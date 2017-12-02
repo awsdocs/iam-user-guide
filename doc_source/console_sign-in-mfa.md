@@ -1,0 +1,7 @@
+# Using MFA Devices With Your IAM Sign\-in Page<a name="console_sign-in-mfa"></a>
+
+IAM users who are configured with multi\-factor authentication \(MFA\) devices must use their MFA devices to sign in to the AWS Management Console\. After the user types the user name and password, AWS checks the user's account to see if MFA is required for that user\. If so, a second sign\-in page appears with an **MFA code** box to enter the numeric code provided by an MFA token device or sent to the user's mobile device as an SMS text message, depending on the type of MFA configured for the user\.
+
+If the MFA code is correct, then the user can access the AWS Management Console\. If the code is incorrect, the user can try again with another code from a token device or by requesting that AWS send another SMS text message code\. This is helpful if the first code was not received or does not work\. 
+
+It's possible for an MFA token device to get out of synchronization\. If after several unsuccessful tries a user cannot sign in to the AWS Management Console, the user is prompted to synchronize the MFA token device\. The user can follow the on\-screen prompts to synchronize the MFA token device\. For information about how you can synchronize a device on behalf of a user in your AWS account, see [Resynchronize MFA Devices](id_credentials_mfa_sync.md)\. 
