@@ -1,0 +1,23 @@
+# Identity\-Based Policies and Resource\-Based Policies<a name="access_policies_identity-vs-resource"></a>
+
+When you create a policy to restrict access to a resource, you can choose an *identity\-based policy* or a *resource\-based policy*\.
+
++ Identity\-based IAM policies are attached to an IAM user, group, or role\. These policies let you specify what that user, group, or role can do\. For example, you can attach the policy to the IAM user named Bob, stating that he has permission to use the Amazon Elastic Compute Cloud \(Amazon EC2\) `RunInstances` action\. The policy could further state that Bob has permission to get items from an Amazon DynamoDB table named `MyCompany`\. You can also grant Bob access to manage his own IAM security credentials\. Identity\-based permissions can be managed or inline\.
+
++ Resource\-based policies are attached to a resource\. For example, you can attach resource\-based policies to Amazon S3 buckets, Amazon SQS queues, and AWS Key Management Service encryption keys\. For a list of services that support resource\-based permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. With resource\-based policies you can specify who has access to the resource and what actions they can perform on it\. Resource\-based policies are inline only, not managed\.
+
+**Note**  
+*Resource\-based* permissions differ from *resource\-level* permissions\. Resource\-based permissions are provided by policies that you can attach directly to a resource, as described in this topic\. Resource\-level permissions refers to the ability to specify not just what actions users can perform, but which resources they're allowed to perform those actions on\. Some AWS services let you specify permissions for actions but don't let you specify the individual resources for those actions\. Other services let you specify permissions for a combination of actions and individual resources\.  
+Resource\-based permissions are supported only by some AWS services\. For a list of which services support resource\-based and resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+
+The following figure illustrates both types of policies\. The first column shows policies attached to identities \(two users and two groups\)\. Some of those policies identify specific resources that the actions can be used against\. Those actions support *resource\-level* permissions\. The second column shows policies attached to resources\. Those services support *resource\-based* permissions within *identity\-based *policies\. 
+
+![\[Types of permissions\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Types_of_Permissions.diagram.png)
+
+**Note**  
+When you create a policy, AWS validates, processes, and transforms the policy before storing it\. When AWS returns the policy in response to a user query or displays it in the console, AWS transforms the policy back into a human\-readable format\. This can result in differences in what you see in the policy visual editor: Visual editor permission blocks can be added, removed, or reordered, and content within a block can be optimized\. In the policy JSON editor, insignificant white space can be removed, and elements within JSON maps can be reordered\. In addition, AWS account IDs within the principal elements can be replaced by the ARN of the AWS account root user\. Because of these possible changes, you should not compare JSON policy documents as strings\.
+
+A user who has specific permissions might request a resource that also has a permissions policy attached to it\. In that case, AWS evaluates both sets of permissions when determining whether to grant access to the resource\. For information about how policies are evaluated, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
+
+**Note**  
+Amazon S3 supports policies both for IAM users and for resources \(referred to in Amazon S3 as *bucket policies*\)\. In addition, Amazon S3 supports a permission mechanism known as an * access control list \(ACL\)* that is independent of IAM policies and permissions\. You can use IAM policies in combination with Amazon S3 ACLs\. For more information, see [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
