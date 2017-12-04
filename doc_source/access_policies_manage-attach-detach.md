@@ -87,129 +87,129 @@ You can attach or detach managed policies and embed or delete inline policies us
 
 **To list managed policies \(AWS CLI or API\)**
 
-+ AWS CLI: [list\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-policies.html)
++ AWS CLI: [list\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
 
-+ AWS API: [ListPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
++ AWS API: [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
 
 **To retrieve detailed information about a managed policy \(AWS CLI or API\)**
 
-+ AWS CLI: [get\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-policy.html)
++ AWS CLI: [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
-+ AWS API: [GetPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
++ AWS API: [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 **To list the identities \(users, groups, and roles\) to which a managed policy is attached \(AWS CLI or API\)**
 
-+ AWS CLI: [list\-entities\-for\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
++ AWS CLI: [list\-entities\-for\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
 
-+ AWS API: [ListEntitiesForPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
++ AWS API: [ListEntitiesForPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
 
 **To list the managed policies attached to an identity \(a user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI: 
 
-  + [list\-attached\-group\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
+  + [list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
 
-  + [list\-attached\-role\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
+  + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
 
-  + [list\-attached\-user\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
+  + [list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
 
 + AWS API: 
 
-  + [ListAttachedGroupPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
+  + [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
 
-  + [ListAttachedRolePolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
+  + [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
 
-  + [ListAttachedUserPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
+  + [ListAttachedUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
 
 **To list all inline policies that are attached to an identity \(user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI: 
 
-  + [list\-group\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-group-policies.html)
+  + [list\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html)
 
-  + [list\-role\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-role-policies.html)
+  + [list\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-role-policies.html)
 
-  + [list\-user\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-user-policies.html)
+  + [list\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-user-policies.html)
 
 + AWS API:
 
-  + [ListGroupPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html)
+  + [ListGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html)
 
-  + [ListRolePolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html)
+  + [ListRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html)
 
-  + [ListUserPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html)
+  + [ListUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html)
 
 **To retrieve an inline policy document that is embedded in an identity \(user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI:
 
-  + [get\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-group-policy.html)
+  + [get\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group-policy.html)
 
-  + [get\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-role-policy.html)
+  + [get\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role-policy.html)
 
-  + [get\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-user-policy.html)
+  + [get\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user-policy.html)
 
 + AWS API:
 
-  + [GetGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html)
+  + [GetGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html)
 
-  + [GetRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)
+  + [GetRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)
 
-  + [GetUserPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html)
+  + [GetUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html)
 
 **To attach a managed policy to an identity \(user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI: 
 
-  + [attach\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
+  + [attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
 
-  + [attach\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
+  + [attach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
 
-  + [attach\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
+  + [attach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
 
 + AWS API: 
 
-  + [AttachGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
+  + [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
 
-  + [AttachRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+  + [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
 
-  + [AttachUserPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
+  + [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
 
 **To detach a managed policy from an identity \(user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI: 
 
-  + [detach\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html)
+  + [detach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html)
 
-  + [detach\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/detach-role-policy.html)
+  + [detach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-role-policy.html)
 
-  + [detach\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html)
+  + [detach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html)
 
 + AWS API: 
 
-  + [DetachGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html)
+  + [DetachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html)
 
-  + [DetachRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)
+  + [DetachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)
 
-  + [DetachUserPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html)
+  + [DetachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html)
 
 **To embed an inline policy in an identity \(user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI:
 
-  + [put\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-group-policy.html)
+  + [put\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-group-policy.html)
 
-  + [put\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+  + [put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
-  + [put\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-user-policy.html)
+  + [put\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html)
 
 + AWS API:
 
-  + [PutGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html)
+  + [PutGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html)
 
-  + [PutRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+  + [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
-  + [PutUserPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
+  + [PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 
 **Note**  
 You can embed an inline policy for a *service\-linked role* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
@@ -218,11 +218,11 @@ You can embed an inline policy for a *service\-linked role* only in the service 
 
 + AWS CLI:
 
-  + [delete\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html)
+  + [delete\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html)
 
-  + [delete\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-role-policy.html)
+  + [delete\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-role-policy.html)
 
-  + [delete\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html)
+  + [delete\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html)
 
 **Note**  
 You can delete an inline policy from a *service\-linked role* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.

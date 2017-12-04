@@ -4,19 +4,19 @@ Amazon Polly \(service prefix: polly\) provides the following service\-specific 
 
 **Actions for Amazon Polly**
 
-For information about using the following Amazon Polly API actions in an IAM policy, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Polly](http://alpha-docs-aws.amazon.com/polly/latest/dg/authentication-and-access-control.html) in the *Amazon Polly Developer Guide*\.
+For information about using the following Amazon Polly API actions in an IAM policy, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Polly](http://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html) in the *Amazon Polly Developer Guide*\.
 
-+ `[polly:GetLexicon](http://alpha-docs-aws.amazon.com/polly/latest/dg/API_GetLexicon.html)`
++ `[polly:GetLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html)`
 
-+ `[polly:PutLexicon](http://alpha-docs-aws.amazon.com/polly/latest/dg/API_PutLexicon.html)`
++ `[polly:PutLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)`
 
-+ `[polly:DescribeVoices](http://alpha-docs-aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)`
++ `[polly:DescribeVoices](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)`
 
-+ `[polly:DeleteLexicon](http://alpha-docs-aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)`
++ `[polly:DeleteLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)`
 
-+ `[polly:ListLexicons](http://alpha-docs-aws.amazon.com/polly/latest/dg/API_ListLexicons.html)`
++ `[polly:ListLexicons](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)`
 
-+ `[polly:SynthesizeSpeech](http://alpha-docs-aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)`
++ `[polly:SynthesizeSpeech](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)`
 
 **Condition context keys for Amazon Polly**
 

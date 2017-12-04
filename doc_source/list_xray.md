@@ -4,17 +4,17 @@ AWS XRay \(service prefix: xray\) provides the following service\-specific actio
 
 **Actions for AWS XRay**
 
-+ `[xray:BatchGetTraces](http://alpha-docs-aws.amazon.com/xray/latest/api/API_BatchGetTraces.html)`
++ `[xray:BatchGetTraces](http://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html)`
 
-+ `[xray:GetServiceGraph](http://alpha-docs-aws.amazon.com/xray/latest/api/API_GetServiceGraph.html)`
++ `[xray:GetServiceGraph](http://docs.aws.amazon.com/xray/latest/api/API_GetServiceGraph.html)`
 
-+ `[xray:PutTelemetryRecords](http://alpha-docs-aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html)`
++ `[xray:PutTelemetryRecords](http://docs.aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html)`
 
-+ `[xray:PutTraceSegments](http://alpha-docs-aws.amazon.com/xray/latest/api/API_PutTraceSegments.html)`
++ `[xray:PutTraceSegments](http://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html)`
 
-+ `[xray:GetTraceGraph](http://alpha-docs-aws.amazon.com/xray/latest/api/API_GetTraceGraph.html)`
++ `[xray:GetTraceGraph](http://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html)`
 
-+ `[xray:GetTraceSummaries](http://alpha-docs-aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html)`
++ `[xray:GetTraceSummaries](http://docs.aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html)`
 
 **Condition context keys for AWS XRay**
 

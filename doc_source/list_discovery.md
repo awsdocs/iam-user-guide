@@ -4,43 +4,43 @@ Application Discovery \(service prefix: discovery\) provides the following servi
 
 **Actions for Application Discovery**
 
-For information about using the following Application Discovery Service actions in an IAM policy, see [Setting Up Access to Application Discovery Service](http://alpha-docs-aws.amazon.com/application-discovery/latest/userguide/appdisc-access.html) in the *Application Discovery Service User Guide*\.
+For information about using the following Application Discovery Service actions in an IAM policy, see [Setting Up Access to Application Discovery Service](http://docs.aws.amazon.com/application-discovery/latest/userguide/appdisc-access.html) in the *Application Discovery Service User Guide*\.
 
-+ `[discovery:StartDataCollectionByAgentIds](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_StartDataCollectionByAgentIds.html)`
++ `[discovery:StartDataCollectionByAgentIds](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartDataCollectionByAgentIds.html)`
 
-+ `[discovery:DescribeTags](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DescribeTags.html)`
++ `[discovery:DescribeTags](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeTags.html)`
 
-+ `[discovery:DescribeExportConfigurations](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportConfigurations.html)`
++ `[discovery:DescribeExportConfigurations](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportConfigurations.html)`
 
-+ `[discovery:StopDataCollectionByAgentIds](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_StopDataCollectionByAgentIds.html)`
++ `[discovery:StopDataCollectionByAgentIds](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StopDataCollectionByAgentIds.html)`
 
-+ `[discovery:GetDiscoverySummary](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_GetDiscoverySummary.html)`
++ `[discovery:GetDiscoverySummary](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_GetDiscoverySummary.html)`
 
-+ `[discovery:ExportConfigurations](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_ExportConfigurations.html)`
++ `[discovery:ExportConfigurations](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportConfigurations.html)`
 
-+ `[discovery:ListServerNeighbors](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_ListServerNeighbors.html)`
++ `[discovery:ListServerNeighbors](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ListServerNeighbors.html)`
 
-+ `[discovery:DescribeConfigurations](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DescribeConfigurations.html)`
++ `[discovery:DescribeConfigurations](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeConfigurations.html)`
 
-+ `[discovery:CreateApplication](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_CreateApplication.html)`
++ `[discovery:CreateApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_CreateApplication.html)`
 
-+ `[discovery:ListConfigurations](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_ListConfigurations.html)`
++ `[discovery:ListConfigurations](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ListConfigurations.html)`
 
-+ `[discovery:StartExportTask](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html)`
++ `[discovery:StartExportTask](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html)`
 
-+ `[discovery:DeleteApplications](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DeleteApplications.html)`
++ `[discovery:DeleteApplications](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DeleteApplications.html)`
 
-+ `[discovery:DescribeAgents](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html)`
++ `[discovery:DescribeAgents](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html)`
 
-+ `[discovery:AssociateConfigurationItemsToApplication](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_AssociateConfigurationItemsToApplication.html)`
++ `[discovery:AssociateConfigurationItemsToApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_AssociateConfigurationItemsToApplication.html)`
 
-+ `[discovery:DeleteTags](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DeleteTags.html)`
++ `[discovery:DeleteTags](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DeleteTags.html)`
 
-+ `[discovery:CreateTags](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_CreateTags.html)`
++ `[discovery:CreateTags](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_CreateTags.html)`
 
-+ `[discovery:UpdateApplication](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_UpdateApplication.html)`
++ `[discovery:UpdateApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_UpdateApplication.html)`
 
-+ `[discovery:DisassociateConfigurationItemsFromApplication](http://alpha-docs-aws.amazon.com/application-discovery/latest/APIReference/API_DisassociateConfigurationItemsFromApplication.html)`
++ `[discovery:DisassociateConfigurationItemsFromApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DisassociateConfigurationItemsFromApplication.html)`
 
 **Condition context keys for Application Discovery**
 

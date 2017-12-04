@@ -79,7 +79,7 @@ The user that you want to enable Enhanced Monitoring needs a policy that include
 
 ```
     {
-        "SID": "PolicyStatementToAllowUserToPassOneSpecificRole",
+        "Sid": "PolicyStatementToAllowUserToPassOneSpecificRole",
         "Effect": "Allow",
         "Action": [ "iam:PassRole" ],
         "Resource": "arn:aws:iam:::role/RDS-Monitoring-Role"

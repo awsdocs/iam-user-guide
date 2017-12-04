@@ -4,19 +4,19 @@ Application Auto Scaling \(service prefix: application\-autoscaling\) provides t
 
 **Actions for Application Auto Scaling**
 
-+ `[application\-autoscaling:DescribeScalingActivities](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
++ `[application\-autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
 
-+ `[application\-autoscaling:DescribeScalableTargets](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html)`
++ `[application\-autoscaling:DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html)`
 
-+ `[application\-autoscaling:RegisterScalableTarget](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html)`
++ `[application\-autoscaling:RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html)`
 
-+ `[application\-autoscaling:DeleteScalingPolicy](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScalingPolicy.html)`
++ `[application\-autoscaling:DeleteScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScalingPolicy.html)`
 
-+ `[application\-autoscaling:DescribeScalingPolicies](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingPolicies.html)`
++ `[application\-autoscaling:DescribeScalingPolicies](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingPolicies.html)`
 
-+ `[application\-autoscaling:DeregisterScalableTarget](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeregisterScalableTarget.html)`
++ `[application\-autoscaling:DeregisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeregisterScalableTarget.html)`
 
-+ `[application\-autoscaling:PutScalingPolicy](http://alpha-docs-aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScalingPolicy.html)`
++ `[application\-autoscaling:PutScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScalingPolicy.html)`
 
 **Condition context keys for Application Auto Scaling**
 

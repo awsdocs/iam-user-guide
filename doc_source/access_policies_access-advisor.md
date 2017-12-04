@@ -30,7 +30,7 @@ Users must have permission to see user, group, role, and policy details in order
 `iam:GetServiceLastAccessedDetailsWithEntities`
 `iam:ListPoliciesGrantingServiceAccess`
 Because these actions are not specific to a single resource, administrators should provide access to use these actions on all resources \(`"Resource": "*"`\)\.   
-Be aware that granting these permissions permits the user to see which users, groups, or roles are attached to a [managed policy](http://alpha-docs-aws.amazon.com/general/latest/gr/glos-chap.html#managed_policy)\. It also allows the user to see which services a user or role has access to and which services have been accessed, by whom and when\. This is similar to the `iam:ListEntitiesForPolicy` and `iam:ListAttached[User/Group/Role]Policies` permissions\.
+Be aware that granting these permissions permits the user to see which users, groups, or roles are attached to a [managed policy](http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#managed_policy)\. It also allows the user to see which services a user or role has access to and which services have been accessed, by whom and when\. This is similar to the `iam:ListEntitiesForPolicy` and `iam:ListAttached[User/Group/Role]Policies` permissions\.
 
 **To view access advisor information**
 
@@ -88,7 +88,7 @@ Some examples that show the value of using the IAM access advisor for both polic
 Imagine an administrator who is responsible for managing a team’s AWS infrastructure\. The team has created an application that runs on Amazon EC2 and calls other AWS services\. This means that the administrator needs to provision an EC2 instance for this application and manage its configuration\. One part of this is to attach an IAM role to this EC2 instance\. 
 
 **Note**  
-You can attach IAM roles to EC2 instances to enable applications that run on those instances to make API requests\. That way you don't need to manually manage the security credentials that the applications use\. Instead of creating and distributing your AWS credentials, you can delegate permission to make API requests to an IAM role that is assigned to the instance\. For more information, see [IAM Roles for Amazon EC2](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)\. 
+You can attach IAM roles to EC2 instances to enable applications that run on those instances to make API requests\. That way you don't need to manually manage the security credentials that the applications use\. Instead of creating and distributing your AWS credentials, you can delegate permission to make API requests to an IAM role that is assigned to the instance\. For more information, see [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)\. 
 
 However, the administrator is new to IAM and when attaching the IAM role to the EC2 instance, the administrator is not sure what to put in the role’s permission policy\. The administrator *wants* to implement a thorough access control mechanism, but the immediate priority is to make sure that the application works\. To do that the administrator simply copies the **PowerUserAccess** AWS managed policy shown below with the intention of modifying it as it becomes clear over time what permissions are really needed\. This policy grants full read\-write permissions to all AWS services and resources in the account except for IAM \(and is definitely *not* recommended as a long\-term solution\)\.
 

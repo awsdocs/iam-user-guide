@@ -2,9 +2,9 @@
 
 This example shows how you might create a policy that allows row\-level access to a specific DynamoDB table based on an Amazon Cognito ID\. To use this policy, replace the red text in the example policy with your own information\.
 
-To use this policy, you must structure your DynamoDB table so the Cognito user ID is the partition key\. For more information, see [Creating a Table](http://alpha-docs-aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.CreateTable) in the *Amazon DynamoDB Developer Guide*\.
+To use this policy, you must structure your DynamoDB table so the Cognito user ID is the partition key\. For more information, see [Creating a Table](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.CreateTable) in the *Amazon DynamoDB Developer Guide*\.
 
-To learn more about DynamoDB condition keys, see [Specifying Conditions: Using Condition Keys](http://alpha-docs-aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys) in the* Amazon DynamoDB Developer Guide*\.
+To learn more about DynamoDB condition keys, see [Specifying Conditions: Using Condition Keys](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys) in the* Amazon DynamoDB Developer Guide*\.
 
 ```
 {

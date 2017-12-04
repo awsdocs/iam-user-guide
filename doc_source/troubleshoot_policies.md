@@ -76,7 +76,7 @@ When you create or edit a policy using the visual editor, you must first choose 
 
 + **Use the ARN builder** – Based on the resource type, you might see different fields to build your ARN\. You can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the region and instance ID, then the policy grants permissions to any instance in your account\.
 
-+ **Type or paste the ARN** – You can specify resources by their [Amazon Resource Name \(ARN\)](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\. You can include a wildcard character \(**\***\) in any field of the ARN \(between each pair of colons\)\. For more information, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
++ **Type or paste the ARN** – You can specify resources by their [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\. You can include a wildcard character \(**\***\) in any field of the ARN \(between each pair of colons\)\. For more information, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
 
 ### Denying Permissions in the Visual Editor<a name="troubleshoot_policies-switch-deny"></a>
 
@@ -154,7 +154,7 @@ You must be careful when using these policy elements such as `NotPrincipal`, `No
 
 ### Policy Summary Includes Unrecognized Services, Actions, or Resource Types<a name="unrecognized-services-actions"></a>
 
-In the IAM console, if a policy summary includes a warning symbol \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\), then the policy might include an unrecognized service, action or resource type\. To learn about warnings within a policy summary, see [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)\. 
+In the IAM console, if a policy summary includes a warning symbol \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\), then the policy might include an unrecognized service, action or resource type\. To learn about warnings within a policy summary, see [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)\. 
 
 **Note**  
 IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
@@ -219,7 +219,7 @@ To assign permissions to a user, group, role, or resource, you create a *policy*
 
 To learn about these and other policy elements, see [IAM JSON Policy Elements Reference](reference_policies_elements.md)\. 
 
-To grant access, your policy must define an action with a supported resource\. If your policy also includes a condition, that condition must include a global condition key or must apply to the action\. To learn which resources are supported by an action, see the [AWS documentation](http://alpha-docs-aws.amazon.com/) for your service\. To learn which conditions are supported by an action, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
+To grant access, your policy must define an action with a supported resource\. If your policy also includes a condition, that condition must include a global condition key or must apply to the action\. To learn which resources are supported by an action, see the [AWS documentation](http://docs.aws.amazon.com/) for your service\. To learn which conditions are supported by an action, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
 
 To learn whether your policy defines an action, resource, or condition that does not grant permissions, you can view the policy summary for your policy using the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. You can use policy summaries to identify and correct problems in your policy\.
 
@@ -235,7 +235,7 @@ To view examples of policy summaries that include warnings, see [[ERROR] BAD/MIS
 
 #### An Action Is Defined Without an Applicable Resource<a name="mismatch_action-no-resource"></a>
 
-The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's `Resource` element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's `Resource` element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 ```
 {

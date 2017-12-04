@@ -2,7 +2,7 @@
 
 AWS Identity and Access Management \(IAM\) is integrated with AWS CloudTrail, a service that logs AWS events made by or on behalf of your AWS account\. CloudTrail logs authenticated AWS API calls and also AWS sign\-in events, and collects this event information in files that are delivered to Amazon S3 buckets\. Using information collected by CloudTrail, you can determine what requests were successfully made to AWS services, who made the request, when it was made, and so on\. 
 
-To learn more about CloudTrail, including how to configure and enable it, see the [http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/)\. 
+To learn more about CloudTrail, including how to configure and enable it, see the [http://docs.aws.amazon.com/awscloudtrail/latest/userguide/](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\. 
 
 
 + [Types of IAM Information Logged in CloudTrail](#cloudtrail-integration-iam-information)
@@ -13,19 +13,19 @@ To learn more about CloudTrail, including how to configure and enable it, see th
 
  IAM information is available to CloudTrail in these ways: 
 
-+ **API requests to IAM and AWS Security Token Service \(AWS STS\)** – CloudTrail logs all authenticated API requests \(made with credentials\) to IAM and AWS STS APIs, with the exception of `DecodeAuthorizationMessage`\. CloudTrail also logs nonauthenticated requests to the AWS STS actions, `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` and logs information provided by the identity provider\. You can use this information to map calls made by a federated user with an assumed role back to the originating external federated caller\. In the case of `AssumeRole`, you can map calls back to the originating AWS service or to the account of the originating user\. The `userIdentity` section of the JSON data in the CloudTrail log entry contains the information that you need to map the AssumeRole\* request with a specific federated user\. For more information, see [CloudTrail userIdentity Element](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
++ **API requests to IAM and AWS Security Token Service \(AWS STS\)** – CloudTrail logs all authenticated API requests \(made with credentials\) to IAM and AWS STS APIs, with the exception of `DecodeAuthorizationMessage`\. CloudTrail also logs nonauthenticated requests to the AWS STS actions, `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` and logs information provided by the identity provider\. You can use this information to map calls made by a federated user with an assumed role back to the originating external federated caller\. In the case of `AssumeRole`, you can map calls back to the originating AWS service or to the account of the originating user\. The `userIdentity` section of the JSON data in the CloudTrail log entry contains the information that you need to map the AssumeRole\* request with a specific federated user\. For more information, see [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
 
   For example, calls to the IAM `CreateUser`, `DeleteRole`, `ListGroups`, and other API operations are all logged by CloudTrail\. 
 
   Examples for this type of log entry are presented later in this topic\. 
 **Important**  
-If you activate AWS STS endpoints in regions other than the default global endpoint, then you must also turn on CloudTrail logging in those regions to record any AWS STS API calls made in those regions\. For more information, see [Turning On CloudTrail in Additional Regions](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html) in the AWS CloudTrail User Guide\.
+If you activate AWS STS endpoints in regions other than the default global endpoint, then you must also turn on CloudTrail logging in those regions to record any AWS STS API calls made in those regions\. For more information, see [Turning On CloudTrail in Additional Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html) in the AWS CloudTrail User Guide\.
 
 + **API requests to other AWS services** – Authenticated requests to other AWS service APIs are logged by CloudTrail, and these log entries contain information about who generated the request\. 
 
   For example, if a request is made to list Amazon EC2 instances or create an AWS CodeDeploy deployment group, the user identity of the person or service that made the request is contained in the log entry for that request\. The user identity information helps you determine whether the request was made with AWS account root user credentials or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. 
 
-  For more details about the user identity information in CloudTrail log entries, see [userIdentity Element](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/event_reference_user_identity.html) in the *AWS CloudTrail User Guide*\. 
+  For more details about the user identity information in CloudTrail log entries, see [userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_user_identity.html) in the *AWS CloudTrail User Guide*\. 
 
 + **AWS sign\-in events** – Sign\-in events to the AWS Management Console, the AWS Discussion Forums, and the AWS Marketplace are logged by CloudTrail\. 
 
@@ -72,7 +72,7 @@ You forget which account you are signing in to and accidentally type the account
 
 + **How temporary credential requests are logged** – When a principal requests temporary credentials, the principal type determines how CloudTrail logs the event\. The following table shows how CloudTrail logs different information for each of the API calls that generate temporary credentials\.  
 ****    
-[\[See the AWS documentation website for more details\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)
 
 ## Examples of Logged Events in CloudTrail Files<a name="cloudtrail-integration-understanding-records"></a>
 
@@ -463,7 +463,7 @@ The following example shows a CloudTrail log entry for a successful sign\-in eve
 }
 ```
 
-For more details about the information contained in CloudTrail log files, see [CloudTrail Event Reference](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
+For more details about the information contained in CloudTrail log files, see [CloudTrail Event Reference](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
 
 ## Preventing Duplicate Log Entries in CloudTrail<a name="cloudtrail-integration-global-service"></a>
 
@@ -498,4 +498,4 @@ The following table lists the regions and how CloudTrail logs AWS STS requests i
 
 When you configure CloudTrail to aggregate trail information from multiple regions in your account into a single Amazon S3 bucket, IAM events are duplicated in the logs—the trail for each region writes the same IAM event to the aggregated log\. To prevent this duplication, you can include global events selectively\. A typical approach is to enable global events in one trail and to disable global events in all other trails that write to the same Amazon S3 bucket\. That way only one set of global events is written\.
 
-For more information, see [Aggregating Logs](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/aggregatinglogs.html) in the *AWS CloudTrail User Guide*\. 
+For more information, see [Aggregating Logs](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregatinglogs.html) in the *AWS CloudTrail User Guide*\. 

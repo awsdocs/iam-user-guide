@@ -2,7 +2,7 @@
 
 You can use IAM roles to delegate access to your AWS resources\. With IAM roles, you can establish trust relationships between your *trusting* account and other AWS *trusted* accounts\. The trusting account owns the resource to be accessed and the trusted account contains the users who need access to the resource\.
 
-After you create the trust relationship, an IAM user or an application from the trusted account can use the AWS Security Token Service \(AWS STS\) [http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API action\. This action provides temporary security credentials that enable access to AWS resources in your account\.
+After you create the trust relationship, an IAM user or an application from the trusted account can use the AWS Security Token Service \(AWS STS\) [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API action\. This action provides temporary security credentials that enable access to AWS resources in your account\.
 
 The accounts can both be controlled by you, or the account with the users can be controlled by a third party\. If the other account with the users is in an AWS account that you do not control, then you can use the `externalID` attribute and a unique identifier supplied by the third\-party account\. This helps ensure that access occurs only in the correct contexts\. For more information, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md)\.
 
@@ -54,15 +54,15 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 **To create a role for cross\-account access \(AWS CLI\)**
 
-+ Create a role: [aws iam create\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-role.html)
++ Create a role: [aws iam create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
 
-+ Attach a managed permission policy to the role: [aws iam attach\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
++ Attach a managed permission policy to the role: [aws iam attach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
 
    \-or\-
 
-  Create an inline permission policy for the role: [aws iam put\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+  Create an inline permission policy for the role: [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
-The following example shows both steps in a simple environment\. The example assumes that you are using a client computer running Windows, and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](http://alpha-docs-aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
+The following example shows both steps in a simple environment\. The example assumes that you are using a client computer running Windows, and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
 The sample trust policy referenced in the first command contains the following JSON code to enable users in the account 123456789012 to assume the role , but only if the user provides MFA authentication\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
 
@@ -115,15 +115,15 @@ You can use API calls to create a role that an IAM user can switch to\.
 
 **To create a role in code \(API\)**
 
-+ Create a role: [CreateRole](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
++ Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
 
   For the role's trust policy, you can specify a file location\.
 
-+ Attach a managed permission policy to the role: [AttachRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
++ Attach a managed permission policy to the role: [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
 
    \-or\-
 
-  Create an inline permission policy for the role: [PutRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+  Create an inline permission policy for the role: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
 **Important**  
 Remember that this is only the first half of the configuration required\. You must also give individual users in the trusted account permissions to switch to the role\. For more information about this step, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.

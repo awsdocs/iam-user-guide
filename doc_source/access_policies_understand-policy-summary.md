@@ -3,7 +3,7 @@
 Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. 
 
 ![\[Policy summaries diagram image that illustrates the 3 tables and their
-        relationship\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-pol-sum.png)
+        relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-pol-sum.png)
 
 The policy summary table is grouped into one or more **Uncategorized services**, **Explicit deny**, and **Allow** sections\. If the policy includes a service that IAM does not recognize, then the service is included in the **Uncategorized services** section of the table\. If IAM recognizes the service, then it is included under the **Explicit deny** or **Allow** sections of the table, depending on the effect of the policy \(`Deny` or `Allow`\)\.
 
@@ -83,7 +83,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 In the following example of a user details page, the **PolSumUser** user has eight attached policies\. The **SummaryAllElements** policy is a managed policy \(customer managed policy\) that is attached directly to the user\. This policy is expanded to show the policy summary\. To view the JSON policy document for this policy, see [[ERROR] BAD/MISSING LINK TEXT](#policy-summary-example-json)\.
 
-![\[Policy summary dialog image\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-user-page-dialog.png)
+![\[Policy summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-user-page-dialog.png)
 
 In the preceding image, the policy summary is visible from within the user details page:
 
@@ -103,23 +103,23 @@ In the preceding image, the policy summary is visible from within the user detai
 
 The following policy summary table image shows the expanded **SummaryAllElements** policy on the **PolSumUser** user details page\.
 
-![\[Policy summary dialog image\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-table-dialog.png)
+![\[Policy summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-table-dialog.png)
 
 In the preceding image, the policy summary is visible from within the user details page:
 
 1. **Service** – This column lists the services that are defined within the policy and provides details for each service\. Each service name in the policy summary table is a link to the *service summary* table, which is explained in [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\. In this example, permissions are defined for the Amazon S3, Billing, and Amazon EC2 services\. The policy also defines permissions for a \(misspelled\) `codedploy` service, which IAM does not recognize\.
 
-1. **Unrecognized services** – This policy includes an unrecognized service \(in this case **codedploy ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)**\)\. You can use this warning to check whether a service name might include a typo\. If the service name is correct, then the service might not support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the policy includes an unrecognized `codedploy` service that is missing an `e`\. Because of this typo, the policy does not provide the expected AWS CodeDeploy permissions\. You can edit the policy to include the accurate `codedeploy` service name; the service then appears in the policy summary\.
+1. **Unrecognized services** – This policy includes an unrecognized service \(in this case **codedploy ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)**\)\. You can use this warning to check whether a service name might include a typo\. If the service name is correct, then the service might not support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the policy includes an unrecognized `codedploy` service that is missing an `e`\. Because of this typo, the policy does not provide the expected AWS CodeDeploy permissions\. You can edit the policy to include the accurate `codedeploy` service name; the service then appears in the policy summary\.
 
 1. For those services that IAM recognizes, it arranges services according to whether the policy allows or explicitly denies the use of the service\. In this example, the policy includes `Allow` and `Deny` statements for the Amazon S3 service\. Therefore the policy summary includes S3 within both the **Explicit deny** and **Allow** sections\.
 
 1. **Show remaining 100** – Choose this link to expand the table to include the services that are not defined by the policy\. These services are *implicitly denied* \(or denied by default\) within this policy\. However, a statement in another policy might still allow or explicitly deny using the service\. The policy summary summarizes the permissions of a single policy\. To learn about how the AWS service decides whether a given request should be allowed or denied, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
-1. **EC2 ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized action\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains an action that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon EC2 action\. To learn more about unrecognized actions and to view the unrecognized action in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
+1. **EC2 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized action\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains an action that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon EC2 action\. To learn more about unrecognized actions and to view the unrecognized action in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
 **Note**  
 IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
 
-1. **S3 ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized resource\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains a resource type that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon S3 action\. To learn more about unrecognized resources and to view the unrecognized resource type in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
+1. **S3 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized resource\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains a resource type that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon S3 action\. To learn more about unrecognized resources and to view the unrecognized resource type in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
 
 1. **Access level** – This column tells whether the actions in each access level \(`List`, `Read`, `Write`, and `Permissions management`\) have `Full` or `Limited` permissions defined in the policy\. For additional details and examples of the access level summary, see [Understanding Access Level Summaries Within Policy Summaries](access_policies_understand-policy-summary-access-level-summaries.md)\.
 
@@ -151,39 +151,39 @@ This column can include a resource from a different service\. If the policy stat
 
 When a policy or an element within the policy does not grant permissions, IAM provides additional warnings and information in the policy summary\. The following policy summary table shows the expanded **Show remaining 100** services on the **PolSumUser** user details page with the possible warnings\.
 
-![\[Policy summary dialog image\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-table-showremaining-dialog.png)
+![\[Policy summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-table-showremaining-dialog.png)
 
 In the preceding image, you can see all services that include defined actions, resources, or conditions with no permissions:
 
 1. **Resource warnings** – For services that do not provide permissions for all of the included actions or resources, you see one of the following warnings in the **Resource** column of the table:
 
-   + **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No resources are defined\.** – This means that the service has defined actions but no supported resources are included in the policy\.
+   + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No resources are defined\.** – This means that the service has defined actions but no supported resources are included in the policy\.
 
-   + **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – This means that the service has defined actions, but that some of those actions don't have a supported resource\.
+   + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – This means that the service has defined actions, but that some of those actions don't have a supported resource\.
 
-   + **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – This means that the service has defined resources, but that some of those resources don't have a supporting action\.
+   + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – This means that the service has defined resources, but that some of those resources don't have a supporting action\.
 
    If a service includes both actions that do not have an applicable resource and resources that do not have an applicable resource, then only the **One or more resources do not have an applicable action\.** warning is shown\. This is because when you view the service summary for the service, resources that do not apply to any action are not shown\. For the `ListAllMyBuckets` action, this policy includes the last warning because the action does not support resource\-level permissions, and does not support the `s3:x-amz-acl` condition key\. If you fix either the resource problem or the condition problem, the remaining issue appears in a detailed warning\.
 
 1. **Request condition warnings** – For services that do not provide permissions for all of the included conditions, you see one of the following warnings in the **Request condition** column of the table:
 
-   + **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable condition\.** – This means that the service has defined actions, but that some of those actions don't have a supported condition\.
+   + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable condition\.** – This means that the service has defined actions, but that some of those actions don't have a supported condition\.
 
-   + **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – This means that the service has defined conditions, but that some of those conditions don't have a supporting action,
+   + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – This means that the service has defined conditions, but that some of those conditions don't have a supporting action,
 
-1. **Multiple | ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – The `Deny` statement for Amazon S3 includes more than one resource\. It also includes more than one action, and some actions support the resources and some do not\. To view this policy, see [[ERROR] BAD/MISSING LINK TEXT](#policy-summary-example-json)\. In this case, the policy includes all Amazon S3 actions, and only the actions that can be performed on a bucket or bucket object are denied\.
+1. **Multiple | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – The `Deny` statement for Amazon S3 includes more than one resource\. It also includes more than one action, and some actions support the resources and some do not\. To view this policy, see [[ERROR] BAD/MISSING LINK TEXT](#policy-summary-example-json)\. In this case, the policy includes all Amazon S3 actions, and only the actions that can be performed on a bucket or bucket object are denied\.
 
 1. The ellipses \(…\) indicate that all the services are included in the page, but we are showing only the rows with information relevant to this policy\. When you view this page in the AWS Management Console, you see all the AWS services\.
 
 1. The background color in the table rows indicates services that do not grant any permissions\. You cannot get any additional information about these services in the policy summary\. For services in white rows, you can choose the name of the service to view the service summary \(list of actions\) page\. There you can learn more about the permissions granted for that service\.
 
-1. **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) None \- No actions are defined\.** – This means that the service is defined as a resource or condition, but that no actions are included for the service, and therefore the service provides no permissions\. In this case, the policy includes a AWS CodeBuild resource but no AWS CodeBuild actions\.
+1. **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) None \- No actions are defined\.** – This means that the service is defined as a resource or condition, but that no actions are included for the service, and therefore the service provides no permissions\. In this case, the policy includes a AWS CodeBuild resource but no AWS CodeBuild actions\.
 
-1. **![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No resources are defined** – The service has defined actions, but no supported resources are included in the policy, and therefore the service provides no permissions\. In this case, the policy includes AWS CodeCommit actions but no AWS CodeCommit resources\.
+1. **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No resources are defined** – The service has defined actions, but no supported resources are included in the policy, and therefore the service provides no permissions\. In this case, the policy includes AWS CodeCommit actions but no AWS CodeCommit resources\.
 
-1. **BucketName = developer\_bucket, ObjectPath = All | ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – The service has a defined bucket object resource, and at least one more resource that does not have a supporting action\.
+1. **BucketName = developer\_bucket, ObjectPath = All | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – The service has a defined bucket object resource, and at least one more resource that does not have a supporting action\.
 
-1. **s3:x\-amz\-acl = public\-read | ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – The service has a defined `s3:x-amz-acl` condition key, and at least one more condition key that does not have a supporting action\.
+1. **s3:x\-amz\-acl = public\-read | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – The service has a defined `s3:x-amz-acl` condition key, and at least one more condition key that does not have a supporting action\.
 
 ## **SummaryAllElements** JSON Policy Document<a name="policy-summary-example-json"></a>
 

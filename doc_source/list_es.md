@@ -4,35 +4,35 @@ Amazon Elasticsearch Service \(service prefix: es\) provides the following servi
 
 **Actions for Amazon Elasticsearch Service**
 
-For information about using the following Amazon ElasticSearch API actions in an IAM policy, see [Configuring an Access Policy for an Elasticsearch Domain](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg-configure-access.html) in the *Amazon Elasticsearch Developer Guide*\.
+For information about using the following Amazon ElasticSearch API actions in an IAM policy, see [Configuring an Access Policy for an Elasticsearch Domain](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg-configure-access.html) in the *Amazon Elasticsearch Developer Guide*\.
 
-+ `[es:UpdateElasticsearchDomainConfig](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updateelasticsearchdomainconfig)`
++ `[es:UpdateElasticsearchDomainConfig](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-updateelasticsearchdomainconfig)`
 
 + `[es:ESHttpPut]()`
 
-+ `[es:DescribeElasticsearchDomain](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain)`
++ `[es:DescribeElasticsearchDomain](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomain)`
 
-+ `[es:DeleteElasticsearchDomain](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchdomain)`
++ `[es:DeleteElasticsearchDomain](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-deleteelasticsearchdomain)`
 
-+ `[es:DescribeElasticsearchDomains](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeesdomains)`
++ `[es:DescribeElasticsearchDomains](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeesdomains)`
 
-+ `[es:RemoveTags](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-removetags)`
++ `[es:RemoveTags](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-removetags)`
 
 + `[es:ESHttpPost]()`
 
-+ `[es:CreateElasticsearchDomain](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain)`
++ `[es:CreateElasticsearchDomain](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-createelasticsearchdomain)`
 
 + `[es:ESHttpHead]()`
 
-+ `[es:ListTags](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags)`
++ `[es:ListTags](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags)`
 
-+ `[es:AddTags](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-addtags)`
++ `[es:AddTags](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-addtags)`
 
-+ `[es:ListDomainNames](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags)`
++ `[es:ListDomainNames](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-listtags)`
 
 + `[es:ESHttpGet]()`
 
-+ `[es:DescribeElasticsearchDomainConfig](http://alpha-docs-aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomainconfig)`
++ `[es:DescribeElasticsearchDomainConfig](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomainconfig)`
 
 **Condition context keys for Amazon Elasticsearch Service**
 

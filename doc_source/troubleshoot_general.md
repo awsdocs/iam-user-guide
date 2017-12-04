@@ -25,15 +25,15 @@ Verify that you have permission to call the action and resource that you have re
 
 If you're trying to access a service that has resource\-based \(or access control\) policies, such as Amazon S3, Amazon SNS, or Amazon SQS, verify that the resource policy specifies you as a principal and grants you access\. For more information about resource\-based policies, see the documentation for that service\.
 
-If you are signing requests manually \(without using the [AWS SDKs](http://aws.amazon.com/tools/)\), verify that you have correctly [ signed the request](http://alpha-docs-aws.amazon.com/general/latest/gr/signing_aws_api_requests.html)\.
+If you are signing requests manually \(without using the [AWS SDKs](http://aws.amazon.com/tools/)\), verify that you have correctly [ signed the request](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html)\.
 
 ## I get "access denied" when I make a request with temporary security credentials\.<a name="troubleshoot_general_access-denied-temp-creds"></a>
 
-+ Verify that the service accepts temporary security credentials, see [ Using Temporary Security Credentials to Access AWS](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html)\.
++ Verify that the service accepts temporary security credentials, see [ Using Temporary Security Credentials to Access AWS](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html)\.
 
-+ Verify that your requests are being signed correctly and that the request is well\-formed\. For details, see your [toolkit](http://aws.amazon.com/tools/) documentation or [Using Temporary Security Credentials to Authenticate an AWS Request](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS)\.
++ Verify that your requests are being signed correctly and that the request is well\-formed\. For details, see your [toolkit](http://aws.amazon.com/tools/) documentation or [Using Temporary Security Credentials to Authenticate an AWS Request](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS)\.
 
-+ Verify that your temporary security credentials haven't expired\. For more information, see [Using Temporary Security Credentials](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/Welcome.html)\. 
++ Verify that your temporary security credentials haven't expired\. For more information, see [Using Temporary Security Credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html)\. 
 
 + Verify that the IAM user or role has the correct permissions\. Permissions for temporary security credentials are derived from an IAM user or role, so the permissions are limited to those granted to the IAM user or role\. For more information about how permissions for temporary security credentials are determined, see [Controlling Permissions for Temporary Security Credentials](id_credentials_temp_control-access.md)\.
 
@@ -68,12 +68,12 @@ You must design your global applications to account for these potential delays a
 
 For more information about how some other AWS services are affected by this, consult the following resources:
 
-+ **Amazon DynamoDB**: [What is the consistency model of Amazon DynamoDB?](https://aws.amazon.com/dynamodb/faqs) in the *DynamoDB FAQ*, and [Read Consistency](http://alpha-docs-aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html) in the Amazon DynamoDB Developer Guide\.
++ **Amazon DynamoDB**: [What is the consistency model of Amazon DynamoDB?](https://aws.amazon.com/dynamodb/faqs) in the *DynamoDB FAQ*, and [Read Consistency](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html) in the Amazon DynamoDB Developer Guide\.
 
-+ **Amazon EC2**: [EC2 Eventual Consistency](http://alpha-docs-aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency) in the *Amazon EC2 API Reference*\.
++ **Amazon EC2**: [EC2 Eventual Consistency](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency) in the *Amazon EC2 API Reference*\.
 
 + **Amazon EMR**: [Ensuring Consistency When Using Amazon S3 and Amazon Elastic MapReduce for ETL Workflows](http://aws.amazon.com/blogs/big-data/ensuring-consistency-when-using-amazon-s3-and-amazon-elastic-mapreduce-for-etl-workflows/) in the AWS Big Data Blog
 
-+ **Amazon Redshift**: [Managing Data Consistency](http://alpha-docs-aws.amazon.com/redshift/latest/dg/managing-data-consistency.html) in the *Amazon Redshift Database Developer Guide*
++ **Amazon Redshift**: [Managing Data Consistency](http://docs.aws.amazon.com/redshift/latest/dg/managing-data-consistency.html) in the *Amazon Redshift Database Developer Guide*
 
-+ **Amazon S3**: [Amazon S3 Data Consistency Model](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel) in the *Amazon Simple Storage Service Developer Guide*
++ **Amazon S3**: [Amazon S3 Data Consistency Model](http://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel) in the *Amazon Simple Storage Service Developer Guide*

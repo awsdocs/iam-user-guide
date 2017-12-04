@@ -66,7 +66,7 @@ For more information and detail about this procedure, see [Granting a User Permi
 
 1. Do one of the following:
 
-   + To edit a *customer* managed policy, choose the name of the policy, choose **Edit policy**, and then choose the **JSON** tab\. You cannot edit an AWS managed policy\. AWS managed policies appear with the AWS icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
+   + To edit a *customer* managed policy, choose the name of the policy, choose **Edit policy**, and then choose the **JSON** tab\. You cannot edit an AWS managed policy\. AWS managed policies appear with the AWS icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
 
    + To edit an inline policy, choose the arrow next to the name of the policy and choose **Edit policy**\.
 
@@ -98,7 +98,7 @@ For more information and detail about this procedure, see [Granting a User Permi
 
    + To edit an existing customer managed policy, choose the name of the policy and then choose **Edit policy**\.
 **Note**  
-You cannot edit an AWS managed policy\. AWS managed policy appear with the AWS icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\. 
+You cannot edit an AWS managed policy\. AWS managed policy appear with the AWS icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\. 
 
    + To attach an existing managed policy, choose **Add permissions**\.
 
@@ -128,19 +128,19 @@ You can use the AWS Command Line Interface or IAM API to modify a role\.
 
 1. If you don't know the name of the role that you want to modify, use one of the following commands to list the roles in your account:
 
-   + AWS CLI: [aws iam list\-roles](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-roles.html)
+   + AWS CLI: [aws iam list\-roles](http://docs.aws.amazon.com/cli/latest/reference/iam/list-roles.html)
 
-   + AWS Tools for Windows PowerShell: [Get\-IAMRoles](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRoles.html&tocid=Get-IAMRoles)
+   + AWS Tools for Windows PowerShell: [Get\-IAMRoles](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRoles.html&tocid=Get-IAMRoles)
 
-   + IAM API: [ListRoles](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html)
+   + IAM API: [ListRoles](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html)
 
 1. \(Optional\) To view the current trust policy for a role, use one of the following commands:
 
-   + AWS CLI: [aws iam get\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-role.html)
+   + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
-   + AWS Tools for Windows PowerShell: [Get\-IAMRole](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRole.html&tocid=Get-IAMRole)
+   + AWS Tools for Windows PowerShell: [Get\-IAMRole](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRole.html&tocid=Get-IAMRole)
 
-   + IAM API: [GetRole](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)
+   + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)
 
 1. To modify the trusted principals that can access the role, create a text file with the updated trust policy\. You can use any text editor to construct the policy\.
 
@@ -159,11 +159,11 @@ You can use the AWS Command Line Interface or IAM API to modify a role\.
 
 1. To update the trust policy, use one of the following commands:
 
-   + AWS CLI: [aws iam update\-assume\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-assume-role-policy.html)
+   + AWS CLI: [aws iam update\-assume\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/update-assume-role-policy.html)
 
-   + AWS Tools for Windows PowerShell: [Update\-IAMAssumeRolePolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAssumeRolePolicy.html&tocid=Update-IAMAssumeRolePolicy)
+   + AWS Tools for Windows PowerShell: [Update\-IAMAssumeRolePolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAssumeRolePolicy.html&tocid=Update-IAMAssumeRolePolicy)
 
-   + IAM API: [UpdateAssumeRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html)
+   + IAM API: [UpdateAssumeRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html)
 
 **To allow users in a trusted external account to use the role \(AWS CLI, AWS Tools for Windows PowerShellAWS API\)**
 
@@ -184,68 +184,68 @@ For more information and detail about this procedure, see [Granting a User Permi
 
    Create a JSON file that contains a policy similar to the preceding example\. Replace the values in red with the actual values from the ARN of the role that users are allowed to assume\. After you have created the policy, use one of the following commands to upload it to IAM:
 
-   + AWS CLI: [aws iam create\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-policy.html)
+   + AWS CLI: [aws iam create\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy.html)
 
-   + AWS Tools for Windows PowerShell: [New\-IAMPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMPolicy.html&tocid=New-IAMPolicy)
+   + AWS Tools for Windows PowerShell: [New\-IAMPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMPolicy.html&tocid=New-IAMPolicy)
 
-   + IAM API: [CreatePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
+   + IAM API: [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
 
    The output of this command contains the ARN of the policy\. Make a note of this ARN because you will need to use it in a later step\. 
 
 1. Decide which user or group to attach the policy to\. If you don't know the name of the user or group that you want to modify, use one of these commands to list the users or group in your account:
 
-   + AWS CLI: [aws iam list\-users](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-users.html) or [aws iam list\-groups](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-groups.html)
+   + AWS CLI: [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html) or [aws iam list\-groups](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html)
 
-   + AWS Tools for Windows PowerShell: [Get\-IAMUsers](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers) or [Get\-IAMGroups](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroups.html&tocid=Get-IAMGroups)
+   + AWS Tools for Windows PowerShell: [Get\-IAMUsers](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers) or [Get\-IAMGroups](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroups.html&tocid=Get-IAMGroups)
 
-   + IAM API: [ListUsers](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) or [ListGroups](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html)
+   + IAM API: [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) or [ListGroups](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html)
 
 1. Use one of the following commands to attach the policy that you created in a previous step to the user or group:
 
-   + AWS CLI: [aws iam attach\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html) or [aws iam attach\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
+   + AWS CLI: [aws iam attach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html) or [aws iam attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
 
-   + AWS Tools for Windows PowerShell: [Register\-IAMUserPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMUserPolicy.html&tocid=Register-IAMUserPolicy) or [Register\-IAMGroupPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMGroupPolicy.html&tocid=Register-IAMGroupPolicy)
+   + AWS Tools for Windows PowerShell: [Register\-IAMUserPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMUserPolicy.html&tocid=Register-IAMUserPolicy) or [Register\-IAMGroupPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMGroupPolicy.html&tocid=Register-IAMGroupPolicy)
 
-   + IAM API: [AttachUserPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html) or [AttachGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
+   + IAM API: [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html) or [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
 
 **To change the permissions allowed by a role \(AWS CLI, AWS Tools for Windows PowerShell, AWS API\)**
 
 1. \(Optional\) To view the current permissions associated with a role, use the following commands:
 
-   + AWS CLI: [aws iam list\-role\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-role-policies.html) \(to list inline policies\) and [aws iam list\-attached\-role\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html) \(to list managed policies\)
+   + AWS CLI: [aws iam list\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-role-policies.html) \(to list inline policies\) and [aws iam list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html) \(to list managed policies\)
 
-   + AWS Tools for Windows PowerShell: [Get\-IAMRolePolicies](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRolePolicies.html&tocid=Get-IAMRolePolicies) \(to list inline policies\) and [Get\-IAMAttachedRolePolicies](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAttachedRolePolicies.html&tocid=Get-IAMAttachedRolePolicies) \(to list managed policies\)
+   + AWS Tools for Windows PowerShell: [Get\-IAMRolePolicies](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRolePolicies.html&tocid=Get-IAMRolePolicies) \(to list inline policies\) and [Get\-IAMAttachedRolePolicies](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAttachedRolePolicies.html&tocid=Get-IAMAttachedRolePolicies) \(to list managed policies\)
 
-   + IAM API: [ListRolePolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html) \(to list inline policies\) and [ListAttachedRolePolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html) \(to list managed policies\)
+   + IAM API: [ListRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html) \(to list inline policies\) and [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html) \(to list managed policies\)
 
 1. The command to update permissions for the role differs depending on whether you are updating a managed policy or an inline policy\.
 
    To update a managed policy, use one of the following commands to create a new version of the managed policy:
 
-   + AWS CLI: [aws iam create\-policy\-version](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
+   + AWS CLI: [aws iam create\-policy\-version](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
 
-   + AWS Tools for Windows PowerShell: [New\-IAMPolicyVersion](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMPolicyVersion.html&tocid=New-IAMPolicyVersion)
+   + AWS Tools for Windows PowerShell: [New\-IAMPolicyVersion](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMPolicyVersion.html&tocid=New-IAMPolicyVersion)
 
-   + IAM API: [CreatePolicyVersion](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
+   + IAM API: [CreatePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
 
    To update an inline policy, use one of the following commands:
 
-   + AWS CLI: [aws iam put\-role\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+   + AWS CLI: [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
-   + AWS Tools for Windows PowerShell: [Write\-IAMRolePolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy)
+   + AWS Tools for Windows PowerShell: [Write\-IAMRolePolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy)
 
-   + IAM API: [PutRolePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+   + IAM API: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
 **To change the description of a role \(AWS CLI, AWS API\)**
 
 1. \(Optional\) To view the current description for a role, use the following commands:
 
-   + AWS CLI: [aws iam get\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-role.html)
+   + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
-   + IAM API: [GetRole](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+   + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 
 1. To update a role's description, use one of the following commands:
 
-   + AWS CLI: [aws iam update\-role\-description](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-role-description.html)
+   + AWS CLI: [aws iam update\-role\-description](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role-description.html)
 
-   + IAM API: [UpdateRoleDescription](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html)
+   + IAM API: [UpdateRoleDescription](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html)

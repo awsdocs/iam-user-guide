@@ -2,7 +2,7 @@
 
 The `Condition` element of an JSON policy in IAM allows you to test the value of keys that are included in the evaluation context of all AWS API requests\. These keys provide information about the request itself, or the resources that the request references\. You can check that keys have specified values before allowing the action requested by the user\. This gives you granular control over when your JSON policy statements match or don't match an incoming API request\. For information about how to use the `Condition` element in an JSON policy, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
 
-This topic describes the globally available keys \(with an "aws:" prefix\), as well as the keys defined and provided by the IAM service \(with an "iam:" prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
+This topic describes the globally available keys \(with an "aws:" prefix\), as well as the keys defined and provided by the IAM service \(with an "iam:" prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
 
 **Note**  
 If you use condition keys that are available only in some scenarios \(such as aws:SourceIp and aws:SourceVpc\) you can use the IfExists versions of the comparison operators\. If the condition keys are missing from a request context \(and you haven't set IfExists\), the policy engine can fail the evaluation\. For example, if you want to write a policy that restricts access from a particular IP range or from a particular VPC, you can construct the conditions as follows:   
@@ -67,13 +67,13 @@ To check the type of principal \(user, account, federated user, etc\.\) for the 
 
 **aws:Referer**  
 Works with string operators\.  
-To check who referred the client browser to the address the request is being sent to\. It is only supported by some services, such as [Amazon S3, as a service that can be directly addressed by a web browser](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. The value comes from the referer header in the HTTPS request made to AWS\.  
+To check who referred the client browser to the address the request is being sent to\. It is only supported by some services, such as [Amazon S3, as a service that can be directly addressed by a web browser](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. The value comes from the referer header in the HTTPS request made to AWS\.  
 This key should be used carefully: `aws:referer` allows Amazon S3 bucket owners to help prevent their content from being served up by unauthorized third\-party sites to standard web browsers \(for more information, see the link above\)\. Since the `aws:referer` value is provided by the caller in an http header, unauthorized parties can use modified or custom browsers to provide any `aws:referer` value that they choose\. As a result, `aws:referer` should not be used to prevent unauthorized parties from making direct AWS requests\. It is offered only to allow customers to protect their digital content, stored in Amazon S3, from being referenced on unauthorized, third\-party sites\.
 
 **aws:RequestTag/*tag\-key***  
 Works with string operators\.  
 This context key is formatted "aws:Request/*tag\-key*":"*tag\-value*" where *tag\-key* and *tag\-value* are a tag key and value pair\.  
-To check a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag "Dept" and that it has the value "Accounting"\. This AWS condition key was [introduced for Amazon EC2](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
+To check a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag "Dept" and that it has the value "Accounting"\. This AWS condition key was [introduced for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
 
 **aws:SecureTransport**  
 Works with boolean operators\.  
@@ -87,20 +87,20 @@ To check the source of the request, using the Amazon Resource Name \(ARN\) of th
 Works with IP address operators\.  
 To check the requester's IP address, see [IP Address Condition Operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress)\.  
 The `aws:SourceIp` condition key should be used in an JSON policy only for IAM users, groups, roles, or federated users that make API calls from within the specified IP range\. This policy denies access to an AWS service that makes calls on your behalf\. For example, if you have a service role that allows AWS CloudFormation to call Amazon EC2 to stop an instance, then the request is denied because the target service \(EC2\) sees the IP address of the calling service \(CloudFormation\) rather than the IP address of the originating user\. There is no way to pass the originating IP address through a calling service to the target service for evaluation in an JSON policy\.
-If the request comes from a host that uses an Amazon VPC endpoint, then the `aws:SourceIp` key is not available\. You should instead use a VPC\-specific key\. For more information, see [VPC Endpoints \- Controlling the Use of Endpoints](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\.
+If the request comes from a host that uses an Amazon VPC endpoint, then the `aws:SourceIp` key is not available\. You should instead use a VPC\-specific key\. For more information, see [VPC Endpoints \- Controlling the Use of Endpoints](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\.
 
 **aws:SourceVpc**  
 Works with string operators\.  
-To restrict access to a specific VPC\. For more information, see [Restricting Access to a Specific VPC](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc) in the *Amazon Simple Storage Service Developer Guide*\. \(This condition key is supported for traffic to an AWS service over a VPC endpoint\.\)
+To restrict access to a specific VPC\. For more information, see [Restricting Access to a Specific VPC](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc) in the *Amazon Simple Storage Service Developer Guide*\. \(This condition key is supported for traffic to an AWS service over a VPC endpoint\.\)
 
 **aws:SourceVpce**  
 Works with string operators\.  
-To restrict access to a specific VPC endpoint\. For more information, see [Restricting Access to a Specific VPC Endpoint](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc-endpoint) in the *Amazon Simple Storage Service Developer Guide*\.
+To restrict access to a specific VPC endpoint\. For more information, see [Restricting Access to a Specific VPC Endpoint](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc-endpoint) in the *Amazon Simple Storage Service Developer Guide*\.
 
 **aws:TagKeys**  
 Works with string operators\.  
 This context key is formatted "aws:TagKeys":"*tag\-key*" where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.  
-To check the tag keys that are present in an AWS request\. This AWS condition key was [introduced for Amazon EC2](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
+To check the tag keys that are present in an AWS request\. This AWS condition key was [introduced for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
 
 **aws:UserAgent**  
 Works with string operators\.  
@@ -175,15 +175,15 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 **More Information About Web Identity Federation**  
 For more information about web identity federation, see the following:  
 
-+ [Amazon Cognito Overview](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
++ [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
 
-+ [Amazon Cognito Overview](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
++ [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
 
 + [About Web Identity Federation](id_roles_providers_oidc.md)
 
 ## Available Keys for SAML\-Based Federation<a name="condition-keys-saml"></a>
 
-If you are working with [SAML\-based federation](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html), you can include additional condition keys in the policy\. 
+If you are working with [SAML\-based federation](http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html), you can include additional condition keys in the policy\. 
 
 ### Trust Policies<a name="condition-keys-saml_trust-policy"></a>
 

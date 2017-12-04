@@ -21,7 +21,7 @@ This means that in most cases if you do not pass a policy with the `GetFederatio
 
 The following figures show a visual representation of how the policies interact to determine permissions for the temporary security credentials returned by a call to `GetFederationToken`\.
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 ## Example: Assigning Permissions Using GetFederationToken<a name="permissions-get-federation-token-example"></a>
 

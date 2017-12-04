@@ -4,7 +4,7 @@
 
 To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account ID appears in the upper\-right corner below the **Support** menu\.
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
 
 ## About Account Aliases<a name="AboutAccountAlias"></a>
 
@@ -53,27 +53,27 @@ Your AWS account can have only one alias\. If you create a new alias for your AW
 
 To create an alias for your AWS Management Console sign\-in page URL
 
-+ AWS CLI: `[aws iam create\-account\-alias](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
++ AWS CLI: `[aws iam create\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
 
-+ Tools for Windows PowerShell: `[New\-IAMAccountAlias](http://alpha-docs-aws.amazon.com//powershell/latest/reference/Index.html?page=New-IAMAccountAlias.html&tocid=New-IAMAccountAlias)`
++ Tools for Windows PowerShell: `[New\-IAMAccountAlias](http://docs.aws.amazon.com//powershell/latest/reference/Index.html?page=New-IAMAccountAlias.html&tocid=New-IAMAccountAlias)`
 
-+ AWS API: `[CreateAccountAlias](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
++ AWS API: `[CreateAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
 
 To delete an AWS account ID alias
 
-+ AWS CLI:`[aws iam delete\-account\-alias](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
++ AWS CLI:`[aws iam delete\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
 
-+ Tools for Windows PowerShell: `[Remove\-IAMAccountAlias](http://alpha-docs-aws.amazon.com//powershell/latest/reference/Index.html?page=Remove-IAMAccountAlias.html&tocid=Remove-IAMAccountAlias)`
++ Tools for Windows PowerShell: `[Remove\-IAMAccountAlias](http://docs.aws.amazon.com//powershell/latest/reference/Index.html?page=Remove-IAMAccountAlias.html&tocid=Remove-IAMAccountAlias)`
 
-+ AWS API: `[DeleteAccountAlias](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
++ AWS API: `[DeleteAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
 
 To display your AWS account ID alias
 
-+ AWS CLI: `[aws iam list\-account\-aliases](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
++ AWS CLI: `[aws iam list\-account\-aliases](http://docs.aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
 
-+ Tools for Windows PowerShell: `[Get\-IAMAccountAlias\.html](http://alpha-docs-aws.amazon.com//powershell/latest/reference/Index.html?page=Get-IAMAccountAlias.html&tocid=Get-IAMAccountAlias)`
++ Tools for Windows PowerShell: `[Get\-IAMAccountAlias\.html](http://docs.aws.amazon.com//powershell/latest/reference/Index.html?page=Get-IAMAccountAlias.html&tocid=Get-IAMAccountAlias)`
 
-+ AWS API: `[ListAccountAliases](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 
++ AWS API: `[ListAccountAliases](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 
 
 **Note**  
 The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\. 

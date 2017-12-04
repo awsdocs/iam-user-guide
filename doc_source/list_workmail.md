@@ -4,7 +4,7 @@ Amazon WorkMail \(service prefix: workmail\) provides the following service\-spe
 
 **Actions for Amazon WorkMail**
 
-For information about using the following Amazon WorkMail API actions in an IAM policy, see [AWS Identity and Access Management Policies for Amazon WorkMail](http://alpha-docs-aws.amazon.com/workmail/latest/adminguide/iam_policies_workmail.html) in the *Amazon WorkMail Administrator Guide*\.
+For information about using the following Amazon WorkMail API actions in an IAM policy, see [AWS Identity and Access Management Policies for Amazon WorkMail](http://docs.aws.amazon.com/workmail/latest/adminguide/iam_policies_workmail.html) in the *Amazon WorkMail Administrator Guide*\.
 
 + `workmail:GetMobileDeviceDetails`
 

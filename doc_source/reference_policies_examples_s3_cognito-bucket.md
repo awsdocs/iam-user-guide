@@ -32,6 +32,6 @@ Amazon Cognito is an easy way to use web identity federation in your mobile app\
 
 For more information about Amazon Cognito, see the following:
 
-+ [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*
++ [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*
 
-+ [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*
++ [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*

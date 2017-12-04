@@ -4,7 +4,7 @@ Amazon AppStream \(service prefix: appstream\) provides the following service\-s
 
 **Actions for Amazon AppStream**
 
-For more information about the Amazon AppStream API actions in the following list, see [Amazon AppStream REST API](http://alpha-docs-aws.amazon.com/appstream/latest/developerguide/appstream-api-rest.html) in the *Amazon AppStream Developer Guide*\.
+For more information about the Amazon AppStream API actions in the following list, see [Amazon AppStream REST API](http://docs.aws.amazon.com/appstream/latest/developerguide/appstream-api-rest.html) in the *Amazon AppStream Developer Guide*\.
 
 + `appstream:ListAssociatedFleets`
 

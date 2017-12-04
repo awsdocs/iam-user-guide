@@ -10,7 +10,7 @@ An MFA device can get out of synchronization\. If the device is not synchronized
 
 1. In the navigation pane, choose **Users**, and then choose the name of the user whose MFA device needs to be resynchronized\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
 1. In the **Manage MFA Device** wizard, choose **Resynchronize MFA device**, and then choose **Next Step**\.
 
@@ -22,7 +22,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 **To resynchronize an MFA device for a user \(AWS CLI\)**
 
-+ At a command prompt, issue the [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
++ At a command prompt, issue the [http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
 
   + Virtual MFA device: specify Amazon Resource Name \(ARN\) of device as `SerialNumber`\.
 
@@ -42,7 +42,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 **To resynchronize an MFA device for a user \(Tools for Windows PowerShell\)**
 
-+ Use the [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice) cmdlet:
++ Use the [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice) cmdlet:
 
   + Virtual MFA device: specify Amazon Resource Name \(ARN\) of device as `SerialNumber`\.
 
@@ -64,4 +64,4 @@ IAM has an API call that performs synchronization\. In this case, we recommend t
 
 **To resynchronize an MFA device for a user \(API\)**
 
-+ Send the [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.
++ Send the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.

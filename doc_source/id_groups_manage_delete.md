@@ -20,7 +20,7 @@ In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API 
 
 1. Remove all users from the group\.
 
-   + CLI: [aws iam get\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-group.html) \(to get the list of users in the group\), and [aws iam remove\-user\-from\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) \(to remove a user from the group\) 
+   + CLI: [aws iam get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) \(to get the list of users in the group\), and [aws iam remove\-user\-from\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) \(to remove a user from the group\) 
 
    + Tools for Windows PowerShell: 
 
@@ -28,11 +28,11 @@ In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API 
      (Get-IAMGroup -GroupName "GroupToDelete").Users | Remove-IAMUserFromGroup -GroupName "GroupToDelete" -Force
      ```
 
-   + AWS API: [GetGroup](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) \(to get the list of users in the group\), and [RemoveUserFromGroup](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html) \(to remove a user from the group\) 
+   + AWS API: [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) \(to get the list of users in the group\), and [RemoveUserFromGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html) \(to remove a user from the group\) 
 
 1. Delete all inline policies embedded in the group\.
 
-   + CLI: [aws iam list\-group\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-group-policies.html) \(to get a list of the group's inline policies\), and [aws iam delete\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html) \(to delete the group's inline policies\) 
+   + CLI: [aws iam list\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html) \(to get a list of the group's inline policies\), and [aws iam delete\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html) \(to delete the group's inline policies\) 
 
    + Tools for Windows PowerShell: 
 
@@ -40,11 +40,11 @@ In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API 
      Get-IAMGroupPolicies -GroupName "GroupToReplace" | % { Remove-IAMGroupPolicy -GroupName "GroupToReplace" -PolicyName $_ -Force}
      ```
 
-   +  AWS API: [ListGroupPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html) \(to get a list of the group's inline policies\), and [DeleteGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html) \(to delete the group's inline policies\) 
+   +  AWS API: [ListGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html) \(to get a list of the group's inline policies\), and [DeleteGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html) \(to delete the group's inline policies\) 
 
 1. Detach all managed policies attached to the group\.
 
-   + CLI: [aws iam list\-attached\-group\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html) \(to get a list of the managed policies attached to the group\), and [aws iam detach\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html) \(to detach a managed policy from the group\) 
+   + CLI: [aws iam list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html) \(to get a list of the managed policies attached to the group\), and [aws iam detach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html) \(to detach a managed policy from the group\) 
 
    + Tools for Windows PowerShell: 
 
@@ -52,12 +52,12 @@ In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API 
      Get-IAMAttachedUserPolicies -UserName "UserToDelete" | % { Unregister-IAMUserPolicy -PolicyArn $_.PolicyArn -UserName -UserName "UserToDelete" -Force }
      ```
 
-   + AWS API: [ListAttachedGroupPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html) \(to get a list of the managed policies attached to the group'\), and [DetachGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html) \(to detach a managed policy from the group\)
+   + AWS API: [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html) \(to get a list of the managed policies attached to the group'\), and [DetachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html) \(to detach a managed policy from the group\)
 
 1. Delete the group\.
 
-   + CLI: [aws iam delete\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-group.html)
+   + CLI: [aws iam delete\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-group.html)
 
-   + Tools for Windows PowerShell: [Remove\-IAMGroup](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMGroup.html&tocid=Remove-IAMGroup)
+   + Tools for Windows PowerShell: [Remove\-IAMGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMGroup.html&tocid=Remove-IAMGroup)
 
-   + AWS API: [DeleteGroup](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteGroup.html) 
+   + AWS API: [DeleteGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroup.html) 

@@ -19,7 +19,7 @@ The following sections explain how you can use IAM to create and manage user ide
 
 The "identity" aspect of AWS Identity and Access Management \(IAM\) helps you with the question "Who is that user?", often referred to as *authentication*\. Instead of sharing your root user credentials with others, you can create individual IAM users within your account that correspond to users in your organization\. IAM users are not separate accounts; they are users within your account\. Each user can have its own password for access to the AWS Management Console\. You can also create an individual access key for each user so that the user can make programmatic requests to work with resources in your account\. In the following figure, the users Brad, Jim, DevApp1, DevApp2, TestApp1, and TestApp2 have been added to a single AWS account\. Each user has its own credentials\. 
 
-![\[An AWS account with individual IAM users, each of whom has credentials.\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-account-with-users.diagram.png)
+![\[An AWS account with individual IAM users, each of whom has credentials.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-account-with-users.diagram.png)
 
 Notice that some of the users are actually applications \(for example, DevApp1\)\. An IAM user doesn't have to represent an actual person; you can create an IAM user in order to generate an access key for an application that runs in your corporate network and needs AWS access\.
 
@@ -43,10 +43,10 @@ Federation is particularly useful in these cases:
 
   If you are creating a mobile app or web\-based app that can let users identify themselves through an Internet identity provider like Login with Amazon, Facebook, Google, or any OpenID Connect \(OIDC\) compatible identity provider, the app can use federation to access AWS\. For more information, see [About Web Identity Federation](id_roles_providers_oidc.md)\. 
 **Tip**  
-To use identity federation with Internet identity providers, we recommend you use [Amazon Cognito](http://alpha-docs-aws.amazon.com/cognito/devguide/)\.
+To use identity federation with Internet identity providers, we recommend you use [Amazon Cognito](http://docs.aws.amazon.com/cognito/devguide/)\.
 
 The following diagram shows how a user can use IAM to get temporary AWS security credentials to access resources in your AWS account\. 
 
 ![\[Users who are already authenticated elsewhere can be federated into AWS without
-          requiring an IAM user.\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Users who are already authenticated elsewhere can be federated into AWS without
-          requiring an IAM user.\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+          requiring an IAM user.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Users who are already authenticated elsewhere can be federated into AWS without
+          requiring an IAM user.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)

@@ -143,14 +143,14 @@ Some AWS services support additional options for specifying a principal\. For ex
 
 For more information, see the following:
 
-+ [Bucket Policy Examples](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
++ [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
 
-+ [Example Policies for Amazon SNS](http://alpha-docs-aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
++ [Example Policies for Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
 
-+ [Amazon SQS Policy Examples](http://alpha-docs-aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
++ [Amazon SQS Policy Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
 
-+ [Key Policies](http://alpha-docs-aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
++ [Key Policies](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
 
-+ [Account Identifiers](http://alpha-docs-aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
++ [Account Identifiers](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
 
 + [About Web Identity Federation](id_roles_providers_oidc.md)

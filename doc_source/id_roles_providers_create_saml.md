@@ -55,40 +55,40 @@ Use the following commands to create and manage a SAML provider\.
 
 **To create an identity provider and upload a metadata document**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html) 
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html) 
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMSAMLProvider.html&tocid=New-IAMSAMLProvider](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMSAMLProvider.html&tocid=New-IAMSAMLProvider)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMSAMLProvider.html&tocid=New-IAMSAMLProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMSAMLProvider.html&tocid=New-IAMSAMLProvider)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html) 
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html) 
 
 **To upload a new metadata document for an IdP**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html) 
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html) 
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMSAMLProvider.html&tocid=Update-IAMSAMLProvider](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMSAMLProvider.html&tocid=Update-IAMSAMLProvider)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMSAMLProvider.html&tocid=Update-IAMSAMLProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMSAMLProvider.html&tocid=Update-IAMSAMLProvider)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)
 
 **To get information about a specific provider, such as the ARN, creation date, and expiration**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProvider.html&tocid=Get-IAMSAMLProvider](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProvider.html&tocid=Get-IAMSAMLProvider)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProvider.html&tocid=Get-IAMSAMLProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProvider.html&tocid=Get-IAMSAMLProvider)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html)
 
 **To list information for all IdPs, such as the ARN, creation date, and expiration**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html) 
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html) 
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProviders.html&tocid=Get-IAMSAMLProviders](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProviders.html&tocid=Get-IAMSAMLProviders)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProviders.html&tocid=Get-IAMSAMLProviders](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMSAMLProviders.html&tocid=Get-IAMSAMLProviders)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html) 
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html) 
 
 **To delete an IdP**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMSAMLProvider.html&tocid=Remove-IAMSAMLProvider](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMSAMLProvider.html&tocid=Remove-IAMSAMLProvider)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMSAMLProvider.html&tocid=Remove-IAMSAMLProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMSAMLProvider.html&tocid=Remove-IAMSAMLProvider)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html)

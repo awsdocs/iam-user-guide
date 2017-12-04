@@ -18,7 +18,7 @@ Before you can create a role for SAML 2\.0 federation, you must first complete t
 
    + For the `Condition` element, use a `StringEquals` condition to test that the `saml:aud` attribute from the SAML response matches the SAML federation endpoint for AWS\. 
 **Note**  
-Because the policy for the trusted entity uses [policy variables](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html) that represent values in the SAML response, you must set the policy's `Version` element to `2012-10-17` or a later supported version\.
+Because the policy for the trusted entity uses [policy variables](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html) that represent values in the SAML response, you must set the policy's `Version` element to `2012-10-17` or a later supported version\.
 
    The following example shows a trust policy for a role designed for a SAML federated user:
 
@@ -56,7 +56,7 @@ Because the policy for the trusted entity uses [policy variables](http://alpha-d
 
 1. To add more attribute\-related conditions to the trust policy, choose **Add condition \(optional\)**, select the additional condition, and specify a value\. 
 **Note**  
-The list displays the most commonly used SAML attributes\. IAM supports additional attributes that you can use to create conditions\. \(For a list of the supported attributes, see [Available Keys for SAML Federation](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#condition-keys-saml) in the topic [IAM JSON Policy Elements Reference](reference_policies_elements.md)\.\) If you need a condition for a supported SAML attribute that's not in the list, you can manually add that condition by editing the trust policy after you create the role\.
+The list displays the most commonly used SAML attributes\. IAM supports additional attributes that you can use to create conditions\. \(For a list of the supported attributes, see [Available Keys for SAML Federation](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#condition-keys-saml) in the topic [IAM JSON Policy Elements Reference](reference_policies_elements.md)\.\) If you need a condition for a supported SAML attribute that's not in the list, you can manually add that condition by editing the trust policy after you create the role\.
 
 1.  Review your SAML 2\.0 trust information and then choose **Next: Permissions**\. 
 

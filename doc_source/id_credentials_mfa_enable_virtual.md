@@ -26,7 +26,7 @@ You must have physical access to the hardware that will host the user's virtual 
 
 1. In the **User Name** list, choose the name of the intended MFA user\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the edit icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the edit icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
 1. In the **Manage MFA Device** wizard, choose **A virtual MFA device**, and then choose **Next Step**\.
 
@@ -66,7 +66,7 @@ If you are using an AWS account created after September 14, 2017, you might see 
    + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root user**\. 
 
    + **Option 2**: On the right side of the navigation bar, choose your account name, and choose **Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
-![\[Security Credentials in the navigation menu\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
 

@@ -98,7 +98,7 @@ Each policy is a JSON document\. As illustrated in the following figure, a polic
 
 Each statement includes the core information about a single permission\. If a policy includes multiple statements, AWS applies a logical `OR` across the statements at evaluation time\. If multiple policies are applicable to a request, AWS applies a logical `OR` across the policies at evaluation time\. 
 
-![\[General policy structure\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_General_Policy_Structure.diagram.png)
+![\[General policy structure\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_General_Policy_Structure.diagram.png)
 
 The information in a statement is contained within a series of *elements*\. For information about these elements, see [IAM JSON Policy Elements Reference](reference_policies_elements.md)\.
 

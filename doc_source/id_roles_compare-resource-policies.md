@@ -6,11 +6,11 @@ Cross\-account access with a resource\-based policy has an advantage over a role
 
 The disadvantage is that not all services support resource\-based policies\. A few of the AWS services that support resource\-based policies are listed here:
 
-+ **Amazon S3 buckets** – The policy is attached to the bucket, but the policy controls access to both the bucket and the objects in it\. For more information, go to [Access Control](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
++ **Amazon S3 buckets** – The policy is attached to the bucket, but the policy controls access to both the bucket and the objects in it\. For more information, go to [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
-+ **Amazon Simple Notification Service \(Amazon SNS\) topics** – For more information, go to [Managing Access to Your Amazon SNS Topics](http://alpha-docs-aws.amazon.com/sns/latest/dg/AccessPolicyLanguage.html) in the *Amazon Simple Notification Service Developer Guide*\. 
++ **Amazon Simple Notification Service \(Amazon SNS\) topics** – For more information, go to [Managing Access to Your Amazon SNS Topics](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage.html) in the *Amazon Simple Notification Service Developer Guide*\. 
 
-+ **Amazon Simple Queue Service \(Amazon SQS\) queues** – For more information, go to [Appendix: The Access Policy Language](http://alpha-docs-aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html) in the *Amazon Simple Queue Service Developer Guide*\. 
++ **Amazon Simple Queue Service \(Amazon SQS\) queues** – For more information, go to [Appendix: The Access Policy Language](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html) in the *Amazon Simple Queue Service Developer Guide*\. 
 
 For a complete list of the growing number of AWS services that support attaching permission policies to resources instead of principals, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes** in the **Resource Based** column\.
 
@@ -18,7 +18,7 @@ For a complete list of the growing number of AWS services that support attaching
 
 After a resource grants your AWS account permissions as a principal in its resource\-based policy, you can then delegate permissions to specific users or groups under your AWS account\. You attach a policy to the user or group that you want to delegate the permissions to\. Note that you can only delegate permissions equivalent to, or less than, the permissions granted to your account by the resource owning account\. For example, if your account is granted full access to the resources of another AWS account, then you can delegate full access, list access, or any other partial access to users under your AWS account\. If, on the other hand, your account is granted list access only, then you can delegate only list access\. If you try to delegate more permissions than your account has, your users will still have only list access only\. This is illustrated in the following figure\. For information about attaching a policy to a user or group, see [Managing IAM Policies](access_policies_manage.md)\.
 
-![\[Delegating access to an AWS account\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/Delegation.diagram.png)
+![\[Delegating access to an AWS account\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Delegation.diagram.png)
 
 1. Account A gives account B full access to account A's S3 bucket by naming account B as a principal in the policy\. As a result, account B is authorized to perform any action on account A's bucket, and the account B administrator can delegate access to its users in account B\. 
 

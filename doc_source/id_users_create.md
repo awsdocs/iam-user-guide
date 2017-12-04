@@ -3,7 +3,7 @@
 You can create one or more IAM users in your AWS account\. You might create an IAM user when someone joins your organization, or when you have a new application that needs to make API calls to AWS\. 
 
 **Important**  
-If you arrived at this page trying to enable Amazon Advertising for your application or website, see [Becoming a Product Advertising API Developer](http://alpha-docs-aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.  
+If you arrived at this page trying to enable Amazon Advertising for your application or website, see [Becoming a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.  
 If you arrived at this page from the IAM console, it is possible that your account does not include IAM users, even though you are logged in\. You could be signed in as the AWS account root user, using a role, or signed in with temporary credentials\. To learn more about these IAM identities, see [Identities \(Users, Groups, and Roles\)](id.md)\.
 
 
@@ -110,44 +110,44 @@ The user's password is ***not*** included in the generated email\. You must prov
 
 1. **Create a user\.**
 
-   + AWS CLI: [aws iam create\-user](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-user.html)
+   + AWS CLI: [aws iam create\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/create-user.html)
 
-   + Tools for Windows PowerShell: [New\-IAMUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMUser.html&tocid=New-IAMUser)
+   + Tools for Windows PowerShell: [New\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMUser.html&tocid=New-IAMUser)
 
-   + IAM API: [CreateUser](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html)
+   + IAM API: [CreateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html)
 
 1. \(Optional\) **Give the user access to the AWS Management Console**\. This requires a password\. You must also give the user the URL of your account's sign\-in page\.
 
-   + AWS CLI: [aws iam create\-login\-profile](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
+   + AWS CLI: [aws iam create\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
 
-   + Tools for Windows PowerShell: [New\-IAMLoginProfile](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMLoginProfile.html&tocid=New-IAMLoginProfile)
+   + Tools for Windows PowerShell: [New\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMLoginProfile.html&tocid=New-IAMLoginProfile)
 
-   + IAM API: [CreateLoginProfile](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
+   + IAM API: [CreateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
 
 1. \(Optional\) **Give the user programmatic access**\. This requires access keys\. 
 
-   + AWS CLI: [aws iam create\-access\-key](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
+   + AWS CLI: [aws iam create\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 
-   + Tools for Windows PowerShell: [New\-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
+   + Tools for Windows PowerShell: [New\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
 
-   + IAM API: [CreateAccessKey](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
+   + IAM API: [CreateAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 **Important**  
 This is your only opportunity to view or download the secret access keys, and you must provide this information to your users before they can use the AWS API\. Save the user's new access key ID and secret access key in a safe and secure place\. **You will not have access to the secret keys again after this step\.** 
 
 1. **Add the user to one or more groups\.** The groups that you specify should have attached policies that grant the appropriate permissions for the user\. 
 
-   + AWS CLI: [aws iam add\-user\-to\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/add-user-to-group.html) 
+   + AWS CLI: [aws iam add\-user\-to\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/add-user-to-group.html) 
 
-   + Tools for Windows PowerShell: [Add\-IAMUserToGroup](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Add-IAMUserToGroup.html&tocid=Add-IAMUserToGroup)
+   + Tools for Windows PowerShell: [Add\-IAMUserToGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Add-IAMUserToGroup.html&tocid=Add-IAMUserToGroup)
 
-   + IAM API: [AddUserToGroup](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html) 
+   + IAM API: [AddUserToGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html) 
 
 1. \(Optional\) **Attach a policy to the user** Attach a policy that defines the user's permissions\. **Note:** We recommend that you manage user permissions by adding the user to a group and attaching a policy to the group instead of attaching directly to a user\.
 
-   + AWS CLI: [aws iam attach\-user\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
+   + AWS CLI: [aws iam attach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
 
-   + Tools for Windows PowerShell: [Register\-IAMUserPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMUserPolicy.html&tocid=Register-IAMUserPolicy)
+   + Tools for Windows PowerShell: [Register\-IAMUserPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMUserPolicy.html&tocid=Register-IAMUserPolicy)
 
-   + IAM API: [AttachUserPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
+   + IAM API: [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
 
 1. \(Optional\) **Give the user permission to manage his or her own security credentials**\. For more information, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\. 

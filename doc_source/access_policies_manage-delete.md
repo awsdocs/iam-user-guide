@@ -38,42 +38,42 @@ You can edit a managed or inline policy using the AWS Command Line Interface \(A
 
 **To list managed policies \(AWS CLI or API\)**
 
-+ AWS CLI: [list\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-policies.html)
++ AWS CLI: [list\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
 
-+ AWS API: [ListPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
++ AWS API: [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
 
 **To retrieve detailed information about a managed policy \(AWS CLI or API\)**
 
-+ AWS CLI: [get\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-policy.html)
++ AWS CLI: [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
-+ AWS API: [GetPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
++ AWS API: [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 **To list the identities \(users, groups, and roles\) to which a managed policy is attached \(AWS CLI or API\)**
 
-+ AWS CLI: [list\-entities\-for\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
++ AWS CLI: [list\-entities\-for\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
 
-+ AWS API: [ListEntitiesForPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
++ AWS API: [ListEntitiesForPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
 
 **To list the managed policies attached to an identity \(a user, group, or role\) \(AWS CLI or API\)**
 
 + AWS CLI: 
 
-  + [list\-attached\-group\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
+  + [list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
 
-  + [list\-attached\-role\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
+  + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
 
-  + [list\-attached\-user\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
+  + [list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
 
 + AWS API: 
 
-  + [ListAttachedGroupPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
+  + [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
 
-  + [ListAttachedRolePolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
+  + [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
 
-  + [ListAttachedUserPolicies](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
+  + [ListAttachedUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
 
 **To delete a customer managed policy \(AWS CLI or API\)**
 
-+ AWS CLI: [delete\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-policy.html)
++ AWS CLI: [delete\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-policy.html)
 
-+ AWS API: [DeletePolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html)
++ AWS API: [DeletePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html)

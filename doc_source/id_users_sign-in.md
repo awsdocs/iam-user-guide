@@ -49,6 +49,6 @@ If you enable CloudTrail to log sign\-in events to your logs, you need to be awa
 
   AWS redirects you to the `ap-southeast-1` regional sign\-in endpoint and results in a regional CloudTrail log event\.
 
-For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
+For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
 
 If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Creating, Modifying, and Viewing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.

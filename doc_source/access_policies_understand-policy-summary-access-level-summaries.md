@@ -16,7 +16,7 @@ The following example describes the access provided by a policy for the given se
 | S3 | Limited: Read, Write, Permissions management | Access to at least one but not all Amazon S3 Read, Write and Permissions management actions | 
 | codedploy | \(empty\) | Unknown access, because IAM does not recognize this service | 
 | API Gateway | None | No access is defined in the policy | 
-| CodeBuild | ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No actions are defined\. | No access because no actions are defined for the service\. To learn how to understand and troubleshoot this issue, see [[ERROR] BAD/MISSING LINK TEXT](troubleshoot_policies.md#policy-summary-not-grant-permissions) | 
+| CodeBuild | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No actions are defined\. | No access because no actions are defined for the service\. To learn how to understand and troubleshoot this issue, see [[ERROR] BAD/MISSING LINK TEXT](troubleshoot_policies.md#policy-summary-not-grant-permissions) | 
 
 As previously mentioned, **Full access** indicates that the policy provides access to all the actions within the service\. Policies that provide access to some but not all actions within a service are further grouped according to the access level classification\. This is indicated by one of the following access\-level groupings:
 

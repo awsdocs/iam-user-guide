@@ -14,7 +14,7 @@ When an AWS service receives a request, the request is first authenticated using
 Requests that are made by the AWS account root user are allowed for resources in that account\. However, if the request is made using the credentials of an IAM user, or if the request is signed using temporary credentials that are granted by AWS STS, AWS uses the permissions defined in one or more IAM policies to determine whether the user's request is authorized\. 
 
 **Note**  
-Amazon S3 supports Access Control Lists \(ACLs\) and resource\-level policies for buckets and objects\. The permissions established using ACLs and bucket\-level policies can affect what actions the root user is allowed to perform on a bucket\. For more information, see [Guidelines for Using the Available Access Policy Options](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/access-policy-alternatives-guidelines.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+Amazon S3 supports Access Control Lists \(ACLs\) and resource\-level policies for buckets and objects\. The permissions established using ACLs and bucket\-level policies can affect what actions the root user is allowed to perform on a bucket\. For more information, see [Guidelines for Using the Available Access Policy Options](http://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-alternatives-guidelines.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 ## The Impact of AWS Organizations on IAM Policies<a name="evaluation-logic-organizations"></a>
 
@@ -22,7 +22,7 @@ AWS Organizations is a service that enables you to group together and centrally 
 
 In summary, an IAM user in an account that is in an organization can use the *intersection* of the permissions allowed by both Organizations SCPs and by the IAM permission policies attached to the user by the account's administrator\. In other words, only those allowed by both IAM and Organizations\.
 
-For more information about Organizations and SCPs, see [About Service Control Policies](http://alpha-docs-aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
+For more information about Organizations and SCPs, see [About Service Control Policies](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
 
 ## The Request Context<a name="policy-eval-reqcontext"></a>
 
@@ -71,7 +71,7 @@ The order in which the policies are evaluated has no effect on the outcome of th
 
 The following flow chart provides details about how the decision is made\.
 
-![\[Evaluation flow chart\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Evaluation_Flow.diagram.png)
+![\[Evaluation flow chart\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Evaluation_Flow.diagram.png)
 
 1. The decision starts by assuming that the request will be denied\.
 
@@ -95,15 +95,15 @@ The following example illustrates how you can use an explicit deny to override a
 
 The following diagram represents that set of queues\.
 
-![\[Set of queues whose names start with test\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_1.diagram.png)
+![\[Set of queues whose names start with test\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_1.diagram.png)
 
 Let's say that you have a queue called `test0` that you want to remove the group's access to\. The following diagram represents that set of queues\.
 
-![\[Set of queues whose names start with test, except for test0\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_2.diagram.png)
+![\[Set of queues whose names start with test, except for test0\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_2.diagram.png)
 
 You could add another policy to the group, or another statement to the existing policy, that explicitly denies the group's access to the `test0` queue\. The group would still have access to all other queues whose names begin with the string `test`\. The following diagram illustrates those two statements in the policy\.
 
-![\[Example policy for explicit deny overriding allow\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_3.diagram.png)
+![\[Example policy for explicit deny overriding allow\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_3.diagram.png)
 
 When any user in the group makes a request to use the queue `test0`, the explicit deny overrides the allow, and the user is denied access to the queue\.
 
@@ -115,13 +115,13 @@ A policy also results in a deny if a condition in a statement isn't met\. If all
 
 For example, let's say you want to prevent requests that come from Antarctica\. You write a policy called Policy A1 that allows a request only if it doesn't come from Antarctica\. The following diagram illustrates the policy\.
 
-![\[Policy allowing request if it's not from Antarctica\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_1.diagram.png)
+![\[Policy allowing request if it's not from Antarctica\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_1.diagram.png)
 
 If someone sends a request from the U\.S\., the condition is met \(the request is not from Antarctica\)\. Therefore, the result is `Allow`\. But if someone sends a request from Antarctica, the condition isn't met, and the policy's result is therefore `Deny`\. 
 
 You could *explicitly* deny access from Antarctica by creating a different policy \(named Policy A2\) as in the following diagram\.
 
-![\[Policy denying request if it's from Antarctica\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_2.diagram.png)
+![\[Policy denying request if it's from Antarctica\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_2.diagram.png)
 
 If this policy applies to a user who sends a request from Antarctica, the condition is met, and the policy's result is therefore `Deny`\.
 
@@ -129,7 +129,7 @@ The distinction between a request being denied by default and an explicit deny i
 
 For example, let's say there's another policy that allows requests if they arrive on June 1, 2010\. How does this policy affect the outcome when evaluated together with the policy that restricts access from Antarctica? We'll compare the outcome when evaluating the date\-based policy \(we'll call it Policy B\) with the preceding policies \(A1 and A2\)\. Scenario 1 evaluates Policy A1 with Policy B, and Scenario 2 evaluates Policy A2 with Policy B\. The following figure show the results when a request comes in from Antarctica on June 1, 2010\.
 
-![\[Override of deny by default\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override.diagram.png)
+![\[Override of deny by default\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override.diagram.png)
 
 In Scenario 1, Policy A1 returns `Deny` because requests are allowed only if they don't come from Antarctica; any other condition \(requests that do come from Antarctica\) are denied by default\. Policy B returns an allow because the request arrives on June 1, 2010\. The allow from Policy B overrides the default deny from Policy A1, and the request is therefore allowed\.
 

@@ -5,7 +5,7 @@ The AWS Management Console provides a web\-based way to administer AWS services\
 When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\.
 
 **Important**  
-We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the best practice of using the root user only to create your first IAM user\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://alpha-docs-aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
+We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the best practice of using the root user only to create your first IAM user\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
 
 This section provides information about the AWS Management Console sign\-in page\. It explains how to create a unique sign\-in URL for IAM users in your account, and how to sign in as the root user\. 
 
@@ -32,7 +32,7 @@ To create a bookmark for your account sign\-in page in your web browser, you sho
 
 You can find the URL for your account sign\-in page anytime by viewing the dashboard of the IAM console\.
 
-![\[URL to your account-specific sign-in page in the IAM dashboard\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccountAlias.console.png)
+![\[URL to your account-specific sign-in page in the IAM dashboard\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccountAlias.console.png)
 
 IAM users can also sign in at the following general sign\-in endpoint and type an account ID or account alias manually:
 
@@ -43,7 +43,7 @@ IAM users can also sign in at the following general sign\-in endpoint and type a
 **Note**  
 To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account ID appears in the upper\-right corner below the **Support** menu\.  
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
 
 For convenience, the AWS sign\-in page uses a browser cookie to remember the IAM user name and account information\. The next time the user goes to any page in the AWS Management Console, the console uses the cookie to redirect the user to the account sign\-in page\.
 

@@ -104,7 +104,7 @@ You can use policy variables in the `Resource` element and in string comparisons
 
 ### Resource Element<a name="policy-vars-resourceelement"></a>
 
-A policy variable can appear as the last part of the [ARN](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that identifies a resource\. The following policy might be attached to a group\. It gives each of the users in the group full programmatic access to a user\-specific object \(their own "home directory"\) in Amazon S3\. 
+A policy variable can appear as the last part of the [ARN](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that identifies a resource\. The following policy might be attached to a group\. It gives each of the users in the group full programmatic access to a user\-specific object \(their own "home directory"\) in Amazon S3\. 
 
 ```
 {
@@ -211,9 +211,9 @@ Similarly, you might create an app for a mobile device in which the app needs to
 
 The recommended way to use web identity federation is by taking advantage of Amazon Cognito and the AWS mobile SDKs\. For more information, see the following:
 
-+ [Amazon Cognito Overview ](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* 
++ [Amazon Cognito Overview ](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* 
 
-+ [Amazon Cognito Overview ](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* 
++ [Amazon Cognito Overview ](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* 
 
 + [Common Scenarios for Temporary Credentials](id_credentials_temp.md#sts-introduction)\.
 
@@ -233,9 +233,9 @@ Requests can also include service\-specific keys and values in its request conte
 
 For information about service\-specific keys that you can use to get values for policy variables, refer to the documentation for the individual services\. For example, see the following topics: 
 
-+  [Bucket Keys in Amazon S3 Policies](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
++  [Bucket Keys in Amazon S3 Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
 
-+  [Amazon SNS Keys](http://alpha-docs-aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
++  [Amazon SNS Keys](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
 
 ### Special Characters<a name="policy-vars-specialchars"></a>
 

@@ -4,21 +4,21 @@ Amazon Kinesis Firehose \(service prefix: firehose\) provides the following serv
 
 **Actions for Amazon Kinesis Firehose**
 
-For information about using IAM policies to grant permissions to run Kinesis Firehose actions and access Kinesis Firehose resources, see [Controlling Access with Kinesis Firehose](http://alpha-docs-aws.amazon.com/firehose/latest/dev/controlling-access.html) in the *Amazon Kinesis Firehose Developer Guide*\.
+For information about using IAM policies to grant permissions to run Kinesis Firehose actions and access Kinesis Firehose resources, see [Controlling Access with Kinesis Firehose](http://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html) in the *Amazon Kinesis Firehose Developer Guide*\.
 
-+ `[firehose:CreateDeliveryStream](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html)`
++ `[firehose:CreateDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html)`
 
-+ `[firehose:PutRecordBatch](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html)`
++ `[firehose:PutRecordBatch](http://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html)`
 
-+ `[firehose:ListDeliveryStreams](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html)`
++ `[firehose:ListDeliveryStreams](http://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html)`
 
-+ `[firehose:DescribeDeliveryStream](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html)`
++ `[firehose:DescribeDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html)`
 
-+ `[firehose:DeleteDeliveryStream](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html)`
++ `[firehose:DeleteDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html)`
 
-+ `[firehose:PutRecord](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html)`
++ `[firehose:PutRecord](http://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html)`
 
-+ `[firehose:UpdateDestination](http://alpha-docs-aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html)`
++ `[firehose:UpdateDestination](http://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html)`
 
 **Condition context keys for Amazon Kinesis Firehose**
 

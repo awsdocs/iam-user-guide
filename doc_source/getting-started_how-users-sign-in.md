@@ -12,7 +12,7 @@ https://AWS-account-ID-or-alias.signin.aws.amazon.com/console
 
 You can find the sign\-in URL for an account on the IAM console dashboard\.
 
-![\[IAM dashboard, sign-in URL\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccountAlias.console.png)
+![\[IAM dashboard, sign-in URL\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccountAlias.console.png)
 
 You can also sign in at the following endpoint and enter the account ID or alias manually, instead of it being embedded in the URL:
 
@@ -55,6 +55,6 @@ If you enable CloudTrail to log sign\-in events to your logs, you need to be awa
 
   AWS redirects you to the `ap-southeast-1` regional sign\-in endpoint and results in a CloudTrail log event in that region\.
 
-For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
+For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
 
 If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Creating, Modifying, and Viewing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.

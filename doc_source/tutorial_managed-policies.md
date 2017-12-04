@@ -4,7 +4,7 @@ In this tutorial, you use the AWS Management Console to create a customer manage
 
 This workflow has three basic steps:
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Create the Policy](#step1-create-policy)**  
 By default, IAM users do not have permissions to do anything\. They cannot access the AWS Management Console or manage the data within unless you allow it\. In this step, you create a customer managed policy that allows any attached user to sign in to the console\.
@@ -23,7 +23,7 @@ To perform the steps in this tutorial, you need to already have the following:
 
 + A test IAM user that has no permissions assigned or group memberships as follows:  
 ****    
-[\[See the AWS documentation website for more details\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/tutorial_managed-policies.html)
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_managed-policies.html)
 
 ## Step 1: Create the Policy<a name="step1-create-policy"></a>
 

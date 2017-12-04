@@ -10,7 +10,7 @@ Before you create users, you should understand how IAM works\. IAM provides the 
 + [Actions](#intro-structure-actions)
 + [Resources](#intro-structure-resources)
 
-![\[IntroToIAM_Diagram\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/intro-diagram_800.png)
+![\[IntroToIAM_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/intro-diagram_800.png)
 
 ## Principal<a name="intro-structure-principal"></a>
 
@@ -57,7 +57,7 @@ By default, only the AWS account root user has access to all the resources in th
 
 ## Actions<a name="intro-structure-actions"></a>
 
-After your request has been authenticated and authorized, AWS approves the actions in your request\. Actions are defined by a service, and are the things that you can do to a resource, such as viewing, creating, editing, and deleting that resource\. For example, IAM supports the around 40 actions for a user resource, including the following actions:
+After your request has been authenticated and authorized, AWS approves the actions in your request\. Actions are defined by a service, and are the things that you can do to a resource, such as viewing, creating, editing, and deleting that resource\. For example, IAM supports around 40 actions for a user resource, including the following actions:
 
 + `CreateUser`
 

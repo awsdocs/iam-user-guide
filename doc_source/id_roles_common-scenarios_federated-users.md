@@ -24,7 +24,7 @@ Bob is a developer at Example Corp\. To enable Example Corp\. internal applicati
 
 To get temporary security credentials, the identity broker application calls either `AssumeRole` or `GetFederationToken` to obtain temporary security credentials, depending on how Bob wants to manage the policies for users and when the temporary credentials should expire\. \(For more information about the differences between these APIs, see [Temporary Security Credentials](id_credentials_temp.md) and [Controlling Permissions for Temporary Security Credentials](id_credentials_temp_control-access.md)\.\) The call returns temporary security credentials consisting of an AWS access key ID, a secret access key, and a session token\. The identity broker application makes these temporary security credentials available to the internal company application\. The app can then use the temporary credentials to make calls to AWS directly\. The app caches the credentials until they expire, and then requests a new set of temporary credentials\. The following figure illustrates this scenario\.
 
-![\[Sample workflow using a custom identity broker application\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/enterprise-authentication-with-identity-broker-application.diagram.png)
+![\[Sample workflow using a custom identity broker application\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/enterprise-authentication-with-identity-broker-application.diagram.png)
 
 This scenario has the following attributes:
 

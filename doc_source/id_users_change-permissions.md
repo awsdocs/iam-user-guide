@@ -38,7 +38,7 @@ You can change permissions associated with a user through one of three technique
 
 1. Review the current group memberships for users in the **Groups** column of the console\. If necessary, add the column to the users table by completing the following steps:
 
-   1. Above the table on the far right, choose the settings symbol \(![\[Settings icon\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
+   1. Above the table on the far right, choose the settings symbol \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
    1. In the **Manage Columns** dialog box, select the **Groups** column\. Optionally, you can also clear the check box for any column headings that you do not want to appear in the users table\.
 

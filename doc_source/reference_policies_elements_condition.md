@@ -32,19 +32,19 @@ When the policy is evaluated during a request, AWS replaces the key with the cor
 
 A `Condition` element can contain multiple conditions, and each condition can contain multiple key\-value pairs\. The following figure illustrates this\. Unless otherwise specified, all keys can have multiple values\.
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block.diagram.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block.diagram.png)
 
 Let's say you want to let John use a resource only if a numeric value *foo* equals either A or B, and another numeric value *bar* equals C\. You would create a condition block that looks like the following figure\.
 
-![\[Condition block that includes two NumericEquals conditions\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example1.diagram.png)
+![\[Condition block that includes two NumericEquals conditions\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example1.diagram.png)
 
 Let's say you also want to restrict John's access to after January 1, 2009\. You would add another condition, `DateGreaterThan`, with a date equal to January 1, 2009\. The condition block would then look like the following figure\.
 
-![\[Condition block that includes DateGreaterThan condition\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example2.diagram.png)
+![\[Condition block that includes DateGreaterThan condition\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example2.diagram.png)
 
 If there are multiple condition operators, or if there are multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All condition operators must be met for an allow or an explicit deny decision\. If any one condition operator isn't met, the result is a deny\.
 
-![\[Condition block showing how AND and OR are applied to multiple values\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
+![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
 
 As noted, AWS has predefined condition operators and keys \(like `aws:CurrentTime`\)\. Individual AWS services also define service\-specific keys\.
 

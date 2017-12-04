@@ -27,7 +27,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 1. In the **User Name** list, choose the name \(not the check box\) of the intended MFA user\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
 1. In the **Manage MFA Device** wizard, choose **An SMS MFA device**, and then choose **Next Step**\.
 

@@ -4,21 +4,21 @@ AWS Security Token Service \(service prefix: sts\) provides the following servic
 
 **Actions for AWS Security Token Service**
 
-For information about using the following AWS STS API actions in an IAM policy, see [Granting Permissions to Create Temporary Security Credentials](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/STSPermission.html) in the *Using Temporary Security Credentials*\.
+For information about using the following AWS STS API actions in an IAM policy, see [Granting Permissions to Create Temporary Security Credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/STSPermission.html) in the *Using Temporary Security Credentials*\.
 
-+ `[sts:AssumeRoleWithWebIdentity](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)`
++ `[sts:AssumeRoleWithWebIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)`
 
-+ `[sts:GetCallerIdentity](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)`
++ `[sts:GetCallerIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)`
 
-+ `[sts:DecodeAuthorizationMessage](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html)`
++ `[sts:DecodeAuthorizationMessage](http://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html)`
 
-+ `[sts:AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)`
++ `[sts:AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)`
 
-+ `[sts:GetSessionToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html)`
++ `[sts:GetSessionToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html)`
 
-+ `[sts:GetFederationToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)`
++ `[sts:GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)`
 
-+ `[sts:AssumeRoleWithSAML](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)`
++ `[sts:AssumeRoleWithSAML](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)`
 
 **Condition context keys for AWS Security Token Service**
 

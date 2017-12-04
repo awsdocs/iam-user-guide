@@ -20,8 +20,8 @@ For more information about permissions and policies, see [Access Management](acc
 
 To attach a policy to a group \(AWS CLI, Tools for Windows PowerShell, API\)
 
-+ AWS CLI: [aws iam attach\-group\-policy](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
++ AWS CLI: [aws iam attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
 
-+ Tools for Windows PowerShell: [Register\-IAMGroupPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMGroupPolicy.html&tocid=Register-IAMGroupPolicy)
++ Tools for Windows PowerShell: [Register\-IAMGroupPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMGroupPolicy.html&tocid=Register-IAMGroupPolicy)
 
-+ AWS API: [AttachGroupPolicy](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html) 
++ AWS API: [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html) 

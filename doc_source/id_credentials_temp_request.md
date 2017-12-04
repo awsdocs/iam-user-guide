@@ -2,7 +2,7 @@
 
 To request temporary security credentials, you can use the AWS STS API actions\. You can use AWS Security Token Service \(AWS STS\) to create and provide trusted users with temporary security credentials that can control access to your AWS resources\. For more information about AWS STS, see [Temporary Security Credentials](id_credentials_temp.md)\.
 
-To call the APIs, you can use one of the [AWS SDKs](http://aws.amazon.com/tools/), which are available for a variety of programming languages and environments, including Java, \.NET, Python, Ruby, Android, and iOS\. The SDKs take care of tasks such as cryptographically signing your requests, retrying requests if necessary, and handling error responses\. You can also use the AWS STS Query API, which is described in the [AWS Security Token Service API Reference](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/)\. Finally, two command line tools support the AWS STS commands: the [AWS Command Line Interface](https://aws.amazon.com/documentation/cli), and the [AWS Tools for Windows PowerShell](https://aws.amazon.com/documentation/powershell)\. 
+To call the APIs, you can use one of the [AWS SDKs](http://aws.amazon.com/tools/), which are available for a variety of programming languages and environments, including Java, \.NET, Python, Ruby, Android, and iOS\. The SDKs take care of tasks such as cryptographically signing your requests, retrying requests if necessary, and handling error responses\. You can also use the AWS STS Query API, which is described in the [AWS Security Token Service API Reference](http://docs.aws.amazon.com/STS/latest/APIReference/)\. Finally, two command line tools support the AWS STS commands: the [AWS Command Line Interface](https://aws.amazon.com/documentation/cli), and the [AWS Tools for Windows PowerShell](https://aws.amazon.com/documentation/powershell)\. 
 
 The AWS STS API actions return temporary security credentials that consist of an access key and a session token\. The access key consists of an access key ID and a secret key\. Users \(or an application that the user runs\) can use these credentials to access your resources\. When the credentials are created, they are associated with an IAM access control policy that limits what the user can do when using the credentials\. For more information, see [Using Temporary Security Credentials to Request Access to AWS Resources](id_credentials_temp_use-resources.md)\. 
 
@@ -14,11 +14,11 @@ The size of the security token that STS APIs return is not fixed\. We strongly r
 
 ## Using AWS STS with AWS Regions<a name="using_sts_regions"></a>
 
-You can send AWS STS API calls either to a global endpoint or to one of the regional endpoints\. If you choose an endpoint closer to you, you can reduce latency and improve the performance of your API calls\. You also can choose to direct your calls to an alternative regional endpoint if you can no longer communicate with the original endpoint\. If you are using one of the various AWS SDKs, then use that SDK's method to select a region before you make the API call\. If you are manually constructing HTTP API requests, then you must direct the request to the correct endpoint yourself\. For more information, see the [AWS STS section of *Regions and Endpoints*](http://alpha-docs-aws.amazon.com/general/latest/gr/rande.html#sts_region) and [Activating and Deactivating AWS STS in an AWS Region](id_credentials_temp_enable-regions.md)\.
+You can send AWS STS API calls either to a global endpoint or to one of the regional endpoints\. If you choose an endpoint closer to you, you can reduce latency and improve the performance of your API calls\. You also can choose to direct your calls to an alternative regional endpoint if you can no longer communicate with the original endpoint\. If you are using one of the various AWS SDKs, then use that SDK's method to select a region before you make the API call\. If you are manually constructing HTTP API requests, then you must direct the request to the correct endpoint yourself\. For more information, see the [AWS STS section of *Regions and Endpoints*](http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region) and [Activating and Deactivating AWS STS in an AWS Region](id_credentials_temp_enable-regions.md)\.
 
 Following are the APIs that you can use to acquire temporary credentials for use in your AWS environment and applications\.
 
-## [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)—Cross\-Account Delegation and Federation Through a Custom Identity Broker<a name="api_assumerole"></a>
+## [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)—Cross\-Account Delegation and Federation Through a Custom Identity Broker<a name="api_assumerole"></a>
 
 This API action is useful for allowing existing IAM users to access AWS resources that they don't already have access to, such as resources in another AWS account\. It is also useful for existing IAM users as a means to temporarily gain privileged access—for example, to provide multi\-factor authentication \(MFA\)\. You must call this API using existing IAM user credentials\. For more information, see [Creating a Role to Delegate Permissions to an IAM User](id_roles_create_for-user.md) and [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\.
 
@@ -55,7 +55,7 @@ https://sts.amazonaws.com/
 **Note**  
 The policy value shown in the example above is the URL\-encoded version of the following policy:  
 `{"Version":"2012-10-17","Statement":[{"Sid":"Stmt1","Effect":"Allow","Action":"s3:*","Resource":"*"}]}`  
-Also, note that the `AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://alpha-docs-aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
+Also, note that the `AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
 
 This API supports a parameter for `DurationSeconds` that specifies how long the temporary credentials are valid\. This is not the same as the duration of a console session that might request using those temporary credentials\. You can request a console sign\-in token by calling the federation endpoint and supplying the temporary credentials to get a sign\-in token for the console\. That console request uses a different `SessionDuration` parameter of up to 12 hours\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
 
@@ -93,16 +93,16 @@ In addition to the temporary security credentials, the response includes the Ama
 ```
 
 **Note**  
-`AssumeRole` stores the policy in a packed format\. `AssumeRole` returns the size as a percentage of the maximum size allowed so you can adjust the calling parameters\. For more information about the size constraints on the policy, go to [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) in the *AWS Security Token Service API Reference*\. 
+`AssumeRole` stores the policy in a packed format\. `AssumeRole` returns the size as a percentage of the maximum size allowed so you can adjust the calling parameters\. For more information about the size constraints on the policy, go to [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) in the *AWS Security Token Service API Reference*\. 
 
-## [AssumeRoleWithWebIdentity](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)—Federation Through a Web\-based Identity Provider<a name="api_assumerolewithwebidentity"></a>
+## [AssumeRoleWithWebIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)—Federation Through a Web\-based Identity Provider<a name="api_assumerolewithwebidentity"></a>
 
 This API returns a set of temporary security credentials for federated users who are authenticated through a public identity provider such as Login with Amazon, Facebook, Google, or any OpenID Connect \(OIDC\)\-compatible identity provider\. This API is useful for creating mobile applications or client\-based web applications that require access to AWS in which users do not have their own AWS or IAM identities\. For more information, see [About Web Identity Federation](id_roles_providers_oidc.md)\.
 
 **Note**  
 Instead of directly calling `AssumeRoleWithWebIdentity`, we recommend that you use Amazon Cognito and the Amazon Cognito credentials provider with the AWS SDKs for mobile development\. For more information, see the following:   
-[Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*
-[Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*
+[Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*
+[Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*
 
 If you are not using Amazon Cognito, you call the `AssumeRoleWithWebIdentity` action of AWS STS\. This is an unsigned call, meaning that the app does not need to have access to any AWS security credentials in order to make the call\. When you make this call, you pass the following information:
 
@@ -130,7 +130,7 @@ When you have the temporary security credentials, you can use them to make AWS A
 
 Your app should cache the credentials\. As noted, by default the credentials expire after an hour\. If you are not using the [AmazonSTSCredentialsProvider](http://aws.amazon.com/blogs/mobile/using-the-amazoncredentialsprovider-protocol-in-the-aws-sdk-for-ios/) action in the AWS SDK, it's up to you and your app to call `AssumeRoleWithWebIdentity` again to get a new set of temporary security credentials before the old ones expire\.
 
-## [AssumeRoleWithSAML](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)—Federation Through an Enterprise Identity Provider Compatible with SAML 2\.0<a name="api_assumerolewithsaml"></a>
+## [AssumeRoleWithSAML](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)—Federation Through an Enterprise Identity Provider Compatible with SAML 2\.0<a name="api_assumerolewithsaml"></a>
 
 This API returns a set of temporary security credentials for federated users who are authenticated by your organization's existing identity system and who use [SAML](https://www.oasis-open.org/standards#samlv2.0) 2\.0 \(Security Assertion Markup Language\) to pass authentication and authorization information to AWS\. This API is useful in organizations that have integrated their identity systems \(such as Windows Active Directory or OpenLDAP\) with software that can produce SAML assertions to provide information about user identity and permissions \(such as Active Directory Federation Services or Shibboleth\)\. For more information, see [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\.
 
@@ -166,7 +166,7 @@ When you have the temporary security credentials, you can use them to make AWS A
 
 Your app should cache the credentials\. By default the credentials expire after an hour\. If you are not using the [AmazonSTSCredentialsProvider](http://aws.amazon.com/blogs/mobile/using-the-amazoncredentialsprovider-protocol-in-the-aws-sdk-for-ios) action in the AWS SDK, it's up to you and your app to call `AssumeRoleWithSAML` again to get a new set of temporary security credentials before the old ones expire\.
 
-## [GetFederationToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)—Federation Through a Custom Identity Broker<a name="api_getfederationtoken"></a>
+## [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)—Federation Through a Custom Identity Broker<a name="api_getfederationtoken"></a>
 
 This API returns a set of temporary security credentials for federated users\. This API differs from `AssumeRole` in that the default expiration period is substantially longer \(up to 36 hours instead of up to 1 hour\)\. The longer expiration period can help reduce the number of calls to AWS because you do not need to get new credentials as often\. For more information, see [Requesting Temporary Security Credentials](#id_credentials_temp_request)\.
 
@@ -189,7 +189,7 @@ https://sts.amazonaws.com/
 **Note**  
 The policy value shown in the example above is the URL\-encoded version of this policy:   
 `{"Version":"2012-10-17","Statement":[{"Sid":"Stmt1","Effect":"Allow","Action":"s3:*","Resource":"*"}]}`  
-Also, note that the `&AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://alpha-docs-aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
+Also, note that the `&AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
 
 **Example Response**  
 
@@ -223,15 +223,15 @@ Also, note that the `&AUTHPARAMS` parameter in the preceding example is meant as
 ```
 
 **Note**  
-`GetFederationToken` stores the policy in a packed format\. The action returns the size as a percentage of the maximum size allowed so that you can adjust the calling parameters\. For more information about size constraints on the policy, go to [GetFederationToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) in the *AWS Security Token Service API Reference*\. 
+`GetFederationToken` stores the policy in a packed format\. The action returns the size as a percentage of the maximum size allowed so that you can adjust the calling parameters\. For more information about size constraints on the policy, go to [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) in the *AWS Security Token Service API Reference*\. 
 
 If you prefer to grant permissions at the resource level \(for example, you attach a policy to an Amazon S3 bucket\), you can omit the `Policy` parameter\. However, if you do not include a policy for the federated user, the temporary security credentials will not grant any permissions\. In this case, you *must* use resource policies to grant the federated user access to your AWS resources\.
 
 For example, if your AWS account number is 111122223333, and you have an Amazon S3 bucket that you want to allow Susan to access even though her temporary security credentials don't include a policy for the bucket, you would need to ensure that the bucket has a policy with an ARN that matches Susan's ARN, such as `arn:aws:sts::111122223333:federated-user/Susan`\. 
 
-## [GetSessionToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html)—Temporary Credentials for Users in Untrusted Environments<a name="api_getsessiontoken"></a>
+## [GetSessionToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html)—Temporary Credentials for Users in Untrusted Environments<a name="api_getsessiontoken"></a>
 
-This API returns a set of temporary security credentials to an existing IAM user\. It is useful for providing enhanced security, for example, to restrict AWS requests to only when MFA is enabled for the IAM user\. Because the credentials are temporary, they provide enhanced security when you have an IAM user who accesses your resources through a less secure environment, such as a mobile device or web browser\. For more information, see [Requesting Temporary Security Credentials](#id_credentials_temp_request) or [GetSessionToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) in the *AWS Security Token Service API Reference*\.
+This API returns a set of temporary security credentials to an existing IAM user\. It is useful for providing enhanced security, for example, to restrict AWS requests to only when MFA is enabled for the IAM user\. Because the credentials are temporary, they provide enhanced security when you have an IAM user who accesses your resources through a less secure environment, such as a mobile device or web browser\. For more information, see [Requesting Temporary Security Credentials](#id_credentials_temp_request) or [GetSessionToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) in the *AWS Security Token Service API Reference*\.
 
 By default, temporary security credentials for an IAM user are valid for a maximum of 12 hours, but you can request a duration as short as 15 minutes or as long as 36 hours\. For security reasons, a token for an AWS account root user is restricted to a duration of one hour\. 
 
@@ -248,7 +248,7 @@ https://sts.amazonaws.com/
 ```
 
 **Note**  
-The `&AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://alpha-docs-aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
+The `&AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
 
 **Example Response**  
 
@@ -290,8 +290,8 @@ https://sts.amazonaws.com/
 ```
 
 **Note**  
-The call to AWS STS can be to the global endpoint or to any of the regional endpoints for which you activate your AWS account\. For more information, see the [AWS STS section of *Regions and Endpoints*](http://alpha-docs-aws.amazon.com/general/latest/gr/rande.html#sts_region)\.  
-Also, note that the `&AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://alpha-docs-aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
+The call to AWS STS can be to the global endpoint or to any of the regional endpoints for which you activate your AWS account\. For more information, see the [AWS STS section of *Regions and Endpoints*](http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region)\.  
+Also, note that the `&AUTHPARAMS` parameter in the preceding example is meant as a placeholder for the authentication information—that is, the *signature*—that you must include with AWS HTTP API requests\. We recommend using the [AWS SDKs](https://aws.amazon.com/tools/) to create API requests, and one benefit of doing so is that the SDKs handle request signing for you\. If you must create and sign API requests manually, go to [Signing AWS Requests By Using Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/sigv4_signing.html) in the *Amazon Web Services General Reference* to learn how to sign a request\.
 
 ## Comparing the AWS STS APIs<a name="stsapi_comparison"></a>
 
@@ -302,11 +302,11 @@ The following table compares features of the actions \(APIs\) in AWS STS that re
 
 |  **AWS STS API**  |  **Who can call**  |  **Credential lifetime \(min/max/default\)**  |  **MFA support**\*  |  **Passed policy support**\*  |  **Restrictions on resulting temporary credentials**  | 
 | --- | --- | --- | --- | --- | --- | 
-|  [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)  | IAM user or user with existing temporary security credentials  | 15m/1hr/1hr  | Yes  | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
-|  [AssumeRoleWithSAML](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)  | Any user; caller must pass a SAML authentication response that indicates authentication from a known identity provider | 15m/1hr/1hr | No | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
-|  [AssumeRoleWithWebIdentity](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)  | Any user; caller must pass a web identity token that indicates authentication from a known identity provider | 15m/1hr/1hr  | No | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
-| [GetFederationToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) | IAM user or AWS account root user |  IAM user: 15m/36hr/12hr Root user: 15m/1hr/1hr  | No  | Yes  |  Cannot call IAM APIs directly\. SSO to console is allowed\.\* Cannot call AWS STS APIs except `GetCallerIdentity`\.  | 
-| [GetSessionToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) | IAM user or root user |  IAM user: 15m/36hr/12hr Root user: 15m/1hr/1hr  | Yes  | No  |  Cannot call IAM APIs unless MFA information is included with the request\. Cannot call AWS STS APIs except `AssumeRole` or `GetCallerIdentity`\. Single sign\-on \(SSO\) to console is not allowed, but any user with a password \(root or IAM user\) can sign into the console\.\*  | 
+|  [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)  | IAM user or user with existing temporary security credentials  | 15m/1hr/1hr  | Yes  | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
+|  [AssumeRoleWithSAML](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)  | Any user; caller must pass a SAML authentication response that indicates authentication from a known identity provider | 15m/1hr/1hr | No | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
+|  [AssumeRoleWithWebIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)  | Any user; caller must pass a web identity token that indicates authentication from a known identity provider | 15m/1hr/1hr  | No | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
+| [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) | IAM user or AWS account root user |  IAM user: 15m/36hr/12hr Root user: 15m/1hr/1hr  | No  | Yes  |  Cannot call IAM APIs directly\. SSO to console is allowed\.\* Cannot call AWS STS APIs except `GetCallerIdentity`\.  | 
+| [GetSessionToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) | IAM user or root user |  IAM user: 15m/36hr/12hr Root user: 15m/1hr/1hr  | Yes  | No  |  Cannot call IAM APIs unless MFA information is included with the request\. Cannot call AWS STS APIs except `AssumeRole` or `GetCallerIdentity`\. Single sign\-on \(SSO\) to console is not allowed, but any user with a password \(root or IAM user\) can sign into the console\.\*  | 
 
 +  **MFA support**\. You can include information about a multi\-factor authentication \(MFA\) device when you call the AssumeRole and GetSessionToken APIs\. This ensures that the temporary security credentials that result from the API call can be used only by users who are authenticated with an MFA device\. For more information, see [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\. 
 

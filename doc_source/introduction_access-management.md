@@ -24,13 +24,13 @@ Any actions or resources that are not explicitly allowed are denied by default\.
 The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *policy summary* table includes a list of services\. Choose a service there to see the *service summary*\. This summary table includes a list of the actions and associated permissions for the chosen service\. You can choose an action from that table to view the *action summary*\. This table includes a list of resources and conditions for the chosen action\. 
 
 ![\[Policy summaries diagram image that illustrates the 3 tables and their
-          relationship\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-diagram.png)
+          relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-diagram.png)
 
 You can view policy summaries on the **Users** page for all policies \(managed and inline\) that are attached to that user\. View summaries on the **Policies** page for all managed policies\.
 
 For example, the previous policy is summarized in the AWS Management Console as follows:
 
-![\[DynamoDB Example Summary\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-dynamodbexample.png)
+![\[DynamoDB Example Summary\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-dynamodbexample.png)
 
 You can also view the JSON document for the policy\. For information about viewing the summary or JSON document, see [Understanding Permissions Granted by a Policy](access_policies_understand.md)\.
 
@@ -39,7 +39,7 @@ You can also view the JSON document for the policy\. For information about viewi
 You can organize IAM users into *IAM groups* and attach a policy to a group\. In that case, individual users still have their own credentials, but all the users in a group have the permissions that are attached to the group\. Use groups for easier permissions management, and to follow our [IAM Best Practices](best-practices.md)\. 
 
 ![\[Users can be organized into groups to make it easier to manage permissions, because
-          users have the permissions assigned to a group.\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-users-and-groups.diagram.png)
+          users have the permissions assigned to a group.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-users-and-groups.diagram.png)
 
 Users or groups can have multiple policies attached to them that grant different permissions\. In that case, the users' permissions are calculated based on the combination of policies\. But the basic principle still applies: If the user has not been granted an explicit permission for an action and a resource, the user does not have those permissions\. 
 
@@ -70,4 +70,4 @@ The following example shows an S3 bucket policy that allows an IAM user named bo
 }
 ```
 
-Resource\-based policies include a `Principal` element that specifies who is granted the permissions\. In the preceding example, the `Principal` element is set to the [Amazon Resource Name](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of an IAM user named bob in AWS account 777788889999\. This indicates that the resource \(in this case, the S3 bucket\) is accessible to that IAM user but no one else\. 
+Resource\-based policies include a `Principal` element that specifies who is granted the permissions\. In the preceding example, the `Principal` element is set to the [Amazon Resource Name](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of an IAM user named bob in AWS account 777788889999\. This indicates that the resource \(in this case, the S3 bucket\) is accessible to that IAM user but no one else\. 

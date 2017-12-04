@@ -10,7 +10,7 @@ You can enable a hardware MFA device from the AWS Management Console, the comman
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\.
 
 **Note**  
-If you want to enable the device from the command line, use [aws iam enable\-mfa\-device](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
+If you want to enable the device from the command line, use [aws iam enable\-mfa\-device](http://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
 
 ## Enable a Hardware MFA Device for an IAM User \(Console\)<a name="enable-hw-mfa-for-iam-user"></a>
 
@@ -24,14 +24,14 @@ If you want to enable the device from the command line, use [aws iam enable\-mfa
 
 1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security credentials** tab\.
 
-1. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
 1. In the **Manage MFA Device** wizard, choose **A hardware MFA device** and then choose **Next Step**\.
 
 1. Type the device serial number\. The serial number is usually on the back of the device\.
 
 1. In the **Authentication Code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
-![\[IAM Dashboard, MFA Device\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
+![\[IAM Dashboard, MFA Device\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
 
 1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **Authentication Code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 
@@ -61,7 +61,7 @@ To manage MFA devices for the AWS account, you must use your root user credentia
    + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root account**\. 
 
    + **Option 2**: On the right side of the navigation bar, choose on your account name, and then choose **Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
-![\[Security Credentials in the navigation menu\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
 
@@ -70,7 +70,7 @@ To manage MFA devices for the AWS account, you must use your root user credentia
 1. In the **Serial Number** box, type the serial number that is found on the back of the MFA device\.
 
 1. In the **Authentication Code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
-![\[IAM Dashboard, MFA Device\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
+![\[IAM Dashboard, MFA Device\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
 
 1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **Authentication Code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 

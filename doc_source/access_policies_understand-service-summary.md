@@ -3,7 +3,7 @@
 Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *service summary* table includes a list of the actions and summaries of the permissions that are defined by the policy for the chosen service\.
 
 ![\[Policy summaries diagram image that illustrates the 3 tables and their
-        relationship\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-svc-sum.png)
+        relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-svc-sum.png)
 
 You can view a service summary for each service listed in the policy summary that grants permissions\. The table is grouped into **Uncategorized actions**, **Uncategorized resource types**, and access level sections\. If the policy includes an action that IAM does not recognize, then the action is included in the **Uncategorized actions** section of the table\. If IAM recognizes the action, then it is included under one of the access level \(**List**, **Read**, **Write** and **Permissions management**\) sections of the table\. To view a list of actions that belong to each of the action levels for a specific service, see [IAM Policy Actions Grouped by Access Level](reference_policies_access-levels.md)\. To see a complete list of actions for a specific service, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
 
@@ -57,7 +57,7 @@ If the policy that you select is an inline policy that is attached directly to t
 
 The example below is the service summary for Amazon S3 actions that are allowed from the **SummaryAllElements** policy summary \(see [[ERROR] BAD/MISSING LINK TEXT](access_policies_understand-policy-summary.md#policy-summary-example-json)\)\. The actions for this service are grouped by **Uncategorized actions**, **Uncategorized resource types**, and access level\. For example, two **Write** actions are defined out of the total 29 **Write** actions available for the service\.
 
-![\[Service summary dialog image\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-action-dialog.png)
+![\[Service summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-action-dialog.png)
 
 The service summary page for a managed policy includes the following information:
 
@@ -75,7 +75,7 @@ The service summary page for a managed policy includes the following information
 
 1. **Unrecognized resource types** – This policy includes at least one unrecognized resource type within the policy for this service\. You can use this warning to check whether a resource type might include a typo\. If the resource type is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific resource type in a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `autoscling` service name is missing an `a`\.
 
-1. **Unrecognized actions** – This policy includes at least one unrecognized action within the policy for this service\. You can use this warning to check whether an action might include a typo\. If the action name is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific action in a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `DeletObject` ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) action is missing an `e`\. 
+1. **Unrecognized actions** – This policy includes at least one unrecognized action within the policy for this service\. You can use this warning to check whether an action might include a typo\. If the action name is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific action in a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `DeletObject` ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) action is missing an `e`\. 
 **Note**  
 IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
 

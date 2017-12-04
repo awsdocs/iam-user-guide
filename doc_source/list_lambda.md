@@ -4,67 +4,67 @@ AWS Lambda \(service prefix: lambda\) provides the following service\-specific a
 
 **Actions for AWS Lambda**
 
-For information about using the following Lambda API actions in an IAM policy, see [Permission Model](http://alpha-docs-aws.amazon.com/lambda/latest/dg/intro-permission-model.html) in the *AWS Lambda Developer Guide*\.
+For information about using the following Lambda API actions in an IAM policy, see [Permission Model](http://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html) in the *AWS Lambda Developer Guide*\.
 
-+ `[lambda:ListEventSourceMappings](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_ListEventSourceMappings.html)`
++ `[lambda:ListEventSourceMappings](http://docs.aws.amazon.com/lambda/latest/dg/API_ListEventSourceMappings.html)`
 
-+ `[lambda:TagResource](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_TagResource.html)`
++ `[lambda:TagResource](http://docs.aws.amazon.com/lambda/latest/dg/API_TagResource.html)`
 
-+ `[lambda:AddPermission](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_AddPermission.html)`
++ `[lambda:AddPermission](http://docs.aws.amazon.com/lambda/latest/dg/API_AddPermission.html)`
 
-+ `[lambda:ListVersionsByFunction](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_ListVersionsByFunction.html)`
++ `[lambda:ListVersionsByFunction](http://docs.aws.amazon.com/lambda/latest/dg/API_ListVersionsByFunction.html)`
 
-+ `[lambda:CreateFunction](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_CreateFunction.html)`
++ `[lambda:CreateFunction](http://docs.aws.amazon.com/lambda/latest/dg/API_CreateFunction.html)`
 
-+ `[lambda:CreateAlias](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_CreateAlias.html)`
++ `[lambda:CreateAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_CreateAlias.html)`
 
-+ `[lambda:DeleteEventSourceMapping](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html)`
++ `[lambda:DeleteEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html)`
 
-+ `[lambda:RemovePermission](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_RemovePermission.html)`
++ `[lambda:RemovePermission](http://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html)`
 
-+ `[lambda:Invoke](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_Invoke.html)`
++ `[lambda:Invoke](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)`
 
-+ `[lambda:CreateEventSourceMapping](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html)`
++ `[lambda:CreateEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html)`
 
-+ `[lambda:UpdateFunctionCode](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html)`
++ `[lambda:UpdateFunctionCode](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html)`
 
-+ `[lambda:InvokeAsync](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html)`
++ `[lambda:InvokeAsync](http://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html)`
 
-+ `[lambda:UpdateEventSourceMapping](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html)`
++ `[lambda:UpdateEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html)`
 
-+ `[lambda:GetEventSourceMapping](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html)`
++ `[lambda:GetEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html)`
 
-+ `[lambda:EnableReplication](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_EnableReplication.html)`
++ `[lambda:EnableReplication](http://docs.aws.amazon.com/lambda/latest/dg/API_EnableReplication.html)`
 
-+ `[lambda:PublishVersion](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_PublishVersion.html)`
++ `[lambda:PublishVersion](http://docs.aws.amazon.com/lambda/latest/dg/API_PublishVersion.html)`
 
-+ `[lambda:ListAliases](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_ListAliases.html)`
++ `[lambda:ListAliases](http://docs.aws.amazon.com/lambda/latest/dg/API_ListAliases.html)`
 
-+ `[lambda:InvokeFunction](http://alpha-docs-aws.amazon.com/lambda/latest/dg/access-control-identity-based.html#console-permissions-invoke)` \- this is an IAM policy permission only, not an API action that can be called\.
++ `[lambda:InvokeFunction](http://docs.aws.amazon.com/lambda/latest/dg/access-control-identity-based.html#console-permissions-invoke)` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[lambda:DeleteAlias](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html)`
++ `[lambda:DeleteAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteAlias.html)`
 
-+ `[lambda:GetAccountSettings](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html)`
++ `[lambda:GetAccountSettings](http://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html)`
 
-+ `[lambda:ListFunctions](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_ListFunctions.html)`
++ `[lambda:ListFunctions](http://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html)`
 
-+ `[lambda:UntagResource](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_UntagResource.html)`
++ `[lambda:UntagResource](http://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html)`
 
-+ `[lambda:UpdateAlias](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html)`
++ `[lambda:UpdateAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html)`
 
-+ `[lambda:ListTags](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_ListTags.html)`
++ `[lambda:ListTags](http://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html)`
 
-+ `[lambda:GetFunctionConfiguration](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html)`
++ `[lambda:GetFunctionConfiguration](http://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html)`
 
-+ `[lambda:DeleteFunction](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html)`
++ `[lambda:DeleteFunction](http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html)`
 
-+ `[lambda:GetAlias](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_GetAlias.html)`
++ `[lambda:GetAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_GetAlias.html)`
 
-+ `[lambda:UpdateFunctionConfiguration](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html)`
++ `[lambda:UpdateFunctionConfiguration](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionConfiguration.html)`
 
-+ `[lambda:GetFunction](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_GetFunction.html)`
++ `[lambda:GetFunction](http://docs.aws.amazon.com/lambda/latest/dg/API_GetFunction.html)`
 
-+ `[lambda:GetPolicy](http://alpha-docs-aws.amazon.com/lambda/latest/dg/API_GetPolicy.html)`
++ `[lambda:GetPolicy](http://docs.aws.amazon.com/lambda/latest/dg/API_GetPolicy.html)`
 
 **Condition context keys for AWS Lambda**
 

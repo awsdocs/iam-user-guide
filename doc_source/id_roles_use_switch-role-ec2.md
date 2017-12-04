@@ -4,7 +4,7 @@ Applications that run on an EC2 instance must include AWS credentials in their A
 
 Instead, you can and should use an IAM role to manage *temporary* credentials for applications that run on an EC2 instance\. When you use a role, you don't have to distribute long\-term credentials \(such as a user name and password or access keys\) to an EC2 instance\. Instead, the role supplies temporary permissions that applications can use when they make calls to other AWS resources\. When you launch an EC2 instance, you specify an IAM role to associate with the instance\. Applications that run on the instance can then use the role\-supplied temporary credentials to sign API requests\.
 
-Using roles to grant permissions to applications that run on EC2 instances requires a bit of extra configuration\. An application running on an EC2 instance is abstracted from AWS by the virtualized operating system\. Because of this extra separation, an additional step is needed to assign an AWS role and its associated permissions to an EC2 instance and make them available to its applications\. This extra step is the creation of an *[instance profile](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)* that is attached to the instance\. The instance profile contains the role and can provide the role's temporary credentials to an application that runs on the instance\. Those temporary credentials can then be used in the application's API calls to access resources and to limit access to only those resources that the role specifies\. Note that only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions\.
+Using roles to grant permissions to applications that run on EC2 instances requires a bit of extra configuration\. An application running on an EC2 instance is abstracted from AWS by the virtualized operating system\. Because of this extra separation, an additional step is needed to assign an AWS role and its associated permissions to an EC2 instance and make them available to its applications\. This extra step is the creation of an *[instance profile](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)* that is attached to the instance\. The instance profile contains the role and can provide the role's temporary credentials to an application that runs on the instance\. Those temporary credentials can then be used in the application's API calls to access resources and to limit access to only those resources that the role specifies\. Note that only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions\.
 
 Using roles in this way has several benefits\. Because role credentials are temporary and rotated automatically, you don't have to manage credentials, and you don't have to worry about long\-term security risks\. In addition, if you use a single role for multiple instances, you can make a change to that one role and the change is propagated automatically to all the instances\. 
 
@@ -15,7 +15,7 @@ Although a role is usually assigned to an EC2 instance when you launch it, a rol
 
 In the following figure, a developer runs an application on an EC2 instance that requires access to the S3 bucket named `photos`\. An administrator creates the `Get-pics` role\. The role includes policies that grant read permissions for the bucket and that allow the developer to launch the role with an EC2 instance\. When the application runs on the instance, it can use the role's temporary credentials to access the photos bucket\. The administrator doesn't have to grant the developer permission to access the photos bucket, and the developer never has to share or manage credentials\.
 
-![\[Application on an EC2 instance accessing an AWS resource\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/roles-usingrole-ec2roleinstance.png)
+![\[Application on an EC2 instance accessing an AWS resource\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/roles-usingrole-ec2roleinstance.png)
 
 1. The administrator uses IAM to create the **Get\-pics** role\. In the role's trust policy, the administrator specifies that only EC2 instances can assume the role\. In the role's permission policy, the administrator specifies read\-only permissions for the `photos` bucket\.
 
@@ -23,7 +23,7 @@ In the following figure, a developer runs an application on an EC2 instance that
 **Note**  
 If you use the IAM console, the instance profile is managed for you and is mostly transparent to you\. However, if you use the AWS CLI or API to create and manage the role and EC2 instance, then you must create the instance profile and assign the role to it as separate steps\. Then, when you launch the instance, you must specify the instance profile name instead of the role name\.
 
-1. When the application runs, it obtains temporary security credentials from Amazon EC2 [instance metadata](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html), as described in [Retrieving Security Credentials from Instance Metadata](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials)\. These are temporary security credentials that represent the role and are valid for a limited period of time\. 
+1. When the application runs, it obtains temporary security credentials from Amazon EC2 [instance metadata](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html), as described in [Retrieving Security Credentials from Instance Metadata](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials)\. These are temporary security credentials that represent the role and are valid for a limited period of time\. 
 
    With some [AWS SDKs](http://aws.amazon.com/tools/), the developer can use a provider that manages the temporary security credentials transparently\. \(The documentation for individual AWS SDKs describes the features supported by that SDK for managing credentials\.\)
 
@@ -88,17 +88,17 @@ The following sample policy allows users to use the Amazon EC2 API to launch an 
 
 ## How Do I Get Started?<a name="roles-usingrole-ec2instance-get-started"></a>
 
-To understand how roles work with EC2 instances, you need to use the IAM console to create a role, launch an EC2 instance that uses that role, and then examine the running instance\. You can examine the [instance metadata](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) to see how the role's temporary credentials are made available to an instance\. You can also see how an application that runs on an instance can use the role\. Use the following resources to learn more\. 
+To understand how roles work with EC2 instances, you need to use the IAM console to create a role, launch an EC2 instance that uses that role, and then examine the running instance\. You can examine the [instance metadata](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) to see how the role's temporary credentials are made available to an instance\. You can also see how an application that runs on an instance can use the role\. Use the following resources to learn more\. 
 
 + 
 
 + SDK walkthroughs\. The AWS SDK documentation includes walkthroughs that show an application running on an EC2 instance that uses temporary credentials for roles to read an Amazon S3 bucket\. Each of the following walkthroughs presents similar steps with a different programming language:
 
-  + [ Using IAM Roles for EC2 Instances with the SDK for Java](http://alpha-docs-aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 
+  + [ Using IAM Roles for EC2 Instances with the SDK for Java](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 
 
-  + [ Using IAM Roles for EC2 Instances with the SDK for \.NET](http://alpha-docs-aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-roles.html) in the *AWS SDK for \.NET Developer Guide*
+  + [ Using IAM Roles for EC2 Instances with the SDK for \.NET](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-roles.html) in the *AWS SDK for \.NET Developer Guide*
 
-  + [ Using IAM Roles for EC2 Instances with the SDK for Ruby](http://alpha-docs-aws.amazon.com/sdk-for-ruby/v2/developer-guide/ruby-dg-roles.html) in the *AWS SDK for Ruby Developer Guide*
+  + [ Using IAM Roles for EC2 Instances with the SDK for Ruby](http://docs.aws.amazon.com/sdk-for-ruby/v2/developer-guide/ruby-dg-roles.html) in the *AWS SDK for Ruby Developer Guide*
 
     The walkthroughs provide complete step\-by\-step instructions for creating and compiling the example program, creating the role, launching the instance, connecting to the instance, deploying the example program, and testing it\.
 
@@ -106,7 +106,7 @@ To understand how roles work with EC2 instances, you need to use the IAM console
 
 For more information about creating roles or roles for EC2 instances, see the following information:
 
-+ For more information about [using IAM roles with Amazon EC2 instances](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances), go to the *Amazon EC2 User Guide for Linux Instances*\.
++ For more information about [using IAM roles with Amazon EC2 instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances), go to the *Amazon EC2 User Guide for Linux Instances*\.
 
 + To create a role, see [Creating IAM Roles](id_roles_create.md)
 
@@ -114,4 +114,4 @@ For more information about creating roles or roles for EC2 instances, see the fo
 
 + If you work with the IAM API or CLI, you must create and manage IAM instance profiles\. For more information about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\.
 
-+ For more information about temporary security credentials for roles in the instance metadata, see [Retrieving Security Credentials from Instance Metadata](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials) in the Amazon EC2 User Guide for Linux Instances\.
++ For more information about temporary security credentials for roles in the instance metadata, see [Retrieving Security Credentials from Instance Metadata](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials) in the Amazon EC2 User Guide for Linux Instances\.

@@ -16,7 +16,7 @@ You can use the AWS Management Console to view password usage information for yo
 
 1. If necessary, add the **Console last sign\-in** column to the users table:
 
-   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
+   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
    1. In **Manage Columns**, select **Console last sign\-in**\.
 
@@ -39,15 +39,15 @@ You can use the AWS Management Console to view password usage information for yo
 **To find unused passwords \(API, CLI, PowerShell\)**  
 You can use the following commands to find unused passwords:
 
-+ **AWS CLI** –`[aws iam list\-users](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns a list of users, each with a `PasswordLastUsed` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
++ **AWS CLI** –`[aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns a list of users, each with a `PasswordLastUsed` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
 
    
 
-+ **Tools for Windows PowerShell** – `[Get\-IAMUsers](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers)` returns a collection of `User` objects, each of which has a `PasswordLastUsed` property\. If the property value is `1/1/0001 12:00:00 AM`, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
++ **Tools for Windows PowerShell** – `[Get\-IAMUsers](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers)` returns a collection of `User` objects, each of which has a `PasswordLastUsed` property\. If the property value is `1/1/0001 12:00:00 AM`, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
 
    
 
-+ **IAM API** –` [ListUsers](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html)` returns a collection of users, each of which has a `<PasswordLastUsed>` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
++ **IAM API** –` [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html)` returns a collection of users, each of which has a `<PasswordLastUsed>` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
 
   For information about the commands to download the credentials report, see [Getting Credential Reports \(AWS CLI, Tools for Windows PowerShell, or IAM API\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.
 
@@ -63,7 +63,7 @@ You can use the AWS Management Console to view access key usage information for 
 
 1. If necessary, add the **Access key last used** column to the users table:
 
-   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
+   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
    1. In **Manage Columns**, select **Access key last used**\.
 
@@ -84,24 +84,24 @@ You can use the following commands to find unused access keys:
 
 **AWS CLI**  
 
-+ `[aws iam list\-access\-keys](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns information about the access keys for a user, including the `AccessKeyID`\.
++ `[aws iam list\-access\-keys](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns information about the access keys for a user, including the `AccessKeyID`\.
 
-+ `[aws iam get\-access\-key\-last\-used](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)` takes an access key ID and returns output that includes the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the `LastUsedDate` field is missing, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
++ `[aws iam get\-access\-key\-last\-used](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)` takes an access key ID and returns output that includes the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the `LastUsedDate` field is missing, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
    
 
 **Tools for Windows PowerShell**  
 
-+ `[Get\-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey)` returns a collection of access key objects associated with the specified user\. Each object has an `AccessKeyId` property\.
++ `[Get\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey)` returns a collection of access key objects associated with the specified user\. Each object has an `AccessKeyId` property\.
 
-+ `[Get\-IAMAccessKeyLastUsed](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)` takes an access key ID and returns an object with an `AccessKeyLastUsed` property object\. The methods of that object include the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the property value is `1/1/0001 12:00:00 AM`, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
++ `[Get\-IAMAccessKeyLastUsed](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)` takes an access key ID and returns an object with an `AccessKeyLastUsed` property object\. The methods of that object include the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the property value is `1/1/0001 12:00:00 AM`, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
    
 
 **IAM API**  
 
-+ `[ListAccessKeys](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)` returns a list of `AccessKeyID` values for access keys that are associated with the specified user\. 
++ `[ListAccessKeys](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)` returns a list of `AccessKeyID` values for access keys that are associated with the specified user\. 
 
-+ `[GetAccessKeyLastUsed](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)` takes an access key ID and returns a collection of values\. Included are the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the value is missing, then user either has no access key or the access key has not been used since IAM began tracking access key age on April 22, 2015\.
++ `[GetAccessKeyLastUsed](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)` takes an access key ID and returns a collection of values\. Included are the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the value is missing, then user either has no access key or the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
 For information about the commands to download the credentials report, see [Getting Credential Reports \(AWS CLI, Tools for Windows PowerShell, or IAM API\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)

@@ -6,7 +6,7 @@ This tutorial shows how to grant users access to AWS services, but **only** when
 
 This workflow has three basic steps\. 
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Create a Policy to Enforce MFA Sign\-In](#tutorial_mfa_step1)**  
 Create a customer managed policy that prohibits all actions ***except*** the few IAM API operations that enable changing credentials and managing MFA devices\.
@@ -211,7 +211,7 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 
 1. In the navigation pane, choose **Users**, and then choose the user \(not the check box\) **MFAUser**\. If the **Groups** tab appears by default, note that it says that you don't have permissions to see your group memberships\.
 
-1. Now add an MFA device\. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the edit icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Now add an MFA device\. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the edit icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
 1. For this tutorial, we use a virtual \(software\-based\) MFA device, such as the Google Authenticator app on a mobile phone\. Choose **A virtual MFA device**, and then click **Next Step**\.
 

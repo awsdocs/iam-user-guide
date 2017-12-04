@@ -38,13 +38,13 @@ The following icons identify the types of items that are found by a search:
 
 | Icon | Description | 
 | --- | --- | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_user.png)  | IAM users | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_group.png)  | IAM groups | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_role.png)  | IAM roles | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_policy.png)  | IAM policies | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_action.png)  | Tasks such as "create user" or "attach policy" | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_delete.png)  | Results from the keyword delete | 
-|  ![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/search_help.png)  | IAM documentation | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_user.png)  | IAM users | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_group.png)  | IAM groups | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_role.png)  | IAM roles | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_policy.png)  | IAM policies | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_action.png)  | Tasks such as "create user" or "attach policy" | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_delete.png)  | Results from the keyword delete | 
+|  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_help.png)  | IAM documentation | 
 
 ## Sample Search Phrases<a name="search_phrases"></a>
 

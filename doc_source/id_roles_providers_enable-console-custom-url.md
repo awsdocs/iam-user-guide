@@ -9,7 +9,7 @@ To enable your organization's users to access the AWS Management Console, you ca
 
 1. Verify that the user is authenticated by your local identity system\.
 
-1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) APIs to obtain temporary security credentials for the user\. The credentials are associated with a role with permissions that control what the user can do\. These credentials have a maximum duration as specified in the `DurationSeconds` parameter of the `AssumeRole` or `GetFederationToken` API call used to generate them\.
+1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) APIs to obtain temporary security credentials for the user\. The credentials are associated with a role with permissions that control what the user can do\. These credentials have a maximum duration as specified in the `DurationSeconds` parameter of the `AssumeRole` or `GetFederationToken` API call used to generate them\.
 **Important**  
 If you use the `AssumeRole` API, you must call it as an IAM user with long\-term credentials\. The call to the federation endpoint in step 3 works only if the temporary credentials are requested by an IAM user with long\-term credentials\. If the temporary credentials are requested by an IAM assumed\-role user with a different set of temporary credentials, then the call to the federation endpoint fails\.
 
@@ -30,7 +30,7 @@ Keep in mind that the URL grants access to your AWS resources through the AWS Ma
 
 To view a sample application that shows you how you can implement a single sign\-on solution, go to [AWS Management Console federation proxy sample use case](https://aws.amazon.com/code/4001165270590826) in the *AWS Sample Code & Libraries*\.
 
-To complete these tasks, you can use the [HTTPS Query API for AWS Identity and Access Management \(IAM\)](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/) and the [AWS Security Token Service \(AWS STS\)](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/)\. Or, you can use programming languages, such as Java, Ruby, or C\#, along with the appropriate [AWS SDK](https://aws.amazon.com/tools/)\. Each of these methods is described in the following sections\.
+To complete these tasks, you can use the [HTTPS Query API for AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/APIReference/) and the [AWS Security Token Service \(AWS STS\)](http://docs.aws.amazon.com/STS/latest/APIReference/)\. Or, you can use programming languages, such as Java, Ruby, or C\#, along with the appropriate [AWS SDK](https://aws.amazon.com/tools/)\. Each of these methods is described in the following sections\.
 
 
 + [Example Code Using IAM Query APIs](#STSConsoleLink_manual)
@@ -40,7 +40,7 @@ To complete these tasks, you can use the [HTTPS Query API for AWS Identity and A
 
 ## Example Code Using IAM Query APIs<a name="STSConsoleLink_manual"></a>
 
-You can construct a URL that gives your federated users direct access to the AWS Management Console\. This task uses the IAM and AWS STS HTTPS Query API\. For more information about making query requests, see [Making Query Requests](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide//IAM_UsingQueryAPI.html)\.
+You can construct a URL that gives your federated users direct access to the AWS Management Console\. This task uses the IAM and AWS STS HTTPS Query API\. For more information about making query requests, see [Making Query Requests](http://docs.aws.amazon.com/IAM/latest/UserGuide//IAM_UsingQueryAPI.html)\.
 
 **Note**  
 The following procedure contains examples of text strings\. To enhance readability, line breaks have been added to some of the longer examples\. When you create these strings for your own use, you should omit any line breaks\.
@@ -51,7 +51,7 @@ The following procedure contains examples of text strings\. To enhance readabili
 
 1. Obtain temporary security credentials for the user\. The temporary credentials consist of an access key ID, a secret access key, and a security token\. For more information about creating temporary credentials, see [Temporary Security Credentials](id_credentials_temp.md)\.
 
-   To get temporary credentials, you call either the AWS STS [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API \(recommended\) or the [GetFederationToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API\. For more information about the differences between these APIs, see [Understanding the API Options for Securely Delegating Access to Your AWS Account](http://aws.amazon.com/blogs/security/understanding-the-api-options-for-securely-delegating-access-to-your-aws-account) in the AWS Security Blog\.
+   To get temporary credentials, you call either the AWS STS [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API \(recommended\) or the [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API\. For more information about the differences between these APIs, see [Understanding the API Options for Securely Delegating Access to Your AWS Account](http://aws.amazon.com/blogs/security/understanding-the-api-options-for-securely-delegating-access-to-your-aws-account) in the AWS Security Blog\.
 **Important**  
 When you create temporary security credentials, you must specify the permissions the credentials grants to the user who holds them\. For any of the APIs that begin with `AssumeRole*`, you use an IAM role to assign permissions\. For the other APIs, the mechanism varies with the API\. For more details, see [Controlling Permissions for Temporary Security Credentials](id_credentials_temp_control-access.md)\. 
 If you use the `AssumeRole` API, you must call it as an IAM user with long\-term credentials\. The call to the federation endpoint in step 3 works only if the temporary credentials are requested by an IAM user with long\-term credentials\. If the temporary credentials are requested by an IAM assumed\-role user with a different set of temporary credentials, then the call to the federation endpoint fails\.
@@ -78,7 +78,7 @@ If you use the `AssumeRole` API, you must call it as an IAM user with long\-term
    Session = *** the URL encoded JSON string created in steps 3 & 4 ***
    ```
 
-   The `SessionDuration` parameter specifies the number of seconds that the credentials for the console session are valid\. This is separate from the duration of the temporary credentials\. You can specify a `SessionDuration` maximum value of 43200 \(12 hours\)\. If the parameter is missing, then the session defaults to the duration of the credentials you retrieved from AWS STS in step 2 \(which defaults to one hour\)\. See the [documentation for the AssumeRole API](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) for details about how to specify duration using the `DurationSeconds` parameter\. The ability to create a console session that is longer than one hour is intrinsic to the `getSigninToken` action of the federation endpoint\. You cannot use the IAM or STS APIs to get credentials that are valid for longer than one hour \(3600 seconds\)\.
+   The `SessionDuration` parameter specifies the number of seconds that the credentials for the console session are valid\. This is separate from the duration of the temporary credentials\. You can specify a `SessionDuration` maximum value of 43200 \(12 hours\)\. If the parameter is missing, then the session defaults to the duration of the credentials you retrieved from AWS STS in step 2 \(which defaults to one hour\)\. See the [documentation for the AssumeRole API](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) for details about how to specify duration using the `DurationSeconds` parameter\. The ability to create a console session that is longer than one hour is intrinsic to the `getSigninToken` action of the federation endpoint\. You cannot use the IAM or STS APIs to get credentials that are valid for longer than one hour \(3600 seconds\)\.
 **Note**  
 You do not need the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`, because the console session can be as long as the temporary credentials are valid \(up to 36 hours\)\.
 
@@ -138,7 +138,7 @@ You do not need the `SessionDuration` HTTP parameter if you got the temporary cr
 
 The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/tools/)\. 
 
-The code uses the [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
+The code uses the [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
 
 ```
 import urllib, json
@@ -353,7 +353,6 @@ session_json = {
 # that is valid for 12 hours.
 get_signin_token_url = signin_url + 
                        "?Action=getSigninToken" + 
-                       "&SessionDuration=43200" +
                        "&SessionType=json&Session=" + 
                        CGI.escape(session_json)
 

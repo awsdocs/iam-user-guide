@@ -2,8 +2,8 @@
 
 **Note**  
 If you found this topic because you are trying to configure the Product Advertising API to sell Amazon products on your website, see these topics:  
-[Getting Started with the Product Advertising API](http://alpha-docs-aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
-[Getting Started as a Product Advertising API Developer](http://alpha-docs-aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
+[Getting Started with the Product Advertising API](http://docs.aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
+[Getting Started as a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
 
 Users need their own access keys to make programmatic calls to AWS from the [AWS Command Line Interface](https://aws.amazon.com/cli/) \(AWS CLI\), [Tools for Windows PowerShell](https://aws.amazon.com/documentation/powershell), the [AWS SDKs](https://aws.amazon.com/tools/), or direct HTTP calls using the APIs for individual AWS services\. To fill this need, you can create, modify, view, or rotate access keys \(access key IDs and secret access keys\) for IAM users\.
 
@@ -18,7 +18,7 @@ You can delete an access key at any time\. However, when you delete an access ke
 
 You can give your users permission to list, rotate, and manage their own keys\. For more information, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\. 
 
-For more information about the credentials used with AWS and IAM, see [Temporary Security Credentials](id_credentials_temp.md), and [Types of Security Credentials](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the *Amazon Web Services General Reference*\.
+For more information about the credentials used with AWS and IAM, see [Temporary Security Credentials](id_credentials_temp.md), and [Types of Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the *Amazon Web Services General Reference*\.
 
 
 + [Creating, Modifying, and Viewing Access Keys \(Console\)](#Using_CreateAccessKey)
@@ -37,7 +37,7 @@ You can use the AWS Management Console to manage the access keys of IAM users\.
 
 1. If necessary, add the **Access key ID** column to the users table by completing the following steps:
 
-   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
+   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
    1. In **Manage Columns**, select **Access key ID**\.
 
@@ -57,7 +57,7 @@ Only the user's access key ID and status is visible\. The secret access key can 
 
 1. If necessary, add the **Access key ID** column to the users table by completing the following steps:
 
-   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
+   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
    1. In **Manage Columns**, select **Access key ID**\.
 
@@ -97,43 +97,43 @@ To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, o
 
 ### To create an access key<a name="w3ab1c19c19c31c23b5"></a>
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 
 ### To disable or reenable an access key<a name="w3ab1c19c19c31c23b7"></a>
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
 
 ### To list a user's access keys<a name="w3ab1c19c19c31c23b9"></a>
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-access-keys.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)
 
 ### To determine when an access key was most recently used<a name="w3ab1c19c19c31c23c11"></a>
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
 
 ### To delete an access key<a name="w3ab1c19c19c31c23c13"></a>
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
 
 ## Rotating Access Keys<a name="Using_RotateAccessKey"></a>
 
@@ -152,7 +152,7 @@ If you use the AWS account root user credentials, we recommend that you also reg
 
 1. If necessary, add the **Access key age** column to the users table by completing the following steps:
 
-   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
+   1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
    1. In **Manage Columns**, select **Access key age**\.
 
@@ -196,41 +196,41 @@ The following steps describe the general process for rotating an access key with
 
 1. While the first access key is still active, create a second access key, which is active by default\. At this point, the user has two active access keys\.
 
-   + AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
+   + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 
-   + Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
+   + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
 
-   + AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
+   + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 
 1. Update all applications and tools to use the new access key\.
 
 1. Determine whether the first access key is still in use:
 
-   + AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
+   + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 
-   + Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)
+   + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)
 
-   + AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
+   + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
 
    One approach is to wait several days and then check the old access key for any use before proceeding\.
 
 1. Even if step [[ERROR] BAD/MISSING LINK TEXT](#step-determine-use) indicates no use of the old key, we recommend that you do not immediately delete the first access key\. Instead, change the state of the first access key to `Inactive`\.
 
-   + AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
+   + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
 
-   + Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey)
+   + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey)
 
-   + AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
+   + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
 
 1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can switch its state back to `Active` to reenable the first access key\. Then return to step [[ERROR] BAD/MISSING LINK TEXT](#step-update-apps) and update this application to use the new key\.
 
 1. After you wait some period of time to ensure that all applications and tools have been updated, you can delete the first access key\.
 
-   + AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
+   + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 
-   + Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
+   + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
 
-   + AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
+   + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
 
 For more information, see the following:
 

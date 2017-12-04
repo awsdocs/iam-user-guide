@@ -18,9 +18,9 @@ Adding MFA protection to APIs involves these tasks:
 
 1. The administrator creates policies for the users that include a `Condition` element that checks whether the user authenticated with an AWS MFA device\.
 
-1. The user calls one of the STS APIs that support the MFA parameters [AssumeRole](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) or [GetSessionToken](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html), depending on the scenario for MFA protection, as explained later\. As part of the call, the user includes the device identifier for the device that's associated with the user, as well as the time\-based one\-time password \(TOTP\) that the device generates\. In either case, the user gets back temporary security credentials that the user can then use to make additional requests to AWS\.
+1. The user calls one of the STS APIs that support the MFA parameters [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) or [GetSessionToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html), depending on the scenario for MFA protection, as explained later\. As part of the call, the user includes the device identifier for the device that's associated with the user, as well as the time\-based one\-time password \(TOTP\) that the device generates\. In either case, the user gets back temporary security credentials that the user can then use to make additional requests to AWS\.
 **Note**  
-MFA protection for a service's APIs is available only if the service supports temporary security credentials\. For a list of these services, see [ Using Temporary Security Credentials to Access AWS](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html)\.
+MFA protection for a service's APIs is available only if the service supports temporary security credentials\. For a list of these services, see [ Using Temporary Security Credentials to Access AWS](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html)\.
 
 If authorization fails, AWS returns an "Access Denied" error message \(as it does for any unauthorized access\)\. With MFA\-protected API policies in place, AWS denies access to the APIs specified in the policies if the user attempts to use an API without valid MFA authentication or if the timestamp of the request for the API is outside of the allowed range specified in the policy\. The user must be reauthenticated with MFA by requesting new temporary security credentials with an MFA code and device serial number\.
 
@@ -219,7 +219,7 @@ In this scenario, user Alice is an administrator in account A\. User Charlie is 
    }
    ```
 **Note**  
-Amazon S3 offers an MFA Delete feature for *root* account access \(only\)\. You can enable Amazon S3 MFA Delete when you set the versioning state of the bucket\. Amazon S3 MFA Delete cannot be applied to an IAM user, and is managed independently from MFA\-protected API access\. An IAM user with permission to delete a bucket cannot delete a bucket with Amazon S3 MFA Delete enabled\. For more information on Amazon S3 MFA Delete, see [MFA Delete](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/MultiFactorAuthenticationDelete.html)\.
+Amazon S3 offers an MFA Delete feature for *root* account access \(only\)\. You can enable Amazon S3 MFA Delete when you set the versioning state of the bucket\. Amazon S3 MFA Delete cannot be applied to an IAM user, and is managed independently from MFA\-protected API access\. An IAM user with permission to delete a bucket cannot delete a bucket with Amazon S3 MFA Delete enabled\. For more information on Amazon S3 MFA Delete, see [MFA Delete](http://docs.aws.amazon.com/AmazonS3/latest/dev/MultiFactorAuthenticationDelete.html)\.
 
 1. In account C, an administrator makes sure that user Charlie is configured with an AWS MFA device and that he knows the ID of the device—the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\. 
 

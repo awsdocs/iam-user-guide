@@ -121,43 +121,43 @@ To manage passwords for IAM users, use the following commands:
 
 **To create a password**
 
-+ AWS CLI: [aws iam create\-login\-profile](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
++ AWS CLI: [aws iam create\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
 
-+ Tools for Windows PowerShell: [New\-IAMLoginProfile](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMLoginProfile.html&tocid=New-IAMLoginProfile)
++ Tools for Windows PowerShell: [New\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMLoginProfile.html&tocid=New-IAMLoginProfile)
 
-+ AWS API: [CreateLoginProfile](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
++ AWS API: [CreateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
 
 **To determine whether a user has a password**
 
-+ AWS CLI: [aws iam get\-login\-profile](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-login-profile.html)
++ AWS CLI: [aws iam get\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-login-profile.html)
 
-+ Tools for Windows PowerShell: [Get\-IAMLoginProfile](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMLoginProfile.html&tocid=Get-IAMLoginProfile)
++ Tools for Windows PowerShell: [Get\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMLoginProfile.html&tocid=Get-IAMLoginProfile)
 
-+ AWS API: [GetLoginProfile](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)
++ AWS API: [GetLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)
 
 **To determine when a user's password was last used**
 
-+ AWS CLI: [aws iam get\-user](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-user.html)
++ AWS CLI: [aws iam get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html)
 
-+ Tools for Windows PowerShell: [Get\-IAMUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUser.html&tocid=Get-IAMUser)
++ Tools for Windows PowerShell: [Get\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUser.html&tocid=Get-IAMUser)
 
-+ AWS API: [GetUser](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)
++ AWS API: [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)
 
 **To change a user's password**
 
-+ AWS CLI: [aws iam update\-login\-profile](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-login-profile.html)
++ AWS CLI: [aws iam update\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/update-login-profile.html)
 
-+ Tools for Windows PowerShell: [Update\-IAMLoginProfile](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMLoginProfile.html&tocid=Update-IAMLoginProfile)
++ Tools for Windows PowerShell: [Update\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMLoginProfile.html&tocid=Update-IAMLoginProfile)
 
-+ AWS API: [UpdateLoginProfile](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)
++ AWS API: [UpdateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)
 
 **To delete a user's password**
 
-+ AWS CLI: [aws iam delete\-login\-profile](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
++ AWS CLI: [aws iam delete\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
 
-+ Tools for Windows PowerShell: [Remove\-IAMLoginProfile](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMLoginProfile.html&tocid=Remove-IAMLoginProfile)
++ Tools for Windows PowerShell: [Remove\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMLoginProfile.html&tocid=Remove-IAMLoginProfile)
 
-+ AWS API: [DeleteLoginProfile](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html)
++ AWS API: [DeleteLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html)
 
 **Note**  
 You can use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account\. However, you must first delete the password as a separate step in the process of removing the user\. For more information, see [Deleting an IAM User \(AWS CLI and Tools for Windows PowerShell\)](id_users_manage.md#id_users_deleting_cli)\. 

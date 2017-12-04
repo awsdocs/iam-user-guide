@@ -15,7 +15,7 @@ The following diagram illustrates the flow for SAML\-enabled single sign\-on\.
 **Note**  
 This specific use of SAML differs from the more general one illustrated at [About SAML 2\.0\-based Federation](id_roles_providers_saml.md) because this workflow opens the AWS Management Console on behalf of the user\. This requires the use of the AWS SSO endpoint instead of directly calling the `AssumeRoleWithSAML` API\. The endpoint calls the API for the user and returns a URL that automatically redirects the user's browser to the AWS Management Console\.
 
-![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 The diagram illustrates the following steps:
 

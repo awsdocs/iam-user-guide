@@ -4,57 +4,57 @@ Amazon Elastic MapReduce \(service prefix: elasticmapreduce\) provides the follo
 
 **Actions for Amazon Elastic MapReduce**
 
-For information about controlling access to Amazon EMR by specifying actions in an IAM policy, see [Set Access Policies for IAM Users](http://alpha-docs-aws.amazon.com/emr/latest/DeveloperGuide/emr-set-iam-policy.html) in the *Amazon EMR Developer Guide*\.
+For information about controlling access to Amazon EMR by specifying actions in an IAM policy, see [Set Access Policies for IAM Users](http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-set-iam-policy.html) in the *Amazon EMR Developer Guide*\.
 
-+ `[elasticmapreduce:DescribeCluster](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeCluster.html)`
++ `[elasticmapreduce:DescribeCluster](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeCluster.html)`
 
-+ `[elasticmapreduce:DescribeJobFlows](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeJobFlows.html)`
++ `[elasticmapreduce:DescribeJobFlows](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeJobFlows.html)`
 
-+ `[elasticmapreduce:DeleteSecurityConfiguration](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_DeleteSecurityConfiguration.html)`
++ `[elasticmapreduce:DeleteSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DeleteSecurityConfiguration.html)`
 
-+ `[elasticmapreduce:SetTerminationProtection](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_SetTerminationProtection.html)`
++ `[elasticmapreduce:SetTerminationProtection](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_SetTerminationProtection.html)`
 
-+ `[elasticmapreduce:ViewEventsFromAllClustersInConsole](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ViewEventsFromAllClustersInConsole.html)`
++ `[elasticmapreduce:ViewEventsFromAllClustersInConsole](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ViewEventsFromAllClustersInConsole.html)`
 
-+ `[elasticmapreduce:ListInstanceGroups](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstanceGroups.html)`
++ `[elasticmapreduce:ListInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstanceGroups.html)`
 
-+ `[elasticmapreduce:TerminateJobFlows](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_TerminateJobFlows.html)`
++ `[elasticmapreduce:TerminateJobFlows](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_TerminateJobFlows.html)`
 
-+ `[elasticmapreduce:ModifyInstanceGroups](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ModifyInstanceGroups.html)`
++ `[elasticmapreduce:ModifyInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ModifyInstanceGroups.html)`
 
-+ `[elasticmapreduce:ListBootstrapActions](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ListBootstrapActions.html)`
++ `[elasticmapreduce:ListBootstrapActions](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListBootstrapActions.html)`
 
-+ `[elasticmapreduce:RemoveTags](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveTags.html)`
++ `[elasticmapreduce:RemoveTags](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveTags.html)`
 
-+ `[elasticmapreduce:DescribeStep](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeStep.html)`
++ `[elasticmapreduce:DescribeStep](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeStep.html)`
 
-+ `[elasticmapreduce:ListInstances](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstances.html)`
++ `[elasticmapreduce:ListInstances](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstances.html)`
 
-+ `[elasticmapreduce:ListSteps](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ListSteps.html)`
++ `[elasticmapreduce:ListSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListSteps.html)`
 
-+ `[elasticmapreduce:ListClusters](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ListClusters.html)`
++ `[elasticmapreduce:ListClusters](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListClusters.html)`
 
-+ `[elasticmapreduce:RemoveAutoScalingPolicy](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveAutoScalingPolicy.html)`
++ `[elasticmapreduce:RemoveAutoScalingPolicy](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveAutoScalingPolicy.html)`
 
-+ `[elasticmapreduce:ListSecurityConfigurations](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_ListSecurityConfigurations.html)`
++ `[elasticmapreduce:ListSecurityConfigurations](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListSecurityConfigurations.html)`
 
-+ `[elasticmapreduce:RunJobFlow](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_RunJobFlow.html)`
++ `[elasticmapreduce:RunJobFlow](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RunJobFlow.html)`
 
-+ `[elasticmapreduce:DescribeSecurityConfiguration](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeSecurityConfiguration.html)`
++ `[elasticmapreduce:DescribeSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeSecurityConfiguration.html)`
 
-+ `[elasticmapreduce:AddJobFlowSteps](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_AddJobFlowSteps.html)`
++ `[elasticmapreduce:AddJobFlowSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddJobFlowSteps.html)`
 
-+ `[elasticmapreduce:CreateSecurityConfiguration](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_CreateSecurityConfiguration.html)`
++ `[elasticmapreduce:CreateSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_CreateSecurityConfiguration.html)`
 
-+ `[elasticmapreduce:AddTags](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_AddTags.html)`
++ `[elasticmapreduce:AddTags](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddTags.html)`
 
-+ `[elasticmapreduce:AddInstanceGroups](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_AddInstanceGroups.html)`
++ `[elasticmapreduce:AddInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddInstanceGroups.html)`
 
-+ `[elasticmapreduce:PutAutoScalingPolicy](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_PutAutoScalingPolicy.html)`
++ `[elasticmapreduce:PutAutoScalingPolicy](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_PutAutoScalingPolicy.html)`
 
-+ `[elasticmapreduce:SetVisibleToAllUsers](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_SetVisibleToAllUsers.html)`
++ `[elasticmapreduce:SetVisibleToAllUsers](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_SetVisibleToAllUsers.html)`
 
-+ `[elasticmapreduce:CancelSteps](http://alpha-docs-aws.amazon.com/ElasticMapReduce/latest/API/API_CancelSteps.html)`
++ `[elasticmapreduce:CancelSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_CancelSteps.html)`
 
 **Condition context keys for Amazon Elastic MapReduce**
 

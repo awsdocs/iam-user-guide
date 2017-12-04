@@ -14,4 +14,4 @@ For more information on policies and permissions in AWS see the following topics
 
 + [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
-+ [Managing Access Permissions to Your Amazon S3 Resources](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in *Amazon Simple Storage Service Developer Guide*\.
++ [Managing Access Permissions to Your Amazon S3 Resources](http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in *Amazon Simple Storage Service Developer Guide*\.

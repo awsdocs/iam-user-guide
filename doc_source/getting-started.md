@@ -7,7 +7,7 @@ This set of documentation deals primarily with the IAM service\. To learn about 
 
 The following figure shows a simple example of an AWS account with three groups\. A group is a collection of users who have similar responsibilities\. In this example, one group is for administrators \(it's called *Admins*\)\. There's also a *Developers* group and a *Test* group\. Each group has multiple users\. Each user can be in more than one group, although the figure doesn't illustrate that\. You can't put groups inside other groups\. You use policies to grant permissions to groups\.
 
-![\[Example layout of AWS account, groups, and users\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/Account_Group_Example.diagram.png)
+![\[Example layout of AWS account, groups, and users\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Account_Group_Example.diagram.png)
 
 In the procedure that follows, you will perform the following tasks:
 

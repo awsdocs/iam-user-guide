@@ -13,7 +13,7 @@ If you use the API or CLI to delete a user from your AWS account, you must deact
 
 1. To deactivate the MFA device for a user, choose the name of the user whose MFA you want to remove\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
 1. In the **Manage MFA Device** wizard, choose **Deactivate MFA device**, and then choose **Next Step**\.
 
@@ -26,7 +26,7 @@ If you use the API or CLI to delete a user from your AWS account, you must deact
 To manage MFA devices for the AWS account, you must sign in to AWS with your AWS account root user credentials\. You cannot manage MFA devices for the root user with other credentials\.
 
 1. On the navigation bar, choose your account name, and then choose **Security Credentials**\. If a prompt appears, choose **Continue to Security Credentials**\.  
-![\[Security Credentials in the navigation menu\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Expand the **Multi\-Factor Authentication \(MFA\)** section\.
 
@@ -36,8 +36,8 @@ The MFA device is deactivated for the AWS account\.
 
 **To deactivate an MFA device for a user \(AWS CLI, Tools for Windows PowerShell, or AWS API\)**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)

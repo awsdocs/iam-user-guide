@@ -15,31 +15,31 @@ You can list the IAM users in your AWS account or in a specific IAM group, and l
 
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**\. The console displays the users in your AWS account\. 
 
-+ AWS CLI: [aws iam list\-users](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-users.html)
++ AWS CLI: [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)
 
-+ Tools for Windows PowerShell: [Get\-IAMUsers](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers)
++ Tools for Windows PowerShell: [Get\-IAMUsers](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers)
 
-+ AWS API: [ListUsers](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) 
++ AWS API: [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) 
 
 ### To list the users in a specific group<a name="w3ab1c19c19c24b7b6"></a>
 
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups**, choose the name of the group, and then choose the **Users** tab\. 
 
-+ AWS CLI: [aws iam get\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-group.html)
++ AWS CLI: [aws iam get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html)
 
-+ Tools for Windows PowerShell: [Get\-IAMGroup](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroup.html&tocid=Get-IAMGroup)
++ Tools for Windows PowerShell: [Get\-IAMGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroup.html&tocid=Get-IAMGroup)
 
-+ AWS API: [GetGroup](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html)
++ AWS API: [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html)
 
 ### To list all the groups that a user is in<a name="w3ab1c19c19c24b7b8"></a>
 
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**, choose the user name, and then choose the **Groups** tab\. 
 
-+ AWS CLI: [aws iam list\-groups\-for\-user](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)
++ AWS CLI: [aws iam list\-groups\-for\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)
 
-+ Tools for Windows PowerShell: [Get\-IAMGroupForUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroupForUser.html&tocid=Get-IAMGroupForUser)
++ Tools for Windows PowerShell: [Get\-IAMGroupForUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroupForUser.html&tocid=Get-IAMGroupForUser)
 
-+ AWS API: [ListGroupsForUser](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html)
++ AWS API: [ListGroupsForUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html)
 
 ## Renaming an IAM User<a name="id_users_renaming"></a>
 
@@ -71,11 +71,11 @@ This is true also if an administrator changes the path; the administrator needs 
 
 ### To rename a user<a name="w3ab1c19c19c24b9c18"></a>
 
-+ AWS CLI: [aws iam update\-user](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-user.html)
++ AWS CLI: [aws iam update\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/update-user.html)
 
-+ Tools for Windows PowerShell: [Update\-IAMUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMUser.html&tocid=Update-IAMUser)
++ Tools for Windows PowerShell: [Update\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMUser.html&tocid=Update-IAMUser)
 
-+ AWS API: [UpdateUser](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html) 
++ AWS API: [UpdateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html) 
 
 ## Deleting an IAM User<a name="id_users_deleting"></a>
 
@@ -117,56 +117,56 @@ Any managed policies attached to the user are detached from the user when the us
 
 ### Deleting an IAM User \(AWS CLI and Tools for Windows PowerShell\)<a name="id_users_deleting_cli"></a>
 
-Unlike the AWS Management Console, when you delete a user with the AWS CLI or Tools for Windows PowerShell you have to delete the items attached to the user manually\. This procedure illustrates the process\. For a complete PowerShell code snippet, see the example in [Remove\-IAMUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)\.
+Unlike the AWS Management Console, when you delete a user with the AWS CLI or Tools for Windows PowerShell you have to delete the items attached to the user manually\. This procedure illustrates the process\. For a complete PowerShell code snippet, see the example in [Remove\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)\.
 
 **To use the AWS CLI to delete a user from your account**
 
 1. Delete the user's keys and certificates\. This helps ensure that the user can't access your AWS account's resources anymore\. Note that when you delete a security credential, it's gone forever and can't be retrieved\. 
 
-   [aws iam delete\-access\-key](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-access-key.html) and [aws iam delete\-signing\-certificate](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-signing-certificate.html) 
+   [aws iam delete\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html) and [aws iam delete\-signing\-certificate](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-signing-certificate.html) 
 
 1. Delete the user's password, if the user has one\.
 
-   [aws iam delete\-login\-profile](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
+   [aws iam delete\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
 
 1. Deactivate the user's MFA device, if the user has one\.
 
-   [aws iam deactivate\-mfa\-device](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html) 
+   [aws iam deactivate\-mfa\-device](http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html) 
 
 1. Detach any policies that are attached to the user\. 
 
-   [aws iam list\-attached\-user\-policies](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html) \(to list the policies attached to the user\) and [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html) \(to detach the policies\) 
+   [aws iam list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html) \(to list the policies attached to the user\) and [http://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html) \(to detach the policies\) 
 
 1. Get a list of any groups the user was in, and remove the user from those groups\. 
 
-   [aws iam list\-groups\-for\-user](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html) and [aws iam remove\-user\-from\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) 
+   [aws iam list\-groups\-for\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html) and [aws iam remove\-user\-from\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) 
 
 1. Delete the user\.
 
-   [aws iam delete\-user](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-user.html) 
+   [aws iam delete\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-user.html) 
 
 **To use the Tools for Windows PowerShell to delete a user from your account**
 
 1. Delete the user's keys and certificates\. This helps ensure that the user can't access your AWS account's resources anymore\. Note that when you delete a security credential, it's gone forever and can't be retrieved\.
 
-   [Remove\-IAMAccessKey](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey) and [Remove\-IAMSigningCertificate](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMSigningCertificate.html&tocid=Remove-IAMSigningCertificate)
+   [Remove\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey) and [Remove\-IAMSigningCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMSigningCertificate.html&tocid=Remove-IAMSigningCertificate)
 
 1. Delete the user's password, if the user has one\.
 
-   [Remove\-IAMLoginProfile](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMLoginProfile.html&tocid=Remove-IAMLoginProfile)
+   [Remove\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMLoginProfile.html&tocid=Remove-IAMLoginProfile)
 
 1. Deactivate the user's MFA device, if the user has one\.
 
-   [Disable\-IAMMFADevice](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice)
+   [Disable\-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice)
 
 1. Detach any policies that are attached to the user\. 
 
-   [Get\-IAMAttachedUserPolicies](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAttachedUserPolicies.html&tocid=Get-IAMAttachedUserPolicies) \(to list the policies attached to the user\) and [Remove\-IAMUserPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMUserPolicy.html&tocid=Remove-IAMUserPolicy) \(to detach the policies\)\.
+   [Get\-IAMAttachedUserPolicies](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAttachedUserPolicies.html&tocid=Get-IAMAttachedUserPolicies) \(to list the policies attached to the user\) and [Remove\-IAMUserPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMUserPolicy.html&tocid=Remove-IAMUserPolicy) \(to detach the policies\)\.
 
 1. Get a list of any groups the user was in, and remove the user from those groups\. 
 
-   [Get\-IAMGroupForUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMGroupForUser.html&tocid=Remove-IAMGroupForUser) and [Remove\-IAMUserFromGroup](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMUserFromGroup.html&tocid=Remove-IAMUserFromGroup)\.
+   [Get\-IAMGroupForUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMGroupForUser.html&tocid=Remove-IAMGroupForUser) and [Remove\-IAMUserFromGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMUserFromGroup.html&tocid=Remove-IAMUserFromGroup)\.
 
 1. Delete the user\.
 
-   [Remove\-IAMUser](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMUser.html&tocid=Remove-IAMUser)
+   [Remove\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMUser.html&tocid=Remove-IAMUser)

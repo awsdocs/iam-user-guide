@@ -4,31 +4,31 @@ Amazon Rekognition \(service prefix: rekognition\) provides the following servic
 
 **Actions for Amazon Rekognition**
 
-For information about using the following Amazon Rekognition API actions in an IAM policy, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Rekognition](http://alpha-docs-aws.amazon.com/rekognition/latest/dg//using-identity-based-policies.html) in the *Amazon Rekognition Developer Guide*\.
+For information about using the following Amazon Rekognition API actions in an IAM policy, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Rekognition](http://docs.aws.amazon.com/rekognition/latest/dg//using-identity-based-policies.html) in the *Amazon Rekognition Developer Guide*\.
 
-+ `[rekognition:SearchFaces](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html)`
++ `[rekognition:SearchFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFaces.html)`
 
-+ `[rekognition:CreateCollection](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html)`
++ `[rekognition:CreateCollection](http://docs.aws.amazon.com/rekognition/latest/dg/API_CreateCollection.html)`
 
-+ `[rekognition:IndexFaces](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html)`
++ `[rekognition:IndexFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_IndexFaces.html)`
 
-+ `[rekognition:CompareFaces](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html)`
++ `[rekognition:CompareFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html)`
 
-+ `[rekognition:DetectFaces](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html)`
++ `[rekognition:DetectFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_DetectFaces.html)`
 
-+ `[rekognition:SearchFacesByImage](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html)`
++ `[rekognition:SearchFacesByImage](http://docs.aws.amazon.com/rekognition/latest/dg/API_SearchFacesByImage.html)`
 
-+ `[rekognition:ListCollections](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_ListCollections.html)`
++ `[rekognition:ListCollections](http://docs.aws.amazon.com/rekognition/latest/dg/API_ListCollections.html)`
 
-+ `[rekognition:DeleteFaces](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html)`
++ `[rekognition:DeleteFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html)`
 
-+ `[rekognition:DeleteCollection](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html)`
++ `[rekognition:DeleteCollection](http://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteCollection.html)`
 
-+ `[rekognition:ListFaces](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_ListFaces.html)`
++ `[rekognition:ListFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html)`
 
-+ `[rekognition:DetectLabels](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html)`
++ `[rekognition:DetectLabels](http://docs.aws.amazon.com/rekognition/latest/dg/API_DetectLabels.html)`
 
-+ `[rekognition:DetectModerationLabels](http://alpha-docs-aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html)`
++ `[rekognition:DetectModerationLabels](http://docs.aws.amazon.com/rekognition/latest/dg/API_DetectModerationLabels.html)`
 
 **Condition context keys for Amazon Rekognition**
 

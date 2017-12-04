@@ -4,25 +4,25 @@ AWS Shield \(service prefix: shield\) provides the following service\-specific a
 
 **Actions for AWS Shield**
 
-For more information about using IAM policies with AWS Shield Advanced and AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](http://alpha-docs-aws.amazon.com/waf/latest/developerguide/access-control-identity-based.html) in the *AWS WAF Developer Guide*\.
+For more information about using IAM policies with AWS Shield Advanced and AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](http://docs.aws.amazon.com/waf/latest/developerguide/access-control-identity-based.html) in the *AWS WAF Developer Guide*\.
 
-+ `[shield:CreateProtection](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html)`
++ `[shield:CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html)`
 
-+ `[shield:DescribeProtection](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html)`
++ `[shield:DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html)`
 
-+ `[shield:DescribeSubscription](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)`
++ `[shield:DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)`
 
-+ `[shield:DeleteProtection](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html)`
++ `[shield:DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html)`
 
-+ `[shield:DescribeAttack](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html)`
++ `[shield:DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html)`
 
-+ `[shield:DeleteSubscription](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html)`
++ `[shield:DeleteSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html)`
 
-+ `[shield:ListProtections](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html)`
++ `[shield:ListProtections](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html)`
 
-+ `[shield:CreateSubscription](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html)`
++ `[shield:CreateSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html)`
 
-+ `[shield:ListAttacks](http://alpha-docs-aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html)`
++ `[shield:ListAttacks](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html)`
 
 **Condition context keys for AWS Shield**
 

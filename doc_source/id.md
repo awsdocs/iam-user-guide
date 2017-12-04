@@ -36,7 +36,7 @@ Because an IAM user is just an identity with specific permissions in your accoun
 
   Create IAM users for the individuals who need access to your AWS resources, assign appropriate permissions to each user, and give each user his or her own credentials\. We strongly recommend that you never share credentials among multiple users\. 
 
-+ **You want to use the [command\-line interface](http://alpha-docs-aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) \(CLI\) to work with AWS\.**
++ **You want to use the [command\-line interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) \(CLI\) to work with AWS\.**
 
   The CLI needs credentials that it can use to make calls to AWS\. Create an IAM user and give that user permissions to run the CLI commands you need\. Then configure the CLI on your computer to use the access key credentials associated with that IAM user\. 
 
@@ -50,9 +50,9 @@ Don't create an IAM user and pass the user's credentials to the application or e
 **You're creating an app that runs on a mobile phone and that makes requests to AWS\.**  
 Don't create an IAM user and distribute the user's access key with the app\. Instead, use an identity provider like Login with Amazon, Amazon Cognito, Facebook, or Google to authenticate users and map the users to an IAM role\. The app can use the role to get temporary security credentials that have the permissions specified by the policies attached to the role\. For more information, see the following:   
 
-+ [Amazon Cognito Overview](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide*
++ [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide*
 
-+ [Amazon Cognito Overview](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide*
++ [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide*
 
 + [About Web Identity Federation](id_roles_providers_oidc.md)
 

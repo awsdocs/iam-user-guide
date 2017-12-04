@@ -25,7 +25,7 @@ Consult these resources for creating, managing, and using users and groups\.
 
 Review the following guides to manage passwords for your AWS account and for IAM users\. You'll also find information about *access keys*—the secret key that you use to make programmatic calls to AWS\.
 
-+ **[AWS Security Credentials](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-security-credentials.html)** – Describes the types of credentials you use to access Amazon Web Services, explains how to create and manage them, and includes recommendations for managing access keys securely\.
++ **[AWS Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)** – Describes the types of credentials you use to access Amazon Web Services, explains how to create and manage them, and includes recommendations for managing access keys securely\.
 
 + **[Managing Passwords](id_credentials_passwords.md)** and **[Managing Access Keys for IAM Users](id_credentials_access-keys.md)** – Describes options for managing credentials for IAM users in your account\.
 
@@ -63,25 +63,25 @@ Most AWS products are integrated with IAM so that you can use IAM features to he
 
 ### Using IAM with Amazon EC2<a name="resources-iam-and-ec2"></a>
 
-+ [Controlling Access to Amazon EC2 Resources](http://alpha-docs-aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html) – Describes how to use IAM features to permit users to administer Amazon EC2 instances, volumes, and more\.
++ [Controlling Access to Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html) – Describes how to use IAM features to permit users to administer Amazon EC2 instances, volumes, and more\.
 
 +  [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md) – Describes how to use IAM roles to securely provide credentials for applications that run on Amazon EC2 instances and that need access to other AWS products\. 
 
 ### Using IAM with Amazon S3<a name="resources-iam-and-s3"></a>
 
-+ [Managing Access Permissions to Your Amazon S3 Resources](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) – Discusses the Amazon S3 security model for buckets and objects, which includes IAM policies\.
++ [Managing Access Permissions to Your Amazon S3 Resources](http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) – Discusses the Amazon S3 security model for buckets and objects, which includes IAM policies\.
 
 + [ Writing IAM Policies: Grant Access to User\-Specific Folders in an Amazon S3 Bucket](http://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket) – Discusses how to let users protect their own folders in Amazon S3\. \(For more posts about Amazon S3 and IAM, choose the **S3** tag below the title of the blog post\.\) 
 
 ### Using IAM with Amazon RDS<a name="resources-iam-and-rds"></a>
 
-+ [Using AWS Identity and Access Management \(IAM\) to Manage Access to Amazon RDS Resources](http://alpha-docs-aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html) – Describes how to use IAM to control access to database instances, database snapshots, and more\. 
++ [Using AWS Identity and Access Management \(IAM\) to Manage Access to Amazon RDS Resources](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html) – Describes how to use IAM to control access to database instances, database snapshots, and more\. 
 
 + [A Primer on RDS Resource\-Level Permissions](http://aws.amazon.com/blogs/security/a-primer-on-rds-resource-level-permissions) – Describes how to use IAM to control access to specific Amazon RDS instances\. 
 
 ### Using IAM with Amazon DynamoDB<a name="resources-iam-and-ddb"></a>
 
-+ [Using IAM to Control Access to DynamoDB Resources](http://alpha-docs-aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html) – Describes how to use IAM to permit users to administer DynamoDB tables and indexes\. 
++ [Using IAM to Control Access to DynamoDB Resources](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html) – Describes how to use IAM to permit users to administer DynamoDB tables and indexes\. 
 
 + The following video \(8:55\) explains how to provide access control for individual DynamoDB database items or attributes \(or both\)\. 
 
@@ -93,7 +93,7 @@ Find expert tips and guidance on the best ways to secure your AWS account and re
 
 + **[IAM Best Practices](best-practices.md)** – Offers recommendations for ways to use IAM to help secure your AWS account and resources\. 
 
-+ **[AWS CloudTrail User Guide](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\. 
++ **[AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\. 
 
 ## General Resources<a name="resources-general"></a>
 

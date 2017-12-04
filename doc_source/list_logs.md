@@ -4,55 +4,55 @@ Amazon CloudWatch Logs \(service prefix: logs\) provides the following service\-
 
 **Actions for Amazon CloudWatch Logs**
 
-+ `[logs:PutDestination](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html)`
++ `[logs:PutDestination](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html)`
 
-+ `[logs:DeleteRetentionPolicy](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html)`
++ `[logs:DeleteRetentionPolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html)`
 
-+ `[logs:PutDestinationPolicy](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html)`
++ `[logs:PutDestinationPolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html)`
 
-+ `[logs:PutRetentionPolicy](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html)`
++ `[logs:PutRetentionPolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html)`
 
-+ `[logs:DescribeExportTasks](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html)`
++ `[logs:DescribeExportTasks](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html)`
 
-+ `[logs:DeleteLogStream](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogStream.html)`
++ `[logs:DeleteLogStream](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogStream.html)`
 
-+ `[logs:DescribeLogStreams](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html)`
++ `[logs:DescribeLogStreams](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogStreams.html)`
 
-+ `[logs:DeleteLogGroup](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogGroup.html)`
++ `[logs:DeleteLogGroup](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteLogGroup.html)`
 
-+ `[logs:PutLogEvents](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html)`
++ `[logs:PutLogEvents](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html)`
 
-+ `[logs:CreateExportTask](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html)`
++ `[logs:CreateExportTask](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html)`
 
-+ `[logs:PutMetricFilter](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html)`
++ `[logs:PutMetricFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html)`
 
-+ `[logs:DescribeSubscriptionFilters](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html)`
++ `[logs:DescribeSubscriptionFilters](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html)`
 
-+ `[logs:CreateLogGroup](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html)`
++ `[logs:CreateLogGroup](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogGroup.html)`
 
-+ `[logs:DeleteDestination](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDestination.html)`
++ `[logs:DeleteDestination](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteDestination.html)`
 
-+ `[logs:DeleteSubscriptionFilter](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html)`
++ `[logs:DeleteSubscriptionFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html)`
 
-+ `[logs:FilterLogEvents](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html)`
++ `[logs:FilterLogEvents](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html)`
 
-+ `[logs:PutSubscriptionFilter](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html)`
++ `[logs:PutSubscriptionFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html)`
 
-+ `[logs:DescribeMetricFilters](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeMetricFilters.html)`
++ `[logs:DescribeMetricFilters](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeMetricFilters.html)`
 
-+ `[logs:GetLogEvents](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html)`
++ `[logs:GetLogEvents](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html)`
 
-+ `[logs:CancelExportTask](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html)`
++ `[logs:CancelExportTask](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html)`
 
-+ `[logs:TestMetricFilter](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestMetricFilter.html)`
++ `[logs:TestMetricFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TestMetricFilter.html)`
 
-+ `[logs:CreateLogStream](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogStream.html)`
++ `[logs:CreateLogStream](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateLogStream.html)`
 
-+ `[logs:DescribeDestinations](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDestinations.html)`
++ `[logs:DescribeDestinations](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDestinations.html)`
 
-+ `[logs:DescribeLogGroups](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html)`
++ `[logs:DescribeLogGroups](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html)`
 
-+ `[logs:DeleteMetricFilter](http://alpha-docs-aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteMetricFilter.html)`
++ `[logs:DeleteMetricFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteMetricFilter.html)`
 
 **Condition context keys for Amazon CloudWatch Logs**
 

@@ -4,7 +4,7 @@ Amazon Athena \(service prefix: athena\) provides the following service\-specifi
 
 **Actions for Amazon Athena**
 
-For information about using the following Athena API actions in an IAM policy, see [Setting User and Amazon S3 Bucket Permissions](http://alpha-docs-aws.amazon.com/athena/latest/ug/access.html) in the *Amazon Athena User Guide*\.
+For information about using the following Athena API actions in an IAM policy, see [Setting User and Amazon S3 Bucket Permissions](http://docs.aws.amazon.com/athena/latest/ug/access.html) in the *Amazon Athena User Guide*\.
 
 + `[athena:GetCatalogs](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetCatalogs.html)`
 

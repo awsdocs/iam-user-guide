@@ -2,7 +2,7 @@
 
 The following resources can help you learn more about web identity federation:
 
-+ [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide* and [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*\.
++ [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide* and [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*\.
 
 + The [Web Identity Federation Playground](https://web-identity-federation-playground.s3.amazonaws.com/index.html) is an interactive website that lets you walk through the process of authenticating via Login with Amazon, Facebook, or Google, , getting temporary security credentials, and then using those credentials to make a request to AWS\. 
 

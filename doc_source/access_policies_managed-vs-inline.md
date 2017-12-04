@@ -11,7 +11,7 @@ When you need to set the permissions for an identity in IAM, you must decide whe
 
 ## AWS Managed Policies<a name="aws-managed-policies"></a>
 
-An *AWS managed policy* is a standalone policy that is created and administered by AWS\. *Standalone policy* means that the policy has its own [Amazon Resource Name \(ARN\)](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. 
+An *AWS managed policy* is a standalone policy that is created and administered by AWS\. *Standalone policy* means that the policy has its own [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. 
 
 AWS managed policies are designed to provide permissions for many common use cases\. For example, there are AWS managed policies that define typical permissions for administrators \(all access\), for power users \(all access except IAM\), and for other various levels of access to AWS services\. AWS managed policies make it easier for you to assign appropriate permissions to users, groups, and roles than if you had to write the policies yourself\. 
 
@@ -21,7 +21,7 @@ You cannot change the permissions defined in AWS managed policies\. AWS will occ
 
 The following diagram illustrates AWS managed policies\. The diagram shows three AWS managed policies: **AdministratorAccess**, ** PowerUserAccess**, and **AWSCloudTrailReadOnlyAccess**\. Notice that a single AWS managed policy can be attached to principal entities in different AWS accounts, and to different principal entities in a single AWS account\. 
 
-![\[Diagram of AWS managed policies\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of AWS managed policies\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of AWS managed policies\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 ## Customer Managed Policies<a name="customer-managed-policies"></a>
 
@@ -29,9 +29,9 @@ You can create standalone policies that you administer in your own AWS account, 
 
 A great way to create a customer managed policy is to start by copying an existing AWS managed policy\. That way you know that the policy is correct at the beginning and all you need to do is customize it to your environment\.
 
-The following diagram illustrates customer managed policies\. Each policy is an entity in IAM with its own [Amazon Resource Name \(ARN\)](http://alpha-docs-aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. Notice that the same policy can be attached to multiple principal entities—for example, the same **DynamoDB\-books\-app** policy is attached to two different IAM roles\.
+The following diagram illustrates customer managed policies\. Each policy is an entity in IAM with its own [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. Notice that the same policy can be attached to multiple principal entities—for example, the same **DynamoDB\-books\-app** policy is attached to two different IAM roles\.
 
-![\[Diagram of customer managed policies\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-customer-managed-policies.diagram.png)
+![\[Diagram of customer managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-customer-managed-policies.diagram.png)
 
 ## Inline Policies<a name="inline-policies"></a>
 
@@ -39,7 +39,7 @@ An inline policy is a policy that's embedded in a principal entity \(a user, gro
 
 The following diagram illustrates inline policies\. Each policy is an inherent part of the user, group, or role\. Notice that two roles include the same policy \(the **DynamoDB\-books\-app** policy\), but they are not sharing a single policy; each role has its own copy of the policy\.
 
-![\[Diagram of inline policies\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of inline policies\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Diagram of inline policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of inline policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 ## Choosing Between Managed Policies and Inline Policies<a name="choosing-managed-or-inline"></a>
 

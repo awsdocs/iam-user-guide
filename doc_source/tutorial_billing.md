@@ -4,10 +4,10 @@ AWS account owners can delegate access to specific IAM users who need to view or
 
 This workflow has four basic steps\. 
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Enable Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
-By default, only the AWS account owner \(AWS account root user\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://alpha-docs-aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+By default, only the AWS account owner \(AWS account root user\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 **[Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)**  
 After enabling billing access on your account, you must still explicitly grant access to billing data to specific IAM users or groups\. You grant this access with a customer managed policy\.
@@ -38,7 +38,7 @@ Sign into your test account and turn on billing access\. For information about h
 
 1. On the navigation bar, choose your account name, and then choose **My Account**\.
 
-1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**, and then select the check box to activate IAM access to the Billing and Cost Management pages\.
+1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**, and then select the check box to activate IAM user and federated user access to the Billing and Cost Management pages\.
 
 1. Sign out of the console, and then proceed to [Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)\.
 
@@ -54,7 +54,7 @@ Next, create custom policies that grant both view and full access permissions to
 
 1. In the navigation pane, choose **Policies**, and then choose **Create policy**\.
 
-1. On the **Visual editor** tab, choose **Choose a service** to get started\. Then choose **AWS Billing**\.
+1. On the **Visual editor** tab, choose **Choose a service** to get started\. Then choose **Billing**\.
 
 1. Follow these steps to create two policies:
 
@@ -152,11 +152,11 @@ The following optional procedure demonstrates how you could alternatively use th
 
 For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
 
-+ [Activate Access to the AWS Website](http://alpha-docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
++ [Activate Access to the AWS Website](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
 
-+ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](http://alpha-docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
++ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
 
-+ [Billing Permissions Descriptions](http://alpha-docs-aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
++ [Billing Permissions Descriptions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
 
 For related information in the *IAM User Guide*, see the following resources:
 

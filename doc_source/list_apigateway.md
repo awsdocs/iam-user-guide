@@ -4,7 +4,7 @@ Manage Amazon API Gateway \(service prefix: apigateway\) provides the following 
 
 **Actions for Manage Amazon API Gateway**
 
-For more information about controlling access to API Gateway, see [User Access Permissions for Amazon API Gateway](http://alpha-docs-aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\.
+For more information about controlling access to API Gateway, see [User Access Permissions for Amazon API Gateway](http://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\.
 
 + `apigateway:HEAD`
 

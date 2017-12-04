@@ -4,7 +4,7 @@ AWS Marketplace \(service prefix: aws\-marketplace\) provides the following serv
 
 **Actions for AWS Marketplace**
 
-For information about using the following MarketPlace Subscription API actions in an IAM policy, see [Permission Details for AWS Marketplace Subscriptions](http://alpha-docs-aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) in the *AWS Marketplace User Guide*\.
+For information about using the following MarketPlace Subscription API actions in an IAM policy, see [Permission Details for AWS Marketplace Subscriptions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) in the *AWS Marketplace User Guide*\.
 
 + `aws-marketplace:BatchMeterUsage`
 

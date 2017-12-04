@@ -3,7 +3,7 @@
 Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *action summary* table includes a list of resources and the associated conditions that apply to the chosen action\. 
 
 ![\[Policy summaries diagram image that illustrates the 3 tables and their
-        relationship\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-action-sum.png)
+        relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-action-sum.png)
 
 To view an action summary for each action that grants permissions, choose the link in the service summary\. The action summary table includes details about the resource, including its **Region** and **Account**\. You can also view the conditions that apply to each resource\. This shows you conditions that apply to some resources but not others\.
 
@@ -63,7 +63,7 @@ If the policy that you select is an inline policy that is attached directly to t
 
 The example below is the action summary for the `PutObject` \(Write\) action from the Amazon S3 service summary \(see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\)\. For this action, the policy defines multiple conditions on a single resource\.
 
-![\[Action summary dialog image\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-dialog.png)
+![\[Action summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-dialog.png)
 
 The action summary page includes the following information:
 

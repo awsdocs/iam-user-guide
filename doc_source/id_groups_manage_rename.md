@@ -14,8 +14,8 @@ To change the name of an IAM group
 
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, click **Groups** and then select the check box next to the group name\. From the **Group Actions** list at the top of the page, select **Edit Group Name**\. Type the new group name and then click **Yes, Edit**\.
 
-+ AWS CLI: [aws iam update\-group](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-group.html) 
++ AWS CLI: [aws iam update\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/update-group.html) 
 
-+ Tools for Windows PowerShell: [Update\-IAMGroup](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMGroup.html&tocid=Update-IAMGroup)
++ Tools for Windows PowerShell: [Update\-IAMGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMGroup.html&tocid=Update-IAMGroup)
 
-+ AWS API: [UpdateGroup](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html) 
++ AWS API: [UpdateGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html) 

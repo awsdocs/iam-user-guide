@@ -26,7 +26,7 @@ This error can also occur if the federated users do not have permissions to assu
 
 This error can also occur if the SAML response does not include a `Subject` containing a `NameID`\.
 
-For more information see [Establish Permissions in AWS for Federated Users](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html#configuring-role) and [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\. To view the SAML response in your browser, follow the steps listed in [How to View a SAML Response in Your Browser for Troubleshooting](troubleshoot_saml_view-saml-response.md)\.
+For more information see [Establish Permissions in AWS for Federated Users](http://docs.aws.amazon.com/STS/latest/UsingSTS/STSMgmtConsole-SAML.html#configuring-role) and [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\. To view the SAML response in your browser, follow the steps listed in [How to View a SAML Response in Your Browser for Troubleshooting](troubleshoot_saml_view-saml-response.md)\.
 
 ## Error: RoleSessionName in AuthnResponse must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} \(Service: AWSSecurityTokenService; Status Code: 400; Error Code: InvalidIdentityToken\)<a name="troubleshoot_saml_invalid-rolesessionname"></a>
 

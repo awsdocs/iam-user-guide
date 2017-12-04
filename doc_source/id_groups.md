@@ -16,4 +16,4 @@ Following are some important characteristics of groups:
 
 The following diagram shows a simple example of a small company\. The company owner creates an `Admins` group for users to create and manage other users as the company grows\. The `Admins` group creates a `Developers` group and a `Test` group\. Each of these groups consists of users \(humans and applications\) that interact with AWS \(Jim, Brad, DevApp1, and so on\)\. Each user has an individual set of security credentials\. In this example, each user belongs to a single group\. However, users can belong to multiple groups\. 
 
-![\[Example of relationship between AWS accounts, users, and groups\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/Relationship_Between_Entities_Example.diagram.png)
+![\[Example of relationship between AWS accounts, users, and groups\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Relationship_Between_Entities_Example.diagram.png)

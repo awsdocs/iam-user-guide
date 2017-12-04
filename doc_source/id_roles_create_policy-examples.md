@@ -40,7 +40,7 @@ The following example shows a policy that can be attached to a role\. The policy
 
 ## Using a Resource\-based Policy to Delegate Access to an Amazon S3 Bucket in Another Account<a name="example-delegate-xaccount-S3"></a>
 
-In this example, account A uses a resource\-based policy \(an Amazon S3 [bucket policy](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingBucketPolicies.html)\) to grant account B full access to account A's S3 bucket\. Then account B creates an IAM user policy to delegate that access to account A's bucket to one of the users in account B\. 
+In this example, account A uses a resource\-based policy \(an Amazon S3 [bucket policy](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucketPolicies.html)\) to grant account B full access to account A's S3 bucket\. Then account B creates an IAM user policy to delegate that access to account A's bucket to one of the users in account B\. 
 
 The S3 bucket policy in account A might look like the following policy\. In this example, account A's S3 bucket is named *mybucket*, and account B's account number is 111122223333\. It does not specify any individual users or groups in account B, only the account itself\.
 
@@ -60,7 +60,7 @@ The S3 bucket policy in account A might look like the following policy\. In this
 }
 ```
 
-Alternatively, account A can use Amazon S3 [Access Control Lists \(ACLs\)](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) to grant account B access to an S3 bucket or a single object within a bucket\. In that case, the only thing that changes is how account A grants access to account B\. Account B still uses a policy to delegate access to an IAM group in account B, as described in the next part of this example\. For more information about controlling access on S3 buckets and objects, go to [Access Control](http://alpha-docs-aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+Alternatively, account A can use Amazon S3 [Access Control Lists \(ACLs\)](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) to grant account B access to an S3 bucket or a single object within a bucket\. In that case, the only thing that changes is how account A grants access to account B\. Account B still uses a policy to delegate access to an IAM group in account B, as described in the next part of this example\. For more information about controlling access on S3 buckets and objects, go to [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 The following policy sample completes the example above and shows the IAM group \(or user\) policy that the administrator of account B might create to delegate read access to a group or user in account B\. Even though the policy above grants access to account B, individual groups and users in account B cannot access the resource until a group or user policy explicitly grants permissions to the resource\. The permissions in this policy can only be a subset of those in the cross\-account policy above\. Account B cannot grant more permissions to its groups and users than account A granted to account B in the first policy\. In this policy, the `Action` element is explicitly defined to allow only `List` actions, and the `Resource` element of this policy matches the `Resource` for the bucket policy implemented by account A\.
 

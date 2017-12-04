@@ -3,7 +3,7 @@
 Entities and objects in IAM have size limitations\. IAM limits how you name an entity, the number of entities you can create, and the number of characters you can use in an entity\. 
 
 **Note**  
-To get account\-level information about entity usage and quotas, use the [GetAccountSummary](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API action or the [get\-account\-summary](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
+To get account\-level information about entity usage and quotas, use the [GetAccountSummary](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API action or the [get\-account\-summary](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
 
 ## IAM Entity Name Limits<a name="reference_iam-limits-names"></a>
 
@@ -79,11 +79,11 @@ The following are the maximum lengths for entities:
 | Group name | 128 characters | 
 | Role name | 64 characters If you intend to use a role with the Switch Role feature in the AWS console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
 | Instance profile name | 128 characters | 
-|  Unique IDs created by IAM, for example: [\[See the AWS documentation website for more details\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 128 characters | 
+|  Unique IDs created by IAM, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 128 characters | 
 | Policy name | 128 characters | 
 | Password for a login profile | 1 to 128 characters | 
 | Alias for an AWS account ID | 3 to 63 characters | 
 | Role trust policy JSON text \(the policy that determines who is allowed to assume the role\) | 2,048 characters | 
 | Role session name | 64 characters | 
-| For inline policies | You can add as many inline policies as you want to an IAM user, role, or group, but the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count whitespace when calculating the size of a policy against these limitations\.  | 
-| For managed policies | [\[See the AWS documentation website for more details\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) IAM does not count whitespace when calculating the size of a policy against this limitation\.  | 
+| For inline policies | You can add as many inline policies as you want to an IAM user, role, or group, but the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count whitespace when calculating the size of a policy against these limitations\.  | 
+| For managed policies | [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) IAM does not count whitespace when calculating the size of a policy against this limitation\.  | 

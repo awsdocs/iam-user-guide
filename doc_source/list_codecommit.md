@@ -4,49 +4,49 @@ AWS CodeCommit \(service prefix: codecommit\) provides the following service\-sp
 
 **Actions for AWS CodeCommit**
 
-For information about using the following AWS CodeCommit actions in an IAM policy, see [Access Permissions Reference](http://alpha-docs-aws.amazon.com/codecommit/latest/userguide/access-permissions.html) in the *[AWS CodeCommit User Guide](http://alpha-docs-aws.amazon.com/codecommit/latest/userguide/)*\.
+For information about using the following AWS CodeCommit actions in an IAM policy, see [Access Permissions Reference](http://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html) in the *[AWS CodeCommit User Guide](http://docs.aws.amazon.com/codecommit/latest/userguide/)*\.
 
-+ `[codecommit:GetBranch](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_GetBranch.html)`
++ `[codecommit:GetBranch](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetBranch.html)`
 
 + `codecommit:GetObjectIdentifier` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[codecommit:GetCommit](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_GetCommit.html)`
++ `[codecommit:GetCommit](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetCommit.html)`
 
-+ `[codecommit:GetBlob](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_GetBlob.html)`
++ `[codecommit:GetBlob](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetBlob.html)`
 
-+ `[codecommit:PutRepositoryTriggers](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_PutRepositoryTriggers.html)`
++ `[codecommit:PutRepositoryTriggers](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_PutRepositoryTriggers.html)`
 
-+ `[codecommit:GetRepository](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html)`
++ `[codecommit:GetRepository](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepository.html)`
 
 + `codecommit:GitPull` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[codecommit:GetRepositoryTriggers](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_GetRepositoryTriggers.html)`
++ `[codecommit:GetRepositoryTriggers](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetRepositoryTriggers.html)`
 
 + `codecommit:GetTree` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[codecommit:TestRepositoryTriggers](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_TestRepositoryTriggers.html)`
++ `[codecommit:TestRepositoryTriggers](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_TestRepositoryTriggers.html)`
 
-+ `[codecommit:ListBranches](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_ListBranches.html)`
++ `[codecommit:ListBranches](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListBranches.html)`
 
-+ `[codecommit:UpdateDefaultBranch](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_UpdateDefaultBranch.html)`
++ `[codecommit:UpdateDefaultBranch](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateDefaultBranch.html)`
 
-+ `[codecommit:CreateBranch](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_CreateBranch.html)`
++ `[codecommit:CreateBranch](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateBranch.html)`
 
-+ `[codecommit:DeleteRepository](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_DeleteRepository.html)`
++ `[codecommit:DeleteRepository](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteRepository.html)`
 
-+ `[codecommit:GetReferences](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_GetReferences.html)`
++ `[codecommit:GetReferences](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_GetReferences.html)`
 
-+ `[codecommit:ListRepositories](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_ListRepositories.html)`
++ `[codecommit:ListRepositories](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_ListRepositories.html)`
 
-+ `[codecommit:UpdateRepositoryDescription](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryDescription.html)`
++ `[codecommit:UpdateRepositoryDescription](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryDescription.html)`
 
-+ `[codecommit:UpdateRepositoryName](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryName.html)`
++ `[codecommit:UpdateRepositoryName](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_UpdateRepositoryName.html)`
 
-+ `[codecommit:DeleteBranch](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_DeleteBranch.html)`
++ `[codecommit:DeleteBranch](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_DeleteBranch.html)`
 
-+ `[codecommit:CreateRepository](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_CreateRepository.html)`
++ `[codecommit:CreateRepository](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_CreateRepository.html)`
 
-+ `[codecommit:BatchGetRepositories](http://alpha-docs-aws.amazon.com/codecommit/latest/APIReference/API_BatchGetRepositories.html)`
++ `[codecommit:BatchGetRepositories](http://docs.aws.amazon.com/codecommit/latest/APIReference/API_BatchGetRepositories.html)`
 
 + `codecommit:GitPush` \- this is an IAM policy permission only, not an API action that can be called\.
 

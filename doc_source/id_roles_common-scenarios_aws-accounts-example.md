@@ -2,7 +2,7 @@
 
 Imagine that your organization has multiple AWS accounts to isolate a development environment from a production environment\. Users in the development account might occasionally need to access resources in the production account, such as when you are promoting an update from the development environment to the production environment\. Although you could create separate identities \(and passwords\) for users who work in both accounts, managing credentials for multiple accounts makes identity management difficult\. In the following figure, all users are managed in the development account, but some developers require limited access to the production account\. The development account has two groups: Testers and Developers, and each group has its own policy\.
 
-![\[Use a role to delegate permissions to a user in a different account\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/roles-usingroletodelegate.png)
+![\[Use a role to delegate permissions to a user in a different account\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/roles-usingroletodelegate.png)
 
 1. In the production account an administrator uses IAM to create the `UpdateAPP` role in that account\. In the role, the administrator defines a trust policy that specifies the development account as a `Principal`, meaning that authorized users from the development account can use the `UpdateAPP` role\. The administrator also defines a permissions policy for the role that specifies that users of the role have read and write permissions to the Amazon Simple Storage Service \(S3\) bucket named `productionapp`\.
 
@@ -20,9 +20,9 @@ The administrator can optionally configure the role so that users who assume the
 
 1. AWS STS returns temporary credentials:
 
-   + AWS console: AWS STS verifies the request with the role's trust policy to ensure that the request is from a trusted entity \(which it is: the development account\)\. After verification, AWS STS returns [temporary security credentials](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/Welcome.html) to the AWS console\.
+   + AWS console: AWS STS verifies the request with the role's trust policy to ensure that the request is from a trusted entity \(which it is: the development account\)\. After verification, AWS STS returns [temporary security credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html) to the AWS console\.
 
-   + API/CLI: AWS STS verifies the request against the role's trust policy to ensure that the request is from a trusted entity \(which it is: the Development account\)\. After verification, AWS STS returns [temporary security credentials](http://alpha-docs-aws.amazon.com/STS/latest/UsingSTS/Welcome.html) to the application\.
+   + API/CLI: AWS STS verifies the request against the role's trust policy to ensure that the request is from a trusted entity \(which it is: the Development account\)\. After verification, AWS STS returns [temporary security credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html) to the application\.
 
 1. The temporary credentials allow access to the AWS resource:
 

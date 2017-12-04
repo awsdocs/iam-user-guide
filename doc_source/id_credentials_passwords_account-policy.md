@@ -100,24 +100,24 @@ To manage an account password policy from the AWS CLI, Tools for Windows PowerSh
 
 **To create or change a password policy**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccountPasswordPolicy.html&tocid=Update-IAMAccountPasswordPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccountPasswordPolicy.html&tocid=Update-IAMAccountPasswordPolicy)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccountPasswordPolicy.html&tocid=Update-IAMAccountPasswordPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccountPasswordPolicy.html&tocid=Update-IAMAccountPasswordPolicy)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
 
 **To retrieve the password policy**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html) 
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html) 
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccountPasswordPolicy.html&tocid=Get-IAMAccountPasswordPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccountPasswordPolicy.html&tocid=Get-IAMAccountPasswordPolicy)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccountPasswordPolicy.html&tocid=Get-IAMAccountPasswordPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccountPasswordPolicy.html&tocid=Get-IAMAccountPasswordPolicy)
 
-+ AWS API: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
++ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
 
 **To delete a password policy**
 
-+ AWS CLI: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html) 
++ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html) 
 
-+ Tools for Windows PowerShell: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccountPasswordPolicy.html&tocid=Remove-IAMAccountPasswordPolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccountPasswordPolicy.html&tocid=Remove-IAMAccountPasswordPolicy)
++ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccountPasswordPolicy.html&tocid=Remove-IAMAccountPasswordPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccountPasswordPolicy.html&tocid=Remove-IAMAccountPasswordPolicy)
 
-+ AWS APII: [`DeleteAccountPasswordPolicy` ](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 
++ AWS APII: [`DeleteAccountPasswordPolicy` ](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 

@@ -30,7 +30,7 @@ To support these scenarios, you can use the following modifiers to a condition o
 
 + `ForAllValues` – The condition returns true if there's a match between every one of the specified key values in the request and at least one value in the policy\. 
 
-For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](http://alpha-docs-aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 
+For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 
 
 ## Examples of Condition Set Operators<a name="reference_policies_multi-value-conditions-examples"></a>
 

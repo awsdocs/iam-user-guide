@@ -4,11 +4,11 @@ Amazon Mobile Analytics \(service prefix: mobileanalytics\) provides the followi
 
 **Actions for Amazon Mobile Analytics**
 
-+ `[mobileanalytics:PutEvents](http://alpha-docs-aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)`
++ `[mobileanalytics:PutEvents](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)`
 
-+ `[mobileanalytics:GetReports](http://alpha-docs-aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
++ `[mobileanalytics:GetReports](http://docs.aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
 
-+ `[mobileanalytics:GetFinancialReports](http://alpha-docs-aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
++ `[mobileanalytics:GetFinancialReports](http://docs.aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
 
 **Condition context keys for Amazon Mobile Analytics**
 

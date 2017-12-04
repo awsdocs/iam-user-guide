@@ -4,69 +4,69 @@ Amazon Pinpoint \(service prefix: mobiletargeting\) provides the following servi
 
 **Actions for Amazon Pinpoint**
 
-For information about using the following Amazon Pinpoint API actions in an IAM policy, see [Permissions](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions.html) in the *Amazon Pinpoint Developer Guide*\.
+For information about using the following Amazon Pinpoint API actions in an IAM policy, see [Permissions](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions.html) in the *Amazon Pinpoint Developer Guide*\.
 
-+ `[mobiletargeting:GetSegments](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetSegments](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateApplicationSettings](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateApplicationSettings](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetImportJob](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetImportJob](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetCampaign](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetCampaign](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:CreateImportJob](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:CreateImportJob](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetGcmChannel](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:DeleteApnsChannel](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:DeleteApnsChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateSegment](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateSegment](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateGcmChannel](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateCampaign](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateCampaign](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetCampaignVersions](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetCampaignVersions](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:DeleteGcmChannel](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:DeleteGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetCampaignVersion](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetCampaignVersion](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetSegmentVersion](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetSegmentVersion](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:CreateSegment](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:CreateSegment](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetSegment](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetSegment](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetApnsChannel](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetApnsChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetEndpoint](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetEndpoint](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:CreateCampaign](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:CreateCampaign](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetCampaigns](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetCampaigns](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetCampaignActivities](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetCampaignActivities](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:DeleteSegment](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:DeleteSegment](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:DeleteCampaign](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:DeleteCampaign](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetReports](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetReports](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetSegmentImportJobs](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetSegmentImportJobs](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateEndpoint](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateEndpoint](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateApnsChannel](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateApnsChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetImportJobs](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetImportJobs](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetApplicationSettings](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetApplicationSettings](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetSegmentVersions](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:GetSegmentVersions](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:UpdateEndpointsBatch](http://alpha-docs-aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
++ `[mobiletargeting:UpdateEndpointsBatch](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
 **Condition context keys for Amazon Pinpoint**
 

@@ -98,7 +98,7 @@ In other cases, the service might support creating a service\-linked role manual
 If the service does not support creating the role, then you can use IAM to create the service\-linked role\.
 
 **Important**  
-Service\-linked roles count toward your [IAM roles in an AWS account](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entities) limit, but if you have reached your limit, you can still create service\-linked roles in your account\. Only service\-linked roles can exceed the limit\.
+Service\-linked roles count toward your [IAM roles in an AWS account](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entities) limit, but if you have reached your limit, you can still create service\-linked roles in your account\. Only service\-linked roles can exceed the limit\.
 
 ### Creating a Service\-Linked Role \(IAM Console\)<a name="create-service-linked-role-iam-console"></a>
 
@@ -145,7 +145,7 @@ Before creating a service\-linked role in IAM, find out whether the linked servi
 Use the following command:
 
 ```
-$ aws iam [create\-service\-linked\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME-URL.amazonaws.com
+$ aws iam [create\-service\-linked\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME-URL.amazonaws.com
 ```
 
 ### Creating a Service\-Linked Role \(IAM API\)<a name="create-service-linked-role-iam-api"></a>
@@ -154,7 +154,7 @@ Before creating a service\-linked role in IAM, find out whether the linked servi
 
 **To create a service\-linked role \(API\)**
 
-Use the [CreateServiceLinkedRole](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateServiceLinkedRole.html) API call\. In the request, specify a service name of `SERVICE_NAME_URL.amazonaws.com`\. 
+Use the [CreateServiceLinkedRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceLinkedRole.html) API call\. In the request, specify a service name of `SERVICE_NAME_URL.amazonaws.com`\. 
 
 For example, to create the **Lex Bots** service\-linked role, use `lex.amazonaws.com`\.
 
@@ -187,7 +187,7 @@ You can use IAM commands from the AWS Command Line Interface to edit the descrip
 1. \(Optional\) To view the current description for a role, use the following commands:
 
    ```
-   $ aws iam [get\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name ROLE-NAME
+   $ aws iam [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name ROLE-NAME
    ```
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
@@ -195,7 +195,7 @@ You can use IAM commands from the AWS Command Line Interface to edit the descrip
 1. To update a service\-linked role's description, use the following command:
 
    ```
-   $ aws iam [update\-role\-description](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/update-role-description.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
+   $ aws iam [update\-role\-description](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role-description.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
    ```
 
 ### Editing a Service\-Linked Role Description \(IAM API\)<a name="edit-service-linked-role-iam-api"></a>
@@ -206,11 +206,11 @@ You can use the IAM API to edit the description of a service\-linked role\.
 
 1. \(Optional\) To view the current description for a role, use the following command, and specify the name of the role:
 
-   IAM API: [GetRole](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+   IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 
 1. To update a role's description, use the following command, and specify the name \(and optional description\) of the role: 
 
-   IAM API: [UpdateRoleDescription](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html) 
+   IAM API: [UpdateRoleDescription](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html) 
 
 ## Deleting a Service\-Linked Role<a name="delete-service-linked-role"></a>
 
@@ -275,7 +275,7 @@ You can use IAM commands from the AWS Command Line Interface to delete a service
 1. If you don't know the name of the service\-linked role that you want to delete, type the following command to list the roles and their Amazon Resource Names \(ARNs\) in your account:
 
    ```
-   $ aws iam [get\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
+   $ aws iam [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
    ```
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
@@ -283,13 +283,13 @@ You can use IAM commands from the AWS Command Line Interface to delete a service
 1. Because a service\-linked role cannot be deleted if it is being used or has associated resources, you must submit a deletion request\. That request can be denied if these conditions are not met\. You must capture the `deletion-task-id` from the response to check the status of the deletion task\. Type the following command to submit a service\-linked role deletion request:
 
    ```
-   $ aws iam [delete\-service\-linked\-role](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/delete-service-linked-role.html) --role-name role-name
+   $ aws iam [delete\-service\-linked\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-service-linked-role.html) --role-name role-name
    ```
 
 1. Type the following command to check the status of the deletion task:
 
    ```
-   $ aws iam [get\-service\-linked\-role\-deletion\-status](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/get-service-linked-role-deletion-status.html) --deletion-task-id deletion-task-id
+   $ aws iam [get\-service\-linked\-role\-deletion\-status](http://docs.aws.amazon.com/cli/latest/reference/iam/get-service-linked-role-deletion-status.html) --deletion-task-id deletion-task-id
    ```
 
    The status of the deletion task can be `NOT_STARTED`, `IN_PROGRESS`, `SUCCEEDED`, or `FAILED`\. If the deletion fails, the call returns the reason that it failed so that you can troubleshoot\. If the deletion fails because the role is using the service's resources, then the notification includes a list of resources, if the service returns that information\. You can then clean up the resources and submit the deletion again\.
@@ -302,11 +302,11 @@ You can use the IAM API to delete a service\-linked role\.
 
 **To delete a service\-linked role \(API\)**
 
-1. To submit a deletion request for a service\-linked roll, call [DeleteServiceLinkedRole](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html)\. In the request, specify a role name\.
+1. To submit a deletion request for a service\-linked roll, call [DeleteServiceLinkedRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html)\. In the request, specify a role name\.
 
    Because a service\-linked role cannot be deleted if it is being used or has associated resources, you must submit a deletion request\. That request can be denied if these conditions are not met\. You must capture the `DeletionTaskId` from the response to check the status of the deletion task\.
 
-1. To check the status of the deletion, call [GetServiceLinkedRoleDeletionStatus](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html)\. In the request, specify the `DeletionTaskId`\.
+1. To check the status of the deletion, call [GetServiceLinkedRoleDeletionStatus](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLinkedRoleDeletionStatus.html)\. In the request, specify the `DeletionTaskId`\.
 
    The status of the deletion task can be `NOT_STARTED`, `IN_PROGRESS`, `SUCCEEDED`, or `FAILED`\. If the deletion fails, the call returns the reason that it failed so that you can troubleshoot\. If the deletion fails because the role is using the service's resources, then the notification includes a list of resources, if the service returns that information\. You can then clean up the resources and submit the deletion again\.
 **Note**  

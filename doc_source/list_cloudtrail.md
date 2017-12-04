@@ -4,35 +4,35 @@ AWS CloudTrail \(service prefix: cloudtrail\) provides the following service\-sp
 
 **Actions for AWS CloudTrail**
 
-For more information about using the following CloudTrail API actions in an IAM policy, see [Granting Permissions for CloudTrail Actions](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/userguide/controlling_access_granting_permissions.html) in the AWS CloudTrail User Guide\.
+For more information about using the following CloudTrail API actions in an IAM policy, see [Granting Permissions for CloudTrail Actions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/controlling_access_granting_permissions.html) in the AWS CloudTrail User Guide\.
 
-+ `[cloudtrail:StopLogging](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html)`
++ `[cloudtrail:StopLogging](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html)`
 
-+ `[cloudtrail:UpdateTrail](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html)`
++ `[cloudtrail:UpdateTrail](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html)`
 
-+ `[cloudtrail:CreateTrail](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html)`
++ `[cloudtrail:CreateTrail](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html)`
 
-+ `[cloudtrail:DescribeTrails](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html)`
++ `[cloudtrail:DescribeTrails](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html)`
 
-+ `[cloudtrail:PutEventSelectors](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventSelectors.html)`
++ `[cloudtrail:PutEventSelectors](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_PutEventSelectors.html)`
 
-+ `[cloudtrail:GetTrailStatus](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html)`
++ `[cloudtrail:GetTrailStatus](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html)`
 
-+ `[cloudtrail:ListPublicKeys](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html)`
++ `[cloudtrail:ListPublicKeys](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html)`
 
-+ `[cloudtrail:RemoveTags](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html)`
++ `[cloudtrail:RemoveTags](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html)`
 
-+ `[cloudtrail:StartLogging](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html)`
++ `[cloudtrail:StartLogging](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html)`
 
-+ `[cloudtrail:DeleteTrail](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html)`
++ `[cloudtrail:DeleteTrail](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html)`
 
-+ `[cloudtrail:ListTags](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html)`
++ `[cloudtrail:ListTags](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html)`
 
-+ `[cloudtrail:AddTags](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html)`
++ `[cloudtrail:AddTags](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html)`
 
-+ `[cloudtrail:LookupEvents](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html)`
++ `[cloudtrail:LookupEvents](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html)`
 
-+ `[cloudtrail:GetEventSelectors](http://alpha-docs-aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventSelectors.html)`
++ `[cloudtrail:GetEventSelectors](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetEventSelectors.html)`
 
 **Condition context keys for AWS CloudTrail**
 

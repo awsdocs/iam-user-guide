@@ -4,41 +4,41 @@ Amazon Elastic Transcoder \(service prefix: elastictranscoder\) provides the fol
 
 **Actions for Amazon Elastic Transcoder**
 
-For information about using the following Elastic Transcoder API actions in an IAM policy, see [List of Elastic Transcoder Operations with Controllable Access](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/security.html#operations-list) in the *Amazon Elastic Transcoder Developer Guide*\.
+For information about using the following Elastic Transcoder API actions in an IAM policy, see [List of Elastic Transcoder Operations with Controllable Access](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/security.html#operations-list) in the *Amazon Elastic Transcoder Developer Guide*\.
 
-+ `[elastictranscoder:ListJobsByStatus](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html)`
++ `[elastictranscoder:ListJobsByStatus](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-status.html)`
 
-+ `[elastictranscoder:ListJobsByPipeline](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html)`
++ `[elastictranscoder:ListJobsByPipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-jobs-by-pipeline.html)`
 
-+ `[elastictranscoder:ReadPipeline](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html)`
++ `[elastictranscoder:ReadPipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html)`
 
-+ `[elastictranscoder:ListPipelines](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html)`
++ `[elastictranscoder:ListPipelines](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html)`
 
-+ `[elastictranscoder:CreatePipeline](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html)`
++ `[elastictranscoder:CreatePipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html)`
 
-+ `[elastictranscoder:CreatePreset](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html)`
++ `[elastictranscoder:CreatePreset](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html)`
 
-+ `[elastictranscoder:UpdatePipelineNotifications](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html)`
++ `[elastictranscoder:UpdatePipelineNotifications](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-notifications.html)`
 
-+ `[elastictranscoder:ReadPreset](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html)`
++ `[elastictranscoder:ReadPreset](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-preset.html)`
 
-+ `[elastictranscoder:DeletePipeline](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html)`
++ `[elastictranscoder:DeletePipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html)`
 
-+ `[elastictranscoder:DeletePreset](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html)`
++ `[elastictranscoder:DeletePreset](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html)`
 
-+ `[elastictranscoder:TestRole](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html)`
++ `[elastictranscoder:TestRole](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html)`
 
-+ `[elastictranscoder:ReadJob](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html)`
++ `[elastictranscoder:ReadJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html)`
 
-+ `[elastictranscoder:CancelJob](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html)`
++ `[elastictranscoder:CancelJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html)`
 
-+ `[elastictranscoder:ListPresets](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html)`
++ `[elastictranscoder:ListPresets](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html)`
 
-+ `[elastictranscoder:UpdatePipeline](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html)`
++ `[elastictranscoder:UpdatePipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html)`
 
-+ `[elastictranscoder:UpdatePipelineStatus](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html)`
++ `[elastictranscoder:UpdatePipelineStatus](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html)`
 
-+ `[elastictranscoder:CreateJob](http://alpha-docs-aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html)`
++ `[elastictranscoder:CreateJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html)`
 
 **Condition context keys for Amazon Elastic Transcoder**
 

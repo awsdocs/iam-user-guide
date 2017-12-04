@@ -69,7 +69,7 @@ Before you can create a role for web identity federation, you must first complet
 
    Notice that the values for the principal in the role are specific to an IdP\. A role can specify only one principal\. Therefore, if the mobile app allows users to sign in from more than one IdP, you must create a role for each IdP that you want to support\. 
 **Note**  
-Because the policy for the trusted entity uses [policy variables](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html) that represent the IdP and the app ID, you must set the policy's `Version` element to `2012-10-17` or a later supported version\.
+Because the policy for the trusted entity uses [policy variables](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html) that represent the IdP and the app ID, you must set the policy's `Version` element to `2012-10-17` or a later supported version\.
 
    The following example shows a trust policy for a role designed for a mobile app if the user signs in from Login with Amazon\. In the example, *amzn1\.application\-oa2\-123456* represents the app ID that Amazon assigned when you configured the app using Login with Amazon\.
 
@@ -151,7 +151,7 @@ You must create a separate role for each identity provider that you want to supp
 
    + Select **Amazon Cognito** if you're creating a role for Amazon Cognito\. 
 **Note**  
-You only need to manually create a role for use with Amazon Cognito when you are working on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you for standard scenarios\. For more information about Amazon Cognito, see [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
+You only need to manually create a role for use with Amazon Cognito when you are working on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you for standard scenarios\. For more information about Amazon Cognito, see [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
 
 1. Type the identifier for your application\. The name identifier setting changes depending on which provider you select:
 

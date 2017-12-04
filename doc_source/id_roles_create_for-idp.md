@@ -23,17 +23,17 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 **To create a role using the AWS CLI**  
 Use the following commands:
 
-+ To create a role: [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-role.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/create-role.html)
++ To create a role: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
 
 + To attach a permission policy to the role:
 
-  [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html) to attach an existing managed policy
+  [http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html) to attach an existing managed policy
 
    or
 
-  [http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-role-policy.html](http://alpha-docs-aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) to create an inline policy
+  [http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) to create an inline policy
 
-The following example shows all the steps in a simple environment\. The example assumes that you are running the AWS CLI on a computer running Windows, and have already configured the AWS CLI with your credentials\. For more information, see [Configuring the AWS Command Line Interface](http://alpha-docs-aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
+The following example shows all the steps in a simple environment\. The example assumes that you are running the AWS CLI on a computer running Windows, and have already configured the AWS CLI with your credentials\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
 The commands to run are the following:
 
@@ -58,17 +58,17 @@ Creating a role using the Tools for Windows PowerShell involves multiple steps\.
 **To create a role using the Tools for Windows PowerShell**  
 Use the following commands:
 
-+ To create a role: [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMRole.html&tocid=New-IAMRole](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMRole.html&tocid=New-IAMRole)
++ To create a role: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMRole.html&tocid=New-IAMRole](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMRole.html&tocid=New-IAMRole)
 
 + To attach a permission policy to the role:
 
-  [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMRolePolicy.html&tocid=Register-IAMRolePolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMRolePolicy.html&tocid=Register-IAMRolePolicy) to attach an existing managed policy
+  [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMRolePolicy.html&tocid=Register-IAMRolePolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMRolePolicy.html&tocid=Register-IAMRolePolicy) to attach an existing managed policy
 
    \-or\-
 
-  [http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy](http://alpha-docs-aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy) to create an inline policy
+  [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy) to create an inline policy
 
-The following example shows all of the steps in a simple environment\. The example assumes that you have already configured the Tools for Windows PowerShell with your credentials\. For more information, see [Using AWS Credentials](http://alpha-docs-aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html)\.
+The following example shows all of the steps in a simple environment\. The example assumes that you have already configured the Tools for Windows PowerShell with your credentials\. For more information, see [Using AWS Credentials](http://docs.aws.amazon.com/powershell/latest/userguide/specifying-your-aws-credentials.html)\.
 
 The commands to run are the following:
 
@@ -91,12 +91,12 @@ Before you create the role, you must follow the steps in the Prerequisites secti
 **To create a role for identity federation using the IAM API**  
 Use the following commands:
 
-+ To create a role: [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
++ To create a role: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
 
 + To attach a permission policy to the role:
 
-  [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html) to attach an existing managed policy
+  [http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html) to attach an existing managed policy
 
    or
 
-  [http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html) to create an inline policy
+  [http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html) to create an inline policy

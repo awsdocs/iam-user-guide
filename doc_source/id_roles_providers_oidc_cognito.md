@@ -8,7 +8,7 @@ In the app's code, Adele calls the sign\-in interface for the IdP that she confi
 
 The following figure shows a simplified flow for how this might work, using Login with Amazon as the IdP\. For Step 2, the app can also use Facebook, Google, or any OIDC\-compatible identity provider, but that's not shown here\.
 
-![\[Sample workflow using Amazon Cognito to federate users for a mobile application\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/mobile-app-web-identity-federation.diagram.png)
+![\[Sample workflow using Amazon Cognito to federate users for a mobile application\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/mobile-app-web-identity-federation.diagram.png)
 
 1. A customer starts your app on a mobile device\. The app asks the user to sign in\.
 
@@ -34,6 +34,6 @@ Use the following process to configure your app to use Amazon Cognito to authent
 
 For more information, see the following:
 
-+ [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
++ [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
 
-+ [Amazon Cognito Identity](http://alpha-docs-aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*\.
++ [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*\.

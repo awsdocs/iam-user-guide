@@ -2,7 +2,7 @@
 
 AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a principal makes a request in AWS, the IAM service checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access by creating policies and attaching them to IAM identities or AWS resources\. Those policies specify the permissions that are allowed or denied\. For details about the rest of the authentication and authorization process, see [Understanding How IAM Works](intro-structure.md)\.
 
-![\[AccessManagement_Diagram\]](http://alpha-docs-aws.amazon.com/IAM/latest/UserGuide/images/access-diagram_800.png)
+![\[AccessManagement_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/access-diagram_800.png)
 
 During authorization, IAM uses values from the request context to check for matching policies and determine whether to allow or deny the request\. 
 

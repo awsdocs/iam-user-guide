@@ -1,6 +1,6 @@
 # Granting Permissions to Create Temporary Security Credentials<a name="id_credentials_temp_control-access_enable-create"></a>
 
-By default, IAM users do not have permission to create temporary security credentials for federated users and roles\. However, by default IAM users can call [http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html](http://alpha-docs-aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) with their own permissions and thereby create temporary credentials for others\.\.
+By default, IAM users do not have permission to create temporary security credentials for federated users and roles\. However, by default IAM users can call [http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) with their own permissions and thereby create temporary credentials for others\.\.
 
 **Note**  
 Although you can grant permissions directly to a user, we strongly recommend that you grant permissions to a group\. This makes management of the permissions much easier\. When someone no longer needs to perform the tasks associated with the permissions, you simply remove them from the group\. If someone else needs to perform that task, add them to the group to grant the permissions\.
