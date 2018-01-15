@@ -8,9 +8,9 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 
 + `[elasticache:DeleteCacheParameterGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheParameterGroup.html)`
 
-+ `[elasticache:CreateCacheCluster](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html)`
-
 + `[elasticache:ModifyReplicationGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroup.html)`
+
++ `[elasticache:CreateCacheCluster](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html)`
 
 + `[elasticache:DescribeReservedCacheNodes](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodes.html)`
 
@@ -44,11 +44,11 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 
 + `[elasticache:DeleteCacheSecurityGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSecurityGroup.html)`
 
-+ `[elasticache:ModifyCacheCluster](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html)`
-
 + `[elasticache:DescribeReservedCacheNodesOfferings](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodesOfferings.html)`
 
 + `[elasticache:PurchaseReservedCacheNodesOffering](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_PurchaseReservedCacheNodesOffering.html)`
+
++ `[elasticache:ModifyCacheCluster](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html)`
 
 + `[elasticache:CreateCacheParameterGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheParameterGroup.html)`
 
@@ -56,15 +56,15 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 
 + `[elasticache:CreateCacheSubnetGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html)`
 
-+ `[elasticache:CreateReplicationGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html)`
-
 + `[elasticache:RemoveTagsFromResource](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RemoveTagsFromResource.html)`
+
++ `[elasticache:CreateReplicationGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html)`
 
 + `[elasticache:DescribeEvents](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html)`
 
-+ `[elasticache:DeleteCacheCluster](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheCluster.html)`
-
 + `[elasticache:DescribeEngineDefaultParameters](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEngineDefaultParameters.html)`
+
++ `[elasticache:DeleteCacheCluster](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheCluster.html)`
 
 + `[elasticache:AuthorizeCacheSecurityGroupIngress](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html)`
 
@@ -78,9 +78,9 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 
 + `[elasticache:ModifyCacheParameterGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html)`
 
-+ `[elasticache:ModifyCacheSubnetGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheSubnetGroup.html)`
-
 + `[elasticache:ListTagsForResource](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListTagsForResource.html)`
+
++ `[elasticache:ModifyCacheSubnetGroup](http://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheSubnetGroup.html)`
 
 **Condition context keys for Amazon ElastiCache**
 

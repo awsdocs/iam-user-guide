@@ -2,16 +2,16 @@
 
 An instance profile is a container for an IAM role that you can use to pass role information to an EC2 instance when the instance starts\.
 
-## Managing Instance Profiles using the AWS Management Console<a name="w3ab1c19c23c22c24c21b5"></a>
+## Managing Instance Profiles using the AWS Management Console<a name="instance-profiles-manage-console"></a>
 
 If you use the AWS Management Console to create a role for Amazon EC2, the console automatically creates an instance profile and gives it the same name as the role\. When you then use the Amazon EC2 console to launch an instance with an IAM role, you can select a role to associate with the instance\. In the console, the list that's displayed is actually a list of instance profile names\. The console does not create an instance profile for a role that is not associated with Amazon EC2\.
 
-## Managing Instance Profiles using the AWS CLI, Tools for Windows PowerShell, and AWS API<a name="w3ab1c19c23c22c24c21b7"></a>
+## Managing Instance Profiles using the AWS CLI, Tools for Windows PowerShell, and AWS API<a name="instance-profiles-manage-cli-api"></a>
 
 If you manage your roles from the AWS CLI, Tools for Windows PowerShell, or the AWS API, you create roles and instance profiles as separate actions\. You can give the roles and instance profiles different names, so you have to know the names of your instance profiles as well as the names of roles they contain so that you can choose the correct instance profile when you launch an EC2 instance\. 
 
 **Note**  
-An instance profile can contain only one IAM role, although a role can be included in multiple instance profiles\. This limit of one role per instance cannot be increased\.
+An instance profile can contain only one IAM role, although a role can be included in multiple instance profiles\. This limit of one role per instance cannot be increased\. You can remove the existing role and then add a different role to an instance profile\. You must then wait for the change to appear across all of AWS because of [eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency)\. To force the change, you must [disassociate the instance profile](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html) and then [associate the instance profile](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html), or you can stop your instance and then restart it\. 
 
 You can use the following commands to work with instance profiles in an AWS account\.
 

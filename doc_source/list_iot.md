@@ -56,9 +56,9 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:ListThings](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThings.html)`
 
-+ `[iot:AcceptCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html)`
-
 + `[iot:ListCertificates](http://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificates.html)`
+
++ `[iot:AcceptCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html)`
 
 + `[iot:CreateThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingType.html)`
 
@@ -68,11 +68,11 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:ListThingTypes](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThingTypes.html)`
 
-+ `[iot:DeletePolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html)`
++ `[iot:EnableTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_EnableTopicRule.html)`
 
 + `[iot:AttachThingPrincipal](http://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html)`
 
-+ `[iot:EnableTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_EnableTopicRule.html)`
++ `[iot:DeletePolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html)`
 
 + `[iot:DeleteCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCACertificate.html)`
 
@@ -80,21 +80,21 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:DeprecateThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_DeprecateThingType.html)`
 
-+ `[iot:RejectCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_RejectCertificateTransfer.html)`
-
 + `[iot:ListPolicies](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicies.html)`
 
++ `[iot:RejectCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_RejectCertificateTransfer.html)`
+
 + `[iot:RegisterCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html)`
+
++ `[iot:ListThingPrincipals](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipals.html)`
 
 + `[iot:ListPolicyPrincipals](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyPrincipals.html)`
 
 + `[iot:CreateCertificateFromCsr](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)`
 
-+ `[iot:ListThingPrincipals](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipals.html)`
++ `[iot:DetachPrincipalPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DetachPrincipalPolicy.html)`
 
 + `[iot:UpdateCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCertificate.html)`
-
-+ `[iot:DetachPrincipalPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DetachPrincipalPolicy.html)`
 
 + `[iot:DescribeCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCACertificate.html)`
 
@@ -112,11 +112,11 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:ListCACertificates](http://docs.aws.amazon.com/iot/latest/apireference/API_ListCACertificates.html)`
 
++ `[iot:GetTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRule.html)`
+
 + `[iot:CreateTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html)`
 
 + `[iot:DescribeThing](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThing.html)`
-
-+ `[iot:GetTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRule.html)`
 
 + `[iot:DeleteRegistrationCode](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRegistrationCode.html)`
 

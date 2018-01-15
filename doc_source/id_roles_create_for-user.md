@@ -64,7 +64,7 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 The following example shows both steps in a simple environment\. The example assumes that you are using a client computer running Windows, and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
-The sample trust policy referenced in the first command contains the following JSON code to enable users in the account 123456789012 to assume the role , but only if the user provides MFA authentication\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
+The sample trust policy referenced in the first command contains the following JSON code to enable users in the account 123456789012 to assume the role, but only if the user provides MFA authentication\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
 
 ```
 {

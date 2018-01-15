@@ -16,9 +16,9 @@ For information about using the following AWS CodeDeploy API actions in an IAM p
 
 + `[codedeploy:CreateDeploymentConfig](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeploymentConfig.html)`
 
-+ `[codedeploy:UpdateDeploymentGroup](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateDeploymentGroup.html)`
-
 + `[codedeploy:BatchGetDeploymentGroups](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_BatchGetDeploymentGroups.html)`
+
++ `[codedeploy:UpdateDeploymentGroup](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateDeploymentGroup.html)`
 
 + `[codedeploy:GetDeploymentInstance](http://docs.aws.amazon.com/codedeploy/latest/APIReference/API_GetDeploymentInstance.html)`
 

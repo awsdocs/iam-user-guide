@@ -8,9 +8,9 @@ For information about using the following Kinesis API actions in an IAM policy, 
 
 + `[kinesis:AddTagsToStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html)`
 
-+ `[kinesis:EnableEnhancedMonitoring](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html)`
-
 + `[kinesis:ListStreams](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html)`
+
++ `[kinesis:EnableEnhancedMonitoring](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html)`
 
 + `[kinesis:DecreaseStreamRetentionPeriod](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html)`
 
@@ -18,9 +18,9 @@ For information about using the following Kinesis API actions in an IAM policy, 
 
 + `[kinesis:ListTagsForStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html)`
 
-+ `[kinesis:DescribeStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html)`
-
 + `[kinesis:CreateStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html)`
+
++ `[kinesis:DescribeStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html)`
 
 + `[kinesis:GetRecords](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html)`
 
@@ -38,9 +38,9 @@ For information about using the following Kinesis API actions in an IAM policy, 
 
 + `[kinesis:RemoveTagsFromStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html)`
 
-+ `[kinesis:UpdateShardCount](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html)`
-
 + `[kinesis:DeleteStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html)`
+
++ `[kinesis:UpdateShardCount](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html)`
 
 + `[kinesis:MergeShards](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html)`
 

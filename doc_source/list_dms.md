@@ -12,9 +12,9 @@ For information about using the following AWS Database Migration Service API act
 
 + `[dms:DescribeOrderableReplicationInstances](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeOrderableReplicationInstances.html)`
 
-+ `[dms:DescribeEventCategories](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeEventCategories.html)`
-
 + `[dms:DescribeCertificates](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeCertificates.html)`
+
++ `[dms:DescribeEventCategories](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeEventCategories.html)`
 
 + `[dms:TestConnection](http://docs.aws.amazon.com/dms/latest/APIReference//API_TestConnection.html)`
 
@@ -26,17 +26,17 @@ For information about using the following AWS Database Migration Service API act
 
 + `[dms:DescribeReplicationInstances](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeReplicationInstances.html)`
 
-+ `[dms:CreateReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference//API_CreateReplicationTask.html)`
-
 + `[dms:DescribeReplicationSubnetGroups](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeReplicationSubnetGroups.html)`
+
++ `[dms:CreateReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference//API_CreateReplicationTask.html)`
 
 + `[dms:DescribeEndpoints](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeEndpoints.html)`
 
 + `[dms:DescribeReplicationTasks](http://docs.aws.amazon.com/dms/latest/APIReference//API_DescribeReplicationTasks.html)`
 
-+ `[dms:CreateEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference//API_CreateEndpoint.html)`
-
 + `[dms:DeleteReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference//API_DeleteReplicationInstance.html)`
+
++ `[dms:CreateEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference//API_CreateEndpoint.html)`
 
 + `[dms:CreateReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference//API_CreateReplicationInstance.html)`
 
@@ -68,9 +68,9 @@ For information about using the following AWS Database Migration Service API act
 
 + `[dms:DeleteEventSubscription](http://docs.aws.amazon.com/dms/latest/APIReference//API_DeleteEventSubscription.html)`
 
-+ `[dms:ModifyEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference//API_ModifyEndpoint.html)`
-
 + `[dms:ModifyReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference//API_ModifyReplicationSubnetGroup.html)`
+
++ `[dms:ModifyEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference//API_ModifyEndpoint.html)`
 
 + `[dms:RefreshSchemas](http://docs.aws.amazon.com/dms/latest/APIReference//API_RefreshSchemas.html)`
 

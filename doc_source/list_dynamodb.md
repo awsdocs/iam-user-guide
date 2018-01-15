@@ -36,17 +36,17 @@ For information about using the following DynamoDB API actions in an IAM policy,
 
 + `[dynamodb:DescribeStream](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeStream.html)`
 
-+ `[dynamodb:DeleteTable](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html)`
-
 + `[dynamodb:BatchWriteItem](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html)`
+
++ `[dynamodb:DeleteTable](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html)`
 
 + `[dynamodb:DescribeLimits](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeLimits.html)`
 
 + `[dynamodb:UpdateTable](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html)`
 
-+ `[dynamodb:DescribeReservedCapacityOfferings](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeReservedCapacityOfferings.html)`
-
 + `[dynamodb:UpdateItem](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html)`
+
++ `[dynamodb:DescribeReservedCapacityOfferings](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeReservedCapacityOfferings.html)`
 
 + `[dynamodb:ListTables](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTables.html)`
 

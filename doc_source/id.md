@@ -2,6 +2,12 @@
 
 This section describes *IAM identities*, which you create to provide authentication for people and processes in your AWS account\. This section also describes IAM *groups*, which are collections of IAM users that you can manage as a unit\. Identities represent the user, and can be authenticated and then authorized to perform actions in AWS\. Each of these can be associated with one or more *policies* to determine what actions a user, role, or member of a group can do with which AWS resources and under what conditions\.
 
+## The AWS Account Root User<a name="id_root"></a>
+
+When you first create an AWS account, you create an account \(or root user\) identity, which you use to sign in to AWS\. You can sign in to the AWS Management Console as the root user—that is, the email address and password that you provide when you create the account\. This combination of your email address and password is called your root user credentials\.
+
+When you sign in as the root user, you have complete, unrestricted access to all resources in your AWS account, including access to your billing information and the ability to change your password\. This level of access is necessary when you initially set up the account\. However, we recommend that you ***don't*** use root user credentials for everyday access\. We especially recommend that you do not share your root user credentials with anyone, because doing so gives them unrestricted access to your account\. It is not possible to restrict the permissions that are granted to the AWS account\. Instead, we strongly recommend that you adhere to the best practice of using the root user only to create your first IAM user and then securely locking away the root user credentials\. 
+
 ## IAM Users<a name="id_iam-users"></a>
 
 An IAM *user* is an entity that you create in AWS\. The IAM user represents the person or service who uses the IAM user to interact with AWS\. A primary use for IAM users is to give people the ability to sign in to the AWS Management Console for interactive tasks and to make programmatic requests to AWS services using the API or CLI\. A user in AWS consists of a name, a password to sign into the AWS Management Console, and up to two access keys that can be used with the API or CLI\. When you create an IAM user, you grant it permissions by making it a member of a group that has appropriate permission policies attached \(recommended\), or by directly attaching policies to the user\. You can also clone the permissions of an existing IAM user, which automatically makes the new user a member of the same groups and attaches all the same policies\.
@@ -17,12 +23,6 @@ An IAM *role* is very similar to a user, in that it is an identity with permissi
 ## Temporary Credentials<a name="id_temp-creds"></a>
 
 Temporary credentials are primarily used with IAM roles, but there are also other uses\. You can request temporary credentials that have a more restricted set of permissions than your standard IAM user\. This prevents you from accidentally performing tasks that are not permitted by the more restricted credentials\. A benefit of temporary credentials is that they expire automatically after a set period of time\. You have control over the duration that the credentials are valid\.
-
-## The AWS Account Root User<a name="id_root"></a>
-
-When you first create an AWS account, you create an account \(or root user\) identity, which you use to sign in to AWS\. You can sign in to the AWS Management Console as the root user—that is, the email address and password that you provide when you create the account\. This combination of your email address and password is called your root user credentials\.
-
-When you sign in as the root user, you have complete, unrestricted access to all resources in your AWS account, including access to your billing information and the ability to change your password\. This level of access is necessary when you initially set up the account\. However, we recommend that you ***don't*** use root user credentials for everyday access\. We especially recommend that you do not share your root user credentials with anyone, because doing so gives them unrestricted access to your account\. It is not possible to restrict the permissions that are granted to the AWS account\. Instead, we strongly recommend that you adhere to the best practice of using the root user only to create your first IAM user and then securely locking away the root user credentials\. 
 
 ## When to Create an IAM User \(Instead of a Role\)<a name="id_which-to-choose"></a>
 

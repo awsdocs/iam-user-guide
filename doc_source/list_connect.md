@@ -8,17 +8,17 @@ For information about using Amazon Connect, see [Amazon Connect Documentation](h
 
 + `connect:GetFederationTokens`
 
-+ `connect:DestroyInstance`
-
 + `connect:DescribeInstance`
+
++ `connect:DestroyInstance`
 
 + `connect:ListInstances`
 
 + `connect:CreateInstance`
 
-+ `connect:GetFederationToken`
-
 + `connect:ModifyInstance`
+
++ `connect:GetFederationToken`
 
 **Condition context keys for Amazon AWS Cloud Contact Center**
 

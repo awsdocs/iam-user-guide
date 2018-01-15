@@ -21,21 +21,21 @@ For the latest information about permissions in this service, see [AWS Storage G
 
 + `[storagegateway:CreateTapes](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateTapes.html)`
 
-+ `[storagegateway:DeleteBandwidthRateLimit](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteBandwidthRateLimit.html)`
++ `[storagegateway:UpdateMaintenanceStartTime](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateMaintenanceStartTime.html)`
 
 + `[storagegateway:DescribeNFSFileShares](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeNFSFileShares.html)`
 
-+ `[storagegateway:UpdateMaintenanceStartTime](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_UpdateMaintenanceStartTime.html)`
++ `[storagegateway:DeleteBandwidthRateLimit](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteBandwidthRateLimit.html)`
 
 + `[storagegateway:CreateCachediSCSIVolume](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateCachediSCSIVolume.html)`
 
 + `[storagegateway:RetrieveTapeArchive](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_RetrieveTapeArchive.html)`
 
++ `[storagegateway:DeleteVolume](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteVolume.html)`
+
 + `[storagegateway:CreateStorediSCSIVolume](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateStorediSCSIVolume.html)`
 
 + `[storagegateway:DescribeChapCredentials](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeChapCredentials.html)`
-
-+ `[storagegateway:DeleteVolume](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteVolume.html)`
 
 + `[storagegateway:SetLocalConsolePassword](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_SetLocalConsolePassword.html)`
 
@@ -45,9 +45,9 @@ For the latest information about permissions in this service, see [AWS Storage G
 
 + `[storagegateway:AddCache](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddCache.html)`
 
-+ `[storagegateway:StartGateway](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartGateway.html)`
-
 + `[storagegateway:ListLocalDisks](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListLocalDisks.html)`
+
++ `[storagegateway:StartGateway](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_StartGateway.html)`
 
 + `[storagegateway:ShutdownGateway](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ShutdownGateway.html)`
 
@@ -69,17 +69,17 @@ For the latest information about permissions in this service, see [AWS Storage G
 
 + `[storagegateway:CreateSnapshot](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshot.html)`
 
-+ `[storagegateway:ListTagsForResource](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTagsForResource.html)`
-
 + `[storagegateway:DescribeWorkingStorage](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeWorkingStorage.html)`
+
++ `[storagegateway:ListTagsForResource](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListTagsForResource.html)`
 
 + `[storagegateway:ResetCache](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ResetCache.html)`
 
 + `[storagegateway:CreateSnapshotFromVolumeRecoveryPoint](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_CreateSnapshotFromVolumeRecoveryPoint.html)`
 
-+ `[storagegateway:DescribeSnapshotSchedule](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSnapshotSchedule.html)`
-
 + `[storagegateway:DescribeTapes](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeTapes.html)`
+
++ `[storagegateway:DescribeSnapshotSchedule](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeSnapshotSchedule.html)`
 
 + `[storagegateway:DeleteChapCredentials](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteChapCredentials.html)`
 
@@ -91,9 +91,9 @@ For the latest information about permissions in this service, see [AWS Storage G
 
 + `[storagegateway:ListVolumeRecoveryPoints](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_ListVolumeRecoveryPoints.html)`
 
-+ `[storagegateway:DescribeVTLDevices](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeVTLDevices.html)`
-
 + `[storagegateway:AddWorkingStorage](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_AddWorkingStorage.html)`
+
++ `[storagegateway:DescribeVTLDevices](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DescribeVTLDevices.html)`
 
 + `[storagegateway:DeleteSnapshotSchedule](http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_DeleteSnapshotSchedule.html)`
 

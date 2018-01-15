@@ -6,9 +6,9 @@ Amazon SES \(service prefix: ses\) provides the following service\-specific acti
 
 For information about using the following Amazon SES API actions in an IAM policy, see [Controlling User Access to Amazon SES](http://docs.aws.amazon.com/ses/latest/DeveloperGuide/control-user-access.html) in the *Amazon Simple Email Service Developer Guide*\.
 
-+ `[ses:VerifyDomainIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html)`
-
 + `[ses:VerifyEmailIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyEmailIdentity.html)`
+
++ `[ses:VerifyDomainIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_VerifyDomainIdentity.html)`
 
 + `[ses:CreateReceiptRule](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html)`
 
@@ -16,9 +16,9 @@ For information about using the following Amazon SES API actions in an IAM polic
 
 + `[ses:GetIdentityPolicies](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityPolicies.html)`
 
-+ `[ses:CreateReceiptFilter](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html)`
-
 + `[ses:DeleteIdentityPolicy](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentityPolicy.html)`
+
++ `[ses:CreateReceiptFilter](http://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptFilter.html)`
 
 + `[ses:SetActiveReceiptRuleSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetActiveReceiptRuleSet.html)`
 
@@ -34,9 +34,9 @@ For information about using the following Amazon SES API actions in an IAM polic
 
 + `[ses:SendRawEmail](http://docs.aws.amazon.com/ses/latest/APIReference/API_SendRawEmail.html)`
 
-+ `[ses:SetReceiptRulePosition](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetReceiptRulePosition.html)`
-
 + `[ses:DeleteReceiptRule](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRule.html)`
+
++ `[ses:SetReceiptRulePosition](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetReceiptRulePosition.html)`
 
 + `[ses:CloneReceiptRuleSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_CloneReceiptRuleSet.html)`
 
@@ -54,9 +54,9 @@ For information about using the following Amazon SES API actions in an IAM polic
 
 + `[ses:SetIdentityDkimEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityDkimEnabled.html)`
 
-+ `[ses:GetIdentityNotificationAttributes](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html)`
-
 + `[ses:PutIdentityPolicy](http://docs.aws.amazon.com/ses/latest/APIReference/API_PutIdentityPolicy.html)`
+
++ `[ses:GetIdentityNotificationAttributes](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityNotificationAttributes.html)`
 
 + `[ses:GetIdentityVerificationAttributes](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityVerificationAttributes.html)`
 
@@ -64,9 +64,9 @@ For information about using the following Amazon SES API actions in an IAM polic
 
 + `[ses:GetSendStatistics](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetSendStatistics.html)`
 
-+ `[ses:SetIdentityHeadersInNotificationsEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html)`
-
 + `[ses:SetIdentityMailFromDomain](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityMailFromDomain.html)`
+
++ `[ses:SetIdentityHeadersInNotificationsEnabled](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityHeadersInNotificationsEnabled.html)`
 
 + `[ses:DeleteReceiptRuleSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteReceiptRuleSet.html)`
 
@@ -80,15 +80,15 @@ For information about using the following Amazon SES API actions in an IAM polic
 
 + `[ses:SetIdentityNotificationTopic](http://docs.aws.amazon.com/ses/latest/APIReference/API_SetIdentityNotificationTopic.html)`
 
-+ `[ses:ListReceiptFilters](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html)`
-
 + `[ses:DeleteIdentity](http://docs.aws.amazon.com/ses/latest/APIReference/API_DeleteIdentity.html)`
+
++ `[ses:ListReceiptFilters](http://docs.aws.amazon.com/ses/latest/APIReference/API_ListReceiptFilters.html)`
 
 + `[ses:DescribeReceiptRule](http://docs.aws.amazon.com/ses/latest/APIReference/API_DescribeReceiptRule.html)`
 
-+ `[ses:ReorderReceiptRuleSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html)`
-
 + `[ses:GetIdentityDkimAttributes](http://docs.aws.amazon.com/ses/latest/APIReference/API_GetIdentityDkimAttributes.html)`
+
++ `[ses:ReorderReceiptRuleSet](http://docs.aws.amazon.com/ses/latest/APIReference/API_ReorderReceiptRuleSet.html)`
 
 **Condition context keys for Amazon SES**
 

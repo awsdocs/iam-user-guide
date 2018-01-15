@@ -34,9 +34,9 @@ For information about using the following AWS Config API actions in an IAM polic
 
 + `[config:DescribeConfigRules](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRules.html)`
 
-+ `[config:DescribeConfigRuleEvaluationStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html)`
-
 + `[config:ListDiscoveredResources](http://docs.aws.amazon.com/config/latest/APIReference/API_ListDiscoveredResources.html)`
+
++ `[config:DescribeConfigRuleEvaluationStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html)`
 
 + `[config:GetTagKeys](http://docs.aws.amazon.com/config/latest/APIReference/API_GetTagKeys.html)`
 
@@ -44,9 +44,9 @@ For information about using the following AWS Config API actions in an IAM polic
 
 + `[config:DeleteConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigRule.html)`
 
-+ `[config:DescribeConfigurationRecorderStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html)`
-
 + `[config:PutEvaluations](http://docs.aws.amazon.com/config/latest/APIReference/API_PutEvaluations.html)`
+
++ `[config:DescribeConfigurationRecorderStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html)`
 
 + `[config:StopConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html)`
 

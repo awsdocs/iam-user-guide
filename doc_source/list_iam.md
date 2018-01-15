@@ -32,11 +32,11 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:ListEntitiesForPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)`
 
-+ `[iam:ListAccountAliases](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)`
-
 + `[iam:DeleteServiceLinkedRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html)`
 
 + `[iam:ListServerCertificates](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html)`
+
++ `[iam:ListAccountAliases](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)`
 
 + `[iam:PassRole](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html)` \- this is an IAM policy permission only, not an API action that can be called\.
 
@@ -46,11 +46,11 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:ListMFADevices](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListMFADevices.html)`
 
-+ `[iam:SimulateCustomPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html)`
-
 + `[iam:UploadSigningCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSigningCertificate.html)`
 
 + `[iam:DeleteRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRole.html)`
+
++ `[iam:SimulateCustomPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html)`
 
 + `[iam:CreateServiceSpecificCredential](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceSpecificCredential.html)`
 
@@ -58,9 +58,9 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:ResyncMFADevice](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html)`
 
-+ `[iam:ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)`
-
 + `[iam:AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)`
+
++ `[iam:ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)`
 
 + `[iam:ListPoliciesGrantingServiceAccess](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access_policies_access-advisor-viewing)` \- this is an IAM policy permission only, not an API action that can be called\.
 
@@ -78,9 +78,9 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)`
 
-+ `[iam:GenerateServiceLastAccessedDetails](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html)` \- this is an IAM policy permission only, not an API action that can be called\.
-
 + `[iam:ChangePassword](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html)`
+
++ `[iam:GenerateServiceLastAccessedDetails](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html)` \- this is an IAM policy permission only, not an API action that can be called\.
 
 + `[iam:CreateOpenIDConnectProvider](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html)`
 
@@ -96,23 +96,23 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:CreateSAMLProvider](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html)`
 
-+ `[iam:DeleteSSHPublicKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html)`
-
 + `[iam:ListPolicyVersions](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicyVersions.html)`
+
++ `[iam:DeleteSSHPublicKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html)`
 
 + `[iam:CreateGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html)`
 
-+ `[iam:ListAccessKeys](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)`
-
 + `[iam:CreateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html)`
+
++ `[iam:ListAccessKeys](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)`
 
 + `[iam:UploadServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html)`
 
 + `[iam:GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)`
 
-+ `[iam:RemoveRoleFromInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveRoleFromInstanceProfile.html)`
-
 + `[iam:UploadSSHPublicKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html)`
+
++ `[iam:RemoveRoleFromInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveRoleFromInstanceProfile.html)`
 
 + `[iam:UpdateSigningCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSigningCertificate.html)`
 
@@ -126,9 +126,9 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)`
 
-+ `[iam:CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)`
-
 + `[iam:UpdateAccountPasswordPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)`
+
++ `[iam:CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)`
 
 + `[iam:DeleteServiceSpecificCredential](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceSpecificCredential.html)`
 
@@ -142,21 +142,21 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:GetLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)`
 
-+ `[iam:UpdateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)`
-
 + `[iam:DeleteUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html)`
+
++ `[iam:UpdateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)`
 
 + `[iam:GetPolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html)`
 
 + `[iam:AddRoleToInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html)`
 
-+ `[iam:GetAccountPasswordPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html)`
-
 + `[iam:UpdateServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServerCertificate.html)`
 
-+ `[iam:GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)`
-
 + `[iam:DeactivateMFADevice](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)`
+
++ `[iam:GetAccountPasswordPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html)`
+
++ `[iam:GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)`
 
 + `[iam:DeleteVirtualMFADevice](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html)`
 
@@ -172,17 +172,17 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:GetAccessKeyLastUsed](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)`
 
-+ `[iam:DeleteAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)`
-
 + `[iam:DeleteGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html)`
+
++ `[iam:DeleteAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)`
 
 + `[iam:GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html)`
 
 + `[iam:UpdateSSHPublicKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSSHPublicKey.html)`
 
-+ `[iam:DetachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)`
-
 + `[iam:CreateAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)`
+
++ `[iam:DetachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)`
 
 + `[iam:GetSSHPublicKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html)`
 
@@ -196,15 +196,15 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:ListOpenIDConnectProviders](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)`
 
-+ `[iam:ListInstanceProfilesForRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html)`
-
 + `[iam:UpdateSAMLProvider](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)`
+
++ `[iam:ListInstanceProfilesForRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html)`
 
 + `[iam:CreateVirtualMFADevice](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateVirtualMFADevice.html)`
 
-+ `[iam:DeleteUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUser.html)`
-
 + `[iam:ListGroups](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html)`
+
++ `[iam:DeleteUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUser.html)`
 
 + `[iam:GetAccountAuthorizationDetails](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountAuthorizationDetails.html)`
 
@@ -246,9 +246,9 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:ListUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html)`
 
-+ `[iam:GetRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)`
-
 + `[iam:ListSAMLProviders](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html)`
+
++ `[iam:GetRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)`
 
 + `[iam:DeleteInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteInstanceProfile.html)`
 
@@ -256,12 +256,14 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 + `[iam:SimulatePrincipalPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)`
 
-+ `[iam:GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)`
-
 + `[iam:UpdateGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html)`
+
++ `[iam:GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)`
 
 **Condition context keys for Identity And Access Management**
 
 Identity And Access Management has the following service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
 
 + `[iam:PolicyARN](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#available-keys-for-iam)`
+
++ `[iam:AWSServiceName](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#available-keys-for-iam)`

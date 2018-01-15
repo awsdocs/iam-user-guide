@@ -12,9 +12,9 @@ For the REST API for `DownloadCompleteDBLogFile`, see [DownloadCompleteDBLogFile
 
 + `[rds:DescribeDBInstances](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html)`
 
-+ `[rds:DescribeCertificates](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html)`
-
 + `[rds:CopyDBClusterSnapshot](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyDBClusterSnapshot.html)`
+
++ `[rds:DescribeCertificates](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeCertificates.html)`
 
 + `[rds:DescribePendingMaintenanceActions](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribePendingMaintenanceActions.html)`
 
@@ -28,9 +28,9 @@ For the REST API for `DownloadCompleteDBLogFile`, see [DownloadCompleteDBLogFile
 
 + `[rds:PromoteReadReplica](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_PromoteReadReplica.html)`
 
-+ `[rds:ModifyDBSnapshotAttribute](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html)`
-
 + `[rds:ResetDBParameterGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ResetDBParameterGroup.html)`
+
++ `[rds:ModifyDBSnapshotAttribute](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBSnapshotAttribute.html)`
 
 + `[rds:DescribeDBSnapshotAttributes](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshotAttributes.html)`
 
@@ -54,11 +54,11 @@ For the REST API for `DownloadCompleteDBLogFile`, see [DownloadCompleteDBLogFile
 
 + `[rds:DeleteDBSnapshot](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSnapshot.html)`
 
-+ `[rds:ModifyDBParameterGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html)`
++ `[rds:DescribeDBClusterParameterGroups](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html)`
 
 + `[rds:DeleteDBSecurityGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBSecurityGroup.html)`
 
-+ `[rds:DescribeDBClusterParameterGroups](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameterGroups.html)`
++ `[rds:ModifyDBParameterGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBParameterGroup.html)`
 
 + `[rds:CopyOptionGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CopyOptionGroup.html)`
 
@@ -108,11 +108,11 @@ For the REST API for `DownloadCompleteDBLogFile`, see [DownloadCompleteDBLogFile
 
 + `[rds:DeleteOptionGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteOptionGroup.html)`
 
++ `[rds:ModifyDBInstance](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html)`
+
 + `[rds:DescribeDBSecurityGroups](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSecurityGroups.html)`
 
 + `[rds:RestoreDBInstanceFromDBSnapshot](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBInstanceFromDBSnapshot.html)`
-
-+ `[rds:ModifyDBInstance](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBInstance.html)`
 
 + `[rds:DescribeDBLogFiles](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBLogFiles.html)`
 
@@ -146,11 +146,11 @@ For the REST API for `DownloadCompleteDBLogFile`, see [DownloadCompleteDBLogFile
 
 + `[rds:DescribeEvents](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEvents.html)`
 
-+ `[rds:DeleteDBParameterGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html)`
++ `[rds:DescribeDBSnapshots](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html)`
 
 + `[rds:ModifyDBClusterParameterGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterParameterGroup.html)`
 
-+ `[rds:DescribeDBSnapshots](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSnapshots.html)`
++ `[rds:DeleteDBParameterGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DeleteDBParameterGroup.html)`
 
 + `[rds:DescribeEngineDefaultClusterParameters](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeEngineDefaultClusterParameters.html)`
 
@@ -160,19 +160,19 @@ For the REST API for `DownloadCompleteDBLogFile`, see [DownloadCompleteDBLogFile
 
 + `[rds:RestoreDBClusterToPointInTime](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_RestoreDBClusterToPointInTime.html)`
 
-+ `[rds:DescribeDBParameterGroups](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html)`
-
 + `[rds:ModifyDBCluster](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBCluster.html)`
+
++ `[rds:DescribeDBParameterGroups](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBParameterGroups.html)`
 
 + `[rds:DescribeDBSubnetGroups](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBSubnetGroups.html)`
 
-+ `[rds:CreateOptionGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html)`
-
 + `[rds:DescribeDBClusterSnapshots](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterSnapshots.html)`
 
-+ `[rds:DescribeDBClusterParameters](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html)`
++ `[rds:CreateOptionGroup](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateOptionGroup.html)`
 
 + `[rds:DescribeOptionGroupOptions](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeOptionGroupOptions.html)`
+
++ `[rds:DescribeDBClusterParameters](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusterParameters.html)`
 
 + `[rds:DescribeReservedDBInstancesOfferings](http://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeReservedDBInstancesOfferings.html)`
 

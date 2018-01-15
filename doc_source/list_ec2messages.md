@@ -8,11 +8,11 @@ Amazon Message Delivery Service \(service prefix: ec2messages\) provides the fol
 
 + `ec2messages:AcknowledgeMessage`
 
-+ `ec2messages:DeleteMessage`
++ `ec2messages:SendReply`
 
 + `ec2messages:FailMessage`
 
-+ `ec2messages:SendReply`
++ `ec2messages:DeleteMessage`
 
 + `ec2messages:GetMessages`
 

@@ -12,9 +12,9 @@ For information about controlling access to your billing data by using an IAM po
 
 + `aws-portal:ModifyBilling`
 
-+ `aws-portal:ModifyPaymentMethods`
-
 + `aws-portal:ViewPaymentMethods`
+
++ `aws-portal:ModifyPaymentMethods`
 
 + `aws-portal:ViewBilling`
 

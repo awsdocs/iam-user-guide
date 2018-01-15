@@ -6,17 +6,17 @@ AWS Batch \(service prefix: batch\) provides the following service\-specific act
 
 For more information about controlling access to your AWS Batch resources, see [AWS Batch IAM Policies, Roles, and Permissions](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html) in the *AWS Batch User Guide*\.
 
-+ `[batch:DescribeJobs](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html)`
-
 + `[batch:TerminateJob](http://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html)`
 
-+ `[batch:UpdateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html)`
++ `[batch:DescribeJobs](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html)`
 
 + `[batch:UpdateComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html)`
 
-+ `[batch:RegisterJobDefinition](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)`
++ `[batch:UpdateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html)`
 
 + `[batch:CreateComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html)`
+
++ `[batch:RegisterJobDefinition](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)`
 
 + `[batch:CreateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html)`
 

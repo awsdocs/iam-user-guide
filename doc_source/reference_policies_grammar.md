@@ -145,7 +145,7 @@ policy  = {
 
 + The `principal_block` element is required in resource\-based policies \(for example, in Amazon S3 bucket policies\) and in trust policies for IAM roles\. It must *not* be included in identity\-based policies\.
 
-+ Each string value \(`policy_id_string`, `sid_string`, `principal_ID_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
++ Each string value \(`policy_id_string`, `sid_string`, `principal_id_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
 
 ### Notes About String Values<a name="policies-grammar-notes-strings"></a>
 
@@ -192,7 +192,7 @@ Provides a way to include information about an individual statement\. For IAM po
 "Sid": "ThisStatementProvidesPermissionsForConsoleAccess"
 ```
 
-**`principal_string`**  
+**`principal_id_string`**  
 Provides a way to specify a principal using the *Amazon Resource Name* \(ARN\) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. For an AWS account, you can also use the short form `AWS:accountnumber` instead of the full ARN\. For all of the options including AWS services, assumed roles, and so on, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.  
 Note that you can use \* only to specify "everyone/anonymous\." You cannot use it to specify part of a name or ARN\.
 

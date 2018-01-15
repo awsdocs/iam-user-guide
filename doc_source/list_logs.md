@@ -6,7 +6,11 @@ Amazon CloudWatch Logs \(service prefix: logs\) provides the following service\-
 
 + `[logs:PutDestination](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html)`
 
++ `[logs:TagLogGroup](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html)`
+
 + `[logs:DeleteRetentionPolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html)`
+
++ `[logs:PutResourcePolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutResourcePolicy.html)`
 
 + `[logs:PutDestinationPolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html)`
 
@@ -22,9 +26,11 @@ Amazon CloudWatch Logs \(service prefix: logs\) provides the following service\-
 
 + `[logs:PutLogEvents](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html)`
 
-+ `[logs:CreateExportTask](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html)`
++ `[logs:UntagLogGroup](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html)`
 
 + `[logs:PutMetricFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutMetricFilter.html)`
+
++ `[logs:CreateExportTask](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateExportTask.html)`
 
 + `[logs:DescribeSubscriptionFilters](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html)`
 
@@ -34,11 +40,19 @@ Amazon CloudWatch Logs \(service prefix: logs\) provides the following service\-
 
 + `[logs:DeleteSubscriptionFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteSubscriptionFilter.html)`
 
++ `[logs:DeleteResourcePolicy](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteResourcePolicy.html)`
+
++ `[logs:ListTagsLogGroup](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html)`
+
 + `[logs:FilterLogEvents](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html)`
 
 + `[logs:PutSubscriptionFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html)`
 
++ `[logs:DescribeResourcePolicies](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeResourcePolicies.html)`
+
 + `[logs:DescribeMetricFilters](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeMetricFilters.html)`
+
++ `[logs:AssociateKmsKey](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_AssociateKmsKey.html)`
 
 + `[logs:GetLogEvents](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html)`
 
@@ -51,6 +65,8 @@ Amazon CloudWatch Logs \(service prefix: logs\) provides the following service\-
 + `[logs:DescribeDestinations](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDestinations.html)`
 
 + `[logs:DescribeLogGroups](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeLogGroups.html)`
+
++ `[logs:DisassociateKmsKey](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DisassociateKmsKey.html)`
 
 + `[logs:DeleteMetricFilter](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteMetricFilter.html)`
 

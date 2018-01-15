@@ -6,17 +6,17 @@ Data Pipeline \(service prefix: datapipeline\) provides the following service\-s
 
 For information about using the following AWS Data Pipeline API actions in an IAM policy, see [Controlling Access to Pipelines and Resources](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html) in the *AWS Data Pipeline Developer Guide*\.
 
-+ `[datapipeline:GetAccountLimits](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html)`
-
 + `[datapipeline:QueryObjects](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_QueryObjects.html)`
+
++ `[datapipeline:GetAccountLimits](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_GetAccountLimits.html)`
 
 + `[datapipeline:ValidatePipelineDefinition](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ValidatePipelineDefinition.html)`
 
-+ `[datapipeline:CreatePipeline](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html)`
++ `[datapipeline:DeactivatePipeline](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html)`
 
 + `[datapipeline:ListPipelines](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ListPipelines.html)`
 
-+ `[datapipeline:DeactivatePipeline](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DeactivatePipeline.html)`
++ `[datapipeline:CreatePipeline](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_CreatePipeline.html)`
 
 + `[datapipeline:ReportTaskProgress](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskProgress.html)`
 
@@ -38,13 +38,13 @@ For information about using the following AWS Data Pipeline API actions in an IA
 
 + `[datapipeline:PollForTask](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_PollForTask.html)`
 
-+ `[datapipeline:DescribePipelines](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html)`
-
 + `[datapipeline:SetTaskStatus](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetTaskStatus.html)`
 
-+ `[datapipeline:AddTags](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html)`
++ `[datapipeline:DescribePipelines](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_DescribePipelines.html)`
 
 + `[datapipeline:SetStatus](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_SetStatus.html)`
+
++ `[datapipeline:AddTags](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_AddTags.html)`
 
 + `[datapipeline:ReportTaskRunnerHeartbeat](http://docs.aws.amazon.com/datapipeline/latest/APIReference/API_ReportTaskRunnerHeartbeat.html)`
 

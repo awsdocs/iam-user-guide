@@ -18,7 +18,7 @@ For information about policy size limitations and other quotas, see [Limitations
 + [Create an IAM Policy \(Console\)](#access_policies_create-start)
 + [Import an Existing Managed Policy](#access_policies_create-copy)
 + [Create a Policy with the Visual Editor](#access_policies_create-visual-editor)
-+ [Create a Policy with the JSON Editor](#access_policies_create-json-editor)
++ [Create a Policy on the JSON Tab](#access_policies_create-json-editor)
 + [Create IAM Policies \(AWS CLI or AWS API\)](#create-policies-cli-api)
 
 ## Create an IAM Policy \(Console\)<a name="access_policies_create-start"></a>
@@ -41,7 +41,7 @@ No matter which way you choose to create a policy, they all start the same way:
 
    + [Create a Policy with the Visual Editor](#access_policies_create-visual-editor) 
 
-   + [Create a Policy with the JSON Editor](#access_policies_create-json-editor) 
+   + [Create a Policy on the JSON Tab](#access_policies_create-json-editor) 
 
 ## Import an Existing Managed Policy<a name="access_policies_create-copy"></a>
 
@@ -141,7 +141,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)\.
 
-## Create a Policy with the JSON Editor<a name="access_policies_create-json-editor"></a>
+## Create a Policy on the JSON Tab<a name="access_policies_create-json-editor"></a>
 
 You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an example policy to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
 

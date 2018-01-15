@@ -8,9 +8,9 @@ For information about using the following Amazon WorkDocs API actions in an IAM 
 
 + `[workdocs:DeleteDocument](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
-+ `[workdocs:GetDocumentPath](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
-
 + `[workdocs:CreateNotificationSubscription](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
+
++ `[workdocs:GetDocumentPath](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 + `[workdocs:DescribeResourcePermissions](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
@@ -20,15 +20,15 @@ For information about using the following Amazon WorkDocs API actions in an IAM 
 
 + `[workdocs:DescribeFolderContents](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
++ `[workdocs:CreateInstance](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
+
 + `[workdocs:GetFolderPath](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
-+ `[workdocs:CreateInstance](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
++ `[workdocs:GetDocument](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 + `[workdocs:AddUserToGroup](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 + `[workdocs:InitiateDocumentVersionUpload](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
-
-+ `[workdocs:GetDocument](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 + `[workdocs:DeregisterDirectory](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
@@ -52,9 +52,9 @@ For information about using the following Amazon WorkDocs API actions in an IAM 
 
 + `[workdocs:RemoveResourcePermission](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
-+ `[workdocs:CreateUser](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
-
 + `[workdocs:DeleteNotificationSubscription](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
+
++ `[workdocs:CreateUser](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 + `[workdocs:DescribeNotificationSubscriptions](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
@@ -74,15 +74,15 @@ For information about using the following Amazon WorkDocs API actions in an IAM 
 
 + `[workdocs:UpdateUser](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
-+ `[workdocs:RegisterDirectory](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
-
 + `[workdocs:DeleteFolderContents](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
+
++ `[workdocs:RegisterDirectory](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 + `[workdocs:GetDocumentVersion](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
-+ `[workdocs:DeleteInstance](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
-
 + `[workdocs:UpdateFolder](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
+
++ `[workdocs:DeleteInstance](http://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)`
 
 **Condition context keys for Amazon WorkDocs**
 

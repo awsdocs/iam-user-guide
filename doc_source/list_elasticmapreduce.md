@@ -16,11 +16,11 @@ For information about controlling access to Amazon EMR by specifying actions in 
 
 + `[elasticmapreduce:ViewEventsFromAllClustersInConsole](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ViewEventsFromAllClustersInConsole.html)`
 
-+ `[elasticmapreduce:ListInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstanceGroups.html)`
++ `[elasticmapreduce:ModifyInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ModifyInstanceGroups.html)`
 
 + `[elasticmapreduce:TerminateJobFlows](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_TerminateJobFlows.html)`
 
-+ `[elasticmapreduce:ModifyInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ModifyInstanceGroups.html)`
++ `[elasticmapreduce:ListInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstanceGroups.html)`
 
 + `[elasticmapreduce:ListBootstrapActions](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListBootstrapActions.html)`
 

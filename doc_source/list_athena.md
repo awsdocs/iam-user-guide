@@ -26,9 +26,9 @@ For information about using the following Athena API actions in an IAM policy, s
 
 + `[athena:StopQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html)`
 
-+ `[athena:BatchGetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html)`
-
 + `[athena:GetExecutionEngines](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetExecutionEngines.html)`
+
++ `[athena:BatchGetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html)`
 
 + `[athena:GetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html)`
 

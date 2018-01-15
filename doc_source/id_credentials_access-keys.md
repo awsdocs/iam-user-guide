@@ -10,7 +10,7 @@ Users need their own access keys to make programmatic calls to AWS from the [AWS
 When you create an access key, IAM returns the access key ID and secret access key\. You should save these in a secure location and give them to the user\. 
 
 **Important**  
-To ensure the security of your AWS account, the secret access key is accessible only at the time you create it\. If a secret access key is lost, you must delete the access key for the associated user and create a new key\. For more details, see [Retrieving Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
+To ensure the security of your AWS account, the secret access key is accessible only at the time you create it\. If a secret access key is lost, you must delete the access key for the associated user and create a new key\. For more details, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
 
 By default, when you create an access key, its status is `Active`, which means the user can use the access key for AWS CLI, Tools for Windows PowerShell, and API calls\. Each user can have two active access keys, which is useful when you must rotate the user's access keys\. You can disable a user's access key, which means it can't be used for API calls\. You might do this while you're rotating keys or to revoke API access for a user\. 
 
@@ -95,7 +95,7 @@ Only the user's access key ID is visible\. The secret access key can only be ret
 
 To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, or the AWS API, use the following commands:
 
-### To create an access key<a name="w3ab1c19c19c31c23b5"></a>
+### To create an access key<a name="w3ab1c19c19c30c23b5"></a>
 
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 
@@ -103,7 +103,7 @@ To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, o
 
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 
-### To disable or reenable an access key<a name="w3ab1c19c19c31c23b7"></a>
+### To disable or reenable an access key<a name="w3ab1c19c19c30c23b7"></a>
 
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
 
@@ -111,7 +111,7 @@ To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, o
 
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
 
-### To list a user's access keys<a name="w3ab1c19c19c31c23b9"></a>
+### To list a user's access keys<a name="w3ab1c19c19c30c23b9"></a>
 
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)
 
@@ -119,7 +119,7 @@ To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, o
 
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)
 
-### To determine when an access key was most recently used<a name="w3ab1c19c19c31c23c11"></a>
+### To determine when an access key was most recently used<a name="w3ab1c19c19c30c23c11"></a>
 
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 
@@ -127,7 +127,7 @@ To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, o
 
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
 
-### To delete an access key<a name="w3ab1c19c19c31c23c13"></a>
+### To delete an access key<a name="w3ab1c19c19c30c23c13"></a>
 
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 

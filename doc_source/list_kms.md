@@ -10,9 +10,9 @@ For information about using the following AWS KMS API actions in an IAM resource
 
 + `[kms:GenerateDataKey](http://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateDataKey.html)`
 
-+ `[kms:GenerateRandom](http://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateRandom.html)`
-
 + `[kms:Decrypt](http://docs.aws.amazon.com/kms/latest/APIReference/API_Decrypt.html)`
+
++ `[kms:GenerateRandom](http://docs.aws.amazon.com/kms/latest/APIReference/API_GenerateRandom.html)`
 
 + `[kms:TagResource](http://docs.aws.amazon.com/kms/latest/APIReference/API_TagResource.html)`
 
@@ -28,9 +28,9 @@ For information about using the following AWS KMS API actions in an IAM resource
 
 + `[kms:GetKeyPolicy](http://docs.aws.amazon.com/kms/latest/APIReference/API_GetKeyPolicy.html)`
 
-+ `[kms:ListRetirableGrants](http://docs.aws.amazon.com/kms/latest/APIReference/API_ListRetirableGrants.html)`
-
 + `[kms:ListKeys](http://docs.aws.amazon.com/kms/latest/APIReference/API_ListKeys.html)`
+
++ `[kms:ListRetirableGrants](http://docs.aws.amazon.com/kms/latest/APIReference/API_ListRetirableGrants.html)`
 
 + `[kms:PutKeyPolicy](http://docs.aws.amazon.com/kms/latest/APIReference/API_PutKeyPolicy.html)`
 
@@ -38,9 +38,9 @@ For information about using the following AWS KMS API actions in an IAM resource
 
 + `[kms:CancelKeyDeletion](http://docs.aws.amazon.com/kms/latest/APIReference/API_CancelKeyDeletion.html)`
 
-+ `[kms:DeleteAlias](http://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html)`
-
 + `[kms:DisableKey](http://docs.aws.amazon.com/kms/latest/APIReference/API_DisableKey.html)`
+
++ `[kms:DeleteAlias](http://docs.aws.amazon.com/kms/latest/APIReference/API_DeleteAlias.html)`
 
 + `[kms:DescribeKey](http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html)`
 

@@ -12,9 +12,9 @@ For information about using the following Amazon Polly API actions in an IAM pol
 
 + `[polly:DescribeVoices](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)`
 
-+ `[polly:DeleteLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)`
-
 + `[polly:ListLexicons](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)`
+
++ `[polly:DeleteLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)`
 
 + `[polly:SynthesizeSpeech](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)`
 

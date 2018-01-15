@@ -6,15 +6,15 @@ AWS OpsWorks \(service prefix: opsworks\) provides the following service\-specif
 
 For information about using the following AWS OpsWorks API actions in an IAM policy, see the Action section in [Managing AWS OpsWorks Permissions by Attaching an IAM Policy](http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users-policy.html) in the *AWS OpsWorks User Guide*\.
 
-+ `[opsworks:DescribeCommands](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeCommands.html)`
-
 + `[opsworks:UnassignVolume](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UnassignVolume.html)`
+
++ `[opsworks:DescribeCommands](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeCommands.html)`
 
 + `[opsworks:DescribeApps](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeApps.html)`
 
-+ `[opsworks:StartStack](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_StartStack.html)`
-
 + `[opsworks:SetLoadBasedAutoScaling](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_SetLoadBasedAutoScaling.html)`
+
++ `[opsworks:StartStack](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_StartStack.html)`
 
 + `[opsworks:CloneStack](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CloneStack.html)`
 
@@ -22,9 +22,9 @@ For information about using the following AWS OpsWorks API actions in an IAM pol
 
 + `[opsworks:DeregisterVolume](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterVolume.html)`
 
-+ `[opsworks:UpdateElasticIp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateElasticIp.html)`
-
 + `[opsworks:DescribeServiceErrors](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeServiceErrors.html)`
+
++ `[opsworks:UpdateElasticIp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateElasticIp.html)`
 
 + `[opsworks:CreateInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateInstance.html)`
 
@@ -68,17 +68,21 @@ For information about using the following AWS OpsWorks API actions in an IAM pol
 
 + `[opsworks:DeleteLayer](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteLayer.html)`
 
++ `[opsworks:UntagResource](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UntagResource.html)`
+
 + `[opsworks:DescribeInstances](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeInstances.html)`
 
-+ `[opsworks:DescribeRdsDbInstances](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeRdsDbInstances.html)`
-
 + `[opsworks:UpdateApp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateApp.html)`
+
++ `[opsworks:DescribeRdsDbInstances](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeRdsDbInstances.html)`
 
 + `[opsworks:StartInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_StartInstance.html)`
 
 + `[opsworks:DeleteUserProfile](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteUserProfile.html)`
 
 + `[opsworks:DescribeTimeBasedAutoScaling](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeTimeBasedAutoScaling.html)`
+
++ `[opsworks:TagResource](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_TagResource.html)`
 
 + `[opsworks:DeleteApp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteApp.html)`
 
@@ -92,9 +96,9 @@ For information about using the following AWS OpsWorks API actions in an IAM pol
 
 + `[opsworks:UpdateUserProfile](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateUserProfile.html)`
 
-+ `[opsworks:CreateUserProfile](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateUserProfile.html)`
-
 + `[opsworks:DescribeElasticIps](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeElasticIps.html)`
+
++ `[opsworks:CreateUserProfile](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateUserProfile.html)`
 
 + `[opsworks:SetTimeBasedAutoScaling](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_SetTimeBasedAutoScaling.html)`
 
@@ -108,17 +112,17 @@ For information about using the following AWS OpsWorks API actions in an IAM pol
 
 + `[opsworks:DescribeLayers](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeLayers.html)`
 
-+ `[opsworks:DescribeVolumes](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeVolumes.html)`
-
 + `[opsworks:DescribeStacks](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeStacks.html)`
+
++ `[opsworks:DescribeVolumes](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeVolumes.html)`
 
 + `[opsworks:DescribeAgentVersions](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeAgentVersions.html)`
 
 + `[opsworks:RegisterInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_RegisterInstance.html)`
 
-+ `[opsworks:DeregisterInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterInstance.html)`
-
 + `[opsworks:AssignInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_AssignInstance.html)`
+
++ `[opsworks:DeregisterInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterInstance.html)`
 
 + `[opsworks:DeregisterElasticIp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeregisterElasticIp.html)`
 
@@ -130,11 +134,13 @@ For information about using the following AWS OpsWorks API actions in an IAM pol
 
 + `[opsworks:UpdateVolume](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_UpdateVolume.html)`
 
++ `[opsworks:ListTags](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_ListTags.html)`
+
 + `[opsworks:CreateApp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateApp.html)`
 
-+ `[opsworks:DisassociateElasticIp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DisassociateElasticIp.html)`
-
 + `[opsworks:DescribeLoadBasedAutoScaling](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeLoadBasedAutoScaling.html)`
+
++ `[opsworks:DisassociateElasticIp](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DisassociateElasticIp.html)`
 
 + `[opsworks:DescribeDeployments](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeDeployments.html)`
 
@@ -142,9 +148,9 @@ For information about using the following AWS OpsWorks API actions in an IAM pol
 
 + `[opsworks:DescribeElasticLoadBalancers](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DescribeElasticLoadBalancers.html)`
 
-+ `[opsworks:CreateLayer](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateLayer.html)`
-
 + `[opsworks:DeleteInstance](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_DeleteInstance.html)`
+
++ `[opsworks:CreateLayer](http://docs.aws.amazon.com/opsworks/latest/APIReference/API_CreateLayer.html)`
 
 **Condition context keys for AWS OpsWorks**
 

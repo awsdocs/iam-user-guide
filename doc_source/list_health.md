@@ -8,9 +8,9 @@ For information about using the following AWS Health API actions in an IAM polic
 
 + `[health:DescribeEvents](http://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html)`
 
-+ `[health:DescribeEntityAggregates](http://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html)`
-
 + `[health:DescribeEventDetails](http://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html)`
+
++ `[health:DescribeEntityAggregates](http://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html)`
 
 + `[health:DescribeEventTypes](http://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html)`
 

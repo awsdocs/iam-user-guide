@@ -6,19 +6,15 @@ Amazon Resource Group Tagging API \(service prefix: tag\) provides the following
 
 For information about using the following Resource Group Tagging API actions in an IAM policy, see [Obtaining](http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-tagging.html)\.
 
-+ `[tag:AddResourceTags](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_AddResourceTags.html)`
-
 + `[tag:UntagResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html)`
 
 + `[tag:TagResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html)`
 
-+ `[tag:RemoveResourceTags](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_RemoveResourceTags.html)`
-
 + `[tag:GetResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html)`
 
-+ `[tag:GetTagValues](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html)`
-
 + `[tag:GetTagKeys](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html)`
+
++ `[tag:GetTagValues](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html)`
 
 **Condition context keys for Amazon Resource Group Tagging API**
 

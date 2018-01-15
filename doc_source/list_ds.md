@@ -8,9 +8,9 @@ For information about using the following AWS Directory Service API actions in a
 
 + `[ds:RestoreFromSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html)`
 
-+ `[ds:GetSnapshotLimits](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html)`
-
 + `[ds:CancelSchemaExtension](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CancelSchemaExtension.html)`
+
++ `[ds:GetSnapshotLimits](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html)`
 
 + `[ds:DeleteConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteConditionalForwarder.html)`
 
@@ -40,9 +40,9 @@ For information about using the following AWS Directory Service API actions in a
 
 + `[ds:ListIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListIpRoutes.html)`
 
-+ `[ds:CreateComputer](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html)`
-
 + `[ds:DescribeTrusts](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html)`
+
++ `[ds:CreateComputer](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html)`
 
 + `[ds:DescribeEventTopics](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html)`
 
@@ -74,19 +74,17 @@ For information about using the following AWS Directory Service API actions in a
 
 + `[ds:CreateConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateConditionalForwarder.html)`
 
-+ `[ds:ListAuthorizedApplications](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListAuthorizedApplications.html)`
-
 + `[ds:DeregisterEventTopic](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterEventTopic.html)`
 
-+ `[ds:AuthorizeApplicaton](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_AuthorizeApplicaton.html)`
-
-+ `[ds:DeleteTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteTrust.html)`
++ `[ds:ListAuthorizedApplications](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListAuthorizedApplications.html)`
 
 + `[ds:AddTagsToResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html)`
 
-+ `[ds:CreateTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html)`
++ `[ds:DeleteTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteTrust.html)`
 
 + `[ds:CreateSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateSnapshot.html)`
+
++ `[ds:CreateTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html)`
 
 + `[ds:ListTagsForResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListTagsForResource.html)`
 

@@ -6,9 +6,9 @@ Amazon SimpleDB \(service prefix: sdb\) provides the following service\-specific
 
 For information about using the following Amazon SimpleDB API actions in an IAM policy, see [Amazon SimpleDB Actions](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingIAMWithSDB.html#UsingWithSDB_Actions) in the *Amazon Simple Workflow Service Developer Guide*\.
 
-+ `[sdb:GetAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_GetAttributes.html)`
-
 + `[sdb:DomainMetadata](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_DomainMetadata.html)`
+
++ `[sdb:GetAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_GetAttributes.html)`
 
 + `[sdb:BatchDeleteAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_BatchDeleteAttributes.html)`
 
@@ -16,9 +16,9 @@ For information about using the following Amazon SimpleDB API actions in an IAM 
 
 + `[sdb:CreateDomain](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_CreateDomain.html)`
 
-+ `[sdb:PutAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_PutAttributes.html)`
-
 + `[sdb:BatchPutAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_BatchPutAttributes.html)`
+
++ `[sdb:PutAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_PutAttributes.html)`
 
 + `[sdb:Select](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/SDB_API_Select.html)`
 

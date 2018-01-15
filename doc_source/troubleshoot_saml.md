@@ -2,6 +2,16 @@
 
 Use the information here to help you diagnose and fix issues that you might encounter when working with SAML 2\.0 and federation with IAM\.
 
+
++ [Error: Your request included an invalid SAML response\. To logout, click here\.](#troubleshoot_saml_invalid-response)
++ [Error: RoleSessionName is required in AuthnResponse \(Service: AWSSecurityTokenService; Status Code: 400; Error Code: InvalidIdentityToken\)](#troubleshoot_saml_missing-rolesessionname)
++ [Error: Not authorized to perform sts:AssumeRoleWithSAML \(Service: AWSSecurityTokenService; Status Code: 403; Error Code: AccessDenied\)](#troubleshoot_saml_missing-role)
++ [Error: RoleSessionName in AuthnResponse must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} \(Service: AWSSecurityTokenService; Status Code: 400; Error Code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-rolesessionname)
++ [Error: Response signature invalid \(Service: AWSSecurityTokenService; Status Code: 400; Error Code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-metadata)
++ [Error: Failed to assume role: Issuer not present in specified provider \(Service: AWSOpenIdDiscoveryService; Status Code: 400; Error Code: AuthSamlInvalidSamlResponseException\)](#troubleshoot_saml_issuer-mismatch)
++ [Error: Could not parse metadata\.](#troubleshoot_saml_issuer-metadata)
++ [How to View a SAML Response in Your Browser for Troubleshooting](troubleshoot_saml_view-saml-response.md)
+
 ## Error: Your request included an invalid SAML response\. To logout, click here\.<a name="troubleshoot_saml_invalid-response"></a>
 
 This error can occur when the SAML response from the identity provider does not include an attribute with the `Name` set to `https://aws.amazon.com/SAML/Attributes/Role`\. The attribute must contain one or more `AttributeValue` elements, each containing a comma\-separated pair of strings:

@@ -42,11 +42,11 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:AdminGetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html)`
 
-+ `[cognito\-idp:AdminDeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html)`
-
 + `[cognito\-idp:ForgetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html)`
 
 + `[cognito\-idp:GetGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html)`
+
++ `[cognito\-idp:AdminDeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html)`
 
 + `[cognito\-idp:AdminForgetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html)`
 
@@ -62,9 +62,9 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:ChangePassword](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ChangePassword.html)`
 
-+ `[cognito\-idp:AdminListGroupsForUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html)`
-
 + `[cognito\-idp:SignUp](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html)`
+
++ `[cognito\-idp:AdminListGroupsForUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListGroupsForUser.html)`
 
 + `[cognito\-idp:ListDevices](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListDevices.html)`
 
@@ -74,9 +74,9 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:AdminSetUserSettings](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserSettings.html)`
 
-+ `[cognito\-idp:ListGroups](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html)`
-
 + `[cognito\-idp:DeleteUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html)`
+
++ `[cognito\-idp:ListGroups](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html)`
 
 + `[cognito\-idp:DeleteGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteGroup.html)`
 
@@ -96,9 +96,9 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:AdminDeleteUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html)`
 
-+ `[cognito\-idp:CreateGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html)`
-
 + `[cognito\-idp:AdminRemoveUserFromGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRemoveUserFromGroup.html)`
+
++ `[cognito\-idp:CreateGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html)`
 
 + `[cognito\-idp:UpdateUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html)`
 
@@ -110,9 +110,9 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:AdminDisableUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html)`
 
-+ `[cognito\-idp:DeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html)`
-
 + `[cognito\-idp:ListUserImportJobs](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html)`
+
++ `[cognito\-idp:DeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html)`
 
 + `[cognito\-idp:UpdateDeviceStatus](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html)`
 
@@ -120,9 +120,9 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:DeleteUserPool](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPool.html)`
 
-+ `[cognito\-idp:CreateUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html)`
-
 + `[cognito\-idp:ListUserPoolClients](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html)`
+
++ `[cognito\-idp:CreateUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html)`
 
 + `[cognito\-idp:SetUserSettings](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserSettings.html)`
 

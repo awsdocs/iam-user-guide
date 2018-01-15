@@ -6,9 +6,9 @@ Amazon EC2 Container Service \(service prefix: ecs\) provides the following serv
 
 For information about using the following Amazon ECS API actions in an IAM policy, see [Amazon ECS IAM Policies](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/;IAM_policies.html) in the *Amazon ECS Developer Guide*\.
 
-+ `[ecs:DescribeContainerInstances](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html)`
-
 + `[ecs:RegisterTaskDefinition](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RegisterTaskDefinition.html)`
+
++ `[ecs:DescribeContainerInstances](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html)`
 
 + `[ecs:DeleteService](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteService.html)`
 
@@ -28,17 +28,17 @@ For information about using the following Amazon ECS API actions in an IAM polic
 
 + `[ecs:StopTask](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StopTask.html)`
 
++ `[ecs:ListClusters](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html)`
+
 + `[ecs:DescribeServices](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServices.html)`
 
-+ `[ecs:ListClusters](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListClusters.html)`
++ `[ecs:DescribeClusters](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html)`
+
++ `[ecs:StartTask](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html)`
 
 + `[ecs:ListTaskDefinitions](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTaskDefinitions.html)`
 
 + `[ecs:DiscoverPollEndpoint](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DiscoverPollEndpoint.html)`
-
-+ `[ecs:StartTask](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_StartTask.html)`
-
-+ `[ecs:DescribeClusters](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeClusters.html)`
 
 + `[ecs:ListContainerInstances](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html)`
 
@@ -48,9 +48,9 @@ For information about using the following Amazon ECS API actions in an IAM polic
 
 + `[ecs:ListTasks](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListTasks.html)`
 
-+ `[ecs:UpdateContainerAgent](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html)`
-
 + `[ecs:DescribeTaskDefinition](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTaskDefinition.html)`
+
++ `[ecs:UpdateContainerAgent](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerAgent.html)`
 
 + `[ecs:CreateService](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html)`
 

@@ -18,11 +18,11 @@ For information about using the following CloudFront API actions in an IAM polic
 
 + `[cloudfront:DeleteDistribution](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteDistribution.html)`
 
-+ `[cloudfront:GetDistributionConfig](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html)`
++ `[cloudfront:CreateInvalidation](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html)`
 
 + `[cloudfront:DeleteStreamingDistribution](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_DeleteStreamingDistribution.html)`
 
-+ `[cloudfront:CreateInvalidation](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html)`
++ `[cloudfront:GetDistributionConfig](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html)`
 
 + `[cloudfront:ListDistributionsByWebACLId](http://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html)`
 

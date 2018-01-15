@@ -16,9 +16,9 @@ For information about using the following Amazon GameLift API actions in an IAM 
 
 + `[gamelift:CreateAlias](http://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html)`
 
-+ `[gamelift:DescribeGameSessionDetails](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html)`
-
 + `[gamelift:CreateFleet](http://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html)`
+
++ `[gamelift:DescribeGameSessionDetails](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html)`
 
 + `[gamelift:DescribeFleetCapacity](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html)`
 
@@ -42,9 +42,9 @@ For information about using the following Amazon GameLift API actions in an IAM 
 
 + `[gamelift:DescribePlayerSessions](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html)`
 
-+ `[gamelift:DescribeFleetUtilization](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html)`
-
 + `[gamelift:DescribeFleetPortSettings](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetPortSettings.html)`
+
++ `[gamelift:DescribeFleetUtilization](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html)`
 
 + `[gamelift:DeleteAlias](http://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteAlias.html)`
 

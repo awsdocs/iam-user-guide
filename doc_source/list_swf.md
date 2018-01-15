@@ -6,17 +6,17 @@ Amazon Simple Workflow Service \(service prefix: swf\) provides the following se
 
 For information about using the following Amazon SWF API actions in an IAM policy, see [Using IAM to Manage Access to Amazon SWF Resources](http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) in the *Amazon Simple Workflow Service Developer Guide*\.
 
-+ `[swf:SignalExternalWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalExternalWorkflowExecution.html)`
-
 + `[swf:StartWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartWorkflowExecution.html)`
+
++ `[swf:SignalExternalWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_SignalExternalWorkflowExecution.html)`
 
 + `[swf:ScheduleActivityTask](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_ScheduleActivityTask.html)`
 
 + `[swf:ContinueAsNewWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_ContinueAsNewWorkflowExecution.html)`
 
-+ `[swf:RespondActivityTaskCanceled](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCanceled.html)`
-
 + `[swf:PollForDecisionTask](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForDecisionTask.html)`
+
++ `[swf:RespondActivityTaskCanceled](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondActivityTaskCanceled.html)`
 
 + `[swf:RequestCancelActivityTask](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelActivityTask.html)`
 
@@ -32,11 +32,11 @@ For information about using the following Amazon SWF API actions in an IAM polic
 
 + `[swf:RespondDecisionTaskCompleted](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RespondDecisionTaskCompleted.html)`
 
-+ `[swf:CompleteWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_CompleteWorkflowExecution.html)`
++ `[swf:RecordActivityTaskHeartbeat](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordActivityTaskHeartbeat.html)`
 
 + `[swf:RequestCancelWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelWorkflowExecution.html)`
 
-+ `[swf:RecordActivityTaskHeartbeat](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RecordActivityTaskHeartbeat.html)`
++ `[swf:CompleteWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_CompleteWorkflowExecution.html)`
 
 + `[swf:RegisterActivityType](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RegisterActivityType.html)`
 
@@ -48,9 +48,9 @@ For information about using the following Amazon SWF API actions in an IAM polic
 
 + `[swf:DescribeWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowExecution.html)`
 
-+ `[swf:ListActivityTypes](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListActivityTypes.html)`
-
 + `[swf:RequestCancelExternalWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_RequestCancelExternalWorkflowExecution.html)`
+
++ `[swf:ListActivityTypes](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListActivityTypes.html)`
 
 + `[swf:ListDomains](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_ListDomains.html)`
 
@@ -60,19 +60,19 @@ For information about using the following Amazon SWF API actions in an IAM polic
 
 + `[swf:StartChildWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_StartChildWorkflowExecution.html)`
 
-+ `[swf:DeprecateActivityType](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html)`
-
 + `[swf:CancelWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_CancelWorkflowExecution.html)`
 
++ `[swf:DeprecateActivityType](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateActivityType.html)`
+
 + `[swf:DeprecateWorkflowType](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateWorkflowType.html)`
+
++ `[swf:DeprecateDomain](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateDomain.html)`
 
 + `[swf:PollForActivityTask](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_PollForActivityTask.html)`
 
 + `[swf:DescribeActivityType](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeActivityType.html)`
 
 + `[swf:FailWorkflowExecution](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_FailWorkflowExecution.html)`
-
-+ `[swf:DeprecateDomain](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DeprecateDomain.html)`
 
 + `[swf:DescribeWorkflowType](http://docs.aws.amazon.com/amazonswf/latest/apireference/API_DescribeWorkflowType.html)`
 

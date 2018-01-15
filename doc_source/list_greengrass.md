@@ -6,6 +6,8 @@ AWS Greengrass \(service prefix: greengrass\) provides the following service\-sp
 
 For information about using the following API actions in an IAM policy, see [Some Topic](somehtmlfile.html) in the **\.
 
++ `[greengrass:CreateResourceDefinitionVersion]()`
+
 + `[greengrass:DeleteCoreDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html)`
 
 + `[greengrass:GetGroupVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/getgroupversion-get.html)`
@@ -14,11 +16,19 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:GetCoreDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html)`
 
++ `[greengrass:ListResourceDefinitionVersions]()`
+
 + `[greengrass:DisassociateServiceRoleFromAccount](http://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html)`
 
 + `[greengrass:CreateGroupCertificateAuthority](http://docs.aws.amazon.com/greengrass/latest/apireference/creategroupcertificateauthority-post.html)`
 
++ `[greengrass:UpdateResourceDefinition]()`
+
 + `[greengrass:GetLoggerDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinitionversion-get.html)`
+
++ `[greengrass:CreateResourceDefinition]()`
+
++ `[greengrass:DeleteResourceDefinition]()`
 
 + `[greengrass:CreateFunctionDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinitionversion-post.html)`
 
@@ -30,17 +40,17 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:GetAssociatedRole](http://docs.aws.amazon.com/greengrass/latest/apireference/getassociatedrole-get.html)`
 
-+ `[greengrass:GetSubscriptionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html)`
-
 + `[greengrass:ListGroupCertificateAuthorities](http://docs.aws.amazon.com/greengrass/latest/apireference/listgroupcertificateauthorities-get.html)`
+
++ `[greengrass:GetSubscriptionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinition-get.html)`
 
 + `[greengrass:CreateSubscriptionDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinitionversion-post.html)`
 
 + `[greengrass:CreateSubscriptionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/createsubscriptiondefinition-post.html)`
 
-+ `[greengrass:ListDeployments](http://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html)`
-
 + `[greengrass:GetLoggerDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/getloggerdefinition-get.html)`
+
++ `[greengrass:ListDeployments](http://docs.aws.amazon.com/greengrass/latest/apireference/listdeployments-get.html)`
 
 + `[greengrass:CreateDeployment](http://docs.aws.amazon.com/greengrass/latest/apireference/createdeployment-post.html)`
 
@@ -48,11 +58,13 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:CreateDeviceDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinition-post.html)`
 
-+ `[greengrass:CreateFunctionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html)`
-
 + `[greengrass:GetGroupCertificateAuthority](http://docs.aws.amazon.com/greengrass/latest/apireference/getgroupcertificateauthority-get.html)`
 
++ `[greengrass:CreateFunctionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/createfunctiondefinition-post.html)`
+
 + `[greengrass:CreateGroupVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/creategroupversion-post.html)`
+
++ `[greengrass:GetResourceDefinition]()`
 
 + `[greengrass:CreateDeviceDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/createdevicedefinitionversion-post.html)`
 
@@ -64,9 +76,9 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:GetFunctionDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/getfunctiondefinitionversion-get.html)`
 
-+ `[greengrass:DeleteLoggerDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html)`
-
 + `[greengrass:UpdateSubscriptionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/updatesubscriptiondefinition-put.html)`
+
++ `[greengrass:DeleteLoggerDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/deleteloggerdefinition-delete.html)`
 
 + `[greengrass:ListLoggerDefinitionVersions](http://docs.aws.amazon.com/greengrass/latest/apireference/listloggerdefinitionversions-get.html)`
 
@@ -75,6 +87,8 @@ For information about using the following API actions in an IAM policy, see [Som
 + `[greengrass:DeleteFunctionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/deletefunctiondefinition-delete.html)`
 
 + `[greengrass:ListGroups](http://docs.aws.amazon.com/greengrass/latest/apireference/listgroups-get.html)`
+
++ `[greengrass:GetResourceDefinitionVersion]()`
 
 + `[greengrass:GetSubscriptionDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/getsubscriptiondefinitionversion-get.html)`
 
@@ -94,6 +108,8 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:UpdateGroupCertificateConfiguration](http://docs.aws.amazon.com/greengrass/latest/apireference/updategroupcertificateconfiguration-put.html)`
 
++ `[greengrass:ListResourceDefinitions]()`
+
 + `[greengrass:GetDeviceDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/getdevicedefinitionversion-get.html)`
 
 + `[greengrass:AssociateServiceRoleToAccount](http://docs.aws.amazon.com/greengrass/latest/apireference/associateserviceroletoaccount-put.html)`
@@ -104,9 +120,9 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:GetServiceRoleForAccount](http://docs.aws.amazon.com/greengrass/latest/apireference/getserviceroleforaccount-get.html)`
 
-+ `[greengrass:ListFunctionDefinitionVersions](http://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html)`
-
 + `[greengrass:GetCoreDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinitionversion-get.html)`
+
++ `[greengrass:ListFunctionDefinitionVersions](http://docs.aws.amazon.com/greengrass/latest/apireference/listfunctiondefinitionversions-get.html)`
 
 + `[greengrass:ListGroupVersions](http://docs.aws.amazon.com/greengrass/latest/apireference/listgroupversions-get.html)`
 
@@ -128,11 +144,11 @@ For information about using the following API actions in an IAM policy, see [Som
 
 + `[greengrass:UpdateConnectivityInfo](http://docs.aws.amazon.com/greengrass/latest/apireference/updateconnectivityinfo-put.html)`
 
-+ `[greengrass:GetDeploymentStatus](http://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html)`
++ `[greengrass:UpdateFunctionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html)`
 
 + `[greengrass:CreateCoreDefinitionVersion](http://docs.aws.amazon.com/greengrass/latest/apireference/createcoredefinitionversion-post.html)`
 
-+ `[greengrass:UpdateFunctionDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/updatefunctiondefinition-put.html)`
++ `[greengrass:GetDeploymentStatus](http://docs.aws.amazon.com/greengrass/latest/apireference/getdeploymentstatus-get.html)`
 
 + `[greengrass:UpdateGroup](http://docs.aws.amazon.com/greengrass/latest/apireference/updategroup-put.html)`
 

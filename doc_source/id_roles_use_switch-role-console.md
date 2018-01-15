@@ -17,7 +17,9 @@ Where your administrator provides the *account\_id\_number* and *role\_name* to 
 **Important**  
 If you create the role programmatically instead of in the IAM console, then you have an option to add a `Path` of up to 512 characters in addition to the `RoleName`, which can be up to 64 characters long\. However, to use a role with the Switch Role feature in the AWS console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
 
-+ You can manually switch roles using the information your administrator provides by using the following procedure: 
++ You can manually switch roles using the information your administrator provides by using the procedures below\. 
+
+To troubleshoot common issues that you might encounter when you assume a role, see [I Can't Assume a Role](troubleshoot_roles.md#troubleshoot_roles_cant-assume-role)\.
 
 **To switch to a role**
 

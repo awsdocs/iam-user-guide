@@ -6,9 +6,9 @@ Amazon Pinpoint \(service prefix: mobiletargeting\) provides the following servi
 
 For information about using the following Amazon Pinpoint API actions in an IAM policy, see [Permissions](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions.html) in the *Amazon Pinpoint Developer Guide*\.
 
-+ `[mobiletargeting:GetSegments](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
-
 + `[mobiletargeting:UpdateApplicationSettings](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
+
++ `[mobiletargeting:GetSegments](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
 + `[mobiletargeting:GetImportJob](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
@@ -18,11 +18,11 @@ For information about using the following Amazon Pinpoint API actions in an IAM 
 
 + `[mobiletargeting:GetGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
++ `[mobiletargeting:UpdateGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
+
 + `[mobiletargeting:DeleteApnsChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
 + `[mobiletargeting:UpdateSegment](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
-
-+ `[mobiletargeting:UpdateGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
 + `[mobiletargeting:UpdateCampaign](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
@@ -30,9 +30,9 @@ For information about using the following Amazon Pinpoint API actions in an IAM 
 
 + `[mobiletargeting:DeleteGcmChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetCampaignVersion](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
-
 + `[mobiletargeting:GetSegmentVersion](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
+
++ `[mobiletargeting:GetCampaignVersion](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
 + `[mobiletargeting:CreateSegment](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
@@ -54,9 +54,9 @@ For information about using the following Amazon Pinpoint API actions in an IAM 
 
 + `[mobiletargeting:GetReports](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
-+ `[mobiletargeting:GetSegmentImportJobs](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
-
 + `[mobiletargeting:UpdateEndpoint](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
+
++ `[mobiletargeting:GetSegmentImportJobs](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 
 + `[mobiletargeting:UpdateApnsChannel](http://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions)`
 

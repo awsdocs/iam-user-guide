@@ -10,9 +10,9 @@ For more information about the Device Farm API actions in the following list, se
 
 + `[devicefarm:ListSamples](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSamples.html)`
 
-+ `[devicefarm:ListDevices](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html)`
-
 + `[devicefarm:ListSuites](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSuites.html)`
+
++ `[devicefarm:ListDevices](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html)`
 
 + `[devicefarm:GetDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePool.html)`
 
@@ -34,17 +34,17 @@ For more information about the Device Farm API actions in the following list, se
 
 + `[devicefarm:UpdateDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html)`
 
-+ `[devicefarm:GetTest](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html)`
-
 + `[devicefarm:DeleteDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteDevicePool.html)`
+
++ `[devicefarm:GetTest](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html)`
 
 + `[devicefarm:GetDevice](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevice.html)`
 
 + `[devicefarm:GetRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRun.html)`
 
-+ `[devicefarm:InstallToRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html)`
-
 + `[devicefarm:ListTests](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTests.html)`
+
++ `[devicefarm:InstallToRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html)`
 
 + `[devicefarm:DeleteRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRemoteAccessSession.html)`
 
@@ -74,19 +74,19 @@ For more information about the Device Farm API actions in the following list, se
 
 + `[devicefarm:ListNetworkProfiles](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListNetworkProfiles.html)`
 
-+ `[devicefarm:GetNetworkProfile](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetNetworkProfile.html)`
-
 + `[devicefarm:PurchaseOffering](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_PurchaseOffering.html)`
+
++ `[devicefarm:GetNetworkProfile](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetNetworkProfile.html)`
 
 + `[devicefarm:ScheduleRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ScheduleRun.html)`
 
 + `[devicefarm:RenewOffering](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RenewOffering.html)`
 
-+ `[devicefarm:ListUploads](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html)`
-
 + `[devicefarm:DeleteProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteProject.html)`
 
 + `[devicefarm:ListArtifacts](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListArtifacts.html)`
+
++ `[devicefarm:ListUploads](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html)`
 
 + `[devicefarm:UpdateProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html)`
 
@@ -98,9 +98,9 @@ For more information about the Device Farm API actions in the following list, se
 
 + `[devicefarm:ListOfferingTransactions](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingTransactions.html)`
 
-+ `[devicefarm:ListJobs](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html)`
-
 + `[devicefarm:DeleteNetworkProfile](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteNetworkProfile.html)`
+
++ `[devicefarm:ListJobs](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html)`
 
 **Condition context keys for AWS Device Farm**
 

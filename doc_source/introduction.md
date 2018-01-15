@@ -16,7 +16,9 @@ AWS Identity and Access Management \(IAM\) is a web service that helps you secur
 
 ## Video Introduction to IAM<a name="intro-video"></a>
 
-This short video \(2:15\) provides a brief introduction to IAM\.
+AWS Training and Certification provides a 10\-minute video introduction to IAM:
+
+[Introduction to AWS Identity and Access Management](https://www.aws.training/learningobject/video?id=16448)
 
 ## IAM Features<a name="intro-features"></a>
 

@@ -16,11 +16,11 @@ For information about using the following Amazon Chime actions in an IAM policy,
 
 + `chime:DeleteCDRBucket`
 
-+ `chime:UpdateAccountResource`
-
 + `chime:ConnectDirectory`
 
 + `chime:ListGroups`
+
++ `chime:UpdateAccountResource`
 
 + `chime:LogoutUser`
 
@@ -42,9 +42,9 @@ For information about using the following Amazon Chime actions in an IAM policy,
 
 + `chime:ListDomains`
 
-+ `chime:DeleteAccount`
-
 + `chime:ListDirectories`
+
++ `chime:DeleteAccount`
 
 + `chime:RenewDelegate`
 
@@ -52,17 +52,17 @@ For information about using the following Amazon Chime actions in an IAM policy,
 
 + `chime:GetUserByEmail`
 
-+ `chime:UpdateCDRBucket`
-
 + `chime:ListCDRBucket`
+
++ `chime:UpdateCDRBucket`
 
 + `chime:InviteUsers`
 
 + `chime:ValidateAccountResource`
 
-+ `chime:AddOrUpdateGroups`
-
 + `chime:GetAccount`
+
++ `chime:AddOrUpdateGroups`
 
 + `chime:GetDomain`
 
@@ -70,9 +70,9 @@ For information about using the following Amazon Chime actions in an IAM policy,
 
 + `chime:GetAccountSettings`
 
-+ `chime:ValidateDelegate`
-
 + `chime:SubmitSupportRequest`
+
++ `chime:ValidateDelegate`
 
 + `chime:ListDelegates`
 

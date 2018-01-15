@@ -12,9 +12,9 @@ For information about using the following Elastic Transcoder API actions in an I
 
 + `[elastictranscoder:ReadPipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-pipeline.html)`
 
-+ `[elastictranscoder:ListPipelines](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html)`
-
 + `[elastictranscoder:CreatePipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-pipeline.html)`
+
++ `[elastictranscoder:ListPipelines](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-pipelines.html)`
 
 + `[elastictranscoder:CreatePreset](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-preset.html)`
 
@@ -24,21 +24,21 @@ For information about using the following Elastic Transcoder API actions in an I
 
 + `[elastictranscoder:DeletePipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-pipeline.html)`
 
-+ `[elastictranscoder:DeletePreset](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html)`
-
 + `[elastictranscoder:TestRole](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/test-pipeline-role.html)`
 
-+ `[elastictranscoder:ReadJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html)`
++ `[elastictranscoder:DeletePreset](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/delete-preset.html)`
 
 + `[elastictranscoder:CancelJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/cancel-job.html)`
+
++ `[elastictranscoder:ReadJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/get-job.html)`
 
 + `[elastictranscoder:ListPresets](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/list-presets.html)`
 
 + `[elastictranscoder:UpdatePipeline](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline.html)`
 
-+ `[elastictranscoder:UpdatePipelineStatus](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html)`
-
 + `[elastictranscoder:CreateJob](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/create-job.html)`
+
++ `[elastictranscoder:UpdatePipelineStatus](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/update-pipeline-status.html)`
 
 **Condition context keys for Amazon Elastic Transcoder**
 

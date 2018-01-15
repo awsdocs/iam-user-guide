@@ -66,7 +66,7 @@ For more information and detail about this procedure, see [Granting a User Permi
 
 1. Do one of the following:
 
-   + To edit a *customer* managed policy, choose the name of the policy, choose **Edit policy**, and then choose the **JSON** tab\. You cannot edit an AWS managed policy\. AWS managed policies appear with the AWS icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
+   + To edit a customer managed policy, choose the name of the policy, choose **Edit policy**, and then choose the **JSON** tab\. You cannot edit an AWS managed policy\. AWS managed policies appear with the AWS icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
 
    + To edit an inline policy, choose the arrow next to the name of the policy and choose **Edit policy**\.
 

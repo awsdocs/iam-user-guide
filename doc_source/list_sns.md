@@ -16,9 +16,9 @@ For information about using the following Amazon SNS API actions in an IAM polic
 
 + `[sns:AddPermission](http://docs.aws.amazon.com/sns/latest/api/API_AddPermission.html)`
 
-+ `[sns:ListPhoneNumbersOptedOut](http://docs.aws.amazon.com/sns/latest/api/API_ListPhoneNumbersOptedOut.html)`
-
 + `[sns:DeleteTopic](http://docs.aws.amazon.com/sns/latest/api/API_DeleteTopic.html)`
+
++ `[sns:ListPhoneNumbersOptedOut](http://docs.aws.amazon.com/sns/latest/api/API_ListPhoneNumbersOptedOut.html)`
 
 + `[sns:Subscribe](http://docs.aws.amazon.com/sns/latest/api/API_Subscribe.html)`
 
@@ -42,17 +42,17 @@ For information about using the following Amazon SNS API actions in an IAM polic
 
 + `[sns:SetSubscriptionAttributes](http://docs.aws.amazon.com/sns/latest/api/API_SetSubscriptionAttributes.html)`
 
-+ `[sns:OptInPhoneNumber](http://docs.aws.amazon.com/sns/latest/api/API_OptInPhoneNumber.html)`
-
 + `[sns:Publish](http://docs.aws.amazon.com/sns/latest/api/API_Publish.html)`
+
++ `[sns:OptInPhoneNumber](http://docs.aws.amazon.com/sns/latest/api/API_OptInPhoneNumber.html)`
 
 + `[sns:SetEndpointAttributes](http://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html)`
 
 + `[sns:GetSMSAttributes](http://docs.aws.amazon.com/sns/latest/api/API_GetSMSAttributes.html)`
 
-+ `[sns:CheckIfPhoneNumberIsOptedOut](http://docs.aws.amazon.com/sns/latest/api/API_CheckIfPhoneNumberIsOptedOut.html)`
-
 + `[sns:DeleteEndpoint](http://docs.aws.amazon.com/sns/latest/api/API_DeleteEndpoint.html)`
+
++ `[sns:CheckIfPhoneNumberIsOptedOut](http://docs.aws.amazon.com/sns/latest/api/API_CheckIfPhoneNumberIsOptedOut.html)`
 
 + `[sns:SetTopicAttributes](http://docs.aws.amazon.com/sns/latest/api/API_SetTopicAttributes.html)`
 
@@ -60,9 +60,9 @@ For information about using the following Amazon SNS API actions in an IAM polic
 
 + `[sns:CreatePlatformEndpoint](http://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformEndpoint.html)`
 
-+ `[sns:ListSubscriptions](http://docs.aws.amazon.com/sns/latest/api/API_ListSubscriptions.html)`
-
 + `[sns:CreatePlatformApplication](http://docs.aws.amazon.com/sns/latest/api/API_CreatePlatformApplication.html)`
+
++ `[sns:ListSubscriptions](http://docs.aws.amazon.com/sns/latest/api/API_ListSubscriptions.html)`
 
 + `[sns:ConfirmSubscription](http://docs.aws.amazon.com/sns/latest/api/API_ConfirmSubscription.html)`
 

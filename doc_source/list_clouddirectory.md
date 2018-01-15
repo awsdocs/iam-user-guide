@@ -24,9 +24,9 @@ For additional information about using Amazon Cloud Directory actions in an IAM 
 
 + `[clouddirectory:GetDirectory](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetDirectory.html)`
 
-+ `[clouddirectory:ListAppliedSchemaArns](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAppliedSchemaArns.html)`
-
 + `[clouddirectory:CreateTypedLinkFacet](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html)`
+
++ `[clouddirectory:ListAppliedSchemaArns](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAppliedSchemaArns.html)`
 
 + `[clouddirectory:GetTypedLinkFacetInformation](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetTypedLinkFacetInformation.html)`
 
@@ -54,31 +54,31 @@ For additional information about using Amazon Cloud Directory actions in an IAM 
 
 + `[clouddirectory:ApplySchema](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ApplySchema.html)`
 
-+ `[clouddirectory:UntagResource](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UntagResource.html)`
-
 + `[clouddirectory:ListOutgoingTypedLinks](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html)`
 
-+ `[clouddirectory:PutSchemaFromJson](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PutSchemaFromJson.html)`
++ `[clouddirectory:UntagResource](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UntagResource.html)`
 
 + `[clouddirectory:CreateSchema](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateSchema.html)`
+
++ `[clouddirectory:PutSchemaFromJson](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PutSchemaFromJson.html)`
 
 + `[clouddirectory:ListTagsForResource](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTagsForResource.html)`
 
 + `[clouddirectory:DeleteTypedLinkFacet](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteTypedLinkFacet.html)`
 
-+ `[clouddirectory:ListObjectParentPaths](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParentPaths.html)`
-
 + `[clouddirectory:PublishSchema](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PublishSchema.html)`
+
++ `[clouddirectory:ListObjectParentPaths](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParentPaths.html)`
 
 + `[clouddirectory:ListObjectChildren](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectChildren.html)`
 
 + `[clouddirectory:DeleteObject](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteObject.html)`
 
-+ `[clouddirectory:TagResource](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_TagResource.html)`
++ `[clouddirectory:DeleteSchema](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteSchema.html)`
 
 + `[clouddirectory:ListAttachedIndices](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListAttachedIndices.html)`
 
-+ `[clouddirectory:DeleteSchema](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteSchema.html)`
++ `[clouddirectory:TagResource](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_TagResource.html)`
 
 + `[clouddirectory:DetachTypedLink](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html)`
 
@@ -94,9 +94,9 @@ For additional information about using Amazon Cloud Directory actions in an IAM 
 
 + `[clouddirectory:RemoveFacetFromObject](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_RemoveFacetFromObject.html)`
 
-+ `[clouddirectory:ListIncomingTypedLinks](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html)`
-
 + `[clouddirectory:ListDirectories](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListDirectories.html)`
+
++ `[clouddirectory:ListIncomingTypedLinks](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html)`
 
 + `[clouddirectory:GetFacet](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetFacet.html)`
 
@@ -114,11 +114,11 @@ For additional information about using Amazon Cloud Directory actions in an IAM 
 
 + `[clouddirectory:ListFacetNames](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListFacetNames.html)`
 
-+ `[clouddirectory:ListIndex](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIndex.html)`
-
 + `[clouddirectory:ListObjectParents](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParents.html)`
 
 + `[clouddirectory:AttachObject](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachObject.html)`
+
++ `[clouddirectory:ListIndex](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIndex.html)`
 
 + `[clouddirectory:CreateObject](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateObject.html)`
 

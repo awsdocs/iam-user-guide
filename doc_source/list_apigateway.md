@@ -16,9 +16,9 @@ For more information about controlling access to API Gateway, see [User Access P
 
 + `apigateway:OPTIONS`
 
-+ `apigateway:PATCH`
-
 + `apigateway:PUT`
+
++ `apigateway:PATCH`
 
 **Condition context keys for Manage Amazon API Gateway**
 

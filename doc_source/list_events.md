@@ -16,9 +16,9 @@ For information about controlling access to CloudWatch Events by using an IAM po
 
 + `[events:PutRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutRule.html)`
 
-+ `[events:PutTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html)`
-
 + `[events:DeleteRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DeleteRule.html)`
+
++ `[events:PutTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html)`
 
 + `[events:ListRules](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRules.html)`
 
@@ -26,17 +26,15 @@ For information about controlling access to CloudWatch Events by using an IAM po
 
 + `[events:RemoveTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_RemoveTargets.html)`
 
-+ `[events:ListRuleNamesByTarget](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRuleNamesByTarget.html)`
-
 + `[events:ListTargetsByRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListTargetsByRule.html)`
+
++ `[events:ListRuleNamesByTarget](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRuleNamesByTarget.html)`
 
 **Condition context keys for Amazon CloudWatch Events**
 
 For information about using condition keys to provide more granular control over CloudWatch Events with IAM policies, see [Condition Keys for CloudWatch Events](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsConditionKeys.html) in the *Amazon CloudWatch User Guide*\.
 
 Amazon CloudWatch Events has the following service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
-
-+ `[events: detail\.userIdentity\.principalId](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsConditionKeys.html)`
 
 + `[events:TargetArn](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsConditionKeys.html)`
 

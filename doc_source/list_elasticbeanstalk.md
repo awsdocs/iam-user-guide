@@ -8,9 +8,9 @@ For information about using the following Elastic Beanstalk API actions in an IA
 
 + `[elasticbeanstalk:DescribeEnvironments](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html)`
 
-+ `[elasticbeanstalk:DeleteEnvironmentConfiguration](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteEnvironmentConfiguration.html)`
-
 + `[elasticbeanstalk:DescribeConfigurationSettings](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html)`
+
++ `[elasticbeanstalk:DeleteEnvironmentConfiguration](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DeleteEnvironmentConfiguration.html)`
 
 + `[elasticbeanstalk:ListPlatformVersions](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html)`
 
@@ -34,11 +34,11 @@ For information about using the following Elastic Beanstalk API actions in an IA
 
 + `[elasticbeanstalk:ComposeEnvironments](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html)`
 
++ `[elasticbeanstalk:RebuildEnvironment](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html)`
+
 + `[elasticbeanstalk:CreateApplication](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html)`
 
 + `[elasticbeanstalk:CreateEnvironment](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateEnvironment.html)`
-
-+ `[elasticbeanstalk:RebuildEnvironment](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html)`
 
 + `[elasticbeanstalk:UpdateApplicationResourceLifecycle](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html)`
 

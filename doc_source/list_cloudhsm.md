@@ -20,11 +20,11 @@ For information about controlling access to AWS CloudHSM by using an IAM policy,
 
 + `[cloudhsm:DescribeHsm](http://docs.aws.amazon.com/cloudhsm/latest/dg/API_DescribeHsm.html)`
 
-+ `[cloudhsm:DeleteLunaClient](http://docs.aws.amazon.com/cloudhsm/latest/dg/API_DeleteLunaClient.html)`
-
 + `[cloudhsm:DeleteHsm](http://docs.aws.amazon.com/cloudhsm/latest/dg/API_DeleteHsm.html)`
 
 + `[cloudhsm:ListLunaClients](http://docs.aws.amazon.com/cloudhsm/latest/dg/API_ListLunaClients.html)`
+
++ `[cloudhsm:DeleteLunaClient](http://docs.aws.amazon.com/cloudhsm/latest/dg/API_DeleteLunaClient.html)`
 
 + `[cloudhsm:CreateLunaClient](http://docs.aws.amazon.com/cloudhsm/latest/dg/API_CreateLunaClient.html)`
 

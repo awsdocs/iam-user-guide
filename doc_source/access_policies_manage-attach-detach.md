@@ -10,12 +10,13 @@ For information about policy size limitations and other quotas, see [Limitations
 
 
 + [Attaching IAM Policies \(Console\)](#attach-managed-policy-console)
++ [Embedding Inline Policies \(Console\)](#embed-inline-policy-console)
 + [Detaching IAM Policies \(Console\)](#detach-managed-policy-console)
 + [Attaching or Detaching IAM Policies \(AWS CLI or AWS API\)](#attach-detach-managed-policy-cli-api)
 
 ## Attaching IAM Policies \(Console\)<a name="attach-managed-policy-console"></a>
 
-You can use the AWS Management Console to attach a managed policy to an identity \(a user, group, or role\)\. Attaching a policy applies its permissions in the policy to the identity\. Because an inline policy is stored on the identity, it is embedded rather than attached, though it is a similar concept\.
+You can use the AWS Management Console to attach a managed policy to an identity \(a user, group, or role\)\. Attaching a policy applies the permissions in the policy to the identity\.
 
 **To attach a managed policy \(console\)**
 
@@ -29,19 +30,45 @@ You can use the AWS Management Console to attach a managed policy to an identity
 
 1. Select one or more identities to attach the policy to\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the identities, choose **Attach policy**\.
 
-**To embed an inline policy \(console\)**
+## Embedding Inline Policies \(Console\)<a name="embed-inline-policy-console"></a>
+
+You can use the AWS Management Console to embed an inline policy in an identity \(a user, group, or role\)\. Embedding a policy applies the permissions in the policy to the identity\. Because an inline policy is stored in the identity, it is embedded rather than attached, though the concept is similar\.
+
+**To embed an inline policy for a user or role \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Groups**, **Users**, or **Roles**\.
+1. In the navigation pane, choose **Users** or **Roles**\.
 
-1. In the list, choose the name of the group, user, or role to embed a policy in\.
+1. In the list, choose the name of the user or role to embed a policy in\.
 
-1. Choose the **Permissions** tab\. If you chose **Groups**, expand the **Inline Policies** section if necessary\.
+1. Choose the **Permissions** tab\. 
 
-1. If in **Groups**, choose **Create Group Policy**\. If in **Users** or **Roles**, scroll to the bottom of the page and choose **Add inline policy**\. If there are no existing policies in **Groups**, instead choose **click here** to create your first inline policy\.
+1. Scroll to the bottom of the page and choose **Add inline policy**\.
 **Note**  
-You cannot embed an inline policy in a *service\-linked role* in IAM\. Because the linked service defines whether you can modify the permissions of the role, you might be able to add additional policies from the service console, API, or CLI\. To view the service\-linked role documentation for a service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and choose **Yes** in the **Service\-Linked Role** column for your service\.
+You cannot embed an inline policy in a *service\-linked role* in IAM\. Because the linked service defines whether you can modify the permissions of the role, you might be able to add additional policies from the service console, API, or AWS CLI\. To view the service\-linked role documentation for a service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and choose **Yes** in the **Service\-Linked Role** column for your service\.
+
+1. Choose from the following methods to view the steps required to create your policy:
+
+   + [Import an Existing Managed Policy](access_policies_create.md#access_policies_create-copy) – You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy or a customer managed policy that you created previously\.
+
+   + [Create a Policy with the Visual Editor](access_policies_create.md#access_policies_create-visual-editor) – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
+
+   + [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an example policy\.
+
+1. After you create an inline policy, it is automatically embedded in your user or role\.
+
+**To embed an inline policy for a group \(console\)**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Groups**\.
+
+1. In the list, choose the name of the group to embed a policy in\.
+
+1. Choose the **Permissions** tab and expand the **Inline Policies** section if necessary\.
+
+1. Choose **Create Group Policy**\. If there are no existing policies in **Groups**, instead choose **click here** to create your first inline policy\.
 
 1. Choose **Policy Generator** or **Custom Policy**, and then choose **Select**\. 
 

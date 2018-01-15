@@ -10,11 +10,13 @@ AWS Step Functions is capable of executing code and accessing AWS resources \(su
 
 + `[states:DescribeExecution](http://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeExecution.html)`
 
++ `[states:DescribeStateMachineForExecution](http://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachineForExecution.html)`
+
 + `[states:StopExecution](http://docs.aws.amazon.com/step-functions/latest/apireference/API_StopExecution.html)`
 
-+ `[states:ListExecutions](http://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html)`
-
 + `[states:GetExecutionHistory](http://docs.aws.amazon.com/step-functions/latest/apireference/API_GetExecutionHistory.html)`
+
++ `[states:ListExecutions](http://docs.aws.amazon.com/step-functions/latest/apireference/API_ListExecutions.html)`
 
 + `[states:DescribeStateMachine](http://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeStateMachine.html)`
 
@@ -24,9 +26,9 @@ AWS Step Functions is capable of executing code and accessing AWS resources \(su
 
 + `[states:GetActivityTask](http://docs.aws.amazon.com/step-functions/latest/apireference/API_GetActivityTask.html)`
 
-+ `[states:DescribeActivity](http://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html)`
-
 + `[states:ListStateMachines](http://docs.aws.amazon.com/step-functions/latest/apireference/API_ListStateMachines.html)`
+
++ `[states:DescribeActivity](http://docs.aws.amazon.com/step-functions/latest/apireference/API_DescribeActivity.html)`
 
 + `[states:CreateStateMachine](http://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateStateMachine.html)`
 
@@ -34,11 +36,13 @@ AWS Step Functions is capable of executing code and accessing AWS resources \(su
 
 + `[states:SendTaskFailure](http://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskFailure.html)`
 
-+ `[states:ListActivities](http://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html)`
-
 + `[states:CreateActivity](http://docs.aws.amazon.com/step-functions/latest/apireference/API_CreateActivity.html)`
 
++ `[states:ListActivities](http://docs.aws.amazon.com/step-functions/latest/apireference/API_ListActivities.html)`
+
 + `[states:SendTaskHeartbeat](http://docs.aws.amazon.com/step-functions/latest/apireference/API_SendTaskHeartbeat.html)`
+
++ `[states:UpdateStateMachine](http://docs.aws.amazon.com/step-functions/latest/apireference/API_UpdateStateMachine.html)`
 
 **Condition context keys for AWS Step Functions**
 

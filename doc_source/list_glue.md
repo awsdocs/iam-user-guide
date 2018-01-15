@@ -10,9 +10,9 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 + `[glue:StartTrigger](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:GetTableVersions](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:GetConnection](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:GetTableVersions](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:CreateClassifier](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
@@ -20,9 +20,9 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 + `[glue:UpdateClassifier](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:BatchDeleteTable](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:GetJobs](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:BatchDeleteTable](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:StartCrawler](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
@@ -40,9 +40,9 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 + `[glue:UpdateConnection](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:CreateTrigger](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:GetPartition](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:CreateTrigger](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:UpdatePartition](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
@@ -62,9 +62,9 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 + `[glue:DeleteUserDefinedFunction](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:ImportCatalogToGlue](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:GetTables](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:ImportCatalogToGlue](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:GetDatabase](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
@@ -86,29 +86,29 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 + `[glue:UpdateDatabase](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
++ `[glue:GetTriggers](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
 + `[glue:GetJob](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:GetTriggers](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
++ `[glue:DeleteTrigger](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:GetTrigger](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:GetJobRun](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:DeleteTrigger](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:CreateDevEndpoint](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:GetPartitions](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:GetConnections](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:UpdateJob](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:GetConnections](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:CreatePartition](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:CreateDatabase](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:GetUserDefinedFunctions](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:CreateDatabase](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:GetClassifiers](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
@@ -120,9 +120,9 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 + `[glue:GetJobRuns](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
-+ `[glue:StopCrawler](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
-
 + `[glue:BatchDeleteConnection](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
+
++ `[glue:StopCrawler](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 + `[glue:DeleteDevEndpoint](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
@@ -153,7 +153,5 @@ For information about using the following AWS Glue API actions in an IAM policy,
 + `[glue:UpdateCrawler](http://docs.aws.amazon.com/glue/latest/dg/api-permissions-reference.html)`
 
 **Condition context keys for AWS Glue**
-
-For information about using the following conditions in an IAM policy, see [Some Topic](somehtmlfile.html) in the **\.
 
 AWS Glue has no service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.

@@ -12,7 +12,7 @@ This example shows how you might create a policy that allows `Read` and `Write` 
          "s3:GetBucketLocation",
          "s3:ListAllMyBuckets"
        ],
-       "Resource": "arn:aws:s3:::*"
+       "Resource": "*"
      },
      {
        "Effect": "Allow",

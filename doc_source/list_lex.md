@@ -8,9 +8,9 @@ For information about using the following Amazon Lex API actions in an IAM polic
 
 + `[lex:PutSlotType](http://docs.aws.amazon.com/lex/latest/dg/API_PutSlotType.html)`
 
-+ `[lex:GetIntent](http://docs.aws.amazon.com/lex/latest/dg/API_GetIntent.html)`
-
 + `[lex:GetBotChannelAssociation](http://docs.aws.amazon.com/lex/latest/dg/API_GetBotChannelAssociation.html)`
+
++ `[lex:GetIntent](http://docs.aws.amazon.com/lex/latest/dg/API_GetIntent.html)`
 
 + `[lex:DeleteIntentVersion](http://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntentVersion.html)`
 
@@ -26,21 +26,21 @@ For information about using the following Amazon Lex API actions in an IAM polic
 
 + `[lex:GetSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/API_GetSlotTypes.html)`
 
-+ `[lex:PostContent](http://docs.aws.amazon.com/lex/latest/dg/API_PostContent.html)`
++ `[lex:GetBot](http://docs.aws.amazon.com/lex/latest/dg/API_GetBot.html)`
 
 + `[lex:GetBotAlias](http://docs.aws.amazon.com/lex/latest/dg/API_GetBotAlias.html)`
 
 + `[lex:DeleteBotAlias](http://docs.aws.amazon.com/lex/latest/dg/API_DeleteBotAlias.html)`
 
-+ `[lex:GetBot](http://docs.aws.amazon.com/lex/latest/dg/API_GetBot.html)`
++ `[lex:PostContent](http://docs.aws.amazon.com/lex/latest/dg/API_PostContent.html)`
 
 + `[lex:CreateBotVersion](http://docs.aws.amazon.com/lex/latest/dg/API_CreateBotVersion.html)`
-
-+ `[lex:DeleteIntent](http://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntent.html)`
 
 + `[lex:PutIntent](http://docs.aws.amazon.com/lex/latest/dg/API_PutIntent.html)`
 
 + `[lex:GetIntentVersions](http://docs.aws.amazon.com/lex/latest/dg/API_GetIntentVersions.html)`
+
++ `[lex:DeleteIntent](http://docs.aws.amazon.com/lex/latest/dg/API_DeleteIntent.html)`
 
 + `[lex:GetBuiltinSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/API_GetBuiltinSlotTypes.html)`
 

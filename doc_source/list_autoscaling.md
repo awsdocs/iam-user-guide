@@ -12,9 +12,9 @@ For information about using the following Auto Scaling API actions in an IAM pol
 
 + `[autoscaling:DeleteLaunchConfiguration](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DeleteLaunchConfiguration.html)`
 
-+ `[autoscaling:PutScheduledUpdateGroupAction](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScheduledUpdateGroupAction.html)`
-
 + `[autoscaling:CreateOrUpdateTags](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateOrUpdateTags.html)`
+
++ `[autoscaling:PutScheduledUpdateGroupAction](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_PutScheduledUpdateGroupAction.html)`
 
 + `[autoscaling:AttachLoadBalancerTargetGroups](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_AttachLoadBalancerTargetGroups.html)`
 
@@ -50,13 +50,13 @@ For information about using the following Auto Scaling API actions in an IAM pol
 
 + `[autoscaling:TerminateInstanceInAutoScalingGroup](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_TerminateInstanceInAutoScalingGroup.html)`
 
-+ `[autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
-
 + `[autoscaling:ExitStandby](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ExitStandby.html)`
 
-+ `[autoscaling:DetachLoadBalancers](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancers.html)`
++ `[autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
 
 + `[autoscaling:DescribeNotificationConfigurations](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DescribeNotificationConfigurations.html)`
+
++ `[autoscaling:DetachLoadBalancers](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_DetachLoadBalancers.html)`
 
 + `[autoscaling:ExecutePolicy](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_ExecutePolicy.html)`
 

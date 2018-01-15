@@ -1,6 +1,6 @@
 # Understanding How IAM Works<a name="intro-structure"></a>
 
-Before you create users, you should understand how IAM works\. IAM provides the infrastructure necessary to control authorization and access control for your account\. The IAM infrastructure includes the following elements:
+Before you create users, you should understand how IAM works\. IAM provides the infrastructure necessary to control authentication and authorization for your account\. The IAM infrastructure includes the following elements:
 
 
 + [Principal](#intro-structure-principal)
@@ -38,13 +38,13 @@ AWS gathers this information into a *request context*, which is used to evaluate
 
 ## Authentication<a name="intro-structure-authentication"></a>
 
-As a principal, you must be authenticated \(signed in to AWS\) to send a request to AWS\. \(A few services, like Amazon S3, allow requests from anonymous users\.\) To authenticate from the console, you must sign in with your user name and password\. To authenticate from the API or CLI, you must provide your access key and secret key\. You might also be required to provide additional security information\. AWS recommends that you use multi\-factor authentication \(MFA\) to increase the security of your account\. To learn more about the IAM identities that AWS can authenticate, see [Identities \(Users, Groups, and Roles\)](id.md)\.
+As a principal, you must be authenticated \(signed in to AWS\) to send a request to AWS\. Alternatively, a few services, like Amazon S3, allow requests from anonymous users\. To authenticate from the console, you must sign in with your user name and password\. To authenticate from the API or CLI, you must provide your access key and secret key\. You might also be required to provide additional security information\. AWS recommends that you use multi\-factor authentication \(MFA\) to increase the security of your account\. To learn more about the IAM identities that AWS can authenticate, see [Identities \(Users, Groups, and Roles\)](id.md)\.
 
 ## Authorization<a name="intro-structure-authorization"></a>
 
 During authorization, IAM uses values from the request context to check for matching policies and determine whether to allow or deny the request\. Policies are stored in IAM as JSON documents and specify the permissions that are allowed or denied for principals \(*identity\-based policies*\) or resources \(*resource\-based policies*\)\. 
 
-IAM checks each policy that matches the context of your request\. If a single policy includes a denied action, IAMdenies the entire request and stops evaluating\. This is called an *explicit deny*\. Because requests are *denied by default* IAM authorizes your request only if every part of your request is allowed by the matching policies\. The evaluation logic follows these rules:
+IAM checks each policy that matches the context of your request\. If a single policy includes a denied action, IAM denies the entire request and stops evaluating\. This is called an *explicit deny*\. Because requests are *denied by default*, IAM authorizes your request only if every part of your request is allowed by the matching policies\. The evaluation logic follows these rules:
 
 + By default, all requests are denied\.
 

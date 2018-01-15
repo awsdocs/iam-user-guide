@@ -68,7 +68,7 @@ Next, create custom policies that grant both view and full access permissions to
 
    **Read\-only access**
 
-   1. Repeat steps 3 through 6\.
+   1. Repeat steps 3 and 4\.
 
    1. Choose **Select actions** and then select the check box next to **Read**\. You do not need to select a resource or condition for this policy\.
 
@@ -92,7 +92,7 @@ Now that you have custom billing policies available, you can attach them to thei
 
    1. Choose **Policy actions**, and then choose **Attach**\.
 
-   1. In the search box, type **FullAccess**, select the check box next to the name of the group, and then choose **Attach policy**\.
+   1. In the search box, type **FinanceManager**, select the check box next to the name of the group, and then choose **Attach policy**\.
 
    **Read\-only access**
 
@@ -100,7 +100,7 @@ Now that you have custom billing policies available, you can attach them to thei
 
    1. Choose **Policy actions**, and then choose **Attach**\.
 
-   1. For **Filter**, choose **Groups**\. In the search box, type **ViewAccess**, select the check box next to the name of the group, and then choose **Attach policy**\.
+   1. For **Filter**, choose **Groups**\. In the search box, type **FinanceUser**, select the check box next to the name of the group, and then choose **Attach policy**\.
 
 1. Sign out of the console, and then proceed to [Step 4: Test Access to the Billing Console](#tutorial-billing-step4)\.
 

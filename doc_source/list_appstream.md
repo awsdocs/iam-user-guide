@@ -6,9 +6,9 @@ Amazon AppStream \(service prefix: appstream\) provides the following service\-s
 
 For more information about the Amazon AppStream API actions in the following list, see [Amazon AppStream REST API](http://docs.aws.amazon.com/appstream/latest/developerguide/appstream-api-rest.html) in the *Amazon AppStream Developer Guide*\.
 
-+ `appstream:ListAssociatedFleets`
-
 + `appstream:DeleteImage`
+
++ `appstream:ListAssociatedFleets`
 
 + `appstream:StartFleet`
 
@@ -18,9 +18,9 @@ For more information about the Amazon AppStream API actions in the following lis
 
 + `appstream:StartImageBuilder`
 
-+ `appstream:CreateStreamingURL`
-
 + `appstream:DescribeFleets`
+
++ `appstream:CreateStreamingURL`
 
 + `appstream:UpdateStack`
 
@@ -31,6 +31,8 @@ For more information about the Amazon AppStream API actions in the following lis
 + `appstream:CreateImageBuilder`
 
 + `appstream:CreateStack`
+
++ `appstream:Stream`
 
 + `appstream:DisassociateFleet`
 
@@ -58,12 +60,14 @@ For more information about the Amazon AppStream API actions in the following lis
 
 + `appstream:DescribeDirectoryConfigs`
 
-+ `appstream:DeleteDirectoryConfig`
-
 + `appstream:StopFleet`
+
++ `appstream:DeleteDirectoryConfig`
 
 + `appstream:CreateDirectoryConfig`
 
 **Condition context keys for Amazon AppStream**
 
-Amazon AppStream has no service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
+Amazon AppStream has the following service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
+
++ `appstream:userId`

@@ -6,9 +6,9 @@ Application Auto Scaling \(service prefix: application\-autoscaling\) provides t
 
 + `[application\-autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
 
-+ `[application\-autoscaling:DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html)`
-
 + `[application\-autoscaling:RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html)`
+
++ `[application\-autoscaling:DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html)`
 
 + `[application\-autoscaling:DeleteScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScalingPolicy.html)`
 

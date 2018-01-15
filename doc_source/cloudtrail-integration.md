@@ -78,7 +78,7 @@ You forget which account you are signing in to and accidentally type the account
 
 CloudTrail log files contain events that are formatted using JSON\. An event represents a single API request or sign\-in event and includes information about the requested action, any parameters, and the date and time of the action\. 
 
-### IAM API Event in CloudTrail Log File<a name="w3ab1c24c11b4"></a>
+### IAM API Event in CloudTrail Log File<a name="w3ab1c19c30c11b4"></a>
 
 The following example shows a CloudTrail log entry for a request made for the IAM `GetUserPolicy` action\. 
 
@@ -359,7 +359,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
 }
 ```
 
-### Sign\-in Failure Event in CloudTrail Log File<a name="w3ab1c24c11b8"></a>
+### Sign\-in Failure Event in CloudTrail Log File<a name="w3ab1c19c30c11b8"></a>
 
 The following example shows a CloudTrail log entry for a failed sign\-in event\.
 
@@ -430,7 +430,7 @@ The following example shows a CloudTrail log entry for an unsuccessful sign\-in 
 }
 ```
 
-### Sign\-in Success Event in CloudTrail Log File<a name="w3ab1c24c11c12"></a>
+### Sign\-in Success Event in CloudTrail Log File<a name="w3ab1c19c30c11c12"></a>
 
 The following example shows a CloudTrail log entry for a successful sign\-in event\.
 

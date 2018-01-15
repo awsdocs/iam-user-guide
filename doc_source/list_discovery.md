@@ -8,9 +8,9 @@ For information about using the following Application Discovery Service actions 
 
 + `[discovery:StartDataCollectionByAgentIds](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartDataCollectionByAgentIds.html)`
 
-+ `[discovery:DescribeTags](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeTags.html)`
-
 + `[discovery:DescribeExportConfigurations](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportConfigurations.html)`
+
++ `[discovery:DescribeTags](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeTags.html)`
 
 + `[discovery:StopDataCollectionByAgentIds](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StopDataCollectionByAgentIds.html)`
 
@@ -38,9 +38,9 @@ For information about using the following Application Discovery Service actions 
 
 + `[discovery:CreateTags](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_CreateTags.html)`
 
-+ `[discovery:UpdateApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_UpdateApplication.html)`
-
 + `[discovery:DisassociateConfigurationItemsFromApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DisassociateConfigurationItemsFromApplication.html)`
+
++ `[discovery:UpdateApplication](http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_UpdateApplication.html)`
 
 **Condition context keys for Application Discovery**
 

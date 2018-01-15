@@ -78,7 +78,7 @@ This policy supports the ability to pass roles to AWS services\. The policy gran
 
 **Use case:** This user runs Hadoop jobs and queries\. The user also accesses and analyzes information for data analytics and business intelligence\.
 
-**Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to AWS Data Pipeline, Amazon EC2, Amazon Elasticsearch Service, Amazon Elastic File System, Amazon EMR, Amazon Kinesis, Amazon Kinesis Analytics, Amazon Machine Learning, Amazon RDS, and Amazon Redshift\.
+**Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to AWS Data Pipeline, Amazon EC2, Amazon Elasticsearch Service, Amazon Elastic File System, Amazon EMR, Amazon Kinesis, Amazon Kinesis Data Analytics, Amazon Machine Learning, Amazon RDS, and Amazon Redshift\.
 
 This job function supports the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
@@ -89,7 +89,7 @@ This job function supports the ability to pass roles to AWS services\. The polic
 | --- | --- | --- | --- | 
 | Allow Amazon EC2 instances access to services and resources suitable for clusters | [EMR\-EC2\_DefaultRole](http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-iam-roles-defaultroles.html) | Amazon EMR for EC2  | [AmazonElasticMapReduceforEC2Role](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AmazonElasticMapReduceforEC2Role) | 
 | Allow Amazon EMR access to access the Amazon EC2 service and resources for clusters | [EMR\_DefaultRole](http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-iam-roles-defaultroles.html) | Amazon EMR | [AmazonElasticMapReduceRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AmazonElasticMapReduceRole) | 
-| Allow Kinesis Kinesis Analytics to access streaming data sources | [kinesis\-\*](http://aws.amazon.com/blogs/big-data/a-zero-administration-amazon-redshift-database-loader) | Create a role with a trust policy as defined in the [AWS Big Data Blog](http://aws.amazon.com/blogs/big-data/a-zero-administration-amazon-redshift-database-loader)\. | See the [AWS Big Data Blog](http://aws.amazon.com/blogs/big-data/a-zero-administration-amazon-redshift-database-loader), which outlines four possible options depending on your use case | 
+| Allow Kinesis Kinesis Data Analytics to access streaming data sources | [kinesis\-\*](http://aws.amazon.com/blogs/big-data/a-zero-administration-amazon-redshift-database-loader) | Create a role with a trust policy as defined in the [AWS Big Data Blog](http://aws.amazon.com/blogs/big-data/a-zero-administration-amazon-redshift-database-loader)\. | See the [AWS Big Data Blog](http://aws.amazon.com/blogs/big-data/a-zero-administration-amazon-redshift-database-loader), which outlines four possible options depending on your use case | 
 | Allow AWS Data Pipeline to access your AWS resources | [DataPipelineDefaultRole](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | Create a role with a trust policy as defined in the [AWS Data Pipeline Developer Guide](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | [AWSDataPipelineRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AWSDataPipelineRole) | 
 | Allow your applications running on Amazon EC2 instances to access your AWS resources | [DataPipelineDefaultResourceRole](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | Create a role with a trust policy as defined in the [AWS Data Pipeline Developer Guide](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | [AmazonEC2RoleforDataPipelineRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforDataPipelineRole) | 
 
@@ -107,7 +107,7 @@ This job function supports the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user is tasked with setting up and maintaining AWS network resources\.
 
-**Policy description:** This policy grants permissions to create and maintain network resources in Amazon EC2, Amazon Route 53, Amazon Virtual Private Cloud \(VPC\), and AWS Direct Connect\. 
+**Policy description:** This policy grants permissions to create and maintain network resources in Amazon EC2, Route 53, Amazon Virtual Private Cloud \(VPC\), and AWS Direct Connect\. 
 
 This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
@@ -124,7 +124,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user sets up and maintains resources for development operations\.
 
-**Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Amazon Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
+**Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
 
 This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 

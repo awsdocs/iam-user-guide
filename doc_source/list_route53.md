@@ -4,7 +4,7 @@ Amazon Route 53 \(service prefix: route53\) provides the following service\-spec
 
 **Actions for Amazon Route 53**
 
-For information about using the following Amazon Route 53 API actions in an IAM policy, see [Amazon Route 53 Actions](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/UsingWithIAM.html#UsingWithRoute53_Actions) in the *Amazon Route 53 Developer Guide*\.
+For information about using the following Route 53 API actions in an IAM policy, see [Route 53 Actions](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/UsingWithIAM.html#UsingWithRoute53_Actions) in the *Amazon Route 53 Developer Guide*\.
 
 + `[route53:TestDNSAnswer]()`
 
@@ -14,9 +14,9 @@ For information about using the following Amazon Route 53 API actions in an IAM
 
 + `[route53:ListResourceRecordSets](http://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResourceRecordSets.html)`
 
-+ `[route53:GetHealthCheckCount](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckCount.html)`
-
 + `[route53:CreateHealthCheck](http://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHealthCheck.html)`
+
++ `[route53:GetHealthCheckCount](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheckCount.html)`
 
 + `[route53:ListGeoLocations](http://docs.aws.amazon.com/Route53/latest/APIReference/API_ListGeoLocations.html)`
 
@@ -32,17 +32,17 @@ For information about using the following Amazon Route 53 API actions in an IAM
 
 + `[route53:EnableDomainAutoRenew](http://docs.aws.amazon.com/Route53/latest/APIReference/api-enable-domain-auto-renew.html)`
 
-+ `[route53:UpdateTrafficPolicyInstance](http://docs.aws.amazon.com/Route53/latest/APIReference/api-update-traffic-policy-instance.html)`
-
 + `[route53:CreateTrafficPolicy](http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-create-traffic-policy.html)`
+
++ `[route53:UpdateTrafficPolicyInstance](http://docs.aws.amazon.com/Route53/latest/APIReference/api-update-traffic-policy-instance.html)`
 
 + `[route53:DeleteHealthCheck](http://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteHealthCheck.html)`
 
 + `[route53:ListTrafficPolicyInstancesByPolicy](http://docs.aws.amazon.com/Route53/latest/APIReference/api-list-traffic-policy-instances-by-policy.html)`
 
-+ `[route53:GetTrafficPolicyInstance](http://docs.aws.amazon.com/Route53/latest/APIReference/api-get-traffic-policy-instance.html)`
-
 + `[route53:CreateHostedZone](http://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html)`
+
++ `[route53:GetTrafficPolicyInstance](http://docs.aws.amazon.com/Route53/latest/APIReference/api-get-traffic-policy-instance.html)`
 
 + `[route53:GetGeoLocation](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetGeoLocation.html)`
 
@@ -68,21 +68,21 @@ For information about using the following Amazon Route 53 API actions in an IAM
 
 + `[route53:GetHealthCheck](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheck.html)`
 
-+ `[route53:CreateTrafficPolicyVersion](http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-create-traffic-policy-version.html)`
-
 + `[route53:GetHealthCheckStatus](http://docs.aws.amazon.com/Route53/latest/APIReference/api-get-health-check-status.html)`
 
 + `[route53:GetHealthCheckLastFailureReason](http://docs.aws.amazon.com/Route53/latest/APIReference/api-get-health-check-last-failure-reason.html)`
+
++ `[route53:CreateTrafficPolicyVersion](http://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-create-traffic-policy-version.html)`
 
 + `[route53:ListReusableDelegationSets](http://docs.aws.amazon.com/Route53/latest/APIReference/api-list-reusable-delegation-sets.html)`
 
 + `[route53:UpdateHealthCheck](http://docs.aws.amazon.com/Route53/latest/APIReference/API_UpdateHealthCheck.html)`
 
++ `[route53:GetCheckerIpRanges](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetCheckerIpRanges.html)`
+
 + `[route53:GetHostedZoneCount](http://docs.aws.amazon.com/Route53/latest/APIReference/api-get-hosted-zone-count.html)`
 
 + `[route53:CreateTrafficPolicyInstance](http://docs.aws.amazon.com/Route53/latest/APIReference/api-create-traffic-policy-instance.html)`
-
-+ `[route53:GetCheckerIpRanges](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetCheckerIpRanges.html)`
 
 + `[route53:ListHostedZonesByName](http://docs.aws.amazon.com/Route53/latest/APIReference/api-list-hosted-zones-by-name.html)`
 
@@ -104,6 +104,6 @@ For information about using the following Amazon Route 53 API actions in an IAM
 
 **Condition context keys for Amazon Route 53**
 
-For information about using Amazon Route 53 condition keys in an IAM policy, see [Amazon Route 53 Keys](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/UsingWithIAM.html#Route53PolicyKeys) in the *Amazon Route 53 Developer Guide*\.
+For information about using Route 53 condition keys in an IAM policy, see [Route 53 Keys](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/UsingWithIAM.html#Route53PolicyKeys) in the *Amazon Route 53 Developer Guide*\.
 
 Amazon Route 53 has no service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.

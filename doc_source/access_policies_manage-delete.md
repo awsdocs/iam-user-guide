@@ -8,7 +8,7 @@ For general information about IAM policies, see [IAM Policies](access_policies.m
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
-## Deleting Customer Managed Policies<a name="delete-managed-policy"></a>
+## Deleting Customer Managed Policies \(Console\)<a name="delete-managed-policy"></a>
 
 You can delete a customer managed policy to remove it from your AWS account\. You cannot delete AWS managed policies\.
 

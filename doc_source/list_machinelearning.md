@@ -6,9 +6,9 @@ Amazon Machine Learning \(service prefix: machinelearning\) provides the followi
 
 For information about using the following Amazon ML API actions in an IAM policy, see [Permission Model](http://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam) in the *Amazon Machine Learning Developer Guide*\.
 
-+ `[machinelearning:Predict](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_Predict.html)`
-
 + `[machinelearning:CreateMLModel](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateMLModel.html)`
+
++ `[machinelearning:Predict](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_Predict.html)`
 
 + `[machinelearning:DeleteRealtimeEndpoint](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteRealtimeEndpoint.html)`
 
@@ -24,11 +24,11 @@ For information about using the following Amazon ML API actions in an IAM policy
 
 + `[machinelearning:CreateDataSourceFromRedshift](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_CreateDataSourceFromRedshift.html)`
 
-+ `[machinelearning:GetMLModel](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetMLModel.html)`
-
 + `[machinelearning:DescribeDataSources](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DescribeDataSources.html)`
 
 + `[machinelearning:DeleteBatchPrediction](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_DeleteBatchPrediction.html)`
+
++ `[machinelearning:GetMLModel](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetMLModel.html)`
 
 + `[machinelearning:GetEvaluation](http://docs.aws.amazon.com/machine-learning/latest/APIReference/API_GetEvaluation.html)`
 

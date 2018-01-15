@@ -18,9 +18,9 @@ For information about using the following AWS CodeStar API actions in an IAM pol
 
 + `[codestar:CreateProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html)`
 
-+ `[codestar:GetExtendedAccess](http://docs.aws.amazon.com/codestar/latest/APIReference/API_GetExtendedAccess.html)`
-
 + `[codestar:DescribeProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeProject.html)`
+
++ `[codestar:GetExtendedAccess](http://docs.aws.amazon.com/codestar/latest/APIReference/API_GetExtendedAccess.html)`
 
 + `[codestar:UpdateUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateUserProfile.html)`
 
@@ -38,11 +38,11 @@ For information about using the following AWS CodeStar API actions in an IAM pol
 
 + `[codestar:DescribeUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeUserProfile.html)`
 
-+ `[codestar:DeleteUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html)`
++ `[codestar:DeleteExtendedAccess](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteExtendedAccess.html)`
 
 + `[codestar:VerifyServiceRole](http://docs.aws.amazon.com/codestar/latest/APIReference/API_VerifyServiceRole.html)`
 
-+ `[codestar:DeleteExtendedAccess](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteExtendedAccess.html)`
++ `[codestar:DeleteUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html)`
 
 **Condition context keys for AWS CodeStar**
 

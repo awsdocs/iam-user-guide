@@ -26,7 +26,7 @@ IAM works only with AWS products that are integrated with IAM\. For a list of se
 
 1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
 **Note**  
-This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign In to the Console**, and then choose **Create a new AWS account**\.
+This might be unavailable in your browser if you previously signed into the AWS Management Console\. In that case, choose **Sign in to a different account**, and then choose **Create a new AWS account**\.
 
 1. Follow the online instructions\.
 

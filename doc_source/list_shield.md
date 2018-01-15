@@ -6,13 +6,13 @@ AWS Shield \(service prefix: shield\) provides the following service\-specific a
 
 For more information about using IAM policies with AWS Shield Advanced and AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](http://docs.aws.amazon.com/waf/latest/developerguide/access-control-identity-based.html) in the *AWS WAF Developer Guide*\.
 
-+ `[shield:CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html)`
-
 + `[shield:DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html)`
 
-+ `[shield:DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)`
++ `[shield:CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html)`
 
 + `[shield:DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html)`
+
++ `[shield:DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)`
 
 + `[shield:DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html)`
 

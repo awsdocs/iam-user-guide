@@ -6,9 +6,9 @@ Amazon Cognito Identity \(service prefix: cognito\-identity\) provides the follo
 
 + `[cognito\-identity:GetIdentityPoolRoles](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html)`
 
-+ `[cognito\-identity:DeleteIdentityPool](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html)`
-
 + `[cognito\-identity:SetIdentityPoolRoles](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetIdentityPoolRoles.html)`
+
++ `[cognito\-identity:DeleteIdentityPool](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html)`
 
 + `[cognito\-identity:UpdateIdentityPool](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UpdateIdentityPool.html)`
 

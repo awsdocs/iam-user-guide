@@ -32,9 +32,9 @@ For more information about Amazon Lightsail, see the [Amazon LightSail documenta
 
 + `[lightsail:GetStaticIp](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetStaticIp.html)`
 
-+ `[lightsail:GetInstances](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html)`
-
 + `[lightsail:GetInstancePortStates](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstancePortStates.html)`
+
++ `[lightsail:GetInstances](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstances.html)`
 
 + `[lightsail:GetOperations](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperations.html)`
 
@@ -44,15 +44,15 @@ For more information about Amazon Lightsail, see the [Amazon LightSail documenta
 
 + `[lightsail:CreateInstanceSnapshot](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstanceSnapshot.html)`
 
-+ `[lightsail:DeleteDomainEntry](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html)`
-
 + `[lightsail:IsVpcPeered](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_IsVpcPeered.html)`
+
++ `[lightsail:DeleteDomainEntry](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomainEntry.html)`
 
 + `[lightsail:StopInstance](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StopInstance.html)`
 
-+ `[lightsail:GetBlueprints](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html)`
-
 + `[lightsail:GetDomain](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetDomain.html)`
+
++ `[lightsail:GetBlueprints](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBlueprints.html)`
 
 + `[lightsail:GetInstanceMetricData](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceMetricData.html)`
 
@@ -70,19 +70,19 @@ For more information about Amazon Lightsail, see the [Amazon LightSail documenta
 
 + `[lightsail:DeleteDomain](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DeleteDomain.html)`
 
++ `[lightsail:CreateKeyPair](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html)`
+
 + `[lightsail:DownloadDefaultKeyPair](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DownloadDefaultKeyPair.html)`
 
 + `[lightsail:CreateDomain](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateDomain.html)`
-
-+ `[lightsail:CreateKeyPair](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateKeyPair.html)`
 
 + `[lightsail:GetInstanceState](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceState.html)`
 
 + `[lightsail:GetActiveNames](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetActiveNames.html)`
 
-+ `[lightsail:GetInstanceSnapshot](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html)`
-
 + `[lightsail:GetOperationsForResource](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetOperationsForResource.html)`
+
++ `[lightsail:GetInstanceSnapshot](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetInstanceSnapshot.html)`
 
 + `[lightsail:CreateInstances](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateInstances.html)`
 

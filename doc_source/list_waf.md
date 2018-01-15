@@ -6,31 +6,23 @@ AWS WAF \(service prefix: waf\) provides the following service\-specific actions
 
 For information about using the following AWS WAF API actions in an IAM policy, see [Using IAM to Control Access to AWS WAF Resources](http://docs.aws.amazon.com/waf/latest/developerguide/waf-iam.html) in the *AWS WAF Developer Guide*\.
 
-+ `[waf:ListByteMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListByteMatchSets.html)`
-
-+ `[waf:CreateXssMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateXssMatchSet.html)`
-
-+ `[waf:UpdateByteMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateByteMatchSet.html)`
-
 + `[waf:UpdateIPSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateIPSet.html)`
 
 + `[waf:UpdateSizeConstraintSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateSizeConstraintSet.html)`
 
-+ `[waf:CreateSqlInjectionMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateSqlInjectionMatchSet.html)`
++ `[waf:CreateGeoMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateGeoMatchSet.html)`
 
 + `[waf:GetSampledRequests](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetSampledRequests.html)`
 
 + `[waf:DeleteIPSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteIPSet.html)`
 
-+ `[waf:CreateRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRule.html)`
++ `[waf:GetRateBasedRuleManagedKeys](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedRuleManagedKeys.html)`
 
 + `[waf:CreateRateBasedRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRateBasedRule.html)`
 
-+ `[waf:GetRateBasedRuleManagedKeys](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedRuleManagedKeys.html)`
++ `[waf:DeleteRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRule.html)`
 
 + `[waf:GetSizeConstraintSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetSizeConstraintSet.html)`
-
-+ `[waf:DeleteRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRule.html)`
 
 + `[waf:ListWebACLs](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListWebACLs.html)`
 
@@ -42,53 +34,91 @@ For information about using the following AWS WAF API actions in an IAM policy, 
 
 + `[waf:CreateWebACL](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateWebACL.html)`
 
-+ `[waf:UpdateRateBasedRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRateBasedRule.html)`
++ `[waf:GetRegexMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexMatchSet.html)`
 
 + `[waf:GetIPSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetIPSet.html)`
 
++ `[waf:DeleteRegexMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRegexMatchSet.html)`
+
 + `[waf:GetXssMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetXssMatchSet.html)`
-
-+ `[waf:UpdateWebACL](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html)`
-
-+ `[waf:CreateIPSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html)`
 
 + `[waf:UpdateRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRule.html)`
 
-+ `[waf:GetByteMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetByteMatchSet.html)`
++ `[waf:CreateIPSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateIPSet.html)`
 
-+ `[waf:DeleteSizeConstraintSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteSizeConstraintSet.html)`
++ `[waf:GetByteMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetByteMatchSet.html)`
 
 + `[waf:CreateByteMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateByteMatchSet.html)`
 
++ `[waf:DeleteSizeConstraintSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteSizeConstraintSet.html)`
+
++ `[waf:UpdateGeoMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateGeoMatchSet.html)`
+
 + `[waf:ListIPSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListIPSets.html)`
 
-+ `[waf:GetRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRule.html)`
-
-+ `[waf:GetChangeToken](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetChangeToken.html)`
-
-+ `[waf:ListRateBasedules](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListRateBasedules.html)`
++ `[waf:GetRegexPatternSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRegexPatternSet.html)`
 
 + `[waf:GetSqlInjectionMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetSqlInjectionMatchSet.html)`
-
-+ `[waf:GetRateBasedRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedRule.html)`
 
 + `[waf:DeleteWebACL](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteWebACL.html)`
 
 + `[waf:UpdateSqlInjectionMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateSqlInjectionMatchSet.html)`
 
-+ `[waf:DeleteSqlInjectionMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteSqlInjectionMatchSet.html)`
-
 + `[waf:DeleteByteMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteByteMatchSet.html)`
 
 + `[waf:GetWebACL](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetWebACL.html)`
+
++ `[waf:ListXssMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListXssMatchSets.html)`
+
++ `[waf:UpdateRegexMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexMatchSet.html)`
+
++ `[waf:UpdateByteMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateByteMatchSet.html)`
+
++ `[waf:CreateXssMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateXssMatchSet.html)`
+
++ `[waf:ListByteMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListByteMatchSets.html)`
+
++ `[waf:DeleteRegexPatternSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRegexPatternSet.html)`
+
++ `[waf:ListRegexPatternSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListRegexPatternSets.html)`
+
++ `[waf:CreateSqlInjectionMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateSqlInjectionMatchSet.html)`
+
++ `[waf:DeleteGeoMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteGeoMatchSet.html)`
+
++ `[waf:CreateRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRule.html)`
+
++ `[waf:ListRegexMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListRegexMatchSets.html)`
+
++ `[waf:UpdateRateBasedRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRateBasedRule.html)`
+
++ `[waf:CreateRegexPatternSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexPatternSet.html)`
+
++ `[waf:UpdateWebACL](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateWebACL.html)`
+
++ `[waf:GetGeoMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetGeoMatchSet.html)`
+
++ `[waf:ListGeoMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListGeoMatchSets.html)`
+
++ `[waf:GetRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRule.html)`
+
++ `[waf:GetChangeToken](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetChangeToken.html)`
+
++ `[waf:ListRateBasedRules](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListRateBasedRules.html)`
+
++ `[waf:GetRateBasedRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetRateBasedRule.html)`
+
++ `[waf:DeleteSqlInjectionMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteSqlInjectionMatchSet.html)`
+
++ `[waf:CreateRegexMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_CreateRegexMatchSet.html)`
+
++ `[waf:UpdateRegexPatternSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateRegexPatternSet.html)`
 
 + `[waf:GetChangeTokenStatus](http://docs.aws.amazon.com/waf/latest/APIReference/API_GetChangeTokenStatus.html)`
 
 + `[waf:ListSqlInjectionMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListSqlInjectionMatchSets.html)`
 
 + `[waf:UpdateXssMatchSet](http://docs.aws.amazon.com/waf/latest/APIReference/API_UpdateXssMatchSet.html)`
-
-+ `[waf:ListXssMatchSets](http://docs.aws.amazon.com/waf/latest/APIReference/API_ListXssMatchSets.html)`
 
 + `[waf:DeleteRateBasedRule](http://docs.aws.amazon.com/waf/latest/APIReference/API_DeleteRateBasedRule.html)`
 

@@ -1,6 +1,6 @@
 # Changing the AWS Account Root User Password<a name="id_credentials_passwords_change-root"></a>
 
-You must be signed in as the AWS account root user in order to change the password\. 
+You must be signed in as the AWS account root user in order to change the password\. To learn how to reset a forgotten root user password, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
 
 **To change the password for the root user**
 

@@ -1,6 +1,6 @@
 # Editing IAM Policies<a name="access_policies_manage-edit"></a>
 
-A policy is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. You can edit customer managed policies and inline policies in IAM\. AWS cannot be edited\. For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
+A policy is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. You can edit customer managed policies and inline policies in IAM\. AWS managed policies cannot be edited\. For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
 ## Editing Customer Managed Policies \(Console\)<a name="edit-managed-policy-console"></a>
 
@@ -20,17 +20,11 @@ You edit customer managed policies to change the permissions that are defined in
 
    + Choose the **Visual editor** tab to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\.
 
-   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. When you are finished making changes, choose **Review policy** to continue\. Policy Validator reports any syntax errors\.
+   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\. Policy Validator reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, complete the following tasks:
-
-   1. To save your changes without affecting the currently attached entities, clear the check box for **Save as default version**\. For more information, see [Setting the Default Version of Customer Managed Policies](access_policies_managed-versioning.md#default-version)\.
-
-   1. Type a **Name** and a **Description** \(optional\) for the policy that you are editing\. You cannot edit these later\.
-
-   1. Review the policy **Summary** and then choose **Save** to save your work\.
+1. On the **Review** page, review the policy **Summary** and then choose **Save changes** to save your work\.
 
 1. If the managed policy already has the maximum of five versions, choosing **Save** displays a dialog box\. To save your new version, you must remove at least one older version\. You cannot delete the default version\. Choose from the following options:
 
@@ -64,17 +58,35 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 ## Editing Inline Policies \(Console\)<a name="edit-inline-policy-console"></a>
 
-You can edit an IAM policy or an inline policy using the AWS Management Console\.
+You can edit an inline policy using the AWS Management Console\.
 
-**To edit an inline policy for a group, user, or role \(console\)**
+**To edit an inline policy for a user or role \(console\)**
 
-1. In the navigation pane, choose **Groups**, **Users**, or **Roles**\.
+1. In the navigation pane, choose **Users** or **Roles**\.
 
-1. Choose the name of the group, user, or role with the policy that you want to modify\. Then choose the **Permissions** tab\. If you chose **Users** or **Roles**, expand the policy\.
+1. Choose the name of the user or role with the policy that you want to modify\. Then choose the **Permissions** tab and expand the policy\.
 
 1. To edit an inline policy, choose **Edit Policy**\. 
 
-1. After you have modified your policy, choose **Save** to save your changes\.
+1. Do one of the following:
+
+   + Choose the **Visual editor** tab to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\.
+
+   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\. Policy Validator reports any syntax errors\. To save your changes without affecting the currently attached entities, clear the check box for **Save as default version**\.
+**Note**  
+You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+
+1. On the **Review** page, review the policy **Summary** and then choose **Save changes** to save your work\.
+
+**To edit an inline policy for a group \(console\)**
+
+1. In the navigation pane, choose **Groups**\.
+
+1. Choose the name of the group with the policy that you want to modify\. Then choose the **Permissions** tab\.
+
+1. To edit an inline policy, choose **Edit Policy**\. 
+
+1. After you have modified your JSON policy, choose **Save** to save your changes\.
 
 ## Editing IAM Policies \(AWS CLI or the AWS API\)<a name="edit-policies-cli-api"></a>
 

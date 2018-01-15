@@ -10,9 +10,9 @@ Amazon Inspector requires an IAM role to access your account to do its assessmen
 
 + `[inspector:DescribeResourceGroups](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeResourceGroups.html)`
 
-+ `[inspector:UnsubscribeFromEvent](http://docs.aws.amazon.com/inspector/latest/APIReference/API_UnsubscribeFromEvent.html)`
-
 + `[inspector:RemoveAttributesFromFindings](http://docs.aws.amazon.com/inspector/latest/APIReference/API_RemoveAttributesFromFindings.html)`
+
++ `[inspector:UnsubscribeFromEvent](http://docs.aws.amazon.com/inspector/latest/APIReference/API_UnsubscribeFromEvent.html)`
 
 + `[inspector:ListEventSubscriptions](http://docs.aws.amazon.com/inspector/latest/APIReference/API_ListEventSubscriptions.html)`
 
@@ -32,21 +32,21 @@ Amazon Inspector requires an IAM role to access your account to do its assessmen
 
 + `[inspector:DescribeCrossAccountAccessRole](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeCrossAccountAccessRole.html)`
 
-+ `[inspector:StartAssessmentRun](http://docs.aws.amazon.com/inspector/latest/APIReference/API_StartAssessmentRun.html)`
++ `[inspector:GetTelemetryMetadata](http://docs.aws.amazon.com/inspector/latest/APIReference/API_GetTelemetryMetadata.html)`
 
 + `[inspector:UpdateAssessmentTarget](http://docs.aws.amazon.com/inspector/latest/APIReference/API_UpdateAssessmentTarget.html)`
 
-+ `[inspector:GetTelemetryMetadata](http://docs.aws.amazon.com/inspector/latest/APIReference/API_GetTelemetryMetadata.html)`
++ `[inspector:StartAssessmentRun](http://docs.aws.amazon.com/inspector/latest/APIReference/API_StartAssessmentRun.html)`
 
 + `[inspector:ListAssessmentRuns](http://docs.aws.amazon.com/inspector/latest/APIReference/API_ListAssessmentRuns.html)`
 
-+ `[inspector:DeleteAssessmentRun](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DeleteAssessmentRun.html)`
-
 + `[inspector:ListFindings](http://docs.aws.amazon.com/inspector/latest/APIReference/API_ListFindings.html)`
 
-+ `[inspector:DescribeAssessmentTargets](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeAssessmentTargets.html)`
++ `[inspector:DeleteAssessmentRun](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DeleteAssessmentRun.html)`
 
 + `[inspector:DescribeFindings](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeFindings.html)`
+
++ `[inspector:DescribeAssessmentTargets](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeAssessmentTargets.html)`
 
 + `[inspector:ListAssessmentTargets](http://docs.aws.amazon.com/inspector/latest/APIReference/API_ListAssessmentTargets.html)`
 
@@ -54,9 +54,9 @@ Amazon Inspector requires an IAM role to access your account to do its assessmen
 
 + `[inspector:SetTagsForResource](http://docs.aws.amazon.com/inspector/latest/APIReference/API_SetTagsForResource.html)`
 
-+ `[inspector:RegisterCrossAccountAccessRole](http://docs.aws.amazon.com/inspector/latest/APIReference/API_RegisterCrossAccountAccessRole.html)`
-
 + `[inspector:DescribeAssessmentTemplates](http://docs.aws.amazon.com/inspector/latest/APIReference/API_DescribeAssessmentTemplates.html)`
+
++ `[inspector:RegisterCrossAccountAccessRole](http://docs.aws.amazon.com/inspector/latest/APIReference/API_RegisterCrossAccountAccessRole.html)`
 
 + `[inspector:CreateAssessmentTemplate](http://docs.aws.amazon.com/inspector/latest/APIReference/API_CreateAssessmentTemplate.html)`
 

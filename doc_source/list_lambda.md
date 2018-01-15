@@ -28,9 +28,9 @@ For information about using the following Lambda API actions in an IAM policy, s
 
 + `[lambda:UpdateFunctionCode](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html)`
 
-+ `[lambda:InvokeAsync](http://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html)`
-
 + `[lambda:UpdateEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateEventSourceMapping.html)`
+
++ `[lambda:InvokeAsync](http://docs.aws.amazon.com/lambda/latest/dg/API_InvokeAsync.html)`
 
 + `[lambda:GetEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_GetEventSourceMapping.html)`
 
@@ -48,9 +48,9 @@ For information about using the following Lambda API actions in an IAM policy, s
 
 + `[lambda:ListFunctions](http://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html)`
 
-+ `[lambda:UntagResource](http://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html)`
-
 + `[lambda:UpdateAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html)`
+
++ `[lambda:UntagResource](http://docs.aws.amazon.com/lambda/latest/dg/API_UntagResource.html)`
 
 + `[lambda:ListTags](http://docs.aws.amazon.com/lambda/latest/dg/API_ListTags.html)`
 

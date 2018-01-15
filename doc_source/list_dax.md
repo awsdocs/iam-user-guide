@@ -10,9 +10,9 @@ For information about using the following DynamoDB Accelerator API actions in an
 
 + `[dax:CreateParameterGroup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateParameterGroup.html)`
 
-+ `[dax:Query](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html)`
-
 + `[dax:DeleteItem](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html)`
+
++ `[dax:Query](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html)`
 
 + `[dax:TagResource](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html)`
 
@@ -24,13 +24,13 @@ For information about using the following DynamoDB Accelerator API actions in an
 
 + `[dax:DescribeParameterGroups](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeParameterGroups.html)`
 
-+ `[dax:DeleteSubnetGroup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteSubnetGroup.html)`
-
 + `[dax:UpdateParameterGroup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateParameterGroup.html)`
 
-+ `[dax:IncreaseReplicationFactor](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_IncreaseReplicationFactor.html)`
++ `[dax:DeleteSubnetGroup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteSubnetGroup.html)`
 
 + `[dax:DescribeDefaultParameters](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeDefaultParameters.html)`
+
++ `[dax:IncreaseReplicationFactor](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_IncreaseReplicationFactor.html)`
 
 + `[dax:RebootNode](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RebootNode.html)`
 
@@ -52,9 +52,9 @@ For information about using the following DynamoDB Accelerator API actions in an
 
 + `[dax:ListTables](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTables.html)`
 
-+ `[dax:DescribeSubnetGroups](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeSubnetGroups.html)`
-
 + `[dax:UntagResource](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UntagResource.html)`
+
++ `[dax:DescribeSubnetGroups](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeSubnetGroups.html)`
 
 + `[dax:ListTags](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTags.html)`
 

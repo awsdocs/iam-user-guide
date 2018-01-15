@@ -12,25 +12,25 @@ For more information about using IAM policies with AWS Service Catalog, see [AWS
 
 + `[servicecatalog:UpdateProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProduct.html)`
 
-+ `[servicecatalog:ListProvisioningArtifacts](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifacts.html)`
-
 + `[servicecatalog:ListConstraintsForPortfolio](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListConstraintsForPortfolio.html)`
 
-+ `[servicecatalog:DeleteConstraint](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteConstraint.html)`
++ `[servicecatalog:ListProvisioningArtifacts](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListProvisioningArtifacts.html)`
 
 + `[servicecatalog:UpdateProvisioningArtifact](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_UpdateProvisioningArtifact.html)`
 
-+ `[servicecatalog:AssociateProductWithPortfolio](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateProductWithPortfolio.html)`
++ `[servicecatalog:DeleteConstraint](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteConstraint.html)`
 
-+ `[servicecatalog:DescribeRecord](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html)`
++ `[servicecatalog:AssociateProductWithPortfolio](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_AssociateProductWithPortfolio.html)`
 
 + `[servicecatalog:DescribeProvisioningArtifact](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningArtifact.html)`
 
-+ `[servicecatalog:ListLaunchPaths](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html)`
++ `[servicecatalog:DescribeRecord](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeRecord.html)`
 
 + `[servicecatalog:ListPortfolios](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfolios.html)`
 
 + `[servicecatalog:DescribeProductAsAdmin](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductAsAdmin.html)`
+
++ `[servicecatalog:ListLaunchPaths](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListLaunchPaths.html)`
 
 + `[servicecatalog:DescribePortfolio](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribePortfolio.html)`
 
@@ -60,9 +60,9 @@ For more information about using IAM policies with AWS Service Catalog, see [AWS
 
 + `[servicecatalog:CreateProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreateProduct.html)`
 
-+ `[servicecatalog:TerminateProvisionedProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html)`
-
 + `[servicecatalog:DescribeProvisioningParameters](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProvisioningParameters.html)`
+
++ `[servicecatalog:TerminateProvisionedProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_TerminateProvisionedProduct.html)`
 
 + `[servicecatalog:SearchProductsAsAdmin](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_SearchProductsAsAdmin.html)`
 
@@ -86,9 +86,9 @@ For more information about using IAM policies with AWS Service Catalog, see [AWS
 
 + `[servicecatalog:DescribeProductView](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DescribeProductView.html)`
 
-+ `[servicecatalog:ProvisionProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html)`
-
 + `[servicecatalog:ListPortfoliosForProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ListPortfoliosForProduct.html)`
+
++ `[servicecatalog:ProvisionProduct](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionProduct.html)`
 
 + `[servicecatalog:DeleteProvisioningArtifact](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_DeleteProvisioningArtifact.html)`
 

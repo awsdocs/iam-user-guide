@@ -12,9 +12,9 @@ For information about using the following AWS Direct Connect API actions in an I
 
 + `[directconnect:ConfirmPrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPrivateVirtualInterface.html)`
 
-+ `[directconnect:CreateConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html)`
-
 + `[directconnect:DescribeConnections](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnections.html)`
+
++ `[directconnect:CreateConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html)`
 
 + `[directconnect:DescribeVirtualGateways](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualGateways.html)`
 
@@ -28,9 +28,9 @@ For information about using the following AWS Direct Connect API actions in an I
 
 + `[directconnect:ConfirmConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmConnection.html)`
 
-+ `[directconnect:ConfirmPublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPublicVirtualInterface.html)`
-
 + `[directconnect:CreatePrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html)`
+
++ `[directconnect:ConfirmPublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPublicVirtualInterface.html)`
 
 + `[directconnect:DescribeInterconnectLoa](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnectLoa.html)`
 
@@ -44,9 +44,9 @@ For information about using the following AWS Direct Connect API actions in an I
 
 + `[directconnect:AllocatePrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html)`
 
-+ `[directconnect:AllocateConnectionOnInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateConnectionOnInterconnect.html)`
-
 + `[directconnect:AllocatePublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html)`
+
++ `[directconnect:AllocateConnectionOnInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateConnectionOnInterconnect.html)`
 
 **Condition context keys for AWS Direct Connect**
 

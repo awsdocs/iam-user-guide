@@ -14,9 +14,9 @@ For additional information about using Amazon CloudSearch actions in an IAM poli
 
 + `[cloudsearch:RemoveTags](http://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_RemoveTags.html)`
 
-+ `[cloudsearch:search](http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions)` \- this is an IAM policy permission only, not an API action that can be called\.
-
 + `[cloudsearch:UpdateAvailabilityOptions](http://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateAvailabilityOptions.html)`
+
++ `[cloudsearch:search](http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions)` \- this is an IAM policy permission only, not an API action that can be called\.
 
 + `[cloudsearch:DescribeDomains](http://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_DescribeDomains.html)`
 

@@ -1,31 +1,35 @@
 # IAM Policies<a name="access_policies"></a>
 
-A policy is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents attached to principals as *identity\-based policies*, or to resources as *resource\-based policies*\. Those two types of policies have their own categories:
+A policy is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents attached to principals as *identity\-based policies*, or to resources as *resource\-based policies*\.
 
-+ **Identity\-based policies** – Permission policies that you can attach to a principal \(or identity\), such as an IAM user, role, or group\. These policies control what actions that identity can perform, on which resources, and under what conditions\.
+## Identity\-Based Policies<a name="policies_id-based"></a>
 
-  + **Managed policies** – Standalone identity\-based policies that you can attach to multiple users, groups, and roles in your AWS account\. You can use two types of managed policies: 
+Identity\-based policies are permission policies that you can attach to a principal \(or identity\), such as an IAM user, role, or group\. These policies control what actions that identity can perform, on which resources, and under what conditions\. Identity\-based policies can be further categorized:
 
-    + **AWS managed policies** – Managed policies that are created and managed by AWS\. If you are new to using policies, we recommend that you start by using AWS managed policies\.
++ **Managed policies** – Standalone identity\-based policies that you can attach to multiple users, groups, and roles in your AWS account\. You can use two types of managed policies: 
 
-    + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\. You can create and edit an IAM policy in the visual editor or by creating the JSON policy document directly\. For more information, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
+  + **AWS managed policies** – Managed policies that are created and managed by AWS\. If you are new to using policies, we recommend that you start by using AWS managed policies\.
 
-  + **Inline policies** – Policies that you create and manage and that are *embedded* directly into a single user, group, or role\.
+  + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\. You can create and edit an IAM policy in the visual editor or by creating the JSON policy document directly\. For more information, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
 
-    To learn how to choose whether to use a managed policy or an inline policy, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
++ **Inline policies** – Policies that you create and manage and that are *embedded* directly into a single user, group, or role\.
 
-+ **Resource\-based policies** – JSON policy documents that you attach to a resource such as an Amazon S3 bucket\. These policies control what actions a specified principal can perform on that resource and under what conditions\. Resource\-based policies are inline policies, and there are no managed resource\-based policies\.
+  To learn how to choose whether to use a managed policy or an inline policy, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
 
-  Although IAM identities are technically AWS resources, you cannot attach a resource\-based policy to an IAM identity\. You must use identity\-based policies in IAM\. To see which services support resource\-based policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn more about resource\-based policies, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\. 
+## Resource\-Based Policies<a name="policies_resource-based"></a>
 
-  *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. When you create a role in IAM, the role must have two things: The first is a trust policy that indicates who can assume the role\. The second is a permission policy that indicates what they can do with that role\. Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role until the administrator for that account grants the users the permission to assume the role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+Resource\-based policies are JSON policy documents that you attach to a resource such as an Amazon S3 bucket\. These policies control what actions a specified principal can perform on that resource and under what conditions\. Resource\-based policies are inline policies, and there are no managed resource\-based policies\.
+
+Although IAM identities are technically AWS resources, you cannot attach a resource\-based policy to an IAM identity\. You must use identity\-based policies in IAM\. To see which services support resource\-based policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn more about resource\-based policies, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\. 
+
+*Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. When you create a role in IAM, the role must have two things: The first is a trust policy that indicates who can assume the role\. The second is a permission policy that indicates what they can do with that role\. Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role until the administrator for that account grants the users the permission to assume the role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
 **Important**  
 Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories above, we mean an identity\-based, customer managed policy\.
 
 ## Overview of JSON Policies<a name="access_policies-json"></a>
 
-Policies are stored in AWS as JSON documents attached to principals as *identity\-based policies*, or to resources as *resource\-based policies*\. It is not necessary for you to understand the JSON syntax\. You can use the visual editor to create and edit customer managed policies without ever using JSON\. However, if you choose to use inline policies for groups, users, or roles, you are still required to create and edit those policies in the JSON editor\. For more information about using the visual editor, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
+Policies are stored in AWS as JSON documents attached to principals as *identity\-based policies*, or to resources as *resource\-based policies*\. It is not necessary for you to understand the JSON syntax\. You can use the visual editor to create and edit customer managed policies without ever using JSON\. However, if you choose to use inline policies for groups, you are still required to create and edit those policies in the JSON editor\. For more information about using the visual editor, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
 
 **Introduction to JSON Policies**  
 To assign permissions to a user, group, role, or resource, you create a JSON *policy*, which is a document that defines permissions\. The policy document includes the following elements:
@@ -55,7 +59,7 @@ Policies are documents that are stored using JSON\. A policy consists of one or 
 
 You can attach this policy to an IAM identity \(group, user, or role\)\. If that's the only policy for the identity, the identity is allowed to perform only this one action \(`ListBucket`\) on one Amazon S3 bucket \(`example_bucket`\)\. 
 
-To specify resource\-based permissions, you can attach a policy to the resource, such as an Amazon SNS topic, an Amazon S3 bucket, or an Amazon Glacier vault\. In that case, the policy has to include information about who is allowed to access the resource, known as the *principal*\. \(For identity\-based policies, the principal is the IAM user that the policy is attached to, or the user who gets the policy from a group\.\) For more information, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\.
+To specify permissions for a resource, you can attach a resource\-based policy to the resource, such as an Amazon SNS topic, an Amazon S3 bucket, or an Amazon Glacier vault\. In that case, the policy has to include information about who is allowed to access the resource, known as the *principal*\. \(For identity\-based policies, the principal is the IAM user that the policy is attached to, or the user who gets the policy from a group\.\) For more information, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\.
 
 The following example shows a resource\-based policy that might be attached to an Amazon S3 bucket\. The policy grants permission to a specific AWS account to perform any Amazon S3 actions in `mybucket`\. This includes both working with the bucket and with the objects in it\. \(Because the policy grants trust only to the account, individual users in the account must still be granted permissions for the specified Amazon S3 actions\.\) 
 

@@ -10,9 +10,9 @@ For information about using the following CloudWatch API actions in an IAM polic
 
 + `[cloudwatch:PutMetricAlarm](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html)`
 
-+ `[cloudwatch:DeleteAlarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html)`
-
 + `[cloudwatch:GetMetricData](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/permissions-reference-cw.html#cw-permissions-table)` \- this is an IAM policy permission only, not an API action that can be called\.
+
++ `[cloudwatch:DeleteAlarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html)`
 
 + `[cloudwatch:GetMetricStatistics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html)`
 
@@ -20,9 +20,9 @@ For information about using the following CloudWatch API actions in an IAM polic
 
 + `[cloudwatch:DescribeAlarmsForMetric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html)`
 
-+ `[cloudwatch:ListMetrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html)`
-
 + `[cloudwatch:DescribeAlarmHistory](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html)`
+
++ `[cloudwatch:ListMetrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html)`
 
 + `[cloudwatch:EnableAlarmActions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html)`
 

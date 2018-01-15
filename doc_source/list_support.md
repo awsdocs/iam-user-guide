@@ -28,9 +28,9 @@ AWS Support does not provide service\-specific actions or conditions, but your p
 
 + `support:ResolveCase`
 
-+ `support:DescribeTrustedAdvisorCheckSummaries`
-
 + `support:AddCommunicationToCase`
+
++ `support:DescribeTrustedAdvisorCheckSummaries`
 
 + `support:DescribeCommunications`
 

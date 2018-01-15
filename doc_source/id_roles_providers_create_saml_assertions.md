@@ -17,12 +17,19 @@ The following excerpt shows an example\. Substitute your own values for the mark
 ```
 
 **`AudienceRestriction` and `Audience`**  
-For security reasons, AWS must be included as an audience in the SAML assertion your IdP sends to AWS\. Therefore, the value of the `Audience` element **must **match one of the following two values, either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. AWS tests and enforces this value automatically\. The following sample XML snippet from a SAML assertion shows how this key can be specified by the IdP and shows both valid values; you only need to include one\.  
+For security reasons, AWS must be included as an audience in the SAML assertion your IdP sends to AWS\. Therefore, the value of the `Audience` element should match one of the following two values, either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. The following sample XML snippets from SAML assertions show how this key can be specified by the IdP\. Include whichever sample applies to your use case\.  
 
 ```
 <Conditions>
   <AudienceRestriction>
     <Audience>https://signin.aws.amazon.com/saml</Audience>
+  </AudienceRestriction>
+</Conditions>
+```
+
+```
+<Conditions>
+  <AudienceRestriction>
     <Audience>urn:amazon:webservices</Audience>
   </AudienceRestriction>
 </Conditions>

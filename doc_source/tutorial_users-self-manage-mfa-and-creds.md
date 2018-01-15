@@ -163,7 +163,7 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
    + The first statement enables the user to see basic information about the account and its users in the IAM console\. These permissions must be in their own statement because they do not support or do not need to specify a specific resource ARN, and instead specify `"Resource" : "*"`\.
 
-   + The second statement enables the user to manage his or her own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\.\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
+   + The second statement enables the user to manage his or her own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
 
    + The third statement enables the user to see information about MFA devices, and which are associated with his or her IAM user entity\.
 
@@ -173,11 +173,11 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
    + The sixth and final statement uses a combination of `"Deny"` and `"NotAction"` to deny all actions for all other AWS services ***if*** the user is not signed\-in with MFA\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other permissions granted to the user can take effect\. This last statement ensures that when the user is not signed\-in with MFA that they can perform only the IAM actions allowed in the earlier statements\. The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
 **Note**  
-The example policy shown in this topic does not allow new users to both sign\-in and perform the initial password change together\. If you want your users to be able to do so, then move `iam:ChangePassword` and `iam:CreateLoginProfile` from the statement `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` to the statement `BlockMostAccessUnlessSignedInWithMFA`\.
+The example policy shown in this topic does not allow users to both sign\-in and perform a password change together\. New users and users with an expired password might try to do so\. To allow this, move `iam:ChangePassword` and `iam:CreateLoginProfile` from the statement `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` to the statement `BlockMostAccessUnlessSignedInWithMFA`\.
 
 1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs any time\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.
 
 1. On the **Review** page, type **Force\_MFA** for the policy name\. For the policy description, type **This policy allows users to manage their own passwords and MFA devices but nothing else unless they authenticate with MFA\.** Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
 

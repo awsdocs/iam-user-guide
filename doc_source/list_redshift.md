@@ -6,9 +6,9 @@ Amazon Redshift \(service prefix: redshift\) provides the following service\-spe
 
 + `[redshift:EnableLogging](http://docs.aws.amazon.com/redshift/latest/APIReference/API_EnableLogging.html)`
 
-+ `[redshift:GetClusterCredentials](http://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html)`
-
 + `[redshift:DescribeClusterVersions](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterVersions.html)`
+
++ `[redshift:GetClusterCredentials](http://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html)`
 
 + `[redshift:DescribeHsmConfigurations](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeHsmConfigurations.html)`
 
@@ -20,9 +20,9 @@ Amazon Redshift \(service prefix: redshift\) provides the following service\-spe
 
 + `[redshift:DeleteClusterParameterGroup](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterParameterGroup.html)`
 
-+ `[redshift:CreateClusterSnapshot](http://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html)`
-
 + `[redshift:DeleteClusterSnapshot](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSnapshot.html)`
+
++ `[redshift:CreateClusterSnapshot](http://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateClusterSnapshot.html)`
 
 + `[redshift:CancelQuerySession](http://docs.aws.amazon.com/redshift/latest/APIReference/API_CancelQuerySession.html)`
 
@@ -100,11 +100,9 @@ Amazon Redshift \(service prefix: redshift\) provides the following service\-spe
 
 + `[redshift:DeleteClusterSecurityGroup](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteClusterSecurityGroup.html)`
 
-+ `[redshift:ModifyEventSubscription](http://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEventSubscription.html)`
-
 + `[redshift:DescribeClusterSnapshots](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeClusterSnapshots.html)`
 
-+ `[redshift:AuthorizeCluster](http://docs.aws.amazon.com/redshift/latest/APIReference/API_AuthorizeCluster.html)`
++ `[redshift:ModifyEventSubscription](http://docs.aws.amazon.com/redshift/latest/APIReference/API_ModifyEventSubscription.html)`
 
 + `[redshift:DescribeEventSubscriptions](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEventSubscriptions.html)`
 
@@ -120,11 +118,11 @@ Amazon Redshift \(service prefix: redshift\) provides the following service\-spe
 
 + `[redshift:DeleteSnapshotCopyGrant](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DeleteSnapshotCopyGrant.html)`
 
-+ `[redshift:DescribeTableRestoreStatus](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTableRestoreStatus.html)`
++ `[redshift:DescribeReservedNodeOfferings](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeOfferings.html)`
 
 + `[redshift:CreateHsmConfiguration](http://docs.aws.amazon.com/redshift/latest/APIReference/API_CreateHsmConfiguration.html)`
 
-+ `[redshift:DescribeReservedNodeOfferings](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeReservedNodeOfferings.html)`
++ `[redshift:DescribeTableRestoreStatus](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeTableRestoreStatus.html)`
 
 + `[redshift:DescribeEvents](http://docs.aws.amazon.com/redshift/latest/APIReference/API_DescribeEvents.html)`
 

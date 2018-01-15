@@ -6,13 +6,13 @@ Amazon Cognito Sync \(service prefix: cognito\-sync\) provides the following ser
 
 + `[cognito\-sync:UpdateRecords](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html)`
 
-+ `[cognito\-sync:QueryRecords](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_QueryRecords.html)`
-
 + `[cognito\-sync:DescribeIdentityPoolUsage](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html)`
 
-+ `[cognito\-sync:BulkPublish](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html)`
++ `[cognito\-sync:QueryRecords](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_QueryRecords.html)`
 
 + `[cognito\-sync:RegisterDevice](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html)`
+
++ `[cognito\-sync:BulkPublish](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html)`
 
 + `[cognito\-sync:UnsubscribeFromDataset](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html)`
 

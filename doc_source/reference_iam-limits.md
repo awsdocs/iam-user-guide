@@ -53,6 +53,7 @@ For most IAM entity limits, you cannot request a limit increase\.
 | Access keys assigned to the AWS account root user | 2 | 
 | Aliases for an AWS account | 1 | 
 | Groups an IAM user can be a member of | 10 | 
+| IAM users in a group | Equal to the user quota for the account | 
 | Identity providers \(IdPs\) associated with an IAM SAML provider object | 10 | 
 | Keys per SAML provider | 10 | 
 | Login profiles for an IAM user | 1 | 

@@ -4,13 +4,13 @@ Amazon Kinesis Analytics \(service prefix: kinesisanalytics\) provides the follo
 
 **Actions for Amazon Kinesis Analytics**
 
-For information about using the following Amazon Kinesis Analytics API actions in an IAM policy, see [Granting Amazon Kinesis Analytics Permissions to Access Streaming Sources \(Creating an IAM Role\)](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/iam-role.html) in the *Amazon Kinesis Analytics Developer Guide*\.
+For information about using the following Amazon Kinesis Data Analytics API actions in an IAM policy, see [Granting Amazon Kinesis Data Analytics Permissions to Access Streaming Sources \(Creating an IAM Role\)](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/iam-role.html) in the *Amazon Kinesis Data Analytics Developer Guide*\.
 
 + `[kinesisanalytics:DescribeApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html)`
 
-+ `[kinesisanalytics:AddApplicationOutput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html)`
-
 + `[kinesisanalytics:AddApplicationInput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html)`
+
++ `[kinesisanalytics:AddApplicationOutput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html)`
 
 + `[kinesisanalytics:DeleteApplicationOutput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html)`
 

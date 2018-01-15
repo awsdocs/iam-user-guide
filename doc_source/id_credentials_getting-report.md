@@ -1,6 +1,6 @@
 # Getting Credential Reports for Your AWS Account<a name="id_credentials_getting-report"></a>
 
-You can generate and download a *credential report* that lists all users in your account and the status of their various credentials, including passwords,  access keys, and MFA devices\. You can get a credential report from the AWS Management Console, the [AWS SDKs](https://aws.amazon.com/tools) and [Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or the IAM API\. 
+You can generate and download a *credential report* that lists all users in your account and the status of their various credentials, including passwords, access keys, and MFA devices\. You can get a credential report from the AWS Management Console, the [AWS SDKs](https://aws.amazon.com/tools) and [Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or the IAM API\. 
 
 You can use credential reports to assist in your auditing and compliance efforts\. You can use the report to audit the effects of credential lifecycle requirements, such as password and access key rotation\. You can provide the report to an external auditor, or grant permissions to an auditor so that he or she can download the report directly\.
 
@@ -28,7 +28,7 @@ The Amazon Resource Name \(ARN\) of the user\. For more information about ARNs, 
 The date and time when the user was created, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601)\.
 
 **password\_enabled**  
-When the user has a password, this value is `TRUE`\. Otherwise it is `FALSE`\. The value for the AWS account root user is always `not_supported`\.
+When the user has a password, this value is `TRUE`\. Otherwise it is `FALSE`\.The value for the AWS account root user is always `not_supported`\.
 
 **password\_last\_used**  
 The date and time when the AWS account root user or IAM user's password was last used to sign in to an AWS website, in [ISO 8601 date\-time format](http://www.iso.org/iso/iso8601)\. AWS websites that capture a user's last sign\-in time are the AWS Management Console, the AWS Discussion Forums, and the AWS Marketplace\. When a password is used more than once in a 5\-minute span, only the first use is recorded in this field\.   

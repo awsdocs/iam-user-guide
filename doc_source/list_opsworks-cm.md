@@ -6,9 +6,9 @@ AWS OpsWorks Configuration Management \(service prefix: opsworks\-cm\) provides 
 
 For information about using the following AWS OpsWorks for Chef Automate API actions in an IAM policy, see [Best Practices: Managing Permissions](http://docs.aws.amazon.com/opsworks/latest/userguide/best-practices-permissions.html) in the *AWS OpsWorks User Guide*\.
 
-+ `[opsworks\-cm:UpdateServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html)`
-
 + `[opsworks\-cm:StartMaintenance](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html)`
+
++ `[opsworks\-cm:UpdateServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html)`
 
 + `[opsworks\-cm:DeleteServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html)`
 
@@ -20,15 +20,15 @@ For information about using the following AWS OpsWorks for Chef Automate API act
 
 + `[opsworks\-cm:DescribeEvents](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html)`
 
-+ `[opsworks\-cm:RestoreServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html)`
-
 + `[opsworks\-cm:DescribeServers](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html)`
+
++ `[opsworks\-cm:RestoreServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html)`
 
 + `[opsworks\-cm:DescribeBackups](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html)`
 
-+ `[opsworks\-cm:DescribeNodeAssociationStatus](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html)`
-
 + `[opsworks\-cm:AssociateNode](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html)`
+
++ `[opsworks\-cm:DescribeNodeAssociationStatus](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html)`
 
 + `[opsworks\-cm:UpdateServerEngineAttributes](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html)`
 

@@ -14,9 +14,9 @@ For information about controlling access to AWS CodePipeline by using an IAM pol
 
 + `[codepipeline:DeleteCustomActionType](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_DeleteCustomActionType.html)`
 
-+ `[codepipeline:ListPipelines](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelines.html)`
-
 + `[codepipeline:CreatePipeline](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreatePipeline.html)`
+
++ `[codepipeline:ListPipelines](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListPipelines.html)`
 
 + `[codepipeline:PollForThirdPartyJobs](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PollForThirdPartyJobs.html)`
 
@@ -36,17 +36,17 @@ For information about controlling access to AWS CodePipeline by using an IAM pol
 
 + `[codepipeline:GetJobDetails](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetJobDetails.html)`
 
-+ `[codepipeline:PutApprovalResult](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutApprovalResult.html)`
-
 + `[codepipeline:ListActionTypes](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_ListActionTypes.html)`
+
++ `[codepipeline:PutApprovalResult](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_PutApprovalResult.html)`
 
 + `[codepipeline:CreateCustomActionType](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_CreateCustomActionType.html)`
 
 + `[codepipeline:AcknowledgeThirdPartyJob](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_AcknowledgeThirdPartyJob.html)`
 
-+ `[codepipeline:GetThirdPartyJobDetails](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetThirdPartyJobDetails.html)`
-
 + `[codepipeline:GetPipelineExecution](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipelineExecution.html)`
+
++ `[codepipeline:GetThirdPartyJobDetails](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetThirdPartyJobDetails.html)`
 
 + `[codepipeline:GetPipeline](http://docs.aws.amazon.com/codepipeline/latest/APIReference/API_GetPipeline.html)`
 

@@ -26,11 +26,11 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeSpotPriceHistory](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotPriceHistory.html)`
 
-+ `[ec2:CreateDefaultVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultVpc.html)`
++ `[ec2:DescribeHosts](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html)`
 
 + `[ec2:CreateVpcPeeringConnection](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcPeeringConnection.html)`
 
-+ `[ec2:DescribeHosts](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHosts.html)`
++ `[ec2:CreateDefaultVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultVpc.html)`
 
 + `[ec2:PurchaseScheduledInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseScheduledInstances.html)`
 
@@ -80,9 +80,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:ReportInstanceStatus](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReportInstanceStatus.html)`
 
-+ `[ec2:EnableVpcClassicLink](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLink.html)`
-
 + `[ec2:ModifyInstanceAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html)`
+
++ `[ec2:EnableVpcClassicLink](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLink.html)`
 
 + `[ec2:DeleteVpnConnectionRoute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnConnectionRoute.html)`
 
@@ -104,13 +104,15 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:CreateEgressOnlyInternetGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateEgressOnlyInternetGateway.html)`
 
++ `[ec2:DescribeFlowLogs](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFlowLogs.html)`
+
 + `[ec2:CreateDhcpOptions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDhcpOptions.html)`
 
-+ `[ec2:DescribeFlowLogs](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFlowLogs.html)`
++ `[ec2:DescribeFpgaImages](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImages.html)`
 
 + `[ec2:RunInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html)`
 
-+ `[ec2:DescribeFpgaImages](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImages.html)`
++ `[ec2:CreateLaunchTemplateVersion](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html)`
 
 + `[ec2:DescribeVpcPeeringConnections](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcPeeringConnections.html)`
 
@@ -144,9 +146,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeReservedInstancesOfferings](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesOfferings.html)`
 
-+ `[ec2:CancelBundleTask](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelBundleTask.html)`
-
 + `[ec2:DetachVpnGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVpnGateway.html)`
+
++ `[ec2:CancelBundleTask](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelBundleTask.html)`
 
 + `[ec2:DisableVpcClassicLinkDnsSupport](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisableVpcClassicLinkDnsSupport.html)`
 
@@ -156,9 +158,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:ReplaceIamInstanceProfileAssociation](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html)`
 
-+ `[ec2:RebootInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RebootInstances.html)`
-
 + `[ec2:DisassociateIamInstanceProfile](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html)`
+
++ `[ec2:RebootInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RebootInstances.html)`
 
 + `[ec2:DetachClassicLinkVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachClassicLinkVpc.html)`
 
@@ -175,6 +177,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:CreateSubnet](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSubnet.html)`
 
 + `[ec2:DisassociateAddress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateAddress.html)`
+
++ `[ec2:DeleteLaunchTemplateVersions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplateVersions.html)`
 
 + `[ec2:DisassociateFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateFpgaImage.html)`
 
@@ -198,9 +202,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:CreateNetworkAclEntry](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkAclEntry.html)`
 
-+ `[ec2:DeleteCustomerGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCustomerGateway.html)`
-
 + `[ec2:AuthorizeSecurityGroupIngress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AuthorizeSecurityGroupIngress.html)`
+
++ `[ec2:DeleteCustomerGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteCustomerGateway.html)`
 
 + `[ec2:CreateFlowLogs](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFlowLogs.html)`
 
@@ -220,9 +224,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DeleteVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpc.html)`
 
-+ `[ec2:RequestSpotFleet](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html)`
-
 + `[ec2:StopInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_StopInstances.html)`
+
++ `[ec2:RequestSpotFleet](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html)`
 
 + `[ec2:DescribeExportTasks](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeExportTasks.html)`
 
@@ -252,9 +256,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:ResetNetworkInterfaceAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetNetworkInterfaceAttribute.html)`
 
-+ `[ec2:CopyImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html)`
-
 + `[ec2:CreateVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpc.html)`
+
++ `[ec2:CopyImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html)`
 
 + `[ec2:DescribeHostReservations](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservations.html)`
 
@@ -270,9 +274,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeImageAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html)`
 
-+ `[ec2:UnassignPrivateIpAddresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignPrivateIpAddresses.html)`
-
 + `[ec2:DeleteVpnGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnGateway.html)`
+
++ `[ec2:UnassignPrivateIpAddresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignPrivateIpAddresses.html)`
 
 + `[ec2:DescribeImportImageTasks](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImportImageTasks.html)`
 
@@ -283,6 +287,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:DescribeVpnConnections](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html)`
 
 + `[ec2:AcceptVpcPeeringConnection](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcPeeringConnection.html)`
+
++ `[ec2:DeleteLaunchTemplate](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplate.html)`
 
 + `[ec2:ModifyVpcEndpoint](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpoint.html)`
 
@@ -306,9 +312,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:ModifyVolume](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVolume.html)`
 
-+ `[ec2:AssociateIamInstanceProfile](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html)`
-
 + `[ec2:ResetImageAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetImageAttribute.html)`
+
++ `[ec2:AssociateIamInstanceProfile](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html)`
 
 + `[ec2:DescribeVpcAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcAttribute.html)`
 
@@ -324,19 +330,21 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:CreateSecurityGroup](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateSecurityGroup.html)`
 
-+ `[ec2:DeleteTags](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTags.html)`
-
 + `[ec2:ReleaseHosts](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseHosts.html)`
 
++ `[ec2:DeleteTags](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteTags.html)`
+
 + `[ec2:CreateVolume](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVolume.html)`
+
++ `[ec2:ModifyLaunchTemplate](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyLaunchTemplate.html)`
 
 + `[ec2:ReplaceRouteTableAssociation](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceRouteTableAssociation.html)`
 
 + `[ec2:PurchaseHostReservation](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseHostReservation.html)`
 
-+ `[ec2:CreateNetworkInterfacePermission](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html)`
-
 + `[ec2:ModifyVpcAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcAttribute.html)`
+
++ `[ec2:CreateNetworkInterfacePermission](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterfacePermission.html)`
 
 + `[ec2:DeleteSpotDatafeedSubscription](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSpotDatafeedSubscription.html)`
 
@@ -372,21 +380,21 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:AcceptReservedInstancesExchangeQuote](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptReservedInstancesExchangeQuote.html)`
 
-+ `[ec2:AssociateRouteTable](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html)`
-
 + `[ec2:UnmonitorInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnmonitorInstances.html)`
 
-+ `[ec2:DeleteNetworkAclEntry](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAclEntry.html)`
++ `[ec2:AssociateRouteTable](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html)`
 
 + `[ec2:CreateFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html)`
 
++ `[ec2:DeleteNetworkAclEntry](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAclEntry.html)`
+
 + `[ec2:AssignIpv6Addresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignIpv6Addresses.html)`
 
-+ `[ec2:UnassignIpv6Addresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignIpv6Addresses.html)`
++ `[ec2:DeregisterImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterImage.html)`
 
 + `[ec2:CreatePlacementGroup](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreatePlacementGroup.html)`
 
-+ `[ec2:DeregisterImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeregisterImage.html)`
++ `[ec2:UnassignIpv6Addresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UnassignIpv6Addresses.html)`
 
 + `[ec2:DeleteVpcEndpoints](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpoints.html)`
 
@@ -410,29 +418,27 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DeleteRouteTable](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRouteTable.html)`
 
-+ `[ec2:DescribePrefixLists](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrefixLists.html)`
-
 + `[ec2:AttachInternetGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachInternetGateway.html)`
+
++ `[ec2:DescribePrefixLists](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribePrefixLists.html)`
 
 + `[ec2:GetHostReservationPurchasePreview](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetHostReservationPurchasePreview.html)`
 
 + `[ec2:DescribeReservedInstancesModifications](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeReservedInstancesModifications.html)`
 
-+ `[ec2:RegisterImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html)`
-
 + `[ec2:CreateInternetGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateInternetGateway.html)`
+
++ `[ec2:RegisterImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RegisterImage.html)`
 
 + `[ec2:ModifyInstancePlacement](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstancePlacement.html)`
 
 + `[ec2:DescribeRegions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html)`
 
-+ `[ec2:AssociateSubnetCidrBlock](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSubnetCidrBlock.html)`
-
 + `[ec2:DescribeSnapshotAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotAttribute.html)`
 
-+ `[ec2:DescribeMovingAddresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMovingAddresses.html)`
++ `[ec2:AssociateSubnetCidrBlock](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSubnetCidrBlock.html)`
 
-+ `[ec2:DescribeIamInstanceProfileAssociation](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIamInstanceProfileAssociation.html)`
++ `[ec2:DescribeMovingAddresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMovingAddresses.html)`
 
 + `[ec2:DescribeClassicLinkInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeClassicLinkInstances.html)`
 
@@ -442,9 +448,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeScheduledInstanceAvailability](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstanceAvailability.html)`
 
-+ `[ec2:DescribeVpnGateways](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html)`
-
 + `[ec2:DetachVolume](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachVolume.html)`
+
++ `[ec2:DescribeVpnGateways](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html)`
 
 + `[ec2:CreateNetworkInterface](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html)`
 
@@ -458,21 +464,21 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeNetworkInterfaces](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfaces.html)`
 
-+ `[ec2:DetachNetworkInterface](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachNetworkInterface.html)`
-
 + `[ec2:ModifyNetworkInterfaceAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyNetworkInterfaceAttribute.html)`
 
-+ `[ec2:CreateKeyPair](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html)`
++ `[ec2:DetachNetworkInterface](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachNetworkInterface.html)`
 
 + `[ec2:DisassociateRouteTable](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateRouteTable.html)`
+
++ `[ec2:CreateKeyPair](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateKeyPair.html)`
 
 + `[ec2:AttachClassicLinkVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachClassicLinkVpc.html)`
 
 + `[ec2:DescribeEgressOnlyInternetGateways](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeEgressOnlyInternetGateways.html)`
 
-+ `[ec2:CancelReservedInstancesListing](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelReservedInstancesListing.html)`
-
 + `[ec2:DisassociateSubnetCidrBlock](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateSubnetCidrBlock.html)`
+
++ `[ec2:CancelReservedInstancesListing](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelReservedInstancesListing.html)`
 
 + `[ec2:MonitorInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_MonitorInstances.html)`
 
@@ -489,6 +495,8 @@ Amazon EC2 has the following service\-specific context keys that can be used in 
 + `aws:TagKeys`
 
 + `ec2:AccepterVpc`
+
++ `ec2:AuthorizedService`
 
 + `ec2:AuthorizedUser`
 

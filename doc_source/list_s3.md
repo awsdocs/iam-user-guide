@@ -20,9 +20,9 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:DeleteBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETEwebsite.html)`
 
-+ `[s3:PutBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTwebsite.html)`
-
 + `[s3:DeleteObjectTagging]()`
+
++ `[s3:PutBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTwebsite.html)`
 
 + `[s3:GetObjectVersionForReplication]()`
 
@@ -38,11 +38,11 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:PutIpConfiguration]()`
 
-+ `[s3:GetLifecycleConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlifecycle.html)`
++ `[s3:PutObjectTagging]()`
 
 + `[s3:DeleteObjectVersionTagging]()`
 
-+ `[s3:PutObjectTagging]()`
++ `[s3:GetLifecycleConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlifecycle.html)`
 
 + `[s3:PutReplicationConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html)`
 
@@ -52,9 +52,9 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:GetBucketVersioning](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETversioningStatus.html)`
 
-+ `[s3:PutAccelerateConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTaccelerate.html)`
-
 + `[s3:ListAllMyBuckets](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTServiceGET.html)`
+
++ `[s3:PutAccelerateConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTaccelerate.html)`
 
 + `[s3:GetReplicationConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGetReplication.html)`
 
@@ -66,9 +66,9 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:PutMetricsConfiguration]()`
 
-+ `[s3:PutBucketRequestPayment](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTrequestPaymentPUT.html)`
-
 + `[s3:GetBucketLogging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlogging.html)`
+
++ `[s3:PutBucketRequestPayment](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTrequestPaymentPUT.html)`
 
 + `[s3:GetInventoryConfiguration]()`
 
@@ -76,11 +76,11 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:GetBucketTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETtagging.html)`
 
++ `[s3:ListBucketByTags]()`
+
 + `[s3:PutBucketVersioning](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html)`
 
 + `[s3:PutBucketCORS](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTcors.html)`
-
-+ `[s3:ListBucketByTags]()`
 
 + `[s3:DeleteObject](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html)`
 
@@ -98,11 +98,11 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:PutBucketTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTtagging.html)`
 
-+ `[s3:AbortMultipartUpload](http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadAbort.html)`
-
 + `[s3:PutBucketAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTacl.html)`
 
 + `[s3:GetMetricsConfiguration]()`
+
++ `[s3:AbortMultipartUpload](http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadAbort.html)`
 
 + `[s3:PutBucketPolicy](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTpolicy.html)`
 
@@ -110,15 +110,15 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:ReplicateObject](http://docs.aws.amazon.com/AmazonS3/latest/dev/crr-how-setup.html#replication-iam-role-intro)`
 
-+ `[s3:PutObjectVersionAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html#objectPutAclVersions)`
-
 + `[s3:GetObjectAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETacl.html)`
+
++ `[s3:PutObjectVersionAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html#objectPutAclVersions)`
 
 + `[s3:GetBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETwebsite.html)`
 
-+ `[s3:ReplicateTags]()`
-
 + `[s3:ListObjects]()`
+
++ `[s3:ReplicateTags]()`
 
 + `[s3:PutObjectAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html)`
 
@@ -136,9 +136,9 @@ For information about using the following Amazon S3 API actions in an IAM policy
 
 + `[s3:GetObjectVersionTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETtagging.html)`
 
-+ `[s3:DeleteBucketPolicy](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETEpolicy.html)`
-
 + `[s3:GetObjectVersionAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/objectGetAclVersions.html)`
+
++ `[s3:DeleteBucketPolicy](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETEpolicy.html)`
 
 + `[s3:PutBucketLogging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html)`
 

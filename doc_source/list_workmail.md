@@ -6,9 +6,9 @@ Amazon WorkMail \(service prefix: workmail\) provides the following service\-spe
 
 For information about using the following Amazon WorkMail API actions in an IAM policy, see [AWS Identity and Access Management Policies for Amazon WorkMail](http://docs.aws.amazon.com/workmail/latest/adminguide/iam_policies_workmail.html) in the *Amazon WorkMail Administrator Guide*\.
 
-+ `workmail:GetMobileDeviceDetails`
-
 + `workmail:GetMobileDevicesForUser`
+
++ `workmail:GetMobileDeviceDetails`
 
 + `workmail:CreateMailDomain`
 
@@ -28,13 +28,13 @@ For information about using the following Amazon WorkMail API actions in an IAM 
 
 + `workmail:GetMailDomainDetails`
 
-+ `workmail:ResetUserPassword`
-
 + `workmail:DeleteMailDomain`
 
-+ `workmail:SetDefaultMailDomain`
++ `workmail:ResetUserPassword`
 
 + `workmail:SetAdmin`
+
++ `workmail:SetDefaultMailDomain`
 
 + `workmail:GetMobilePolicyDetails`
 
@@ -50,9 +50,9 @@ For information about using the following Amazon WorkMail API actions in an IAM 
 
 + `workmail:GetMailGroupDetails`
 
-+ `workmail:ListMembersInMailGroup`
-
 + `workmail:SetMailGroupDetails`
+
++ `workmail:ListMembersInMailGroup`
 
 + `workmail:DescribeOrganizations`
 
@@ -74,9 +74,9 @@ For information about using the following Amazon WorkMail API actions in an IAM 
 
 + `workmail:RemoveMembersFromGroup`
 
-+ `workmail:DeleteOrganization`
-
 + `workmail:EnableMailUsers`
+
++ `workmail:DeleteOrganization`
 
 **Condition context keys for Amazon WorkMail**
 

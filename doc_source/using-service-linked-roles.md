@@ -14,23 +14,30 @@ You must configure permissions to allow an IAM entity \(such as a user, group, o
 
 **To allow an IAM entity to create a specific service\-linked role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to create the service\-linked role:
+Add the following policy to the IAM entity that needs to create the service\-linked role:
 
 ```
 {
-    "Effect": "Allow",
-    "Action": [
-        "iam:CreateServiceLinkedRole",
-        "iam:PutRolePolicy"
-    ],
-    "Resource": "arn:aws:iam::*:role/aws-service-role/SERVICE-NAME-URL.amazonaws.com/SERVICE-LINKED-ROLE-NAME-PREFIX*",
-    "Condition": {"StringLike": {"iam:AWSServiceName": "SERVICE-NAME-URL.amazonaws.com"}}
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/SERVICE-NAME.amazonaws.com/SERVICE-LINKED-ROLE-NAME-PREFIX*",
+            "Condition": {"StringLike": {"iam:AWSServiceName": "SERVICE-NAME.amazonaws.com"}}
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:PutRolePolicy",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/SERVICE-NAME.amazonaws.com/SERVICE-LINKED-ROLE-NAME-PREFIX*"
+        }
+    ]
 }
 ```
 
 **To allow an IAM entity to create any service\-linked role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to create a service\-linked role:
+Add the following statement to the permissions policy for the IAM entity that needs to create a service\-linked role, or any service role:
 
 ```
 {
@@ -39,13 +46,13 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:CreateServiceLinkedRole",
         "iam:PutRolePolicy"
     ],
-    "Resource": "*"
+    "Resource": "arn:aws:iam::*:role/aws-service-role/*"
 }
 ```
 
-**To allow an IAM entity to edit the description of service\-linked roles**
+**To allow an IAM entity to edit the description of any service roles**
 
-Add the following statement to the permissions policy for the IAM entity that needs to edit the description of a service\-linked role:
+Add the following statement to the permissions policy for the IAM entity that needs to edit the description of a service\-linked role, or any service role:
 
 ```
 {
@@ -53,7 +60,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
     "Action": [
         "iam:UpdateRoleDescription"
     ],
-    "Resource": "*"
+    "Resource": "arn:aws:iam::*:role/aws-service-role/*"
 }
 ```
 
@@ -68,13 +75,13 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:DeleteServiceLinkedRole",
         "iam:GetServiceLinkedRoleDeletionStatus"
     ],
-    "Resource": "arn:aws:iam::*:role/aws-service-role/SERVICE-NAME-URL.amazonaws.com/SERVICE-LINKED-ROLE-NAME-PREFIX*"
+    "Resource": "arn:aws:iam::*:role/aws-service-role/SERVICE-NAME.amazonaws.com/SERVICE-LINKED-ROLE-NAME-PREFIX*"
 }
 ```
 
-**To allow an IAM entity to delete any specific service\-linked role**
+**To allow an IAM entity to delete any service role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to delete a service\-linked role:
+Add the following statement to the permissions policy for the IAM entity that needs to delete a service\-linked role, or any service\-role:
 
 ```
 {
@@ -83,7 +90,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:DeleteServiceLinkedRole",
         "iam:GetServiceLinkedRoleDeletionStatus"
     ],
-    "Resource": "*"
+    "Resource": "arn:aws:iam::*:role/aws-service-role/*"
 }
 ```
 
@@ -91,7 +98,7 @@ Alternatively, you can use an AWS managed policy to provide full access to the s
 
 ## Creating a Service\-Linked Role<a name="create-service-linked-role"></a>
 
-The method that you use to create a service\-linked role depends on the service\. In some cases, you don't need to manually create a service\-linked role\. For example, when you complete a specific action \(such as creating a resource\) in the service, the service might create the service\-linked role for you\. Or if you were using a service before it began supporting service\-linked roles, then the service might have automatically created the role in your account\. To learn more, see [A New Role Appeared in My IAM Account](troubleshoot_roles.md#troubleshoot_roles_new-role-appeared)\.
+The method that you use to create a service\-linked role depends on the service\. In some cases, you don't need to manually create a service\-linked role\. For example, when you complete a specific action \(such as creating a resource\) in the service, the service might create the service\-linked role for you\. Or if you were using a service before it began supporting service\-linked roles, then the service might have automatically created the role in your account\. To learn more, see [A New Role Appeared in My AWS Account](troubleshoot_roles.md#troubleshoot_roles_new-role-appeared)\.
 
 In other cases, the service might support creating a service\-linked role manually using the service console, API, or CLI\. For information about which services support using service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. To learn whether the service supports creating the service\-linked role, choose the **Yes** link to view the service\-linked role documentation for that service\.
 
@@ -145,7 +152,7 @@ Before creating a service\-linked role in IAM, find out whether the linked servi
 Use the following command:
 
 ```
-$ aws iam [create\-service\-linked\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME-URL.amazonaws.com
+$ aws iam [create\-service\-linked\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME.amazonaws.com
 ```
 
 ### Creating a Service\-Linked Role \(IAM API\)<a name="create-service-linked-role-iam-api"></a>

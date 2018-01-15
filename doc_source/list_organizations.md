@@ -20,23 +20,23 @@ For additional information about using AWS Organizations actions in an IAM polic
 
 + `[organizations:DescribePolicy](http://docs.aws.amazon.com/organizations/latest/APIReference//API_DescribePolicy.html)`
 
-+ `[organizations:EnableAllFeatures](http://docs.aws.amazon.com/organizations/latest/APIReference//API_EnableAllFeatures.html)`
-
-+ `[organizations:EnablePolicyType](http://docs.aws.amazon.com/organizations/latest/APIReference//API_EnablePolicyType.html)`
-
 + `[organizations:DeletePolicy](http://docs.aws.amazon.com/organizations/latest/APIReference//API_DeletePolicy.html)`
 
 + `[organizations:DetachPolicy](http://docs.aws.amazon.com/organizations/latest/APIReference//API_DetachPolicy.html)`
 
-+ `[organizations:DescribeOrganizationalUnit](http://docs.aws.amazon.com/organizations/latest/APIReference//API_DescribeOrganizationalUnit.html)`
++ `[organizations:EnablePolicyType](http://docs.aws.amazon.com/organizations/latest/APIReference//API_EnablePolicyType.html)`
 
-+ `[organizations:ListChildren](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListChildren.html)`
++ `[organizations:EnableAllFeatures](http://docs.aws.amazon.com/organizations/latest/APIReference//API_EnableAllFeatures.html)`
+
++ `[organizations:DescribeOrganizationalUnit](http://docs.aws.amazon.com/organizations/latest/APIReference//API_DescribeOrganizationalUnit.html)`
 
 + `[organizations:ListParents](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListParents.html)`
 
-+ `[organizations:ListPolicies](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListPolicies.html)`
++ `[organizations:ListChildren](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListChildren.html)`
 
 + `[organizations:UpdateOrganizationalUnit](http://docs.aws.amazon.com/organizations/latest/APIReference//API_UpdateOrganizationalUnit.html)`
+
++ `[organizations:ListPolicies](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListPolicies.html)`
 
 + `[organizations:ListHandshakesForAccount](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListHandshakesForAccount.html)`
 
@@ -67,8 +67,6 @@ For additional information about using AWS Organizations actions in an IAM polic
 + `[organizations:CreateOrganization](http://docs.aws.amazon.com/organizations/latest/APIReference//API_CreateOrganization.html)`
 
 + `[organizations:ListAccountsForParent](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListAccountsForParent.html)`
-
-+ `[organizations:EnableFullControl](http://docs.aws.amazon.com/organizations/latest/APIReference//API_EnableFullControl.html)`
 
 + `[organizations:ListHandshakesForOrganization](http://docs.aws.amazon.com/organizations/latest/APIReference//API_ListHandshakesForOrganization.html)`
 

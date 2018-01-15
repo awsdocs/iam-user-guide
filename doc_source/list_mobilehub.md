@@ -4,15 +4,23 @@ AWS Mobile Hub \(service prefix: mobilehub\) provides the following service\-spe
 
 **Actions for AWS Mobile Hub**
 
++ `mobilehub:DescribeBundle`
+
++ `mobilehub:ExportProject`
+
 + `mobilehub:ListAvailableFeatures`
 
++ `mobilehub:ImportProject`
+
 + `mobilehub:ListProjects`
+
++ `mobilehub:ListAvailableConnectors`
+
++ `mobilehub:ExportBundle`
 
 + `mobilehub:CreateProject`
 
 + `mobilehub:GetProject`
-
-+ `mobilehub:ValidateProject`
 
 + `mobilehub:DeleteProject`
 
@@ -24,9 +32,13 @@ AWS Mobile Hub \(service prefix: mobilehub\) provides the following service\-spe
 
 + `mobilehub:DeployToStage`
 
-+ `mobilehub:CreateServiceRole`
++ `mobilehub:GetProjectSnapshot`
+
++ `mobilehub:ListBundles`
 
 + `mobilehub:SynchronizeProject`
+
++ `mobilehub:CreateServiceRole`
 
 + `mobilehub:VerifyServiceRole`
 

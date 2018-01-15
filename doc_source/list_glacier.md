@@ -24,9 +24,9 @@ For information about using the following Amazon Glacier API actions in an IAM p
 
 + `[glacier:SetVaultNotifications](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-vault-notifications-put.html)`
 
-+ `[glacier:AddTagsToVault](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html)`
-
 + `[glacier:UploadMultipartPart](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-upload-part.html)`
+
++ `[glacier:AddTagsToVault](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-AddTagsToVault.html)`
 
 + `[glacier:InitiateMultipartUpload](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-initiate-upload.html)`
 
@@ -44,9 +44,9 @@ For information about using the following Amazon Glacier API actions in an IAM p
 
 + `[glacier:CompleteVaultLock](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-CompleteVaultLock.html)`
 
-+ `[glacier:ListTagsForVault](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListTagsForVault.html)`
-
 + `[glacier:InitiateJob](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html)`
+
++ `[glacier:ListTagsForVault](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-ListTagsForVault.html)`
 
 + `[glacier:ListParts](http://docs.aws.amazon.com/amazonglacier/latest/dev/api-multipart-list-parts.html)`
 

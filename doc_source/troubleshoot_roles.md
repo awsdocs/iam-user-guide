@@ -4,8 +4,8 @@ Use the information here to help you diagnose and fix common issues that you mig
 
 
 + [I Can't Assume a Role](#troubleshoot_roles_cant-assume-role)
-+ [A New Role Appeared in My IAM Account](#troubleshoot_roles_new-role-appeared)
-+ [I Can't Edit or Delete a Role in My IAM Account](#troubleshoot_roles_cant-edit-delete-role)
++ [A New Role Appeared in My AWS Account](#troubleshoot_roles_new-role-appeared)
++ [I Can't Edit or Delete a Role in My AWS Account](#troubleshoot_roles_cant-edit-delete-role)
 
 ## I Can't Assume a Role<a name="troubleshoot_roles_cant-assume-role"></a>
 
@@ -42,7 +42,7 @@ Use the information here to help you diagnose and fix common issues that you mig
       }
   ```
 
-## A New Role Appeared in My IAM Account<a name="troubleshoot_roles_new-role-appeared"></a>
+## A New Role Appeared in My AWS Account<a name="troubleshoot_roles_new-role-appeared"></a>
 
 Some AWS services require that you use a unique type of service role that is linked directly to the service\. This service\-linked role is predefined by the service and includes all the permissions that the service requires\. This makes setting up a service easier because you don’t have to manually add the necessary permissions\. For general information about service\-linked roles, see [Using Service\-Linked Roles](using-service-linked-roles.md)\.
 
@@ -50,7 +50,7 @@ You might already be using a service when it begins supporting service\-linked r
 
 For information about which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. For information about using the service\-linked role for a service, choose the **Yes** link\.
 
-## I Can't Edit or Delete a Role in My IAM Account<a name="troubleshoot_roles_cant-edit-delete-role"></a>
+## I Can't Edit or Delete a Role in My AWS Account<a name="troubleshoot_roles_cant-edit-delete-role"></a>
 
 You cannot delete or edit the permissions for a service\-linked role in IAM\. These roles include predefined trusts and permissions that are required by the service in order to perform actions on your behalf\. You can use the IAM console, AWS CLI, or API to edit only the description of a service\-linked role\. You can view the service\-linked roles in your account by going to the IAM **Roles** page in the console\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. A banner on the role's **Summary** page also indicates that the role is a service\-linked role\. You can manage and delete these roles only through the linked service, if that service supports the action\. Be careful when modifying or deleting a service\-linked role because doing so could remove permissions that the service needs to access AWS resources\. 
 
