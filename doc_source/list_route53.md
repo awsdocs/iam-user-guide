@@ -66,6 +66,12 @@ For information about using the following Route 53 API actions in an IAM policy
 
 + `[route53:AssociateVPCWithHostedZone](http://docs.aws.amazon.com/Route53/latest/APIReference/API_AssociateVPCWithHostedZone.html)`
 
++ `[route53:CreateVPCAssociationAuthorization](http://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html)`
+
++ `[route53:DeleteVPCAssociationAuthorization](http://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteVPCAssociationAuthorization.html)`
+
++ `[route53:ListVPCAssociationAuthorization](http://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteVPCAssociationAuthorization.html)`
+
 + `[route53:GetHealthCheck](http://docs.aws.amazon.com/Route53/latest/APIReference/API_GetHealthCheck.html)`
 
 + `[route53:GetHealthCheckStatus](http://docs.aws.amazon.com/Route53/latest/APIReference/api-get-health-check-status.html)`
