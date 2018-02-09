@@ -21,7 +21,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 
 ## Lock Away Your AWS Account Root User Access Keys<a name="lock-away-credentials"></a>
 
-You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account gives full access to all your resources for all AWS services, including your billing information\. You cannot restrict the permissions associated with your AWS account access key\. 
+You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account gives full access to all your resources for all AWS services, including your billing information\. You cannot restrict the permissions associated with your AWS root account access key\. 
 
 Therefore, protect your AWS account access key like you would your credit card numbers or any other sensitive secret\. Here are some ways to do that: 
 
