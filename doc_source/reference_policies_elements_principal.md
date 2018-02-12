@@ -4,9 +4,9 @@ Use the `Principal` element to specify the user \(IAM user, federated user, or a
 
 Use the `Principal` element in these ways:
 
-+ In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you typically specify the identifier of the trusted account\. 
++ In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. 
 **Note**  
-You cannot specify anything other than a 12\-digit account ID when you create a cross\-account role\. However, you can change it to "\*" in the policy editor after you create the role\. If you do this, we strongly recommend that you limit who can access the role through other means, such as a `Condition` element that limits access to only certain IP addresses\. Do not leave your role accessible to everyone\!
+After you create the role, you can change the account to "\*" to allow everyone to assume the role\. If you do this, we strongly recommend that you limit who can access the role through other means, such as a `Condition` element that limits access to only certain IP addresses\. Do not leave your role accessible to everyone\!
 
 + In resource\-based policies, use the `Principal` element to specify the accounts or users who are allowed to access the resource\. 
 
@@ -14,24 +14,9 @@ Do not use the `Principal` element in policies that you attach to IAM users and 
 
 ## Specifying a Principal<a name="Principal_specifying"></a>
 
-You specify a principal using the *Amazon Resource Name* \(ARN\) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. When you specify an AWS account, you can use a shortened form that consists of the `AWS:` prefix followed by the account ID, instead of using the account's full ARN\. 
+You specify a principal using the *Amazon Resource Name* \(ARN\) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. When you specify an AWS account, you can use a shortened form that consists of the `AWS:` prefix followed by the account ID, instead of using the account's full ARN\. In the AWS Management Console, specify only the 12\-digit account ID\. 
 
 The following examples show various ways in which principals can be specified\.
-
-**Everyone \(anonymous users\)** 
-
-The following are equivalent:
-
-```
-"Principal": "*"
-```
-
-```
-"Principal" : { "AWS" : "*" }
-```
-
-**Note**  
-In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Anonymous\. You cannot use it as a wildcard to match part of a name or an ARN\. We also strongly recommend that you do not use a wildcard in the `Principal` element in a role's trust policy unless you otherwise restrict access through a `Condition` element in the policy\. Otherwise, any IAM user in any account can access the role\.
 
 **Specific AWS accounts**
 
@@ -122,22 +107,52 @@ If your `Principal` element in a role trust policy contains an ARN that points t
 
 **AWS service**
 
-When you create a trust policy for an IAM role that will be assumed by an AWS service, you typically specify the principal using a friendly name for that service, as in the following example\.
+IAM roles that can be assumed by an AWS service are called *service roles*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service role have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:
+
+`long_service-name.amazonaws.com`
+
+The service principal is defined by the service\. To learn the service principal for a service, see the documentation for that service\. 
+
+The following example shows a policy that can be attached to a service role\. The policy enables two services, Amazon EMR and AWS Data Pipeline, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. To specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
 
 ```
-"Principal": {
-  "Service": [
-    "ec2.amazonaws.com",
-    "datapipeline.amazonaws.com" 
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": [
+          "elasticmapreduce.amazonaws.com",
+          "datapipeline.amazonaws.com"
+        ]
+      },
+      "Action": "sts:AssumeRole"
+    }
   ]
 }
 ```
 
-Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you use a canonical user in a format like this:
+Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
 
 ```
 "Principal": { "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be" }
 ```
+
+**Everyone \(anonymous users\)** 
+
+The following are equivalent:
+
+```
+"Principal": "*"
+```
+
+```
+"Principal" : { "AWS" : "*" }
+```
+
+**Note**  
+In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Anonymous\. You cannot use it as a wildcard to match part of a name or an ARN\. We also strongly recommend that you do not use a wildcard in the `Principal` element in a role's trust policy unless you otherwise restrict access through a `Condition` element in the policy\. Otherwise, any IAM user in any account can access the role\.
 
 ## More Information<a name="Principal_more-info"></a>
 

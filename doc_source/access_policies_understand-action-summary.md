@@ -2,8 +2,7 @@
 
 Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *action summary* table includes a list of resources and the associated conditions that apply to the chosen action\. 
 
-![\[Policy summaries diagram image that illustrates the 3 tables and their
-        relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-action-sum.png)
+![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-action-sum.png)
 
 To view an action summary for each action that grants permissions, choose the link in the service summary\. The action summary table includes details about the resource, including its **Region** and **Account**\. You can also view the conditions that apply to each resource\. This shows you conditions that apply to some resources but not others\.
 

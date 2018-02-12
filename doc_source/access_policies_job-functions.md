@@ -166,23 +166,37 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 Several of the previously listed policies grant the ability to configure AWS services with roles that enable those services to perform operations on your behalf\. The job function policies either specify exact role names that you must use or at least include a prefix that specifies the first part of the name that can be used\. To create one of these roles, perform the steps in the following procedure\.
 
-**To create an IAM service role for a job function**
+**To create a role for an AWS service \(IAM console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create new role**\.
+1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. If needed, expand the **AWS Service Roles** section, and then choose **Select** for the service role type specified in the **Service role type to select** column of the appropriate table in the preceding topics\. If a service role type is not defined in the table, select **Amazon EC2**\. You must later edit the trust policy for the role later to replace the EC2 service endpoint with the one that needs to assume the role\. For more information, see Example 2\.
+1. Choose the **AWS Service** role type, and then choose the service that you want to allow to assume this role\.
 
-1. If the table shows a specified managed policy, select the check box for that policy to grant the permissions that you want the service to have\. If the table specifies something other than an existing managed policy, you can skip this step\. Then create the policy later according to the documentation and attach it to the role\.
+1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
-1. Choose **Next Step** to name and review the role\. 
+1. Choose one or more permissions policies to attach to the role\. Depending on the use case that you selected, the service might do any of the following:
 
-1. For **Role name**, type a role name that matches the requirements for the name specified in the managed policy for the job function\. \(You'll find this in the **Role name** column of the tables in the preceding topics\.\) Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\. 
+   + Define the permissions that the role uses
+
+   + Allow you to choose from a limited set of permissions
+
+   + Allow you to choose from any permissions
+
+   + Allow you to select no policies at this time, create the policies later, and then attach them to the role
+
+   Select the box next to the policy that assigns the permissions that you want the users to have, and then choose **Next: Review**\. 
+**Note**  
+The permissions that you specify are available to any entity that uses the role\. By default, a role has no permissions\.
+
+1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, this option is not editable\. In other cases, the service might define a prefix for the role and allow you to type an optional suffix\. Some services allow you to specify the entire name of your role\.
+
+   If possible, type a role name or role name suffix to help you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\.
 
 1. \(Optional\) For **Role description**, type a description for the new role\.
 
-1. After you review the details, choose **Create role**\.
+1. Review the role and then choose **Create role**\.
 
 ## Example 1: Configuring a User as a Database Administrator \(Console\)<a name="jf_example_1"></a>
 
@@ -196,9 +210,13 @@ This example shows the steps required to configure Alice, an IAM user, as a Data
 
 1. In the list of users, select **Alice** and then choose **Attach policy**\. Alice now can administer AWS databases\. However, to allow Alice to monitor those databases, you must configure the service role\.
 
-1. Choose **Roles**, and then choose **Create new role**\.
+1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. Under **AWS Service Roles** choose **Select** next to **Amazon RDS Role for Enhanced Monitoring**\.
+1. Choose the **AWS Service** role type, and then choose **Amazon RDS**\.
+
+1. Choose the **Amazon RDS Role for Enhanced Monitoring** use case\.
+
+1. Amazon RDS defines the permissions for your role\. Choose **Next: Review** to continue\.
 
 1. The role name must be one of those specified by the DatabaseAdministrator policy that Alice now has\. One of those is **rds\-monitoring\-role**\. Type that for the **Role name**\.
 
@@ -251,11 +269,13 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
    The new policy appears in the list of managed policies and is ready to attach\.
 
-1. Choose **Roles**, and then choose **Create new role**\.
+1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. Under **AWS Service Roles** choose **Select** next to **Amazon EC2**\.
+1. Choose the **AWS Service** role type, and then choose **Amazon EC2**\.
 
-1. On the **Attach policy** page, choose the policy you created earlier, **vpc\-flow\-logs\-policy\-for\-service\-role**, and then choose **Next Step**\.
+1. Choose the **Amazon EC2** use case\.
+
+1. On the **Attach permissions policies** page, choose the policy you created earlier, **vpc\-flow\-logs\-policy\-for\-service\-role**, and then choose **Next: Review**\.
 
 1. The role name must be permitted by the NetworkAdministrator policy that Juan now has\. Any name that begins with `flow-logs-` is allowed\. For this example, type **flow\-logs\-for\-juan** for the **Role name**\.
 
@@ -271,4 +291,4 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
            "Service": "vpc-flow-logs.amazonaws.com"
    ```
 
-1. Alice can now create flow logs for a VPC or subnet in the Amazon EC2 console\. When you create the flow log, specify the **flow\-logs\-for\-juan** role\. That role has the permissions to create the log and write data to it\.
+1. Juan can now create flow logs for a VPC or subnet in the Amazon EC2 console\. When you create the flow log, specify the **flow\-logs\-for\-juan** role\. That role has the permissions to create the log and write data to it\.

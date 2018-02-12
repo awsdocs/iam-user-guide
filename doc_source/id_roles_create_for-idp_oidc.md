@@ -53,7 +53,7 @@ Before you can create a role for web identity federation, you must first complet
 
        `"Principal":{"Federated":"arn:aws:iam::123456789012:oidc-provider/server.example.com"}`
 
-   + In the `Condition` element, use a `StringEquals` condition to limit permissions\. Test whether the identity pool ID \(for Amazon Cognito\) or the app ID \(for other providers\) matches the app ID that you got when you configured the app with the IdP\. This ensures that the request is coming from your app\. Test the app ID that you have against the following policy variables depending on the IdP that you are using: 
+   + In the `Condition` element, use a `StringEquals` condition to limit permissions\. Test the identity pool ID \(for Amazon Cognito\) or the app ID \(for other providers\)\. It should match the app ID that you got when you configured the app with the IdP\. This ensures that the request is coming from your app\. Test the app ID that you have against the following policy variables depending on the IdP that you are using: 
 
      `"Condition": {"StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east:12345678-ffff-ffff-ffff-123456"}}`
 
@@ -143,17 +143,17 @@ If you are using Amazon Cognito, you should use the Amazon Cognito console to se
 
 1. Choose the **Web identity** role type\.
 
-1. In the **Identity provider** list, select the identity provider that you're creating the role for: 
+1. In the **Identity provider** list, choose the identity provider that you're creating the role for: 
 
-   + If you're creating a role for an individual web identity provider, select **Login with Amazon**, **Facebook**, or **Google**\. 
+   + If you're creating a role for an individual web identity provider, choose **Login with Amazon**, **Facebook**, or **Google**\. 
 **Note**  
 You must create a separate role for each identity provider that you want to support\.
 
-   + Select **Amazon Cognito** if you're creating a role for Amazon Cognito\. 
+   + Choose **Amazon Cognito** if you're creating a role for Amazon Cognito\. 
 **Note**  
 You only need to manually create a role for use with Amazon Cognito when you are working on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you for standard scenarios\. For more information about Amazon Cognito, see [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
 
-1. Type the identifier for your application\. The name identifier setting changes depending on which provider you select:
+1. Type the identifier for your application\. The name identifier setting changes depending on which provider you choose:
 
    + If you're creating a role for Login with Amazon, type the app ID into the **Application ID** box\.
 

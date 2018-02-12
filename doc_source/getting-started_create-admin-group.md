@@ -7,13 +7,13 @@ As a best practice, do not use the AWS account root user for any task where it's
 
 Thereafter, the users in the administrators group should set up the groups, users, and so on, for the AWS account\. All future interaction should be through the AWS account's users and their own keys instead of the root user\. However, to perform some account and service management tasks, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
-## Creating an Administrator IAM User and Group \(Console\)<a name="w3ab1c10c19b9"></a>
+## Creating an Administrator IAM User and Group \(Console\)<a name="getting-started_create-admin-group-console"></a>
 
 This procedure describes how to use the AWS Management Console to create an IAM user for yourself and add that user to a group that has administrative permissions from an attached managed policy\.
 
 **To create an administrator user for yourself and add the user to an administrators group \(console\)**
 
-1. Use your AWS account root user email address and password to sign in to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Use your AWS account email address and password to sign in as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane, choose **Users** and then choose **Add user**\.
 
@@ -37,9 +37,9 @@ This procedure describes how to use the AWS Management Console to create an IAM 
 
 You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access Management](access.md) and [Example Policies](access_policies_examples.md)\. To add additional users to the group after it's created, see [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)\.
 
-## Creating an IAM User and Group \(AWS CLI\)<a name="w3ab1c10c19c11"></a>
+## Creating an IAM User and Group \(AWS CLI\)<a name="getting-started_create-admin-group-cli"></a>
 
-If you followed the steps in the previous section, you used the AWS Management Console to set up an administrators group while creating the a user in your AWS account\. This procedure shows an alternative way to create a group\.
+If you followed the steps in the previous section, you used the AWS Management Console to set up an administrators group while creating the IAM user in your AWS account\. This procedure shows an alternative way to create a group\.
 
 **Overview: Setting Up an Administrators Group**
 

@@ -20,6 +20,8 @@ For information about using the following Lambda API actions in an IAM policy, s
 
 + `[lambda:DeleteEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteEventSourceMapping.html)`
 
++ `[lambda:PutFunctionConcurrency](http://docs.aws.amazon.com/lambda/latest/dg/API_PutFunctionConcurrency.html)`
+
 + `[lambda:RemovePermission](http://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html)`
 
 + `[lambda:Invoke](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)`
@@ -47,6 +49,8 @@ For information about using the following Lambda API actions in an IAM policy, s
 + `[lambda:GetAccountSettings](http://docs.aws.amazon.com/lambda/latest/dg/API_GetAccountSettings.html)`
 
 + `[lambda:ListFunctions](http://docs.aws.amazon.com/lambda/latest/dg/API_ListFunctions.html)`
+
++ `[lambda:DeleteFunctionConcurrency](http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunctionConcurrency.html)`
 
 + `[lambda:UpdateAlias](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateAlias.html)`
 

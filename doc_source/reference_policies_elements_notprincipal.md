@@ -29,12 +29,20 @@ In the following example, all principals *except* the user named Bob in AWS acco
 This example works as intended when it is part of a policy statement in a resource\-based policy that is attached to a resource in either the same or a different AWS account \(not 444455556666\)\. This example by itself does not grant access to Bob, it only omits Bob from the list of principals that are explicitly denied\. To give Bob access to the resource, another policy statement must explicitly allow access using `"Effect": "Allow"`\.  
 
 ```
-"Effect": "Deny",
-"NotPrincipal": {
-  "AWS": [
-    "arn:aws:iam::444455556666:user/Bob",
-    "arn:aws:iam::444455556666:root"
-  ]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Deny",
+        "NotPrincipal": {"AWS": [
+            "arn:aws:iam::444455556666:user/Bob",
+            "arn:aws:iam::444455556666:root"
+        ]},
+        "Action": "s3:*",
+        "Resource": [
+            "arn:aws:s3:::BUCKETNAME",
+            "arn:aws:s3:::BUCKETNAME/*"
+        ]
+    }]
 }
 ```
 
@@ -43,12 +51,20 @@ In the following example, all principals *except* the assumed\-role user named c
 This example works as intended when it is part of a policy statement in a resource\-based policy that is attached to a resource in a different AWS account \(not 444455556666\)\. This example by itself does not grant access to the assumed\-role user cross\-account\-audit\-app, it only omits cross\-account\-audit\-app from the list of principals that are explicitly denied\. To give cross\-account\-audit\-app access to the resource, another policy statement must explicitly allow access using `"Effect": "Allow"`\.  
 
 ```
-"Effect": "Deny",
-"NotPrincipal": {
-  "AWS": [
-    "arn:aws:sts::444455556666:assumed-role/cross-account-read-only-role/cross-account-audit-app",
-    "arn:aws:iam::444455556666:role/cross-account-read-only-role",
-    "arn:aws:iam::444455556666:root"
-  ]
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Deny",
+        "NotPrincipal": {"AWS": [
+            "arn:aws:sts::444455556666:assumed-role/cross-account-read-only-role/cross-account-audit-app",
+            "arn:aws:iam::444455556666:role/cross-account-read-only-role",
+            "arn:aws:iam::444455556666:root"
+        ]},
+        "Action": "s3:*",
+        "Resource": [
+            "arn:aws:s3:::Bucket_AccountAudit",
+            "arn:aws:s3:::Bucket_AccountAudit/*"
+        ]
+    }]
 }
 ```

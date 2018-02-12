@@ -1,10 +1,12 @@
 # Resynchronize MFA Devices<a name="id_credentials_mfa_sync"></a>
 
-An MFA device can get out of synchronization\. If the device is not synchronized when the user tries to use it, the user's sign\-in attempt fails\. If the user uses the MFA device to sign in to the AWS Management Console, IAM prompts the user to resynchronize the device\.
+As an AWS administrator, you can recynchronize your IAM user MFA devices if they get out of synchronization\. If a user's device is not synchronized when they try to use it, the user's sign\-in attempt fails and IAM prompts the user to resynchronize the device\.
+
+If your AWS account root user MFA device is not working, you can resynchronize your device using the IAM console with or without completing the sign\-in process\. 
 
 ## Resynchronize an MFA Device \(IAM Console\)<a name="id_credentials_mfa_sync_console"></a>
 
-**To resynchronize an MFA device for a user \(console\)**
+**To resynchronize an MFA device for an IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -18,9 +20,33 @@ An MFA device can get out of synchronization\. If the device is not synchronized
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the request appears to work but the device remains out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\.
 
+**To resynchronize your root user MFA before signing in \(console\)**
+
+1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
+**Note**  
+If you are using an AWS account created after September 14, 2017, on the **Sign in with authentication device** page, choose **Troubleshoot your authentication device**\.
+
+1. In the **Re\-Sync With Our Servers** section, type the next two sequentially generated codes from the device into **Authentication Code 1** and **Authentication Code 2**\. Then choose **Re\-sync authentication device**\.
+
+1. If required, type your password again and choose **Sign in**\. Then complete the sign\-in using your MFA device\.
+
+**To resynchronize your root user MFA device after signing in \(console\)**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. On the right side of the navigation bar, choose your account name, and choose **Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.
+
+1. Expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.
+
+1. Next to your active MFA device, choose **Re\-sync**\.
+
+1. In the **Manage MFA Device** dialog, type the next two sequentially generated codes from the device into **Authentication Code 1** and **Authentication Code 2**\. Then choose **Next Step**\.
+**Important**  
+Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\.
+
 ## Resynchronize an MFA Device \(AWS CLI\)<a name="id_credentials_mfa_sync_cli"></a>
 
-**To resynchronize an MFA device for a user \(AWS CLI\)**
+**To resynchronize an MFA device for an IAM user \(AWS CLI\)**
 
 + At a command prompt, issue the [http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
 
@@ -40,7 +66,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 ## Tools for Windows PowerShell<a name="id_credentials_mfa_sync_twp"></a>
 
-**To resynchronize an MFA device for a user \(Tools for Windows PowerShell\)**
+**To resynchronize an MFA device for an IAM user \(Tools for Windows PowerShell\)**
 
 + Use the [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice) cmdlet:
 
@@ -62,6 +88,6 @@ Submit your request immediately after generating the codes\. If you generate the
 
 IAM has an API call that performs synchronization\. In this case, we recommend that you give your MFA users permission to access this API call\. You should build a tool based on that API call that lets your users resynchronize their devices whenever they need to\.
 
-**To resynchronize an MFA device for a user \(API\)**
+**To resynchronize an MFA device for an IAM user \(API\)**
 
 + Send the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.

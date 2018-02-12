@@ -34,6 +34,8 @@ For information about using the following Amazon EC2 Systems Manager API actions
 
 + `[ssm:UpdateInstanceInformation](http://docs.aws.amazon.com/ssm/latest/APIReference/API_UpdateInstanceInformation.html)`
 
++ `[ssm:PutComplianceItems](http://docs.aws.amazon.com/ssm/latest/APIReference/API_PutComplianceItems.html)`
+
 + `[ssm:DescribePatchBaselines](http://docs.aws.amazon.com/ssm/latest/APIReference/API_DescribePatchBaselines.html)`
 
 + `[ssm:GetCommandInvocation](http://docs.aws.amazon.com/ssm/latest/APIReference/API_GetCommandInvocation.html)`

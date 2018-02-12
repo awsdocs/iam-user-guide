@@ -90,8 +90,6 @@ The following sample policy allows users to use the Amazon EC2 API to launch an 
 
 To understand how roles work with EC2 instances, you need to use the IAM console to create a role, launch an EC2 instance that uses that role, and then examine the running instance\. You can examine the [instance metadata](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) to see how the role's temporary credentials are made available to an instance\. You can also see how an application that runs on an instance can use the role\. Use the following resources to learn more\. 
 
-+ 
-
 + SDK walkthroughs\. The AWS SDK documentation includes walkthroughs that show an application running on an EC2 instance that uses temporary credentials for roles to read an Amazon S3 bucket\. Each of the following walkthroughs presents similar steps with a different programming language:
 
   + [ Using IAM Roles for EC2 Instances with the SDK for Java](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 

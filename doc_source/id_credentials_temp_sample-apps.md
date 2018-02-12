@@ -10,10 +10,10 @@ You can use AWS Security Token Service \(AWS STS\) to create and provide trusted
 
 ## Samples for Web Identity Federation<a name="sts-sample-apps-wif"></a>
 
-The following sample applications illustrate various ways to use web identity federation, which lets you trade authentication from a known identity provider like Login with Amazon, Amazon Cognito, Facebook, or Google for temporary AWS security credentials that your app can use to access AWS services\.
+The following sample applications illustrate how to use web identity federation with providers like Login with Amazon, Amazon Cognito, Facebook, or Google\. You can trade authentication from these providers for temporary AWS security credentials to access AWS services\.
 
 **Note**  
-As an alternative to the approaches that are illustrated in the following samples, we recommend you use Amazon Cognito with the AWS SDKs for mobile development\. Amazon Cognito is the simplest way to manage identity for mobile apps, and it provides additional features like synchronization and cross\-device identity\. For more information about Amazon Cognito, see [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* and [Authenticate Users with Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide*\. 
+As an alternative, we recommend that you use Amazon Cognito with the AWS SDKs for mobile development\. Amazon Cognito is the simplest way to manage identity for mobile apps, and it provides additional features like synchronization and cross\-device identity\. For more information about Amazon Cognito, see [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* and [Authenticate Users with Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide*\. 
 
 + [Web Identity Federation Playground](https://web-identity-federation-playground.s3.amazonaws.com/index.html)\. This website provides an interactive demonstration of web identity federation and the `AssumeRoleWithWebIdentity` API\. 
 

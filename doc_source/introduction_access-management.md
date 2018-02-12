@@ -23,8 +23,7 @@ Any actions or resources that are not explicitly allowed are denied by default\.
 
 The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *policy summary* table includes a list of services\. Choose a service there to see the *service summary*\. This summary table includes a list of the actions and associated permissions for the chosen service\. You can choose an action from that table to view the *action summary*\. This table includes a list of resources and conditions for the chosen action\. 
 
-![\[Policy summaries diagram image that illustrates the 3 tables and their
-          relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-diagram.png)
+![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-diagram.png)
 
 You can view policy summaries on the **Users** page for all policies \(managed and inline\) that are attached to that user\. View summaries on the **Policies** page for all managed policies\.
 
@@ -38,8 +37,7 @@ You can also view the JSON document for the policy\. For information about viewi
 
 You can organize IAM users into *IAM groups* and attach a policy to a group\. In that case, individual users still have their own credentials, but all the users in a group have the permissions that are attached to the group\. Use groups for easier permissions management, and to follow our [IAM Best Practices](best-practices.md)\. 
 
-![\[Users can be organized into groups to make it easier to manage permissions, because
-          users have the permissions assigned to a group.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-users-and-groups.diagram.png)
+![\[Users can be organized into groups to make it easier to manage permissions, because users have the permissions assigned to a group.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-users-and-groups.diagram.png)
 
 Users or groups can have multiple policies attached to them that grant different permissions\. In that case, the users' permissions are calculated based on the combination of policies\. But the basic principle still applies: If the user has not been granted an explicit permission for an action and a resource, the user does not have those permissions\. 
 

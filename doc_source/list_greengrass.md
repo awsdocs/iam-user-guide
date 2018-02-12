@@ -4,8 +4,6 @@ AWS Greengrass \(service prefix: greengrass\) provides the following service\-sp
 
 **Actions for AWS Greengrass**
 
-For information about using the following API actions in an IAM policy, see [Some Topic](somehtmlfile.html) in the **\.
-
 + `[greengrass:CreateResourceDefinitionVersion]()`
 
 + `[greengrass:DeleteCoreDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/deletecoredefinition-delete.html)`
@@ -17,6 +15,8 @@ For information about using the following API actions in an IAM policy, see [Som
 + `[greengrass:GetCoreDefinition](http://docs.aws.amazon.com/greengrass/latest/apireference/getcoredefinition-get.html)`
 
 + `[greengrass:ListResourceDefinitionVersions]()`
+
++ `[greengrass:CreateSoftwareUpdateJob]()`
 
 + `[greengrass:DisassociateServiceRoleFromAccount](http://docs.aws.amazon.com/greengrass/latest/apireference/disassociateservicerolefromaccount-delete.html)`
 

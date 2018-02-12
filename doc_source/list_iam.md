@@ -264,6 +264,6 @@ For information about controlling access to IAM managed policies, see [Controlli
 
 Identity And Access Management has the following service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
 
-+ `[iam:PolicyARN](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#available-keys-for-iam)`
++ `[iam:PolicyARN](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam)`
 
-+ `[iam:AWSServiceName](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#available-keys-for-iam)`
++ `[iam:AWSServiceName](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam)`

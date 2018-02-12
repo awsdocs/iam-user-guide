@@ -40,6 +40,8 @@ For information about using the following Amazon ECS API actions in an IAM polic
 
 + `[ecs:DiscoverPollEndpoint](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DiscoverPollEndpoint.html)`
 
++ `[ecs:UpdateContainerInstancesState](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_UpdateContainerInstancesState.html)`
+
 + `[ecs:ListContainerInstances](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListContainerInstances.html)`
 
 + `[ecs:ListServices](http://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html)`

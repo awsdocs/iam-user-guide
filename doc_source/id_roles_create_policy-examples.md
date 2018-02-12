@@ -5,20 +5,20 @@ The following examples show how you can allow or grant an AWS account access to 
 
 + [Using Roles to Delegate Access to Another AWS Account's Resources](#example-delegate-xaccount-rolesapi)
 + [Using a Policy to Delegate Access To Services](#id_roles_create_policy-examples-access-to-services)
-+ [Using a Resource\-based Policy to Delegate Access to an Amazon S3 Bucket in Another Account](#example-delegate-xaccount-S3)
-+ [Using a Resource\-based Policy to Delegate Access to an Amazon SQS Queue in Another Account](#example-delegate-xaccount-SQS)
++ [Using a Resource\-Based Policy to Delegate Access to an Amazon S3 Bucket in Another Account](#example-delegate-xaccount-S3)
++ [Using a Resource\-Based Policy to Delegate Access to an Amazon SQS Queue in Another Account](#example-delegate-xaccount-SQS)
 + [Cannot Delegate Access When the Account is Denied Access](#example-delegate-xaccount-SQS-denied)
 
 ## Using Roles to Delegate Access to Another AWS Account's Resources<a name="example-delegate-xaccount-rolesapi"></a>
 
- For a complete walkthrough that shows how to use IAM roles to grant users in one account access to AWS resources that are in another account, see [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](tutorial_cross-account-with-roles.md)\. 
+ For a tutorial that shows how to use IAM roles to grant users in one account access to AWS resources that are in another account, see [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](tutorial_cross-account-with-roles.md)\. 
 
 **Important**  
-If your `Principal` element in a role trust policy contains an ARN that points to a specific IAM role or user, then that ARN is transformed to a unique principal ID when the policy is saved\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the role or user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the ARN when the trust policy is displayed\. However, if you delete the role or user, then the relationship is broken\. The policy no longer applies, even if you recreate the user or role because it does not match the principal ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to an ARN\. The end result is that if you delete and recreate a user or role referenced in a trust policy's `Principal` element, you must edit the role to replace the ARN\. It will get transformed into the new principal ID when you save the policy\.
+You can include the ARN for a specific role or user in the `Principal` element of a role trust policy\. When you save the policy, AWS transforms the ARN to a unique principal ID\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the role or user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the ARN when the trust policy is displayed\. However, if you delete the role or user, then the relationship is broken\. The policy no longer applies, even if you recreate the user or role because it does not match the principal ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to an ARN\. The result is that if you delete and recreate a user or role referenced in a trust policy's `Principal` element, you must edit the role to replace the ARN\. It is transformed into the new principal ID when you save the policy\.
 
 ## Using a Policy to Delegate Access To Services<a name="id_roles_create_policy-examples-access-to-services"></a>
 
-The following example shows a policy that can be attached to a role\. The policy enables two services, Amazon EMR and AWS Data Pipeline, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. Note that to specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
+The following example shows a policy that can be attached to a role\. The policy enables two services, Amazon EMR and AWS Data Pipeline, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. To specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
 
 ```
 {
@@ -38,7 +38,7 @@ The following example shows a policy that can be attached to a role\. The policy
 }
 ```
 
-## Using a Resource\-based Policy to Delegate Access to an Amazon S3 Bucket in Another Account<a name="example-delegate-xaccount-S3"></a>
+## Using a Resource\-Based Policy to Delegate Access to an Amazon S3 Bucket in Another Account<a name="example-delegate-xaccount-S3"></a>
 
 In this example, account A uses a resource\-based policy \(an Amazon S3 [bucket policy](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucketPolicies.html)\) to grant account B full access to account A's S3 bucket\. Then account B creates an IAM user policy to delegate that access to account A's bucket to one of the users in account B\. 
 
@@ -62,7 +62,7 @@ The S3 bucket policy in account A might look like the following policy\. In this
 
 Alternatively, account A can use Amazon S3 [Access Control Lists \(ACLs\)](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) to grant account B access to an S3 bucket or a single object within a bucket\. In that case, the only thing that changes is how account A grants access to account B\. Account B still uses a policy to delegate access to an IAM group in account B, as described in the next part of this example\. For more information about controlling access on S3 buckets and objects, go to [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
-The following policy sample completes the example above and shows the IAM group \(or user\) policy that the administrator of account B might create to delegate read access to a group or user in account B\. Even though the policy above grants access to account B, individual groups and users in account B cannot access the resource until a group or user policy explicitly grants permissions to the resource\. The permissions in this policy can only be a subset of those in the cross\-account policy above\. Account B cannot grant more permissions to its groups and users than account A granted to account B in the first policy\. In this policy, the `Action` element is explicitly defined to allow only `List` actions, and the `Resource` element of this policy matches the `Resource` for the bucket policy implemented by account A\.
+The administrator of account B might create the following policy sample\. The policy allows read access to a group or user in account B\. The preceding policy grants access to account B\. However, individual groups and users in account B cannot access the resource until a group or user policy explicitly grants permissions to the resource\. The permissions in this policy can only be a subset of those in the preceding cross\-account policy\. Account B cannot grant more permissions to its groups and users than account A granted to account B in the first policy\. In this policy, the `Action` element is explicitly defined to allow only `List` actions, and the `Resource` element of this policy matches the `Resource` for the bucket policy implemented by account A\.
 
 To implement this policy account B uses IAM to attach it to the appropriate user \(or group\) in account B\. 
 
@@ -80,7 +80,7 @@ To implement this policy account B uses IAM to attach it to the appropriate user
 }
 ```
 
-## Using a Resource\-based Policy to Delegate Access to an Amazon SQS Queue in Another Account<a name="example-delegate-xaccount-SQS"></a>
+## Using a Resource\-Based Policy to Delegate Access to an Amazon SQS Queue in Another Account<a name="example-delegate-xaccount-SQS"></a>
 
 In the following example, account A has an Amazon SQS queue that uses a resource\-based policy attached to the queue to grant queue access to account B\. Then account B uses an IAM group policy to delegate access to a group in account B\. 
 
@@ -118,13 +118,13 @@ Account B's policy for delegating access to a group in account B might look like
 }
 ```
 
-In the preceding IAM user policy example, account B uses a wildcard to grant its user access to all Amazon SQS actions on account A's queue\. But, because account B can delegate access only to the extent that account B has been granted access, the account B group that has the second policy can access the queue only between noon and 3:00 p\.m\. on November 30, 2014, and the user can only perform the `SendMessage` and `ReceiveMessage` actions, as defined in account A's Amazon SQS queue policy\. 
+In the preceding IAM user policy example, account B uses a wildcard to grant its user access to all Amazon SQS actions on account A's queue\. However account B can delegate access only to the extent that account B has been granted access\. The account B group that has the second policy can access the queue only between noon and 3:00 p\.m\. on November 30, 2014\. The user can only perform the `SendMessage` and `ReceiveMessage` actions, as defined in account A's Amazon SQS queue policy\. 
 
 ## Cannot Delegate Access When the Account is Denied Access<a name="example-delegate-xaccount-SQS-denied"></a>
 
-By default, other AWS accounts and their users cannot access your AWS account resources\. But if you use a policy to explicitly deny an AWS account access to your resources, the deny propagates to the users under that account whether or not the users have existing policies granting them access\. This means that an AWS account cannot delegate access to another account's resources if the other account has explicitly denied access to the user's parent account\. 
+An AWS account cannot delegate access to another account's resources if the other account has explicitly denied access to the user's parent account\. The deny propagates to the users under that account whether or not the users have existing policies granting them access\.
 
-For example, account A writes a bucket policy on account A's S3 bucket that explicitly denies account B access to account A's bucket\. But account B writes an IAM user policy that grants a user in account B access to account A's bucket\. The explicit deny applied to account A's S3 bucket propagates to the users in account B and overrides the IAM user policy granting access to the user in account B\. \(For detailed information how permissions are evaluated, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.\) 
+For example, account A writes a bucket policy on account A's S3 bucket that explicitly denies account B access to account A's bucket\. But account B writes an IAM user policy that grants a user in account B access to account A's bucket\. The explicit deny applied to account A's S3 bucket propagates to the users in account B\. It overrides the IAM user policy granting access to the user in account B\. \(For detailed information how permissions are evaluated, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.\) 
 
 Account A's bucket policy might look like the following policy\. In this example, account A's S3 bucket is named *mybucket*, and account B's account number is 1111\-2222\-3333\. Account A uses Amazon S3 to implement this policy\. 
 
@@ -141,17 +141,4 @@ Account A's bucket policy might look like the following policy\. In this example
 }
 ```
 
-To implement the following IAM user policy, account B uses IAM to attach it to the a user in account B\. 
-
-```
-{
-   "Version": "2012-10-17",
-   "Statement":{
-      "Effect":"Allow",
-      "Action":"s3:*",
-      "Resource":"arn:aws:s3:::mybucket/*"
-   }
-}
-```
-
-Account A's bucket policy explicitly denies account B access to *mybucket*\. Because you only delegate a subset of permissions that have been granted to you, account B's IAM user policy granting the user in account B access to account A's bucket has no effect\. The user in account B cannot access account A's bucket\. 
+This explicit deny overrides any policies in account B that provide permission to access the S3 bucket in account A\. 

@@ -74,11 +74,11 @@ For services that support resource\-based policies as described in [Identity\-Ba
 
 ## Permissions for One Service to Access Another<a name="UserPermissionsAcrossAWS_ARCHIVE"></a>
 
-Many AWS services access other AWS services\. For example, several AWS services—including Amazon EMR, Elastic Load Balancing, and Auto Scaling—manage Amazon EC2 instances\. Other AWS services make use of Amazon S3 buckets, Amazon SNS topics, Amazon SQS queues, and so on\.
+Many AWS services access other AWS services\. For example, several AWS services—including Amazon EMR, Elastic Load Balancing, and Amazon EC2 Auto Scaling—manage Amazon EC2 instances\. Other AWS services make use of Amazon S3 buckets, Amazon SNS topics, Amazon SQS queues, and so on\.
 
 The scenario for managing permissions in these cases varies by service\. Here are some examples of how permissions are handled for different services: 
 
-+ In Auto Scaling, users must have permission to use Auto Scaling, but don't need to be explicitly granted permission to manage Amazon EC2 instances\. 
++ In Amazon EC2 Auto Scaling, users must have permission to use Auto Scaling, but don't need to be explicitly granted permission to manage Amazon EC2 instances\. 
 
 + In AWS Data Pipeline, an IAM role determines what a pipeline can do; users need permission to assume the role\. \(For details, see [ Granting Permissions to Pipelines with IAM](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) in the *AWS Data Pipeline Developer Guide*\.\) 
 

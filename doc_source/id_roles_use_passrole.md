@@ -4,12 +4,12 @@ To configure many AWS services, you must *pass* an IAM role to the service that 
 
 To pass a role \(and its permissions\) to an AWS service, a user must have permissions to *pass the role* to the service\. This helps administrators ensure that only approved users can configure a service with a role that grants permissions\. To allow a user to pass a role to an AWS service, you must grant the `PassRole` permission to the user's IAM user, role, or group\.
 
-When a user passes a role ARN as a parameter to any API that uses the role to assign permissions to the service, the service checks whether that user has the `iam:PassRole` permission\. To limit the user to passing only approved roles, you can filter the `iam:PassRole` permission with the `Resources` element of the IAM policy statement\. 
+A user can pass a role ARN as a parameter in any API operation that uses the role to assign permissions to the service\. The service then checks whether that user has the `iam:PassRole` permission\. To limit the user to passing only approved roles, you can filter the `iam:PassRole` permission with the `Resources` element of the IAM policy statement\. 
 
 **Example 1**  
 Imagine that you want to grant a user the ability to pass any of an approved set of roles to the Amazon EC2 service upon launching an instance\. You need three elements:
 
-+ An IAM *permissions policy* attached to the role that determines what the role can do\. Scope permissions to only the actions that the role needs to perform, and to only the resources that the role needs for those actions\. You can use AWS managed or customer\-created IAM permissions policy\.
++ An IAM *permissions policy* attached to the role that determines what the role can do\. Scope permissions to only the actions that the role must perform, and to only the resources that the role needs for those actions\. You can use AWS managed or customer\-created IAM permissions policy\.
 
   ```
   {

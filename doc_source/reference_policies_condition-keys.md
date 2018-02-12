@@ -72,8 +72,8 @@ This key should be used carefully: `aws:referer` allows Amazon S3 bucket owners 
 
 **aws:RequestTag/*tag\-key***  
 Works with string operators\.  
-This context key is formatted "aws:Request/*tag\-key*":"*tag\-value*" where *tag\-key* and *tag\-value* are a tag key and value pair\.  
-To check a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag "Dept" and that it has the value "Accounting"\. This AWS condition key was [introduced for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
+This context key is formatted "aws:RequestTag/*tag\-key*":"*tag\-value*" where *tag\-key* and *tag\-value* are a tag key and value pair\.  
+To check a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag key "Dept" and that it has the value "Accounting"\. This AWS condition key was [introduced for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
 
 **aws:SecureTransport**  
 Works with boolean operators\.  

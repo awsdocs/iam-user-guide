@@ -154,4 +154,6 @@ For information about using the following AWS Glue API actions in an IAM policy,
 
 **Condition context keys for AWS Glue**
 
+For information about using the following conditions in an IAM policy, see [Some Topic](somehtmlfile.html) in the **\.
+
 AWS Glue has no service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.

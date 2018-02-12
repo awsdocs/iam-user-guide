@@ -47,6 +47,4 @@ To use identity federation with Internet identity providers, we recommend you us
 
 The following diagram shows how a user can use IAM to get temporary AWS security credentials to access resources in your AWS account\. 
 
-![\[Users who are already authenticated elsewhere can be federated into AWS without
-          requiring an IAM user.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Users who are already authenticated elsewhere can be federated into AWS without
-          requiring an IAM user.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
+![\[Users who are already authenticated elsewhere can be federated into AWS without requiring an IAM user.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Users who are already authenticated elsewhere can be federated into AWS without requiring an IAM user.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)

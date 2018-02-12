@@ -12,7 +12,7 @@ This workflow has three basic steps\.
 Create a customer managed policy that prohibits all actions ***except*** the few IAM API operations that enable changing credentials and managing MFA devices\.
 
 **[Step 2: Attach Policies to Your Test Group](#tutorial_mfa_step2)**  
-Create a group whose members have full access to all Amazon EC2 actions if they sign\-in with MFA\. To create such a gorup, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
+Create a group whose members have full access to all Amazon EC2 actions if they sign\-in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
 
 **[Step 3: Test Your User's Access](#tutorial_mfa_step3)**  
 Sign in as the test user to verify that access to Amazon EC2 is blocked *until* the user creates an MFA device and then signs in using that device\. 
@@ -47,6 +47,8 @@ You begin by creating an IAM customer managed policy that denies all permissions
 1. In the navigation pane, choose **Policies**, and then choose **Create policy**\.
 
 1. Choose the **JSON** tab and copy the text from the following JSON policy document\. Paste this text into the **JSON** text box\.
+**Note**  
+This example policy does not allow users to both sign\-in and perform a password change\. New users and users with an expired password might try to do so\. To allow this, move `iam:ChangePassword` and `iam:CreateLoginProfile` from the statement `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` to the statement `BlockMostAccessUnlessSignedInWithMFA`\.
 
    ```
    {
@@ -58,6 +60,7 @@ You begin by creating an IAM customer managed policy that denies all permissions
                "Action": [
                    "iam:ListAccountAliases",
                    "iam:ListUsers",
+                   "iam:ListVirtualMFADevices",
                    "iam:GetAccountPasswordPolicy",
                    "iam:GetAccountSummary"
                ],
@@ -92,7 +95,6 @@ You begin by creating an IAM customer managed policy that denies all permissions
                "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
                "Effect": "Allow",
                "Action": [
-                   "iam:ListVirtualMFADevices",
                    "iam:ListMFADevices"
                ],
                "Resource": [
@@ -172,8 +174,6 @@ You begin by creating an IAM customer managed policy that denies all permissions
    + The fifth statement allows the user to deactivate only his or her own MFA device and only if the user signed in using MFA\. This prevents others with only the access keys \(and not the MFA device\) from deactivating the MFA device and replacing it with their own\.
 
    + The sixth and final statement uses a combination of `"Deny"` and `"NotAction"` to deny all actions for all other AWS services ***if*** the user is not signed\-in with MFA\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other permissions granted to the user can take effect\. This last statement ensures that when the user is not signed\-in with MFA that they can perform only the IAM actions allowed in the earlier statements\. The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
-**Note**  
-The example policy shown in this topic does not allow users to both sign\-in and perform a password change together\. New users and users with an expired password might try to do so\. To allow this, move `iam:ChangePassword` and `iam:CreateLoginProfile` from the statement `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` to the statement `BlockMostAccessUnlessSignedInWithMFA`\.
 
 1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
 **Note**  

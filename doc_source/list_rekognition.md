@@ -10,6 +10,8 @@ For information about using the following Amazon Rekognition API actions in an I
 
 + `[rekognition:DeleteFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteFaces.html)`
 
++ `[rekognition:DetectText](http://docs.aws.amazon.com/rekognition/latest/dg/API_DetectText.html)`
+
 + `[rekognition:ListFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_ListFaces.html)`
 
 + `[rekognition:StartPersonTracking](http://docs.aws.amazon.com/rekognition/latest/dg/API_StartPersonTracking.html)`
@@ -32,13 +34,15 @@ For information about using the following Amazon Rekognition API actions in an I
 
 + `[rekognition:StartCelebrityRecognition](http://docs.aws.amazon.com/rekognition/latest/dg/API_StartCelebrityRecognition.html)`
 
-+ `[rekognition:StartContentModeration](http://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html)`
-
 + `[rekognition:StartFaceDetection](http://docs.aws.amazon.com/rekognition/latest/dg/API_StartFaceDetection.html)`
+
++ `[rekognition:StartContentModeration](http://docs.aws.amazon.com/rekognition/latest/dg/API_StartContentModeration.html)`
 
 + `[rekognition:GetFaceSearch](http://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceSearch.html)`
 
 + `[rekognition:GetLabelDetection](http://docs.aws.amazon.com/rekognition/latest/dg/API_GetLabelDetection.html)`
+
++ `[rekognition:GetCelebrityInfo](http://docs.aws.amazon.com/rekognition/latest/dg/API_GetCelebrityInfo.html)`
 
 + `[rekognition:CompareFaces](http://docs.aws.amazon.com/rekognition/latest/dg/API_CompareFaces.html)`
 
@@ -63,6 +67,8 @@ For information about using the following Amazon Rekognition API actions in an I
 + `[rekognition:DeleteStreamProcessor](http://docs.aws.amazon.com/rekognition/latest/dg/API_DeleteStreamProcessor.html)`
 
 + `[rekognition:CreateStreamProcessor](http://docs.aws.amazon.com/rekognition/latest/dg/API_CreateStreamProcessor.html)`
+
++ `[rekognition:RecognizeCelebrities](http://docs.aws.amazon.com/rekognition/latest/dg/API_RecognizeCelebrities.html)`
 
 + `[rekognition:GetFaceDetection](http://docs.aws.amazon.com/rekognition/latest/dg/API_GetFaceDetection.html)`
 

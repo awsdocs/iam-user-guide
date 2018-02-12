@@ -40,6 +40,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DeleteFlowLogs](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html)`
 
++ `[ec2:CreateDefaultSubnet](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateDefaultSubnet.html)`
+
 + `[ec2:DescribeInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html)`
 
 + `[ec2:CreateReservedInstancesListing](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateReservedInstancesListing.html)`
@@ -218,6 +220,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeSpotFleetRequests](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetRequests.html)`
 
++ `[ec2:DescribeNetworkInterfacePermissions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeNetworkInterfacePermissions.html)`
+
 + `[ec2:DescribeVolumesModifications](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumesModifications.html)`
 
 + `[ec2:DetachInternetGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachInternetGateway.html)`
@@ -273,6 +277,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:DeleteKeyPair](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteKeyPair.html)`
 
 + `[ec2:DescribeImageAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html)`
+
++ `[ec2:ModifyVpcTenancy](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcTenancy.html)`
 
 + `[ec2:DeleteVpnGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpnGateway.html)`
 
@@ -434,9 +440,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeRegions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRegions.html)`
 
-+ `[ec2:DescribeSnapshotAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotAttribute.html)`
-
 + `[ec2:AssociateSubnetCidrBlock](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateSubnetCidrBlock.html)`
+
++ `[ec2:DescribeSnapshotAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshotAttribute.html)`
 
 + `[ec2:DescribeMovingAddresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeMovingAddresses.html)`
 
@@ -453,6 +459,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:DescribeVpnGateways](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnGateways.html)`
 
 + `[ec2:CreateNetworkInterface](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html)`
+
++ `[ec2:DeleteNetworkInterfacePermission](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkInterfacePermission.html)`
 
 + `[ec2:EnableVpcClassicLinkDnsSupport](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVpcClassicLinkDnsSupport.html)`
 

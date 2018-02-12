@@ -24,8 +24,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Application Auto Scaling](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/Welcome.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/application-autoscaling-service-linked-roles.html) | 
-|  [Auto Scaling](http://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Application Auto Scaling](http://docs.aws.amazon.com/autoscaling/application/APIReference/Welcome.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/autoscaling/application/APIReference/application-autoscaling-service-linked-roles.html) | 
+|  [Amazon EC2 Auto Scaling](http://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Batch](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | No | No | No | Yes | No | 
 |  [Amazon Elastic Compute Cloud \(Amazon EC2\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes¹ | No | Yes¹ | Yes | Yes² | 
 |  [AWS Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes³ | No | No | Yes | [Yes](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
@@ -162,7 +162,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Machine Learning](http://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Polly](http://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Rekognition](http://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | No | No | 
-|  [AWS Single Sign\-On \(AWS SSO\)](http://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | Yes | No | Yes | No | 
 | [Amazon Transcribe](http://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
 | [Amazon Translate](http://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | Yes | No | No | No | Yes | No | 
 
@@ -199,8 +198,9 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Inspector](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Key Management Service \(AWS KMS\)](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)  | Yes | Yes | Yes | No | Yes | No | 
 | [AWS Organizations](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | No | 
+|  [AWS Single Sign\-On \(AWS SSO\)](http://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | Yes | No | Yes | No | 
 |  [AWS Security Token Service \(AWS STS\)](http://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes³ | No | No | Yes⁴ | No | 
-|  [AWS Shield Advanced](http://docs.aws.amazon.com/waf/latest/developerguide/eifjccghvlidlrreuikbhncclhtckjgvlnnetgggrjht                 shield-chapter.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Shield Advanced](http://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS WAF](http://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 
 ¹ GuardDuty does not support creating a service\-linked role using the IAM console\.
@@ -268,9 +268,9 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Greengrass](http://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS IoT](http://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | Yes¹ | Yes² | Yes³ | No | Yes | No | 
 
-¹ For more information about AWS IoT action\-level permissions, see [AWS IoT Policy Actions](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html#policy-actions) in the *AWS IoT User Guide*\.
+¹ For more information about AWS IoT action\-level permissions, see [AWS IoT Policy Actions](http://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) in the *AWS IoT User Guide*\.
 
-² For information about which AWS IoT actions support resource\-level permissions and which resources you can specify for each, see [Action Resources](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html#action-resources) in the *AWS IoT Developer Guide*\.
+² For information about which AWS IoT actions support resource\-level permissions and which resources you can specify for each, see [Action Resources](http://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) in the *AWS IoT Developer Guide*\.
 
 ³ Devices connected to AWS IoT are authenticated by using X\.509 certificates\. You can attach AWS IoT policies to an X\.509 certificate to control what the device is authorized to do\. For more information, see [Create an AWS IoT Policy](http://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html) in the *AWS IoT Developer Guide*\. 
 

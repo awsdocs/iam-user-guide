@@ -6,11 +6,17 @@ Amazon DynamoDB \(service prefix: dynamodb\) provides the following service\-spe
 
 For information about using the following DynamoDB API actions in an IAM policy, see [DynamoDB Actions](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html#UsingWithActions) in the *Amazon DynamoDB Developer Guide*\.
 
++ `[dynamodb:DescribeBackup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeBackup.html)`
+
 + `[dynamodb:ListStreams](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListStreams.html)`
+
++ `[dynamodb:ListBackups](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListBackups.html)`
 
 + `[dynamodb:Query](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Query.html)`
 
 + `[dynamodb:DeleteItem](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteItem.html)`
+
++ `[dynamodb:DeleteBackup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteBackup.html)`
 
 + `[dynamodb:TagResource](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TagResource.html)`
 
@@ -26,6 +32,8 @@ For information about using the following DynamoDB API actions in an IAM policy,
 
 + `[dynamodb:ListTagsOfResource](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ListTagsOfResource.html)`
 
++ `[dynamodb:DescribeContinuousBackups](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeContinuousBackups.html)`
+
 + `[dynamodb:DescribeReservedCapacity](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeReservedCapacity.html)`
 
 + `[dynamodb:PurchaseReservedCapacityOfferings](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PurchaseReservedCapacityOfferings.html)`
@@ -39,6 +47,8 @@ For information about using the following DynamoDB API actions in an IAM policy,
 + `[dynamodb:BatchWriteItem](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchWriteItem.html)`
 
 + `[dynamodb:DeleteTable](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DeleteTable.html)`
+
++ `[dynamodb:RestoreTableFromBackup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_RestoreTableFromBackup.html)`
 
 + `[dynamodb:DescribeLimits](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeLimits.html)`
 
@@ -55,6 +65,8 @@ For information about using the following DynamoDB API actions in an IAM policy,
 + `[dynamodb:Scan](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_Scan.html)`
 
 + `[dynamodb:PutItem](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_PutItem.html)`
+
++ `[dynamodb:CreateBackup](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateBackup.html)`
 
 **Condition context keys for Amazon DynamoDB**
 

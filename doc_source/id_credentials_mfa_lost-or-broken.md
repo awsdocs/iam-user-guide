@@ -1,17 +1,18 @@
 # What If an MFA Device Is Lost or Stops Working?<a name="id_credentials_mfa_lost-or-broken"></a>
 
-If your multi\-factor authentication \(MFA\) device is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\.
+If your AWS account root user multi\-factor authentication \(MFA\) device is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
 
-If the device appears to be functioning properly, but you cannot use it to access your AWS resources, then it simply might be out of synchronization with the AWS system\. For information about synchronizing an MFA device, see [Resynchronize MFA Devices](id_credentials_mfa_sync.md)\.
+If the device appears to be functioning properly, but you cannot use it to access your AWS resources, then it might be out of synchronization with the AWS system\. For information about synchronizing an MFA device, see [Resynchronize MFA Devices](id_credentials_mfa_sync.md)\.
 
-Before you sign in using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\.
+If the MFA device associated with an IAM user is lost or stops working, the user can't recover it\. IAM users must contact an administrator to deactiveate the device\.
 
-**Note**  
-If you are using an AWS account created after September 14, 2017, you might see differences in the following console pages: **Sign in with authentication device** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
+Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\.
 
 **To sign in using alternative factors of authentication as an AWS account root user**
 
 1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
+**Note**  
+If you are using an AWS account created after September 14, 2017, you might see the following console text: **Sign in with authentication device**, **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
 
 1. If required, type your password again and choose **Sign in**\.
 
@@ -39,7 +40,7 @@ If you are using an AWS account created after September 14, 2017, you might see 
 
 **To get help for an MFA device as an IAM user**
 
-1. Contact the system administrator or other person who gave you the user name and password for the IAM user\. The administrator must deactivate the MFA device as described in [Deactivating MFA Devices](id_credentials_mfa_disable.md) so that you can sign in\.
+1. Contact the AWS administrator or other person who gave you the user name and password for the IAM user\. The administrator must deactivate the MFA device as described in [Deactivating MFA Devices](id_credentials_mfa_disable.md) so that you can sign in\.
 
 1. If you are using a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. After you have the new physical MFA device, enable the device as described in [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)\.
 

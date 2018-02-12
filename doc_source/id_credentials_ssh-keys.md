@@ -49,7 +49,7 @@ With SSH connections, you create public and private key files on your local mach
 + To create an SSH public key and associate it with an IAM user, see [For SSH Connections on Linux, macOS, or Unix](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) or see [For SSH Connections on Windows](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-windows.html) in the *AWS CodeCommit User Guide*\. 
 
 **Note**  
-IAM accepts public keys in the OpenSSH RSA format only\. If you provide your public key in another format, you will see an error message stating that the key format is not valid\.
+IAM accepts public keys in the OpenSSH RSA format only with a maximum length of 2048 bits\. If you provide your public key in another format, you will see an error message stating that the key format is not valid\.
 
 ## Use HTTPS with the AWS CLI Credential Helper and AWS CodeCommit<a name="access-keys-code-commit"></a>
 

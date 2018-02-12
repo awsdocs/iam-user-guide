@@ -14,7 +14,7 @@ You must configure permissions to allow an IAM entity \(such as a user, group, o
 
 **To allow an IAM entity to create a specific service\-linked role**
 
-Add the following policy to the IAM entity that needs to create the service\-linked role:
+Add the following policy to the IAM entity that needs to create the service\-linked role\.
 
 ```
 {
@@ -37,36 +37,31 @@ Add the following policy to the IAM entity that needs to create the service\-lin
 
 **To allow an IAM entity to create any service\-linked role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to create a service\-linked role, or any service role:
+Add the following statement to the permissions policy for the IAM entity that needs to create a service\-linked role, or any service role that includes the needed policies\. This policy statement does not allow the IAM entity to attach a policy to the role\.
 
 ```
 {
     "Effect": "Allow",
-    "Action": [
-        "iam:CreateServiceLinkedRole",
-        "iam:PutRolePolicy"
-    ],
+    "Action": "iam:CreateServiceLinkedRole",
     "Resource": "arn:aws:iam::*:role/aws-service-role/*"
 }
 ```
 
 **To allow an IAM entity to edit the description of any service roles**
 
-Add the following statement to the permissions policy for the IAM entity that needs to edit the description of a service\-linked role, or any service role:
+Add the following statement to the permissions policy for the IAM entity that needs to edit the description of a service\-linked role, or any service role\.
 
 ```
 {
     "Effect": "Allow",
-    "Action": [
-        "iam:UpdateRoleDescription"
-    ],
+    "Action": "iam:UpdateRoleDescription",
     "Resource": "arn:aws:iam::*:role/aws-service-role/*"
 }
 ```
 
 **To allow an IAM entity to delete a specific service\-linked role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to delete the service\-linked role:
+Add the following statement to the permissions policy for the IAM entity that needs to delete the service\-linked role\.
 
 ```
 {
@@ -81,7 +76,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 
 **To allow an IAM entity to delete any service role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to delete a service\-linked role, or any service\-role:
+Add the following statement to the permissions policy for the IAM entity that needs to delete a service\-linked role, or any service\-role\.
 
 ```
 {

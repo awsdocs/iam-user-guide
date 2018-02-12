@@ -12,6 +12,8 @@ For more information about the Amazon AppStream API actions in the following lis
 
 + `appstream:StartFleet`
 
++ `appstream:TagResource`
+
 + `appstream:CreateFleet`
 
 + `appstream:ExpireSession`
@@ -58,6 +60,8 @@ For more information about the Amazon AppStream API actions in the following lis
 
 + `appstream:UpdateFleet`
 
++ `appstream:UntagResource`
+
 + `appstream:DescribeDirectoryConfigs`
 
 + `appstream:StopFleet`
@@ -65,6 +69,8 @@ For more information about the Amazon AppStream API actions in the following lis
 + `appstream:DeleteDirectoryConfig`
 
 + `appstream:CreateDirectoryConfig`
+
++ `appstream:ListTagsForResource`
 
 **Condition context keys for Amazon AppStream**
 

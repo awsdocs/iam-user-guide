@@ -2,8 +2,7 @@
 
 Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *service summary* table includes a list of the actions and summaries of the permissions that are defined by the policy for the chosen service\.
 
-![\[Policy summaries diagram image that illustrates the 3 tables and their
-        relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-svc-sum.png)
+![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-svc-sum.png)
 
 You can view a service summary for each service listed in the policy summary that grants permissions\. The table is grouped into **Uncategorized actions**, **Uncategorized resource types**, and access level sections\. If the policy includes an action that IAM does not recognize, then the action is included in the **Uncategorized actions** section of the table\. If IAM recognizes the action, then it is included under one of the access level \(**List**, **Read**, **Write** and **Permissions management**\) sections of the table\. To view a list of actions that belong to each of the action levels for a specific service, see [IAM Policy Actions Grouped by Access Level](reference_policies_access-levels.md)\. To see a complete list of actions for a specific service, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
 

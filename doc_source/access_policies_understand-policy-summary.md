@@ -2,8 +2,7 @@
 
 Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. 
 
-![\[Policy summaries diagram image that illustrates the 3 tables and their
-        relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-pol-sum.png)
+![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-pol-sum.png)
 
 The policy summary table is grouped into one or more **Uncategorized services**, **Explicit deny**, and **Allow** sections\. If the policy includes a service that IAM does not recognize, then the service is included in the **Uncategorized services** section of the table\. If IAM recognizes the service, then it is included under the **Explicit deny** or **Allow** sections of the table, depending on the effect of the policy \(`Deny` or `Allow`\)\.
 
