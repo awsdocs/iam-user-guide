@@ -4,6 +4,10 @@ Application Auto Scaling \(service prefix: application\-autoscaling\) provides t
 
 **Actions for Application Auto Scaling**
 
++ `[application\-autoscaling:DeleteScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScheduledAction.html)`
+
++ `[application\-autoscaling:DescribeScheduledActions](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScheduledActions.html)`
+
 + `[application\-autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
 
 + `[application\-autoscaling:RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html)`
@@ -17,6 +21,8 @@ Application Auto Scaling \(service prefix: application\-autoscaling\) provides t
 + `[application\-autoscaling:DeregisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeregisterScalableTarget.html)`
 
 + `[application\-autoscaling:PutScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScalingPolicy.html)`
+
++ `[application\-autoscaling:PutScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html)`
 
 **Condition context keys for Application Auto Scaling**
 

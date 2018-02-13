@@ -6,7 +6,11 @@ Amazon Cognito User Pools \(service prefix: cognito\-idp\) provides the followin
 
 For more information about Amazon Cognito Your User Pools, see the [Amazon Cognito Your User Pools documenation](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/)\.
 
++ `[cognito\-idp:UpdateAuthEventFeedback](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html)`
+
 + `[cognito\-idp:VerifyUserAttribute](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html)`
+
++ `[cognito\-idp:AdminListUserAuthEvents](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html)`
 
 + `[cognito\-idp:ListUsersInGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html)`
 
@@ -26,6 +30,8 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:GetUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html)`
 
++ `[cognito\-idp:AdminSetUserMFAPreference](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html)`
+
 + `[cognito\-idp:CreateUserPool](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html)`
 
 + `[cognito\-idp:GlobalSignOut](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GlobalSignOut.html)`
@@ -40,6 +46,8 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:ForgotPassword](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html)`
 
++ `[cognito\-idp:GetUserPoolMfaConfig](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html)`
+
 + `[cognito\-idp:AdminGetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html)`
 
 + `[cognito\-idp:ForgetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html)`
@@ -48,11 +56,17 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:AdminDeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html)`
 
++ `[cognito\-idp:AdminUpdateAuthEventFeedback](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html)`
+
 + `[cognito\-idp:AdminForgetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html)`
 
 + `[cognito\-idp:DescribeUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html)`
 
++ `[cognito\-idp:DescribeRiskConfiguration](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html)`
+
 + `[cognito\-idp:AdminConfirmSignUp](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html)`
+
++ `[cognito\-idp:SetUserPoolMfaConfig](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html)`
 
 + `[cognito\-idp:AddCustomAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html)`
 
@@ -92,7 +106,11 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 
 + `[cognito\-idp:GetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html)`
 
++ `[cognito\-idp:SetRiskConfiguration](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html)`
+
 + `[cognito\-idp:AdminRespondToAuthChallenge](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html)`
+
++ `[cognito\-idp:SetUserMFAPreference](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html)`
 
 + `[cognito\-idp:AdminDeleteUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html)`
 

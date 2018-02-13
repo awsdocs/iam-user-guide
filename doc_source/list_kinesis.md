@@ -22,9 +22,9 @@ For information about using the following Kinesis API actions in an IAM policy, 
 
 + `[kinesis:DescribeStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html)`
 
-+ `[kinesis:GetRecords](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html)`
-
 + `[kinesis:PutRecord](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html)`
+
++ `[kinesis:GetRecords](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html)`
 
 + `[kinesis:IncreaseStreamRetentionPeriod](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html)`
 

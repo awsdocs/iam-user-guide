@@ -12,11 +12,9 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:ListJobExecutionsForThing](http://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForThing.html)`
 
-+ `[iot:ListStreams](http://docs.aws.amazon.com/iot/latest/apireference/API_ListStreams.html)`
-
-+ `[iot:CreatePolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html)`
-
 + `[iot:ListTopicRules](http://docs.aws.amazon.com/iot/latest/apireference/API_ListTopicRules.html)`
+
++ `[iot:ListTargetsForPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_ListTargetsForPolicy.html)`
 
 + `[iot:DeleteThing](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html)`
 
@@ -28,8 +26,6 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:GetLoggingOptions](http://docs.aws.amazon.com/iot/latest/apireference/API_GetLoggingOptions.html)`
 
-+ `[iot:DescribeCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCertificate.html)`
-
 + `[iot:DeleteThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThingType.html)`
 
 + `[iot:DeleteTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteTopicRule.html)`
@@ -37,10 +33,6 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 + `[iot:CancelJob](http://docs.aws.amazon.com/iot/latest/apireference/API_CancelJob.html)`
 
 + `[iot:ListPrincipalThings](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPrincipalThings.html)`
-
-+ `[iot:GetPolicyVersion](http://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicyVersion.html)`
-
-+ `[iot:ListOTAUpdateJobs](http://docs.aws.amazon.com/iot/latest/apireference/API_ListOTAUpdateJobs.html)`
 
 + `[iot:AttachPrincipalPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_AttachPrincipalPolicy.html)`
 
@@ -52,15 +44,11 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:RegisterCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCertificate.html)`
 
-+ `[iot:ListJobExecutionsForJob](http://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForJob.html)`
++ `[iot:UpdateIndexingConfiguration](http://docs.aws.amazon.com/iot/latest/apireference/API_UpdateIndexingConfiguration.html)`
 
-+ `[iot:DeletePolicyVersion](http://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html)`
++ `[iot:CreateRoleAlias](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateRoleAlias.html)`
 
 + `[iot:Connect](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html)` \- this is an IAM policy permission only, not an API action that can be called\.
-
-+ `[iot:DescribeStream](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeStream.html)`
-
-+ `[iot:AssociateTargetsWithJob](http://docs.aws.amazon.com/iot/latest/apireference/API_AssociateTargetsWithJob.html)`
 
 + `[iot:DetachThingPrincipal](http://docs.aws.amazon.com/iot/latest/apireference/API_DetachThingPrincipal.html)`
 
@@ -68,21 +56,17 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:UpdateCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_UpdateCACertificate.html)`
 
-+ `[iot:GetOTAUpdateJob](http://docs.aws.amazon.com/iot/latest/apireference/API_GetOTAUpdateJob.html)`
-
 + `[iot:SetLoggingOptions](http://docs.aws.amazon.com/iot/latest/apireference/API_SetLoggingOptions.html)`
-
-+ `[iot:DeleteCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCertificate.html)`
 
 + `[iot:DeleteOTAUpdateJob](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteOTAUpdateJob.html)`
 
-+ `[iot:GetRegistrationCode](http://docs.aws.amazon.com/iot/latest/apireference/API_GetRegistrationCode.html)`
++ `[iot:DeleteCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCertificate.html)`
+
++ `[iot:DescribeIndex](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeIndex.html)`
 
 + `[iot:ListThings](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThings.html)`
 
 + `[iot:ListCertificates](http://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificates.html)`
-
-+ `[iot:AcceptCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html)`
 
 + `[iot:CreateThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateThingType.html)`
 
@@ -90,27 +74,19 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:DescribeThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThingType.html)`
 
++ `[iot:ListAttachedPolicies](http://docs.aws.amazon.com/iot/latest/apireference/API_ListAttachedPolicies.html)`
+
 + `[iot:CreateKeysAndCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html)`
+
++ `[iot:DescribeRoleAlias](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeRoleAlias.html)`
 
 + `[iot:ListThingTypes](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThingTypes.html)`
 
 + `[iot:EnableTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_EnableTopicRule.html)`
 
-+ `[iot:AttachThingPrincipal](http://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html)`
-
-+ `[iot:DeletePolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html)`
-
-+ `[iot:CreateOTAUpdateJob](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdateJob.html)`
-
-+ `[iot:DeleteCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCACertificate.html)`
-
 + `[iot:UpdateThingShadow](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html)` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[iot:DeprecateThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_DeprecateThingType.html)`
-
-+ `[iot:ListPolicies](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicies.html)`
-
-+ `[iot:RejectCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_RejectCertificateTransfer.html)`
++ `[iot:DeleteCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteCACertificate.html)`
 
 + `[iot:RegisterCACertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_RegisterCACertificate.html)`
 
@@ -119,6 +95,90 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 + `[iot:ListThingPrincipals](http://docs.aws.amazon.com/iot/latest/apireference/API_ListThingPrincipals.html)`
 
 + `[iot:ListPolicyPrincipals](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyPrincipals.html)`
+
++ `[iot:UpdateRoleAlias](http://docs.aws.amazon.com/iot/latest/apireference/API_UpdateRoleAlias.html)`
+
++ `[iot:ListPolicyVersions](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyVersions.html)`
+
++ `[iot:DeleteRoleAlias](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRoleAlias.html)`
+
++ `[iot:DescribeJobExecution](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJobExecution.html)`
+
++ `[iot:SetDefaultAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_SetDefaultAuthorizer.html)`
+
++ `[iot:GetTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRule.html)`
+
++ `[iot:CreateTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html)`
+
++ `[iot:CreateThing](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateThing.html)`
+
++ `[iot:Receive](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html)` \- this is an IAM policy permission only, not an API action that can be called\.
+
++ `[iot:ReplaceTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_ReplaceTopicRule.html)`
+
++ `[iot:DeleteAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteAuthorizer.html)`
+
++ `[iot:ListStreams](http://docs.aws.amazon.com/iot/latest/apireference/API_ListStreams.html)`
+
++ `[iot:CreatePolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicy.html)`
+
++ `[iot:TestAuthorization](http://docs.aws.amazon.com/iot/latest/apireference/API_TestAuthorization.html)`
+
++ `[iot:TestInvokeAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_TestInvokeAuthorizer.html)`
+
++ `[iot:DescribeCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeCertificate.html)`
+
++ `[iot:AttachPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_AttachPolicy.html)`
+
++ `[iot:GetPolicyVersion](http://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicyVersion.html)`
+
++ `[iot:ListOTAUpdateJobs](http://docs.aws.amazon.com/iot/latest/apireference/API_ListOTAUpdateJobs.html)`
+
++ `[iot:DeletePolicyVersion](http://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicyVersion.html)`
+
++ `[iot:ListJobExecutionsForJob](http://docs.aws.amazon.com/iot/latest/apireference/API_ListJobExecutionsForJob.html)`
+
++ `[iot:DescribeStream](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeStream.html)`
+
++ `[iot:AssociateTargetsWithJob](http://docs.aws.amazon.com/iot/latest/apireference/API_AssociateTargetsWithJob.html)`
+
++ `[iot:GetOTAUpdateJob](http://docs.aws.amazon.com/iot/latest/apireference/API_GetOTAUpdateJob.html)`
+
++ `[iot:DescribeDefaultAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeDefaultAuthorizer.html)`
+
++ `[iot:DescribeAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuthorizer.html)`
+
++ `[iot:GetRegistrationCode](http://docs.aws.amazon.com/iot/latest/apireference/API_GetRegistrationCode.html)`
+
++ `[iot:AcceptCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_AcceptCertificateTransfer.html)`
+
++ `[iot:ListAuthorizers](http://docs.aws.amazon.com/iot/latest/apireference/API_ListAuthorizers.html)`
+
++ `[iot:UpdateAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_UpdateAuthorizer.html)`
+
++ `[iot:CreateAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateAuthorizer.html)`
+
++ `[iot:ClearDefaultAuthorizer](http://docs.aws.amazon.com/iot/latest/apireference/API_ClearDefaultAuthorizer.html)`
+
++ `[iot:DeletePolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DeletePolicy.html)`
+
++ `[iot:AttachThingPrincipal](http://docs.aws.amazon.com/iot/latest/apireference/API_AttachThingPrincipal.html)`
+
++ `[iot:DetachPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_DetachPolicy.html)`
+
++ `[iot:CreateOTAUpdateJob](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateOTAUpdateJob.html)`
+
++ `[iot:GetEffectivePolicies](http://docs.aws.amazon.com/iot/latest/apireference/API_GetEffectivePolicies.html)`
+
++ `[iot:ListIndices](http://docs.aws.amazon.com/iot/latest/apireference/API_ListIndices.html)`
+
++ `[iot:DeprecateThingType](http://docs.aws.amazon.com/iot/latest/apireference/API_DeprecateThingType.html)`
+
++ `[iot:ListPolicies](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicies.html)`
+
++ `[iot:RejectCertificateTransfer](http://docs.aws.amazon.com/iot/latest/apireference/API_RejectCertificateTransfer.html)`
+
++ `[iot:GetIndexingConfiguration](http://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html)`
 
 + `[iot:CreateCertificateFromCsr](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)`
 
@@ -132,29 +192,23 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:Publish](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html)` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[iot:ListPolicyVersions](http://docs.aws.amazon.com/iot/latest/apireference/API_ListPolicyVersions.html)`
-
-+ `[iot:DescribeJobExecution](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeJobExecution.html)`
-
 + `[iot:CreatePolicyVersion](http://docs.aws.amazon.com/iot/latest/apireference/API_CreatePolicyVersion.html)`
 
 + `[iot:TransferCertificate](http://docs.aws.amazon.com/iot/latest/apireference/API_TransferCertificate.html)`
 
 + `[iot:DescribeEndpoint](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeEndpoint.html)`
 
++ `[iot:SearchIndex](http://docs.aws.amazon.com/iot/latest/apireference/API_SearchIndex.html)`
+
 + `[iot:CreateStream](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateStream.html)`
 
 + `[iot:ListCACertificates](http://docs.aws.amazon.com/iot/latest/apireference/API_ListCACertificates.html)`
-
-+ `[iot:GetTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_GetTopicRule.html)`
-
-+ `[iot:CreateTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateTopicRule.html)`
 
 + `[iot:DescribeThing](http://docs.aws.amazon.com/iot/latest/apireference/API_DescribeThing.html)`
 
 + `[iot:DeleteRegistrationCode](http://docs.aws.amazon.com/iot/latest/apireference/API_DeleteRegistrationCode.html)`
 
-+ `[iot:CreateThing](http://docs.aws.amazon.com/iot/latest/apireference/API_CreateThing.html)`
++ `[iot:ListRoleAliases](http://docs.aws.amazon.com/iot/latest/apireference/API_ListRoleAliases.html)`
 
 + `[iot:DisableTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_DisableTopicRule.html)`
 
@@ -162,11 +216,7 @@ For information about using IAM policies to grant permissions to run AWS IoT act
 
 + `[iot:DeleteThingShadow](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html)` \- this is an IAM policy permission only, not an API action that can be called\.
 
-+ `[iot:Receive](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html)` \- this is an IAM policy permission only, not an API action that can be called\.
-
 + `[iot:ListCertificatesByCA](http://docs.aws.amazon.com/iot/latest/apireference/API_ListCertificatesByCA.html)`
-
-+ `[iot:ReplaceTopicRule](http://docs.aws.amazon.com/iot/latest/apireference/API_ReplaceTopicRule.html)`
 
 + `[iot:GetPolicy](http://docs.aws.amazon.com/iot/latest/apireference/API_GetPolicy.html)`
 

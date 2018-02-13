@@ -10,6 +10,8 @@ Amazon MQ \(service prefix: mq\) provides the following service\-specific action
 
 + `mq:UpdateBroker`
 
++ `mq:RebootBroker`
+
 + `mq:ListUsers`
 
 + `mq:DescribeBroker`
@@ -33,8 +35,6 @@ Amazon MQ \(service prefix: mq\) provides the following service\-specific action
 + `mq:UpdateUser`
 
 + `mq:DeleteBroker`
-
-+ `mq:RestartBroker`
 
 + `mq:ListConfigurationRevisions`
 

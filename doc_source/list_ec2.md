@@ -16,6 +16,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:CreateNatGateway](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNatGateway.html)`
 
++ `[ec2:DescribeVpcEndpointConnections](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnections.html)`
+
 + `[ec2:ResetInstanceAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetInstanceAttribute.html)`
 
 + `[ec2:ResetSnapshotAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetSnapshotAttribute.html)`
@@ -34,9 +36,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:PurchaseScheduledInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseScheduledInstances.html)`
 
-+ `[ec2:DescribeIdentityIdFormat](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdentityIdFormat.html)`
++ `[ec2:CopyFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyFpgaImage.html)`
 
-+ `[ec2:AssociateFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateFpgaImage.html)`
++ `[ec2:DescribeIdentityIdFormat](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIdentityIdFormat.html)`
 
 + `[ec2:DeleteFlowLogs](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFlowLogs.html)`
 
@@ -51,6 +53,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:DescribeDhcpOptions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeDhcpOptions.html)`
 
 + `[ec2:AttachVolume](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachVolume.html)`
+
++ `[ec2:CreateVpcEndpointServiceConfiguration](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointServiceConfiguration.html)`
 
 + `[ec2:ModifyReservedInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyReservedInstances.html)`
 
@@ -68,7 +72,13 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DeleteSecurityGroup](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSecurityGroup.html)`
 
++ `[ec2:ModifyVpcEndpointServicePermissions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServicePermissions.html)`
+
 + `[ec2:AllocateAddress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateAddress.html)`
+
++ `[ec2:ResetFpgaImageAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ResetFpgaImageAttribute.html)`
+
++ `[ec2:DeleteFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteFpgaImage.html)`
 
 + `[ec2:DescribeVolumeAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVolumeAttribute.html)`
 
@@ -81,6 +91,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:RevokeSecurityGroupIngress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RevokeSecurityGroupIngress.html)`
 
 + `[ec2:ReportInstanceStatus](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReportInstanceStatus.html)`
+
++ `[ec2:DescribeInstanceCreditSpecifications](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstanceCreditSpecifications.html)`
 
 + `[ec2:ModifyInstanceAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html)`
 
@@ -114,13 +126,19 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:RunInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html)`
 
++ `[ec2:DeleteVpcEndpointConnectionNotifications](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointConnectionNotifications.html)`
+
 + `[ec2:CreateLaunchTemplateVersion](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateLaunchTemplateVersion.html)`
 
 + `[ec2:DescribeVpcPeeringConnections](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcPeeringConnections.html)`
 
++ `[ec2:DescribeVpcEndpointServicePermissions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServicePermissions.html)`
+
 + `[ec2:CancelSpotInstanceRequests](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CancelSpotInstanceRequests.html)`
 
 + `[ec2:DescribeHostReservationOfferings](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeHostReservationOfferings.html)`
+
++ `[ec2:ModifyVpcEndpointConnectionNotification](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointConnectionNotification.html)`
 
 + `[ec2:AssociateDhcpOptions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateDhcpOptions.html)`
 
@@ -135,6 +153,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:DescribeVpcClassicLinkDnsSupport](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcClassicLinkDnsSupport.html)`
 
 + `[ec2:UpdateSecurityGroupRuleDescriptionsEgress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsEgress.html)`
+
++ `[ec2:ModifyInstanceCreditSpecification](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html)`
 
 + `[ec2:RunScheduledInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunScheduledInstances.html)`
 
@@ -156,6 +176,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DescribeSpotFleetInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotFleetInstances.html)`
 
++ `[ec2:DescribeFpgaImageAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeFpgaImageAttribute.html)`
+
 + `[ec2:UpdateSecurityGroupRuleDescriptionsIngress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_UpdateSecurityGroupRuleDescriptionsIngress.html)`
 
 + `[ec2:ReplaceIamInstanceProfileAssociation](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReplaceIamInstanceProfileAssociation.html)`
@@ -165,6 +187,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:RebootInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RebootInstances.html)`
 
 + `[ec2:DetachClassicLinkVpc](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DetachClassicLinkVpc.html)`
+
++ `[ec2:ModifyFpgaImageAttribute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyFpgaImageAttribute.html)`
 
 + `[ec2:DescribeVpcs](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcs.html)`
 
@@ -182,15 +206,17 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DeleteLaunchTemplateVersions](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteLaunchTemplateVersions.html)`
 
-+ `[ec2:DisassociateFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateFpgaImage.html)`
-
 + `[ec2:RestoreAddressToClassic](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RestoreAddressToClassic.html)`
+
++ `[ec2:AcceptVpcEndpointConnections](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AcceptVpcEndpointConnections.html)`
 
 + `[ec2:DescribeScheduledInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeScheduledInstances.html)`
 
 + `[ec2:DescribeIamInstanceProfileAssociations](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeIamInstanceProfileAssociations.html)`
 
 + `[ec2:ImportInstance](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html)`
+
++ `[ec2:DescribeElasticGpus](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeElasticGpus.html)`
 
 + `[ec2:DeleteRoute](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html)`
 
@@ -254,7 +280,11 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:ImportImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html)`
 
++ `[ec2:RejectVpcEndpointConnections](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RejectVpcEndpointConnections.html)`
+
 + `[ec2:DeleteVpcPeeringConnection](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcPeeringConnection.html)`
+
++ `[ec2:ModifyVpcEndpointServiceConfiguration](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyVpcEndpointServiceConfiguration.html)`
 
 + `[ec2:ReleaseAddress](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseAddress.html)`
 
@@ -354,9 +384,13 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:DeleteSpotDatafeedSubscription](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSpotDatafeedSubscription.html)`
 
++ `[ec2:CreateVpcEndpointConnectionNotification](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html)`
+
 + `[ec2:DeleteSubnet](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSubnet.html)`
 
 + `[ec2:CopySnapshot](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopySnapshot.html)`
+
++ `[ec2:DescribeVpcEndpointServiceConfigurations](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointServiceConfigurations.html)`
 
 + `[ec2:DeleteVolume](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVolume.html)`
 
@@ -376,6 +410,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:EnableVgwRoutePropagation](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_EnableVgwRoutePropagation.html)`
 
++ `[ec2:DescribeVpcEndpointConnectionNotifications](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpcEndpointConnectionNotifications.html)`
+
 + `[ec2:GetConsoleOutput](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetConsoleOutput.html)`
 
 + `[ec2:DescribeRouteTables](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeRouteTables.html)`
@@ -390,9 +426,9 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 
 + `[ec2:AssociateRouteTable](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateRouteTable.html)`
 
-+ `[ec2:CreateFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html)`
-
 + `[ec2:DeleteNetworkAclEntry](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteNetworkAclEntry.html)`
+
++ `[ec2:CreateFpgaImage](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFpgaImage.html)`
 
 + `[ec2:AssignIpv6Addresses](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssignIpv6Addresses.html)`
 
@@ -405,6 +441,8 @@ For information about using the following Amazon EC2 API actions in an IAM polic
 + `[ec2:DeleteVpcEndpoints](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpoints.html)`
 
 + `[ec2:DescribeSpotInstanceRequests](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSpotInstanceRequests.html)`
+
++ `[ec2:DeleteVpcEndpointServiceConfigurations](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteVpcEndpointServiceConfigurations.html)`
 
 + `[ec2:AttachNetworkInterface](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AttachNetworkInterface.html)`
 

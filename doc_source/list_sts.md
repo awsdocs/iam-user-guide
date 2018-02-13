@@ -6,9 +6,9 @@ AWS Security Token Service \(service prefix: sts\) provides the following servic
 
 For information about using the following AWS STS API actions in an IAM policy, see [Granting Permissions to Create Temporary Security Credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/STSPermission.html) in the *Using Temporary Security Credentials*\.
 
-+ `[sts:AssumeRoleWithWebIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)`
-
 + `[sts:GetCallerIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)`
+
++ `[sts:AssumeRoleWithWebIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)`
 
 + `[sts:DecodeAuthorizationMessage](http://docs.aws.amazon.com/STS/latest/APIReference/API_DecodeAuthorizationMessage.html)`
 
@@ -22,4 +22,24 @@ For information about using the following AWS STS API actions in an IAM policy, 
 
 **Condition context keys for AWS Security Token Service**
 
-AWS Security Token Service has no service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
+AWS Security Token Service has the following service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
+
++ `<web-identity-provider>:aud`
+
++ `<web-identity-provider>:oaud`
+
++ `<web-identity-provider>:sub`
+
++ `aws:FederatedProvider`
+
++ `saml:namequalifier`
+
++ `saml:sub`
+
++ `saml:sub_type`
+
++ `saml:aud`
+
++ `saml:iss`
+
++ `saml:doc`

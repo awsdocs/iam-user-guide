@@ -24,8 +24,6 @@ For information about using the following Lambda API actions in an IAM policy, s
 
 + `[lambda:RemovePermission](http://docs.aws.amazon.com/lambda/latest/dg/API_RemovePermission.html)`
 
-+ `[lambda:Invoke](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)`
-
 + `[lambda:CreateEventSourceMapping](http://docs.aws.amazon.com/lambda/latest/dg/API_CreateEventSourceMapping.html)`
 
 + `[lambda:UpdateFunctionCode](http://docs.aws.amazon.com/lambda/latest/dg/API_UpdateFunctionCode.html)`

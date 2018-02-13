@@ -34,6 +34,8 @@ For information about using the following Amazon ElasticSearch API actions in an
 
 + `[es:DescribeElasticsearchDomainConfig](http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeelasticsearchdomainconfig)`
 
++ `[es:ESHttpDelete]()`
+
 **Condition context keys for Amazon Elasticsearch Service**
 
 Amazon Elasticsearch Service has no service\-specific context keys that can be used in an IAM policy\. For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys) in the *IAM Policy Elements Reference*\.
