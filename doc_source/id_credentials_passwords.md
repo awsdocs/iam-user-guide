@@ -1,6 +1,6 @@
 # Managing Passwords<a name="id_credentials_passwords"></a>
 
-You can manage passwords for your AWS account root user and for IAM users in your account\. IAM users need passwords in order to access the AWS Management Console\. Users do not need passwords to access AWS resources programmatically by using the AWS CLI, Tools for Windows PowerShell, the AWS SDKs or APIs\. For those environments, users need access keys instead\.
+You can manage passwords for your AWS account root user and for IAM users in your account\. IAM users need passwords in order to access the AWS Management Console\. Users do not need passwords to access AWS resources programmatically by using the AWS CLI, Tools for Windows PowerShell, the AWS SDKs or APIs\. For those environments, users need [access keys](id_credentials_access-keys.md) instead\.
 
 
 + [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)

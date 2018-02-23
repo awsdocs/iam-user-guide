@@ -1,6 +1,6 @@
 # Examples of Policy Summaries<a name="access_policies_policy-summary-examples"></a>
 
-The following examples include JSON policies with their associated policy summaries, the service summaries, and the action summaries to help you understand the permissions given through a policy\.
+The following examples include JSON policies with their associated [policy summaries](access_policies_understand-policy-summary.md), the [service summaries](access_policies_understand-service-summary.md), and the [action summaries](access_policies_understand-action-summary.md) to help you understand the permissions given through a policy\.
 
 ## Policy 1: DenyCustomerBucket<a name="example1"></a>
 

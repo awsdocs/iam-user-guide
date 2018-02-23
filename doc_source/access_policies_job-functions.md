@@ -47,7 +47,7 @@ In the following sections, each policy's name is a link to the policy details pa
 **Policy description:** This policy grants permissions for managing billing and costs\. The permissions include viewing and modifying both budgets and payment methods\.
 
 **Note**  
-Before an IAM user can access the AWS Billing and Cost Management console with this policy, you must first enable Billing and Cost Management console access for the account\. To do this, follow the instructions in Step 1 of the tutorial about delegating access to the billing console\.
+Before an IAM user can access the AWS Billing and Cost Management console with this policy, you must first enable Billing and Cost Management console access for the account\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
 
 ### Database Administrator<a name="jf_database-administrator"></a>
 
@@ -200,7 +200,7 @@ The permissions that you specify are available to any entity that uses the role\
 
 ## Example 1: Configuring a User as a Database Administrator \(Console\)<a name="jf_example_1"></a>
 
-This example shows the steps required to configure Alice, an IAM user, as a Database Administrator\. You use the information in first row of the table in that section and allow the user to enable Amazon RDS monitoring\. You attach the [DatabaseAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/DatabaseAdministrator) policy to Alice's IAM user so that she can manage the Amazon database services\. That policy also enables Alice to pass a role called `rds-monitoring-role` to the Amazon RDS service that allows the service to monitor the RDS databases on her behalf\.
+This example shows the steps required to configure Alice, an IAM user, as a [Database Administrator](#jf_database-administrator)\. You use the information in first row of the table in that section and allow the user to enable Amazon RDS monitoring\. You attach the [DatabaseAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/DatabaseAdministrator) policy to Alice's IAM user so that she can manage the Amazon database services\. That policy also enables Alice to pass a role called `rds-monitoring-role` to the Amazon RDS service that allows the service to monitor the RDS databases on her behalf\.
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -228,7 +228,7 @@ This example shows the steps required to configure Alice, an IAM user, as a Data
 
 ## Example 2: Configuring a User as a Network Administrator \(Console\)<a name="jf_example_2"></a>
 
-This example shows the steps required to configure Juan, an IAM user, as a Network Administrator\. It uses the information in the table in that section to allow Juan to monitor IP traffic going to and from a VPC\. It also allows Juan to capture that information in the logs in CloudWatch Logs\. You attach the [NetworkAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/NetworkAdministrator) policy to Juan's IAM user so that he can configure AWS network resources\. That policy also enables Juan to pass a role whose name begins with `flow-logs*` to Amazon EC2 when you create a flow log\. In this scenario, unlike Example 1, there isn't a predefined service role type, so you must perform a few steps differently\.
+This example shows the steps required to configure Juan, an IAM user, as a [Network Administrator](#jf_network-administrator)\. It uses the information in the table in that section to allow Juan to monitor IP traffic going to and from a VPC\. It also allows Juan to capture that information in the logs in CloudWatch Logs\. You attach the [NetworkAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/NetworkAdministrator) policy to Juan's IAM user so that he can configure AWS network resources\. That policy also enables Juan to pass a role whose name begins with `flow-logs*` to Amazon EC2 when you create a flow log\. In this scenario, unlike Example 1, there isn't a predefined service role type, so you must perform a few steps differently\.
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -261,7 +261,7 @@ This example shows the steps required to configure Juan, an IAM user, as a Netwo
    }
    ```
 
-1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 

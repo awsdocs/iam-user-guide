@@ -2,7 +2,7 @@
 
 You can use a policy to control access to resources within IAM or all of AWS\. 
 
-To use a policy to control access in AWS, you must understand how IAM grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to take an action \(such as creating a user\), you send a *request* for that action\. Your request specifies an action, a resource, a *principal* \(group, user, or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
+To use a [policy](access_policies.md) to control access in AWS, you must understand how IAM grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to take an action \(such as creating a user\), you send a *request* for that action\. Your request specifies an action, a resource, a *principal* \(group, user, or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
 
 IAM then checks that you \(the principal\) are authenticated \(signed in\) and authorized \(have permission\) to perform the specified action on the specified resource\. During authorization, IAM checks all the policies attached to your user or role and the policies attached to the resource that you are trying to access\. These checks are based on the context of your request\. AWS authorizes the request only if each part of your request is allowed by the policies\.
 
@@ -10,15 +10,15 @@ To view a diagram of this process, see [Understanding How IAM Works](intro-struc
 
 When you write an IAM policy, you can control access to the following:
 
-+ **AWS for Principals** – Control what the person making the request \(the principal \) is allowed to do\. 
++ **[AWS for Principals](#access_controlling-principals)** – Control what the person making the request \(the [principal](intro-structure.md#intro-structure-principal) \) is allowed to do\. 
 
-+ **IAM Identities** – Control which IAM identities \(groups, users, and roles\) can be accessed and how\.
++ **[IAM Identities](#access_controlling-identities)** – Control which IAM identities \(groups, users, and roles\) can be accessed and how\.
 
-+ **IAM Policies** – Control who can create, edit, and delete customer managed policies, and who can attach and detach all managed policies\.
++ **[IAM Policies](#access_controlling-policies)** – Control who can create, edit, and delete customer managed policies, and who can attach and detach all managed policies\.
 
-+ **AWS Resources** – Control who has access to resources using an identity\-based policy or a resource\-based policy\.
++ **[AWS Resources](#access_controlling-resources)** – Control who has access to resources using an identity\-based policy or a resource\-based policy\.
 
-+ **AWS Accounts** – Control whether a request is allowed only for members of a specific account\.
++ **[AWS Accounts](#access_controlling-principal-accounts)** – Control whether a request is allowed only for members of a specific account\.
 
 Policies let you specify who has access to AWS resources, and what actions they can perform on those resources\. Every IAM user starts with no permissions\. In other words, by default, users can do nothing, not even view their own access keys\. To give a user permission to do something, you can add the permission to the user \(that is, attach a policy to the user\)\. Or you can add the user to a group that has the desired permission\.
 
@@ -122,7 +122,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. Attach the policy to your group\. For more information, see [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)\.
 
-Alternatively, you can create the same policy using this example JSON policy document\. For more information, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+Alternatively, you can create the same policy using this example JSON policy document\. For more information, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 **Example Example policy that allows all users Read\-only access to a specific group, and allows only specific users access to make changes to the group**  
 
@@ -208,7 +208,7 @@ For more information, refer to these resources:
 
 ### Controlling Permissions for Creating, Updating, and Deleting Customer Managed Policies<a name="policies-controlling-access-create-update-delete"></a>
 
-You can use IAM policies to control who is allowed to create, update, and delete customer managed policies in your AWS account\. The following list contains API operations that pertain directly to creating, updating, and deleting policies or policy versions: 
+You can use [IAM policies](access_policies.md) to control who is allowed to create, update, and delete customer managed policies in your AWS account\. The following list contains API operations that pertain directly to creating, updating, and deleting policies or policy versions: 
 
 + [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
 
@@ -222,7 +222,7 @@ You can use IAM policies to control who is allowed to create, update, and delete
 
 The API operations in the preceding list correspond to actions that you can allow or deny—that is, permissions that you can grant—using an IAM policy\. 
 
-The following example shows a policy that allows a user to create, update \(that is, create a new policy version\), delete, and set a default version for all customer managed policies in the AWS account\. The example policy also allows the user to list policies and get policies\. To learn how to create a policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+The following example shows a policy that allows a user to create, update \(that is, create a new policy version\), delete, and set a default version for all customer managed policies in the AWS account\. The example policy also allows the user to list policies and get policies\. To learn how to create a policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 **Example policy that allows creating, updating, deleting, listing, getting, and setting the default version for all policies**  
 
@@ -249,7 +249,7 @@ The following example shows a policy that allows a user to create, update \(that
 
 You can create policies that limit the use of these API operations to affect only the managed policies that you specify\. For example, you might want to allow a user to set the default version and delete policy versions, but only for specific customer managed policies\. You do this by specifying the policy ARN in the `Resource` element of the policy that grants these permissions\. 
 
-The following example shows a policy that allows a user to delete policy versions and set the default version, but only for the customer managed policies that include the path /TEAM\-A/\. The customer managed policy ARN is specified in the `Resource` element of the policy \(in this example the ARN includes a path and a wildcard and thus matches all customer managed policies that include the path /TEAM\-A/\)\. To learn how to create a policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+The following example shows a policy that allows a user to delete policy versions and set the default version, but only for the customer managed policies that include the path /TEAM\-A/\. The customer managed policy ARN is specified in the `Resource` element of the policy \(in this example the ARN includes a path and a wildcard and thus matches all customer managed policies that include the path /TEAM\-A/\)\. To learn how to create a policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 For more information about using paths in the names of customer managed policies, see [Friendly Names and Paths](reference_identifiers.md#identifiers-friendly-names)\. 
 
@@ -289,7 +289,7 @@ The following list shows API operations that pertain directly to attaching and d
 
 You can create policies that limit the use of these API operations to affect only the specific managed policies and/or principal entities that you specify\. For example, you might want to allow a user to attach managed policies, but only the managed policies that you specify\. Or, you might want to allow a user to attach managed policies, but only to the principal entities that you specify\. 
 
-The following example policy allows a user to attach managed policies to only the groups and roles that include the path /TEAM\-A/\. The group and role ARNs are specified in the `Resource` element of the policy\. \(In this example the ARNs include a path and a wildcard character and thus match all groups and roles that include the path /TEAM\-A/\)\. To learn how to create a policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+The following example policy allows a user to attach managed policies to only the groups and roles that include the path /TEAM\-A/\. The group and role ARNs are specified in the `Resource` element of the policy\. \(In this example the ARNs include a path and a wildcard character and thus match all groups and roles that include the path /TEAM\-A/\)\. To learn how to create a policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 **Example policy that allows attaching managed policies to only specific groups or roles**  
 
@@ -312,7 +312,7 @@ The following example policy allows a user to attach managed policies to only th
 
 You can further limit the actions in the preceding example to affect only specific policies—that is, you can control which permissions a user is allowed to attach to other principal entities—by adding a condition to the policy\. 
 
-In the following example, the condition ensures that the `AttachGroupPolicy` and `AttachRolePolicy` permissions are allowed only when the policy being attached matches one of the specified policies\. The condition uses the `iam:PolicyArn` condition key to determine which policy or policies are allowed to be attached\. The following example policy expands on the previous example by allowing a user to attach only the managed policies that include the path /TEAM\-A/ to only the groups and roles that include the path /TEAM\-A/\. To learn how to create a policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+In the following example, the condition ensures that the `AttachGroupPolicy` and `AttachRolePolicy` permissions are allowed only when the policy being attached matches one of the specified policies\. The condition uses the `iam:PolicyArn` [condition key](reference_policies_elements_condition.md) to determine which policy or policies are allowed to be attached\. The following example policy expands on the previous example by allowing a user to attach only the managed policies that include the path /TEAM\-A/ to only the groups and roles that include the path /TEAM\-A/\. To learn how to create a policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -363,7 +363,7 @@ For more information, refer to these resources:
 + To learn how to attach an IAM policy to a principal, see [Attaching IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
 
 + Amazon S3 supports using resource\-based policies on their buckets\. For more information, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
-
+<a name="NoDefaultPermissions"></a>
 **Resource Creators Do Not Automatically Have Permissions**  
 If you sign in using the AWS account root user credentials, you have permission to perform any action on resources that belong to the account\. However, this isn't true for IAM users\. An IAM user might be granted access to create a resource, but the user's permissions, even for that resource, are limited to what's been explicitly granted\. This means that just because you create a resource, such as an IAM role, you do not automatically have permission to edit or delete that role\. Additionally, your permission can be revoked at any time by the account owner or by another user who has been granted access to manage your permissions\.
 

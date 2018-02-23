@@ -17,7 +17,7 @@ For examples of policies that let users perform tasks with other AWS services, l
 
 ## Allow Users to Manage Their Own Passwords \(from the My Password Page\)<a name="creds-policies-password-self"></a>
 
-If the account's password policy is set to allow all users to change their own passwords, you don't need to attach any permissions to individual users or groups\. All users are able to go to the My Password page in the AWS Management Console that lets them change their own password\. 
+If the account's [password policy](id_credentials_passwords_account-policy.md) is set to allow all users to change their own passwords, you don't need to attach any permissions to individual users or groups\. All users are able to go to the [My Password page](id_credentials_passwords.md#id_credentials_passwords_user-change-own) in the AWS Management Console that lets them change their own password\. 
 
 If the account's password policy is *not* set to allow all users to change their own passwords, you can attach the following policy to selected users or groups to allow those users to change only their own passwords\. This policy only allows users to use the special [My Password page](https://console.aws.amazon.com/iam/home#my_password) in the console; it does not give users permissions to work through the dashboard in the IAM console\. 
 
@@ -201,7 +201,7 @@ The following permissions in the policy allow access to user tasks via the AWS M
 
 ## Allow Users to Set Account Password Policy<a name="creds-policies-set-password-policy"></a>
 
-You might give some users permissions to get and update your AWS account's password policy\. The following example policy grants these permissions\. 
+You might give some users permissions to get and update your AWS account's [password policy](id_credentials_passwords_account-policy.md)\. The following example policy grants these permissions\. 
 
 ```
 {
@@ -239,7 +239,7 @@ For more information about credential reports, see [Getting Credential Reports f
 
 ## Allow Users to Manage Only Their Own Virtual MFA Devices<a name="creds-policies-mfa-console"></a>
 
-A virtual MFA device is a software implementation of a device that provides one\-time passwords\. Virtual MFA devices are hosted on a physical hardware device \(typically a smartphone\)\. In order to configure a virtual MFA device, you must have access to the physical device where the virtual MFA device is hosted\. If your users create virtual MFA devices inside a smartphone app on their own smartphone, you might want to let them configure the devices themselves\. For more about using virtual MFA devices with IAM, see [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)\.
+A [virtual MFA device](id_credentials_mfa_enable_virtual.md) is a software implementation of a device that provides one\-time passwords\. Virtual MFA devices are hosted on a physical hardware device \(typically a smartphone\)\. In order to configure a virtual MFA device, you must have access to the physical device where the virtual MFA device is hosted\. If your users create virtual MFA devices inside a smartphone app on their own smartphone, you might want to let them configure the devices themselves\. For more about using virtual MFA devices with IAM, see [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)\.
 
 The following policy allows a user to configure and manage his or her own virtual MFA device from the AWS Management Console or using any of the command\-line tools\. The policy allows only MFA\-authenticated users to deactivate and delete their own virtual MFA devices\. 
 

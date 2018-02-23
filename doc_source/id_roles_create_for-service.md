@@ -1,6 +1,6 @@
 # Creating a Role to Delegate Permissions to an AWS Service<a name="id_roles_create_for-service"></a>
 
-Many AWS services require that you use roles to control what that service can access\. A role that a service assumes to perform actions on your behalf is called a service role\. When a role serves a specialized purpose for a service, it is categorized as a service role for EC2 instances \(for example\), or a service\-linked role\. See the [AWS documentation](http://docs.aws.amazon.com/) for each service to see if it uses roles and to learn how to assign a role for the service to use\.
+Many AWS services require that you use roles to control what that service can access\. A role that a service assumes to perform actions on your behalf is called a [service role](id_roles_terms-and-concepts.md#iam-term-service-role)\. When a role serves a specialized purpose for a service, it is categorized as a [service role for EC2 instances](id_roles_terms-and-concepts.md#iam-term-service-role-ec2) \(for example\), or a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)\. See the [AWS documentation](http://docs.aws.amazon.com/) for each service to see if it uses roles and to learn how to assign a role for the service to use\.
 
 For information about how roles help you to delegate permissions, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
 
@@ -77,7 +77,7 @@ The example trust policy referenced in the first command contains the following 
 }
 ```
 
-The example permission policy referenced in the second command allows the role to perform only the `ListBucket` action on an S3 bucket named `example_bucket`\. To learn how to create an IAM policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+The example permission policy referenced in the second command allows the role to perform only the `ListBucket` action on an S3 bucket named `example_bucket`\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ```
 {

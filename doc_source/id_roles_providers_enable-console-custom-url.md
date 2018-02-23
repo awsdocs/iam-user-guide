@@ -66,7 +66,7 @@ If you use the `AssumeRole` API, you must call it as an IAM user with long\-term
 
 1. [URL encode](https://en.wikipedia.org/wiki/Percent-encoding) the session string from the previous step\. Because the information that you are encoding is sensitive, we recommend that you avoid using a web service for this encoding\. Instead, use a locally installed function or feature in your development toolkit to securely encode this information\. You can use the `urllib.quote_plus` function in Python, the `URLEncoder.encode` function in Java, or the `CGI.escape` function in Ruby\. See the examples later in this topic\.
 
-1. Send your request to the AWS federation endpoint at the following address:
+1. <a name="STSConsoleLink_manual_step5"></a>Send your request to the AWS federation endpoint at the following address:
 
    `https://signin.aws.amazon.com/federation` 
 
@@ -105,7 +105,7 @@ You do not need the `SessionDuration` HTTP parameter if you got the temporary cr
    {"SigninToken":"*** the SigninToken string ***"}
    ```
 
-1. Finally, create the URL that your federated users can use to access the AWS Management Console\. The URL is the same federation URL endpoint that you used in [[ERROR] BAD/MISSING LINK TEXT](#STSConsoleLink_manual_step5), plus the following parameters:
+1. Finally, create the URL that your federated users can use to access the AWS Management Console\. The URL is the same federation URL endpoint that you used in [Step 5](#STSConsoleLink_manual_step5), plus the following parameters:
 
    ```
    ?Action = login

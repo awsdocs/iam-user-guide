@@ -175,7 +175,7 @@ This example policy does not allow users to both sign\-in and perform a password
 
    + The sixth and final statement uses a combination of `"Deny"` and `"NotAction"` to deny all actions for all other AWS services ***if*** the user is not signed\-in with MFA\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other permissions granted to the user can take effect\. This last statement ensures that when the user is not signed\-in with MFA that they can perform only the IAM actions allowed in the earlier statements\. The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
 
-1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.
 
@@ -229,7 +229,7 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 
 1. In the **Manage MFA Device** wizard, in the **Authentication Code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **Authentication Code 2** box\. Choose **Active Virtual MFA**\. 
 **Important**  
-Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device is successfully associated with the user\. However,t the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can resync the device\.
+Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device is successfully associated with the user\. However,t the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
    The virtual MFA device is now ready to use with AWS\. 
 

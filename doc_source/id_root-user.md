@@ -3,7 +3,7 @@
 When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\.
 
 **Important**  
-We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the best practice of using the root user only to create your first IAM user\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
+We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
 
 To manage your root user, follow the steps in the following procedures\.
 
@@ -43,7 +43,7 @@ If you previously signed in to the console with *[IAM user](http://docs.aws.amaz
 
    + If you choose **Download Key File**, you receive a file named `rootkey.csv` that contains the access key ID and the secret key\. Save the file somewhere safe\. 
 
-1. When you no longer use the access key we recommend that you delete it, or at least mark it inactive by choosing **Make Inactive** so that it cannot be misused if leaked\.
+1. When you no longer use the access key [we recommend that you delete it](best-practices.md#remove-credentials), or at least mark it inactive by choosing **Make Inactive** so that it cannot be misused if leaked\.
 
 **To create an access key for the root user \(programmatically\)**
 
@@ -63,7 +63,7 @@ You can use the AWS Management Console or various programming tools to delete ac
 
 1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the root user\.
 **Note**  
-If you previously signed in to the console with *IAM user* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.
+If you previously signed in to the console with *[IAM user](id_users.md)* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.
 
 1. On the **IAM Dashboard** page, choose your account name in the navigation bar, and then choose **My Security Credentials**\. 
 

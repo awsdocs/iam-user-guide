@@ -176,11 +176,11 @@ The following steps describe the general process for rotating an access key with
 
 1. Update all applications and tools to use the new access key\.
 
-1. Determine whether the first access key is still in use by reviewing the **Last used** column for the oldest access key\. One approach is to wait several days and then check the old access key for any use before proceeding\.
+1. <a name="id_credentials_access-keys-key-still-in-use"></a>Determine whether the first access key is still in use by reviewing the **Last used** column for the oldest access key\. One approach is to wait several days and then check the old access key for any use before proceeding\.
 
 1. Even if the **Last used** column value indicates that the old key has never been used, we recommend that you do not immediately delete the first access key\. Instead, choose **Make inactive** to deactivate the first access key\.
 
-1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can choose **Make active** to reenable the first access key\. Then return to [[ERROR] BAD/MISSING LINK TEXT](#id_credentials_access-keys-key-still-in-use) and update this application to use the new key\.
+1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can choose **Make active** to reenable the first access key\. Then return to [Step 3](#id_credentials_access-keys-key-still-in-use) and update this application to use the new key\.
 
 1. After you wait some period of time to ensure that all applications and tools have been updated, you can delete the first access key:
 
@@ -202,9 +202,9 @@ The following steps describe the general process for rotating an access key with
 
    + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 
-1. Update all applications and tools to use the new access key\.
+1. <a name="step-update-apps"></a>Update all applications and tools to use the new access key\.
 
-1. Determine whether the first access key is still in use:
+1. <a name="step-determine-use"></a>Determine whether the first access key is still in use:
 
    + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 
@@ -214,7 +214,7 @@ The following steps describe the general process for rotating an access key with
 
    One approach is to wait several days and then check the old access key for any use before proceeding\.
 
-1. Even if step [[ERROR] BAD/MISSING LINK TEXT](#step-determine-use) indicates no use of the old key, we recommend that you do not immediately delete the first access key\. Instead, change the state of the first access key to `Inactive`\.
+1. Even if step [Step 3](#step-determine-use) indicates no use of the old key, we recommend that you do not immediately delete the first access key\. Instead, change the state of the first access key to `Inactive`\.
 
    + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
 
@@ -222,7 +222,7 @@ The following steps describe the general process for rotating an access key with
 
    + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
 
-1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can switch its state back to `Active` to reenable the first access key\. Then return to step [[ERROR] BAD/MISSING LINK TEXT](#step-update-apps) and update this application to use the new key\.
+1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can switch its state back to `Active` to reenable the first access key\. Then return to step [Step 2](#step-update-apps) and update this application to use the new key\.
 
 1. After you wait some period of time to ensure that all applications and tools have been updated, you can delete the first access key\.
 

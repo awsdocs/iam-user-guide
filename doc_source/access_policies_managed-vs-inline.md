@@ -55,7 +55,7 @@ When you change a managed policy, the change is applied to all principal entitie
 
 **Versioning and rolling back**  
  When you change a customer managed policy, the changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. IAM stores up to five versions of your customer managed policies\. You can use policy versions to revert a policy to an earlier version if you need to\.   
-A policy version is different from a `Version` policy element\. The `Version` policy element is used within a policy and defines the version of the policy language\. To learn more about policy versions, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_managed-versioning.md)\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\.
+A policy version is different from a `Version` policy element\. The `Version` policy element is used within a policy and defines the version of the policy language\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\.
 
 **Delegating permissions management**  
 You can allow users in your AWS account to attach and detach policies while maintaining control over the permissions defined in those policies\. In effect, you can designate some users as full admins—that is, admins that can create, update, and delete policies\. You can then designate other users as limited admins\. That is, admins that can attach policies to other principal entities, but only the policies that you have allowed them to attach\.   

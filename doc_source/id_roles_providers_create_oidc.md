@@ -1,6 +1,6 @@
 # Creating OpenID Connect \(OIDC\) Identity Providers<a name="id_roles_providers_create_oidc"></a>
 
-*OIDC identity providers* are entities in IAM that describe an identity provider \(IdP\) service that supports the [OpenID Connect](http://openid.net/connect/) \(OIDC\) standard\. You use an OIDC identity provider when you want to establish trust between an OIDC\-compatible IdP—such as Google, Salesforce, and many others—and your AWS account\. This is useful if you are creating a mobile app or web application that requires access to AWS resources, but you don't want to create custom sign\-in code or manage your own user identities\. For more information about this scenario, see [[ERROR] BAD/MISSING LINK TEXT](id_roles_providers_oidc.md)\.
+*OIDC identity providers* are entities in IAM that describe an identity provider \(IdP\) service that supports the [OpenID Connect](http://openid.net/connect/) \(OIDC\) standard\. You use an OIDC identity provider when you want to establish trust between an OIDC\-compatible IdP—such as Google, Salesforce, and many others—and your AWS account\. This is useful if you are creating a mobile app or web application that requires access to AWS resources, but you don't want to create custom sign\-in code or manage your own user identities\. For more information about this scenario, see [About Web Identity Federation](id_roles_providers_oidc.md)\.
 
 You can create and manage an OIDC identity provider using the AWS Management Console, the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API\. 
 
@@ -15,7 +15,7 @@ Follow these instructions to create and manage an OIDC provider in the AWS Manag
 
 **To create an OIDC identity provider**
 
-1. Before you create an OIDC identity provider in IAM, you must register your application with the IdP to receive a *client ID*\. The client ID \(also known as *audience*\) is a unique identifier for your app that is issued to you when you register your app with the IdP\. For more information about obtaining a client ID, see the documentation for your IdP\. 
+1. <a name="idpoidcstep1"></a>Before you create an OIDC identity provider in IAM, you must register your application with the IdP to receive a *client ID*\. The client ID \(also known as *audience*\) is a unique identifier for your app that is issued to you when you register your app with the IdP\. For more information about obtaining a client ID, see the documentation for your IdP\. 
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -33,7 +33,7 @@ Follow these instructions to create and manage an OIDC provider in the AWS Manag
 
    + Within your AWS account, each OIDC identity provider must use a unique URL\.
 
-1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [[ERROR] BAD/MISSING LINK TEXT](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\. Click **Next Step**\. 
+1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\. Click **Next Step**\. 
 
 1. Use the **Thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\. Click **Create**\.
 

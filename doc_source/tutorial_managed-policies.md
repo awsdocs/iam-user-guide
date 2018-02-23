@@ -1,6 +1,6 @@
 # Tutorial: Create and Attach Your First Customer Managed Policy<a name="tutorial_managed-policies"></a>
 
-In this tutorial, you use the AWS Management Console to create a customer managed policy and then attach that policy to an IAM user in your AWS account\. The policy you create allows an IAM test user to sign in directly to the AWS Management Console with read\-only permissions\. 
+In this tutorial, you use the AWS Management Console to create a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) and then attach that policy to an IAM user in your AWS account\. The policy you create allows an IAM test user to sign in directly to the AWS Management Console with read\-only permissions\. 
 
 This workflow has three basic steps:
 
@@ -54,7 +54,7 @@ In this step, you create a customer managed policy that allows any attached user
    }
    ```
 
-1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 

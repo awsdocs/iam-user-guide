@@ -48,7 +48,7 @@ The date and time when the user's password was last set, in [ISO 8601 date\-time
 When the account has a [password policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html) that requires password rotation, this field contains the date and time, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601), when the user is required to set a new password\. The value for the AWS account \(root\) is always `not_supported`\.
 
 **mfa\_active**  
-When a multi\-factor authentication \(MFA\) device has been enabled for the user, this value is `TRUE`\. Otherwise it is `FALSE`\.
+When a [multi\-factor authentication](id_credentials_mfa.md) \(MFA\) device has been enabled for the user, this value is `TRUE`\. Otherwise it is `FALSE`\.
 
 **access\_key\_1\_active**  
 When the user has an access key and the access key's status is `Active`, this value is `TRUE`\. Otherwise it is `FALSE`\.

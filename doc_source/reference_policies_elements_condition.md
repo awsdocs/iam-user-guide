@@ -1,8 +1,8 @@
 # IAM JSON Policy Elements: Condition<a name="reference_policies_elements_condition"></a>
 
-The `Condition` element \(or `Condition` *block*\) lets you specify conditions for when a policy is in effect\. The `Condition` element is optional\. In the `Condition` element, you build expressions in which you use condition operators \(equal, less than, etc\.\) to match the condition in the policy against values in the request\. Condition values can include date, time, the IP address of the requester, the ARN of the request source, the user name, user ID, and the user agent of the requester\. Some services let you specify additional values in conditions; for example, Amazon S3 lets you write a condition using the `s3:VersionId` key, which is unique to that service\.
+The `Condition` element \(or `Condition` *block*\) lets you specify conditions for when a policy is in effect\. The `Condition` element is optional\. In the `Condition` element, you build expressions in which you use [condition operators](reference_policies_elements_condition_operators.md) \(equal, less than, etc\.\) to match the condition in the policy against values in the request\. Condition values can include date, time, the IP address of the requester, the ARN of the request source, the user name, user ID, and the user agent of the requester\. Some services let you specify additional values in conditions; for example, Amazon S3 lets you write a condition using the `s3:VersionId` key, which is unique to that service\.
 
-+ For a list of all of the condition operators and a description of how each one works, see Condition Operators
++ For a list of all of the condition operators and a description of how each one works, see [Condition Operators](reference_policies_elements_condition_operators.md)
 
 + For a description of how to handle condition keys that have multiple values, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)
 
@@ -22,7 +22,7 @@ The following example shows the basic format of a `Condition` element:
 }
 ```
 
-A value from the request is represented by a key, in this case `aws:CurrentTime`\. The key value is compared to a value that you specify either as a literal value \(`2013-08-16T12:00:00Z`\) or as a policy variable, as explained later\. The type of comparison to make is specified by the condition operator \(here, `DateGreaterThan`\)\. You can create conditions that compare strings, dates, numbers, and so on, using typical boolean comparisons like equals, greater than, and less than\. 
+A value from the request is represented by a key, in this case `aws:CurrentTime`\. The key value is compared to a value that you specify either as a literal value \(`2013-08-16T12:00:00Z`\) or as a policy variable, as explained later\. The type of comparison to make is specified by the [condition operator](reference_policies_elements_condition_operators.md) \(here, `DateGreaterThan`\)\. You can create conditions that compare strings, dates, numbers, and so on, using typical boolean comparisons like equals, greater than, and less than\. 
 
 Under some circumstances, keys can contains multiple values\. For example, a request to DynamoDB might ask to return or update multiple attributes from a table\. A policy for access to DynamoDB tables can include the `dynamodb:Attributes` key, which contains all the attributes listed in the request\. You can test the multiple attributes in the request against a list of allowed attributes in a policy by using set operators in the `Condition` element\. For more information, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)\. 
 

@@ -4,7 +4,7 @@ AWS Service Catalog \(service prefix: servicecatalog\) provides the following se
 
 **Actions for AWS Service Catalog**
 
-For more information about using IAM policies with AWS Service Catalog, see [AWS Managed Policies](http://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-managed-policies.html) in the *AWS Service Catalog Administrator Guide*\.
+For more information about using IAM policies with AWS Service Catalog, see [Authentication and Access Control for AWS Service Catalog](http://docs.aws.amazon.com/servicecatalog/latest/adminguide/controlling_access.html) in the *AWS Service Catalog Administrator Guide*\.
 
 + `[servicecatalog:CreatePortfolioShare](http://docs.aws.amazon.com/servicecatalog/latest/dg/API_CreatePortfolioShare.html)`
 

@@ -2,12 +2,12 @@
 
 You can grant IAM users the permission to change their own passwords for signing in to the AWS Management Console\. You can do this in one of two ways:
 
-+ Allow all IAM users in the account to change their own passwords\. 
++ [Allow all IAM users in the account to change their own passwords](#proc_letalluserschangepassword)\. 
 
-+ Allow only selected IAM users to change their own passwords\. In this scenario, you disable the option for all users to change their own passwords and you use an IAM policy to grant permissions to only some users to change their own passwords and optionally other credentials like their own access keys\. 
++ [Allow only selected IAM users to change their own passwords](#proc_letselectuserschangepassword)\. In this scenario, you disable the option for all users to change their own passwords and you use an IAM policy to grant permissions to only some users to change their own passwords and optionally other credentials like their own access keys\. 
 
 **Important**  
-We recommend that you set a password policy so that users create strong passwords\.
+We recommend that you [set a password policy](id_credentials_passwords_account-policy.md) so that users create strong passwords\.<a name="proc_letalluserschangepassword"></a>
 
 **To allow all IAM users change their own passwords**
 
@@ -19,7 +19,7 @@ We recommend that you set a password policy so that users create strong password
 
 1. Point users to the following instructions that show how they can change their passwords: [How IAM Users Change Their Own Password](id_credentials_passwords.md#id_credentials_passwords_user-change-own)\. 
 
-For information about the AWS CLI, Tools for Windows PowerShell, and API commands that you can use to change the account's password policy \(which includes letting all users change their own passwords\), see [Setting a Password Policy \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](id_credentials_passwords_account-policy.md#PasswordPolicy_CLI)\.
+For information about the AWS CLI, Tools for Windows PowerShell, and API commands that you can use to change the account's password policy \(which includes letting all users change their own passwords\), see [Setting a Password Policy \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](id_credentials_passwords_account-policy.md#PasswordPolicy_CLI)\.<a name="proc_letselectuserschangepassword"></a>
 
 **To allow selected IAM users change their own passwords**
 

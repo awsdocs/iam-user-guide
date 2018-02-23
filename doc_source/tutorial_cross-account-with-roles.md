@@ -91,7 +91,7 @@ Before you can create a role, you need the account ID of the Development AWS acc
 
    The `ListBucket` permission allows users to view objects in the `productionapp` bucket\. The `GetObject`, `PutObject`, `DeleteObject` permissions allows users to view, update, and delete contents in the `productionapp` bucket\.
 
-1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 

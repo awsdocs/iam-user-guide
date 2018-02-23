@@ -3,7 +3,7 @@
 *Resources* are objects within a service\. IAM resources include groups, users, roles, and policies\. If you are signed in with AWS account root user credentials, you have no restrictions on administering IAM credentials or IAM resources\. However, IAM users must explicitly be given permissions to administer credentials or IAM resources\. You can do this by attaching an identity\-based policy to the user\.
 
 **Note**  
-Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories, we mean an identity\-based, customer managed policy\. For details about policy categories, see [[ERROR] BAD/MISSING LINK TEXT](access_policies.md)\.
+Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories, we mean an identity\-based, customer managed policy\. For details about policy categories, see [IAM Policies](access_policies.md)\.
 
 ## Permissions for Administering IAM Identities<a name="access_permissions-required-identities"></a>
 

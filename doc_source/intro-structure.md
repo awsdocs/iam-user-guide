@@ -53,7 +53,7 @@ IAM checks each policy that matches the context of your request\. If a single po
 + An explicit deny overrides any allows\.
 
 **Note**  
-By default, only the AWS account root user has access to all the resources in that account\. So if you are not signed in as the root user, you must have permissions granted by a policy\.
+By default, only the [AWS account root user](id_root-user.md) has access to all the resources in that account\. So if you are not signed in as the root user, you must have permissions granted by a policy\.
 
 ## Actions<a name="intro-structure-actions"></a>
 

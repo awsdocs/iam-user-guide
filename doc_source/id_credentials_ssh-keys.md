@@ -6,7 +6,7 @@ AWS CodeCommit is a managed version control service that hosts private Git repos
 
 + SSH keys, a locally generated public\-private key pair that you can associate with your IAM user to communicate with AWS CodeCommit repositories over SSH\.
 
-+  AWS access keys, which you can use with the credential helper included with the AWS CLI to communicate with AWS CodeCommit repositories over HTTPS\.
++  [AWS access keys](id_credentials_access-keys.md), which you can use with the credential helper included with the AWS CLI to communicate with AWS CodeCommit repositories over HTTPS\.
 
 See the following sections for more information about each option\. 
 
@@ -49,7 +49,7 @@ With SSH connections, you create public and private key files on your local mach
 + To create an SSH public key and associate it with an IAM user, see [For SSH Connections on Linux, macOS, or Unix](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) or see [For SSH Connections on Windows](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-windows.html) in the *AWS CodeCommit User Guide*\. 
 
 **Note**  
-IAM accepts public keys in the OpenSSH RSA format only with a maximum length of 2048 bits\. If you provide your public key in another format, you will see an error message stating that the key format is not valid\.
+IAM accepts public keys in the OpenSSH RSA format only with a minimum length of 2048 bits and a maximum length of 16384 bits\. If you provide your public key in another format, you will see an error message stating that the key format is not valid\.
 
 ## Use HTTPS with the AWS CLI Credential Helper and AWS CodeCommit<a name="access-keys-code-commit"></a>
 

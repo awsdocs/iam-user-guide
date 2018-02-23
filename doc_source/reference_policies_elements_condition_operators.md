@@ -2,23 +2,23 @@
 
 Condition operators are the "verbs" of conditions and specify the type of comparison that IAM performs\. The condition operators can be grouped into the following categories:
 
-+ String
++ [String](#Conditions_String)
 
-+ Numeric
++ [Numeric](#Conditions_Numeric)
 
-+ Date and time
++ [Date and time](#Conditions_Date)
 
-+ Boolean
++ [Boolean](#Conditions_Boolean)
 
-+ Binary
++ [Binary](#Conditions_BinaryEquals)
 
-+ IP address
++ [IP address](#Conditions_IPAddress)
 
-+ Amazon Resource Name \(ARN\) \(available for only some services\.\)
++ [Amazon Resource Name \(ARN\)](#Conditions_ARN) \(available for only some services\.\)
 
-+ \.\.\.IfExists \(checks if the key value exists as part of another check\)
++ [\.\.\.IfExists](#Conditions_IfExists) \(checks if the key value exists as part of another check\)
 
-+ Null check \(checks if the key value exists as a standalone check\)
++ [Null check](#Conditions_Null) \(checks if the key value exists as a standalone check\)
 
 ## String Condition Operators<a name="Conditions_String"></a>
 
@@ -50,7 +50,7 @@ For example, the following statement contains a `Condition` element that uses th
 }
 ```
 
-The following example uses the `StringLike` condition operator to perform string matching with a policy variable to create a policy that lets an IAM user use the Amazon S3 console to manage his or her own "home directory" in an Amazon S3 bucket\. The policy allows the specified actions on an S3 bucket as long as the `s3:prefix` matches any one of the specified patterns\.
+The following example uses the `StringLike` condition operator to perform string matching with a [policy variable](reference_policies_variables.md) to create a policy that lets an IAM user use the Amazon S3 console to manage his or her own "home directory" in an Amazon S3 bucket\. The policy allows the specified actions on an S3 bucket as long as the `s3:prefix` matches any one of the specified patterns\.
 
 ```
 {

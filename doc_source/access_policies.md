@@ -30,7 +30,7 @@ Throughout the AWS documentation, when we refer to an IAM policy without mention
 ## Overview of JSON Policies<a name="access_policies-json"></a>
 
 Policies are stored in AWS as JSON documents attached to principals as *identity\-based policies*, or to resources as *resource\-based policies*\. It is not necessary for you to understand the JSON syntax\. You can use the visual editor to create and edit customer managed policies without ever using JSON\. However, if you choose to use inline policies for groups, you are still required to create and edit those policies in the JSON editor\. For more information about using the visual editor, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
-
+<a name="policies-introduction"></a>
 **Introduction to JSON Policies**  
 To assign permissions to a user, group, role, or resource, you create a JSON *policy*, which is a document that defines permissions\. The policy document includes the following elements:
 
@@ -85,14 +85,14 @@ IAM policies control access regardless of the interface\. For example, you could
 For basic example policies that cover common scenarios, see [Example Policies](access_policies_examples.md)\. 
 
 AWS managed policies and the Policy Generator are available from the IAM console in the AWS Management Console\. For more information about creating policies in the console, see [Managing IAM Policies](access_policies_manage.md)\. Also, you can use the [AWS Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html) online to create policies for AWS products without accessing the console\.
-
+<a name="multiple-statements-and-policies"></a>
 **Multiple Statements and Multiple Policies**  
 You can attach more than one policy to an entity\. If you have multiple permissions to grant to an entity, you can put them in separate policies, or you can put them all in one policy\. 
 
 Generally, each statement in a policy includes information about a single permission\. If your policy includes multiple statements, a logical OR is applied across the statements at evaluation time\. Similarly, if multiple policies are applicable to a request, a logical OR is applied across the policies at evaluation time\.
 
 Users often have multiple policies that apply to them \(but aren't necessarily *attached* to them\)\. For example, IAM user Bob could have policies attached to him, and other policies attached to the groups he's in\. In addition, he might be accessing an Amazon S3 bucket that has its own bucket policy \(resource\-based policy\)\. All applicable policies are evaluated and the result is always that access is either granted or denied\. For more information about the evaluation logic we use, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
-
+<a name="policies-basic-structure"></a>
 **Policy Structure**  
 Each policy is a JSON document\. As illustrated in the following figure, a policy includes:
 

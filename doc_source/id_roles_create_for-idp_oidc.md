@@ -1,6 +1,6 @@
 # Creating a Role for Web Identity or OpenID Connect Federation \(Console\)<a name="id_roles_create_for-idp_oidc"></a>
 
-Before you can create a role for web identity federation, you must first complete the following prerequisite steps\.
+Before you can create a role for web identity federation, you must first complete the following prerequisite steps\.<a name="oidc-prereqs"></a>
 
 **To prepare to create a role for web identity federation**
 
@@ -12,7 +12,7 @@ Before you can create a role for web identity federation, you must first complet
 
    + [Using OAuth 2\.0 for Login \(OpenID Connect\)](https://developers.google.com/accounts/docs/OAuth2Login) on the Google developers site\.
 
-1. After getting the required information from the identity provider, you can create an *identity provider* in IAM\. For more information, see [Creating OpenID Connect \(OIDC\) Identity Providers](id_roles_providers_create_oidc.md)\.
+1. <a name="idpoidcstep2"></a>After getting the required information from the identity provider, you can create an *identity provider* in IAM\. For more information, see [Creating OpenID Connect \(OIDC\) Identity Providers](id_roles_providers_create_oidc.md)\.
 
 1. Prepare the policies for the role that the IdP\-authenticated users will assume\. As with any role, a role for the mobile app contains two policies\. One is the trust policy that specifies who can assume the role \(the trusted entity or principal\)\. The other policy \(the permission policy\) specifies the actual AWS actions and resources that the mobile app is allowed or denied access to \(similar to user or resource policies\)\.
 
@@ -49,7 +49,7 @@ Before you can create a role for web identity federation, you must first complet
 
        `"Principal":{"Federated":"accounts.google.com"}`
 
-     + For other OIDC providers, use the ARN of the OIDC identity provider you created in [[ERROR] BAD/MISSING LINK TEXT](#idpoidcstep2), like the following example:
+     + For other OIDC providers, use the ARN of the OIDC identity provider you created in [Step 2](#idpoidcstep2), like the following example:
 
        `"Principal":{"Federated":"arn:aws:iam::123456789012:oidc-provider/server.example.com"}`
 
@@ -86,7 +86,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Facebook\. In this example, *111222333444555* represents the app ID assigned by Facebook\. To learn how to create an IAM policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Facebook\. In this example, *111222333444555* represents the app ID assigned by Facebook\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
    ```
    {
@@ -101,7 +101,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Google\. In this example, *666777888999000* represents the app ID assigned by Google\. To learn how to create an IAM policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Google\. In this example, *666777888999000* represents the app ID assigned by Google\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
    ```
    {
@@ -116,7 +116,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   The following example shows a policy for a role that the mobile app could assume if the application is using Amazon Cognito\. In this example, *us\-east:12345678\-ffff\-ffff\-ffff\-123456* represents the identity pool ID assigned by Amazon Cognito\. To learn how to create an IAM policy using this example JSON policy document, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_create.md#access_policies_create-json-editor)\.
+   The following example shows a policy for a role that the mobile app could assume if the application is using Amazon Cognito\. In this example, *us\-east:12345678\-ffff\-ffff\-ffff\-123456* represents the identity pool ID assigned by Amazon Cognito\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
    ```
    {

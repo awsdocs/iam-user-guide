@@ -10,7 +10,7 @@ These differences lead to the following advantages for using temporary credentia
 
 + You do not have to distribute or embed long\-term AWS security credentials with an application\.
 
-+ You can provide access to your AWS resources to users without having to define an AWS identity for them\. Temporary credentials are the basis for roles and identity federation\.
++ You can provide access to your AWS resources to users without having to define an AWS identity for them\. Temporary credentials are the basis for [roles and identity federation](id_roles.md)\.
 
 + The temporary security credentials have a limited lifetime, so you do not have to rotate them or explicitly revoke them when they're no longer needed\. After temporary security credentials expire, they cannot be reused\. You can specify how long the credentials are valid, up to a maximum limit\. 
 

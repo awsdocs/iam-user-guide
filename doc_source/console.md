@@ -5,7 +5,7 @@ The AWS Management Console provides a web\-based way to administer AWS services\
 When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\.
 
 **Important**  
-We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the best practice of using the root user only to create your first IAM user\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
+We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
 
 This section provides information about the AWS Management Console sign\-in page\. It explains how to create a unique sign\-in URL for IAM users in your account, and how to sign in as the root user\. 
 
@@ -14,7 +14,7 @@ If your organization has an existing identity system, you might want to create a
 
 ## The IAM User Sign\-in Page<a name="user-sign-in-page"></a>
 
-To use the AWS Management Console, IAM users must provide their account ID or account alias in addition to their user name and password\. When you, as an administrator, create an IAM user in the console, you must send the sign\-in credentials to that user, including the user name and the URL to the account sign\-in page\. 
+To use the AWS Management Console, IAM users must provide their account ID or account alias in addition to their user name and password\. When you, as an administrator, [create an IAM user in the console](id_users_create.md#id_users_create_console), you must send the sign\-in credentials to that user, including the user name and the URL to the account sign\-in page\. 
 
 **Important**  
 Depending on how you set up the IAM user, provide all users with a temporary password for their first sign\-in and, if appropriate, an MFA device\. For detailed information about passwords and MFA devices, see [Managing Passwords](id_credentials_passwords.md) and [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
@@ -52,4 +52,4 @@ For convenience, the AWS sign\-in page uses a browser cookie to remember the IAM
 Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the root user\.
 
 **Note**  
-If you previously signed in to the console with *IAM user* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.
+If you previously signed in to the console with *[IAM user](id_users.md)* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.

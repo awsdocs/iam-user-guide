@@ -1,14 +1,14 @@
 # Access Management<a name="access"></a>
 
-AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a principal makes a request in AWS, the IAM service checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access by creating policies and attaching them to IAM identities or AWS resources\. Those policies specify the permissions that are allowed or denied\. For details about the rest of the authentication and authorization process, see [Understanding How IAM Works](intro-structure.md)\.
+AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a [principal](intro-structure.md#intro-structure-principal) makes a request in AWS, the IAM service checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access by creating policies and attaching them to IAM identities or AWS resources\. Those policies specify the permissions that are allowed or denied\. For details about the rest of the authentication and authorization process, see [Understanding How IAM Works](intro-structure.md)\.
 
 ![\[AccessManagement_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/access-diagram_800.png)
 
-During authorization, IAM uses values from the request context to check for matching policies and determine whether to allow or deny the request\. 
+During authorization, IAM uses values from the [request context](intro-structure.md#intro-structure-request) to check for matching policies and determine whether to allow or deny the request\. 
 
 Policies are stored in AWS as JSON documents and specify the permissions that are allowed or denied for principals \(*identity\-based policies*\) or resources \(*resource\-based policies*\)\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. Resource\-based policies also include trust policies\. For more information about these types of policies, see [IAM Policies](access_policies.md)\.
 
-IAM checks each policy that matches the context of the request\. If a single policy includes a denied action, IAMdenies the entire request and stops evaluating policies\. This is called an *explicit deny*\. Because requests are *denied by default*, IAM authorizes your request only if every part of your request is allowed by the matching policies\. The evaluation logic follows these rules:
+IAM checks each policy that matches the context of the request\. If a single policy includes a denied action, IAMdenies the entire request and stops evaluating policies\. This is called an *explicit deny*\. Because requests are *denied by default*, IAM authorizes your request only if every part of your request is allowed by the matching policies\. The [evaluation logic](reference_policies_evaluation-logic.md) follows these rules:
 
 + By default, all requests are denied\.
 

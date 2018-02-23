@@ -23,7 +23,7 @@ You can use the AWS Management Console to create and delete SAML identity provid
 
 **To create a SAML identity provider**
 
-1. Before you can create a SAML identity provider, you need the SAML metadata document that you get from the IdP that includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+1. <a name="samlstep1"></a>Before you can create a SAML identity provider, you need the SAML metadata document that you get from the IdP that includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
 **Important**  
 The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
 
@@ -35,7 +35,7 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 
 1. Type a name for the identity provider\.
 
-1. For **Metadata Document**, click **Choose File**, specify the SAML metadata document that you downloaded in [[ERROR] BAD/MISSING LINK TEXT](#samlstep1), and click **Open**\. Click **Next Step**\.
+1. For **Metadata Document**, click **Choose File**, specify the SAML metadata document that you downloaded in [Step 1](#samlstep1), and click **Open**\. Click **Next Step**\.
 
 1. Verify the information you have provided, and click **Create**\. 
 

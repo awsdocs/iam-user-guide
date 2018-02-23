@@ -64,7 +64,7 @@ The next step is to create an IAM role that establishes a trust relationship bet
 }
 ```
 
-For the permission policy in the role, you specify permissions as you would for any role, user, or group\. For example, if users from your organization are allowed to administer Amazon EC2 instances, you explicitly allow Amazon EC2 actions in the permission policy\. You can do this by assigning a managed policy, such as the **Amazon EC2 Full Access** managed policy\. 
+For the [permission policy](access_policies.md) in the role, you specify permissions as you would for any role, user, or group\. For example, if users from your organization are allowed to administer Amazon EC2 instances, you explicitly allow Amazon EC2 actions in the permission policy\. You can do this by assigning a [managed policy](access_policies_manage-attach-detach.md), such as the **Amazon EC2 Full Access** managed policy\. 
 
 For details about creating a role for a SAML IdP, see [Creating a Role for SAML 2\.0 Federation \(Console\)](id_roles_create_for-idp_saml.md)\. 
 

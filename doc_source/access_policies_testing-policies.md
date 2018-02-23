@@ -43,7 +43,7 @@ The simulator evaluates the policies that you choose and determines the effectiv
 
 You can use the policy simulator console or the policy simulator API to test policies\. By default, console users can test policies that are not yet attached to a user, group, or role by typing or copying those policies into the simulator\. These policies are used only in the simulation and do not disclose sensitive information\. API users must have permissions to test unattached policies\. To allow console or API users to test policies that are attached to IAM users, groups, or roles in your AWS account, you must provide users with permissions to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
 
-For examples of console and API policies that allow a user to simulate policies, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_examples.md#policy_library_IAM)\.
+For examples of console and API policies that allow a user to simulate policies, see [Example Policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
 
 ### Permissions Required for Using the Policy Simulator Console<a name="permissions-required_policy-simulator-console"></a>
 
@@ -200,7 +200,7 @@ To sign in to the policy simulator as an IAM user, use your unique sign\-in URL 
 
    The simulator opens in **Existing Policies** mode and lists the IAM users in your account under **Users, Groups, and Roles\.**
 
-1. Choose the option that is appropriate to your task:  
+1. <a name="polsimstep-selectid"></a>Choose the option that is appropriate to your task:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html)
 **Tip**  
@@ -211,22 +211,22 @@ To test a customer managed policy that is attached to a user: In the navigation 
 
    If your account is not a member of an organization, then there are no OCPs to simulate\.
 
-1. \(Optional\) To test only a subset of policies attached to a user, group, or role, in the **Policies** pane clear the check box next to each policy that you want to exclude\.
+1. <a name="polsimstep-polsubset"></a>\(Optional\) To test only a subset of policies attached to a user, group, or role, in the **Policies** pane clear the check box next to each policy that you want to exclude\.
 
-1. Under **Policy Simulator**, choose **Select service** and then choose the service to test\. Then choose **Select actions** and select one or more actions to test\. Although the menus show the available selections for only one service at a time, all the services and actions that you have selected appear in **Action Settings and Results**\. 
+1. <a name="polsimstep-service"></a>Under **Policy Simulator**, choose **Select service** and then choose the service to test\. Then choose **Select actions** and select one or more actions to test\. Although the menus show the available selections for only one service at a time, all the services and actions that you have selected appear in **Action Settings and Results**\. 
 
-1. \(Optional\) If any of the policies that you choose in [[ERROR] BAD/MISSING LINK TEXT](#polsimstep-selectid) and [[ERROR] BAD/MISSING LINK TEXT](#polsimstep-polsubset) include conditions with AWS *global condition keys*, then supply values for those keys\. You can do this by by expanding the **Global Settings** section and typing values for the key names displayed there\.
+1. \(Optional\) If any of the policies that you choose in [Step 2](#polsimstep-selectid) and [Step 4](#polsimstep-polsubset) include conditions with [AWS *global condition keys*](reference_policies_condition-keys.md), then supply values for those keys\. You can do this by by expanding the **Global Settings** section and typing values for the key names displayed there\.
 **Warning**  
 If you leave the value for a condition key empty, then that key is ignored during the simulation\. In some cases, this results in an error and the simulation fails to run\. In other cases the simulation runs, but the results might not be reliable because the simulation does not match the real\-world conditions that include a value for the condition key or variable\.
 
-1. \(Optional\) Each selected action appears in the **Action Settings and Results** list with **Not simulated** shown in the **Permission** column until you actually run the simulation\. Before you run the simulation, you can configure each action with a resource\. To configure individual actions for a specific scenario, choose the arrow to expand the action's row\. If the action supports resource\-level permissions, you can type the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the specific resource whose access you want to test\. By default, each resource is set to a wildcard \(\*\)\. You can also specify a value for any condition context keys\. As noted previously, keys with empty values are ignored, which can cause simulation failures or unreliable results\.
+1. \(Optional\) Each selected action appears in the **Action Settings and Results** list with **Not simulated** shown in the **Permission** column until you actually run the simulation\. Before you run the simulation, you can configure each action with a resource\. To configure individual actions for a specific scenario, choose the arrow to expand the action's row\. If the action supports resource\-level permissions, you can type the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the specific resource whose access you want to test\. By default, each resource is set to a wildcard \(\*\)\. You can also specify a value for any [condition context keys](reference_policies_actionsconditions.md)\. As noted previously, keys with empty values are ignored, which can cause simulation failures or unreliable results\.
 
    1. Choose the arrow next to the action name to expand each row and configure any additional information required to accurately simulate the action in your scenario\. If the action requires any resource\-level permissions, you can type the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of the specific resource that you want to simulate access to\. By default, each resource is set to a wildcard \(\*\)\.
 
    1. If the action supports resource\-level permissions but does not require them, then you can choose **Add Resource** to select the resource type that you want to add to the simulation\. 
 
    1. If any of the selected policies include a `Condition` element that references a context key for this action's service, then that key name is displayed under the action\. You can specify the value to be used during the simulation of that action for the specified resource\.
-
+<a name="resource-scenarios"></a>
 **Actions that require different groups of resource types**  
 Some actions require different resource types under different circumstances\. Each group of resource types is associated with a scenario\. If one of these applies to your simulation, select it and the simulator requires the resource types appropriate for that scenario\. The following list shows each of the supported scenario options and the resources that you must define to run the simulation\.
 
@@ -256,7 +256,7 @@ Some actions require different resource types under different circumstances\. Ea
 
      instance, image, security\-group, network\-interface, subnet, volume
 
-1. \(Optional\) If you want to include a resource\-based policy in your simulation, then you must first select the actions that you want to simulate on that resource in [[ERROR] BAD/MISSING LINK TEXT](#polsimstep-service)\. Expand the rows for the selected actions, and type the ARN of the resource with a policy that you want to simulate\. Then select **Include Resource Policy** next to the **ARN** text box\. The IAM policy simulator currently supports resource\-based policies from only the following services: Amazon S3 \(resource\-based policies only; ACLs are not currently supported\), Amazon SQS, Amazon SNS, and unlocked Amazon Glacier vaults \(locked vaults are not currently supported\)\.
+1. <a name="polsimstep-respol"></a>\(Optional\) If you want to include a resource\-based policy in your simulation, then you must first select the actions that you want to simulate on that resource in [Step 5](#polsimstep-service)\. Expand the rows for the selected actions, and type the ARN of the resource with a policy that you want to simulate\. Then select **Include Resource Policy** next to the **ARN** text box\. The IAM policy simulator currently supports resource\-based policies from only the following services: Amazon S3 \(resource\-based policies only; ACLs are not currently supported\), Amazon SQS, Amazon SNS, and unlocked Amazon Glacier vaults \(locked vaults are not currently supported\)\.
 
 1. Choose **Run Simulation** in the upper\-right corner\.
 

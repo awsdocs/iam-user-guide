@@ -9,7 +9,7 @@ This section describes how to use the IAM console to switch to a role:
 
 + You can only switch roles when you sign in as an IAM user\. You cannot switch roles if you sign in as the AWS account root user\.
 
-+ If your administrator provides you with a link, click the link and then skip to step [[ERROR] BAD/MISSING LINK TEXT](#StepJumpToHere) in the following procedure\. The link takes you to the appropriate web page and fills in the account ID \(or alias\) and the role name for you\.
++ If your administrator provides you with a link, click the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. The link takes you to the appropriate web page and fills in the account ID \(or alias\) and the role name for you\.
 **Tip**  
 You can manually construct the link yourself by using the following format:  
 `https://signin.aws.amazon.com/switchrole?account=account_id_number&roleName=role_name&displayName=text_to_display`  
@@ -35,7 +35,7 @@ If your administrator created the role with a path, such as `division_abc/subdiv
 **Important**  
 If you create the role programmatically instead of in the IAM console, then you have an option to add a `Path` of up to 512 characters in addition to the `RoleName`, which can be up to 64 characters long\. However, to use a role with the Switch Role feature in the IAM console, the combined `Path` and `RoleName` cannot exceed 64 characters\. This is a limit of the browser cookies that store the role name\.
 
-1. \(Optional\) Type text that you want to appear on the navigation bar in place of your user name when this role is active\. A name is suggested, based on the account and role information, but you can change it to whatever has meaning for you\. You can also select a color to highlight the display name\. The name and color can help remind you when this role is active, which changes your permissions\. For example, for a role that gives you access to the test environment, you might specify a **Display Name** of **Test** and select the green **Display Color**\. For the role that gives you access to production, you might specify a **Display Name** of **Production** and select red as the **Display Color**\.
+1. <a name="StepJumpToHere"></a>\(Optional\) Type text that you want to appear on the navigation bar in place of your user name when this role is active\. A name is suggested, based on the account and role information, but you can change it to whatever has meaning for you\. You can also select a color to highlight the display name\. The name and color can help remind you when this role is active, which changes your permissions\. For example, for a role that gives you access to the test environment, you might specify a **Display Name** of **Test** and select the green **Display Color**\. For the role that gives you access to production, you might specify a **Display Name** of **Production** and select red as the **Display Color**\.
 
 1. Click **Switch Role**\. The display name and color replace your user name on the navigation bar, and you can start using the permissions that the role grants you\.
 

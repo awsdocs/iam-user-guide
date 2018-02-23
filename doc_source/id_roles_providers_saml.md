@@ -4,9 +4,9 @@ AWS supports identity federation with [SAML 2\.0 \(Security Assertion Markup Lan
 
 IAM federation supports these use cases: 
 
-+ **Federated access to allow a user or application in your organization to call AWS APIs**\. You use a SAML assertion \(as part of the authentication response\) that is generated in your organization to get temporary security credentials\. This scenario is similar to other federation scenarios that IAM supports, like those described in [Requesting Temporary Security Credentials](id_credentials_temp_request.md) and [About Web Identity Federation](id_roles_providers_oidc.md)\. However, SAML 2\.0–based identity providers in your organization handle many of the details at run time for performing authentication and authorization checking\. This is the scenario discussed in this topic\.
++ [**Federated access to allow a user or application in your organization to call AWS APIs**](#CreatingSAML-configuring)\. You use a SAML assertion \(as part of the authentication response\) that is generated in your organization to get temporary security credentials\. This scenario is similar to other federation scenarios that IAM supports, like those described in [Requesting Temporary Security Credentials](id_credentials_temp_request.md) and [About Web Identity Federation](id_roles_providers_oidc.md)\. However, SAML 2\.0–based identity providers in your organization handle many of the details at run time for performing authentication and authorization checking\. This is the scenario discussed in this topic\.
 
-+ **Web\-based single sign\-on \(SSO\) to the AWS Management Console from your organization**\. Users can sign in to a portal in your organization hosted by a SAML 2\.0–compatible IdP, select an option to go to AWS, and be redirected to the console without having to provide additional sign\-in information\. In addition to being able to use a third\-party SAML IdP to establish SSO access to the console, you can alternatively create a custom IdP to enable console access for your external users\. For more information about building a custom IdP, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
++ [**Web\-based single sign\-on \(SSO\) to the AWS Management Console from your organization**](id_roles_providers_enable-console-saml.md)\. Users can sign in to a portal in your organization hosted by a SAML 2\.0–compatible IdP, select an option to go to AWS, and be redirected to the console without having to provide additional sign\-in information\. In addition to being able to use a third\-party SAML IdP to establish SSO access to the console, you can alternatively create a custom IdP to enable console access for your external users\. For more information about building a custom IdP, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
 
 ## Using SAML\-Based Federation for API Access to AWS<a name="CreatingSAML-configuring"></a>
 
@@ -28,7 +28,7 @@ Imagine that in your organization, you want to provide a way for users to copy d
 
 ### Overview of Configuring SAML 2\.0\-Based Federation<a name="CreatingSAML-configuring-IdP"></a>
 
-Before you can use SAML 2\.0\-based federation as described in the preceding scenario and diagram, you must configure your organization's IdP and your AWS account to trust each other\. The general process for configuring this trust is described in the following steps\. Inside your organization, you must have an IdP that supports SAML 2\.0, like Microsoft Active Directory Federation Service \(AD FS, part of Windows Server\), Shibboleth, or another compatible SAML 2\.0 provider\. 
+Before you can use SAML 2\.0\-based federation as described in the preceding scenario and diagram, you must configure your organization's IdP and your AWS account to trust each other\. The general process for configuring this trust is described in the following steps\. Inside your organization, you must have an [IdP that supports SAML 2\.0](id_roles_providers_saml_3rd-party.md), like Microsoft Active Directory Federation Service \(AD FS, part of Windows Server\), Shibboleth, or another compatible SAML 2\.0 provider\. 
 
 **To configure your organization's IdP and AWS to trust each other**
 
@@ -36,19 +36,19 @@ Before you can use SAML 2\.0\-based federation as described in the preceding sce
 
    `https://signin.aws.amazon.com/static/saml-metadata.xml`
 
-1. Using your organization's IdP, you generate an equivalent metadata XML file that can describe your IdP as an identity provider to AWS\. It must include the issuer name, a creation date, an expiration date, and keys that AWS can use to validate authentication responses \(assertions\) from your organization\. 
+1. <a name="createxml"></a>Using your organization's IdP, you generate an equivalent metadata XML file that can describe your IdP as an identity provider to AWS\. It must include the issuer name, a creation date, an expiration date, and keys that AWS can use to validate authentication responses \(assertions\) from your organization\. 
 
-1. In the IAM console, you create a SAML identity provider entity\. As part of this process, you upload the SAML metadata document that was produced by the IdP in your organization in [[ERROR] BAD/MISSING LINK TEXT](#createxml)\. For more information, see [Creating SAML Identity Providers](id_roles_providers_create_saml.md)\.
+1. <a name="samlovrcreateentity"></a>In the IAM console, you create a SAML identity provider entity\. As part of this process, you upload the SAML metadata document that was produced by the IdP in your organization in [Step 2](#createxml)\. For more information, see [Creating SAML Identity Providers](id_roles_providers_create_saml.md)\.
 
-1. In IAM, you create one or more IAM roles\. In the role's trust policy, you set the SAML provider as the principal, which establishes a trust relationship between your organization and AWS\. The role's permission policy establishes what users from your organization are allowed to do in AWS\. For more information, see [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\.
+1. <a name="samlovrcreaterole"></a>In IAM, you create one or more IAM roles\. In the role's trust policy, you set the SAML provider as the principal, which establishes a trust relationship between your organization and AWS\. The role's permission policy establishes what users from your organization are allowed to do in AWS\. For more information, see [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\.
 
-1. In your organization's IdP, you define assertions that map users or groups in your organization to the IAM roles\. Note that different users and groups in your organization might map to different IAM roles\. The exact steps for performing the mapping depend on what IdP you're using\. In the earlier scenario of an Amazon S3 folder for users, it's possible that all users will map to the same role that provides Amazon S3 permissions\. For more information, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\.
+1. In your organization's IdP, you define assertions that map users or groups in your organization to the IAM roles\. Note that different users and groups in your organization might map to different IAM roles\. The exact steps for performing the mapping depend on what IdP you're using\. In the [earlier scenario](#CreatingSAML-configuring) of an Amazon S3 folder for users, it's possible that all users will map to the same role that provides Amazon S3 permissions\. For more information, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\.
 
    If your IdP enables SSO to the AWS console, then you can configure the maximum duration of the console sessions\. For more information, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md)\.
 **Note**  
 The AWS implementation of SAML 2\.0 federation does not support encrypted SAML assertions between the identity provider and AWS\. However, the traffic between the customer's systems and AWS is transmitted over an encrypted \(TLS\) channel\.
 
-1. In the application that you're creating, you call the AWS Security Token Service `AssumeRoleWithSAML` API, passing it the ARN of the SAML provider you created in [[ERROR] BAD/MISSING LINK TEXT](#samlovrcreateentity), the ARN of the role to assume that you created in [[ERROR] BAD/MISSING LINK TEXT](#samlovrcreaterole), and the SAML assertion about the current user that you get from your IdP\. AWS makes sure that the request to assume the role comes from the IdP referenced in the SAML provider\. 
+1. In the application that you're creating, you call the AWS Security Token Service `AssumeRoleWithSAML` API, passing it the ARN of the SAML provider you created in [Step 3](#samlovrcreateentity), the ARN of the role to assume that you created in [Step 4](#samlovrcreaterole), and the SAML assertion about the current user that you get from your IdP\. AWS makes sure that the request to assume the role comes from the IdP referenced in the SAML provider\. 
 
    For more information, see [AssumeRoleWithSAML](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) in the *AWS Security Token Service API Reference*\. 
 
@@ -63,7 +63,7 @@ The role or roles that you create in IAM define what federated users from your o
   "Version": "2012-10-17",
   "Statement": [{
     "Effect": "Allow",
-    "Principal": {"AWS": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:saml-provider/ExampleOrgSSOProvider"},
+    "Principal": {"Federated": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:saml-provider/ExampleOrgSSOProvider"},
     "Action": "sts:AssumeRoleWithSAML",
     "Condition": {
       "StringEquals": {

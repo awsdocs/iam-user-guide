@@ -60,13 +60,13 @@ The following example shows a policy for an Amazon S3 bucket that uses a policy 
 }
 ```
 
-When this policy is evaluated, IAM replaces the variable `${aws:username}`with the friendly name of the actual current user\. This means that a single policy applied to a group of users can control access to a bucket by using the user name as part of the resource's name\. 
+When this policy is evaluated, IAM replaces the variable `${aws:username}`with the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the actual current user\. This means that a single policy applied to a group of users can control access to a bucket by using the user name as part of the resource's name\. 
 
 The variable is marked using a `$` prefix followed by a pair of curly braces \(`{ }`\)\. Inside the `${ }` characters, you can include the name of the value from the request that you want to use in the policy\. The values you can use are discussed later on this page\.
 
 **Note**  
 In order to use policy variables, you must include the `Version` element in a statement, and the version must be set to a version that supports policy variables\. Variables were introduced in version `2012-10-17`\. Earlier versions of the policy language don't support policy variables\. If you don't include the `Version` element and set it to an appropriate version date, variables like `${aws:username}` are treated as literal strings in the policy\.   
-A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [[ERROR] BAD/MISSING LINK TEXT](reference_policies_elements_version.md)\. To learn more about policy versions, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_managed-versioning.md)\.
+A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
 
 You can use policy variables in a similar way to allow each user to manage his or her own access keys\. A policy that allows a user to programmatically change the access key for user `David` looks like this: 
 
@@ -162,7 +162,7 @@ A policy variable can also be used for `Condition` values in any condition that 
 
 ## Request Information That You Can Use for Policy Variables<a name="policy-vars-infotouse"></a>
 
- The values that can be substituted for policy variables must come from the current request context\. 
+ The values that can be substituted for policy variables must come from the current [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext)\. 
 
 ### Information Available in All Requests<a name="policy-vars-infoallreqs"></a>
 
@@ -184,7 +184,7 @@ Policies contain keys whose values you can use as policy variables\. \(Under som
 
 + **`aws:userid`** This value is the unique ID for the current user—see the chart that follows\.
 
-+ **`aws:username`** This is a string containing the friendly name of the current user—see the chart that follows\.
++ **`aws:username`** This is a string containing the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the current user—see the chart that follows\.
 
 + **`ec2:SourceInstanceARN`** This is the Amazon Resource Name \(ARN\) of the Amazon EC2 instance from which the request is made\. This key is present only when the request comes from an Amazon EC2 instance using an IAM role associated with an EC2 instance profile\.
 

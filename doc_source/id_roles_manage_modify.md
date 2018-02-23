@@ -4,11 +4,11 @@ You can change or modify a role in the following ways:
 
 + To change who can assume a role, modify the role's trust policy\.
 **Note**  
-If the role is a *service\-linked role*, the role's trust policy cannot be modified\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\.
+If the role is a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*, the role's trust policy cannot be modified\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\.
 
 + To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\.
 **Note**  
-If the role is a *service\-linked role*, the role's permissions can be modified only from the service that depends on the role\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+If the role is a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*, the role's permissions can be modified only from the service that depends on the role\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 
 + To change the description of the role, modify the description text\.
 

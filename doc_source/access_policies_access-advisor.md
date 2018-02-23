@@ -122,17 +122,17 @@ The administrator might also infer that the developer’s access to Route 53, E
 
 As this example shows, you might use the service last accessed data for principals as a starting point for a number of possible next steps, including the following suggestions\. However, it’s up to you as an IAM administrator to choose the steps that strike the right balance of accessibility and least\-privilege that’s appropriate to your organization\.
 
-+ Removing membership in a group
++ [Removing membership in a group](id_groups_manage_add-remove-users.md)
 
-+ Detaching a managed policy
++ [Detaching a managed policy](access_policies_manage-attach-detach.md#detach-managed-policy-console)
 
-+ Deleting a managed policy
++ [Deleting a managed policy](access_policies_manage-delete.md#delete-managed-policy)
 
-+ Deleting an inline policy and converting to a managed policy
++ [Deleting an inline policy and converting to a managed policy](access_policies_manage-delete.md)
 
-+ Editing an existing policy to remove permissions
++ [Editing an existing policy to remove permissions](access_policies_manage-edit.md)
 
-+ Adding an explicit deny to an existing policy
++ [Adding an explicit deny to an existing policy](reference_policies_evaluation-logic.md#AccessPolicyLanguage_Interplay)
 
 ## Regions Where Data Is Tracked<a name="access-advisor_tracking-period"></a>
 

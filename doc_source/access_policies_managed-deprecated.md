@@ -1,6 +1,6 @@
 # Deprecated AWS Managed Policies<a name="access_policies_managed-deprecated"></a>
 
-To simplify the assignment of permissions, AWS provides managed policies—predefined policies that are ready to be attached to your IAM users, groups, and roles\.
+To simplify the assignment of permissions, AWS provides [managed policies](access_policies_managed-vs-inline.md)—predefined policies that are ready to be attached to your IAM users, groups, and roles\.
 
 Sometimes AWS needs to add a new permission to an existing policy, such as when a new service is introduced\. Adding a new permission to an existing policy does not disrupt or remove any feature or ability\.
 

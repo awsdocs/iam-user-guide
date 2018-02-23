@@ -36,7 +36,7 @@ If you are using an AWS account created after September 14, 2017, you might see 
 
    If you are using a virtual MFA device, remove the account from your device\. Then go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA virtual device entity before you create a new one\.
 
-1. If your MFA device is missing or stolen, also change your AWS password in case an attacker has stolen the authentication device and might also have your current password\.
+1. If your MFA device is missing or stolen, also [change your AWS password](id_credentials_passwords_change-root.md) in case an attacker has stolen the authentication device and might also have your current password\.
 
 **To get help for an MFA device as an IAM user**
 
@@ -46,4 +46,4 @@ If you are using an AWS account created after September 14, 2017, you might see 
 
    If you are using a virtual MFA device, remove the account from your device\. Then enable the virtual device as described in [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)\.
 
-1. If your MFA device is missing or stolen, also change your password in case an attacker has stolen the authentication device and might also have your current password\.
+1. If your MFA device is missing or stolen, also [change your password](id_credentials_passwords.md#id_credentials_passwords_user-change-own) in case an attacker has stolen the authentication device and might also have your current password\.

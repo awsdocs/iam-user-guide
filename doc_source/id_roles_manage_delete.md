@@ -9,7 +9,7 @@ Make sure that you do not have any Amazon EC2 instances running with the role or
 
 ## Deleting a Service\-Linked Role<a name="id_roles_manage_delete_slr"></a>
 
-If the role is a *service\-linked role*, review the documentation for the linked service to learn how to delete the role\. You can view the service\-linked roles in your account by going to the IAM **Roles** page in the console\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. A banner on the role's **Summary** page also indicates that the role is a service\-linked role\.
+If the role is a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*, review the documentation for the linked service to learn how to delete the role\. You can view the service\-linked roles in your account by going to the IAM **Roles** page in the console\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. A banner on the role's **Summary** page also indicates that the role is a service\-linked role\.
 
 If the service does not include documentation for deleting the service\-linked role, then you can use the IAM console, API, or CLI to delete the role\. For more information, see [Deleting a Service\-Linked Role](using-service-linked-roles.md#delete-service-linked-role)\.
 

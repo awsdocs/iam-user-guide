@@ -6,15 +6,15 @@ You can change the permissions for an IAM user in your AWS account by changing i
 
 + Add or remove a user from a group\.
 
-+ Add, remove, or edit a managed policy attached to the group\. This policy can be an AWS managed policy or a customer managed policy that you create\.
++ Add, remove, or edit a managed policy attached to the group\. This policy can be an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies) or a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) that you create\.
 
-+ Add, remove, or edit a group's inline policies\.
++ Add, remove, or edit a group's [inline policies](access_policies_managed-vs-inline.md#inline-policies)\.
 
 **Direct policy attachment**  
 
-+ Add, remove, or edit a managed policy attached directly to a user\. This policy can be an AWS managed policy or a customer managed policy that you create\.
++ Add, remove, or edit a managed policy attached directly to a user\. This policy can be an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies) or a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) that you create\.
 
-+ Add, remove, or edit a user's inline policies\.
++ Add, remove, or edit a user's [inline policies](access_policies_managed-vs-inline.md#inline-policies)\.
 
 For information about the permissions that you need in order to modify the permissions for a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\.
 
@@ -22,13 +22,13 @@ For information about the permissions that you need in order to modify the permi
 
 You can change permissions associated with a user through one of three techniques:
 
-+ **Add user to group** – Make the user a member of a group that already has policies attached\. Every member of the group receives the permissions granted by the group's policies\.
++ [**Add user to group**](#by-add-users-to-group) – Make the user a member of a group that already has policies attached\. Every member of the group receives the permissions granted by the group's policies\.
 
-+ **Copy permissions from existing user** – Copy all group memberships and attached managed policies as well as all inline policies embedded in the source user\.
++ [**Copy permissions from existing user**](#by-copying-user) – Copy all group memberships and attached managed policies as well as all inline policies embedded in the source user\.
 
-+ **Attach policies directly to user** – Attach a managed policy directly to the user\. As a best practice, we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
++ [**Attach policies directly to user**](#by-direct-attach-policy) – Attach a managed policy directly to the user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
 
-### Adding Permissions by Adding the User to a Group<a name="w3ab1c19c19c26b9b6"></a>
+### Adding Permissions by Adding the User to a Group<a name="w3ab1c19c19c26b9b6"></a><a name="by-add-users-to-group"></a>
 
 **To add permissions to a user by adding the user to a group**
 
@@ -68,7 +68,7 @@ Group names can be a combination of up to 128 letters, digits, and these charact
 
 The new permissions affect the user immediately\.
 
-### Adding Permissions by Copying from Another User<a name="w3ab1c19c19c26b9b8"></a>
+### Adding Permissions by Copying from Another User<a name="w3ab1c19c19c26b9b8"></a><a name="by-copying-user"></a>
 
 **To add permissions to a user by copying permissions from another user**
 
@@ -84,7 +84,7 @@ The new permissions affect the user immediately\.
 
 The new permissions affect the user immediately\.
 
-### Adding Permissions by Attaching Policies Directly to the User<a name="w3ab1c19c19c26b9c10"></a>
+### Adding Permissions by Attaching Policies Directly to the User<a name="w3ab1c19c19c26b9c10"></a><a name="by-direct-attach-policy"></a>
 
 **To add permissions to a user by directly attaching managed policies**
 

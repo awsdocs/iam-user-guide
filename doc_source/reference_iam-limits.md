@@ -17,7 +17,7 @@ The following are restrictions on IAM names:
 
 + Path names must begin and end with a forward slash \(/\)\.
 
-+ Policy names for inline policies must be unique to the user, group, or role they are embedded in, and can contain any Basic Latin \(ASCII\) characters minus the following reserved characters: backward slash \(\\\), forward slash \(/\), asterisk \(\*\), question mark \(?\), and white space\. These characters are reserved according to [RFC 3986](https://tools.ietf.org/html/rfc3986#section-2.2)\. 
++ Policy names for [inline policies](access_policies_managed-vs-inline.md) must be unique to the user, group, or role they are embedded in, and can contain any Basic Latin \(ASCII\) characters minus the following reserved characters: backward slash \(\\\), forward slash \(/\), asterisk \(\*\), question mark \(?\), and white space\. These characters are reserved according to [RFC 3986](https://tools.ietf.org/html/rfc3986#section-2.2)\. 
 
 + User passwords \(login profiles\) can contain any Basic Latin \(ASCII\) characters\.
 
@@ -37,7 +37,7 @@ AWS allows you to request an increase to default IAM entity limits\. To learn ho
 | Customer managed policies in an AWS account | 1500 | 
 | Groups in an AWS account | 300 | 
 | Roles in an AWS account | 1000 | 
-| Users in an AWS account | 5000 \(If you need to add a large number of users, consider using temporary security credentials\.\) | 
+| Users in an AWS account | 5000 \(If you need to add a large number of users, consider using [temporary security credentials](id_credentials_temp.md)\.\) | 
 | Virtual MFA devices \(assigned or unassigned\) in an AWS account | Equal to the user quota for the account | 
 | Instance profiles in an AWS account | 1000 | 
 | Server certificates stored in an AWS account | 20 | 
@@ -86,5 +86,5 @@ The following are the maximum lengths for entities:
 | Alias for an AWS account ID | 3 to 63 characters | 
 | Role trust policy JSON text \(the policy that determines who is allowed to assume the role\) | 2,048 characters | 
 | Role session name | 64 characters | 
-| For inline policies | You can add as many inline policies as you want to an IAM user, role, or group, but the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count whitespace when calculating the size of a policy against these limitations\.  | 
-| For managed policies | [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) IAM does not count whitespace when calculating the size of a policy against this limitation\.  | 
+| For [inline policies](access_policies_managed-vs-inline.md) | You can add as many inline policies as you want to an IAM user, role, or group, but the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count whitespace when calculating the size of a policy against these limitations\.  | 
+| For [managed policies](access_policies_managed-vs-inline.md) | [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) IAM does not count whitespace when calculating the size of a policy against this limitation\.  | 

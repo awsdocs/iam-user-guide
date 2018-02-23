@@ -81,7 +81,7 @@ For additional notes, see [Policy Grammar Notes](#policies-grammar-notes) follow
 The following listing describes the policy language grammar\. For conventions used in the listing, see the preceding section\. For additional information, see the notes that follow\.
 
 **Note**  
-This grammar describes policies marked with a version of `2008-10-17` and `2012-10-17`\. A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_managed-versioning.md)\.
+This grammar describes policies marked with a version of `2008-10-17` and `2012-10-17`\. A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
 
 ```
 policy  = {
@@ -193,7 +193,7 @@ Provides a way to include information about an individual statement\. For IAM po
 ```
 
 **`principal_id_string`**  
-Provides a way to specify a principal using the *Amazon Resource Name* \(ARN\) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. For an AWS account, you can also use the short form `AWS:accountnumber` instead of the full ARN\. For all of the options including AWS services, assumed roles, and so on, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.  
+Provides a way to specify a principal using the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. For an AWS account, you can also use the short form `AWS:accountnumber` instead of the full ARN\. For all of the options including AWS services, assumed roles, and so on, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.  
 Note that you can use \* only to specify "everyone/anonymous\." You cannot use it to specify part of a name or ARN\.
 
 **`resource_string`**  

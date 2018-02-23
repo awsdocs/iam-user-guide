@@ -13,7 +13,7 @@ Imagine that you have Amazon Elastic Compute Cloud \(Amazon EC2\) instances that
 
 + You can add multi\-factor authentication \(MFA\) protection to the role so that only users who sign in with an MFA device can assume the role\.
 
-We recommend using this approach to enforce the *principle of least access*, that is, restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with auditing to help ensure that roles are only used when needed\.
+We recommend using this approach to enforce the *principle of least access*, that is, restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with [auditing](cloudtrail-integration.md) to help ensure that roles are only used when needed\.
 
 When you create a role for this purpose, you specify the accounts by ID whose users need access in the `Principal` element of the role's trust policy\. You can then grant specific users in those other accounts permissions to switch to the role\.
 

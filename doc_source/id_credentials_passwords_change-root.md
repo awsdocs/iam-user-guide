@@ -6,7 +6,7 @@ You must be signed in as the AWS account root user in order to change the passwo
 
 1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the root user\.
 **Note**  
-If you previously signed in to the console with *IAM user* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.
+If you previously signed in to the console with *[IAM user](id_users.md)* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.
 
 1. In the upper right corner of the console, choose your account name or number and then choose **My Account**\.
 
@@ -14,7 +14,7 @@ If you previously signed in to the console with *IAM user* credentials, your bro
 
 1. On the **Password** line choose **Edit** to change your password\.
 
-1. Choose a strong password\. Although you can set an account password policy for IAM users, that policy does not apply to your AWS account root user\.
+1. Choose a strong password\. Although you can [set an account password policy for IAM users](id_credentials_passwords_account-policy.md), that policy does not apply to your AWS account root user\.
 
    AWS requires that your password meet these conditions:
 

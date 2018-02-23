@@ -77,7 +77,7 @@ The tables in this section list commonly used SAML attributes and how they map t
 **Important**  
 These keys are available only in IAM trust policies \(policies that determine who can assume a role\) and are not applicable to permissions policies\.
 
-In the eduPerson and eduOrg attributes table, values are typed either as strings or as lists of strings\. For string values, you can test these values in IAM trust policies using `StringEquals` or `StringLike` conditions\. For values that contain a list of strings, you can use the `ForAnyValue` and `ForAllValues` policy set operators to test the values in trust policies\.
+In the eduPerson and eduOrg attributes table, values are typed either as strings or as lists of strings\. For string values, you can test these values in IAM trust policies using `StringEquals` or `StringLike` conditions\. For values that contain a list of strings, you can use the `ForAnyValue` and `ForAllValues` [policy set operators](reference_policies_multi-value-conditions.md) to test the values in trust policies\.
 
 **Note**  
 You should include only one claim per AWS context key\. If you include more than one, only one claim will be mapped\. 

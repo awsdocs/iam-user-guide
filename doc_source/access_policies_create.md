@@ -1,6 +1,6 @@
 # Creating IAM Policies<a name="access_policies_create"></a>
 
-A policy is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\.
+A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\.
 
 You can create a new IAM policy in the AWS Management Console using one of the following methods:
 
@@ -8,9 +8,9 @@ You can create a new IAM policy in the AWS Management Console using one of the f
 
 + **Visual editor** – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 
-+ **JSON** – In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an example policy\.
++ **JSON** – In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
-You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
+You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Attaching IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
@@ -85,7 +85,7 @@ After you create a policy, you can attach it to your groups, users, or roles\. F
 
 ## Create a Policy with the Visual Editor<a name="access_policies_create-visual-editor"></a>
 
-The visual editor in the IAM console guides you through creating a policy without having to write JSON syntax\. To view an example of using the visual editor to create a policy, see [[ERROR] BAD/MISSING LINK TEXT](access_controlling.md#access_controlling-identities)\.
+The visual editor in the IAM console guides you through creating a policy without having to write JSON syntax\. To view an example of using the visual editor to create a policy, see [Controlling Access to Identities](access_controlling.md#access_controlling-identities)\.
 
 **To use the visual editor to create a policy**
 
@@ -103,11 +103,11 @@ The visual editor in the IAM console guides you through creating a policy withou
 
    + Choose **add actions** to type a specific action or use wildcards \(`*`\) to specify multiple actions\.
 
-   By default, the policy that you are creating allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because IAM denies by default, we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a JSON statement to deny permissions \("blacklisting"\) only if you want to override a permission separately allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\.
+   By default, the policy that you are creating allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because [IAM denies by default](reference_policies_evaluation-logic.md), we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a JSON statement to deny permissions \("blacklisting"\) only if you want to override a permission separately allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\.
 
-1. If the selected service and the actions that you selected in the previous steps do not support choosing specific resources, then **All resources** is selected for you\. In that case, you cannot edit this section\. 
+1. If the selected service and the actions that you selected in the previous steps do not support choosing [specific resources](access_controlling.md#access_controlling-resources), then **All resources** is selected for you\. In that case, you cannot edit this section\. 
 
-   If you chose one or more actions that support resource\-level permissions, then the visual editor lists those resources You can then choose **Resources** to specify resources for your policy\. 
+   If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources You can then choose **Resources** to specify resources for your policy\. 
 
    You can choose resources in the following ways:
 
@@ -143,9 +143,9 @@ After you create a policy, you can attach it to your groups, users, or roles\. F
 
 ## Create a Policy on the JSON Tab<a name="access_policies_create-json-editor"></a>
 
-You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an example policy to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
+You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
 
-A JSON policy document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of a specific resource, they must be in two separate JSON statements\. For general information about IAM policies, see [IAM Policies](access_policies.md)\. For information about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
+A JSON [policy](access_policies.md) document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of a specific resource, they must be in two separate JSON statements\. For general information about IAM policies, see [IAM Policies](access_policies.md)\. For information about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
 
 **To use the JSON policy editor to create a policy**
 
@@ -155,7 +155,7 @@ A JSON policy document consists of one or more statements\. Each statement shoul
 
 1. Type or paste a JSON policy document\. For details about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
 
-1. When you are finished, choose **Review policy**\. The Policy Validator reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
@@ -192,4 +192,4 @@ You can create an IAM policy or an inline policy using the AWS Command Line Inte
   + [PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 
 **Note**  
-You can embed an inline policy for a *service\-linked role* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.

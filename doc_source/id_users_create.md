@@ -18,7 +18,7 @@ In outline, the process of creating a user and making it usable for work tasks c
 
    + **Programmatic access:** The IAM user might need to make API calls or use the AWS CLI or the Tools for Windows PowerShell\. In that case, create an access key \(an access key ID and a secret access key\) for that user\.
 
-     **AWS Management Console access**: If the user needs to access AWS resources from the AWS Management Console, create a password for the user\.
+     **AWS Management Console access**: If the user needs to access AWS resources from the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\.
 
    As a best practice, do not create credentials of a certain type for a user who will never need that kind of access\. For example, for a user who requires access through the AWS Management Console only, do not create access keys\.
 
@@ -26,7 +26,7 @@ In outline, the process of creating a user and making it usable for work tasks c
 
 1. Provide the user with the necessary sign\-in information\. This includes the password and the URL for the account sign\-in webpage where the user enters those credentials\. For more information, see [How IAM Users Sign In to AWS](id_users_sign-in.md)\.
 
-1. \(Optional\) Configure multi\-factor authentication \(MFA\) for the user\. MFA requires the user to provide a one\-time\-use code each time he or she signs into the AWS Management Console\. 
+1. \(Optional\) Configure [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) for the user\. MFA requires the user to provide a one\-time\-use code each time he or she signs into the AWS Management Console\. 
 
 1. \(Optional\) Give users permissions to manage their own security credentials\. \(By default, users do not have permissions to manage their own credentials\.\) For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\. 
 
@@ -116,7 +116,7 @@ The user's password is ***not*** included in the generated email\. You must prov
 
    + IAM API: [CreateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html)
 
-1. \(Optional\) **Give the user access to the AWS Management Console**\. This requires a password\. You must also give the user the URL of your account's sign\-in page\.
+1. \(Optional\) **Give the user access to the AWS Management Console**\. This requires a password\. You must also give the user the [URL of your account's sign\-in page\.](id_users_sign-in.md)
 
    + AWS CLI: [aws iam create\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
 

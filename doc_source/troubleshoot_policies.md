@@ -1,6 +1,6 @@
 # Troubleshoot IAM Policies<a name="troubleshoot_policies"></a>
 
-A policy is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents that are attached to principals as *identity\-based policies* or to resources as *resource\-based policies*\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. You can create and edit customer managed policies in the AWS Management Console using the **Visual editor** tab or the **JSON** tab\. When you view a policy in the AWS Management Console, you can see a summary of the permissions that are granted by that policy\. You can use the visual editor and policy summaries to help you diagnose and fix common errors encountered while managing IAM policies\.
+A [policy](access_policies.md) is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents that are attached to principals as *identity\-based policies* or to resources as *resource\-based policies*\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. You can create and edit customer managed policies in the AWS Management Console using the **Visual editor** tab or the **JSON** tab\. When you view a policy in the AWS Management Console, you can see a summary of the permissions that are granted by that policy\. You can use the visual editor and policy summaries to help you diagnose and fix common errors encountered while managing IAM policies\.
 
 Keep in mind that all IAM policies are stored using syntax that begins with the rules of [JavaScript Object Notation](http://www.json.org) \(JSON\)\. You do not have to understand this syntax to create or manage your policies\. You can create and edit a policy using the visual editor in the AWS Management Console\. To learn more about JSON syntax in IAM policies, see [Grammar of the IAM JSON Policy Language ](reference_policies_grammar.md)\.
 
@@ -46,7 +46,7 @@ Keep in mind that all IAM policies are stored using syntax that begins with the 
 
 ## Troubleshoot Using the Visual Editor<a name="troubleshoot_policies-viseditor"></a>
 
-When you create or edit a customer managed policy, you can use information in the **Visual editor** tab to help you troubleshoot errors in your policy\. To view an example of using the visual editor to create a policy, see [[ERROR] BAD/MISSING LINK TEXT](access_controlling.md#access_controlling-identities)\.
+When you create or edit a customer managed policy, you can use information in the **Visual editor** tab to help you troubleshoot errors in your policy\. To view an example of using the visual editor to create a policy, see [Controlling Access to Identities](access_controlling.md#access_controlling-identities)\.
 
 ### Policy Restructuring<a name="troubleshoot_viseditor-restructure"></a>
 
@@ -72,7 +72,7 @@ IAM might restructure complex policies or policies that have permission blocks o
 
 ### Choosing a Resource ARN in the Visual Editor<a name="troubleshoot_policies-resource-arn"></a>
 
-When you create or edit a policy using the visual editor, you must first choose a service, and then choose actions from that service\. If the service and actions that you selected support choosing specific resources, then the visual editor lists the supported resource types\. You can then choose **Add ARN** to provide the details about your resource\. You can choose from the following options for adding an ARN for a resource type\.
+When you create or edit a policy using the visual editor, you must first choose a service, and then choose actions from that service\. If the service and actions that you selected support choosing [specific resources](access_controlling.md#access_controlling-resources), then the visual editor lists the supported resource types\. You can then choose **Add ARN** to provide the details about your resource\. You can choose from the following options for adding an ARN for a resource type\.
 
 + **Use the ARN builder** – Based on the resource type, you might see different fields to build your ARN\. You can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the region and instance ID, then the policy grants permissions to any instance in your account\.
 
@@ -89,7 +89,7 @@ By default, only the AWS account root user has access to all the resources in th
 
 When you use the visual editor to construct a policy, you can select only one service at a time\. This is a best practice because the visual editor then allows you to choose from the actions for that one service\. You then choose from the resources supported by that service and the selected actions\. This makes it easier to create and troubleshoot your policy\. 
 
-If you are familiar with the JSON syntax, you can also use a wildcard character \(\*\) to manually specify multiple services\. For example, type **Code\*** to provide permissions for all services beginning with `Code`, such as `CodeBuild` and `CodeCommit`\. However, you must then type the actions and resource ARNs to complete your policy\. Additionally, when you save your policy, it might be restructured to include each service in a separate permission block\.
+If you are familiar with the JSON syntax, you can also use a wildcard character \(\*\) to manually specify multiple services\. For example, type **Code\*** to provide permissions for all services beginning with `Code`, such as `CodeBuild` and `CodeCommit`\. However, you must then type the actions and resource ARNs to complete your policy\. Additionally, when you save your policy, it might be [restructured](#troubleshoot_viseditor-restructure) to include each service in a separate permission block\.
 
 Alternatively, to use JSON syntax \(such as wildcards\) for services, create, edit, and save your policy using the **JSON** tab\.
 
@@ -104,7 +104,7 @@ To reduce the size of your policy in the visual editor, edit your policy or move
 When you create or edit a policy in the visual editor, you might see a warning that your policy includes an unrecognized service, action, or resource type\.
 
 **Note**  
-IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
+IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the [policy simulator](access_policies_testing-policies.md)\.
 
 If your policy includes unrecognized services, actions or resource types, one of the following errors has occurred:
 
@@ -132,13 +132,13 @@ You can diagnose and resolve issues related to policy summaries\.
 
 ### Missing Policy Summary<a name="missing-policy-summary"></a>
 
-The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. You can view the policy summary for any policies that are attached to a user on the **Users** page\. You can view the policy summary for managed policies on the **Policies** page\. If AWS is unable to render a summary for a policy, then you see the JSON policy document instead of the summary, and receive the following error:
+The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the [service summary](access_policies_understand-service-summary.md), and the [action summary](access_policies_understand-action-summary.md)\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. You can view the [policy summary](access_policies_understand.md) for any policies that are attached to a user on the **Users** page\. You can view the policy summary for managed policies on the **Policies** page\. If AWS is unable to render a summary for a policy, then you see the JSON policy document instead of the summary, and receive the following error:
 
 **A summary for this policy cannot be generated\. You can still view or edit the JSON policy document\.**
 
 If your policy does not include a summary, one of the following errors has occurred:
 
-+ **Unsupported policy element** – IAM does not support generating policy summaries for policies that include one of the following policy elements:
++ **Unsupported policy element** – IAM does not support generating policy summaries for policies that include one of the following [policy elements](reference_policies_elements.md):
 
   + `Principal`
 
@@ -150,14 +150,14 @@ If your policy does not include a summary, one of the following errors has occur
 **Note**  
 You must be careful when using these policy elements such as `NotPrincipal`, `NotAction`, and `NotResource`\. For information about using policy elements, see [IAM JSON Policy Elements Reference](reference_policies_elements.md)\.
 
-  You can create a policy that does not provide effective permissions if you provide mismatched services and resources\. This can occur if you specify actions in one service and resources from another service\. In this case, the policy summary does appear\. The only indication that there is a problem is that the resource column in the summary can include a resource from a different service\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the policy simulator\.
+  You can create a policy that does not provide effective permissions if you provide mismatched services and resources\. This can occur if you specify actions in one service and resources from another service\. In this case, the policy summary does appear\. The only indication that there is a problem is that the resource column in the summary can include a resource from a different service\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the [policy simulator](access_policies_testing-policies.md)\.
 
 ### Policy Summary Includes Unrecognized Services, Actions, or Resource Types<a name="unrecognized-services-actions"></a>
 
-In the IAM console, if a policy summary includes a warning symbol \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\), then the policy might include an unrecognized service, action or resource type\. To learn about warnings within a policy summary, see [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)\. 
+In the IAM console, if a [policy summary](access_policies_understand.md) includes a warning symbol \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\), then the policy might include an unrecognized service, action or resource type\. To learn about warnings within a policy summary, see [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)\. 
 
 **Note**  
-IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
+IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the [policy simulator](access_policies_testing-policies.md)\.
 
 If your policy includes unrecognized services, actions or resource types, one of the following errors has occurred:
 
@@ -171,7 +171,7 @@ If your policy includes unrecognized services, actions or resource types, one of
 
 + **Resource type does not support summaries** – If your policy includes a supported action with an unsupported resource type, then the resource is included in the **Unrecognized resource types** section of the service summary table\. To learn about warnings within a service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
 
-+ **Typo** – Because the policy validator in AWS checks only that the JSON is syntactically correct, you can create a policy that includes a typo\. If you are certain that your policy contains none of the errors above, then your policy might include a typo\. Check for misspelled service, action, and resource type names\. For example, you might use `s2` instead of `s3` and `ListMyBuckets` instead of `ListAllMyBuckets`\. Another common action typo is the inclusion of unnecessary text in ARNs, such as `arn:aws:s3: : :*`, or missing colons in actions, such as `AWSAuthRuntimeService.AuthenticatePassword`\. You can evaluate a policy that might include typos by using the policy simulator to confirm whether the policy provides the permissions you intended\.
++ **Typo** – Because the policy validator in AWS checks only that the JSON is syntactically correct, you can create a policy that includes a typo\. If you are certain that your policy contains none of the errors above, then your policy might include a typo\. Check for misspelled service, action, and resource type names\. For example, you might use `s2` instead of `s3` and `ListMyBuckets` instead of `ListAllMyBuckets`\. Another common action typo is the inclusion of unnecessary text in ARNs, such as `arn:aws:s3: : :*`, or missing colons in actions, such as `AWSAuthRuntimeService.AuthenticatePassword`\. You can evaluate a policy that might include typos by using the [policy simulator](access_policies_testing-policies.md) to confirm whether the policy provides the permissions you intended\.
 
 ### Service Does Not Support IAM Policy Summaries<a name="unsupported-services-actions"></a>
 
@@ -219,23 +219,23 @@ To assign permissions to a user, group, role, or resource, you create a *policy*
 
 To learn about these and other policy elements, see [IAM JSON Policy Elements Reference](reference_policies_elements.md)\. 
 
-To grant access, your policy must define an action with a supported resource\. If your policy also includes a condition, that condition must include a global condition key or must apply to the action\. To learn which resources are supported by an action, see the [AWS documentation](http://docs.aws.amazon.com/) for your service\. To learn which conditions are supported by an action, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
+To grant access, your policy must define an action with a supported resource\. If your policy also includes a condition, that condition must include a [global condition key](reference_policies_condition-keys.md) or must apply to the action\. To learn which resources are supported by an action, see the [AWS documentation](http://docs.aws.amazon.com/) for your service\. To learn which conditions are supported by an action, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
 
-To learn whether your policy defines an action, resource, or condition that does not grant permissions, you can view the policy summary for your policy using the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. You can use policy summaries to identify and correct problems in your policy\.
+To learn whether your policy defines an action, resource, or condition that does not grant permissions, you can view the [policy summary](access_policies_understand-policy-summary.md) for your policy using the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. You can use policy summaries to identify and correct problems in your policy\.
 
 There are several reasons why an element might not grant permissions despite being defined in the IAM policy:
 
-+ **An action is defined without an applicable resource**
++ [**An action is defined without an applicable resource**](#mismatch_action-no-resource)
 
-+ **A resource is defined without an applicable action**
++ [**A resource is defined without an applicable action**](#mismatch_resource-no-action)
 
-+ **A condition is defined without an applicable action**
++ [**A condition is defined without an applicable action**](#mismatch_condition-no-match)
 
-To view examples of policy summaries that include warnings, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_understand-policy-summary.md)\.
+To view examples of policy summaries that include warnings, see [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)\.
 
 #### An Action Is Defined Without an Applicable Resource<a name="mismatch_action-no-resource"></a>
 
-The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's `Resource` element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's [`Resource`](reference_policies_elements_resource.md) element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 ```
 {
@@ -415,7 +415,7 @@ You can diagnose and resolve issues relating to policy management\.
 
 ### Attaching or Detaching a Policy in an IAM Account<a name="troubleshoot_roles_cant-attach-detach-policy"></a>
 
-Some AWS managed policies are linked to a service\. These policies are used only with a service\-linked role for that service\. In the IAM console, when you view the **Summary** page for a policy, the page includes a banner to indicate that the policy is linked to a service\. You cannot attach this policy to a user, group, or role within IAM\. When you create a service\-linked role for the service, this policy is automatically attached to your new role\. Because the policy is required, you cannot detach the policy from the service\-linked role\. 
+Some AWS managed policies are linked to a service\. These policies are used only with a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) for that service\. In the IAM console, when you view the **Summary** page for a policy, the page includes a banner to indicate that the policy is linked to a service\. You cannot attach this policy to a user, group, or role within IAM\. When you create a service\-linked role for the service, this policy is automatically attached to your new role\. Because the policy is required, you cannot detach the policy from the service\-linked role\. 
 
 ## Troubleshoot JSON Policy Documents<a name="troubleshoot_policies-json"></a>
 
@@ -528,7 +528,7 @@ The policy engine does not allow such errors in new or edited policies\. However
 Multiple `Effect` elements: only the last `Effect` element is observed\. The others are ignored\.
 Multiple `Action` elements: all `Action` elements are combined internally and treated as if they were a single list\.
 Multiple `Resource` elements: all `Resource` elements are combined internally and treated as if they were a single list\.
-The policy engine does not allow you to save any policy with syntax errors\. You must correct the errors in the policy before you can save it\. The Policy Validator tool can help you to find all older policies with errors and can recommend corrections for them\.
+The policy engine does not allow you to save any policy with syntax errors\. You must correct the errors in the policy before you can save it\. The [Policy Validator](access_policies_policy-validator.md) tool can help you to find all older policies with errors and can recommend corrections for them\.
 
  In each case, the solution is to remove the incorrect extra element\. For `Effect` elements, this is straightforward: if you want the previous example to *deny* permissions to Amazon EC2 instances, then you must remove the line `"Effect": "Allow",` from the policy, as follows:
 
@@ -575,7 +575,7 @@ Each of the required elements in a `Statement` element's value object can be pre
 
 ### Missing JSON Version Element<a name="missing-version"></a>
 
-A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_managed-versioning.md)\.
+A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
 
 As AWS features evolve, new capabilities are added to IAM policies to support those features\. Sometimes, an update to the policy syntax includes a new version number\. If you use newer features of the policy grammar in your policy, then you must tell the policy parsing engine which version you are using\. The default policy version is "2008\-10\-17\." If you want to use any policy feature that was introduced later, then you must specify the version number that supports the feature you want\. We recommend that you *always* include the latest policy syntax version number, which is currently `"Version": "2012-10-17"`\. For example, the following policy is incorrect because it uses a policy variable `${...}` in the ARN for a resource without specifying a policy syntax version that supports policy variables \(called out in *red*\):
 

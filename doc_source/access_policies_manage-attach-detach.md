@@ -46,7 +46,7 @@ You can use the AWS Management Console to embed an inline policy in an identity 
 
 1. Scroll to the bottom of the page and choose **Add inline policy**\.
 **Note**  
-You cannot embed an inline policy in a *service\-linked role* in IAM\. Because the linked service defines whether you can modify the permissions of the role, you might be able to add additional policies from the service console, API, or AWS CLI\. To view the service\-linked role documentation for a service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and choose **Yes** in the **Service\-Linked Role** column for your service\.
+You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. Because the linked service defines whether you can modify the permissions of the role, you might be able to add additional policies from the service console, API, or AWS CLI\. To view the service\-linked role documentation for a service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and choose **Yes** in the **Service\-Linked Role** column for your service\.
 
 1. Choose from the following methods to view the steps required to create your policy:
 
@@ -54,7 +54,7 @@ You cannot embed an inline policy in a *service\-linked role* in IAM\. Because t
 
    + [Create a Policy with the Visual Editor](access_policies_create.md#access_policies_create-visual-editor) – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 
-   + [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an example policy\.
+   + [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
 1. After you create an inline policy, it is automatically embedded in your user or role\.
 
@@ -74,7 +74,7 @@ You cannot embed an inline policy in a *service\-linked role* in IAM\. Because t
 
 1. Do one of the following:
 
-   + If you chose **Custom Policy**, specify a name for the policy and create your policy document\. Policy Validator reports any syntax errors\.
+   + If you chose **Custom Policy**, specify a name for the policy and create your policy document\.[ Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 
    + If you are using the policy generator to create your policy, select the appropriate **Effect**, **AWS Service**, and **Actions** options\. Type the Amazon Resource Name \(ARN\) \(if applicable\), and add any conditions that you want to include\. Then choose **Add Statement**\. You can add as many statements as you want to the policy\. When you are finished adding statements, choose **Next Step**\. 
 
@@ -239,7 +239,7 @@ You can attach or detach managed policies and embed or delete inline policies us
   + [PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 
 **Note**  
-You can embed an inline policy for a *service\-linked role* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 
 **To detach and delete an inline policy from an identity \(user, group, or role\)**
 
@@ -252,4 +252,4 @@ You can embed an inline policy for a *service\-linked role* only in the service 
   + [delete\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html)
 
 **Note**  
-You can delete an inline policy from a *service\-linked role* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+You can delete an inline policy from a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.

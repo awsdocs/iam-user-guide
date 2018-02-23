@@ -35,7 +35,7 @@ Where:
 
 + `resource` is the portion that identifies the specific resource by name\.
 
-You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies, instance profiles, virtual MFA devices, and server certificates\. The following table shows the ARN format for each and an example\. The region portion of the ARN is blank because IAM resources are global\. 
+You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies, instance profiles, virtual MFA devices, and [server certificates](id_credentials_server-certs.md)\. The following table shows the ARN format for each and an example\. The region portion of the ARN is blank because IAM resources are global\. 
 
 **Note**  
 Many of the following examples include paths in the resource part of the ARN\. Paths cannot be created or manipulated in the AWS Management Console\. To use paths you must work with the resource by using the AWS API, the AWS CLI, or the Tools for Windows PowerShell\.

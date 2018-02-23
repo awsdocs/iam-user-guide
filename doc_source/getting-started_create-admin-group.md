@@ -3,7 +3,7 @@
 **Important**  
 If you arrived at this page trying to enable Amazon Advertising for your application or web site, see [Becoming a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
 
-As a best practice, do not use the AWS account root user for any task where it's not required\. Instead, create a new IAM user for each person that requires administrator access\. Then make those users administrators by placing the users into an "Administrators" group to which you attach the AdministratorAccess managed policy\. 
+As a [best practice](best-practices.md#lock-away-credentials), do not use the AWS account root user for any task where it's not required\. Instead, create a new IAM user for each person that requires administrator access\. Then make those users administrators by placing the users into an "Administrators" group to which you attach the AdministratorAccess managed policy\. 
 
 Thereafter, the users in the administrators group should set up the groups, users, and so on, for the AWS account\. All future interaction should be through the AWS account's users and their own keys instead of the root user\. However, to perform some account and service management tasks, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
@@ -93,7 +93,7 @@ This section shows how to create a group in the IAM system\.
 
 ### Attaching a Policy to the Group \(AWS CLI\)<a name="Using_AddingAdminRightsPolicy"></a>
 
-This section shows how to attach a policy that lets any user in the group perform any action on any resource in the AWS account\. You do this by attaching the AWS managed policy called AdministratorAccess to the Admins group\. For more information about policies, see [Access Management](access.md)\. 
+This section shows how to attach a policy that lets any user in the group perform any action on any resource in the AWS account\. You do this by attaching the [AWS managed policy](access_policies_managed-vs-inline.md) called AdministratorAccess to the Admins group\. For more information about policies, see [Access Management](access.md)\. 
 
 **To add a policy giving full administrator permissions \(AWS CLI\)**
 

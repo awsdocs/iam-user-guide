@@ -5,7 +5,7 @@ A *role* specifies a set of permissions that you can use to access AWS resources
 **Important**  
 The permissions of your IAM user and any roles that you switch to are not cumulative\. Only one set of permissions is active at a time\. When you switch to a role, you temporarily give up your user permissions and work with the permissions that are assigned to the role\. When you exit the role, your user permissions are automatically restored\.
 
-You can run an AWS CLI command using a role only when you are signed in as an IAM user, as an externally authenticated user \(SAML or OIDC\) already using a role, or when run from within an Amazon EC2 instance that is attached to a role through its instance profile\. You cannot switch to a role when you are signed in as the AWS account root user\.
+You can run an AWS CLI command using a role only when you are signed in as an IAM user, as an [externally authenticated user](id_roles_providers.md) \([SAML](id_roles_providers_saml.md) or [OIDC](id_roles_providers_oidc.md)\) already using a role, or when run from within an Amazon EC2 instance that is attached to a role through its instance profile\. You cannot switch to a role when you are signed in as the AWS account root user\.
 
 This section describes how to switch roles when you work at the command line with the AWS Command Line Interface\.
 
@@ -16,7 +16,7 @@ For security purposes, you can use AWS CloudTrail to audit the use of roles in t
 
 **To switch to a role using the AWS CLI**
 
-1. If you have never used the AWS CLI, then you must first configure your default CLI profile\. Open a command prompt and set up your AWS CLI installation to use the access key from your IAM user or from your federated role\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
+1. <a name="step-configure-default"></a>If you have never used the AWS CLI, then you must first configure your default CLI profile\. Open a command prompt and set up your AWS CLI installation to use the access key from your IAM user or from your federated role\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
 
    ```
    $ aws configure
@@ -42,6 +42,6 @@ For security purposes, you can use AWS CloudTrail to audit the use of roles in t
 
    This command works if the permissions assigned to the `ProductionAccessRole` enable listing the users in the current AWS account\.
 
-1. To return to the permissions granted by your original credentials, run commands without the `--profile` parameter\. The AWS CLI reverts to using the credentials in your default profile, which you configured in [[ERROR] BAD/MISSING LINK TEXT](#step-configure-default)\.
+1. To return to the permissions granted by your original credentials, run commands without the `--profile` parameter\. The AWS CLI reverts to using the credentials in your default profile, which you configured in [Step 1](#step-configure-default)\.
 
 For more information, see [Assuming a Role](http://docs.aws.amazon.com/cli/latest/userguide/cli-roles.html) in the *AWS Command Line Interface User Guide*\.

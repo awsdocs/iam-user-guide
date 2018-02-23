@@ -3,12 +3,12 @@
 
 |  | 
 | --- |
-|  AWS is no longer accepting new participants for the SMS MFA preview\. We encourage you to use MFA on your AWS account through either a hardware\-based or virtual \(software\-based\) MFA token device\. If your account is already participating in the SMS MFA Preview program, you can continue using this feature\.  | 
+|  AWS is no longer accepting new participants for the SMS MFA preview\. We encourage you to use MFA on your AWS account through either a [hardware\-based](id_credentials_mfa_enable_physical.md) or [virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA token device\. If your account is already participating in the SMS MFA Preview program, you can continue using this feature\.  | 
 
 An SMS MFA device can be any mobile device with a phone number that can receive standard [SMS text messages](http://wikipedia.org/wiki/Short_Message_Service)\. When an MFA code is needed, AWS sends it to the phone number that is configured for the IAM user\. 
 
 **Note**  
-SMS MFA can be used only with IAM users\. It cannot be used with the AWS account root user\. To protect the root user with MFA, you must use either a hardware\-based or virtual \(software\-based\) MFA token device\.
+SMS MFA can be used only with IAM users\. It cannot be used with the AWS account root user\. To protect the root user with MFA, you must use either a [hardware\-based](id_credentials_mfa_enable_physical.md) or [virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA token device\.
 
 ## Enable an SMS MFA Device for an IAM User \(AWS Management Console\)<a name="enable-sms-mfa-console"></a>
 

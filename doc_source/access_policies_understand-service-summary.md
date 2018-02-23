@@ -1,6 +1,6 @@
 # Service Summary \(List of Actions\)<a name="access_policies_understand-service-summary"></a>
 
-Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *service summary* table includes a list of the actions and summaries of the permissions that are defined by the policy for the chosen service\.
+Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the service summary, and the [action summary](access_policies_understand-action-summary.md)\. The *service summary* table includes a list of the actions and summaries of the permissions that are defined by the policy for the chosen service\.
 
 ![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-svc-sum.png)
 
@@ -54,13 +54,13 @@ If the policy that you select is an inline policy that is attached directly to t
 
 ## Understanding the Elements of a Service Summary<a name="understanding-elements-service-summary"></a>
 
-The example below is the service summary for Amazon S3 actions that are allowed from the **SummaryAllElements** policy summary \(see [[ERROR] BAD/MISSING LINK TEXT](access_policies_understand-policy-summary.md#policy-summary-example-json)\)\. The actions for this service are grouped by **Uncategorized actions**, **Uncategorized resource types**, and access level\. For example, two **Write** actions are defined out of the total 29 **Write** actions available for the service\.
+The example below is the service summary for Amazon S3 actions that are allowed from the **SummaryAllElements** policy summary \(see [**SummaryAllElements** JSON Policy Document](access_policies_understand-policy-summary.md#policy-summary-example-json)\)\. The actions for this service are grouped by **Uncategorized actions**, **Uncategorized resource types**, and access level\. For example, two **Write** actions are defined out of the total 29 **Write** actions available for the service\.
 
 ![\[Service summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-action-dialog.png)
 
 The service summary page for a managed policy includes the following information:
 
-1. If the policy does not grant permissions to all the actions, resources, and conditions defined for the service in the policy, then a warning banner appears at the top of the page\. The service summary then includes details about the problem\. To learn how policy summaries help you to understand and troubleshoot the permissions that your policy grants, see [[ERROR] BAD/MISSING LINK TEXT](troubleshoot_policies.md#policy-summary-not-grant-permissions)\.
+1. If the policy does not grant permissions to all the actions, resources, and conditions defined for the service in the policy, then a warning banner appears at the top of the page\. The service summary then includes details about the problem\. To learn how policy summaries help you to understand and troubleshoot the permissions that your policy grants, see [My Policy Does Not Grant the Expected Permissions](troubleshoot_policies.md#policy-summary-not-grant-permissions)\.
 
 1. Next to the **Back** link appears the name of the service \(in this case S3\)\. The service summary for this service includes the list of allowed actions that are defined in the policy\. If instead, the text **\(Explicitly denied\)** appears next to the name of a service, then the actions listed in the service summary table are explicitly denied\.
 
@@ -68,7 +68,7 @@ The service summary page for a managed policy includes the following information
 
 1. To view the summary for a specific action, type keywords into the search box to reduce the list of available actions\.
 
-1. **Action \(2 of 69 actions\)** – This column lists the actions that are defined within the policy and provides the resources and conditions for each action\. If the policy grants permissions to the action, then the action name links to the *action summary* table\. The count indicates the number of recognized actions that provide permissions\. The total is the number of known actions for the service\. In this example, 2 actions provide permissions out of 69 total known S3 actions\.
+1. **Action \(2 of 69 actions\)** – This column lists the actions that are defined within the policy and provides the resources and conditions for each action\. If the policy grants permissions to the action, then the action name links to the *[action summary](access_policies_understand-action-summary.md)* table\. The count indicates the number of recognized actions that provide permissions\. The total is the number of known actions for the service\. In this example, 2 actions provide permissions out of 69 total known S3 actions\.
 
 1. **Show/Hide remaining 67** – Choose this link to expand or hide the table to include actions that are known but do not provide permissions for this service\. Expanding the link also displays warnings for any elements that do not provide permissions\.
 
@@ -76,7 +76,7 @@ The service summary page for a managed policy includes the following information
 
 1. **Unrecognized actions** – This policy includes at least one unrecognized action within the policy for this service\. You can use this warning to check whether an action might include a typo\. If the action name is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific action in a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `DeletObject` ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) action is missing an `e`\. 
 **Note**  
-IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
+IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the [policy simulator](access_policies_testing-policies.md)\.
 
 1. For those actions that IAM recognizes, the table groups these actions into at least one or up to four sections, depending on the level of access that the policy allows or denies\. The sections are **List**, **Read**, **Write**, and **Permissions management**\. You can also see the number of actions that are defined out of the total number of actions available within each access level\. For information about which actions belong to each of the action levels for AWS services, see [IAM Policy Actions Grouped by Access Level](reference_policies_access-levels.md)\. To see a complete list of actions for a specific service, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
 
@@ -88,7 +88,7 @@ IAM reviews service names, actions, and resource types for services that support
 
 1. **Resource** – This column shows the resources that the policy defines for the service\. IAM does not check whether the resource applies to each action\. In this example, actions in the S3 service are allowed on only the `developer_bucket` Amazon S3 bucket resource\. Depending on the information that the service provides to IAM, you might see an ARN such as `arn:aws:s3:::developer_bucket/*`, or you might see the defined resource type, such as `BucketName = developer_bucket`\.
 **Note**  
-This column can include a resource from a different service\. If the policy statement that includes the resource does not include both actions and resources from the same service, then your policy includes mismatched resources\. IAM does not warn you about mismatched resources when you create a policy, or when you view a policy in the service summary\. IAM also does not indicate whether the action applies to the resources, only whether the service matches\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the policy simulator\.
+This column can include a resource from a different service\. If the policy statement that includes the resource does not include both actions and resources from the same service, then your policy includes mismatched resources\. IAM does not warn you about mismatched resources when you create a policy, or when you view a policy in the service summary\. IAM also does not indicate whether the action applies to the resources, only whether the service matches\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the [policy simulator](access_policies_testing-policies.md)\.
 
 1. **Resource warning** – For actions with resources that do not provide full permissions, you see one of the following warnings:
 

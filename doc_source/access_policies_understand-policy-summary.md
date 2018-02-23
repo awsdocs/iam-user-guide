@@ -1,6 +1,6 @@
 # Policy Summary \(List of Services\)<a name="access_policies_understand-policy-summary"></a>
 
-Policies are summarized in three tables: the policy summary, the service summary, and the action summary\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. 
+Policies are summarized in three tables: the policy summary, the [service summary](access_policies_understand-service-summary.md), and the [action summary](access_policies_understand-action-summary.md)\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. 
 
 ![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-pol-sum.png)
 
@@ -46,7 +46,7 @@ You can view the summaries for any policies that are attached to a user on the *
 
 ## Editing Policies to Fix Warnings<a name="edit-policy-summary"></a>
 
-While viewing a policy summary, you might find a typo or notice that the policy does not provide the permissions that you expected\. You cannot edit a policy summary directly\. However, you can edit a managed policy using the visual policy editor, which catches many of the same errors and warnings that the policy summary reports\. You can then view the changes in the policy summary to confirm that you fixed all of the issues\. To learn how to edit an inline policy, see [[ERROR] BAD/MISSING LINK TEXT](access_policies_manage-edit.md)\. You cannot edit AWS managed policies\.
+While viewing a policy summary, you might find a typo or notice that the policy does not provide the permissions that you expected\. You cannot edit a policy summary directly\. However, you can edit a managed policy using the visual policy editor, which catches many of the same errors and warnings that the policy summary reports\. You can then view the changes in the policy summary to confirm that you fixed all of the issues\. To learn how to edit an inline policy, see [Editing IAM Policies](access_policies_manage-edit.md)\. You cannot edit AWS managed policies\.
 
 **To edit a policy for your policy summary using the **Visual editor** tab**
 
@@ -80,7 +80,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 ## Understanding the Elements of a Policy Summary<a name="understanding-elements-policy-summary"></a>
 
-In the following example of a user details page, the **PolSumUser** user has eight attached policies\. The **SummaryAllElements** policy is a managed policy \(customer managed policy\) that is attached directly to the user\. This policy is expanded to show the policy summary\. To view the JSON policy document for this policy, see [[ERROR] BAD/MISSING LINK TEXT](#policy-summary-example-json)\.
+In the following example of a user details page, the **PolSumUser** user has eight attached policies\. The **SummaryAllElements** policy is a managed policy \(customer managed policy\) that is attached directly to the user\. This policy is expanded to show the policy summary\. To view the JSON policy document for this policy, see [**SummaryAllElements** JSON Policy Document](#policy-summary-example-json)\.
 
 ![\[Policy summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-user-page-dialog.png)
 
@@ -90,7 +90,7 @@ In the preceding image, the policy summary is visible from within the user detai
 
 1. The **SummaryAllElements** policy is one of several policies that are attached to the user\. The policy is expanded in order to view the policy summary\.
 
-1. If the policy does not grant permissions to all the actions, resources, and conditions defined in the policy, then a warning or error banner appears at the top of the page\. The policy summary then includes details about the problem\. To learn how policy summaries help you to understand and troubleshoot the permissions that your policy grants, see [[ERROR] BAD/MISSING LINK TEXT](troubleshoot_policies.md#policy-summary-not-grant-permissions)\.
+1. If the policy does not grant permissions to all the actions, resources, and conditions defined in the policy, then a warning or error banner appears at the top of the page\. The policy summary then includes details about the problem\. To learn how policy summaries help you to understand and troubleshoot the permissions that your policy grants, see [My Policy Does Not Grant the Expected Permissions](troubleshoot_policies.md#policy-summary-not-grant-permissions)\.
 
 1. Use the **Policy summary** and **\{ \} JSON** buttons to toggle between the policy summary and the JSON policy document\.
 
@@ -108,7 +108,7 @@ In the preceding image, the policy summary is visible from within the user detai
 
 1. **Service** – This column lists the services that are defined within the policy and provides details for each service\. Each service name in the policy summary table is a link to the *service summary* table, which is explained in [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\. In this example, permissions are defined for the Amazon S3, Billing, and Amazon EC2 services\. The policy also defines permissions for a \(misspelled\) `codedploy` service, which IAM does not recognize\.
 
-1. **Unrecognized services** – This policy includes an unrecognized service \(in this case **codedploy ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)**\)\. You can use this warning to check whether a service name might include a typo\. If the service name is correct, then the service might not support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the policy includes an unrecognized `codedploy` service that is missing an `e`\. Because of this typo, the policy does not provide the expected AWS CodeDeploy permissions\. You can edit the policy to include the accurate `codedeploy` service name; the service then appears in the policy summary\.
+1. **Unrecognized services** – This policy includes an unrecognized service \(in this case **codedploy ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)**\)\. You can use this warning to check whether a service name might include a typo\. If the service name is correct, then the service might not support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the policy includes an unrecognized `codedploy` service that is missing an `e`\. Because of this typo, the policy does not provide the expected AWS CodeDeploy permissions\. You can [edit the policy](#edit-policy-summary) to include the accurate `codedeploy` service name; the service then appears in the policy summary\.
 
 1. For those services that IAM recognizes, it arranges services according to whether the policy allows or explicitly denies the use of the service\. In this example, the policy includes `Allow` and `Deny` statements for the Amazon S3 service\. Therefore the policy summary includes S3 within both the **Explicit deny** and **Allow** sections\.
 
@@ -116,7 +116,7 @@ In the preceding image, the policy summary is visible from within the user detai
 
 1. **EC2 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized action\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains an action that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon EC2 action\. To learn more about unrecognized actions and to view the unrecognized action in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
 **Note**  
-IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the policy simulator\.
+IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the [policy simulator](access_policies_testing-policies.md)\.
 
 1. **S3 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized resource\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains a resource type that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon S3 action\. To learn more about unrecognized resources and to view the unrecognized resource type in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
 
@@ -124,7 +124,7 @@ IAM reviews service names, actions, and resource types for services that support
 
    + **Full access** – This entry indicates that the service has access to all actions within all four of the access levels available for the service\. In this example, because this row is in the **Explicit deny** section of the table, all Amazon S3 actions are denied for the resources included in the policy\.
 
-   + If the entry does not include **Full access**, then the service has access to some but not all of the actions for the service\. The access is then defined by following descriptions for each of the four access level classifications \(`List`, `Read`, `Write`, and `Permissions management`\):
+   + <a name="full-vs-limited-access-summary"></a>If the entry does not include **Full access**, then the service has access to some but not all of the actions for the service\. The access is then defined by following descriptions for each of the four access level classifications \(`List`, `Read`, `Write`, and `Permissions management`\):
 
      **Full**: The policy provides access to all actions within each access level classification listed\. In this example, the policy provides access to all of the Billing `Read` actions\.
 
@@ -138,7 +138,7 @@ IAM reviews service names, actions, and resource types for services that support
 
    + Resource text – The policy includes one resource within the service\. In this example, the listed actions are allowed on only the `developer_bucket` Amazon S3 bucket resource\. Depending on the information that the service provides to IAM, you might see an ARN such as `arn:aws:s3:::developer_bucket/*`, or you might see the defined resource type, such as `BucketName = developer_bucket`\.
 **Note**  
-This column can include a resource from a different service\. If the policy statement that includes the resource does not include both actions and resources from the same service, then your policy includes mismatched resources\. IAM does not warn you about mismatched resources when you create a policy, or when you view a policy in the policy summary\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the policy simulator\.
+This column can include a resource from a different service\. If the policy statement that includes the resource does not include both actions and resources from the same service, then your policy includes mismatched resources\. IAM does not warn you about mismatched resources when you create a policy, or when you view a policy in the policy summary\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the [policy simulator](access_policies_testing-policies.md)\.
 
 1. **Request condition** – This column indicates whether the services or actions associated with the resource are subject to conditions\.
 
@@ -170,7 +170,7 @@ In the preceding image, you can see all services that include defined actions, r
 
    + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – This means that the service has defined conditions, but that some of those conditions don't have a supporting action,
 
-1. **Multiple | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – The `Deny` statement for Amazon S3 includes more than one resource\. It also includes more than one action, and some actions support the resources and some do not\. To view this policy, see [[ERROR] BAD/MISSING LINK TEXT](#policy-summary-example-json)\. In this case, the policy includes all Amazon S3 actions, and only the actions that can be performed on a bucket or bucket object are denied\.
+1. **Multiple | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – The `Deny` statement for Amazon S3 includes more than one resource\. It also includes more than one action, and some actions support the resources and some do not\. To view this policy, see [**SummaryAllElements** JSON Policy Document](#policy-summary-example-json)\. In this case, the policy includes all Amazon S3 actions, and only the actions that can be performed on a bucket or bucket object are denied\.
 
 1. The ellipses \(…\) indicate that all the services are included in the page, but we are showing only the rows with information relevant to this policy\. When you view this page in the AWS Management Console, you see all the AWS services\.
 

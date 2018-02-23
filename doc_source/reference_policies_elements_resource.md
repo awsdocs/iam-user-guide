@@ -40,7 +40,7 @@ You can specify multiple resources\. The following example refers to two DynamoD
 ]
 ```
 
-In the `Resource` element, you can use JSON policy variables in the part of the ARN that identifies the specific resource \(that is, in the trailing part of the ARN\)\. For example, you can use the key `{aws:username}` as part of a resource ARN to indicate that the current user's name should be included as part of the resource's name\. The following example shows how you can use the `{aws:username}` key in a `Resource` element\. The policy allows access to a Amazon DynamoDB table that matches the current user's name\.
+In the `Resource` element, you can use JSON [policy variables](reference_policies_variables.md) in the part of the ARN that identifies the specific resource \(that is, in the trailing part of the ARN\)\. For example, you can use the key `{aws:username}` as part of a resource ARN to indicate that the current user's name should be included as part of the resource's name\. The following example shows how you can use the `{aws:username}` key in a `Resource` element\. The policy allows access to a Amazon DynamoDB table that matches the current user's name\.
 
 ```
 {

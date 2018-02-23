@@ -2,11 +2,11 @@
 
 With identity federation, you can provide access to AWS resources for users who sign in from a third\-party identity provider \(IdP\)\. To configure identity federation, you configure the provider and then you create an IAM role that determines what permissions a federated user has\. For more information about federation and identity providers, see [Identity Providers and Federation](id_roles_providers.md)\.
 
-Before you can create a role for SAML 2\.0 federation, you must first complete the following prerequisite steps:
+Before you can create a role for SAML 2\.0 federation, you must first complete the following prerequisite steps:<a name="saml-prereqs"></a>
 
 **To prepare to create a role for SAML 2\.0 federation**
 
-1. Before you create a role for SAML\-based federation, you must create a SAML provider in IAM\. For more information, see [Creating SAML Identity Providers](id_roles_providers_create_saml.md)\.
+1. <a name="idpsamlstep1"></a>Before you create a role for SAML\-based federation, you must create a SAML provider in IAM\. For more information, see [Creating SAML Identity Providers](id_roles_providers_create_saml.md)\.
 
 1. Prepare the policies for the role that the SAML 2\.0–authenticated users will assume\. As with any role, a role for the SAML federation contains two policies\. One is the trust policy that specifies who can assume the role \(the trusted entity, or principal\)\. The other policy \(the permission policy\) specifies the actual AWS actions and resources that the federated user is allowed or denied access to \(similar to a user or resource policy\)\.
 
@@ -14,7 +14,7 @@ Before you can create a role for SAML 2\.0 federation, you must first complete t
 
    The trust policy must grant an `Allow` effect for the `sts:AssumeRoleWithSAML` action\. In this role, you use two values that ensure that the role can be assumed only by your application:
 
-   + For the `Principal` element, use the string `{"Federated":ARNofIdentityProvider}`\. Replace `ARNofIdentityProvider` with the ARN of the SAML identity provider that you created in [[ERROR] BAD/MISSING LINK TEXT](#idpsamlstep1)\.
+   + For the `Principal` element, use the string `{"Federated":ARNofIdentityProvider}`\. Replace `ARNofIdentityProvider` with the ARN of the [SAML identity provider](id_roles_providers_saml.md) that you created in [Step 1](#idpsamlstep1)\.
 
    + For the `Condition` element, use a `StringEquals` condition to test that the `saml:aud` attribute from the SAML response matches the SAML federation endpoint for AWS\. 
 **Note**  

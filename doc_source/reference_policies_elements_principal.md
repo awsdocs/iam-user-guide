@@ -14,7 +14,7 @@ Do not use the `Principal` element in policies that you attach to IAM users and 
 
 ## Specifying a Principal<a name="Principal_specifying"></a>
 
-You specify a principal using the *Amazon Resource Name* \(ARN\) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. When you specify an AWS account, you can use a shortened form that consists of the `AWS:` prefix followed by the account ID, instead of using the account's full ARN\. In the AWS Management Console, specify only the 12\-digit account ID\. 
+You specify a principal using the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. When you specify an AWS account, you can use a shortened form that consists of the `AWS:` prefix followed by the account ID, instead of using the account's full ARN\. In the AWS Management Console, specify only the 12\-digit account ID\. 
 
 The following examples show various ways in which principals can be specified\.
 
@@ -107,7 +107,7 @@ If your `Principal` element in a role trust policy contains an ARN that points t
 
 **AWS service**
 
-IAM roles that can be assumed by an AWS service are called *service roles*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service role have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:
+IAM roles that can be assumed by an AWS service are called *[service roles](id_roles_terms-and-concepts.md#iam-term-service-role)*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service role have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:
 
 `long_service-name.amazonaws.com`
 

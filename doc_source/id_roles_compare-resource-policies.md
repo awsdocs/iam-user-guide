@@ -1,6 +1,6 @@
 # How IAM Roles Differ from Resource\-based Policies<a name="id_roles_compare-resource-policies"></a>
 
-For some AWS services, you can grant cross\-account access to your resources\. To do this, you attach a policy directly to the resource that you want to share, instead of using a role as a proxy\. The resource that you want to share must support resource\-based policies\. Unlike a user\-based policy, a resource\-based policy specifies who \(in the form of a list of AWS account ID numbers\) can access that resource\. 
+For some AWS services, you can grant cross\-account access to your resources\. To do this, you attach a policy directly to the resource that you want to share, instead of using a role as a proxy\. The resource that you want to share must support [resource\-based policies](access_policies_identity-vs-resource.md)\. Unlike a user\-based policy, a resource\-based policy specifies who \(in the form of a list of AWS account ID numbers\) can access that resource\. 
 
 Cross\-account access with a resource\-based policy has an advantage over a role\. With a resource that is accessed through a resource\-based policy, the user still works in the trusted account and does not have to give up his or her user permissions in place of the role permissions\. In other words, the user continues to have access to resources in the trusted account at the same time as he or she has access to the resource in the trusting account\. This is useful for tasks such as copying information to or from the shared resource in the other account\. 
 

@@ -1,8 +1,8 @@
 # Obtaining the Thumbprint for an OpenID Connect Identity Provider<a name="id_roles_providers_create_oidc_verify-thumbprint"></a>
 
-When you create an OpenID Connect \(OIDC\) identity provider in IAM, you must supply a thumbprint for the identity provider \(IdP\)\. The thumbprint is a signature for the unique server certificate that is used by the OIDC\-compatible IdP\. When you create an OIDC identity provider in IAM, you are trusting identities authenticated by that IdP with access to your AWS account\. By supplying the OIDC IdP's thumbprint, you assert to AWS that you wish to trust a particular OIDC IdP with this access\.
+When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint for the identity provider \(IdP\)\. The thumbprint is a signature for the unique server certificate that is used by the OIDC\-compatible IdP\. When you create an OIDC identity provider in IAM, you are trusting identities authenticated by that IdP with access to your AWS account\. By supplying the OIDC IdP's thumbprint, you assert to AWS that you wish to trust a particular OIDC IdP with this access\.
 
-When you create an OIDC identity provider with the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API, you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with the IAM console, the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually and verify that the thumbprint obtained by the IAM console matches the one you expect for your OIDC provider\. 
+When you create an OIDC identity provider with [the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API](id_roles_providers_create_oidc.md#manage-oidc-provider-cli), you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with [the IAM console](id_roles_providers_create_oidc.md), the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually and verify that the thumbprint obtained by the IAM console matches the one you expect for your OIDC provider\. 
 
 You use a web browser and the OpenSSL command line tool to obtain the thumbprint for an OIDC provider\. For more information, see the following sections\. 
 
@@ -16,9 +16,9 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
    Open this URL in a web browser, replacing *server\.example\.com* with your IdP's server name\. 
 
-1. In the document displayed in your web browser, find `"jwks_uri"`\. \(Use your web browser's **Find** feature to locate this text on the page\.\) Immediately following the text `"jwks_uri"` you will see a colon \(:\) followed by a URL\. Copy the fully qualified domain name of the URL\. Do not include the `https://` or any path that comes after the top\-level domain\. 
+1. <a name="thumbstep2"></a>In the document displayed in your web browser, find `"jwks_uri"`\. \(Use your web browser's **Find** feature to locate this text on the page\.\) Immediately following the text `"jwks_uri"` you will see a colon \(:\) followed by a URL\. Copy the fully qualified domain name of the URL\. Do not include the `https://` or any path that comes after the top\-level domain\. 
 
-1. Use the OpenSSL command line tool to execute the following command\. Replace *keys\.example\.com* with the domain name you obtained in [[ERROR] BAD/MISSING LINK TEXT](#thumbstep2)\.
+1. Use the OpenSSL command line tool to execute the following command\. Replace *keys\.example\.com* with the domain name you obtained in [Step 3](#thumbstep2)\.
 
    ```
    openssl s_client -showcerts -connect keys.example.com:443

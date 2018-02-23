@@ -10,7 +10,7 @@ When the temporary security credentials returned by `AssumeRole`, `AssumeRoleWit
 
 + Any resource\-based policies \(such as an Amazon S3 bucket policy\) attached to the resource that is being accessed by the temporary security credentials\.
 
-AWS uses all of these policies to arrive at an "allow" or "deny" authorization decision that follows the IAM policy evaluation logic\.
+AWS uses all of these policies to arrive at an "allow" or "deny" authorization decision that follows the [IAM policy evaluation logic](reference_policies_evaluation-logic.md)\.
 
 It is important to understand that the policies that are attached to the IAM user or the credentials that made the original call to `AssumeRole` are not evaluated by AWS when making the "allow" or "deny" authorization decision\. The user temporarily gives up its original permissions in favor of the permissions assigned by the assumed role\. In the case of the `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` APIs, there are no policies to evaluate because the caller of the API is not an AWS identity\.
 

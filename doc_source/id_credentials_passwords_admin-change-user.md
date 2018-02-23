@@ -62,7 +62,7 @@ When users leave your organization or no longer need AWS access, it is important
 
    + To create a custom password, choose **Custom password**, and type the password\. 
 **Note**  
-The password that you create must meet the account's password policy, if one is currently set\.
+The password that you create must meet the account's [password policy](id_credentials_passwords_account-policy.md), if one is currently set\.
 
 1. To require the user to create a new password when signing in, choose **Require password reset**\. Then choose **Apply**\.
 **Important**  
@@ -90,7 +90,7 @@ For security reasons, you cannot access the password after completing this step,
 
    + To create a custom password, choose **Custom password**, and type the password\. 
 **Note**  
-The password that you create must meet the account's password policy, if one is currently set\.
+The password that you create must meet the account's [password policy](id_credentials_passwords_account-policy.md), if one is currently set\.
 
 1. To require the user to create a new password when signing in, choose **Require password reset**\. Then choose **Apply**\.
 **Important**  

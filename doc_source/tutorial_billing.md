@@ -7,7 +7,7 @@ This workflow has four basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Enable Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
-By default, only the AWS account owner \(AWS account root user\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+By default, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 **[Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)**  
 After enabling billing access on your account, you must still explicitly grant access to billing data to specific IAM users or groups\. You grant this access with a customer managed policy\.
@@ -34,7 +34,7 @@ Sign into your test account and turn on billing access\. For information about h
 
 **To enable access to billing data on your AWS test account**
 
-1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the *AWS account root user*\.
+1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the *[AWS account root user](id_root-user.md)*\.
 
 1. On the navigation bar, choose your account name, and then choose **My Account**\.
 
@@ -44,15 +44,15 @@ Sign into your test account and turn on billing access\. For information about h
 
 ## Step 2: Create IAM Policies That Grant Permissions to Billing Data<a name="tutorial-billing-step2"></a>
 
-Next, create custom policies that grant both view and full access permissions to the pages within the Billing and Cost Management console\. For general information about IAM permission policies, see Managed Policies and Inline Policies\.
+Next, create custom policies that grant both view and full access permissions to the pages within the Billing and Cost Management console\. For general information about IAM permission policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
 
 **To create IAM policies that grant permissions to billing data**
 
-1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don’t sign in with your root user credentials\. For more information, see Create individual IAM users\.
+1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don’t sign in with your root user credentials\. For more information, see [Create individual IAM users](best-practices.md#create-iam-users)\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Policies**, and then choose **Create policy**\.
+1. <a name="tutorial-billing-repeat"></a>In the navigation pane, choose **Policies**, and then choose **Create policy**\.
 
 1. On the **Visual editor** tab, choose **Choose a service** to get started\. Then choose **Billing**\.
 
@@ -68,7 +68,7 @@ Next, create custom policies that grant both view and full access permissions to
 
    **Read\-only access**
 
-   1. Repeat steps 3 and 4\.
+   1. Repeat steps [3 and 4](#tutorial-billing-repeat)\.
 
    1. Choose **Select actions** and then select the check box next to **Read**\. You do not need to select a resource or condition for this policy\.
 
@@ -80,7 +80,7 @@ Next, create custom policies that grant both view and full access permissions to
 
 ## Step 3: Attach Billing Policies to Your Groups<a name="tutorial-billing-step3"></a>
 
-Now that you have custom billing policies available, you can attach them to their corresponding groups that you created earlier\. Although you can attach a policy directly to a user or role, we recommend \(in accordance with IAM best practices\) that you use groups instead\. For more information, see Use groups to assign permissions to IAM users\. 
+Now that you have custom billing policies available, you can attach them to their corresponding groups that you created earlier\. Although you can attach a policy directly to a user or role, we recommend \(in accordance with IAM best practices\) that you use groups instead\. For more information, see [Use groups to assign permissions to IAM users](best-practices.md#use-groups-for-permissions)\. 
 
 **To attach billing policies to your groups**
 
