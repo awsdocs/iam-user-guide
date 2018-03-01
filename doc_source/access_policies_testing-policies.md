@@ -119,7 +119,7 @@ Include the following actions in your policy:
 
 + `s3:GetBucketPolicy`
 
-+ `s3:GetObjects`
++ `s3:GetObject`
 
 For example, the following policy uses these actions to allow console users to simulate a resource\-based policy in a specific Amazon S3 bucket\.
 
@@ -130,7 +130,7 @@ For example, the following policy uses these actions to allow console users to s
           {
             "Action": [
               "s3:GetBucketPolicy",           
-              "s3:GetObjects"
+              "s3:GetObject"
             ],
             "Effect": "Allow",
             "Resource":"arn:aws:s3:::<BUCKET-NAME>/*"
