@@ -97,9 +97,9 @@ The visual editor in the IAM console guides you through creating a policy withou
 
    You can choose actions in the following ways:
 
-   + Use check boxes to select all actions for the service or all actions in one of the predefined **Access level groups**\.
+   + Use check boxes to select all actions for the service or all actions in one of the predefined **Access level** groups\.
 
-   + Expand each of the **Access level groups** to choose individual actions\.
+   + Expand each of the **Access level** groups to choose individual actions\.
 
    + Choose **add actions** to type a specific action or use wildcards \(`*`\) to specify multiple actions\.
 
@@ -125,7 +125,7 @@ The visual editor in the IAM console guides you through creating a policy withou
 
    + Use check boxes to select commonly used conditions\.
 
-   + Choose **Add condition** to specify other conditions\. Choose the condition's **Key**, **Qualifier**, and **Operator**, and then type a **Value**\. To add more than one value, choose **Add new value**\. You can consider the values as being connected by a logical "OR" operator\. When you are finished, choose **Add**\.
+   + Choose **Add condition** to specify other conditions\. Choose the condition's **Condition Key**, **Qualifier**, and **Operator**, and then type a **Value**\. To add more than one value, choose **Add new value**\. You can consider the values as being connected by a logical "OR" operator\. When you are finished, choose **Add**\.
 
    To add more than one condition, choose **Add condition** again\. Repeat as needed\. Each condition applies only to this one visual editor permission block\. All the conditions must be true for the permission block to be considered a match\. In other words, consider the conditions to be connected by a logical "AND" operator\.
 

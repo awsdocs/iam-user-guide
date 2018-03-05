@@ -73,15 +73,22 @@ This key should be used carefully: `aws:referer` allows Amazon S3 bucket owners 
 **aws:RequestTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted "aws:RequestTag/*tag\-key*":"*tag\-value*" where *tag\-key* and *tag\-value* are a tag key and value pair\.  
-To check a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag key "Dept" and that it has the value "Accounting"\. This AWS condition key was [introduced for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
+To check a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag key "Dept" and that it has the value "Accounting"\.   
+This AWS condition key was [introduced for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
 
 **aws:SecureTransport**  
 Works with [boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
 To check whether the request was sent using SSL\.
 
+**aws:SourceAccount**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+To check that the source of the request comes from a specific account\. For example, if an S3 bucket in your account is configured to deliver object creation events to an SNS topic, use this condition key to check that S3 is not being used as a confused deputy\. S3 tells SNS the account that the bucket belongs to\.   
+This condition key is available for only some services\.
+
 **aws:SourceArn**  
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
-To check the source of the request, using the [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) of the source\. \(This value is available for only some services\.\)
+To check the source of the request, using the [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) of the source\.   
+This condition key is available for only some services\.
 
 **aws:SourceIp**  
 Works with [IP address operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress)\.  

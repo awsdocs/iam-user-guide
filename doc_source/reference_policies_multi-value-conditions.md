@@ -5,6 +5,9 @@ This topic discusses how to create a policy `Condition` element that lets you te
 To create this type of condition, you can use the `ForAllValues` or `ForAnyValue` qualifier with the condition operator\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. 
 
 
++ [Introduction](#reference_policies_multi-value-conditions-intro)
++ [Examples of Condition Set Operators](#reference_policies_multi-value-conditions-examples)
++ [Evaluation Logic for Condition Set Operators](#reference_policies_multi-value-conditions-eval)
 
 ## Introduction<a name="reference_policies_multi-value-conditions-intro"></a>
 

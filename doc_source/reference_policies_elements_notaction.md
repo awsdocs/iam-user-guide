@@ -1,12 +1,12 @@
 # IAM JSON Policy Elements: NotAction<a name="reference_policies_elements_notaction"></a>
 
-`NotAction` is an advanced policy element that explicitly matches everything *except* the specified list of actions\. Using `NotAction` can result in a shorter policy by listing only a few actions that should not match, rather than including a long list of actions that will match\. When using `NotAction`, you should keep in mind that actions specified in this element are the *only* actions in that are limited\. This, in turn, means that all of the actions or services that are not listed are allowed if you use the `Allow` effect, or are denied if you use the `Deny` effect\. 
+`NotAction` is an advanced policy element that explicitly matches everything *except* the specified list of actions\. Using `NotAction` can result in a shorter policy by listing only a few actions that should not match, rather than including a long list of actions that will match\. When using `NotAction`, you should keep in mind that actions specified in this element are the *only* actions in that are limited\. This, in turn, means that all of the applicable actions or services that are not listed are allowed if you use the `Allow` effect, or are denied if you use the `Deny` effect\. When you use `NotAction` with the `Resource` element, you provide scope for the policy\. This is how AWS determines which actions or services are applicable\. For more information, see the following example policy\. 
 
 **NotAction with Allow** 
 
-You can use the `NotAction` element in a statement with `"Effect": "Allow"` to provide access to all of the actions in an AWS service, except for the actions specified in `NotAction`\. You can also use it with the `Resource` element to provide access to one or more resources with the exception of the action specified in the `NotAction` element\. 
+You can use the `NotAction` element in a statement with `"Effect": "Allow"` to provide access to all of the actions in an AWS service, except for the actions specified in `NotAction`\. You can use it with the `Resource` element to provide scope for the policy, limiting the allowed actions to the actions that can be performed on the specified resource\.
 
-The following example allows users to access all of the actions in every Amazon S3 resource *except* for deleting a bucket\.
+The following example allows users to access all of the Amazon S3 actions that can be performed on any S3 resource *except* for deleting a bucket\. This does not allow users to use the `ListAllMyBuckets` S3 API operation, because that action requires the "\*" resource\. This policy also does not allow actions in other services, because other service actions are not applicable to the S3 resources\.
 
 ```
 "Effect": "Allow",
@@ -24,7 +24,7 @@ The following example allows users to access every action in every AWS service e
 "Resource": "*"
 ```
 
-Be careful using the `NotAction` element and `"Effect": "Allow"` in the same statement or in a different statement within a policy\. `NotAction` matches all services and actions that are not explicitly listed, and could result in granting users more permissions than you intended\.
+Be careful using the `NotAction` element and `"Effect": "Allow"` in the same statement or in a different statement within a policy\. `NotAction` matches all services and actions that are not explicitly listed or applicable to the specified resource, and could result in granting users more permissions than you intended\.
 
 **NotAction with Deny**
 

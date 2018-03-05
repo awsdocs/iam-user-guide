@@ -12,6 +12,12 @@ If you are using the [AWS SDKs](https://aws.amazon.com/tools), the [AWS Command 
 You can use AWS Security Token Service \(AWS STS\) to create and provide trusted users with temporary security credentials that can control access to your AWS resources\. For more information about AWS STS, see [Temporary Security Credentials](id_credentials_temp.md)\. AWS STS is a global service that has a default endpoint at `https://sts.amazonaws.com`\. This endpoint is in the US East \(Ohio\) region, although credentials that you get from this and other endpoints are valid globally and work with services and resources in any region\. You can also choose to make AWS STS API calls to endpoints in any of the supported regions\. This can reduce latency by making the requests from servers in a region that is geographically closer to you\. No matter which region your credentials come from, they work globally\. For more information, see [Activating and Deactivating AWS STS in an AWS Region](id_credentials_temp_enable-regions.md)\.
 
 
++ [Using Temporary Credentials in Amazon EC2 Instances](#using-temp-creds-sdk-ec2-instances)
++ [Using Temporary Security Credentials with the AWS SDKs](#using-temp-creds-sdk)
++ [Using Temporary Security Credentials with the AWS CLI](#using-temp-creds-sdk-cli)
++ [Using Temporary Security Credentials with the Tools for Windows PowerShell](#using-temp-creds-twp)
++ [Using Temporary Security Credentials with APIs](#RequestWithSTS)
++ [More Information](#using-temp-creds-more-info)
 
 ## Using Temporary Credentials in Amazon EC2 Instances<a name="using-temp-creds-sdk-ec2-instances"></a>
 
