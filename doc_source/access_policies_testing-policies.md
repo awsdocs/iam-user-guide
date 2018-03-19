@@ -28,6 +28,7 @@ With the IAM policy simulator, you can test and troubleshoot IAM and resource\-b
 + [How the IAM Policy Simulator Works](#policies_policy-simulator-how-it-works)
 + [Permissions Required for Using the IAM Policy Simulator](#permissions-required_policy-simulator)
 + [Using the IAM Policy Simulator \(AWS Management Console\)](#policies_policy-simulator-using)
++ [Using the IAM Policy Simulator \(AWS CLI, Tools for Windows PowerShell, and AWS API\)](#policies-simulator-using-api)
 
 ## How the IAM Policy Simulator Works<a name="policies_policy-simulator-how-it-works"></a>
 
@@ -285,7 +286,7 @@ The following table lists the informational and warning messages you might encou
 | You have policies that do not comply with the policy syntax\. You can use the Policy Validator to review and accept the recommended updates to your policies\.  |  This message appears at the top of the policy list if you have policies that do not comply with the IAM policy grammar\. In order to simulate these policies, follow the instructions at [Validating JSON Policies](access_policies_policy-validator.md) to identify and fix these policies\.  | 
 |  This policy must be updated to comply with the latest policy syntax rules\.  |  This message is displayed if you have policies that do not comply with the IAM policy grammar\. In order to simulate these policies, follow the instructions at [Validating JSON Policies](access_policies_policy-validator.md) to identify and fix these policies\.  | 
 
-### Using the IAM Policy Simulator \(AWS CLI, Tools for Windows PowerShell, and AWS API\)<a name="policies-simulator-using-api"></a>
+## Using the IAM Policy Simulator \(AWS CLI, Tools for Windows PowerShell, and AWS API\)<a name="policies-simulator-using-api"></a>
 
 Policy simulator commands typically require calling APIs to do two things:
 
