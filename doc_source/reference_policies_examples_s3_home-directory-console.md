@@ -7,7 +7,7 @@ Use `${aws:userid}` instead of `${aws:username}` to allows a federated user with
 + role-id is a unique identifier assigned to each role at creation. You can display the role ID with the AWS CLI command: `aws iam get-role --role-name rolename`   
 + caller-specified-name names that are passed by the calling process (such as an application or service) when it makes a call to get temporary credentials.
 
-For example, if you specify the friendly name Bob, the correct format would be "AROAXXT2NJT7D3SIQN7Z6:Bob". This names your session and allows access to the S3 bucket with a matching prefix. 
+For example, if you specify the friendly name Bob, the correct format would be `"AROAXXT2NJT7D3SIQN7Z6:Bob"`. This names your session and allows access to the S3 bucket with a matching prefix. 
 
 ```
 {
