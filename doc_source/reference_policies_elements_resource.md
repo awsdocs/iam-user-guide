@@ -19,7 +19,7 @@ The following example refers to the IAM user named Bob in an AWS account\.
 "Resource": "arn:aws:iam::account-ID-without-hyphens:user/Bob"
 ```
 
-You can use wildcards as part of the resource ARN\. You can use wildcard characters \(\* and ?\) within any ARN segment \(the parts separated by colons\)\. An asterisk \(\*\) represents any combination of characters and a question mark \(?\) represents any single character\. You can have use multiple \* or ? characters in each segment, but a wildcard cannot span segments\. The following example refers to all IAM users whose path is `/accounting`\. 
+You can use wildcards as part of the resource ARN\. You can use wildcard characters \(\* and ?\) within any ARN segment \(the parts separated by colons\)\. An asterisk \(\*\) represents any combination of characters and a question mark \(?\) represents any single character\. You can use multiple \* or ? characters in each segment, but a wildcard cannot span segments\. The following example refers to all IAM users whose path is `/accounting`\. 
 
 ```
 "Resource": "arn:aws:iam::account-ID-without-hyphens:user/accounting/*"
