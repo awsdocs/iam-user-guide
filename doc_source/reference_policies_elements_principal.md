@@ -155,6 +155,8 @@ In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Ano
 ## More Information<a name="Principal_more-info"></a>
 
 For more information, see the following:
+
++ [Full Listing of AWS Service Principals](reference_service_principals_listing.md)
 + [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
 + [Example Policies for Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
 + [Amazon SQS Policy Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
