@@ -5,31 +5,18 @@ Amazon Kinesis Analytics \(service prefix: kinesisanalytics\) provides the follo
 **Actions for Amazon Kinesis Analytics**
 
 For information about using the following Amazon Kinesis Data Analytics API actions in an IAM policy, see [Granting Amazon Kinesis Data Analytics Permissions to Access Streaming Sources \(Creating an IAM Role\)](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/iam-role.html) in the *Amazon Kinesis Data Analytics Developer Guide*\.
-
-+ `[kinesisanalytics:DescribeApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html)`
-
 + `[kinesisanalytics:AddApplicationInput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html)`
-
 + `[kinesisanalytics:AddApplicationOutput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html)`
-
-+ `[kinesisanalytics:DeleteApplicationOutput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html)`
-
-+ `[kinesisanalytics:StartApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartApplication.html)`
-
-+ `[kinesisanalytics:DeleteApplicationReferenceDataSource](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html)`
-
 + `[kinesisanalytics:AddApplicationReferenceDataSource](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html)`
-
-+ `[kinesisanalytics:DiscoverInputSchema](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html)`
-
 + `[kinesisanalytics:CreateApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html)`
-
-+ `[kinesisanalytics:ListApplications](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html)`
-
-+ `[kinesisanalytics:StopApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html)`
-
 + `[kinesisanalytics:DeleteApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html)`
-
++ `[kinesisanalytics:DeleteApplicationOutput](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html)`
++ `[kinesisanalytics:DeleteApplicationReferenceDataSource](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html)`
++ `[kinesisanalytics:DescribeApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html)`
++ `[kinesisanalytics:DiscoverInputSchema](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html)`
++ `[kinesisanalytics:ListApplications](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html)`
++ `[kinesisanalytics:StartApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartApplication.html)`
++ `[kinesisanalytics:StopApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html)`
 + `[kinesisanalytics:UpdateApplication](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html)`
 
 **Condition context keys for Amazon Kinesis Analytics**

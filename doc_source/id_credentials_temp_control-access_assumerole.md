@@ -5,9 +5,7 @@ The permission policy of the role that is being assumed determines the permissio
 Optionally, you can pass a separate policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API call\. You use the passed policy to scope down the permissions assigned to the temporary security credentials—that is, to allow only a subset of the permissions that are allowed by the permission policy of the role\. You cannot use the passed policy to grant permissions that are in excess of those allowed by the permission policy of the role; it is a filter only\. If you do not pass a policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API call, then the permissions attached to the temporary security credentials are the same as the permissions defined in the role permissions policy of the role that is being assumed\. 
 
 When the temporary security credentials returned by `AssumeRole`, `AssumeRoleWithSAML`, and `AssumeRoleWithWebIdentity` are used to make AWS requests, AWS determines whether to allow or deny access by evaluating all of the following policies:
-
 + The combination of the role permission policy of the role that was assumed and the policy passed as a parameter to the API, as discussed previously\.
-
 + Any resource\-based policies \(such as an Amazon S3 bucket policy\) attached to the resource that is being accessed by the temporary security credentials\.
 
 AWS uses all of these policies to arrive at an "allow" or "deny" authorization decision that follows the [IAM policy evaluation logic](reference_policies_evaluation-logic.md)\.
@@ -49,9 +47,7 @@ In this example, you call the `AssumeRole` API and do not include the optional `
 ### Policy Passed as a Parameter<a name="permissions-assume-role-example-passed-policy"></a>
 
 Imagine that you want to allow a user to assume the same role as in the previous example, but you want the assumed role user to have permission only to get and put objects—but not delete objects—in the `productionapp` S3 bucket\. One way to accomplish this is to create a new role and specify the desired permissions in that role's permission policy\. Another way to accomplish this is to call the `AssumeRole` API and include the optional `Policy` parameter as part of the API call\. For example, imagine that the following policy is passed as a parameter of the API call\. The assumed role user would have permissions to perform only these actions: 
-
 + List all objects in the `productionapp` bucket\.
-
 + Get and put objects in the `productionapp` bucket\.
 
 Note that because the `s3:DeleteObject` permission is not specified in the following policy, it is filtered out and the assumed role user is not granted the `s3:DeleteObject` permission\. When you pass a policy as a parameter of the `AssumeRole` API call, the effective permissions of the assumed role user consist of only those permissions that are granted both in the role permission policy ***and*** the passed policy\.

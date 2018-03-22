@@ -12,7 +12,7 @@ The service last accessed data includes ***all*** attempts to access an AWS API,
 
 This topic describes the functionality of the IAM service last accessed data and how you can use it with the IAM console\. It also describes two practical scenarios of using the service last accessed data to remove unnecessary permissions from an IAM policy\.
 
-
+**Topics**
 + [Viewing Access Advisor Information](#access_policies_access-advisor-viewing)
 + [Notes](#access_policies_access-advisor-notes)
 + [Troubleshooting Tips](#access_policies_access-advisor-troubleshooting)
@@ -54,29 +54,20 @@ If you choose the name of a user in the dialog box, IAM opens a new browser tab 
 *\(Policy only\)* The name of one user or role and a count of other users and roles who have used this policy to access the specified service\. Choose the link to see a list of all of the users and roles to which this policy is attached and when each last accessed the specified service\.
 
 **Additional options**
-
    + Use the **Filter** menu on the **Access Advisor** tab to limit the list to **Services accessed** and **Services not accessed**\. For example, you might select **Services not accessed** for a policy to discover which services listed in that policy are never used\. In that case, you might want to remove those services from the policy\. You can also type a name \(or part of a name\) in the search box to restrict the list to only those entities whose name matches what you type\.
-
    + Choose one of the column heads to sort the information according to that column's information\. Choose the header a second time to sort in the opposite order\.
 
 ## Notes<a name="access_policies_access-advisor-notes"></a>
-
 + The list of services in the table reflects the *current* state of your IAM policies, not any historical state\. For example, if the current version of your policy allows only Amazon S3 access and it previously allowed access to other AWS services, the service last accessed data shows only a table entry for Amazon S3\. If you are trying to determine the history of access control changes in your account, or want to audit historical access, we recommend that you use [AWS CloudTrail](https://aws.amazon.com/cloudtrail/)\.
-
 + It usually takes less than 4 hours for recent **Last Accessed** activity to appear in the table\. However, under some circumstances it can take up to 12 hours\. If the service is running unusually slow, a notification appears in the IAM console\.
-
 + Access advisor reports activity for the last 365 days\. If there has been no activity, then Access Advisor reports **Not accessed in the tracking period**\. If there has been activity, but it was 365 days ago or longer, then Access Advisor reports a last accessed period of **365**\.
 
 ## Troubleshooting Tips<a name="access_policies_access-advisor-troubleshooting"></a>
 
 If the service last accessed table is empty, it might be caused by one of the following:
-
 + You selected a user that has no attached policies, either directly or through group memberships\.
-
 + You selected a managed policy attached to a group that has no members\.
-
 + You selected a user, group, or role that has neither inline nor managed policies attached\.
-
 + You selected a user that has permissions granted only by a resource\-based policy\.
 
 ## Sample Usage Scenarios<a name="access_policies_access-advisor-scenarios"></a>
@@ -121,17 +112,11 @@ The administrator confirms that the developer has no business need for access to
 The administrator might also infer that the developer’s access to Route 53, Elastic Transcoder, etc\. from the app\-dev group should also be revoked due to lack of use\. However, before cutting these permissions out of the app\-dev policy \(which may adversely affect other members of the group\), the administrator should consult the service last accessed data for the app\-dev group policies\. That data can reveal whether these permissions are universally unused by all app\-dev group members or simply unused by this particular developer\. If they are truly unused by all group members, then the administrator can probably safely remove those permissions from the app\-dev group's policy\. If it is only this one developer that is not using the permissions, then the administrator may want to craft a different set of permissions for the developer\. Another option is for the administrator to do nothing, accepting that not all users exercise all the permissions granted to them\.
 
 As this example shows, you might use the service last accessed data for principals as a starting point for a number of possible next steps, including the following suggestions\. However, it’s up to you as an IAM administrator to choose the steps that strike the right balance of accessibility and least\-privilege that’s appropriate to your organization\.
-
 + [Removing membership in a group](id_groups_manage_add-remove-users.md)
-
 + [Detaching a managed policy](access_policies_manage-attach-detach.md#detach-managed-policy-console)
-
 + [Deleting a managed policy](access_policies_manage-delete.md#delete-managed-policy)
-
 + [Deleting an inline policy and converting to a managed policy](access_policies_manage-delete.md)
-
 + [Editing an existing policy to remove permissions](access_policies_manage-edit.md)
-
 + [Adding an explicit deny to an existing policy](reference_policies_evaluation-logic.md#AccessPolicyLanguage_Interplay)
 
 ## Regions Where Data Is Tracked<a name="access-advisor_tracking-period"></a>

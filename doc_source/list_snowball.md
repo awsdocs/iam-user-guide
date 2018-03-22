@@ -5,40 +5,23 @@ AWS Snowball \(service prefix: snowball\) provides the following service\-specif
 **Actions for AWS Snowball**
 
 For additional information about using AWS Snowball actions in an IAM policy, see [Authorization and Access Control in Snowball](http://docs.aws.amazon.com/snowball/latest/ug/auth-access-control.html) in the *AWS Snowball User Guide*\.
-
-+ `[snowball:DescribeJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeJob.html)`
-
-+ `[snowball:DescribeAddress](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeAddress.html)`
-
-+ `[snowball:ListClusterJobs](http://docs.aws.amazon.com//snowball/latest/api-reference/API_ListClusterJobs.html)`
-
-+ `[snowball:DescribeCluster](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeCluster.html)`
-
-+ `[snowball:CreateAddress](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CreateAddress.html)`
-
-+ `[snowball:GetJobManifest](http://docs.aws.amazon.com//snowball/latest/api-reference/API_GetJobManifest.html)`
-
-+ `[snowball:GetJobUnlockCode](http://docs.aws.amazon.com//snowball/latest/api-reference/API_GetJobUnlockCode.html)`
-
-+ `[snowball:UpdateJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_UpdateJob.html)`
-
-+ `[snowball:DescribeAddresses](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeAddresses.html)`
-
 + `[snowball:CancelCluster](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CancelCluster.html)`
-
 + `[snowball:CancelJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CancelJob.html)`
-
-+ `[snowball:ListClusters](http://docs.aws.amazon.com//snowball/latest/api-reference/API_ListClusters.html)`
-
-+ `[snowball:CreateJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CreateJob.html)`
-
-+ `[snowball:ListJobs](http://docs.aws.amazon.com//snowball/latest/api-reference/API_ListJobs.html)`
-
-+ `[snowball:UpdateCluster](http://docs.aws.amazon.com//snowball/latest/api-reference/API_UpdateCluster.html)`
-
++ `[snowball:CreateAddress](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CreateAddress.html)`
 + `[snowball:CreateCluster](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CreateCluster.html)`
-
++ `[snowball:CreateJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_CreateJob.html)`
++ `[snowball:DescribeAddress](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeAddress.html)`
++ `[snowball:DescribeAddresses](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeAddresses.html)`
++ `[snowball:DescribeCluster](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeCluster.html)`
++ `[snowball:DescribeJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_DescribeJob.html)`
++ `[snowball:GetJobManifest](http://docs.aws.amazon.com//snowball/latest/api-reference/API_GetJobManifest.html)`
++ `[snowball:GetJobUnlockCode](http://docs.aws.amazon.com//snowball/latest/api-reference/API_GetJobUnlockCode.html)`
 + `[snowball:GetSnowballUsage](http://docs.aws.amazon.com//snowball/latest/api-reference/API_GetSnowballUsage.html)`
++ `[snowball:ListClusterJobs](http://docs.aws.amazon.com//snowball/latest/api-reference/API_ListClusterJobs.html)`
++ `[snowball:ListClusters](http://docs.aws.amazon.com//snowball/latest/api-reference/API_ListClusters.html)`
++ `[snowball:ListJobs](http://docs.aws.amazon.com//snowball/latest/api-reference/API_ListJobs.html)`
++ `[snowball:UpdateCluster](http://docs.aws.amazon.com//snowball/latest/api-reference/API_UpdateCluster.html)`
++ `[snowball:UpdateJob](http://docs.aws.amazon.com//snowball/latest/api-reference/API_UpdateJob.html)`
 
 **Condition context keys for AWS Snowball**
 

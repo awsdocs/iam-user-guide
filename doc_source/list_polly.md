@@ -5,17 +5,11 @@ Amazon Polly \(service prefix: polly\) provides the following service\-specific 
 **Actions for Amazon Polly**
 
 For information about using the following Amazon Polly API actions in an IAM policy, see [Using Identity\-Based Policies \(IAM Policies\) for Amazon Polly](http://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html) in the *Amazon Polly Developer Guide*\.
-
-+ `[polly:GetLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html)`
-
-+ `[polly:PutLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)`
-
-+ `[polly:DescribeVoices](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)`
-
-+ `[polly:ListLexicons](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)`
-
 + `[polly:DeleteLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)`
-
++ `[polly:DescribeVoices](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)`
++ `[polly:GetLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html)`
++ `[polly:ListLexicons](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)`
++ `[polly:PutLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)`
 + `[polly:SynthesizeSpeech](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)`
 
 **Condition context keys for Amazon Polly**

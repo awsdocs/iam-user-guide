@@ -1,9 +1,7 @@
 # Using Multi\-Factor Authentication \(MFA\) in AWS<a name="id_credentials_mfa"></a>
 
 For increased security, we recommend that you configure multi\-factor authentication \(MFA\) to help protect your AWS resources\. MFA adds extra security because it requires users to type a unique authentication code from an approved authentication device or SMS text message when they access AWS websites or services\. 
-
 + **Security token\-based**\. This type of MFA requires you to assign an MFA device \(hardware or virtual\) to the IAM user or the AWS account root user\. A virtual device is a software application running on a phone or other mobile device that emulates a physical device\. Either way, the device generates a six\-digit numeric code based upon a time\-synchronized one\-time password algorithm\. The user must type a valid code from the device on a second webpage during sign\-in\. Each MFA device assigned to a user must be unique; a user cannot type a code from another user's device to authenticate\. For more information about enabling security token\-based MFA, see [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md) and [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)\.
-
 + **SMS text message\-based**\. This type of MFA requires you to configure the IAM user with the phone number of the user's SMS\-compatible mobile device\. When the user signs in, AWS sends a six\-digit numeric code by SMS text message to the user's mobile device\. The user is required to type that code on a second webpage during sign\-in\. Note that SMS\-based MFA is available only for IAM users\. You cannot use this type of MFA with the AWS account root user\. For more information about enabling SMS text messaging\-based MFA, see [PREVIEW \- Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)\.
 **Note**  
 AWS is no longer accepting new participants for the SMS MFA preview\. We encourage you to use MFA on your AWS account through either a [hardware\-based](id_credentials_mfa_enable_physical.md) or [virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA token device\. If your account is already participating in the SMS MFA Preview program, you can continue using this feature\.
@@ -20,7 +18,7 @@ When you enable MFA for the AWS account root user, it affects only the root user
 
 For answers to commonly asked questions about AWS MFA, go to the [AWS Multi\-Factor Authentication FAQs](http://aws.amazon.com/iam/faqs/#MFA_FAQs)\. 
 
-
+**Topics**
 + [Enabling MFA Devices](id_credentials_mfa_enable.md)
 + [Checking MFA Status](id_credentials_mfa_checking-status.md)
 + [Resynchronize MFA Devices](id_credentials_mfa_sync.md)

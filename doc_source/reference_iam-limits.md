@@ -8,19 +8,12 @@ To get account\-level information about entity usage and quotas, use the [GetAcc
 ## IAM Entity Name Limits<a name="reference_iam-limits-names"></a>
 
 The following are restrictions on IAM names:
-
 + Policy documents can contain only the following Unicode characters: horizontal tab \(U\+0009\), linefeed \(U\+000A\), carriage return \(U\+000D\), and characters in the range U\+0020 to U\+00FF\. 
-
 + Names of users, groups, roles, policies, instance profiles, and server certificates must be alphanumeric, including the following common characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\.
-
 + Names of users, groups, and roles must be unique within the account\. They are not distinguished by case, for example, you cannot create groups named both "ADMINS" and "admins"\.
-
 + Path names must begin and end with a forward slash \(/\)\.
-
 + Policy names for [inline policies](access_policies_managed-vs-inline.md) must be unique to the user, group, or role they are embedded in, and can contain any Basic Latin \(ASCII\) characters minus the following reserved characters: backward slash \(\\\), forward slash \(/\), asterisk \(\*\), question mark \(?\), and white space\. These characters are reserved according to [RFC 3986](https://tools.ietf.org/html/rfc3986#section-2.2)\. 
-
 + User passwords \(login profiles\) can contain any Basic Latin \(ASCII\) characters\.
-
 + AWS account ID aliases must be unique across AWS products, and must be alphanumeric following DNS naming conventions\. An alias must be lowercase, it must not start or end with a hyphen, it cannot contain two consecutive hyphens, and it cannot be a 12 digit number\. 
 
 For a list of Basic Latin \(ASCII\) characters, go to the [Library of Congress Basic Latin \(ASCII\) Code Table](http://lcweb2.loc.gov/diglib/codetables/42.html)\. 

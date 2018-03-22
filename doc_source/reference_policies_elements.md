@@ -4,7 +4,7 @@ JSON policy documents are made up of elements\. The elements are listed here in 
 
 The details of what goes into a policy vary for each service, depending on what actions the service makes available, what types of resources it contains, and so on\. When you're writing policies for a specific service, it's helpful to see examples of policies for that service\. For a list of all the services that support IAM, and for links to the documentation in those services that discusses IAM and policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
-
+**Topics**
 + [Version](reference_policies_elements_version.md)
 + [Id](reference_policies_elements_id.md)
 + [Statement](reference_policies_elements_statement.md)

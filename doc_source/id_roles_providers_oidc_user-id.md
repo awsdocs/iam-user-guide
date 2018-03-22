@@ -39,17 +39,12 @@ For these structures, `app1` and `app2` represent different apps, such as differ
 You can typically create the folders for `app1` and `app2` through the AWS Management Console, since the application names are static values\. That's true also if you include the provider name in the path, since the provider name is also a static value\. In contrast, the user\-specific folders \(*user1*, *user2*, *user3*, etc\.\) have to be created at run time from the app, using the user ID that's available in the `SubjectFromWebIdentityToken` value that is returned by the request to `AssumeRoleWithWebIdentity`\.
 
 To write policies that allow exclusive access to resources for individual users, you can match the complete folder name, including the app name and provider name, if you're using that\. You can then include the following provider\-specific context keys that reference the user ID that the provider returns:
-
 + `cognito-identity.amazonaws.com:sub`
-
 + `www.amazon.com:user_id`
-
 + `graph.facebook.com:id`
-
 + `accounts.google.com:sub`
 
 For OIDC providers, use the fully qualified URL of the OIDC provider with the subcontext key, like the following example:
-
 + `server.example.com:sub`
 
 The following example shows a permission policy that grants access to a bucket in Amazon S3 only if the prefix for the bucket matches the string:

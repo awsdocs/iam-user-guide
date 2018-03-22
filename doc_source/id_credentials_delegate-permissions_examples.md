@@ -4,7 +4,7 @@ Following are examples of IAM policies that allow users to perform tasks associa
 
 For examples of policies that let users perform tasks with other AWS services, like Amazon S3, Amazon EC2, and DynamoDB, see [Example Policies](access_policies_examples.md)\. 
 
-
+**Topics**
 + [Allow Users to Manage Their Own Passwords \(from the My Password Page\)](#creds-policies-password-self)
 + [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](#creds-policies-credentials)
 + [Allow a User to List the Account's Groups, Users, Policies, and More for Reporting Purposes](#iampolicy-example-userlistall)
@@ -46,11 +46,8 @@ For information about letting selected users manage passwords using the **Users*
 ## Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys<a name="creds-policies-credentials"></a>
 
 The following policy allows users to perform these actions in the AWS Management Console:
-
 + Create, change, or remove their own password\. This includes the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html), and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html) actions\. 
-
 + Create or delete their own access key \(access key ID and secret access key\)\. This includes the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html), and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html) actions\. 
-
 + Create or delete their own SSH keys\. This includes the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadSSHPublicKey.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSSHPublicKey.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSSHPublicKey.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSSHPublicKeys.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSSHPublicKeys.html), and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSSHPublicKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSSHPublicKey.html) actions\. 
 
 ```
@@ -143,15 +140,10 @@ The following policy allows the user to update the membership of the group calle
 ## Allow a User to Manage IAM Users<a name="creds-policies-users"></a>
 
 The following policy allows a user to perform all the tasks associated with managing IAM users but not to perform actions on other entities, such as creating groups or policies\. Allowed actions include these: 
-
 + Creating the user \(the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html) action\)\. 
-
 + Deleting the user\. This task requires permissions to perform all of the following actions: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSigningCertificate.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSigningCertificate.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html), and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUser.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUser.html)\. 
-
 + Listing users in the account and in groups \(the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html) actions\)\. 
-
 + Listing and removing policies for the user \(the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html), [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html) actions\) 
-
 + Renaming or changing the path for the user \(the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html) action\)\. The `Resource` element must include an ARN that covers both the source path and the target path\. For more information on paths, see [Friendly Names and Paths](reference_identifiers.md#identifiers-friendly-names)\.
 
 ```
@@ -194,9 +186,7 @@ The following policy allows a user to perform all the tasks associated with mana
 A number of the permissions included in the preceding policy allow the user to perform tasks in the AWS Management Console\. Users who perform user\-related tasks from the [AWS CLI](http://aws.amazon.com/cli/), the [AWS SDKs](http://aws.amazon.com/tools/), or the IAM HTTP query API only might not need certain permissions\. For example, if users already know the ARN of policies to detach from a user, they do not need the `iam:ListAttachedUserPolicies` permission\. The exact list of permissions that a user requires depends on the tasks that the user must perform while managing other users\. 
 
 The following permissions in the policy allow access to user tasks via the AWS Management Console:
-
 + `iam:GetAccount*`
-
 + `iam:ListAccount*`
 
 ## Allow Users to Set Account Password Policy<a name="creds-policies-set-password-policy"></a>

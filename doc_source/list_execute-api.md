@@ -5,9 +5,7 @@ Amazon API Gateway \(service prefix: execute\-api\) provides the following servi
 **Actions for Amazon API Gateway**
 
 For more information about controlling access to API Gateway, see [User Access Permissions for Amazon API Gateway](http://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\.
-
 + `execute-api:InvalidateCache`
-
 + `execute-api:Invoke`
 
 **Condition context keys for Amazon API Gateway**

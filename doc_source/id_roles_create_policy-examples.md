@@ -2,7 +2,7 @@
 
 The following examples show how you can allow or grant an AWS account access to the resources in another AWS account\. To learn how to create an IAM policy using these example JSON policy documents, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
-
+**Topics**
 + [Using Roles to Delegate Access to Another AWS Account's Resources](#example-delegate-xaccount-rolesapi)
 + [Using a Policy to Delegate Access To Services](#id_roles_create_policy-examples-access-to-services)
 + [Using a Resource\-Based Policy to Delegate Access to an Amazon S3 Bucket in Another Account](#example-delegate-xaccount-S3)

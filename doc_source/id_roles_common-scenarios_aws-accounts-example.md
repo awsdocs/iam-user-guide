@@ -13,19 +13,13 @@ The administrator can optionally configure the role so that users who assume the
 1. In the development account an administrator grants members of the Developers group permission to switch to the role\. This is done by granting the Developers group permission to call the AWS Security Token Service \(AWS STS\) `AssumeRole` API for the `UpdateAPP` role\. Any IAM user that belongs to the Developers group in the development account can now switch to the `UpdateAPP` role in the production account\. Other users who are not in the developer group do not have permission to switch to the role and therefore cannot access the S3 bucket in the production account\.
 
 1. The user requests switches to the role:
-
    + AWS console: The user chooses the account name on the navigation bar and chooses **Switch Role**\. The user specifies the account ID \(or alias\) and role name\. Alternatively, the user can click on a link sent in email by the administrator\. The link takes the user to the **Switch Role** page with the details already filled in\.
-
    + AWS API/Tools for Windows PowerShell/AWS CLI: A user in the Developers group of the development account calls the `AssumeRole` function to obtain credentials for the `UpdateAPP` role\. The user specifies the ARN of the `UpdateAPP` role as part of the call\. If a user in the Testers group makes the same request, the request fails because Testers do not have permission to call `AssumeRole` for the `UpdateAPP` role ARN\.
 
 1. AWS STS returns temporary credentials:
-
    + AWS console: AWS STS verifies the request with the role's trust policy to ensure that the request is from a trusted entity \(which it is: the development account\)\. After verification, AWS STS returns [temporary security credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html) to the AWS console\.
-
    + API/CLI: AWS STS verifies the request against the role's trust policy to ensure that the request is from a trusted entity \(which it is: the Development account\)\. After verification, AWS STS returns [temporary security credentials](http://docs.aws.amazon.com/STS/latest/UsingSTS/Welcome.html) to the application\.
 
 1. The temporary credentials allow access to the AWS resource:
-
    + AWS console: The AWS console uses the temporary credentials on behalf of the user on all subsequent console actions, in this case, to read and write to the `productionapp` bucket\. The console cannot access any other resource in the production account\. When the user exits the role, the user's permissions revert to the original permissions held before switching to the role\.
-
    + API/CLI: The application uses the temporary security credentials to update the `productionapp` bucket\. With the temporary security credentials, the application can only read from and write to the `productionapp` bucket and cannot access any other resource in the Production account\. The application does not have to exit the role, but instead stops using the temporary credentials and uses the original credentials in subsequent API calls\.

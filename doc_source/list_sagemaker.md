@@ -3,66 +3,36 @@
 Amazon SageMaker \(service prefix: sagemaker\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon SageMaker**
-
-+ `sagemaker:StopNotebookInstance`
-
-+ `sagemaker:ListModels`
-
-+ `sagemaker:DescribeNotebookInstance`
-
-+ `sagemaker:StopTrainingJob`
-
-+ `sagemaker:CreateEndpointConfig`
-
-+ `sagemaker:StartNotebookInstance`
-
-+ `sagemaker:DescribeTrainingJob`
-
-+ `sagemaker:ListNotebookInstances`
-
-+ `sagemaker:DeleteModel`
-
-+ `sagemaker:CreateModel`
-
-+ `sagemaker:UpdateNotebookInstance`
-
-+ `sagemaker:CreatePresignedNotebookInstanceUrl`
-
-+ `sagemaker:CreateEndpoint`
-
-+ `sagemaker:CreateTrainingJob`
-
-+ `sagemaker:DescribeEndpoint`
-
-+ `sagemaker:InvokeEndpoint`
-
-+ `sagemaker:UpdateEndpointWeightsAndCapacities`
-
-+ `sagemaker:ListTrainingJobs`
-
-+ `sagemaker:DeleteNotebookInstance`
-
-+ `sagemaker:DescribeEndpointConfig`
-
-+ `sagemaker:DeleteEndpoint`
-
-+ `sagemaker:CreateNotebookInstance`
-
-+ `sagemaker:ListEndpoints`
-
-+ `sagemaker:UpdateEndpoint`
-
-+ `sagemaker:ListEndpointConfigs`
-
-+ `sagemaker:DescribeModel`
-
 + `sagemaker:AddTags`
-
-+ `sagemaker:ListTags`
-
++ `sagemaker:CreateEndpoint`
++ `sagemaker:CreateEndpointConfig`
++ `sagemaker:CreateModel`
++ `sagemaker:CreateNotebookInstance`
++ `sagemaker:CreatePresignedNotebookInstanceUrl`
++ `sagemaker:CreateTrainingJob`
++ `sagemaker:DeleteEndpoint`
 + `sagemaker:DeleteEndpointConfig`
-
++ `sagemaker:DeleteModel`
++ `sagemaker:DeleteNotebookInstance`
 + `sagemaker:DeleteTags`
++ `sagemaker:DescribeEndpoint`
++ `sagemaker:DescribeEndpointConfig`
++ `sagemaker:DescribeModel`
++ `sagemaker:DescribeNotebookInstance`
++ `sagemaker:DescribeTrainingJob`
++ `sagemaker:InvokeEndpoint`
++ `sagemaker:ListEndpointConfigs`
++ `sagemaker:ListEndpoints`
++ `sagemaker:ListModels`
++ `sagemaker:ListNotebookInstances`
++ `sagemaker:ListTags`
++ `sagemaker:ListTrainingJobs`
++ `sagemaker:StartNotebookInstance`
++ `sagemaker:StopNotebookInstance`
++ `sagemaker:StopTrainingJob`
++ `sagemaker:UpdateEndpoint`
++ `sagemaker:UpdateEndpointWeightsAndCapacities`
++ `sagemaker:UpdateNotebookInstance`
 
 **Condition context keys for Amazon SageMaker**
 

@@ -3,12 +3,9 @@
 AWS Price List \(service prefix: pricing\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Price List**
-
-+ `pricing:GetAttributeValues`
-
-+ `pricing:GetProducts`
-
 + `pricing:DescribeServices`
++ `pricing:GetAttributeValues`
++ `pricing:GetProducts`
 
 **Condition context keys for AWS Price List**
 

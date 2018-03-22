@@ -53,9 +53,7 @@ After you create the role and grant it permissions to perform AWS tasks or acces
 Creating a role from the AWS CLI involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the AWS CLI you must explicitly perform each step yourself\. You must create the policy and assign a permissions policy to the role\.
 
 **To create a role for cross\-account access \(AWS CLI\)**
-
 + Create a role: [aws iam create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
-
 + Attach a managed permission policy to the role: [aws iam attach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
 
    \-or\-
@@ -114,11 +112,9 @@ After you create the role and grant it permissions to perform AWS tasks or acces
 You can use API calls to create a role that an IAM user can switch to\.
 
 **To create a role in code \(API\)**
-
 + Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
 
   For the role's trust policy, you can specify a file location\.
-
 + Attach a managed permission policy to the role: [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
 
    \-or\-

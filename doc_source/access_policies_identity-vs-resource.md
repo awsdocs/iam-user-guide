@@ -1,9 +1,7 @@
 # Identity\-Based Policies and Resource\-Based Policies<a name="access_policies_identity-vs-resource"></a>
 
 When you create a policy to restrict access to a resource, you can choose an *identity\-based policy* or a *resource\-based policy*\.
-
 + Identity\-based IAM policies are attached to an IAM user, group, or role\. These policies let you specify what that user, group, or role can do\. For example, you can attach the policy to the IAM user named Bob, stating that he has permission to use the Amazon Elastic Compute Cloud \(Amazon EC2\) `RunInstances` action\. The policy could further state that Bob has permission to get items from an Amazon DynamoDB table named `MyCompany`\. You can also grant Bob access to manage his own IAM security credentials\. Identity\-based permissions can be [managed or inline](access_policies_managed-vs-inline.md)\.
-
 + Resource\-based policies are attached to a resource\. For example, you can attach resource\-based policies to Amazon S3 buckets, Amazon SQS queues, and AWS Key Management Service encryption keys\. For a list of services that support resource\-based permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. With resource\-based policies you can specify who has access to the resource and what actions they can perform on it\. Resource\-based policies are inline only, not managed\.
 
 **Note**  

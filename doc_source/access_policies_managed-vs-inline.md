@@ -2,7 +2,7 @@
 
 When you need to set the permissions for an identity in IAM, you must decide whether to use an AWS managed policy, a customer managed policy, or an inline policy\. The following sections provide more information about each of the types of identity\-based policies and when to use them\.
 
-
+**Topics**
 + [AWS Managed Policies](#aws-managed-policies)
 + [Customer Managed Policies](#customer-managed-policies)
 + [Inline Policies](#inline-policies)

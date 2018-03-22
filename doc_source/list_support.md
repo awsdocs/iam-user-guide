@@ -5,34 +5,20 @@ AWS Support \(service prefix: support\) provides the following service\-specific
 **Actions for AWS Support**
 
 AWS Support does not provide service\-specific actions or conditions, but your policy must include the `support:*` action \(explicitly or implicitly\) in order to use the AWS Support Center or to use the AWS Support API\. In addition, when you use the AWS Support API to call Trusted Advisor\-related actions \(such as `DescribeTrustedAdvisorChecks`\), none of the `trustedadvisor` actions restrict your access\. The `trustedadvisor` actions apply only to Trusted Advisor in the AWS Management Console\.
-
 + `support:AddAttachmentsToSet`
-
-+ `support:DescribeTrustedAdvisorChecks`
-
-+ `support:DescribeAttachment`
-
-+ `support:DescribeTrustedAdvisorCheckRefreshStatuses`
-
-+ `support:CreateCase`
-
-+ `support:DescribeCases`
-
-+ `support:DescribeTrustedAdvisorCheckResult`
-
-+ `support:RefreshTrustedAdvisorCheck`
-
-+ `support:DescribeSeverityLevels`
-
-+ `support:DescribeServices`
-
-+ `support:ResolveCase`
-
 + `support:AddCommunicationToCase`
-
-+ `support:DescribeTrustedAdvisorCheckSummaries`
-
++ `support:CreateCase`
++ `support:DescribeAttachment`
++ `support:DescribeCases`
 + `support:DescribeCommunications`
++ `support:DescribeServices`
++ `support:DescribeSeverityLevels`
++ `support:DescribeTrustedAdvisorCheckRefreshStatuses`
++ `support:DescribeTrustedAdvisorCheckResult`
++ `support:DescribeTrustedAdvisorCheckSummaries`
++ `support:DescribeTrustedAdvisorChecks`
++ `support:RefreshTrustedAdvisorCheck`
++ `support:ResolveCase`
 
 **Condition context keys for AWS Support**
 

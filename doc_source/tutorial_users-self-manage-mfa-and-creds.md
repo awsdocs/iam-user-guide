@@ -20,13 +20,10 @@ Sign in as the test user to verify that access to Amazon EC2 is blocked *until* 
 ## Prerequisites<a name="tutorial_mfa_prereqs"></a>
 
 To perform the steps in this tutorial, you must already have the following:
-
 + An AWS account that you can sign in to as an IAM user with administrative permissions\.
-
 + Your account ID number which you type into the policy in Step 1\. 
 
   To find your account ID number, on the navigation bar at the top of the page, choose **Support** and then choose **Support Center**\. You can find your account ID under this page's **Support** menu\. 
-
 + A test IAM user who is a member of a group as follows:
 
 
@@ -162,17 +159,11 @@ This example policy does not allow users to both sign\-in and perform a password
    ```
 
    What does this policy do? 
-
    + The first statement enables the user to see basic information about the account and its users in the IAM console\. These permissions must be in their own statement because they do not support or do not need to specify a specific resource ARN, and instead specify `"Resource" : "*"`\.
-
    + The second statement enables the user to manage his or her own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
-
    + The third statement enables the user to see information about MFA devices, and which are associated with his or her IAM user entity\.
-
    + The fourth statement allows the user to provision or manage his or her own MFA device\. Notice that the resource ARNs in the fourth statement allow access to only an MFA device or user that has the exact same name as the currently signed\-in user\. Users can't create or alter any MFA device other than their own\.
-
    + The fifth statement allows the user to deactivate only his or her own MFA device and only if the user signed in using MFA\. This prevents others with only the access keys \(and not the MFA device\) from deactivating the MFA device and replacing it with their own\.
-
    + The sixth and final statement uses a combination of `"Deny"` and `"NotAction"` to deny all actions for all other AWS services ***if*** the user is not signed\-in with MFA\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other permissions granted to the user can take effect\. This last statement ensures that when the user is not signed\-in with MFA that they can perform only the IAM actions allowed in the earlier statements\. The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
 
 1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
@@ -220,9 +211,7 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 1. Open your virtual MFA app\. \(For a list of apps that you can use for hosting virtual MFA devices, see [Virtual MFA Applications](https://aws.amazon.com/iam/details/mfa/#Virtual_MFA_Applications)\.\) If the virtual MFA app supports multiple accounts \(multiple virtual MFA devices\), choose the option to create a new account \(a new virtual MFA device\)\.
 
 1. Determine whether the MFA app supports QR codes, and then do one of the following:
-
    + Use the app to scan the QR code\. For example, you might choose the camera icon or choose an option similar to **Scan code**, and then use the device's camera to scan the code\.
-
    + In the **Manage MFA Device** wizard, choose **Show secret key for manual configuration**, and then type the secret configuration key into your MFA app\.
 
    When you are finished, the virtual MFA device starts generating one\-time passwords\. 
@@ -240,9 +229,6 @@ Submit your request immediately after generating the codes\. If you generate the
 ## Related Resources<a name="tutorial_mfa_related"></a>
 
 For related information found in the *IAM User Guide*, see the following resources:
-
 + [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)
-
 + [Enabling MFA Devices](id_credentials_mfa_enable.md)
-
 + [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md)

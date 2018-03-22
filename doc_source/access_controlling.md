@@ -9,15 +9,10 @@ IAM then checks that you \(the principal\) are authenticated \(signed in\) and a
 To view a diagram of this process, see [Understanding How IAM Works](intro-structure.md)\. For details about how IAM determines whether a request is allowed, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
 
 When you write an IAM policy, you can control access to the following:
-
 + **[AWS for Principals](#access_controlling-principals)** – Control what the person making the request \(the [principal](intro-structure.md#intro-structure-principal) \) is allowed to do\. 
-
 + **[IAM Identities](#access_controlling-identities)** – Control which IAM identities \(groups, users, and roles\) can be accessed and how\.
-
 + **[IAM Policies](#access_controlling-policies)** – Control who can create, edit, and delete customer managed policies, and who can attach and detach all managed policies\.
-
 + **[AWS Resources](#access_controlling-resources)** – Control who has access to resources using an identity\-based policy or a resource\-based policy\.
-
 + **[AWS Accounts](#access_controlling-principal-accounts)** – Control whether a request is allowed only for members of a specific account\.
 
 Policies let you specify who has access to AWS resources, and what actions they can perform on those resources\. Every IAM user starts with no permissions\. In other words, by default, users can do nothing, not even view their own access keys\. To give a user permission to do something, you can add the permission to the user \(that is, attach a policy to the user\)\. Or you can add the user to a group that has the desired permission\.
@@ -35,15 +30,10 @@ You can use identity\-based policies to control what the person making the reque
 For example, assume that you want the user Zhang Wei to have full access to Amazon EC2, read\-only access to Amazon S3, and the ability to change his own password in the AWS Management Console\. You can create three different policies so that you can later break them up if you need one set of permissions for a different user\. Or you can put all the permissions together in a single policy, and then attach that policy to the IAM user that is named Zhang Wei\. You could also attach a policy to a group to which Zhang Wei belongs, or a role that Zhang Wei can assume\. As a result, when Zhang views the contents of an S3 bucket or starts a new EC2 instance, his requests are allowed\. If he tries to create a new S3 bucket or change the contents of an existing bucket, his request is denied because he doesn't have permission\. 
 
 For more information, refer to these resources:
-
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
-
 + To learn how to attach an IAM policy to a principal, see [Attaching IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
-
 + To see an example policy for granting full access to EC2, see [Amazon EC2: Allows Full EC2 Access Within a Specific Region, Programmatically and in the Console](reference_policies_examples_ec2_region.md)\.
-
 + To allow read\-only access to an S3 bucket, use the first two statements of the following example policy: [Amazon S3: Allows Read and Write Access to a Specific S3 Bucket, Programmatically and in the Console](reference_policies_examples_s3_rw-bucket-console.md)\.
-
 + To see an example policy for allowing users to rotate their credentials, see [IAM: Allows IAM Users to Rotate Their Own Credentials Programmatically and in the Console](reference_policies_examples_iam_credentials_console.md)\.
 
 ## Controlling Access to Identities<a name="access_controlling-identities"></a>
@@ -67,11 +57,8 @@ For example, you can create a group named **AllUsers**, and then attach that gro
 1. Choose **Select actions** and then type **group** in the search box\. The visual editor shows all the IAM actions that contain the word `group`\. Select all of the check boxes\.
 
 1. Choose **Resources** to specify resources for your policy\. Based on the actions you chose, you should see **group**, **group\-path**, and **user** resource types\.
-
    + **group** – Choose **Add ARN**\. For **Resource**, select the check box next to **Any**\. For **Group Name With Path**, type the group name **AllUsers**\. Then choose **Add**\.
-
    + **group\-path** – Select the check box next to **Any**\.
-
    + **user** – Select the check box next to **Any**\.
 
    One of the actions that you chose, `ListGroups`, does not support using specific resources\. You do not have to choose **All resources** for that action\. When you save your policy or view the policy on the **JSON** tab, you can see that IAM automatically creates a new permission block granting this action permission on all resources\.
@@ -83,33 +70,21 @@ For example, you can create a group named **AllUsers**, and then attach that gro
 1. Choose **Select actions** and then choose **Switch to deny permissions**\. When you do that, the entire block is used to deny permissions\.
 
 1. Type **group** in the search box\. The visual editor shows you all the IAM actions that contain the word `group`\. Select the check boxes next to the following actions:
-
    + **CreateGroup**
-
    + **DeleteGroup**
-
    + **RemoveUserFromGroup**
-
    + **AttachGroupPolicy**
-
    + **DeleteGroupPolicy**
-
    + **DetachGroupPolicy**
-
    + **PutGroupPolicy**
-
    + **UpdateGroup**
 
 1. Choose **Resources** to specify the resources for your policy\. Based on the actions that you chose, you should see the **group** resource type\. Choose **Add ARN**\. For **Resource**, select the check box next to **Any**\. For **Group Name With Path**, type the group name **AllUsers**\. Then choose **Add**\.
 
 1. Choose **Specify request conditions \(optional\)** and then choose **Add condition**\. Complete the form with the following values:
-
    + **Key** – Choose **aws:username**
-
    + **Qualifier** – Choose **For any value in request**
-
    + **Operator** – Choose **StringNotEquals**
-
    + **Value** – Type **srodriguez** and then choose **Add another condition value**\. Type **mjackson** and then choose **Add another condition value**\. Type **adesai** and then choose **Add**\.
 
    This condition ensures that access will be denied to the specified group management actions when the user making the call is not included in the list\. Because this explicitly denies permission, it overrides the previous block that allowed those users to call the actions\. Users on the list are not denied access, and they are granted permission in the first permission block, so they can fully manage the group\.
@@ -199,25 +174,17 @@ For customer managed policies, you can control who can create, update, and delet
 For example, you can give permissions to an account administrator to create, update, and delete policies\. Then you give permissions to a team leader or other limited administrator to attach and detach these policies to and from principal entities that the limited administrator manages\.
 
 For more information, refer to these resources:
-
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
-
 + To learn how to attach an IAM policy to a principal, see [Attaching IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
-
 + To see an example policy for limiting the use of managed policies, see [IAM: Limits Managed Policies That Can Be Applied to a New IAM User, Group, or Role](reference_policies_examples_iam_limit-managed.md)\.
 
 ### Controlling Permissions for Creating, Updating, and Deleting Customer Managed Policies<a name="policies-controlling-access-create-update-delete"></a>
 
 You can use [IAM policies](access_policies.md) to control who is allowed to create, update, and delete customer managed policies in your AWS account\. The following list contains API operations that pertain directly to creating, updating, and deleting policies or policy versions: 
-
 + [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
-
 + [CreatePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
-
 + [DeletePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html)
-
 + [DeletePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html)
-
 + [SetDefaultPolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html)
 
 The API operations in the preceding list correspond to actions that you can allow or deny—that is, permissions that you can grant—using an IAM policy\. 
@@ -274,17 +241,11 @@ For more information about using paths in the names of customer managed policies
 You can also use IAM policies to allow users to work with only specific managed policies\. In effect, you can control which permissions a user is allowed to grant to other principal entities\. 
 
 The following list shows API operations that pertain directly to attaching and detaching managed policies to and from principal entities:
-
 +  [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
-
 + [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
-
 + [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
-
 + [DetachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html)
-
 + [DetachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)
-
 + [DetachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html)
 
 You can create policies that limit the use of these API operations to affect only the specific managed policies and/or principal entities that you specify\. For example, you might want to allow a user to attach managed policies, but only the managed policies that you specify\. Or, you might want to allow a user to attach managed policies, but only to the principal entities that you specify\. 
@@ -357,11 +318,8 @@ You can also specify the ARN of an AWS managed policy in a policy's `Condition` 
 You can control access to resources using an identity\-based policy or a resource\-based policy\. In an identity\-based policy, you attach the policy to an identity and specify what resources that identity can access\. In a resource\-based policy, you attach a policy to the resource that you want to control\. In the policy, you specify which principals can access that resource\. For more information about both types of policies, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\.
 
 For more information, refer to these resources:
-
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
-
 + To learn how to attach an IAM policy to a principal, see [Attaching IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
-
 + Amazon S3 supports using resource\-based policies on their buckets\. For more information, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 <a name="NoDefaultPermissions"></a>
 **Resource Creators Do Not Automatically Have Permissions**  

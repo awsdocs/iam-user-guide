@@ -6,9 +6,7 @@ By default, IAM users do not have permission to create temporary security creden
 Although you can grant permissions directly to a user, we strongly recommend that you grant permissions to a group\. This makes management of the permissions much easier\. When someone no longer needs to perform the tasks associated with the permissions, you simply remove them from the group\. If someone else needs to perform that task, add them to the group to grant the permissions\.
 
 To grant an IAM group permission to create temporary security credentials for federated users or roles, you attach a policy that grants one or both of the following privileges:
-
 + For federated users to access an IAM role, grant access to AWS STS `AssumeRole`\.
-
 + <a name="para_gsy_hxg_1t"></a>For federated users that don't need a role, grant access to AWS STS `GetFederationToken`\.
 
  For more information about the differences between the `AssumeRole` and `GetFederationToken` APIs, see [Requesting Temporary Security Credentials](id_credentials_temp_request.md)\.

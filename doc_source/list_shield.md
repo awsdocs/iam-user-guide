@@ -5,24 +5,15 @@ AWS Shield \(service prefix: shield\) provides the following service\-specific a
 **Actions for AWS Shield**
 
 For more information about using IAM policies with AWS Shield Advanced and AWS WAF, see [Using Identity\-Based Policies \(IAM Policies\) for AWS WAF](http://docs.aws.amazon.com/waf/latest/developerguide/access-control-identity-based.html) in the *AWS WAF Developer Guide*\.
-
-+ `[shield:DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html)`
-
 + `[shield:CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html)`
-
-+ `[shield:DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html)`
-
-+ `[shield:DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)`
-
-+ `[shield:DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html)`
-
-+ `[shield:DeleteSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html)`
-
-+ `[shield:ListProtections](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html)`
-
 + `[shield:CreateSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html)`
-
++ `[shield:DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html)`
++ `[shield:DeleteSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html)`
++ `[shield:DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html)`
++ `[shield:DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html)`
++ `[shield:DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html)`
 + `[shield:ListAttacks](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html)`
++ `[shield:ListProtections](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html)`
 
 **Condition context keys for AWS Shield**
 

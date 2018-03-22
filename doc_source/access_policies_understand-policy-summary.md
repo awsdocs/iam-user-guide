@@ -121,9 +121,7 @@ IAM reviews service names, actions, and resource types for services that support
 1. **S3 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)** – This service includes an unrecognized resource\. IAM recognizes service names, actions, and resource types for services that support policy summaries\. When a service is recognized but contains a resource type that is not recognized, IAM includes a warning next to that service\. In this example, IAM can't recognize at least one Amazon S3 action\. To learn more about unrecognized resources and to view the unrecognized resource type in an S3 service summary, see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\.
 
 1. **Access level** – This column tells whether the actions in each access level \(`List`, `Read`, `Write`, and `Permissions management`\) have `Full` or `Limited` permissions defined in the policy\. For additional details and examples of the access level summary, see [Understanding Access Level Summaries Within Policy Summaries](access_policies_understand-policy-summary-access-level-summaries.md)\.
-
    + **Full access** – This entry indicates that the service has access to all actions within all four of the access levels available for the service\. In this example, because this row is in the **Explicit deny** section of the table, all Amazon S3 actions are denied for the resources included in the policy\.
-
    + <a name="full-vs-limited-access-summary"></a>If the entry does not include **Full access**, then the service has access to some but not all of the actions for the service\. The access is then defined by following descriptions for each of the four access level classifications \(`List`, `Read`, `Write`, and `Permissions management`\):
 
      **Full**: The policy provides access to all actions within each access level classification listed\. In this example, the policy provides access to all of the Billing `Read` actions\.
@@ -131,21 +129,15 @@ IAM reviews service names, actions, and resource types for services that support
      **Limited**: The policy provides access to one or more but not all actions within each access level classification listed\. In this example, the policy provides access to some of the Billing `Write` actions\.
 
 1. **Resource** – This column shows the resources that the policy specifies for each service\. 
-
    + **Multiple** – The policy includes more than one but not all of the resources within the service\. In this example, access is explicitly denied to more than one Amazon S3 resource\.
-
    + **All resources** –\- The policy is defined for all resources within the service\. In this example, the policy allows the listed actions to be performed on all Billing resources\.
-
    + Resource text – The policy includes one resource within the service\. In this example, the listed actions are allowed on only the `developer_bucket` Amazon S3 bucket resource\. Depending on the information that the service provides to IAM, you might see an ARN such as `arn:aws:s3:::developer_bucket/*`, or you might see the defined resource type, such as `BucketName = developer_bucket`\.
 **Note**  
 This column can include a resource from a different service\. If the policy statement that includes the resource does not include both actions and resources from the same service, then your policy includes mismatched resources\. IAM does not warn you about mismatched resources when you create a policy, or when you view a policy in the policy summary\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the [policy simulator](access_policies_testing-policies.md)\.
 
 1. **Request condition** – This column indicates whether the services or actions associated with the resource are subject to conditions\.
-
    + **None** – The policy includes no conditions for the service\. In this example no conditions are applied to the denied actions in the Amazon S3 service\.
-
    + Condition text – The policy includes one condition for the service\. In this example, the listed **Billing** actions are allowed only if the IP address of the source matches `203.0.113.0/24`\.
-
    + **Multiple** – The policy includes more than one condition for the service\. In this example, access to the listed Amazon S3 actions is allowed based on more than one condition\. To view each of the multiple conditions for the policy, choose **\{ \} JSON** to view the policy document\.
 
 When a policy or an element within the policy does not grant permissions, IAM provides additional warnings and information in the policy summary\. The following policy summary table shows the expanded **Show remaining 100** services on the **PolSumUser** user details page with the possible warnings\.
@@ -155,22 +147,17 @@ When a policy or an element within the policy does not grant permissions, IAM pr
 In the preceding image, you can see all services that include defined actions, resources, or conditions with no permissions:
 
 1. **Resource warnings** – For services that do not provide permissions for all of the included actions or resources, you see one of the following warnings in the **Resource** column of the table:
-
    + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No resources are defined\.** – This means that the service has defined actions but no supported resources are included in the policy\.
-
    + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – This means that the service has defined actions, but that some of those actions don't have a supported resource\.
-
    + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – This means that the service has defined resources, but that some of those resources don't have a supporting action\.
 
    If a service includes both actions that do not have an applicable resource and resources that do not have an applicable resource, then only the **One or more resources do not have an applicable action\.** warning is shown\. This is because when you view the service summary for the service, resources that do not apply to any action are not shown\. For the `ListAllMyBuckets` action, this policy includes the last warning because the action does not support resource\-level permissions, and does not support the `s3:x-amz-acl` condition key\. If you fix either the resource problem or the condition problem, the remaining issue appears in a detailed warning\.
 
 1. **Request condition warnings** – For services that do not provide permissions for all of the included conditions, you see one of the following warnings in the **Request condition** column of the table:
-
    + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable condition\.** – This means that the service has defined actions, but that some of those actions don't have a supported condition\.
-
    + **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – This means that the service has defined conditions, but that some of those conditions don't have a supporting action,
 
-1. **Multiple | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – The `Deny` statement for Amazon S3 includes more than one resource\. It also includes more than one action, and some actions support the resources and some do not\. To view this policy, see [**SummaryAllElements** JSON Policy Document](#policy-summary-example-json)\. In this case, the policy includes all Amazon S3 actions, and only the actions that can be performed on a bucket or bucket object are denied\.
+1. **Multiple \| ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more actions do not have an applicable resource\.** – The `Deny` statement for Amazon S3 includes more than one resource\. It also includes more than one action, and some actions support the resources and some do not\. To view this policy, see [**SummaryAllElements** JSON Policy Document](#policy-summary-example-json)\. In this case, the policy includes all Amazon S3 actions, and only the actions that can be performed on a bucket or bucket object are denied\.
 
 1. The ellipses \(…\) indicate that all the services are included in the page, but we are showing only the rows with information relevant to this policy\. When you view this page in the AWS Management Console, you see all the AWS services\.
 
@@ -180,9 +167,9 @@ In the preceding image, you can see all services that include defined actions, r
 
 1. **![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No resources are defined** – The service has defined actions, but no supported resources are included in the policy, and therefore the service provides no permissions\. In this case, the policy includes AWS CodeCommit actions but no AWS CodeCommit resources\.
 
-1. **BucketName = developer\_bucket, ObjectPath = All | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – The service has a defined bucket object resource, and at least one more resource that does not have a supporting action\.
+1. **BucketName = developer\_bucket, ObjectPath = All \| ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more resources do not have an applicable action\.** – The service has a defined bucket object resource, and at least one more resource that does not have a supporting action\.
 
-1. **s3:x\-amz\-acl = public\-read | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – The service has a defined `s3:x-amz-acl` condition key, and at least one more condition key that does not have a supporting action\.
+1. **s3:x\-amz\-acl = public\-read \| ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) One or more conditions do not have an applicable action\.** – The service has a defined `s3:x-amz-acl` condition key, and at least one more condition key that does not have a supporting action\.
 
 ## **SummaryAllElements** JSON Policy Document<a name="policy-summary-example-json"></a>
 

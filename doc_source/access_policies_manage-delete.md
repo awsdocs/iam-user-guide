@@ -37,43 +37,27 @@ You can delete a customer managed policy to remove it from your AWS account\. Yo
 You can edit a managed or inline policy using the AWS Command Line Interface \(AWS CLI\) or the AWS API\.
 
 **To list managed policies \(AWS CLI or API\)**
-
 + AWS CLI: [list\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
-
 + AWS API: [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
 
 **To retrieve detailed information about a managed policy \(AWS CLI or API\)**
-
 + AWS CLI: [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
-
 + AWS API: [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 **To list the identities \(users, groups, and roles\) to which a managed policy is attached \(AWS CLI or API\)**
-
 + AWS CLI: [list\-entities\-for\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
-
 + AWS API: [ListEntitiesForPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
 
 **To list the managed policies attached to an identity \(a user, group, or role\) \(AWS CLI or API\)**
-
 + AWS CLI: 
-
   + [list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
-
   + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
-
   + [list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
-
 + AWS API: 
-
   + [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
-
   + [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
-
   + [ListAttachedUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
 
 **To delete a customer managed policy \(AWS CLI or API\)**
-
 + AWS CLI: [delete\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-policy.html)
-
 + AWS API: [DeletePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html)

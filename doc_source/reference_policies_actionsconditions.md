@@ -1,14 +1,11 @@
 # AWS Service Actions and Condition Context Keys for Use in IAM Policies<a name="reference_policies_actionsconditions"></a>
 
 Each AWS service can provide actions and condition context keys for use in IAM policies\. Not all API actions defined by a service can be used in an IAM policy, and a service might define some permissions that don't directly correspond to an API action\. Use this list to determine which actions can be used as permissions in an IAM policy\.
-
 + Use actions found in these lists in the `Action` element of an IAM policy to allow or deny what a user can do within a service\. For more information about the `Action` element, see [Action](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html#Action) in the [IAM Policy Element Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/AccessPolicyLanguage_ElementDescriptions.html)\.
-
 + Use the context keys in these lists in the `Condition` element of an IAM policy to allow or deny access only when specified values are present\. For more information about the `Condition` element, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
-
 + For the list of the global condition context keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys)\.
 
-
+**Topics**
 + [Alexa for Business](list_a4b.md)
 + [Amazon API Gateway](list_execute-api.md)
 + [Application Auto Scaling](list_application-autoscaling.md)
@@ -116,6 +113,7 @@ Each AWS service can provide actions and condition context keys for use in IAM p
 + [Amazon S3](list_s3.md)
 + [Amazon SageMaker](list_sagemaker.md)
 + [AWS Security Token Service](list_sts.md)
++ [AWS Serverless Application Repository](list_serverlessrepo.md)
 + [AWS Service Catalog](list_servicecatalog.md)
 + [Amazon SES](list_ses.md)
 + [AWS Shield](list_shield.md)
@@ -129,6 +127,7 @@ Each AWS service can provide actions and condition context keys for use in IAM p
 + [AWS Step Functions](list_states.md)
 + [Amazon Storage Gateway](list_storagegateway.md)
 + [AWS Support](list_support.md)
++ [Amazon Transcribe](list_transcribe.md)
 + [Amazon Translate](list_translate.md)
 + [AWS Trusted Advisor](list_trustedadvisor.md)
 + [AWS WAF](list_waf.md)

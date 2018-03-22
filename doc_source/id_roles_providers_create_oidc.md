@@ -4,7 +4,7 @@
 
 You can create and manage an OIDC identity provider using the AWS Management Console, the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API\. 
 
-
+**Topics**
 + [Creating and Managing an OIDC Provider \(AWS Management Console\)](#manage-oidc-provider-console)
 + [Creating and Managing an OIDC Identity Provider \(AWS CLI, Tools for Windows PowerShell, and IAM API\)](#manage-oidc-provider-cli)
 + [Obtaining the Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
@@ -24,13 +24,9 @@ Follow these instructions to create and manage an OIDC provider in the AWS Manag
 1. For **Provider Type**, click **Choose a provider type**, and then choose **OpenID Connect**\. 
 
 1. For **Provider URL**, type the URL of the IdP\. The URL must comply with these restrictions:
-
    + The URL is case\-sensitive\.
-
    + The URL must begin with **https://**
-
    + The URL cannot include a colon \(:\) character, and therefore cannot specify a port number\. This means that the server must be listening on the default port 443\.
-
    + Within your AWS account, each OIDC identity provider must use a unique URL\.
 
 1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\. Click **Next Step**\. 
@@ -66,57 +62,36 @@ An OIDC identity provider must have at least 1 and can have a maximum of 5 thumb
 Use the following commands to create and manage an OIDC provider\.
 
 To create a new OIDC provider
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-open-id-connect-provider.html)
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMOpenIDConnectProvider.html&tocid=New-IAMOpenIDConnectProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMOpenIDConnectProvider.html&tocid=New-IAMOpenIDConnectProvider)
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html)
 
 To add a new client ID to an existing OIDC provider
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/add-client-id-to-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/add-client-id-to-open-id-connect-provider.html) 
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Add-IAMClientIDToOpenIDConnectProvider.html&tocid=Add-IAMClientIDToOpenIDConnectProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Add-IAMClientIDToOpenIDConnectProvider.html&tocid=Add-IAMClientIDToOpenIDConnectProvider)
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html)
 
 To remove a client ID from an existing OIDC provider
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/remove-client-id-from-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/remove-client-id-from-open-id-connect-provider.html) 
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMClientIDFromOpenIDConnectProvider.html&tocid=Remove-IAMClientIDFromOpenIDConnectProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMClientIDFromOpenIDConnectProvider.html&tocid=Remove-IAMClientIDFromOpenIDConnectProvider)
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html)
 
 To update the list of server certificate thumbprints for an existing OIDC provider 
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-open-id-connect-provider-thumbprint.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-open-id-connect-provider-thumbprint.html) 
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMOpenIDConnectProviderThumbprint.html&tocid=Update-IAMOpenIDConnectProviderThumbprint](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMOpenIDConnectProviderThumbprint.html&tocid=Update-IAMOpenIDConnectProviderThumbprint)
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html)
 
 To get a list of all the OIDC providers in your AWS account
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html) 
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMOpenIDConnectProviders.html&tocid=Get-IAMOpenIDConnectProviders](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMOpenIDConnectProviders.html&tocid=Get-IAMOpenIDConnectProviders)
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
 
 To get detailed information about an OIDC provider
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html) 
-
 + Tools for Windows PowerShell[http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMOpenIDConnectProvider.html&tocid=Get-IAMOpenIDConnectProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMOpenIDConnectProvider.html&tocid=Get-IAMOpenIDConnectProvider): 
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)
 
 To delete an OIDC provider
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html) 
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMOpenIDConnectProvider.html&tocid=Remove-IAMOpenIDConnectProvider](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMOpenIDConnectProvider.html&tocid=Remove-IAMOpenIDConnectProvider)
-
 + IAM API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html)

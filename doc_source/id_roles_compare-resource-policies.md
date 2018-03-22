@@ -5,11 +5,8 @@ For some AWS services, you can grant cross\-account access to your resources\. T
 Cross\-account access with a resource\-based policy has an advantage over a role\. With a resource that is accessed through a resource\-based policy, the user still works in the trusted account and does not have to give up his or her user permissions in place of the role permissions\. In other words, the user continues to have access to resources in the trusted account at the same time as he or she has access to the resource in the trusting account\. This is useful for tasks such as copying information to or from the shared resource in the other account\. 
 
 The disadvantage is that not all services support resource\-based policies\. A few of the AWS services that support resource\-based policies are listed here:
-
 + **Amazon S3 buckets** – The policy is attached to the bucket, but the policy controls access to both the bucket and the objects in it\. For more information, go to [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
-
 + **Amazon Simple Notification Service \(Amazon SNS\) topics** – For more information, go to [Managing Access to Your Amazon SNS Topics](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage.html) in the *Amazon Simple Notification Service Developer Guide*\. 
-
 + **Amazon Simple Queue Service \(Amazon SQS\) queues** – For more information, go to [Appendix: The Access Policy Language](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/AccessPolicyLanguage.html) in the *Amazon Simple Queue Service Developer Guide*\. 
 
 For a complete list of the growing number of AWS services that support attaching permission policies to resources instead of principals, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes** in the **Resource Based** column\.

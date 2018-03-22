@@ -5,10 +5,8 @@ AWS Budget Service \(service prefix: budgets\) provides the following service\-s
 **Actions for AWS Budget Service**
 
 For more information about controlling access to AWS Billing, see [Billing and Cost Management Permissions Reference](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing and Cost Management API Reference*\.
-
-+ `[budgets:ViewBudget](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)`
-
 + `[budgets:ModifyBudget](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)`
++ `[budgets:ViewBudget](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)`
 
 **Condition context keys for AWS Budget Service**
 

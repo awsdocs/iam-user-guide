@@ -3,14 +3,10 @@
 Auto Scaling Plans \(service prefix: autoscaling\-plans\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Auto Scaling Plans**
-
-+ `autoscaling-plans:DescribeScalingPlanResources`
-
-+ `autoscaling-plans:DescribeScalingPlans`
-
 + `autoscaling-plans:CreateScalingPlan`
-
 + `autoscaling-plans:DeleteScalingPlan`
++ `autoscaling-plans:DescribeScalingPlanResources`
++ `autoscaling-plans:DescribeScalingPlans`
 
 **Condition context keys for Auto Scaling Plans**
 

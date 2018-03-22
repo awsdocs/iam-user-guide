@@ -10,15 +10,12 @@ The following figure shows a simple example of an AWS account with three groups\
 ![\[Example layout of AWS account, groups, and users\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Account_Group_Example.diagram.png)
 
 In the procedure that follows, you will perform the following tasks:
-
 + Create an Administrators group and give the group permission to access all of your AWS account's resources\.
-
 + Create a user for yourself and add that user to the Administrators group\.
-
 + Create a password for your user so you can sign in to the AWS Management Console\.
 
 You will grant the Administrators group permission to access all your available AWS account resources\. Available resources are any AWS products you use, or that you are signed up for\. Users in the Administrators group can also access your AWS account information, *except* for your AWS account's security credentials\.
 
-
+**Topics**
 + [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)
 + [How Users Sign In to Your Account](getting-started_how-users-sign-in.md)

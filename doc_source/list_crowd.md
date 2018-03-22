@@ -3,9 +3,7 @@
 Amazon Mechanical Turk Crowd \(service prefix: crowd\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Mechanical Turk Crowd**
-
 + `crowd:GetTask`
-
 + `crowd:PutTask`
 
 **Condition context keys for Amazon Mechanical Turk Crowd**

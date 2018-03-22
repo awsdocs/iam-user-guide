@@ -3,43 +3,24 @@
 AWS Mobile Hub \(service prefix: mobilehub\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Mobile Hub**
-
-+ `mobilehub:DescribeBundle`
-
-+ `mobilehub:ExportProject`
-
-+ `mobilehub:ListAvailableFeatures`
-
-+ `mobilehub:ImportProject`
-
-+ `mobilehub:ListProjects`
-
-+ `mobilehub:ListAvailableConnectors`
-
-+ `mobilehub:ExportBundle`
-
 + `mobilehub:CreateProject`
-
-+ `mobilehub:GetProject`
-
-+ `mobilehub:DeleteProject`
-
-+ `mobilehub:UpdateProject`
-
-+ `mobilehub:GenerateProjectParameters`
-
-+ `mobilehub:ListAvailableRegions`
-
-+ `mobilehub:DeployToStage`
-
-+ `mobilehub:GetProjectSnapshot`
-
-+ `mobilehub:ListBundles`
-
-+ `mobilehub:SynchronizeProject`
-
 + `mobilehub:CreateServiceRole`
-
++ `mobilehub:DeleteProject`
++ `mobilehub:DeployToStage`
++ `mobilehub:DescribeBundle`
++ `mobilehub:ExportBundle`
++ `mobilehub:ExportProject`
++ `mobilehub:GenerateProjectParameters`
++ `mobilehub:GetProject`
++ `mobilehub:GetProjectSnapshot`
++ `mobilehub:ImportProject`
++ `mobilehub:ListAvailableConnectors`
++ `mobilehub:ListAvailableFeatures`
++ `mobilehub:ListAvailableRegions`
++ `mobilehub:ListBundles`
++ `mobilehub:ListProjects`
++ `mobilehub:SynchronizeProject`
++ `mobilehub:UpdateProject`
 + `mobilehub:VerifyServiceRole`
 
 **Condition context keys for AWS Mobile Hub**

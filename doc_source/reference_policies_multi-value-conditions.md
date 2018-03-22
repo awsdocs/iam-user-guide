@@ -4,7 +4,7 @@ This topic discusses how to create a policy `Condition` element that lets you te
 
 To create this type of condition, you can use the `ForAllValues` or `ForAnyValue` qualifier with the condition operator\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. 
 
-
+**Contents**
 + [Introduction](#reference_policies_multi-value-conditions-intro)
 + [Examples of Condition Set Operators](#reference_policies_multi-value-conditions-examples)
 + [Evaluation Logic for Condition Set Operators](#reference_policies_multi-value-conditions-eval)
@@ -28,9 +28,7 @@ You might want to create a policy that allows users to see only some attributes�
 Or you might want to make sure that users are explicitly forbidden to include some attributes in a request, such as the `ID` and `UserName` attributes\. For example, you might exclude attributes when the user is updating the DynamoDB table, because an update \(`PUT` operation\) should not change certain attributes\. In that case, you create a list of forbidden attributes \(`ID`, `UserName`\), and if any of the user's requested attributes match any of the forbidden attributes, the request is denied\. 
 
 To support these scenarios, you can use the following modifiers to a condition operator:
-
 + `ForAnyValue` – The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. 
-
 + `ForAllValues` – The condition returns true if there's a match between every one of the specified key values in the request and at least one value in the policy\. 
 
 For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 
@@ -106,9 +104,7 @@ The evaluation for the combination is this:
 |  `UserName` matches `Tags`?  | 
 
 The result of the condition operator depends on which modifier is used with the policy condition:
-
 + `ForAllValues`\. If every key in the request \(`PostDateTime` or `UserName`\) matches at least one condition value in the policy \(`PostDateTime`, `Message`, `Tags`\), the condition operator returns true\. Stated another way, in order for the condition to be true, \(`PostDateTime` must equal `PostDateTime`, `Message`, or `Tags`\) *and* \(`UserName` must equal `PostDateTime`, `Message`, or `Tags`\)\. 
-
 + `ForAnyValue`\. If any combination of request value and policy value \(any one of the six in the example\) returns true, the condition operator returns true\. 
 
 The following policy includes a `ForAllValues` qualifier: 

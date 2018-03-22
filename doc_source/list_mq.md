@@ -3,40 +3,23 @@
 Amazon MQ \(service prefix: mq\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon MQ**
-
-+ `mq:ListBrokers`
-
 + `mq:CreateBroker`
-
-+ `mq:UpdateBroker`
-
-+ `mq:RebootBroker`
-
-+ `mq:ListUsers`
-
-+ `mq:DescribeBroker`
-
-+ `mq:CreateUser`
-
-+ `mq:UpdateConfiguration`
-
-+ `mq:DeleteUser`
-
 + `mq:CreateConfiguration`
-
-+ `mq:DescribeUser`
-
-+ `mq:DescribeConfiguration`
-
-+ `mq:ListConfigurations`
-
-+ `mq:DescribeConfigurationRevision`
-
-+ `mq:UpdateUser`
-
++ `mq:CreateUser`
 + `mq:DeleteBroker`
-
++ `mq:DeleteUser`
++ `mq:DescribeBroker`
++ `mq:DescribeConfiguration`
++ `mq:DescribeConfigurationRevision`
++ `mq:DescribeUser`
++ `mq:ListBrokers`
 + `mq:ListConfigurationRevisions`
++ `mq:ListConfigurations`
++ `mq:ListUsers`
++ `mq:RebootBroker`
++ `mq:UpdateBroker`
++ `mq:UpdateConfiguration`
++ `mq:UpdateUser`
 
 **Condition context keys for Amazon MQ**
 

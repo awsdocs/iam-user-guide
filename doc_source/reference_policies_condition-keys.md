@@ -9,7 +9,7 @@ If you use condition keys that are available only in some scenarios \(such as aw
 `"Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] }, "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }`  
 This condition matches \(1\) if the aws:SourceIp context key exists and has the value xxx **or** \(2\) if the aws:SourceVpc context key exists and has the value yyy\. If either or both keys do not exist, the condition still matches\. The test is only made if the specified key exists in the request context\. If it is not there, it is treated as "I don't care"\.
 
-
+**Topics**
 + [Available Global Condition Keys](#AvailableKeys)
 + [Available Keys for IAM](#available-keys-for-iam)
 + [Available Keys for Web Identity Federation](#condition-keys-wif)
@@ -152,21 +152,15 @@ The FederatedProvider key identifies which of the IdPs was used to authenticate 
 **Application ID and User ID**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 You can also use two keys that provide a unique identifier for the user and an identifier for the application or site that the user authenticated with\. These keys have the following IdP\-specific names:  
-
 + For Amazon Cognito users, the keys are `cognito-identity.amazonaws.com:aud` \(for the identity pool ID\) and `cognito-identity.amazonaws.com:sub` \(for the user ID\)\. 
-
 + For Login With Amazon users, the keys are `www.amazon.com:app_id` and `www.amazon.com:user_id`
-
 + For Facebook users, the keys are `graph.facebook.com:app_id` and `graph.facebook.com:id`
-
 + For Google users, the keys are `accounts.google.com:aud` \(for the app ID\) and `accounts.google.com:sub` \(for the user ID\)\.
 
 **The amr Key in Amazon Cognito**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 If you are using Amazon Cognito for web identity federation, the `cognito-identity.amazonaws.com:amr` key \(Authenticated Methods Reference\) in a trust policy includes login information about the user\. The key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
-
 + If the user is unauthenticated, the key contains only `unauthenticated`\.
-
 + If the user is authenticated, the key contains the value `authenticated` and the name of the login provider used in the call \(`graph.facebook.com`, `accounts.google.com`, or `www.amazon.com`\)\. 
 As an example, the following condition in the trust policy for an Amazon Cognito role tests whether the user is unauthenticated:  
 
@@ -181,11 +175,8 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 
 **More Information About Web Identity Federation**  
 For more information about web identity federation, see the following:  
-
 + [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
-
 + [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
-
 + [About Web Identity Federation](id_roles_providers_oidc.md)
 
 ## Available Keys for SAML\-Based Federation<a name="condition-keys-saml"></a>

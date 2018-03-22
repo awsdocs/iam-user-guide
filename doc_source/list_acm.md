@@ -5,26 +5,16 @@ AWS Certificate Manager \(service prefix: acm\) provides the following service\-
 **Actions for AWS Certificate Manager**
 
 For information about controlling access to ACM by using an IAM policy, see [Permissions and Policies](http://docs.aws.amazon.com/acm/latest/userguide/assets.html) in the *AWS Certificate Manager User Guide*\.
-
-+ `[acm:DescribeCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html)`
-
-+ `[acm:ResendValidationEmail](http://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html)`
-
-+ `[acm:RequestCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html)`
-
-+ `[acm:DeleteCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html)`
-
-+ `[acm:RemoveTagsFromCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html)`
-
-+ `[acm:ImportCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html)`
-
 + `[acm:AddTagsToCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html)`
-
-+ `[acm:ListTagsForCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html)`
-
-+ `[acm:ListCertificates](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html)`
-
++ `[acm:DeleteCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html)`
++ `[acm:DescribeCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html)`
 + `[acm:GetCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html)`
++ `[acm:ImportCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html)`
++ `[acm:ListCertificates](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html)`
++ `[acm:ListTagsForCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html)`
++ `[acm:RemoveTagsFromCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html)`
++ `[acm:RequestCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html)`
++ `[acm:ResendValidationEmail](http://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html)`
 
 **Condition context keys for AWS Certificate Manager**
 

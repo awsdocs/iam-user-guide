@@ -5,20 +5,13 @@ Manage Amazon API Gateway \(service prefix: apigateway\) provides the following 
 **Actions for Manage Amazon API Gateway**
 
 For more information about controlling access to API Gateway, see [User Access Permissions for Amazon API Gateway](http://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html) in the *API Gateway Developer Guide*\.
-
-+ `apigateway:HEAD`
-
 + `apigateway:DELETE`
-
-+ `apigateway:POST`
-
 + `apigateway:GET`
-
++ `apigateway:HEAD`
 + `apigateway:OPTIONS`
-
-+ `apigateway:PUT`
-
 + `apigateway:PATCH`
++ `apigateway:POST`
++ `apigateway:PUT`
 
 **Condition context keys for Manage Amazon API Gateway**
 

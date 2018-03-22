@@ -117,13 +117,9 @@ Before you create a service\-linked role in IAM, find out whether the linked ser
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy required by the service\. Then choose **Next: Permissions**\.
 
 1. Choose one or more permissions policies to attach to the role\. Depending on the use case that you selected, the service might do any of the following:
-
    + Define the permissions used by the role
-
    + Allow you to choose from a limited set of permissions
-
    + Allow you to choose from any permissions
-
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role\.
 
    Select the box next to the policy that assigns the permissions that you want the role to have, and then choose **Next: Review**\. 
@@ -259,13 +255,10 @@ You can use the IAM console to delete a service\-linked role\.
 1. In the confirmation dialog box, review the service last accessed data, which shows when each of the selected roles last accessed an AWS service\. This helps you to confirm whether the role is currently active\. If you want to proceed, choose **Yes, Delete** to submit the service\-linked role for deletion\.
 
 1. Watch the IAM console notifications to monitor the progress of the service\-linked role deletion\. Because the IAM service\-linked role deletion is asynchronous, after you submit the role for deletion, the deletion task can succeed or fail\. 
-
    + If the task succeeds, then the role is removed from the list and a notification of success appears at the top of the page\.
-
    + If the task fails, you can choose **View details** or **View Resources** from the notifications to learn why the deletion failed\. If the deletion fails because the role is using the service's resources, then the notification includes a list of resources, if the service returns that information\. You can then [clean up the resources](#service-linked-role-review-before-delete) and submit the deletion again\.
 **Note**  
 You might have to repeat this process several times, depending on the information that the service returns\. For example, your service\-linked role might use six resources and your service might return information about five of them\. If you clean up the five resources and submit the role for deletion again, the deletion fails and the service reports the one remaining resource\. A service might return all of the resources, a few of them, or it might not report any resources\.
-
    + If the task fails and the notification does not include a list of resources, then the service might not return that information\. To learn how to clean up the resources for that service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. Find your service in the table, and choose the **Yes** link to view the service\-linked role documentation for that service\.
 
 ### Deleting a Service\-Linked Role \(IAM CLI\)<a name="delete-service-linked-role-iam-cli"></a>

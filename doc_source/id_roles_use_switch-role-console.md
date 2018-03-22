@@ -6,9 +6,7 @@ A *role* specifies a set of permissions that you can use to access AWS resources
 When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, it uses your original user or federated role credentials to determine if you are allowed to assume RoleA\. If you then try to switch to RoleB *while you are using RoleA*, it still uses your **original** user or federated role credentials to authorize your attempt to switch to RoleB, not the credentials for RoleA\.
 
 This section describes how to use the IAM console to switch to a role:
-
 + You can only switch roles when you sign in as an IAM user\. You cannot switch roles if you sign in as the AWS account root user\.
-
 + If your administrator provides you with a link, click the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. The link takes you to the appropriate web page and fills in the account ID \(or alias\) and the role name for you\.
 **Tip**  
 You can manually construct the link yourself by using the following format:  
@@ -16,7 +14,6 @@ You can manually construct the link yourself by using the following format:
 Where your administrator provides the *account\_id\_number* and *role\_name* to you\. For *text\_to\_display*, see the explanation in step 5 in the following procedure\.
 **Important**  
 If you create the role programmatically instead of in the IAM console, then you have an option to add a `Path` of up to 512 characters in addition to the `RoleName`, which can be up to 64 characters long\. However, to use a role with the Switch Role feature in the AWS console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
-
 + You can manually switch roles using the information your administrator provides by using the procedures below\. 
 
 To troubleshoot common issues that you might encounter when you assume a role, see [I Can't Assume a Role](troubleshoot_roles.md#troubleshoot_roles_cant-assume-role)\.

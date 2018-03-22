@@ -1,13 +1,9 @@
 # IAM JSON Policy Elements: Condition<a name="reference_policies_elements_condition"></a>
 
 The `Condition` element \(or `Condition` *block*\) lets you specify conditions for when a policy is in effect\. The `Condition` element is optional\. In the `Condition` element, you build expressions in which you use [condition operators](reference_policies_elements_condition_operators.md) \(equal, less than, etc\.\) to match the condition in the policy against values in the request\. Condition values can include date, time, the IP address of the requester, the ARN of the request source, the user name, user ID, and the user agent of the requester\. Some services let you specify additional values in conditions; for example, Amazon S3 lets you write a condition using the `s3:VersionId` key, which is unique to that service\.
-
 + For a list of all of the condition operators and a description of how each one works, see [Condition Operators](reference_policies_elements_condition_operators.md)
-
 + For a description of how to handle condition keys that have multiple values, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)
-
 + For a list of all of the globally available condition keys, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys)\.
-
 + For conditions keys that are defined by each service, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
 
 ## The Condition Block<a name="AccessPolicyLanguage_ConditionBlock"></a>
@@ -49,11 +45,8 @@ If there are multiple condition operators, or if there are multiple keys attache
 As noted, AWS has predefined condition operators and keys \(like `aws:CurrentTime`\)\. Individual AWS services also define service\-specific keys\.
 
 As an example, let's say you want to let user John access your Amazon SQS queue under the following conditions:
-
 + The time is after 12:00 noon on 8/16/2013
-
 + The time is before 3:00 p\.m\. on 8/16/2013
-
 + The request \(IAM or SQS\) or message \(SNS\) comes from an IP address within the range 192\.0\.2\.0 to 192\.0\.2\.255 *or* 203\.0\.113\.0 to 203\.0\.113\.255\.
 
 Your condition block has three separate condition operators, and all three of them must be met for John to have access to your queue, topic, or resource\.

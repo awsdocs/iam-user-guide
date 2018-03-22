@@ -2,7 +2,7 @@
 
 To help secure your AWS resources, follow these recommendations for the AWS Identity and Access Management \(IAM\) service\. 
 
-
+**Topics**
 + [Lock Away Your AWS Account Root User Access Keys](#lock-away-credentials)
 + [Create Individual IAM Users](#create-iam-users)
 + [Use AWS Defined Policies to Assign Permissions Whenever Possible](#bp-use-aws-defined-policies)
@@ -24,15 +24,10 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account gives full access to all your resources for all AWS services, including your billing information\. You cannot restrict the permissions associated with your AWS account access key\. 
 
 Therefore, protect your AWS account access key like you would your credit card numbers or any other sensitive secret\. Here are some ways to do that: 
-
 + If you don't already have an access key for your AWS account, don't create one unless you absolutely need to\. Instead, use your account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) and create an IAM user for yourself that has administrative privileges, as explained in the next section\.
-
 + If you do have an access key for your AWS account, delete it\. If you must keep it, rotate \(change\) the access key regularly\. To delete or rotate your AWS account access keys, go to the [Security Credentials page](https://console.aws.amazon.com/iam/home?#security_credential) in the AWS Management Console and sign in with your account's email address and password\. You can manage your access keys in the **Access keys** section\.
-
 + Never share your AWS account password or access keys with anyone\. The remaining sections of this document discuss various ways to avoid having to share your AWS account root user credentials with other users and to avoid having to embed them in an application\. 
-
 + Use a strong password to help protect account\-level access to the AWS Management Console\. For information about managing your AWS account root user password, see [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)\.
-
 + Enable AWS multi\-factor authentication \(MFA\) on your AWS account\. For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
 
 ## Create Individual IAM Users<a name="create-iam-users"></a>
@@ -57,9 +52,7 @@ AWS managed policies for job functions can span multiple services and align with
 Instead of defining permissions for individual IAM users, it's usually more convenient to create groups that relate to job functions \(administrators, developers, accounting, etc\.\)\. Next, define the relevant permissions for each group\. Finally, assign IAM users to those groups\. All the users in an IAM group inherit the permissions assigned to the group\. That way, you can make changes for everyone in a group in just one place\. As people move around in your company, you can simply change what IAM group their IAM user belongs to\. 
 
 For more information, see the following:
-
 + [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)
-
 + [Managing IAM Groups](id_groups_manage.md)
 
 ## Grant Least Privilege<a name="grant-least-privilege"></a>
@@ -73,15 +66,10 @@ Defining the right set of permissions requires some research\. Determine what is
 One feature that can help with this is the **Access Advisor** tab\. This tab is available on the IAM console details page whenever you inspect a user, group, role, or policy\. The tab includes information about which services are actually used by a user, group, role, or by anyone that uses a policy\. You can use this information to identify unnecessary permissions so that you can refine your IAM policies to better adhere to the principle of least privilege\. For more information, see [Reducing Policy Scope by Viewing User Activity](access_policies_access-advisor.md)\.
 
 For more information, see the following:
-
 + [Access Management](access.md)
-
 + Policy topics for individual services, which provide examples of how to write policies for service\-specific resources\. Examples:
-
   + [Authentication and Access Control for Amazon DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html) in the *Amazon DynamoDB Developer Guide*
-
   + [Using Bucket Policies and User Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*
-
   + [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*
 
 ## Use Access Levels to Review IAM Permissions<a name="use-access-levels-to-review-permissions"></a>
@@ -156,15 +144,10 @@ For more information, see [IAM JSON Policy Elements: Condition](reference_polici
 You can use logging features in AWS to determine the actions users have taken in your account and the resources that were used\. The log files show the time and date of actions, the source IP for an action, which actions failed due to inadequate permissions, and more\.
 
 Logging features are available in the following AWS services:
-
 + [Amazon CloudFront](https://aws.amazon.com/cloudfront/) – Logs user requests that CloudFront receives\. For more information, see [Access Logs](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) in the *Amazon CloudFront Developer Guide*\.
-
 + [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) – Logs AWS API calls and related events made by or on behalf of an AWS account\. For more information, see the [http://docs.aws.amazon.com/awscloudtrail/latest/userguide/](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
-
 + [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) – Monitors your AWS Cloud resources and the applications you run on AWS\. You can set alarms in CloudWatch based on metrics that you define\. For more information, see the [http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/)\.
-
 + [AWS Config](https://aws.amazon.com/config/) – Provides detailed historical information about the configuration of your AWS resources, including your IAM users, groups, roles, and policies\. For example, you can use AWS Config to determine the permissions that belonged to a user or group at a specific time\. For more information, see the [http://docs.aws.amazon.com/config/latest/developerguide/](http://docs.aws.amazon.com/config/latest/developerguide/)\.
-
 + [Amazon Simple Storage Service \(Amazon S3\)](https://aws.amazon.com/s3/) – Logs access requests to your Amazon S3 buckets\. For more information, see [Server Access Logging](http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service Developer Guide*\.
 
 ## Video Presentation About IAM Best Practices<a name="top-practices-video"></a>

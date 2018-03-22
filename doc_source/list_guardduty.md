@@ -3,80 +3,43 @@
 Amazon GuardDuty \(service prefix: guardduty\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon GuardDuty**
-
-+ `guardduty:UpdateIPSet`
-
-+ `guardduty:GetMasterAccount`
-
-+ `guardduty:UpdateFindingsFeedback`
-
-+ `guardduty:CreateMembers`
-
-+ `guardduty:UpdateDetector`
-
-+ `guardduty:DeleteDetector`
-
-+ `guardduty:ArchiveFindings`
-
-+ `guardduty:ListInvitations`
-
-+ `guardduty:DeleteIPSet`
-
-+ `guardduty:GetInvitationsCount`
-
-+ `guardduty:ListFindings`
-
-+ `guardduty:GetIPSet`
-
-+ `guardduty:UpdateThreatIntelSet`
-
-+ `guardduty:GetDetector`
-
-+ `guardduty:CreateSampleFindings`
-
-+ `guardduty:DeleteThreatIntelSet`
-
-+ `guardduty:DeleteInvitations`
-
-+ `guardduty:GetThreatIntelSet`
-
 + `guardduty:AcceptInvitation`
-
-+ `guardduty:CreateIPSet`
-
-+ `guardduty:ListMembers`
-
-+ `guardduty:DisassociateMembers`
-
-+ `guardduty:InviteMembers`
-
-+ `guardduty:GetMembers`
-
-+ `guardduty:ListDetectors`
-
-+ `guardduty:ListIPSets`
-
-+ `guardduty:CreateThreatIntelSet`
-
-+ `guardduty:GetFindings`
-
-+ `guardduty:UnarchiveFindings`
-
-+ `guardduty:StopMonitoringMembers`
-
-+ `guardduty:GetFindingsStatistics`
-
-+ `guardduty:DeclineInvitations`
-
-+ `guardduty:DeleteMembers`
-
-+ `guardduty:ListThreatIntelSets`
-
-+ `guardduty:StartMonitoringMembers`
-
++ `guardduty:ArchiveFindings`
 + `guardduty:CreateDetector`
-
++ `guardduty:CreateIPSet`
++ `guardduty:CreateMembers`
++ `guardduty:CreateSampleFindings`
++ `guardduty:CreateThreatIntelSet`
++ `guardduty:DeclineInvitations`
++ `guardduty:DeleteDetector`
++ `guardduty:DeleteIPSet`
++ `guardduty:DeleteInvitations`
++ `guardduty:DeleteMembers`
++ `guardduty:DeleteThreatIntelSet`
 + `guardduty:DisassociateFromMasterAccount`
++ `guardduty:DisassociateMembers`
++ `guardduty:GetDetector`
++ `guardduty:GetFindings`
++ `guardduty:GetFindingsStatistics`
++ `guardduty:GetIPSet`
++ `guardduty:GetInvitationsCount`
++ `guardduty:GetMasterAccount`
++ `guardduty:GetMembers`
++ `guardduty:GetThreatIntelSet`
++ `guardduty:InviteMembers`
++ `guardduty:ListDetectors`
++ `guardduty:ListFindings`
++ `guardduty:ListIPSets`
++ `guardduty:ListInvitations`
++ `guardduty:ListMembers`
++ `guardduty:ListThreatIntelSets`
++ `guardduty:StartMonitoringMembers`
++ `guardduty:StopMonitoringMembers`
++ `guardduty:UnarchiveFindings`
++ `guardduty:UpdateDetector`
++ `guardduty:UpdateFindingsFeedback`
++ `guardduty:UpdateIPSet`
++ `guardduty:UpdateThreatIntelSet`
 
 **Condition context keys for Amazon GuardDuty**
 

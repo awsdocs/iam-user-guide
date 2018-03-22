@@ -23,17 +23,11 @@ Following are the APIs that you can use to acquire temporary credentials for use
 This API action is useful for allowing existing IAM users to access AWS resources that they don't already have access to, such as resources in another AWS account\. It is also useful for existing IAM users as a means to temporarily gain privileged access—for example, to provide multi\-factor authentication \(MFA\)\. You must call this API using existing IAM user credentials\. For more information, see [Creating a Role to Delegate Permissions to an IAM User](id_roles_create_for-user.md) and [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\.
 
 This call must be made using valid AWS security credentials\. When you make this call, you pass the following information:
-
 + The Amazon Resource Name \(ARN\) of the role that the app should assume\. 
-
 + The duration, which specifies how long the temporary security credentials are valid\. The minimum is 15 minutes \(900 seconds\) and the maximum \(and the default\) is 1 hour \(3600 seconds\)\. You need to pass this value only if you want the temporary credentials to expire before 1 hour\. This is separate from the duration of a console session that you might request using these credentials\. The request to the federation endpoint for a console sign\-in token takes a `SessionDuration` parameter that specifies the maximum length of the console session, separately from the `DurationSeconds` parameter on this API\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
-
 + A role session name, which is a string value that you can use to identify the session\. This value can be captured and logged by CloudTrail to help you distinguish between your role users during an audit\.
-
 + Optionally, a policy \(in JSON format\)\. This policy is combined with the policy associated with the role\. If specified, the permissions are the intersection of those granted to the role and those granted by this policy\. You can use this policy to you further restrict the access permissions that are associated with the temporary credentials, beyond the restrictions already established by the role permission policy\. Note that this policy cannot be used to elevate privileges beyond what the assumed role is allowed to access\.
-
 + If configured to use multi\-factor authentication \(MFA\), then you include the identifier for an MFA device and the one\-time code provided by that device\.
-
 + An optional ExternalID value that can be used when delegating access to your account to a third\-party\. This value helps ensure that only the specified third\-party can access the role\. For more information, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md)\.
 
 The following example shows a sample request and response using `AssumeRole`\. In this example, the request includes the name for the session named Bob\. The `Policy` parameter includes a JSON document that specifies that the resulting credentials have permissions to access only Amazon S3\.
@@ -105,25 +99,17 @@ Instead of directly calling `AssumeRoleWithWebIdentity`, we recommend that you u
 [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*
 
 If you are not using Amazon Cognito, you call the `AssumeRoleWithWebIdentity` action of AWS STS\. This is an unsigned call, meaning that the app does not need to have access to any AWS security credentials in order to make the call\. When you make this call, you pass the following information:
-
 + The Amazon Resource Name \(ARN\) of the role that the app should assume\. If your app supports multiple ways for users to sign in, you must define multiple roles, one per identity provider\. The call to `AssumeRoleWithWebIdentity` should include the ARN of the role that is specific to the provider through which the user signed in\. 
-
 + The token that the app gets from the IdP after the app authenticates the user\.
-
 + The duration, which specifies how long the temporary security credentials are valid\. The minimum is 15 minutes \(900 seconds\) and the maximum \(and the default\) is 1 hour \(3600 seconds\)\. You need to pass this value only if you want the temporary credentials to expire before 1 hour\. This is separate from the duration of a console session that you might request using these credentials\. The request to the federation endpoint for a console sign\-in token takes a `SessionDuration` parameter that specifies the maximum length of the console session, separately from the `DurationSeconds` parameter on this API\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
-
 + A role session name, which is a string value that you can use to identify the session\. This value can be captured and logged by CloudTrail to help you distinguish between your role users during an audit\.
-
 + Optionally, a policy \(in JSON format\)\. This policy is combined with the policy associated with the role\. If specified, the permissions are the intersection of those granted to the role and those granted by this policy\. You can use this policy to you further restrict the access permissions that are associated with the temporary credentials, beyond the restrictions already established by the role permission policy\. Note that this policy cannot be used to elevate privileges beyond what the assumed role is allowed to access\.
 **Note**  
 Because a call to `AssumeRoleWithWebIdentity` is not signed \(encrypted\), you should only include this optional policy if the request is not being transmitted through an untrusted intermediary who could alter the policy to remove the restrictions\.
 
 When you call `AssumeRoleWithWebIdentity`, AWS verifies the authenticity of the token\. For example, depending on the provider, AWS might make a call to the provider and include the token that the app has passed\. Assuming that the identity provider validates the token, AWS returns the following information to you: 
-
 + A set of temporary security credentials\. These consist of an access key ID, a secret access key, and a session token\. 
-
 + The role ID and the ARN of the assumed role\. 
-
 + A `SubjectFromWebIdentityToken` value that contains the unique user ID\.
 
 When you have the temporary security credentials, you can use them to make AWS API calls\. This is the same process as making an AWS API call with long\-term security credentials, except that you must include the session token, which lets AWS verify that the temporary security credentials are valid\.
@@ -135,31 +121,19 @@ Your app should cache the credentials\. As noted, by default the credentials exp
 This API returns a set of temporary security credentials for federated users who are authenticated by your organization's existing identity system and who use [SAML](https://www.oasis-open.org/standards#samlv2.0) 2\.0 \(Security Assertion Markup Language\) to pass authentication and authorization information to AWS\. This API is useful in organizations that have integrated their identity systems \(such as Windows Active Directory or OpenLDAP\) with software that can produce SAML assertions to provide information about user identity and permissions \(such as Active Directory Federation Services or Shibboleth\)\. For more information, see [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\.
 
 This is an unsigned call, which means that the app does not need to have access to any AWS security credentials in order to make the call\. When you make this call, you pass the following information:
-
 + The Amazon Resource Name \(ARN\) of the role that the app should assume\. 
-
 + The ARN of the SAML provider created in IAM that describes the identity provider\.
-
 + The SAML assertion, encoded in base\-64, that was provided by the SAML identity provider in its authentication response to the sign\-in request from your app\.
-
 + The duration, which specifies how long the temporary security credentials are valid\. The maximum \(and the default\) is 1 hour \(3600 seconds\)\. You need to pass this value only if you want the temporary credentials to expire before 1 hour\. The minimum duration for the credentials is 15 minutes \(900 seconds\)\. This is separate from the duration of a console session that you might request using these credentials\. The request to the federation endpoint for a console sign\-in token takes a `SessionDuration` parameter that specifies the maximum length of the console session, separately from the `DurationSeconds` parameter on this API\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
-
 + A policy \(in JSON format\)\. This policy is combined with the policy associated with the role\. If specified, the permissions are the intersection of those granted to the role and those granted by this policy\. You can use this policy to further restrict the access permissions that are associated with the temporary credentials, beyond the restrictions already established by the role permission policy\. Note that this policy cannot be used to elevate privileges beyond what the assumed role is allowed to access\.
 
 When you call `AssumeRoleWithSAML`, AWS verifies the authenticity of the SAML assertion\. Assuming that the identity provider validates the assertion, AWS returns the following information to you: 
-
 + A set of temporary security credentials\. These consist of an access key ID, a secret access key, and a session token\. 
-
 + The role ID and the ARN of the assumed role\. 
-
 + An `Audience` value that contains the value of the `Recipient` attribute of the `SubjectConfirmationData` element of the SAML assertion\.
-
 + An `Issuer` value that contains the value of the `Issuer` element of the SAML assertion\.
-
 + A `NameQualifier` element that contains a hash value built from the `Issuer` value, the AWS account ID, and the friendly name of the SAML provider\. When combined with the `Subject` element, they can uniquely identify the federated user\.
-
 + A `Subject` element that contains the value of the `NameID` element in the `Subject` element of the SAML assertion\.
-
 + A `SubjectType` element that indicates the format of the `Subject` element\. The value can be `persistent`, `transient`, or the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\. 
 
 When you have the temporary security credentials, you can use them to make AWS API calls\. This is the same process as making an AWS API call with long\-term security credentials, except that you must include the session token, which lets AWS verify that the temporary security credentials are valid\.
@@ -307,15 +281,9 @@ The following table compares features of the actions \(APIs\) in AWS STS that re
 |  [AssumeRoleWithWebIdentity](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html)  | Any user; caller must pass a web identity token that indicates authentication from a known identity provider | 15m/1hr/1hr  | No | Yes |  Cannot call `GetFederationToken` or `GetSessionToken`\.  | 
 | [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) | IAM user or AWS account root user |  IAM user: 15m/36hr/12hr Root user: 15m/1hr/1hr  | No  | Yes  |  Cannot call IAM APIs directly\. SSO to console is allowed\.\* Cannot call AWS STS APIs except `GetCallerIdentity`\.  | 
 | [GetSessionToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) | IAM user or root user |  IAM user: 15m/36hr/12hr Root user: 15m/1hr/1hr  | Yes  | No  |  Cannot call IAM APIs unless MFA information is included with the request\. Cannot call AWS STS APIs except `AssumeRole` or `GetCallerIdentity`\. Single sign\-on \(SSO\) to console is not allowed, but any user with a password \(root or IAM user\) can sign into the console\.\*  | 
-
 +  **MFA support**\. You can include information about a multi\-factor authentication \(MFA\) device when you call the AssumeRole and GetSessionToken APIs\. This ensures that the temporary security credentials that result from the API call can be used only by users who are authenticated with an MFA device\. For more information, see [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\. 
-
 +  **Passed policy support**\. You can pass an IAM policy as a parameter to most of the AWS STS APIs to be used in conjunction with other policies affecting the user \(if any\) to determine what the user is allowed to do with the temporary credentials that result from the API call\. For more information, see the following topics:
-
   + [Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity](id_credentials_temp_control-access_assumerole.md) 
-
   + [Permissions for GetFederationToken](id_credentials_temp_control-access_getfederationtoken.md)
-
   + [Permissions for GetSessionToken](id_credentials_temp_control-access_getsessiontoken.md)
-
 + **Single sign\-on \(SSO\) to the console**\. To support SSO, AWS lets you call a federation endpoint \(`https://signin.aws.amazon.com/federation`\) and pass temporary security credentials\. The endpoint returns a token that you can use to construct a URL that signs a user directly into the console without requiring a password\. For more information, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md) and [ How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the AWS Security Blog\. 

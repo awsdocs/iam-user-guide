@@ -16,7 +16,7 @@ These policies are all maintained by AWS and are kept up to date to include supp
 
 ## Job Functions<a name="jf_names"></a>
 
-
+**Topics**
 + [Administrator](#jf_administrator)
 + [Billing](#jf_accounts-payable)
 + [Database Administrator](#jf_database-administrator)
@@ -177,13 +177,9 @@ Several of the previously listed policies grant the ability to configure AWS ser
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
 1. Choose one or more permissions policies to attach to the role\. Depending on the use case that you selected, the service might do any of the following:
-
    + Define the permissions that the role uses
-
    + Allow you to choose from a limited set of permissions
-
    + Allow you to choose from any permissions
-
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role
 
    Select the box next to the policy that assigns the permissions that you want the users to have, and then choose **Next: Review**\. 
