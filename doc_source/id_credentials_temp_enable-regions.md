@@ -3,9 +3,7 @@
 By default, the AWS Security Token Service \(AWS STS\) is available as a global service, and all AWS STS requests go to a single endpoint at `https://sts.amazonaws.com`\. You can optionally send your AWS STS requests to endpoints in any of the AWS regions shown in the table that follows\. All regions are enabled by default, but you can disable any regions that you know you don't need\.
 
 You might choose to send your AWS STS requests to a regional endpoint for the following reasons:
-
 + **Reduce latency** – By making your AWS STS calls to an endpoint that is geographically closer to your services and applications, you can access AWS STS services with lower latency and better response times\.
-
 + **Build in Redundancy** – By adding code to your application that switches your AWS STS API calls to a different region, you ensure that if the first region stops responding, your application continues to operate\. This redundancy is not automatic; you must build the functionality into your code\.
 
 When you activate a region for an account, you enable the STS endpoints in that region to issue temporary credentials for users and roles in that account when a request is made to an endpoint in the region\. The credentials are still recognized and usable globally\. It is not the account of the caller, but the account from which temporary credentials are requested that must activate the region\.

@@ -3,18 +3,12 @@
 Amazon Message Delivery Service \(service prefix: ec2messages\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Message Delivery Service**
-
-+ `ec2messages:GetEndpoint`
-
 + `ec2messages:AcknowledgeMessage`
-
-+ `ec2messages:SendReply`
-
-+ `ec2messages:FailMessage`
-
 + `ec2messages:DeleteMessage`
-
++ `ec2messages:FailMessage`
++ `ec2messages:GetEndpoint`
 + `ec2messages:GetMessages`
++ `ec2messages:SendReply`
 
 **Condition context keys for Amazon Message Delivery Service**
 

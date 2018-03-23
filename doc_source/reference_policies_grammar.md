@@ -3,18 +3,14 @@
 This page presents a formal grammar for the language used to create JSON policies in IAM\. We present this grammar so that you can understand how to construct and validate policies\.
 
 For examples of policies, see the following topics:
-
 + [IAM Policies](access_policies.md)
-
 + [Example Policies](access_policies_examples.md)
-
 + [Example Policies for Working in the Amazon EC2 Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-ec2-console.html) and [Example Policies for Working With the AWS CLI, the Amazon EC2 CLI, or an AWS SDK](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
-
 +  [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 For examples of policies used in other AWS services, go to the documentation for those services\.
 
-
+**Topics**
 + [The Policy Language and JSON](#policies-grammar-json)
 + [Conventions Used in This Grammar](#policies-grammar-conventions)
 + [Grammar](#policies-grammar-bnf)
@@ -23,15 +19,11 @@ For examples of policies used in other AWS services, go to the documentation for
 ## The Policy Language and JSON<a name="policies-grammar-json"></a>
 
 Policies are expressed in JSON\. When a policy is submitted to IAM, it is first validated to make sure that the JSON syntax is correct\. In this document, we do not provide a complete description of what constitutes valid JSON\. However, here are some basic JSON rules:
-
 + White space between individual entities is allowed\.
-
 + Values are enclosed in quotation marks\. Quotation marks are optional for numeric and Boolean values\.
-
 + Many elements \(for example, `action_string_list` and `resource_string_list`\) can take a JSON array as a value\. Arrays can take one or more values\. If more than one value is included, the array is in square brackets \(`[` and `]`\) and comma\-delimited, as in the following example: 
 
   `"Action" : ["ec2:Describe*","ec2:List*"]`
-
 + Basic JSON data types \(Boolean, number, and string\) are defined in [RFC 7159](http://tools.ietf.org/html/rfc7159)\.
 
 You can use a JSON validator to check the syntax of a policy\. You can find a validator online, and many code editors and XML\-editing tools include JSON validation features\.
@@ -39,15 +31,12 @@ You can use a JSON validator to check the syntax of a policy\. You can find a va
 ## Conventions Used in This Grammar<a name="policies-grammar-conventions"></a>
 
 The following conventions are used in this grammar:
-
 + The following characters are JSON tokens and *are* included in policies:
 
   `{ } [ ] " , :`
-
 + The following characters are special characters in the grammar and are *not* included in policies: 
 
   `= < > ( ) |`
-
 + If an element allows multiple values, it is indicated using repeated values, a comma delimiter, and an ellipsis \(`...`\)\. Examples:
 
   `[<action_string>, <action_string>, ...]`
@@ -59,17 +48,14 @@ The following conventions are used in this grammar:
   `"Action": [<action_string>]`
 
   `"Action": <action_string>`
-
 + A question mark \(`?`\) following an element indicates that the element is optional\. Example: 
 
   <`version_block?>`
 
   However, be sure to refer to the notes that follow the grammar listing for details about optional elements\. 
-
 + A vertical line \(`|`\) between elements indicates alternatives\. In the grammar, parentheses define the scope of the alternatives\. Example:
 
   `("Principal" | "NotPrincipal")` 
-
 + Elements that must be literal strings are enclosed in double quotation marks \(`"`\)\. Example:
 
   `<version_block> = "Version" : ("2008-10-17" | "2012-10-17")`
@@ -132,19 +118,12 @@ policy  = {
 ```
 
 ## Policy Grammar Notes<a name="policies-grammar-notes"></a>
-
 + A single policy can contain an array of statements\.
-
 + Policies have a maximum size between 2048 characters and 10,240 characters, depending on what entity the policy is attached to\. For more information, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\. Policy size calculations do not include white space characters\.
-
 + Individual elements must not contain multiple instances of the same key\. For example, you cannot include the `Effect` block twice in the same statement\. 
-
 + Blocks can appear in any order\. For example, `version_block` can follow `id_block` in a policy\. Similarly, `effect_block`, `principal_block`, `action_block` can appear in any order within a statement\.
-
 + The `id_block` is optional in resource\-based policies\. It must *not* be included in identity\-based policies\.
-
 + The `principal_block` element is required in resource\-based policies \(for example, in Amazon S3 bucket policies\) and in trust policies for IAM roles\. It must *not* be included in identity\-based policies\.
-
 + Each string value \(`policy_id_string`, `sid_string`, `principal_id_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
 
 ### Notes About String Values<a name="policies-grammar-notes-strings"></a>
@@ -231,9 +210,7 @@ Identifies the type of condition being tested, such as `StringEquals`, `StringLi
 **`condition_key_string`**  
 Identifies the condition key whose value will be tested to determine whether the condition is met\. AWS defines a set of condition keys that are available in all AWS services, including `aws:principaltype`, `aws:SecureTransport`, and `aws:userid`\.  
 For a list of AWS condition keys, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys)\. For condition keys that are specific to a service, see the documentation for that service such as the following:  
-
 + [Specifying Conditions in a Policy](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service Developer Guide*
-
 + [IAM Policies for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ```

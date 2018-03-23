@@ -31,11 +31,8 @@ If you want to enable MFA for the account, see [Enable a Virtual MFA Device for 
 1. To view additional information about the MFA device for a user, choose the name of the user whose MFA status you want to check\. Then choose the **Security credentials** tab\. 
 
 1. If no MFA device is active for the user, the console displays **No** next to **Assigned MFA device**\. If the user has an MFA device enabled, the **Assigned MFA device** item shows a value for the device:
-
    + The device serial number of a hardware device \(usually the number from the back of the device\), such as `GAHT12345678`
-
    + The ARN in AWS for an SMS device, such as `arn:aws:iam::123456789012:sms-mfa/username`
-
    + The ARN in AWS for a virtual device, such as `arn:aws:iam::123456789012:mfa/username`
 
 If you want to change the current setting, choose the edit icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\) next to **Assigned MFA Device**\. For hardware device information, see [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)\. For SMS device information, see [PREVIEW \- Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)\. For virtual device information, see [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)\.

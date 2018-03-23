@@ -3,14 +3,10 @@
 AWS Cost Explorer Service \(service prefix: ce\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Cost Explorer Service**
-
-+ `ce:GetTags`
-
-+ `ce:GetDimensionValues`
-
-+ `ce:GetReservationUtilization`
-
 + `ce:GetCostAndUsage`
++ `ce:GetDimensionValues`
++ `ce:GetReservationUtilization`
++ `ce:GetTags`
 
 **Condition context keys for AWS Cost Explorer Service**
 

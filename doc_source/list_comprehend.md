@@ -3,28 +3,17 @@
 Amazon Comprehend \(service prefix: comprehend\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Comprehend**
-
-+ `comprehend:BatchDetectKeyPhrases`
-
-+ `comprehend:DetectDominantLanguage`
-
-+ `comprehend:ListTopicsDetectionJobs`
-
-+ `comprehend:DetectEntities`
-
-+ `comprehend:BatchDetectEntities`
-
-+ `comprehend:DetectKeyPhrases`
-
-+ `comprehend:DetectSentiment`
-
-+ `comprehend:StartTopicsDetectionJob`
-
-+ `comprehend:DescribeTopicsDetectionJob`
-
 + `comprehend:BatchDetectDominantLanguage`
-
++ `comprehend:BatchDetectEntities`
++ `comprehend:BatchDetectKeyPhrases`
 + `comprehend:BatchDetectSentiment`
++ `comprehend:DescribeTopicsDetectionJob`
++ `comprehend:DetectDominantLanguage`
++ `comprehend:DetectEntities`
++ `comprehend:DetectKeyPhrases`
++ `comprehend:DetectSentiment`
++ `comprehend:ListTopicsDetectionJobs`
++ `comprehend:StartTopicsDetectionJob`
 
 **Condition context keys for Amazon Comprehend**
 

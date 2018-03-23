@@ -1,9 +1,7 @@
 # Permissions for GetFederationToken<a name="id_credentials_temp_control-access_getfederationtoken"></a>
 
 The permissions for the temporary security credentials returned by `GetFederationToken` are determined by a combination of the following: 
-
 + The policy or policies that are attached to the IAM user whose credentials are used to call `GetFederationToken`\.
-
 + The policy that is passed as a parameter in the call\. 
 
 The passed policy is attached to the temporary security credentials that result from the `GetFederationToken` API call—that is, to the *federated user*\. When the federated user makes an AWS request, AWS evaluates the policy attached to the federated user in combination with the policy or policies attached to the IAM user whose credentials were used to call `GetFederationToken`\. 
@@ -12,9 +10,7 @@ The passed policy is attached to the temporary security credentials that result 
 AWS allows the federated user's request only when both the attached policy ***and*** the IAM user policy explicitly allow the federated user to perform the requested action\. 
 
 The permissions assigned to the federated user are defined in one of two places: 
-
 + The policy passed as a parameter of the `GetFederationToken` API call\. \(This is most common\.\)
-
 + A resource\-based policy that explicitly names the federated user in the `Principal` element of the policy\. \(This is less common\.\)
 
 This means that in most cases if you do not pass a policy with the `GetFederationToken` API call, the resulting temporary security credentials have no permissions\. The only exception is when the credentials are used to access a resource that has a resource\-based policy that specifically references the federated user in the `Principal` element of the policy\. 
@@ -76,9 +72,7 @@ Although the preceding policy grants several permissions, by itself it is not en
 ### Policy Passed as Parameter<a name="permissions-get-federation-token-example-passed-policy"></a>
 
 The most common way to ensure that the federated user is assigned appropriate permission is to pass a policy as a parameter of the `GetFederationToken` API call\. Expanding on our previous example, imagine that `GetFederationToken` is called with the credentials of the IAM user `token-app` and imagine that the following policy is passed as a parameter of the API call\. The federated user would have permission to perform only these actions: 
-
 + List the contents of the Amazon S3 bucket named `productionapp`\. 
-
 + Perform the Amazon S3 `GetObject`, `PutObject`, and `DeleteObject` actions on items in the `productionapp` bucket\.
 
 The federated user is assigned these permissions because the permissions have been granted to both the IAM user who called `GetFederationToken` \(via the policy attached to the IAM user\) ***and*** to the federated user \(via the passed policy\)\. The federated user could not perform actions in Amazon SNS, Amazon SQS, Amazon DynamoDB, or in any S3 bucket except `productionapp`, even though those permissions are granted to the IAM user associated with the `GetFederationToken` call\. This is true because the effective permissions for the federated user consist of only those permissions that are granted in both the IAM user policy ***and*** the passed policy\. 

@@ -3,17 +3,12 @@
 You can change the permissions for an IAM user in your AWS account by changing its group memberships or by attaching and detaching managed policies\. A user gets its permissions through one of the following methods:
 
 **Group membership**  
-
 + Add or remove a user from a group\.
-
 + Add, remove, or edit a managed policy attached to the group\. This policy can be an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies) or a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) that you create\.
-
 + Add, remove, or edit a group's [inline policies](access_policies_managed-vs-inline.md#inline-policies)\.
 
 **Direct policy attachment**  
-
 + Add, remove, or edit a managed policy attached directly to a user\. This policy can be an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies) or a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) that you create\.
-
 + Add, remove, or edit a user's [inline policies](access_policies_managed-vs-inline.md#inline-policies)\.
 
 For information about the permissions that you need in order to modify the permissions for a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\.
@@ -21,11 +16,8 @@ For information about the permissions that you need in order to modify the permi
 ## Adding Permissions to a New or Existing User \(Console\)<a name="w3ab1c19c19c26b9"></a>
 
 You can change permissions associated with a user through one of three techniques:
-
 + [**Add user to group**](#by-add-users-to-group) – Make the user a member of a group that already has policies attached\. Every member of the group receives the permissions granted by the group's policies\.
-
 + [**Copy permissions from existing user**](#by-copying-user) – Copy all group memberships and attached managed policies as well as all inline policies embedded in the source user\.
-
 + [**Attach policies directly to user**](#by-direct-attach-policy) – Attach a managed policy directly to the user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
 
 ### Adding Permissions by Adding the User to a Group<a name="w3ab1c19c19c26b9b6"></a><a name="by-add-users-to-group"></a>
@@ -111,19 +103,13 @@ The new permissions affect the user immediately\.
    The **Permissions** tab displays each policy that applies to the user, and how the user gets that policy\.
 
 1. If you want to revoke permissions by removing an existing policy, view the **Policy type** to understand how the user is getting that policy before choosing **X** to remove the policy:
-
    + If the policy applies because of group membership, then choosing **X** removes the user from the group\. Because you might have multiple policies attached from a single group, if you remove a user from a group, the user loses access to *all* policies that it received through that group membership\.\.
-
    + If the policy is a managed policy attached directly to the user, then choosing **X** detaches the policy from the user\. This does not affect the policy itself or any other entity that the policy might be attached to\.
-
    + If the policy is an inline embedded policy, then choosing **X** removes the policy from IAM\. Inline policies that are attached directly to a user exist only on that user\.
 
 ## Adding and Removing Permissions from a User \(AWS API, AWS CLI, Tools for Windows PowerShell\)<a name="w3ab1c19c19c26c13"></a>
 
 To add or remove permissions programmatically, you must add or remove the group memberships, attach or detach the managed policies, or add or delete the inline policies\. For more information, see the following topics:
-
 + [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)
-
 + [Attaching or Detaching IAM Policies \(AWS CLI or AWS API\)](access_policies_manage-attach-detach.md#attach-detach-managed-policy-cli-api)
-
 + [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)

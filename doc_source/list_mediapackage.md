@@ -3,26 +3,16 @@
 AWS Elemental MediaPackage \(service prefix: mediapackage\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Elemental MediaPackage**
-
-+ `mediapackage:DescribeChannel`
-
-+ `mediapackage:DeleteOriginEndpoint`
-
-+ `mediapackage:CreateOriginEndpoint`
-
-+ `mediapackage:DescribeOriginEndpoint`
-
 + `mediapackage:CreateChannel`
-
-+ `mediapackage:ListChannels`
-
-+ `mediapackage:ListOriginEndpoints`
-
-+ `mediapackage:UpdateOriginEndpoint`
-
-+ `mediapackage:UpdateChannel`
-
++ `mediapackage:CreateOriginEndpoint`
 + `mediapackage:DeleteChannel`
++ `mediapackage:DeleteOriginEndpoint`
++ `mediapackage:DescribeChannel`
++ `mediapackage:DescribeOriginEndpoint`
++ `mediapackage:ListChannels`
++ `mediapackage:ListOriginEndpoints`
++ `mediapackage:UpdateChannel`
++ `mediapackage:UpdateOriginEndpoint`
 
 **Condition context keys for AWS Elemental MediaPackage**
 

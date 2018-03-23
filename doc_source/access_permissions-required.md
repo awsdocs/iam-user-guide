@@ -77,9 +77,7 @@ For services that support resource\-based policies as described in [Identity\-Ba
 Many AWS services access other AWS services\. For example, several AWS services—including Amazon EMR, Elastic Load Balancing, and Amazon EC2 Auto Scaling—manage Amazon EC2 instances\. Other AWS services make use of Amazon S3 buckets, Amazon SNS topics, Amazon SQS queues, and so on\.
 
 The scenario for managing permissions in these cases varies by service\. Here are some examples of how permissions are handled for different services: 
-
 + In Amazon EC2 Auto Scaling, users must have permission to use Auto Scaling, but don't need to be explicitly granted permission to manage Amazon EC2 instances\. 
-
 + In AWS Data Pipeline, an IAM role determines what a pipeline can do; users need permission to assume the role\. \(For details, see [ Granting Permissions to Pipelines with IAM](http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) in the *AWS Data Pipeline Developer Guide*\.\) 
 
 For details about how to configure permissions properly so that an AWS service is able to accomplish the tasks you intend, refer to the documentation for the service you are calling\. To learn how to create a role for a service, see [Creating a Role to Delegate Permissions to an AWS Service](id_roles_create_for-service.md)\.
@@ -94,21 +92,13 @@ Actions are the things that you can do to a resource, such as viewing, creating,
 To allow someone to perform an action, you must include the necessary actions in a policy that applies to the calling identity or the affected resource\. In general, to provide the permission required to perform an action, you must include that action in your policy\. For example, to create a user, you need add the CreateUser action to your policy\.
 
 In some cases, an action might require that you include additional related actions in your policy\. For example, to provide permission for someone to create a directory in AWS Directory Service using the `ds:CreateDirectory` operation, you must include the following actions in their policy:
-
 + `ds:CreateDirectory`
-
 + `ec2:DescribeSubnets`
-
 + `ec2:DescribeVpcs`
-
 + `ec2:CreateSecurityGroup`
-
 + `ec2:CreateNetworkInterface`
-
 + `ec2:DescribeNetworkInterfaces`
-
 + `ec2:AuthorizeSecurityGroupIngress`
-
 + `ec2:AuthorizeSecurityGroupEgress`
 
 When you create or edit a policy using the visual editor, you receive warnings and prompts to help you choose all of the required actions for your policy\.

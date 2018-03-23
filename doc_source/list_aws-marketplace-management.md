@@ -5,13 +5,9 @@ AWS Marketplace Management Portal \(service prefix: aws\-marketplace\-management
 **Actions for AWS Marketplace Management Portal**
 
 For information about using the following MarketPlace Management API actions in an IAM policy, see [Permission Details for AWS Marketplace Management Portal](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) in the *AWS Marketplace User Guide*\.
-
 + `aws-marketplace-management:uploadFiles`
-
-+ `aws-marketplace-management:viewReports`
-
 + `aws-marketplace-management:viewMarketing`
-
++ `aws-marketplace-management:viewReports`
 + `aws-marketplace-management:viewSupport`
 
 **Condition context keys for AWS Marketplace Management Portal**

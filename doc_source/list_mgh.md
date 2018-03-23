@@ -3,38 +3,22 @@
 AWS Migration Hub \(service prefix: mgh\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Migration Hub**
-
-+ `mgh:DisassociateCreatedArtifact`
-
-+ `mgh:DescribeApplicationState`
-
-+ `mgh:DescribeMigrationTask`
-
-+ `mgh:DeleteProgressUpdateStream`
-
-+ `mgh:ListMigrationTasks`
-
-+ `mgh:ListCreatedArtifacts`
-
 + `mgh:AssociateCreatedArtifact`
-
-+ `mgh:ListProgressUpdateStreams`
-
-+ `mgh:DisassociateDiscoveredResource`
-
 + `mgh:AssociateDiscoveredResource`
-
-+ `mgh:NotifyMigrationTaskState`
-
-+ `mgh:NotifyApplicationState`
-
-+ `mgh:ImportMigrationTask`
-
-+ `mgh:PutResourceAttributes`
-
-+ `mgh:ListDiscoveredResources`
-
 + `mgh:CreateProgressUpdateStream`
++ `mgh:DeleteProgressUpdateStream`
++ `mgh:DescribeApplicationState`
++ `mgh:DescribeMigrationTask`
++ `mgh:DisassociateCreatedArtifact`
++ `mgh:DisassociateDiscoveredResource`
++ `mgh:ImportMigrationTask`
++ `mgh:ListCreatedArtifacts`
++ `mgh:ListDiscoveredResources`
++ `mgh:ListMigrationTasks`
++ `mgh:ListProgressUpdateStreams`
++ `mgh:NotifyApplicationState`
++ `mgh:NotifyMigrationTaskState`
++ `mgh:PutResourceAttributes`
 
 **Condition context keys for AWS Migration Hub**
 

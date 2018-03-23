@@ -14,9 +14,7 @@ To enable your organization's users to access the AWS Management Console, you ca
 If you use the `AssumeRole` API, you must call it as an IAM user with long\-term credentials\. The call to the federation endpoint in step 3 works only if the temporary credentials are requested by an IAM user with long\-term credentials\. If the temporary credentials are requested by an IAM assumed\-role user with a different set of temporary credentials, then the call to the federation endpoint fails\.
 
 1. Call the AWS federation endpoint and supply the temporary security credentials to request a sign\-in token\.
-
    + If you used one of the `AssumeRole*` API operations to get the temporary security credentials, then this request can include the `SessionDuration` parameter\. This parameter specifies how long the federated consoled session is valid, up to a maximum of 12 hours\.
-
    + If you instead used the `GetFederationToken` API to get the credentials, then you don't need the `SessionDuration` parameter\. The temporary credentials are already valid for up to 36 hours and specify the maximum length of the federated console session\.
 
 1. Construct a URL for the console that includes the token\.
@@ -32,7 +30,7 @@ To view a sample application that shows you how you can implement a single sign\
 
 To complete these tasks, you can use the [HTTPS Query API for AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/APIReference/) and the [AWS Security Token Service \(AWS STS\)](http://docs.aws.amazon.com/STS/latest/APIReference/)\. Or, you can use programming languages, such as Java, Ruby, or C\#, along with the appropriate [AWS SDK](https://aws.amazon.com/tools/)\. Each of these methods is described in the following sections\.
 
-
+**Topics**
 + [Example Code Using IAM Query API Operations](#STSConsoleLink_manual)
 + [Example Code Using Python](#STSConsoleLink_programPython)
 + [Example Code Using Java](#STSConsoleLink_programJava)

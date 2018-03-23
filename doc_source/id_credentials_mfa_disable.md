@@ -35,9 +35,6 @@ To manage MFA devices for the AWS account, you must sign in to AWS with your AWS
 The MFA device is deactivated for the AWS account\.
 
 **To deactivate an MFA device for a user \(AWS CLI, Tools for Windows PowerShell, or AWS API\)**
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice)
-
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)

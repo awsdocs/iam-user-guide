@@ -50,9 +50,7 @@ The following diagram illustrates the confused deputy problem\.
 ![\[The description of a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[The description of a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[The description of a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 This diagram assumes the following:
-
 + **AWS1** is your AWS account\.
-
 + **AWS1:ExampleRole** is a role in your account\. This role's trust policy trusts Example Corp by specifying Example Corp's AWS account as the one that can assume the role\.
 
 Here's what happens:
@@ -104,9 +102,7 @@ The external ID helps prevent any other customer from tricking Example Corp into
 ## When Should I Use the External ID?<a name="external-id-use"></a>
 
 Use an external ID in the following situations:
-
 + You are an AWS account owner and you have configured a role for a third party that accesses other AWS accounts in addition to yours\. You should ask the third party for an external ID that it includes when it assumes your role\. Then you check for that external ID in your role's trust policy\. Doing so ensures that the external party can assume your role only when it is acting on your behalf\.
-
 + You are in the position of assuming roles on behalf of different customers like Example Corp in our previous scenario\. You should assign a unique external ID to each customer and instruct them to add the external ID to their role's trust policy\. You must then ensure that you always include the correct external ID in your requests to assume roles\.
 
   You probably already have a unique identifier for each of your customers, and this unique ID is sufficient for use as an external ID\. The external ID is not a special value that you need to create explicitly, or track separately, just for this purpose\. 

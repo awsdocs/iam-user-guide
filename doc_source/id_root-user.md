@@ -7,7 +7,7 @@ We strongly recommend that you do not use the root user for your everyday tasks,
 
 To manage your root user, follow the steps in the following procedures\.
 
-
+**Topics**
 + [Enable MFA on the AWS Account Root User](#id_root-user_manage_mfa)
 + [Creating Access Keys for the Root User](#id_root-user_manage_add-key)
 + [Deleting Access Keys from the Root User](#id_root-user_manage_delete-key)
@@ -16,9 +16,7 @@ To manage your root user, follow the steps in the following procedures\.
 ## Enable MFA on the AWS Account Root User<a name="id_root-user_manage_mfa"></a>
 
 If you continue to use the root user credentials, it is a security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
-
 + [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
-
 + [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 ## Creating Access Keys for the Root User<a name="id_root-user_manage_add-key"></a>
@@ -38,9 +36,7 @@ If you previously signed in to the console with *[IAM user](http://docs.aws.amaz
 1. Expand the **Access keys \(access key ID and secret access key\)** section\.
 
 1. Choose **Create New Access Key**\. A warning explains that you have only this one opportunity to view or download the secret access key\. It cannot be retrieved later\. 
-
    + If you choose **Show Access Key**, you can copy the access key ID and secret key from your browser window and paste it somewhere else\.
-
    + If you choose **Download Key File**, you receive a file named `rootkey.csv` that contains the access key ID and the secret key\. Save the file somewhere safe\. 
 
 1. When you no longer use the access key [we recommend that you delete it](best-practices.md#remove-credentials), or at least mark it inactive by choosing **Make Inactive** so that it cannot be misused if leaked\.
@@ -48,11 +44,8 @@ If you previously signed in to the console with *[IAM user](http://docs.aws.amaz
 **To create an access key for the root user \(programmatically\)**
 
 Use one of the following commands:
-
 + AWS CLI: [aws iam create\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
-
 + Tools for Windows PowerShell: [New\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
-
 + AWS API: [CreateAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
 ## Deleting Access Keys from the Root User<a name="id_root-user_manage_delete-key"></a>
@@ -78,11 +71,8 @@ You can mark an access key as inactive instead of deleting it\. This enables you
 **To delete an access key for the root user \(programmatically\)**
 
 Use one of the following commands:
-
 + AWS CLI: [aws iam delete\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
-
 + Tools for Windows PowerShell: [Remove\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
-
 + AWS API: [DeleteAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
 ## Changing the Root User's Password<a name="id_root-user_manage_password"></a>

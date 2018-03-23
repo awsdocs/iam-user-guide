@@ -10,13 +10,10 @@ If you arrived at this page while trying to enable Amazon Advertising for your a
 ## How AWS identifies an IAM user<a name="id_users_create_aws-identifiers"></a>
 
 When you create a user, IAM creates these ways to identify that user:
-
 + A "friendly name" for the user, which is the name that you specified when you created the user, such as `Bob` or `Alice`\. These are the names you see in the AWS Management Console\. 
-
 + An Amazon Resource Name \(ARN\) for the user\. You use the ARN when you need to uniquely identify the user across all of AWS, such as when you specify the user as a `Principal` in an IAM policy for an Amazon S3 bucket\. An ARN for an IAM user might look like the following: 
 
   `arn:aws:iam::account-ID-without-hyphens:user/Bob`
-
 + A unique identifier for the user\. This ID is returned only when you use the API, Tools for Windows PowerShell, or AWS CLI to create the user; you do not see this ID in the console\.
 
 For more information about these identifiers, see [IAM Identifiers](reference_identifiers.md)\.
@@ -24,27 +21,18 @@ For more information about these identifiers, see [IAM Identifiers](reference_id
 ## Users and credentials<a name="id_users_creds"></a>
 
 You can access AWS in different ways depending on the user credentials:
-
 + [**Console password**](id_credentials_passwords.md): A password that the user can type to sign in to interactive sessions such as the AWS Management Console\.
-
 + [**Access keys**](id_credentials_access-keys.md): A combination of an access key ID and a secret access key\. You can assign two to a user at a time\. These can be used to make programmatic calls to AWS when using the API in program code or at a command prompt when using the AWS CLI or the AWS PowerShell tools\.
-
 + [**SSH keys for use with AWS CodeCommit**](id_credentials_ssh-keys.md): An SSH public key in the OpenSSH format that can be used to authenticate with AWS CodeCommit\.
-
 + [**Server certificates**](id_credentials_server-certs.md): SSL/TLS certificates that you can use to authenticate with some AWS services\. We recommend that you use AWS Certificate Manager \(ACM\) to provision, manage, and deploy your server certificates\. Use IAM only when you must support HTTPS connections in a region that is not supported by ACM\. To learn which regions support ACM, see the [AWS Certificate Manager](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region) section of the *AWS General Reference*\.
 
 By default, a brand new IAM user has no password and no access key \(neither an access key ID nor a secret access key\)—no credentials of any kind\. You must create the type of credentials for an IAM user based on what the user will be doing\. 
 
 Take advantage of the following options to administer passwords, access keys, and MFA devices:
-
 + **[Manage passwords for your IAM users](id_credentials_passwords.md)\.** Create and change the passwords that permit access to the AWS Management Console\. Set a password policy to enforce a minimum password complexity\. Allow users to change their own passwords\. 
-
 + **[Manage access keys for your IAM users](id_credentials_access-keys.md)\.** Create and update access keys for programmatic access to the resources in your account\. 
-
 + You can enhance the security of the user's credentials by enabling [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) for the user\. With MFA, users have to provide both the credentials that are part of their user identity \(a password or access key\) and a temporary numeric code that's generated on a hardware device or by an application on a smartphone or tablet, or sent by AWS to an SMS\-compatible mobile device\. 
-
 + **[Find unused passwords and access keys](id_credentials_finding-unused.md)\.** Anyone who has a password or access keys for your account or an IAM user in your account has access to your AWS resources\. The security [best practice](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) is to remove passwords and access keys when users no longer need them\.
-
 + **[Download a credential report for your account](id_credentials_getting-report.md)\.** You can generate and download a credential report that lists all IAM users in your account and the status of their various credentials, including passwords, access keys, and MFA devices\. For passwords and access keys, the credential report shows how recently the password or access key has been used\.
 
 ## Users and permissions<a name="id_users_perms"></a>

@@ -5,11 +5,8 @@ AWS Cost and Usage Report \(service prefix: cur\) provides the following service
 **Actions for AWS Cost and Usage Report**
 
 For more information about controlling access to Customer Usage Reports, see the [Billing and Cost Management Permissions Reference](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing and Cost Management API Reference*\.
-
 + `[cur:DeleteReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html)`
-
 + `[cur:DescribeReportDefinitions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html)`
-
 + `[cur:PutReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html)`
 
 **Condition context keys for AWS Cost and Usage Report**

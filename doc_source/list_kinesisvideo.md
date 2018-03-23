@@ -3,34 +3,20 @@
 Amazon Kinesis Video Streams \(service prefix: kinesisvideo\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Kinesis Video Streams**
-
-+ `kinesisvideo:PutMedia`
-
-+ `kinesisvideo:ListStreams`
-
-+ `kinesisvideo:GetMediaForFragmentList`
-
-+ `kinesisvideo:ListTagsForStream`
-
-+ `kinesisvideo:GetMedia`
-
 + `kinesisvideo:CreateStream`
-
-+ `kinesisvideo:UpdateStream`
-
-+ `kinesisvideo:DescribeStream`
-
-+ `kinesisvideo:UntagStream`
-
-+ `kinesisvideo:ListFragments`
-
 + `kinesisvideo:DeleteStream`
-
-+ `kinesisvideo:TagStream`
-
-+ `kinesisvideo:UpdateDataRetention`
-
++ `kinesisvideo:DescribeStream`
 + `kinesisvideo:GetDataEndpoint`
++ `kinesisvideo:GetMedia`
++ `kinesisvideo:GetMediaForFragmentList`
++ `kinesisvideo:ListFragments`
++ `kinesisvideo:ListStreams`
++ `kinesisvideo:ListTagsForStream`
++ `kinesisvideo:PutMedia`
++ `kinesisvideo:TagStream`
++ `kinesisvideo:UntagStream`
++ `kinesisvideo:UpdateDataRetention`
++ `kinesisvideo:UpdateStream`
 
 **Condition context keys for Amazon Kinesis Video Streams**
 

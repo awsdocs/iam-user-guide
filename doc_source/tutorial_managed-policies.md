@@ -18,9 +18,7 @@ Once the policy is attached, you can sign in as the user and test the policy\.
 ## Prerequisites<a name="tutorial-managed-policies-prereqs"></a>
 
 To perform the steps in this tutorial, you need to already have the following:
-
 + An AWS account that you can sign in to as an IAM user with administrative permissions\.
-
 + A test IAM user that has no permissions assigned or group memberships as follows:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_managed-policies.html)
@@ -95,11 +93,8 @@ For this tutorial, we recommend that you test access by signing in as the test u
 ## Related Resources<a name="tutorial-managed-policies-addl-resources"></a>
 
 For related information in the *IAM User Guide*, see the following resources:
-
 + [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)
-
 + [Controlling User Access to the AWS Management Console](console_controlling-access.md)
-
 + [Create Individual IAM Users](best-practices.md#create-iam-users)
 
 ## Summary<a name="tutorial-managed-policies-summary"></a>

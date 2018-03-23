@@ -19,23 +19,15 @@ The following example describes the access provided by a policy for the given se
 | CodeBuild | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) No actions are defined\. | No access because no actions are defined for the service\. To learn how to understand and troubleshoot this issue, see [My Policy Does Not Grant the Expected Permissions](troubleshoot_policies.md#policy-summary-not-grant-permissions) | 
 
 As [previously mentioned](access_policies_understand-policy-summary.md#full-vs-limited-access-summary), **Full access** indicates that the policy provides access to all the actions within the service\. Policies that provide access to some but not all actions within a service are further grouped according to the access level classification\. This is indicated by one of the following access\-level groupings:
-
 + **Full**: The policy provides access to all actions within the specified access level classification\.
-
 + **Limited**: The policy provides access to one or more but not all actions within the specified access level classification\.
-
 + **None**: The policy provides no access\.
-
 + \(empty\): IAM does not recognize this service\. If the service name includes a typo, then the policy provides no access to the service\. If the service name is correct, then the service might not support policy summaries or might be in preview\. In this case, the policy might provide access, but that access cannot be shown in the policy summary\. To request policy summary support for a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\.
 
 Access level summaries that include partial access to actions are grouped using the following access level classifications:
-
 + **[List](reference_access-level_list.md)**: Permission to list resources within the service to determine whether an object exists\. Actions with this level of access can list objects but cannot see the contents of a resource\. For example, the Amazon S3 action `ListBucket` has the **List** access level\. 
-
 + **[Read](reference_access-level_read.md)**: Permission to read but not edit the contents and attributes of resources in the service\. For example, the Amazon S3 actions `GetObject` and `GetBucketLocation` have the **Read** access level\.
-
 + **[Write](reference_access-level_write.md)**: Permission to create, delete, or modify resources in the service\. For example, the Amazon S3 actions `CreateBucket`, `DeleteBucket` and `PutObject` have the **Write** access level\.
-
 + **[Permissions management](reference_access-level_permissions.md)**: Permission to grant or modify resource permissions in the service\. For example, most IAM and AWS Organizations actions, as well as actions like the Amazon S3 actions `PutBucketPolicy` and `DeleteBucketPolicy` have the **Permissions management** access level\.
 **Tip**  
 To improve the security of your AWS account, restrict or regularly monitor policies that include the **Permissions management** access level classification\.

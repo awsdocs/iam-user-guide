@@ -3,26 +3,16 @@
 Application Auto Scaling \(service prefix: application\-autoscaling\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Application Auto Scaling**
-
-+ `[application\-autoscaling:DeleteScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScheduledAction.html)`
-
-+ `[application\-autoscaling:DescribeScheduledActions](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScheduledActions.html)`
-
-+ `[application\-autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
-
-+ `[application\-autoscaling:RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html)`
-
-+ `[application\-autoscaling:DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html)`
-
 + `[application\-autoscaling:DeleteScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScalingPolicy.html)`
-
-+ `[application\-autoscaling:DescribeScalingPolicies](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingPolicies.html)`
-
++ `[application\-autoscaling:DeleteScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScheduledAction.html)`
 + `[application\-autoscaling:DeregisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeregisterScalableTarget.html)`
-
++ `[application\-autoscaling:DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html)`
++ `[application\-autoscaling:DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html)`
++ `[application\-autoscaling:DescribeScalingPolicies](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingPolicies.html)`
++ `[application\-autoscaling:DescribeScheduledActions](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScheduledActions.html)`
 + `[application\-autoscaling:PutScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScalingPolicy.html)`
-
 + `[application\-autoscaling:PutScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html)`
++ `[application\-autoscaling:RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html)`
 
 **Condition context keys for Application Auto Scaling**
 

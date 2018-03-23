@@ -91,11 +91,8 @@ IAM reviews service names, actions, and resource types for services that support
 This column can include a resource from a different service\. If the policy statement that includes the resource does not include both actions and resources from the same service, then your policy includes mismatched resources\. IAM does not warn you about mismatched resources when you create a policy, or when you view a policy in the service summary\. IAM also does not indicate whether the action applies to the resources, only whether the service matches\. If this column includes a mismatched resource, then you should review your policy for errors\. To better understand your policies, always test them with the [policy simulator](access_policies_testing-policies.md)\.
 
 1. **Resource warning** – For actions with resources that do not provide full permissions, you see one of the following warnings:
-
    + **This action does not support resource\-level permissions\. This requires a wildcard \(\*\) for the resource\.** – This means that the policy includes resource\-level permissions but must include `"Resource": ["*"]` to provide permissions for this action\.
-
    + **This action does not have an applicable resource\.** – This means that the action is included in the policy without a supported resource\.
-
    + **This action does not have an applicable resource and condition\.** – This means that the action is included in the policy without a supported resource and without a supported condition\. In this case, there is also condition included in the policy for this service, but there are no conditions that apply to this action\.
 
    For the `ListAllMyBuckets` action, this policy includes the last warning because the action does not support resource\-level permissions and does not support the `s3:x-amz-acl` condition key\. If you fix either the resource problem or the condition problem, the remaining issue appears in a detailed warning\.
@@ -103,9 +100,7 @@ This column can include a resource from a different service\. If the policy stat
 1. **Request condition** – This column tells whether the actions associated with the resource are subject to conditions\. To learn more about those conditions, choose **\{ \} JSON** to review the JSON policy document\.
 
 1. **Condition warning** – For actions with conditions that do not provide full permissions, you see one of the following warnings:
-
    + **<CONDITION\_KEY> is not a supported condition key for this action\.** – This means that the policy includes a condition key for the service that is not supported for this action\.
-
    + **Multiple condition keys are not supported for this action\.** – This means that the policy includes more than one condition keys for the service that are not supported for this action\.
 
    For `GetObject`, this policy includes the `s3:x-amz-acl` condition key, which will not work with this action\. Although the action supports the resource, the policy does not grant any permissions for this action because the condition will never be true for this action\.

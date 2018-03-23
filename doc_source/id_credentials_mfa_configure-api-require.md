@@ -4,7 +4,7 @@ With IAM policies, you can specify which APIs a user is allowed to call\. In som
 
 For example, you might have a policy that allows a user to perform the Amazon EC2 `RunInstances`, `DescribeInstances`, and `StopInstances` actions\. But you might want to restrict a destructive action like `TerminateInstances` and ensure that users can perform that action only if they authenticate with an AWS MFA device\.
 
-
+**Topics**
 + [Overview](#MFAProtectedAPI-overview)
 + [Scenario: MFA Protection for Cross\-Account Delegation](#MFAProtectedAPI-cross-account-delegation)
 + [Scenario: MFA Protection for Access to APIs in the Current Account](#MFAProtectedAPI-user-mfa)
@@ -27,17 +27,12 @@ If authorization fails, AWS returns an "Access Denied" error message \(as it doe
 ### IAM Policies with MFA Conditions<a name="MFAProtectedAPI-policies"></a>
 
 Policies with MFA conditions can be attached to the following:
-
 + An IAM user or group
-
 + A resource such as an Amazon S3 bucket, Amazon SQS queue, or Amazon SNS topic
-
 + The trust policy of an IAM role that can be assumed by a user
 
 You can use an MFA condition in a policy to check the following properties:
-
 + Existence—To simply verify that the user did authenticate with MFA, check that the `aws:MultiFactorAuthPresent` key is `True` in a `Bool` condition\. The key is only present when the user authenticates with short term credentials\. Long term credentials, such as access keys, do not include this key\.
-
 + Duration—If you want to grant access only within a specified time after MFA authentication, use a numeric condition type to compare the `aws:MultiFactorAuthAge` key's age to a value \(such as 3600 seconds\)\. Note that the `aws:MultiFactorAuthAge` key is not present if MFA was not used\.
 
 The following example shows the trust policy of an IAM role that includes an MFA condition to test for the existence of MFA authentication\. With this policy, users from the AWS account specified in the `Principal` element \(replace `ACCOUNT-B-ID` with a valid AWS account ID\) can assume the role that this policy is attached to, but only if the user is MFA authenticated\.
@@ -61,13 +56,10 @@ For more information on the condition types for MFA, see [Available Global Condi
 AWS STS provides two APIs that let users pass MFA information: `GetSessionToken` and `AssumeRole`\. The API that the user calls to get temporary security credentials depends on which of the following scenarios applies\. 
 
 Use `GetSessionToken` for these scenarios:
-
 + Call APIs that access resources in the same AWS account as the IAM user who makes the request\. Note that temporary credentials from a `GetSessionToken` request can access IAM and STS APIs *only* if you include MFA information in the request for credentials\. Because temporary credentials returned by `GetSessionToken` include MFA information, you can check for MFA in individual API calls made by the credentials\.
-
 + Access to resources that are protected with resource\-based policies that include an MFA condition\.
 
 Use `AssumeRole` for these scenarios:
-
 + Call APIs that access resources in the same or a different AWS account\. The API calls can include any IAM or STS API\. Note that to protect access you enforce MFA at the time when the user assumes the role\. The temporary credentials returned by `AssumeRole` do not include MFA information in the context, so you cannot check individual API calls for MFA\. This is why you must use `GetSessionToken` to restrict access to resources protected by resource\-based policies\.
 
 Details about how to implement these scenarios are provided later in this document\.
@@ -75,23 +67,14 @@ Details about how to implement these scenarios are provided later in this docume
 ### Important Points About MFA\-Protected API Access<a name="MFAProtectedAPI-important-points"></a>
 
 It's important to understand the following aspects of MFA protection for APIs:
-
 + MFA protection is available only with temporary security credentials, which must be obtained with `AssumeRole` or `GetSessionToken`\. 
-
 + You cannot use MFA\-protected API access with AWS account root user credentials\.
-
 + Federated users cannot be assigned an MFA device for use with AWS services, so they cannot access AWS resources controlled by MFA\. \(See next point\.\) 
-
 + Other AWS STS APIs that return temporary credentials do not support MFA\. For `AssumeRoleWithWebIdentity` and `AssumeRoleWithSAML`, the user is authenticated by an external provider and AWS cannot determine whether that provider required MFA\. For `GetFederationToken`, MFA is not necessarily associated with a specific user\. 
-
 + Similarly, long\-term credentials \(IAM user access keys and root user access keys\) cannot be used with MFA\-protected API access because they don't expire\.
-
 + `AssumeRole` and `GetSessionToken` can also be called without MFA information\. In that case, the caller gets back temporary security credentials, but the session information for those temporary credentials does not indicate that the user authenticated with MFA\.
-
 + To establish MFA protection for APIs, you add MFA conditions to policies\. If a policy doesn't include the condition for MFAs, the policy does not enforce the use of MFA\. For cross\-account delegation, if the role's trust policy doesn’t include an MFA condition then there is no MFA protection for the API calls that are made with the role's temporary security credentials\.
-
 + When you allow another AWS account to access resources in your account, *even when you require multi\-factor authentication*, the security of your resources depends on the configuration of the trusted account—that is, the other account \(not yours\)\. Any identity in the trusted account that has permission to create virtual MFA devices can construct an MFA claim to satisfy that part of your role's trust policy\. Before you allow another account's access to your AWS resources that require multi\-factor authentication, you should ensure that the trusted account's owner follows security best practices and restricts access to sensitive APIs—such as MFA device\-management APIs—to specific, trusted identities\.
-
 + If a policy includes an MFA condition, a request is denied if users have not been MFA authenticated, or if they provide an invalid MFA device identifier or invalid TOTP\.
 
 ## Scenario: MFA Protection for Cross\-Account Delegation<a name="MFAProtectedAPI-cross-account-delegation"></a>

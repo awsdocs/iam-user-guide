@@ -5,36 +5,21 @@ AWS CodeBuild \(service prefix: codebuild\) provides the following service\-spec
 **Actions for AWS CodeBuild**
 
 For information about using the following AWS CodeBuild API actions in an IAM policy, see [Using Identity\-Based Policies \(IAM Policies\) for AWS CodeBuild](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html) in the *AWS CodeBuild User Guide*\.
-
-+ `[codebuild:PersistOAuthToken](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)` \- this is an IAM policy permission only, not an API action that can be called\.
-
-+ `[codebuild:ListProjects](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html)`
-
-+ `[codebuild:BatchGetProjects](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html)`
-
-+ `[codebuild:ListConnectedOAuthAccounts](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)` \- this is an IAM policy permission only, not an API action that can be called\.
-
-+ `[codebuild:ListCuratedEnvironmentImages](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html)`
-
 + `[codebuild:BatchDeleteBuilds](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchDeleteBuilds.html)`
-
-+ `[codebuild:CreateProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html)`
-
-+ `[codebuild:StopBuild](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html)`
-
-+ `[codebuild:ListBuildsForProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html)`
-
-+ `[codebuild:ListRepositories](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)` \- this is an IAM policy permission only, not an API action that can be called\.
-
-+ `[codebuild:DeleteProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html)`
-
-+ `[codebuild:UpdateProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html)`
-
-+ `[codebuild:ListBuilds](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html)`
-
-+ `[codebuild:StartBuild](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html)`
-
 + `[codebuild:BatchGetBuilds](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html)`
++ `[codebuild:BatchGetProjects](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html)`
++ `[codebuild:CreateProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html)`
++ `[codebuild:DeleteProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html)`
++ `[codebuild:ListBuilds](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html)`
++ `[codebuild:ListBuildsForProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html)`
++ `[codebuild:ListConnectedOAuthAccounts](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)` \- this is an IAM policy permission only, not an API action that can be called\.
++ `[codebuild:ListCuratedEnvironmentImages](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html)`
++ `[codebuild:ListProjects](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html)`
++ `[codebuild:ListRepositories](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)` \- this is an IAM policy permission only, not an API action that can be called\.
++ `[codebuild:PersistOAuthToken](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)` \- this is an IAM policy permission only, not an API action that can be called\.
++ `[codebuild:StartBuild](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html)`
++ `[codebuild:StopBuild](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html)`
++ `[codebuild:UpdateProject](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html)`
 
 **Condition context keys for AWS CodeBuild**
 

@@ -3,45 +3,25 @@
 AWS Elemental MediaConvert \(service prefix: mediaconvert\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Elemental MediaConvert**
-
-+ `mediaconvert:DeleteJobTemplate`
-
-+ `mediaconvert:DeleteQueue`
-
-+ `mediaconvert:DescribeEndpoint`
-
-+ `mediaconvert:ListJobTemplates`
-
-+ `mediaconvert:UpdateJobTemplate`
-
-+ `mediaconvert:GetJob`
-
-+ `mediaconvert:GetPreset`
-
-+ `mediaconvert:CreateQueue`
-
-+ `mediaconvert:CreatePreset`
-
-+ `mediaconvert:GetJobTemplate`
-
-+ `mediaconvert:CreateJobTemplate`
-
-+ `mediaconvert:ListQueues`
-
-+ `mediaconvert:DeletePreset`
-
-+ `mediaconvert:UpdatePreset`
-
 + `mediaconvert:CancelJob`
-
-+ `mediaconvert:GetQueue`
-
-+ `mediaconvert:ListPresets`
-
 + `mediaconvert:CreateJob`
-
++ `mediaconvert:CreateJobTemplate`
++ `mediaconvert:CreatePreset`
++ `mediaconvert:CreateQueue`
++ `mediaconvert:DeleteJobTemplate`
++ `mediaconvert:DeletePreset`
++ `mediaconvert:DeleteQueue`
++ `mediaconvert:DescribeEndpoint`
++ `mediaconvert:GetJob`
++ `mediaconvert:GetJobTemplate`
++ `mediaconvert:GetPreset`
++ `mediaconvert:GetQueue`
++ `mediaconvert:ListJobTemplates`
 + `mediaconvert:ListJobs`
-
++ `mediaconvert:ListPresets`
++ `mediaconvert:ListQueues`
++ `mediaconvert:UpdateJobTemplate`
++ `mediaconvert:UpdatePreset`
 + `mediaconvert:UpdateQueue`
 
 **Condition context keys for AWS Elemental MediaConvert**

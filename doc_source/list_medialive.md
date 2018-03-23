@@ -3,34 +3,20 @@
 AWS Elemental MediaLive \(service prefix: medialive\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Elemental MediaLive**
-
-+ `medialive:StopChannel`
-
-+ `medialive:ListInputSecurityGroups`
-
-+ `medialive:DescribeInputSecurityGroup`
-
-+ `medialive:DescribeChannel`
-
-+ `medialive:ListChannels`
-
-+ `medialive:ListInputs`
-
-+ `medialive:CreateInput`
-
-+ `medialive:DeleteInput`
-
-+ `medialive:DeleteChannel`
-
-+ `medialive:DeleteInputSecurityGroup`
-
-+ `medialive:DescribeInput`
-
-+ `medialive:StartChannel`
-
 + `medialive:CreateChannel`
-
++ `medialive:CreateInput`
 + `medialive:CreateInputSecurityGroup`
++ `medialive:DeleteChannel`
++ `medialive:DeleteInput`
++ `medialive:DeleteInputSecurityGroup`
++ `medialive:DescribeChannel`
++ `medialive:DescribeInput`
++ `medialive:DescribeInputSecurityGroup`
++ `medialive:ListChannels`
++ `medialive:ListInputSecurityGroups`
++ `medialive:ListInputs`
++ `medialive:StartChannel`
++ `medialive:StopChannel`
 
 **Condition context keys for AWS Elemental MediaLive**
 

@@ -4,7 +4,7 @@ If your AWS account root user multi\-factor authentication \(MFA\) device is los
 
 If the device appears to be functioning properly, but you cannot use it to access your AWS resources, then it might be out of synchronization with the AWS system\. For information about synchronizing an MFA device, see [Resynchronize MFA Devices](id_credentials_mfa_sync.md)\.
 
-If the MFA device associated with an IAM user is lost or stops working, the user can't recover it\. IAM users must contact an administrator to deactiveate the device\.
+If the MFA device associated with an IAM user is lost or stops working, the user can't recover it\. IAM users must contact an administrator to deactivate the device\.
 
 Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\.
 

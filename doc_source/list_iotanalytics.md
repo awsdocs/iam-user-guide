@@ -3,48 +3,27 @@
 AWS IoT Analytics \(service prefix: iotanalytics\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS IoT Analytics**
-
-+ `iotanalytics:DescribeChannel`
-
-+ `iotanalytics:CreateDatasetContent`
-
-+ `iotanalytics:ListChannels`
-
-+ `iotanalytics:CreatePipeline`
-
-+ `iotanalytics:ListPipelines`
-
-+ `iotanalytics:ListDatasets`
-
-+ `iotanalytics:DescribeDatastore`
-
-+ `iotanalytics:DeleteChannel`
-
-+ `iotanalytics:DeleteDatastore`
-
-+ `iotanalytics:CreateDataset`
-
-+ `iotanalytics:CreateDatastore`
-
-+ `iotanalytics:UpdateDataset`
-
-+ `iotanalytics:DeleteDatasetContent`
-
-+ `iotanalytics:DeletePipeline`
-
 + `iotanalytics:CreateChannel`
-
-+ `iotanalytics:ListDatastores`
-
-+ `iotanalytics:GetDatasetContent`
-
-+ `iotanalytics:DescribeDataset`
-
-+ `iotanalytics:UpdatePipeline`
-
-+ `iotanalytics:DescribePipeline`
-
++ `iotanalytics:CreateDataset`
++ `iotanalytics:CreateDatasetContent`
++ `iotanalytics:CreateDatastore`
++ `iotanalytics:CreatePipeline`
++ `iotanalytics:DeleteChannel`
 + `iotanalytics:DeleteDataset`
++ `iotanalytics:DeleteDatasetContent`
++ `iotanalytics:DeleteDatastore`
++ `iotanalytics:DeletePipeline`
++ `iotanalytics:DescribeChannel`
++ `iotanalytics:DescribeDataset`
++ `iotanalytics:DescribeDatastore`
++ `iotanalytics:DescribePipeline`
++ `iotanalytics:GetDatasetContent`
++ `iotanalytics:ListChannels`
++ `iotanalytics:ListDatasets`
++ `iotanalytics:ListDatastores`
++ `iotanalytics:ListPipelines`
++ `iotanalytics:UpdateDataset`
++ `iotanalytics:UpdatePipeline`
 
 **Condition context keys for AWS IoT Analytics**
 

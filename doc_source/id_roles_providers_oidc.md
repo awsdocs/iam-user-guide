@@ -10,7 +10,7 @@ For most scenarios, we recommend that you use [Amazon Cognito](https://aws.amazo
 
 If you don't use Amazon Cognito, then you must write code that interacts with a web IdP \(Login with Amazon, Facebook, Google, or any other OIDC\-compatible IdP\) and then calls the `AssumeRoleWithWebIdentity` API to trade the authentication token you get from those IdPs for AWS temporary security credentials\. If you have already used this approach for existing apps, you can continue to use it\.
 
-
+**Topics**
 + [Using Amazon Cognito for Mobile Apps](id_roles_providers_oidc_cognito.md)
 + [Using Web Identity Federation APIs for Mobile Apps](id_roles_providers_oidc_manual.md)
 + [Identifying Users with Web Identity Federation](id_roles_providers_oidc_user-id.md)

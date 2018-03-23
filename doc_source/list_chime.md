@@ -5,96 +5,51 @@ Amazon Chime \(service prefix: chime\) provides the following service\-specific 
 **Actions for Amazon Chime**
 
 For information about using the following Amazon Chime actions in an IAM policy, see [Control Access to the Amazon Chime Console](http://docs.aws.amazon.com/chime/latest/ag/working-users.html) in the *Amazon Chime Administration Guide*\.
-
-+ `chime:RenameAccount`
-
-+ `chime:ListUsers`
-
-+ `chime:ResetPersonalPin`
-
-+ `chime:ListAccounts`
-
-+ `chime:DeleteCDRBucket`
-
-+ `chime:ConnectDirectory`
-
-+ `chime:ListGroups`
-
-+ `chime:UpdateAccountResource`
-
-+ `chime:LogoutUser`
-
-+ `chime:DeleteDelegate`
-
-+ `chime:ActivateUsers`
-
-+ `chime:ResetAccountResource`
-
-+ `chime:SuspendUsers`
-
-+ `chime:UpdateAccountSettings`
-
-+ `chime:GetCDRBucket`
-
-+ `chime:DeleteGroups`
-
-+ `chime:GetAccountResource`
-
-+ `chime:ListDomains`
-
-+ `chime:ListDirectories`
-
-+ `chime:DeleteAccount`
-
-+ `chime:RenewDelegate`
-
-+ `chime:GetUser`
-
-+ `chime:GetUserByEmail`
-
-+ `chime:ListCDRBucket`
-
-+ `chime:UpdateCDRBucket`
-
-+ `chime:InviteUsers`
-
-+ `chime:ValidateAccountResource`
-
-+ `chime:GetAccount`
-
-+ `chime:AddOrUpdateGroups`
-
-+ `chime:GetDomain`
-
-+ `chime:CreateAccount`
-
-+ `chime:GetAccountSettings`
-
-+ `chime:SubmitSupportRequest`
-
-+ `chime:ValidateDelegate`
-
-+ `chime:ListDelegates`
-
 + `chime:AcceptDelegate`
-
-+ `chime:UpdateUserLicenses`
-
-+ `chime:DeleteDomain`
-
-+ `chime:AuthorizeDirectory`
-
++ `chime:ActivateUsers`
 + `chime:AddDomain`
-
-+ `chime:UpdateSupportedLicenses`
-
++ `chime:AddOrUpdateGroups`
++ `chime:AuthorizeDirectory`
++ `chime:ConnectDirectory`
++ `chime:CreateAccount`
 + `chime:CreateCDRBucket`
-
-+ `chime:InviteDelegate`
-
++ `chime:DeleteAccount`
++ `chime:DeleteCDRBucket`
++ `chime:DeleteDelegate`
++ `chime:DeleteDomain`
++ `chime:DeleteGroups`
 + `chime:DisconnectDirectory`
-
++ `chime:GetAccount`
++ `chime:GetAccountResource`
++ `chime:GetAccountSettings`
++ `chime:GetCDRBucket`
++ `chime:GetDomain`
++ `chime:GetUser`
++ `chime:GetUserByEmail`
++ `chime:InviteDelegate`
++ `chime:InviteUsers`
++ `chime:ListAccounts`
++ `chime:ListCDRBucket`
++ `chime:ListDelegates`
++ `chime:ListDirectories`
++ `chime:ListDomains`
++ `chime:ListGroups`
++ `chime:ListUsers`
++ `chime:LogoutUser`
++ `chime:RenameAccount`
++ `chime:RenewDelegate`
++ `chime:ResetAccountResource`
++ `chime:ResetPersonalPin`
++ `chime:SubmitSupportRequest`
++ `chime:SuspendUsers`
 + `chime:UnauthorizeDirectory`
++ `chime:UpdateAccountResource`
++ `chime:UpdateAccountSettings`
++ `chime:UpdateCDRBucket`
++ `chime:UpdateSupportedLicenses`
++ `chime:UpdateUserLicenses`
++ `chime:ValidateAccountResource`
++ `chime:ValidateDelegate`
 
 **Condition context keys for Amazon Chime**
 

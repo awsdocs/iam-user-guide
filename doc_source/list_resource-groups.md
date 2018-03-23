@@ -3,29 +3,17 @@
 AWS Resource Groups \(service prefix: resource\-groups\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Resource Groups**
-
-+ `resource-groups:GetGroup`
-
-+ `resource-groups:Untag`
-
-+ `resource-groups:GetTags`
-
-+ `resource-groups:ListGroupResources`
-
-+ `resource-groups:GetGroupQuery`
-
-+ `resource-groups:SearchResources`
-
 + `resource-groups:CreateGroup`
-
-+ `resource-groups:ListGroups`
-
-+ `resource-groups:Tag`
-
 + `resource-groups:DeleteGroup`
-
++ `resource-groups:GetGroup`
++ `resource-groups:GetGroupQuery`
++ `resource-groups:GetTags`
++ `resource-groups:ListGroupResources`
++ `resource-groups:ListGroups`
++ `resource-groups:SearchResources`
++ `resource-groups:Tag`
++ `resource-groups:Untag`
 + `resource-groups:UpdateGroup`
-
 + `resource-groups:UpdateGroupQuery`
 
 **Condition context keys for AWS Resource Groups**
