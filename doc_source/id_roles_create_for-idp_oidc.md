@@ -148,7 +148,8 @@ You only need to manually create a role for use with Amazon Cognito when you are
    + If you're creating a role for Login with Amazon, type the app ID into the **Application ID** box\.
    + If you're creating a role for Amazon Cognito, type the ID of the identity pool that you have created for your Amazon Cognito applications into the **Identity Pool ID** box\.
    + If you're creating a role for Facebook, type the app ID into the **Application ID** box\.
-   + If you're creating a role for Amazon Cognito, type the audience name into the **Audience** box\.
+   + If you're creating a role for Google, type the audience name into the **Audience** box\.
+
 
 1. \(Optional\) Click **Add condition \(optional\)** to create additional conditions that must be met before users of your application can use the permissions that the role grants\. For example, you can add a condition that grants access to AWS resources only for a specific IAM user ID\.
 
