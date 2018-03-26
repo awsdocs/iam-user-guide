@@ -5,7 +5,7 @@ Temporary security credentials are valid until they expire, and they cannot be r
 **Note**  
 When you update existing policy permissions, or when you apply a new policy to a user or a resource, it may take a few minutes for policy updates to take effect\.
 
-
+**Topics**
 + [Denying Access to the Creator of the Temporary Security Credentials](#denying-access-to-credentials-creator)
 + [Denying Access to Temporary Security Credentials by Name](#denying-access-to-credentials-by-name)
 + [Denying Access to Temporary Security Credentials Issued Before a Specific Time](#denying-access-to-credentials-by-issue-time)

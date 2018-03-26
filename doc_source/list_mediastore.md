@@ -3,30 +3,18 @@
 AWS Elemental MediaStore \(service prefix: mediastore\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Elemental MediaStore**
-
-+ `mediastore:DeleteObject`
-
-+ `mediastore:ListItems`
-
-+ `mediastore:DeleteContainer`
-
-+ `mediastore:DescribeContainer`
-
-+ `mediastore:PutContainerPolicy`
-
-+ `mediastore:DescribeObject`
-
-+ `mediastore:DeleteContainerPolicy`
-
-+ `mediastore:GetContainerPolicy`
-
-+ `mediastore:PutObject`
-
 + `mediastore:CreateContainer`
-
++ `mediastore:DeleteContainer`
++ `mediastore:DeleteContainerPolicy`
++ `mediastore:DeleteObject`
++ `mediastore:DescribeContainer`
++ `mediastore:DescribeObject`
++ `mediastore:GetContainerPolicy`
 + `mediastore:GetObject`
-
 + `mediastore:ListContainers`
++ `mediastore:ListItems`
++ `mediastore:PutContainerPolicy`
++ `mediastore:PutObject`
 
 **Condition context keys for AWS Elemental MediaStore**
 

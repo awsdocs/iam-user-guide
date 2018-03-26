@@ -7,22 +7,14 @@ AWS Trusted Advisor \(service prefix: trustedadvisor\) provides the following se
 AWS Trusted Advisor provides the following service\-specific actions and condition context keys for use in IAM policies\. Note that these actions apply only to Trusted Advisor in the AWS Management Console; they do not apply to the Trusted Advisor\-related actions provided by the AWS Support API \(such as `DescribeTrustedAdvisorChecks`\)\. For more information about how these actions affect access to the Trusted Advisor console, see [Controlling Access to the Trusted Advisor Console](https://aws.amazon.com//premiumsupport/ta-iam/)\.
 
 To use the Trusted Advisor\-related actions provided by the AWS Support API, your policy must include the `support:*` action \(explicitly or implicitly\); none of the `trustedadvisor` action permissions restrict your access\.
-
-+ `trustedadvisor:IncludeCheckItems`
-
-+ `trustedadvisor:DescribeCheckRefreshStatuses`
-
-+ `trustedadvisor:UpdateNotificationPreferences`
-
-+ `trustedadvisor:RefreshCheck`
-
-+ `trustedadvisor:DescribeNotificationPreferences`
-
-+ `trustedadvisor:ExcludeCheckItems`
-
-+ `trustedadvisor:DescribeCheckSummaries`
-
 + `trustedadvisor:DescribeCheckItems`
++ `trustedadvisor:DescribeCheckRefreshStatuses`
++ `trustedadvisor:DescribeCheckSummaries`
++ `trustedadvisor:DescribeNotificationPreferences`
++ `trustedadvisor:ExcludeCheckItems`
++ `trustedadvisor:IncludeCheckItems`
++ `trustedadvisor:RefreshCheck`
++ `trustedadvisor:UpdateNotificationPreferences`
 
 **Condition context keys for AWS Trusted Advisor**
 

@@ -1,9 +1,7 @@
 # Permitting IAM Users to Change Their Own Passwords<a name="id_credentials_passwords_enable-user-change"></a>
 
 You can grant IAM users the permission to change their own passwords for signing in to the AWS Management Console\. You can do this in one of two ways:
-
 + [Allow all IAM users in the account to change their own passwords](#proc_letalluserschangepassword)\. 
-
 + [Allow only selected IAM users to change their own passwords](#proc_letselectuserschangepassword)\. In this scenario, you disable the option for all users to change their own passwords and you use an IAM policy to grant permissions to only some users to change their own passwords and optionally other credentials like their own access keys\. 
 
 **Important**  
@@ -62,13 +60,8 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
 ## For More Information<a name="HowToPwdIAMUser-moreinfo"></a>
 
 For more information on managing credentials, see the following topics:
-
 + [Permitting IAM Users to Change Their Own Passwords](#id_credentials_passwords_enable-user-change) 
-
 + [Managing Passwords](id_credentials_passwords.md)
-
 + [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)
-
 + [Managing IAM Policies](access_policies_manage.md)
-
 + [How IAM Users Change Their Own Password](id_credentials_passwords.md#id_credentials_passwords_user-change-own)

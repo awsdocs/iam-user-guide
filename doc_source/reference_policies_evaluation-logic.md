@@ -1,6 +1,6 @@
 # IAM JSON Policy Evaluation Logic<a name="reference_policies_evaluation-logic"></a>
 
-
+**Topics**
 + [Policy Evaluation Basics](#policy-eval-basics)
 + [The Impact of AWS Organizations on IAM Policies](#evaluation-logic-organizations)
 + [The Request Context](#policy-eval-reqcontext)
@@ -27,11 +27,8 @@ For more information about Organizations and SCPs, see [About Service Control Po
 ## The Request Context<a name="policy-eval-reqcontext"></a>
 
 When AWS authorizes a request, information about the request is assembled from several sources:
-
 + Principal \(the requester\), which is determined based on the secret access key\. This might represent the root user, an IAM user, a federated user \(via STS\), or an assumed role, and includes the aggregate permissions that are associated with that principal\. 
-
 + Environment data, such as the IP address, user agent, SSL enabled, the time of day, etc\. This information is determined from the request\.
-
 + Resource data, which pertains to information that is part of the resource being requested\. This can include information such as a DynamoDB table name, a tag on an Amazon EC2 instance, etc\. 
 
 This information is gathered into a *request context*, which is a collection of information that's derived from the request\. During evaluation, AWS uses values from the request context to determine whether to allow or deny the request\. For example, does the action in the request context match an action in the `Action` element? If not, the request is denied\. Similarly, does the resource in the request context match one of the resources in the `Resource` element? If not, the request is denied\.
@@ -60,11 +57,8 @@ Policy variables like `${aws:username}` also work like this\. In the following p
 ## Determining Whether a Request is Allowed or Denied<a name="policy-eval-denyallow"></a>
 
 When a request is made, the AWS service decides whether a given request should be allowed or denied\. The evaluation logic follows these rules:
-
 + By default, all requests are denied\. \(In general, requests made using the account credentials for resources in the account are always allowed\.\) 
-
 + An explicit allow overrides this default\.
-
 + An explicit deny overrides any allows\.
 
 The order in which the policies are evaluated has no effect on the outcome of the evaluation\. All policies are evaluated, and the result is always that the request is either allowed or denied\.

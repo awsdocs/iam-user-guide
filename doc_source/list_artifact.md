@@ -3,14 +3,10 @@
 AWS Artifact \(service prefix: artifact\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Artifact**
-
-+ `artifact:TerminateAgreement`
-
-+ `artifact:Get`
-
-+ `artifact:DownloadAgreement`
-
 + `artifact:AcceptAgreement`
++ `artifact:DownloadAgreement`
++ `artifact:Get`
++ `artifact:TerminateAgreement`
 
 **Condition context keys for AWS Artifact**
 

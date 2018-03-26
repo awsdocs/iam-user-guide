@@ -2,7 +2,7 @@
 
 Use the information here to help you troubleshoot and fix access denied or other issues that you might encounter when working with Amazon EC2 and IAM\.
 
-
+**Topics**
 + [When attempting to launch an instance, I don't see the role I expected to see in the Amazon EC2 console **IAM role** list\.](#troubleshoot_iam-ec2_missingrole)
 + [The credentials on my instance are for the wrong role\.](#troubleshoot_iam-ec2_wrongrole)
 + [When I attempt to call the `AddRoleToInstanceProfile`, I get an `AccessDenied` error\.](#troubleshoot_iam-ec2_access-denied-adding-role)
@@ -13,11 +13,9 @@ Use the information here to help you troubleshoot and fix access denied or other
 ## When attempting to launch an instance, I don't see the role I expected to see in the Amazon EC2 console **IAM role** list\.<a name="troubleshoot_iam-ec2_missingrole"></a>
 
 Check the following:
-
 + If you are signed in as an IAM user, verify that you have permission to call `ListInstanceProfiles`\. For information about the permissions necessary to work with roles, see "Permissions Required for Using Roles with Amazon EC2" in [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\. For information about adding permissions to a user, see [Managing IAM Policies](access_policies_manage.md)\.
 
   If you cannot modify your own permissions, you must contact an administrator who can work with IAM in order to update your permissions\.
-
 + If you created a role by using the IAM CLI or API, verify that you created an instance profile and added the role to that instance profile\. Also, if you name your role and instance profile differently, you won't see the correct role name in the list of IAM roles in the Amazon EC2 console\. The **IAM Role** list in the Amazon EC2 console lists the names of instance profiles, not the names of roles\. You will have to select the name of the instance profile that contains the role you want\. For details about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\.
 **Note**  
 If you use the IAM console to create roles, you don't need to work with instance profiles\. For each role that you create in the IAM console, an instance profile is created with the same name as the role, and the role is automatically added to that instance profile\. An instance profile can contain only one IAM role, and that limit cannot be increased\.
@@ -29,7 +27,6 @@ If the role in the instance profile was replaced recently, your application will
 ## When I attempt to call the `AddRoleToInstanceProfile`, I get an `AccessDenied` error\.<a name="troubleshoot_iam-ec2_access-denied-adding-role"></a>
 
 If you are making requests as an IAM user, verify that you have the following permissions:
-
 + `iam:AddRoleToInstanceProfile` with the resource matching the instance profile ARN \(for example, `arn:aws:iam::999999999999:instance-profile/ExampleInstanceProfile`\)\. 
 
 For more information about the permissions necessary to work with roles, see "How Do I Get Started?" in [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\. For information about adding permissions to a user, see [Managing IAM Policies](access_policies_manage.md)\.
@@ -37,17 +34,11 @@ For more information about the permissions necessary to work with roles, see "Ho
 ## Amazon EC2: When I attempt to launch an instance with a role, I get an `AccessDenied` error\.<a name="troubleshoot_iam-ec2_access-denied-launch"></a>
 
 Check the following:
-
 + Launch an instance without an instance profile\. This will help ensure that the problem is limited to IAM roles for Amazon EC2 instances\.
-
 + If you are making requests as an IAM user, verify that you have the following permissions:
-
   + `ec2:RunInstances` with a wildcard resource \("\*"\)
-
   + `iam:PassRole` with the resource matching the role ARN \(for example, `arn:aws:iam::999999999999:role/ExampleRoleName`\)
-
 + Call the IAM `GetInstanceProfile` action to ensure that you are using a valid instance profile name or a valid instance profile ARN\. For more information, see [ Using IAM roles with Amazon EC2 instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances)\.
-
 + Call the IAM `GetInstanceProfile` action to ensure that the instance profile has a role\. Empty instance profiles will fail with an `AccessDenied` error\. For more information about creating a role, see [Creating IAM Roles](id_roles_create.md)\.
 
 For more information about the permissions necessary to work with roles, see "How Do I Get Started?" in [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\. For information about adding permissions to a user, see [Managing IAM Policies](access_policies_manage.md)\. 
@@ -55,19 +46,16 @@ For more information about the permissions necessary to work with roles, see "Ho
 ## I can't access the temporary security credentials on my EC2 instance\.<a name="troubleshoot_iam-ec2_no-keys"></a>
 
 Check the following:
-
 + Can you can access another part of the instance metadata service \(IMDS\)? If not, check that you have no firewall rules blocking access to requests to the IMDS\.
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/hostname; echo
   ```
-
 + Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling `ec2:DescribeInstances`\.
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/iam; echo
   ```
-
 + Check the `info` document in the IAM subtree for an error\. If you have an error, see [What do the errors from the `info` document in the IAM subtree mean?](#troubleshoot_iam-ec2_errors-info-doc) for more information\.
 
   ```

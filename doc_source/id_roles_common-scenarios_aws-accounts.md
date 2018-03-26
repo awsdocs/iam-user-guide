@@ -6,11 +6,8 @@ You can grant your IAM users permission to switch to roles within your AWS accou
 If you want to grant access to an account that you do not own or control, see [Providing Access to AWS Accounts Owned by Third Parties](id_roles_common-scenarios_third-party.md) later in this topic\. 
 
 Imagine that you have Amazon Elastic Compute Cloud \(Amazon EC2\) instances that are critical to your organization\. Instead of directly granting your users permission to terminate the instances, you can create a role with those privileges and allow administrators to switch to the role when they need to terminate an instance\. This adds the following layers of protection to the instances:
-
 + You must explicitly grant your users permission to assume the role\.
-
 + Your users must actively switch to the role using the AWS Management Console\.
-
 + You can add multi\-factor authentication \(MFA\) protection to the role so that only users who sign in with an MFA device can assume the role\.
 
 We recommend using this approach to enforce the *principle of least access*, that is, restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with [auditing](cloudtrail-integration.md) to help ensure that roles are only used when needed\.

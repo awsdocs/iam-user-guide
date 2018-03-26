@@ -9,11 +9,8 @@ However, AWS might choose to create a *new* policy when the needed changes could
 Therefore, when such a change is required, AWS creates a completely new policy with the required changes and makes it available to customers\. The old policy is then marked *deprecated*\. A deprecated managed policy appears with a warning icon next to it in the **Policies** list in the IAM console\.
 
 A deprecated policy has the following characteristics:
-
 + It continues to work for all *currently* attached users, groups, and roles\. Nothing breaks\.
-
 + It *cannot* be attached to any new users, groups, or roles\. If you detach it from a current entity, you cannot reattach it\.
-
 + After you detach it from all current entities, it is no longer visible and can no longer be used in any way\.
 
 If any user, group, or role requires the policy, you must instead attach the new policy\. When you receive notice that a policy is deprecated, we recommend that you immediately plan to attach all users, groups, and roles to the replacement policy and detach them from the deprecated policy\. Continuing to use the deprecated policy can carry risks that are mitigated only by switching to the replacement policy\.

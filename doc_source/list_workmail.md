@@ -5,78 +5,42 @@ Amazon WorkMail \(service prefix: workmail\) provides the following service\-spe
 **Actions for Amazon WorkMail**
 
 For information about using the following Amazon WorkMail API actions in an IAM policy, see [AWS Identity and Access Management Policies for Amazon WorkMail](http://docs.aws.amazon.com/workmail/latest/adminguide/iam_policies_workmail.html) in the *Amazon WorkMail Administrator Guide*\.
-
-+ `workmail:GetMobileDevicesForUser`
-
-+ `workmail:GetMobileDeviceDetails`
-
-+ `workmail:CreateMailDomain`
-
-+ `workmail:SetMobilePolicyDetails`
-
-+ `workmail:EnableMailDomain`
-
-+ `workmail:DescribeDirectories`
-
-+ `workmail:SearchMembers`
-
-+ `workmail:DisableMailGroups`
-
-+ `workmail:DisableMailUsers`
-
 + `workmail:AddMembersToGroup`
-
-+ `workmail:GetMailDomainDetails`
-
-+ `workmail:DeleteMailDomain`
-
-+ `workmail:ResetUserPassword`
-
-+ `workmail:SetAdmin`
-
-+ `workmail:SetDefaultMailDomain`
-
-+ `workmail:GetMobilePolicyDetails`
-
-+ `workmail:GetMailUserDetails`
-
-+ `workmail:CreateResource`
-
-+ `workmail:DescribeMailUsers`
-
 + `workmail:CreateGroup`
-
-+ `workmail:WipeMobileDevice`
-
-+ `workmail:GetMailGroupDetails`
-
-+ `workmail:SetMailGroupDetails`
-
-+ `workmail:ListMembersInMailGroup`
-
-+ `workmail:DescribeOrganizations`
-
-+ `workmail:CreateOrganization`
-
-+ `workmail:DescribeMailDomains`
-
-+ `workmail:DescribeMailGroups`
-
-+ `workmail:EnableMailGroups`
-
-+ `workmail:DeleteMobileDevice`
-
++ `workmail:CreateMailDomain`
 + `workmail:CreateMailUser`
-
-+ `workmail:DescribeKmsKeys`
-
-+ `workmail:SetMailUserDetails`
-
-+ `workmail:RemoveMembersFromGroup`
-
-+ `workmail:EnableMailUsers`
-
++ `workmail:CreateOrganization`
++ `workmail:CreateResource`
++ `workmail:DeleteMailDomain`
++ `workmail:DeleteMobileDevice`
 + `workmail:DeleteOrganization`
++ `workmail:DescribeDirectories`
++ `workmail:DescribeKmsKeys`
++ `workmail:DescribeMailDomains`
++ `workmail:DescribeMailGroups`
++ `workmail:DescribeMailUsers`
++ `workmail:DescribeOrganizations`
++ `workmail:DisableMailGroups`
++ `workmail:DisableMailUsers`
++ `workmail:EnableMailDomain`
++ `workmail:EnableMailGroups`
++ `workmail:EnableMailUsers`
++ `workmail:GetMailDomainDetails`
++ `workmail:GetMailGroupDetails`
++ `workmail:GetMailUserDetails`
++ `workmail:GetMobileDeviceDetails`
++ `workmail:GetMobileDevicesForUser`
++ `workmail:GetMobilePolicyDetails`
++ `workmail:ListMembersInMailGroup`
++ `workmail:RemoveMembersFromGroup`
++ `workmail:ResetUserPassword`
++ `workmail:SearchMembers`
++ `workmail:SetAdmin`
++ `workmail:SetDefaultMailDomain`
++ `workmail:SetMailGroupDetails`
++ `workmail:SetMailUserDetails`
++ `workmail:SetMobilePolicyDetails`
++ `workmail:WipeMobileDevice`
 
 **Condition context keys for Amazon WorkMail**
 

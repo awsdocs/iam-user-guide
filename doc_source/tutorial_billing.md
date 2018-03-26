@@ -151,19 +151,13 @@ The following optional procedure demonstrates how you could alternatively use th
 ## Related Resources<a name="tutorial-billing-addl-resources"></a>
 
 For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
-
 + [Activate Access to the AWS Website](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
-
 + [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
-
 + [Billing Permissions Descriptions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
 
 For related information in the *IAM User Guide*, see the following resources:
-
 + [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)
-
 + [Controlling User Access to the AWS Management Console](console_controlling-access.md)
-
 + [Attaching a Policy to an IAM Group](id_groups_manage_attach-policy.md)
 
 ## Summary<a name="tutorial-billing-summary"></a>

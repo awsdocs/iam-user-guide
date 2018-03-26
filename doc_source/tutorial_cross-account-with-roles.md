@@ -22,15 +22,11 @@ Finally, as a Developer, you use the `UpdateApp` role to update the `productiona
 ## Prerequisites<a name="tutorial_cross-account-with-roles-prereqs"></a>
 
 This tutorial assumes that you have the following already in place:
-
 + Two separate AWS accounts that you can use, one to represent the Development account, and one to represent the Production account\.
-
 + Users and groups in the Development account created and configured as follows:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html)
-
 + You do not need to have any users or groups created in the Production account\.
-
 + An Amazon S3 bucket created in the Production account\. We call it `ProductionApp` in this tutorial, but because S3 bucket names must be globally unique, you must use a bucket with a different name\.
 
 ## Step 1 \- Create a Role<a name="tutorial_cross-account-with-roles-1"></a>
@@ -222,9 +218,7 @@ If David needs to work with in the Production environment in the AWS Management 
 Switching roles using the AWS Management Console works only with accounts that do not require an `ExternalID`\. If you grant access to your account to a third party and require an `ExternalID` in a `Condition` element in your permission policy, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalID`\. For more information about this scenario, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the *AWS Security Blog*\.
 
 There are two ways that David can use to enter the **Switch Role** page:
-
 + David receives a link from his administrator that points to a pre\-defined Switch Role configuration\. The link is provided to the administrator on the final page of the **Create role** wizard or on the **Role Summary** page for a cross\-account role\. Choosing this link takes David to the **Switch Role** page with the **Account ID** and **Role name** fields already filled in\. All David needs to do is choose **Switch Role** and he's done\.
-
 + The administrator does not send the link in email, but instead sends the **Account ID** number and **Role Name** values\. David must manually type them to switch roles\. This is illustrated in the following procedure\.
 
 **To assume a role**
@@ -289,11 +283,8 @@ David's default environment uses the `David` user credentials from his default p
    ```
 
 1. David sees the three pieces that he needs in the Credentials section of the output\.
-
    + `AccessKeyId`
-
    + `SecretAccessKey`
-
    + `SessionToken`
 
    David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually type the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
@@ -337,9 +328,7 @@ When David needs to make an update to the Production account from code, he makes
 For a code example \(using Python\), see [Switching to an IAM Role \(API\)](id_roles_use_switch-role-api.md)\.
 
 ## Related Resources<a name="tutorial_cross-account-with-roles-related"></a>
-
 + For more information about IAM users and groups, see [Identities \(Users, Groups, and Roles\)](id.md) \.
-
 + For more information about Amazon S3 buckets, see [Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
 
 ## Summary<a name="tutorial_cross-account-with-roles-summary"></a>

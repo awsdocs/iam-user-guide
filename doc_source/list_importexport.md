@@ -5,18 +5,12 @@ AWS Import Export Disk Service \(service prefix: importexport\) provides the fol
 **Actions for AWS Import Export Disk Service**
 
 For information about using the following AWS Import/Export API actions in an IAM policy, see [Controlling Access to AWS Import/Export Jobs](http://docs.aws.amazon.com/AWSImportExport/latest/DG/iam-access-importexport-actions.html) in the *AWS Import/Export Developer Guide*\.
-
-+ `[importexport:GetShippingLabel](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html)`
-
-+ `[importexport:UpdateJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html)`
-
 + `[importexport:CancelJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html)`
-
 + `[importexport:CreateJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html)`
-
-+ `[importexport:ListJobs](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html)`
-
++ `[importexport:GetShippingLabel](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html)`
 + `[importexport:GetStatus](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html)`
++ `[importexport:ListJobs](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html)`
++ `[importexport:UpdateJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html)`
 
 **Condition context keys for AWS Import Export Disk Service**
 

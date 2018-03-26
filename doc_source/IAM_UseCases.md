@@ -6,7 +6,7 @@ This use case looks at two typical ways a fictional company called Example Corp 
 
 For more information about using IAM with other services from AWS, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
-
+**Topics**
 + [Initial Setup of Example Corp](#InitSetupExampleCorp_IAM)
 + [Use Case for IAM with Amazon EC2](#UseCase_EC2)
 + [Use Case for IAM with Amazon S3](#UseCase_S3)
@@ -30,13 +30,10 @@ A company like Example Corp typically uses IAM to interact with services like Am
 To provide "perimeter" control, Joe attaches a policy to the AllUsers group\. This policy denies any AWS request from a user if the originating IP address is outside Example Corp's corporate network\.
 
 At Example Corp, different groups require different permissions:
-
 + **System Administrators** – Need permission to create and manage AMIs, instances, snapshots, volumes, security groups, and so on\. Joe attaches a policy to the SysAdmins group that gives members of the group permission to use all the Amazon EC2 actions\.
-
 + **Developers** – Need the ability to work with instances only\. Joe therefore attaches a policy to the Developers group that allows developers to call `DescribeInstances`, `RunInstances`, `StopInstances`, `StartInstances`, and `TerminateInstances`\. 
 **Note**  
 Amazon EC2 uses SSH keys, Windows passwords, and security groups to control who has access to the operating system of specific Amazon EC2 instances\. There's no method in the IAM system to allow or deny access to the operating system of a specific instance\.
-
 + **Managers** – Should not be able to perform any Amazon EC2 actions except listing the Amazon EC2 resources currently available\. Therefore, Joe attaches a policy to the Managers group that only lets them call Amazon EC2 "Describe" APIs\.
 
 For examples of what these policies might look like, see [Example Policies](access_policies_examples.md) and [Using AWS Identity and Access Management](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?UsingIAM.html) in the *Amazon EC2 User Guide for Linux Instances*\.
@@ -66,13 +63,9 @@ As employees, Don and Mary each need to be able to create their own data in the 
 Joe divides the master `/example_bucket` into a set of home directories for each employee, and a shared area for groups of developers and managers\.
 
 Now Joe creates a set of policies to assign permissions to the users and groups:
-
 + **Home directory access for Don** – Joe attaches a policy to Don that lets him read, write, and list any objects with the Amazon S3 key prefix `/example_bucket/home/don/` 
-
 + **Home directory access for Mary** – Joe attaches a policy to Mary that lets her read, write, and list any objects with the Amazon S3 key prefix `/example_bucket/home/mary/`
-
 + **Shared directory access for the Developers group** – Joe attaches a policy to the group that lets developers read, write, and list any objects in `/example_bucket/share/developers/`
-
 + **Shared directory access for the Managers group** – Joe attaches a policy to the group that lets managers read, write, and list objects in `/example_bucket/share/managers/`
 
 **Note**  

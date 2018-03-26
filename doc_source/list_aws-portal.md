@@ -5,19 +5,12 @@ AWS Billing \(service prefix: aws\-portal\) provides the following service\-spec
 **Actions for AWS Billing**
 
 For information about controlling access to your billing data by using an IAM policy, see [Billing and Cost Management Permissions Reference](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing and Cost Management User Guide*\.
-
 + `aws-portal:ModifyAccount`
-
-+ `aws-portal:ViewAccount`
-
 + `aws-portal:ModifyBilling`
-
-+ `aws-portal:ViewPaymentMethods`
-
 + `aws-portal:ModifyPaymentMethods`
-
++ `aws-portal:ViewAccount`
 + `aws-portal:ViewBilling`
-
++ `aws-portal:ViewPaymentMethods`
 + `aws-portal:ViewUsage`
 
 **Condition context keys for AWS Billing**

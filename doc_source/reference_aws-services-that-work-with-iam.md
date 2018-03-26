@@ -1,21 +1,13 @@
 # AWS Services That Work with IAM<a name="reference_aws-services-that-work-with-iam"></a>
 
 The AWS services listed below are grouped by their [AWS product categories](https://aws.amazon.com/products/) and include information about what IAM features they support:
-
 + **Service** – You can choose the name of a service to view the AWS documentation for that service\.
-
 + **Actions** – You can specify individual actions in a policy\. If the service does not support this feature, then **All actions** is selected in the [visual editor](access_policies_create.md#access_policies_create-visual-editor)\. In a JSON policy document, you must use `*` in the `Action` element\. For a list of actions in each service, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
-
-+ **Resource\-level permissions** – You can use [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) to specify individual resources in the policy\. If the service does not support this feature, then **All resources** is chosen in the [policy visual editor](access_policies_create.md#access_policies_create-visual-editor)\. In a JSON policy document, you must use `*` in the `Resource` element\. If a service supports this feature for some resources but not others, it is indicated in the table footnotes\.
-
++ **Resource\-level permissions** – You can use [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) to specify individual resources in the policy\. If the service does not support this feature, then **All resources** is chosen in the [policy visual editor](access_policies_create.md#access_policies_create-visual-editor)\. In a JSON policy document, you must use `*` in the `Resource` element\. Some actions, such as `List*` actions, do not support specifying an ARN because they are designed to return multiple resources\. If a service supports this feature for some resources but not others, it is indicated by yellow cells in the table\. See the documentation for that service for more information\.
 + **Resource\-based policies** – You can attach resource\-based policies to a resource within the service\. Resource\-based policies include a `Principal` element to specify which IAM identities can access that resource\. For more information, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\.
-
 + **Authorization based on tags** – You can use [resource tags](http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the condition of a policy\. For example, you might create a [ policy that allows tag owners full access to Amazon RDS resources](reference_policies_examples_rds_tag-owner.md) that they have tagged\. You do this by using a condition key such as `rds:db-tag/Owner`\.
-
 + **Temporary credentials** – Users signed in with federation, a cross\-account role, or a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) can access the service\. Temporary security credentials are obtained by calling AWS STS API operations like [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) or [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)\. For more information, see [Temporary Security Credentials](id_credentials_temp.md)\. 
-
 + **Service\-linked roles** – A [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) gives the service permission to access resources in other services to complete an action on your behalf\. Choose the `Yes` link to see the documentation for services that support these roles\. For more information, see [Using Service\-Linked Roles](using-service-linked-roles.md)\.
-
 + **More information** – If a service doesn't fully support a feature, you can review the footnotes for an entry to view the limitations and links to related information\.
 
 ## Compute Services<a name="compute_svcs"></a>
@@ -27,25 +19,17 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Application Auto Scaling](http://docs.aws.amazon.com/autoscaling/application/APIReference/Welcome.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/autoscaling/application/APIReference/application-autoscaling-service-linked-roles.html) | 
 |  [Amazon EC2 Auto Scaling](http://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
 |  [AWS Batch](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | No | No | No | Yes | No | 
-|  [Amazon Elastic Compute Cloud \(Amazon EC2\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes¹ | No | Yes¹ | Yes | Yes² | 
-|  [AWS Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes³ | No | No | Yes | [Yes](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
+|  [Amazon Elastic Compute Cloud \(Amazon EC2\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | Yes¹ | 
+|  [AWS Elastic Beanstalk](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
 |  [Amazon Elastic Container Registry \(Amazon ECR\)](http://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html)  | Yes | Yes | Yes | No | Yes | No | 
-|  [Amazon Elastic Container Service \(Amazon ECS\)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide//IAM_policies.html)  | Yes | Yes⁴ | No | No | Yes | [Yes](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) | 
-|  [Elastic Load Balancing](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/index.html?UsingIAM.html)  | Yes | Yes⁵ | No | No | Yes | [Yes](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html) | 
-|  [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | Yes⁶ | No | Yes | No | 
+|  [Amazon Elastic Container Service \(Amazon ECS\)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide//IAM_policies.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) | 
+|  [Elastic Load Balancing](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/index.html?UsingIAM.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html) | 
+|  [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | Yes² | No | Yes | No | 
 |  [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/all) | Yes | No | No | No | Yes | No | 
 
-¹ Amazon EC2 supports resource\-level permissions and tags only for some APIs\. For more information, see [ Supported Resources and Conditions for Amazon EC2 API Actions ](http://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/iam-policies-for-amazon-ec2.html#ec2-supported-iam-actions-resources) in the *Amazon EC2 User Guide for Linux Instances*\. 
+¹ Amazon EC2 service\-linked roles cannot be created using the AWS Management Console, and can be used only for the following features: [Scheduled Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html#service-linked-roles-scheduled-instances), [Spot Instance Requests](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html#service-linked-roles-spot-instance-requests), [Spot Fleet Requests](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#service-linked-roles-spot-fleet-requests) 
 
-² Amazon EC2 service\-linked roles cannot be created using the AWS Management Console, and can be used only for the following features: [Scheduled Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html#service-linked-roles-scheduled-instances), [Spot Instance Requests](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html#service-linked-roles-spot-instance-requests), [Spot Fleet Requests](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#service-linked-roles-spot-fleet-requests) 
-
-³ Only some API actions for Elastic Beanstalk can be used as permissions against specific resources\. For more information, see [Resources and Conditions for Elastic Beanstalk Actions](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html) in the *AWS Elastic Beanstalk Developer Guide*\. 
-
-⁴ Amazon ECS supports resource\-level permissions only for some APIs\. For more information, see [Supported Resource\-Level Permissions for Amazon ECS API Actions](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-supported-iam-actions-resources.html) in the *Amazon Elastic Container Service Developer Guide*\.
-
-⁵ Only some API actions for Elastic Load Balancing can be used as permissions against specific resources\. For more information, see [Control Access to Your Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/UsingIAM.html) in the *Elastic Load Balancing User Guide*\.
-
-⁶ The only AWS Lambda API action that can be specified in a resource\-based policy is [lambda:InvokeFunction](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. For more information, see [Using Resource\-Based Policies for AWS Lambda \(Lambda Function Policies\)](http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *AWS Lambda Developer Guide*\.
+² The only AWS Lambda API action that can be specified in a resource\-based policy is [lambda:InvokeFunction](http://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. For more information, see [Using Resource\-Based Policies for AWS Lambda \(Lambda Function Policies\)](http://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *AWS Lambda Developer Guide*\.
 
 ## Storage and Migration Services<a name="storage_svcs"></a>
 
@@ -53,21 +37,15 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon Elastic Block Store \(Amazon EBS\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
+|  [Amazon Elastic Block Store \(Amazon EBS\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Elastic File System \(Amazon EFS\)](http://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Glacier](http://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
 |  [AWS Import/Export](http://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Migration Hub](http://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Simple Storage Service \(Amazon S3\)](http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)  | Yes | Yes | Yes | [Yes](http://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html) | Yes | No | 
-| [AWS Snowball](http://docs.aws.amazon.com/snowball/latest/ug/auth-access-control.html) | Yes | No² | No | No | Yes | No | 
-| [AWS Snowball Edge](http://docs.aws.amazon.com/snowball/latest/developer-guide/authentication-and-access-control.html) | Yes | No³ | No | No | No | No | 
+| [AWS Snowball](http://docs.aws.amazon.com/snowball/latest/ug/auth-access-control.html) | Yes | No | No | No | Yes | No | 
+| [AWS Snowball Edge](http://docs.aws.amazon.com/snowball/latest/developer-guide/authentication-and-access-control.html) | Yes | No | No | No | No | No | 
 |  [AWS Storage Gateway](http://docs.aws.amazon.com/storagegateway/latest/userguide/UsingIAMWithStorageGateway.html)  | Yes | Yes | No | No | Yes | No | 
-
-¹ For information about which EBS actions support resource\-level permissions, see [ Supported Resources and Conditions for Amazon EC2 API Actions ](http://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/iam-policies-for-amazon-ec2.html#ec2-supported-iam-actions-resources) in the *Amazon EC2 User Guide for Linux Instances*\. 
-
-² Specifies ARNs for related services \(Amazon S3\)\.
-
-³ Specifies ARNs for related services \(Amazon S3, AWS Lambda, AWS Greengrass\)\.
 
 ## Database Services<a name="database_svcs"></a>
 
@@ -76,7 +54,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Database Migration Service](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [Amazon DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html)  | Yes | No¹ | No | No | Yes | [Yes](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/using-service-linked-roles.html) | 
 |  [Amazon Redshift](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/redshift/latest/mgmt/using-service-linked-roles.html) | 
 |  [Amazon Relational Database Service \(Amazon RDS\)](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) | 
@@ -112,10 +90,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS CodeBuild](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS CodeDeploy](http://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS CodePipeline](http://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | No | Yes | No | 
+|  [AWS CodePipeline](http://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS CodeStar](http://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | No | No | No | 
-
-¹ Only some API actions for AWS CodePipeline can be used as permissions against specific resources\. For more information, see [AWS CodePipeline Resources and Operations](http://docs.aws.amazon.com/codepipeline/latest/userguide/iam-access-control-identity-based.html#ACP_ARN_Format) in the *AWS CodePipeline User Guide*\. 
 
 ## Management Tools and Services<a name="management_svcs"></a>
 
@@ -198,7 +174,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Directory Service](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon GuardDuty](http://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | No | No | [Yes](http://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty_service-access)¹ | 
 |  [AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | No | No | Yes² | No | 
-|  [Amazon Inspector](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon Inspector](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | Yes | 
 |  [AWS Key Management Service \(AWS KMS\)](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)  | Yes | Yes | Yes | No | Yes | No | 
 | [AWS Organizations](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | Yes | 
 |  [AWS Single Sign\-On \(AWS SSO\)](http://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | Yes | No | Yes | No | 
@@ -269,13 +245,9 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Greengrass](http://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
-|  [AWS IoT](http://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | Yes¹ | Yes² | Yes³ | No | Yes | No | 
+|  [AWS IoT](http://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](http://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](http://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | No | Yes | No | 
 
-¹ For more information about AWS IoT action\-level permissions, see [AWS IoT Policy Actions](http://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) in the *AWS IoT User Guide*\.
-
-² For information about which AWS IoT actions support resource\-level permissions and which resources you can specify for each, see [Action Resources](http://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) in the *AWS IoT Developer Guide*\.
-
-³ Devices connected to AWS IoT are authenticated by using X\.509 certificates\. You can attach AWS IoT policies to an X\.509 certificate to control what the device is authorized to do\. For more information, see [Create an AWS IoT Policy](http://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html) in the *AWS IoT Developer Guide*\. 
+¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates\. You can attach AWS IoT policies to an X\.509 certificate to control what the device is authorized to do\. For more information, see [Create an AWS IoT Policy](http://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html) in the *AWS IoT Developer Guide*\. 
 
 ## Game Development Services<a name="game_svcs"></a>
 

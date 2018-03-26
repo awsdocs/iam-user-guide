@@ -5,20 +5,13 @@ Amazon AWS Cloud Contact Center \(service prefix: connect\) provides the followi
 **Actions for Amazon AWS Cloud Contact Center**
 
 For information about using Amazon Connect, see [Amazon Connect Documentation](https://aws.amazon.com/documentation/connect/)\.
-
-+ `connect:GetFederationTokens`
-
-+ `connect:DescribeInstance`
-
-+ `connect:DestroyInstance`
-
-+ `connect:ListInstances`
-
 + `connect:CreateInstance`
-
-+ `connect:ModifyInstance`
-
++ `connect:DescribeInstance`
++ `connect:DestroyInstance`
 + `connect:GetFederationToken`
++ `connect:GetFederationTokens`
++ `connect:ListInstances`
++ `connect:ModifyInstance`
 
 **Condition context keys for Amazon AWS Cloud Contact Center**
 

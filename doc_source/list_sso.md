@@ -3,88 +3,47 @@
 Single Sign\-On \(service prefix: sso\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Single Sign\-On**
-
-+ `sso:UpdateApplicationInstanceSecurityConfiguration`
-
-+ `sso:PutPermissionsPolicy`
-
-+ `sso:UpdateProfile`
-
-+ `sso:UpdateApplicationInstanceResponseConfiguration`
-
-+ `sso:ListApplicationInstances`
-
-+ `sso:ListProfileAssociations`
-
-+ `sso:ListDirectoryAssociations`
-
-+ `sso:UpdateApplicationInstanceResponseSchemaConfiguration`
-
-+ `sso:DeleteApplicationInstanceCertificate`
-
 + `sso:AssociateDirectory`
-
-+ `sso:ImportApplicationInstanceServiceProviderMetadata`
-
-+ `sso:GetTrust`
-
-+ `sso:DisassociateDirectory`
-
-+ `sso:DeleteApplicationInstance`
-
-+ `sso:CreateApplicationInstance`
-
-+ `sso:CreatePermissionSet`
-
-+ `sso:UpdateApplicationInstanceServiceProviderConfiguration`
-
-+ `sso:ListPermissionSets`
-
-+ `sso:UpdateDirectoryAssociation`
-
-+ `sso:UpdateApplicationInstanceActiveCertificate`
-
-+ `sso:UpdateApplicationInstanceStatus`
-
-+ `sso:DeleteProfile`
-
-+ `sso:DeletePermissionsPolicy`
-
-+ `sso:GetApplicationTemplate`
-
-+ `sso:ListApplicationTemplates`
-
-+ `sso:ListProfiles`
-
-+ `sso:DescribePermissionsPolicies`
-
-+ `sso:UpdateTrust`
-
-+ `sso:DeletePermissionSet`
-
-+ `sso:GetApplicationInstance`
-
-+ `sso:UpdateApplicationInstanceDisplayData`
-
 + `sso:AssociateProfile`
-
++ `sso:CreateApplicationInstance`
 + `sso:CreateApplicationInstanceCertificate`
-
-+ `sso:GetPermissionSet`
-
-+ `sso:DisassociateProfile`
-
++ `sso:CreatePermissionSet`
 + `sso:CreateProfile`
-
-+ `sso:StartSSO`
-
-+ `sso:GetSSOStatus`
-
-+ `sso:ListApplicationInstanceCertificates`
-
 + `sso:CreateTrust`
-
++ `sso:DeleteApplicationInstance`
++ `sso:DeleteApplicationInstanceCertificate`
++ `sso:DeletePermissionSet`
++ `sso:DeletePermissionsPolicy`
++ `sso:DeleteProfile`
++ `sso:DescribePermissionsPolicies`
++ `sso:DisassociateDirectory`
++ `sso:DisassociateProfile`
++ `sso:GetApplicationInstance`
++ `sso:GetApplicationTemplate`
++ `sso:GetPermissionSet`
 + `sso:GetProfile`
++ `sso:GetSSOStatus`
++ `sso:GetTrust`
++ `sso:ImportApplicationInstanceServiceProviderMetadata`
++ `sso:ListApplicationInstanceCertificates`
++ `sso:ListApplicationInstances`
++ `sso:ListApplicationTemplates`
++ `sso:ListDirectoryAssociations`
++ `sso:ListPermissionSets`
++ `sso:ListProfileAssociations`
++ `sso:ListProfiles`
++ `sso:PutPermissionsPolicy`
++ `sso:StartSSO`
++ `sso:UpdateApplicationInstanceActiveCertificate`
++ `sso:UpdateApplicationInstanceDisplayData`
++ `sso:UpdateApplicationInstanceResponseConfiguration`
++ `sso:UpdateApplicationInstanceResponseSchemaConfiguration`
++ `sso:UpdateApplicationInstanceSecurityConfiguration`
++ `sso:UpdateApplicationInstanceServiceProviderConfiguration`
++ `sso:UpdateApplicationInstanceStatus`
++ `sso:UpdateDirectoryAssociation`
++ `sso:UpdateProfile`
++ `sso:UpdateTrust`
 
 **Condition context keys for Single Sign\-On**
 

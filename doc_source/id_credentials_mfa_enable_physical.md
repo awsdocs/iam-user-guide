@@ -1,6 +1,6 @@
 # Enabling a Hardware MFA Device \(Console\)<a name="id_credentials_mfa_enable_physical"></a>
 
-
+**Topics**
 + [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user)
 + [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)
 + [Replace or "Rotate" a Physical MFA Device](#replace-phys-mfa)
@@ -57,9 +57,7 @@ If you are using an AWS account created after September 14, 2017, you might see 
 To manage MFA devices for the AWS account, you must use your root user credentials to sign in to AWS\. You cannot manage MFA devices for the root user while signed in with other credentials\.
 
 1. Do one of the following:
-
    + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root account**\. 
-
    + **Option 2**: On the right side of the navigation bar, choose on your account name, and then choose **Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
 ![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
@@ -83,9 +81,6 @@ Submit your request immediately after generating the authentication codes\. If y
 ## Replace or "Rotate" a Physical MFA Device<a name="replace-phys-mfa"></a>
 
 You can have only one MFA device assigned to a user at a time\. If the user loses a device or needs to replace it for any reason, you must first deactivate the old device\. Then you can add the new device for the user\.
-
 + To deactivate the device currently associated with a user, see [Deactivating MFA Devices](id_credentials_mfa_disable.md)\.
-
 + To add a replacement hardware MFA device for an IAM user, follow the steps in the procedure [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user) earlier in this topic\.
-
 + To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root) earlier in this topic\.

@@ -4,7 +4,7 @@ AWS Identity and Access Management \(IAM\) is a web service that helps you secur
 
  When you first create an AWS account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\. We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\.
 
-
+**Topics**
 + [Video Introduction to IAM](#intro-video)
 + [IAM Features](#intro-features)
 + [Accessing IAM](#intro-accessing)

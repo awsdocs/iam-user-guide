@@ -133,11 +133,8 @@ After you have the administrators group set up, you must add at least one user t
 ## Related Resources<a name="getting-started_create-admin-group-addl-resources"></a>
 
 For related information found in the *Amazon Web Services General Reference*, see the following resources:
-
 + [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
 
 For related information in the *IAM User Guide*, see the following resources:
-
 + [Reducing Policy Scope by Viewing User Activity](access_policies_access-advisor.md)
-
 + [Tutorial: Delegate Access to the Billing Console](tutorial_billing.md)

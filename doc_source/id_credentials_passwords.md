@@ -2,7 +2,7 @@
 
 You can manage passwords for your AWS account root user and for IAM users in your account\. IAM users need passwords in order to access the AWS Management Console\. Users do not need passwords to access AWS resources programmatically by using the AWS CLI, Tools for Windows PowerShell, the AWS SDKs or APIs\. For those environments, users need [access keys](id_credentials_access-keys.md) instead\.
 
-
+**Topics**
 + [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)
 + [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)
 + [Managing Passwords for IAM Users](id_credentials_passwords_admin-change-user.md)
@@ -15,7 +15,7 @@ If IAM users have been granted permission to change their own passwords, they ca
 
 For information about the permissions that users need in order to change their own passwords, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\.
 
-
+**Topics**
 + [How IAM Users Change Their Own Password \(AWS Management Console\)](#ManagingUserPwdSelf-Console)
 + [How IAM Users Change Their Own Password \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](#ManagingUserPwdSelf-CLIAPI)
 
@@ -43,9 +43,6 @@ If the account has a password policy, the new password must meet the requirement
 The following procedure describes how IAM users can use the AWS CLI, Tools for Windows PowerShell, or AWS API to change their own password\.
 
 **To change your own IAM password, use the following commands**
-
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html](http://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html)
-
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Edit-IAMPassword.html&tocid=Edit-IAMPassword](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Edit-IAMPassword.html&tocid=Edit-IAMPassword)
-
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html)

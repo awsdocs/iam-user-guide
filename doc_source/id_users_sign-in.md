@@ -24,7 +24,6 @@ If your organization has an existing identity system, you might want to create a
 
 **Logging sign\-in details in CloudTrail**  
 If you enable CloudTrail to log sign\-in events to your logs, you need to be aware of how CloudTrail chooses where to log the events\.
-
 + If your users sign\-in directly to a console, they are redirected to either a global or a regional sign\-in endpoint, based on whether the selected service console supports regions\. For example, the main console home page supports regions, so if you sign in to the following URL:
 
   ```
@@ -40,7 +39,6 @@ If you enable CloudTrail to log sign\-in events to your logs, you need to be awa
   ```
 
   AWS redirects you to the global sign\-in endpoint at `https://signin.aws.amazon.com`, resulting in a global CloudTrail log entry\.
-
 + You can manually request a certain regional sign\-in endpoint by signing in to the region\-enabled main console home page using a URL syntax like the following:
 
   ```

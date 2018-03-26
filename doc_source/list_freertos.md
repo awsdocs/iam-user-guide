@@ -3,28 +3,17 @@
 Amazon FreeRTOS \(service prefix: freertos\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon FreeRTOS**
-
-+ `freertos:DeleteSoftwareConfiguration`
-
-+ `freertos:ListSoftwareConfigurations`
-
-+ `freertos:GetSoftwareURLForConfiguration`
-
-+ `freertos:UpdateSoftwareConfiguration`
-
-+ `freertos:DescribeSoftwareConfiguration`
-
-+ `freertos:ListHardwareVendors`
-
-+ `freertos:ListFreeRTOSVersions`
-
-+ `freertos:ListHardwarePlatforms`
-
 + `freertos:CreateSoftwareConfiguration`
-
-+ `freertos:GetSoftwareURL`
-
++ `freertos:DeleteSoftwareConfiguration`
 + `freertos:DescribeHardwarePlatform`
++ `freertos:DescribeSoftwareConfiguration`
++ `freertos:GetSoftwareURL`
++ `freertos:GetSoftwareURLForConfiguration`
++ `freertos:ListFreeRTOSVersions`
++ `freertos:ListHardwarePlatforms`
++ `freertos:ListHardwareVendors`
++ `freertos:ListSoftwareConfigurations`
++ `freertos:UpdateSoftwareConfiguration`
 
 **Condition context keys for Amazon FreeRTOS**
 

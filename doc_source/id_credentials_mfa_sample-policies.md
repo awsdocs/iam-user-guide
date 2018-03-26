@@ -5,7 +5,7 @@ The following examples show additional ways that MFA conditions can be added to 
 **Note**  
 The following examples show policies attached directly to an IAM user or group in your own AWS account\. To adapt the example to MFA\-protect APIs across accounts, you use IAM roles instead and put the MFA condition check in the role trust policy, not in the role access policy\. For more information, see [Scenario: MFA Protection for Cross\-Account Delegation](id_credentials_mfa_configure-api-require.md#MFAProtectedAPI-cross-account-delegation)\. 
 
-
+**Topics**
 + [Example 1: Granting Access After Recent MFA Authentication \(GetSessionToken\)](#ExampleMFAforIAMUserAge)
 + [Example 2: Denying Access to Specific APIs Without Valid MFA Authentication \(GetSessionToken\)](#ExampleMFAforResource)
 + [Example 3: Denying Access to Specific APIs Without *Recent* Valid MFA Authentication \(GetSessionToken\)](#ExampleMFADenyNotRecent)

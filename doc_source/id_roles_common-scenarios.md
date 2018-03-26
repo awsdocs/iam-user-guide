@@ -1,9 +1,7 @@
 # Common Scenarios for Roles: Users, Applications, and Services<a name="id_roles_common-scenarios"></a>
 
 As with most AWS features, you generally have two ways to use a role: interactively in the IAM console, or programmatically with the AWS CLI, Tools for Windows PowerShell, or API\.
-
 + IAM users in your account using the IAM console can *switch to* a role to temporarily use the permissions of the role in the console\. The users give up their original permissions and take on the permissions assigned to the role\. When the users exit the role, their original permissions are restored\.
-
 + An application or a service offered by AWS \(like Amazon EC2\) can *assume* a role by requesting temporary security credentials for a role with which to make programmatic requests to AWS\. You use a role this way so that you don't have to share or maintain long\-term security credentials \(for example, by creating an IAM user\) for each entity that requires access to a resource\.
 
 **Note**  
@@ -16,11 +14,7 @@ For more complex uses of roles, such as granting access to applications and serv
 Federated users sign in by using credentials from an identity provider \(IdP\)\. AWS then provides temporary credentials to the trusted IdP to pass on to the user for including in subsequent AWS resource requests\. Those credentials provide the permissions granted to the assigned role\.
 
 This section provides overviews of the following scenarios:
-
 + [Provide access for an IAM user in one AWS account that you own to access resources in another account that you own](id_roles_common-scenarios_aws-accounts.md)
-
 + [Provide access to IAM users in AWS accounts owned by third parties](id_roles_common-scenarios_third-party.md)
-
 + [Provide access for services offered by AWS to AWS resources](id_roles_common-scenarios_services.md)
-
 + [Provide access for externally authenticated users \(identity federation\)](id_roles_common-scenarios_federated-users.md)

@@ -3,78 +3,42 @@
 Alexa for Business \(service prefix: a4b\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Alexa for Business**
-
-+ `a4b:SearchProfiles`
-
-+ `a4b:DeleteSkillGroup`
-
-+ `a4b:UpdateProfile`
-
-+ `a4b:TagResource`
-
-+ `a4b:UpdateDevice`
-
-+ `a4b:ResolveRoom`
-
-+ `a4b:DeleteUser`
-
-+ `a4b:UpdateRoom`
-
-+ `a4b:UpdateSkillGroup`
-
-+ `a4b:GetRoom`
-
 + `a4b:AssociateDeviceWithRoom`
-
-+ `a4b:DisassociateSkillGroupFromRoom`
-
-+ `a4b:SearchSkillGroups`
-
-+ `a4b:StartDeviceSync`
-
-+ `a4b:PutRoomSkillParameter`
-
-+ `a4b:GetDevice`
-
-+ `a4b:SearchUsers`
-
-+ `a4b:GetSkillGroup`
-
-+ `a4b:SearchRooms`
-
-+ `a4b:GetRoomSkillParameter`
-
-+ `a4b:DeleteProfile`
-
-+ `a4b:CreateUser`
-
 + `a4b:AssociateSkillGroupWithRoom`
-
-+ `a4b:ListSkills`
-
-+ `a4b:DeleteRoomSkillParameter`
-
-+ `a4b:UntagResource`
-
-+ `a4b:SendInvitation`
-
-+ `a4b:ListTags`
-
-+ `a4b:DeleteRoom`
-
 + `a4b:CreateProfile`
-
 + `a4b:CreateRoom`
-
-+ `a4b:SearchDevices`
-
 + `a4b:CreateSkillGroup`
-
++ `a4b:CreateUser`
++ `a4b:DeleteProfile`
++ `a4b:DeleteRoom`
++ `a4b:DeleteRoomSkillParameter`
++ `a4b:DeleteSkillGroup`
++ `a4b:DeleteUser`
 + `a4b:DisassociateDeviceFromRoom`
-
++ `a4b:DisassociateSkillGroupFromRoom`
++ `a4b:GetDevice`
 + `a4b:GetProfile`
-
++ `a4b:GetRoom`
++ `a4b:GetRoomSkillParameter`
++ `a4b:GetSkillGroup`
++ `a4b:ListSkills`
++ `a4b:ListTags`
++ `a4b:PutRoomSkillParameter`
++ `a4b:ResolveRoom`
 + `a4b:RevokeInvitation`
++ `a4b:SearchDevices`
++ `a4b:SearchProfiles`
++ `a4b:SearchRooms`
++ `a4b:SearchSkillGroups`
++ `a4b:SearchUsers`
++ `a4b:SendInvitation`
++ `a4b:StartDeviceSync`
++ `a4b:TagResource`
++ `a4b:UntagResource`
++ `a4b:UpdateDevice`
++ `a4b:UpdateProfile`
++ `a4b:UpdateRoom`
++ `a4b:UpdateSkillGroup`
 
 **Condition context keys for Alexa for Business**
 

@@ -35,9 +35,7 @@ You must have physical access to the hardware that will host the user's virtual 
 1. Open your virtual MFA app\. \(For a list of apps that you can use for hosting virtual MFA devices, see [Virtual MFA Applications](https://aws.amazon.com/iam/details/mfa/#Virtual_MFA_Applications)\.\) If the virtual MFA app supports multiple accounts \(multiple virtual MFA devices\), choose the option to create a new account \(a new virtual MFA device\)\.
 
 1. Determine whether the MFA app supports QR codes, and then do one of the following:
-
    + Use the app to scan the QR code\. For example, you might choose the camera icon or choose an option similar to **Scan code**, and then use the device's camera to scan the code\.
-
    + In the **Manage MFA Device** wizard, choose **Show secret key for manual configuration**, and then type the secret configuration key into your MFA app\.
 
    When you are finished, the virtual MFA device starts generating one\-time passwords\. 
@@ -62,9 +60,7 @@ If you are using an AWS account created after September 14, 2017, you might see 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. Do one of the following:
-
    + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root user**\. 
-
    + **Option 2**: On the right side of the navigation bar, choose your account name, and choose **Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
 ![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
@@ -79,9 +75,7 @@ If you are using an AWS account created after September 14, 2017, you might see 
 1. If the virtual MFA software supports multiple accounts \(multiple virtual MFA devices\), then choose the option to create a new account \(a new virtual device\)\.
 
 1. The easiest way to configure the app is to use the app to scan the QR code\. If you cannot scan the code, you can type the configuration information manually\.
-
    + To use the QR code to configure the virtual MFA device, follow the app instructions for scanning the code\. For example, you might need to tap the camera icon or tap a command like **Scan account barcode**, and then use the device's camera to scan the QR code\.
-
    + If you cannot scan the code, type the configuration information manually by typing the **Secret Configuration Key** value into the app\. For example, to do this in the AWS Virtual MFA app, choose **Manually add account**, and then type the secret configuration key and choose **Create**\.
 **Important**  
 Make a secure backup of the QR code or secret configuration key, or make sure that you enable multiple virtual MFA devices for your account\. A virtual MFA device might become unavailable, for example, if you lose the smartphone where the virtual MFA device is hosted\)\. If that happens, you will not be able to sign in to your account and you will have to contact customer service to remove MFA protection for the account\. 
@@ -101,9 +95,6 @@ The device is ready for use with AWS\. For information about using MFA with the 
 ## Replace or "Rotate" a Virtual MFA Device<a name="replace-virt-mfa"></a>
 
 You can have only one virtual MFA device assigned to a user at a time\. If the user loses a device or needs to replace it for any reason, you must first deactivate the old device\. Then you can add the new device for the user\.
-
 + To deactivate the device currently associated with a user, see [Deactivating MFA Devices](id_credentials_mfa_disable.md)\.
-
 + To add a replacement virtual MFA device for an IAM user, follow the steps in the procedure [Enable a Virtual MFA Device for an IAM User \(AWS Management Console\)](#enable-virt-mfa-for-iam-user) above\.
-
 + To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](#enable-virt-mfa-for-root) earlier in this topic\.

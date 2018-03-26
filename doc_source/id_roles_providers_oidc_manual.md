@@ -10,11 +10,8 @@ The process for using web identity federation ***without*** Amazon Cognito follo
 1. Sign up as a developer with the IdP and configure your app with the IdP, who gives you a unique ID for your app\. \(Different IdPs use different terminology for this process\. This outline uses the term *configure* for the process of identifying your app with the IdP\.\) Each IdP gives you an app ID that's unique to that IdP, so if you configure the same app with multiple IdPs, your app will have multiple app IDs\. You can configure multiple apps with each provider\. 
 
    The following external links provide information about using some of the commonly used identity providers: 
-
    + [Login with Amazon Developer Center](https://login.amazon.com/) 
-
    + [Add Facebook Login to Your App or Website](https://developers.facebook.com/docs/facebook-login/v2.1) on the Facebook developers site\. 
-
    + [Using OAuth 2\.0 for Login \(OpenID Connect\)](https://developers.google.com/accounts/docs/OAuth2Login) on the Google developers site\.
 **Note**  
 Although Amazon Cognito and Google are based on OIDC technology, you don't have to create an identity provider entity in IAM to use them\. Support for Amazon Cognito and Google are built\-in to AWS\.

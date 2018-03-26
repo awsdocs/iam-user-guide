@@ -1,19 +1,12 @@
 # IAM JSON Policy Elements: Supported Data Types<a name="reference_policies_elements_datatypes"></a>
 
 This section lists the data types that are supported when you specify values in JSON policies\. The policy language doesn't support all types for each policy element; for information about each element, see the preceding sections\.
-
 + Strings
-
 + Numbers \(Ints and Floats\)
-
 + Boolean
-
 + Null
-
 + Lists
-
 + Maps
-
 + Structs \(which are just nested Maps\)
 
 The following table maps each data type to the serialization\. Note that all policies must be in UTF\-8\. For information about the JSON data types, go to [RFC 4627](http://tools.ietf.org/html/rfc4627)\. 

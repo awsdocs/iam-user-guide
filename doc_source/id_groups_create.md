@@ -22,9 +22,6 @@ For an example of how to set up an `Administrators` group, see [Creating Your Fi
 
 **To create IAM groups and attach policies \(AWS CLI, Tools for Windows PowerShell, AWS API\)**  
 Use one of the following commands to create a group:
-
 + AWS CLI: [aws iam create\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html) 
-
 + Tools for Windows PowerShell: [New\-IAMGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMGroup.html&tocid=New-IAMGroup)
-
 + AWS API: [CreateGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html) 

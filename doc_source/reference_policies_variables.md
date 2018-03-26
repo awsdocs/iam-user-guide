@@ -1,6 +1,6 @@
 # IAM Policy Elements: Variables<a name="reference_policies_variables"></a>
 
-
+**Topics**
 + [Introduction](#policy-vars-intro)
 + [Where You Can Use Policy Variables](#policy-vars-wheretouse)
 + [Request Information That You Can Use for Policy Variables](#policy-vars-infotouse)
@@ -167,25 +167,15 @@ A policy variable can also be used for `Condition` values in any condition that 
 ### Information Available in All Requests<a name="policy-vars-infoallreqs"></a>
 
 Policies contain keys whose values you can use as policy variables\. \(Under some circumstances, the keys do not contain a value—see the information that follows this list\.\) 
-
 + **`aws:CurrentTime`** This can be used for conditions that check the date and time\.
-
 + **`aws:EpochTime`** This is the date in epoch or UNIX time, for use with date/time conditions\.
-
 + **`aws:TokenIssueTime`** This is the date and time that temporary security credentials were issued and can be used with date/time conditions\. **Note:** This key is only available in requests that are signed using temporary security credentials\. For more information about temporary security credentials, see [Temporary Security Credentials](id_credentials_temp.md)\.
-
 + **`aws:principaltype`** This value indicates whether the principal is an account, user, federated, or assumed role—see the explanation that follows later\.
-
 + **`aws:SecureTransport`** This is a Boolean value that represents whether the request was sent using SSL\.
-
 + **`aws:SourceIp`** This is the requester's IP address, for use with IP address conditions\. Refer to [IP Address Condition Operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress) for information about when `SourceIp` is valid and when you should use a VPC\-specific key instead\. 
-
 + **`aws:UserAgent`** This value is a string that contains information about the requester's client application\.
-
 + **`aws:userid`** This value is the unique ID for the current user—see the chart that follows\.
-
 + **`aws:username`** This is a string containing the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the current user—see the chart that follows\.
-
 + **`ec2:SourceInstanceARN`** This is the Amazon Resource Name \(ARN\) of the Amazon EC2 instance from which the request is made\. This key is present only when the request comes from an Amazon EC2 instance using an IAM role associated with an EC2 instance profile\.
 
 **Important**  
@@ -194,13 +184,9 @@ Key names are case\-insensitive\. For example, `aws:CurrentTime` is equivalent t
 The values for `aws:username`, `aws:userid`, and `aws:principaltype` depend on what type of principal initiated the request—whether the request was made using the credentials of an AWS account, an IAM user, an IAM role, and so on\. The following shows values for these keys for different types of principal\. 
 
 In this 
-
 + *not present* means that the value is not in the current request information, and any attempt to match it fails and causes the request to be denied\. 
-
 + *role\-id* is a unique identifier assigned to each role at creation\. You can display the role ID with the AWS CLI command: `aws iam get-role --role-name rolename`
-
 + *caller\-specified\-name* and *caller\-specified\-role\-name* are names that are passed by the calling process \(such as an application or service\) when it makes a call to get temporary credentials\.
-
 + *ec2\-instance\-id* is a value assigned to the instance when it is launched and appears on the **Instances** page of the Amazon EC2 console\. You can also display the instance ID by running the AWS CLI command: `aws ec2 describe-instances`
 
 ### Information Available in Requests for Federated Users<a name="policy-vars-infoWIF"></a>
@@ -210,41 +196,28 @@ Federated users are users who are authenticated using a system other than IAM\. 
 Similarly, you might create an app for a mobile device in which the app needs to access AWS resources\. In that case, you might use *web identity federation*, where the app authenticates the user using a well\-known identity provider like Login with Amazon, Amazon Cognito, Facebook, or Google\. The app can then use the user's authentication information from these providers to get temporary security credentials for accessing AWS resources\. 
 
 The recommended way to use web identity federation is by taking advantage of Amazon Cognito and the AWS mobile SDKs\. For more information, see the following:
-
 + [Amazon Cognito Overview ](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* 
-
 + [Amazon Cognito Overview ](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* 
-
 + [Common Scenarios for Temporary Credentials](id_credentials_temp.md#sts-introduction)\.
 
 ### Service\-Specific Information<a name="policy-vars-infoperservice"></a>
 
 Requests can also include service\-specific keys and values in its request context\. Examples include the following: 
-
 + `s3:prefix`
-
 + `s3:max-keys`
-
 + `s3:x-amz-acl`
-
 + `sns:Endpoint`
-
 + `sns:Protocol`
 
 For information about service\-specific keys that you can use to get values for policy variables, refer to the documentation for the individual services\. For example, see the following topics: 
-
 +  [Bucket Keys in Amazon S3 Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
-
 +  [Amazon SNS Keys](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
 
 ### Special Characters<a name="policy-vars-specialchars"></a>
 
 There are a few special predefined policy variables that have fixed values that enable you to represent characters that otherwise have special meaning\. If these special characters are part of the string, you are trying to match and you inserted them literally they would be misinterpreted\. For example, inserting an \* asterisk in the string would be interpreted as a wildcard, matching any characters, instead of as a literal \*\. In these cases, you can use the following predefined policy variables:
-
 + **$\{\*\}** \- use where you need an \* asterisk character\.
-
 + **$\{?\}** \- use where you need a ? question mark character\.
-
 + **$\{$\}** \- use where you need a $ dollar sign character\.
 
 These predefined policy variables can be used in any string where you can use regular policy variables\.
@@ -252,13 +225,8 @@ These predefined policy variables can be used in any string where you can use re
 ## For More Information<a name="policy-vars-formoreinfo"></a>
 
  For more information about policies, see the following: 
-
 +  [IAM Policies](access_policies.md) 
-
 +  [Example Policies](access_policies_examples.md) 
-
 +  [IAM JSON Policy Elements Reference](reference_policies_elements.md) 
-
 +  [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md) 
-
 +  [About Web Identity Federation](id_roles_providers_oidc.md)

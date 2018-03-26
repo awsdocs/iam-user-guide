@@ -5,28 +5,17 @@ Amazon Elastic File System \(service prefix: elasticfilesystem\) provides the fo
 **Actions for Amazon Elastic File System**
 
 For information about using the following Amazon EFS API actions in an IAM policy, see [Authentication and Access Control](http://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html) in the *Amazon Elastic File System User Guide*\.
-
-+ `[elasticfilesystem:ModifyMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html)`
-
-+ `[elasticfilesystem:DescribeTags](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html)`
-
-+ `[elasticfilesystem:DescribeMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html)`
-
-+ `[elasticfilesystem:DescribeFileSystems](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html)`
-
-+ `[elasticfilesystem:CreateMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html)`
-
-+ `[elasticfilesystem:DescribeMountTargets](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html)`
-
 + `[elasticfilesystem:CreateFileSystem](http://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html)`
-
-+ `[elasticfilesystem:DeleteTags](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html)`
-
++ `[elasticfilesystem:CreateMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html)`
 + `[elasticfilesystem:CreateTags](http://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html)`
-
-+ `[elasticfilesystem:DeleteMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html)`
-
 + `[elasticfilesystem:DeleteFileSystem](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystem.html)`
++ `[elasticfilesystem:DeleteMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html)`
++ `[elasticfilesystem:DeleteTags](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html)`
++ `[elasticfilesystem:DescribeFileSystems](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html)`
++ `[elasticfilesystem:DescribeMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html)`
++ `[elasticfilesystem:DescribeMountTargets](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html)`
++ `[elasticfilesystem:DescribeTags](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html)`
++ `[elasticfilesystem:ModifyMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html)`
 
 **Condition context keys for Amazon Elastic File System**
 

@@ -3,12 +3,9 @@
 Amazon Mobile Analytics \(service prefix: mobileanalytics\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Mobile Analytics**
-
-+ `[mobileanalytics:PutEvents](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)`
-
-+ `[mobileanalytics:GetReports](http://docs.aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
-
 + `[mobileanalytics:GetFinancialReports](http://docs.aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
++ `[mobileanalytics:GetReports](http://docs.aws.amazon.com/mobileanalytics/latest/ug/using-the-console.html)`
++ `[mobileanalytics:PutEvents](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)`
 
 **Condition context keys for Amazon Mobile Analytics**
 

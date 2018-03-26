@@ -4,7 +4,7 @@ AWS Identity and Access Management \(IAM\) is integrated with AWS CloudTrail, a 
 
 To learn more about CloudTrail, including how to configure and enable it, see the [http://docs.aws.amazon.com/awscloudtrail/latest/userguide/](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\. 
 
-
+**Topics**
 + [Types of IAM Information Logged in CloudTrail](#cloudtrail-integration-iam-information)
 + [Examples of Logged Events in CloudTrail Files](#cloudtrail-integration-understanding-records)
 + [Preventing Duplicate Log Entries in CloudTrail](#cloudtrail-integration-global-service)
@@ -12,7 +12,6 @@ To learn more about CloudTrail, including how to configure and enable it, see th
 ## Types of IAM Information Logged in CloudTrail<a name="cloudtrail-integration-iam-information"></a>
 
  IAM information is available to CloudTrail in these ways: 
-
 + **API requests to IAM and AWS Security Token Service \(AWS STS\)** – CloudTrail logs all authenticated API requests \(made with credentials\) to IAM and AWS STS APIs, with the exception of `DecodeAuthorizationMessage`\. CloudTrail also logs nonauthenticated requests to the AWS STS actions, `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` and logs information provided by the identity provider\. You can use this information to map calls made by a federated user with an assumed role back to the originating external federated caller\. In the case of `AssumeRole`, you can map calls back to the originating AWS service or to the account of the originating user\. The `userIdentity` section of the JSON data in the CloudTrail log entry contains the information that you need to map the AssumeRole\* request with a specific federated user\. For more information, see [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
 
   For example, calls to the IAM `CreateUser`, `DeleteRole`, `ListGroups`, and other API operations are all logged by CloudTrail\. 
@@ -20,19 +19,16 @@ To learn more about CloudTrail, including how to configure and enable it, see th
   Examples for this type of log entry are presented later in this topic\. 
 **Important**  
 If you activate AWS STS endpoints in regions other than the default global endpoint, then you must also turn on CloudTrail logging in those regions to record any AWS STS API calls made in those regions\. For more information, see [Turning On CloudTrail in Additional Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html) in the AWS CloudTrail User Guide\.
-
 + **API requests to other AWS services** – Authenticated requests to other AWS service APIs are logged by CloudTrail, and these log entries contain information about who generated the request\. 
 
   For example, if a request is made to list Amazon EC2 instances or create an AWS CodeDeploy deployment group, the user identity of the person or service that made the request is contained in the log entry for that request\. The user identity information helps you determine whether the request was made with AWS account root user credentials or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. 
 
   For more details about the user identity information in CloudTrail log entries, see [userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_user_identity.html) in the *AWS CloudTrail User Guide*\. 
-
 + **AWS sign\-in events** – Sign\-in events to the AWS Management Console, the AWS Discussion Forums, and the AWS Marketplace are logged by CloudTrail\. 
 
   For example, IAM and federated user sign\-in events—successful sign\-ins and failed sign\-in attempts—are logged by CloudTrail\. Additionally, successful sign\-in events by the root user are logged by CloudTrail\. Note that unsuccessful sign\-in events by the root user are *not *logged by CloudTrail\.
 
   If you enable CloudTrail to log sign\-in events to your logs, you need to be aware of how CloudTrail chooses where to log the events\.
-
   + If your users sign in directly to a console, they are redirected to either a global or a regional sign\-in endpoint, based on whether the selected service console supports regions\. For example, the main console home page supports regions, so if you sign in to the following URL:
 
     ```
@@ -48,7 +44,6 @@ If you activate AWS STS endpoints in regions other than the default global endpo
     ```
 
     AWS redirects you to the global sign\-in endpoint at `https://signin.aws.amazon.com`, resulting in a global CloudTrail log entry\.
-
   + You can manually request a certain regional sign\-in endpoint by signing in to the region\-enabled main console home page using a URL syntax like the following:
 
     ```
@@ -63,13 +58,10 @@ You click the link for one AWS account's sign\-in page, but then type the accoun
 You forget which account you are signing in to and accidentally type the account name of your personal email account, your bank sign\-in identifier, or some other private ID\. 
 
   Whether the sign\-in event is considered to a regional event or a global one depends on the console the user is signing into, and how the user constructs the sign\-in URL\.
-
   + Is the service console regionalized? If so, then the sign\-in request is automatically redirected to a regional sign\-in endpoint and the event is logged in that region's CloudTrail log\. For example, if you sign in to `https://alias.signin.aws.amazon.com/console` the console home page which is regionalized, you are automatically redirected you to a sign\-in endpoint in your region \(for example, `https://us-east-2.signin.aws.amazon.com`\), and the event is logged in that region's log\.
 
     However, some services are not regionalized yet\. For example, the Amazon S3 service is *not* currently regionalized, so if you sign in to `https://alias.signin.aws.amazon.com/console/s3`, you are redirected to the global sign\-in endpoint at `https://signin.aws.amazon.com`, resulting in an event in your global log\.
-
   + You can also manually request a certain regional sign\-in endpoint by using a URL syntax like `https://alias.signin.aws.amazon.com/console?region=ap-southeast-1`, which redirects to the ap\-southeast\-1 regional sign\-in endpoint and results in an event in the regional log\.
-
 + **How temporary credential requests are logged** – When a principal requests temporary credentials, the principal type determines how CloudTrail logs the event\. The following table shows how CloudTrail logs different information for each of the API calls that generate temporary credentials\.  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)

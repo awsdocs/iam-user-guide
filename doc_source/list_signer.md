@@ -3,11 +3,8 @@
 AWS Code Signing for Amazon FreeRTOS \(service prefix: signer\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for AWS Code Signing for Amazon FreeRTOS**
-
 + `signer:DescribeSigningJob`
-
 + `signer:ListSigningJobs`
-
 + `signer:StartSigningJob`
 
 **Condition context keys for AWS Code Signing for Amazon FreeRTOS**

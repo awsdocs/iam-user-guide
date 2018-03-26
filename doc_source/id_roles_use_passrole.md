@@ -8,7 +8,6 @@ A user can pass a role ARN as a parameter in any API operation that uses the rol
 
 **Example 1**  
 Imagine that you want to grant a user the ability to pass any of an approved set of roles to the Amazon EC2 service upon launching an instance\. You need three elements:
-
 + An IAM *permissions policy* attached to the role that determines what the role can do\. Scope permissions to only the actions that the role must perform, and to only the resources that the role needs for those actions\. You can use AWS managed or customer\-created IAM permissions policy\.
 
   ```
@@ -21,7 +20,6 @@ Imagine that you want to grant a user the ability to pass any of an approved set
       }
   }
   ```
-
 + A* trust policy* for the role that allows the service to assume the role\. For example, you could attach the following trust policy to the role with the `UpdateAssumeRolePolicy` action\. This trust policy allows Amazon EC2 to use the role and the permissions attached to the role\.
 
   ```
@@ -35,7 +33,6 @@ Imagine that you want to grant a user the ability to pass any of an approved set
       }
   }
   ```
-
 + An IAM *permissions policy* attached to the IAM user that allows the user to pass only those policies that are approved\. `iam:PassRole` usually is accompanied by `iam:GetRole` so that the user can get the details of the role to be passed\. In this example, the user can pass only roles that exist in the specified account with names that begin with `EC2-roles-for-XYZ-`:
 
   ```

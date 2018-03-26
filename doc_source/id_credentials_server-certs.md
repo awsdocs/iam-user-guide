@@ -12,7 +12,7 @@ For more information about importing third party certificates into ACM, see [Imp
 
 For more information about uploading third party certificates to IAM, see the following topics\.
 
-
+**Topics**
 + [Uploading a Server Certificate \(IAM API\)](#upload-server-certificate)
 + [Retrieving a Server Certificate \(IAM API\)](#get-server-certificate)
 + [Listing Server Certificates \(IAM API\)](#list-server-certificates)
@@ -23,19 +23,13 @@ For more information about uploading third party certificates to IAM, see the fo
 ## Uploading a Server Certificate \(IAM API\)<a name="upload-server-certificate"></a>
 
 To upload a server certificate to IAM, you must provide the certificate and its matching private key\. When the certificate is not self\-signed, you must also provide a certificate chain\. \(You don't need a certificate chain when uploading a self\-signed certificate\.\) Before you upload a certificate, ensure that you have all these items and that they meet the following criteria:
-
 + The certificate must be valid at the time of upload\. You cannot upload a certificate before its validity period begins \(the certificate's `NotBefore` date\) or after it expires \(the certificate's `NotAfter` date\)\.
-
 + The private key must be unencrypted\. You cannot upload a private key that is protected by a password or passphrase\. For help decrypting an encrypted private key, see [Troubleshooting](#server-certificate-troubleshooting)\.
-
 + The certificate, private key, and certificate chain must all be PEM\-encoded\. For help converting these items to PEM format, see [Troubleshooting](#server-certificate-troubleshooting)\.
 
 To use the [IAM API](http://docs.aws.amazon.com/IAM/latest/APIReference/) to upload a certificate, send an [UploadServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html) request\. The following example shows how to do this with the [AWS Command Line Interface \(AWS CLI\)](https://aws.amazon.com/cli/)\. The example assumes the following:
-
 + The PEM\-encoded certificate is stored in a file named `Certificate.pem`\.
-
 + The PEM\-encoded certificate chain is stored in a file named `CertificateChain.pem`\.
-
 + The PEM\-encoded, unencrypted private key is stored in a file named `PrivateKey.pem`\.
 
 To use the following example command, replace these file names with your own and replace *ExampleCertificate* with a name for your uploaded certificate\. Type the command on one continuous line\. The following example includes line breaks and extra spaces to make it easier to read\.

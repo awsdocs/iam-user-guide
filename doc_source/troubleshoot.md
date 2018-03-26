@@ -2,7 +2,7 @@
 
 If you encounter access\-denied issues or similar difficulties when working with AWS Identity and Access Management \(IAM\), consult the topics in this section\.
 
-
+**Topics**
 + [Troubleshooting General Issues](troubleshoot_general.md)
 + [Troubleshoot IAM Policies](troubleshoot_policies.md)
 + [Troubleshooting IAM Roles](troubleshoot_roles.md)

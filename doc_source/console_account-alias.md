@@ -52,27 +52,18 @@ Your AWS account can have only one alias\. If you create a new alias for your AW
 ### API or CLI<a name="CreateAlias_APICLI"></a>
 
 To create an alias for your AWS Management Console sign\-in page URL
-
 + AWS CLI: `[aws iam create\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
-
 + Tools for Windows PowerShell: `[New\-IAMAccountAlias](http://docs.aws.amazon.com//powershell/latest/reference/Index.html?page=New-IAMAccountAlias.html&tocid=New-IAMAccountAlias)`
-
 + AWS API: `[CreateAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
 
 To delete an AWS account ID alias
-
 + AWS CLI:`[aws iam delete\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
-
 + Tools for Windows PowerShell: `[Remove\-IAMAccountAlias](http://docs.aws.amazon.com//powershell/latest/reference/Index.html?page=Remove-IAMAccountAlias.html&tocid=Remove-IAMAccountAlias)`
-
 + AWS API: `[DeleteAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
 
 To display your AWS account ID alias
-
 + AWS CLI: `[aws iam list\-account\-aliases](http://docs.aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
-
 + Tools for Windows PowerShell: `[Get\-IAMAccountAlias\.html](http://docs.aws.amazon.com//powershell/latest/reference/Index.html?page=Get-IAMAccountAlias.html&tocid=Get-IAMAccountAlias)`
-
 + AWS API: `[ListAccountAliases](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 
 
 **Note**  

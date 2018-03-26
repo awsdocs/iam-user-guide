@@ -5,13 +5,9 @@ An IAM [*group*](#id_groups) is a collection of IAM users\. Groups let you speci
 Note that a group is not truly an "identity" in IAM because it cannot be identified as a `Principal` in a permission policy\. It is simply a way to attach policies to multiple users at one time\.
 
 Following are some important characteristics of groups:
-
 + A group can contain many users, and a user can belong to multiple groups\.
-
 + Groups can't be nested; they can contain only users, not other groups\.
-
 + There's no default group that automatically includes all users in the AWS account\. If you want to have a group like that, you need to create it and assign each new user to it\.
-
 + There's a limit to the number of groups you can have, and a limit to how many groups a user can be in\. For more information, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\. 
 
 The following diagram shows a simple example of a small company\. The company owner creates an `Admins` group for users to create and manage other users as the company grows\. The `Admins` group creates a `Developers` group and a `Test` group\. Each of these groups consists of users \(humans and applications\) that interact with AWS \(Jim, Brad, DevApp1, and so on\)\. Each user has an individual set of security credentials\. In this example, each user belongs to a single group\. However, users can belong to multiple groups\. 

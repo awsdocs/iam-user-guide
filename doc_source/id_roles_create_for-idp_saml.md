@@ -13,9 +13,7 @@ Before you can create a role for SAML 2\.0 federation, you must first complete t
    For SAML 2\.0 providers, the policy must include a `Statement` element similar to the following:
 
    The trust policy must grant an `Allow` effect for the `sts:AssumeRoleWithSAML` action\. In this role, you use two values that ensure that the role can be assumed only by your application:
-
    + For the `Principal` element, use the string `{"Federated":ARNofIdentityProvider}`\. Replace `ARNofIdentityProvider` with the ARN of the [SAML identity provider](id_roles_providers_saml.md) that you created in [Step 1](#idpsamlstep1)\.
-
    + For the `Condition` element, use a `StringEquals` condition to test that the `saml:aud` attribute from the SAML response matches the SAML federation endpoint for AWS\. 
 **Note**  
 Because the policy for the trusted entity uses [policy variables](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html) that represent values in the SAML response, you must set the policy's `Version` element to `2012-10-17` or a later supported version\.

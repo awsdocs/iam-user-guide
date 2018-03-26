@@ -1,23 +1,14 @@
 # IAM JSON Policy Elements: Condition Operators<a name="reference_policies_elements_condition_operators"></a>
 
 Condition operators are the "verbs" of conditions and specify the type of comparison that IAM performs\. The condition operators can be grouped into the following categories:
-
 + [String](#Conditions_String)
-
 + [Numeric](#Conditions_Numeric)
-
 + [Date and time](#Conditions_Date)
-
 + [Boolean](#Conditions_Boolean)
-
 + [Binary](#Conditions_BinaryEquals)
-
 + [IP address](#Conditions_IPAddress)
-
 + [Amazon Resource Name \(ARN\)](#Conditions_ARN) \(available for only some services\.\)
-
 + [\.\.\.IfExists](#Conditions_IfExists) \(checks if the key value exists as part of another check\)
-
 + [Null check](#Conditions_Null) \(checks if the key value exists as a standalone check\)
 
 ## String Condition Operators<a name="Conditions_String"></a>

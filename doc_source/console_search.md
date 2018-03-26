@@ -3,11 +3,8 @@
 As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys or browse to the deeply nested IAM resources to find items you need to work with\. A faster option is to use the IAM console search page to locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
 
 The IAM console search feature can locate any of the following:
-
 + IAM entity names that match your search keywords \(for users, groups, roles, identity providers, and policies\)
-
 + AWS documentation topic names that match your search keywords 
-
 + Tasks that match your search keywords
 
 Every line in the search result is an active link\. For example, you can choose the user name in the search result, which takes you to that user's detail page\. Or you can choose an action link, for example **Create user**, to go to the **Create User** page\.
@@ -49,53 +46,28 @@ The following icons identify the types of items that are found by a search:
 ## Sample Search Phrases<a name="search_phrases"></a>
 
 You can use the following phrases in the IAM search\. Replace terms in italics with the names of actual IAM users, groups, roles, access keys, policies, or identity providers respectively that you want to locate\.
-
 + *user\_name* or *group\_name* or *role\_name* or *policy\_name* or *identity\_provider\_name*
-
 + *access\_key*
-
 + **add user *user\_name* to groups** or **add users to group *group\_name***
-
 + **remove user *user\_name* from groups**
-
 + ****delete *user\_name*** or **delete *group\_name*** or **delete *role\_name***, or **delete *policy\_name***, or **delete *identity\_provider\_name*****
-
 + **manage access keys *user\_name***
-
 + **manage signing certificates *user\_name***
-
 + **users**
-
 + **manage MFA for *user\_name***
-
 + **manage password for *user\_name***
-
 + **create role**
-
 + **password policy**
-
 + **edit trust policy for role *role\_name***
-
 + **show policy document for role *role\_name***
-
 + **attach policy to *role\_name***
-
 + **create managed policy**
-
 + **create user**
-
 + **create group**
-
 + **attach policy to *group\_name***
-
 + **attach entities to *policy\_name***
-
 + **detach entities to *policy\_name***
-
 + **what is IAM**
-
 + **how do I create an IAM user**
-
 + **how do I use IAM console**
-
 + **what is a user** or **what is a group**, or **what is a policy**, or **what is a role**, or **what is an identity provider**

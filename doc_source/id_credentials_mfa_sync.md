@@ -47,15 +47,12 @@ Submit your request immediately after generating the codes\. If you generate the
 ## Resynchronize an MFA Device \(AWS CLI\)<a name="id_credentials_mfa_sync_cli"></a>
 
 **To resynchronize an MFA device for an IAM user \(AWS CLI\)**
-
 + At a command prompt, issue the [http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
-
   + Virtual MFA device: specify Amazon Resource Name \(ARN\) of device as `SerialNumber`\.
 
     ```
     $ aws iam resync-mfa-device --user-name Bob --serial-number arn:aws:iam::123456789012:mfa/BobsMFA --authentication-code-1 123456 --authentication-code-2 987654
     ```
-
   + Physical MFA device: specify physical device's serial number as `SerialNumber`\. The format is vendor specific\.
 
     ```
@@ -67,15 +64,12 @@ Submit your request immediately after generating the codes\. If you generate the
 ## Tools for Windows PowerShell<a name="id_credentials_mfa_sync_twp"></a>
 
 **To resynchronize an MFA device for an IAM user \(Tools for Windows PowerShell\)**
-
 + Use the [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Sync-IAMMFADevice.html&tocid=Sync-IAMMFADevice) cmdlet:
-
   + Virtual MFA device: specify Amazon Resource Name \(ARN\) of device as `SerialNumber`\.
 
     ```
     PS C:\>Sync-IAMMFADevice -UserName Bob -SerialNumber arn:aws:iam::123456789012:mfa/BobsMFA -AuthenticationCode1 123456 -AuthenticationCode2 987654 
     ```
-
   + Physical MFA device: specify physical device's serial number as `SerialNumber`\. The format is vendor specific\.
 
     ```
@@ -89,5 +83,4 @@ Submit your request immediately after generating the codes\. If you generate the
 IAM has an API call that performs synchronization\. In this case, we recommend that you give your MFA users permission to access this API call\. You should build a tool based on that API call that lets your users resynchronize their devices whenever they need to\.
 
 **To resynchronize an MFA device for an IAM user \(API\)**
-
 + Send the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.

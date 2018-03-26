@@ -3,7 +3,6 @@
 Amazon Translate \(service prefix: translate\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Translate**
-
 + `translate:TranslateText`
 
 **Condition context keys for Amazon Translate**

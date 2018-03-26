@@ -3,42 +3,24 @@
 Amazon Route 53 Auto Naming \(service prefix: servicediscovery\) provides the following service\-specific actions and condition context keys for use in IAM policies\.
 
 **Actions for Amazon Route 53 Auto Naming**
-
-+ `servicediscovery:GetOperation`
-
-+ `servicediscovery:DeleteService`
-
-+ `servicediscovery:DeleteNamespace`
-
-+ `servicediscovery:ListServices`
-
-+ `servicediscovery:CreatePublicDnsNamespace`
-
-+ `servicediscovery:ListNamespaces`
-
 + `servicediscovery:CreatePrivateDnsNamespace`
-
-+ `servicediscovery:RegisterInstance`
-
-+ `servicediscovery:DeregisterInstance`
-
-+ `servicediscovery:GetInstance`
-
++ `servicediscovery:CreatePublicDnsNamespace`
 + `servicediscovery:CreateService`
-
-+ `servicediscovery:UpdateService`
-
-+ `servicediscovery:ListInstances`
-
-+ `servicediscovery:GetNamespace`
-
++ `servicediscovery:DeleteNamespace`
++ `servicediscovery:DeleteService`
++ `servicediscovery:DeregisterInstance`
++ `servicediscovery:GetInstance`
 + `servicediscovery:GetInstancesHealthStatus`
-
-+ `servicediscovery:UpdateInstanceHeartbeatStatus`
-
++ `servicediscovery:GetNamespace`
++ `servicediscovery:GetOperation`
 + `servicediscovery:GetService`
-
++ `servicediscovery:ListInstances`
++ `servicediscovery:ListNamespaces`
 + `servicediscovery:ListOperations`
++ `servicediscovery:ListServices`
++ `servicediscovery:RegisterInstance`
++ `servicediscovery:UpdateInstanceHeartbeatStatus`
++ `servicediscovery:UpdateService`
 
 **Condition context keys for Amazon Route 53 Auto Naming**
 

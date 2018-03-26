@@ -8,7 +8,7 @@ If you create a role programmatically instead of in the IAM console, then you ha
 **Note**  
 When using the AWS Management Console, you can switch roles only when signed in as an IAM user\. You cannot switch roles when signed in as the AWS account root user\.
 
-
+**Topics**
 + [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)
 + [Granting a User Permissions to Pass a Role to an AWS Service](id_roles_use_passrole.md)
 + [Switching to a Role \(AWS Management Console\)](id_roles_use_switch-role-console.md)

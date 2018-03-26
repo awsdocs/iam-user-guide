@@ -1,6 +1,6 @@
 # Calling the API by Making HTTP Query Requests<a name="programming"></a>
 
-
+**Topics**
 + [Endpoints](#IAMEndpoints)
 + [HTTPS Required](#IAMHTTPSRequired)
 + [Signing IAM API Requests](#SigVersion)
@@ -17,9 +17,7 @@ The response is an XML document\. For details about the response, see the indivi
 ## Endpoints<a name="IAMEndpoints"></a>
 
 IAM and AWS STS each have a single global endpoint:
-
 + \(IAM\) [https://iam\.amazonaws\.com](https://iam.amazonaws.com)
-
 + \(AWS STS\) [https://sts\.amazonaws\.com](https://sts.amazonaws.com)
 
 **Note**  
@@ -40,9 +38,6 @@ To sign your API requests, we recommend using AWS Signature Version 4\. For info
 If you need to use Signature Version 2, information about using Signature Version 2 is available in the [AWS General Reference](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html)\.
 
 For more information, see the following:
-
 +  [AWS Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)\. Provides general information about the types of credentials used for accessing AWS\. 
-
 + [IAM Best Practices](best-practices.md)\. Presents a list of suggestions for using IAM service to help secure your AWS resources\. 
-
 + [Temporary Security Credentials](id_credentials_temp.md)\. Describes how to create and use temporary security credentials\. 

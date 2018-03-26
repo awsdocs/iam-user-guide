@@ -8,7 +8,7 @@ You can view policy summaries on the **Users** page or **Roles** page for all po
 
 You can use the information in the policy summaries to understand the permissions that are allowed or denied by your policy\. Policy summaries can help you [troubleshoot](troubleshoot_policies.md) and fix policies that are not providing the permissions that you expect\.
 
-
+**Topics**
 + [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)
 + [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)
 + [Action Summary \(List of Resources\)](access_policies_understand-action-summary.md)

@@ -5,38 +5,22 @@ AWS Batch \(service prefix: batch\) provides the following service\-specific act
 **Actions for AWS Batch**
 
 For more information about controlling access to your AWS Batch resources, see [AWS Batch IAM Policies, Roles, and Permissions](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html) in the *AWS Batch User Guide*\.
-
-+ `[batch:TerminateJob](http://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html)`
-
-+ `[batch:DescribeJobs](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html)`
-
-+ `[batch:UpdateComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html)`
-
-+ `[batch:UpdateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html)`
-
-+ `[batch:CreateComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html)`
-
-+ `[batch:RegisterJobDefinition](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)`
-
-+ `[batch:CreateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html)`
-
-+ `[batch:DescribeJobQueues](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html)`
-
 + `[batch:CancelJob](http://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html)`
-
-+ `[batch:DescribeJobDefinitions](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html)`
-
-+ `[batch:DescribeComputeEnvironments](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html)`
-
-+ `[batch:SubmitJob](http://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html)`
-
++ `[batch:CreateComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html)`
++ `[batch:CreateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html)`
 + `[batch:DeleteComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html)`
-
-+ `[batch:ListJobs](http://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html)`
-
-+ `[batch:DeregisterJobDefinition](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html)`
-
 + `[batch:DeleteJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html)`
++ `[batch:DeregisterJobDefinition](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html)`
++ `[batch:DescribeComputeEnvironments](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html)`
++ `[batch:DescribeJobDefinitions](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html)`
++ `[batch:DescribeJobQueues](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html)`
++ `[batch:DescribeJobs](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html)`
++ `[batch:ListJobs](http://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html)`
++ `[batch:RegisterJobDefinition](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)`
++ `[batch:SubmitJob](http://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html)`
++ `[batch:TerminateJob](http://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html)`
++ `[batch:UpdateComputeEnvironment](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html)`
++ `[batch:UpdateJobQueue](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html)`
 
 **Condition context keys for AWS Batch**
 

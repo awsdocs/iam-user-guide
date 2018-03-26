@@ -6,7 +6,7 @@ You can use roles to delegate access to users, applications, or services that do
 
 For these scenarios, you can delegate access to AWS resources using an *IAM role*\. This section introduces roles and the different ways you can use them, when and how to choose among approaches, and how to create, manage, switch to \(or assume\), and delete roles\.
 
-
+**Topics**
 + [Roles Terms and Concepts](id_roles_terms-and-concepts.md)
 + [Common Scenarios for Roles: Users, Applications, and Services](id_roles_common-scenarios.md)
 + [Identity Providers and Federation](id_roles_providers.md)

@@ -1,13 +1,9 @@
 # Resetting Your Lost or Forgotten Passwords or Access Keys<a name="id_credentials_access-keys_retrieve"></a>
 
 If you lose or forget your passwords or access keys, you *cannot* retrieve them from IAM\. Instead, you can reset them using the following methods:
-
 + **AWS account root user password** – If you forget your root user password, you can reset the password from the AWS Management Console\. For details, see [Resetting a Lost or Forgotten Root User Password](#reset-root-password) later in this topic\.
-
 + **AWS account access keys** – If you forget your account access keys, you can create new access keys without disabling the existing access keys\. If you are not using the existing keys, you can delete those\. For details, see [Creating Access Keys for the Root User](id_root-user.md#id_root-user_manage_add-key) and [Deleting Access Keys from the Root User](id_root-user.md#id_root-user_manage_delete-key)\.
-
 + **IAM user password** – If you are an IAM user and you forget your password, you must ask your administrator to reset your password\. To learn how an administrator can manage your password, see [Managing Passwords for IAM Users](id_credentials_passwords_admin-change-user.md)\.
-
 + **IAM user access keys** – If you are an IAM user and you forget your access keys, you will need new access keys\. If you have permission to create your own access keys, you can find instructions for creating a new one at [Creating, Modifying, and Viewing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\. If you do not have the required permissions, you must ask your administrator to create new access keys\. If you are still using your old keys, ask your administrator not to delete the old keys\. To learn how an administrator can manage your access keys, see [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\.
 
 You should follow the AWS [best practice](best-practices.md#rotate-credentials) of periodically changing your password and AWS access keys\. In AWS, you change access keys by *rotating* them\. This means that you create a new one, configure your applications to use the new key, and then delete the old one\. You are allowed to have two access key pairs active at the same time for just this reason\. For more information, see [Rotating Access Keys](id_credentials_access-keys.md#Using_RotateAccessKey)\.

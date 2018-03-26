@@ -27,11 +27,8 @@ To get temporary security credentials, the identity broker application calls eit
 ![\[Sample workflow using a custom identity broker application\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/enterprise-authentication-with-identity-broker-application.diagram.png)
 
 This scenario has the following attributes:
-
 + The identity broker application has permissions to access IAM's token service \(STS\) API to create temporary security credentials\.
-
 + The identity broker application is able to verify that employees are authenticated within the existing authentication system\.
-
 + Users are able to get a temporary URL that gives them access to the AWS Management Console \(which is referred to as single sign\-on\)\.
 
 To see a sample application similar to the identity broker application that is described in this scenario, go to [Identity Federation Sample Application for an Active Directory Use Case](https://aws.amazon.com/code/1288653099190193) at *AWS Sample Code & Libraries*\. For information about creating temporary security credentials, see[Requesting Temporary Security Credentials](id_credentials_temp_request.md)\. For more information about federated users getting access to the AWS Management Console, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md)\.
