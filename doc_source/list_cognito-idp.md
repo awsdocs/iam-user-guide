@@ -60,6 +60,7 @@ For more information about Amazon Cognito Your User Pools, see the [Amazon Cogni
 + `[cognito\-idp:ListGroups](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html)`
 + `[cognito\-idp:ListUserImportJobs](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html)`
 + `[cognito\-idp:ListUserPoolClients](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html)`
++ `[cognito\-idp:ListUserPools](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPools.html)`
 + `[cognito\-idp:ListUsersInGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html)`
 + `[cognito\-idp:ResendConfirmationCode](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html)`
 + `[cognito\-idp:RespondToAuthChallenge](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html)`
