@@ -31,7 +31,7 @@ You can grant other people permission to administer and use resources in your AW
 You can grant different permissions to different people for different resources\. For example, you might allow some users complete access to Amazon Elastic Compute Cloud \(Amazon EC2\), Amazon Simple Storage Service \(Amazon S3\), Amazon DynamoDB, Amazon Redshift, and other AWS services\. For other users, you can allow read\-only access to just some S3 buckets, or permission to administer just some EC2 instances, or to access your billing information but nothing else\.
 
 **Secure access to AWS resources for applications that run on Amazon EC2**  
-You can use IAM features to securely give applications that run on EC2 instances the credentials that they need in order to access other AWS resources\. Examples include S3 buckets and RDS or DynamoDB databases\. 
+You can use IAM features to securely provide credentials for applications that run on EC2 instances\. These credentials provide permissions for your application to access other AWS resources\. Examples include S3 buckets and DynamoDB tables\. 
 
 **Multi\-factor authentication \(MFA\)**  
 You can add two\-factor authentication to your account and to individual users for extra security\. With MFA you or your users must provide not only a password or access key to work with your account, but also a code from a specially configured device\. 
