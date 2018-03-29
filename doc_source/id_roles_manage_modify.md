@@ -8,6 +8,9 @@ If the role is a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term
 **Note**  
 If the role is a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*, the role's permissions can be modified only from the service that depends on the role\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 + To change the description of the role, modify the description text\.
++ To specify the maximum session duration setting for roles that are assumed using the AWS CLI or API, modify the maximum session duration setting's value\. This setting can have a value from 1 hour to 12 hours\. If you do not specify a value, the default maximum of 1 hour is applied\. 
+**Note**  
+Anyone who assumes the role from the AWS CLI or API can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer session\. The `MaxSessionDuration` setting determines the maximum duration of the role session that can be requested using the `DurationSeconds` parameter\. If users don't specify a value for the `DurationSeconds` parameter, their security credentials are valid for one hour\.
 
 You can use the AWS Management Console, the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), the Tools for Windows PowerShell, or the IAM API to make these changes\.
 
@@ -109,11 +112,23 @@ You cannot edit an AWS managed policy\. AWS managed policy appear with the AWS i
 
 1. Next to **Role description** and on the far right, choose **Edit**\. 
 
-1. Type a new description in the box and choose **Save**\.
+1. Type a new description in the box and choose **Save**\.<a name="id_roles_modify_max-session"></a>
+
+**To change the maximum session duration setting for roles that are assumed using the AWS CLI or API \(console\)**
+
+1. In the navigation pane of the IAM console, choose **Roles**\.
+
+1. Choose the name of the role to modify\.
+
+1. Next to **Maximum CLI/API session duration** choose a value\. Or choose **Custom duration** and type a value \(in seconds\)\.
+
+1. Choose **Save**\.
+
+   Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
 
 ## Modifying a Role \(AWS CLI, AWS Tools for Windows PowerShell, AWS API\)<a name="roles-managingrole-editing-cli"></a>
 
-You can use the AWS Command Line Interface or IAM API to modify a role\.
+You can use the AWS Command Line Interface , AWS Tools for Windows PowerShell, or the API to modify a role\.
 
 **To change the trusted principals that can access the role \(AWS CLI, AWS Tools for Windows PowerShell, AWS API\)**
 
@@ -171,7 +186,7 @@ For more information and detail about this procedure, see [Granting a User Permi
 
    The output of this command contains the ARN of the policy\. Make a note of this ARN because you will need to use it in a later step\. 
 
-1. Decide which user or group to attach the policy to\. If you don't know the name of the user or group that you want to modify, use one of these commands to list the users or group in your account:
+1. Decide which user or group to attach the policy to\. If you don't know the name of the user or group that you want to modify, use one of these commands to list the users or groups in your account:
    + AWS CLI: [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html) or [aws iam list\-groups](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html)
    + AWS Tools for Windows PowerShell: [Get\-IAMUsers](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers) or [Get\-IAMGroups](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroups.html&tocid=Get-IAMGroups)
    + IAM API: [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) or [ListGroups](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html)
@@ -206,6 +221,18 @@ For more information and detail about this procedure, see [Granting a User Permi
    + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
    + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 
-1. To update a role's description, use one of the following commands:
-   + AWS CLI: [aws iam update\-role\-description](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role-description.html)
-   + IAM API: [UpdateRoleDescription](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html)
+1. To update a role's description, use one of the following commands with the description parameter:
+   + AWS CLI: [aws iam update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
+   + IAM API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
+
+**To change the maximum session duration setting for roles that are assumed using the AWS CLI or API \(AWS CLI, AWS API\)**
+
+1. \(Optional\) To view the current maximum session duration setting for a role, use the following commands:
+   + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
+   + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+
+1. To update a role's maximum session duration setting, use one of the following commands with the `max-sessionduration` CLI parameter or the `MaxSessionDuration` API parameter:
+   + AWS CLI: [aws iam update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
+   + IAM API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
+
+   Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.

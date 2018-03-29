@@ -17,16 +17,15 @@ Before you can create a role for web identity federation, you must first complet
 
    ```
    {
-     "Version": "2012-10-17",
-     "Statement": {
-       "Effect": "Allow",
-       "Principal": {"Federated": "cognito-identity.amazonaws.com"},
-       "Action": "sts:AssumeRoleWithWebIdentity",
-       "Condition": {
+       "Version": "2012-10-17",
+       "Statement": [{
+           "Effect": "Allow",
+           "Principal": {"Federated": "cognito-identity.amazonaws.com"},
+           "Action": "sts:AssumeRoleWithWebIdentity",
+           "Condition": {
          "StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east-2:12345678-abcd-abcd-abcd-123456"},
          "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "unauthenticated"}
-       }
-     }
+       }]
    }
    ```
 
@@ -68,14 +67,14 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
 
    ```
    {
-     "Version": "2012-10-17",
-     "Id": "RoleForLoginWithAmazon",
-     "Statement": [{
-       "Effect": "Allow",
-       "Principal": {"Federated": "www.amazon.com"},
-       "Action": "sts:AssumeRoleWithWebIdentity",
-       "Condition": {"StringEquals": {"www.amazon.com:app_id": "amzn1.application-oa2-123456"}}
-     }]
+       "Version": "2012-10-17",
+       "Statement": [{
+           "Sid": "RoleForLoginWithAmazon",
+           "Effect": "Allow",
+           "Principal": {"Federated": "www.amazon.com"},
+           "Action": "sts:AssumeRoleWithWebIdentity",
+           "Condition": {"StringEquals": {"www.amazon.com:app_id": "amzn1.application-oa2-123456"}}
+       }]
    }
    ```
 
@@ -83,14 +82,14 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
 
    ```
    {
-     "Version": "2012-10-17",
-     "Id": "RoleForFacebook",
-     "Statement": [{
-       "Effect": "Allow",
-       "Principal": {"Federated": "graph.facebook.com"},
-       "Action": "sts:AssumeRoleWithWebIdentity",
-       "Condition": {"StringEquals": {"graph.facebook.com:app_id": "111222333444555"}}
-     }]
+       "Version": "2012-10-17",
+       "Statement": [{
+           "Sid": "RoleForFacebook",
+           "Effect": "Allow",
+           "Principal": {"Federated": "graph.facebook.com"},
+           "Action": "sts:AssumeRoleWithWebIdentity",
+           "Condition": {"StringEquals": {"graph.facebook.com:app_id": "111222333444555"}}
+       }]
    }
    ```
 
@@ -98,14 +97,14 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
 
    ```
    {
-     "Version": "2012-10-17",
-     "Id": "RoleForGoogle",
-     "Statement": [{
-       "Effect": "Allow",
-       "Principal": {"Federated": "accounts.google.com"},
-       "Action": "sts:AssumeRoleWithWebIdentity",
-       "Condition": {"StringEquals": {"accounts.google.com:aud": "666777888999000"}}
-     }]
+       "Version": "2012-10-17",
+       "Statement": [{
+           "Sid": "RoleForGoogle",
+           "Effect": "Allow",
+           "Principal": {"Federated": "accounts.google.com"},
+           "Action": "sts:AssumeRoleWithWebIdentity",
+           "Condition": {"StringEquals": {"accounts.google.com:aud": "666777888999000"}}
+       }]
    }
    ```
 
@@ -113,14 +112,14 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
 
    ```
    {
-     "Version": "2012-10-17",
-     "Id": "RoleForCognito",
-     "Statement": [{
-       "Effect": "Allow",
-       "Principal": {"Federated": "cognito-identity.amazonaws.com"},
-       "Action": "sts:AssumeRoleWithWebIdentity",
-       "Condition": {"StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east:12345678-ffff-ffff-ffff-123456"}}
-     }]
+       "Version": "2012-10-17",
+       "Statement": [{
+           "Sid": "RoleForCognito",
+           "Effect": "Allow",
+           "Principal": {"Federated": "cognito-identity.amazonaws.com"},
+           "Action": "sts:AssumeRoleWithWebIdentity",
+           "Condition": {"StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east:12345678-ffff-ffff-ffff-123456"}}
+       }]
    }
    ```
 

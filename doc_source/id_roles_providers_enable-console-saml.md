@@ -5,7 +5,7 @@ You can use a role to configure your SAML 2\.0\-compliant IdP and AWS to permit 
 + Tools for Windows PowerShell: [Switching to an IAM Role \(Tools for Windows PowerShell\)](id_roles_use_switch-role-twp.md)
 + AWS API : [Switching to an IAM Role \(API\)](id_roles_use_switch-role-api.md)
 
-## Overview<a name="w3ab1c19c23c16c17b7"></a>
+## Overview<a name="enable-console-saml-overview"></a>
 
 The following diagram illustrates the flow for SAML\-enabled single sign\-on\. 
 

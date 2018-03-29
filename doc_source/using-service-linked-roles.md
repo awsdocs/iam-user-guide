@@ -193,7 +193,7 @@ You can use IAM commands from the AWS Command Line Interface to edit the descrip
 1. To update a service\-linked role's description, use the following command:
 
    ```
-   $ aws iam [update\-role\-description](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role-description.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
+   $ aws iam [update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
    ```
 
 ### Editing a Service\-Linked Role Description \(IAM API\)<a name="edit-service-linked-role-iam-api"></a>
@@ -208,7 +208,7 @@ You can use the IAM API to edit the description of a service\-linked role\.
 
 1. To update a role's description, use the following command, and specify the name \(and optional description\) of the role: 
 
-   IAM API: [UpdateRoleDescription](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html) 
+   IAM API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html) 
 
 ## Deleting a Service\-Linked Role<a name="delete-service-linked-role"></a>
 

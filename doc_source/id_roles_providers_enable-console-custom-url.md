@@ -9,19 +9,21 @@ To enable your organization's users to access the AWS Management Console, you ca
 
 1. Verify that the user is authenticated by your local identity system\.
 
-1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API operations to obtain temporary security credentials for the user\. The credentials are associated with a role with permissions that control what the user can do\. These credentials have a maximum duration as specified in the `DurationSeconds` parameter of the `AssumeRole` or `GetFederationToken` API call used to generate them\.
-**Important**  
-If you use the `AssumeRole` API, you must call it as an IAM user with long\-term credentials\. The call to the federation endpoint in step 3 works only if the temporary credentials are requested by an IAM user with long\-term credentials\. If the temporary credentials are requested by an IAM assumed\-role user with a different set of temporary credentials, then the call to the federation endpoint fails\.
+1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API operations to obtain temporary security credentials for the user\. To learn about the different methods that you can use to assume a role, see [Using IAM Roles](id_roles_use.md)\.
+   + If you use one of the `AssumeRole*` API operations to get the temporary security credentials for a role, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session, from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view or change the maximum value for a role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. Additionally, if you use the `AssumeRole*` API operations, you must call them as an IAM user with long\-term credentials\. Otherwise, the call to the federation endpoint in step 3 fails\.
+   + If you use the `GetFederationToken` API operation to get the credentials, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. You can make this API call only by using the long\-term AWS security credentials of an IAM user\. You can also make these calls using AWS account root user credentials, but we do not recommended it\. If you make this call as the root user, the default session lasts for one hour\. Or you can specify a session from 900 seconds \(15 minutes\) up to 3,600 seconds \(one hour\)\. 
 
 1. Call the AWS federation endpoint and supply the temporary security credentials to request a sign\-in token\.
-   + If you used one of the `AssumeRole*` API operations to get the temporary security credentials, then this request can include the `SessionDuration` parameter\. This parameter specifies how long the federated consoled session is valid, up to a maximum of 12 hours\.
-   + If you instead used the `GetFederationToken` API to get the credentials, then you don't need the `SessionDuration` parameter\. The temporary credentials are already valid for up to 36 hours and specify the maximum length of the federated console session\.
 
-1. Construct a URL for the console that includes the token\.
+1. Construct a URL for the console that includes the token:
+   + If you use one of the `AssumeRole*` API operations in your URL, you can include the `SessionDuration` HTTP parameter\. This parameter specifies the duration of the console session, from 900 seconds \(15 minutes\) to 43200 seconds \(12 hours\)\.
+   + If you use the `GetFederationToken` API operation in your URL, you can include the `DurationSeconds` parameter\. This parameter specifies the duration of the federated console session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. 
+**Note**  
+Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
 
 1. Give the URL to the user or invoke the URL on the user's behalf\.
 
-The URL that the federation endpoint provides is valid for 15 minutes after it is created\. The temporary security credentials associated with the URL are valid for the duration you specified when you created them, starting from the time they were created\.
+The URL that the federation endpoint provides is valid for 15 minutes after it is created\. This differs from the duration \(in seconds\) of the temporary security credential session that is associated with the URL\. Those credentials are valid for the duration you specified when you created them, starting from the time they were created\.
 
 **Important**  
 The URL grants access to your AWS resources through the AWS Management Console if you have enabled permissions in the associated temporary security credentials\. For this reason, you should treat the URL as a secret\. We recommend returning the URL through a secure redirect, for example, by using a 302 HTTP response status code over an SSL connection\. For more information about the 302 HTTP response status code, go to [RFC 2616, section 10\.3\.3](https://tools.ietf.org/html/rfc2616#section-10.3.3)\.
@@ -51,10 +53,9 @@ The following procedure contains examples of text strings\. To enhance readabili
 
    To get temporary credentials, you call either the AWS STS [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API \(recommended\) or the [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API\. For more information about the differences between these API operations, see [Understanding the API Options for Securely Delegating Access to Your AWS Account](http://aws.amazon.com/blogs/security/understanding-the-api-options-for-securely-delegating-access-to-your-aws-account) in the AWS Security Blog\.
 **Important**  
-When you create temporary security credentials, you must specify the permissions the credentials grants to the user who holds them\. For any of the API operations that begin with `AssumeRole*`, you use an IAM role to assign permissions\. For the other API operations, the mechanism varies with the API\. For more details, see [Controlling Permissions for Temporary Security Credentials](id_credentials_temp_control-access.md)\. 
-If you use the `AssumeRole` API, you must call it as an IAM user with long\-term credentials\. The call to the federation endpoint in step 3 works only if the temporary credentials are requested by an IAM user with long\-term credentials\. If the temporary credentials are requested by an IAM assumed\-role user with a different set of temporary credentials, then the call to the federation endpoint fails\.
+When you use the [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API to create temporary security credentials, you must specify the permissions that the credentials grant to the user who assumes the role\. For any of the API operations that begin with `AssumeRole*`, you use an IAM role to assign permissions\. For the other API operations, the mechanism varies with the API\. For more details, see [Controlling Permissions for Temporary Security Credentials](id_credentials_temp_control-access.md)\. Additionally, if you use the `AssumeRole*` API operations, you must call them as an IAM user with long\-term credentials\. Otherwise, the call to the federation endpoint in step 3 fails\.
 
-1. After you obtain the temporary security credentials, build them into a JSON "session" string to exchange them for a sign\-in token\. The following example shows how to encode the credentials\. You replace the placeholder text with the appropriate values from the credentials that you receive in the previous step\.
+1. After you obtain the temporary security credentials, build them into a JSON session string to exchange them for a sign\-in token\. The following example shows how to encode the credentials\. You replace the placeholder text with the appropriate values from the credentials that you receive in the previous step\.
 
    ```
    {"sessionId":"*** temporary access key ID ***",
@@ -68,7 +69,7 @@ If you use the `AssumeRole` API, you must call it as an IAM user with long\-term
 
    `https://signin.aws.amazon.com/federation` 
 
-   The request must include the `Action` and `Session` parameters, and \(optionally\) if you used `AssumeRole`, a `SessionDuration` HTTP parameter as shown in the following example\.
+   The request must include the `Action` and `Session` parameters, and \(optionally\) if you used an [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation, a `SessionDuration` HTTP parameter as shown in the following example\.
 
    ```
    Action = getSigninToken
@@ -76,18 +77,18 @@ If you use the `AssumeRole` API, you must call it as an IAM user with long\-term
    Session = *** the URL encoded JSON string created in steps 3 & 4 ***
    ```
 
-   The `SessionDuration` parameter specifies the number of seconds that the credentials for the console session are valid\. This is separate from the duration of the temporary credentials\. You can specify a `SessionDuration` maximum value of 43200 \(12 hours\)\. If the parameter is missing, then the session defaults to the duration of the credentials you retrieved from AWS STS in step 2 \(which defaults to one hour\)\. See the [documentation for the AssumeRole API](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) for details about how to specify duration using the `DurationSeconds` parameter\. The ability to create a console session that is longer than one hour is intrinsic to the `getSigninToken` action of the federation endpoint\. You cannot use the IAM or STS API operations to get credentials that are valid for longer than one hour \(3600 seconds\)\.
+   The `SessionDuration` HTTP parameter specifies the duration of the console session\. This is separate from the duration of the temporary credentials that you specify using the `DurationSeconds` parameter\. You can specify a `SessionDuration` maximum value of 43,200 \(12 hours\)\. If the `SessionDuration` parameter is missing, then the session defaults to the duration of the credentials that you retrieved from AWS STS in step 2 \(which defaults to one hour\)\. See the [documentation for the `AssumeRole` API](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) for details about how to specify a duration using the `DurationSeconds` parameter\. The ability to create a console session that is longer than one hour is intrinsic to the `getSigninToken` operation of the federation endpoint\.
 **Note**  
-You do not need the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. The console session can be as long as the temporary credentials are valid \(up to 36 hours\)\.
+Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
 
-   When you enable console sessions with an extended duration the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\. 
+   When you enable console sessions with an extended duration, the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\. 
 
     The following is an example of what your request might look like\. The lines are wrapped here for readability, but you should submit it as a one\-line string\.
 
    ```
    https://signin.aws.amazon.com/federation
    ?Action=getSigninToken
-   &SessionDuration=43200
+   &SessionDuration=1800
    &Session=%7B%22sessionId%22%3A+%22ASIAJUMHIZPTOKTBMK5A%22%2C+%22sessionKey%22
    %3A+%22LSD7LWI%2FL%2FN%2BgYpan5QFz0XUpc8s7HYjRsgcsrsm%22%2C+%22sessionToken%2
    2%3A+%22FQoDYXdzEBQaDLbj3VWv2u50NN%2F3yyLSASwYtWhPnGPMNmzZFfZsL0Qd3vtYHw5A5dW
@@ -97,7 +98,7 @@ You do not need the `SessionDuration` HTTP parameter if you got the temporary cr
    UAhJ3nXIkIbG7Ucv9cOEpCf%2Fg23ijRgILIBQ%3D%3D%22%7D
    ```
 
-   The response from the federation endpoint is a JSON document with an `SigninToken` value\. It will look similar to the following example\.
+   The response from the federation endpoint is a JSON document with a `SigninToken` value\. It will look similar to the following example\.
 
    ```
    {"SigninToken":"*** the SigninToken string ***"}
@@ -112,7 +113,7 @@ You do not need the `SessionDuration` HTTP parameter if you got the temporary cr
    &SigninToken = *** the value of SigninToken received in the previous step ***
    ```
 
-   The following example shows what the final URL might look like\. The URL is valid for 15 minutes from the time it is created\. The temporary security credentials and console session embedded within the URL are valid for the duration you specify in the `SessionDuration` parameter when you initially request them\. 
+   The following example shows what the final URL might look like\. The URL is valid for 15 minutes from the time it is created\. The temporary security credentials and console session embedded within the URL are valid for the duration you specify in the `SessionDuration` HTTP parameter when you initially request them\. 
 
    ```
    https://signin.aws.amazon.com/federation
@@ -227,7 +228,7 @@ AWSSecurityTokenServiceClient stsClient =
 
 GetFederationTokenRequest getFederationTokenRequest = 
   new GetFederationTokenRequest();
-getFederationTokenRequest.setDurationSeconds(3600);
+getFederationTokenRequest.setDurationSeconds(1800);
 getFederationTokenRequest.setName("UserName");
 
 // A sample policy for accessing Amazon Simple Notification Service (Amazon SNS) in the console.
@@ -266,7 +267,7 @@ String sessionJson = String.format(
 
 String getSigninTokenURL = signInURL + 
                            "?Action=getSigninToken" +
-                           "&SessionDuration=43200" + 
+                           "&DurationSeconds=43200" + 
                            "&SessionType=json&Session=" + 
                            URLEncoder.encode(sessionJson,"UTF-8");
 
@@ -320,7 +321,7 @@ sts = Aws::STS::Client.new()
 # in the AWS SNS console.
 
 session = sts.get_federation_token({
-  duration_seconds: 3600,
+  duration_seconds: 1800,
   name: "UserName",
   policy: "{\"Version\":\"2012-10-17\",\"Statement\":{\"Effect\":\"Allow\",\"Action\":\"sns:*\",\"Resource\":\"*\"}}",
 })

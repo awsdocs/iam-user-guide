@@ -2,10 +2,10 @@
 
 In your organization, after a user's identity has been verified, the IdP sends an authentication response to the AWS SAML endpoint at `https://signin.aws.amazon.com/saml`\. This response is a POST request that includes a SAML token that adheres to the [HTTP POST Binding for SAML 2\.0](http://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf) standard and that contains the following elements, or *claims*\. You configure these claims in your SAML\-compatible IdP\. Refer to the documentation for your IdP for instructions on how to enter these claims\.
 
-When the IdP sends the response containing the claims to AWS, many of the incoming claims map to AWS context keys that can be checked in IAM policies using the `Condition` element\. A listing of the available mappings follows in the section [Mapping SAML Attributes to AWS Trust Policy Context Keys](#saml-attribute-mapping)\.
+When the IdP sends the response containing the claims to AWS, many of the incoming claims map to AWS context keys\. These context keys can be checked in IAM policies using the `Condition` element\. A listing of the available mappings follows in the section [Mapping SAML Attributes to AWS Trust Policy Context Keys](#saml-attribute-mapping)\.
 
 **`Subject` and `NameID`**  
-The following excerpt shows an example\. Substitute your own values for the marked ones\. There must be exactly 1 `SubjectConfirmation` element with a `SubjectConfirmationData` element that includes both the `NotOnOrAfter` attribute and a `Recipient` attribute with a value that must match the AWS endpoint \(`https://signin.aws.amazon.com/saml`\), as shown in the following example\. For information about the name identifier formats supported for single sign\-on interactions, see [Oracle Sun OpenSSO Enterprise Administration Reference](https://docs.oracle.com/cd/E19316-01/820-3886/ggwbz/index.html)\.   
+The following excerpt shows an example\. Substitute your own values for the marked ones\. There must be exactly one `SubjectConfirmation` element with a `SubjectConfirmationData` element that includes both the `NotOnOrAfter` attribute and a `Recipient` attribute\. These attributes include a value that must match the AWS endpoint \(`https://signin.aws.amazon.com/saml`\), as shown in the following example\. For information about the name identifier formats supported for single sign\-on interactions, see [Oracle Sun OpenSSO Enterprise Administration Reference](https://docs.oracle.com/cd/E19316-01/820-3886/ggwbz/index.html)\.   
 
 ```
 <Subject>
@@ -49,7 +49,7 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 ```
 
 **An `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/RoleSessionName`**  
-This element contains one `AttributeValue` element that provides an identifier for the AWS temporary credentials that are issued for SSO and is used to display user information in the AWS Management Console\. The value in the `AttributeValue` element must be between 2 and 64 characters long, can contain only alphanumeric characters, underscores, and the following characters: **\+** \(plus sign\), **=** \(equals sign\), **,** \(comma\), **\.** \(period\), **@** \(at symbol\), and **\-** \(hyphen\)\. It cannot contain spaces\. The value is typically a user ID \(`bobsmith`\) or an email address \(`bobsmith@example.com`\)\. It should not be a value that includes a space, like a user's display name \(`Bob Smith`\)\.  
+This element contains one `AttributeValue` element that provides an identifier for the AWS temporary credentials that are issued for SSO\. This element is used to display user information in the AWS Management Console\. The value in the `AttributeValue` element must be between 2 and 64 characters long, can contain only alphanumeric characters, underscores, and the following characters: **\+** \(plus sign\), **=** \(equals sign\), **,** \(comma\), **\.** \(period\), **@** \(at symbol\), and **\-** \(hyphen\)\. It cannot contain spaces\. The value is typically a user ID \(`bobsmith`\) or an email address \(`bobsmith@example.com`\)\. It should not be a value that includes a space, like a user's display name \(`Bob Smith`\)\.  
 The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It must be set to `https://aws.amazon.com/SAML/Attributes/RoleSessionName` exactly\.
 
 ```
@@ -59,14 +59,15 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 ```
 
 **An optional `Attribute` element with the `SessionDuration` attribute set to `https://aws.amazon.com/SAML/Attributes/SessionDuration`**  
-This element contains one `AttributeValue` element that specifies the maximum time that the user can access the AWS Management Console before having to request new temporary credentials\. The value is an integer representing the number of seconds, and can be a maximum of 43200 seconds \(12 hours\)\. If this attribute is not present, then the maximum session duration defaults to one hour \(the default value of the `DurationSeconds` parameter of the `AssumeRoleWithSAML` API\)\. To use this attribute, you must configure the SAML provider to provide single sign\-on access to the AWS Management Console through the console sign\-in web endpoint at `https://signin.aws.amazon.com/saml`\. Note that this attribute extends sessions only to the AWS Management Console\. It cannot extend the lifetime of other credentials\. However, if it is present in an `AssumeRoleWithSAML` API call, it can be used to *shorten* the lifetime of the credentials returned by the call to less than the default of 60 minutes\.   
+This element contains one `AttributeValue` element that specifies how long that the user can access the AWS Management Console before having to request new temporary credentials\. The value is an integer representing the number of seconds for the session\. The value can range from 900 seconds \(15 minutes\) to 43200 seconds \(12 hours\)\. If this attribute is not present, then the credential last for one hour \(the default value of the `DurationSeconds` parameter of the `AssumeRoleWithSAML` API\)\.  
+To use this attribute, you must configure the SAML provider to provide single sign\-on access to the AWS Management Console through the console sign\-in web endpoint at `https://signin.aws.amazon.com/saml`\. Note that this attribute extends sessions only to the AWS Management Console\. It cannot extend the lifetime of other credentials\. However, if it is present in an `AssumeRoleWithSAML` API call, it can be used to *shorten* the lifetime of the credentials returned by the call to less than the default of 60 minutes\.   
 Note, too, that if a `SessionNotOnOrAfter` attribute is also defined, then the ***lesser*** value of the two attributes, `SessionDuration` or `SessionNotOnOrAfter`, establishes the maximum duration of the console session\.  
 When you enable console sessions with an extended duration the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** page in the IAM console\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.   
 The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It must be set to `https://aws.amazon.com/SAML/Attributes/SessionDuration` exactly\.
 
 ```
 <Attribute Name="https://aws.amazon.com/SAML/Attributes/SessionDuration">
-  <AttributeValue>7200</AttributeValue>
+  <AttributeValue>1800</AttributeValue>
 </Attribute>
 ```
 

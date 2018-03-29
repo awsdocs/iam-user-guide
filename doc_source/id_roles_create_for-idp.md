@@ -2,7 +2,7 @@
 
 Identity federation provides access to AWS resources to users by means of a third\-party identity provider \(IdP\)\. To set up identity federation, you configure the provider and then create an IAM role that determines what permissions a federated user will have\. For more information about federation and identity providers, see [Identity Providers and Federation](id_roles_providers.md)\.
 
-## Creating a Role for Federated Users \(AWS Management Console\)<a name="w3ab1c19c23c20c15b5"></a>
+## Creating a Role for Federated Users \(AWS Management Console\)<a name="w3ab1c19c23c21c15b5"></a>
 
 The steps for creating a role for federated users depends on your choice of third\-party providers:
 + To create a role for users federated with a Web Identity or OpenID Connect \(OIDC\) IdP, see [Creating a Role for Web Identity or OpenID Connect Federation \(Console\)](id_roles_create_for-idp_oidc.md)\.

@@ -11,6 +11,6 @@ The temporary credentials that you get when you call `GetSessionToken` have the 
 + You can use the credentials to access the AWS Management Console by passing the credentials to the federation single sign\-on endpoint at `https://signin.aws.amazon.com/federation`\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
 + You **cannot** use the credentials to call IAM or AWS STS APIs\. You **can** use them to call APIs for other AWS services\.
 
-Compare this API and its limitations and capability with the other APIs that create temporary security credentials at [Comparing the AWS STS APIs](id_credentials_temp_request.md#stsapi_comparison)
+Compare this API and its limitations and capability with the other APIs that create temporary security credentials at [Comparing the AWS STS API Operations](id_credentials_temp_request.md#stsapi_comparison)
 
 For more information about MFA\-protected API access using `GetSessionToken`, see [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\.

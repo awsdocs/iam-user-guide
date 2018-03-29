@@ -90,7 +90,7 @@ If you select the **Require password reset** option, make sure that the user has
 **Important**  
 For security reasons, you cannot access the password after completing this step, but you can create a new password at any time\.
 
-**To delete an IAM user's password**
+**To delete \(disable\) an IAM user's password**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -103,7 +103,7 @@ For security reasons, you cannot access the password after completing this step,
 1. For **Console access**, choose **Disable**, and then choose **Apply**\.
 
 **Important**  
-When you remove a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\.
+When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\.
 
 ## Creating, Changing, or Deleting an IAM User Password \(API, CLI, PowerShell\)<a name="Using_ManagingPasswordsCLIAPI"></a>
 
@@ -129,10 +129,10 @@ To manage passwords for IAM users, use the following commands:
 + Tools for Windows PowerShell: [Update\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMLoginProfile.html&tocid=Update-IAMLoginProfile)
 + AWS API: [UpdateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)
 
-**To delete a user's password**
+**To delete \(disable\) a user's password**
 + AWS CLI: [aws iam delete\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
 + Tools for Windows PowerShell: [Remove\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMLoginProfile.html&tocid=Remove-IAMLoginProfile)
 + AWS API: [DeleteLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html)
 
-**Note**  
-You can use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account\. However, you must first delete the password as a separate step in the process of removing the user\. For more information, see [Deleting an IAM User \(AWS CLI and Tools for Windows PowerShell\)](id_users_manage.md#id_users_deleting_cli)\. 
+**Important**  
+When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM User \(AWS CLI and Tools for Windows PowerShell\)](id_users_manage.md#id_users_deleting_cli)\. 

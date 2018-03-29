@@ -40,13 +40,17 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
 
 1. Make sure you've created a SAML provider in IAM, as described in [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\.
 
-1. In the navigation pane of the console, choose **Roles** and then choose **Create role**\.
+1. In the navigation pane of the IAM console, choose **Roles** and then choose **Create role**\.
 
 1. Choose the **SAML 2\.0 federation** role type\.
 
 1. In the **SAML Provider** list, select the provider that you're creating the role for\. 
 
-1. Choose the SAML 2\.0 access level method\. Choose **Allow programmatic access only** to create a role that can be assumed programmatically from the AWS API\. Then choose **Allow programmatic and AWS Management Console access** to create a role that can be assumed programmatically and from the console\. The roles created by both are similar, but the role that can also be assumed from the console includes a trust policy with a particular condition\. That condition explicitly ensures that the SAML audience \(`SAML:aud` attribute\) is set to the AWS sign\-in endpoint for SAML \(https://signin\.aws\.amazon\.com/saml\)\.
+1. Choose the SAML 2\.0 access level method\. 
+   + Choose **Allow programmatic access only** to create a role that can be assumed programmatically from the AWS API\.
+   + Choose **Allow programmatic and AWS Management Console access** to create a role that can be assumed programmatically and from the console\.
+
+   The roles created by both are similar, but the role that can also be assumed from the console includes a trust policy with a particular condition\. That condition explicitly ensures that the SAML audience \(`SAML:aud` attribute\) is set to the AWS sign\-in endpoint for SAML \(https://signin\.aws\.amazon\.com/saml\)\.
 
 1. If you're creating a role for programmatic access, select an attribute from the **Attribute** list\. Then in the **Value** box, type a value to include in the role\. This restricts role access to users from the identity provider whose SAML authentication response \(assertion\) includes the attributes that you specify\. You must specify at least one attribute to ensure that your role is limited to a subset of users at your organization\. 
 
