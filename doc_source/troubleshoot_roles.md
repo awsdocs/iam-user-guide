@@ -6,6 +6,7 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [I Can't Assume a Role](#troubleshoot_roles_cant-assume-role)
 + [A New Role Appeared in My AWS Account](#troubleshoot_roles_new-role-appeared)
 + [I Can't Edit or Delete a Role in My AWS Account](#troubleshoot_roles_cant-edit-delete-role)
++ [I'm not authorized to perform: iam:PassRole](#troubleshoot_roles_not-auth-passrole)
 + [Why Can't I Assume a Role with a 12\-hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
 
 ## I Can't Assume a Role<a name="troubleshoot_roles_cant-assume-role"></a>
@@ -53,6 +54,16 @@ For information about which services support service\-linked roles, see [AWS Ser
 You cannot delete or edit the permissions for a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) in IAM\. These roles include predefined trusts and permissions that are required by the service in order to perform actions on your behalf\. You can use the IAM console, AWS CLI, or API to edit only the description of a service\-linked role\. You can view the service\-linked roles in your account by going to the IAM **Roles** page in the console\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. A banner on the role's **Summary** page also indicates that the role is a service\-linked role\. You can manage and delete these roles only through the linked service, if that service supports the action\. Be careful when modifying or deleting a service\-linked role because doing so could remove permissions that the service needs to access AWS resources\. 
 
 For information about which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. 
+
+## I'm not authorized to perform: iam:PassRole<a name="troubleshoot_roles_not-auth-passrole"></a>
+
+When you create a service\-linked role, you must have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you the first time that you create an Auto Scaling group\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive the following error:
+
+`ClientError: An error occurred (AccessDenied) when calling the PutLifecycleHook operation: User: arn:aws:sts::819251488009:assumed-role/aws-defaultuser/U313846 is not authorized to perform: iam:PassRole on resource: arn:aws:iam::819251488009:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling`
+
+To fix this error, ask your administrator to add the `iam:PassRole` permission for you\.
+
+To learn which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which services automatically create a service\-linked role when you perform an action in that service, choose the **Yes** link and view the service\-linked role documtnation for the service\.
 
 ## Why Can't I Assume a Role with a 12\-hour Session? \(AWS CLI, AWS API\)<a name="troubleshoot_roles_cant-set-session"></a>
 

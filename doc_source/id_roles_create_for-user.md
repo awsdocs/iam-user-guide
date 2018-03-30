@@ -10,7 +10,7 @@ For information about how to use roles to delegate permissions, see [Roles Terms
 
 ## Creating an IAM Role \(Console\)<a name="roles-creatingrole-user-console"></a>
 
-You can use the AWS Management Console to create a role that an IAM user can assume\. For example, imagine that your organization has multiple AWS accounts to isolate a development environment from a production environment\. To view a high\-level description of the steps necessary to set up and use a role that allows users in the development account to access resources in the production account, see [Example Scenario Using Separate Development and Production Accounts](id_roles_common-scenarios_aws-accounts-example.md)\.
+You can use the AWS Management Console to create a role that an IAM user can assume\. For example, imagine that your organization has multiple AWS accounts to isolate a development environment from a production environment\. To view a high\-level description of the steps necessary to set up and use a role that allows users in the development account to access resources in the production account, see [Example Scenario Using Separate Development and Production Accounts](id_roles_common-scenarios_aws-accounts.md#id_roles_common-scenarios_aws-accounts-example)\.
 
 **To create a role \(console\)**
 
