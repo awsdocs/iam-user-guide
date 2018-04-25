@@ -91,27 +91,27 @@ Only the user's access key ID is visible\. The secret access key can only be ret
 
 To manage a user's access keys from the AWS CLI, Tools for Windows PowerShell, or the AWS API, use the following commands:
 
-### To create an access key<a name="w3ab1c19c19c30c23b5"></a>
+### To create an access key<a name="w3ab1c19c19c29c23b5"></a>
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 
-### To disable or reenable an access key<a name="w3ab1c19c19c30c23b7"></a>
+### To disable or reenable an access key<a name="w3ab1c19c19c29c23b7"></a>
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccessKey.html&tocid=Update-IAMAccessKey)
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
 
-### To list a user's access keys<a name="w3ab1c19c19c30c23b9"></a>
+### To list a user's access keys<a name="w3ab1c19c19c29c23b9"></a>
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKey.html&tocid=Get-IAMAccessKey)
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)
 
-### To determine when an access key was most recently used<a name="w3ab1c19c19c30c23c11"></a>
+### To determine when an access key was most recently used<a name="w3ab1c19c19c29c23c11"></a>
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccessKeyLastUsed.html&tocid=Get-IAMAccessKeyLastUsed)
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
 
-### To delete an access key<a name="w3ab1c19c19c30c23c13"></a>
+### To delete an access key<a name="w3ab1c19c19c29c23c13"></a>
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)

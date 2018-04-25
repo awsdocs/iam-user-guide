@@ -6,11 +6,11 @@ You can use credential reports to assist in your auditing and compliance efforts
 
 You can generate a credential report as often as once every four hours\. When you request a report, IAM first checks whether a report for the AWS account has been generated within the past four hours\. If so, the most recent report is downloaded\. If the most recent report for the account is more than four hours old, or if there are no previous reports for the account, IAM generates and downloads a new report\. 
 
-## Required Permissions<a name="w3ab1c19c19c41b9"></a>
+## Required Permissions<a name="w3ab1c19c19c40b9"></a>
 + To create a credential report: `GenerateCredentialReport` 
 + To download the report: `GetCredentialReport`
 
-## Understanding the Report Format<a name="w3ab1c19c19c41c11"></a>
+## Understanding the Report Format<a name="w3ab1c19c19c40c11"></a>
 
 Credential reports are formatted as comma\-separated values \(CSV\) files\. You can open CSV files with common spreadsheet software to perform analysis, or you can build an application that consumes the CSV files programmatically and performs custom analysis\. 
 

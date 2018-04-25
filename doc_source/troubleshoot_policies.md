@@ -173,7 +173,7 @@ To assign permissions to a user, group, role, or resource, you create a *policy*
 
 To learn about these and other policy elements, see [IAM JSON Policy Elements Reference](reference_policies_elements.md)\. 
 
-To grant access, your policy must define an action with a supported resource\. If your policy also includes a condition, that condition must include a [global condition key](reference_policies_condition-keys.md) or must apply to the action\. To learn which resources are supported by an action, see the [AWS documentation](http://docs.aws.amazon.com/) for your service\. To learn which conditions are supported by an action, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
+To grant access, your policy must define an action with a supported resource\. If your policy also includes a condition, that condition must include a [global condition key](reference_policies_condition-keys.md) or must apply to the action\. To learn which resources are supported by an action, see the [AWS documentation](http://docs.aws.amazon.com/) for your service\. To learn which conditions are supported by an action, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
 To learn whether your policy defines an action, resource, or condition that does not grant permissions, you can view the [policy summary](access_policies_understand-policy-summary.md) for your policy using the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. You can use policy summaries to identify and correct problems in your policy\.
 
@@ -264,7 +264,7 @@ Alternately, to fix this policy to provide only CloudFront permissions, remove t
 
 #### A Condition Is Defined Without an Applicable Action<a name="mismatch_condition-no-match"></a>
 
-The policy below defines two Amazon S3 actions for all S3 resources, if the S3 prefix equals `custom` and the version ID equals `1234`\. However, the `s3:VersionId` condition key is used for object version tagging and is not supported by the defined bucket actions\. To learn which conditions are supported by an action, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md) and follow the link to the service documentation for condition keys\.
+The policy below defines two Amazon S3 actions for all S3 resources, if the S3 prefix equals `custom` and the version ID equals `1234`\. However, the `s3:VersionId` condition key is used for object version tagging and is not supported by the defined bucket actions\. To learn which conditions are supported by an action, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) and follow the link to the service documentation for condition keys\.
 
 ```
 {

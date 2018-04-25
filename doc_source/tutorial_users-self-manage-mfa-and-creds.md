@@ -45,7 +45,7 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
 1. Choose the **JSON** tab and copy the text from the following JSON policy document\. Paste this text into the **JSON** text box\.
 **Note**  
-This example policy does not allow users to both sign\-in and perform a password change\. New users and users with an expired password might try to do so\. To allow this, move `iam:ChangePassword` and `iam:CreateLoginProfile` from the statement `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` to the statement `BlockMostAccessUnlessSignedInWithMFA`\.
+This example policy does not allow users to both sign in and perform a password change\. New users and users with an expired password might try to do so\. To intentionally allow this, add `iam:ChangePassword` and `iam:CreateLoginProfile` to the statement `BlockMostAccessUnlessSignedInWithMFA`\.
 
    ```
    {

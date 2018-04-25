@@ -5,8 +5,8 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 **Topics**
 + [Lock Away Your AWS Account Root User Access Keys](#lock-away-credentials)
 + [Create Individual IAM Users](#create-iam-users)
-+ [Use AWS Defined Policies to Assign Permissions Whenever Possible](#bp-use-aws-defined-policies)
 + [Use Groups to Assign Permissions to IAM Users](#use-groups-for-permissions)
++ [Use AWS Defined Policies to Assign Permissions Whenever Possible](#bp-use-aws-defined-policies)
 + [Grant Least Privilege](#grant-least-privilege)
 + [Use Access Levels to Review IAM Permissions](#use-access-levels-to-review-permissions)
 + [Configure a Strong Password Policy for Your Users](#configure-strong-password-policy)
@@ -39,14 +39,6 @@ By creating individual IAM users for people accessing your account, you can give
 **Note**  
 Before you set permissions for individual IAM users, though, see the next point about groups\.
 
-## Use AWS Defined Policies to Assign Permissions Whenever Possible<a name="bp-use-aws-defined-policies"></a>
-
-We recommend that you use the managed policies that are created and maintained by AWS to grant permissions whenever possible\. A key advantage of using these policies is that they are maintained and updated by AWS as new services or new APIs are introduced\. 
-
-AWS\-managed policies are designed to support common tasks\. They typically provide access to a single service or a limited set of actions\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
-
-AWS managed policies for job functions can span multiple services and align with common job functions in the IT industry\. For a list and descriptions of job function policies, see [AWS Managed Policies for Job Functions](access_policies_job-functions.md)\.
-
 ## Use Groups to Assign Permissions to IAM Users<a name="use-groups-for-permissions"></a>
 
 Instead of defining permissions for individual IAM users, it's usually more convenient to create groups that relate to job functions \(administrators, developers, accounting, etc\.\)\. Next, define the relevant permissions for each group\. Finally, assign IAM users to those groups\. All the users in an IAM group inherit the permissions assigned to the group\. That way, you can make changes for everyone in a group in just one place\. As people move around in your company, you can simply change what IAM group their IAM user belongs to\. 
@@ -55,13 +47,21 @@ For more information, see the following:
 + [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)
 + [Managing IAM Groups](id_groups_manage.md)
 
+## Use AWS Defined Policies to Assign Permissions Whenever Possible<a name="bp-use-aws-defined-policies"></a>
+
+We recommend that you use the managed policies that are created and maintained by AWS to grant permissions whenever possible\. A key advantage of using these policies is that they are maintained and updated by AWS as new services or new APIs are introduced\. 
+
+AWS\-managed policies are designed to support common tasks\. They typically provide access to a single service or a limited set of actions\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
+
+AWS managed policies for job functions can span multiple services and align with common job functions in the IT industry\. For a list and descriptions of job function policies, see [AWS Managed Policies for Job Functions](access_policies_job-functions.md)\.
+
 ## Grant Least Privilege<a name="grant-least-privilege"></a>
 
 When you create IAM policies, follow the standard security advice of granting *least privilege*—that is, granting only the permissions required to perform a task\. Determine what users need to do and then craft policies for them that let the users perform *only* those tasks\. 
 
 Start with a minimum set of permissions and grant additional permissions as necessary\. Doing so is more secure than starting with permissions that are too lenient and then trying to tighten them later\.
 
-Defining the right set of permissions requires some research\. Determine what is required for the specific task, what actions a particular service supports, and what permissions are required in order to perform those actions\. To have access levels help you determine what permissions are required, see [Use Access Levels to Review IAM Permissions](#use-access-levels-to-review-permissions)\.
+You can use access level groupings to understand the level of access that a policy grants\. [Policy actions](reference_policies_elements_action.md) are classified as `List`, `Read`, `Write`, `Permissions management`, or `Tagging`\. For example, you can choose actions from the `List` and `Read` access levels to grant read\-only access to your users\. To learn how to use policy summaries to understand access level permissions, see [Use Access Levels to Review IAM Permissions](#use-access-levels-to-review-permissions)\.
 
 One feature that can help with this is the **Access Advisor** tab\. This tab is available on the IAM console details page whenever you inspect a user, group, role, or policy\. The tab includes information about which services are actually used by a user, group, role, or by anyone that uses a policy\. You can use this information to identify unnecessary permissions so that you can refine your IAM policies to better adhere to the principle of least privilege\. For more information, see [Reducing Policy Scope by Viewing User Activity](access_policies_access-advisor.md)\.
 

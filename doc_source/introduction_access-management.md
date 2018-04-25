@@ -64,7 +64,7 @@ Although IAM identities are technically AWS resources, you cannot attach a resou
 **Important**  
 Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories above, we mean an identity\-based, customer managed policy\.
 
-When a user tries to perform an operation in AWS, IAM checks all the policies that exist on the user, its groups, or the affected resource\. If there is an identity\-based policy and a resouce\-based policy that apply to the same operation, then both must allow the operation\. This means that the identity\-based policy must allow the action on the resource\. This means that the resource\-based policy must also allow the action for the principal making the call\.
+When a user tries to perform an operation in AWS, IAM checks all the policies that exist on the user, its groups, or the affected resource\. If there is an identity\-based policy and a resource\-based policy that apply to the same operation, then both must allow the operation\. This means that the identity\-based policy must allow the action on the resource\. This means that the resource\-based policy must also allow the action for the principal making the call\.
 
 For example, in Amazon S3, you can attach a resource\-based policy to a bucket\. This is called a bucket policy\. The following example shows an S3 bucket policy that allows an IAM user named bob in AWS account 777788889999 to put objects into the bucket to which the policy is attached\.
 

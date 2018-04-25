@@ -11,19 +11,19 @@ Amazon Web Services offers multiple tools for managing the IAM users in your AWS
 
 You can list the IAM users in your AWS account or in a specific IAM group, and list all the groups that a user is in\. For information about the permissions that you need in order to list users, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\. 
 
-### To list all the users in the account<a name="w3ab1c19c19c24b7b4"></a>
+### To list all the users in the account<a name="w3ab1c19c19c23b7b4"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**\. The console displays the users in your AWS account\. 
 + AWS CLI: [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)
 + Tools for Windows PowerShell: [Get\-IAMUsers](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers)
 + AWS API: [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) 
 
-### To list the users in a specific group<a name="w3ab1c19c19c24b7b6"></a>
+### To list the users in a specific group<a name="w3ab1c19c19c23b7b6"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups**, choose the name of the group, and then choose the **Users** tab\. 
 + AWS CLI: [aws iam get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html)
 + Tools for Windows PowerShell: [Get\-IAMGroup](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroup.html&tocid=Get-IAMGroup)
 + AWS API: [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html)
 
-### To list all the groups that a user is in<a name="w3ab1c19c19c24b7b8"></a>
+### To list all the groups that a user is in<a name="w3ab1c19c19c23b7b8"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**, choose the user name, and then choose the **Groups** tab\. 
 + AWS CLI: [aws iam list\-groups\-for\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)
 + Tools for Windows PowerShell: [Get\-IAMGroupForUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroupForUser.html&tocid=Get-IAMGroupForUser)
@@ -53,7 +53,7 @@ arn:aws:iam::111122223333:user/division_abc/subdivision_xyz/Robert
 
 This is true also if an administrator changes the path; the administrator needs to update the policy to reflect the new path for the user\. 
 
-### To rename a user<a name="w3ab1c19c19c24b9c18"></a>
+### To rename a user<a name="w3ab1c19c19c23b9c18"></a>
 + AWS CLI: [aws iam update\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/update-user.html)
 + Tools for Windows PowerShell: [Update\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMUser.html&tocid=Update-IAMUser)
 + AWS API: [UpdateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html) 

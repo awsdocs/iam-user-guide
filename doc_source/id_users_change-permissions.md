@@ -13,14 +13,14 @@ You can change the permissions for an IAM user in your AWS account by changing i
 
 For information about the permissions that you need in order to modify the permissions for a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\.
 
-## Adding Permissions to a New or Existing User \(Console\)<a name="w3ab1c19c19c26b9"></a>
+## Adding Permissions to a New or Existing User \(Console\)<a name="w3ab1c19c19c25b9"></a>
 
 You can change permissions associated with a user through one of three techniques:
 + [**Add user to group**](#by-add-users-to-group) – Make the user a member of a group that already has policies attached\. Every member of the group receives the permissions granted by the group's policies\.
 + [**Copy permissions from existing user**](#by-copying-user) – Copy all group memberships and attached managed policies as well as all inline policies embedded in the source user\.
 + [**Attach policies directly to user**](#by-direct-attach-policy) – Attach a managed policy directly to the user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
 
-### Adding Permissions by Adding the User to a Group<a name="w3ab1c19c19c26b9b6"></a><a name="by-add-users-to-group"></a>
+### Adding Permissions by Adding the User to a Group<a name="w3ab1c19c19c25b9b6"></a><a name="by-add-users-to-group"></a>
 
 **To add permissions to a user by adding the user to a group**
 
@@ -60,7 +60,7 @@ Group names can be a combination of up to 128 letters, digits, and these charact
 
 The new permissions affect the user immediately\.
 
-### Adding Permissions by Copying from Another User<a name="w3ab1c19c19c26b9b8"></a><a name="by-copying-user"></a>
+### Adding Permissions by Copying from Another User<a name="w3ab1c19c19c25b9b8"></a><a name="by-copying-user"></a>
 
 **To add permissions to a user by copying permissions from another user**
 
@@ -76,7 +76,7 @@ The new permissions affect the user immediately\.
 
 The new permissions affect the user immediately\.
 
-### Adding Permissions by Attaching Policies Directly to the User<a name="w3ab1c19c19c26b9c10"></a><a name="by-direct-attach-policy"></a>
+### Adding Permissions by Attaching Policies Directly to the User<a name="w3ab1c19c19c25b9c10"></a><a name="by-direct-attach-policy"></a>
 
 **To add permissions to a user by directly attaching managed policies**
 
@@ -92,7 +92,7 @@ The new permissions affect the user immediately\.
 
 The new permissions affect the user immediately\.
 
-## Removing Permissions from an Existing User \(Console\)<a name="w3ab1c19c19c26c11"></a>
+## Removing Permissions from an Existing User \(Console\)<a name="w3ab1c19c19c25c11"></a>
 
 **To revoke permissions for IAM users**
 
@@ -107,7 +107,7 @@ The new permissions affect the user immediately\.
    + If the policy is a managed policy attached directly to the user, then choosing **X** detaches the policy from the user\. This does not affect the policy itself or any other entity that the policy might be attached to\.
    + If the policy is an inline embedded policy, then choosing **X** removes the policy from IAM\. Inline policies that are attached directly to a user exist only on that user\.
 
-## Adding and Removing Permissions from a User \(AWS API, AWS CLI, Tools for Windows PowerShell\)<a name="w3ab1c19c19c26c13"></a>
+## Adding and Removing Permissions from a User \(AWS API, AWS CLI, Tools for Windows PowerShell\)<a name="w3ab1c19c19c25c13"></a>
 
 To add or remove permissions programmatically, you must add or remove the group memberships, attach or detach the managed policies, or add or delete the inline policies\. For more information, see the following topics:
 + [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)

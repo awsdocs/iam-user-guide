@@ -62,7 +62,7 @@ Before you can create a role, you need the account ID of the Development AWS acc
        {
          "Effect": "Allow",
          "Action": "s3:ListAllMyBuckets",
-         "Resource": "arn:aws:s3:::*"
+         "Resource": "*"
        },
        {
          "Effect": "Allow",

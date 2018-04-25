@@ -13,7 +13,7 @@ Although a role is usually assigned to an EC2 instance when you launch it, a rol
 
 ## How Do Roles for EC2 Instances Work?<a name="roles-usingrole-ec2instance-roles"></a>
 
-In the following figure, a developer runs an application on an EC2 instance that requires access to the S3 bucket named `photos`\. An administrator creates the `Get-pics` role\. The role includes policies that grant read permissions for the bucket and that allow the developer to launch the role with an EC2 instance\. When the application runs on the instance, it can use the role's temporary credentials to access the photos bucket\. The administrator doesn't have to grant the developer permission to access the photos bucket, and the developer never has to share or manage credentials\.
+In the following figure, a developer runs an application on an EC2 instance that requires access to the S3 bucket named `photos`\. An administrator creates the `Get-pics` service role and attaches the role to the EC2 instance\. The role includes a permissions policy that grants read\-only access to the specified S3 bucket\. It also includes a trust policy that allows the EC2 instance to assume the role and retrieve the temporary credentials\. When the application runs on the instance, it can use the role's temporary credentials to access the photos bucket\. The administrator doesn't have to grant the developer permission to access the photos bucket, and the developer never has to share or manage credentials\.
 
 ![\[Application on an EC2 instance accessing an AWS resource\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/roles-usingrole-ec2roleinstance.png)
 

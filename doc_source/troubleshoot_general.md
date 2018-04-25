@@ -5,6 +5,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 **Topics**
 + [I lost my access keys](#troubleshoot_general_access-keys)
 + [I need to access an old account](#troubleshoot_general_lost-root-creds)
++ [I can't sign in to my account](#troubleshoot_general_cant-sign-in)
 + [I get "access denied" when I make a request to an AWS service](#troubleshoot_general_access-denied-service)
 + [I get "access denied" when I make a request with temporary security credentials](#troubleshoot_general_access-denied-temp-creds)
 + [Policy variables aren't working](#troubleshoot_general_policy-variables-dont-work)
@@ -32,6 +33,12 @@ If you’re still not able to access your AWS account, you can find alternate su
 + All the details that are listed on the account, including your full name, phone number, address, email address, and last four digits of the credit card\. You might need to create a new AWS account for the purpose of contacting Customer Service, but this is necessary to assist in the investigation of your request\.
 + The reason that you're unable to access the email account to receive password reset instructions
 + Also request that the support team delete any accounts that you are not using\. It’s a good idea not to have open accounts in your name that could result in charges to you\.
+
+## I can't sign in to my account<a name="troubleshoot_general_cant-sign-in"></a>
+
+When you first created your AWS account, you provided an email address and password\. These are your AWS account root user credentials\. If you can no longer access your account because you have lost or forgotten your password, you can recover that password\. For more information, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
+
+If you provided your account email address and password, AWS sometimes requires you to provide a one\-time verification code\. To retrieve the verification code, check the email that is associated with your AWS account for a message from Amazon Web Services\. The email address ends in @amazon\.com or @aws\.amazon\.com \. Follow the directions in the message\. If you don't see the message in your account, check your spam folder\. If you no longer have access to the email, see [I need to access an old account](#troubleshoot_general_lost-root-creds)\.
 
 ## I get "access denied" when I make a request to an AWS service<a name="troubleshoot_general_access-denied-service"></a>
 

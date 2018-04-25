@@ -4,7 +4,7 @@ The `Condition` element \(or `Condition` *block*\) lets you specify conditions f
 + For a list of all of the condition operators and a description of how each one works, see [Condition Operators](reference_policies_elements_condition_operators.md)
 + For a description of how to handle condition keys that have multiple values, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)
 + For a list of all of the globally available condition keys, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys)\.
-+ For conditions keys that are defined by each service, see [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md)\.
++ For conditions keys that are defined by each service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
 ## The Condition Block<a name="AccessPolicyLanguage_ConditionBlock"></a>
 

@@ -5,7 +5,7 @@ This section presents detailed syntax, descriptions, and examples of the element
 + [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md) — This section describes AWS requests, how they are authenticated, and how AWS uses policies to determine access to resources\. 
 + [Grammar of the IAM JSON Policy Language ](reference_policies_grammar.md) — This section presents a formal grammar for the language used to create policies in IAM\.
 + [AWS Managed Policies for Job Functions](access_policies_job-functions.md) — This section lists all of the AWS managed policies that directly map to common job functions in the IT industry\. Use these policies to grant the permissions needed to carry out the tasks expected of someone in a specific job function\. These policies consolidate permissions for many services into a single policy\.
-+ [AWS Service Actions and Condition Context Keys for Use in IAM Policies](reference_policies_actionsconditions.md) — This section presents a list of all of the AWS API actions that can be used as permissions in an IAM policy and the service\-specific condition keys that can be used to further refine the request\.
++ [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) — This section presents a list of all of the AWS API actions that can be used as permissions in an IAM policy and the service\-specific condition keys that can be used to further refine the request\.
 + [IAM Policy Actions Grouped by Access Level](reference_policies_access-levels.md) — This section presents a list the access levels that all AWS API actions are members of\. Each API action that can be used as a policy permission is categorized into one access level\.
 
 **Important**  
