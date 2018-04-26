@@ -9,7 +9,7 @@ This example shows how you might create a policy that limits customer managed an
     {
       "Effect": "Allow",
       "Action": [
-        "iam:ChangePasword",
+        "iam:ChangePassword",
         "iam:CreateAccessKey",
         "iam:CreateLoginProfile",
         "iam:CreateUser",
