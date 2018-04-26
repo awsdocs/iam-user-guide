@@ -83,7 +83,7 @@ You can use this context key to limit access to AWS services within a given set 
 
 ```
 {
-    "Sid": "Deny_All_Outside_EU",
+    "Sid": "DenyAllOutsideEU",
     "Effect": "Deny",
     "Action": "*",
     "Resource": "*",
