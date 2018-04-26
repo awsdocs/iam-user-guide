@@ -21,21 +21,21 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AssociateNode](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html) | Associate a node to a configuration management server\. |   |  |  |  | 
-| [CreateBackup](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html) | Create a backup for the specified server\. |   |  |  |  | 
-| [CreateServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html) | Create a new server\. |   |  |  |  | 
-| [DeleteBackup](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html) | Delete the specified backup and possibly its S3 bucket\. |   |  |  |  | 
-| [DeleteServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html) | Deletes the specified server with his corresponding CF stack and possibly the S3 bucket\. |   |  |  |  | 
-| [DescribeAccountAttributes](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html) | Describe the service limits for the user's account\. |   |  |  |  | 
-| [DescribeBackups](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html) | Describe a single backup, all backups of a specified server or all backups of the user's account\. |   |  |  |  | 
-| [DescribeEvents](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html) | Describe all events of the specified server\. |   |  |  |  | 
-| [DescribeNodeAssociationStatus](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html) | Describe the association status for the specified node token and the specified server\. |   |  |  |  | 
-| [DescribeServers](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html) | Describes the specified server or all servers of the user's account\. |   |  |  |  | 
-| [DisassociateNode](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html) | Disassociates a specified node from a server\. |   |  |  |  | 
-| [RestoreServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html) | Applies a backup to specified server\. Possibly swaps out the ec2\-instance if specified\. |   |  |  |  | 
-| [StartMaintenance](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html) | Start the server maintenance immediately\. |   |  |  |  | 
-| [UpdateServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html) | Update general server settings\. |   |  |  |  | 
-| [UpdateServerEngineAttributes](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html) | Update server settings specific to the configuration management type\. |   |  |  |  | 
+| [AssociateNode](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html) | Associate a node to a configuration management server\. | Write  |  |  |  | 
+| [CreateBackup](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html) | Create a backup for the specified server\. | Write  |  |  |  | 
+| [CreateServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html) | Create a new server\. | Write  |  |  |  | 
+| [DeleteBackup](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html) | Delete the specified backup and possibly its S3 bucket\. | Write  |  |  |  | 
+| [DeleteServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html) | Deletes the specified server with his corresponding CF stack and possibly the S3 bucket\. | Write  |  |  |  | 
+| [DescribeAccountAttributes](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html) | Describe the service limits for the user's account\. | List Read Write  |  |  |  | 
+| [DescribeBackups](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html) | Describe a single backup, all backups of a specified server or all backups of the user's account\. | List Read Write  |  |  |  | 
+| [DescribeEvents](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html) | Describe all events of the specified server\. | List Read Write  |  |  |  | 
+| [DescribeNodeAssociationStatus](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html) | Describe the association status for the specified node token and the specified server\. | List Read Write  |  |  |  | 
+| [DescribeServers](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html) | Describes the specified server or all servers of the user's account\. | List Read Write  |  |  |  | 
+| [DisassociateNode](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html) | Disassociates a specified node from a server\. | Write  |  |  |  | 
+| [RestoreServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html) | Applies a backup to specified server\. Possibly swaps out the ec2\-instance if specified\. | Write  |  |  |  | 
+| [StartMaintenance](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html) | Start the server maintenance immediately\. | Write  |  |  |  | 
+| [UpdateServer](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html) | Update general server settings\. | Write  |  |  |  | 
+| [UpdateServerEngineAttributes](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html) | Update server settings specific to the configuration management type\. | Write  |  |  |  | 
 
 ## Resources Defined by OpsworksCM<a name="awsopsworksconfigurationmanagement-resources-for-iam-policies"></a>
 

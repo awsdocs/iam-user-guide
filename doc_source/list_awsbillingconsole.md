@@ -21,13 +21,13 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [ModifyAccount](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to modify Account Settings\. |   |  |  |  | 
-| [ModifyBilling](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to modify billing settings\. |   |  |  |  | 
-| [ModifyPaymentMethods](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to modify payment methods\. |   |  |  |  | 
-| [ViewAccount](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view account settings\. |   |  |  |  | 
-| [ViewBilling](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view billing pages in the console\. |   |  |  |  | 
-| [ViewPaymentMethods](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view payment methods\. |   |  |  |  | 
-| [ViewUsage](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view AWS usage reports\. |   |  |  |  | 
+| [ModifyAccount](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to modify Account Settings\. | Write  |  |  |  | 
+| [ModifyBilling](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to modify billing settings\. | Write  |  |  |  | 
+| [ModifyPaymentMethods](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to modify payment methods\. | Write  |  |  |  | 
+| [ViewAccount](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view account settings\. | Read Write  |  |  |  | 
+| [ViewBilling](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view billing pages in the console\. | Read Write  |  |  |  | 
+| [ViewPaymentMethods](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view payment methods\. | Read Write  |  |  |  | 
+| [ViewUsage](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Allow or deny IAM users permission to view AWS usage reports\. | Read Write  |  |  |  | 
 
 ## Resources Defined by Billing<a name="awsbillingconsole-resources-for-iam-policies"></a>
 

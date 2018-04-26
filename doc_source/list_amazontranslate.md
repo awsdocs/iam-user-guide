@@ -21,7 +21,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [TranslateText](http://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html) | Translate text from a source language to a target language\. |   |  |  |  | 
+| [TranslateText](http://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html) | Translate text from a source language to a target language\. | Read Write  |  |  |  | 
 
 ## Resources Defined by Translate<a name="amazontranslate-resources-for-iam-policies"></a>
 

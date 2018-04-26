@@ -21,42 +21,42 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddTagsToResource](http://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html) | Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task |   |  |  |  | 
-| [CreateEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html) | Creates an endpoint using the provided settings |   |  |  |  | 
-| [CreateReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html) | Creates the replication instance using the specified parameters |   |  |  |  | 
-| [CreateReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html) | Creates a replication subnet group given a list of the subnet IDs in a VPC |   |  |  |  | 
-| [CreateReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html) | Creates a replication task using the specified parameters |   |  |  |  | 
-| [DeleteEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEndpoint.html) | Deletes the specified endpoint |   |  |  |  | 
-| [DeleteEventSubscription](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEventSubscription.html) | Deletes an AWS DMS event subscription\. |   |  |  |  | 
-| [DeleteReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationInstance.html) | Deletes the specified replication instance |   |  |  |  | 
-| [DeleteReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html) | Deletes a subnet group |   |  |  |  | 
-| [DeleteReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html) | Deletes the specified replication task |   |  |  |  | 
-| [DescribeAccountAttributes](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html) | Lists all of the AWS DMS attributes for a customer account |   |  |  |  | 
-| [DescribeCertificates](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html) | Provides a description of the certificate\. |   |  |  |  | 
-| [DescribeConnections](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConnections.html) | Describes the status of the connections that have been made between the replication instance and an endpoint |   |  |  |  | 
-| [DescribeEndpointTypes](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointTypes.html) | Returns information about the type of endpoints available |   |  |  |  | 
-| [DescribeEndpoints](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpoints.html) | Returns information about the endpoints for your account in the current region |   |  |  |  | 
-| [DescribeEventCategories](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventCategories.html) | Lists categories for all event source types, or, if specified, for a specified source type\.  |   |  |  |  | 
-| [DescribeEventSubscriptions](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventSubscriptions.html) | Lists all the event subscriptions for a customer account\.  |   |  |  |  | 
-| [DescribeEvents](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEvents.html) | Lists events for a given source identifier and source type\.  |   |  |  |  | 
-| [DescribeOrderableReplicationInstances](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeOrderableReplicationInstances.html) | Returns information about the replication instance types that can be created in the specified region |   |  |  |  | 
-| [DescribeRefreshSchemasStatus](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRefreshSchemasStatus.html) | Returns the status of the RefreshSchemas operation |   |  |  |  | 
-| [DescribeReplicationInstances](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstances.html) | Returns information about replication instances for your account in the current region |   |  |  |  | 
-| [DescribeReplicationSubnetGroups](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationSubnetGroups.html) | Returns information about the replication subnet groups |   |  |  |  | 
-| [DescribeReplicationTasks](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTasks.html) | Returns information about replication tasks for your account in the current region |   |  |  |  | 
-| [DescribeSchemas](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html) | Returns information about the schema for the specified endpoint |   |  |  |  | 
-| [DescribeTableStatistics](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html) | Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted |   |  |  |  | 
-| [ListTagsForResource](http://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html) | Lists all tags for an AWS DMS resource |   |  |  |  | 
-| [ModifyEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html) | Modifies the specified endpoint |   |  |  |  | 
-| [ModifyEventSubscription](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEventSubscription.html) | Modifies an existing AWS DMS event notification subscription\. |   |  |  |  | 
-| [ModifyReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html) | Modifies the replication instance to apply new settings |   |  |  |  | 
-| [ModifyReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html) | Modifies the settings for the specified replication subnet group |   |  |  |  | 
-| [ModifyReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html) | Modifies the specified replication task\. |   |  |  |  | 
-| [RefreshSchemas](http://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html) | Populates the schema for the specified endpoint |   |  |  |  | 
-| [RemoveTagsFromResource](http://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html) | Removes metadata tags from a DMS resource |   |  |  |  | 
-| [StartReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html) | Starts the replication task |   |  |  |  | 
-| [StopReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html) | Stops the replication task |   |  |  |  | 
-| [TestConnection](http://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html) | Tests the connection between the replication instance and the endpoint |   |  |  |  | 
+| [AddTagsToResource](http://docs.aws.amazon.com/dms/latest/APIReference/API_AddTagsToResource.html) | Adds metadata tags to a DMS resource, including replication instance, endpoint, security group, and migration task | Tagging Write  |  |  |  | 
+| [CreateEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateEndpoint.html) | Creates an endpoint using the provided settings | Write  |  |  |  | 
+| [CreateReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html) | Creates the replication instance using the specified parameters | Write  |  |  |  | 
+| [CreateReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationSubnetGroup.html) | Creates a replication subnet group given a list of the subnet IDs in a VPC | Write  |  |  |  | 
+| [CreateReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html) | Creates a replication task using the specified parameters | Write  |  |  |  | 
+| [DeleteEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEndpoint.html) | Deletes the specified endpoint | Write  |  |  |  | 
+| [DeleteEventSubscription](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteEventSubscription.html) | Deletes an AWS DMS event subscription\. | Write  |  |  |  | 
+| [DeleteReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationInstance.html) | Deletes the specified replication instance | Write  |  |  |  | 
+| [DeleteReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html) | Deletes a subnet group | Write  |  |  |  | 
+| [DeleteReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_DeleteReplicationTask.html) | Deletes the specified replication task | Write  |  |  |  | 
+| [DescribeAccountAttributes](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeAccountAttributes.html) | Lists all of the AWS DMS attributes for a customer account | Read Write  |  |  |  | 
+| [DescribeCertificates](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeCertificates.html) | Provides a description of the certificate\. | Read Write  |  |  |  | 
+| [DescribeConnections](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeConnections.html) | Describes the status of the connections that have been made between the replication instance and an endpoint | Read Write  |  |  |  | 
+| [DescribeEndpointTypes](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpointTypes.html) | Returns information about the type of endpoints available | Read Write  |  |  |  | 
+| [DescribeEndpoints](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEndpoints.html) | Returns information about the endpoints for your account in the current region | Read Write  |  |  |  | 
+| [DescribeEventCategories](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventCategories.html) | Lists categories for all event source types, or, if specified, for a specified source type\.  | Read Write  |  |  |  | 
+| [DescribeEventSubscriptions](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEventSubscriptions.html) | Lists all the event subscriptions for a customer account\.  | Read Write  |  |  |  | 
+| [DescribeEvents](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeEvents.html) | Lists events for a given source identifier and source type\.  | Read Write  |  |  |  | 
+| [DescribeOrderableReplicationInstances](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeOrderableReplicationInstances.html) | Returns information about the replication instance types that can be created in the specified region | Read Write  |  |  |  | 
+| [DescribeRefreshSchemasStatus](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeRefreshSchemasStatus.html) | Returns the status of the RefreshSchemas operation | Read Write  |  |  |  | 
+| [DescribeReplicationInstances](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationInstances.html) | Returns information about replication instances for your account in the current region | Read Write  |  |  |  | 
+| [DescribeReplicationSubnetGroups](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationSubnetGroups.html) | Returns information about the replication subnet groups | Read Write  |  |  |  | 
+| [DescribeReplicationTasks](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeReplicationTasks.html) | Returns information about replication tasks for your account in the current region | Read Write  |  |  |  | 
+| [DescribeSchemas](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeSchemas.html) | Returns information about the schema for the specified endpoint | Read Write  |  |  |  | 
+| [DescribeTableStatistics](http://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeTableStatistics.html) | Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted | Read Write  |  |  |  | 
+| [ListTagsForResource](http://docs.aws.amazon.com/dms/latest/APIReference/API_ListTagsForResource.html) | Lists all tags for an AWS DMS resource | List Read Write  |  |  |  | 
+| [ModifyEndpoint](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html) | Modifies the specified endpoint | Write  |  |  |  | 
+| [ModifyEventSubscription](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEventSubscription.html) | Modifies an existing AWS DMS event notification subscription\. | Write  |  |  |  | 
+| [ModifyReplicationInstance](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationInstance.html) | Modifies the replication instance to apply new settings | Write  |  |  |  | 
+| [ModifyReplicationSubnetGroup](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationSubnetGroup.html) | Modifies the settings for the specified replication subnet group | Write  |  |  |  | 
+| [ModifyReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html) | Modifies the specified replication task\. | Write  |  |  |  | 
+| [RefreshSchemas](http://docs.aws.amazon.com/dms/latest/APIReference/API_RefreshSchemas.html) | Populates the schema for the specified endpoint | Write  |  |  |  | 
+| [RemoveTagsFromResource](http://docs.aws.amazon.com/dms/latest/APIReference/API_RemoveTagsFromResource.html) | Removes metadata tags from a DMS resource | Tagging Write  |  |  |  | 
+| [StartReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html) | Starts the replication task | Write  |  |  |  | 
+| [StopReplicationTask](http://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html) | Stops the replication task | Write  |  |  |  | 
+| [TestConnection](http://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html) | Tests the connection between the replication instance and the endpoint | Read Write  |  |  |  | 
 
 ## Resources Defined by DMS<a name="awsdatabasemigrationservice-resources-for-iam-policies"></a>
 

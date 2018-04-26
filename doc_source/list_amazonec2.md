@@ -57,12 +57,12 @@ The following resource types are defined by this service and can be used in the 
 
 Amazon EC2 defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [aws:RequestTag/tag\-key](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys) | A key that is present in the request the user makes to the EC2 service\. | String | 
 | [aws:TagKeys](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys) | The list of all the tag key names associated with the resource in the request\. | String | 

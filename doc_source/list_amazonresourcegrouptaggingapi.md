@@ -21,11 +21,11 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [GetResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html) | Get tagged AWS resources that match the given tag filters |   |  |  |  | 
-| [GetTagKeys](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html) | Get all tagKeys for the account in the specific region |   |  |  |  | 
-| [GetTagValues](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html) | Get all tagValues for the account in the specific region |   |  |  |  | 
-| [TagResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html) | Add tags to AWS resources |   |  |  |  | 
-| [UntagResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html) | Remove tags from AWS resources |   |  |  |  | 
+| [GetResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html) | Get tagged AWS resources that match the given tag filters | Read Write  |  |  |  | 
+| [GetTagKeys](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html) | Get all tagKeys for the account in the specific region | Read Write  |  |  |  | 
+| [GetTagValues](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html) | Get all tagValues for the account in the specific region | Read Write  |  |  |  | 
+| [TagResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html) | Add tags to AWS resources | Tagging Write  |  |  |  | 
+| [UntagResources](http://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html) | Remove tags from AWS resources | Tagging Write  |  |  |  | 
 
 ## Resources Defined by Resource Group Tagging<a name="amazonresourcegrouptaggingapi-resources-for-iam-policies"></a>
 

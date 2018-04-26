@@ -18,24 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [CancelRotateSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to cancel an in\-progress secret rotation\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [CreateSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to create a secret that stores encrypted data that can be queried and rotated\. |   |  |  |  | 
-| [DeleteSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to delete a secret\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [DescribeSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to retrieve the metadata about a secret, but not the encrypted data\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [GetRandomPassword](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to generate a random string for use in passowrd creation\. |   |  |  |  | 
-| [GetSecretValue](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to retrieve and decrypt the encrypted data\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [ListSecretVersionIds](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to list the available versions of a secret\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [ListSecrets](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to list the available secrets\. |   |  |  |  | 
-| [PutSecretValue](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to create a new version of the secret with new encrypted data\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [RestoreSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to cancel deletion of a secret\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [RotateSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to start rotation of a secret\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [TagResource](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to add tags to a secret\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [UntagResource](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to remove tags from a secret\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [UpdateSecret](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to update a secret with new metadata or with a new version of the encrypted data\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
-| [UpdateSecretVersionStage](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-actions) | Enables the user to move a stage from one secret to another\. |   | [Secret\*](#awssecretsmanager-Secret)  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecretsmanager.html)
 
 ## Resources Defined by Secrets Manager<a name="awssecretsmanager-resources-for-iam-policies"></a>
 
@@ -52,12 +35,12 @@ The following resource types are defined by this service and can be used in the 
 
 AWS Secrets Manager defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [secretsmanager:SecretId](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the SecretID value in the request\. | ARN | 
 | [secretsmanager:Name](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the friendly name of the secret in the request\. | String | 

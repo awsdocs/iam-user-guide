@@ -21,28 +21,28 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Create a project |   |  |  |  | 
-| [CreateServiceRole](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Enable AWS Mobile Hub in the account by creating the required service role |   |  |  |  | 
-| [DeleteProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Delete the specified project |   | [project\*](#awsmobilehub-project)  |  |  | 
-| [DeleteProjectSnapshot](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Delete a saved snapshot of project configuration |   |  |  |  | 
-| [DeployToStage](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Deploy changes to the specified stage |   |  |  |  | 
-| [DescribeBundle](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Describe the download bundle |   |  |  |  | 
-| [ExportBundle](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Export the download bundle |   |  |  |  | 
-| [ExportProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Export the project configuration |   | [project\*](#awsmobilehub-project)  |  |  | 
-| [GenerateProjectParameters](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Generate project parameters required for code generation |   | [project\*](#awsmobilehub-project)  |  |  | 
-| [GetProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Get project configuration and resources |   | [project\*](#awsmobilehub-project)  |  |  | 
-| [GetProjectSnapshot](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Fetch the previously exported project configuration snapshot |   |  |  |  | 
-| [ImportProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Create a new project from the previously exported project configuration |   |  |  |  | 
-| [InstallBundle](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Install a bundle in the project deployments S3 bucket |   |  |  |  | 
-| [ListAvailableConnectors](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List the available SaaS \(Software as a Service\) connectors |   |  |  |  | 
-| [ListAvailableFeatures](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List available features |   |  |  |  | 
-| [ListAvailableRegions](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List available regions for projects |   |  |  |  | 
-| [ListBundles](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List the available download bundles |   |  |  |  | 
-| [ListProjectSnapshots](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List saved snapshots of project configuration |   |  |  |  | 
-| [ListProjects](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List projects |   |  |  |  | 
-| [SynchronizeProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Synchronize state of resources into project |   | [project\*](#awsmobilehub-project)  |  |  | 
-| [UpdateProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Update project |   | [project\*](#awsmobilehub-project)  |  |  | 
-| [VerifyServiceRole](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Verify AWS Mobile Hub is enabled in the account |   |  |  |  | 
+| [CreateProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Create a project | Write  |  |  |  | 
+| [CreateServiceRole](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Enable AWS Mobile Hub in the account by creating the required service role | Write  |  |  |  | 
+| [DeleteProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Delete the specified project | Write  | [project\*](#awsmobilehub-project)  |  |  | 
+| [DeleteProjectSnapshot](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Delete a saved snapshot of project configuration | Write  |  |  |  | 
+| [DeployToStage](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Deploy changes to the specified stage | Write  |  |  |  | 
+| [DescribeBundle](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Describe the download bundle | Read Write  |  |  |  | 
+| [ExportBundle](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Export the download bundle | Read Write  |  |  |  | 
+| [ExportProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Export the project configuration | Read Write  | [project\*](#awsmobilehub-project)  |  |  | 
+| [GenerateProjectParameters](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Generate project parameters required for code generation | Write  | [project\*](#awsmobilehub-project)  |  |  | 
+| [GetProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Get project configuration and resources | Read Write  | [project\*](#awsmobilehub-project)  |  |  | 
+| [GetProjectSnapshot](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Fetch the previously exported project configuration snapshot | Read Write  |  |  |  | 
+| [ImportProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Create a new project from the previously exported project configuration | Write  |  |  |  | 
+| [InstallBundle](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Install a bundle in the project deployments S3 bucket | Write  |  |  |  | 
+| [ListAvailableConnectors](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List the available SaaS \(Software as a Service\) connectors | List Read Write  |  |  |  | 
+| [ListAvailableFeatures](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List available features | List Read Write  |  |  |  | 
+| [ListAvailableRegions](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List available regions for projects | List Read Write  |  |  |  | 
+| [ListBundles](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List the available download bundles | List Read Write  |  |  |  | 
+| [ListProjectSnapshots](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List saved snapshots of project configuration | List Read Write  |  |  |  | 
+| [ListProjects](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | List projects | List Read Write  |  |  |  | 
+| [SynchronizeProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Synchronize state of resources into project | Write  | [project\*](#awsmobilehub-project)  |  |  | 
+| [UpdateProject](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Update project | Write  | [project\*](#awsmobilehub-project)  |  |  | 
+| [VerifyServiceRole](http://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html) | Verify AWS Mobile Hub is enabled in the account | Read Write  |  |  |  | 
 
 ## Resources Defined by Mobile Hub<a name="awsmobilehub-resources-for-iam-policies"></a>
 

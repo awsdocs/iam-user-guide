@@ -16,42 +16,42 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| AddMembersToGroup | Adds a list of members \(users or groups\) to a group\. |   |  |  |  | 
-| CreateGroup | Creates a new group in the directory \(but doesn't enable it for mail\)\. |   |  |  |  | 
-| CreateMailDomain | Creates a mail domain\. |   |  |  |  | 
-| CreateMailUser | Creates a user in the directory and the WorkMail storage but does not enable the user for mail\. |   |  |  |  | 
-| CreateOrganization | Creates an organization, either using an existing directory or creates a new directory on\-the\-fly\. Also creates and enables the complementary mail domain\. Optionally creates KMS key |   |  |  |  | 
-| CreateResource | Creates a new resource |   |  |  |  | 
-| DeleteMailDomain | Description for DeleteMailDomain |   |  |  |  | 
-| DeleteMobileDevice | Description for DeleteMobileDevice |   |  |  |  | 
-| DeleteOrganization | Description for DeleteOrganization |   |  |  |  | 
-| DescribeDirectories | Description for DescribeDirectories |   |  |  |  | 
-| DescribeKmsKeys | Description for DescribeKmsKeys |   |  |  |  | 
-| DescribeMailDomains | Description for DescribeMailDomains |   |  |  |  | 
-| DescribeMailGroups | Description for DescribeMailGroups |   |  |  |  | 
-| DescribeMailUsers | Description for DescribeMailUsers |   |  |  |  | 
-| DescribeOrganizations | Description for DescribeOrganizations |   |  |  |  | 
-| DisableMailGroups | Description for DisableMailGroups |   |  |  |  | 
-| DisableMailUsers | Description for DisableMailUsers |   |  |  |  | 
-| EnableMailDomain | Description for EnableMailDomain |   |  |  |  | 
-| EnableMailGroups | Description for EnableMailGroups |   |  |  |  | 
-| EnableMailUsers | Description for EnableMailUsers |   |  |  |  | 
-| GetMailDomainDetails | Description for GetMailDomainDetails |   |  |  |  | 
-| GetMailGroupDetails | Description for GetMailGroupDetails |   |  |  |  | 
-| GetMailUserDetails | Description for GetMailUserDetails |   |  |  |  | 
-| GetMobileDeviceDetails | Description for GetMobileDeviceDetails |   |  |  |  | 
-| GetMobileDevicesForUser | Description for GetMobileDevicesForUser |   |  |  |  | 
-| GetMobilePolicyDetails | Description for GetMobilePolicyDetails |   |  |  |  | 
-| ListMembersInMailGroup | Description for ListMembersInMailGroup |   |  |  |  | 
-| RemoveMembersFromGroup | Description for RemoveMembersFromGroup |   |  |  |  | 
-| ResetUserPassword | Description for ResetUserPassword |   |  |  |  | 
-| SearchMembers | Description for SearchMembers |   |  |  |  | 
-| SetAdmin | Description for SetAdmin |   |  |  |  | 
-| SetDefaultMailDomain | Description for SetDefaultMailDomain |   |  |  |  | 
-| SetMailGroupDetails | Description for SetMailGroupDetails |   |  |  |  | 
-| SetMailUserDetails | Description for SetMailUserDetails |   |  |  |  | 
-| SetMobilePolicyDetails | Description for SetMobilePolicyDetails |   |  |  |  | 
-| WipeMobileDevice | Description for WipeMobileDevice |   |  |  |  | 
+| AddMembersToGroup | Adds a list of members \(users or groups\) to a group\. | Write  |  |  |  | 
+| CreateGroup | Creates a new group in the directory \(but doesn't enable it for mail\)\. | Write  |  |  |  | 
+| CreateMailDomain | Creates a mail domain\. | Write  |  |  |  | 
+| CreateMailUser | Creates a user in the directory and the WorkMail storage but does not enable the user for mail\. | Write  |  |  |  | 
+| CreateOrganization | Creates an organization, either using an existing directory or creates a new directory on\-the\-fly\. Also creates and enables the complementary mail domain\. Optionally creates KMS key | Write  |  |  |  | 
+| CreateResource | Creates a new resource | Write  |  |  |  | 
+| DeleteMailDomain | Description for DeleteMailDomain | Write  |  |  |  | 
+| DeleteMobileDevice | Description for DeleteMobileDevice | Write  |  |  |  | 
+| DeleteOrganization | Description for DeleteOrganization | Write  |  |  |  | 
+| DescribeDirectories | Description for DescribeDirectories | List Read Write  |  |  |  | 
+| DescribeKmsKeys | Description for DescribeKmsKeys | List Read Write  |  |  |  | 
+| DescribeMailDomains | Description for DescribeMailDomains | List Read Write  |  |  |  | 
+| DescribeMailGroups | Description for DescribeMailGroups | List Read Write  |  |  |  | 
+| DescribeMailUsers | Description for DescribeMailUsers | List Read Write  |  |  |  | 
+| DescribeOrganizations | Description for DescribeOrganizations | List Read Write  |  |  |  | 
+| DisableMailGroups | Description for DisableMailGroups | Write  |  |  |  | 
+| DisableMailUsers | Description for DisableMailUsers | Write  |  |  |  | 
+| EnableMailDomain | Description for EnableMailDomain | Write  |  |  |  | 
+| EnableMailGroups | Description for EnableMailGroups | Write  |  |  |  | 
+| EnableMailUsers | Description for EnableMailUsers | Write  |  |  |  | 
+| GetMailDomainDetails | Description for GetMailDomainDetails | Read Write  |  |  |  | 
+| GetMailGroupDetails | Description for GetMailGroupDetails | Read Write  |  |  |  | 
+| GetMailUserDetails | Description for GetMailUserDetails | Read Write  |  |  |  | 
+| GetMobileDeviceDetails | Description for GetMobileDeviceDetails | Read Write  |  |  |  | 
+| GetMobileDevicesForUser | Description for GetMobileDevicesForUser | Read Write  |  |  |  | 
+| GetMobilePolicyDetails | Description for GetMobilePolicyDetails | Read Write  |  |  |  | 
+| ListMembersInMailGroup | Description for ListMembersInMailGroup | Read Write  |  |  |  | 
+| RemoveMembersFromGroup | Description for RemoveMembersFromGroup | Write  |  |  |  | 
+| ResetUserPassword | Description for ResetUserPassword | Write  |  |  |  | 
+| SearchMembers | Description for SearchMembers | Read Write  |  |  |  | 
+| SetAdmin | Description for SetAdmin | Write  |  |  |  | 
+| SetDefaultMailDomain | Description for SetDefaultMailDomain | Write  |  |  |  | 
+| SetMailGroupDetails | Description for SetMailGroupDetails | Write  |  |  |  | 
+| SetMailUserDetails | Description for SetMailUserDetails | Write  |  |  |  | 
+| SetMobilePolicyDetails | Description for SetMobilePolicyDetails | Write  |  |  |  | 
+| WipeMobileDevice | Description for WipeMobileDevice | Write  |  |  |  | 
 
 ## Resources Defined by WorkMail<a name="amazonworkmail-resources-for-iam-policies"></a>
 

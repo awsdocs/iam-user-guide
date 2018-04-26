@@ -21,16 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddTagsToCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html) | Adds one or more tags to an ACM Certificate\. |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
-| [DeleteCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html) |  Deletes an ACM Certificate and its associated private key\. |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
-| [DescribeCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html) | Returns a list of the fields contained in the specified ACM Certificate\. |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
-| [GetCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html) | Retrieves an ACM Certificate and certificate chain for the certificate specified by an ARN\. |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
-| [ImportCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html) | Imports an SSL/TLS certificate into AWS Certificate Manager \(ACM\) to use with ACM's integrated AWS services |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
-| [ListCertificates](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html) | Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned by the calling account\. |   |  |  |  | 
-| [ListTagsForCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html) | Lists the tags that have been applied to the ACM Certificate\. |   |  |  |  | 
-| [RemoveTagsFromCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html) | Remove one or more tags from an ACM Certificate\. A tag consists of a key\-value pair |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
-| [RequestCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html) | Requests an ACM Certificate for use with other AWS services\. |   |  |  |  | 
-| [ResendValidationEmail](http://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html) | Resends the email that requests domain ownership validation\. |   | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [AddTagsToCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html) | Adds one or more tags to an ACM Certificate\. | Tagging Write  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [DeleteCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html) |  Deletes an ACM Certificate and its associated private key\. | Permissions management  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [DescribeCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html) | Returns a list of the fields contained in the specified ACM Certificate\. | Read Write  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [GetCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html) | Retrieves an ACM Certificate and certificate chain for the certificate specified by an ARN\. | Read Write  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [ImportCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html) | Imports an SSL/TLS certificate into AWS Certificate Manager \(ACM\) to use with ACM's integrated AWS services | Write  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [ListCertificates](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html) | Retrieves a list of the ACM Certificate ARNs, and the domain name for each ARN, owned by the calling account\. | List Read Write  |  |  |  | 
+| [ListTagsForCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html) | Lists the tags that have been applied to the ACM Certificate\. | Read Write  |  |  |  | 
+| [RemoveTagsFromCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html) | Remove one or more tags from an ACM Certificate\. A tag consists of a key\-value pair | Tagging Write  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
+| [RequestCertificate](http://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html) | Requests an ACM Certificate for use with other AWS services\. | Write  |  |  |  | 
+| [ResendValidationEmail](http://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html) | Resends the email that requests domain ownership validation\. | Permissions management  | [certificate\*](#awscertificatemanager-certificate)  |  |  | 
 
 ## Resources Defined by Certificate Manager<a name="awscertificatemanager-resources-for-iam-policies"></a>
 

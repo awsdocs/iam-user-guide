@@ -21,15 +21,15 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html) | Activate DDoS protection service for a given resource ARN |   | [protection\*](#awsshield-protection)  |  |  | 
-| [CreateSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html) | Activate subscription |   |  |  |  | 
-| [DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html) | Delete an existing protection |   | [protection\*](#awsshield-protection)  |  |  | 
-| [DeleteSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html) | Deactivate subscription |   |  |  |  | 
-| [DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html) | Get attack details |   | [attack\*](#awsshield-attack)  |  |  | 
-| [DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html) | Get protection details |   | [protection\*](#awsshield-protection)  |  |  | 
-| [DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html) | Get subscription details, such as start time |   |  |  |  | 
-| [ListAttacks](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html) | List all existing attacks |   |  |  |  | 
-| [ListProtections](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html) | List all existing protections |   |  |  |  | 
+| [CreateProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateProtection.html) | Activate DDoS protection service for a given resource ARN | Write  | [protection\*](#awsshield-protection)  |  |  | 
+| [CreateSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html) | Activate subscription | Write  |  |  |  | 
+| [DeleteProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteProtection.html) | Delete an existing protection | Write  | [protection\*](#awsshield-protection)  |  |  | 
+| [DeleteSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DeleteSubscription.html) | Deactivate subscription | Write  |  |  |  | 
+| [DescribeAttack](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeAttack.html) | Get attack details | Read Write  | [attack\*](#awsshield-attack)  |  |  | 
+| [DescribeProtection](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeProtection.html) | Get protection details | Read Write  | [protection\*](#awsshield-protection)  |  |  | 
+| [DescribeSubscription](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_DescribeSubscription.html) | Get subscription details, such as start time | Read Write  |  |  |  | 
+| [ListAttacks](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html) | List all existing attacks | List Read Write  |  |  |  | 
+| [ListProtections](http://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html) | List all existing protections | List Read Write  |  |  |  | 
 
 ## Resources Defined by Shield<a name="awsshield-resources-for-iam-policies"></a>
 

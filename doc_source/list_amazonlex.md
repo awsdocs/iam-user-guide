@@ -21,41 +21,41 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateBotVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_CreateBotVersion.html) | Creates a new version based on the $LATEST version of the specified bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [CreateIntentVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_CreateIntentVersion.html) | Creates a new version based on the $LATEST version of the specified intent\. |   | [intent\*](#amazonlex-intent)  |  |  | 
-| [CreateSlotTypeVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_CreateSlotTypeVersion.html) | Creates a new version based on the $LATEST version of the specified slot type\. |   | [slottype\*](#amazonlex-slottype)  |  |  | 
-| [DeleteBot](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBot.html) | Deletes all versions of a bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [DeleteBotAlias](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBotAlias.html) | Deletes an alias for a specific bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [DeleteBotChannelAssociation](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBotChannelAssociation.html) | Deletes the association between a Amazon Lex bot alias and a messaging platform\. |   | [channel\*](#amazonlex-channel)  |  |  | 
-| [DeleteBotVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBotVersion.html) | Deletes a specific version of a bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [DeleteIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteIntent.html) | Deletes all versions of an intent\. |   | [intent\*](#amazonlex-intent)  |  |  | 
-| [DeleteIntentVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteIntentVersion.html) | Deletes a specific version of an intent\. |   | [intent\*](#amazonlex-intent)  |  |  | 
-| [DeleteSlotType](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteSlotType.html) | Deletes all versions of a slot type\. |   | [slottype\*](#amazonlex-slottype)  |  |  | 
-| [DeleteSlotTypeVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteSlotTypeVersion.html) | Deletes a specific version of a slot type\. |   | [slottype\*](#amazonlex-slottype)  |  |  | 
-| [DeleteUtterances](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteUtterances.html) | Deletes the information Amazon Lex maintains for utterances on a specific bot and userId\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [GetBot](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBot.html) | Returns information for a specific bot\. In addition to the bot name, the bot version or alias is required\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [GetBotAlias](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotAlias.html) | Returns information about a Amazon Lex bot alias\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [GetBotAliases](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotAliases.html) | Returns a list of aliases for a given Amazon Lex bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [GetBotChannelAssociation](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotChannelAssociation.html) | Returns information about the association between a Amazon Lex bot and a messaging platform\. |   | [channel\*](#amazonlex-channel)  |  |  | 
-| [GetBotChannelAssociations](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotChannelAssociations.html) | Returns a list of all of the channels associated with a single bot\. |   | [channel\*](#amazonlex-channel)  |  |  | 
-| [GetBotVersions](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotVersions.html) | Returns information for all versions of a specific bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [GetBots](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBots.html) | Returns information for the $LATEST version of all bots, subject to filters provided by the client\. |   |  |  |  | 
-| [GetBuiltinIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBuiltinIntent.html) | Returns information about a built\-in intent\. |   |  |  |  | 
-| [GetBuiltinIntents](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBuiltinIntents.html) | Gets a list of built\-in intents that meet the specified criteria\. |   |  |  |  | 
-| [GetBuiltinSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBuiltinSlotTypes.html) | Gets a list of built\-in slot types that meet the specified criteria\. |   |  |  |  | 
-| [GetIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetIntent.html) | Returns information for a specific intent\. In addition to the intent name, you must also specify the intent version\. |   | [intent\*](#amazonlex-intent)  |  |  | 
-| [GetIntentVersions](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetIntentVersions.html) | Returns information for all versions of a specific intent\. |   | [intent\*](#amazonlex-intent)  |  |  | 
-| [GetIntents](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetIntents.html) | Returns information for the $LATEST version of all intents, subject to filters provided by the client\. |   |  |  |  | 
-| [GetSlotType](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetSlotType.html) | Returns information about a specific version of a slot type\. In addition to specifying the slot type name, you must also specify the slot type version\. |   | [slottype\*](#amazonlex-slottype)  |  |  | 
-| [GetSlotTypeVersions](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetSlotTypeVersions.html) | Returns information for all versions of a specific slot type\. |   | [slottype\*](#amazonlex-slottype)  |  |  | 
-| [GetSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetSlotTypes.html) | Returns information for the $LATEST version of all slot types, subject to filters provided by the client\. |   |  |  |  | 
-| [GetUtterancesView](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetUtterancesView.html) | Returns a view of aggregate utterance data for versions of a bot for a recent time period\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [PostContent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_runtime_PostContent.html) | Sends user input \(text or speech\) to Amazon Lex\. |   |  |  |  | 
-| [PostText](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_runtime_PostText.html) | Sends user input \(text\-only\) to Amazon Lex\. |   |  |  |  | 
-| [PutBot](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutBot.html) | Creates or updates the $LATEST version of a Amazon Lex conversational bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [PutBotAlias](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutBotAlias.html) | Creates or updates an alias for the specific bot\. |   | [bot\*](#amazonlex-bot)  |  |  | 
-| [PutIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutIntent.html) | Creates or updates the $LATEST version of an intent\. |   | [intent\*](#amazonlex-intent)  |  |  | 
-| [PutSlotType](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutSlotType.html) | Creates or updates the $LATEST version of a slot type\. |   | [slottype\*](#amazonlex-slottype)  |  |  | 
+| [CreateBotVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_CreateBotVersion.html) | Creates a new version based on the $LATEST version of the specified bot\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [CreateIntentVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_CreateIntentVersion.html) | Creates a new version based on the $LATEST version of the specified intent\. | Write  | [intent\*](#amazonlex-intent)  |  |  | 
+| [CreateSlotTypeVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_CreateSlotTypeVersion.html) | Creates a new version based on the $LATEST version of the specified slot type\. | Write  | [slottype\*](#amazonlex-slottype)  |  |  | 
+| [DeleteBot](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBot.html) | Deletes all versions of a bot\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [DeleteBotAlias](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBotAlias.html) | Deletes an alias for a specific bot\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [DeleteBotChannelAssociation](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBotChannelAssociation.html) | Deletes the association between a Amazon Lex bot alias and a messaging platform\. | Write  | [channel\*](#amazonlex-channel)  |  |  | 
+| [DeleteBotVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteBotVersion.html) | Deletes a specific version of a bot\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [DeleteIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteIntent.html) | Deletes all versions of an intent\. | Write  | [intent\*](#amazonlex-intent)  |  |  | 
+| [DeleteIntentVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteIntentVersion.html) | Deletes a specific version of an intent\. | Write  | [intent\*](#amazonlex-intent)  |  |  | 
+| [DeleteSlotType](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteSlotType.html) | Deletes all versions of a slot type\. | Write  | [slottype\*](#amazonlex-slottype)  |  |  | 
+| [DeleteSlotTypeVersion](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteSlotTypeVersion.html) | Deletes a specific version of a slot type\. | Write  | [slottype\*](#amazonlex-slottype)  |  |  | 
+| [DeleteUtterances](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_DeleteUtterances.html) | Deletes the information Amazon Lex maintains for utterances on a specific bot and userId\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [GetBot](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBot.html) | Returns information for a specific bot\. In addition to the bot name, the bot version or alias is required\. | Read Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [GetBotAlias](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotAlias.html) | Returns information about a Amazon Lex bot alias\. | Read Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [GetBotAliases](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotAliases.html) | Returns a list of aliases for a given Amazon Lex bot\. | List Read Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [GetBotChannelAssociation](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotChannelAssociation.html) | Returns information about the association between a Amazon Lex bot and a messaging platform\. | Read Write  | [channel\*](#amazonlex-channel)  |  |  | 
+| [GetBotChannelAssociations](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotChannelAssociations.html) | Returns a list of all of the channels associated with a single bot\. | List Read Write  | [channel\*](#amazonlex-channel)  |  |  | 
+| [GetBotVersions](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBotVersions.html) | Returns information for all versions of a specific bot\. | List Read Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [GetBots](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBots.html) | Returns information for the $LATEST version of all bots, subject to filters provided by the client\. | List Read Write  |  |  |  | 
+| [GetBuiltinIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBuiltinIntent.html) | Returns information about a built\-in intent\. | Read Write  |  |  |  | 
+| [GetBuiltinIntents](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBuiltinIntents.html) | Gets a list of built\-in intents that meet the specified criteria\. | Read Write  |  |  |  | 
+| [GetBuiltinSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetBuiltinSlotTypes.html) | Gets a list of built\-in slot types that meet the specified criteria\. | Read Write  |  |  |  | 
+| [GetIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetIntent.html) | Returns information for a specific intent\. In addition to the intent name, you must also specify the intent version\. | Read Write  | [intent\*](#amazonlex-intent)  |  |  | 
+| [GetIntentVersions](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetIntentVersions.html) | Returns information for all versions of a specific intent\. | List Read Write  | [intent\*](#amazonlex-intent)  |  |  | 
+| [GetIntents](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetIntents.html) | Returns information for the $LATEST version of all intents, subject to filters provided by the client\. | List Read Write  |  |  |  | 
+| [GetSlotType](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetSlotType.html) | Returns information about a specific version of a slot type\. In addition to specifying the slot type name, you must also specify the slot type version\. | Read Write  | [slottype\*](#amazonlex-slottype)  |  |  | 
+| [GetSlotTypeVersions](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetSlotTypeVersions.html) | Returns information for all versions of a specific slot type\. | List Read Write  | [slottype\*](#amazonlex-slottype)  |  |  | 
+| [GetSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetSlotTypes.html) | Returns information for the $LATEST version of all slot types, subject to filters provided by the client\. | List Read Write  |  |  |  | 
+| [GetUtterancesView](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_GetUtterancesView.html) | Returns a view of aggregate utterance data for versions of a bot for a recent time period\. | List Read Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [PostContent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_runtime_PostContent.html) | Sends user input \(text or speech\) to Amazon Lex\. | Write  |  |  |  | 
+| [PostText](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_runtime_PostText.html) | Sends user input \(text\-only\) to Amazon Lex\. | Write  |  |  |  | 
+| [PutBot](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutBot.html) | Creates or updates the $LATEST version of a Amazon Lex conversational bot\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [PutBotAlias](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutBotAlias.html) | Creates or updates an alias for the specific bot\. | Write  | [bot\*](#amazonlex-bot)  |  |  | 
+| [PutIntent](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutIntent.html) | Creates or updates the $LATEST version of an intent\. | Write  | [intent\*](#amazonlex-intent)  |  |  | 
+| [PutSlotType](http://docs.aws.amazon.com/lex/latest/dg/APIReference/API_PutSlotType.html) | Creates or updates the $LATEST version of a slot type\. | Write  | [slottype\*](#amazonlex-slottype)  |  |  | 
 
 ## Resources Defined by Lex<a name="amazonlex-resources-for-iam-policies"></a>
 
@@ -75,12 +75,12 @@ The following resource types are defined by this service and can be used in the 
 
 Amazon Lex defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [lex:associatedIntents](http://docs.aws.amazon.com/lex/latest/dg/) | Enables you to control access based on the intents included in the request\. | String | 
 | [lex:associatedSlotTypes](http://docs.aws.amazon.com/lex/latest/dg/) | Enables you to control access based on the slot types included in the request\. | String | 

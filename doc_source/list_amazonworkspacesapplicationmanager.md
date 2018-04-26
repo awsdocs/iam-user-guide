@@ -21,7 +21,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AuthenticatePackager](http://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html) | Description for AuthenticatePackager |   |  |  |  | 
+| [AuthenticatePackager](http://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html) | Description for AuthenticatePackager | Write  |  |  |  | 
 
 ## Resources Defined by WAM<a name="amazonworkspacesapplicationmanager-resources-for-iam-policies"></a>
 

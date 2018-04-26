@@ -16,20 +16,20 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateStream](url-actions-replace-meAPI_CreateStream.html) | Create a Kinesis video stream\. |   |  |  |  | 
-| [DeleteStream](url-actions-replace-meAPI_DeleteStream.html) | Delete an existing Kinesis video stream\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [DescribeStream](url-actions-replace-meAPI_DescribeStream.html) | Describe the specified Kinesis video stream\. |   |  |  |  | 
-| [GetDataEndpoint](url-actions-replace-meAPI_GetDataEndpoint.html) | Gets an endpoint for a specified stream for either reading or writing media data to Kinesis Video Streams\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [GetMedia](url-actions-replace-meAPI_GetMedia.html) | Returns media content of a Kinesis video stream\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [GetMediaForFragmentList](url-actions-replace-meAPI_GetMediaForFragmentList.html) | Read and return media data only from persisted storage\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [ListFragments](url-actions-replace-meAPI_ListFragments.html) | List the fragments from archival storage based on the pagination token or selector type with range specified\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [ListStreams](url-actions-replace-meAPI_ListStreams.html) | List your Kinesis video streams\. |   |  |  |  | 
-| [ListTagsForStream](url-actions-replace-meAPI_ListTagsForStream.html) | Fetch the tags associated with Kinesis video stream\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [PutMedia](url-actions-replace-meAPI_PutMedia.html) | Send media data to a Kinesis video stream\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [TagStream](url-actions-replace-meAPI_TagStream.html) | Attach set of tags to your Kinesis video streams\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [UntagStream](url-actions-replace-meAPI_UntagStream.html) | Remove one or more tags from your Kinesis video streams\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [UpdateDataRetention](url-actions-replace-meAPI_UpdateDataRetention.html) | Update the data retention period of your Kinesis video stream\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [UpdateStream](url-actions-replace-meAPI_UpdateStream.html) | Update an existing Kinesis video stream\. |   | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [CreateStream](url-actions-replace-meAPI_CreateStream.html) | Create a Kinesis video stream\. | Write  |  |  |  | 
+| [DeleteStream](url-actions-replace-meAPI_DeleteStream.html) | Delete an existing Kinesis video stream\. | Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [DescribeStream](url-actions-replace-meAPI_DescribeStream.html) | Describe the specified Kinesis video stream\. | List Read Write  |  |  |  | 
+| [GetDataEndpoint](url-actions-replace-meAPI_GetDataEndpoint.html) | Gets an endpoint for a specified stream for either reading or writing media data to Kinesis Video Streams\. | Read Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [GetMedia](url-actions-replace-meAPI_GetMedia.html) | Returns media content of a Kinesis video stream\. | Read Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [GetMediaForFragmentList](url-actions-replace-meAPI_GetMediaForFragmentList.html) | Read and return media data only from persisted storage\. | Read Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [ListFragments](url-actions-replace-meAPI_ListFragments.html) | List the fragments from archival storage based on the pagination token or selector type with range specified\. | List Read Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [ListStreams](url-actions-replace-meAPI_ListStreams.html) | List your Kinesis video streams\. | List Read Write  |  |  |  | 
+| [ListTagsForStream](url-actions-replace-meAPI_ListTagsForStream.html) | Fetch the tags associated with Kinesis video stream\. | Read Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [PutMedia](url-actions-replace-meAPI_PutMedia.html) | Send media data to a Kinesis video stream\. | Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [TagStream](url-actions-replace-meAPI_TagStream.html) | Attach set of tags to your Kinesis video streams\. | Tagging Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [UntagStream](url-actions-replace-meAPI_UntagStream.html) | Remove one or more tags from your Kinesis video streams\. | Tagging Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [UpdateDataRetention](url-actions-replace-meAPI_UpdateDataRetention.html) | Update the data retention period of your Kinesis video stream\. | Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+| [UpdateStream](url-actions-replace-meAPI_UpdateStream.html) | Update an existing Kinesis video stream\. | Write  | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
 
 ## Resources Defined by Kinesis Video Streams<a name="amazonkinesisvideostreams-resources-for-iam-policies"></a>
 

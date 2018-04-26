@@ -16,12 +16,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| AcknowledgeMessage | Acknowledges a message, ensuring it will not be delivered again |   |  |  |  | 
-| DeleteMessage | Deletes a message |   |  |  |  | 
-| FailMessage | Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again |   |  |  |  | 
-| GetEndpoint | Routes traffic to the correct endpoint based on the given destination for the messages |   |  |  |  | 
-| GetMessages | Delivers messages to clients/instances using long polling |   |  |  |  | 
-| SendReply | Sends replies from clients/instances to upstream service |   |  |  |  | 
+| AcknowledgeMessage | Acknowledges a message, ensuring it will not be delivered again | Write  |  |  |  | 
+| DeleteMessage | Deletes a message | Write  |  |  |  | 
+| FailMessage | Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again | Write  |  |  |  | 
+| GetEndpoint | Routes traffic to the correct endpoint based on the given destination for the messages | Read Write  |  |  |  | 
+| GetMessages | Delivers messages to clients/instances using long polling | Read Write  |  |  |  | 
+| SendReply | Sends replies from clients/instances to upstream service | Write  |  |  |  | 
 
 ## Resources Defined by EC2 Messages<a name="amazonmessagedeliveryservice-resources-for-iam-policies"></a>
 

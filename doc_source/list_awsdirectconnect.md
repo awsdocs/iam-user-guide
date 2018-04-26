@@ -21,27 +21,27 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AllocateConnectionOnInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateConnectionOnInterconnect.html) | Creates a hosted connection on an interconnect\. |   |  |  |  | 
-| [AllocatePrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html) | Provisions a private virtual interface to be owned by a different customer\. |   |  |  |  | 
-| [AllocatePublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html) | Provisions a public virtual interface to be owned by a different customer\. |   |  |  |  | 
-| [ConfirmConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmConnection.html) | Confirm the creation of a hosted connection on an interconnect\. |   |  |  |  | 
-| [ConfirmPrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPrivateVirtualInterface.html) | Accept ownership of a private virtual interface created by another customer\. |   |  |  |  | 
-| [ConfirmPublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPublicVirtualInterface.html) | Accept ownership of a public virtual interface created by another customer |   |  |  |  | 
-| [CreateConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html) | Creates a new connection between the customer network and a specific AWS Direct Connect location\. |   |  |  |  | 
-| [CreateInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateInterconnect.html) | Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location\. |   |  |  |  | 
-| [CreatePrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html) | Creates a new private virtual interface\. |   |  |  |  | 
-| [CreatePublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePublicVirtualInterface.html) | Creates a new public virtual interface\. |   |  |  |  | 
-| [DeleteConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteConnection.html) | Deletes the connection\. |   |  |  |  | 
-| [DeleteInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteInterconnect.html) | Deletes the specified interconnect\. |   |  |  |  | 
-| [DeleteVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteVirtualInterface.html) | Deletes a virtual interface\. |   |  |  |  | 
-| [DescribeConnectionLoa](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionLoa.html) | Returns the LOA\-CFA for a Connection\. |   |  |  |  | 
-| [DescribeConnections](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnections.html) | Displays all connections in this region\. |   |  |  |  | 
-| [DescribeConnectionsOnInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionsOnInterconnect.html) | Return a list of connections that have been provisioned on the given interconnect\. |   |  |  |  | 
-| [DescribeInterconnectLoa](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnectLoa.html) | Returns the LOA\-CFA for an Interconnect\. |   |  |  |  | 
-| [DescribeInterconnects](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnects.html) | Returns a list of interconnects owned by the AWS account\. |   |  |  |  | 
-| [DescribeLocations](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html) | Returns the list of AWS Direct Connect locations in the current AWS region\. |   |  |  |  | 
-| [DescribeVirtualGateways](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualGateways.html) | Returns a list of virtual private gateways owned by the AWS account\. |   |  |  |  | 
-| [DescribeVirtualInterfaces](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualInterfaces.html) | Displays all virtual interfaces for an AWS account\. |   |  |  |  | 
+| [AllocateConnectionOnInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocateConnectionOnInterconnect.html) | Creates a hosted connection on an interconnect\. | Write  |  |  |  | 
+| [AllocatePrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePrivateVirtualInterface.html) | Provisions a private virtual interface to be owned by a different customer\. | Write  |  |  |  | 
+| [AllocatePublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_AllocatePublicVirtualInterface.html) | Provisions a public virtual interface to be owned by a different customer\. | Write  |  |  |  | 
+| [ConfirmConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmConnection.html) | Confirm the creation of a hosted connection on an interconnect\. | Read Write  |  |  |  | 
+| [ConfirmPrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPrivateVirtualInterface.html) | Accept ownership of a private virtual interface created by another customer\. | Read Write  |  |  |  | 
+| [ConfirmPublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_ConfirmPublicVirtualInterface.html) | Accept ownership of a public virtual interface created by another customer | Read Write  |  |  |  | 
+| [CreateConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateConnection.html) | Creates a new connection between the customer network and a specific AWS Direct Connect location\. | Write  |  |  |  | 
+| [CreateInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreateInterconnect.html) | Creates a new interconnect between a AWS Direct Connect partner's network and a specific AWS Direct Connect location\. | Write  |  |  |  | 
+| [CreatePrivateVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePrivateVirtualInterface.html) | Creates a new private virtual interface\. | Write  |  |  |  | 
+| [CreatePublicVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_CreatePublicVirtualInterface.html) | Creates a new public virtual interface\. | Write  |  |  |  | 
+| [DeleteConnection](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteConnection.html) | Deletes the connection\. | Write  |  |  |  | 
+| [DeleteInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteInterconnect.html) | Deletes the specified interconnect\. | Write  |  |  |  | 
+| [DeleteVirtualInterface](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DeleteVirtualInterface.html) | Deletes a virtual interface\. | Write  |  |  |  | 
+| [DescribeConnectionLoa](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionLoa.html) | Returns the LOA\-CFA for a Connection\. | List Read Write  |  |  |  | 
+| [DescribeConnections](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnections.html) | Displays all connections in this region\. | List Read Write  |  |  |  | 
+| [DescribeConnectionsOnInterconnect](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeConnectionsOnInterconnect.html) | Return a list of connections that have been provisioned on the given interconnect\. | List Read Write  |  |  |  | 
+| [DescribeInterconnectLoa](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnectLoa.html) | Returns the LOA\-CFA for an Interconnect\. | List Read Write  |  |  |  | 
+| [DescribeInterconnects](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeInterconnects.html) | Returns a list of interconnects owned by the AWS account\. | List Read Write  |  |  |  | 
+| [DescribeLocations](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html) | Returns the list of AWS Direct Connect locations in the current AWS region\. | List Read Write  |  |  |  | 
+| [DescribeVirtualGateways](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualGateways.html) | Returns a list of virtual private gateways owned by the AWS account\. | List Read Write  |  |  |  | 
+| [DescribeVirtualInterfaces](http://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeVirtualInterfaces.html) | Displays all virtual interfaces for an AWS account\. | List Read Write  |  |  |  | 
 
 ## Resources Defined by Direct Connect<a name="awsdirectconnect-resources-for-iam-policies"></a>
 

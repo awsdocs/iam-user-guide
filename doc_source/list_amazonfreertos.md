@@ -21,17 +21,17 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| CreateSoftwareConfiguration | Creates a software configuration\. |   |  |  |  | 
-| DeleteSoftwareConfiguration | Deletes the software configuration\. |   |  |  |  | 
-| DescribeHardwarePlatform | Describes the hardware platform\. |   |  |  |  | 
-| DescribeSoftwareConfiguration | Describes the software configuration\. |   |  |  |  | 
-| GetSoftwareURL | Get the URL for Amazon FreeRTOS software download\. |   |  |  |  | 
-| GetSoftwareURLForConfiguration | Get the URL for Amazon FreeRTOS software download based on the configuration\. |   |  |  |  | 
-| ListFreeRTOSVersions | Lists versions of AmazonFreeRTOS\. |   |  |  |  | 
-| ListHardwarePlatforms | Lists the hardware platforms\. |   |  |  |  | 
-| ListHardwareVendors | Lists the hardware vendors\. |   |  |  |  | 
-| ListSoftwareConfigurations | Lists the software configurations\. |   |  |  |  | 
-| UpdateSoftwareConfiguration | Updates the software configuration\. |   |  |  |  | 
+| CreateSoftwareConfiguration | Creates a software configuration\. | Write  |  |  |  | 
+| DeleteSoftwareConfiguration | Deletes the software configuration\. | Write  |  |  |  | 
+| DescribeHardwarePlatform | Describes the hardware platform\. | Read Write  |  |  |  | 
+| DescribeSoftwareConfiguration | Describes the software configuration\. | Read Write  |  |  |  | 
+| GetSoftwareURL | Get the URL for Amazon FreeRTOS software download\. | Read Write  |  |  |  | 
+| GetSoftwareURLForConfiguration | Get the URL for Amazon FreeRTOS software download based on the configuration\. | Read Write  |  |  |  | 
+| ListFreeRTOSVersions | Lists versions of AmazonFreeRTOS\. | List Read Write  |  |  |  | 
+| ListHardwarePlatforms | Lists the hardware platforms\. | List Read Write  |  |  |  | 
+| ListHardwareVendors | Lists the hardware vendors\. | List Read Write  |  |  |  | 
+| ListSoftwareConfigurations | Lists the software configurations\. | List Read Write  |  |  |  | 
+| UpdateSoftwareConfiguration | Updates the software configuration\. | Write  |  |  |  | 
 
 ## Resources Defined by FreeRTOS<a name="amazonfreertos-resources-for-iam-policies"></a>
 

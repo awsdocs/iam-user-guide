@@ -21,49 +21,49 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html) | Creates a device pool |   |  |  |  | 
-| [CreateProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html) | Creates a new project |   |  |  |  | 
-| [CreateRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html) | Specifies and starts a remote access session |   |  |  |  | 
-| [CreateUpload](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html) | Creates a new project |   |  |  |  | 
-| [DeleteDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html) | Deletes a device pool given the pool ARN\. Does not allow deletion of curated pools owned by the system |   |  |  |  | 
-| [DeleteProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteProject.html) | Deletes an AWS Device Farm project, given the project ARN |   |  |  |  | 
-| [DeleteRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRemoteAccessSession.html) | Deletes a completed remote access session and its results |   |  |  |  | 
-| [DeleteRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRun.html) | Deletes the run, given the run ARN |   |  |  |  | 
-| [DeleteUpload](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteUpload.html) | Deletes an upload given the upload ARN |   |  |  |  | 
-| [GetAccountSettings](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetAccountSettings.html) | Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account |   |  |  |  | 
-| [GetDevice](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevice.html) | Gets information about a unique device type |   |  |  |  | 
-| [GetDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePool.html) | Gets information about a device pool |   |  |  |  | 
-| [GetDevicePoolCompatibility](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePoolCompatibility.html) | Gets information about compatibility with a device pool |   |  |  |  | 
-| [GetJob](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetJob.html) | Gets information about a job |   |  |  |  | 
-| [GetOfferingStatus](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetOfferingStatus.html) | Gets the current status and future status of all offerings purchased by an AWS account |   |  |  |  | 
-| [GetProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetProject.html) | Gets information about a project |   |  |  |  | 
-| [GetRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRemoteAccessSession.html) | Returns a link to a currently running remote access session |   |  |  |  | 
-| [GetRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRun.html) | Gets information about a run |   |  |  |  | 
-| [GetSuite](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetSuite.html) | Gets information about a suite |   |  |  |  | 
-| [GetTest](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html) | Gets information about a test |   |  |  |  | 
-| [GetUpload](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetUpload.html) | Gets information about an upload |   |  |  |  | 
-| [InstallToRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html) | Installs an application to the device in a remote access session |   |  |  |  | 
-| [ListArtifacts](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListArtifacts.html) | Gets information about artifacts |   |  |  |  | 
-| [ListDevicePools](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevicePools.html) | Gets information about device pools |   |  |  |  | 
-| [ListDevices](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html) | Gets information about unique device types |   |  |  |  | 
-| [ListJobs](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html) | Gets information about jobs |   |  |  |  | 
-| [ListOfferingTransactions](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingTransactions.html) | Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account |   |  |  |  | 
-| [ListOfferings](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferings.html) | Returns a list of products or offerings that the user can manage through the API |   |  |  |  | 
-| [ListProjects](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListProjects.html) | Gets information about projects |   |  |  |  | 
-| [ListRemoteAccessSessions](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRemoteAccessSessions.html) | Returns a list of all currently running remote access sessions |   |  |  |  | 
-| [ListRuns](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRuns.html) | Gets information about runs |   |  |  |  | 
-| [ListSamples](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSamples.html) | Gets information about samples |   |  |  |  | 
-| [ListSuites](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSuites.html) | Gets information about suites |   |  |  |  | 
-| [ListTests](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTests.html) | Gets information about tests |   |  |  |  | 
-| [ListUniqueProblems](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUniqueProblems.html) | Gets information about unique problems |   |  |  |  | 
-| [ListUploads](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html) | Gets information about uploads |   |  |  |  | 
-| [PurchaseOffering](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_PurchaseOffering.html) | Immediately purchases offerings for an AWS account |   |  |  |  | 
-| [RenewOffering](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RenewOffering.html) | Explicitly sets the quantity of devices to renew for an offering, starting from the effectiveDate of the next period |   |  |  |  | 
-| [ScheduleRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ScheduleRun.html) | Schedules a run |   |  |  |  | 
-| [StopRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRemoteAccessSession.html) | Ends a specified remote access session |   |  |  |  | 
-| [StopRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRun.html) | Initiates a stop request for the current test run |   |  |  |  | 
-| [UpdateDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html) | Modifies the name, description, and rules in a device pool given the attributes and the pool ARN |   |  |  |  | 
-| [UpdateProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html) | Modifies the specified project name, given the project ARN and a new name |   |  |  |  | 
+| [CreateDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateDevicePool.html) | Creates a device pool | Write  |  |  |  | 
+| [CreateProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html) | Creates a new project | Write  |  |  |  | 
+| [CreateRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateProject.html) | Specifies and starts a remote access session | Write  |  |  |  | 
+| [CreateUpload](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html) | Creates a new project | Write  |  |  |  | 
+| [DeleteDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_CreateUpload.html) | Deletes a device pool given the pool ARN\. Does not allow deletion of curated pools owned by the system | Write  |  |  |  | 
+| [DeleteProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteProject.html) | Deletes an AWS Device Farm project, given the project ARN | Write  |  |  |  | 
+| [DeleteRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRemoteAccessSession.html) | Deletes a completed remote access session and its results | Write  |  |  |  | 
+| [DeleteRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteRun.html) | Deletes the run, given the run ARN | Write  |  |  |  | 
+| [DeleteUpload](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeleteUpload.html) | Deletes an upload given the upload ARN | Write  |  |  |  | 
+| [GetAccountSettings](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetAccountSettings.html) | Returns the number of unmetered iOS and/or unmetered Android devices that have been purchased by the account | Write Read  |  |  |  | 
+| [GetDevice](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevice.html) | Gets information about a unique device type | Read Write  |  |  |  | 
+| [GetDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePool.html) | Gets information about a device pool | Read Write  |  |  |  | 
+| [GetDevicePoolCompatibility](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetDevicePoolCompatibility.html) | Gets information about compatibility with a device pool | Read Write  |  |  |  | 
+| [GetJob](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetJob.html) | Gets information about a job | Read Write  |  |  |  | 
+| [GetOfferingStatus](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetOfferingStatus.html) | Gets the current status and future status of all offerings purchased by an AWS account | Write Read  |  |  |  | 
+| [GetProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetProject.html) | Gets information about a project | Read Write  |  |  |  | 
+| [GetRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRemoteAccessSession.html) | Returns a link to a currently running remote access session | Write Read  |  |  |  | 
+| [GetRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetRun.html) | Gets information about a run | Read Write  |  |  |  | 
+| [GetSuite](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetSuite.html) | Gets information about a suite | Read Write  |  |  |  | 
+| [GetTest](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetTest.html) | Gets information about a test | Read Write  |  |  |  | 
+| [GetUpload](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_GetUpload.html) | Gets information about an upload | Read Write  |  |  |  | 
+| [InstallToRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstallToRemoteAccessSession.html) | Installs an application to the device in a remote access session | Write  |  |  |  | 
+| [ListArtifacts](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListArtifacts.html) | Gets information about artifacts | List Read Write  |  |  |  | 
+| [ListDevicePools](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevicePools.html) | Gets information about device pools | List Read Write  |  |  |  | 
+| [ListDevices](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListDevices.html) | Gets information about unique device types | List Read Write  |  |  |  | 
+| [ListJobs](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListJobs.html) | Gets information about jobs | List Read Write  |  |  |  | 
+| [ListOfferingTransactions](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferingTransactions.html) | Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account | List Read Write  |  |  |  | 
+| [ListOfferings](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListOfferings.html) | Returns a list of products or offerings that the user can manage through the API | List Read Write  |  |  |  | 
+| [ListProjects](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListProjects.html) | Gets information about projects | List Read Write  |  |  |  | 
+| [ListRemoteAccessSessions](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRemoteAccessSessions.html) | Returns a list of all currently running remote access sessions | List Read Write  |  |  |  | 
+| [ListRuns](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListRuns.html) | Gets information about runs | List Read Write  |  |  |  | 
+| [ListSamples](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSamples.html) | Gets information about samples | List Read Write  |  |  |  | 
+| [ListSuites](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListSuites.html) | Gets information about suites | List Read Write  |  |  |  | 
+| [ListTests](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListTests.html) | Gets information about tests | List Read Write  |  |  |  | 
+| [ListUniqueProblems](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUniqueProblems.html) | Gets information about unique problems | List Read Write  |  |  |  | 
+| [ListUploads](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ListUploads.html) | Gets information about uploads | List Read Write  |  |  |  | 
+| [PurchaseOffering](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_PurchaseOffering.html) | Immediately purchases offerings for an AWS account | Write  |  |  |  | 
+| [RenewOffering](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RenewOffering.html) | Explicitly sets the quantity of devices to renew for an offering, starting from the effectiveDate of the next period | Write  |  |  |  | 
+| [ScheduleRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_ScheduleRun.html) | Schedules a run | Write  |  |  |  | 
+| [StopRemoteAccessSession](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRemoteAccessSession.html) | Ends a specified remote access session | Write  |  |  |  | 
+| [StopRun](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_StopRun.html) | Initiates a stop request for the current test run | Write  |  |  |  | 
+| [UpdateDevicePool](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html) | Modifies the name, description, and rules in a device pool given the attributes and the pool ARN | Write  |  |  |  | 
+| [UpdateProject](http://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html) | Modifies the specified project name, given the project ARN and a new name | Write  |  |  |  | 
 
 ## Resources Defined by Device Farm<a name="awsdevicefarm-resources-for-iam-policies"></a>
 

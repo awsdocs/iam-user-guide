@@ -21,26 +21,26 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddTagsToResource](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html) | Adds or overwrites one or more tags for the specified AWS CloudHSM resource |   |  |  |  | 
-| [CreateHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html) | Creates a high\-availability partition group |   |  |  |  | 
-| [CreateHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHsm.html) | Creates an uninitialized HSM instance |   |  |  |  | 
-| [CreateLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html) | Creates an HSM client |   |  |  |  | 
-| [DeleteHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html) | Deletes a high\-availability partition group |   |  |  |  | 
-| [DeleteHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHsm.html) | Deletes an HSM\. After completion, this operation cannot be undone and your key material cannot be recovered |   |  |  |  | 
-| [DeleteLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html) | Deletes a client |   |  |  |  | 
-| [DescribeHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html) | Retrieves information about a high\-availability partition group |   |  |  |  | 
-| [DescribeHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html) | Retrieves information about an HSM\. You can identify the HSM by its ARN or its serial number |   |  |  |  | 
-| [DescribeLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html) | Retrieves information about an HSM client |   |  |  |  | 
-| [GetConfig](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html) | Gets the configuration files necessary to connect to all high availability partition groups the client is associated with |   |  |  |  | 
-| [ListAvailableZones](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html) | Lists the Availability Zones that have available AWS CloudHSM capacity |   |  |  |  | 
-| [ListHapgs](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html) | Lists the high\-availability partition groups for the account |   |  |  |  | 
-| [ListHsms](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html) | Retrieves the identifiers of all of the HSMs provisioned for the current customer |   |  |  |  | 
-| [ListLunaClients](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html) | Lists all of the clients |   |  |  |  | 
-| [ListTagsForResource](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html) | Returns a list of all tags for the specified AWS CloudHSM resource |   |  |  |  | 
-| [ModifyHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html) | Modifies an existing high\-availability partition group |   |  |  |  | 
-| [ModifyHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html) | Modifies an HSM |   |  |  |  | 
-| [ModifyLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html) | Modifies the certificate used by the client |   |  |  |  | 
-| [RemoveTagsFromResource](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html) | Removes one or more tags from the specified AWS CloudHSM resource |   |  |  |  | 
+| [AddTagsToResource](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html) | Adds or overwrites one or more tags for the specified AWS CloudHSM resource | Write Tagging  |  |  |  | 
+| [CreateHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html) | Creates a high\-availability partition group | Write  |  |  |  | 
+| [CreateHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHsm.html) | Creates an uninitialized HSM instance | Write  |  |  |  | 
+| [CreateLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html) | Creates an HSM client | Write  |  |  |  | 
+| [DeleteHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html) | Deletes a high\-availability partition group | Write  |  |  |  | 
+| [DeleteHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHsm.html) | Deletes an HSM\. After completion, this operation cannot be undone and your key material cannot be recovered | Write  |  |  |  | 
+| [DeleteLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html) | Deletes a client | Write  |  |  |  | 
+| [DescribeHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html) | Retrieves information about a high\-availability partition group | Read Write  |  |  |  | 
+| [DescribeHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html) | Retrieves information about an HSM\. You can identify the HSM by its ARN or its serial number | Read Write  |  |  |  | 
+| [DescribeLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html) | Retrieves information about an HSM client | Read Write  |  |  |  | 
+| [GetConfig](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html) | Gets the configuration files necessary to connect to all high availability partition groups the client is associated with | Read Write  |  |  |  | 
+| [ListAvailableZones](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html) | Lists the Availability Zones that have available AWS CloudHSM capacity | List Read Write  |  |  |  | 
+| [ListHapgs](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html) | Lists the high\-availability partition groups for the account | List Read Write  |  |  |  | 
+| [ListHsms](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html) | Retrieves the identifiers of all of the HSMs provisioned for the current customer | List Read Write  |  |  |  | 
+| [ListLunaClients](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html) | Lists all of the clients | List Read Write  |  |  |  | 
+| [ListTagsForResource](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html) | Returns a list of all tags for the specified AWS CloudHSM resource | Read Write  |  |  |  | 
+| [ModifyHapg](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html) | Modifies an existing high\-availability partition group | Write  |  |  |  | 
+| [ModifyHsm](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html) | Modifies an HSM | Write  |  |  |  | 
+| [ModifyLunaClient](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html) | Modifies the certificate used by the client | Write  |  |  |  | 
+| [RemoveTagsFromResource](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html) | Removes one or more tags from the specified AWS CloudHSM resource | Write Tagging  |  |  |  | 
 
 ## Resources Defined by CloudHSM<a name="awscloudhsm-resources-for-iam-policies"></a>
 

@@ -21,13 +21,13 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html) | Creates a delivery stream\. |   |  |  |  | 
-| [DeleteDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html) | Deletes a delivery stream and its data\. |   | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
-| [DescribeDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html) | Describes the specified delivery stream and gets the status\. |   |  |  |  | 
-| [ListDeliveryStreams](http://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html) | Lists your delivery streams\. |   |  |  |  | 
-| [PutRecord](http://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html) | Writes a single data record into an Amazon Kinesis Firehose delivery stream\. |   | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
-| [PutRecordBatch](http://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html) | Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records\. |   | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
-| [UpdateDestination](http://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html) | Updates the specified destination of the specified delivery stream\. |   | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
+| [CreateDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html) | Creates a delivery stream\. | Write  |  |  |  | 
+| [DeleteDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_DeleteDeliveryStream.html) | Deletes a delivery stream and its data\. | Write  | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
+| [DescribeDeliveryStream](http://docs.aws.amazon.com/firehose/latest/APIReference/API_DescribeDeliveryStream.html) | Describes the specified delivery stream and gets the status\. | List Read Write  |  |  |  | 
+| [ListDeliveryStreams](http://docs.aws.amazon.com/firehose/latest/APIReference/API_ListDeliveryStreams.html) | Lists your delivery streams\. | List Read Write  |  |  |  | 
+| [PutRecord](http://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecord.html) | Writes a single data record into an Amazon Kinesis Firehose delivery stream\. | Write  | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
+| [PutRecordBatch](http://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html) | Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records\. | Write  | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
+| [UpdateDestination](http://docs.aws.amazon.com/firehose/latest/APIReference/API_UpdateDestination.html) | Updates the specified destination of the specified delivery stream\. | Write  | [deliverystream\*](#amazonkinesisfirehose-deliverystream)  |  |  | 
 
 ## Resources Defined by Firehose<a name="amazonkinesisfirehose-resources-for-iam-policies"></a>
 

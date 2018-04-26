@@ -21,10 +21,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [GetCostAndUsage](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetCostAndUsage.html) | Get cost and usage metrics for your account |   |  |  |  | 
-| [GetDimensionValues](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetDimensionValues.html) | Retrieve all available filter values for a filter over a period of time\. |   |  |  |  | 
-| [GetReservationUtilization](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetReservationUtilization.html) | Get reservation utilization for your account\. |   |  |  |  | 
-| [GetTags](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetTags.html) | Query tags for a specified time period\. |   |  |  |  | 
+| [GetCostAndUsage](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetCostAndUsage.html) | Get cost and usage metrics for your account | Read Write  |  |  |  | 
+| [GetDimensionValues](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetDimensionValues.html) | Retrieve all available filter values for a filter over a period of time\. | Read Write  |  |  |  | 
+| [GetReservationUtilization](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetReservationUtilization.html) | Get reservation utilization for your account\. | Read Write  |  |  |  | 
+| [GetTags](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetTags.html) | Query tags for a specified time period\. | Read Write  |  |  |  | 
 
 ## Resources Defined by Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 

@@ -21,16 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-create.html) | Creates a new AWS Elemental MediaPackage Channel\. |   |  |  |  | 
-| [CreateOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-create.html) | Creates a new AWS Elemental MediaPackage OriginEndpoint\. |   |  |  |  | 
-| [DeleteChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-delete.html) | Deletes an AWS Elemental MediaPackage Channel |   |  |  |  | 
-| [DeleteOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-delete.html) | Deletes an AWS Elemental MediaPackage OriginEndpoint\. |   |  |  |  | 
-| [DescribeChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-view.html) | Returns the configuration of an AWS Elemental MediaPackage Channel\. |   |  |  |  | 
-| [DescribeOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view.html) | Returns the configuration of an AWS Elemental MediaPackage OriginEndpoint\. |   |  |  |  | 
-| [ListChannels](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html) | Returns a list AWS Elemental MediaPackage Channels\. |   |  |  |  | 
-| [ListOriginEndpoints](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view-all.html) | Returns a list of AWS Elemental MediaPackage OriginEndpoints\. |   |  |  |  | 
-| [UpdateChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-edit.html) | Updates the configuration of an AWS Elemental MediaPackage Channel\. |   |  |  |  | 
-| [UpdateOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-edit.html) | Updates the configuration of an AWS Elemental MediaPackage OriginEndpoint\. |   |  |  |  | 
+| [CreateChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-create.html) | Creates a new AWS Elemental MediaPackage Channel\. | Write  |  |  |  | 
+| [CreateOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-create.html) | Creates a new AWS Elemental MediaPackage OriginEndpoint\. | Write  |  |  |  | 
+| [DeleteChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-delete.html) | Deletes an AWS Elemental MediaPackage Channel | Write  |  |  |  | 
+| [DeleteOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-delete.html) | Deletes an AWS Elemental MediaPackage OriginEndpoint\. | Write  |  |  |  | 
+| [DescribeChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-view.html) | Returns the configuration of an AWS Elemental MediaPackage Channel\. | Read Write  |  |  |  | 
+| [DescribeOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view.html) | Returns the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Read Write  |  |  |  | 
+| [ListChannels](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html) | Returns a list AWS Elemental MediaPackage Channels\. | Read Write  |  |  |  | 
+| [ListOriginEndpoints](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view-all.html) | Returns a list of AWS Elemental MediaPackage OriginEndpoints\. | Read Write  |  |  |  | 
+| [UpdateChannel](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-edit.html) | Updates the configuration of an AWS Elemental MediaPackage Channel\. | Write  |  |  |  | 
+| [UpdateOriginEndpoint](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-edit.html) | Updates the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Write  |  |  |  | 
 
 ## Resources Defined by MediaPackage<a name="awselementalmediapackage-resources-for-iam-policies"></a>
 

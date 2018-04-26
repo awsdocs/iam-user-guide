@@ -21,44 +21,44 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html) | Adds a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services |   |  |  |  | 
-| [AddTagsToResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html) | Adds or overwrites one or more tags for the specified Amazon Directory Services directory\. |   |  |  |  | 
-| [CancelSchemaExtension](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CancelSchemaExtension.html) | Cancels an in\-progress schema extension to a Microsoft AD directory\. |   |  |  |  | 
-| [ConnectDirectory](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ConnectDirectory.html) | Creates an AD Connector to connect to an on\-premises directory\. |   |  |  |  | 
-| [CreateAlias](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateAlias.html) | Creates an alias for a directory and assigns the alias to the directory\. |   |  |  |  | 
-| [CreateComputer](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html) | Creates a computer account in the specified directory, and joins the computer to the directory\. |   |  |  |  | 
-| [CreateConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateConditionalForwarder.html) | Creates a conditional forwarder associated with your AWS directory\. |   |  |  |  | 
-| [CreateDirectory](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html) | Creates a Simple AD directory\. |   |  |  |  | 
-| [CreateMicrosoftAD](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html) | Creates a Microsoft AD in the AWS cloud\. |   |  |  |  | 
-| [CreateSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateSnapshot.html) | Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud\. |   |  |  |  | 
-| [CreateTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html) | Initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain\. |   |  |  |  | 
-| [DeleteConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteConditionalForwarder.html) | Deletes a conditional forwarder that has been set up for your AWS directory\. |   |  |  |  | 
-| [DeleteDirectory](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html) | Deletes an AWS Directory Service directory\. |   |  |  |  | 
-| [DeleteSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteSnapshot.html) | Deletes a directory snapshot\. |   |  |  |  | 
-| [DeleteTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/DeleteTrust.html) | Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain\. |   |  |  |  | 
-| [DeregisterEventTopic](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterEventTopic.html) | Removes the specified directory as a publisher to the specified SNS topic\. |   |  |  |  | 
-| [DescribeConditionalForwarders](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html) | Obtains information about the conditional forwarders for this account\. |   |  |  |  | 
-| [DescribeDirectories](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html) | Obtains information about the directories that belong to this account\. |   |  |  |  | 
-| [DescribeEventTopics](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html) | Obtains information about which SNS topics receive status messages from the specified directory\. |   |  |  |  | 
-| [DescribeSnapshots](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSnapshots.html) | Obtains information about the directory snapshots that belong to this account\. |   |  |  |  | 
-| [DescribeTrusts](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html) | Obtains information about the trust relationships for this account\. |   |  |  |  | 
-| [DisableRadius](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html) | Disables multi\-factor authentication \(MFA\) with the Remote Authentication Dial In User Service \(RADIUS\) server for an AD Connector directory\. |   |  |  |  | 
-| [DisableSso](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html) | Disables single\-sign on for a directory\. |   |  |  |  | 
-| [EnableRadius](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html) | Enables multi\-factor authentication \(MFA\) with the Remote Authentication Dial In User Service \(RADIUS\) server for an AD Connector directory\. |   |  |  |  | 
-| [EnableSso](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableSso.html) | Enables single\-sign on for a directory\. |   |  |  |  | 
-| [GetDirectoryLimits](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetDirectoryLimits.html) | Obtains directory limit information for the current region\. |   |  |  |  | 
-| [GetSnapshotLimits](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html) | Obtains the manual snapshot limits for a directory\. |   |  |  |  | 
-| [ListIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListIpRoutes.html) | Lists the address blocks that you have added to a directory\. |   |  |  |  | 
-| [ListSchemaExtensions](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListSchemaExtensions.html) | Lists all schema extensions applied to a Microsoft AD Directory\. |   |  |  |  | 
-| [ListTagsForResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListTagsForResource.html) | Lists all tags on an Amazon Directory Services directory\. |   |  |  |  | 
-| [RegisterEventTopic](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html) | Associates a directory with an SNS topic\. |   |  |  |  | 
-| [RemoveIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveIpRoutes.html) | Removes IP address blocks from a directory\. |   |  |  |  | 
-| [RemoveTagsFromResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html) | Removes tags from an Amazon Directory Services directory\. |   |  |  |  | 
-| [RestoreFromSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html) | Restores a directory using an existing directory snapshot\. |   |  |  |  | 
-| [StartSchemaExtension](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html) | Applies a schema extension to a Microsoft AD directory\. |   |  |  |  | 
-| [UpdateConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateConditionalForwarder.html) | Updates a conditional forwarder that has been set up for your AWS directory\. |   |  |  |  | 
-| [UpdateRadius](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateRadius.html) | Updates the Remote Authentication Dial In User Service \(RADIUS\) server information for an AD Connector directory\. |   |  |  |  | 
-| [VerifyTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_VerifyTrust.html) | Verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain\. |   |  |  |  | 
+| [AddIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html) | Adds a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services | Write  |  |  |  | 
+| [AddTagsToResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html) | Adds or overwrites one or more tags for the specified Amazon Directory Services directory\. | Tagging Write  |  |  |  | 
+| [CancelSchemaExtension](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CancelSchemaExtension.html) | Cancels an in\-progress schema extension to a Microsoft AD directory\. | Write  |  |  |  | 
+| [ConnectDirectory](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ConnectDirectory.html) | Creates an AD Connector to connect to an on\-premises directory\. | Write  |  |  |  | 
+| [CreateAlias](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateAlias.html) | Creates an alias for a directory and assigns the alias to the directory\. | Write  |  |  |  | 
+| [CreateComputer](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html) | Creates a computer account in the specified directory, and joins the computer to the directory\. | Write  |  |  |  | 
+| [CreateConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateConditionalForwarder.html) | Creates a conditional forwarder associated with your AWS directory\. | Write  |  |  |  | 
+| [CreateDirectory](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateDirectory.html) | Creates a Simple AD directory\. | Write  |  |  |  | 
+| [CreateMicrosoftAD](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateMicrosoftAD.html) | Creates a Microsoft AD in the AWS cloud\. | Write  |  |  |  | 
+| [CreateSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateSnapshot.html) | Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud\. | Write  |  |  |  | 
+| [CreateTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html) | Initiates the creation of the AWS side of a trust relationship between a Microsoft AD in the AWS cloud and an external domain\. | Write  |  |  |  | 
+| [DeleteConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteConditionalForwarder.html) | Deletes a conditional forwarder that has been set up for your AWS directory\. | Write  |  |  |  | 
+| [DeleteDirectory](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html) | Deletes an AWS Directory Service directory\. | Write  |  |  |  | 
+| [DeleteSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteSnapshot.html) | Deletes a directory snapshot\. | Write  |  |  |  | 
+| [DeleteTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/DeleteTrust.html) | Deletes an existing trust relationship between your Microsoft AD in the AWS cloud and an external domain\. | Write  |  |  |  | 
+| [DeregisterEventTopic](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterEventTopic.html) | Removes the specified directory as a publisher to the specified SNS topic\. | Write  |  |  |  | 
+| [DescribeConditionalForwarders](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html) | Obtains information about the conditional forwarders for this account\. | Read Write  |  |  |  | 
+| [DescribeDirectories](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html) | Obtains information about the directories that belong to this account\. | List Read Write  |  |  |  | 
+| [DescribeEventTopics](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html) | Obtains information about which SNS topics receive status messages from the specified directory\. | Read Write  |  |  |  | 
+| [DescribeSnapshots](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSnapshots.html) | Obtains information about the directory snapshots that belong to this account\. | Read Write  |  |  |  | 
+| [DescribeTrusts](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html) | Obtains information about the trust relationships for this account\. | Read Write  |  |  |  | 
+| [DisableRadius](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html) | Disables multi\-factor authentication \(MFA\) with the Remote Authentication Dial In User Service \(RADIUS\) server for an AD Connector directory\. | Write  |  |  |  | 
+| [DisableSso](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html) | Disables single\-sign on for a directory\. | Write  |  |  |  | 
+| [EnableRadius](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html) | Enables multi\-factor authentication \(MFA\) with the Remote Authentication Dial In User Service \(RADIUS\) server for an AD Connector directory\. | Write  |  |  |  | 
+| [EnableSso](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableSso.html) | Enables single\-sign on for a directory\. | Write  |  |  |  | 
+| [GetDirectoryLimits](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetDirectoryLimits.html) | Obtains directory limit information for the current region\. | Read Write  |  |  |  | 
+| [GetSnapshotLimits](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html) | Obtains the manual snapshot limits for a directory\. | Read Write  |  |  |  | 
+| [ListIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListIpRoutes.html) | Lists the address blocks that you have added to a directory\. | Read Write  |  |  |  | 
+| [ListSchemaExtensions](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListSchemaExtensions.html) | Lists all schema extensions applied to a Microsoft AD Directory\. | List Read Write  |  |  |  | 
+| [ListTagsForResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListTagsForResource.html) | Lists all tags on an Amazon Directory Services directory\. | Read Write  |  |  |  | 
+| [RegisterEventTopic](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html) | Associates a directory with an SNS topic\. | Write  |  |  |  | 
+| [RemoveIpRoutes](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveIpRoutes.html) | Removes IP address blocks from a directory\. | Write  |  |  |  | 
+| [RemoveTagsFromResource](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html) | Removes tags from an Amazon Directory Services directory\. | Tagging Write  |  |  |  | 
+| [RestoreFromSnapshot](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html) | Restores a directory using an existing directory snapshot\. | Write  |  |  |  | 
+| [StartSchemaExtension](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html) | Applies a schema extension to a Microsoft AD directory\. | Write  |  |  |  | 
+| [UpdateConditionalForwarder](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateConditionalForwarder.html) | Updates a conditional forwarder that has been set up for your AWS directory\. | Write  |  |  |  | 
+| [UpdateRadius](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateRadius.html) | Updates the Remote Authentication Dial In User Service \(RADIUS\) server information for an AD Connector directory\. | Write  |  |  |  | 
+| [VerifyTrust](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_VerifyTrust.html) | Verifies a trust relationship between your Microsoft AD in the AWS cloud and an external domain\. | Read Write  |  |  |  | 
 
 ## Resources Defined by Directory Service<a name="awsdirectoryservice-resources-for-iam-policies"></a>
 

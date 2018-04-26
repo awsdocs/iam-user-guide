@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [GetTranscriptionJob](http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html) | Returns information about a transcription job\. |   |  |  |  | 
-| [ListTranscriptionJobs](http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html) | Lists transcription jobs with the specified status\. |   |  |  |  | 
-| [StartTranscriptionJob](http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html) | Starts an asynchronous job to transcribe speech to text\. |   |  |  |  | 
+| [GetTranscriptionJob](http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html) | Returns information about a transcription job\. | Write Read  |  |  |  | 
+| [ListTranscriptionJobs](http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html) | Lists transcription jobs with the specified status\. | Write Read List  |  |  |  | 
+| [StartTranscriptionJob](http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html) | Starts an asynchronous job to transcribe speech to text\. | Write  |  |  |  | 
 
 ## Resources Defined by Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
 

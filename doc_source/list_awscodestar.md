@@ -21,25 +21,25 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AssociateTeamMember](http://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html) | Adds a user to the team for an AWS CodeStar project\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [CreateProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html) | Creates a project with minimal structure, customer policies, and no resources\. |   |  |  |  | 
-| [CreateUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateUserProfile.html) | Creates a profile for a user that includes user preferences, display name, and email\. |   |  |  |  | 
-| DeleteExtendedAccess \[permission only\] | Grants access to extended delete APIs\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [DeleteProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteProject.html) | Deletes a project, including project resources\. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [DeleteUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html) | Deletes a user profile in AWS CodeStar, including all personal preference data associated with that profile, such as display name and email address\. It does not delete the history of that user, for example the history of commits made by that user\. |   |  |  |  | 
-| [DescribeProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeProject.html) | Describes a project and its resources\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [DescribeUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeUserProfile.html) | Describes a user in AWS CodeStar and the user attributes across all projects\. |   |  |  |  | 
-| [DisassociateTeamMember](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DisassociateTeamMember.html) | Removes a user from a project\. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources\. |   | [project\*](#awscodestar-project)  |  |  | 
-| GetExtendedAccess \[permission only\] | Grants access to extended read APIs\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [ListProjects](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListProjects.html) | Lists all projects in CodeStar associated with your AWS account\. |   |  |  |  | 
-| [ListResources](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListResources.html) | Lists all resources associated with a project in CodeStar\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [ListTeamMembers](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTeamMembers.html) | Lists all team members associated with a project\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [ListUserProfiles](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListUserProfiles.html) | Lists user profiles in AWS CodeStar\. |   |  |  |  | 
-| PutExtendedAccess \[permission only\] | Grants access to extended write APIs\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [UpdateProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateProject.html) | Updates a project in CodeStar\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [UpdateTeamMember](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateTeamMember.html) | Updates team member attributes within a CodeStar project\. |   | [project\*](#awscodestar-project)  |  |  | 
-| [UpdateUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateUserProfile.html) | Updates a profile for a user that includes user preferences, display name, and email\. |   |  |  |  | 
-| VerifyServiceRole | Verifies whether the AWS CodeStar service role exists in the customer's account\. |   |  |  |  | 
+| [AssociateTeamMember](http://docs.aws.amazon.com/codestar/latest/APIReference/API_AssociateTeamMember.html) | Adds a user to the team for an AWS CodeStar project\. | Permissions management  | [project\*](#awscodestar-project)  |  |  | 
+| [CreateProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateProject.html) | Creates a project with minimal structure, customer policies, and no resources\. | Permissions management  |  |  |  | 
+| [CreateUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_CreateUserProfile.html) | Creates a profile for a user that includes user preferences, display name, and email\. | Write  |  |  |  | 
+| DeleteExtendedAccess \[permission only\] | Grants access to extended delete APIs\. | Write  | [project\*](#awscodestar-project)  |  |  | 
+| [DeleteProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteProject.html) | Deletes a project, including project resources\. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project\. | Permissions management  | [project\*](#awscodestar-project)  |  |  | 
+| [DeleteUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DeleteUserProfile.html) | Deletes a user profile in AWS CodeStar, including all personal preference data associated with that profile, such as display name and email address\. It does not delete the history of that user, for example the history of commits made by that user\. | Write  |  |  |  | 
+| [DescribeProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeProject.html) | Describes a project and its resources\. | Read Write  | [project\*](#awscodestar-project)  |  |  | 
+| [DescribeUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DescribeUserProfile.html) | Describes a user in AWS CodeStar and the user attributes across all projects\. | Read Write  |  |  |  | 
+| [DisassociateTeamMember](http://docs.aws.amazon.com/codestar/latest/APIReference/API_DisassociateTeamMember.html) | Removes a user from a project\. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources\. | Permissions management  | [project\*](#awscodestar-project)  |  |  | 
+| GetExtendedAccess \[permission only\] | Grants access to extended read APIs\. | Read Write  | [project\*](#awscodestar-project)  |  |  | 
+| [ListProjects](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListProjects.html) | Lists all projects in CodeStar associated with your AWS account\. | List Read Write  |  |  |  | 
+| [ListResources](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListResources.html) | Lists all resources associated with a project in CodeStar\. | List Read Write  | [project\*](#awscodestar-project)  |  |  | 
+| [ListTeamMembers](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListTeamMembers.html) | Lists all team members associated with a project\. | List Read Write  | [project\*](#awscodestar-project)  |  |  | 
+| [ListUserProfiles](http://docs.aws.amazon.com/codestar/latest/APIReference/API_ListUserProfiles.html) | Lists user profiles in AWS CodeStar\. | List Read Write  |  |  |  | 
+| PutExtendedAccess \[permission only\] | Grants access to extended write APIs\. | Write  | [project\*](#awscodestar-project)  |  |  | 
+| [UpdateProject](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateProject.html) | Updates a project in CodeStar\. | Write  | [project\*](#awscodestar-project)  |  |  | 
+| [UpdateTeamMember](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateTeamMember.html) | Updates team member attributes within a CodeStar project\. | Permissions management  | [project\*](#awscodestar-project)  |  |  | 
+| [UpdateUserProfile](http://docs.aws.amazon.com/codestar/latest/APIReference/API_UpdateUserProfile.html) | Updates a profile for a user that includes user preferences, display name, and email\. | Write  |  |  |  | 
+| VerifyServiceRole | Verifies whether the AWS CodeStar service role exists in the customer's account\. | List Read Write  |  |  |  | 
 
 ## Resources Defined by CodeStar<a name="awscodestar-resources-for-iam-policies"></a>
 

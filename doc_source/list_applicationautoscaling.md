@@ -21,16 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScalingPolicy.html) | Deletes an Application Auto Scaling scaling policy that was previously created\. |   |  |  |  | 
-| [DeleteScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScheduledAction.html) | Deletes an Application Auto Scaling scheduled action that was previously created\. |   |  |  |  | 
-| [DeregisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeregisterScalableTarget.html) | Deregisters a scalable target that was previously registered\. |   |  |  |  | 
-| [DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html) | Provides descriptive information for scalable targets with a specified service namespace\. |   |  |  |  | 
-| [DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html) | Provides descriptive information for scaling activities with a specified service namespace for the previous six weeks\. |   |  |  |  | 
-| [DescribeScalingPolicies](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingPolicies.html) | Provides descriptive information for scaling policies with a specified service namespace\. |   |  |  |  | 
-| [DescribeScheduledActions](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScheduledActions.html) | Provides descriptive information for scheduled actions with a specified service namespace\. |   |  |  |  | 
-| [PutScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScalingPolicy.html) | Creates or updates a policy for an existing Application Auto Scaling scalable target\. |   |  |  |  | 
-| [PutScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html) | Creates or updates a scheduled action for an existing Application Auto Scaling scalable target\. |   |  |  |  | 
-| [RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html) | Registers or updates a scalable target\. A scalable target is a resource that can be scaled out or in with Application Auto Scaling\. |   |  |  |  | 
+| [DeleteScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScalingPolicy.html) | Deletes an Application Auto Scaling scaling policy that was previously created\. | Write  |  |  |  | 
+| [DeleteScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeleteScheduledAction.html) | Deletes an Application Auto Scaling scheduled action that was previously created\. | Write  |  |  |  | 
+| [DeregisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DeregisterScalableTarget.html) | Deregisters a scalable target that was previously registered\. | Write  |  |  |  | 
+| [DescribeScalableTargets](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalableTargets.html) | Provides descriptive information for scalable targets with a specified service namespace\. | Read Write  |  |  |  | 
+| [DescribeScalingActivities](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingActivities.html) | Provides descriptive information for scaling activities with a specified service namespace for the previous six weeks\. | Read Write  |  |  |  | 
+| [DescribeScalingPolicies](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScalingPolicies.html) | Provides descriptive information for scaling policies with a specified service namespace\. | Read Write  |  |  |  | 
+| [DescribeScheduledActions](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_DescribeScheduledActions.html) | Provides descriptive information for scheduled actions with a specified service namespace\. | Read Write  |  |  |  | 
+| [PutScalingPolicy](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScalingPolicy.html) | Creates or updates a policy for an existing Application Auto Scaling scalable target\. | Write  |  |  |  | 
+| [PutScheduledAction](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html) | Creates or updates a scheduled action for an existing Application Auto Scaling scalable target\. | Write  |  |  |  | 
+| [RegisterScalableTarget](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html) | Registers or updates a scalable target\. A scalable target is a resource that can be scaled out or in with Application Auto Scaling\. | Write  |  |  |  | 
 
 ## Resources Defined by Application Auto Scaling<a name="applicationautoscaling-resources-for-iam-policies"></a>
 

@@ -18,76 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [AbortMultipartUpload](http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadAbort.html) | Aborts a multipart upload\. |   | [object\*](#amazons3-object)  |  |  | 
-| [CreateBucket](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUT.html) | Creates a new bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [DeleteBucket](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETE.html) | Deletes the bucket named in the URI |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [DeleteBucketPolicy](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETEpolicy.html) | Delete the policy on a specified bucket |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [DeleteBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketDELETEwebsite.html) | Removes the website configuration for a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [DeleteObject](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html) | Removes the null version \(if there is one\) of an object and inserts a delete marker, which becomes the current version of the object\. |   | [object\*](#amazons3-object)  |  |  | 
-| [DeleteObjectTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETEtagging.html) | This implementation of the DELETE operation uses the tagging subresource to remove the entire tag set from the specified object\. |   | [object\*](#amazons3-object)  |  |  | 
-| [DeleteObjectVersion](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html) | To remove a specific version of a object, you must be the bucket owner and you must use the versionId subresource\. |   | [object\*](#amazons3-object)  |  |  | 
-| [DeleteObjectVersionTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETEtagging.html) | DELETE Object tagging \(for a Specific Version of the Object\) |   | [object\*](#amazons3-object)  |  |  | 
-| [GetAccelerateConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETaccelerate.html) | This implementation of the GET operation uses the accelerate subresource to return the Transfer Acceleration state of a bucket, which is either Enabled or Suspended\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetAnalyticsConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETAnalyticsConfig.html) | This implementation of the GET operation returns an analytics configuration \(identified by the analytics configuration ID\) from the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETacl.html) | Return the access control list \(ACL\) of a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketCORS](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETcors.html) | Returns the cors configuration information set for the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketLocation](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlocation.html) | Return a bucket's region\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketLogging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlogging.html) | Return the logging status of a bucket and the permissions users have to view and modify that status\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketNotification](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETnotification.html) | Return the notification configuration of a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketPolicy](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETpolicy.html) | Return the policy of a specified bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketRequestPayment](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTrequestPaymentGET.html) | Return the request payment configuration of a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETtagging.html) | Return the tag set associated with the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketVersioning](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETversioningStatus.html) | Return the versioning state of a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETwebsite.html) | Returns the website configuration associated with a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetInventoryConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html) | This implementation of the GET operation returns an inventory configuration \(identified by the inventory configuration ID\) from the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| GetIpConfiguration |  |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetLifecycleConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlifecycle.html) | Returns the lifecycle configuration information set on the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetMetricsConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETMetricConfiguration.html) | Gets a metrics configuration for the CloudWatch request metrics \(specified by the metrics configuration ID\) from the bucket\. Note that this doesn't include the daily storage metrics\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [GetObject](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html) | Retrieves objects from Amazon S3\. |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETacl.html) | Return the access control list \(ACL\) of an object\. |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETtagging.html) | This implementation of the GET operation returns the tags associated with an object\. You send the GET request against the tagging subresource associated with the object\. |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectTorrent](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETtorrent.html) | return torrent files from a bucket\. |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectVersion](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGET.html) | To return a different version, use the versionId subresource\. |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectVersionAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/objectGetAclVersions.html) | To return ACL information about a different version, use the versionId subresource\. |   | [object\*](#amazons3-object)  |  |  | 
-| GetObjectVersionForReplication |  |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectVersionTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETtagging.html) | GET Object tagging \(for a Specific Version of the Object\) |   | [object\*](#amazons3-object)  |  |  | 
-| [GetObjectVersionTorrent](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectGETtorrent.html) | To return Torrent files about a different version, use the versionId subresource\. |   | [object\*](#amazons3-object)  |  |  | 
-| [GetReplicationConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETreplication.html) | Returns the replication configuration information set on the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [ListAllMyBuckets](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTServiceGET.html) | Returns a list of all buckets owned by the authenticated sender of the request\. |   |  |  |  | 
-| [ListBucket](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGET.html) | Returns some or all \(up to 1000\) of the objects in a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| ListBucketByTags |  |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [ListBucketMultipartUploads](http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadListMPUpload.html) | Lists in\-progress multipart uploads\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [ListBucketVersions](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETVersion.html) | Use the versions subresource to list metadata about all of the versions of objects in a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [ListMultipartUploadParts](http://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadListParts.html) | Lists the parts that have been uploaded for a specific multipart upload\. |   | [object\*](#amazons3-object)  |  |  | 
-| ObjectOwnerOverrideToBucketOwner |  |   | [object\*](#amazons3-object)  |  |  | 
-| [PutAccelerateConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTaccelerate.html) | This implementation of the PUT operation uses the accelerate subresource to set the Transfer Acceleration state of an existing bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutAnalyticsConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTAnalyticsConfig.html) | This implementation of the PUT operation adds an analytics configuration \(identified by the analytics ID\) to the bucket\. You can have up to 1,000 analytics configurations per bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTacl.html) | Set the permissions on an existing bucket using access control lists \(ACL\)\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketCORS](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTcors.html) | Sets the cors configuration for your bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketLogging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html) | Set the logging parameters for a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketNotification](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTnotification.html) | Enables you to receive notifications when certain events happen in your bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketPolicy](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTpolicy.html) | Add to or replace a policy on a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketRequestPayment](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTrequestPaymentPUT.html) | Set the request payment configuration of a bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTtagging.html) | Add a set of tags to an existing bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketVersioning](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html) | Set the versioning state of an existing bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutBucketWebsite](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTwebsite.html) | Sets the configuration of the website that is specified in the website subresource\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutInventoryConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTInventoryConfig.html) | This implementation of the PUT operation adds an inventory configuration \(identified by the inventory ID\) to the bucket\. You can have up to 1,000 inventory configurations per bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| PutIpConfiguration |  |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutLifecycleConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html) | Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutMetricsConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html) | Sets or updates a metrics configuration for the CloudWatch request metrics \(specified by the metrics configuration ID\) from the bucket\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| [PutObject](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUT.html) | Adds an object to a bucket\. |   | [object\*](#amazons3-object)  |  |  | 
-| [PutObjectAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html) | Set the access control list \(ACL\) permissions for an object that already exists in a bucket\. |   | [object\*](#amazons3-object)  |  |  | 
-| [PutObjectTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html) | This implementation of the PUT operation uses the tagging subresource to add a set of tags to an existing object\. |   | [object\*](#amazons3-object)  |  |  | 
-| [PutObjectVersionAcl](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTacl.html#objectPutAclVersions) | The ACL of an object is set at the object version level\. |   | [object\*](#amazons3-object)  |  |  | 
-| [PutObjectVersionTagging](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html) | PUT Object tagging \(for a Specific Version of the Object\) |   | [object\*](#amazons3-object)  |  |  | 
-| [PutReplicationConfiguration](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTreplication.html) | In a versioning\-enabled bucket, this operation creates a new replication configuration \(or replaces an existing one, if present\)\. |   | [bucket\*](#amazons3-bucket)  |  |  | 
-| ReplicateDelete |  |   | [object\*](#amazons3-object)  |  |  | 
-| ReplicateObject |  |   | [object\*](#amazons3-object)  |  |  | 
-| ReplicateTags |  |   | [object\*](#amazons3-object)  |  |  | 
-| [RestoreObject](http://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html) | Restores a temporary copy of an archived object\. |   | [object\*](#amazons3-object)  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html)
 
 ## Resources Defined by S3<a name="amazons3-resources-for-iam-policies"></a>
 
@@ -105,12 +36,12 @@ The following resource types are defined by this service and can be used in the 
 
 Amazon S3 defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [s3:ExistingObjectTag/<key>](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) | Enables you to verify that an existing object tag has the specific tag key and value\. | String | 
 | [s3:LocationConstraint](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to restrict users to creating buckets in only a specific region\. | String | 

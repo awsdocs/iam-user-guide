@@ -21,27 +21,27 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [BatchGetNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html) | Gets information about one or more named queries\. |   |  |  |  | 
-| [BatchGetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html) | Gets information about one or more query executions\. |   |  |  |  | 
-| CancelQueryExecution | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StopQueryExecution otherwise\. |   |  |  |  | 
-| [CreateNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html) | Creates a named query\. |   |  |  |  | 
-| [DeleteNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html) | Deletes a named query specified\. |   |  |  |  | 
-| GetCatalogs | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. |   |  |  |  | 
-| GetExecutionEngine | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. |   |  |  |  | 
-| GetExecutionEngines | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. |   |  |  |  | 
-| [GetNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html) | Gets information about the specified named query\. |   |  |  |  | 
-| GetNamespace | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. |   |  |  |  | 
-| GetNamespaces | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. |   |  |  |  | 
-| [GetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html) | Gets information about the specified query execution\. |   |  |  |  | 
-| GetQueryExecutions | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use ListQueryExecutions otherwise\. |   |  |  |  | 
-| [GetQueryResults](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html) | Gets information about the results of the specified query execution\. |   |  |  |  | 
-| GetTable | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to tables\. |   |  |  |  | 
-| GetTables | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to tables\. |   |  |  |  | 
-| [ListNamedQueries](http://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html) | Returns a list of named queries in Amazon Athena for the specified AWS account\. |   |  |  |  | 
-| [ListQueryExecutions](http://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html) | Returns a list of query executions for the specified AWS account\. |   |  |  |  | 
-| RunQuery | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StartQueryExecution otherwise\. |   |  |  |  | 
-| [StartQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html) | Starts a query execution using a SQL query provided as a string\. |   |  |  |  | 
-| [StopQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html) | Stops the specified query execution\. |   |  |  |  | 
+| [BatchGetNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html) | Gets information about one or more named queries\. | Read Write  |  |  |  | 
+| [BatchGetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html) | Gets information about one or more query executions\. | Read Write  |  |  |  | 
+| CancelQueryExecution | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StopQueryExecution otherwise\. | Write  |  |  |  | 
+| [CreateNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html) | Creates a named query\. | Write  |  |  |  | 
+| [DeleteNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html) | Deletes a named query specified\. | Write  |  |  |  | 
+| GetCatalogs | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. | Read Write  |  |  |  | 
+| GetExecutionEngine | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. | Read Write  |  |  |  | 
+| GetExecutionEngines | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. | Read Write  |  |  |  | 
+| [GetNamedQuery](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html) | Gets information about the specified named query\. | Read Write  |  |  |  | 
+| GetNamespace | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. | Read Write  |  |  |  | 
+| GetNamespaces | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to databases and tables\. | Read Write  |  |  |  | 
+| [GetQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html) | Gets information about the specified query execution\. | Read Write  |  |  |  | 
+| GetQueryExecutions | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use ListQueryExecutions otherwise\. | Read Write  |  |  |  | 
+| [GetQueryResults](http://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html) | Gets information about the results of the specified query execution\. | Read Write  |  |  |  | 
+| GetTable | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to tables\. | Read Write  |  |  |  | 
+| GetTables | Applies only to AWS services managed policy and principals that use an Athena JDBC driver\. Enables access to tables\. | Read Write  |  |  |  | 
+| [ListNamedQueries](http://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html) | Returns a list of named queries in Amazon Athena for the specified AWS account\. | List Read Write  |  |  |  | 
+| [ListQueryExecutions](http://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html) | Returns a list of query executions for the specified AWS account\. | List Read Write  |  |  |  | 
+| RunQuery | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StartQueryExecution otherwise\. | Write  |  |  |  | 
+| [StartQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html) | Starts a query execution using a SQL query provided as a string\. | Write  |  |  |  | 
+| [StopQueryExecution](http://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html) | Stops the specified query execution\. | Write  |  |  |  | 
 
 ## Resources Defined by Athena<a name="amazonathena-resources-for-iam-policies"></a>
 

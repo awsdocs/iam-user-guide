@@ -23,8 +23,8 @@ The following are not actual APIs, they are permissions that allow access to Mec
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| GetTask | Retrieve information about the specified task |   | [task\*](#amazonmechanicalturkcrowd-task)  |  |  | 
-| PutTask | Create or update a task\. |   | [task\*](#amazonmechanicalturkcrowd-task)  |  |  | 
+| GetTask | Retrieve information about the specified task | Read Write  | [task\*](#amazonmechanicalturkcrowd-task)  |  |  | 
+| PutTask | Create or update a task\. | Write  | [task\*](#amazonmechanicalturkcrowd-task)  |  |  | 
 
 ## Resources Defined by Mechanical Turk Crowd<a name="amazonmechanicalturkcrowd-resources-for-iam-policies"></a>
 

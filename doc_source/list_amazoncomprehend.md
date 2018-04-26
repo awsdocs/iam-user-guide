@@ -21,17 +21,17 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [BatchDetectDominantLanguage](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html) | Detects the language or languages present in the list of text documents\. |   |  |  |  | 
-| [BatchDetectEntities](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html) | Detects the named entities \("People", "Places", "Locations", etc\) within the given list of text documents\. |   |  |  |  | 
-| [BatchDetectKeyPhrases](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html) | Detects the phrases in the list of text documents that are most indicative of the content\. |   |  |  |  | 
-| [BatchDetectSentiment](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html) | Detects the sentiment of a text in the list of documents \(Positive, Negative, Neutral, or Mixed\)\. |   |  |  |  | 
-| [DescribeTopicsDetectionJob](http://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html) | Gets the properties associated with a topic detection job\. |   |  |  |  | 
-| [DetectDominantLanguage](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html) | Detects the language or languages present in the text\. |   |  |  |  | 
-| [DetectEntities](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html) | Detects the named entities \("People", "Places", "Locations", etc\) within the given text document\. |   |  |  |  | 
-| [DetectKeyPhrases](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html) | Detects the phrases in the text that are most indicative of the content\. |   |  |  |  | 
-| [DetectSentiment](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html) | Detects the sentiment of a text in a document \(Positive, Negative, Neutral, or Mixed\)\. |   |  |  |  | 
-| [ListTopicsDetectionJobs](http://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html) | Gets a list of the topic detection jobs that you have submitted\. |   |  |  |  | 
-| [StartTopicsDetectionJob](http://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html) | Starts an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic\. |   |  |  |  | 
+| [BatchDetectDominantLanguage](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html) | Detects the language or languages present in the list of text documents\. | Read Write  |  |  |  | 
+| [BatchDetectEntities](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html) | Detects the named entities \("People", "Places", "Locations", etc\) within the given list of text documents\. | Read Write  |  |  |  | 
+| [BatchDetectKeyPhrases](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html) | Detects the phrases in the list of text documents that are most indicative of the content\. | Read Write  |  |  |  | 
+| [BatchDetectSentiment](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html) | Detects the sentiment of a text in the list of documents \(Positive, Negative, Neutral, or Mixed\)\. | Read Write  |  |  |  | 
+| [DescribeTopicsDetectionJob](http://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html) | Gets the properties associated with a topic detection job\. | Read Write  |  |  |  | 
+| [DetectDominantLanguage](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html) | Detects the language or languages present in the text\. | Read Write  |  |  |  | 
+| [DetectEntities](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html) | Detects the named entities \("People", "Places", "Locations", etc\) within the given text document\. | Read Write  |  |  |  | 
+| [DetectKeyPhrases](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html) | Detects the phrases in the text that are most indicative of the content\. | Read Write  |  |  |  | 
+| [DetectSentiment](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html) | Detects the sentiment of a text in a document \(Positive, Negative, Neutral, or Mixed\)\. | Read Write  |  |  |  | 
+| [ListTopicsDetectionJobs](http://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html) | Gets a list of the topic detection jobs that you have submitted\. | Read Write  |  |  |  | 
+| [StartTopicsDetectionJob](http://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html) | Starts an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic\. | Write  |  |  |  | 
 
 ## Resources Defined by Comprehend<a name="amazoncomprehend-resources-for-iam-policies"></a>
 

@@ -21,30 +21,30 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddInstanceGroups.html) | Adds instance groups to a running cluster |   |  |  |  | 
-| [AddJobFlowSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddJobFlowSteps.html) | Adds new steps to a running job flow |   |  |  |  | 
-| [AddTags](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddTags.html) | Adds tags to an Amazon EMR resource |   |  |  |  | 
-| [CancelSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_CancelSteps.html) | Cancels a pending step or steps in a running cluster |   |  |  |  | 
-| [CreateSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_CreateSecurityConfiguration.html) | Creates a security configuration which is stored in the service |   |  |  |  | 
-| [DeleteSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ DeleteSecurityConfiguration.html) | Deletes a security configuration |   |  |  |  | 
-| [DescribeCluster](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeCluster.html) | Provides cluster\-level details including status, hardware and software configuration, VPC settings, and so on |   |  |  |  | 
-| [DescribeSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeSecurityConfiguration.html) | Provides the details of a security configuration by returning the configuration JSON |   |  |  |  | 
-| [DescribeStep](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeStep.html) | Provides more detail about the cluster step |   |  |  |  | 
-| [ListBootstrapActions](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListBootstrapActions.html) | Provides information about the bootstrap actions associated with a cluster |   |  |  |  | 
-| [ListClusters](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListClusters.html) | Provides the status of all clusters visible to this AWS account |   |  |  |  | 
-| [ListInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstanceGroups.html) | Provides all available details about the instance groups in a cluster |   |  |  |  | 
-| [ListInstances](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstances.html) | Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster |   |  |  |  | 
-| [ListSecurityConfigurations](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ ListSecurityConfigurations ) |  Lists all the security configurations visible to this account, providing their creation dates and times, and their names |   |  |  |  | 
-| [ListSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListSteps.html) | Provides a list of steps for the cluster |   |  |  |  | 
-| [ModifyInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ModifyInstanceGroups.html) | Modifies the number of nodes and configuration settings of an instance group |   |  |  |  | 
-| [PutAutoScalingPolicy](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_PutAutoScalingPolicy.html) | Modifies the number of nodes and configuration settings of an instance group |   |  |  |  | 
-| [RemoveAutoScalingPolicy](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveAutoScalingPolicy.html) | Removes an automatic scaling policy from a specified instance group within an EMR cluster |   |  |  |  | 
-| [RemoveTags](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveTags.html) | Removes tags from an Amazon EMR resource |   |  |  |  | 
-| [RunJobFlow](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RunJobFlow.html) | Creates and starts running a new job flow |   |  |  |  | 
-| [SetTerminationProtection](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_SetTerminationProtection.html) | Locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job\-flow error |   |  |  |  | 
-| [SetVisibleToAllUsers](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_SetVisibleToAllUsers.html) | Sets whether all AWS Identity and Access Management \(IAM\) users under your account can access the specified job flows |   |  |  |  | 
-| [TerminateJobFlows](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_TerminateJobFlows.html) | Shuts a list of job flows down |   |  |  |  | 
-| ViewEventsFromAllClustersInConsole \[permission only\] | Use the console to view events from all clusters in a region |   |  |  |  | 
+| [AddInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddInstanceGroups.html) | Adds instance groups to a running cluster | Write  |  |  |  | 
+| [AddJobFlowSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddJobFlowSteps.html) | Adds new steps to a running job flow | Write  |  |  |  | 
+| [AddTags](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_AddTags.html) | Adds tags to an Amazon EMR resource | Tagging Write  |  |  |  | 
+| [CancelSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_CancelSteps.html) | Cancels a pending step or steps in a running cluster | Write  |  |  |  | 
+| [CreateSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_CreateSecurityConfiguration.html) | Creates a security configuration which is stored in the service | Write  |  |  |  | 
+| [DeleteSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ DeleteSecurityConfiguration.html) | Deletes a security configuration | Write  |  |  |  | 
+| [DescribeCluster](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeCluster.html) | Provides cluster\-level details including status, hardware and software configuration, VPC settings, and so on | Read Write  |  |  |  | 
+| [DescribeSecurityConfiguration](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeSecurityConfiguration.html) | Provides the details of a security configuration by returning the configuration JSON | Read Write  |  |  |  | 
+| [DescribeStep](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_DescribeStep.html) | Provides more detail about the cluster step | Read Write  |  |  |  | 
+| [ListBootstrapActions](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListBootstrapActions.html) | Provides information about the bootstrap actions associated with a cluster | List Read Write  |  |  |  | 
+| [ListClusters](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListClusters.html) | Provides the status of all clusters visible to this AWS account | List Read Write  |  |  |  | 
+| [ListInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstanceGroups.html) | Provides all available details about the instance groups in a cluster | List Read Write  |  |  |  | 
+| [ListInstances](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListInstances.html) | Provides information about the cluster instances that Amazon EMR provisions on behalf of a user when it creates the cluster | List Read Write  |  |  |  | 
+| [ListSecurityConfigurations](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ ListSecurityConfigurations ) |  Lists all the security configurations visible to this account, providing their creation dates and times, and their names | List Read Write  |  |  |  | 
+| [ListSteps](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ListSteps.html) | Provides a list of steps for the cluster | List Read Write  |  |  |  | 
+| [ModifyInstanceGroups](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_ModifyInstanceGroups.html) | Modifies the number of nodes and configuration settings of an instance group | Write  |  |  |  | 
+| [PutAutoScalingPolicy](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_PutAutoScalingPolicy.html) | Modifies the number of nodes and configuration settings of an instance group | Write  |  |  |  | 
+| [RemoveAutoScalingPolicy](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveAutoScalingPolicy.html) | Removes an automatic scaling policy from a specified instance group within an EMR cluster | Write  |  |  |  | 
+| [RemoveTags](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RemoveTags.html) | Removes tags from an Amazon EMR resource | Tagging Write  |  |  |  | 
+| [RunJobFlow](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_RunJobFlow.html) | Creates and starts running a new job flow | Write Tagging  |  |  |  | 
+| [SetTerminationProtection](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_SetTerminationProtection.html) | Locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job\-flow error | Write  |  |  |  | 
+| [SetVisibleToAllUsers](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_SetVisibleToAllUsers.html) | Sets whether all AWS Identity and Access Management \(IAM\) users under your account can access the specified job flows | Write  |  |  |  | 
+| [TerminateJobFlows](http://docs.aws.amazon.com/ElasticMapReduce/latest/API/API_TerminateJobFlows.html) | Shuts a list of job flows down | Write  |  |  |  | 
+| ViewEventsFromAllClustersInConsole \[permission only\] | Use the console to view events from all clusters in a region | List Read Write  |  |  |  | 
 
 ## Resources Defined by EMR<a name="amazonelasticmapreduce-resources-for-iam-policies"></a>
 

@@ -21,17 +21,17 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateFileSystem](http://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html) | Creates a new, empty file system\. |   |  |  |  | 
-| [CreateMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html) | Creates a mount target for a file system\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [CreateTags](http://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html) | Creates or overwrites tags associated with a file system\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DeleteFileSystem](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystem.html) | Deletes a file system, permanently severing access to its contents\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DeleteMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html) | Deletes the specified mount target\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DeleteTags](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html) | Deletes the specified tags from a file system\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DescribeFileSystems](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html) | Returns the description of a specific Amazon EFS file system if either the file system CreationToken or the FileSystemId is provided; otherwise, returns descriptions of all file systems owned by the caller's AWS account in the AWS region of the endpoint that you're calling\. |   | [file\-system](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DescribeMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html) | Returns the security groups currently in effect for a mount target\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DescribeMountTargets](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html) | Returns the descriptions of all the current mount targets, or a specific mount target, for a file system\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [DescribeTags](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html) | Returns the tags associated with a file system\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
-| [ModifyMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html) | Modifies the set of security groups in effect for a mount target\. |   | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [CreateFileSystem](http://docs.aws.amazon.com/efs/latest/ug/API_CreateFileSystem.html) | Creates a new, empty file system\. | Write  |  |  |  | 
+| [CreateMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_CreateMountTarget.html) | Creates a mount target for a file system\. | Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [CreateTags](http://docs.aws.amazon.com/efs/latest/ug/API_CreateTags.html) | Creates or overwrites tags associated with a file system\. | Tagging Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DeleteFileSystem](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteFileSystem.html) | Deletes a file system, permanently severing access to its contents\. | Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DeleteMountTarget](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteMountTarget.html) | Deletes the specified mount target\. | Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DeleteTags](http://docs.aws.amazon.com/efs/latest/ug/API_DeleteTags.html) | Deletes the specified tags from a file system\. | Tagging Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DescribeFileSystems](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeFileSystems.html) | Returns the description of a specific Amazon EFS file system if either the file system CreationToken or the FileSystemId is provided; otherwise, returns descriptions of all file systems owned by the caller's AWS account in the AWS region of the endpoint that you're calling\. | List Read Write  | [file\-system](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DescribeMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargetSecurityGroups.html) | Returns the security groups currently in effect for a mount target\. | Read Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DescribeMountTargets](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html) | Returns the descriptions of all the current mount targets, or a specific mount target, for a file system\. | Read Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [DescribeTags](http://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html) | Returns the tags associated with a file system\. | Read Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
+| [ModifyMountTargetSecurityGroups](http://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html) | Modifies the set of security groups in effect for a mount target\. | Write  | [file\-system\*](#amazonelasticfilesystem-file-system)  |  |  | 
 
 ## Resources Defined by EFS<a name="amazonelasticfilesystem-resources-for-iam-policies"></a>
 

@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [Subscribe](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) | Allows users to add new software subscriptions on the Your Software page\. |   |  |  |  | 
-| [Unsubscribe](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) | Allows users to remove software subscriptions from the Your Software page\. |   |  |  |  | 
-| [ViewSubscriptions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) | Allows users to see subscribed software\. Without this permission, no other permissions will work\. |   |  |  |  | 
+| [Subscribe](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) | Allows users to add new software subscriptions on the Your Software page\. | Write  |  |  |  | 
+| [Unsubscribe](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) | Allows users to remove software subscriptions from the Your Software page\. | Write  |  |  |  | 
+| [ViewSubscriptions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) | Allows users to see subscribed software\. Without this permission, no other permissions will work\. | List Read Write  |  |  |  | 
 
 ## Resources Defined by Marketplace<a name="awsmarketplace-resources-for-iam-policies"></a>
 

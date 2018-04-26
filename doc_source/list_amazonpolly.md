@@ -5,7 +5,7 @@ Amazon Polly \(service prefix: `polly`\) provides the following service\-specifi
 References:
 + Learn how to [configure this service](http://docs.aws.amazon.com/polly/latest/dg/)\.
 + View a [list of the API operations available for this service](http://docs.aws.amazon.com/polly/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](${ConceptsDocRoot}authentication-and-access-control.html) permission policies\.
++ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Polly](#amazonpolly-actions-as-permissions)
@@ -21,12 +21,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html) | Deletes the specified pronunciation lexicon stored in an AWS Region |   | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
-| [DescribeVoices](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html) | Returns the list of voices that are available for use when requesting speech synthesis\. |   |  |  |  | 
-| [GetLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html) | Returns the content of the specified pronunciation lexicon stored in an AWS Region\. |   | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
-| [ListLexicons](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html) | Returns a list of pronunciation lexicons stored in an AWS Region\. |   |  |  |  | 
-| [PutLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html) | Stores a pronunciation lexicon in an AWS Region\. |   | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
-| [SynthesizeSpeech](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html) | Synthesizes UTF\-8 input, plain text or SSML, to a stream of bytes\. |   | [lexicon](#amazonpolly-lexicon)  |  |  | 
+| [DeleteLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html) | Deletes the specified pronunciation lexicon stored in an AWS Region | Write  | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
+| [DescribeVoices](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html) | Returns the list of voices that are available for use when requesting speech synthesis\. | List Read Write  |  |  |  | 
+| [GetLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html) | Returns the content of the specified pronunciation lexicon stored in an AWS Region\. | Read Write  | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
+| [ListLexicons](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html) | Returns a list of pronunciation lexicons stored in an AWS Region\. | List Read Write  |  |  |  | 
+| [PutLexicon](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html) | Stores a pronunciation lexicon in an AWS Region\. | Write  | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
+| [SynthesizeSpeech](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html) | Synthesizes UTF\-8 input, plain text or SSML, to a stream of bytes\. | Read Write  | [lexicon](#amazonpolly-lexicon)  |  |  | 
 
 ## Resources Defined by Polly<a name="amazonpolly-resources-for-iam-policies"></a>
 

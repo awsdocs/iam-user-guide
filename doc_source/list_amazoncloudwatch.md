@@ -21,22 +21,22 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteAlarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html) | Deletes all specified alarms\. In the event of an error, no alarms are deleted |   |  |  |  | 
-| [DeleteDashboards](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html) | Deletes all CloudWatch dashboards that you specify |   |  |  |  | 
-| [DescribeAlarmHistory](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) | Retrieves history for the specified alarm |   |  |  |  | 
-| [DescribeAlarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html) | Retrieves alarms with the specified names |   |  |  |  | 
-| [DescribeAlarmsForMetric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html) | Retrieves all alarms for a single metric |   |  |  |  | 
-| [DisableAlarmActions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html) | Disables actions for the specified alarms |   |  |  |  | 
-| [EnableAlarmActions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html) | Enables actions for the specified alarms |   |  |  |  | 
-| [GetDashboard](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html) | Displays the details of the CloudWatch dashboard you specify |   |  |  |  | 
-| [GetMetricData](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html) | Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data |   |  |  |  | 
-| [GetMetricStatistics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) | Gets statistics for the specified metric |   |  |  |  | 
-| [ListDashboards](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html) | Returns a list of all CloudWatch dashboards in your account |   |  |  |  | 
-| [ListMetrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html) | Returns a list of valid metrics stored for the AWS account owner |   |  |  |  | 
-| [PutDashboard](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html) | Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists |   |  |  |  | 
-| [PutMetricAlarm](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html) | Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric |   |  |  |  | 
-| [PutMetricData](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html) | Publishes metric data points to Amazon CloudWatch |   |  |  |  | 
-| [SetAlarmState](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html) | Temporarily sets the state of an alarm for testing purposes |   |  |  |  | 
+| [DeleteAlarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html) | Deletes all specified alarms\. In the event of an error, no alarms are deleted | Write  |  |  |  | 
+| [DeleteDashboards](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html) | Deletes all CloudWatch dashboards that you specify | Write  |  |  |  | 
+| [DescribeAlarmHistory](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) | Retrieves history for the specified alarm | Read Write  |  |  |  | 
+| [DescribeAlarms](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html) | Retrieves alarms with the specified names | Read Write  |  |  |  | 
+| [DescribeAlarmsForMetric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html) | Retrieves all alarms for a single metric | Read Write  |  |  |  | 
+| [DisableAlarmActions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html) | Disables actions for the specified alarms | Write  |  |  |  | 
+| [EnableAlarmActions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html) | Enables actions for the specified alarms | Write  |  |  |  | 
+| [GetDashboard](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html) | Displays the details of the CloudWatch dashboard you specify | Read Write  |  |  |  | 
+| [GetMetricData](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html) | Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data | Read Write  |  |  |  | 
+| [GetMetricStatistics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) | Gets statistics for the specified metric | Read Write  |  |  |  | 
+| [ListDashboards](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html) | Returns a list of all CloudWatch dashboards in your account | List Read Write  |  |  |  | 
+| [ListMetrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html) | Returns a list of valid metrics stored for the AWS account owner | List Read Write  |  |  |  | 
+| [PutDashboard](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html) | Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists | Write  |  |  |  | 
+| [PutMetricAlarm](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html) | Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric | Write  |  |  |  | 
+| [PutMetricData](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html) | Publishes metric data points to Amazon CloudWatch | Write  |  |  |  | 
+| [SetAlarmState](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html) | Temporarily sets the state of an alarm for testing purposes | Write  |  |  |  | 
 
 ## Resources Defined by CloudWatch<a name="amazoncloudwatch-resources-for-iam-policies"></a>
 

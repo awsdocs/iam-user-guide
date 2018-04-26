@@ -21,13 +21,13 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DELETE](http://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html) | Used to delete resources |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
-| [GET](http://docs.aws.amazon.com/apigateway/api-reference/API_GET.html) | Used to get information about resources |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
-| [HEAD](http://docs.aws.amazon.com/apigateway/api-reference/API_HEAD.html) | Same as GET but does not return the resource representation\. Used in testing scenarios |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
-| [OPTIONS](http://docs.aws.amazon.com/apigateway/api-reference/API_OPTIONS.html) | Used by callers to get information about available communication options for the target service |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
-| [PATCH](http://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html) | Used to update resources |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
-| [POST](http://docs.aws.amazon.com/apigateway/api-reference/API_POST.html) | Used to create child resources |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
-| [PUT](http://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html) | Used to update resources \(and, although not recommended, can be used to create child resources\) |   | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [DELETE](http://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html) | Used to delete resources | Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [GET](http://docs.aws.amazon.com/apigateway/api-reference/API_GET.html) | Used to get information about resources | Read Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [HEAD](http://docs.aws.amazon.com/apigateway/api-reference/API_HEAD.html) | Same as GET but does not return the resource representation\. Used in testing scenarios | Read Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [OPTIONS](http://docs.aws.amazon.com/apigateway/api-reference/API_OPTIONS.html) | Used by callers to get information about available communication options for the target service | Read Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [PATCH](http://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html) | Used to update resources | Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [POST](http://docs.aws.amazon.com/apigateway/api-reference/API_POST.html) | Used to create child resources | Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
+| [PUT](http://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html) | Used to update resources \(and, although not recommended, can be used to create child resources\) | Write  | [apigateway\-general\*](#manageamazonapigateway-apigateway-general)  |  |  | 
 
 ## Resources Defined by API Gateway<a name="manageamazonapigateway-resources-for-iam-policies"></a>
 

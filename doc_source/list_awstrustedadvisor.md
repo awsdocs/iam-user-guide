@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| DescribeCheckItems | View details for the check items |   | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| DescribeCheckRefreshStatuses | Describe check refresh statuses |   | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| DescribeCheckSummaries | Describes the check's summaries |   | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| DescribeNotificationPreferences | Describes the notification preferences for the account |   |  |  |  | 
-| ExcludeCheckItems | Exclude recommendations for checks for a given customer |   | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| IncludeCheckItems | Include recommendations for checks for a given customer |   | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| RefreshCheck | Enqueue a refresh for the specified check |   | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| UpdateNotificationPreferences | Update notification preferences  |   |  |  |  | 
+| DescribeCheckItems | View details for the check items | List Read Write  | [checks\*](#awstrustedadvisor-checks)  |  |  | 
+| DescribeCheckRefreshStatuses | Describe check refresh statuses | List Read Write  | [checks\*](#awstrustedadvisor-checks)  |  |  | 
+| DescribeCheckSummaries | Describes the check's summaries | List Read Write  | [checks\*](#awstrustedadvisor-checks)  |  |  | 
+| DescribeNotificationPreferences | Describes the notification preferences for the account | List Read Write  |  |  |  | 
+| ExcludeCheckItems | Exclude recommendations for checks for a given customer | Write  | [checks\*](#awstrustedadvisor-checks)  |  |  | 
+| IncludeCheckItems | Include recommendations for checks for a given customer | Write  | [checks\*](#awstrustedadvisor-checks)  |  |  | 
+| RefreshCheck | Enqueue a refresh for the specified check | Write  | [checks\*](#awstrustedadvisor-checks)  |  |  | 
+| UpdateNotificationPreferences | Update notification preferences  | Write  |  |  |  | 
 
 ## Resources Defined by Trusted Advisor<a name="awstrustedadvisor-resources-for-iam-policies"></a>
 

@@ -21,18 +21,18 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DeleteRule.html) | Deletes a rule\. You must remove all targets from a rule using RemoveTargets before you can delete the rule\. |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [DescribeRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DescribeRule.html) | Describes the details of the specified rule |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [DisableRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DisableRule.html) | Disables a rule\. A disabled rule won't match any events, and won't self\-trigger if it has a schedule expression\. |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [EnableRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_EnableRule.html) | Enables a rule\. If the rule does not exist, the operation fails |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [ListRuleNamesByTarget](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRuleNamesByTarget.html) | Lists the names of the rules that the given target is put to |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [ListRules](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRules.html) | Lists the Amazon CloudWatch Events rules in your account |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [ListTargetsByRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListTargetsByRule.html) | Lists of targets assigned to the rule |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [PutEvents](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutEvents.html) | Sends custom events to Amazon CloudWatch Events so that they can be matched to rules |   |  |  |  | 
-| [PutRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutRule.html) | Creates or updates a rule\. Rules are enabled by default, or based on value of the State parameter |   |  |  |  | 
-| [PutTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html) | Adds target\(s\) to a rule\. Targets are the resources that can be invoked when a rule is triggered |   |  |  |  | 
-| [RemoveTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_RemoveTargets.html) | Removes target\(s\) from a rule so that when the rule is triggered, those targets will no longer be invoked |   | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
-| [TestEventPattern](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_TestEventPattern.html) | Tests whether an event pattern matches the provided event |   |  |  |  | 
+| [DeleteRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DeleteRule.html) | Deletes a rule\. You must remove all targets from a rule using RemoveTargets before you can delete the rule\. | Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [DescribeRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DescribeRule.html) | Describes the details of the specified rule | Read Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [DisableRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DisableRule.html) | Disables a rule\. A disabled rule won't match any events, and won't self\-trigger if it has a schedule expression\. | Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [EnableRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_EnableRule.html) | Enables a rule\. If the rule does not exist, the operation fails | Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [ListRuleNamesByTarget](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRuleNamesByTarget.html) | Lists the names of the rules that the given target is put to | List Read Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [ListRules](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRules.html) | Lists the Amazon CloudWatch Events rules in your account | List Read Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [ListTargetsByRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListTargetsByRule.html) | Lists of targets assigned to the rule | List Read Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [PutEvents](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutEvents.html) | Sends custom events to Amazon CloudWatch Events so that they can be matched to rules | Write  |  |  |  | 
+| [PutRule](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutRule.html) | Creates or updates a rule\. Rules are enabled by default, or based on value of the State parameter | Write  |  | [events:detail\.userIdentity\.principalId](#amazoncloudwatchevents-events_detail.userIdentity.principalId) [events:detail\-type](#amazoncloudwatchevents-events_detail-type) [events:source](#amazoncloudwatchevents-events_source)  |  | 
+| [PutTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html) | Adds target\(s\) to a rule\. Targets are the resources that can be invoked when a rule is triggered | Write  |  | [events:TargetArn](#amazoncloudwatchevents-events_TargetArn)  |  | 
+| [RemoveTargets](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_RemoveTargets.html) | Removes target\(s\) from a rule so that when the rule is triggered, those targets will no longer be invoked | Write  | [rule\*](#amazoncloudwatchevents-rule)  |  |  | 
+| [TestEventPattern](http://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_TestEventPattern.html) | Tests whether an event pattern matches the provided event | Read Write  |  |  |  | 
 
 ## Resources Defined by CloudWatch Events<a name="amazoncloudwatchevents-resources-for-iam-policies"></a>
 
@@ -49,14 +49,14 @@ The following resource types are defined by this service and can be used in the 
 
 Amazon CloudWatch Events defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 For information about using condition keys to provide more granular control over CloudWatch Events with IAM policies, see [Condition Keys for CloudWatch Events](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsConditionKeys.html) in the *Amazon CloudWatch User Guide*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [events:TargetArn](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/policy-keys-cwe.html#LimitingAccessToTargets) | The ARN of a target that can be put to a rule\. | ARN | 
 | [events:detail\-type](http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/policy-keys-cwe.html#EventsPatternDetailType) | Matches the literal string of the detail\-type filed of the event\. | String | 

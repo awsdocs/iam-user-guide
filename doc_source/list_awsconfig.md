@@ -21,32 +21,32 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigRule.html) | Deletes the specified AWS Config rule and all of its evaluation results |   |  |  |  | 
-| [DeleteConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html) | Deletes the configuration recorder |   |  |  |  | 
-| [DeleteDeliveryChannel](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html) | Deletes the delivery channel |   |  |  |  | 
-| [DeleteEvaluationResults](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteEvaluationResults.html) | Deletes the evaluation results for the specified Config rule |   |  |  |  | 
-| [DeliverConfigSnapshot](http://docs.aws.amazon.com/config/latest/APIReference/API_DeliverConfigSnapshot.html) | Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel |   |  |  |  | 
-| [DescribeComplianceByConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByConfigRule.html) | Indicates whether the specified AWS Config rules are compliant |   |  |  |  | 
-| [DescribeComplianceByResource](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByResource.html) | Indicates whether the specified AWS resources are compliant |   |  |  |  | 
-| [DescribeConfigRuleEvaluationStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html) | Returns status information for each of your AWS managed Config rules |   |  |  |  | 
-| [DescribeConfigRules](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRules.html) | Returns details about your AWS Config rules |   |  |  |  | 
-| [DescribeConfigurationRecorderStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html) | Returns the current status of the specified configuration recorder |   |  |  |  | 
-| [DescribeConfigurationRecorders](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html) | Returns the name of one or more specified configuration recorders |   |  |  |  | 
-| [DescribeDeliveryChannelStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannelStatus.html) | Returns the current status of the specified delivery channel |   |  |  |  | 
-| [DescribeDeliveryChannels](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannels.html) | Returns details about the specified delivery channel |   |  |  |  | 
-| [GetComplianceDetailsByConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByConfigRule.html) | Returns the evaluation results for the specified AWS Config rule |   |  |  |  | 
-| [GetComplianceDetailsByResource](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html) | Returns the evaluation results for the specified AWS resource |   |  |  |  | 
-| [GetComplianceSummaryByConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByConfigRule.html) | Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each |   |  |  |  | 
-| [GetComplianceSummaryByResourceType](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByResourceType.html) | Returns the number of resources that are compliant and the number that are noncompliant |   |  |  |  | 
-| [GetResourceConfigHistory](http://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html) | Returns a list of configuration items for the specified resource |   |  |  |  | 
-| [ListDiscoveredResources](http://docs.aws.amazon.com/config/latest/APIReference/API_ListDiscoveredResources.html) | Accepts a resource type and returns a list of resource identifiers for the resources of that type |   |  |  |  | 
-| [PutConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html) | Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations |   |  |  |  | 
-| [PutConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html) | Creates a new configuration recorder to record the selected resource configurations |   |  |  |  | 
-| [PutDeliveryChannel](http://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html) | Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic |   |  |  |  | 
-| [PutEvaluations](http://docs.aws.amazon.com/config/latest/APIReference/API_PutEvaluations.html) | Used by an AWS Lambda function to deliver evaluation results to AWS Config |   |  |  |  | 
-| [StartConfigRulesEvaluation](http://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigRulesEvaluation.html) | Evaluates your resources against the specified Config rules |   |  |  |  | 
-| [StartConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html) | Starts recording configurations of the AWS resources you have selected to record in your AWS account |   |  |  |  | 
-| [StopConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html) | Stops recording configurations of the AWS resources you have selected to record in your AWS account |   |  |  |  | 
+| [DeleteConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigRule.html) | Deletes the specified AWS Config rule and all of its evaluation results | Write  |  |  |  | 
+| [DeleteConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConfigurationRecorder.html) | Deletes the configuration recorder | Write  |  |  |  | 
+| [DeleteDeliveryChannel](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html) | Deletes the delivery channel | Write  |  |  |  | 
+| [DeleteEvaluationResults](http://docs.aws.amazon.com/config/latest/APIReference/API_DeleteEvaluationResults.html) | Deletes the evaluation results for the specified Config rule | Write  |  |  |  | 
+| [DeliverConfigSnapshot](http://docs.aws.amazon.com/config/latest/APIReference/API_DeliverConfigSnapshot.html) | Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel | Read Write  |  |  |  | 
+| [DescribeComplianceByConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByConfigRule.html) | Indicates whether the specified AWS Config rules are compliant | List Read Write  |  |  |  | 
+| [DescribeComplianceByResource](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeComplianceByResource.html) | Indicates whether the specified AWS resources are compliant | List Read Write  |  |  |  | 
+| [DescribeConfigRuleEvaluationStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRuleEvaluationStatus.html) | Returns status information for each of your AWS managed Config rules | List Read Write  |  |  |  | 
+| [DescribeConfigRules](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigRules.html) | Returns details about your AWS Config rules | List Read Write  |  |  |  | 
+| [DescribeConfigurationRecorderStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html) | Returns the current status of the specified configuration recorder | List Read Write  |  |  |  | 
+| [DescribeConfigurationRecorders](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html) | Returns the name of one or more specified configuration recorders | List Read Write  |  |  |  | 
+| [DescribeDeliveryChannelStatus](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannelStatus.html) | Returns the current status of the specified delivery channel | List Read Write  |  |  |  | 
+| [DescribeDeliveryChannels](http://docs.aws.amazon.com/config/latest/APIReference/API_DescribeDeliveryChannels.html) | Returns details about the specified delivery channel | List Read Write  |  |  |  | 
+| [GetComplianceDetailsByConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByConfigRule.html) | Returns the evaluation results for the specified AWS Config rule | Read Write  |  |  |  | 
+| [GetComplianceDetailsByResource](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceDetailsByResource.html) | Returns the evaluation results for the specified AWS resource | Read Write  |  |  |  | 
+| [GetComplianceSummaryByConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByConfigRule.html) | Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25 for each | Read Write  |  |  |  | 
+| [GetComplianceSummaryByResourceType](http://docs.aws.amazon.com/config/latest/APIReference/API_GetComplianceSummaryByResourceType.html) | Returns the number of resources that are compliant and the number that are noncompliant | Read Write  |  |  |  | 
+| [GetResourceConfigHistory](http://docs.aws.amazon.com/config/latest/APIReference/API_GetResourceConfigHistory.html) | Returns a list of configuration items for the specified resource | Read Write  |  |  |  | 
+| [ListDiscoveredResources](http://docs.aws.amazon.com/config/latest/APIReference/API_ListDiscoveredResources.html) | Accepts a resource type and returns a list of resource identifiers for the resources of that type | List Read Write  |  |  |  | 
+| [PutConfigRule](http://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html) | Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your desired configurations | Write  |  |  |  | 
+| [PutConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigurationRecorder.html) | Creates a new configuration recorder to record the selected resource configurations | Write  |  |  |  | 
+| [PutDeliveryChannel](http://docs.aws.amazon.com/config/latest/APIReference/API_PutDeliveryChannel.html) | Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and Amazon SNS topic | Write  |  |  |  | 
+| [PutEvaluations](http://docs.aws.amazon.com/config/latest/APIReference/API_PutEvaluations.html) | Used by an AWS Lambda function to deliver evaluation results to AWS Config | Write  |  |  |  | 
+| [StartConfigRulesEvaluation](http://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigRulesEvaluation.html) | Evaluates your resources against the specified Config rules | Write  |  |  |  | 
+| [StartConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_StartConfigurationRecorder.html) | Starts recording configurations of the AWS resources you have selected to record in your AWS account | Write  |  |  |  | 
+| [StopConfigurationRecorder](http://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html) | Stops recording configurations of the AWS resources you have selected to record in your AWS account | Write  |  |  |  | 
 
 ## Resources Defined by Config<a name="awsconfig-resources-for-iam-policies"></a>
 

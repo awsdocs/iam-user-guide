@@ -16,17 +16,17 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| CreateApplication | Creates an application, optionally including an AWS SAM file to create the first application version in the same call\. |   |  |  |  | 
-| CreateApplicationVersion | Creates an application version\. |   |  |  |  | 
-| CreateCloudFormationChangeSet | Creates an AWS CloudFormation ChangeSet for the given application\. |   |  |  |  | 
-| DeleteApplication | Delete the specified Application |   |  |  |  | 
-| GetApplication | Gets the specified application\. |   |  |  |  | 
-| GetApplicationPolicy | Gets the policy for the specified application\. |   |  |  |  | 
-| ListApplicationVersions | Lists versions for the specified application owned by the requester\. |   |  |  |  | 
-| ListApplications | Lists applications owned by the requester\. |   |  |  |  | 
-| PutApplicationPolicy | Puts the policy for the specified application\. |   |  |  |  | 
-| SearchApplications | Gets all applications authorized for this user |   |  |  |  | 
-| UpdateApplication | Updates meta\-data of the application |   |  |  |  | 
+| CreateApplication | Creates an application, optionally including an AWS SAM file to create the first application version in the same call\. | Write  |  |  |  | 
+| CreateApplicationVersion | Creates an application version\. | Write  |  |  |  | 
+| CreateCloudFormationChangeSet | Creates an AWS CloudFormation ChangeSet for the given application\. | Write  |  |  |  | 
+| DeleteApplication | Delete the specified Application | Write  |  |  |  | 
+| GetApplication | Gets the specified application\. | Read Write  |  |  |  | 
+| GetApplicationPolicy | Gets the policy for the specified application\. | Read Write  |  |  |  | 
+| ListApplicationVersions | Lists versions for the specified application owned by the requester\. | List Read Write  |  |  |  | 
+| ListApplications | Lists applications owned by the requester\. | List Read Write  |  |  |  | 
+| PutApplicationPolicy | Puts the policy for the specified application\. | Write  |  |  |  | 
+| SearchApplications | Gets all applications authorized for this user | Read Write  |  |  |  | 
+| UpdateApplication | Updates meta\-data of the application | Write  |  |  |  | 
 
 ## Resources Defined by Serverless Application Repository<a name="awsserverlessapplicationrepository-resources-for-iam-policies"></a>
 

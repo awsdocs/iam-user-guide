@@ -51,12 +51,12 @@ The following resource types are defined by this service and can be used in the 
 
 Identity And Access Management defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [iam:PolicyARN](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam) | The ARN of an IAM policy\. | ARN | 
 | [iam:PassedToService](http://docs.aws.amazon.com/IAM/latest/UserGuide/) | The AWS service to which this role is passed\. | String | 

@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html) | Delete Cost and Usage Report Definition |   | [cur\*](#awscostandusagereport-cur)  |  |  | 
-| [DescribeReportDefinitions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html) | Get Cost and Usage Report Definitions |   |  |  |  | 
-| [PutReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html) | Write Cost and Usage Report Definition |   | [cur\*](#awscostandusagereport-cur)  |  |  | 
+| [DeleteReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html) | Delete Cost and Usage Report Definition | Write  | [cur\*](#awscostandusagereport-cur)  |  |  | 
+| [DescribeReportDefinitions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html) | Get Cost and Usage Report Definitions | Read Write  |  |  |  | 
+| [PutReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html) | Write Cost and Usage Report Definition | Write  | [cur\*](#awscostandusagereport-cur)  |  |  | 
 
 ## Resources Defined by Cost and Usage Report<a name="awscostandusagereport-resources-for-iam-policies"></a>
 

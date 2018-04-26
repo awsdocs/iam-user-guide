@@ -18,35 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [CancelUpdateStack](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CancelUpdateStack.html) | Cancels an update on the specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [ContinueUpdateRollback](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ContinueUpdateRollback.html) | For a specified stack that is in the UPDATE\_ROLLBACK\_FAILED state, continues rolling it back to the UPDATE\_ROLLBACK\_COMPLETE state\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [CreateChangeSet](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html) | Creates a list of changes for a stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [CreateStack](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html) | Creates a stack as specified in the template\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [DeleteChangeSet](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteChangeSet.html) | Deletes the specified change set\. Deleting change sets ensures that no one executes the wrong change set\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [DeleteStack](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeleteStack.html) | Deletes a specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [DescribeAccountLimits](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeAccountLimits.html) | Retrieves your account's AWS CloudFormation limits\. |   |  |  |  | 
-| [DescribeStackEvents](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackEvents.html) | Returns all stack related events for a specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [DescribeStackResource](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResource.html) | Returns a description of the specified resource in the specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [DescribeStackResources](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStackResources.html) | Returns AWS resource descriptions for running and deleted stacks\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [DescribeStacks](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeStacks.html) | Returns the description for the specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [EstimateTemplateCost](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_EstimateTemplateCost.html) | Returns the estimated monthly cost of a template\. |   |  |  |  | 
-| [ExecuteChangeSet](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html) | Updates a stack using the input information that was provided when the specified change set was created\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [GetStackPolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetStackPolicy.html) | Returns the stack policy for a specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [GetTemplate](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplate.html) | Returns the template body for a specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [GetTemplateSummary](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_GetTemplateSummary.html) | Returns information about a new or existing template\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [ListChangeSets](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListChangeSets.html) | Returns the ID and status of each active change set for a stack\. For example, AWS CloudFormation lists change sets that are in the CREATE\_IN\_PROGRESS or CREATE\_PENDING state\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [ListExports](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListExports.html) | Lists all exported output values in the account and region in which you call this action\. |   |  |  |  | 
-| [ListImports](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListImports.html) | Lists all stacks that are importing an exported output value\. |   |  |  |  | 
-| [ListStackResources](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackResources.html) | Returns descriptions of all resources of the specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [ListStacks](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStacks.html) | Returns the summary information for stacks whose status matches the specified StackStatusFilter\. |   |  |  |  | 
-| [SetStackPolicy](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetStackPolicy.html) | Sets a stack policy for a specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [SignalResource](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SignalResource.html) | Sends a signal to the specified resource with a success or failure status\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [UpdateStack](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStack.html) | Updates a stack as specified in the template\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [UpdateTerminationProtection](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateTerminationProtection.html) | Updates termination protection for the specified stack\. |   | [stack\*](#awscloudformation-stack)  |  |  | 
-| [ValidateTemplate](http://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SignalResource.html) | Validates a specified template\. |   |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudformation.html)
 
 ## Resources Defined by CloudFormation<a name="awscloudformation-resources-for-iam-policies"></a>
 
@@ -63,12 +35,12 @@ The following resource types are defined by this service and can be used in the 
 
 AWS CloudFormation defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAMPolicy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
-| Condition keys | Description | Type | 
+| Condition Keys | Description | Type | 
 | --- | --- | --- | 
 | [cloudformation:ChangeSetName](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An AWS CloudFormation change set name\. Use to control which change sets IAM users can execute or delete\. | String | 
 | [cloudformation:ResourceTypes](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | The template resource types, such as <code>AWS::EC2::Instance</code>\. Use to control which resource types IAM users can work with when they create or update a stack | String | 

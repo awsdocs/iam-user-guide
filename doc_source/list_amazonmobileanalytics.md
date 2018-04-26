@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| GetFinancialReports | Grant access to financial metrics for an app |   |  |  |  | 
-| GetReports | Grant access to standard metrics for an app |   |  |  |  | 
-| [PutEvents](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html) | The PutEvents operation records one or more events |   |  |  |  | 
+| GetFinancialReports | Grant access to financial metrics for an app | Read Write  |  |  |  | 
+| GetReports | Grant access to standard metrics for an app | Read Write  |  |  |  | 
+| [PutEvents](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html) | The PutEvents operation records one or more events | Write  |  |  |  | 
 
 ## Resources Defined by Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
 
