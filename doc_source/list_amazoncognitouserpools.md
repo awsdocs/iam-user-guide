@@ -1,0 +1,110 @@
+# Actions, Resources, and Condition Keys for Amazon Cognito User Pools<a name="list_amazoncognitouserpools"></a>
+
+Amazon Cognito User Pools \(service prefix: `cognito-idp`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
+
+References:
++ Learn how to [configure this service](http://docs.aws.amazon.com/cognito/latest/developerguide/)\.
++ View a [list of the API operations available for this service](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
+
+**Topics**
++ [Actions Defined by Amazon Cognito User Pools](#amazoncognitouserpools-actions-as-permissions)
++ [Resources Defined by Cognito User Pools](#amazoncognitouserpools-resources-for-iam-policies)
++ [Condition Keys for Amazon Cognito User Pools](#amazoncognitouserpools-policy-keys)
+
+## Actions Defined by Amazon Cognito User Pools<a name="amazoncognitouserpools-actions-as-permissions"></a>
+
+You can specify the following actions in the `Action` element of an IAM policy statement\. By using policies, you define the permissions for anyone performing an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\. For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
+
+
+****  
+
+| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
+| --- | --- | --- | --- | --- | --- | 
+| [AddCustomAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AddCustomAttributes.html) | Adds additional user attributes to the user pool schema\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminAddUserToGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminAddUserToGroup.html) | Adds the specified user to the specified group\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminConfirmSignUp](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminConfirmSignUp.html) | Confirms user registration as an admin without using a confirmation code\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminCreateUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminCreateUser.html) | Creates a new user in the specified user pool and sends a welcome message via email or phone \(SMS\)\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminDeleteUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUser.html) | Deletes a user as an administrator\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminDeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDeleteUserAttributes.html) | Deletes the user attributes in a user pool as an administrator\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminDisableUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminDisableUser.html) | Disables the specified user as an administrator\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminEnableUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminEnableUser.html) | Enables the specified user as an administrator\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminForgetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminForgetDevice.html) | Forgets the device, as an administrator\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminGetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetDevice.html) | Gets the device, as an administrator\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminGetUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminGetUser.html) | Gets the specified user by user name in a user pool as an administrator\. Works on any user\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminInitiateAuth](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html) | Authenticates a user in a user pool as an administrator\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminListDevices](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListDevices.html) | Lists devices, as an administrator\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminListGroupsForUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html) | Lists the groups that the user belongs to\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminListUserAuthEvents](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminListUserAuthEvents.html) | Lists the authentication events for the user\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminRemoveUserFromGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRemoveUserFromGroup.html) | Removes the specified user from the specified group\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminResetUserPassword](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminResetUserPassword.html) | Resets the specified user's password in a user pool as an administrator\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminRespondToAuthChallenge](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminRespondToAuthChallenge.html) | Responds to an authentication challenge, as an administrator\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminSetUserMFAPreference](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html) | Sets MFA preference for the user in the userpool | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminSetUserSettings](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserSettings.html) | Sets all the user settings for a specified user name\. Works on any user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminUpdateAuthEventFeedback](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateAuthEventFeedback.html) | Updates the feedback for the user authentication event | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminUpdateDeviceStatus](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateDeviceStatus.html) | Updates the device status as an administrator\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminUpdateUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html) | Updates the specified user's attributes, including developer attributes, as an administrator\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [AdminUserGlobalSignOut](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUserGlobalSignOut.html) | Signs out users from all devices, as an administrator\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ChangePassword](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ChangePassword.html) | Changes the password for a specified user in a user pool\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ConfirmDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html) | Confirms tracking of the device\. This API call is the call that begins device tracking\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ConfirmForgotPassword](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html) | Allows a user to enter a confirmation code to reset a forgotten password\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ConfirmSignUp](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmSignUp.html) | Confirms registration of a user and handles the existing alias from a previous user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [CreateGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html) | Creates a new group in the specified user pool\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [CreateUserImportJob](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserImportJob.html) | Creates the user import job\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [CreateUserPool](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPool.html) | Creates a new Amazon Cognito user pool and sets the password policy for the pool\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [CreateUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateUserPoolClient.html) | Creates the user pool client\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DeleteGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteGroup.html) | Deletes a group\. Currently only groups with no members can be deleted\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DeleteUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUser.html) | Allows a user to delete one's self\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DeleteUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserAttributes.html) | Deletes the attributes for a user\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DeleteUserPool](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPool.html) | Deletes the specified Amazon Cognito user pool\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DeleteUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DeleteUserPoolClient.html) | Allows the developer to delete the user pool client\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DescribeRiskConfiguration](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeRiskConfiguration.html) | Describes the risk configuration setting for the userpool / userpool client | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DescribeUserImportJob](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserImportJob.html) | Describes the user import job\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DescribeUserPool](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html) | Returns the configuration information and metadata of the specified user pool\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [DescribeUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html) | Client method for returning the configuration information and metadata of the specified user pool client\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ForgetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgetDevice.html) | Forgets the specified device\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ForgotPassword](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html) | Calling this API causes a message to be sent to the end user with a confirmation code that is required to change the user's password\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GetCSVHeader](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetCSVHeader.html) | Gets the header information for the \.csv file to be used as input for the user import job\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GetDevice](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetDevice.html) | Gets the device\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GetGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetGroup.html) | Gets a group\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GetUser](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUser.html) | Gets the user attributes and metadata for a user\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GetUserAttributeVerificationCode](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserAttributeVerificationCode.html) | Gets the user attribute verification code for the specified attribute name\. | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GetUserPoolMfaConfig](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GetUserPoolMfaConfig.html) | Gets the MFA configuration for the userpool | Read | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [GlobalSignOut](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_GlobalSignOut.html) | Signs out users from all devices\.\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [InitiateAuth](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html) | Initiates the authentication flow\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ListDevices](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListDevices.html) | Lists the devices\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ListGroups](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListGroups.html) | Lists the groups associated with a user pool\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ListUserImportJobs](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserImportJobs.html) | Lists the user import jobs\.\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ListUserPoolClients](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUserPoolClients.html) | Lists the clients that have been created for the specified user pool\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ListUsersInGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ListUsersInGroup.html) | Lists the users in the specified group\. | List | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [ResendConfirmationCode](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ResendConfirmationCode.html) | Resends the confirmation \(for confirmation of registration\) to a specific user in the user pool\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [RespondToAuthChallenge](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_RespondToAuthChallenge.html) | Responds to the authentication challenge\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [SetRiskConfiguration](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetRiskConfiguration.html) | sets the risk configuration setting for the userpool / userpool client | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [SetUserMFAPreference](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html) | Sets MFA preference for the user in the userpool | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [SetUserPoolMfaConfig](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html) | Sets the MFA configuration for the userpool | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [SetUserSettings](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserSettings.html) | Sets the user settings like multi\-factor authentication \(MFA\)\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [SignUp](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SignUp.html) | Registers the user in the specified user pool and creates a user name, password, and user attributes\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [StartUserImportJob](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StartUserImportJob.html) | Starts the user import\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [StopUserImportJob](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_StopUserImportJob.html) | Stops the user import job\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [UpdateAuthEventFeedback](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateAuthEventFeedback.html) | Updates the feedback for the user authentication event | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [UpdateDeviceStatus](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html) | Updates the device status\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [UpdateGroup](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateGroup.html) | Updates the specified group with the specified attributes\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [UpdateUserAttributes](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserAttributes.html) | Allows a user to update a specific attribute \(one at a time\)\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [UpdateUserPool](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPool.html) | Updates the specified user pool with the specified attributes\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [UpdateUserPoolClient](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateUserPoolClient.html) | Allows the developer to update the specified user pool client and password policy\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+| [VerifyUserAttribute](http://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_VerifyUserAttribute.html) | Verifies a user attribute using a one time verification code\. | Write | [userpool\*](#amazoncognitouserpools-userpool)  |  |  | 
+
+## Resources Defined by Cognito User Pools<a name="amazoncognitouserpools-resources-for-iam-policies"></a>
+
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazoncognitouserpools-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+| [userpool](http://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) | arn:$\{Partition\}:cognito\-idp:$\{Region\}:$\{Account\}:userpool/$\{UserPoolId\} |  | 
+
+## Condition Keys for Amazon Cognito User Pools<a name="amazoncognitouserpools-policy-keys"></a>
+
+Cognito User Pools has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

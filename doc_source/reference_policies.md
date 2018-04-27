@@ -1,0 +1,11 @@
+# IAM JSON Policy Reference<a name="reference_policies"></a>
+
+This section presents detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\. It includes the following sections\.
++  [IAM JSON Policy Elements Reference](reference_policies_elements.md) — Learn more about the elements that you can use when you create a policy\. View additional policy examples and learn about conditions, supported data types, and how they are used in various services\. 
++ [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md) — This section describes AWS requests, how they are authenticated, and how AWS uses policies to determine access to resources\. 
++ [Grammar of the IAM JSON Policy Language ](reference_policies_grammar.md) — This section presents a formal grammar for the language used to create policies in IAM\.
++ [AWS Managed Policies for Job Functions](access_policies_job-functions.md) — This section lists all of the AWS managed policies that directly map to common job functions in the IT industry\. Use these policies to grant the permissions needed to carry out the tasks expected of someone in a specific job function\. These policies consolidate permissions for many services into a single policy\.
++ [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) — This section presents a list of all of the AWS API actions that can be used as permissions in an IAM policy and the service\-specific condition keys that can be used to further refine the request\.
+
+**Important**  
+You cannot save any policy that does not comply with the established policy syntax\. You can use Policy Validator to detect and correct invalid policies\. One click takes you to an editor that shows both the existing policy and a copy with the recommended changes\. You can accept the changes or make further modifications\. For more information, see [Validating JSON Policies](access_policies_policy-validator.md)\.
