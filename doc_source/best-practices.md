@@ -80,8 +80,7 @@ When you review a policy, you can view the [policy summary](access_policies_unde
 
 For example, in the Amazon S3 service, you might want to allow a large group of users to access `List` and `Read` actions\. Such actions permit those users to list the buckets and get objects in Amazon S3\. However, you should allow only a small group of users to access the Amazon S3 `Write` actions to delete buckets or put objects into an S3 bucket\. Additionally, you should restrict permissions to allow only administrators to access the Amazon S3 `Permissions management` actions\. This ensures that only a limited number of people can manage bucket policies in Amazon S3\. This is especially important for `Permissions management` actions in IAM and AWS Organizations services\.
 
-**Important**  
-Before you create or edit policies based on these access levels, review the definitions for each access level\. Make sure that the actions you want are categorized the way you expect\. To learn about each AWS access level and to view a list of actions that belong to each action level for a specific service, see [IAM Policy Actions Grouped by Access Level](reference_policies_access-levels.md)\.
+To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
 To see the access levels for a policy, you must first locate the policy's summary\. The policy summary is included on the **Policies** page for managed policies, and on the **Users** page for policies that are attached to a user\. For more information, see [Policy Summary \(List of Services\)](access_policies_understand-policy-summary.md)\.
 
