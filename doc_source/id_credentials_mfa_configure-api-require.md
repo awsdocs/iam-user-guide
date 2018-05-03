@@ -49,7 +49,7 @@ The following example shows the trust policy of an IAM role that includes an MFA
 }
 ```
 
-For more information on the condition types for MFA, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys), [Numeric Condition Operators](reference_policies_elements_condition_operators.md#Conditions_Numeric), and [Condition Operator to Check Existence of Condition Keys ](reference_policies_elements_condition_operators.md#Conditions_Null) 
+For more information on the condition types for MFA, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md), [Numeric Condition Operators](reference_policies_elements_condition_operators.md#Conditions_Numeric), and [Condition Operator to Check Existence of Condition Keys ](reference_policies_elements_condition_operators.md#Conditions_Null) 
 
 ### Choosing Between GetSessionToken and AssumeRole<a name="scenarios"></a>
 

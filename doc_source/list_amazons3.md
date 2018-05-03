@@ -51,8 +51,8 @@ To view the global condition keys that are available to all services, see [Avail
 | [s3:authtype](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) |  | String | 
 | [s3:delimiter](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to require the user to specify the delimiter parameter in the GET Bucket Object versions request\. | String | 
 | [s3:locationconstraint](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to restrict the user to creating a bucket in only a specific region\. | String | 
-| [s3:max\-keys](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to limit the number of keys Amazon S3 returns in response to the GetBucket and ListObjects requests by requiring the user to specify the max\-keys parameter\. | Numeric | 
-| [s3:prefix](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to limit the response of the GetBucket and ListObjects APIs to key names with specific prefix\. | String | 
+| [s3:max\-keys](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to limit the number of keys Amazon S3 returns in response to ListBucket requests by requiring the user to specify the max\-keys parameter\. | Numeric | 
+| [s3:prefix](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies) | Enables you to limit the response of the ListBucket API to key names with specific prefix\. | String | 
 | [s3:signatureage](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) |  | Numeric | 
 | [s3:signatureversion](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) |  | String | 
 | [s3:versionid](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) |  | String | 

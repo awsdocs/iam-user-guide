@@ -11,23 +11,23 @@
 
 When an AWS service receives a request, the request is first authenticated using information about the access key ID and signature\. \(A few services, like Amazon S3, allow requests from anonymous users\.\) If the request passes authentication, AWS then determines whether the requester is authorized to perform the action represented by the request\. 
 
-Requests that are made by the AWS account root user are allowed for resources in that account\. However, if the request is made using the credentials of an IAM user, or if the request is signed using temporary credentials that are granted by AWS STS, AWS uses the permissions defined in one or more IAM policies to determine whether the user's request is authorized\. 
+Requests that are made by the AWS account root user are allowed for resources in that account\. However, the request might be made using the credentials of an IAM user\. Or the request could be signed using temporary credentials that are granted by AWS STS\., In either of those cases, AWS uses the permissions that are defined in one or more IAM policies to determine whether the user's request is authorized\. 
 
 **Note**  
 Amazon S3 supports Access Control Lists \(ACLs\) and resource\-level policies for buckets and objects\. The permissions established using ACLs and bucket\-level policies can affect what actions the root user is allowed to perform on a bucket\. For more information, see [Guidelines for Using the Available Access Policy Options](http://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-alternatives-guidelines.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 ## The Impact of AWS Organizations on IAM Policies<a name="evaluation-logic-organizations"></a>
 
-AWS Organizations is a service that enables you to group together and centrally manage the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. These SCPs serve as "filters" or "guardrails" that limit what services and actions can be accessed by the IAM users, groups, and roles in those accounts\. If an SCP attached to an account denies access to a service, such as S3, then no user in that account can access any S3 API, even if the user has administrator permissions in the account\. Even the AWS account root user is denied access to S3 APIs\.
+AWS Organizations is a service that enables you to group together and centrally manage the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. These SCPs serve as "filters" or "guardrails" that limit what services and actions can be accessed by the IAM users, groups, and roles in those accounts\. If an SCP that is attached to an account denies access to a service, such as Amazon S3, then no user in that account can access any Amazon S3 API\. This is so even if the user has administrator permissions in the account\. Even the AWS account root user is denied access to Amazon S3 API operations\.
 
-In summary, an IAM user in an account that is in an organization can use the *intersection* of the permissions allowed by both Organizations SCPs and by the IAM permission policies attached to the user by the account's administrator\. In other words, only those allowed by both IAM and Organizations\.
+An IAM user in an account that is in an organization can use the *intersection* of all permissions defined in Organizations, IAM, and other affected services\. IAM permissions policies are attached to the entity that you use to sign in to AWS\. Organizations SCPs apply to the account that you use to sign in\. Resource\-based policies are attached to a resource within a service and define who can access the resource\.
 
 For more information about Organizations and SCPs, see [About Service Control Policies](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
 
 ## The Request Context<a name="policy-eval-reqcontext"></a>
 
 When AWS authorizes a request, information about the request is assembled from several sources:
-+ Principal \(the requester\), which is determined based on the secret access key\. This might represent the root user, an IAM user, a federated user \(via STS\), or an assumed role, and includes the aggregate permissions that are associated with that principal\. 
++ Principal \(the requester\), which is determined based on the secret access key\. This might represent the root user, an IAM user, a federated user \(via AWS STS\), or an assumed role, and includes the aggregate permissions that are associated with that principal\. 
 + Environment data, such as the IP address, user agent, SSL enabled, the time of day, etc\. This information is determined from the request\.
 + Resource data, which pertains to information that is part of the resource being requested\. This can include information such as a DynamoDB table name, a tag on an Amazon EC2 instance, etc\. 
 
@@ -103,7 +103,7 @@ When any user in the group makes a request to use the queue `test0`, the explici
 
 ## The Difference Between Denying by Default and Explicit Deny<a name="AccessPolicyLanguage_Interplay"></a>
 
-A policy results in a deny if the policy doesn't directly apply to the request\. For example, if a user makes a request to use Amazon SQS, but the only policy that applies to the user states that the user can use Amazon S3, the request is denied\. 
+A policy results in a deny if the policy doesn't directly apply to the request\. For example, a user might make a request to use Amazon SQS, but the only policy that applies to the user states that the user can use Amazon S3\. In that case, the request is denied\. 
 
 A policy also results in a deny if a condition in a statement isn't met\. If all conditions in the statement are met, the policy results in either an allow or an explicit deny, based on the value of the `Effect` element in the policy\. Policies don't specify what to do if a condition isn't met, so the result in that case is `Deny`\.
 
@@ -111,7 +111,7 @@ For example, let's say you want to prevent requests that come from Antarctica\. 
 
 ![\[Policy allowing request if it's not from Antarctica\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_1.diagram.png)
 
-If someone sends a request from the U\.S\., the condition is met \(the request is not from Antarctica\)\. Therefore, the result is `Allow`\. But if someone sends a request from Antarctica, the condition isn't met, and the policy's result is therefore `Deny`\. 
+If someone sends a request from the US, the condition is met \(the request is not from Antarctica\)\. Therefore, the result is `Allow`\. But if someone sends a request from Antarctica, the condition isn't met, and the policy's result is therefore `Deny`\. 
 
 You could *explicitly* deny access from Antarctica by creating a different policy \(named Policy A2\) as in the following diagram\.
 
@@ -121,7 +121,7 @@ If this policy applies to a user who sends a request from Antarctica, the condit
 
 The distinction between a request being denied by default and an explicit deny in a policy is important\. By default, a request is denied, but this can be overridden by an allow\. In contrast, if a policy explicitly denies a request, that deny can't be overridden\. 
 
-For example, let's say there's another policy that allows requests if they arrive on June 1, 2010\. How does this policy affect the outcome when evaluated together with the policy that restricts access from Antarctica? We'll compare the outcome when evaluating the date\-based policy \(we'll call it Policy B\) with the preceding policies \(A1 and A2\)\. Scenario 1 evaluates Policy A1 with Policy B, and Scenario 2 evaluates Policy A2 with Policy B\. The following figure show the results when a request comes in from Antarctica on June 1, 2010\.
+For example, let's say there's another policy that allows requests if they arrive on June 1, 2010\. How does this policy affect the outcome when evaluated together with the policy that restricts access from Antarctica? We'll compare the outcome when evaluating the date\-based policy \(we'll call it Policy B\) with the preceding policies \(A1 and A2\)\. Scenario 1 evaluates Policy A1 with Policy B, and Scenario 2 evaluates Policy A2 with Policy B\. The following figure shows the results when a request comes in from Antarctica on June 1, 2010\.
 
 ![\[Override of deny by default\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override.diagram.png)
 

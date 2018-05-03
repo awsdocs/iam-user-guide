@@ -35,7 +35,7 @@ Imagine that you want to grant a user the ability to pass any of an approved set
       }
   }
   ```
-+ An IAM *permissions policy* attached to the IAM user that allows the user to pass only those policies that are approved\. `iam:PassRole` usually is accompanied by `iam:GetRole` so that the user can get the details of the role to be passed\. In this example, the user can pass only roles that exist in the specified account with names that begin with `EC2-roles-for-XYZ-`:
++ An IAM *permissions policy* attached to the IAM user that allows the user to pass only those roles that are approved\. `iam:PassRole` usually is accompanied by `iam:GetRole` so that the user can get the details of the role to be passed\. In this example, the user can pass only roles that exist in the specified account with names that begin with `EC2-roles-for-XYZ-`:
 
   ```
   {

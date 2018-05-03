@@ -5,7 +5,7 @@ This example shows how you might create a policy that limits EC2 instances by al
 If this policy is used in combination with other policies that allow the `ec2:TerminateInstances` action \(such as the [AmazonEC2FullAccess](https://aws-iam-console-beta-dev2.integ.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonEC2FullAccess) AWS managed policy\), then access is denied\. This is because an explicit deny statement takes precedence over allow statements\. For more information, see [Determining Whether a Request is Allowed or Denied](reference_policies_evaluation-logic.md#policy-eval-denyallow)\.
 
 **Important**  
-The `aws:SourceIp` condition key denies access to an AWS service, such as AWS CloudFormation, that makes calls on your behalf\. For more information about using the `aws:SourceIp` condition key, see [Available Global Condition Keys](reference_policies_condition-keys.md#AvailableKeys)\.
+The `aws:SourceIp` condition key denies access to an AWS service, such as AWS CloudFormation, that makes calls on your behalf\. For more information about using the `aws:SourceIp` condition key, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\.
 
 ```
 {
