@@ -218,7 +218,7 @@ In other cases, the service might support deleting a service\-linked role manual
 
 For information about which services support using service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. To learn whether the service supports deleting the service\-linked role, choose the **Yes** link to view the service\-linked role documentation for that service\.
 
-If the service does not support deleting the role, then you can delete the service\-linked role from the IAM console, API, or CLI\. If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don’t have an unused entity that is not actively monitored or maintained\. However, you must clean up your service\-linked role before you can delete it\.
+If the service does support deleting the role, then you can delete the service\-linked role from the IAM console, API, or CLI\. If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don’t have an unused entity that is not actively monitored or maintained\. However, you must clean up your service\-linked role before you can delete it\.
 
 ### Cleaning Up a Service\-Linked Role<a name="service-linked-role-review-before-delete"></a>
 
