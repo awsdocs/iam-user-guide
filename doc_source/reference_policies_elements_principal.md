@@ -12,29 +12,31 @@ Do not use the `Principal` element in policies that you attach to IAM users and 
 
 ## Specifying a Principal<a name="Principal_specifying"></a>
 
-You specify a principal using the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. When you specify an AWS account, you can use a shortened form that consists of the `AWS:` prefix followed by the account ID, instead of using the account's full ARN\. In the AWS Management Console, specify only the 12\-digit account ID\. 
+You specify a principal using the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. 
 
 The following examples show various ways in which principals can be specified\.
 
 **Specific AWS accounts**
 
-When you use an AWS account identifier as the principal in a policy, the permissions in the policy statement can be granted to all identities contained in that account\. This includes IAM users and roles in that account\. The following examples show different ways to specify an AWS account as a principal\. 
+When you use an AWS account identifier as the principal in a policy, the permissions in the policy statement can be granted to all identities contained in that account\. This includes IAM users and roles in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*AWS\-account\-ID*:root\), or a shortened form that consists of the `AWS:` prefix followed by the account ID\.
+
+For example, given an account ID of `123456789012`, you can use either of the following methods to specify that account in the `Principal` element:
 
 ```
-"Principal": { "AWS": "arn:aws:iam::AWS-account-ID:root" }
+"Principal": { "AWS": "arn:aws:iam::123456789012:root" }
 ```
 
 ```
-"Principal": { "AWS": "AWS-account-ID" }
+"Principal": { "AWS": "123456789012" }
 ```
 
-You can specify more than one AWS account as a principal, as shown in the following example\.
+You can also specify more than one AWS account as a principal using an array, with any combination of the methods that we previously mentioned\.
 
 ```
 "Principal": { 
   "AWS": [
-    "arn:aws:iam::AWS-account-ID:root",
-    "arn:aws:iam::AWS-account-ID:root"
+    "arn:aws:iam::123456789012:root",
+    "999999999999"
   ]
 }
 ```

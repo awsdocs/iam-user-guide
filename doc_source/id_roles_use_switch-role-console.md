@@ -12,10 +12,14 @@ When you switch roles in the AWS Management Console, the console always uses you
 This section describes how to use the IAM console to switch to a role:
 + You can only switch roles when you sign in as an IAM user\. You cannot switch roles if you sign in as the AWS account root user\.
 + If your administrator provides you with a link, choose the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. The link takes you to the appropriate webpage and fills in the account ID \(or alias\) and the role name for you\.
-**Tip**  
-You can manually construct the link yourself by using the following format:  
-`https://signin.aws.amazon.com/switchrole?account=account_id_number&roleName=role_name&displayName=text_to_display`  
-Where your administrator provides the *account\_id\_number* and *role\_name* to you\. For *text\_to\_display*, see the explanation in step 5 in the following procedure\.
++ You can manually construct the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. To construct your link, use the following format:
+
+  `https://signin.aws.amazon.com/switchrole?account=account_id_number&roleName=role_name&displayName=text_to_display`
+
+  Where you replace the following text:
+  + *account\_id\_number*–The 12\-digit account identifier provided to you by your administrator\. Alternatively, your administrator might create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS Account ID and Its Alias](console_account-alias.md)\.
+  + *role\_name*–The name of the role that you want to assume\. You can get this from the end of the role's ARN\. For example, provide the `TestRole` role name from the followin grole ARN: `namearn:aws:iam::403299380220:role/TestRole`\.
+  + \(Optional\) *text\_to\_display*–The text that you want to appear on the navigation bar in place of your user name when this role is active\.
 + You can manually switch roles using the information your administrator provides by using the procedures below\. 
 
 To troubleshoot common issues that you might encounter when you assume a role, see [I Can't Assume a Role](troubleshoot_roles.md#troubleshoot_roles_cant-assume-role)\.

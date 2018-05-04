@@ -4,45 +4,41 @@ This example shows how you might create a policy that limits customer managed an
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:ChangePasword",
-        "iam:CreateAccessKey",
-        "iam:CreateLoginProfile",
-        "iam:CreateUser",
-        "iam:DeleteAccessKey",
-        "iam:DeleteLoginProfile",
-        "iam:DeleteUser",
-        "iam:UpdateAccessKey",
-        "iam:ListAttachedUserPolicies",
-        "iam:ListPolicies",
-        "iam:ListUserPolicies",
-        "iam:ListGroups",
-        "iam:ListGroupsForUser",
-        "iam:GetPolicy",
-        "iam:GetAccountSummary"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:AttachUserPolicy",
-        "iam:DetachUserPolicy"
-      ],
-      "Resource": "*",
-      "Condition": {
-        "ArnEquals": {
-          "iam:PolicyArn": [
-            "arn:aws:iam::<ACCOUNTNUMBER>:policy/<MANAGED-POLICY-NAME>",
-            "arn:aws:iam::aws:policy/<AWS-MANAGED-POLICY-NAME>"
-          ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ChangePassword",
+                "iam:CreateAccessKey",
+                "iam:CreateLoginProfile",
+                "iam:CreateUser",
+                "iam:DeleteAccessKey",
+                "iam:DeleteLoginProfile",
+                "iam:DeleteUser",
+                "iam:UpdateAccessKey",
+                "iam:ListAttachedUserPolicies",
+                "iam:ListPolicies",
+                "iam:ListUserPolicies",
+                "iam:ListGroups",
+                "iam:ListGroupsForUser",
+                "iam:GetPolicy",
+                "iam:GetAccountSummary"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachUserPolicy",
+                "iam:DetachUserPolicy"
+            ],
+            "Resource": "*",
+            "Condition": {"ArnEquals": {"iam:PolicyARN": [
+                "arn:aws:iam::123456789012:policy/Pol1",
+                "arn:aws:iam::aws:policy/Pol2"
+            ]}}
         }
-      }
-    }
-  ]
+    ]
 }
 ```
