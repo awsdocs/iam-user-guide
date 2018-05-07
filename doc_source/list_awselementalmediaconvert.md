@@ -29,7 +29,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | [DeleteJobTemplate](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeleteJobTemplate.html) | Delete a mediaconvert custom job template | Write |  |  |  | 
 | [DeletePreset](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeletePreset.html) | Delete a mediaconvert custom output preset | Write |  |  |  | 
 | [DeleteQueue](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeleteQueue.html) | Delete a mediaconvert job queue | Write |  |  |  | 
-| [DescribeEndpoint](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DescribeEndpoint.html) | Subscribe to mediaconvert service, returns a custom endpoint | Write |  |  |  | 
+| [DescribeEndpoints](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DescribeEndpoints.html) | Subscribe to mediaconvert service, returns one \(or more\) custom endpoints | List |  |  |  | 
 | [GetJob](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetJob.html) | Get a mediaconvert job | Read |  |  |  | 
 | [GetJobTemplate](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetJobTemplate.html) | Get a mediaconvert job template | Read |  |  |  | 
 | [GetPreset](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetPreset.html) | Get a mediaconvert output preset | Read |  |  |  | 

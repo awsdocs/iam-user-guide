@@ -5,7 +5,7 @@ Amazon Polly \(service prefix: `polly`\) provides the following service\-specifi
 References:
 + Learn how to [configure this service](http://docs.aws.amazon.com/polly/latest/dg/)\.
 + View a [list of the API operations available for this service](http://docs.aws.amazon.com/polly/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](${ConceptsDocRoot}authentication-and-access-control.html) permission policies\.
++ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Polly](#amazonpolly-actions-as-permissions)
