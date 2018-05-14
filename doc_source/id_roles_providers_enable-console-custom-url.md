@@ -3,7 +3,7 @@
 You can write and run code to create a URL that lets users who sign in to your organization's network securely access the AWS Management Console\. The URL includes a sign\-in token that you get from AWS and that authenticates the user to AWS\.
 
 **Note**  
-If your organization uses an identity provider \(IdP\) that is compatible with SAML, you can set up access to the console without writing code\. This works with providers like Microsoft's Active Directory Federation Services or open\-source Shibboleth\. For details, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md)\. 
+If your organization uses an identity provider \(IdP\) that is compatible with SAML, you can set up access to the console without writing code\. This works with providers like Microsoft's Active Directory Federation Services or open\-source Shibboleth\. For details, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md)\.
 
 To enable your organization's users to access the AWS Management Console, you can create a custom "identity broker" that performs the following steps:
 
@@ -11,13 +11,13 @@ To enable your organization's users to access the AWS Management Console, you ca
 
 1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API operations to obtain temporary security credentials for the user\. To learn about the different methods that you can use to assume a role, see [Using IAM Roles](id_roles_use.md)\.
    + If you use one of the `AssumeRole*` API operations to get the temporary security credentials for a role, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session, from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view or change the maximum value for a role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. Additionally, if you use the `AssumeRole*` API operations, you must call them as an IAM user with long\-term credentials\. Otherwise, the call to the federation endpoint in step 3 fails\.
-   + If you use the `GetFederationToken` API operation to get the credentials, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. You can make this API call only by using the long\-term AWS security credentials of an IAM user\. You can also make these calls using AWS account root user credentials, but we do not recommended it\. If you make this call as the root user, the default session lasts for one hour\. Or you can specify a session from 900 seconds \(15 minutes\) up to 3,600 seconds \(one hour\)\. 
+   + If you use the `GetFederationToken` API operation to get the credentials, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. You can make this API call only by using the long\-term AWS security credentials of an IAM user\. You can also make these calls using AWS account root user credentials, but we do not recommended it\. If you make this call as the root user, the default session lasts for one hour\. Or you can specify a session from 900 seconds \(15 minutes\) up to 3,600 seconds \(one hour\)\.
 
 1. Call the AWS federation endpoint and supply the temporary security credentials to request a sign\-in token\.
 
 1. Construct a URL for the console that includes the token:
    + If you use one of the `AssumeRole*` API operations in your URL, you can include the `SessionDuration` HTTP parameter\. This parameter specifies the duration of the console session, from 900 seconds \(15 minutes\) to 43200 seconds \(12 hours\)\.
-   + If you use the `GetFederationToken` API operation in your URL, you can include the `DurationSeconds` parameter\. This parameter specifies the duration of the federated console session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. 
+   + If you use the `GetFederationToken` API operation in your URL, you can include the `DurationSeconds` parameter\. This parameter specifies the duration of the federated console session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\.
 **Note**  
 Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
 
@@ -35,6 +35,7 @@ To complete these tasks, you can use the [HTTPS Query API for AWS Identity and A
 **Topics**
 + [Example Code Using IAM Query API Operations](#STSConsoleLink_manual)
 + [Example Code Using Python](#STSConsoleLink_programPython)
++ [Example Code Using Python](#STSConsoleLink_programPython3)
 + [Example Code Using Java](#STSConsoleLink_programJava)
 + [Example Showing How to Construct the URL \(Ruby\)](#STSConsoleLink_programRuby)
 
@@ -67,7 +68,7 @@ When you use the [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIR
 
 1. <a name="STSConsoleLink_manual_step5"></a>Send your request to the AWS federation endpoint at the following address:
 
-   `https://signin.aws.amazon.com/federation` 
+   `https://signin.aws.amazon.com/federation`
 
    The request must include the `Action` and `Session` parameters, and \(optionally\) if you used an [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation, a `SessionDuration` HTTP parameter as shown in the following example\.
 
@@ -81,7 +82,7 @@ When you use the [GetFederationToken](http://docs.aws.amazon.com/STS/latest/APIR
 **Note**  
 Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
 
-   When you enable console sessions with an extended duration, the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\. 
+   When you enable console sessions with an extended duration, the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
 
     The following is an example of what your request might look like\. The lines are wrapped here for readability, but you should submit it as a one\-line string\.
 
@@ -113,7 +114,7 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
    &SigninToken = *** the value of SigninToken received in the previous step ***
    ```
 
-   The following example shows what the final URL might look like\. The URL is valid for 15 minutes from the time it is created\. The temporary security credentials and console session embedded within the URL are valid for the duration you specify in the `SessionDuration` HTTP parameter when you initially request them\. 
+   The following example shows what the final URL might look like\. The URL is valid for 15 minutes from the time it is created\. The temporary security credentials and console session embedded within the URL are valid for the duration you specify in the `SessionDuration` HTTP parameter when you initially request them\.
 
    ```
    https://signin.aws.amazon.com/federation
@@ -135,7 +136,7 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
 
 ## Example Code Using Python<a name="STSConsoleLink_programPython"></a>
 
-The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/tools/)\. 
+The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/tools/)\.
 
 The code uses the [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
 
@@ -149,10 +150,10 @@ from boto.sts import STSConnection # AWS SDK for Python (Boto) 'pip install boto
 # Step 2: Using the access keys for an IAM user in your AWS account,
 # call "AssumeRole" to get temporary access keys for the federated user
 
-# Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
+# Note: Calls to AWS STS AssumeRole must be signed using the access key ID
 # and secret access key of an IAM user or using existing temporary credentials.
-# The credentials can be in EC2 instance metadata, in environment variables, 
-# or in a configuration file, and will be discovered automatically by the 
+# The credentials can be in EC2 instance metadata, in environment variables,
+# or in a configuration file, and will be discovered automatically by the
 # STSConnection() function. For more information, see the Python SDK docs:
 # http://boto.readthedocs.org/en/latest/boto_config_tut.html
 sts_connection = STSConnection()
@@ -170,7 +171,7 @@ json_string_with_temp_credentials += '"sessionToken":"' + assumed_role_object.cr
 json_string_with_temp_credentials += '}'
 
 # Step 4. Make request to AWS federation endpoint to get sign-in token. Construct the parameter string with
-# the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials 
+# the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials
 # as parameters.
 request_parameters = "?Action=getSigninToken"
 request_parameters += "&SessionDuration=43200"
@@ -180,17 +181,137 @@ r = requests.get(request_url)
 # Returns a JSON document with a single element named SigninToken.
 signin_token = json.loads(r.text)
 
-# Step 5: Create URL where users can use the sign-in token to sign in to 
+# Step 5: Create URL where users can use the sign-in token to sign in to
 # the console. This URL must be used within 15 minutes after the
 # sign-in token was issued.
-request_parameters = "?Action=login" 
-request_parameters += "&Issuer=Example.org" 
+request_parameters = "?Action=login"
+request_parameters += "&Issuer=Example.org"
 request_parameters += "&Destination=" + urllib.quote_plus("https://console.aws.amazon.com/")
 request_parameters += "&SigninToken=" + signin_token["SigninToken"]
 request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 
 # Send final URL to stdout
 print request_url
+```
+
+## Example Code Using Python3<a name="STSConsoleLink_programPython3"></a>
+
+The following example shows how to use Python3 to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/tools/)\.
+
+The code uses the [AssumeRole](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
+
+```
+import boto3 # pip install boto3
+import json # pip install json
+import urllib.parse # pip install urllib
+import requests # pip install requests
+
+# Step 1: Authenticate user in your own identity system.
+
+ROLE_ARN = 'arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME'
+ROLE_SESSION_NAME = 'AssumeRoleSession'
+SESSION_DURATION = 1800
+AWS_FEDERATION_URL = 'https://signin.aws.amazon.com/federation'
+#After session timeout, users will be redirected to this url.
+ISSUER_URL = 'Example.org'
+AWS_CONSOLE_URL = 'https://console.aws.amazon.com/'
+
+# Step 2: Using the access keys for an IAM user in your AWS account,
+# call "AssumeRole" to get temporary access keys for the federated user
+
+# Note: Calls to AWS STS AssumeRole must be signed using the access key ID
+# and secret access key of an IAM user or using existing temporary credentials.
+# The credentials can be in EC2 instance metadata, in environment variables,
+# or in a configuration file, and will be discovered automatically by the
+# STSConnection() function. For more information, see the Python SDK docs:
+# http://boto3.readthedocs.io/en/latest/reference/services/sts.html
+
+# Step 3: Format resulting temporary credentials into JSON
+def get_sts_details():
+    '''
+        This method returns sts_details json object which contains STS temp user 'access key','secret key' and 'session token' details.
+    :return: sts_details
+    '''
+    client = boto3.client('sts')
+    response = client.assume_role(
+                RoleArn = ROLE_ARN,
+                RoleSessionName = ROLE_SESSION_NAME
+            )
+    print_value("Response", response)
+
+    sts_response_data = {}
+    sts_response_data['sessionId'] = response['Credentials']['AccessKeyId']
+    sts_response_data['sessionKey'] = response['Credentials']['SecretAccessKey']
+    sts_response_data['sessionToken'] = response['Credentials']['SessionToken']
+    sts_details = json.dumps(sts_response_data)
+    print_value("STS_DETAILS",sts_details)
+
+    return sts_details
+
+def encode_value(value):
+    '''
+    :param value: Value to be encoded
+    :return: returns encoded value.
+    '''
+    return urllib.parse.quote_plus(value)
+
+def get_aws_federation_request_url(encoded_session_query_parameter):
+    '''
+        This method returns AWS Federated URL.
+    :param encoded_session_query_parameter:
+    :return: AWS federated url.
+    '''
+    request_parameters = "?Action=getSigninToken"
+    request_parameters += "&SessionDuration={session_duration}".format(session_duration=SESSION_DURATION)
+    request_parameters += "&Session=" + encoded_session_query_parameter
+    federation_request_url = AWS_FEDERATION_URL + request_parameters
+    print_value("federation_request_url",federation_request_url)
+    return federation_request_url
+
+    # Step 4. Make request to AWS federation endpoint to get sign-in token. Construct the parameter string with
+    # the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials
+    # as parameters.
+
+def get_signin_token(federation_request_url):
+    '''
+        This method returns signin token value.
+    :param federation_request_url:
+    :return: signin token value
+    '''
+    response = requests.get(federation_request_url)
+    signin_token = json.loads(response.text)['SigninToken']
+    print_value("signin_token",signin_token)
+    return signin_token
+
+    # Step 5: Create URL where users can use the sign-in token to sign in to
+    # the console. This URL must be used within 15 minutes after the
+    # sign-in token was issued.
+
+def get_aws_signin_url(signin_token):
+    '''
+        Returns AWS Signin URL
+    :param signin_token:
+    :return: AWS signin url
+    '''
+    request_parameters = "?Action=login"
+    request_parameters += "&Issuer={issuer_url}".format(issuer_url=ISSUER_URL)
+    request_parameters += "&Destination=" + encode_value(AWS_CONSOLE_URL)
+    request_parameters += "&SigninToken=" + signin_token
+    aws_signin_url = AWS_FEDERATION_URL + request_parameters
+    return aws_signin_url
+
+def print_value(name, value):
+    print("{name} : {value}\n".format(name=name, value=value))
+
+sts_details = get_sts_details()
+encoded_session_query_parameter = encode_value(sts_details)
+print("encoded_session_query_parameter : ", encoded_session_query_parameter)
+
+federation_request_url = get_aws_federation_request_url(encoded_session_query_parameter)
+signin_token = get_signin_token(federation_request_url)
+aws_signin_url = get_aws_signin_url(signin_token)
+
+print_value("AWS Signin URL",aws_signin_url)
 ```
 
 ## Example Code Using Java<a name="STSConsoleLink_programJava"></a>
@@ -213,20 +334,20 @@ import com.amazonaws.services.securitytoken.model.GetFederationTokenRequest;
 import com.amazonaws.services.securitytoken.model.GetFederationTokenResult;
 
 
-/* Calls to AWS STS APIs must be signed using the access key ID 
-   and secret access key of an IAM user or using existing temporary 
-   credentials. The credentials should not be embedded in code. For 
-   this example, the code looks for the credentials in a 
+/* Calls to AWS STS APIs must be signed using the access key ID
+   and secret access key of an IAM user or using existing temporary
+   credentials. The credentials should not be embedded in code. For
+   this example, the code looks for the credentials in a
    standard configuration file.
 */
-AWSCredentials credentials = 
+AWSCredentials credentials =
   new PropertiesCredentials(
          AwsConsoleApp.class.getResourceAsStream("AwsCredentials.properties"));
 
-AWSSecurityTokenServiceClient stsClient = 
+AWSSecurityTokenServiceClient stsClient =
   new AWSSecurityTokenServiceClient(credentials);
 
-GetFederationTokenRequest getFederationTokenRequest = 
+GetFederationTokenRequest getFederationTokenRequest =
   new GetFederationTokenRequest();
 getFederationTokenRequest.setDurationSeconds(1800);
 getFederationTokenRequest.setName("UserName");
@@ -238,7 +359,7 @@ String policy = "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Action\":\"sns:*\
 
 getFederationTokenRequest.setPolicy(policy);
 
-GetFederationTokenResult federationTokenResult = 
+GetFederationTokenResult federationTokenResult =
   stsClient.getFederationToken(getFederationTokenRequest);
 
 Credentials federatedCredentials = federationTokenResult.getCredentials();
@@ -246,13 +367,13 @@ Credentials federatedCredentials = federationTokenResult.getCredentials();
 // The issuer parameter specifies your internal sign-in
 // page, for example https://mysignin.internal.mycompany.com/.
 // The console parameter specifies the URL to the destination console of the
-// AWS Management Console. This example goes to Amazon SNS. 
+// AWS Management Console. This example goes to Amazon SNS.
 // The signin parameter is the URL to send the request to.
 
 String issuerURL = "https://mysignin.internal.mycompany.com/";
 String consoleURL = "https://console.aws.amazon.com/sns";
 String signInURL = "https://signin.aws.amazon.com/federation";
-  
+
 // Create the sign-in token using temporary credentials,
 // including the access key ID,  secret access key, and security token.
 String sessionJson = String.format(
@@ -260,15 +381,15 @@ String sessionJson = String.format(
   "sessionId", federatedCredentials.getAccessKeyId(),
   "sessionKey", federatedCredentials.getSecretAccessKey(),
   "sessionToken", federatedCredentials.getSessionToken());
-              
+
 // Construct the sign-in request with the request sign-in token action, a
-// 12-hour console session duration, and the JSON document with temporary 
+// 12-hour console session duration, and the JSON document with temporary
 // credentials as parameters.
 
-String getSigninTokenURL = signInURL + 
+String getSigninTokenURL = signInURL +
                            "?Action=getSigninToken" +
-                           "&DurationSeconds=43200" + 
-                           "&SessionType=json&Session=" + 
+                           "&DurationSeconds=43200" +
+                           "&SessionType=json&Session=" +
                            URLEncoder.encode(sessionJson,"UTF-8");
 
 URL url = new URL(getSigninTokenURL);
@@ -276,7 +397,7 @@ URL url = new URL(getSigninTokenURL);
 // Send the request to the AWS federation endpoint to get the sign-in token
 URLConnection conn = url.openConnection ();
 
-BufferedReader bufferReader = new BufferedReader(new 
+BufferedReader bufferReader = new BufferedReader(new
   InputStreamReader(conn.getInputStream()));  
 String returnContent = bufferReader.readLine();
 
@@ -298,7 +419,7 @@ String loginURL = signInURL + "?Action=login" +
 
 ## Example Showing How to Construct the URL \(Ruby\)<a name="STSConsoleLink_programRuby"></a>
 
-The following example shows how to use Ruby to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. This code snippet uses the [AWS SDK for Ruby](http://aws.amazon.com/documentation/sdkforruby/)\. 
+The following example shows how to use Ruby to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. This code snippet uses the [AWS SDK for Ruby](http://aws.amazon.com/documentation/sdkforruby/)\.
 
 ```
 require 'rubygems'
@@ -308,14 +429,14 @@ require 'cgi'
 require 'aws-sdk'
 
 # Create a new STS instance
-# 
-# Note: Calls to AWS STS APIs must be signed using an access key ID 
-# and secret access key. The credentials can be in EC2 instance metadata 
+#
+# Note: Calls to AWS STS APIs must be signed using an access key ID
+# and secret access key. The credentials can be in EC2 instance metadata
 # or in environment variables and will be automatically discovered by
-# the default credentials provider in the AWS Ruby SDK. 
+# the default credentials provider in the AWS Ruby SDK.
 sts = Aws::STS::Client.new()
 
-# The following call creates a temporary session that returns 
+# The following call creates a temporary session that returns
 # temporary security credentials and a session token.
 # The policy grants permissions to work
 # in the AWS SNS console.
@@ -346,13 +467,13 @@ session_json = {
 }.to_json
 
 # Call the federation endpoint, passing the parameters
-# created earlier and the session information as a JSON block. 
+# created earlier and the session information as a JSON block.
 # The request returns a sign-in token that's valid for 15 minutes.
-# Signing in to the console with the token creates a session 
+# Signing in to the console with the token creates a session
 # that is valid for 12 hours.
-get_signin_token_url = signin_url + 
-                       "?Action=getSigninToken" + 
-                       "&SessionType=json&Session=" + 
+get_signin_token_url = signin_url +
+                       "?Action=getSigninToken" +
+                       "&SessionType=json&Session=" +
                        CGI.escape(session_json)
 
 returned_content = URI.parse(get_signin_token_url).read
@@ -367,6 +488,6 @@ signin_token_param = "&SigninToken=" + CGI.escape(signin_token)
 # The "issuer" parameter is optional but recommended.
 issuer_param = "&Issuer=" + CGI.escape(issuer_url)
 destination_param = "&Destination=" + CGI.escape(console_url)
-login_url = signin_url + "?Action=login" + signin_token_param + 
+login_url = signin_url + "?Action=login" + signin_token_param +
   issuer_param + destination_param
 ```
