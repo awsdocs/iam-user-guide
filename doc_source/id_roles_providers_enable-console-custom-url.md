@@ -35,7 +35,7 @@ To complete these tasks, you can use the [HTTPS Query API for AWS Identity and A
 **Topics**
 + [Example Code Using IAM Query API Operations](#STSConsoleLink_manual)
 + [Example Code Using Python](#STSConsoleLink_programPython)
-+ [Example Code Using Python](#STSConsoleLink_programPython3)
++ [Example Code Using Python3](#STSConsoleLink_programPython3)
 + [Example Code Using Java](#STSConsoleLink_programJava)
 + [Example Showing How to Construct the URL \(Ruby\)](#STSConsoleLink_programRuby)
 
