@@ -1,6 +1,6 @@
 # Creating SAML Identity Providers<a name="id_roles_providers_create_saml"></a>
 
-A SAML 2\.0 identity provider is an entity in IAM that describes an identity provider \(IdP\) service that supports the [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security) standard\. You use a SAML identity provider when you want to establish trust between an SAML\-compatible IdP such as Shibboleth or Active Directory Federation Services so that users in your organization can access AWS resources\. SAML identity providers in IAM are used as principals in an IAM trust policy\. 
+A SAML 2\.0 identity provider is an entity in IAM that describes an identity provider \(IdP\) service that supports the [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security) standard\. You use a SAML identity provider when you want to establish trust between an SAML\-compatible IdP such as Shibboleth or Active Directory Federation Services and AWS, so that users in your organization can access AWS resources\. SAML identity providers in IAM are used as principals in an IAM trust policy\. 
 
 For more information about this scenario, see [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\.
 
