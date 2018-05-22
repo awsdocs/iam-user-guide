@@ -23,8 +23,8 @@ The actions in this table are not APIs, but are instead permissions that grant a
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [ModifyBudget](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Modify budgets and budget details | Write | [budget\*](#awsbudgetservice-budget)  |  |  | 
-| [ViewBudget](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | View budgets and budget details | Read | [budget\*](#awsbudgetservice-budget)  |  |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Modify budgets and budget details | Write | [budget\*](#awsbudgetservice-budget)  |  |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | View budgets and budget details | Read | [budget\*](#awsbudgetservice-budget)  |  |  | 
 
 ## Resources Defined by Budget<a name="awsbudgetservice-resources-for-iam-policies"></a>
 
@@ -35,7 +35,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [budget](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html) | arn:$\{Partition\}:budgets::$\{Account\}:budget/$\{BudgetName\} |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html) | arn:$\{Partition\}:budgets::$\{Account\}:budget/$\{BudgetName\} |  | 
 
 ## Condition Keys for AWS Budget Service<a name="awsbudgetservice-policy-keys"></a>
 

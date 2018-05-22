@@ -5,7 +5,7 @@ If you found this topic because you are trying to configure the Product Advertis
 [Getting Started with the Product Advertising API](http://docs.aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
 [Getting Started as a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
 
-Users need their own access keys to make programmatic calls to AWS from the [AWS Command Line Interface](https://aws.amazon.com/cli/) \(AWS CLI\), [Tools for Windows PowerShell](https://aws.amazon.com/documentation/powershell), the [AWS SDKs](https://aws.amazon.com/tools/), or direct HTTP calls using the APIs for individual AWS services\. To fill this need, you can create, modify, view, or rotate access keys \(access key IDs and secret access keys\) for IAM users\.
+Users need their own access keys to make programmatic calls to AWS from the [AWS Command Line Interface](https://aws.amazon.com/cli/) \(AWS CLI\), [Tools for Windows PowerShell](https://aws.amazon.com/documentation/powershell), the [AWS SDKs](https://aws.amazon.com/tools/), or direct HTTP calls using the API operations for individual AWS services\. To fill this need, you can create, modify, view, or rotate access keys \(access key IDs and secret access keys\) for IAM users\.
 
 When you create an access key, IAM returns the access key ID and secret access key\. You should save these in a secure location and give them to the user\. 
 
@@ -39,11 +39,13 @@ You can use the AWS Management Console to manage the access keys of IAM users\.
 
    1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
-   1. In **Manage Columns**, select **Access key ID**\.
+   1. In **Manage columns**, select **Access key ID**\.
 
    1. Choose **Close** to return to the list of users\.
 
-1. The **Access key ID** column includes the access key IDs\. You can use this information to view and copy the access keys for users with one or two access keys\. The column also shows whether the access key is **\(Active\)** or **\(Inactive\)**\. The column displays **None** for users with no access key\.
+1. The **Access key ID** column shows each access key ID, followed by its state; for example, **23478207027842073230762374023 \(Active\)** or **22093740239670237024843420327 \(Inactive\)**\. 
+
+   You can use this information to view and copy the access keys for users with one or two access keys\. The column displays **None** for users with no access key\.
 **Note**  
 Only the user's access key ID and status is visible\. The secret access key can only be retrieved when the key is created\.
 
@@ -59,7 +61,7 @@ Only the user's access key ID and status is visible\. The secret access key can 
 
    1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
-   1. In **Manage Columns**, select **Access key ID**\.
+   1. In **Manage columns**, select **Access key ID**\.
 
    1. Choose **Close** to return to the list of users and confirm that the filtered user owns the specified access key\.
 
@@ -69,7 +71,7 @@ Only the user's access key ID and status is visible\. The secret access key can 
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the intended user, and then choose the **Security Credentials** tab\. The user's access keys and the status of each key is displayed\.
+1. Choose the name of the intended user, and then choose the **Security credentials** tab\. The user's access keys and the status of each key is displayed\.
 **Note**  
 Only the user's access key ID is visible\. The secret access key can only be retrieved when the key is created\.
 
@@ -79,13 +81,13 @@ Only the user's access key ID is visible\. The secret access key can only be ret
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the desired user, and then choose the **Security Credentials** tab\. 
+1. Choose the name of the preferred user, and then choose the **Security credentials** tab\. 
 
-1. If needed, expand the **Access Keys** section and do any of the following:
-   + To create an access key, choose **Create Access Key**\. Then choose **Download Credentials** to save the access key ID and secret access key to a CSV file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you have downloaded the CSV file, choose **Close**\.
-   + To disable an active access key, choose **Make Inactive**\.
-   + To reenable an inactive access key, choose **Make Active**\.
-   + To delete an access key, choose **Delete** and then choose **Delete** to confirm\.
+1. If needed, expand the **Access keys** section and do any of the following:
+   + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a CSV file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you have downloaded the CSV file, choose **Close**\.
+   + To disable an active access key, choose **Make inactive**\.
+   + To reenable an inactive access key, choose **Make active**\.
+   + To delete an access key, choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\.
 
 ## Creating, Modifying, and Viewing Access Keys \(API, CLI, PowerShell\)<a name="Using_CreateAccessKey_CLIAPI"></a>
 
@@ -135,7 +137,7 @@ If you use the AWS account root user credentials, we recommend that you also reg
 
    1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
-   1. In **Manage Columns**, select **Access key age**\.
+   1. In **Manage columns**, select **Access key age**\.
 
    1. Choose **Close** to return to the list of users\.
 
@@ -143,7 +145,7 @@ If you use the AWS account root user credentials, we recommend that you also reg
 
 **To rotate access keys without interrupting your applications \(console\)**
 
-The following steps describe the general process for rotating an access key without interrupting your applications\. These steps show the AWS CLI, Tools for Windows PowerShell and AWS API commands for rotating access keys\. You can also perform these tasks using the console; for details, see [Creating, Modifying, and Viewing Access Keys \(Console\)](#Using_CreateAccessKey), in the section above\.
+The following steps describe the general process for rotating an access key without interrupting your applications\. These steps show the AWS CLI, Tools for Windows PowerShell and AWS API commands for rotating access keys\. You can also perform these tasks using the console; for details, see [Creating, Modifying, and Viewing Access Keys \(Console\)](#Using_CreateAccessKey), in a preceding section\.
 
 1. While the first access key is still active, create a second access key, which is active by default\. At this point, the user has two active access keys\.
 
@@ -151,9 +153,9 @@ The following steps describe the general process for rotating an access key with
 
    1. In the navigation pane, choose **Users**\.
 
-   1. Choose the name of the intended user, and then choose the **Security Credentials** tab\.
+   1. Choose the name of the intended user, and then choose the **Security credentials** tab\.
 
-   1. Choose **Create Access Key** and then choose **Download Credentials** to save the access key ID and secret access key to a `.csv` file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this closes\. After you have downloaded the `.csv` file, choose **Close**\.
+   1. Choose **Create access key** and then choose **Download \.csv file** to save the access key ID and secret access key to a `.csv` file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this closes\. After you have downloaded the `.csv` file, choose **Close**\.
 
 1. Update all applications and tools to use the new access key\.
 
@@ -169,11 +171,11 @@ The following steps describe the general process for rotating an access key with
 
    1. In the navigation pane, choose **Users**\.
 
-   1. Choose the name of the intended user, and then choose the **Security Credentials** tab\.
+   1. Choose the name of the intended user, and then choose the **Security credentials** tab\.
 
-   1. Choose **Create Access Key**, choose **Delete**, and then choose **Delete** to confirm\.
+   1. Locate the access key to delete and choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\.
 
-**To rotate access keys without interrupting your applications \(API, CLI, PowerShell\)**
+**To rotate access keys without interrupting your applications \(API, AWS CLI, PowerShell\)**
 
 1. While the first access key is still active, create a second access key, which is active by default\. At this point, the user has two active access keys\.
    + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)

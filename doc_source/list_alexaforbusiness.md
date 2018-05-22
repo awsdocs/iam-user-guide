@@ -24,11 +24,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [device](http://docs.aws.amazon.com/a4b/latest/APIReference/) | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\} |  | 
-| [profile](http://docs.aws.amazon.com/a4b/latest/APIReference/) | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\} |  | 
-| [room](http://docs.aws.amazon.com/a4b/latest/APIReference/) | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\} |  | 
-| [skillgroup](http://docs.aws.amazon.com/a4b/latest/APIReference/) | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\} |  | 
-| [user](http://docs.aws.amazon.com/a4b/latest/APIReference/) | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\} |  | 
+| device | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\} |  | 
+| profile | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\} |  | 
+| room | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\} |  | 
+| skillgroup | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\} |  | 
+| user | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\} |  | 
 
 ## Condition Keys for Alexa for Business<a name="alexaforbusiness-policy-keys"></a>
 

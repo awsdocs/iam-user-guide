@@ -21,18 +21,18 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateContainer](http://docs.aws.amazon.com/mediastore/latest/ug/containers-create.html) | Creates a storage container | Write |  |  |  | 
-| [DeleteContainer](http://docs.aws.amazon.com/mediastore/latest/ug/containers-delete.html) | Deletes a storage container | Write |  |  |  | 
-| [DeleteContainerPolicy](http://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html) | Deletes a container storage policy\. | Permissions management |  |  |  | 
-| [DeleteObject](http://docs.aws.amazon.com/mediastore/latest/ug/objects-delete.html) | Deletes an object\. | Write |  |  |  | 
-| [DescribeContainer](http://docs.aws.amazon.com/mediastore/latest/ug/containers-view-details.html) | Retrieves details of a specific container | List |  |  |  | 
-| [DescribeObject](http://docs.aws.amazon.com/mediastore/latest/ug/objects-view-details.html) | Retrieves an objects metadata\. | Read |  |  |  | 
-| [GetContainerPolicy](http://docs.aws.amazon.com/mediastore/latest/ug/policies-view.html) | Retrieves a container resource policy\. | Read |  |  |  | 
-| [GetObject](http://docs.aws.amazon.com/mediastore/latest/ug/objects-download.html) | Retrieves an object\. | Read |  |  |  | 
-| [ListContainers](http://docs.aws.amazon.com/mediastore/latest/ug/ccontainers-view-list.html) | Retrieves a list of storage containers\. | List |  |  |  | 
-| [ListItems](http://docs.aws.amazon.com/mediastore/latest/ug/objects-view-list.html) | Retrieves a list of items like objects or folders\. | List |  |  |  | 
-| [PutContainerPolicy](http://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html) | Adds or modifies a container resource policy\. | Permissions management |  |  |  | 
-| [PutObject](http://docs.aws.amazon.com/mediastore/latest/ug/objects-upload.html) | Uploads an object\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/containers-create.html](http://docs.aws.amazon.com/mediastore/latest/ug/containers-create.html) | Creates a storage container | Write |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/containers-delete.html](http://docs.aws.amazon.com/mediastore/latest/ug/containers-delete.html) | Deletes a storage container | Write |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html](http://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html) | Deletes a container storage policy\. | Permissions management |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/objects-delete.html](http://docs.aws.amazon.com/mediastore/latest/ug/objects-delete.html) | Deletes an object\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/containers-view-details.html](http://docs.aws.amazon.com/mediastore/latest/ug/containers-view-details.html) | Retrieves details of a specific container | List |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/objects-view-details.html](http://docs.aws.amazon.com/mediastore/latest/ug/objects-view-details.html) | Retrieves an objects metadata\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/policies-view.html](http://docs.aws.amazon.com/mediastore/latest/ug/policies-view.html) | Retrieves a container resource policy\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/objects-download.html](http://docs.aws.amazon.com/mediastore/latest/ug/objects-download.html) | Retrieves an object\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/ccontainers-view-list.html](http://docs.aws.amazon.com/mediastore/latest/ug/ccontainers-view-list.html) | Retrieves a list of storage containers\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/objects-view-list.html](http://docs.aws.amazon.com/mediastore/latest/ug/objects-view-list.html) | Retrieves a list of items like objects or folders\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html](http://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html) | Adds or modifies a container resource policy\. | Permissions management |  |  |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/objects-upload.html](http://docs.aws.amazon.com/mediastore/latest/ug/objects-upload.html) | Uploads an object\. | Write |  |  |  | 
 
 ## Resources Defined by MediaStore<a name="awselementalmediastore-resources-for-iam-policies"></a>
 
@@ -43,7 +43,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [container](http://docs.aws.amazon.com/mediastore/latest/ug/containers.html) | arn:$\{Partition\}:mediastore:$\{Region\}:$\{Account\}:container/$\{ContainerName\} |  | 
+| [http://docs.aws.amazon.com/mediastore/latest/ug/containers.html](http://docs.aws.amazon.com/mediastore/latest/ug/containers.html) | arn:$\{Partition\}:mediastore:$\{Region\}:$\{Account\}:container/$\{ContainerName\} |  | 
 
 ## Condition Keys for AWS Elemental MediaStore<a name="awselementalmediastore-policy-keys"></a>
 

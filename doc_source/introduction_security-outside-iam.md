@@ -1,6 +1,6 @@
 # Security Features Outside of IAM<a name="introduction_security-outside-iam"></a>
 
-You use IAM to control access to tasks that are performed using the AWS Management Console, the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or service APIs using the [AWS SDKs](https://aws.amazon.com/tools/)\. Some AWS products have other ways to secure their resources as well\. The following list provides some examples, though it is not exhaustive\. 
+You use IAM to control access to tasks that are performed using the AWS Management Console, the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or service API operations using the [AWS SDKs](https://aws.amazon.com/tools/)\. Some AWS products have other ways to secure their resources as well\. The following list provides some examples, though it is not exhaustive\. 
 
 **Amazon EC2**  
 In Amazon Elastic Compute Cloud you log into an instance with a key pair \(for Linux instances\) or using a user name and password \(for Microsoft Windows instances\)\.   

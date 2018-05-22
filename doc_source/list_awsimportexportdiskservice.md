@@ -21,12 +21,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CancelJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html) | This action cancels a specified job\. Only the job owner can cancel it\. The action fails if the job has already started or is complete\. | Write |  |  |  | 
-| [CreateJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html) | This action initiates the process of scheduling an upload or download of your data\. | Write |  |  |  | 
-| [GetShippingLabel](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html) | This action generates a pre\-paid shipping label that you will use to ship your device to AWS for processing\. | Read |  |  |  | 
-| [GetStatus](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html) | This action returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job\. | Read |  |  |  | 
-| [ListJobs](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html) | This action returns the jobs associated with the requester\. | List |  |  |  | 
-| [UpdateJob](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html) | You use this action to change the parameters specified in the original manifest file by supplying a new manifest file\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCancelJob.html) | This action cancels a specified job\. Only the job owner can cancel it\. The action fails if the job has already started or is complete\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebCreateJob.html) | This action initiates the process of scheduling an upload or download of your data\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetShippingLabel.html) | This action generates a pre\-paid shipping label that you will use to ship your device to AWS for processing\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebGetStatus.html) | This action returns information about a job, including where the job is in the processing pipeline, the status of the results, and the signature value associated with the job\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html) | This action returns the jobs associated with the requester\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html](http://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html) | You use this action to change the parameters specified in the original manifest file by supplying a new manifest file\. | Write |  |  |  | 
 
 ## Resources Defined by Import/Export<a name="awsimportexportdiskservice-resources-for-iam-policies"></a>
 

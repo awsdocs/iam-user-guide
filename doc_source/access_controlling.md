@@ -273,7 +273,7 @@ The following example policy allows a user to attach managed policies to only th
 
 You can further limit the actions in the preceding example to affect only specific policies—that is, you can control which permissions a user is allowed to attach to other principal entities—by adding a condition to the policy\. 
 
-In the following example, the condition ensures that the `AttachGroupPolicy` and `AttachRolePolicy` permissions are allowed only when the policy being attached matches one of the specified policies\. The condition uses the `iam:PolicyArn` [condition key](reference_policies_elements_condition.md) to determine which policy or policies are allowed to be attached\. The following example policy expands on the previous example by allowing a user to attach only the managed policies that include the path /TEAM\-A/ to only the groups and roles that include the path /TEAM\-A/\. To learn how to create a policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+In the following example, the condition ensures that the `AttachGroupPolicy` and `AttachRolePolicy` permissions are allowed only when the policy being attached matches one of the specified policies\. The condition uses the `iam:PolicyARN` [condition key](reference_policies_elements_condition.md) to determine which policy or policies are allowed to be attached\. The following example policy expands on the previous example by allowing a user to attach only the managed policies that include the path /TEAM\-A/ to only the groups and roles that include the path /TEAM\-A/\. To learn how to create a policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -289,7 +289,7 @@ In the following example, the condition ensures that the `AttachGroupPolicy` and
       "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/TEAM-A/*"
     ],
     "Condition": {"ArnLike": 
-      {"iam:PolicyArn": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:policy/TEAM-A/*"}
+      {"iam:PolicyARN": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:policy/TEAM-A/*"}
     }
   }
 }
@@ -301,7 +301,7 @@ For example, you can limit the use of actions to involve only the managed polici
 
 ```
 "Condition": {"ArnEquals": 
-  {"iam:PolicyArn": "arn:aws:iam::123456789012:policy/POLICY-NAME"}
+  {"iam:PolicyARN": "arn:aws:iam::123456789012:policy/POLICY-NAME"}
 }
 ```
 
@@ -309,7 +309,7 @@ You can also specify the ARN of an AWS managed policy in a policy's `Condition` 
 
 ```
 "Condition": {"ArnEquals": 
-  {"iam:PolicyArn": "arn:aws:iam::aws:policy/AmazonEC2FullAccess"}
+  {"iam:PolicyARN": "arn:aws:iam::aws:policy/AmazonEC2FullAccess"}
 }
 ```
 

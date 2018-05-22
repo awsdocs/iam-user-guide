@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DeleteReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html) | Delete Cost and Usage Report Definition | Write | [cur\*](#awscostandusagereport-cur)  |  |  | 
-| [DescribeReportDefinitions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html) | Get Cost and Usage Report Definitions | Read |  |  |  | 
-| [PutReportDefinition](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html) | Write Cost and Usage Report Definition | Write | [cur\*](#awscostandusagereport-cur)  |  |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html) | Delete Cost and Usage Report Definition | Write | [cur\*](#awscostandusagereport-cur)  |  |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html) | Get Cost and Usage Report Definitions | Read |  |  |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html) | Write Cost and Usage Report Definition | Write | [cur\*](#awscostandusagereport-cur)  |  |  | 
 
 ## Resources Defined by Cost and Usage Report<a name="awscostandusagereport-resources-for-iam-policies"></a>
 
@@ -34,7 +34,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [cur](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports) | arn:$\{Partition\}:cur:$\{Region\}:$\{Account\}:definition/$\{ReportName\} |  | 
+| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports) | arn:$\{Partition\}:cur:$\{Region\}:$\{Account\}:definition/$\{ReportName\} |  | 
 
 ## Condition Keys for AWS Cost and Usage Report<a name="awscostandusagereport-policy-keys"></a>
 

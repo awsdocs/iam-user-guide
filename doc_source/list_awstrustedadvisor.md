@@ -39,7 +39,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [checks](http://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html) | arn:$\{Partition\}:trustedadvisor:$\{Region\}:$\{Account\}:checks/$\{CategoryCode\}/$\{CheckId\} |  | 
+| [http://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html](http://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html) | arn:$\{Partition\}:trustedadvisor:$\{Region\}:$\{Account\}:checks/$\{CategoryCode\}/$\{CheckId\} |  | 
 
 ## Condition Keys for AWS Trusted Advisor<a name="awstrustedadvisor-policy-keys"></a>
 

@@ -1,9 +1,9 @@
 # About SAML 2\.0\-based Federation<a name="id_roles_providers_saml"></a>
 
-AWS supports identity federation with [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security), an open standard that many identity providers \(IdPs\) use\. This feature enables federated single sign\-on \(SSO\), so users can log into the AWS Management Console or call the AWS APIs without you having to create an IAM user for everyone in your organization\. By using SAML, you can simplify the process of configuring federation with AWS, because you can use the IdP's service instead of [writing custom identity proxy code](http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html)\.
+AWS supports identity federation with [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security), an open standard that many identity providers \(IdPs\) use\. This feature enables federated single sign\-on \(SSO\), so users can log into the AWS Management Console or call the AWS API operations without you having to create an IAM user for everyone in your organization\. By using SAML, you can simplify the process of configuring federation with AWS, because you can use the IdP's service instead of [writing custom identity proxy code](http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html)\.
 
 IAM federation supports these use cases: 
-+ [**Federated access to allow a user or application in your organization to call AWS APIs**](#CreatingSAML-configuring)\. You use a SAML assertion \(as part of the authentication response\) that is generated in your organization to get temporary security credentials\. This scenario is similar to other federation scenarios that IAM supports, like those described in [Requesting Temporary Security Credentials](id_credentials_temp_request.md) and [About Web Identity Federation](id_roles_providers_oidc.md)\. However, SAML 2\.0–based identity providers in your organization handle many of the details at run time for performing authentication and authorization checking\. This is the scenario discussed in this topic\.
++ [**Federated access to allow a user or application in your organization to call AWS API operations**](#CreatingSAML-configuring)\. You use a SAML assertion \(as part of the authentication response\) that is generated in your organization to get temporary security credentials\. This scenario is similar to other federation scenarios that IAM supports, like those described in [Requesting Temporary Security Credentials](id_credentials_temp_request.md) and [About Web Identity Federation](id_roles_providers_oidc.md)\. However, SAML 2\.0–based identity providers in your organization handle many of the details at run time for performing authentication and authorization checking\. This is the scenario discussed in this topic\.
 + [**Web\-based single sign\-on \(SSO\) to the AWS Management Console from your organization**](id_roles_providers_enable-console-saml.md)\. Users can sign in to a portal in your organization hosted by a SAML 2\.0–compatible IdP, select an option to go to AWS, and be redirected to the console without having to provide additional sign\-in information\. In addition to being able to use a third\-party SAML IdP to establish SSO access to the console, you can alternatively create a custom IdP to enable console access for your external users\. For more information about building a custom IdP, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
 
 ## Using SAML\-Based Federation for API Access to AWS<a name="CreatingSAML-configuring"></a>
@@ -22,7 +22,7 @@ Imagine that in your organization, you want to provide a way for users to copy d
 
 1. The API response to the client app includes temporary security credentials\.
 
-1. The client app uses the temporary security credentials to call Amazon S3 APIs\. 
+1. The client app uses the temporary security credentials to call Amazon S3 API operations\. 
 
 ### Overview of Configuring SAML 2\.0\-Based Federation<a name="CreatingSAML-configuring-IdP"></a>
 

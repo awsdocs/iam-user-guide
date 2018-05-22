@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [entity](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html) | arn:$\{Partition\}:health:$\{Region\}::entity/$\{EntityId\} |  | 
-| [event](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html) | arn:$\{Partition\}:health:$\{Region\}::event/$\{EventId\} |  | 
+| [http://docs.aws.amazon.com/health/latest/ug/supported-operations.html](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html) | arn:$\{Partition\}:health:$\{Region\}::entity/$\{EntityId\} |  | 
+| [http://docs.aws.amazon.com/health/latest/ug/supported-operations.html](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html) | arn:$\{Partition\}:health:$\{Region\}::event/$\{EventId\} |  | 
 
 ## Condition Keys for AWS Health APIs and Notifications<a name="awshealthapisandnotifications-policy-keys"></a>
 

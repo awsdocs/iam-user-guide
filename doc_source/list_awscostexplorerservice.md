@@ -21,10 +21,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [GetCostAndUsage](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetCostAndUsage.html) | Get cost and usage metrics for your account | Read |  |  |  | 
-| [GetDimensionValues](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetDimensionValues.html) | Retrieve all available filter values for a filter over a period of time\. | Read |  |  |  | 
-| [GetReservationUtilization](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetReservationUtilization.html) | Get reservation utilization for your account\. | Read |  |  |  | 
-| [GetTags](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/${ActionsDocRoot}API_GetTags.html) | Query tags for a specified time period\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html) | Get cost and usage metrics for your account | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html) | Retrieve all available filter values for a filter over a period of time\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html) | Get reservation utilization for your account\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html) | Query tags for a specified time period\. | Read |  |  |  | 
 
 ## Resources Defined by Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 

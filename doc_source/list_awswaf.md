@@ -29,17 +29,18 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [bytematchset](http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:bytematchset/$\{Id\} |  | 
-| [geomatchset](http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:geomatchset/$\{Id\} |  | 
-| [ipset](http://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html) | arn:$\{Partition\}:waf::$\{Account\}:ipset/$\{Id\} |  | 
-| [ratebasedrule](http://docs.aws.amazon.com/waf/latest/APIReference/API_RateBasedRule.html) | arn:$\{Partition\}:waf::$\{Account\}:ratebasedrule/$\{Id\} |  | 
-| [regexmatchset](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:regexmatchset/$\{Id\} |  | 
-| [regexpatternset](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html) | arn:$\{Partition\}:waf::$\{Account\}:regexpatternset/$\{Id\} |  | 
-| [rule](http://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html) | arn:$\{Partition\}:waf::$\{Account\}:rule/$\{Id\} |  | 
-| [sizeconstraintset](http://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html) | arn:$\{Partition\}:waf::$\{Account\}:sizeconstraintset/$\{Id\} |  | 
-| [sqlinjectionmatchset](http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionmatchset/$\{Id\} |  | 
-| [webacl](http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html) | arn:$\{Partition\}:waf::$\{Account\}:webacl/$\{Id\} |  | 
-| [xssmatchset](http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:xssmatchset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:bytematchset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:geomatchset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html) | arn:$\{Partition\}:waf::$\{Account\}:ipset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RateBasedRule.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RateBasedRule.html) | arn:$\{Partition\}:waf::$\{Account\}:ratebasedrule/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:regexmatchset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html) | arn:$\{Partition\}:waf::$\{Account\}:regexpatternset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html) | arn:$\{Partition\}:waf::$\{Account\}:rule/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html) | arn:$\{Partition\}:waf::$\{Account\}:rulegroup/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html) | arn:$\{Partition\}:waf::$\{Account\}:sizeconstraintset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionmatchset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html) | arn:$\{Partition\}:waf::$\{Account\}:webacl/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:xssmatchset/$\{Id\} |  | 
 
 ## Condition Keys for AWS WAF<a name="awswaf-policy-keys"></a>
 

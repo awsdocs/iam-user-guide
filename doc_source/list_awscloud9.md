@@ -16,18 +16,18 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateEnvironmentEC2](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_CreateEnvironmentEC2.html) | Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud \(Amazon EC2\) instance, and then hosts the environment on the instance\. | Write |  | [cloud9:EnvironmentName](#awscloud9-cloud9_EnvironmentName) [cloud9:InstanceType](#awscloud9-cloud9_InstanceType) [cloud9:SubnetId](#awscloud9-cloud9_SubnetId) [cloud9:UserArn](#awscloud9-cloud9_UserArn)  |  | 
-| [CreateEnvironmentMembership](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_CreateEnvironmentMembership.html) | Adds an environment member to an AWS Cloud9 development environment\. | Write |  | [cloud9:UserArn](#awscloud9-cloud9_UserArn) [cloud9:EnvironmentId](#awscloud9-cloud9_EnvironmentId) [cloud9:Permissions](#awscloud9-cloud9_Permissions)  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_CreateEnvironmentEC2.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_CreateEnvironmentEC2.html) | Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud \(Amazon EC2\) instance, and then hosts the environment on the instance\. | Write |  | [cloud9:EnvironmentName](#awscloud9-cloud9_EnvironmentName) [cloud9:InstanceType](#awscloud9-cloud9_InstanceType) [cloud9:SubnetId](#awscloud9-cloud9_SubnetId) [cloud9:UserArn](#awscloud9-cloud9_UserArn)  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_CreateEnvironmentMembership.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_CreateEnvironmentMembership.html) | Adds an environment member to an AWS Cloud9 development environment\. | Write |  | [cloud9:UserArn](#awscloud9-cloud9_UserArn) [cloud9:EnvironmentId](#awscloud9-cloud9_EnvironmentId) [cloud9:Permissions](#awscloud9-cloud9_Permissions)  |  | 
 | CreateEnvironmentSSH | Creates an AWS Cloud9 development environment, which is connected to a remote SSH server\. | Write |  | [cloud9:EnvironmentName](#awscloud9-cloud9_EnvironmentName)  |  | 
-| [DeleteEnvironment](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DeleteEnvironment.html) | Deletes an AWS Cloud9 development environment\. If the environment is hosted on an Amazon Elastic Compute Cloud \(Amazon EC2\) instance, also terminates the instance\. | Write | [environment\*](#awscloud9-environment)  |  | iam:CreateServiceLinkedRole  | 
-| [DeleteEnvironmentMembership](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DeleteEnvironmentMembership.html) | Deletes an environment member from an AWS Cloud9 development environment\. | Write |  |  |  | 
-| [DescribeEnvironmentMemberships](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironmentMemberships.html) | Gets information about environment members for an AWS Cloud9 development environment\. | Read |  | [cloud9:UserArn](#awscloud9-cloud9_UserArn) [cloud9:EnvironmentId](#awscloud9-cloud9_EnvironmentId)  |  | 
-| [DescribeEnvironmentStatus](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironmentStatus.html) | Gets status information for an AWS Cloud9 development environment\. | Read |  |  |  | 
-| [DescribeEnvironments](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironments.html) | Gets information about AWS Cloud9 development environments\. | Read | [environment\*](#awscloud9-environment)  |  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DeleteEnvironment.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DeleteEnvironment.html) | Deletes an AWS Cloud9 development environment\. If the environment is hosted on an Amazon Elastic Compute Cloud \(Amazon EC2\) instance, also terminates the instance\. | Write | [environment\*](#awscloud9-environment)  |  | iam:CreateServiceLinkedRole  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DeleteEnvironmentMembership.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DeleteEnvironmentMembership.html) | Deletes an environment member from an AWS Cloud9 development environment\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironmentMemberships.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironmentMemberships.html) | Gets information about environment members for an AWS Cloud9 development environment\. | Read |  | [cloud9:UserArn](#awscloud9-cloud9_UserArn) [cloud9:EnvironmentId](#awscloud9-cloud9_EnvironmentId)  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironmentStatus.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironmentStatus.html) | Gets status information for an AWS Cloud9 development environment\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironments.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_DescribeEnvironments.html) | Gets information about AWS Cloud9 development environments\. | Read | [environment\*](#awscloud9-environment)  |  |  | 
 | GetUserPublicKey | Gets the public key of the logged in user\. Only used in the AWS Cloud9 console\. | Read |  |  |  | 
-| [ListEnvironments](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_ListEnvironments.html) | Gets a list of AWS Cloud9 development environment identifiers\. | Read |  |  |  | 
-| [UpdateEnvironment](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_UpdateEnvironment.html) | Changes the settings of an existing AWS Cloud9 development environment\. | Write | [environment\*](#awscloud9-environment)  |  |  | 
-| [UpdateEnvironmentMembership](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_UpdateEnvironmentMembership.html) | Changes the settings of an existing environment member for an AWS Cloud9 development environment\. | Write |  | [cloud9:UserArn](#awscloud9-cloud9_UserArn) [cloud9:EnvironmentId](#awscloud9-cloud9_EnvironmentId) [cloud9:Permissions](#awscloud9-cloud9_Permissions)  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_ListEnvironments.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_ListEnvironments.html) | Gets a list of AWS Cloud9 development environment identifiers\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_UpdateEnvironment.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_UpdateEnvironment.html) | Changes the settings of an existing AWS Cloud9 development environment\. | Write | [environment\*](#awscloud9-environment)  |  |  | 
+| [http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_UpdateEnvironmentMembership.html](http://docs.aws.amazon.com///cloud9/latest/APIReferenceAPI_UpdateEnvironmentMembership.html) | Changes the settings of an existing environment member for an AWS Cloud9 development environment\. | Write |  | [cloud9:UserArn](#awscloud9-cloud9_UserArn) [cloud9:EnvironmentId](#awscloud9-cloud9_EnvironmentId) [cloud9:Permissions](#awscloud9-cloud9_Permissions)  |  | 
 | ValidateEnvironmentName | Checks checks whether the passed in environment is valid\. Only used in the AWS Cloud9 console\. | Write |  |  |  | 
 
 ## Resources Defined by Cloud9<a name="awscloud9-resources-for-iam-policies"></a>
@@ -39,7 +39,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [environment](url-resources-replace-me) | arn:$\{Partition\}:cloud9:$\{Region\}:$\{Account\}:environment:$\{ResourceId\} |  | 
+| environment | arn:$\{Partition\}:cloud9:$\{Region\}:$\{Account\}:environment:$\{ResourceId\} |  | 
 
 ## Condition Keys for AWS Cloud9<a name="awscloud9-policy-keys"></a>
 
@@ -52,9 +52,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [cloud9:InstanceType](url-contextkeys-replace-me) |  | String | 
-| [cloud9:SubnetId](url-contextkeys-replace-me) |  | String | 
-| [cloud9:UserArn](url-contextkeys-replace-me) |  | ARN | 
-| [cloud9:EnvironmentId](url-contextkeys-replace-me) |  | String | 
-| [cloud9:EnvironmentName](url-contextkeys-replace-me) |  | String | 
-| [cloud9:Permissions](url-contextkeys-replace-me) |  | String | 
+| cloud9:InstanceType |  | String | 
+| cloud9:SubnetId |  | String | 
+| cloud9:UserArn |  | ARN | 
+| cloud9:EnvironmentId |  | String | 
+| cloud9:EnvironmentName |  | String | 
+| cloud9:Permissions |  | String | 

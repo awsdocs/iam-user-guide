@@ -60,7 +60,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Relational Database Service \(Amazon RDS\)](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) | 
 |  [Amazon SimpleDB](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingIAMWithSDB.html)  | Yes | Yes | No | No | Yes | No | 
 
-¹ Two APIs specify an Amazon S3 ARN resource when seeding a cluster/replication group\.
+¹ Two API operations specify an Amazon S3 ARN resource when seeding a cluster/replication group\.
 
 ## Networking and Content Delivery Services<a name="networking_svcs"></a>
 
@@ -109,11 +109,14 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS OpsWorks](http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS OpsWorks for Chef Automate](http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS Service Catalog](http://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | No | Yes | No | 
-| [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes² | Yes | No | No | Yes² | No | 
+|  [AWS Systems Manager](http://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
+| [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes² | Yes | No | No | Yes³ | No | 
 
 ¹ Amazon CloudWatch service\-linked roles cannot be created using the AWS Management Console, and support only the [ Alarm Actions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html) feature\.
 
 ² API access to Trusted Advisor is through the AWS Support API and is controlled by AWS Support IAM policies\.
+
+³ Trusted Advisor supports the following tagging condition: `ssm:resourceTag` for Key/Value pairs and `ssm:Overwrite`\.
 
 ## Media Services<a name="media_svcs"></a>
 
@@ -190,7 +193,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ³ AWS STS does not have "resources," but does allow restricting access in a similar way to users\. For more information, see [Denying Access to Temporary Security Credentials by Name](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_disable-perms.html#denying-access-to-credentials-by-name)\. 
 
-⁴ Only some of the APIs for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
+⁴ Only some of the API operations for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
 
 ## Mobile Services<a name="mobile_svcs"></a>
 

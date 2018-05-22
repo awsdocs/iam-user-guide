@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [detector](http://docs.aws.amazon.com/guardduty/latest/ug/${ResourcesDocRoot}) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\} |  | 
-| [ipset](http://docs.aws.amazon.com/guardduty/latest/ug/${ResourcesDocRoot}) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\} |  | 
-| [threatintelset](http://docs.aws.amazon.com/guardduty/latest/ug/${ResourcesDocRoot}) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\} |  | 
+| [http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\} |  | 
+| [http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\} |  | 
+| [http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\} |  | 
 
 ## Condition Keys for Amazon GuardDuty<a name="amazonguardduty-policy-keys"></a>
 

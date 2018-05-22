@@ -29,13 +29,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [change](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/) | arn:$\{Partition\}:route53:::change/$\{Id\} |  | 
-| [delegationset](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set) | arn:$\{Partition\}:route53:::delegationset/$\{Id\} |  | 
-| [healthcheck](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check) | arn:$\{Partition\}:route53:::healthcheck/$\{Id\} |  | 
-| [hostedzone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone) | arn:$\{Partition\}:route53:::hostedzone/$\{Id\} |  | 
-| [queryloggingconfig](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html) | arn:$\{Partition\}:route53:::queryloggingconfig/$\{Id\} |  | 
-| [trafficpolicy](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html) | arn:$\{Partition\}:route53:::trafficpolicy/$\{Id\} |  | 
-| [trafficpolicyinstance](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html) | arn:$\{Partition\}:route53:::trafficpolicyinstance/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html](http://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html) | arn:$\{Partition\}:route53:::change/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set) | arn:$\{Partition\}:route53:::delegationset/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check) | arn:$\{Partition\}:route53:::healthcheck/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone) | arn:$\{Partition\}:route53:::hostedzone/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html) | arn:$\{Partition\}:route53:::queryloggingconfig/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html) | arn:$\{Partition\}:route53:::trafficpolicy/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html) | arn:$\{Partition\}:route53:::trafficpolicyinstance/$\{Id\} |  | 
 
 ## Condition Keys for Amazon Route 53<a name="amazonroute53-policy-keys"></a>
 

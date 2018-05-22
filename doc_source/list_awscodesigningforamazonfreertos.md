@@ -16,9 +16,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DescribeSigningJob](http://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html) | Describe the signing job request\. | Read |  |  |  | 
-| [ListSigningJobs](http://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html) | List signing jobs\. | List |  |  |  | 
-| [StartSigningJob](http://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html) | Start a code signing request\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html](http://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html) | Describe the signing job request\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html](http://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html) | List signing jobs\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html](http://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html) | Start a code signing request\. | Write |  |  |  | 
 
 ## Resources Defined by Signer<a name="awscodesigningforamazonfreertos-resources-for-iam-policies"></a>
 

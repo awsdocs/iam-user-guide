@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [workspacebundle](http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html) | arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\} |  | 
-| [workspaceid](http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html) | arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\} |  | 
+| [http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html](http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html) | arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\} |  | 
+| [http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html](http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html) | arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\} |  | 
 
 ## Condition Keys for Amazon WorkSpaces<a name="amazonworkspaces-policy-keys"></a>
 

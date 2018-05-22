@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [topic](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) | arn:$\{Partition\}:sns:$\{Region\}:$\{Account\}:$\{TopicName\} |  | 
+| [http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html) | arn:$\{Partition\}:sns:$\{Region\}:$\{Account\}:$\{TopicName\} |  | 
 
 ## Condition Keys for Amazon SNS<a name="amazonsns-policy-keys"></a>
 
@@ -42,5 +42,5 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [sns:Endpoint](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19) | The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription\. | String | 
-| [sns:Protocol](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19) | The protocol value from a Subscribe request or a previously confirmed subscription\. | String | 
+| [http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19) | The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription\. | String | 
+| [http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19) | The protocol value from a Subscribe request or a previously confirmed subscription\. | String | 

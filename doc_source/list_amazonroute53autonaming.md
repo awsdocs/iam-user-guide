@@ -24,8 +24,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [namespace](url-resources-replace-meAPI_autonaming_Namespace.html) | arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:stack/$\{NamespaceName\} |  | 
-| [service](url-resources-replace-meAPI_autonaming_Service.html) | arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceName\} |  | 
+| namespace | arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:stack/$\{NamespaceName\} |  | 
+| service | arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceName\} |  | 
 
 ## Condition Keys for Amazon Route 53 Auto Naming<a name="amazonroute53autonaming-policy-keys"></a>
 

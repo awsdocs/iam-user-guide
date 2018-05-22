@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [alias](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html) | arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:alias/$\{Alias\} |  | 
-| [key](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) | arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:key/$\{KeyId\} |  | 
+| [http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html) | arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:alias/$\{Alias\} |  | 
+| [http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys) | arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:key/$\{KeyId\} |  | 
 
 ## Condition Keys for AWS Key Management Service<a name="awskeymanagementservice-policy-keys"></a>
 

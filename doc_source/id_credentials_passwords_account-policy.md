@@ -13,7 +13,7 @@ When you allow your IAM users to change their own passwords, IAM automatically a
 + Force IAM users to contact an account administrator when the user has allowed his or her password to expire\.
 
 **Important**  
-The password settings described here apply only to **passwords** assigned to IAM users and do not affect any access keys they might have\. If a password expires, the user cannot sign\-in to the AWS Management Console\. However, if the user has valid access keys, then the user can still run any AWS CLI or Tools for Windows PowerShell commands or call any APIs through an application that the user's permissions allow\. 
+The password settings described here apply only to **passwords** assigned to IAM users and do not affect any access keys they might have\. If a password expires, the user cannot sign\-in to the AWS Management Console\. However, if the user has valid access keys, then the user can still run any AWS CLI or Tools for Windows PowerShell commands or call any API operations through an application that the user's permissions allow\. 
 
 When you create or change a password policy, most of the password policy settings are enforced the next time your users change their passwords, but some of the settings are enforced immediately\. For example: 
 + When you set minimum length and character type requirements, the settings are enforced the next time your users change their passwords\. Users are not forced to change their existing passwords, even if the existing passwords do not adhere to the updated password policy\.
@@ -88,7 +88,7 @@ You can use the AWS Management Console to create, change, or delete a password p
 
 ## Setting a Password Policy \(AWS CLI, Tools for Windows PowerShell, or AWS API\)<a name="PasswordPolicy_CLI"></a>
 
-To manage an account password policy from the AWS CLI, Tools for Windows PowerShell, or AWS APIs, use the following commands:
+To manage an account password policy from the AWS CLI, Tools for Windows PowerShell, or AWS API, use the following commands:
 
 **To create or change a password policy**
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)

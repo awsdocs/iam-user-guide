@@ -49,7 +49,7 @@ For more information, see the following:
 
 ## Use AWS Defined Policies to Assign Permissions Whenever Possible<a name="bp-use-aws-defined-policies"></a>
 
-We recommend that you use the managed policies that are created and maintained by AWS to grant permissions whenever possible\. A key advantage of using these policies is that they are maintained and updated by AWS as new services or new APIs are introduced\. 
+We recommend that you use the managed policies that are created and maintained by AWS to grant permissions whenever possible\. A key advantage of using these policies is that they are maintained and updated by AWS as new services or new API operations are introduced\. 
 
 AWS\-managed policies are designed to support common tasks\. They typically provide access to a single service or a limited set of actions\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
 
@@ -94,7 +94,7 @@ For more information, see [Setting an Account Password Policy for IAM Users](id_
 
 ## Enable MFA for Privileged Users<a name="enable-mfa-for-privileged-users"></a>
 
-For extra security, enable multi\-factor authentication \(MFA\) for privileged IAM users \(users who are allowed access to sensitive resources or APIs\)\. With MFA, users have a device that generates a unique authentication code \(a one\-time password, or OTP\)\. Users must provide both their normal credentials \(like their user name and password\) and the OTP\. The MFA device can either be a special piece of hardware, or it can be a virtual device \(for example, it can run in an app on a smartphone\)\. 
+For extra security, enable multi\-factor authentication \(MFA\) for privileged IAM users \(users who are allowed access to sensitive resources or API operations\)\. With MFA, users have a device that generates a unique authentication code \(a one\-time password, or OTP\)\. Users must provide both their normal credentials \(like their user name and password\) and the OTP\. The MFA device can either be a special piece of hardware, or it can be a virtual device \(for example, it can run in an app on a smartphone\)\. 
 
 For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
 

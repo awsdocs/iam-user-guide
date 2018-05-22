@@ -238,15 +238,15 @@ The following table lists the informational and warning messages you might encou
 
 ## Using the IAM Policy Simulator \(AWS CLI, Tools for Windows PowerShell, and AWS API\)<a name="policies-simulator-using-api"></a>
 
-Policy simulator commands typically require calling APIs to do two things:
+Policy simulator commands typically require calling API operations to do two things:
 
 1. Evaluate the policies and return the list of context keys that they reference\. You need to know what context keys are referenced so that you can supply values for them in the next step\.
 
 1. Simulate the policies, providing a list of actions, resources, and context keys that are used during the simulation\.
 
-For security reasons, the APIs have been broken into two groups:
+For security reasons, the API operations have been broken into two groups:
 + API actions that simulate only policies that are passed directly to the API as strings\. This set includes [GetContextKeysForCustomPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) and [SimulateCustomPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html)\.
-+ API actions that simulate the policies that are attached to a specified IAM user, group, role, or resource\. Because these APIs can reveal details of permissions assigned to other IAM entities, you should consider restricting access to these API actions\. This set includes [GetContextKeysForPrincipalPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html) and [SimulatePrincipalPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\. For more information about restricting access to API actions, see [Example Policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
++ API actions that simulate the policies that are attached to a specified IAM user, group, role, or resource\. Because these API operations can reveal details of permissions assigned to other IAM entities, you should consider restricting access to these API actions\. This set includes [GetContextKeysForPrincipalPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html) and [SimulatePrincipalPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\. For more information about restricting access to API actions, see [Example Policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
 
 In both cases, the API actions simulate the effect of one or more policies on a list of actions and resources\. Each action is paired with each resource and the simulation determines whether the policies allow or deny that action for that resource\. You can also provide values for any context keys that your policies reference\. You can get the list of context keys that the policies reference by first calling [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) or [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html)\. If you don't provide a value for a context key, the simulation still runs\. But the results might not be reliable because the simulator cannot include that context key in the evaluation\.
 

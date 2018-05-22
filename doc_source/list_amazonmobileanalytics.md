@@ -23,7 +23,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | --- | --- | --- | --- | --- | --- | 
 | GetFinancialReports | Grant access to financial metrics for an app | Read |  |  |  | 
 | GetReports | Grant access to standard metrics for an app | Read |  |  |  | 
-| [PutEvents](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html) | The PutEvents operation records one or more events | Write |  |  |  | 
+| [http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html) | The PutEvents operation records one or more events | Write |  |  |  | 
 
 ## Resources Defined by Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
 

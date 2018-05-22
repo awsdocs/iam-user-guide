@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [fleet](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:fleet/$\{FleetName\} |  | 
-| [image](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image/$\{ImageName\} |  | 
-| [image\-builder](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image\-builder/$\{ImageBuilderName\} |  | 
-| [stack](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:stack/$\{StackName\} |  | 
+| [http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:fleet/$\{FleetName\} |  | 
+| [http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image/$\{ImageName\} |  | 
+| [http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image\-builder/$\{ImageBuilderName\} |  | 
+| [http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts) | arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:stack/$\{StackName\} |  | 
 
 ## Condition Keys for Amazon AppStream<a name="amazonappstream-policy-keys"></a>
 
@@ -45,4 +45,4 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [appstream:userId](url-contextkeys-replace-meexternal-identity-providers-setting-up-saml.html#external-identity-providers-grantperms) |  | String | 
+| appstream:userId |  | String | 

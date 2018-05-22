@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [datasource](http://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/datasources/$\{DatasourceName\} |  | 
-| [field](http://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}/fields/$\{FieldName\} |  | 
-| [graphqlapi](http://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\} |  | 
-| [type](http://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\} |  | 
+| [http://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html](http://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/datasources/$\{DatasourceName\} |  | 
+| [http://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html](http://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}/fields/$\{FieldName\} |  | 
+| [http://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html](http://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\} |  | 
+| [http://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type](http://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\} |  | 
 
 ## Condition Keys for AWS AppSync<a name="awsappsync-policy-keys"></a>
 

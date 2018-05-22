@@ -9,7 +9,7 @@ To grant an IAM group permission to create temporary security credentials for fe
 + For federated users to access an IAM role, grant access to AWS STS `AssumeRole`\.
 + <a name="para_gsy_hxg_1t"></a>For federated users that don't need a role, grant access to AWS STS `GetFederationToken`\.
 
- For more information about the differences between the `AssumeRole` and `GetFederationToken` APIs, see [Requesting Temporary Security Credentials](id_credentials_temp_request.md)\.
+ For more information about the differences between the `AssumeRole` and `GetFederationToken` API operations, see [Requesting Temporary Security Credentials](id_credentials_temp_request.md)\.
 
 **Example : A policy that grants permission to assume a role**  
 The following example policy grants permission to call `AssumeRole` for the `UpdateApp` role in AWS account `123123123123`\. When `AssumeRole` is used, the user \(or application\) that creates the security credentials on behalf of a federated user cannot delegate any permissions not already specified in the role permission policy\.   

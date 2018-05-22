@@ -1,6 +1,6 @@
 # IAM: Limits Managed Policies That Can Be Applied to a New IAM User, Group, or Role<a name="reference_policies_examples_iam_limit-managed"></a>
 
-This example shows how you might create a policy that limits customer managed and AWS managed policies that can be applied to a new IAM user, group, or role\. To use this policy, replace the red text in the example policy with your own information\.
+This example shows how you might create a policy that limits customer managed and AWS managed policies that can be applied to a new IAM user, group, or role\. This policy provides the permissions necessary to complete this action using the AWS API or AWS CLI only\. To use this policy, replace the red text in the example policy with your own information\.
 
 ```
 {

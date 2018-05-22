@@ -19,7 +19,7 @@ To learn more about CloudTrail, including how to configure and enable it, see th
   Examples for this type of log entry are presented later in this topic\. 
 **Important**  
 If you activate AWS STS endpoints in regions other than the default global endpoint, then you must also turn on CloudTrail logging in those regions to record any AWS STS API calls made in those regions\. For more information, see [Turning On CloudTrail in Additional Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html) in the AWS CloudTrail User Guide\.
-+ **API requests to other AWS services** – Authenticated requests to other AWS service APIs are logged by CloudTrail, and these log entries contain information about who generated the request\. 
++ **API requests to other AWS services** – Authenticated requests to other AWS service API operations are logged by CloudTrail, and these log entries contain information about who generated the request\. 
 
   For example, if a request is made to list Amazon EC2 instances or create an AWS CodeDeploy deployment group, the user identity of the person or service that made the request is contained in the log entry for that request\. The user identity information helps you determine whether the request was made with AWS account root user credentials or IAM user credentials, with temporary security credentials for a role or federated user, or by another AWS service\. 
 

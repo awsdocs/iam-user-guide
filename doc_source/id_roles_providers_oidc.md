@@ -12,6 +12,6 @@ If you don't use Amazon Cognito, then you must write code that interacts with a 
 
 **Topics**
 + [Using Amazon Cognito for Mobile Apps](id_roles_providers_oidc_cognito.md)
-+ [Using Web Identity Federation APIs for Mobile Apps](id_roles_providers_oidc_manual.md)
++ [Using Web Identity Federation API Operations for Mobile Apps](id_roles_providers_oidc_manual.md)
 + [Identifying Users with Web Identity Federation](id_roles_providers_oidc_user-id.md)
 + [Additional Resources for Web Identity Federation](id_roles_providers_oidc_resources.md)

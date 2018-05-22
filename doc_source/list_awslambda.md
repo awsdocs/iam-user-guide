@@ -21,37 +21,37 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddPermission](http://docs.aws.amazon.com/lambda/API_AddPermission.html) | Adds a permission to the resource policy associated with the specified AWS Lambda function\. | Permissions management | [function\*](#awslambda-function)  |  |  | 
-| [CreateAlias](http://docs.aws.amazon.com/lambda/API_CreateAlias.html) | Creates an alias that points to the specified Lambda function version\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [CreateEventSourceMapping](http://docs.aws.amazon.com/lambda/API_CreateEventSourceMapping.html) | Identifies a stream as an event source for a Lambda function\. | Write |  |  |  | 
-| [CreateFunction](http://docs.aws.amazon.com/lambda/API_CreateFunction.html) | Creates a new Lambda function\. | Write |  |  |  | 
-| [DeleteAlias](http://docs.aws.amazon.com/lambda/API_DeleteAlias.html) | Deletes the specified Lambda function alias\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [DeleteEventSourceMapping](http://docs.aws.amazon.com/lambda/API_DeleteEventSourceMapping.html) | Removes an event source mapping\. | Write |  |  |  | 
-| [DeleteFunction](http://docs.aws.amazon.com/lambda/API_DeleteFunction.html) | Deletes the specified Lambda function code and configuration\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [DeleteFunctionConcurrency](http://docs.aws.amazon.com/lambda/API_DeleteFunctionConcurrency.html) | Remove concurrency limit set on a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_AddPermission.html](http://docs.aws.amazon.com/lambda/API_AddPermission.html) | Adds a permission to the resource policy associated with the specified AWS Lambda function\. | Permissions management | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_CreateAlias.html](http://docs.aws.amazon.com/lambda/API_CreateAlias.html) | Creates an alias that points to the specified Lambda function version\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_CreateEventSourceMapping.html](http://docs.aws.amazon.com/lambda/API_CreateEventSourceMapping.html) | Identifies a stream as an event source for a Lambda function\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_CreateFunction.html](http://docs.aws.amazon.com/lambda/API_CreateFunction.html) | Creates a new Lambda function\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_DeleteAlias.html](http://docs.aws.amazon.com/lambda/API_DeleteAlias.html) | Deletes the specified Lambda function alias\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_DeleteEventSourceMapping.html](http://docs.aws.amazon.com/lambda/API_DeleteEventSourceMapping.html) | Removes an event source mapping\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_DeleteFunction.html](http://docs.aws.amazon.com/lambda/API_DeleteFunction.html) | Deletes the specified Lambda function code and configuration\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_DeleteFunctionConcurrency.html](http://docs.aws.amazon.com/lambda/API_DeleteFunctionConcurrency.html) | Remove concurrency limit set on a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
 | EnableReplication | Adds a permission to resource policy that gives Lambda replication service permission to get function code and configuration\. | Permissions management | [function\*](#awslambda-function)  |  |  | 
-| [GetAccountSettings](http://docs.aws.amazon.com/lambda/API_GetAccountSettings.html) | Returns account limits and usage statistics, such as concurrency and code storage\. | Read |  |  |  | 
-| [GetAlias](http://docs.aws.amazon.com/lambda/API_GetAlias.html) | Returns the specified alias information such as the alias ARN, description, and function version it is pointing to\. | Read | [function\*](#awslambda-function)  |  |  | 
-| [GetEventSourceMapping](http://docs.aws.amazon.com/lambda/API_GetEventSourceMapping.html) | Returns configuration information for the specified event source mapping\. | Read |  |  |  | 
-| [GetFunction](http://docs.aws.amazon.com/lambda/API_GetFunction.html) | Returns the configuration information of the Lambda function and a presigned URL link to the \.zip file you uploaded with CreateFunction so you can download the \.zip file\. | Read | [function\*](#awslambda-function)  |  |  | 
-| [GetFunctionConfiguration](http://docs.aws.amazon.com/lambda/API_GetFunctionConfiguration.html) | Returns the configuration information of the Lambda function\. | Read | [function\*](#awslambda-function)  |  |  | 
-| [GetPolicy](http://docs.aws.amazon.com/lambda/API_GetPolicy.html) | Returns the resource policy associated with the specified Lambda function\. | Read | [function\*](#awslambda-function)  |  |  | 
-| [InvokeAsync](http://docs.aws.amazon.com/lambda/API_InvokeAsync.html) | Submits an invocation request to AWS Lambda\. Is deprecated | Write | [function\*](#awslambda-function)  |  |  | 
-| [InvokeFunction](http://docs.aws.amazon.com/lambda/API_Invoke.html) | Invokes a specific Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [ListAliases](http://docs.aws.amazon.com/lambda/API_ListAliases.html) | Returns list of aliases created for a Lambda function\. | List | [function\*](#awslambda-function)  |  |  | 
-| [ListEventSourceMappings](http://docs.aws.amazon.com/lambda/API_ListEventSourceMappings.html) | Returns a list of event source mappings you created using the CreateEventSourceMapping\. | List |  |  |  | 
-| [ListFunctions](http://docs.aws.amazon.com/lambda/API_ListFunctions.html) | Returns a list of your Lambda functions\. | List |  |  |  | 
-| [ListTags](http://docs.aws.amazon.com/lambda/API_ListTagsForResource.html) | Lists tags for a Lambda function\. | Read | [function\*](#awslambda-function)  |  |  | 
-| [ListVersionsByFunction](http://docs.aws.amazon.com/lambda/API_ListVersionsByFunction.html) | List all versions of a function\. | List | [function\*](#awslambda-function)  |  |  | 
-| [PublishVersion](http://docs.aws.amazon.com/lambda/API_PublishVersion.html) | Publishes a version of your function from the current snapshot of $LATEST\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [PutFunctionConcurrency](http://docs.aws.amazon.com/lambda/API_PutFunctionConcurrency.html) | Adds concurrency limit to a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [RemovePermission](http://docs.aws.amazon.com/lambda/API_RemovePermission.html) | You can remove individual permissions from an resource policy associated with a Lambda function by providing a statement ID that you provided when you added the permission\. | Permissions management | [function\*](#awslambda-function)  |  |  | 
-| [TagResource](http://docs.aws.amazon.com/lambda/API_TagResources.html) | Adds tags to a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [UntagResource](http://docs.aws.amazon.com/lambda/API_UntagResource.html) | Removes tags from a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [UpdateAlias](http://docs.aws.amazon.com/lambda/API_UpdateAlias.html) | Using this API you can update the function version to which the alias points and the alias description\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [UpdateEventSourceMapping](http://docs.aws.amazon.com/lambda/API_UpdateEventSourceMapping.html) | You can update an event source mapping\. | Write |  |  |  | 
-| [UpdateFunctionCode](http://docs.aws.amazon.com/lambda/API_UpdateFunctionCode.html) | Updates the code for the specified Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [UpdateFunctionConfiguration](http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html) | Updates the configuration parameters for the specified Lambda function by using the values provided in the request\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_GetAccountSettings.html](http://docs.aws.amazon.com/lambda/API_GetAccountSettings.html) | Returns account limits and usage statistics, such as concurrency and code storage\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_GetAlias.html](http://docs.aws.amazon.com/lambda/API_GetAlias.html) | Returns the specified alias information such as the alias ARN, description, and function version it is pointing to\. | Read | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_GetEventSourceMapping.html](http://docs.aws.amazon.com/lambda/API_GetEventSourceMapping.html) | Returns configuration information for the specified event source mapping\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_GetFunction.html](http://docs.aws.amazon.com/lambda/API_GetFunction.html) | Returns the configuration information of the Lambda function and a presigned URL link to the \.zip file you uploaded with CreateFunction so you can download the \.zip file\. | Read | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_GetFunctionConfiguration.html](http://docs.aws.amazon.com/lambda/API_GetFunctionConfiguration.html) | Returns the configuration information of the Lambda function\. | Read | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_GetPolicy.html](http://docs.aws.amazon.com/lambda/API_GetPolicy.html) | Returns the resource policy associated with the specified Lambda function\. | Read | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_InvokeAsync.html](http://docs.aws.amazon.com/lambda/API_InvokeAsync.html) | Submits an invocation request to AWS Lambda\. Is deprecated | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_Invoke.html](http://docs.aws.amazon.com/lambda/API_Invoke.html) | Invokes a specific Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_ListAliases.html](http://docs.aws.amazon.com/lambda/API_ListAliases.html) | Returns list of aliases created for a Lambda function\. | List | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_ListEventSourceMappings.html](http://docs.aws.amazon.com/lambda/API_ListEventSourceMappings.html) | Returns a list of event source mappings you created using the CreateEventSourceMapping\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_ListFunctions.html](http://docs.aws.amazon.com/lambda/API_ListFunctions.html) | Returns a list of your Lambda functions\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_ListTagsForResource.html](http://docs.aws.amazon.com/lambda/API_ListTagsForResource.html) | Lists tags for a Lambda function\. | Read | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_ListVersionsByFunction.html](http://docs.aws.amazon.com/lambda/API_ListVersionsByFunction.html) | List all versions of a function\. | List | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_PublishVersion.html](http://docs.aws.amazon.com/lambda/API_PublishVersion.html) | Publishes a version of your function from the current snapshot of $LATEST\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_PutFunctionConcurrency.html](http://docs.aws.amazon.com/lambda/API_PutFunctionConcurrency.html) | Adds concurrency limit to a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_RemovePermission.html](http://docs.aws.amazon.com/lambda/API_RemovePermission.html) | You can remove individual permissions from an resource policy associated with a Lambda function by providing a statement ID that you provided when you added the permission\. | Permissions management | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_TagResources.html](http://docs.aws.amazon.com/lambda/API_TagResources.html) | Adds tags to a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_UntagResource.html](http://docs.aws.amazon.com/lambda/API_UntagResource.html) | Removes tags from a Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_UpdateAlias.html](http://docs.aws.amazon.com/lambda/API_UpdateAlias.html) | Using this API you can update the function version to which the alias points and the alias description\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_UpdateEventSourceMapping.html](http://docs.aws.amazon.com/lambda/API_UpdateEventSourceMapping.html) | You can update an event source mapping\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_UpdateFunctionCode.html](http://docs.aws.amazon.com/lambda/API_UpdateFunctionCode.html) | Updates the code for the specified Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html](http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html) | Updates the configuration parameters for the specified Lambda function by using the values provided in the request\. | Write |  |  |  | 
 
 ## Resources Defined by Lambda<a name="awslambda-resources-for-iam-policies"></a>
 
@@ -62,7 +62,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [function](http://docs.aws.amazon.com/lambda/lambda-api-permissions-ref.html) | arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:function:$\{FunctionName\} |  | 
+| [http://docs.aws.amazon.com/lambda/lambda-api-permissions-ref.html](http://docs.aws.amazon.com/lambda/lambda-api-permissions-ref.html) | arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:function:$\{FunctionName\} |  | 
 
 ## Condition Keys for AWS Lambda<a name="awslambda-policy-keys"></a>
 

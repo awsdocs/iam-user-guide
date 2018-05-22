@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [log\-group](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/) | arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\} |  | 
-| [log\-stream](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/) | arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}:$\{LogStream\}:$\{LogStreamName\} |  | 
+| log\-group | arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\} |  | 
+| log\-stream | arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}:$\{LogStream\}:$\{LogStreamName\} |  | 
 
 ## Condition Keys for Amazon CloudWatch Logs<a name="amazoncloudwatchlogs-policy-keys"></a>
 

@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [BatchMeterUsage](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html) | Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers\. | Write |  |  |  | 
-| [MeterUsage](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html) | Emits metering records\. | Write |  |  |  | 
-| [ResolveCustomer](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html) | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html) | Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html) | Emits metering records\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html) | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
 
 ## Resources Defined by Marketplace Metering<a name="awsmarketplacemeteringservice-resources-for-iam-policies"></a>
 

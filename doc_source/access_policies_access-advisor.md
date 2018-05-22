@@ -121,23 +121,27 @@ As this example shows, you might use the service last accessed data for principa
 
 ## Regions Where Data Is Tracked<a name="access-advisor_tracking-period"></a>
 
-AWS collects service last accessed data in most regions\. As AWS adds support for service last accessed to additional regions, those regions are added to this list:
+AWS collects service last accessed data in most regions\. Data is stored for a maximum of 365 days\. When AWS adds additional regions, those regions are added to the following table, including the date that AWS started tracking data in each region:
 
 
 ****  
 
-| Region name | Region | 
-| --- | --- | 
-| US East \(N\. Virginia\) | us\-east\-1 | 
-| US West \(N\. California\) | us\-west\-1 | 
-| US West \(Oregon\) | us\-west\-2 | 
-| Asia Pacific \(Tokyo\) | ap\-northeast\-1 | 
-| Asia Pacific \(Singapore\) | ap\-southeast\-1 | 
-| Asia Pacific \(Sydney\) | ap\-southeast\-2 | 
-| EU \(Frankfurt\) | eu\-central\-1 | 
-| EU \(Ireland\) | eu\-west\-1 | 
-| South America \(São Paulo\) | sa\-east\-1 | 
-| Asia Pacific \(Seoul\) | ap\-northeast\-2 | 
-| Asia Pacific \(Mumbai\) | ap\-south\-1 | 
+| Region name | Region | Tracking start date | 
+| --- | --- | --- | 
+| US East \(N\. Virginia\) | us\-east\-1 | October 1, 2015 | 
+| US East \(Ohio\) | us\-east\-2 | October 27, 2017 | 
+| US West \(N\. California\) | us\-west\-1 | October 1, 2015 | 
+| US West \(Oregon\) | us\-west\-2 | October 1, 2015 | 
+| Asia Pacific \(Tokyo\) | ap\-northeast\-1 | October 1, 2015 | 
+| Asia Pacific \(Seoul\) | ap\-northeast\-2 | January 6, 2016 | 
+| Asia Pacific \(Singapore\) | ap\-southeast\-1 | October 1, 2015 | 
+| Asia Pacific \(Sydney\) | ap\-southeast\-2 | October 1, 2015 | 
+| Asia Pacific \(Mumbai\) | ap\-south\-1 | June 27, 2016 | 
+| Canada \(Central\) | ca\-central\-1 | October 28, 2017 | 
+| EU \(Frankfurt\) | eu\-central\-1 | October 1, 2015 | 
+| EU \(Ireland\) | eu\-west\-1 | October 1, 2015 | 
+| EU \(London\) | eu\-west\-2 | October 28, 2017 | 
+| EU \(Paris\) | eu\-west\-3 | December 18, 2017 | 
+| South America \(São Paulo\) | sa\-east\-1 | December 11, 2015 | 
 
 If a region is not listed in the previous table, then that region does not yet provide service last accessed data\.

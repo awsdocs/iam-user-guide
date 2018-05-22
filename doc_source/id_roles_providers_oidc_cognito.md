@@ -14,7 +14,7 @@ The following figure shows a simplified flow for how this might work, using Logi
 
 1. The app uses Login with Amazon resources to accept the user's credentials\.
 
-1. The app uses Cognito APIs to exchange the Login with Amazon ID token for a Cognito token\.
+1. The app uses Cognito API operations to exchange the Login with Amazon ID token for a Cognito token\.
 
 1. The app requests temporary security credentials from AWS STS, passing the Cognito token\.
 

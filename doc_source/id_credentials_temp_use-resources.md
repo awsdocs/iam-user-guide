@@ -14,7 +14,7 @@ You can use AWS Security Token Service \(AWS STS\) to create and provide trusted
 + [Using Temporary Security Credentials with the AWS SDKs](#using-temp-creds-sdk)
 + [Using Temporary Security Credentials with the AWS CLI](#using-temp-creds-sdk-cli)
 + [Using Temporary Security Credentials with the Tools for Windows PowerShell](#using-temp-creds-twp)
-+ [Using Temporary Security Credentials with APIs](#RequestWithSTS)
++ [Using Temporary Security Credentials with API Operations](#RequestWithSTS)
 + [More Information](#using-temp-creds-more-info)
 
 ## Using Temporary Credentials in Amazon EC2 Instances<a name="using-temp-creds-sdk-ec2-instances"></a>
@@ -43,7 +43,7 @@ s3Request = CreateAmazonS3Client(tempCredentials);
 
 For an example written in Python \(using the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/sdk-for-python/)\) that shows how to call `AssumeRole` to get temporary security credentials, and then use those credentials to make a call to Amazon S3, see [Switching to an IAM Role \(API\)](id_roles_use_switch-role-api.md)\.
 
-For details about how to call `AssumeRole`, `GetFederationToken`, and other APIs, and about how to get the temporary security credentials and session token from the result, see the documentation for the SDK that you're working with\. You can find the documentation for all the AWS SDKs on the main [AWS documentation page](http://aws.amazon.com/documentation)\. 
+For details about how to call `AssumeRole`, `GetFederationToken`, and other API operations, and about how to get the temporary security credentials and session token from the result, see the documentation for the SDK that you're working with\. You can find the documentation for all the AWS SDKs on the main [AWS documentation page](http://aws.amazon.com/documentation)\. 
 
 You must make sure that you get a new set of credentials before the old ones expire\. In some SDKs, you can use a provider that manages the process of refreshing credentials for you; check the documentation for the SDK you're using\. 
 
@@ -121,7 +121,7 @@ The following example shows how you might use the variable\-stored credentials a
 PS C:\> Get-EC2Instance -Region us-west-2 -Credential $role.Credentials
 ```
 
-## Using Temporary Security Credentials with APIs<a name="RequestWithSTS"></a>
+## Using Temporary Security Credentials with API Operations<a name="RequestWithSTS"></a>
 
 If you're making direct HTTPS API requests to AWS, you can sign those requests with the temporary security credentials that you get from the AWS Security Token Service \(AWS STS\)\. To do this, you use the access key ID and secret access key that you receive from AWS STS the same way you would use long\-term credentials to sign a request\. You also add to your API request the session token that you receive from AWS STS\. You add the session token to an HTTP header or to a query string parameter named `X-Amz-Security-Token`\. You add the session token to the HTTP header *or* the query string parameter, but not both\. For more information about signing HTTPS API requests, see [Signing AWS API Requests](http://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *AWS General Reference*\.
 

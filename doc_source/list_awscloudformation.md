@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [stack](http://docs.aws.amazon.com/cloudformation/latest/UserGuide/cfn-whatis-concepts.html#w1ab2b5c17c11) | arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/cloudformation/latest/UserGuide/cfn-whatis-concepts.html#w1ab2b5c17c11](http://docs.aws.amazon.com/cloudformation/latest/UserGuide/cfn-whatis-concepts.html#w1ab2b5c17c11) | arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\} |  | 
 
 ## Condition Keys for AWS CloudFormation<a name="awscloudformation-policy-keys"></a>
 
@@ -42,8 +42,8 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [cloudformation:ChangeSetName](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An AWS CloudFormation change set name\. Use to control which change sets IAM users can execute or delete\. | String | 
-| [cloudformation:ResourceTypes](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | The template resource types, such as <code>AWS::EC2::Instance</code>\. Use to control which resource types IAM users can work with when they create or update a stack | String | 
-| [cloudformation:RoleArn](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | The ARN of an IAM service role\. Use to control which service role IAM users can use to work with stacks or change sets\. | ARN | 
-| [cloudformation:StackPolicyUrl](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An Amazon S3 stack policy URL\. Use to control which stack policies IAM users can associate with a stack during a create or update stack action\. | String | 
-| [cloudformation:TemplateUrl](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An Amazon S3 template URL\. Use to control which templates IAM users can use when they create or update stacks\. | String | 
+| [${DocumenationLink}using-iam-template.html#using-iam-template-conditions](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An AWS CloudFormation change set name\. Use to control which change sets IAM users can execute or delete\. | String | 
+| [${DocumenationLink}using-iam-template.html#using-iam-template-conditions](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | The template resource types, such as <code>AWS::EC2::Instance</code>\. Use to control which resource types IAM users can work with when they create or update a stack | String | 
+| [${DocumenationLink}using-iam-template.html#using-iam-template-conditions](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | The ARN of an IAM service role\. Use to control which service role IAM users can use to work with stacks or change sets\. | ARN | 
+| [${DocumenationLink}using-iam-template.html#using-iam-template-conditions](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An Amazon S3 stack policy URL\. Use to control which stack policies IAM users can associate with a stack during a create or update stack action\. | String | 
+| [${DocumenationLink}using-iam-template.html#using-iam-template-conditions](${DocumenationLink}using-iam-template.html#using-iam-template-conditions) | An Amazon S3 template URL\. Use to control which templates IAM users can use when they create or update stacks\. | String | 

@@ -1,20 +1,20 @@
 # Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity<a name="id_credentials_temp_control-access_assumerole"></a>
 
-The permission policy of the role that is being assumed determines the permissions for the temporary security credentials returned by `AssumeRole`, `AssumeRoleWithSAML`, and `AssumeRoleWithWebIdentity`\. You define these permissions when you create or update the role\. 
+The permission policy of the role that is being assumed determines the permissions for the temporary security credentials that are returned by `AssumeRole`, `AssumeRoleWithSAML`, and `AssumeRoleWithWebIdentity`\. You define these permissions when you create or update the role\. 
 
-Optionally, you can pass a separate policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API call\. This supplemental policy can further restrict \(scope\) the permissions of the temporary security credentials that the API operation returns\. You can use these credentials in subsequent AWS API calls to access resources in the account that owns the role\. The temporary credentials have the [effective permissions](reference_policies_evaluation-logic.md) of the assumed role *and* the policy that you pass, in addition to any resource\-based policies \(such as an Amazon S3 bucket policy\) attached to the resource that is being accessed by the temporary security credentials\. You cannot use the passed policy to grant permissions that are in excess of those allowed by the permissions policy of the role that is being assumed\.
+Optionally, you can pass a separate policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API call\. This supplemental policy can further restrict \(scope\) the permissions of the temporary security credentials that the API operation returns\. You can use these credentials in subsequent AWS API calls to access resources in the account that owns the role\. The temporary credentials have the [effective permissions](reference_policies_evaluation-logic.md) of the assumed role *and* the policy that you pass\. These permissions are added to any resource\-based policies \(such as an Amazon S3 bucket policy\) that are attached to the resource that the temporary security credentials can access\. You cannot use the passed policy to grant permissions that are in excess of those allowed by the permissions policy of the role that is being assumed\.
 
 ![\[PermissionsWhenPassingRoles_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/role_passed_policy_permissions.png)
 
-It is important to understand that the policies that are attached to the IAM user or the credentials that made the original call to `AssumeRole` are not evaluated by AWS when making the "allow" or "deny" authorization decision\. The user temporarily gives up its original permissions in favor of the permissions assigned by the assumed role\. In the case of the `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` APIs, there are no policies to evaluate because the caller of the API is not an AWS identity\.
+The policies that are attached to the credentials that made the original call to `AssumeRole` are not evaluated by AWS when making the "allow" or "deny" authorization decision\. The user temporarily gives up its original permissions in favor of the permissions assigned by the assumed role\. In the case of the `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` API operations, there are no policies to evaluate because the caller of the API is not an AWS identity\.
 
 ## Example: Assigning Permissions Using AssumeRole<a name="permissions-assume-role-example"></a>
 
-You can use the `AssumeRole` API action with different kinds of policies\. Here are a few examples\.
+You can use the `AssumeRole` API operation with different kinds of policies\. Here are a few examples\.
 
 ### Role Permission Policy<a name="permissions-assume-role-example-role-access-policy"></a>
 
-In this example, you call the `AssumeRole` API and do not include the optional `Policy` parameter\. The permissions assigned to the temporary security credentials that are returned by the call to `AssumeRole`—that is, the permissions assigned to the *assumed role user*—are determined by the permission policy of the role being assumed\. The following example is a role permission policy that grants the assumed role user permission to list all objects contained in an S3 bucket named `productionapp`, and to get, put, and delete objects within that bucket\.
+In this example, you call the `AssumeRole` API operation without the optional `Policy` parameter\. The permissions assigned to the temporary credentials are determined by the permission policy of the role being assumed\. The following example permissions policy grants the role permission to list all objects that are contained in an S3 bucket named `productionapp`\. It also allows the role to get, put, and delete objects within that bucket\.
 
 **Example Role Permission Policy**  
 
@@ -46,7 +46,7 @@ Imagine that you want to allow a user to assume the same role as in the previous
 + List all objects in the `productionapp` bucket\.
 + Get and put objects in the `productionapp` bucket\.
 
-Note that because the `s3:DeleteObject` permission is not specified in the following policy, it is filtered out and the assumed role user is not granted the `s3:DeleteObject` permission\. When you pass a policy as a parameter of the `AssumeRole` API call, the effective permissions of the assumed role user consist of only those permissions that are granted both in the role permission policy ***and*** the passed policy\.
+In the following policy, the `s3:DeleteObject` permission is filtered out and the assumed role user is not granted the `s3:DeleteObject` permission\. The temporary credentials from `AssumeRole` have the [effective permissions](reference_policies_evaluation-logic.md) of the assumed role *and* the policy that you pass\.
 
 **Example Policy Passed with `AssumeRole` API call**  
 

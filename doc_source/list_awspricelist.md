@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [DescribeServices](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html) | Returns the service details for all \(paginated\) services \(if serviceCode is not set\) or service detail for a particular service \(if given serviceCode\)\. | Read |  |  |  | 
-| [GetAttributeValues](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html) | Returns all \(paginated\) possible values for a given attribute\. | Read |  |  |  | 
-| [GetProducts](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html) | Returns all matching products with given search criteria\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html) | Returns the service details for all \(paginated\) services \(if serviceCode is not set\) or service detail for a particular service \(if given serviceCode\)\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html) | Returns all \(paginated\) possible values for a given attribute\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html) | Returns all matching products with given search criteria\. | Read |  |  |  | 
 
 ## Resources Defined by Price List<a name="awspricelist-resources-for-iam-policies"></a>
 

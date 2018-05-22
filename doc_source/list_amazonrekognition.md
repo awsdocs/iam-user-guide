@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [collection](http://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html) | arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:collection/$\{CollectionId\} |  | 
-| [streamprocessor](http://docs.aws.amazon.com/rekognition/latest/dg/) | arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:streamprocessor/$\{StreamprocessorId\} |  | 
+| [http://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html](http://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html) | arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:collection/$\{CollectionId\} |  | 
+| streamprocessor | arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:streamprocessor/$\{StreamprocessorId\} |  | 
 
 ## Condition Keys for Amazon Rekognition<a name="amazonrekognition-policy-keys"></a>
 

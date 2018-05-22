@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [apps](http://docs.aws.amazon.com/pinpoint/latest/apireference/) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\} |  | 
-| [campaigns](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\} |  | 
-| [endpoints](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/endpoints/$\{EndpointId\} |  | 
-| [segments](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\} |  | 
+| [http://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp](http://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\} |  | 
+| [http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\} |  | 
+| [http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/endpoints/$\{EndpointId\} |  | 
+| [http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\} |  | 
 
 ## Condition Keys for Amazon Pinpoint<a name="amazonpinpoint-policy-keys"></a>
 

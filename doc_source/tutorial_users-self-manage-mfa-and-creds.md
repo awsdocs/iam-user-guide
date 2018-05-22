@@ -1,6 +1,6 @@
 # Tutorial: Enable Your Users to Configure Their Own Credentials and MFA Settings<a name="tutorial_users-self-manage-mfa-and-creds"></a>
 
-You can enable your users to self\-manage their own multi\-factor authentication \(MFA\) devices and credentials\. You can use the AWS Management Console to configure credentials \(access keys, passwords, signing certificates, and SSH public keys\) and MFA devices for your users in small numbers\. But that is a task that could very quickly become time consuming as the number of users grows\. Security best practice specifies that users should regularly change their passwords and rotate their access keys\. They should also delete or deactivate credentials that are not needed and use MFA, at the very least, for sensitive operations\. Showing you how to enable these best practices without burdening your administrators is the goal of this tutorial\.
+You can enable your users to self\-manage their own multi\-factor authentication \(MFA\) devices and credentials\. You can use the AWS Management Console to configure credentials \(access keys, passwords, signing certificates, and SSH public keys\) and MFA devices for your users in small numbers\. But that is a task that could quickly become time consuming as the number of users grows\. Security best practice specifies that users should regularly change their passwords and rotate their access keys\. They should also delete or deactivate credentials that are not needed and use MFA, at the very least, for sensitive operations\. Showing you how to enable these best practices without burdening your administrators is the goal of this tutorial\.
 
 This tutorial shows how to grant users access to AWS services, but **only** when they sign in with MFA\. If they are not signed in with an MFA device, then users cannot access other services\.
 
@@ -12,7 +12,7 @@ This workflow has three basic steps\.
 Create a customer managed policy that prohibits all actions ***except*** the few IAM API operations that enable changing credentials and managing MFA devices\.
 
 **[Step 2: Attach Policies to Your Test Group](#tutorial_mfa_step2)**  
-Create a group whose members have full access to all Amazon EC2 actions if they sign\-in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
+Create a group whose members have full access to all Amazon EC2 actions if they sign in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
 
 **[Step 3: Test Your User's Access](#tutorial_mfa_step3)**  
 Sign in as the test user to verify that access to Amazon EC2 is blocked *until* the user creates an MFA device and then signs in using that device\. 
@@ -21,9 +21,10 @@ Sign in as the test user to verify that access to Amazon EC2 is blocked *until* 
 
 To perform the steps in this tutorial, you must already have the following:
 + An AWS account that you can sign in to as an IAM user with administrative permissions\.
-+ Your account ID number which you type into the policy in Step 1\. 
++ Your account ID number, which you type into the policy in Step 1\. 
 
   To find your account ID number, on the navigation bar at the top of the page, choose **Support** and then choose **Support Center**\. You can find your account ID under this page's **Support** menu\. 
++ A [hardware\-based](id_credentials_mfa_enable_physical.md) or [virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA device\.
 + A test IAM user who is a member of a group as follows:
 
 
@@ -180,7 +181,7 @@ Next you attach two policies to the test IAM group, which will be used to grant 
 
 1. In the navigation pane, choose **Groups**\.
 
-1. In the search box, type **`EC2MFA`**, and then select the group name \(not the check box\) in the list\. 
+1. In the search box, type **`EC2MFA`**, and then choose the group name \(not the check box\) in the list\. 
 
 1. On the **Permissions** tab, and click **Attach Policy**\.
 
@@ -224,7 +225,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 1. Sign out of the console and then sign in as **MFAUser** again\. This time AWS prompts you for an MFA code from your phone\. When you get it, type the code in the box and then choose **Submit**\.
 
-1. Choose **EC2** to open the Amazon EC2 console again\. Note that this time you can see all the information and perform any actions you wish\. If you go to any other console as this user, you see access denied messages because the policies in this tutorial grant access only to Amazon EC2\. 
+1. Choose **EC2** to open the Amazon EC2 console again\. Note that this time you can see all the information and perform any actions you want\. If you go to any other console as this user, you see access denied messages because the policies in this tutorial grant access only to Amazon EC2\. 
 
 ## Related Resources<a name="tutorial_mfa_related"></a>
 

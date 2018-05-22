@@ -5,7 +5,7 @@
 + [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)
 + [Replace or "Rotate" a Physical MFA Device](#replace-phys-mfa)
 
-You can enable a hardware MFA device from the AWS Management Console, the command line, or the IAM API\. The following procedure shows you how to use the AWS Management Console to enable the device for a user under your AWS account\. To enable an MFA device for your AWS account root user, see [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)\.
+You can enable a hardware MFA device for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)\.
 
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\.
 
@@ -22,7 +22,7 @@ If you want to enable the device from the command line, use [aws iam enable\-mfa
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security credentials** tab\.
+1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security Credentials** tab\.
 
 1. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
 
@@ -43,7 +43,7 @@ The device is ready for use with AWS\. For information about using MFA with the 
 
 ## Enable a Hardware MFA Device for the AWS Account Root User \(Console\)<a name="enable-hw-mfa-for-root"></a>
 
-You can use IAM in the AWS Management Console to configure and enable a hardware MFA device for your root user\. To manage MFA devices for the AWS account, you must be signed in to AWS using your AWS account root user credentials\. You cannot manage MFA devices for the root user using other credentials\.
+You can use IAM in the AWS Management Console to configure and enable a hardware MFA device for your root user\. To enable MFA devices for the AWS account, you must be signed in to AWS using your root user credentials\. You cannot enable an MFA device for the AWS account root user with the AWS CLI, AWS API, Tools for Windows PowerShell, or any other command\-line tool\.
 
 If your MFA device is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. Before you enable MFA for your root user, review your account settings and contact information to make sure that you have access to the email and phone number\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
 
@@ -58,8 +58,8 @@ To manage MFA devices for the AWS account, you must use your root user credentia
 
 1. Do one of the following:
    + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root account**\. 
-   + **Option 2**: On the right side of the navigation bar, choose on your account name, and then choose **Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
-![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+   + **Option 2**: On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
+![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
 

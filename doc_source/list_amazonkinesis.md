@@ -21,25 +21,25 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [AddTagsToStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html) | Adds or updates tags for the specified Amazon Kinesis stream\. Each stream can have up to 10 tags\. | Tagging | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [CreateStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html) | Creates a Amazon Kinesis stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [DecreaseStreamRetentionPeriod](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html) | Decreases the stream's retention period, which is the length of time data records are accessible after they are added to the stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [DeleteStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html) | Deletes a stream and all its shards and data\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [DescribeLimits](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html) | Describes the shard limits and usage for the account\. | Read |  |  |  | 
-| [DescribeStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html) | Describes the specified stream\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [DisableEnhancedMonitoring](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html) | Disables enhanced monitoring\. | Write |  |  |  | 
-| [EnableEnhancedMonitoring](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html) | API\_EnableEnhancedMonitoring\.html | Write |  |  |  | 
-| [GetRecords](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html) | Gets data records from a shard\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [GetShardIterator](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html) | Gets a shard iterator\. A shard iterator expires five minutes after it is returned to the requester\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [IncreaseStreamRetentionPeriod](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html) | Increases the stream's retention period, which is the length of time data records are accessible after they are added to the stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [ListStreams](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html) | Lists your streams\. | List |  |  |  | 
-| [ListTagsForStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html) | Lists the tags for the specified Amazon Kinesis stream\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [MergeShards](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html) | Merges two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [PutRecord](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html) | Writes a single data record from a producer into an Amazon Kinesis stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [PutRecords](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html) | Writes multiple data records from a producer into an Amazon Kinesis stream in a single call \(also referred to as a PutRecords request\)\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [RemoveTagsFromStream](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html) | Description for SplitShard | Tagging | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [SplitShard](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html) | Description for SplitShard | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
-| [UpdateShardCount](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html) | Updates the shard count of the specified stream to the specified number of shards\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_AddTagsToStream.html) | Adds or updates tags for the specified Amazon Kinesis stream\. Each stream can have up to 10 tags\. | Tagging | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_CreateStream.html) | Creates a Amazon Kinesis stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DecreaseStreamRetentionPeriod.html) | Decreases the stream's retention period, which is the length of time data records are accessible after they are added to the stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DeleteStream.html) | Deletes a stream and all its shards and data\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeLimits.html) | Describes the shard limits and usage for the account\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DescribeStream.html) | Describes the specified stream\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_DisableEnhancedMonitoring.html) | Disables enhanced monitoring\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_EnableEnhancedMonitoring.html) | API\_EnableEnhancedMonitoring\.html | Write |  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html) | Gets data records from a shard\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html) | Gets a shard iterator\. A shard iterator expires five minutes after it is returned to the requester\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_IncreaseStreamRetentionPeriod.html) | Increases the stream's retention period, which is the length of time data records are accessible after they are added to the stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListStreams.html) | Lists your streams\. | List |  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_ListTagsForStream.html) | Lists the tags for the specified Amazon Kinesis stream\. | Read | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_MergeShards.html) | Merges two adjacent shards in a stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecord.html) | Writes a single data record from a producer into an Amazon Kinesis stream\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_PutRecords.html) | Writes multiple data records from a producer into an Amazon Kinesis stream in a single call \(also referred to as a PutRecords request\)\. | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_RemoveTagsFromStream.html) | Description for SplitShard | Tagging | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_SplitShard.html) | Description for SplitShard | Write | [stream\*](#amazonkinesis-stream)  |  |  | 
+| [http://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html](http://docs.aws.amazon.com/kinesis/latest/APIReference/API_UpdateShardCount.html) | Updates the shard count of the specified stream to the specified number of shards\. | Write |  |  |  | 
 
 ## Resources Defined by Kinesis<a name="amazonkinesis-resources-for-iam-policies"></a>
 
@@ -50,7 +50,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [stream](http://docs.aws.amazon.com/kinesis/latest/dev/) | arn:$\{Partition\}:kinesis:$\{Region\}:$\{Account\}:stream/$\{StreamName\} |  | 
+| stream | arn:$\{Partition\}:kinesis:$\{Region\}:$\{Account\}:stream/$\{StreamName\} |  | 
 
 ## Condition Keys for Amazon Kinesis<a name="amazonkinesis-policy-keys"></a>
 

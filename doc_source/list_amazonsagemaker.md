@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [endpoint](url-resources-replace-me) | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\} |  | 
-| [endpoint\-config](url-resources-replace-me) | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\} |  | 
-| [model](url-resources-replace-me) | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\} |  | 
-| [notebook\-instance](url-resources-replace-me) | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\} |  | 
-| [training\-job](url-resources-replace-me) | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\} |  | 
+| endpoint | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\} |  | 
+| endpoint\-config | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\} |  | 
+| model | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\} |  | 
+| notebook\-instance | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\} |  | 
+| training\-job | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\} |  | 
 
 ## Condition Keys for Amazon SageMaker<a name="amazonsagemaker-policy-keys"></a>
 

@@ -35,7 +35,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [task](url-resources-replace-me) | arn:$\{Partition\}:crowd:$\{Region\}:$\{Account\}:task/$\{FunctionName\}/$\{TaskName\} |  | 
+| task | arn:$\{Partition\}:crowd:$\{Region\}:$\{Account\}:task/$\{FunctionName\}/$\{TaskName\} |  | 
 
 ## Condition Keys for Amazon Mechanical Turk Crowd<a name="amazonmechanicalturkcrowd-policy-keys"></a>
 

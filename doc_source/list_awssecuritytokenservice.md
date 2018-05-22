@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [iam](url-resources-replace-me) | arn:$\{Partition\}:iam::$\{Account\}:$\{RelativeId\} |  | 
-| [role](url-resources-replace-me) | arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\} |  | 
-| [sts](url-resources-replace-me) | arn:$\{Partition\}:sts::$\{Account\}:$\{RelativeId\} |  | 
-| [user](url-resources-replace-me) | arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\} |  | 
+| iam | arn:$\{Partition\}:iam::$\{Account\}:$\{RelativeId\} |  | 
+| role | arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\} |  | 
+| sts | arn:$\{Partition\}:sts::$\{Account\}:$\{RelativeId\} |  | 
+| user | arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\} |  | 
 
 ## Condition Keys for AWS Security Token Service<a name="awssecuritytokenservice-policy-keys"></a>
 
@@ -45,13 +45,40 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [<web\-identity\-provider>:aud](url-contextkeys-replace-me) |  | String | 
-| [<web\-identity\-provider>:oaud](url-contextkeys-replace-me) |  | String | 
-| [<web\-identity\-provider>:sub](url-contextkeys-replace-me) |  | String | 
-| [aws:FederatedProvider](url-contextkeys-replace-me) |  |  | 
-| [saml:namequalifier](url-contextkeys-replace-me) |  | String | 
-| [saml:sub](url-contextkeys-replace-me) |  | String | 
-| [saml:sub\_type](url-contextkeys-replace-me) |  |  | 
-| [saml:aud](url-contextkeys-replace-me) |  |  | 
-| [saml:iss](url-contextkeys-replace-me) |  |  | 
-| [saml:doc](url-contextkeys-replace-me) |  |  | 
+| <web\-identity\-provider>:aud |  | String | 
+| <web\-identity\-provider>:oaud |  | String | 
+| <web\-identity\-provider>:sub |  | String | 
+| aws:FederatedProvider |  | String | 
+| saml:namequalifier |  | String | 
+| saml:sub |  | String | 
+| saml:sub\_type |  | String | 
+| saml:aud |  | String | 
+| saml:iss |  | String | 
+| saml:doc |  | String | 
+| saml:cn |  | String | 
+| saml:commonName |  | String | 
+| saml:eduorghomepageuri |  | String | 
+| saml:eduorgidentityauthnpolicyuri |  | String | 
+| saml:eduorglegalname |  | String | 
+| saml:eduorgsuperioruri |  | String | 
+| saml:eduorgwhitepagesuri |  | String | 
+| saml:edupersonaffiliation |  | String | 
+| saml:edupersonassurance |  | String | 
+| saml:edupersonentitlement |  | String | 
+| saml:edupersonnickname |  | String | 
+| saml:edupersonorgdn |  | String | 
+| saml:edupersonorgunitdn |  | String | 
+| saml:edupersonprimaryaffiliation |  | String | 
+| saml:edupersonprimaryorgunitdn |  | String | 
+| saml:edupersonprincipalname |  | String | 
+| saml:edupersonscopedaffiliation |  | String | 
+| saml:edupersontargetedid |  | String | 
+| saml:givenName |  | String | 
+| saml:mail |  | String | 
+| saml:name |  | String | 
+| saml:organizationStatus |  | String | 
+| saml:primaryGroupSID |  | String | 
+| saml:surname |  | String | 
+| saml:uid |  | String | 
+| saml:x500UniqueIdentifier |  | String | 
+| sts:ExternalId |  | String | 

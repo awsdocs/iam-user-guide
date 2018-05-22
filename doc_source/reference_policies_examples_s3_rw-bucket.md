@@ -1,6 +1,6 @@
 # Amazon S3: Allows Read and Write Access to a Specific S3 Bucket<a name="reference_policies_examples_s3_rw-bucket"></a>
 
-This example shows how you might create a policy that allows `Read` and `Write` access to a specific S3 bucket\. To use this policy, replace the red text in the example policy with your own information\.
+This example shows how you might create a policy that allows `Read` and `Write` access to a specific S3 bucket\. This policy provides the permissions necessary to complete this action using the AWS API or AWS CLI only\. To use this policy, replace the red text in the example policy with your own information\.
 
 ```
 {

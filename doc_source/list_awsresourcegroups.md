@@ -21,18 +21,18 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateGroup](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_CreateGroup.html) | Creates a group with a specified name, description, and resource query\. | Tagging |  |  |  | 
-| [DeleteGroup](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_DeleteGroup.html) | Deletes a specified resource group | Write |  |  |  | 
-| [GetGroup](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetGroup.html) | Gets information of a specified resource group | Read |  |  |  | 
-| [GetGroupQuery](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetGroupQuery.html) | Gets the query associated with a specified resource group | Read |  |  |  | 
-| [GetTags](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetTags.html) | Gets the tags associated with a specified resource group | Read |  |  |  | 
-| [ListGroupResources](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_ListGroupResources.html) | Lists the resources that are member of a specified resource group | List |  |  |  | 
-| [ListGroups](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_ListGroups.html) | Lists all resource groups | List |  |  |  | 
-| [SearchResources](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_SearchResources.html) | Returns a list of AWS resource identifiers matching the given query | List |  |  |  | 
-| [Tag](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_Tag.html) | Tags a specified resource group | Tagging |  |  |  | 
-| [Untag](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_Untag.html) | Removes tags associated with a specified resource group | Tagging |  |  |  | 
-| [UpdateGroup](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_UpdateGroup.html) | Updates a specified resource group | Write |  |  |  | 
-| [UpdateGroupQuery](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_UpdateGroupQuery.html) | Updates the query associated with a specified resource group | Write |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_CreateGroup.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_CreateGroup.html) | Creates a group with a specified name, description, and resource query\. | Tagging |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_DeleteGroup.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_DeleteGroup.html) | Deletes a specified resource group | Write |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetGroup.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetGroup.html) | Gets information of a specified resource group | Read |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetGroupQuery.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetGroupQuery.html) | Gets the query associated with a specified resource group | Read |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetTags.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_GetTags.html) | Gets the tags associated with a specified resource group | Read |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_ListGroupResources.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_ListGroupResources.html) | Lists the resources that are member of a specified resource group | List |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_ListGroups.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_ListGroups.html) | Lists all resource groups | List |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_SearchResources.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_SearchResources.html) | Returns a list of AWS resource identifiers matching the given query | List |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_Tag.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_Tag.html) | Tags a specified resource group | Tagging |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_Untag.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_Untag.html) | Removes tags associated with a specified resource group | Tagging |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_UpdateGroup.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_UpdateGroup.html) | Updates a specified resource group | Write |  |  |  | 
+| [http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_UpdateGroupQuery.html](http://docs.aws.amazon.com/resource-groups/latest/APIReference/API_UpdateGroupQuery.html) | Updates the query associated with a specified resource group | Write |  |  |  | 
 
 ## Resources Defined by Resource Groups<a name="awsresourcegroups-resources-for-iam-policies"></a>
 

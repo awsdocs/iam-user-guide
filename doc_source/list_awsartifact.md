@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [agreement](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact:::agreement/\* |  | 
-| [customer\-agreement](http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\* |  | 
-| [report\-package](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact:::report\-package/\* |  | 
+| [http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact:::agreement/\* |  | 
+| [http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy](http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\* |  | 
+| [http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact:::report\-package/\* |  | 
 
 ## Condition Keys for AWS Artifact<a name="awsartifact-policy-keys"></a>
 

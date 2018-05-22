@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [vault](http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html) | arn:$\{Partition\}:glacier:$\{Region\}:$\{Account\}:vaults/$\{VaultName\} |  | 
+| [http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html](http://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-vaults.html) | arn:$\{Partition\}:glacier:$\{Region\}:$\{Account\}:vaults/$\{VaultName\} |  | 
 
 ## Condition Keys for Amazon Glacier<a name="amazonglacier-policy-keys"></a>
 
@@ -42,5 +42,5 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [glacier:ArchiveAgeInDays](http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions) | How long an archive has been stored in the vault, in days\. | String | 
-| [glacier:ResourceTag/](http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions) | A customer\-defined tag\. | String | 
+| [http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions](http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions) | How long an archive has been stored in the vault, in days\. | String | 
+| [http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions](http://docs.aws.amazon.com/amazonglacier/latest/dev/access-control-overview.html#specifying-conditions) | A customer\-defined tag\. | String | 

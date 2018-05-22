@@ -3,9 +3,9 @@
 If an IAM user in your account is having trouble signing in with a multi\-factor authentication \(MFA\) device, you can deactivate the device\. This allows the user to sign in without using MFA\. You might do this as a temporary solution while the MFA device is replaced, or if the device is temporarily unavailable\. However, we recommend that you enable a new device for the user as soon as possible\. To learn how to enable a new MFA device, see [Enabling MFA Devices](id_credentials_mfa_enable.md)\.
 
 **Note**  
-If you use the API or CLI to delete a user from your AWS account, you must deactivate or delete the user's MFA device as part of the process of removing the user\. For more information about deleting users, see [Managing IAM Users](id_users_manage.md)\.<a name="deactivate-mfa-for-user"></a>
+If you use the API or AWS CLI to delete a user from your AWS account, you must deactivate or delete the user's MFA device, You make this change as part of the process of removing the user\. For more information about deleting users, see [Managing IAM Users](id_users_manage.md)\.<a name="deactivate-mfa-for-user"></a>
 
-**To deactivate an MFA device for a user \(console\)**
+**To deactivate an MFA device for an IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -34,7 +34,7 @@ To manage MFA devices for the AWS account, you must sign in to AWS with your AWS
 
 The MFA device is deactivated for the AWS account\.
 
-**To deactivate an MFA device for a user \(AWS CLI, Tools for Windows PowerShell, or AWS API\)**
+**To deactivate an MFA device for an IAM user \(AWS CLI, Tools for Windows PowerShell, or AWS API\)**
 + AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
 + Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Disable-IAMMFADevice.html&tocid=Disable-IAMMFADevice)
 + AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)

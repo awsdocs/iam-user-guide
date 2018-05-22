@@ -37,7 +37,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [applications](url-resources-replace-me) | arn:$\{Partition\}:serverlessrepo:$\{Region\}:$\{Account\}:applications/$\{ResourceId\} |  | 
+| applications | arn:$\{Partition\}:serverlessrepo:$\{Region\}:$\{Account\}:applications/$\{ResourceId\} |  | 
 
 ## Condition Keys for AWS Serverless Application Repository<a name="awsserverlessapplicationrepository-policy-keys"></a>
 

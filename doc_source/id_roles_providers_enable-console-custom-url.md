@@ -213,7 +213,7 @@ import com.amazonaws.services.securitytoken.model.GetFederationTokenRequest;
 import com.amazonaws.services.securitytoken.model.GetFederationTokenResult;
 
 
-/* Calls to AWS STS APIs must be signed using the access key ID 
+/* Calls to AWS STS API operations must be signed using the access key ID 
    and secret access key of an IAM user or using existing temporary 
    credentials. The credentials should not be embedded in code. For 
    this example, the code looks for the credentials in a 
@@ -309,7 +309,7 @@ require 'aws-sdk'
 
 # Create a new STS instance
 # 
-# Note: Calls to AWS STS APIs must be signed using an access key ID 
+# Note: Calls to AWS STS API operations must be signed using an access key ID 
 # and secret access key. The credentials can be in EC2 instance metadata 
 # or in environment variables and will be automatically discovered by
 # the default credentials provider in the AWS Ruby SDK. 

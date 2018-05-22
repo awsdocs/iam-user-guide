@@ -25,7 +25,7 @@ To add a hardware MFA device for an IAM user, see [Enable a Hardware MFA Device 
 To add a hardware MFA device for your AWS account or an IAM user, see [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)\. 
 
 **Get an access key**  
-You need an access key if you want to make AWS requests using the [AWS SDKs](https://aws.amazon.com/tools/), the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), [Tools for Windows PowerShell](https://aws.amazon.com/powershell/) or the APIs\.   
+You need an access key if you want to make AWS requests using the [AWS SDKs](https://aws.amazon.com/tools/), the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), [Tools for Windows PowerShell](https://aws.amazon.com/powershell/) or the API operations\.   
 You can view and download your secret access key *only* when you create the access key\. You cannot view or recover a secret access key later\. However, if you lose your secret access key, you can create a new access key\. 
 For your AWS account, see [Managing Access Keys for your AWS Account](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)\.   
 For an IAM user, see [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\. 

@@ -21,16 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [BatchDeleteAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html) | Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [BatchPutAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html) | With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call\. With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [CreateDomain](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html) | The CreateDomain operation creates a new domain\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [DeleteAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html) | Deletes one or more attributes associated with the item\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [DeleteDomain](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html) | The DeleteDomain operation deletes a domain\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [DomainMetadata](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html) | Returns information about the domain, including when the domain was created, the number of items and attributes, and the size of attribute names and values\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [GetAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html) | Returns all of the attributes associated with the item\. | Read | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [ListDomains](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html) | Description for ListDomains | List |  |  |  | 
-| [PutAttributes](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html) | The PutAttributes operation creates or replaces attributes in an item\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
-| [Select](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html) | Description for Select | Read |  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchDeleteAttributes.html) | Performs multiple DeleteAttributes operations in a single call, which reduces round trips and latencies\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_BatchPutAttributes.html) | With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call\. With the BatchPutAttributes operation, you can perform multiple PutAttribute operations in a single call\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_CreateDomain.html) | The CreateDomain operation creates a new domain\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteAttributes.html) | Deletes one or more attributes associated with the item\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DeleteDomain.html) | The DeleteDomain operation deletes a domain\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_DomainMetadata.html) | Returns information about the domain, including when the domain was created, the number of items and attributes, and the size of attribute names and values\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_GetAttributes.html) | Returns all of the attributes associated with the item\. | Read | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_ListDomains.html) | Description for ListDomains | List |  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_PutAttributes.html) | The PutAttributes operation creates or replaces attributes in an item\. | Write | [domain\*](#amazonsimpledb-domain)  |  |  | 
+| [http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html](http://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/API_Select.html) | Description for Select | Read |  |  |  | 
 
 ## Resources Defined by SimpleDB<a name="amazonsimpledb-resources-for-iam-policies"></a>
 
@@ -41,7 +41,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [domain](http://docs.aws.amazon.com/sdb/latest/APIReference/DataModel.html) | arn:$\{Partition\}:sdb:$\{Region\}:$\{Account\}:domain/$\{DomainName\} |  | 
+| [http://docs.aws.amazon.com/sdb/latest/APIReference/DataModel.html](http://docs.aws.amazon.com/sdb/latest/APIReference/DataModel.html) | arn:$\{Partition\}:sdb:$\{Region\}:$\{Account\}:domain/$\{DomainName\} |  | 
 
 ## Condition Keys for Amazon SimpleDB<a name="amazonsimpledb-policy-keys"></a>
 

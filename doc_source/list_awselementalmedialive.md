@@ -21,20 +21,20 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [CreateChannel](http://docs.aws.amazon.com//medialive/latest/apireference/channels.html) | Create a medialive channel | Write |  |  |  | 
-| [CreateInput](http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html) | Create a medialive input | Write |  |  |  | 
-| [CreateInputSecurityGroup](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html) | Create a medialive input security group | Write |  |  |  | 
-| [DeleteChannel](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html) | Delete a medialive channel | Write |  |  |  | 
-| [DeleteInput](http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html) | Delete a medialive input | Write |  |  |  | 
-| [DeleteInputSecurityGroup](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html) | Delete a medialive input security group | Write |  |  |  | 
-| [DescribeChannel](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html) | Get details about a medialive channel | Read |  |  |  | 
-| [DescribeInput](http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html) | Describe a medialive input | Read |  |  |  | 
-| [DescribeInputSecurityGroup](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html) | Describe a medialive input security group | Read |  |  |  | 
-| [ListChannels](http://docs.aws.amazon.com//medialive/latest/apireference/channels.html) | List medialive channels | List |  |  |  | 
-| [ListInputSecurityGroups](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html) | List medialive input security groups | List |  |  |  | 
-| [ListInputs](http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html) | List medialive inputs | List |  |  |  | 
-| [StartChannel](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-start.html) | Start a medialive channel | Write |  |  |  | 
-| [StopChannel](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-stop.html) | Stop a medialive channel | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/channels.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels.html) | Create a medialive channel | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html) | Create a medialive input | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html) | Create a medialive input security group | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html) | Delete a medialive channel | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html) | Delete a medialive input | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html) | Delete a medialive input security group | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html) | Get details about a medialive channel | Read |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html) | Describe a medialive input | Read |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html) | Describe a medialive input security group | Read |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/channels.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels.html) | List medialive channels | List |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html) | List medialive input security groups | List |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html) | List medialive inputs | List |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-start.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-start.html) | Start a medialive channel | Write |  |  |  | 
+| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-stop.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-stop.html) | Stop a medialive channel | Write |  |  |  | 
 
 ## Resources Defined by MediaLive<a name="awselementalmedialive-resources-for-iam-policies"></a>
 

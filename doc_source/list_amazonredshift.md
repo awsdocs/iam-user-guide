@@ -29,20 +29,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [cluster](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:cluster:$\{ClusterName\} |  | 
-| [dbgroup](http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_GROUP.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:dbgroup:$\{ClusterName\}/$\{DbGroup\} |  | 
-| [dbname](http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:dbname:$\{ClusterName\}/$\{DbName\} |  | 
-| [dbuser](http://docs.aws.amazon.com/redshift/latest/dg/r_Users.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:dbuser:$\{ClusterName\}/$\{DbUser\} |  | 
-| [eventsubscription](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-events.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:eventsubscription:$\{EventSubscriptionName\} |  | 
-| [hsmclientcertificate](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:hsmclientcertificate:$\{HSMClientCertificateId\} |  | 
-| [hsmconfiguration](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:hsmconfiguration:$\{HSMConfigurationId\} |  | 
-| [parametergroup](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:parametergroup:$\{ParameterGroupName\} |  | 
-| [securitygroup](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroup:$\{SecurityGroupName\}/ec2securitygroup/$\{Owner\}/$\{Ec2SecurityGroupId\} |  | 
-| [securitygroupingress\-cidr](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroupingress:$\{SecurityGroupName\}/cidrip/$\{IpRange\} |  | 
-| [securitygroupingress\-ec2securitygroup](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroupingress:$\{SecurityGroupName\}/ec2securitygroup/$\{Owner\}/$\{Ece2SecuritygroupId\} |  | 
-| [snapshot](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:$\{ClusterName\}/$\{SnapshotName\} |  | 
-| [snapshotcopygrant](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#configure-snapshot-copy-grant) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:snapshotcopygrant:$\{SnapshotCopyGrantName\} |  | 
-| [subnetgroup](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:subnetgroup:$\{SubnetGroupName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:cluster:$\{ClusterName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_GROUP.html](http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_GROUP.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:dbgroup:$\{ClusterName\}/$\{DbGroup\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html](http://docs.aws.amazon.com/redshift/latest/dg/t_creating_database.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:dbname:$\{ClusterName\}/$\{DbName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/dg/r_Users.html](http://docs.aws.amazon.com/redshift/latest/dg/r_Users.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:dbuser:$\{ClusterName\}/$\{DbUser\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-events.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-events.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:eventsubscription:$\{EventSubscriptionName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:hsmclientcertificate:$\{HSMClientCertificateId\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:hsmconfiguration:$\{HSMConfigurationId\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:parametergroup:$\{ParameterGroupName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroup:$\{SecurityGroupName\}/ec2securitygroup/$\{Owner\}/$\{Ec2SecurityGroupId\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroupingress:$\{SecurityGroupName\}/cidrip/$\{IpRange\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroupingress:$\{SecurityGroupName\}/ec2securitygroup/$\{Owner\}/$\{Ece2SecuritygroupId\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-snapshots.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:$\{ClusterName\}/$\{SnapshotName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#configure-snapshot-copy-grant](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#configure-snapshot-copy-grant) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:snapshotcopygrant:$\{SnapshotCopyGrantName\} |  | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html](http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html) | arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:subnetgroup:$\{SubnetGroupName\} |  | 
 
 ## Condition Keys for Amazon Redshift<a name="amazonredshift-policy-keys"></a>
 
@@ -55,6 +55,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [redshift:DbName](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions) | Control access based on the database name\. | String | 
-| [redshift:DbUser](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions) | Control access based on the database user name\. | String | 
-| [redshift:DurationSeconds](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions) | Control access based on the number of seconds until a temporary credential set expires\. | String | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions) | Control access based on the database name\. | String | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions) | Control access based on the database user name\. | String | 
+| [http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions](http://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions) | Control access based on the number of seconds until a temporary credential set expires\. | String | 
