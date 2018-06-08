@@ -3,22 +3,20 @@
 A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\.
 
 You can create a new IAM policy in the AWS Management Console using one of the following methods:
-+ **Import** – You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy, or a customer managed policy that you created previously\.
-+ **Visual editor** – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
-+ **JSON** – In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
++ **Import** — You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy, or a customer managed policy that you created previously\.
++ **Visual editor** — You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
++ **JSON** — In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
-You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Attaching IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
+You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Adding and Removing IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
 **Topics**
-+ [Create an IAM Policy \(Console\)](#access_policies_create-start)
-+ [Import an Existing Managed Policy](#access_policies_create-copy)
-+ [Create a Policy with the Visual Editor](#access_policies_create-visual-editor)
-+ [Create a Policy on the JSON Tab](#access_policies_create-json-editor)
-+ [Create IAM Policies \(AWS CLI or AWS API\)](#create-policies-cli-api)
++ [Creating IAM Policies \(Console\)](#access_policies_create-start)
++ [Creating IAM Policies \(AWS CLI\)](#create-policies-cli-api)
++ [Creating IAM Policies \(AWS API\)](#create-policies-api)
 
-## Create an IAM Policy \(Console\)<a name="access_policies_create-start"></a>
+## Creating IAM Policies \(Console\)<a name="access_policies_create-start"></a>
 
 No matter which way you choose to create a policy, they all start the same way:
 
@@ -33,11 +31,11 @@ No matter which way you choose to create a policy, they all start the same way:
 1. Choose **Create policy**\.
 
 1. Choose one of the following ways to create the policy\. Then follow the steps in the corresponding procedure:
-   + [Import an Existing Managed Policy](#access_policies_create-copy) 
-   + [Create a Policy with the Visual Editor](#access_policies_create-visual-editor) 
-   + [Create a Policy on the JSON Tab](#access_policies_create-json-editor) 
+   + [Importing Existing Managed Policies](#access_policies_create-copy) 
+   + [Creating Policies with the Visual Editor](#access_policies_create-visual-editor) 
+   + [Creating Policies on the JSON Tab](#access_policies_create-json-editor) 
 
-## Import an Existing Managed Policy<a name="access_policies_create-copy"></a>
+### Importing Existing Managed Policies<a name="access_policies_create-copy"></a>
 
 An easy way to create a new policy is to import an existing managed policy within your account that has at least some of the permissions that you need\. You can then customize the policy to match it to your new requirements\.
 
@@ -45,7 +43,7 @@ You cannot import an inline policy\. To learn about the difference between manag
 
 **To import an existing managed policy in the visual editor**
 
-1. Start the **Create policy** wizard by following the steps in [Create an IAM Policy \(Console\)](#access_policies_create-start)\. Choose the **Visual editor** tab, and then on the right side of the page, choose **Import managed policy**\.
+1. Start the **Create policy** wizard by following the steps in [Creating IAM Policies \(Console\)](#access_policies_create-start)\. Choose the **Visual editor** tab, and then on the right side of the page, choose **Import managed policy**\.
 
 1. In the **Import managed policies** window, choose the managed policies that most closely match the policy that you want to include in your new policy\. You can use the **Filter** menu or type in the search box at the top to limit the results in the list of policies\.
 
@@ -57,11 +55,11 @@ You cannot import an inline policy\. To learn about the difference between manag
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these fields later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
+1. On the **Review** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these settings later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
 
 **To import an existing managed policy in the **JSON** tab**
 
-1. Start the **Create policy** wizard by following the steps in [Create an IAM Policy \(Console\)](#access_policies_create-start)\. Choose the **JSON** tab, and then on the right side of the page, choose **Import managed policy**\.
+1. Start the **Create policy** wizard by following the steps in [Creating IAM Policies \(Console\)](#access_policies_create-start)\. Choose the **JSON** tab, and then on the right side of the page, choose **Import managed policy**\.
 
 1. In the **Import managed policies** window, choose the managed policies that most closely match the policy that you want to include in your new policy\. You can use the **Filter** menu or type in the search box at the top to limit the results in the list of policies\.
 
@@ -75,15 +73,15 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
 
-## Create a Policy with the Visual Editor<a name="access_policies_create-visual-editor"></a>
+### Creating Policies with the Visual Editor<a name="access_policies_create-visual-editor"></a>
 
 The visual editor in the IAM console guides you through creating a policy without having to write JSON syntax\. To view an example of using the visual editor to create a policy, see [Controlling Access to Identities](access_controlling.md#access_controlling-identities)\.
 
 **To use the visual editor to create a policy**
 
-1. Start the **Create Policy** wizard by following the steps in [Create an IAM Policy \(Console\)](#access_policies_create-start)\.
+1. Start the **Create Policy** wizard by following the steps in [Creating IAM Policies \(Console\)](#access_policies_create-start)\.
 
 1. On the **Visual editor** tab, choose **Choose a service**\. Then choose an AWS service to add to the policy\. You can use the search box at the top to limit the results in the list of services\. You can choose only one service within a visual editor permission block\. To grant access to more than one service, add multiple permission blocks by choosing **Add additional permissions**\.
 
@@ -98,7 +96,7 @@ The visual editor in the IAM console guides you through creating a policy withou
 
 1. If the selected service and the actions that you selected in the previous steps do not support choosing [specific resources](access_controlling.md#access_controlling-resources), then **All resources** is selected for you\. In that case, you cannot edit this section\. 
 
-   If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources You can then choose **Resources** to specify resources for your policy\. 
+   If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources\. You can then choose **Resources** to specify resources for your policy\. 
 
    You can choose resources in the following ways:
    + Choose **Add ARN** to provide the details about your resource\. Instead of typing a value, you can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the region and instance ID, then the policy grants permissions to any instance in your account\.
@@ -106,7 +104,7 @@ The visual editor in the IAM console guides you through creating a policy withou
    + Choose **Any** from the far right of the resource section to grant permissions to any resources of a particular type\.
    + Choose **All resources** to choose all resources for that service\. 
 
-1. \(Optional\) Choose **Specify request conditions \(optional\)** to add conditions to the policy that you are creating\. Conditions limit a JSON policy statement's effect\. For example, you can specify that a user is allowed to perform the actions on the resources only when that user's request happens within a certain time range\. You can also use commonly used conditions to limit whether a user must be authenticated using a multi\-factor authentication \(MFA\) device, or if the request must originate from within a certain range of IP addresses\. For lists of all of the context keys that you can use in a policy condition, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
+1. \(Optional\) Choose **Specify request conditions \(optional\)** to add conditions to the policy that you are creating\. Conditions limit a JSON policy statement's effect\. For example, you can specify that a user is allowed to perform the actions on the resources only when that user's request happens within a certain time range\. You can also use commonly used conditions to limit whether a user must be authenticated using a multi\-factor authentication \(MFA\) device\. Or you can require that the the request originate from within a certain range of IP addresses\. For lists of all of the context keys that you can use in a policy condition, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
    You can choose conditions in the following ways:
    + Use check boxes to select commonly used conditions\.
@@ -124,9 +122,9 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy summary to make sure that you have granted the intended permissions, and then choose **Create policy** to save your new policy\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
 
-## Create a Policy on the JSON Tab<a name="access_policies_create-json-editor"></a>
+### Creating Policies on the JSON Tab<a name="access_policies_create-json-editor"></a>
 
 You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
 
@@ -134,7 +132,7 @@ A JSON [policy](access_policies.md) document consists of one or more statements\
 
 **To use the JSON policy editor to create a policy**
 
-1. Start the **Create Policy** wizard by following the steps in [Create an IAM Policy \(Console\)](#access_policies_create-start)\.
+1. Start the **Create Policy** wizard by following the steps in [Creating IAM Policies \(Console\)](#access_policies_create-start)\.
 
 1. Choose the **JSON** tab\.
 
@@ -146,25 +144,38 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
 
-## Create IAM Policies \(AWS CLI or AWS API\)<a name="create-policies-cli-api"></a>
+## Creating IAM Policies \(AWS CLI\)<a name="create-policies-cli-api"></a>
 
-You can create an IAM policy or an inline policy using the AWS Command Line Interface \(AWS CLI\) or the AWS API\.
+You can create an IAM policy or an inline policy using the AWS Command Line Interface \(AWS CLI\)\. 
 
-**To create a customer managed policy \(AWS CLI or API\)**
-+ AWS CLI: [create\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy.html)
-+ IAM API: [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
+**To create a customer managed policy \(AWS CLI\)**  
+Use the following command:
++ [create\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy.html)
 
-**To create an inline policy for a principal entity \(group, user, or role\) \(AWS CLI or API\)**
-+ AWS CLI:
-  + [put\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-group-policy.html)
-  + [put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
-  + [put\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html)
-+ IAM API:
-  + [PutGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html)
-  + [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
-  + [PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
+**To create an inline policy for a principal entity \(group, user or role\) \(AWS CLI\)**  
+Use one of the following commands:
++ [put\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-group-policy.html)
++ [put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
++ [put\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html)
+
+**Note**  
+You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+
+## Creating IAM Policies \(AWS API\)<a name="create-policies-api"></a>
+
+You can create an IAM policy or an inline policy using the AWS API\.
+
+**To create a customer managed policy \(AWS API\)**  
+Call the following operation:
++ [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
+
+**To create an inline policy for a principal entity \(group, user, or role\) \(AWS API\)**  
+Call one of the following operations:
++ [PutGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html)
++ [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
++ [PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 
 **Note**  
 You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.

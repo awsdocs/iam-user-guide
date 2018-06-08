@@ -49,4 +49,4 @@ If you enable CloudTrail to log sign\-in events to your logs, you need to be awa
 
 For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
 
-If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Creating, Modifying, and Viewing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.
+If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Managing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.

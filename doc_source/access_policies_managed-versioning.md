@@ -41,7 +41,7 @@ You can set the default version of a customer managed policy to apply that versi
 
 1. Choose the **Policy versions** tab\. Select the check box next to the version that you want to set as the default version, and then choose **Set as default**\.
 
-To learn how to set the default version of a customer managed policy from the AWS Command Line Interface or the AWS API, see [Editing IAM Policies \(AWS CLI or the AWS API\)](access_policies_manage-edit.md#edit-policies-cli-api)\. 
+To learn how to set the default version of a customer managed policy from the AWS Command Line Interface or the AWS API, see [Editing IAM Policies \(AWS CLI\)](access_policies_manage-edit.md#edit-policies-cli-api)\. 
 
 ## Using Versions to Roll Back Changes<a name="versions-roll-back"></a>
 

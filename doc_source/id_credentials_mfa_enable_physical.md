@@ -1,16 +1,16 @@
 # Enabling a Hardware MFA Device \(Console\)<a name="id_credentials_mfa_enable_physical"></a>
 
-**Topics**
-+ [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user)
-+ [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)
-+ [Replace or "Rotate" a Physical MFA Device](#replace-phys-mfa)
-
 You can enable a hardware MFA device for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)\.
 
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\.
 
 **Note**  
-If you want to enable the device from the command line, use [aws iam enable\-mfa\-device](http://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
+If you want to enable the device from the command line, use [http://docs.aws.amazon.com/IAM/latest/CLIReference/userenablemfadevice.html](http://docs.aws.amazon.com/IAM/latest/CLIReference/userenablemfadevice.html) [aws iam enable\-mfa\-device](http://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
+
+**Topics**
++ [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user)
++ [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)
++ [Replace or "Rotate" a Physical MFA Device](#replace-phys-mfa)
 
 ## Enable a Hardware MFA Device for an IAM User \(Console\)<a name="enable-hw-mfa-for-iam-user"></a>
 

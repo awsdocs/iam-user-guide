@@ -81,9 +81,9 @@ It's important to understand the following aspects of MFA protection for APIs:
 
 In this scenario, you want to delegate access to IAM users in another account, but only if the users are authenticated with an AWS MFA device\. \(For more information about cross\-account delegation, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\. 
 
-Imagine that you have account A \(the trusting account that owns the resource to be accessed\), with the IAM user Alice, who has administrator permission\. She wants to grant access to user Bob in account B \(the trusted account\), but wants to make sure that Bob is authenticated with MFA before he assumes the role\. 
+Imagine that you have account A \(the trusting account that owns the resource to be accessed\), with the IAM user Anaya, who has administrator permission\. She wants to grant access to user Richard in account B \(the trusted account\), but wants to make sure that Richard is authenticated with MFA before he assumes the role\. 
 
-1. In the trusting account A, Alice creates an IAM role named `CrossAccountRole` and sets the principal in the role's trust policy to the account ID of account B\. The trust policy grants permission to the AWS STS `AssumeRole` action\. Alice also adds an MFA condition to the trust policy, as in the following example\. 
+1. In the trusting account A, Anaya creates an IAM role named `CrossAccountRole` and sets the principal in the role's trust policy to the account ID of account B\. The trust policy grants permission to the AWS STS `AssumeRole` action\. Anaya also adds an MFA condition to the trust policy, as in the following example\. 
 
    ```
    {
@@ -97,7 +97,7 @@ Imagine that you have account A \(the trusting account that owns the resource to
    }
    ```
 
-1. Alice adds a permission policy to the role that specifies what the role is allowed to do\. The permission policy for a role with MFA protection is no different than any other role\-permission policy\. The following example shows the policy that Alice adds to the role; it allows an assuming user to perform any DynamoDB action on the table `Books` in account A\. 
+1. Anaya adds a permission policy to the role that specifies what the role is allowed to do\. The permission policy for a role with MFA protection is no different than any other role\-permission policy\. The following example shows the policy that Anaya adds to the role; it allows an assuming user to perform any DynamoDB action on the table `Books` in account A\. 
 **Note**  
 The permission policy does not include an MFA condition\. It is important to understand that the MFA authentication is used only to determine whether a user can assume the role\. Once the user has assumed the role, no further MFA checks are made\. 
 
@@ -112,9 +112,9 @@ The permission policy does not include an MFA condition\. It is important to und
    }
    ```
 
-1. In trusted account B, the administrator makes sure that IAM user Bob is configured with an AWS MFA device and that he knows the ID of the device—that is, the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\.
+1. In trusted account B, the administrator makes sure that IAM user Richard is configured with an AWS MFA device and that he knows the ID of the device—that is, the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\.
 
-1. In account B, the administrator attaches the following policy to user Bob \(or a group that he's a member of\) that allows him to call the `AssumeRole` action\. The resource is set to the ARN of the role that Alice created in step 1\. Notice that this policy does not contain an MFA condition\.
+1. In account B, the administrator attaches the following policy to user Richard \(or a group that he's a member of\) that allows him to call the `AssumeRole` action\. The resource is set to the ARN of the role that Anaya created in step 1\. Notice that this policy does not contain an MFA condition\.
 
    ```
    {
@@ -127,9 +127,9 @@ The permission policy does not include an MFA condition\. It is important to und
    }
    ```
 
-1. In account B, Bob \(or an application that Bob is running\) calls `AssumeRole`\. The API call includes the ARN of the role to assume \(`arn:aws:iam::ACCOUNT-A-ID:role/CrossAccountRole`\), the ID of the MFA device, and the current TOTP that Bob gets from his device\. 
+1. In account B, Richard \(or an application that Richard is running\) calls `AssumeRole`\. The API call includes the ARN of the role to assume \(`arn:aws:iam::ACCOUNT-A-ID:role/CrossAccountRole`\), the ID of the MFA device, and the current TOTP that Richard gets from his device\. 
 
-   When Bob calls `AssumeRole`, AWS determines whether he has valid credentials, including the requirement for MFA\. If so, Bob successfully assumes the role and can perform any DynamoDB action on the table named `Books` in account A while using the role's temporary credentials\. 
+   When Richard calls `AssumeRole`, AWS determines whether he has valid credentials, including the requirement for MFA\. If so, Richard successfully assumes the role and can perform any DynamoDB action on the table named `Books` in account A while using the role's temporary credentials\. 
 
    For an example of a program that calls `AssumeRole`, see [Calling AssumeRole with MFA Authentication \(Python\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-assumerole)\.
 
@@ -139,13 +139,13 @@ In this scenario, you want to make sure that a user in your AWS account can acce
 
 Imagine that you have account A that contains a group of developers who need to work with EC2 instances\. Ordinary developers can work with the instances, but they are not granted permissions for the `ec2:StopInstances` or `ec2:TerminateInstances` actions\. You want to limit those "destructive" privileged actions to just a few trusted users, so you add MFA protection to the policy that allows these sensitive Amazon EC2 actions\. 
 
-In this scenario, one of those trusted users is user Carol\. User Alice is an administrator in account A\. 
+In this scenario, one of those trusted users is user Sofía\. User Anaya is an administrator in account A\. 
 
-1. Alice makes sure that Carol is configured with an AWS MFA device and that Carol knows the ID of the device—the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\. 
+1. Anaya makes sure that Sofía is configured with an AWS MFA device and that Sofía knows the ID of the device—the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\. 
 
-1. Alice creates a group named `EC2-Admins` and adds user Carol to the group\.
+1. Anaya creates a group named `EC2-Admins` and adds user Sofía to the group\.
 
-1. Alice attaches the following policy to the `EC2-Admins` group\. This policy grants users permission to call the Amazon EC2 `StopInstances` and `TerminateInstances` actions only if the user has authenticated using MFA\. 
+1. Anaya attaches the following policy to the `EC2-Admins` group\. This policy grants users permission to call the Amazon EC2 `StopInstances` and `TerminateInstances` actions only if the user has authenticated using MFA\. 
 
    ```
    {
@@ -162,9 +162,9 @@ In this scenario, one of those trusted users is user Carol\. User Alice is an ad
    }
    ```
 
-1. If user Carol needs to stop or terminate an Amazon EC2 instance, she \(or an application that she is running\) calls `GetSessionToken` passing the ID of the MFA device and the current TOTP that Carol gets from her device\.
+1. If user Sofía needs to stop or terminate an Amazon EC2 instance, she \(or an application that she is running\) calls `GetSessionToken` passing the ID of the MFA device and the current TOTP that Sofía gets from her device\.
 
-1. User Carol \(or an application that Carol is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `StopInstances` action\. 
+1. User Sofía \(or an application that Sofía is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `StopInstances` action\. 
 
    For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA Authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 
@@ -176,11 +176,11 @@ This scenario illustrates a way to provide cross\-account MFA protection without
 
 Imagine that you are in account A and you create an S3 bucket\. You want to grant access to this bucket to users who are in several different AWS accounts, but only if those users are authenticated with MFA\.
 
-In this scenario, user Alice is an administrator in account A\. User Charlie is an IAM user in account C\.
+In this scenario, user Anaya is an administrator in account A\. User Nikhil is an IAM user in account C\.
 
-1. In account A, Alice creates a bucket named `Account-A-bucket`\.
+1. In account A, Anaya creates a bucket named `Account-A-bucket`\.
 
-1. Alice adds the bucket policy to the bucket\. The policy allows any user in account A, account B, or account C to perform the S3 `PutObject` and `DeleteObject` actions in the bucket\. The policy includes an MFA condition\. 
+1. Anaya adds the bucket policy to the bucket\. The policy allows any user in account A, account B, or account C to perform the S3 `PutObject` and `DeleteObject` actions in the bucket\. The policy includes an MFA condition\. 
 
    ```
    {
@@ -204,11 +204,11 @@ In this scenario, user Alice is an administrator in account A\. User Charlie is 
 **Note**  
 Amazon S3 offers an MFA Delete feature for *root* account access \(only\)\. You can enable Amazon S3 MFA Delete when you set the versioning state of the bucket\. Amazon S3 MFA Delete cannot be applied to an IAM user, and is managed independently from MFA\-protected API access\. An IAM user with permission to delete a bucket cannot delete a bucket with Amazon S3 MFA Delete enabled\. For more information on Amazon S3 MFA Delete, see [MFA Delete](http://docs.aws.amazon.com/AmazonS3/latest/dev/MultiFactorAuthenticationDelete.html)\.
 
-1. In account C, an administrator makes sure that user Charlie is configured with an AWS MFA device and that he knows the ID of the device—the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\. 
+1. In account C, an administrator makes sure that user Nikhil is configured with an AWS MFA device and that he knows the ID of the device—the serial number if it's a hardware MFA device, or the device's ARN if it's a virtual MFA device\. 
 
-1. In account C, Charlie \(or an application that he is running\) calls `GetSessionToken`\. The call includes the ID or ARN of the MFA device and the current TOTP that Charlie gets from his device\. 
+1. In account C, Nikhil \(or an application that he is running\) calls `GetSessionToken`\. The call includes the ID or ARN of the MFA device and the current TOTP that Nikhil gets from his device\. 
 
-1. Charlie \(or an application that he is using\) uses the temporary credentials returned by `GetSessionToken` to call the Amazon S3 `PutObject` action to upload a file to `Account-A-bucket`\. 
+1. Nikhil \(or an application that he is using\) uses the temporary credentials returned by `GetSessionToken` to call the Amazon S3 `PutObject` action to upload a file to `Account-A-bucket`\. 
 
    For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA Authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 **Note**  

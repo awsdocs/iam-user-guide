@@ -14,7 +14,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. Choose the **AWS Service** role type, and then choose the service that you want to allow to assume this role\.
+1. For **Select type of trusted entity**, choose **AWS service**\. Then choose the service that you want to allow to assume this role\.
 
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
@@ -40,7 +40,7 @@ The permissions that you specify are available to any entity that uses the role\
 
 Creating a role from the AWS CLI involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the AWS CLI you must explicitly perform each step yourself\. You must create the policy and assign a permission policy to the role\. If the service you are working with is Amazon EC2, then you must also create an instance profile and add the role to it\.
 
-**To create a role for an AWS service from the AWS CLI, use the following commands:**
+**To create a role for an AWS service from the AWS CLI**
 
 1. Create a role: [aws iam create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
 
@@ -52,9 +52,11 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the role in an instance profile\. An instance profile is a container for a role that can be attached to an Amazon EC2 instance when launched\. An instance profile can contain only one role, and that limit cannot be increased\. If you create the role using the AWS Management Console, the instance profile is created for you with the same name as the role\. For more information about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\. For information about how to launch an EC2 instance with a role, see [Controlling Access to Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances) in the *Amazon EC2 User Guide for Linux Instances*\.
 
-To create an instance profile and add a role to it from the AWS CLI, use the following commands:
-+ Create an instance profile: [aws iam create\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-instance-profile.html)
-+ Add the role to the instance profile: [aws iam add\-role\-to\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/add-role-to-instance-profile.html)
+**To create an instance profile and add a role \(AWS CLI\)**
+
+1. Create an instance profile: [aws iam create\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-instance-profile.html)
+
+1. Add the role to the instance profile: [aws iam add\-role\-to\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/add-role-to-instance-profile.html)
 
 The following example shows all four steps\. The example assumes that you are running on a client computer running Windows and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
@@ -71,7 +73,7 @@ The example trust policy referenced in the first command contains the following 
 }
 ```
 
-The example permission policy referenced in the second command allows the role to perform only the `ListBucket` action on an S3 bucket named `example_bucket`\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+The example permission policy referenced in the second command allows the role to perform only the `ListBucket` action on an S3 bucket named `example_bucket`\. To learn how to create an IAM policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -104,21 +106,26 @@ When you launch the EC2 instance, specify the instance profile name in the **Con
 
 ## Creating a Role for a Service \(AWS API\)<a name="roles-creatingrole-service-api"></a>
 
-You can use the AWS API to create a service role\.
-
 ### <a name="roles-creatingrole-servicerole-api"></a>
 
-**To create a service role in code \(API\)**  
-Use the following commands:
-+ Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
+You can use the AWS API to create a role for a service\.
 
-  For the role's trust policy, you can specify a file location\.
-+ Attach a managed permission policy to the role: [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+**To create a role for an AWS service \(AWS API\)**
 
-   or
+1. Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
 
-  Create an inline permission policy for the role: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+   For the role's trust policy, you can specify a file location\.
+
+1. Attach a managed permission policy to the role: [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+
+    or
+
+   Create an inline permission policy for the role: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
 If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the role in an instance profile\. An instance profile is a container for a role\. Each instance profile can contain only one role, and that limit cannot be increased\. If you create the role in the AWS Management Console, the instance profile is created for you with the same name as the role\. For more information about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\. For information about how to launch an Amazon EC2 instance with a role, see [Controlling Access to Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances) in the *Amazon EC2 User Guide for Linux Instances*\. 
-+ Create an instance profile: [CreateInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html)
-+ Add the role to the instance profile: [AddRoleToInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html)
+
+**To create an instance profile and store the role in it \(AWS API\)**
+
+1. Create an instance profile: [CreateInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html)
+
+1. Add the role to the instance profile: [AddRoleToInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html)

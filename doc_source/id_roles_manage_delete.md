@@ -7,18 +7,25 @@ If the role was associated with an EC2 instance, then you can also remove the ro
 **Warning**  
 Make sure that you do not have any Amazon EC2 instances running with the role or instance profile you are about to delete\. Deleting a role or instance profile that is associated with a running instance will break any applications that are running on the instance\.
 
+**Topics**
++ [Deleting a Service\-Linked Role](#id_roles_manage_delete_slr)
++ [Deleting an IAM Role \(Console\)](#roles-managingrole-deleting-console)
++ [Deleting an IAM Role \(AWS CLI\)](#roles-managingrole-deleting-cli)
++ [Deleting an IAM Role \(AWS API\)](#roles-managingrole-deleting-api)
++ [Related Information](#roles-managingrole-deleting-related-info)
+
 ## Deleting a Service\-Linked Role<a name="id_roles_manage_delete_slr"></a>
 
 If the role is a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*, review the documentation for the linked service to learn how to delete the role\. You can view the service\-linked roles in your account by going to the IAM **Roles** page in the console\. Service\-linked roles appear with **\(Service\-linked role\)** in the **Trusted entities** column of the table\. A banner on the role's **Summary** page also indicates that the role is a service\-linked role\.
 
-If the service does not include documentation for deleting the service\-linked role, then you can use the IAM console, API, or CLI to delete the role\. For more information, see [Deleting a Service\-Linked Role](using-service-linked-roles.md#delete-service-linked-role)\.
+If the service does not include documentation for deleting the service\-linked role, then you can use the IAM console, AWS CLI, or API to delete the role\. For more information, see [Deleting a Service\-Linked Role](using-service-linked-roles.md#delete-service-linked-role)\.
 
 ## Deleting an IAM Role \(Console\)<a name="roles-managingrole-deleting-console"></a>
 
 When you use the AWS Management Console to delete a role, IAM also automatically deletes the policies associated with the role\. It also deletes any Amazon EC2 instance profile that contains the role\.
 
 **Important**  
-In some cases, a role might be associated with an Amazon EC2 instance profile, and the role and the instance profile might the exact same name\. In that case you can use the AWS console to delete the role and the instance profile\. This linkage happens automatically for roles and instance profiles that you create them in the console\. If you created the role from the AWS CLI, Tools for Windows PowerShell, or the AWS API, then the role and the instance profile might have different names\. In that case you cannot use the console to delete them\. Instead, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API to first remove the role from the instance profile\. You must then take a separate step to delete the role\.
+In some cases, a role might be associated with an Amazon EC2 instance profile, and the role and the instance profile might the exact same name\. In that case you can use the AWS console to delete the role and the instance profile\. This linkage happens automatically for roles and instance profiles that you create in the console\. If you created the role from the AWS CLI, Tools for Windows PowerShell, or the AWS API, then the role and the instance profile might have different names\. In that case you cannot use the console to delete them\. Instead, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API to first remove the role from the instance profile\. You must then take a separate step to delete the role\.
 
 **To delete a role \(console\)**
 
@@ -31,13 +38,13 @@ In some cases, a role might be associated with an Amazon EC2 instance profile, a
 1. In the confirmation dialog box, review the service last accessed data, which shows when each of the selected roles last accessed an AWS service\. This helps you to confirm whether the role is currently active\. If you want to proceed, choose **Yes, Delete**\. If you are sure, you can proceed with the deletion even if the service last accessed data is still loading\.
 
 **Note**  
-You cannot use the console to delete an instance profile, except when it has the exact same name as the role\. In addition, you must delete the instance profile as part of the process of deleting a role as described in the preceding procedure\. To delete an instance profile without also deleting the role, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API\. For more information, see the following sections\.
+You cannot use the console to delete an instance profile, except when it has the exact same name as the role\. In addition, you must delete the instance profile as part of the process of deleting a role as described in the preceding procedure\. To delete an instance profile without also deleting the role, you must use the AWS CLI or AWS API\. For more information, see the following sections\.
 
 ## Deleting an IAM Role \(AWS CLI\)<a name="roles-managingrole-deleting-cli"></a>
 
 When you use the AWS CLI to delete a role, you must first delete the policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
 
-**To use the AWS CLI to delete a role \(AWS CLI\)**
+**To delete a role \(AWS CLI\)**
 
 1. If you don't know the name of the role that you want to delete, type the following command to list the roles in your account:
 
@@ -87,43 +94,11 @@ When you use the AWS CLI to delete a role, you must first delete the policies as
    $ aws iam delete-instance-profile --instance-profile-name instance-profile-name
    ```
 
-## Deleting an IAM Role \(Tools for Windows PowerShell\)<a name="roles-managingrole-deleting-ps"></a>
-
-When you use Windows PowerShell to delete a role, you must first delete the policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
-
-**To use the Tools for Windows PowerShell to delete a role \(Tools for Windows PowerShell\)**
-
-1. If you don't know the name of the role that you want to delete, type the following command to list the roles in your account:
-
-   ```
-   PS C:\> Get-IAMRoles | Select RoleName
-   ```
-
-   Use the role name, not the ARN, to refer to roles with the PowerShell cmdlets\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
-
-1. Remove the role from all instance profiles that the role is in\. The following command gets the list of all instance profiles that contain the role, removes the role from each instance profile in the list, and then deletes the now empty instance profiles\. If you plan to reuse the instance profiles, then you can omit the last cmdlet in the command\.
-
-   ```
-   PS C:\> Get-IAMInstanceProfileForRole -RoleName RoleName | Remove-IAMRoleFromInstanceProfile -RoleName RoleName | Remove-IAMInstanceProfile
-   ```
-
-1. Delete all policies that are associated with the role\. The following command gets the list of all policies that are attached to the role and detaches each one\.
-
-   ```
-   PS C:\> Get-IAMAttachedRolePolicies -RoleName RoleName | Unregister-IAMRolePolicy -RoleName RoleName
-   ```
-
-1. Type the following command to delete the role:
-
-   ```
-   PS C:\> Remove-IAMRole -RoleName RoleName
-   ```
-
 ## Deleting an IAM Role \(AWS API\)<a name="roles-managingrole-deleting-api"></a>
 
 When you use the IAM API to delete a role, you must first delete the policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
 
-**To use the AWS API to delete a role \(API\)**
+**To delete a role \(AWS API\)**
 
 1. To list all instance profiles that a role is in, call [ListInstanceProfilesForRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html)\.
 
@@ -135,7 +110,7 @@ When you use the IAM API to delete a role, you must first delete the policies as
 
    To delete all policies that are associated with the role, call [DeleteRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html)\. You must pass the role name and policy name\. 
 
-1. Call [DeleteRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRole.html) to delete the roll\.
+1. Call [DeleteRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRole.html) to delete the role\.
 
 ## Related Information<a name="roles-managingrole-deleting-related-info"></a>
 

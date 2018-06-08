@@ -11,6 +11,13 @@ Using roles in this way has several benefits\. Because role credentials are temp
 **Note**  
 Although a role is usually assigned to an EC2 instance when you launch it, a role can also be attached to an EC2 instance that is already running\. To learn how to attach a role to a running instance, see [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
 
+**Topics**
++ [How Do Roles for EC2 Instances Work?](#roles-usingrole-ec2instance-roles)
++ [Permissions Required for Using Roles with Amazon EC2](#roles-usingrole-ec2instance-permissions)
++ [How Do I Get Started?](#roles-usingrole-ec2instance-get-started)
++ [Related Information](#roles-usingrole-ec2instance-related-info)
++ [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)
+
 ## How Do Roles for EC2 Instances Work?<a name="roles-usingrole-ec2instance-roles"></a>
 
 In the following figure, a developer runs an application on an EC2 instance that requires access to the S3 bucket named `photos`\. An administrator creates the `Get-pics` service role and attaches the role to the EC2 instance\. The role includes a permissions policy that grants read\-only access to the specified S3 bucket\. It also includes a trust policy that allows the EC2 instance to assume the role and retrieve the temporary credentials\. When the application runs on the instance, it can use the role's temporary credentials to access the photos bucket\. The administrator doesn't have to grant the developer permission to access the photos bucket, and the developer never has to share or manage credentials\.

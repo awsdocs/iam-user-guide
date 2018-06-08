@@ -102,9 +102,9 @@ If the service does not support creating the role, then you can use IAM to creat
 **Important**  
 Service\-linked roles count toward your [IAM roles in an AWS account](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entities) limit, but if you have reached your limit, you can still create service\-linked roles in your account\. Only service\-linked roles can exceed the limit\.
 
-### Creating a Service\-Linked Role \(IAM Console\)<a name="create-service-linked-role-iam-console"></a>
+### Creating a Service\-Linked Role \(Console\)<a name="create-service-linked-role-iam-console"></a>
 
-Before you create a service\-linked role in IAM, find out whether the linked service automatically creates service\-linked roles and whether you can t create the role from the service's console, API, or CLI\.
+Before you create a service\-linked role in IAM, find out whether the linked service automatically creates service\-linked roles, In addition, learn whether you can create the role from the service's console, API, or CLI\.
 
 **To create a service\-linked role \(console\)**
 
@@ -134,23 +134,23 @@ The permissions that you specify are available to any entity that uses the role\
 
 1. Review the role and then choose **Create role**\.
 
-### Creating a Service\-Linked Role \(IAM CLI\)<a name="create-service-linked-role-iam-cli"></a>
+### Creating a Service\-Linked Role \(AWS CLI\)<a name="create-service-linked-role-iam-cli"></a>
 
 Before creating a service\-linked role in IAM, find out whether the linked service automatically creates service\-linked roles and whether you can create the role from the service's CLI\. If the service CLI is not supported, you can use IAM commands to create a service\-linked role with the trust policy and inline policies that the service needs to assume the role\.
 
-**To create a service\-linked role \(IAM CLI\)**
+**To create a service\-linked role \(AWS CLI\)**
 
-Use the following command:
+Run the following command:
 
 ```
 $ aws iam [create\-service\-linked\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME.amazonaws.com
 ```
 
-### Creating a Service\-Linked Role \(IAM API\)<a name="create-service-linked-role-iam-api"></a>
+### Creating a Service\-Linked Role \(AWS API\)<a name="create-service-linked-role-iam-api"></a>
 
-Before creating a service\-linked role in IAM, find out whether the linked service automatically creates service\-linked roles and whether you can create the role from the service's API\. If the service API is not supported, you can use the IAM API to create a service\-linked role with the trust policy and inline policies that the service needs to assume the role\.
+Before creating a service\-linked role in IAM, find out whether the linked service automatically creates service\-linked roles and whether you can create the role from the service's API\. If the service API is not supported, you can use the AWS API to create a service\-linked role with the trust policy and inline policies that the service needs to assume the role\.
 
-**To create a service\-linked role \(API\)**
+**To create a service\-linked role \(AWS API\)**
 
 Use the [CreateServiceLinkedRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateServiceLinkedRole.html) API call\. In the request, specify a service name of `SERVICE_NAME_URL.amazonaws.com`\. 
 
@@ -162,7 +162,7 @@ The method that you use to edit a service\-linked role depends on the service\. 
 
 For information about which services support using service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. To learn whether the service supports editing the service\-linked role, choose the **Yes** link to view the service\-linked role documentation for that service\.
 
-### Editing a Service\-Linked Role Description \(IAM Console\)<a name="edit-service-linked-role-iam-console"></a>
+### Editing a Service\-Linked Role Description \(Console\)<a name="edit-service-linked-role-iam-console"></a>
 
 You can use the IAM console to edit the description of a service\-linked role\.
 
@@ -176,13 +176,13 @@ You can use the IAM console to edit the description of a service\-linked role\.
 
 1. Type a new description in the box and choose **Save**\.
 
-### Editing a Service\-Linked Role Description \(IAM CLI\)<a name="edit-service-linked-role-iam-cli"></a>
+### Editing a Service\-Linked Role Description \(AWS CLI\)<a name="edit-service-linked-role-iam-cli"></a>
 
-You can use IAM commands from the AWS Command Line Interface to edit the description of a service\-linked role\.
+You can use IAM commands from the AWS CLI to edit the description of a service\-linked role\.
 
-**To change the description of a service\-linked role \(IAM CLI\)**
+**To change the description of a service\-linked role \(AWS CLI\)**
 
-1. \(Optional\) To view the current description for a role, use the following commands:
+1. \(Optional\) To view the current description for a role, run the following commands:
 
    ```
    $ aws iam [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name ROLE-NAME
@@ -190,25 +190,25 @@ You can use IAM commands from the AWS Command Line Interface to edit the descrip
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
 
-1. To update a service\-linked role's description, use the following command:
+1. To update a service\-linked role's description, run the following command:
 
    ```
    $ aws iam [update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
    ```
 
-### Editing a Service\-Linked Role Description \(IAM API\)<a name="edit-service-linked-role-iam-api"></a>
+### Editing a Service\-Linked Role Description \(AWS API\)<a name="edit-service-linked-role-iam-api"></a>
 
-You can use the IAM API to edit the description of a service\-linked role\.
+You can use the AWS API to edit the description of a service\-linked role\.
 
-**To change the description of a service\-linked role \(API\)**
+**To change the description of a service\-linked role \(AWS API\)**
 
-1. \(Optional\) To view the current description for a role, use the following command, and specify the name of the role:
+1. \(Optional\) To view the current description for a role, call the following operation, and specify the name of the role:
 
-   IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+   AWS API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 
-1. To update a role's description, use the following command, and specify the name \(and optional description\) of the role: 
+1. To update a role's description, call the following operation, and specify the name \(and optional description\) of the role: 
 
-   IAM API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html) 
+   AWS API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html) 
 
 ## Deleting a Service\-Linked Role<a name="delete-service-linked-role"></a>
 
@@ -240,7 +240,7 @@ If you are unsure whether the service is using the service\-linked role, you can
 
 For information about which services support using service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. To learn whether the service supports deleting the service\-linked role, choose the **Yes** link to view the service\-linked role documentation for that service\. See the documentation for that service to learn how to remove resources used by your service\-linked role\.
 
-### Deleting a Service\-Linked Role \(IAM Console\)<a name="delete-service-linked-role-iam-console"></a>
+### Deleting a Service\-Linked Role \(Console\)<a name="delete-service-linked-role-iam-console"></a>
 
 You can use the IAM console to delete a service\-linked role\.
 
@@ -261,11 +261,11 @@ You can use the IAM console to delete a service\-linked role\.
 You might have to repeat this process several times, depending on the information that the service returns\. For example, your service\-linked role might use six resources and your service might return information about five of them\. If you clean up the five resources and submit the role for deletion again, the deletion fails and the service reports the one remaining resource\. A service might return all of the resources, a few of them, or it might not report any resources\.
    + If the task fails and the notification does not include a list of resources, then the service might not return that information\. To learn how to clean up the resources for that service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. Find your service in the table, and choose the **Yes** link to view the service\-linked role documentation for that service\.
 
-### Deleting a Service\-Linked Role \(IAM CLI\)<a name="delete-service-linked-role-iam-cli"></a>
+### Deleting a Service\-Linked Role \(AWS CLI\)<a name="delete-service-linked-role-iam-cli"></a>
 
-You can use IAM commands from the AWS Command Line Interface to delete a service\-linked role\.
+You can use IAM commands from the AWS CLI to delete a service\-linked role\.
 
-**To delete a service\-linked role \(IAM CLI\)**
+**To delete a service\-linked role \(AWS CLI\)**
 
 1. If you don't know the name of the service\-linked role that you want to delete, type the following command to list the roles and their Amazon Resource Names \(ARNs\) in your account:
 
@@ -291,13 +291,13 @@ You can use IAM commands from the AWS Command Line Interface to delete a service
 **Note**  
 You might have to repeat this process several times, depending on the information that the service returns\. For example, your service\-linked role might use six resources and your service might return information about five of them\. If you clean up the five resources and submit the role for deletion again, the deletion fails and the service reports the one remaining resource\. A service might return all of the resources, a few of them, or it might not report any resources\. To learn how to clean up the resources for a service that does not report any resources, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. Find your service in the table, and choose the **Yes** link to view the service\-linked role documentation for that service\.
 
-### Deleting a Service\-Linked Role \(IAM API\)<a name="delete-service-linked-role-iam-api"></a>
+### Deleting a Service\-Linked Role \(AWS API\)<a name="delete-service-linked-role-iam-api"></a>
 
-You can use the IAM API to delete a service\-linked role\.
+You can use the AWS API to delete a service\-linked role\.
 
-**To delete a service\-linked role \(API\)**
+**To delete a service\-linked role \(AWS API\)**
 
-1. To submit a deletion request for a service\-linked roll, call [DeleteServiceLinkedRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html)\. In the request, specify a role name\.
+1. To submit a deletion request for a service\-linked role, call [DeleteServiceLinkedRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServiceLinkedRole.html)\. In the request, specify a role name\.
 
    Because a service\-linked role cannot be deleted if it is being used or has associated resources, you must submit a deletion request\. That request can be denied if these conditions are not met\. You must capture the `DeletionTaskId` from the response to check the status of the deletion task\.
 

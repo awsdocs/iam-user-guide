@@ -30,15 +30,16 @@ You can grant users permission to change their own passwords\. For more informat
 
 **Topics**
 + [Creating, Changing, or Deleting an IAM User Password \(Console\)](#id_credentials_passwords_admin-change-user_console)
-+ [Creating, Changing, or Deleting an IAM User Password \(API, CLI, PowerShell\)](#Using_ManagingPasswordsCLIAPI)
++ [Creating, Changing, or Deleting an IAM User Password \(AWS CLI\)](#Using_ManagingPasswordsCLIAPI)
++ [Creating, Changing, or Deleting an IAM User Password \(AWS API\)](#Using_ManagingPasswordsAPI)
 
 ## Creating, Changing, or Deleting an IAM User Password \(Console\)<a name="id_credentials_passwords_admin-change-user_console"></a>
 
 You can use the AWS Management Console to manage passwords for your IAM users\.
 
-When users leave your organization or no longer need AWS access, it is important to find the credentials that they were using and ensure that they are no longer operational\. Ideally, you delete credentials if they are no longer needed\. You can always recreate them at a later date if the need arises\. At the very least you should change the credentials so that the former users no longer have access\.
+When users leave your organization or no longer need AWS access, it is important to find the credentials that they were using and ensure that they are no longer operational\. Ideally, you delete credentials if they are no longer needed\. You can always recreate them at a later date if the need arises\. At the very least, you should change the credentials so that the former users no longer have access\.
 
-**To add a password for an IAM user**
+**To add a password for an IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -60,11 +61,11 @@ The password that you create must meet the account's [password policy](id_creden
 **Important**  
 If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\.
 
-1. If you choose the option to autogenerate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
+1. If you choose the option to generate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
 **Important**  
 For security reasons, you cannot access the password after completing this step, but you can create a new password at any time\.
 
-**To change the password for an IAM user**
+**To change the password for an IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -86,11 +87,11 @@ The password that you create must meet the account's [password policy](id_creden
 **Important**  
 If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\.
 
-1. If you choose the option to autogenerate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
+1. If you choose the option to generate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
 **Important**  
 For security reasons, you cannot access the password after completing this step, but you can create a new password at any time\.
 
-**To delete \(disable\) an IAM user's password**
+**To delete \(disable\) an IAM user's password \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -105,34 +106,56 @@ For security reasons, you cannot access the password after completing this step,
 **Important**  
 When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\.
 
-## Creating, Changing, or Deleting an IAM User Password \(API, CLI, PowerShell\)<a name="Using_ManagingPasswordsCLIAPI"></a>
+## Creating, Changing, or Deleting an IAM User Password \(AWS CLI\)<a name="Using_ManagingPasswordsCLIAPI"></a>
 
-To manage passwords for IAM users, use the following commands:
+You can use the AWS CLI API to manage passwords for your IAM users\.
 
-**To create a password**
-+ AWS CLI: [aws iam create\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
-+ Tools for Windows PowerShell: [New\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMLoginProfile.html&tocid=New-IAMLoginProfile)
-+ AWS API: [CreateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
+**To create a password \(AWS CLI\)**
 
-**To determine whether a user has a password**
-+ AWS CLI: [aws iam get\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-login-profile.html)
-+ Tools for Windows PowerShell: [Get\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMLoginProfile.html&tocid=Get-IAMLoginProfile)
-+ AWS API: [GetLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)
+1. \(Optional\) To determine whether a user has a password, run this command: [aws iam get\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-login-profile.html)
 
-**To determine when a user's password was last used**
-+ AWS CLI: [aws iam get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html)
-+ Tools for Windows PowerShell: [Get\-IAMUser](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUser.html&tocid=Get-IAMUser)
-+ AWS API: [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)
+1. To create a password, run this command: [aws iam create\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
 
-**To change a user's password**
-+ AWS CLI: [aws iam update\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/update-login-profile.html)
-+ Tools for Windows PowerShell: [Update\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMLoginProfile.html&tocid=Update-IAMLoginProfile)
-+ AWS API: [UpdateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)
+**To change a user's password \(AWS CLI\)**
 
-**To delete \(disable\) a user's password**
-+ AWS CLI: [aws iam delete\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
-+ Tools for Windows PowerShell: [Remove\-IAMLoginProfile](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMLoginProfile.html&tocid=Remove-IAMLoginProfile)
-+ AWS API: [DeleteLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html)
+1. \(Optional\) To determine whether a user has a password, run this command: [aws iam get\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-login-profile.html)
+
+1. To change a password, run this command: [aws iam update\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/update-login-profile.html)
+
+**To delete \(disable\) a user's password \(AWS CLI\)**
+
+1. \(Optional\) To determine whether a user has a password, run this command: [aws iam get\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-login-profile.html)
+
+1. \(Optional\) To determine when a password was last used, run this command: [aws iam get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html)
+
+1. To delete a password, run this command: [aws iam delete\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
 
 **Important**  
-When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM User \(AWS CLI and Tools for Windows PowerShell\)](id_users_manage.md#id_users_deleting_cli)\. 
+When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM User \(AWS CLI\)](id_users_manage.md#id_users_deleting_cli)\. 
+
+## Creating, Changing, or Deleting an IAM User Password \(AWS API\)<a name="Using_ManagingPasswordsAPI"></a>
+
+You can use the AWS API to manage passwords for your IAM users\.
+
+**To create a password \(AWS API\)**
+
+1. \(Optional\) To determine whether a user has a password, call this operation: [GetLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)
+
+1. To create a password, call this operation: [CreateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
+
+**To change a user's password \(AWS API\)**
+
+1. \(Optional\) To determine whether a user has a password, call this operation: [GetLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)
+
+1. To change a password, call this operation: [UpdateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateLoginProfile.html)
+
+**To delete \(disable\) a user's password \(AWS API\)**
+
+1. \(Optional\) To determine whether a user has a password, run this command: [GetLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetLoginProfile.html)
+
+1. \(Optional\) To determine when a password was last used, run this command: [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)
+
+1. To delete a password, run this command: [DeleteLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html)
+
+**Important**  
+When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM User \(AWS CLI\)](id_users_manage.md#id_users_deleting_cli)\. 

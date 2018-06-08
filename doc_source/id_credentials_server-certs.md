@@ -13,14 +13,14 @@ For more information about importing third party certificates into ACM, see [Imp
 For more information about uploading third party certificates to IAM, see the following topics\.
 
 **Topics**
-+ [Uploading a Server Certificate \(IAM API\)](#upload-server-certificate)
-+ [Retrieving a Server Certificate \(IAM API\)](#get-server-certificate)
-+ [Listing Server Certificates \(IAM API\)](#list-server-certificates)
-+ [Renaming a Server Certificate or Updating its Path \(IAM API\)](#rename-server-certificate)
-+ [Deleting a Server Certificate \(IAM API\)](#delete-server-certificate)
++ [Uploading a Server Certificate \(AWS API\)](#upload-server-certificate)
++ [Retrieving a Server Certificate AWS API\)](#get-server-certificate)
++ [Listing Server Certificates \(AWS API\)](#list-server-certificates)
++ [Renaming a Server Certificate or Updating its Path \(AWS API\)](#rename-server-certificate)
++ [Deleting a Server Certificate \(AWS API\)](#delete-server-certificate)
 + [Troubleshooting](#server-certificate-troubleshooting)
 
-## Uploading a Server Certificate \(IAM API\)<a name="upload-server-certificate"></a>
+## Uploading a Server Certificate \(AWS API\)<a name="upload-server-certificate"></a>
 
 To upload a server certificate to IAM, you must provide the certificate and its matching private key\. When the certificate is not self\-signed, you must also provide a certificate chain\. \(You don't need a certificate chain when uploading a self\-signed certificate\.\) Before you upload a certificate, ensure that you have all these items and that they meet the following criteria:
 + The certificate must be valid at the time of upload\. You cannot upload a certificate before its validity period begins \(the certificate's `NotBefore` date\) or after it expires \(the certificate's `NotAfter` date\)\.
@@ -48,7 +48,7 @@ If you are uploading a server certificate to use with Amazon CloudFront, you mus
 
 To use the AWS Tools for Windows PowerShell to upload a certificate, use [Publish\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Publish-IAMServerCertificate.html&tocid=Publish-IAMServerCertificate)\.
 
-## Retrieving a Server Certificate \(IAM API\)<a name="get-server-certificate"></a>
+## Retrieving a Server Certificate AWS API\)<a name="get-server-certificate"></a>
 
 To use the IAM API to retrieve a certificate, send a [GetServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\. Replace *ExampleCertificate* with the name of the certificate to retrieve\.
 
@@ -63,7 +63,7 @@ You cannot download or retrieve a private key from IAM after you upload it\.
 
 To use the AWS Tools for Windows PowerShell to retrieve a certificate, use [Get\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificate.html&tocid=Get-IAMServerCertificate)\.
 
-## Listing Server Certificates \(IAM API\)<a name="list-server-certificates"></a>
+## Listing Server Certificates \(AWS API\)<a name="list-server-certificates"></a>
 
 To use the IAM API to list your uploaded server certificates, send a [ListServerCertificates](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html) request\. The following example shows how to do this with the AWS CLI\.
 
@@ -75,7 +75,7 @@ When the preceding command is successful, it returns a list that contains metada
 
 To use the AWS Tools for Windows PowerShell to list your uploaded server certificates, use [Get\-IAMServerCertificates](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificates.html&tocid=Get-IAMServerCertificates)\.
 
-## Renaming a Server Certificate or Updating its Path \(IAM API\)<a name="rename-server-certificate"></a>
+## Renaming a Server Certificate or Updating its Path \(AWS API\)<a name="rename-server-certificate"></a>
 
 To use the IAM API to rename a server certificate or update its path, send an [UpdateServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
 
@@ -91,7 +91,7 @@ When the preceding command is successful, it does not return any output\.
 
 To use the AWS Tools for Windows PowerShell to rename a server certificate or update its path, use [Update\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMServerCertificate.html&tocid=Update-IAMServerCertificate)\.
 
-## Deleting a Server Certificate \(IAM API\)<a name="delete-server-certificate"></a>
+## Deleting a Server Certificate \(AWS API\)<a name="delete-server-certificate"></a>
 
 To use the IAM API to delete a server certificate, send a [DeleteServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
 
@@ -143,7 +143,7 @@ Base64-encoded certificate
 If these items are not in the right format for uploading to IAM, you can use [OpenSSL](https://openssl.org/) to convert them to the right format\.
 
 **To convert a certificate or certificate chain from DER to PEM**  
-Use the [OpenSSL **x509** command](https://openssl.org/docs/manmaster/man1/x509.html), as in the following example\. In the following example command, replace `Certificate.der` with the name of the file that contains your DER\-encoded certificate\. Replace `Certificate.pem` with the desired name of the output file to contain the PEM\-encoded certificate\.  
+Use the [OpenSSL **x509** command](https://openssl.org/docs/manmaster/man1/x509.html), as in the following example\. In the following example command, replace `Certificate.der` with the name of the file that contains your DER\-encoded certificate\. Replace `Certificate.pem` with the preferred name of the output file to contain the PEM\-encoded certificate\.  
 
 ```
 $ openssl x509 -inform DER -in Certificate.der -outform PEM -out Certificate.pem
@@ -151,7 +151,7 @@ $ openssl x509 -inform DER -in Certificate.der -outform PEM -out Certificate.pem
  
 
 **To convert a private key from DER to PEM**  
-Use the [OpenSSL **rsa** command](https://openssl.org/docs/manmaster/man1/rsa.html), as in the following example\. In the following example command, replace `PrivateKey.der` with the name of the file that contains your DER\-encoded private key\. Replace `PrivateKey.pem` with the desired name of the output file to contain the PEM\-encoded private key\.  
+Use the [OpenSSL **rsa** command](https://openssl.org/docs/manmaster/man1/rsa.html), as in the following example\. In the following example command, replace `PrivateKey.der` with the name of the file that contains your DER\-encoded private key\. Replace `PrivateKey.pem` with the preferred name of the output file to contain the PEM\-encoded private key\.  
 
 ```
 $ openssl rsa -inform DER -in PrivateKey.der -outform PEM -out PrivateKey.pem
@@ -159,7 +159,7 @@ $ openssl rsa -inform DER -in PrivateKey.der -outform PEM -out PrivateKey.pem
  
 
 **To decrypt an encrypted private key \(remove the password or passphrase\)**  
-Use the [OpenSSL **rsa** command](https://openssl.org/docs/manmaster/man1/rsa.html), as in the following example\. To use the following example command, replace `EncryptedPrivateKey.pem` with the name of the file that contains your encrypted private key\. Replace `PrivateKey.pem` with the desired name of the output file to contain the PEM\-encoded unencrypted private key\.  
+Use the [OpenSSL **rsa** command](https://openssl.org/docs/manmaster/man1/rsa.html), as in the following example\. To use the following example command, replace `EncryptedPrivateKey.pem` with the name of the file that contains your encrypted private key\. Replace `PrivateKey.pem` with the preferred name of the output file to contain the PEM\-encoded unencrypted private key\.  
 
 ```
 $ openssl rsa -in EncryptedPrivateKey.pem -out PrivateKey.pem
@@ -167,7 +167,7 @@ $ openssl rsa -in EncryptedPrivateKey.pem -out PrivateKey.pem
  
 
 **To convert a certificate bundle from PKCS\#12 \(PFX\) to PEM**  
-Use the [OpenSSL **pkcs12** command](https://openssl.org/docs/manmaster/man1/pkcs12.html), as in the following example\. In the following example command, replace `CertificateBundle.p12` with the name of the file that contains your PKCS\#12\-encoded certificate bundle\. Replace `CertificateBundle.pem` with the desired name of the output file to contain the PEM\-encoded certificate bundle\.  
+Use the [OpenSSL **pkcs12** command](https://openssl.org/docs/manmaster/man1/pkcs12.html), as in the following example\. In the following example command, replace `CertificateBundle.p12` with the name of the file that contains your PKCS\#12\-encoded certificate bundle\. Replace `CertificateBundle.pem` with the preferred name of the output file to contain the PEM\-encoded certificate bundle\.  
 
 ```
 $ openssl pkcs12 -in CertificateBundle.p12 -out CertificateBundle.pem -nodes
@@ -175,7 +175,7 @@ $ openssl pkcs12 -in CertificateBundle.p12 -out CertificateBundle.pem -nodes
  
 
 **To convert a certificate bundle from PKCS\#7 to PEM**  
-Use the [OpenSSL **pkcs7** command](https://openssl.org/docs/manmaster/man1/pkcs7.html), as in the following example\. In the following example command, replace `CertificateBundle.p7b` with the name of the file that contains your PKCS\#7\-encoded certificate bundle\. Replace `CertificateBundle.pem` with the desired name of the output file to contain the PEM\-encoded certificate bundle\.  
+Use the [OpenSSL **pkcs7** command](https://openssl.org/docs/manmaster/man1/pkcs7.html), as in the following example\. In the following example command, replace `CertificateBundle.p7b` with the name of the file that contains your PKCS\#7\-encoded certificate bundle\. Replace `CertificateBundle.pem` with the preferred name of the output file to contain the PEM\-encoded certificate bundle\.  
 
 ```
 $ openssl pkcs7 -in CertificateBundle.p7b -print_certs -out CertificateBundle.pem

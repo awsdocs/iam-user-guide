@@ -1,4 +1,4 @@
-# Switching to an IAM Role \(API\)<a name="id_roles_use_switch-role-api"></a>
+# Switching to an IAM Role \(AWS API\)<a name="id_roles_use_switch-role-api"></a>
 
 A *role* specifies a set of permissions that you can use to access AWS resources\. In that sense, it is similar to a [user in AWS Identity and Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) \(IAM\)\. An application assumes a role to receive permissions to carry out required tasks and interact with AWS resources\. The role can be in your own account or any other AWS account\. For more information about roles, their benefits, and how to create and configure them, see [IAM Roles](id_roles.md), and [Creating IAM Roles](id_roles_create.md)\. To learn about the different methods that you can use to assume a role, see [Using IAM Roles](id_roles_use.md)\.
 

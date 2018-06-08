@@ -20,7 +20,7 @@ See [Getting Credential Reports for Your AWS Account](id_credentials_getting-rep
 **Add multi\-factor authentication \(MFA\)**  
 To add a virtual MFA device for your AWS account root user, see [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)\.  
 To add a hardware MFA device for your root user, see [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)\.  
-To add a virtual MFA device for an IAM user, see [Enable a Virtual MFA Device for an IAM User \(AWS Management Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-iam-user)\.  
+To add a virtual MFA device for an IAM user, see [Enable a Virtual MFA Device for an IAM User \(Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-iam-user)\.  
 To add a hardware MFA device for an IAM user, see [Enable a Hardware MFA Device for an IAM User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)\.  
 To add a hardware MFA device for your AWS account or an IAM user, see [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)\. 
 

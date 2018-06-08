@@ -16,7 +16,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| Login | Grant login access to the Sumerian console\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html](http://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html) | Grant login access to the Sumerian console\. | Write |  |  |  | 
 
 ## Resources Defined by Sumerian<a name="amazonsumerian-resources-for-iam-policies"></a>
 

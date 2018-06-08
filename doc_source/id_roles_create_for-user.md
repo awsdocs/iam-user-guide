@@ -10,7 +10,7 @@ For information about how to use roles to delegate permissions, see [Roles Terms
 
 ## Creating an IAM Role \(Console\)<a name="roles-creatingrole-user-console"></a>
 
-You can use the AWS Management Console to create a role that an IAM user can assume\. For example, imagine that your organization has multiple AWS accounts to isolate a development environment from a production environment\. To view a high\-level description of the steps necessary to set up and use a role that allows users in the development account to access resources in the production account, see [Example Scenario Using Separate Development and Production Accounts](id_roles_common-scenarios_aws-accounts.md#id_roles_common-scenarios_aws-accounts-example)\.
+You can use the AWS Management Console to create a role that an IAM user can assume\. For example, imagine that your organization has multiple AWS accounts to isolate a development environment from a production environment\. For a high\-level description of the steps to set up and use a role that allows users in the development account to access resources in the production account, see [Example Scenario Using Separate Development and Production Accounts](id_roles_common-scenarios_aws-accounts.md#id_roles_common-scenarios_aws-accounts-example)\.
 
 **To create a role \(console\)**
 
@@ -46,19 +46,21 @@ Choosing this option restricts access to the role only through the AWS CLI, Tool
 **Important**  
 Remember that this is only the first half of the configuration required\. You must also give individual users in the trusted account permissions to switch to the role\. For more information about this step, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
-After you create the role and grant it permissions to perform AWS tasks or access AWS resources, the user can assume the role\. For more information, see [Switching to a Role \(AWS Management Console\)](id_roles_use_switch-role-console.md)\.
+After you create the role and grant it permissions to perform AWS tasks or access AWS resources, the user can assume the role\. For more information, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\.
 
 ## Creating an IAM Role \(AWS CLI\)<a name="roles-creatingrole-user-cli"></a>
 
 Creating a role from the AWS CLI involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the AWS CLI you must explicitly perform each step yourself\. You must create the policy and assign a permissions policy to the role\.
 
 **To create a role for cross\-account access \(AWS CLI\)**
-+ Create a role: [aws iam create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
-+ Attach a managed permission policy to the role: [aws iam attach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
 
-   \-or\-
+1. Create a role: [aws iam create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
 
-  Create an inline permission policy for the role: [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+1. Attach a managed permission policy to the role: [aws iam attach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
+
+    or
+
+   Create an inline permission policy for the role: [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
 The following example shows both steps in a simple environment\. The example assumes that you are using a client computer running Windows, and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
@@ -77,7 +79,7 @@ The sample trust policy referenced in the first command contains the following J
 ```
 
 **Important**  
-If your `Principal` element contains an ARN that points to a specific IAM role or user, then that ARN is transformed to a unique principal ID when the policy is saved\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the role or user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the ARN when the trust policy is displayed\. However, if you delete the role or user, then the relationship is broken\. The policy no longer applies, even if you recreate the user or role because it does not match the principal ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to an ARN\. The result is that if you delete and recreate a user or role referenced in a trust policy's `Principal` element, you must edit the role to replace the ARN\. The user or role is transformed into the new principal ID when you save the policy\.
+If your `Principal` element contains an ARN that points to a specific IAM role or user, then that ARN is transformed to a unique principal ID when the policy is saved\. This helps mitigate the risk of someone escalating their permissions by removing and recreating the role or user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the ARN when the trust policy is displayed\. However, if you delete the role or user, then the relationship is broken\. The policy no longer applies, even if you recreate the user or role because it does not match the principal ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to an ARN\. The result is that if you delete and recreate a user or role referenced in a trust policy's `Principal` element, you must edit the role to replace the ARN\. The user or role is transformed into the new principal ID when you save the policy\.
 
 The managed policy referenced in the second command is assumed to already exists in IAM\. This policy allows the user who assumes the role to perform only the `ListBucket` action on an S3 bucket named `example_bucket`\. The policy looks like this:
 
@@ -105,25 +107,27 @@ $ aws iam attach-role-policy --role-name Test-UserAccess-Role --policy-arn arn:a
 **Important**  
 Remember that this is only the first half of the configuration required\. You must also give individual users in the trusted account permissions to switch to the role\. For more information about this step, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
-After you create the role and grant it permissions to perform AWS tasks or access AWS resources, the user can switch to the role\. For more information, see [Switching to an IAM Role \(AWS Command Line Interface\)](id_roles_use_switch-role-cli.md)\.
+After you create the role and grant it permissions to perform AWS tasks or access AWS resources, the user can switch to the role\. For more information, see [Switching to an IAM Role \(AWS CLI\)](id_roles_use_switch-role-cli.md)\.
 
 ## Creating an IAM Role \(AWS API\)<a name="roles-creatingrole-user-api"></a>
 
 You can use API calls to create a role that an IAM user can switch to\.
 
-**To create a role in code \(API\)**
-+ Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
+**To create a role in code \(AWS API\)**
 
-  For the role's trust policy, you can specify a file location\.
-+ Attach a managed permission policy to the role: [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+1. Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
 
-   \-or\-
+   For the role's trust policy, you can specify a file location\.
 
-  Create an inline permission policy for the role: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+1. Attach a managed permission policy to the role: [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+
+   or
+
+   Create an inline permission policy for the role: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
 **Important**  
 Remember that this is only the first half of the configuration required\. You must also give individual users in the trusted account permissions to switch to the role\. For more information about this step, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
-After you create the role and grant it permissions to perform AWS tasks or access AWS resources, the user can switch to the role\. For more information, see [Switching to an IAM Role \(API\)](id_roles_use_switch-role-api.md)\.
+After you create the role and grant it permissions to perform AWS tasks or access AWS resources, the user can switch to the role\. For more information, see [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)\.
 
  For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.

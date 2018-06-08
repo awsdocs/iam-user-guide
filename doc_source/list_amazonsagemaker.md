@@ -31,8 +31,10 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 | endpoint | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\} |  | 
 | endpoint\-config | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\} |  | 
+| hyper\-parameter\-tuning\-job | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\} |  | 
 | model | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\} |  | 
 | notebook\-instance | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\} |  | 
+| notebook\-instance\-lifecycle\-config | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance\-lifecycle\-config/$\{NotebookInstanceLifecycleConfigName\} |  | 
 | training\-job | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\} |  | 
 
 ## Condition Keys for Amazon SageMaker<a name="amazonsagemaker-policy-keys"></a>

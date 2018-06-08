@@ -10,10 +10,10 @@ If you arrived at this page while trying to enable Amazon Advertising for your a
 ## How AWS identifies an IAM user<a name="id_users_create_aws-identifiers"></a>
 
 When you create a user, IAM creates these ways to identify that user:
-+ A "friendly name" for the user, which is the name that you specified when you created the user, such as `Bob` or `Alice`\. These are the names you see in the AWS Management Console\. 
++ A "friendly name" for the user, which is the name that you specified when you created the user, such as `Richard` or `Anaya`\. These are the names you see in the AWS Management Console\. 
 + An Amazon Resource Name \(ARN\) for the user\. You use the ARN when you need to uniquely identify the user across all of AWS, such as when you specify the user as a `Principal` in an IAM policy for an Amazon S3 bucket\. An ARN for an IAM user might look like the following: 
 
-  `arn:aws:iam::account-ID-without-hyphens:user/Bob`
+  `arn:aws:iam::account-ID-without-hyphens:user/Richard`
 + A unique identifier for the user\. This ID is returned only when you use the API, Tools for Windows PowerShell, or AWS CLI to create the user; you do not see this ID in the console\.
 
 For more information about these identifiers, see [IAM Identifiers](reference_identifiers.md)\.

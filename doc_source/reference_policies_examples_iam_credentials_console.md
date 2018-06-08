@@ -29,4 +29,4 @@ This example shows how you might create a policy that allows IAM users to rotate
 }
 ```
 
-To learn how a user can change their own password in the console, see [How IAM Users Change Their Own Password](id_credentials_passwords.md#id_credentials_passwords_user-change-own)\.
+To learn how a user can change their own password in the console, see [How IAM Users Change Their Own Passwords](id_credentials_passwords_user-change-own.md)\.

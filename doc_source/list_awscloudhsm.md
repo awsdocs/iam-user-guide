@@ -4,7 +4,7 @@ AWS CloudHSM \(service prefix: `cloudhsm`\) provides the following service\-spec
 
 References:
 + Learn how to [configure this service](http://docs.aws.amazon.com/cloudhsm/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/)\.
++ View a [list of the API operations available for this service](http://docs.aws.amazon.com/cloudhsm/)\.
 + Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/cloudhsm/latest/userguide/iam-policy.html) permission policies\.
 
 **Topics**
@@ -22,25 +22,33 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_AddTagsToResource.html) | Adds or overwrites one or more tags for the specified AWS CloudHSM resource | Tagging |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateCluster.html) | Creates a new AWS CloudHSM cluster | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHapg.html) | Creates a high\-availability partition group | Write |  |  |  | 
-| [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHsm.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateHsm.html) | Creates an uninitialized HSM instance | Write |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html) | Creates a new hardware security module \(HSM\) in the specified AWS CloudHSM cluster\. | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_CreateLunaClient.html) | Creates an HSM client | Write |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteCluster.html) | Deletes the specified AWS CloudHSM cluster\. | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHapg.html) | Deletes a high\-availability partition group | Write |  |  |  | 
-| [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHsm.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteHsm.html) | Deletes an HSM\. After completion, this operation cannot be undone and your key material cannot be recovered | Write |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DeleteHsm.html) | Deletes the specified HSM\. | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DeleteLunaClient.html) | Deletes a client | Write |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeBackups.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeBackups.html) | Gets information about backups of AWS CloudHSM clusters\. | Read |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html) | Gets information about AWS CloudHSM clusters\. | Read |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHapg.html) | Retrieves information about a high\-availability partition group | Read |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeHsm.html) | Retrieves information about an HSM\. You can identify the HSM by its ARN or its serial number | Read |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_DescribeLunaClient.html) | Retrieves information about an HSM client | Read |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_GetConfig.html) | Gets the configuration files necessary to connect to all high availability partition groups the client is associated with | Read |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_InitializeCluster.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_InitializeCluster.html) | Claims an AWS CloudHSM cluster\. | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListAvailableZones.html) | Lists the Availability Zones that have available AWS CloudHSM capacity | List |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHapgs.html) | Lists the high\-availability partition groups for the account | List |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListHsms.html) | Retrieves the identifiers of all of the HSMs provisioned for the current customer | List |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListLunaClients.html) | Lists all of the clients | List |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ListTags.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_ListTags.html) | Gets a list of tags for the specified AWS CloudHSM cluster\. | Read |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ListTagsForResource.html) | Returns a list of all tags for the specified AWS CloudHSM resource | Read |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHapg.html) | Modifies an existing high\-availability partition group | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyHsm.html) | Modifies an HSM | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_ModifyLunaClient.html) | Modifies the certificate used by the client | Write |  |  |  | 
 | [http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html](http://docs.aws.amazon.com/cloudhsm/classic/APIReference/API_RemoveTagsFromResource.html) | Removes one or more tags from the specified AWS CloudHSM resource | Tagging |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html) | Adds or overwrites one or more tags for the specified AWS CloudHSM cluster\. | Tagging |  |  |  | 
+| [http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html](http://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html) | Removes the specified tag or tags from the specified AWS CloudHSM cluster\. | Tagging |  |  |  | 
 
 ## Resources Defined by CloudHSM<a name="awscloudhsm-resources-for-iam-policies"></a>
 

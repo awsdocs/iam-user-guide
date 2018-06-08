@@ -25,5 +25,5 @@ AWS is rolling out improvements to the sign\-in process\. One of those improveme
 
    To protect your password, it's important to follow these best practices:
    + Change your password periodically and keep your password private, since anyone who knows your password may access your account\. 
-   + Use a different password on AWS that you use on other sites\. 
+   + Use a different password on AWS than you use on other sites\. 
    + Avoid passwords that are easy to guess\. These include passwords such as `secret`, `password`, `amazon`, or `123456`\. They also include things like a dictionary word, your name, email address, or other personal information that can easily be obtained\.

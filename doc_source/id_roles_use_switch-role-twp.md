@@ -7,14 +7,14 @@ The permissions of your IAM user and any roles that you switch to are not cumula
 
 This section describes how to switch roles when you work at the command line with the AWS Tools for Windows PowerShell\.
 
-Imagine that you have an account in the development environment and you occasionally need to work with the production environment at the command line using the [Tools for Windows PowerShell](http://aws.amazon.com/powershell/)\. You already have one access key credential set available to you\. These can be an access key pair assigned to your standard IAM user; or, if you signed\-in as a federated user, they can be the access key pair for the role initially assigned to you\. You can use these credentials to run the `Use-STSRole` cmdlet that passes the ARN of a new role as a parameter\. The command returns temporary security credentials for the requested role\. You can then use those credentials in subsequent PowerShell commands with the role's permissions to access resources in production\. While you use the role, you cannot make use of your user privileges in the Development account because only one set of permissions can be in effect at a time\.
+Imagine that you have an account in the development environment and you occasionally need to work with the production environment at the command line using the [Tools for Windows PowerShell](http://aws.amazon.com/powershell/)\. You already have one access key credential set available to you\. These can be an access key pair assigned to your standard IAM user\. Or, if you signed\-in as a federated user, they can be the access key pair for the role initially assigned to you\. You can use these credentials to run the `Use-STSRole` cmdlet that passes the ARN of a new role as a parameter\. The command returns temporary security credentials for the requested role\. You can then use those credentials in subsequent PowerShell commands with the role's permissions to access resources in production\. While you use the role, you cannot make use of your user permissions in the Development account because only one set of permissions can be in effect at a time\.
 
 **Note**  
 For security purposes, you can use AWS CloudTrail to audit the use of roles in the account\. The cmdlet `Use-STSRole` must include a `-RoleSessionName` parameter with a value between 2 and 64 characters long that can include letters, numbers, and the `=,.@-` characters\. The role session name identifies actions in CloudTrail logs that are performed with the temporary security credentials\. For more information, see [CloudTrail Event Reference](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
 
 Note that all access keys and tokens are examples only and cannot be used as shown\. Replace with the appropriate values from your live environment\.
 
-**To switch to a role from the Tools for Windows PowerShell**
+**To switch to a role \(Tools for Windows PowerShell\)**
 
 1. Open a PowerShell command prompt and configure the default profile to use the access key from your current IAM user or from your federated role\. If you have previously used the Tools for Windows PowerShell , then this is likely already done\. Note that you can switch roles only if you are signed in as an IAM user, not the AWS account root user\.
 

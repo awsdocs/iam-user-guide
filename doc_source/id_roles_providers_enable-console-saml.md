@@ -1,9 +1,9 @@
 # Enabling SAML 2\.0 Federated Users to Access the AWS Management Console<a name="id_roles_providers_enable-console-saml"></a>
 
 You can use a role to configure your SAML 2\.0\-compliant IdP and AWS to permit your federated users to access the AWS Management Console\. The role grants the user permissions to carry out tasks in the console\. If instead you want to give SAML federated users other ways to access AWS, see one of these topics:
-+ AWS CLI: [Switching to an IAM Role \(AWS Command Line Interface\)](id_roles_use_switch-role-cli.md)
++ AWS CLI: [Switching to an IAM Role \(AWS CLI\)](id_roles_use_switch-role-cli.md)
 + Tools for Windows PowerShell: [Switching to an IAM Role \(Tools for Windows PowerShell\)](id_roles_use_switch-role-twp.md)
-+ AWS API : [Switching to an IAM Role \(API\)](id_roles_use_switch-role-api.md)
++ AWS API : [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)
 
 ## Overview<a name="enable-console-saml-overview"></a>
 

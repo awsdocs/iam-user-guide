@@ -325,7 +325,7 @@ When David needs to make an update to the Production account from code, he makes
 
 1. With the temporary credentials, David makes an `s3:PutObject` call to update the `productionapp` bucket\. He would pass the credentials to the API call as the `AuthParams` parameter\. Because the temporary role credentials have only read and write access to the `productionapp` bucket, any other actions in the Production account are denied\.
 
-For a code example \(using Python\), see [Switching to an IAM Role \(API\)](id_roles_use_switch-role-api.md)\.
+For a code example \(using Python\), see [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)\.
 
 ## Related Resources<a name="tutorial_cross-account-with-roles-related"></a>
 + For more information about IAM users and groups, see [Identities \(Users, Groups, and Roles\)](id.md) \.

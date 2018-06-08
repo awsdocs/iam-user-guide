@@ -57,7 +57,7 @@ Policy variables like `${aws:username}` also work like this\. In the following p
 ## Determining Whether a Request is Allowed or Denied<a name="policy-eval-denyallow"></a>
 
 When a request is made, the AWS service decides whether a given request should be allowed or denied\. The evaluation logic follows these rules:
-+ By default, all requests are denied\. \(In general, requests made using the account credentials for resources in the account are always allowed\.\) 
++ By default, all requests are denied\. \(In general, requests made using the AWS account root user credentials for resources in the account are always allowed\.\) 
 + An explicit allow overrides this default\.
 + An explicit deny overrides any allows\.
 

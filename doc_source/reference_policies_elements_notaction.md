@@ -62,7 +62,7 @@ The following example policy denies access to any operations outside of the `eu-
         "Resource": "*",
         "Condition": {"StringNotEquals": {"aws:RequestedRegion": [
             "eu-central-1",
-            "eu_west-1"
+            "eu-west-1"
         ]}}
     }]
 }

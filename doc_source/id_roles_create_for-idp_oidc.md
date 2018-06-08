@@ -78,7 +78,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Facebook\. In this example, *111222333444555* represents the app ID assigned by Facebook\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Facebook\. In this example, *111222333444555* represents the app ID assigned by Facebook\. To learn how to create an IAM policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
    ```
    {
@@ -93,7 +93,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Google\. In this example, *666777888999000* represents the app ID assigned by Google\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+   The following example shows a policy for a role that the mobile app could assume if the user has signed in from Google\. In this example, *666777888999000* represents the app ID assigned by Google\. To learn how to create an IAM policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
    ```
    {
@@ -108,7 +108,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   The following example shows a policy for a role that the mobile app could assume if the application is using Amazon Cognito\. In this example, *us\-east:12345678\-ffff\-ffff\-ffff\-123456* represents the identity pool ID assigned by Amazon Cognito\. To learn how to create an IAM policy using this example JSON policy document, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+   The following example shows a policy for a role that the mobile app could assume if the application is using Amazon Cognito\. In this example, *us\-east:12345678\-ffff\-ffff\-ffff\-123456* represents the identity pool ID assigned by Amazon Cognito\. To learn how to create an IAM policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
    ```
    {
@@ -123,7 +123,7 @@ Because the policy for the trusted entity uses [policy variables](http://docs.aw
    }
    ```
 
-   After you complete the prerequisites, you can create the role itself\. The following procedure describes how to create the role for web identity/OIDC federation in the AWS Management Console\. To create a role using the AWS CLI, Tools for Windows PowerShell, or AWS API, see the procedures at [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\.
+   After you complete the prerequisites, you can create the role itself\. The following procedure describes how to create the role for web identity/OIDC federation in the AWS Management Console\. To create a role using the AWS CLI or AWS API, see the procedures at [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\.
 
 **To create an IAM role for web identity federation**
 

@@ -1,8 +1,8 @@
 # Obtaining the Thumbprint for an OpenID Connect Identity Provider<a name="id_roles_providers_create_oidc_verify-thumbprint"></a>
 
-When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint for the identity provider \(IdP\)\. The thumbprint is a signature for the unique server certificate that is used by the OIDC\-compatible IdP\. When you create an OIDC identity provider in IAM, you are trusting identities authenticated by that IdP with access to your AWS account\. By supplying the OIDC IdP's thumbprint, you assert to AWS that you wish to trust a particular OIDC IdP with this access\.
+When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint for the identity provider \(IdP\)\. The thumbprint is a signature for the unique server certificate that is used by the OIDC\-compatible IdP\. When you create an OIDC identity provider in IAM, you are trusting identities authenticated by that IdP with access to your AWS account\. By supplying the OIDC IdP's thumbprint, you assert to AWS that you want to trust a particular OIDC IdP with this access\.
 
-When you create an OIDC identity provider with [the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API](id_roles_providers_create_oidc.md#manage-oidc-provider-cli), you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with [the IAM console](id_roles_providers_create_oidc.md), the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually and verify that the thumbprint obtained by the IAM console matches the one you expect for your OIDC provider\. 
+When you create an OIDC identity provider with [the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API](id_roles_providers_create_oidc.md#manage-oidc-provider-cli), you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with [the IAM console](id_roles_providers_create_oidc.md), the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually\. Then verify that the thumbprint obtained by the IAM console matches the one you expect for your OIDC provider\. 
 
 You use a web browser and the OpenSSL command line tool to obtain the thumbprint for an OIDC provider\. For more information, see the following sections\. 
 
@@ -67,7 +67,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
 1. If you are creating the IAM identity provider with the AWS CLI, Tools for Windows PowerShell, or the IAM API, supply this thumbprint when creating the provider\. 
 
-   If you are creating the OIDC provider in the IAM console, compare this thumbprint to the thumbprint that you see in the console on the **Verify Provider Information** page when creating an OIDC provider\. 
+   If you are creating the OIDC provider in the IAM console, compare this thumbprint to the thumbprint shown on the console **Verify Provider Information** page when you create an OIDC provider\. 
 **Important**  
 If the thumbprint you obtained does not match the one you see in the console, you should not create the OIDC provider in IAM\. Instead, you should wait a while and then try again to create the OIDC provider, ensuring that the thumbprints match before you create the provider\. If the thumbprints still do not match after a second attempt, use the [IAM Forum](https://forums.aws.amazon.com/forum.jspa?forumID=76) to contact AWS\.
 
@@ -89,7 +89,7 @@ If you don't already have OpenSSL installed, follow the instructions in this sec
 
 1. If you are asked to install the **Microsoft Visual C\+\+ 2008 Redistributables ** and it is not already installed on your system, choose the download link appropriate for your environment\. Follow the instructions provided by the **Microsoft Visual C\+\+ 2008 Redistributable Setup Wizard**\.
 **Note**  
-If you are not sure whether the Microsoft Visual C\+\+ 2008 Redistributables is already installed on your system, you can try installing OpenSSL first\. The OpenSSL installer displays an alert if the Microsoft Visual C\+\+ 2008 Redistributables is not yet installed\. Make sure you install the architecture \(32\-bit or 64\-bit\) that matches the version of OpenSSL that you install\.
+If you are not sure whether the Microsoft Visual C\+\+ 2008 Redistributables is already installed on your system, you can try installing OpenSSL first\. The OpenSSL installer displays an alert if the Microsoft Visual C\+\+ 2008 Redistributables is not yet installed\. Make sure that you install the architecture \(32\-bit or 64\-bit\) that matches the version of OpenSSL that you install\.
 
 1. After you have installed the Microsoft Visual C\+\+ 2008 Redistributables, select the appropriate version of the OpenSSL binaries for your environment and save the file locally\. Start the **OpenSSL Setup Wizard**\.
 
@@ -137,4 +137,4 @@ Any changes you make to environment variables with the `export` command are vali
    C:\> set Path=%Path%;%OpenSSL_HOME%\bin
    ```
 **Note**  
-Any changes you make to Windows environment variables in a **Command Prompt** window are valid only for the current command line session\. You can make persistent changes to the environment variables by setting them as system properties\. The exact procedures depends on what version of Windows you're using\. \(For example, in Windows 7, open **Control Panel**, **System and Security**, **System**\. Then choose **Advanced system settings**, **Advanced** tab, **Environment Variables**\.\) For more information, see the Windows documentation\.
+Any changes you make to Windows environment variables in a **Command Prompt** window are valid only for the current command line session\. You can make persistent changes to the environment variables by setting them as system properties\. The exact procedures depend on what version of Windows you're using\. \(For example, in Windows 7, open **Control Panel**, **System and Security**, **System**\. Then choose **Advanced system settings**, **Advanced** tab, **Environment Variables**\.\) For more information, see the Windows documentation\.

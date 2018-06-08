@@ -14,7 +14,7 @@ SMS\-based MFA are only available for IAM users and cannot be used for the root 
 
    For information about enabling each type of MFA device, see the following topics:
    + Hardware MFA device: [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)
-   + Virtual MFA device: [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)
+   + Virtual MFA device: [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)
    + SMS MFA device: [PREVIEW – Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)
 
 1. *Use the MFA device when you log in to or access AWS resources\.* Note the following:
@@ -26,7 +26,7 @@ You cannot pass the MFA information for an SMS MFA device to AWS STS APIs to req
    For more information, see [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md) 
 
 **Topics**
-+ [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device](id_credentials_mfa_enable_virtual.md)
++ [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)
 + [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)
 + [PREVIEW – Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)
-+ [Enable and manage virtual MFA devices \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](id_credentials_mfa_enable_cliapi.md)
++ [Enabling and Managing Virtual MFA Devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)

@@ -1,4 +1,4 @@
-# Enabling a Virtual Multi\-factor Authentication \(MFA\) Device<a name="id_credentials_mfa_enable_virtual"></a>
+# Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)<a name="id_credentials_mfa_enable_virtual"></a>
 
 A virtual MFA device uses a software application to generate a six\-digit authentication code that is compatible with the time\-based one\-time password \(TOTP\) standard, as described in [RFC 6238](http://tools.ietf.org/html/rfc6238)\. The app can run on mobile hardware devices, including smartphones\. With most virtual MFA apps, you can host more than one virtual MFA device, which makes them more convenient than hardware MFA devices\. However, be aware that a virtual MFA might be run on a less secure device such as a smartphone\. Consequently, a virtual MFA might not provide the same level of security as a hardware MFA device\. 
 
@@ -6,19 +6,24 @@ You can enable only one MFA device per AWS account root user or IAM user, and th
 
 For a list of virtual MFA apps that you can use on smartphones and tablets \(including Google Android, Apple iPhone and iPad, and Windows Phone\), go to the **Virtual MFA Applications** section at [http://aws.amazon.com/iam/details/mfa/](http://aws.amazon.com/iam/details/mfa/)\. Note that AWS requires a virtual MFA app that produces a six\-digit OTP\.
 
-Use the following steps to enable and manage MFA devices from the AWS Management Console\. To enable and manage MFA devices at the command line, or to use the API, see [Enable and manage virtual MFA devices \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](id_credentials_mfa_enable_cliapi.md)\.
+Use the following steps to enable and manage MFA devices from the AWS Management Console\. To enable and manage MFA devices at the command line, or to use the API, see [Enabling and Managing Virtual MFA Devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)\.
 
 **Important**  
 We recommend that when you configure a virtual MFA device to use with AWS that you save a copy of the QR code or the secret key ***in a secure place***\. That way, if you lose the phone or have to reinstall the MFA software app for any reason, you can reconfigure the app to use the same virtual MFA\. This avoids the need to create a new virtual MFA in AWS for the user or root user\.
 
-## Enable a Virtual MFA Device for an IAM User \(AWS Management Console\)<a name="enable-virt-mfa-for-iam-user"></a>
+**Topics**
++ [Enable a Virtual MFA Device for an IAM User \(Console\)](#enable-virt-mfa-for-iam-user)
++ [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](#enable-virt-mfa-for-root)
++ [Replace or "Rotate" a Virtual MFA Device](#replace-virt-mfa)
+
+## Enable a Virtual MFA Device for an IAM User \(Console\)<a name="enable-virt-mfa-for-iam-user"></a>
 
 You can use IAM in the AWS Management Console to enable a virtual MFA device for an IAM user in your account\. 
 
 **Note**  
 You must have physical access to the hardware that will host the user's virtual MFA device in order to configure MFA\. For example, you might configure MFA for a user who will use a virtual MFA device running on a smartphone\. In that case, you must have the smartphone available in order to finish the wizard\. Because of this, you might want to let users configure and manage their own virtual MFA devices\. In that case you must grant users the permissions to perform the necessary IAM actions\. For more information and for an example of an IAM policy that grants these permissions, see [Allow Users to Manage Only Their Own Virtual MFA Devices](id_credentials_delegate-permissions_examples.md#creds-policies-mfa-console)\. 
 
-**To enable a virtual MFA device for a user**
+**To enable a virtual MFA device for a user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -55,7 +60,7 @@ If your MFA device is lost, stolen, or not working, you can still sign in using 
 **Note**  
 If you are using an AWS account created after September 14, 2017, you might see differences in the following console pages: **Sign in with authentication device** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
 
-**To configure and enable a virtual MFA device for use with your root user**
+**To configure and enable a virtual MFA device for use with your root user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -96,5 +101,5 @@ The device is ready for use with AWS\. For information about using MFA with the 
 
 You can have only one virtual MFA device assigned to a user at a time\. If the user loses a device or needs to replace it for any reason, you must first deactivate the old device\. Then you can add the new device for the user\.
 + To deactivate the device currently associated with a user, see [Deactivating MFA Devices](id_credentials_mfa_disable.md)\.
-+ To add a replacement virtual MFA device for an IAM user, follow the steps in the procedure [Enable a Virtual MFA Device for an IAM User \(AWS Management Console\)](#enable-virt-mfa-for-iam-user) above\.
++ To add a replacement virtual MFA device for an IAM user, follow the steps in the procedure [Enable a Virtual MFA Device for an IAM User \(Console\)](#enable-virt-mfa-for-iam-user) above\.
 + To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](#enable-virt-mfa-for-root) earlier in this topic\.

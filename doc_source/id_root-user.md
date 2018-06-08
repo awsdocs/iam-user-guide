@@ -41,11 +41,10 @@ If you previously signed in to the console with *[IAM user](http://docs.aws.amaz
 
 1. When you no longer use the access key [we recommend that you delete it](best-practices.md#remove-credentials), or at least mark it inactive by choosing **Make Inactive** so that it cannot be misused if leaked\.
 
-**To create an access key for the root user \(programmatically\)**
+**To create an access key for the root user \(AWS CLI or AWS API\)**
 
-Use one of the following commands:
+Use one of the following:
 + AWS CLI: [aws iam create\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
-+ Tools for Windows PowerShell: [New\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMAccessKey.html&tocid=New-IAMAccessKey)
 + AWS API: [CreateAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
 ## Deleting Access Keys from the Root User<a name="id_root-user_manage_delete-key"></a>
@@ -68,11 +67,10 @@ If you previously signed in to the console with *[IAM user](id_users.md)* creden
 **Note**  
 You can mark an access key as inactive instead of deleting it\. This enables you to resume use of it in the future without having to change either the key ID or secret key\. While it is inactive, any attempts to use it in requests to the AWS API fail with the status of access denied\.
 
-**To delete an access key for the root user \(programmatically\)**
+**To delete an access key for the root user \(AWS CLI or AWS API\)**
 
-Use one of the following commands:
+Use one of the following:
 + AWS CLI: [aws iam delete\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
-+ Tools for Windows PowerShell: [Remove\-IAMAccessKey](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccessKey.html&tocid=Remove-IAMAccessKey)
 + AWS API: [DeleteAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
 ## Changing the Root User's Password<a name="id_root-user_manage_password"></a>

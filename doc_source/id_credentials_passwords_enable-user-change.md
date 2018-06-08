@@ -15,9 +15,9 @@ We recommend that you [set a password policy](id_credentials_passwords_account-p
 
 1. In the **Password Policy** section, select **Allow users to change their own password**, and then click **Apply Password Policy**\. 
 
-1. Point users to the following instructions that show how they can change their passwords: [How IAM Users Change Their Own Password](id_credentials_passwords.md#id_credentials_passwords_user-change-own)\. 
+1. Point users to the following instructions that show how they can change their passwords: [How IAM Users Change Their Own Passwords](id_credentials_passwords_user-change-own.md)\. 
 
-For information about the AWS CLI, Tools for Windows PowerShell, and API commands that you can use to change the account's password policy \(which includes letting all users change their own passwords\), see [Setting a Password Policy \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](id_credentials_passwords_account-policy.md#PasswordPolicy_CLI)\.<a name="proc_letselectuserschangepassword"></a>
+For information about the AWS CLI, Tools for Windows PowerShell, and API commands that you can use to change the account's password policy \(which includes letting all users change their own passwords\), see [Setting a Password Policy \(AWS CLI\)](id_credentials_passwords_account-policy.md#PasswordPolicy_CLI)\.<a name="proc_letselectuserschangepassword"></a>
 
 **To allow selected IAM users change their own passwords**
 
@@ -55,7 +55,7 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
 
    This policy grants access to the [ChangePassword](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html) action, which lets users change only their own passwords from the console, the AWS CLI, Tools for Windows PowerShell, or the API\. It also grants access to the [GetAccountPasswordPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) action, which lets the user view the current password policy; this permission is required so that the user can display the **Change Password** page in the console\. The user must be able to read the current password policy to ensure the changed password meets the requirements of the policy\.
 
-1. Point users to the following instructions that show how they can change their passwords: [How IAM Users Change Their Own Password](id_credentials_passwords.md#id_credentials_passwords_user-change-own)\. 
+1. Point users to the following instructions that show how they can change their passwords: [How IAM Users Change Their Own Passwords](id_credentials_passwords_user-change-own.md)\. 
 
 ## For More Information<a name="HowToPwdIAMUser-moreinfo"></a>
 
@@ -64,4 +64,4 @@ For more information on managing credentials, see the following topics:
 + [Managing Passwords](id_credentials_passwords.md)
 + [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)
 + [Managing IAM Policies](access_policies_manage.md)
-+ [How IAM Users Change Their Own Password](id_credentials_passwords.md#id_credentials_passwords_user-change-own)
++ [How IAM Users Change Their Own Passwords](id_credentials_passwords_user-change-own.md)

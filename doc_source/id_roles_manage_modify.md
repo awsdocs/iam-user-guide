@@ -14,6 +14,11 @@ Anyone who assumes the role from the AWS CLI or API can use the `duration-second
 
 You can use the AWS Management Console, the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), the Tools for Windows PowerShell, or the IAM API to make these changes\.
 
+**Topics**
++ [Modifying a Role \(Console\)](#roles-managingrole-editing-console)
++ [Modifying a Role \(AWS CLI\)](#roles-managingrole-editing-cli)
++ [Modifying a Role \(AWS API\)](#roles-managingrole-editing-api)
+
 ## Modifying a Role \(Console\)<a name="roles-managingrole-editing-console"></a>
 
 You can use the AWS Management Console to modify a role\.
@@ -126,21 +131,17 @@ You cannot edit an AWS managed policy\. AWS managed policy appear with the AWS i
 
    Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
 
-## Modifying a Role \(AWS CLI, AWS Tools for Windows PowerShell, AWS API\)<a name="roles-managingrole-editing-cli"></a>
+## Modifying a Role \(AWS CLI\)<a name="roles-managingrole-editing-cli"></a>
 
-You can use the AWS Command Line Interface , AWS Tools for Windows PowerShell, or the API to modify a role\.
+You can use the AWS Command Line Interface to modify a role\.
 
-**To change the trusted principals that can access the role \(AWS CLI, AWS Tools for Windows PowerShell, AWS API\)**
+**To change the trusted principals that can access the role \(AWS CLI\)**
 
-1. If you don't know the name of the role that you want to modify, use one of the following commands to list the roles in your account:
-   + AWS CLI: [aws iam list\-roles](http://docs.aws.amazon.com/cli/latest/reference/iam/list-roles.html)
-   + AWS Tools for Windows PowerShell: [Get\-IAMRoles](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRoles.html&tocid=Get-IAMRoles)
-   + IAM API: [ListRoles](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html)
+1. If you don't know the name of the role that you want to modify, run the following command to list the roles in your account:
+   + [aws iam list\-roles](http://docs.aws.amazon.com/cli/latest/reference/iam/list-roles.html)
 
-1. \(Optional\) To view the current trust policy for a role, use one of the following commands:
-   + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
-   + AWS Tools for Windows PowerShell: [Get\-IAMRole](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRole.html&tocid=Get-IAMRole)
-   + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)
+1. \(Optional\) To view the current trust policy for a role, run the following command:
+   + [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
 1. To modify the trusted principals that can access the role, create a text file with the updated trust policy\. You can use any text editor to construct the policy\.
 
@@ -157,12 +158,10 @@ You can use the AWS Command Line Interface , AWS Tools for Windows PowerShell, o
 
    Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role until the administrator for that account grants the users the permission to assume the role\. To do this, the administrator must add the Amazon Resource Name \(ARN\) of the role to an `Allow` element for the `sts:AssumeRole` action\. For more information, see the next procedure and the topic [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
-1. To update the trust policy, use one of the following commands:
-   + AWS CLI: [aws iam update\-assume\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/update-assume-role-policy.html)
-   + AWS Tools for Windows PowerShell: [Update\-IAMAssumeRolePolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAssumeRolePolicy.html&tocid=Update-IAMAssumeRolePolicy)
-   + IAM API: [UpdateAssumeRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html)
+1. To update the trust policy, run the following command:
+   + [aws iam update\-assume\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/update-assume-role-policy.html)
 
-**To allow users in a trusted external account to use the role \(AWS CLI, AWS Tools for Windows PowerShellAWS API\)**
+**To allow users in a trusted external account to use the role \(AWS CLI\)**
 
 For more information and detail about this procedure, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
@@ -179,60 +178,133 @@ For more information and detail about this procedure, see [Granting a User Permi
    }
    ```
 
-   Create a JSON file that contains a policy similar to the preceding example\. Replace the values in red with the actual values from the ARN of the role that users are allowed to assume\. After you have created the policy, use one of the following commands to upload it to IAM:
-   + AWS CLI: [aws iam create\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy.html)
-   + AWS Tools for Windows PowerShell: [New\-IAMPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMPolicy.html&tocid=New-IAMPolicy)
-   + IAM API: [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
+   Create a JSON file that contains a policy similar to the preceding example\. Replace the values in red with the actual values from the ARN of the role that users are allowed to assume\. After you have created the policy, run the following command to upload it to IAM:
+   + [aws iam create\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy.html)
 
    The output of this command contains the ARN of the policy\. Make a note of this ARN because you will need to use it in a later step\. 
 
-1. Decide which user or group to attach the policy to\. If you don't know the name of the user or group that you want to modify, use one of these commands to list the users or groups in your account:
-   + AWS CLI: [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html) or [aws iam list\-groups](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html)
-   + AWS Tools for Windows PowerShell: [Get\-IAMUsers](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMUsers.html&tocid=Get-IAMUsers) or [Get\-IAMGroups](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMGroups.html&tocid=Get-IAMGroups)
-   + IAM API: [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) or [ListGroups](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html)
+1. Decide which user or group to attach the policy to\. If you don't know the name of the intended user or group, use one of these commands to list the users or groups in your account:
+   + [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html) or [aws iam list\-groups](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html)
 
 1. Use one of the following commands to attach the policy that you created in a previous step to the user or group:
-   + AWS CLI: [aws iam attach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html) or [aws iam attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
-   + AWS Tools for Windows PowerShell: [Register\-IAMUserPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMUserPolicy.html&tocid=Register-IAMUserPolicy) or [Register\-IAMGroupPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMGroupPolicy.html&tocid=Register-IAMGroupPolicy)
-   + IAM API: [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html) or [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
+   + [aws iam attach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html) or [aws iam attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
 
-**To change the permissions allowed by a role \(AWS CLI, AWS Tools for Windows PowerShell, AWS API\)**
+**To change the permissions allowed by a role \(AWS CLI\)**
 
-1. \(Optional\) To view the current permissions associated with a role, use the following commands:
-   + AWS CLI: [aws iam list\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-role-policies.html) \(to list inline policies\) and [aws iam list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html) \(to list managed policies\)
-   + AWS Tools for Windows PowerShell: [Get\-IAMRolePolicies](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMRolePolicies.html&tocid=Get-IAMRolePolicies) \(to list inline policies\) and [Get\-IAMAttachedRolePolicies](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAttachedRolePolicies.html&tocid=Get-IAMAttachedRolePolicies) \(to list managed policies\)
-   + IAM API: [ListRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html) \(to list inline policies\) and [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html) \(to list managed policies\)
+1. \(Optional\) To view the current permissions associated with a role, run the following commands:
+   + [aws iam list\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-role-policies.html) \(to list inline policies\) and [aws iam list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html) \(to list managed policies\)
 
 1. The command to update permissions for the role differs depending on whether you are updating a managed policy or an inline policy\.
 
-   To update a managed policy, use one of the following commands to create a new version of the managed policy:
-   + AWS CLI: [aws iam create\-policy\-version](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
-   + AWS Tools for Windows PowerShell: [New\-IAMPolicyVersion](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMPolicyVersion.html&tocid=New-IAMPolicyVersion)
-   + IAM API: [CreatePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
+   To update a managed policy, run the following command to create a new version of the managed policy:
+   + [aws iam create\-policy\-version](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
 
-   To update an inline policy, use one of the following commands:
-   + AWS CLI: [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
-   + AWS Tools for Windows PowerShell: [Write\-IAMRolePolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Write-IAMRolePolicy.html&tocid=Write-IAMRolePolicy)
-   + IAM API: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+   To update an inline policy, run the following command:
+   + [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
-**To change the description of a role \(AWS CLI, AWS API\)**
+**To change the description of a role \(AWS CLI\)**
 
-1. \(Optional\) To view the current description for a role, use the following commands:
-   + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
-   + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+1. \(Optional\) To view the current description for a role, run the following command:
+   + [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
-1. To update a role's description, use one of the following commands with the description parameter:
-   + AWS CLI: [aws iam update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
-   + IAM API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
+1. To update a role's description, run the following command with the description parameter:
+   + [aws iam update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
 
-**To change the maximum session duration setting for roles that are assumed using the AWS CLI or API \(AWS CLI, AWS API\)**
+**To change the maximum session duration setting for roles that are assumed using the AWS CLI \(AWS CLI\)**
 
-1. \(Optional\) To view the current maximum session duration setting for a role, use the following commands:
-   + AWS CLI: [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
-   + IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+1. \(Optional\) To view the current maximum session duration setting for a role, run the following command:
+   + [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
-1. To update a role's maximum session duration setting, use one of the following commands with the `max-sessionduration` CLI parameter or the `MaxSessionDuration` API parameter:
-   + AWS CLI: [aws iam update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
-   + IAM API: [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
+1. To update a role's maximum session duration setting, run the following command with the `max-sessionduration` CLI parameter or the `MaxSessionDuration` API parameter:
+   + [aws iam update\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
+
+   Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
+
+## Modifying a Role \(AWS API\)<a name="roles-managingrole-editing-api"></a>
+
+You can use the AWS API to modify a role\.
+
+**To change the trusted principals that can access the role \(AWS API\)**
+
+1. If you don't know the name of the role that you want to modify, call the following operation to list the roles in your account:
+   + [ListRoles](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html)
+
+1. \(Optional\) To view the current trust policy for a role, call the following operation:
+   + [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)
+
+1. To modify the trusted principals that can access the role, create a text file with the updated trust policy\. You can use any text editor to construct the policy\.
+
+   For example, the following policy snippet shows how to reference two AWS accounts in the `Principal` element:
+
+   ```
+   "Principal": {
+     "AWS": [
+       "arn:aws:iam::111122223333:root",
+       "arn:aws:iam::444455556666:root"
+     ]
+   },
+   ```
+
+   Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role until the administrator for that account grants the users the permission to assume the role\. To do this, the administrator must add the Amazon Resource Name \(ARN\) of the role to an `Allow` element for the `sts:AssumeRole` action\. For more information, see the next procedure and the topic [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+
+1. To update the trust policy, call the following operation:
+   + [UpdateAssumeRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html)
+
+**To allow users in a trusted external account to use the role \(AWS API\)**
+
+For more information and detail about this procedure, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+
+1. Begin by creating a policy that grants permissions to assume the role\. For example, the following policy contains the minimum necessary permissions:
+
+   ```
+   {
+     "Version": "2012-10-17",
+     "Statement": {
+       "Effect": "Allow",
+       "Action": "sts:AssumeRole",
+       "Resource": "arn:aws:iam::AWS account ID that contains the role:role/role name"
+     }
+   }
+   ```
+
+   Create a JSON file that contains a policy similar to the preceding example\. Replace the values in red with the actual values from the ARN of the role that users are allowed to assume\. After you have created the policy, call the following operation to upload it to IAM:
+   + [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
+
+   The output of this operation contains the ARN of the policy\. Make a note of this ARN because you will need to use it in a later step\. 
+
+1. Decide which user or group to attach the policy to\. If you don't know the name of the intended user or group, call one of these operations to list the users or groups in your account:
+   + [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) or [ListGroups](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroups.html)
+
+1. Call one of the following operations to attach the policy that you created in a previous step to the user or group:
+   +  API: [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html) or [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
+
+**To change the permissions allowed by a role \(AWS API\)**
+
+1. \(Optional\) To view the current permissions associated with a role, call the following operations:
+   + [ListRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html) \(to list inline policies\) and [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html) \(to list managed policies\)
+
+1. The operation to update permissions for the role differs depending on whether you are updating a managed policy or an inline policy\.
+
+   To update a managed policy, call the following operation to create a new version of the managed policy:
+   + [CreatePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
+
+   To update an inline policy, call the following operation:
+   + [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+
+**To change the description of a role \(AWS API\)**
+
+1. \(Optional\) To view the current description for a role, call the following operation:
+   + [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+
+1. To update a role's description, call the following operation with the description parameter:
+   + [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
+
+**To change the maximum session duration setting for roles that are assumed using the API \(AWS API\)**
+
+1. \(Optional\) To view the current maximum session duration setting for a role, call the following operation:
+   + [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+
+1. To update a role's maximum session duration setting, call the following operation with the `max-sessionduration` CLI parameter or the `MaxSessionDuration` API parameter:
+   + [UpdateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
 
    Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.

@@ -4,7 +4,7 @@ You can attach an [AWS managed policy](access_policies_managed-vs-inline.md#aws-
 
 For more information about permissions and policies, see [Access Management](access.md)\. 
 
-**To attach a policy to a group \(AWS Management Console\)**
+**To attach a policy to a group \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -18,7 +18,8 @@ For more information about permissions and policies, see [Access Management](acc
 
 1. Select the check box next to the name of the group to attach the policy to, then click **Attach policy**\. 
 
-To attach a policy to a group \(AWS CLI, Tools for Windows PowerShell, API\)
+**To attach a policy to a group \(AWS CLI or AWS API\)**
+
+Do either of the following:
 + AWS CLI: [aws iam attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
-+ Tools for Windows PowerShell: [Register\-IAMGroupPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Register-IAMGroupPolicy.html&tocid=Register-IAMGroupPolicy)
 + AWS API: [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html) 

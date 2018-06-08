@@ -30,6 +30,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 | [http://docs.aws.amazon.com/cloudformation/latest/UserGuide/cfn-whatis-concepts.html#w1ab2b5c17c11](http://docs.aws.amazon.com/cloudformation/latest/UserGuide/cfn-whatis-concepts.html#w1ab2b5c17c11) | arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\} |  | 
+| [http://docs.aws.amazon.com/cloudformation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset](http://docs.aws.amazon.com/cloudformation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset) | arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stackset/$\{StackSetName\}:$\{Id\} |  | 
 
 ## Condition Keys for AWS CloudFormation<a name="awscloudformation-policy-keys"></a>
 

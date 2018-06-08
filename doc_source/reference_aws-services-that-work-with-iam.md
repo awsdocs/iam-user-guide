@@ -104,19 +104,21 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon CloudWatch](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/UsingIAM.html)  | Yes | No | No | No | Yes | [Yes](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-service-linked-roles.html)¹ | 
 |  [Amazon CloudWatch Events](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EventsPoliciesRolesAccessControl.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon CloudWatch Logs ](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/auth-and-access-control-cwl.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS Config](http://docs.aws.amazon.com/config/latest/developerguide/recommended-iam-permissions-using-aws-config-console-cli.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Config](http://docs.aws.amazon.com/config/latest/developerguide/recommended-iam-permissions-using-aws-config-console-cli.html)  | Yes | Yes² | No | No | Yes | [Yes](http://docs.aws.amazon.com/config/latest/developerguide/using-service-linked-roles.html) | 
 |  [AWS Health](http://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS OpsWorks](http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS OpsWorks for Chef Automate](http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS Service Catalog](http://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Systems Manager](http://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
-| [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes² | Yes | No | No | Yes³ | No | 
+| [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes³ | Yes | No | No | Yes⁴ | No | 
 
 ¹ Amazon CloudWatch service\-linked roles cannot be created using the AWS Management Console, and support only the [ Alarm Actions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html) feature\.
 
-² API access to Trusted Advisor is through the AWS Support API and is controlled by AWS Support IAM policies\.
+² AWS Config supports resource\-level permissions for only multi\-account multi\-region data aggregation\. For a list of supported resources, see the **Multi\-Account Multi\-Region Data Aggregation** section of [AWS Config API Guide](http://docs.aws.amazon.com/remote-configuration/latest/APIReference/Welcome.html)\.
 
-³ Trusted Advisor supports the following tagging condition: `ssm:resourceTag` for Key/Value pairs and `ssm:Overwrite`\.
+³ API access to Trusted Advisor is through the AWS Support API and is controlled by AWS Support IAM policies\.
+
+⁴ Trusted Advisor supports the following tagging condition: `ssm:resourceTag` for Key/Value pairs and `ssm:Overwrite`\.
 
 ## Media Services<a name="media_svcs"></a>
 

@@ -9,7 +9,7 @@ If you use condition keys that are available only in some scenarios \(such as `a
 
 ```
 "Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] },
-      "StringEqualsIfExissts" : {"aws:SourceVpc" : ["yyy"]} }
+      "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }
 ```
 This condition matches \(1\) if the `aws:SourceIp` context key exists and has the value `xxx` ***or*** \(2\) if the `aws:SourceVpc` context key exists and has the value `yyy`\. If either or both keys do not exist, the condition still matches\. The test is only made if the specified key exists in the request context\. If it is not there, it is treated as "I don't care\."
 
@@ -55,7 +55,7 @@ You might expect the previous example to deny access if MFA is not used\. Howeve
 
 **aws:PrincipalOrgID**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-The identifier of an organization that you created using AWS Organizations\. This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in your permissions [policy](access_policies.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
+The identifier of an organization that you created using AWS Organizations\. This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
 For example, the following Amazon S3 bucket policy allows members of any account in the `o-xxxxxxxxxxx` organization to add an object into the `policy-ninja-dev` bucket\.   
 
 ```
@@ -73,6 +73,7 @@ For example, the following Amazon S3 bucket policy allows members of any account
     }
 }
 ```
+This global condition also applies to the master account of an AWS organization\.
 For more information about AWS Organizations, see [What Is AWS Organizations?](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
 
 **aws:PrincipalType**  

@@ -12,7 +12,7 @@ Consult these resources for details:
 + [Creating IAM Policies](access_policies_create.md)
 + [Validating JSON Policies](access_policies_policy-validator.md)
 + [Testing IAM Policies with the IAM Policy Simulator](access_policies_testing-policies.md)
-+ [Attaching and Detaching IAM Policies](access_policies_manage-attach-detach.md)
++ [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)
 + [Versioning IAM Policies](access_policies_managed-versioning.md)
 + [Editing IAM Policies](access_policies_manage-edit.md)
 + [Deleting IAM Policies](access_policies_manage-delete.md)

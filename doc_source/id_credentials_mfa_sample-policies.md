@@ -1,6 +1,6 @@
 # Sample Policies with MFA Conditions<a name="id_credentials_mfa_sample-policies"></a>
 
-The following examples show additional ways that MFA conditions can be added to policies\. To learn how to create an IAM policy using these example JSON policy documents, see [Create a Policy on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+The following examples show additional ways that MFA conditions can be added to policies\. To learn how to create an IAM policy using these example JSON policy documents, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 **Note**  
 The following examples show policies attached directly to an IAM user or group in your own AWS account\. To adapt the example to MFA\-protect API operations across accounts, you use IAM roles instead and put the MFA condition check in the role trust policy, not in the role access policy\. For more information, see [Scenario: MFA Protection for Cross\-Account Delegation](id_credentials_mfa_configure-api-require.md#MFAProtectedAPI-cross-account-delegation)\. 

@@ -13,29 +13,30 @@ When you allow your IAM users to change their own passwords, IAM automatically a
 + Force IAM users to contact an account administrator when the user has allowed his or her password to expire\.
 
 **Important**  
-The password settings described here apply only to **passwords** assigned to IAM users and do not affect any access keys they might have\. If a password expires, the user cannot sign\-in to the AWS Management Console\. However, if the user has valid access keys, then the user can still run any AWS CLI or Tools for Windows PowerShell commands or call any API operations through an application that the user's permissions allow\. 
+The password settings described here apply only to **passwords** assigned to IAM users and do not affect any access keys they might have\. If a password expires, the user cannot sign in to the AWS Management Console\. However, if the user has valid access keys, then the user can still run any AWS CLI or Tools for Windows PowerShell commands\. Users can also call any API operations through an application that the user's permissions allow\. 
 
-When you create or change a password policy, most of the password policy settings are enforced the next time your users change their passwords, but some of the settings are enforced immediately\. For example: 
+When you create or change a password policy, most of the password policy settings are enforced the next time your users change their passwords\. However, some of the settings are enforced immediately\. For example: 
 + When you set minimum length and character type requirements, the settings are enforced the next time your users change their passwords\. Users are not forced to change their existing passwords, even if the existing passwords do not adhere to the updated password policy\.
-+ When you set a password expiration period, the expiration period is enforced immediately\. For example, when you set a password expiration period of 90 days, all IAM users that currently have an existing password that is more than 90 days old are forced to change their password at next sign\-in\.
++ When you set a password expiration period, the expiration period is enforced immediately\. For example, assume that you set a password expiration period of 90 days\. In that case, all IAM users that currently have an existing password that is older than 90 days are required to change their password at next sign\-in\.
 
 For information about the permissions that you need in order to set a password policy, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\. 
 
-The IAM password policy does not apply to the AWS root account password\.
+The IAM password policy does not apply to the AWS account root user password\.
 
-The options currently available do not allow you to create what is commonly called a "lockout policy" that locks a user out of the account after a specified number of failed sign\-in attempts\. To get that kind of enhanced security, we recommend that you combine password policies together with multi\-factor authentication \(MFA\)\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
+The options currently available do not allow you to create what is commonly called a "lockout policy\." Such a policy locks a user out of the account after a specified number of failed sign\-in attempts\. To get that kind of enhanced security, we recommend that you combine password policies together with multi\-factor authentication \(MFA\)\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
 
 **Topics**
 + [Password Policy Options](#password-policy-details)
-+ [Setting a Password Policy \(AWS Management Console\)](#IAMPasswordPolicy)
-+ [Setting a Password Policy \(AWS CLI, Tools for Windows PowerShell, or AWS API\)](#PasswordPolicy_CLI)
++ [Setting a Password Policy \(Console\)](#IAMPasswordPolicy)
++ [Setting a Password Policy \(AWS CLI\)](#PasswordPolicy_CLI)
++ [Setting a Password Policy \(AWS API\)](#PasswordPolicy_API)
 
 ## Password Policy Options<a name="password-policy-details"></a>
 
 The following list describes the options that are available when you configure a password policy for your account\.
 
 **Minimum password length**  
-You can specify the minimum number of characters allowed in an IAM user password\. You can enter any number from 6 to 128\.
+You can specify the minimum number of characters allowed in an IAM user password\. You can type any number from 6 to 128\.
 
 **Require at least one uppercase letter**  
 You can require that IAM user passwords contain at least one uppercase character from the ISO basic Latin alphabet \(A to Z\)\.
@@ -63,14 +64,14 @@ The AWS Management Console warns IAM users when they are within 15 days of passw
 You can prevent IAM users from reusing a specified number of previous passwords\. You can set the number of previous passwords from 1 to 24, inclusive\. 
 
 **Password expiration requires administrator reset**  
-You can prevent IAM users from choosing a new password after their current password has expired\. For example, if the password policy specifies a password expiration period, but an IAM user fails to choose a new password before the expiration period ends, the IAM user cannot set a new password\. In that case, the IAM user must request a password reset from an account administrator in order to regain access to the AWS Management Console\. If you leave this check box cleared and an IAM user allows his or her password to expire, the user will be required to set a new password before accessing the AWS Management Console\.   
-Before you enable this option, be sure that your AWS account has more than one user with administrative permissions \(that is, permission to reset IAM user passwords\) or that your administrators also have access keys that enable them to use the AWS CLI or Tools for Windows PowerShell separately from the AWS Management Console\. When this option is enabled and one administrator's password expires, a second administrator is required to sign\-in to the console to reset the expired password of the first administrator\. However, if the administrator with the expired password has valid access keys then he or she can run an AWS CLI or Tools for Windows PowerShell command to reset his or her own password\. The requirement for a second administrator applies only if a password expires and the first administrator has no access keys\.
+You can prevent IAM users from choosing a new password after their current password has expired\. For example, a password policy can specify a password expiration period\. If an IAM user fails to choose a new password before the expiration period ends, the IAM user cannot set a new password\. In that case, the IAM user must request a password reset from an account administrator in order to regain access to the AWS Management Console\. You can also leave this check box cleared\. If an IAM user allows his or her password to expire, the user in this scenario is required to set a new password before accessing the AWS Management Console\.   
+Before you enable this option, be sure that your AWS account has more than one user with administrative permissions \(that is, permission to reset IAM user passwords\)\. Or you can ensure that your administrators also have access keys that enable them to use the AWS CLI or Tools for Windows PowerShell separately from the AWS Management Console\. When this option is enabled and one administrator's password expires, a second administrator is required to sign\-in to the console to reset the expired password of the first administrator\. However, if the administrator with the expired password has valid access keys then he or she can run an AWS CLI or Tools for Windows PowerShell command\. These commands can reset the administrator's password\. The requirement for a second administrator applies only if a password expires and the first administrator has no access keys\.
 
-## Setting a Password Policy \(AWS Management Console\)<a name="IAMPasswordPolicy"></a>
+## Setting a Password Policy \(Console\)<a name="IAMPasswordPolicy"></a>
 
 You can use the AWS Management Console to create, change, or delete a password policy\. As part of managing the password policy, you can let all users manage their own passwords\.
 
-**To create or change a password policy**
+**To create or change a password policy \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -86,21 +87,16 @@ You can use the AWS Management Console to create, change, or delete a password p
 
 1. In the navigation pane, click **Account Settings**, and then in the **Password Policy** section, click **Delete Password Policy**\. 
 
-## Setting a Password Policy \(AWS CLI, Tools for Windows PowerShell, or AWS API\)<a name="PasswordPolicy_CLI"></a>
+## Setting a Password Policy \(AWS CLI\)<a name="PasswordPolicy_CLI"></a>
 
-To manage an account password policy from the AWS CLI, Tools for Windows PowerShell, or AWS API, use the following commands:
+To manage an account password policy from the AWS CLI, run the following commands:
++ To create or change a password policy: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)
++ To retrieve the password policy: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html) 
++ To delete a password policy: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html) 
 
-**To create or change a password policy**
-+ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)
-+ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccountPasswordPolicy.html&tocid=Update-IAMAccountPasswordPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMAccountPasswordPolicy.html&tocid=Update-IAMAccountPasswordPolicy)
-+ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
+## Setting a Password Policy \(AWS API\)<a name="PasswordPolicy_API"></a>
 
-**To retrieve the password policy**
-+ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html) 
-+ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccountPasswordPolicy.html&tocid=Get-IAMAccountPasswordPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMAccountPasswordPolicy.html&tocid=Get-IAMAccountPasswordPolicy)
-+ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
-
-**To delete a password policy**
-+ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html) 
-+ Tools for Windows PowerShell: [http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccountPasswordPolicy.html&tocid=Remove-IAMAccountPasswordPolicy](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMAccountPasswordPolicy.html&tocid=Remove-IAMAccountPasswordPolicy)
-+ AWS APII: [`DeleteAccountPasswordPolicy` ](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 
+To manage an account password policy from the AWS API, call the following operations:
++ To create or change a password policy: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
++ To retrieve the password policy: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
++ To delete a password policy: [`DeleteAccountPasswordPolicy` ](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 
