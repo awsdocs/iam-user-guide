@@ -10,14 +10,14 @@ For more information, see the following documentation:
 
 **Amazon RDS**  
 In Amazon Relational Database Service you log into the database engine with a user name and password that are tied to that database\.   
-For more information, see [Getting Started with Amazon RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html) in the *Amazon Relational Database Service User Guide*\. 
+For more information, see [Getting Started with Amazon RDS](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_GettingStarted.html) in the *Amazon RDS User Guide*\. 
 
 **Amazon EC2 and Amazon RDS**  
 In Amazon EC2 and Amazon RDS you use security groups to control traffic to an instance or database\.   
 For more information, see the following documentation:   
 + [Amazon EC2 Security Groups for Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon EC2 User Guide for Linux Instances*
 + [Amazon EC2 Security Groups for Windows Instances](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*
-+ [Amazon RDS Security Groups](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html) in the *Amazon Relational Database Service User Guide*
++ [Amazon RDS Security Groups](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html) in the *Amazon RDS User Guide*
 
 **Amazon WorkSpaces**  
 In Amazon WorkSpaces, users sign in to a desktop with a user name and password\.   
