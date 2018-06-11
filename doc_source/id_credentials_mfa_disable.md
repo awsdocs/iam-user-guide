@@ -32,7 +32,7 @@ If you use the API or AWS CLI to delete a user from your AWS account, you must d
 **Important**  
 To manage MFA devices for the AWS account, you must sign in to AWS with your AWS account root user credentials\. You cannot manage MFA devices for the root user with other credentials\.
 
-1. On the navigation bar, choose your account name, and then choose **Security Credentials**\. If a prompt appears, choose **Continue to Security Credentials**\.  
+1. On the navigation bar, choose your account name, and then choose **My Security Credentials**\. If a prompt appears, choose **Continue to Security Credentials**\.  
 ![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Expand the **Multi\-Factor Authentication \(MFA\)** section\.
