@@ -12,7 +12,7 @@ Do not use the `Principal` element in policies that you attach to IAM users and 
 
 ## Specifying a Principal<a name="Principal_specifying"></a>
 
-You specify a principal using the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups as principals\. 
+You specify a principal using the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) of the AWS account, IAM user, IAM role, federated user, or assumed\-role user\. You cannot specify IAM groups and instance profiles as principals\. 
 
 The following examples show various ways in which principals can be specified\.
 

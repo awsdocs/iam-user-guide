@@ -51,11 +51,11 @@ The `*IfExists` operator indicates that the statement matches either if the valu
 "Action" : "Deny",
 "Condition" : { "Null" : { "aws:MultiFactorAuthPresent" : true } }
 ```
-You might expect the previous example to deny access if MFA is not used\. However, when you make an API request with long\-term credentials \(access keys\), the MFA condition context keys are *always* missing\. Consequently, testing for MFA this way always results in denied access to long\-term credentials\.
+You might expect the previous example to deny access *only* if MFA is not used\. This is true when you make a request using IAM roles, federated users, the AWS Management Console, or credentials from `sts:GetSessionToken`\. However, when you make an API request with your IAM user's long\-term credentials \(access keys\), the MFA context is not available for testing\. Consequently, this condition key is always false, regardless of whether the user being tested was authenticated using MFA\.
 
 **aws:PrincipalOrgID**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-The identifier of an organization that you created using AWS Organizations\. This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
+The identifier of an organization that you created using AWS Organizations\.This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
 For example, the following Amazon S3 bucket policy allows members of any account in the `o-xxxxxxxxxxx` organization to add an object into the `policy-ninja-dev` bucket\.   
 
 ```

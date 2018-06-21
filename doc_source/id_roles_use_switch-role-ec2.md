@@ -99,7 +99,7 @@ To understand how roles work with EC2 instances, you need to use the IAM console
 + SDK walkthroughs\. The AWS SDK documentation includes walkthroughs that show an application running on an EC2 instance that uses temporary credentials for roles to read an Amazon S3 bucket\. Each of the following walkthroughs presents similar steps with a different programming language:
   + [ Using IAM Roles for EC2 Instances with the SDK for Java](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 
   + [ Using IAM Roles for EC2 Instances with the SDK for \.NET](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-roles.html) in the *AWS SDK for \.NET Developer Guide*
-  + [ Using IAM Roles for EC2 Instances with the SDK for Ruby](http://docs.aws.amazon.com/sdk-for-ruby/v2/developer-guide/ruby-dg-roles.html) in the *AWS SDK for Ruby Developer Guide*
+  + [ Using IAM Roles for EC2 Instances with the SDK for Ruby](http://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/ruby-dg-roles.html) in the *AWS SDK for Ruby Developer Guide*
 
     The walkthroughs provide complete step\-by\-step instructions for creating and compiling the example program, creating the role, launching the instance, connecting to the instance, deploying the example program, and testing it\.
 

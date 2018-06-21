@@ -318,7 +318,6 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS Marketplace Management Portal](list_awsmarketplacemanagementportal.md)
          + [Actions, Resources, and Condition Keys for AWS Marketplace Metering Service](list_awsmarketplacemeteringservice.md)
          + [Actions, Resources, and Condition Keys for Amazon Mechanical Turk](list_amazonmechanicalturk.md)
-         + [Actions, Resources, and Condition Keys for Amazon Mechanical Turk Crowd](list_amazonmechanicalturkcrowd.md)
          + [Actions, Resources, and Condition Keys for Amazon Message Delivery Service](list_amazonmessagedeliveryservice.md)
          + [Actions, Resources, and Condition Keys for AWS Migration Hub](list_awsmigrationhub.md)
          + [Actions, Resources, and Condition Keys for Amazon Mobile Analytics](list_amazonmobileanalytics.md)
@@ -370,4 +369,5 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS XRay](list_awsxray.md)
 + [Resources](resources.md)
 + [Calling the API by Making HTTP Query Requests](programming.md)
++ [Document History for IAM](document-history.md)
 + [AWS Glossary](glossary.md)

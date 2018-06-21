@@ -59,7 +59,7 @@ For information about which services support service\-linked roles, see [AWS Ser
 
 When you create a service\-linked role, you must have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you the first time that you create an Auto Scaling group\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive the following error:
 
-`ClientError: An error occurred (AccessDenied) when calling the PutLifecycleHook operation: User: arn:aws:sts::819251488009:assumed-role/aws-defaultuser/U313846 is not authorized to perform: iam:PassRole on resource: arn:aws:iam::819251488009:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling`
+`ClientError: An error occurred (AccessDenied) when calling the PutLifecycleHook operation: User: arn:aws:sts::111122223333:assumed-role/Testrole/Diego is not authorized to perform: iam:PassRole on resource: arn:aws:iam::111122223333:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling`
 
 To fix this error, ask your administrator to add the `iam:PassRole` permission for you\.
 

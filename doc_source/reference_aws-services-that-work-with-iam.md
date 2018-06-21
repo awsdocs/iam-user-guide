@@ -110,11 +110,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS OpsWorks for Chef Automate](http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS Service Catalog](http://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Systems Manager](http://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
-| [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes³ | Yes | No | No | Yes⁴ | No | 
+| [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes³ | Yes | No | No | Yes⁴ | [Yes](http://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-ta.html) | 
 
 ¹ Amazon CloudWatch service\-linked roles cannot be created using the AWS Management Console, and support only the [ Alarm Actions](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html) feature\.
 
-² AWS Config supports resource\-level permissions for only multi\-account multi\-region data aggregation\. For a list of supported resources, see the **Multi\-Account Multi\-Region Data Aggregation** section of [AWS Config API Guide](http://docs.aws.amazon.com/remote-configuration/latest/APIReference/Welcome.html)\.
+² AWS Config supports resource\-level permissions for only multi\-account multi\-region data aggregation\. For a list of supported resources, see the **Multi\-Account Multi\-Region Data Aggregation** section of [AWS Config API Guide](http://docs.aws.amazon.com/config/latest/APIReference/Welcome.html)\.
 
 ³ API access to Trusted Advisor is through the AWS Support API and is controlled by AWS Support IAM policies\.
 
@@ -279,4 +279,4 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Billing and Cost Management](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ControllingAccessWebsite.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS Support](http://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | No | No | No | No | Yes | No | 
+|  [AWS Support](http://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | No | No | No | No | Yes | [Yes](http://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 

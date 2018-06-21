@@ -101,7 +101,7 @@ The commands to run are the following:
 $ aws iam create-role --role-name Test-UserAccess-Role --assume-role-policy-document file://C:\policies\trustpolicyforacct123456789012.json
 
 # Attach the permissions policy (in this example a managed policy) to the role to specify what it is allowed to do.
-$ aws iam attach-role-policy --role-name Test-UserAccess-Role --policy-arn arn:aws:iam::123456789012:role/PolicyForRole
+$ aws iam attach-role-policy --role-name Test-UserAccess-Role --policy-arn arn:aws:iam::123456789012:policy/PolicyForRole
 ```
 
 **Important**  

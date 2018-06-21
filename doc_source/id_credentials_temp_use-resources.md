@@ -25,7 +25,7 @@ Applications, AWS CLI, and Tools for Windows PowerShell commands that run on the
 For more information and for examples, see the following:
 +  [Using IAM Roles to Grant Access to AWS Resources on Amazon Elastic Compute Cloud](http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html) — AWS SDK for Java
 +  [Granting Access Using an IAM Role](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-hosm.html) — AWS SDK for \.NET 
-+  [Creating a Role](http://docs.aws.amazon.com/sdk-for-ruby/v2/developer-guide/iam-example-create-role.html) — AWS SDK for Ruby
++  [Creating a Role](http://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/iam-example-create-role.html) — AWS SDK for Ruby
 
 ## Using Temporary Security Credentials with the AWS SDKs<a name="using-temp-creds-sdk"></a>
 

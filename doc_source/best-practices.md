@@ -12,7 +12,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Configure a Strong Password Policy for Your Users](#configure-strong-password-policy)
 + [Enable MFA for Privileged Users](#enable-mfa-for-privileged-users)
 + [Use Roles for Applications That Run on Amazon EC2 Instances](#use-roles-with-ec2)
-+ [Delegate by Using Roles Instead of by Sharing Credentials](#delegate-using-roles)
++ [Use Roles to Delegate Permissions](#delegate-using-roles)
 + [Rotate Credentials Regularly](#rotate-credentials)
 + [Remove Unnecessary Credentials](#remove-credentials)
 + [Use Policy Conditions for Extra Security](#use-policy-conditions)
@@ -106,9 +106,9 @@ When you launch an EC2 instance, you can specify a role for the instance as a la
 
 For more information, see [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\.
 
-## Delegate by Using Roles Instead of by Sharing Credentials<a name="delegate-using-roles"></a>
+## Use Roles to Delegate Permissions<a name="delegate-using-roles"></a>
 
-You might need to allow users from another AWS account to access resources in your AWS account\. If so, don't share security credentials, such as access keys, between accounts\. Instead, use IAM roles\. You can define a role that specifies what permissions the IAM users in the other account are allowed\. You can also designate which AWS accounts have the IAM users that are allowed to assume the role\. 
+Don't share security credentials between accounts to allow users from another AWS account to access resources in your AWS account\. Instead, use IAM roles\. You can define a role that specifies what permissions the IAM users in the other account are allowed\. You can also designate which AWS accounts have the IAM users that are allowed to assume the role\. 
 
 For more information, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
 

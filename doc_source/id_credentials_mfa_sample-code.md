@@ -1,10 +1,10 @@
 # Sample Code: Requesting Credentials with Multi\-factor Authentication<a name="id_credentials_mfa_sample-code"></a>
 
-The following examples show how to call `GetSessionTokenRole` and `AssumeRole` and pass MFA authentication\. The credentials returned are then used to list all S3 buckets in the account\.
+The following examples show how to call `GetSessionToken` and `AssumeRole` and pass MFA authentication\. The credentials returned are then used to list all S3 buckets in the account\.
 
 ## Calling GetSessionToken with MFA Authentication \(Python and C\#\)<a name="MFAProtectedAPI-example-getsessiontoken"></a>
 
-The following examples, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/) and [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/), show how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by `GetSessionTokenRole` are then used to list all S3 buckets in the account\.
+The following examples, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/) and [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/), show how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by `GetSessionToken` are then used to list all S3 buckets in the account\.
 
 The policy attached to the user who runs this code \(or to a group that the user is in\) is assumed to include an MFA check\. The policy also needs to grant the user permission to request the Amazon S3 `ListBuckets` action\. 
 

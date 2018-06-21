@@ -14,7 +14,9 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. For **Select type of trusted entity**, choose **AWS service**\. Then choose the service that you want to allow to assume this role\.
+1. For **Select type of trusted entity**, choose **AWS service**\. 
+
+1. Choose the service that you want to allow to assume this role\.
 
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
