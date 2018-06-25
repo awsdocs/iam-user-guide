@@ -174,7 +174,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Artifact](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Certificate Manager \(ACM\)](http://docs.aws.amazon.com/acm/latest/userguide/assets.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS CloudHSM](http://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | No | No | No | Yes | No | 
+|  [AWS CloudHSM](http://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | No | No | No | Yes | Yes | 
 |  [AWS CloudHSM Classic](http://docs.aws.amazon.com/cloudhsm/classic/userguide/iam-policy.html)  | Yes | No | No | No | No | No | 
 |  [Amazon Cognito](http://docs.aws.amazon.com/cognito/devguide/resource-permissions/)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Directory Service](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | No | No | No | Yes | No | 
