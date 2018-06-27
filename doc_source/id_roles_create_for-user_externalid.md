@@ -85,7 +85,7 @@ Example Corp gives the external ID value of "12345" to you\. You must then add a
 }
 ```
 
-The Condition element in this policy allows Example Corp to assume the role only when the AssumeRole API call includes the external ID value of "12345"\. Example Corp makes sure that whenever it assumes a role on behalf of a customer, it always includes that customer's external ID value in the AssumeRole call\. Even if another customer supplies Example Corp with your ARN, it cannot know the external ID that Example Corp includes in its request to AWS\. This helps prevent an unauthorized customer from gaining access to your resources, as shown in the following diagram\.
+The Condition element in this policy allows Example Corp to assume the role only when the AssumeRole API call includes the external ID value of "12345"\. Example Corp makes sure that whenever it assumes a role on behalf of a customer, it always includes that customer's external ID value in the AssumeRole call\. Even if another customer supplies Example Corp with your ARN, it cannot control the external ID that Example Corp includes in its request to AWS\. This helps prevent an unauthorized customer from gaining access to your resources, as shown in the following diagram\.
 
 ![\[How to mitigate a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[How to mitigate a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[How to mitigate a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
