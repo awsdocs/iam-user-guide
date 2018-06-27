@@ -129,6 +129,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS OpsWorks](list_awsopsworks.md)
 + [AWS OpsWorks Configuration Management](list_awsopsworksconfigurationmanagement.md)
 + [AWS Organizations](list_awsorganizations.md)
++ [AWS Performance Insights](list_awsperformanceinsights.md)
 + [Amazon Pinpoint](list_amazonpinpoint.md)
 + [Amazon Polly](list_amazonpolly.md)
 + [AWS Price List](list_awspricelist.md)

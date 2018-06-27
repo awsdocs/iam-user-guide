@@ -51,7 +51,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | [http://docs.aws.amazon.com/lambda/API_UpdateAlias.html](http://docs.aws.amazon.com/lambda/API_UpdateAlias.html) | Using this API you can update the function version to which the alias points and the alias description\. | Write | [function\*](#awslambda-function)  |  |  | 
 | [http://docs.aws.amazon.com/lambda/API_UpdateEventSourceMapping.html](http://docs.aws.amazon.com/lambda/API_UpdateEventSourceMapping.html) | You can update an event source mapping\. | Write |  |  |  | 
 | [http://docs.aws.amazon.com/lambda/API_UpdateFunctionCode.html](http://docs.aws.amazon.com/lambda/API_UpdateFunctionCode.html) | Updates the code for the specified Lambda function\. | Write | [function\*](#awslambda-function)  |  |  | 
-| [http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html](http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html) | Updates the configuration parameters for the specified Lambda function by using the values provided in the request\. | Write |  |  |  | 
+| [http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html](http://docs.aws.amazon.com/lambda/API_UpdateFunctionConfiguration.html) | Updates the configuration parameters for the specified Lambda function by using the values provided in the request\. | Write | [function\*](#awslambda-function)  |  |  | 
 
 ## Resources Defined by Lambda<a name="awslambda-resources-for-iam-policies"></a>
 

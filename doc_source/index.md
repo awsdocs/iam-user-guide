@@ -327,6 +327,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS OpsWorks](list_awsopsworks.md)
          + [Actions, Resources, and Condition Keys for AWS OpsWorks Configuration Management](list_awsopsworksconfigurationmanagement.md)
          + [Actions, Resources, and Condition Keys for AWS Organizations](list_awsorganizations.md)
+         + [Actions, Resources, and Condition Keys for AWS Performance Insights](list_awsperformanceinsights.md)
          + [Actions, Resources, and Condition Keys for Amazon Pinpoint](list_amazonpinpoint.md)
          + [Actions, Resources, and Condition Keys for Amazon Polly](list_amazonpolly.md)
          + [Actions, Resources, and Condition Keys for AWS Price List](list_awspricelist.md)
