@@ -77,7 +77,7 @@ You can use the AWS Management Console to view access key usage information for 
 
 **To find unused access keys \(AWS CLI\)**  
 Run the following commands to find unused access keys:
-+ `[aws iam list\-access\-keys](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns information about the access keys for a user, including the `AccessKeyID`\.
++ `[aws iam list\-access\-keys](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)` returns information about the access keys for a user, including the `AccessKeyID`\.
 + `[aws iam get\-access\-key\-last\-used](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)` takes an access key ID and returns output that includes the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If `LastUsedDate` is missing, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
 **To find unused access keys \(AWS API\)**  
