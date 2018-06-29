@@ -10,6 +10,8 @@ Before you sign in as a root user using alternative factors of authentication, m
 
 **To sign in using alternative factors of authentication as an AWS account root user**
 
+1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)*\.
+
 1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
 **Note**  
 If you are using an AWS account created after September 14, 2017, you might see the following console text: **Sign in with authentication device**, **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
