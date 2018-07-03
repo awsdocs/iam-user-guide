@@ -145,7 +145,7 @@ To embed an inline policy to an identity \(user, group, or role that is not a *[
    + To list the managed policies attached to an identity \(a user, group, or role\), use one of the following commands:
      + [list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
      + [list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
-     + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam//list-attached-role-policies.html)
+     + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
 
 1. To detach a managed policy from an identity \(user, group, or role\), use one of the following commands:
    + [detach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html)
