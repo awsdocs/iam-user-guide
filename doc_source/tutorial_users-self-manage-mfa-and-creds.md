@@ -92,13 +92,8 @@ This example policy does not allow users to both sign in and perform a password 
            {
                "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
                "Effect": "Allow",
-               "Action": [
-                   "iam:ListMFADevices"
-               ],
-               "Resource": [
-                   "arn:aws:iam::*:mfa/*",
-                   "arn:aws:iam::*:user/${aws:username}"
-               ]
+               "Action": "iam:ListMFADevices",
+               "Resource": "arn:aws:iam::*:user/${aws:username}"
            },
            {
                "Sid": "AllowIndividualUserToManageTheirOwnMFA",
