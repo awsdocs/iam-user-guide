@@ -29,6 +29,8 @@ Or you might want to make sure that users are explicitly forbidden to include so
 
 To support these scenarios, you can use the following modifiers to a condition operator:
 + `ForAnyValue` – The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. 
+**Note**  
+If the key values in the request resolve to an empty data set \(for example, an empty string\), a condition operator modified by `ForAllValues` returns true, and a condition operator modified by `ForAnyValue` returns false\. 
 + `ForAllValues` – The condition returns true if there's a match between every one of the specified key values in the request and at least one value in the policy\. 
 
 For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 

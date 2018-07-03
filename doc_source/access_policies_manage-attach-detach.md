@@ -140,15 +140,15 @@ To embed an inline policy to an identity \(user, group, or role that is not a *[
    + To retrieve detailed information about a managed policy: [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, run the following commands:
-   + To list the identities \(users, groups, and roles\) to which a managed policy is attached:
-     + [list\-entities\-for\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
+   + To list the identities \(users, groups, and roles\) to which a managed policy is attached: 
+     + [list\-entities\-for\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
    + To list the managed policies attached to an identity \(a user, group, or role\), use one of the following commands:
-     + [list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
-     + [list\-attached\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
-     + [list\-attached\-role\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
+     + [list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
+     + [list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
+     + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam//list-attached-role-policies.html)
 
 1. To detach a managed policy from an identity \(user, group, or role\), use one of the following commands:
-   + [detach\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html)
+   + [detach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html)
    + [detach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html)
    + [detach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-role-policy.html)
 
@@ -156,17 +156,13 @@ To embed an inline policy to an identity \(user, group, or role that is not a *[
 
 1. \(Optional\) To list all inline policies that are attached to an identity \(user, group, role\), use one of the following commands:
    + [list\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-user-policies.html)
-   + [list\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html)
+   + [list\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html)
    + [list\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-role-policies.html)
 
 1. \(Optional\) To retrieve an inline policy document that is embedded in an identity \(user, group, or role\), use one of the following commands:
    + [get\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user-policy.html)
    + [get\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group-policy.html)
-   + [get\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role-policy.html)
-
-1. To delete an inline policy from an identity \(user, group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), use one of the following commands:
-   + [delete\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html)
-   + [delete\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html)
+   + [get\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role-policy.html)
    + [delete\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-role-policy.html)
 
 ## Adding and Removing IAM Policies \(AWS API\)<a name="attach-detaching-policy-api"></a>
@@ -175,9 +171,9 @@ You can use the AWS API to attach or detach a managed policy as well as embed or
 
 **To attach a managed policy \(AWS API\)**
 
-1. \(Optional\) To view information about a policy, call the following operations:
-   + To list managed policies: [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
-   + To retrieve detailed information about a managed policy: [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
+1. \(Optional\) To view information about a policy, call the following operations: 
+   + To list managed policies: [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html) 
+   + To retrieve detailed information about a managed policy: [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 1. To attach a managed policy to an identity \(user, group, or role\), call one of the following operations:
    + [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
@@ -188,17 +184,18 @@ You can use the AWS API to attach or detach a managed policy as well as embed or
 To embed an inline policy in an identity \(user, group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), call one of the following operations:
 + [PutUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 + [PutGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html)
-+ [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
++ [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
 **To detach a managed policy \(AWS API\)**
 
 1. \(Optional\) To view information about a policy, call the following operations:
-   + To list managed policies: [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
-   + To retrieve detailed information about a managed policy: [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
+   + To list managed policies: [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
+   + To retrieve detailed information about a managed policy: [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, call the following operations:
    + To list the identities \(users, groups, and roles\) to which a managed policy is attached:
-     + [ListEntitiesForPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
+     + [ListEntitiesForPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
+
    + To list the managed policies attached to an identity \(a user, group, or role\), call one of the following operations:
      + [ListAttachedUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
      + [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
@@ -217,11 +214,11 @@ To embed an inline policy in an identity \(user, group, or role that is not a *[
    + [ListRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html)
 
 1. \(Optional\) To retrieve an inline policy document that is embedded in an identity \(user, group, or role\), call one of the following operations:
-   + [GetUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html)
-   + [GetGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html)
-   + [GetRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)
+   + [GetUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html)
+   + [GetGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html)
+   + [GetRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)
 
 1. To delete an inline policy from an identity \(user, group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), call one of the following operations:
-   + [DeleteUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html)
-   + [DeleteGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html)
-   + [DeleteRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html)
+   + [DeleteUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html)
+   + [DeleteGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html)
+   + [DeleteRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html)
