@@ -20,7 +20,7 @@ The following sections explain how you can use versioning for managed policies\.
 
 ## Permissions for Setting the Default Version of a Policy<a name="policy-version-permissions"></a>
 
-The permissions that are required to set the default version of a policy correspond to the AWSAPI operations for the task\. You can use the `CreatePolicyVersion` or `SetDefaultPolicyVersion` API operations to set the default version of a policy\. To allow someone to set the default policy version of an existing policy, you can allow access to either the `iam:CreatePolicyVersion` action or the `iam:SetDefaultPolicyVersion` action\. The `iam:CreatePolicyVersion` action allows them to create a new version of the policy and to set that version as the default\. The `iam:SetDefaultPolicyVersion` action allows them to set any existing version of the policy as the default\.
+The permissions that are required to set the default version of a policy correspond to the AWS API operations for the task\. You can use the `CreatePolicyVersion` or `SetDefaultPolicyVersion` API operations to set the default version of a policy\. To allow someone to set the default policy version of an existing policy, you can allow access to either the `iam:CreatePolicyVersion` action or the `iam:SetDefaultPolicyVersion` action\. The `iam:CreatePolicyVersion` action allows them to create a new version of the policy and to set that version as the default\. The `iam:SetDefaultPolicyVersion` action allows them to set any existing version of the policy as the default\.
 
 **Important**  
 Denying the `iam:SetDefaultPolicyVersion` action in a user's policy does not stop the user from creating a new policy version and setting it as the default\.
