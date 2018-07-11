@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html](http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html) | Returns information about a transcription job\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html](http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html) | Lists transcription jobs with the specified status\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html](http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html) | Starts an asynchronous job to transcribe speech to text\. | Write |  |  |  | 
+|   [ GetTranscriptionJob ](http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html)  | Returns information about a transcription job\. | Read |  |  |  | 
+|   [ ListTranscriptionJobs ](http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html)  | Lists transcription jobs with the specified status\. | List |  |  |  | 
+|   [ StartTranscriptionJob ](http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html)  | Starts an asynchronous job to transcribe speech to text\. | Write |  |  |   s3:GetObject   | 
 
 ## Resources Defined by Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
 
-Transcribe has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Transcribe has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon Transcribe<a name="amazontranscribe-policy-keys"></a>
 
-Transcribe has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Transcribe has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

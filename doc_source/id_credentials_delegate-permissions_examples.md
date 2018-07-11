@@ -120,20 +120,33 @@ The benefit of using `Get*` and `List*` actions is that if new types of entities
 
 ## Allow a User to Manage a Group's Membership<a name="iampolicy-example-usermanagegroups"></a>
 
-The following policy allows the user to update the membership of the group called *MarketingGroup*\. To use the following policy, replace `ACCOUNT-ID-WITHOUT-HYPHENS` with your AWS account ID\.
+The following policy allows the user to update the membership of the group called *MarketingGroup*\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-      "iam:AddUserToGroup",
-      "iam:RemoveUserFromGroup",
-      "iam:GetGroup"
-    ],
-    "Resource": "arn:aws:iam::account-id-without-hyphens:group/MarketingGroup"
-  }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ViewGroups",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListGroups",
+                "iam:GetUser",
+                "iam:ListGroupsForUser"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "ViewEditThisGroup",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AddUserToGroup",
+                "iam:RemoveUserFromGroup",
+                "iam:GetGroup"
+            ],
+            "Resource": "arn:aws:iam::*:group/MarketingGroup"
+        }
+    ]
 }
 ```
 
@@ -148,38 +161,43 @@ The following policy allows a user to perform all the tasks associated with mana
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowUsersToPerformUserActions",
-      "Effect": "Allow",
-      "Action": [
-        "iam:CreateUser",
-        "iam:ListUsers",
-        "iam:GetUser",
-        "iam:UpdateUser",
-        "iam:DeleteUser",
-        "iam:ListGroupsForUser",
-        "iam:ListUserPolicies",
-        "iam:ListAttachedUserPolicies",
-        "iam:DeleteSigningCertificate",
-        "iam:DeleteLoginProfile",
-        "iam:RemoveUserFromGroup",
-        "iam:DetachUserPolicy",
-        "iam:DeleteUserPolicy"
-      ],
-      "Resource": "*"
-    },
-    {
-      "Sid": "AllowUsersToSeeStatsOnIAMConsoleDashboard",
-      "Effect": "Allow",
-      "Action": [
-        "iam:GetAccount*",
-        "iam:ListAccount*"
-      ],
-      "Resource": "*"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowUsersToPerformUserActions",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListPolicies",
+                "iam:GetPolicy",
+                "iam:UpdateUser",
+                "iam:AttachUserPolicy",
+                "iam:ListEntitiesForPolicy",
+                "iam:DeleteUserPolicy",
+                "iam:DeleteUser",
+                "iam:ListUserPolicies",
+                "iam:CreateUser",
+                "iam:RemoveUserFromGroup",
+                "iam:AddUserToGroup",
+                "iam:GetUserPolicy",
+                "iam:ListGroupsForUser",
+                "iam:PutUserPolicy",
+                "iam:ListAttachedUserPolicies",
+                "iam:ListUsers",
+                "iam:GetUser",
+                "iam:DetachUserPolicy"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowUsersToSeeStatsOnIAMConsoleDashboard",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetAccount*",
+                "iam:ListAccount*"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
 ```
 

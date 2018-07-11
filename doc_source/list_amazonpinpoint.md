@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp](http://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\} |  | 
-| [http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\} |  | 
-| [http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/endpoints/$\{EndpointId\} |  | 
-| [http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html) | arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\} |  | 
+|   [ apps ](http://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}  |  | 
+|   [ campaigns ](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\}  |  | 
+|   [ endpoints ](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/endpoints/$\{EndpointId\}  |  | 
+|   [ segments ](http://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\}  |  | 
 
 ## Condition Keys for Amazon Pinpoint<a name="amazonpinpoint-policy-keys"></a>
 
-Pinpoint has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Pinpoint has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

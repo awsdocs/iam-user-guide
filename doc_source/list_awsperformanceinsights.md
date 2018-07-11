@@ -16,8 +16,8 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| DescribeDimensionKeys | For a specific time period, retrieve the top N dimension keys for a metric\. | Read | [metric\-resource\*](#awsperformanceinsights-metric-resource)  |  |  | 
-| GetResourceMetrics | Retrieve PI metrics for a set of data sources, over a time period\. | Read | [metric\-resource\*](#awsperformanceinsights-metric-resource)  |  |  | 
+|   DescribeDimensionKeys  | For a specific time period, retrieve the top N dimension keys for a metric\. | Read |   [ metric\-resource\* ](#awsperformanceinsights-metric-resource)   |  |  | 
+|   GetResourceMetrics  | Retrieve PI metrics for a set of data sources, over a time period\. | Read |   [ metric\-resource\* ](#awsperformanceinsights-metric-resource)   |  |  | 
 
 ## Resources Defined by Performance Insights<a name="awsperformanceinsights-resources-for-iam-policies"></a>
 
@@ -28,8 +28,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| metric\-resource | arn:$\{Partition\}:pi:$\{Region\}:$\{Account\}:metrics/$\{ServiceType\}/$\{Identifier\} |  | 
+|   metric\-resource  |  arn:$\{Partition\}:pi:$\{Region\}:$\{Account\}:metrics/$\{ServiceType\}/$\{Identifier\}  |  | 
 
 ## Condition Keys for AWS Performance Insights<a name="awsperformanceinsights-policy-keys"></a>
 
-Performance Insights has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Performance Insights has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html) | Returns the service details for all \(paginated\) services \(if serviceCode is not set\) or service detail for a particular service \(if given serviceCode\)\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html) | Returns all \(paginated\) possible values for a given attribute\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html) | Returns all matching products with given search criteria\. | Read |  |  |  | 
+|   [ DescribeServices ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeServices.html)  | Returns the service details for all \(paginated\) services \(if serviceCode is not set\) or service detail for a particular service \(if given serviceCode\)\. | Read |  |  |  | 
+|   [ GetAttributeValues ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html)  | Returns all \(paginated\) possible values for a given attribute\. | Read |  |  |  | 
+|   [ GetProducts ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html)  | Returns all matching products with given search criteria\. | Read |  |  |  | 
 
 ## Resources Defined by Price List<a name="awspricelist-resources-for-iam-policies"></a>
 
-Price List has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Price List has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for AWS Price List<a name="awspricelist-policy-keys"></a>
 
-Price List has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Price List has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

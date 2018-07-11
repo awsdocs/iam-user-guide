@@ -4,27 +4,31 @@ This example shows how you might create a policy that allows Amazon Cognito user
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": ["s3:ListBucket"],
-      "Resource": ["arn:aws:s3:::<BUCKET-NAME>"],
-      "Condition": {"StringLike": {"s3:prefix": ["cognito/<APPLICATION-NAME>/"]}}
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetObject",
-        "s3:PutObject",
-        "s3:DeleteObject"
-      ],
-      "Resource": [
-        "arn:aws:s3:::<BUCKET-NAME>/cognito/<APPLICATION-NAME>/${cognito-identity.amazonaws.com:sub}",
-        "arn:aws:s3:::<BUCKET-NAME>/cognito/<APPLICATION-NAME>/${cognito-identity.amazonaws.com:sub}/*"
-      ]
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": ["s3:ListBucket"],
+            "Resource": ["arn:aws:s3:::<BUCKET-NAME>"],
+            "Condition": {
+                "StringLike": {
+                    "s3:prefix": ["cognito/<APPLICATION-NAME>/"]
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::<BUCKET-NAME>/cognito/<APPLICATION-NAME>/${cognito-identity.amazonaws.com:sub}",
+                "arn:aws:s3:::<BUCKET-NAME>/cognito/<APPLICATION-NAME>/${cognito-identity.amazonaws.com:sub}/*"
+            ]
+        }
+    ]
 }
 ```
 

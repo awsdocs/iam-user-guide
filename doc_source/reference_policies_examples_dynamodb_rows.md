@@ -8,28 +8,24 @@ To learn more about DynamoDB condition keys, see [Specifying Conditions: Using C
 
 ```
 {
-     "Version": "2012-10-17",
-     "Statement": [
-         {
-             "Effect": "Allow",
-             "Action": [
-                 "dynamodb:DeleteItem",
-                 "dynamodb:GetItem",
-                 "dynamodb:PutItem",
-                 "dynamodb:Query",
-                 "dynamodb:UpdateItem"
-             ],
-             "Resource": [
-                 "arn:aws:dynamodb:<REGION>:<ACCOUNTNUMBER>:table/<TABLE-NAME>"
-             ],
-             "Condition": {
-                 "ForAllValues:StringEquals": {
-                     "dynamodb:LeadingKeys": [
-                         "${cognito-identity.amazonaws.com:sub}"
-                     ]
-                 }
-             }
-         }
-     ]
- }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:DeleteItem",
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:Query",
+                "dynamodb:UpdateItem"
+            ],
+            "Resource": ["arn:aws:dynamodb:*:*:table/<TABLE-NAME>"],
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "dynamodb:LeadingKeys": ["${cognito-identity.amazonaws.com:sub}"]
+                }
+            }
+        }
+    ]
+}
 ```

@@ -24,7 +24,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Elastic Container Registry \(Amazon ECR\)](http://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Elastic Container Service \(Amazon ECS\)](http://docs.aws.amazon.com/AmazonECS/latest/developerguide//IAM_policies.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) | 
 |  [Elastic Load Balancing](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/index.html?UsingIAM.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html) | 
-|  [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | Yes² | No | Yes | No | 
+|  [AWS Lambda](http://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | Yes² | No | Yes | [Yes](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
 |  [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/all) | Yes | No | No | No | Yes | No | 
 
 ¹ Amazon EC2 service\-linked roles cannot be created using the AWS Management Console, and can be used only for the following features: [Scheduled Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html#service-linked-roles-scheduled-instances), [Spot Instance Requests](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html#service-linked-roles-spot-instance-requests), [Spot Fleet Requests](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#service-linked-roles-spot-fleet-requests) 
@@ -143,11 +143,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Machine Learning](http://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Polly](http://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Rekognition](http://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | No | No | 
-|  [Amazon SageMaker](http://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html)  | Yes | Yes¹ | No | No | Yes | No | 
+|  [Amazon SageMaker](http://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | Yes¹ | Yes | No | 
 | [Amazon Transcribe](http://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
 | [Amazon Translate](http://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | Yes | No | No | No | Yes | No | 
 
-¹ Amazon SageMaker does not check external resources referenced in a call\. For example, Amazon SageMaker does not support policies that restrict training jobs to certain AWS KMS keys or Amazon S3 buckets\.
+¹ Amazon SageMaker does not support using tag\-based authorization for calls to `InvokeEndpoint`\.
 
 ## Analytics Services<a name="analytics_svcs"></a>
 
@@ -182,6 +182,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | No | No | Yes² | No | 
 |  [Amazon Inspector](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
 |  [AWS Key Management Service \(AWS KMS\)](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)  | Yes | Yes | Yes | No | Yes | No | 
+|  [Amazon Macie ](http://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
 | [AWS Organizations](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | Yes | 
 | [AWS Secrets Manager](http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html               ) | 
 |  [AWS Single Sign\-On \(AWS SSO\)](http://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | No | 

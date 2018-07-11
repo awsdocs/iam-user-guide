@@ -6,36 +6,31 @@ The `dynamodb:Select` requirement prevents the API action from returning any att
 
 ```
 {
-     "Version": "2012-10-17",
-     "Statement": [
-         {
-             "Effect": "Allow",
-             "Action": [
-                 "dynamodb:GetItem",
-                 "dynamodb:BatchGetItem",
-                 "dynamodb:Query",
-                 "dynamodb:PutItem",
-                 "dynamodb:UpdateItem",
-                 "dynamodb:DeleteItem",
-                 "dynamodb:BatchWriteItem"
-             ],
-             "Resource": [
-                 "arn:aws:dynamodb:<REGION>:<ACCOUNTNUMBER>:table/<TABLE-NAME>"
-             ],
-             "
-             "Condition": {
-                 "ForAllValues:StringEquals": {
-                     "dynamodb:Attributes": [
-                         "<COLUMN-NAME-1>",
-                         "<COLUMN-NAME-2>",
-                         "<COLUMN-NAME-3>"
-                     ]
-                 },
-                 "StringEqualsIfExists": {
-                     "dynamodb:Select": "SPECIFIC_ATTRIBUTES"
-                 } 
-             }
-         }
-     ]
- }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:BatchGetItem",
+                "dynamodb:Query",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem",
+                "dynamodb:BatchWriteItem"
+            ],
+            "Resource": ["arn:aws:dynamodb:*:*:table/<TABLE-NAME>"],
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "dynamodb:Attributes": [
+                        "<COLUMN-NAME-1>",
+                        "<COLUMN-NAME-2>",
+                        "<COLUMN-NAME-3>"
+                    ]
+                },
+                "StringEqualsIfExists": {"dynamodb:Select": "SPECIFIC_ATTRIBUTES"}
+            }
+        }
+    ]
+}
 ```

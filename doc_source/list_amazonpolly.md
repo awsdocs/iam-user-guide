@@ -21,12 +21,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html) | Deletes the specified pronunciation lexicon stored in an AWS Region | Write | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
-| [http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html) | Returns the list of voices that are available for use when requesting speech synthesis\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html) | Returns the content of the specified pronunciation lexicon stored in an AWS Region\. | Read | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
-| [http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html) | Returns a list of pronunciation lexicons stored in an AWS Region\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html) | Stores a pronunciation lexicon in an AWS Region\. | Write | [lexicon\*](#amazonpolly-lexicon)  |  |  | 
-| [http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html) | Synthesizes UTF\-8 input, plain text or SSML, to a stream of bytes\. | Read | [lexicon](#amazonpolly-lexicon)  |  |  | 
+|   [ DeleteLexicon ](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)  | Deletes the specified pronunciation lexicon stored in an AWS Region | Write |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
+|   [ DescribeVoices ](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)  | Returns the list of voices that are available for use when requesting speech synthesis\. | List |  |  |  | 
+|   [ GetLexicon ](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html)  | Returns the content of the specified pronunciation lexicon stored in an AWS Region\. | Read |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
+|   [ ListLexicons ](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)  | Returns a list of pronunciation lexicons stored in an AWS Region\. | List |  |  |  | 
+|   [ PutLexicon ](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)  | Stores a pronunciation lexicon in an AWS Region\. | Write |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
+|   [ SynthesizeSpeech ](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)  | Synthesizes UTF\-8 input, plain text or SSML, to a stream of bytes\. | Read |   [ lexicon ](#amazonpolly-lexicon)   |  |  | 
 
 ## Resources Defined by Polly<a name="amazonpolly-resources-for-iam-policies"></a>
 
@@ -37,8 +37,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html](http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) | arn:$\{Partition\}:polly:$\{Region\}:$\{Account\}:lexicon/$\{LexiconName\} |  | 
+|   [ lexicon ](http://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html)  |  arn:$\{Partition\}:polly:$\{Region\}:$\{Account\}:lexicon/$\{LexiconName\}  |  | 
 
 ## Condition Keys for Amazon Polly<a name="amazonpolly-policy-keys"></a>
 
-Polly has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Polly has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

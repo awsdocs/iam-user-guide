@@ -34,10 +34,14 @@ This example shows how you might create a policy that limits customer managed an
                 "iam:DetachUserPolicy"
             ],
             "Resource": "*",
-            "Condition": {"ArnEquals": {"iam:PolicyARN": [
-                "arn:aws:iam::123456789012:policy/Pol1",
-                "arn:aws:iam::aws:policy/Pol2"
-            ]}}
+            "Condition": {
+                "ArnEquals": {
+                    "iam:PolicyARN": [
+                        "arn:aws:iam::*:policy/Pol-1",
+                        "arn:aws:iam::*:policy/Pol-2"
+                    ]
+                }
+            }
         }
     ]
 }

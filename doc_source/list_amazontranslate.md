@@ -21,12 +21,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html](http://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html) | Translate text from a source language to a target language\. | Read |  |  |  | 
+|   [ TranslateText ](http://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html)  | Translate text from a source language to a target language\. | Read |  |  |  | 
 
 ## Resources Defined by Translate<a name="amazontranslate-resources-for-iam-policies"></a>
 
-Translate has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Translate has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon Translate<a name="amazontranslate-policy-keys"></a>
 
-Translate has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Translate has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

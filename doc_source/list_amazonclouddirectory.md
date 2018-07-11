@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory) | arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}/schema/$\{SchemaName\}/$\{Version\} |  | 
-| [http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory) | arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/development/$\{SchemaName\} |  | 
-| [http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory) | arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\} |  | 
-| [http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory) | arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/published/$\{SchemaName\}/$\{Version\} |  | 
+|   [ appliedSchema ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}/schema/$\{SchemaName\}/$\{Version\}  |  | 
+|   [ developmentSchema ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/development/$\{SchemaName\}  |  | 
+|   [ directory ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}  |  | 
+|   [ publishedSchema ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/published/$\{SchemaName\}/$\{Version\}  |  | 
 
 ## Condition Keys for Amazon Cloud Directory<a name="amazonclouddirectory-policy-keys"></a>
 
-Cloud Directory has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Cloud Directory has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

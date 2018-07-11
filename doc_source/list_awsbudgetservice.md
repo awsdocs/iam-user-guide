@@ -23,8 +23,8 @@ The actions in this table are not APIs, but are instead permissions that grant a
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Modify budgets and budget details | Write | [budget\*](#awsbudgetservice-budget)  |  |  | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | View budgets and budget details | Read | [budget\*](#awsbudgetservice-budget)  |  |  | 
+|   [ ModifyBudget ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Modify budgets and budget details | Write |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
+|   [ ViewBudget ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | View budgets and budget details | Read |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
 
 ## Resources Defined by Budget<a name="awsbudgetservice-resources-for-iam-policies"></a>
 
@@ -35,8 +35,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html) | arn:$\{Partition\}:budgets::$\{Account\}:budget/$\{BudgetName\} |  | 
+|   [ budget ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html)  |  arn:$\{Partition\}:budgets::$\{Account\}:budget/$\{BudgetName\}  |  | 
 
 ## Condition Keys for AWS Budget Service<a name="awsbudgetservice-policy-keys"></a>
 
-Budget has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Budget has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

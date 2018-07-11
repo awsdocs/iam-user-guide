@@ -9,24 +9,24 @@ If this policy is used in combination with other policies \(such as the [AmazonS
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "s3:*",
-      "Resource": [
-        "arn:aws:s3:::<BUCKET-NAME>",
-        "arn:aws:s3:::<BUCKET-NAME>/*"
-      ]
-    },
-    {
-      "Effect": "Deny",
-      "NotAction": "s3:*",
-      "NotResource": [
-        "arn:aws:s3:::<BUCKET-NAME>",
-        "arn:aws:s3:::<BUCKET-NAME>/*"
-      ]
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::<BUCKET-NAME>",
+                "arn:aws:s3:::<BUCKET-NAME>/*"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "NotAction": "s3:*",
+            "NotResource": [
+                "arn:aws:s3:::<BUCKET-NAME>",
+                "arn:aws:s3:::<BUCKET-NAME>/*"
+            ]
+        }
+    ]
 }
 ```

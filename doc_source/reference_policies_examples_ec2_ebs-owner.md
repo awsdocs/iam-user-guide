@@ -4,26 +4,30 @@ This example shows how you might create a policy that allows EBS volume owners t
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AttachVolume",
-        "ec2:DetachVolume"
-      ],
-      "Resource": "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:instance/*",
-      "Condition": {"StringEquals": {"ec2:ResourceTag/department": "dev"}}
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AttachVolume",
-        "ec2:DetachVolume"
-      ],
-      "Resource": "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:volume/*",
-      "Condition": {"StringEquals": {"ec2:ResourceTag/volume_user": "${aws:username}"}}
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": "arn:aws:ec2:*:*:instance/*",
+            "Condition": {
+                "StringEquals": {"ec2:ResourceTag/department": "dev"}
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": "arn:aws:ec2:*:*:volume/*",
+            "Condition": {
+                "StringEquals": {"ec2:ResourceTag/volume_user": "${aws:username}"}
+            }
+        }
+    ]
 }
 ```

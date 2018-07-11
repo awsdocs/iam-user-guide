@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact:::agreement/\* |  | 
-| [http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy](http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\* |  | 
-| [http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) | arn:$\{Partition\}:artifact:::report\-package/\* |  | 
+|   [ report\-package ](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::report\-package/\*  |  | 
+|   [ customer\-agreement ](http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\*  |  | 
+|   [ agreement ](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::agreement/\*  |  | 
 
 ## Condition Keys for AWS Artifact<a name="awsartifact-policy-keys"></a>
 
-Artifact has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Artifact has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

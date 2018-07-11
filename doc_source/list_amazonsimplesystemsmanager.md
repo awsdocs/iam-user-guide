@@ -29,14 +29,14 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html) | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\} |  | 
-| maintenancewindow | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:maintenancewindow/$\{ResourceId\} |  | 
-| [http://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html](http://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html) | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\} |  | 
-| parameter | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\} |  | 
-| patchbaseline | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\} |  | 
-| windowtarget | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtarget/$\{ResourceId\} |  | 
-| windowtask | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtask/$\{ResourceId\} |  | 
+|   [ document ](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\}  |  | 
+|   maintenancewindow  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:maintenancewindow/$\{ResourceId\}  |  | 
+|   [ managed\-instance ](http://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\}  |  | 
+|   parameter  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\}  |  | 
+|   patchbaseline  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\}  |  | 
+|   windowtarget  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtarget/$\{ResourceId\}  |  | 
+|   windowtask  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtask/$\{ResourceId\}  |  | 
 
 ## Condition Keys for Amazon Simple Systems Manager<a name="amazonsimplesystemsmanager-policy-keys"></a>
 
-SSM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+SSM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| GetFinancialReports | Grant access to financial metrics for an app | Read |  |  |  | 
-| GetReports | Grant access to standard metrics for an app | Read |  |  |  | 
-| [http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html) | The PutEvents operation records one or more events | Write |  |  |  | 
+|   GetFinancialReports  | Grant access to financial metrics for an app | Read |  |  |  | 
+|   GetReports  | Grant access to standard metrics for an app | Read |  |  |  | 
+|   [ PutEvents ](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)  | The PutEvents operation records one or more events | Write |  |  |  | 
 
 ## Resources Defined by Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
 
-Mobile Analytics has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Mobile Analytics has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon Mobile Analytics<a name="amazonmobileanalytics-policy-keys"></a>
 
-Mobile Analytics has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Mobile Analytics has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

@@ -21,20 +21,20 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html) | Create a Kinesis video stream\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteStream.html) | Delete an existing Kinesis video stream\. | Write | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html) | Describe the specified Kinesis video stream\. | List | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html) | Gets an endpoint for a specified stream for either reading or writing media data to Kinesis Video Streams\. | Read | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMedia.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMedia.html) | Returns media content of a Kinesis video stream\. | Read | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMediaForFragmentList.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMediaForFragmentList.html) | Read and return media data only from persisted storage\. | Read | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListFragments.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListFragments.html) | List the fragments from archival storage based on the pagination token or selector type with range specified\. | List | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListStreams.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListStreams.html) | List your Kinesis video streams\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForStream.html) | Fetch the tags associated with Kinesis video stream\. | Read | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_PutMedia.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_PutMedia.html) | Send media data to a Kinesis video stream\. | Write | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html) | Attach set of tags to your Kinesis video streams\. | Tagging | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html) | Remove one or more tags from your Kinesis video streams\. | Tagging | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateDataRetention.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateDataRetention.html) | Update the data retention period of your Kinesis video stream\. | Write | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html) | Update an existing Kinesis video stream\. | Write | [stream\*](#amazonkinesisvideostreams-stream)  |  |  | 
+|   [ CreateStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_CreateStream.html)  | Create a Kinesis video stream\. | Write |  |  |  | 
+|   [ DeleteStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DeleteStream.html)  | Delete an existing Kinesis video stream\. | Write |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ DescribeStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html)  | Describe the specified Kinesis video stream\. | List |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ GetDataEndpoint ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html)  | Gets an endpoint for a specified stream for either reading or writing media data to Kinesis Video Streams\. | Read |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ GetMedia ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMedia.html)  | Returns media content of a Kinesis video stream\. | Read |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ GetMediaForFragmentList ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetMediaForFragmentList.html)  | Read and return media data only from persisted storage\. | Read |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ ListFragments ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListFragments.html)  | List the fragments from archival storage based on the pagination token or selector type with range specified\. | List |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ ListStreams ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListStreams.html)  | List your Kinesis video streams\. | List |  |  |  | 
+|   [ ListTagsForStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_ListTagsForStream.html)  | Fetch the tags associated with Kinesis video stream\. | Read |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ PutMedia ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_PutMedia.html)  | Send media data to a Kinesis video stream\. | Write |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ TagStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_TagStream.html)  | Attach set of tags to your Kinesis video streams\. | Tagging |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ UntagStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UntagStream.html)  | Remove one or more tags from your Kinesis video streams\. | Tagging |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ UpdateDataRetention ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateDataRetention.html)  | Update the data retention period of your Kinesis video stream\. | Write |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
+|   [ UpdateStream ](http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_UpdateStream.html)  | Update an existing Kinesis video stream\. | Write |   [ stream\* ](#amazonkinesisvideostreams-stream)   |  |  | 
 
 ## Resources Defined by Kinesis Video Streams<a name="amazonkinesisvideostreams-resources-for-iam-policies"></a>
 
@@ -45,8 +45,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| stream | arn:$\{Partition\}:kinesisvideo:$\{Region\}:$\{Account\}:stream/$\{StreamName\}/$\{CreationTime\} |  | 
+|   stream  |  arn:$\{Partition\}:kinesisvideo:$\{Region\}:$\{Account\}:stream/$\{StreamName\}/$\{CreationTime\}  |  | 
 
 ## Condition Keys for Amazon Kinesis Video Streams<a name="amazonkinesisvideostreams-policy-keys"></a>
 
-Kinesis Video Streams has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Kinesis Video Streams has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

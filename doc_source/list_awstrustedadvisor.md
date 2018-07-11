@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| DescribeCheckItems | View details for the check items | List | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| DescribeCheckRefreshStatuses | Describe check refresh statuses | List | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| DescribeCheckSummaries | Describes the check's summaries | List | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| DescribeNotificationPreferences | Describes the notification preferences for the account | List |  |  |  | 
-| ExcludeCheckItems | Exclude recommendations for checks for a given customer | Write | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| IncludeCheckItems | Include recommendations for checks for a given customer | Write | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| RefreshCheck | Enqueue a refresh for the specified check | Write | [checks\*](#awstrustedadvisor-checks)  |  |  | 
-| UpdateNotificationPreferences | Update notification preferences  | Write |  |  |  | 
+|   DescribeCheckItems  | View details for the check items | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   DescribeCheckRefreshStatuses  | Describe check refresh statuses | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   DescribeCheckSummaries  | Describes the check's summaries | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   DescribeNotificationPreferences  | Describes the notification preferences for the account | List |  |  |  | 
+|   ExcludeCheckItems  | Exclude recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   IncludeCheckItems  | Include recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   RefreshCheck  | Enqueue a refresh for the specified check | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   UpdateNotificationPreferences  | Update notification preferences  | Write |  |  |  | 
 
 ## Resources Defined by Trusted Advisor<a name="awstrustedadvisor-resources-for-iam-policies"></a>
 
@@ -39,8 +39,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html](http://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html) | arn:$\{Partition\}:trustedadvisor:$\{Region\}:$\{Account\}:checks/$\{CategoryCode\}/$\{CheckId\} |  | 
+|   [ checks ](http://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html)  |  arn:$\{Partition\}:trustedadvisor:$\{Region\}:$\{Account\}:checks/$\{CategoryCode\}/$\{CheckId\}  |  | 
 
 ## Condition Keys for AWS Trusted Advisor<a name="awstrustedadvisor-policy-keys"></a>
 
-Trusted Advisor has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Trusted Advisor has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

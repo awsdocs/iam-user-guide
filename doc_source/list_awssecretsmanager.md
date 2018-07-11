@@ -29,26 +29,26 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources) | arn:$\{Partition\}:secretsmanager:$\{Region\}:$\{Account\}:secret:$\{SecretId\} | [secretsmanager:resource/AllowRotationLambdaArn](#awssecretsmanager-secretsmanager_resource_AllowRotationLambdaArn)  | 
+|   [ Secret ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources)  |  arn:$\{Partition\}:secretsmanager:$\{Region\}:$\{Account\}:secret:$\{SecretId\}  |   [ secretsmanager:resource/AllowRotationLambdaArn ](#awssecretsmanager-secretsmanager_resource_AllowRotationLambdaArn)   | 
 
 ## Condition Keys for AWS Secrets Manager<a name="awssecretsmanager-policy-keys"></a>
 
 AWS Secrets Manager defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by a key that is present in the request the user makes to the Secrets Manager service\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the list of all the tag key namespresent in the request the user makes to the Secrets Manager service\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the ARN of the rotation Lambda function associated with the secret\. | ARN | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the SecretID value in the request\. | ARN | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the friendly name of the secret in the request\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the description text in the request\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the ARN of the KMS key in the request\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the unique identifier of the version of the secret in the request\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the list of version stages in the request\. | String | 
-| [http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys) | Filters access by the ARN of the rotation Lambda function in the request\. | ARN | 
+|   [ aws:RequestTag/tag\-key ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the Secrets Manager service\. | String | 
+|   [ aws:TagKeys ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key namespresent in the request the user makes to the Secrets Manager service\. | String | 
+|   [ secretsmanager:resource/AllowRotationLambdaArn ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the ARN of the rotation Lambda function associated with the secret\. | ARN | 
+|   [ secretsmanager:SecretId ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the SecretID value in the request\. | ARN | 
+|   [ secretsmanager:Name ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the friendly name of the secret in the request\. | String | 
+|   [ secretsmanager:Description ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the description text in the request\. | String | 
+|   [ secretsmanager:KmsKeyId ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the ARN of the KMS key in the request\. | String | 
+|   [ secretsmanager:VersionId ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the unique identifier of the version of the secret in the request\. | String | 
+|   [ secretsmanager:VersionStage ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of version stages in the request\. | String | 
+|   [ secretsmanager:RotationLambdaARN ](http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the ARN of the rotation Lambda function in the request\. | ARN | 

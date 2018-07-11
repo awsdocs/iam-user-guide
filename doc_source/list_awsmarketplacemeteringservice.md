@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html) | Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html) | Emits metering records\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html) | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
+|   [ BatchMeterUsage ](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html)  | Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers\. | Write |  |  |  | 
+|   [ MeterUsage ](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html)  | Emits metering records\. | Write |  |  |  | 
+|   [ ResolveCustomer ](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html)  | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
 
 ## Resources Defined by Marketplace Metering<a name="awsmarketplacemeteringservice-resources-for-iam-policies"></a>
 
-Marketplace Metering has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace Metering Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for AWS Marketplace Metering Service<a name="awsmarketplacemeteringservice-policy-keys"></a>
 
-Marketplace Metering has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Marketplace Metering has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

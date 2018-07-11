@@ -97,18 +97,27 @@ Imagine that you have account A \(the trusting account that owns the resource to
    }
    ```
 
-1. Anaya adds a permission policy to the role that specifies what the role is allowed to do\. The permission policy for a role with MFA protection is no different than any other role\-permission policy\. The following example shows the policy that Anaya adds to the role; it allows an assuming user to perform any DynamoDB action on the table `Books` in account A\. 
+1. Anaya adds a permission policy to the role that specifies what the role is allowed to do\. The permission policy for a role with MFA protection is no different than any other role\-permission policy\. The following example shows the policy that Anaya adds to the role; it allows an assuming user to perform any DynamoDB action on the table `Books` in account B\. This policy also allows the `dynamodb:ListTables` action, which is required to perform actions in the console\. 
 **Note**  
 The permission policy does not include an MFA condition\. It is important to understand that the MFA authentication is used only to determine whether a user can assume the role\. Once the user has assumed the role, no further MFA checks are made\. 
 
    ```
    {
-     "Version": "2012-10-17",
-     "Statement": [{
-       "Effect": "Allow",
-       "Action": ["dynamodb:*"],
-       "Resource": ["arn:aws:dynamodb:region:ACCOUNT-A-ID:table/Books"]
-     }]
+       "Version": "2012-10-17",
+       "Statement": [
+           {
+               "Sid": "TableActions",
+               "Effect": "Allow",
+               "Action": "dynamodb:*",
+               "Resource": "arn:aws:dynamodb:*:ACCOUNT-B-ID:table/Books"
+           },
+           {
+               "Sid": "ListTable",
+               "Effect": "Allow",
+               "Action": "dynamodb:ListTable",
+               "Resource": "*"
+           }
+       ]
    }
    ```
 
@@ -162,7 +171,11 @@ In this scenario, one of those trusted users is user Sofía\. User Anaya is an a
    }
    ```
 
-1. If user Sofía needs to stop or terminate an Amazon EC2 instance, she \(or an application that she is running\) calls `GetSessionToken` passing the ID of the MFA device and the current TOTP that Sofía gets from her device\.
+1. 
+**Note**  
+For this policy to take effect, users must first sign out and then sign in again\.
+
+   If user Sofía needs to stop or terminate an Amazon EC2 instance, she \(or an application that she is running\) calls `GetSessionToken` passing the ID of the MFA device and the current TOTP that Sofía gets from her device\.
 
 1. User Sofía \(or an application that Sofía is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `StopInstances` action\. 
 

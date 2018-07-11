@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html](http://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/datasources/$\{DatasourceName\} |  | 
-| [http://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html](http://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}/fields/$\{FieldName\} |  | 
-| [http://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html](http://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\} |  | 
-| [http://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type](http://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type) | arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\} |  | 
+|   [ datasource ](http://docs.aws.amazon.com/appsync/latest/devguide/attaching-a-data-source.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/datasources/$\{DatasourceName\}  |  | 
+|   [ graphqlapi ](http://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}  |  | 
+|   [ field ](http://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}/fields/$\{FieldName\}  |  | 
+|   [ type ](http://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}  |  | 
 
 ## Condition Keys for AWS AppSync<a name="awsappsync-policy-keys"></a>
 
-AppSync has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AppSync has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

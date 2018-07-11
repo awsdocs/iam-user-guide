@@ -21,15 +21,15 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html) | Get cost and usage metrics for your account | Read |  |  |  | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html) | Retrieve all available filter values for a filter over a period of time\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html) | Get reservation utilization for your account\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html) | Query tags for a specified time period\. | Read |  |  |  | 
+|   [ GetCostAndUsage ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html)  | Get cost and usage metrics for your account | Read |  |  |  | 
+|   [ GetDimensionValues ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html)  | Retrieve all available filter values for a filter over a period of time\. | Read |  |  |  | 
+|   [ GetReservationUtilization ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html)  | Get reservation utilization for your account\. | Read |  |  |  | 
+|   [ GetTags ](http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html)  | Query tags for a specified time period\. | Read |  |  |  | 
 
 ## Resources Defined by Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 
-Cost Explorer Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Cost Explorer Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for AWS Cost Explorer Service<a name="awscostexplorerservice-policy-keys"></a>
 
-Cost Explorer Service has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Cost Explorer Service has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

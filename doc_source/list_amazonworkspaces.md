@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html](http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html) | arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\} |  | 
-| [http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html](http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html) | arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\} |  | 
+|   [ workspacebundle ](http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\}  |  | 
+|   [ workspaceid ](http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\}  |  | 
 
 ## Condition Keys for Amazon WorkSpaces<a name="amazonworkspaces-policy-keys"></a>
 
-WorkSpaces has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+WorkSpaces has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

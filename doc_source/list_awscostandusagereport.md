@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html) | Delete Cost and Usage Report Definition | Write | [cur\*](#awscostandusagereport-cur)  |  |  | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html) | Get Cost and Usage Report Definitions | Read |  |  |  | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html) | Write Cost and Usage Report Definition | Write | [cur\*](#awscostandusagereport-cur)  |  |  | 
+|   [ DeleteReportDefinition ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/delete-report-definition.html)  | Delete Cost and Usage Report Definition | Write |   [ cur\* ](#awscostandusagereport-cur)   |  |  | 
+|   [ DescribeReportDefinitions ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/describe-report-definitions.html)  | Get Cost and Usage Report Definitions | Read |  |  |  | 
+|   [ PutReportDefinition ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/put-report-definition.html)  | Write Cost and Usage Report Definition | Write |   [ cur\* ](#awscostandusagereport-cur)   |  |  | 
 
 ## Resources Defined by Cost and Usage Report<a name="awscostandusagereport-resources-for-iam-policies"></a>
 
@@ -34,8 +34,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports) | arn:$\{Partition\}:cur:$\{Region\}:$\{Account\}:definition/$\{ReportName\} |  | 
+|   [ cur ](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-reports.html#enhanced-reports)  |  arn:$\{Partition\}:cur:$\{Region\}:$\{Account\}:definition/$\{ReportName\}  |  | 
 
 ## Condition Keys for AWS Cost and Usage Report<a name="awscostandusagereport-policy-keys"></a>
 
-Cost and Usage Report has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Cost and Usage Report has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

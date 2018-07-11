@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions) | arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:batchprediction/$\{BatchPredictionId\} |  | 
-| [http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources) | arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:datasource/$\{DatasourceId\} |  | 
-| [http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations) | arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:evaluation/$\{EvaluationId\} |  | 
-| [http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models) | arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:mlmodel/$\{MlModelId\} |  | 
+|   [ batchprediction ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:batchprediction/$\{BatchPredictionId\}  |  | 
+|   [ datasource ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:datasource/$\{DatasourceId\}  |  | 
+|   [ evaluation ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:evaluation/$\{EvaluationId\}  |  | 
+|   [ mlmodel ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:mlmodel/$\{MlModelId\}  |  | 
 
 ## Condition Keys for Amazon Machine Learning<a name="amazonmachinelearning-policy-keys"></a>
 
-Machine Learning has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Machine Learning has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

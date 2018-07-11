@@ -16,17 +16,17 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| AcknowledgeMessage | Acknowledges a message, ensuring it will not be delivered again | Write |  |  |  | 
-| DeleteMessage | Deletes a message | Write |  |  |  | 
-| FailMessage | Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again | Write |  |  |  | 
-| GetEndpoint | Routes traffic to the correct endpoint based on the given destination for the messages | Read |  |  |  | 
-| GetMessages | Delivers messages to clients/instances using long polling | Read |  |  |  | 
-| SendReply | Sends replies from clients/instances to upstream service | Write |  |  |  | 
+|   AcknowledgeMessage  | Acknowledges a message, ensuring it will not be delivered again | Write |  |  |  | 
+|   DeleteMessage  | Deletes a message | Write |  |  |  | 
+|   FailMessage  | Fails a message, signifying the message could not be processed successfully, ensuring it cannot be replied to or delivered again | Write |  |  |  | 
+|   GetEndpoint  | Routes traffic to the correct endpoint based on the given destination for the messages | Read |  |  |  | 
+|   GetMessages  | Delivers messages to clients/instances using long polling | Read |  |  |  | 
+|   SendReply  | Sends replies from clients/instances to upstream service | Write |  |  |  | 
 
 ## Resources Defined by EC2 Messages<a name="amazonmessagedeliveryservice-resources-for-iam-policies"></a>
 
-EC2 Messages has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Message Delivery Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon Message Delivery Service<a name="amazonmessagedeliveryservice-policy-keys"></a>
 
-EC2 Messages has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+EC2 Messages has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

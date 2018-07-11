@@ -9,30 +9,26 @@ The `aws:SourceIp` condition key denies access to an AWS service, such as AWS Cl
 
 ```
 {
-   "Version": "2012-10-17",
-   "Statement": [
-       {
-           "Effect": "Allow",
-           "Action": [
-               "ec2:TerminateInstances"
-           ],
-           "Resource": [
-               "*"
-           ]
-       },
-       {
-           "Effect": "Deny",
-           "Action": [
-               "ec2:TerminateInstances"
-           ],
-           "Condition": {"NotIpAddress": {"aws:SourceIp": [
-               "192.0.2.0/24",
-               "203.0.113.0/24"
-               ]}},
-           "Resource": [
-               "*"
-           ]
-       }
-   ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": ["ec2:TerminateInstances"],
+            "Resource": ["*"]
+        },
+        {
+            "Effect": "Deny",
+            "Action": ["ec2:TerminateInstances"],
+            "Condition": {
+                "NotIpAddress": {
+                    "aws:SourceIp": [
+                        "192.0.2.0/24",
+                        "203.0.113.0/24"
+                    ]
+                }
+            },
+            "Resource": ["*"]
+        }
+    ]
 }
 ```

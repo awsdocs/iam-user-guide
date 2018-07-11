@@ -21,29 +21,29 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_AssociateDeviceWithPlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_AssociateDeviceWithPlacement.html) | Associate a device to a placement | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ClaimDeviceByClaimCode.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ClaimDeviceByClaimCode.html) | Claim a batch of devices with a claim code\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_CreatePlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_CreatePlacement.html) | Create a new placement in a project | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_CreateProject.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_CreateProject.html) | Create a new project | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DeletePlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DeletePlacement.html) | Delete a placement from a project | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DeleteProject.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DeleteProject.html) | Delete a project | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribeDevice.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribeDevice.html) | Describe a device | Read | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribePlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribePlacement.html) | Describe a placement | Read | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribeProject.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribeProject.html) | Describe a project | Read | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DissacociateDeviceFromPlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DissacociateDeviceFromPlacement.html) | Disassociate a device from a placement | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_FinalizeDeviceClaim.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_FinalizeDeviceClaim.html) | Finalize a device claim | Read | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_GetDeviceMethods.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_GetDeviceMethods.html) | Get available methods of a device | Read | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_GetDevicesInPlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_GetDevicesInPlacement.html) | Get devices associated to a placement | Read | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_InitializeDeviceClaim.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_InitializeDeviceClaim.html) | Initialize a device claim | Read | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_InvokeDeviceMethod.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_InvokeDeviceMethod.html) | Invoke a device method | Write | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListDeviceEvents.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListDeviceEvents.html) | List past events published by a device | Read | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListDevices.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListDevices.html) | List all devices | List |  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListPlacements.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListPlacements.html) | List placements in a project | Read | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListProjects.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListProjects.html) | List all projects | List |  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UnclaimDevice.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UnclaimDevice.html) | Unclaim a device | Read | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdateDeviceState.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdateDeviceState.html) | Update device state | Write | [device\*](#awsiot1-click-device)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdatePlacement.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdatePlacement.html) | Update a placement | Write | [project\*](#awsiot1-click-project)  |  |  | 
-| [http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdateProject.html](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdateProject.html) | Update a project | Write | [project\*](#awsiot1-click-project)  |  |  | 
+|   [ AssociateDeviceWithPlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_AssociateDeviceWithPlacement.html)  | Associate a device to a placement | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ ClaimDeviceByClaimCode ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ClaimDeviceByClaimCode.html)  | Claim a batch of devices with a claim code\. | Read |  |  |  | 
+|   [ CreatePlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_CreatePlacement.html)  | Create a new placement in a project | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ CreateProject ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_CreateProject.html)  | Create a new project | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ DeletePlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DeletePlacement.html)  | Delete a placement from a project | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ DeleteProject ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DeleteProject.html)  | Delete a project | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ DescribeDevice ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribeDevice.html)  | Describe a device | Read |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ DescribePlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribePlacement.html)  | Describe a placement | Read |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ DescribeProject ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DescribeProject.html)  | Describe a project | Read |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ DisassociateDeviceFromPlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_DissacociateDeviceFromPlacement.html)  | Disassociate a device from a placement | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ FinalizeDeviceClaim ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_FinalizeDeviceClaim.html)  | Finalize a device claim | Read |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ GetDeviceMethods ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_GetDeviceMethods.html)  | Get available methods of a device | Read |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ GetDevicesInPlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_GetDevicesInPlacement.html)  | Get devices associated to a placement | Read |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ InitializeDeviceClaim ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_InitializeDeviceClaim.html)  | Initialize a device claim | Read |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ InvokeDeviceMethod ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_InvokeDeviceMethod.html)  | Invoke a device method | Write |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ ListDeviceEvents ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListDeviceEvents.html)  | List past events published by a device | Read |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ ListDevices ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListDevices.html)  | List all devices | List |  |  |  | 
+|   [ ListPlacements ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListPlacements.html)  | List placements in a project | Read |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ ListProjects ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_ListProjects.html)  | List all projects | List |  |  |  | 
+|   [ UnclaimDevice ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UnclaimDevice.html)  | Unclaim a device | Read |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ UpdateDeviceState ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdateDeviceState.html)  | Update device state | Write |   [ device\* ](#awsiot1-click-device)   |  |  | 
+|   [ UpdatePlacement ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdatePlacement.html)  | Update a placement | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
+|   [ UpdateProject ](http://docs.aws.amazon.com/iot1click/latest/APIReference/API_UpdateProject.html)  | Update a project | Write |   [ project\* ](#awsiot1-click-project)   |  |  | 
 
 ## Resources Defined by IoT 1\-Click<a name="awsiot1-click-resources-for-iam-policies"></a>
 
@@ -54,9 +54,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| device | arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:devices/$\{DeviceId\} |  | 
-| project | arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:projects/$\{ProjectName\} |  | 
+|   device  |  arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:devices/$\{DeviceId\}  |  | 
+|   project  |  arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:projects/$\{ProjectName\}  |  | 
 
 ## Condition Keys for AWS IoT 1\-Click<a name="awsiot1-click-policy-keys"></a>
 
-IoT 1\-Click has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+IoT 1\-Click has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

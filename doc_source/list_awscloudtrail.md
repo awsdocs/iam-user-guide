@@ -21,18 +21,18 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html) | Adds one or more tags to a trail, up to a limit of 10 | Tagging | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html) | Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket | Write | [trail\*](#awscloudtrail-trail)  |  | s3:PutObject  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html) | Deletes a trail | Write | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html) | Retrieves settings for the trail associated with the current region for your account | List |  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html) | Returns a JSON\-formatted list of information about the specified trail | Read | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html) | Returns all public keys whose private keys were used to sign the digest files within the specified time range | Read |  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html) | Lists the tags for the trail in the current region | Read | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html) | Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html) | Removes the specified tags from a trail | Tagging | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html) | Starts the recording of AWS API calls and log file delivery for a trail | Write | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html) | Suspends the recording of AWS API calls and log file delivery for the specified trail | Write | [trail\*](#awscloudtrail-trail)  |  |  | 
-| [http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html) | Updates the settings that specify delivery of log files | Write | [trail\*](#awscloudtrail-trail)  |  |  | 
+|   [ AddTags ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AddTags.html)  | Adds one or more tags to a trail, up to a limit of 10 | Tagging |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ CreateTrail ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_CreateTrail.html)  | Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket | Write |   [ trail\* ](#awscloudtrail-trail)   |  |   s3:PutObject   | 
+|   [ DeleteTrail ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DeleteTrail.html)  | Deletes a trail | Write |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ DescribeTrails ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_DescribeTrails.html)  | Retrieves settings for the trail associated with the current region for your account | List |  |  |  | 
+|   [ GetTrailStatus ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_GetTrailStatus.html)  | Returns a JSON\-formatted list of information about the specified trail | Read |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ ListPublicKeys ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListPublicKeys.html)  | Returns all public keys whose private keys were used to sign the digest files within the specified time range | Read |  |  |  | 
+|   [ ListTags ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_ListTags.html)  | Lists the tags for the trail in the current region | Read |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ LookupEvents ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html)  | Looks up API activity events captured by CloudTrail that create, update, or delete resources in your account\. | List |  |  |  | 
+|   [ RemoveTags ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_RemoveTags.html)  | Removes the specified tags from a trail | Tagging |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ StartLogging ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StartLogging.html)  | Starts the recording of AWS API calls and log file delivery for a trail | Write |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ StopLogging ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_StopLogging.html)  | Suspends the recording of AWS API calls and log file delivery for the specified trail | Write |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
+|   [ UpdateTrail ](http://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_UpdateTrail.html)  | Updates the settings that specify delivery of log files | Write |   [ trail\* ](#awscloudtrail-trail)   |  |  | 
 
 ## Resources Defined by CloudTrail<a name="awscloudtrail-resources-for-iam-policies"></a>
 
@@ -45,8 +45,8 @@ For policies that control access to CloudTrail actions, the Resource element is 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/how-cloudtrail-works.html](http://docs.aws.amazon.com/how-cloudtrail-works.html) | arn:$\{Partition\}:cloudtrail:$\{Region\}:$\{Account\}:trail/$\{TrailName\} |  | 
+|   [ trail ](http://docs.aws.amazon.com/how-cloudtrail-works.html)  |  arn:$\{Partition\}:cloudtrail:$\{Region\}:$\{Account\}:trail/$\{TrailName\}  |  | 
 
 ## Condition Keys for AWS CloudTrail<a name="awscloudtrail-policy-keys"></a>
 
-CloudTrail has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+CloudTrail has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

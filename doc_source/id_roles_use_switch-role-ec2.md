@@ -73,7 +73,7 @@ To restrict which roles a user can pass to an EC2 instance, you create a policy 
 `PassRole` is not an API action in the same way that `RunInstances` or `ListInstanceProfiles` is\. Instead, it's a permission that AWS checks whenever a role ARN is passed as a parameter to an API \(or the console does this on the user's behalf\)\. It helps an administrator to control which roles can be passed by which users\. In this case, it ensures that the user is allowed to attach a specific role to an Amazon EC2 instance\.
 
 **Example policy that grants a user permission to launch an EC2 instance with a specific role**  
-The following sample policy allows users to use the Amazon EC2 API to launch an instance with a role\. The `Resource` element specifies the Amazon Resource Name \(ARN\) of a role\. By specifying the ARN, the policy grants the user the permission to pass only the `Get-pics` role\. If the user tries to specify a different role when launching an instance, the action fails\.  
+The following sample policy allows users to use the Amazon EC2 API to launch an instance with a role\. The `Resource` element specifies the Amazon Resource Name \(ARN\) of a role\. By specifying the ARN, the policy grants the user the permission to pass only the `Get-pics` role\. If the user tries to specify a different role when launching an instance, the action fails\. The user does have permissions to run any instance, regardless of whether they pass a role\.  
 
 ```
 {

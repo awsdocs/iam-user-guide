@@ -29,24 +29,24 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\} |  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener\-rule/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}/$\{ListenerRuleId\} |  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\} | [aws:RequestTag/tag\-key](#elasticloadbalancingv2-aws_RequestTag_tag-key) [aws:TagKeys](#elasticloadbalancingv2-aws_TagKeys) [elasticloadbalancing:ResourceTag/tag\-key](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/net/$\{LoadBalancerName\}/$\{LoadBalancerId\} | [aws:RequestTag/tag\-key](#elasticloadbalancingv2-aws_RequestTag_tag-key) [aws:TagKeys](#elasticloadbalancingv2-aws_TagKeys) [elasticloadbalancing:ResourceTag/tag\-key](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/elasticloadbalancing/latest/application/load-balancer-target-groups.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/elasticloadbalancing/latest/application/load-balancer-target-groups.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:targetgroup/$\{TargetGroupName\}/$\{TargetGroupId\} | [aws:RequestTag/tag\-key](#elasticloadbalancingv2-aws_RequestTag_tag-key) [aws:TagKeys](#elasticloadbalancingv2-aws_TagKeys) [elasticloadbalancing:ResourceTag/tag\-key](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)  | 
+|   [ listener ](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}  |  | 
+|   [ listener\-rule ](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener\-rule/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}/$\{ListenerRuleId\}  |  | 
+|   [ loadbalancer/app/ ](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
+|   [ loadbalancer/net/ ](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/net/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
+|   [ targetgroup ](http://docs.aws.amazon.com/elasticloadbalancing/latest/elasticloadbalancing/latest/application/load-balancer-target-groups.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:targetgroup/$\{TargetGroupName\}/$\{TargetGroupId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
 
 ## Condition Keys for Elastic Load Balancing V2<a name="elasticloadbalancingv2-policy-keys"></a>
 
 Elastic Load Balancing V2 defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| aws:RequestTag/tag\-key | A key that is present in the request the user makes to the ELB service\. | String | 
-| aws:TagKeys | The list of all the tag key names associated with the resource in the request\. | String | 
-| elasticloadbalancing:ResourceTag/ | The preface string for a tag key and value pair attached to a resource\. | String | 
-| elasticloadbalancing:ResourceTag/tag\-key | A tag key and value pair\. | String | 
+|   aws:RequestTag/tag\-key  | A key that is present in the request the user makes to the ELB service\. | String | 
+|   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   elasticloadbalancing:ResourceTag/  | The preface string for a tag key and value pair attached to a resource\. | String | 
+|   elasticloadbalancing:ResourceTag/tag\-key  | A tag key and value pair\. | String | 

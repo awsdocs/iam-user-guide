@@ -29,13 +29,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html](http://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html) | arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/device/$\{Vtldevice\} |  | 
-| [http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html) | arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\} |  | 
-| [http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html](http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html) | arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\} |  | 
-| [http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts) | arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{TapeBarcode\} |  | 
-| [http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html](http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html) | arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/target/$\{IscsiTarget\} |  | 
-| [http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts) | arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\} |  | 
+|   [ device ](http://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/device/$\{Vtldevice\}  |  | 
+|   [ gateway ](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |  | 
+|   [ share ](http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\}  |  | 
+|   [ tape ](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{TapeBarcode\}  |  | 
+|   [ target ](http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/target/$\{IscsiTarget\}  |  | 
+|   [ volume ](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\}  |  | 
 
 ## Condition Keys for Amazon Storage Gateway<a name="amazonstoragegateway-policy-keys"></a>
 
-Storage Gateway has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Storage Gateway has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

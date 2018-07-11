@@ -21,10 +21,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html](http://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html) | Creates an Amazon EKS cluster\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html](http://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html) | Deletes an Amazon EKS cluster\. | Write | [cluster\*](#amazonelasticcontainerserviceforkubernetes-cluster)  |  |  | 
-| [http://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html](http://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html) | Returns descriptive information about an Amazon EKS cluster\. | Read | [cluster\*](#amazonelasticcontainerserviceforkubernetes-cluster)  |  |  | 
-| [http://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html](http://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html) | Lists the Amazon EKS clusters in your AWS account \(in the specified or default region\)\. | List |  |  |  | 
+|   [ CreateCluster ](http://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html)  | Creates an Amazon EKS cluster\. | Write |  |  |  | 
+|   [ DeleteCluster ](http://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html)  | Deletes an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+|   [ DescribeCluster ](http://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html)  | Returns descriptive information about an Amazon EKS cluster\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+|   [ ListClusters ](http://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html)  | Lists the Amazon EKS clusters in your AWS account \(in the specified or default region\)\. | List |  |  |  | 
 
 ## Resources Defined by EKS<a name="amazonelasticcontainerserviceforkubernetes-resources-for-iam-policies"></a>
 
@@ -35,8 +35,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/eks/latest/userguide/getting-started.html](http://docs.aws.amazon.com/eks/latest/userguide/getting-started.html) | arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\} |  | 
+|   [ cluster ](http://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |  | 
 
 ## Condition Keys for Amazon Elastic Container Service for Kubernetes<a name="amazonelasticcontainerserviceforkubernetes-policy-keys"></a>
 
-EKS has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+EKS has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

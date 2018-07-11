@@ -29,23 +29,23 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::$\{MasterAccountId\}:account/o\-$\{OrganizationId\}/$\{AccountId\} |  | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::aws:policy/$\{PolicyType\}/p\-$\{PolicyId\} |  | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::$\{MasterAccountId\}:handshake/o\-$\{OrganizationId\}/$\{HandshakeType\}/h\-$\{HandshakeId\} |  | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::$\{MasterAccountId\}:organization/o\-$\{OrganizationId\} |  | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::$\{MasterAccountId\}:ou/o\-$\{OrganizationId\}/ou\-$\{OrganizationalUnitId\} |  | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::$\{MasterAccountId\}:policy/o\-$\{OrganizationId\}>/$\{PolicyType\}/p\-$\{PolicyId\} |  | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html) | arn:$\{Partition\}:organizations::$\{MasterAccountId\}:root/o\-$\{OrganizationId\}/r\-$\{RootId\} |  | 
+|   [ account ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:account/o\-$\{OrganizationId\}/$\{AccountId\}  |  | 
+|   [ handshake ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:handshake/o\-$\{OrganizationId\}/$\{HandshakeType\}/h\-$\{HandshakeId\}  |  | 
+|   [ organization ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:organization/o\-$\{OrganizationId\}  |  | 
+|   [ organizationalunit ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:ou/o\-$\{OrganizationId\}/ou\-$\{OrganizationalUnitId\}  |  | 
+|   [ policy ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:policy/o\-$\{OrganizationId\}/$\{PolicyType\}/p\-$\{PolicyId\}  |  | 
+|   [ awspolicy ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::aws:policy/$\{PolicyType\}/p\-$\{PolicyId\}  |  | 
+|   [ root ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:root/o\-$\{OrganizationId\}/r\-$\{RootId\}  |  | 
 
 ## Condition Keys for AWS Organizations<a name="awsorganizations-policy-keys"></a>
 
 AWS Organizations defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys) | Enables you to filter the request to only the specified service principal names\. | String | 
+|   [ organizations:ServicePrincipal ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys)  | Enables you to filter the request to only the specified service principal names\. | String | 

@@ -6,24 +6,22 @@ Amazon EC2 instances can run AWS commands with permissions granted by an [AWS se
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "ec2:AttachVolume",
-        "ec2:DetachVolume"
-      ],
-      "Resource": [
-        "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:volume/*",
-        "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:instance/*"
-      ],
-      "Condition": {
-        "ArnEquals": {
-          "ec2:SourceInstanceARN": "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:instance/<INSTANCE-ID>"
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:AttachVolume",
+                "ec2:DetachVolume"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:volume/*",
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Condition": {
+                "ArnEquals": {"ec2:SourceInstanceARN": "arn:aws:ec2:*:*:instance/<INSTANCE-ID>"}
+            }
         }
-      }
-    }
-  ]
+    ]
 }
 ```

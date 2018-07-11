@@ -20,19 +20,29 @@ The permissions that are required to administer IAM groups, users, roles, and cr
 }
 ```
 
-In a policy, the value of the `Resource` element depends on the action and what resources the action can affect\. In the preceding example, the policy allows a user to create any user \(`*` is a wildcard that matches all strings\)\. In contrast, a policy that allows users to change only their own access keys \(API actions [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)\) typically has a `Resource` element\. In that case the ARN includes a variable that resolves to the current user's name, as in the following example \(replace `ACCOUNT-ID-WITHOUT-HYPHENS` with your AWS account ID\): 
+In a policy, the value of the `Resource` element depends on the action and what resources the action can affect\. In the preceding example, the policy allows a user to create any user \(`*` is a wildcard that matches all strings\)\. In contrast, a policy that allows users to change only their own access keys \(API actions [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) and [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)\) typically has a `Resource` element\. In this case the ARN includes a variable \(`${aws:username}`\) that resolves to the current user's name, as in the following example: 
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-      "iam:CreateAccessKey",
-      "iam:UpdateAccessKey"
-    ],
-    "Resource": "arn:aws:iam::accountid:user/${aws:username}"
-  }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListUsersForConsole",
+            "Effect": "Allow",
+            "Action": "iam:ListUsers",
+            "Resource": "arn:aws:iam::*:*"
+        },
+        {
+            "Sid": "ViewAndUpdateAccessKeys",
+            "Effect": "Allow",
+            "Action": [
+                "iam:UpdateAccessKey",
+                "iam:CreateAccessKey",
+                "iam:ListAccessKeys"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        }
+    ]
 }
 ```
 

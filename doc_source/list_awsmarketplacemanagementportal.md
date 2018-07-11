@@ -21,15 +21,15 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) | Allows a user to access the File Upload page inside the AWS Marketplace Management Portal\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) | Allows a user to access the Marketing page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) | Allows a user to access the Reports page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) | Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
+|   [ uploadFiles ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the File Upload page inside the AWS Marketplace Management Portal\. | Write |  |  |  | 
+|   [ viewMarketing ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Marketing page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
+|   [ viewReports ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Reports page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
+|   [ viewSupport ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
 
 ## Resources Defined by Marketplace Portal<a name="awsmarketplacemanagementportal-resources-for-iam-policies"></a>
 
-Marketplace Portal has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace Management Portal has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for AWS Marketplace Management Portal<a name="awsmarketplacemanagementportal-policy-keys"></a>
 
-Marketplace Portal has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Marketplace Portal has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

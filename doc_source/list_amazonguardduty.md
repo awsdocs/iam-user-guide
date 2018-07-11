@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\} |  | 
-| [http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\} |  | 
-| [http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/) | arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\} |  | 
+|   [ detector ](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}  |  | 
+|   [ ipset ](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\}  |  | 
+|   [ threatintelset ](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\}  |  | 
 
 ## Condition Keys for Amazon GuardDuty<a name="amazonguardduty-policy-keys"></a>
 
-GuardDuty has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+GuardDuty has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

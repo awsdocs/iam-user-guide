@@ -6,27 +6,27 @@ You can access the IAM Policy Simulator at: [https://policysim\.aws\.amazon\.com
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
-        "iam:GetPolicy",           
-        "iam:GetUserPolicy"
-      ],
-      "Effect": "Allow",
-      "Resource": "*"
-    },
-    {
-      "Action": [
-        "iam:GetUser",           
-        "iam:ListAttachedUserPolicies",           
-        "iam:ListGroupsForUser",           
-        "iam:ListUserPolicies",           
-        "iam:ListUsers"
-      ],
-      "Effect": "Allow",
-      "Resource": "arn:aws:iam::<ACCOUNTNUMBER>:user/<USER-PATH-NAME>/*"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:GetPolicy",
+                "iam:GetUserPolicy"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": [
+                "iam:GetUser",
+                "iam:ListAttachedUserPolicies",
+                "iam:ListGroupsForUser",
+                "iam:ListUserPolicies",
+                "iam:ListUsers"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/<USER-PATH-NAME>/*"
+        }
+    ]
 }
 ```

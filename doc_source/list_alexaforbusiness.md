@@ -2,6 +2,9 @@
 
 Alexa for Business \(service prefix: `a4b`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
+References:
++ View a [list of the API operations available for this service](http://docs.aws.amazon.com/a4b/latest/APIReference/)\.
+
 **Topics**
 + [Actions Defined by Alexa for Business](#alexaforbusiness-actions-as-permissions)
 + [Resources Defined by Alexa for Business](#alexaforbusiness-resources-for-iam-policies)
@@ -24,12 +27,12 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| device | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\} |  | 
-| profile | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\} |  | 
-| room | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\} |  | 
-| skillgroup | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\} |  | 
-| user | arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\} |  | 
+|   profile  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\}  |  | 
+|   room  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\}  |  | 
+|   device  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\}  |  | 
+|   skillgroup  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\}  |  | 
+|   user  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\}  |  | 
 
 ## Condition Keys for Alexa for Business<a name="alexaforbusiness-policy-keys"></a>
 
-Alexa for Business has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Alexa for Business has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

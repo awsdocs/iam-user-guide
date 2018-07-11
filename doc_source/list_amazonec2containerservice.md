@@ -29,23 +29,23 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html) | arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\} |  | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#ECS_ARN_Format](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#ECS_ARN_Format) | arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:container/$\{ContainerId\} |  | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html) | arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:container\-instance/$\{ContainerInstanceId\} |  | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html) | arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:service/$\{ServiceName\} |  | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html) | arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task/$\{TaskId\} |  | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html) | arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task\-definition/$\{TaskDefinitionFamilyName:$\{TaskDefinitionRevisionNumber\} |  | 
+|   [ cluster ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_clusters.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |  | 
+|   [ container ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#ECS_ARN_Format)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:container/$\{ContainerId\}  |  | 
+|   [ container\-instance ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:container\-instance/$\{ContainerInstanceId\}  |  | 
+|   [ service ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:service/$\{ServiceName\}  |  | 
+|   [ task ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task/$\{TaskId\}  |  | 
+|   [ task\-definition ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task\-definition/$\{TaskDefinitionFamilyName:$\{TaskDefinitionRevisionNumber\}  |  | 
 
 ## Condition Keys for Amazon EC2 Container Service<a name="amazonec2containerservice-policy-keys"></a>
 
 Amazon EC2 Container Service defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys) | The ARN of an ECS cluster\. | ARN | 
-| [http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys) | The ARN of an ECS container instance\. | ARN | 
+|   [ ecs:cluster ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS cluster\. | ARN | 
+|   [ ecs:container\-instances ](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS container instance\. | ARN | 

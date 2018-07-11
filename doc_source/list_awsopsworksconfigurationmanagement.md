@@ -21,26 +21,26 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html) | Associate a node to a configuration management server\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html) | Create a backup for the specified server\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html) | Create a new server\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html) | Delete the specified backup and possibly its S3 bucket\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html) | Deletes the specified server with his corresponding CF stack and possibly the S3 bucket\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html) | Describe the service limits for the user's account\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html) | Describe a single backup, all backups of a specified server or all backups of the user's account\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html) | Describe all events of the specified server\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html) | Describe the association status for the specified node token and the specified server\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html) | Describes the specified server or all servers of the user's account\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html) | Disassociates a specified node from a server\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html) | Applies a backup to specified server\. Possibly swaps out the ec2\-instance if specified\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html) | Start the server maintenance immediately\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html) | Update general server settings\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html) | Update server settings specific to the configuration management type\. | Write |  |  |  | 
+|   [ AssociateNode ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_AssociateNode.html)  | Associate a node to a configuration management server\. | Write |  |  |  | 
+|   [ CreateBackup ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateBackup.html)  | Create a backup for the specified server\. | Write |  |  |  | 
+|   [ CreateServer ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_CreateServer.html)  | Create a new server\. | Write |  |  |  | 
+|   [ DeleteBackup ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteBackup.html)  | Delete the specified backup and possibly its S3 bucket\. | Write |  |  |  | 
+|   [ DeleteServer ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DeleteServer.html)  | Deletes the specified server with his corresponding CF stack and possibly the S3 bucket\. | Write |  |  |  | 
+|   [ DescribeAccountAttributes ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeAccountAttributes.html)  | Describe the service limits for the user's account\. | List |  |  |  | 
+|   [ DescribeBackups ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeBackups.html)  | Describe a single backup, all backups of a specified server or all backups of the user's account\. | List |  |  |  | 
+|   [ DescribeEvents ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeEvents.html)  | Describe all events of the specified server\. | List |  |  |  | 
+|   [ DescribeNodeAssociationStatus ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html)  | Describe the association status for the specified node token and the specified server\. | List |  |  |  | 
+|   [ DescribeServers ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html)  | Describes the specified server or all servers of the user's account\. | List |  |  |  | 
+|   [ DisassociateNode ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html)  | Disassociates a specified node from a server\. | Write |  |  |  | 
+|   [ RestoreServer ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html)  | Applies a backup to specified server\. Possibly swaps out the ec2\-instance if specified\. | Write |  |  |  | 
+|   [ StartMaintenance ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html)  | Start the server maintenance immediately\. | Write |  |  |  | 
+|   [ UpdateServer ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html)  | Update general server settings\. | Write |  |  |  | 
+|   [ UpdateServerEngineAttributes ](http://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html)  | Update server settings specific to the configuration management type\. | Write |  |  |  | 
 
 ## Resources Defined by OpsworksCM<a name="awsopsworksconfigurationmanagement-resources-for-iam-policies"></a>
 
-OpsworksCM has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS OpsWorks Configuration Management has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for AWS OpsWorks Configuration Management<a name="awsopsworksconfigurationmanagement-policy-keys"></a>
 
-OpsworksCM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+OpsworksCM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

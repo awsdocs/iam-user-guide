@@ -6,20 +6,20 @@ To learn about using multiple conditions within the `Condition` block of an IAM 
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-          "<SERVICE-NAME-1>:*",
-          "<SERVICE-NAME-2>:<ACTION-NAME-A>",    
-          "<SERVICE-NAME-2>:<ACTION-NAME-B>"
-      ],
-    "Resource": "*",
-    "Condition": {
-      "Bool": {"aws:MultiFactorAuthPresent": true},
-      "DateGreaterThan": {"aws:CurrentTime": "2017-07-01T00:00:00Z"},
-      "DateLessThan": {"aws:CurrentTime": "2017-12-31T23:59:59Z"}
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": [
+            "<SERVICE-NAME-1>:*",
+            "<SERVICE-NAME-2>:<ACTION-NAME-A>",
+            "<SERVICE-NAME-2>:<ACTION-NAME-B>"
+        ],
+        "Resource": "*",
+        "Condition": {
+            "Bool": {"aws:MultiFactorAuthPresent": true},
+            "DateGreaterThan": {"aws:CurrentTime": "2017-07-01T00:00:00Z"},
+            "DateLessThan": {"aws:CurrentTime": "2017-12-31T23:59:59Z"}
+        }
     }
-  }
 }
 ```

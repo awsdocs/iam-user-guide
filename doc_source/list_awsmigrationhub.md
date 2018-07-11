@@ -21,22 +21,22 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html) | Associate a given AWS artifact to a MigrationTask | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html) | Associate a given ADS resource to a MigrationTask | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html) | Create a ProgressUpdateStream | Write | [progressUpdateStream\*](#awsmigrationhub-progressUpdateStream)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html) | Delete a ProgressUpdateStream | Write | [progressUpdateStream\*](#awsmigrationhub-progressUpdateStream)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html) | Get an Application Discovery Service Application's state | Read |  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html) | Describe a MigrationTask | Read | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html) | Disassociate a given AWS artifact from a MigrationTask | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html) | Disassociate a given ADS resource from a MigrationTask | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html) | Import a MigrationTask | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html) | List associated created artifacts for a MigrationTask | List | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html) | List associated ADS resources from MigrationTask | List | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html) | List MigrationTasks | List |  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html) | List ProgressUpdateStreams | List |  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html) | Update an Application Discovery Service Application's state | Write |  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html) | Notify latest MigrationTask state | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html) | Put ResourceAttributes | Write | [migrationTask\*](#awsmigrationhub-migrationTask)  |  |  | 
+|   [ AssociateCreatedArtifact ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateCreatedArtifact.html)  | Associate a given AWS artifact to a MigrationTask | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ AssociateDiscoveredResource ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_AssociateDiscoveredResource.html)  | Associate a given ADS resource to a MigrationTask | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ CreateProgressUpdateStream ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_CreateProgressUpdateStream.html)  | Create a ProgressUpdateStream | Write |   [ progressUpdateStream\* ](#awsmigrationhub-progressUpdateStream)   |  |  | 
+|   [ DeleteProgressUpdateStream ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DeleteProgressUpdateStream.html)  | Delete a ProgressUpdateStream | Write |   [ progressUpdateStream\* ](#awsmigrationhub-progressUpdateStream)   |  |  | 
+|   [ DescribeApplicationState ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeApplicationState.html)  | Get an Application Discovery Service Application's state | Read |  |  |  | 
+|   [ DescribeMigrationTask ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DescribeMigrationTask.html)  | Describe a MigrationTask | Read |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ DisassociateCreatedArtifact ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateCreatedArtifact.html)  | Disassociate a given AWS artifact from a MigrationTask | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ DisassociateDiscoveredResource ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_DisassociateDiscoveredResource.html)  | Disassociate a given ADS resource from a MigrationTask | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ ImportMigrationTask ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ImportMigrationTask.html)  | Import a MigrationTask | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ ListCreatedArtifacts ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListCreatedArtifacts.html)  | List associated created artifacts for a MigrationTask | List |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ ListDiscoveredResources ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListDiscoveredResources.html)  | List associated ADS resources from MigrationTask | List |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ ListMigrationTasks ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListMigrationTasks.html)  | List MigrationTasks | List |  |  |  | 
+|   [ ListProgressUpdateStreams ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ListProgressUpdateStreams.html)  | List ProgressUpdateStreams | List |  |  |  | 
+|   [ NotifyApplicationState ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyApplicationState.html)  | Update an Application Discovery Service Application's state | Write |  |  |  | 
+|   [ NotifyMigrationTaskState ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_NotifyMigrationTaskState.html)  | Notify latest MigrationTask state | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
+|   [ PutResourceAttributes ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html)  | Put ResourceAttributes | Write |   [ migrationTask\* ](#awsmigrationhub-migrationTask)   |  |  | 
 
 ## Resources Defined by Migration Hub<a name="awsmigrationhub-resources-for-iam-policies"></a>
 
@@ -47,9 +47,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_MigrationTask.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_MigrationTask.html) | arn:$\{Partition\}:mgh:$\{Region\}:$\{Account\}:progressUpdateStream/$\{Stream\}/migrationTask/$\{Task\} |  | 
-| [http://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html) | arn:$\{Partition\}:mgh:$\{Region\}:$\{Account\}:progressUpdateStream/$\{Stream\} |  | 
+|   [ progressUpdateStream ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_ProgressUpdateStreamSummary.html)  |  arn:$\{Partition\}:mgh:$\{Region\}:$\{Account\}:progressUpdateStream/$\{Stream\}  |  | 
+|   [ migrationTask ](http://docs.aws.amazon.com/migrationhub/latest/ug/API_MigrationTask.html)  |  arn:$\{Partition\}:mgh:$\{Region\}:$\{Account\}:progressUpdateStream/$\{Stream\}/migrationTask/$\{Task\}  |  | 
 
 ## Condition Keys for AWS Migration Hub<a name="awsmigrationhub-policy-keys"></a>
 
-Migration Hub has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Migration Hub has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

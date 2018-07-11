@@ -21,16 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/channels-create.html](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-create.html) | Creates a new AWS Elemental MediaPackage Channel\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-create.html](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-create.html) | Creates a new AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/channels-delete.html](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-delete.html) | Deletes an AWS Elemental MediaPackage Channel | Write |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-delete.html](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-delete.html) | Deletes an AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/channels-view.html](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-view.html) | Returns the configuration of an AWS Elemental MediaPackage Channel\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view.html](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view.html) | Returns the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html) | Returns a list AWS Elemental MediaPackage Channels\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view-all.html](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view-all.html) | Returns a list of AWS Elemental MediaPackage OriginEndpoints\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/channels-edit.html](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-edit.html) | Updates the configuration of an AWS Elemental MediaPackage Channel\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-edit.html](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-edit.html) | Updates the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
+|   [ CreateChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-create.html)  | Creates a new AWS Elemental MediaPackage Channel\. | Write |  |  |  | 
+|   [ CreateOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-create.html)  | Creates a new AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
+|   [ DeleteChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-delete.html)  | Deletes an AWS Elemental MediaPackage Channel | Write |  |  |  | 
+|   [ DeleteOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-delete.html)  | Deletes an AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
+|   [ DescribeChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-view.html)  | Returns the configuration of an AWS Elemental MediaPackage Channel\. | Read |  |  |  | 
+|   [ DescribeOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view.html)  | Returns the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Read |  |  |  | 
+|   [ ListChannels ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html)  | Returns a list AWS Elemental MediaPackage Channels\. | Read |  |  |  | 
+|   [ ListOriginEndpoints ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view-all.html)  | Returns a list of AWS Elemental MediaPackage OriginEndpoints\. | Read |  |  |  | 
+|   [ UpdateChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-edit.html)  | Updates the configuration of an AWS Elemental MediaPackage Channel\. | Write |  |  |  | 
+|   [ UpdateOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-edit.html)  | Updates the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
 
 ## Resources Defined by MediaPackage<a name="awselementalmediapackage-resources-for-iam-policies"></a>
 
@@ -41,9 +41,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html) | arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:channels/$\{ChannelIdentifier\} |  | 
-| [http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html) | arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:origin\_endpoints/$\{OriginEndpointIdentifier\} |  | 
+|   [ channels ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:channels/$\{ChannelIdentifier\}  |  | 
+|   [ origin\_endpoints ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:origin\_endpoints/$\{OriginEndpointIdentifier\}  |  | 
 
 ## Condition Keys for AWS Elemental MediaPackage<a name="awselementalmediapackage-policy-keys"></a>
 
-MediaPackage has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+MediaPackage has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

@@ -81,16 +81,28 @@ The following examples show ARNs for different types of IAM resources\.
 
   `arn:aws:iam::123456789012:oidc-provider/GoogleProvider` 
 
-The following example shows a policy you could assign to Bob to allow him to manage his own access keys\. Notice that the resource is the IAM user Bob\.
+The following example shows a policy you could assign to Richard to allow him to manage his own access keys\. Notice that the resource is the IAM user Richard\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": ["iam:*AccessKey*"],
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/division_abc/subdivision_xyz/Bob"
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ManageRichardAccessKeys",
+            "Effect": "Allow",
+            "Action": [
+                "iam:*AccessKey*",
+                "iam:GetUser"
+            ],
+            "Resource": "arn:aws:iam::*:user/division_abc/subdivision_xyz/Richard"
+        },
+        {
+            "Sid": "ListForConsole",
+            "Effect": "Allow",
+            "Action": "iam:ListUsers",
+            "Resource": "*"
+        }
+    ]
 }
 ```
 
@@ -161,6 +173,23 @@ One example pertains to reusing friendly names in your AWS account\. Within your
 However, every IAM user has a unique ID, even if you create a new IAM user that reuses a friendly name that you deleted before\. In the example, the old IAM user David and the new IAM user David have different unique IDs\. If you create resource policies for Amazon S3 buckets that grant access by unique ID and not just by user name, it reduces the chance that you could inadvertently grant access to information that an employee should not have\. 
 
 Another example where user IDs can be useful is if you maintain your own database \(or other store\) of IAM user information\. The unique ID can provide a unique identifier for each IAM user you create, even if over time you have IAM users that reuse a name, as in the previous example\.
+
+### Understanding Unique ID Prefixes<a name="identifiers-prefixes"></a>
+
+IAM uses the following prefixes to indicate what type of entity each unique ID applies to\.
+
+
+| Prefix | Entity Type | 
+| --- | --- | 
+| A3T |  Root user  | 
+| AKIA |  Access key  | 
+|  AGPA  | Group | 
+|  AIDA  |  IAM user   | 
+|  AROA  |  Role  | 
+| AIPA | Amazon EC2 instance profile | 
+| ANPA |  Managed policy  | 
+|  ANVA  |  Version in a managed policy  | 
+|  ASIA  |  Temporary \(AWS STS\) keys  | 
 
 ### Getting the Unique ID<a name="identifiers-get-unique-id"></a>
 
