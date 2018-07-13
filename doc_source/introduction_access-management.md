@@ -1,10 +1,16 @@
 # Overview of Access Management: Permissions and Policies<a name="introduction_access-management"></a>
 
-The access management portion of AWS Identity and Access Management \(IAM\) helps you to define what a user or other entity is allowed to do in an account, often referred to as *authorization*\. Permissions are granted through policies\. A policy is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents attached to principals as *identity\-based policies*, or to resources as *resource\-based policies*\.
+The access management portion of AWS Identity and Access Management \(IAM\) helps you define what a user or other entity is allowed to do in an account\. This process is often referred to as *authorization*\. Permissions are categorized as permissions policies and permissions boundaries\. Most permission policies are JSON policy documents in AWS that, when attached to an identity or resource, define their permissions\. A permissions boundary is an advanced feature that allows you to use policies to limit the maximum permissions that a principal can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
+
+AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Most policies are stored in AWS as JSON documents\.
+
+## Policies and Accounts<a name="intro-access-accounts"></a>
+
+If you manage a single account in AWS, then you define the permissions within that account using policies\. If you manage permissions across multiple accounts, it is more difficult to manage permissions for your users\. As a best practice, you can use the AWS Organizations service to help you manage those permissions\. For more information, see [What is AWS Organizations?](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *Organizations User Guide*\.
 
 ## Policies and Users<a name="intro-access-users"></a>
 
-By default, IAM users can't access anything in your account\. You grant permissions to a user by creating an identity\-based policy, which is a policy attached to the user\. The following example shows a policy that grants permission to perform all Amazon DynamoDB actions \(`dynamodb:*`\) on the Books table in the account 123456789012 within the us\-east\-2 region\.
+IAM users are identities in the service\. When you create an IAM user, they can't access anything in your account until you give them permission\. You give permissions to a user by creating an identity\-based policy, which is a policy that is attached to the user\. The following example shows a JSON policy that allows the user to perform all Amazon DynamoDB actions \(`dynamodb:*`\) on the `Books` table in the `123456789012` account within the `us-east-2` Region\.
 
 ```
 {
@@ -17,9 +23,9 @@ By default, IAM users can't access anything in your account\. You grant permissi
 }
 ```
 
- When you attach the policy to an IAM user, then the user has those DynamoDB permissions\. Typically, users in your account have multiple policies that together represent the permissions for that user\.
+ After you attach this policy to your IAM user, the user has those DynamoDB permissions\. Most users have multiple policies that together represent the permissions for that user\.
 
-Any actions or resources that are not explicitly allowed are denied by default\. For example, if the above policy is the only policy attached to a user, then that user is allowed to perform DynamoDB actions on the Books table only\. Actions on all other tables are prohibited\. Similarly, the user is not allowed to perform any actions in Amazon EC2, Amazon S3, or in any other AWS service, because permissions to work with those services are not included in the policy\. 
+Actions or resources that are not explicitly allowed are denied by default\. For example, if the preceding policy is the only policy that is attached to a user, then that user is allowed to perform DynamoDB actions on the `Books` table only\. Actions on all other tables are prohibited\. Similarly, the user is not allowed to perform any actions in Amazon EC2, Amazon S3, or in any other AWS service\. The reason is that permissions to work with those services are not included in the policy\. 
 
 The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the [service summary](access_policies_understand-service-summary.md), and the [action summary](access_policies_understand-action-summary.md)\. The *policy summary* table includes a list of services\. Choose a service there to see the *service summary*\. This summary table includes a list of the actions and associated permissions for the chosen service\. You can choose an action from that table to view the *action summary*\. This table includes a list of resources and conditions for the chosen action\. 
 
@@ -47,39 +53,16 @@ Federated users don't have permanent identities in your AWS account the way that
 
 ## Identity\-based and Resource\-based Policies<a name="intro-access-resource-based-policies"></a>
 
-Identity\-based policies are permission policies that you can attach to a principal \(or identity\), such as an IAM user, role, or group\. Resource\-based policies are JSON policy documents that you attach to a resource such as an Amazon S3 bucket\.
+Identity\-based policies are permissions policies that you attach to a principal \(or identity\), such as an IAM user, group, or role\. Resource\-based policies are permissions policies that you attach to a resource such as an Amazon S3 bucket\.
 
-Identity\-based policies control what actions that identity can perform, on which resources, and under what conditions\. Identity\-based policies can be further categorized:
+*Identity\-based policies* control what actions that identity can perform, on which resources, and under what conditions\. Identity\-based policies can be further categorized:
 + **Managed policies** – Standalone identity\-based policies that you can attach to multiple users, groups, and roles in your AWS account\. You can use two types of managed policies: 
   + **AWS managed policies** – Managed policies that are created and managed by AWS\. If you are new to using policies, we recommend that you start by using AWS managed policies\.
   + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\. You can create and edit an IAM policy in the visual editor or by creating the JSON policy document directly\. For more information, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
-+ **Inline policies** – Policies that you create and manage and that are *embedded* directly into a single user, group, or role\.
++ **Inline policies** – Policies that you create and manage and that are embedded directly into a single user, group, or role\.
 
-Resource\-based policies control what actions a specified principal can perform on that resource and under what conditions\. Resource\-based policies are inline policies, and there are no managed resource\-based policies\.
+*Resource\-based policies* control what actions a specified principal can perform on that resource and under what conditions\. Resource\-based policies are inline policies, and there are no managed resource\-based policies\.
 
 Although IAM identities are technically AWS resources, you cannot attach a resource\-based policy to an IAM identity\. You must use identity\-based policies in IAM\. To see which services support resource\-based policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn more about resource\-based policies, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\. 
 
-*Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. When you create a role in IAM, the role must have two things: The first is a trust policy that indicates who can assume the role\. The second is a permission policy that indicates what they can do with that role\. Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role until the administrator for that account grants the users the permission to assume the role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
-
-**Important**  
-Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories above, we mean an identity\-based, customer managed policy\.
-
-When a user tries to perform an operation in AWS, IAM checks all the policies that exist on the user, its groups, or the affected resource\. If there is an identity\-based policy and a resource\-based policy that apply to the same operation, then both must allow the operation\. This means that the identity\-based policy must allow the action on the resource\. This means that the resource\-based policy must also allow the action for the principal making the call\.
-
-For example, in Amazon S3, you can attach a resource\-based policy to a bucket\. This is called a bucket policy\. The following example shows an S3 bucket policy that allows an IAM user named bob in AWS account 777788889999 to put objects into the bucket to which the policy is attached\.
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Principal": {"AWS": "arn:aws:iam::777788889999:user/bob"},
-    "Action": [
-      "s3:PutObject",
-      "s3:PutObjectAcl"
-    ]
-  }
-}
-```
-
-Resource\-based policies include a `Principal` element that specifies who is granted the permissions\. In the preceding example, the `Principal` element is set to the [Amazon Resource Name](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of an IAM user named bob in AWS account 777788889999\. This indicates that the resource \(in this case, the S3 bucket\) is accessible to that IAM user but no one else\. 
+*Trust policies* are resource\-based policies that are attached to a role\. They define which principals can assume the role\. When you create a role in IAM, the role must have a trust policy and a permissions policy\. The trust policy indicates who can assume the role\. The permissions policy indicates what they can do with that role\. Remember that no trusted entities can assume the role until the administrator for that account grants them permission to assume the role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.

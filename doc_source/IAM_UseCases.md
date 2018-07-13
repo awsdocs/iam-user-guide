@@ -71,7 +71,7 @@ Now John creates a set of policies to assign permissions to the users and groups
 **Note**  
 Amazon S3 doesn't automatically give a user who creates a bucket or object permission to perform other actions on that bucket or object\. Therefore, in your IAM policies, you must explicitly give users permission to use the Amazon S3 resources they create\.
 
-For examples of what these policies might look like, see [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. For information on how policies are evaluated at run time, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
+For examples of what these policies might look like, see [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. For information on how policies are evaluated at run time, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
 
 ### User's Role Change<a name="S3_UserRoleChange"></a>
 

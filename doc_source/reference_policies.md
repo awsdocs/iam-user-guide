@@ -2,7 +2,7 @@
 
 This section presents detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\. It includes the following sections\.
 +  [IAM JSON Policy Elements Reference](reference_policies_elements.md) — Learn more about the elements that you can use when you create a policy\. View additional policy examples and learn about conditions, supported data types, and how they are used in various services\. 
-+ [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md) — This section describes AWS requests, how they are authenticated, and how AWS uses policies to determine access to resources\. 
++ [Policy Evaluation Logic](reference_policies_evaluation-logic.md) — This section describes AWS requests, how they are authenticated, and how AWS uses policies to determine access to resources\. 
 + [Grammar of the IAM JSON Policy Language ](reference_policies_grammar.md) — This section presents a formal grammar for the language that is used to create policies in IAM\.
 + [AWS Managed Policies for Job Functions](access_policies_job-functions.md) — This section lists all the AWS managed policies that directly map to common job functions in the IT industry\. Use these policies to grant the permissions that are needed to carry out the tasks expected of someone in a specific job function\. These policies consolidate permissions for many services into a single policy\.
 + [AWS Global Condition Context Keys](reference_policies_condition-keys.md) — This section includes a list of all the AWS global condition keys that you can use to limit permissions in an IAM policy\.

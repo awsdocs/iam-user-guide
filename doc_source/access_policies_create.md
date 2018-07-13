@@ -7,7 +7,7 @@ You can create a new IAM policy in the AWS Management Console using one of the f
 + **Visual editor** — You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 + **JSON** — In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
-You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Adding and Removing IAM Policies \(Console\)](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
+You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
@@ -128,7 +128,7 @@ After you create a policy, you can attach it to your groups, users, or roles\. F
 
 You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
 
-A JSON [policy](access_policies.md) document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of a specific resource, they must be in two separate JSON statements\. For general information about IAM policies, see [IAM Policies](access_policies.md)\. For information about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
+A JSON [policy](access_policies.md) document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) of a specific resource, they must be in two separate JSON statements\. For general information about IAM policies, see [Policies and Permissions](access_policies.md)\. For information about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
 
 **To use the JSON policy editor to create a policy**
 

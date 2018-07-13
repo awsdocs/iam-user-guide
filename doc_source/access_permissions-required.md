@@ -3,7 +3,7 @@
 *Resources* are objects within a service\. IAM resources include groups, users, roles, and policies\. If you are signed in with AWS account root user credentials, you have no restrictions on administering IAM credentials or IAM resources\. However, IAM users must explicitly be given permissions to administer credentials or IAM resources\. You can do this by attaching an identity\-based policy to the user\.
 
 **Note**  
-Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories, we mean an identity\-based, customer managed policy\. For details about policy categories, see [IAM Policies](access_policies.md)\.
+Throughout the AWS documentation, when we refer to an IAM policy without mentioning any of the specific categories, we mean an identity\-based, customer managed policy\. For details about policy categories, see [Policies and Permissions](access_policies.md)\.
 
 ## Permissions for Administering IAM Identities<a name="access_permissions-required-identities"></a>
 
@@ -80,7 +80,7 @@ If you want to give users permissions to administer groups, users, roles, polici
 You can directly grant IAM users in your own account access to your resources\. If users from another account need access to your resources, you can create an IAM role, which is an entity that includes permissions but that isn't associated with a specific user\. Users from other accounts can then use the role and access resources according to the permissions you've assigned to the role\. For more information, see [Providing Access to an IAM User in Another AWS Account That You Own](id_roles_common-scenarios_aws-accounts.md)\.
 
 **Note**  
-For services that support resource\-based policies as described in [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md) \(such as Amazon S3, Amazon SNS, and Amazon SQS\), an alternative to using roles is to attach a policy to the resource \(bucket, topic, or queue\) that you want to share\. The resource\-based policy can specify the AWS account that has permissions to access the resource\.
+Some services support resource\-based policies as described in [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md) \(such as Amazon S3, Amazon SNS, and Amazon SQS\)\. For those services, an alternative to using roles is to attach a policy to the resource \(bucket, topic, or queue\) that you want to share\. The resource\-based policy can specify the AWS account that has permissions to access the resource\.
 
 ## Permissions for One Service to Access Another<a name="UserPermissionsAcrossAWS_ARCHIVE"></a>
 

@@ -124,7 +124,7 @@ In the preceding IAM user policy example, account B uses a wildcard to grant its
 
 An AWS account cannot delegate access to another account's resources if the other account has explicitly denied access to the user's parent account\. The deny propagates to the users under that account whether or not the users have existing policies granting them access\.
 
-For example, account A writes a bucket policy on account A's S3 bucket that explicitly denies account B access to account A's bucket\. But account B writes an IAM user policy that grants a user in account B access to account A's bucket\. The explicit deny applied to account A's S3 bucket propagates to the users in account B\. It overrides the IAM user policy granting access to the user in account B\. \(For detailed information how permissions are evaluated, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.\) 
+For example, account A writes a bucket policy on account A's S3 bucket that explicitly denies account B access to account A's bucket\. But account B writes an IAM user policy that grants a user in account B access to account A's bucket\. The explicit deny applied to account A's S3 bucket propagates to the users in account B\. It overrides the IAM user policy granting access to the user in account B\. \(For detailed information how permissions are evaluated, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.\) 
 
 Account A's bucket policy might look like the following policy\. In this example, account A's S3 bucket is named *mybucket*, and account B's account number is 1111\-2222\-3333\. Account A uses Amazon S3 to implement this policy\. 
 

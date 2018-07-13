@@ -7,5 +7,5 @@ The following scenarios and applications can guide you in using temporary securi
 
 For more information on policies and permissions in AWS see the following topics:
 + [Access Management](access.md)
-+ [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
++ [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 + [Managing Access Permissions to Your Amazon S3 Resources](http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in *Amazon Simple Storage Service Developer Guide*\.

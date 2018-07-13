@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Delegated administrator](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) | New feature makes it easier to grant trusted employees the ability to manage IAM permissions without also granting full IAM administrative access\. | July 12, 2018 | 
 | [aws:PrincipalOrgID](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) | New condition key provides an easier way to control access to AWS resources by specifying the AWS organization of IAM principals\. | May 17, 2018 | 
 | [aws:RequestedRegion](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#requested-region) | New condition key provides an easier way to use IAM policies to control access to AWS regions\. | April 25, 2018 | 
 | [Increased session duration for IAM roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage.html) | An IAM role can now have a session duration of 12 hours\. | March 28, 2018 | 

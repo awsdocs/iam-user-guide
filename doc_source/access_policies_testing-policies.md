@@ -1,6 +1,6 @@
 # Testing IAM Policies with the IAM Policy Simulator<a name="access_policies_testing-policies"></a>
 
-For more information about how and why to use IAM policies, see [IAM Policies](access_policies.md)\.
+For more information about how and why to use IAM policies, see [Policies and Permissions](access_policies.md)\.
 
 **You can access the IAM Policy Simulator Console at: [https://policysim\.aws\.amazon\.com/](https://policysim.aws.amazon.com/)**
 

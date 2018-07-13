@@ -4,7 +4,7 @@ You can delete IAM policies using the AWS Management Console, the AWS Command Li
 
 For more information about the difference between managed and inline policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\. 
 
-For general information about IAM policies, see [IAM Policies](access_policies.md)\.
+For general information about IAM policies, see [Policies and Permissions](access_policies.md)\.
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 

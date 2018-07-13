@@ -185,7 +185,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Macie ](http://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
 | [AWS Organizations](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | Yes | 
 | [AWS Secrets Manager](http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | No | Yes | Yes | [Yes](http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html               ) | 
-|  [AWS Single Sign\-On \(AWS SSO\)](http://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Single Sign\-On \(AWS SSO\)](http://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | Yes | 
 |  [AWS Security Token Service \(AWS STS\)](http://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes³ | No | No | Yes⁴ | No | 
 |  [AWS Shield Advanced](http://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS WAF](http://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 

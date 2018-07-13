@@ -15,7 +15,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 
 Access keys consist of two parts:
 + **The access key identifier**\. This is not a secret, and can be seen in the IAM console wherever access keys are listed, such as on the user summary page\.
-+ **The secret access key**\. This is provided when you initially create the access key pair\. Just like a password, it ***cannot be retrieved later***\. If you lost your secret access key, then you must create a new access key pair\. If you already have the [maximimum number of access keys](reference_iam-limits.md#reference_iam-limits-entities), you must delete an existing pair before you can create another\.
++ **The secret access key**\. This is provided when you initially create the access key pair\. Just like a password, it ***cannot be retrieved later***\. If you lost your secret access key, then you must create a new access key pair\. If you already have the [maximum number of access keys](reference_iam-limits.md#reference_iam-limits-entities), you must delete an existing pair before you can create another\.
 
 For more information, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
 
@@ -31,7 +31,7 @@ You can try to recover access to your email using one of the following options:
 
 If you’re still not able to access your AWS account, you can find alternate support options at [Contact us](https://aws.amazon.com//contact-us/) by expanding the **I'm an AWS customer and I'm looking for billing or account support** menu\. When you contact Customer Service, you must provide the following information:
 + All the details that are listed on the account, including your full name, phone number, address, email address, and last four digits of the credit card\. You might need to create a new AWS account for the purpose of contacting Customer Service, but this is necessary to assist in the investigation of your request\.
-+ The reason that you're unable to access the email account to receive password reset instructions
++ The reason that you're unable to access the email account to receive password reset instructions\.
 + Also request that the support team delete any accounts that you are not using\. It’s a good idea not to have open accounts in your name that could result in charges to you\.
 
 ## I can't sign in to my account<a name="troubleshoot_general_cant-sign-in"></a>
@@ -43,6 +43,8 @@ If you provided your account email address and password, AWS sometimes requires 
 ## I get "access denied" when I make a request to an AWS service<a name="troubleshoot_general_access-denied-service"></a>
 
 Verify that you have permission to call the action and resource that you have requested\. If any conditions are set, you must also meet those conditions when you send the request\. For information about viewing or modifying policies for an IAM user, group, or role, see [Managing IAM Policies](access_policies_manage.md)\.
+
+If you have a [permissions boundary](access_policies_boundaries.md), verify that the policy used for the permissions boundary allows your request\. If your permissions policies allow the request, but your permissions boundary does not, then the request is denied\. A permissions boundary controls the maximum permissions that a principal can have\. Permissions boundaries are not common\. For more information about how AWS evaluates policies, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
 If you're trying to access a service that has [resource\-based policies](access_policies_identity-vs-resource.md), such as Amazon S3, Amazon SNS, or Amazon SQS, verify that the policy specifies you as a principal and grants you access\. To view the services that support resource\-based policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 

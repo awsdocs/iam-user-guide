@@ -61,3 +61,4 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ iam:PolicyARN ](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam)  | The ARN of an IAM policy\. | ARN | 
 |   iam:PassedToService  | The AWS service to which this role is passed\. | String | 
 |   iam:AWSServiceName  | The AWS service to which this role is attached\. | String | 
+|   iam:PermissionsBoundary  | Policy attached as permissions boundary to an IAM principal\. | String | 
