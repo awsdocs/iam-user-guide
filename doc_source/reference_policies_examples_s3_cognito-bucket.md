@@ -32,7 +32,9 @@ This example shows how you might create a policy that allows Amazon Cognito user
 }
 ```
 
-Amazon Cognito is an easy way to use web identity federation in your mobile app\. Using Amazon Cognito, you can provide access to AWS resources for users who have signed in to your app using a third\-party identity provider like Login with Amazon, Facebook, Google, or any Open\-ID Connect \(OIDC\) compatible identity provider instead of using an IAM user\. To use Amazon Cognito for web identity federation, you create a role that determines what permissions the federated user will have\. You can create one role for authenticated users\. If your app allows unauthenticated \(guest\) users, you can create a second role that defines the permissions for those users\. 
+Amazon Cognito provides authentication, authorization, and user management for your web and mobile apps\. Your users can sign in directly with a user name and passowrd, or through a third party such as Facebook, Amazon, or Google\. 
+
+The two main components of Amazon Cognito are user pools and identity pools\. User pools are user directories that provide sign\-up and sign\-in options for your app users\. Identity pools enable you to grant your users access to other AWS services\. You can use identity pools and user pools separately or together\. 
 
 For more information about Amazon Cognito, see the following:
 + [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*

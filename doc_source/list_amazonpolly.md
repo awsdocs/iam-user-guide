@@ -24,8 +24,11 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DeleteLexicon ](http://docs.aws.amazon.com/polly/latest/dg/API_DeleteLexicon.html)  | Deletes the specified pronunciation lexicon stored in an AWS Region | Write |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
 |   [ DescribeVoices ](http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html)  | Returns the list of voices that are available for use when requesting speech synthesis\. | List |  |  |  | 
 |   [ GetLexicon ](http://docs.aws.amazon.com/polly/latest/dg/API_GetLexicon.html)  | Returns the content of the specified pronunciation lexicon stored in an AWS Region\. | Read |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
+|   [ GetSpeechSynthesisTask ](http://docs.aws.amazon.com/polly/latest/dg/API_GetSpeechSynthesisTask.html)  | Enables the user to get information about specific speech synthesis task\. | Read |  |  |  | 
 |   [ ListLexicons ](http://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)  | Returns a list of pronunciation lexicons stored in an AWS Region\. | List |  |  |  | 
+|   [ ListSpeechSynthesisTasks ](http://docs.aws.amazon.com/polly/latest/dg/API_ListSpeechSynthesisTasks.html)  | Enables the user to list requested speech synthesis tasks\. | List |  |  |  | 
 |   [ PutLexicon ](http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)  | Stores a pronunciation lexicon in an AWS Region\. | Write |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
+|   [ StartSpeechSynthesisTask ](http://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html)  | Enables the user to synthesize long inputs to provided S3 location\. | Write |   [ lexicon ](#amazonpolly-lexicon)   |  |   s3:PutObject   | 
 |   [ SynthesizeSpeech ](http://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)  | Synthesizes UTF\-8 input, plain text or SSML, to a stream of bytes\. | Read |   [ lexicon ](#amazonpolly-lexicon)   |  |  | 
 
 ## Resources Defined by Polly<a name="amazonpolly-resources-for-iam-policies"></a>

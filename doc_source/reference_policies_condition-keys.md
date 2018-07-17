@@ -74,16 +74,19 @@ For example, the following Amazon S3 bucket policy allows members of any account
 }
 ```
 This global condition also applies to the master account of an AWS organization\.
-For more information about AWS Organizations, see [What Is AWS Organizations?](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
+For more information about AWS Organizations, see [What Is AWS Organizations?](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.  
+This condition key is available for only some services\.
 
 **aws:PrincipalType**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks the type of principal \(user, account, federated user, etc\.\) for the current request\.
+Checks the type of principal \(user, account, federated user, etc\.\) for the current request\.  
+This condition key is available for only some services\.
 
 **aws:Referer**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks who referred the client browser to the address that the request is being sent to\. It is only supported by some services, such as [Amazon S3, as a service that can be directly addressed by a web browser](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. The value comes from the referer header in the HTTPS request that is made to AWS\.  
 This key should be used carefully: `aws:referer` allows Amazon S3 bucket owners to help prevent their content from being served up by unauthorized third\-party sites to standard web browsers\. For more information, see the link in the previous paragraph\. Since the `aws:referer` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:referer` value that they choose\. As a result, `aws:referer` should not be used to prevent unauthorized parties from making direct AWS requests\. It is offered only to allow customers to protect their digital content, stored in Amazon S3, from being referenced on unauthorized third\-party sites\.
+ This condition key is available for only some services\.
 
 **aws:RequestedRegion**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -145,6 +148,7 @@ You can use this context key to limit access to AWS services within a given set 
     ]
 }
 ```
+This condition key is available for only some services\.
 
 **aws:RequestTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -178,7 +182,8 @@ Restricts access to a specific VPC\. For more information, see [Restricting Acce
 
 **aws:SourceVpce**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Restricts access to a specific VPC endpoint\. For more information, see [Restricting Access to a Specific VPC Endpoint](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc-endpoint) in the *Amazon Simple Storage Service Developer Guide*\.
+Restricts access to a specific VPC endpoint\. For more information, see [Restricting Access to a Specific VPC Endpoint](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc-endpoint) in the *Amazon Simple Storage Service Developer Guide*\.  
+This condition key is available for only some services\.
 
 **aws:TagKeys**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -195,8 +200,10 @@ Checks the requester's client application\.
 
 **aws:userid**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks the requester's user ID\.
+Checks the requester's user ID\.  
+ This condition key is available for only some services\.
 
 **aws:username**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks the requester's user name\.
+Checks the requester's user name\.  
+ This condition key is available for only some services\.
