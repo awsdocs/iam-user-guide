@@ -33,7 +33,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon API Gateway](list_amazonapigateway.md)
 + [Application Auto Scaling](list_applicationautoscaling.md)
 + [Application Discovery](list_applicationdiscovery.md)
-+ [Amazon AppStream](list_amazonappstream.md)
++ [Amazon AppStream 2\.0](list_amazonappstream2.0.md)
 + [AWS AppSync](list_awsappsync.md)
 + [AWS Artifact](list_awsartifact.md)
 + [Amazon Athena](list_amazonathena.md)

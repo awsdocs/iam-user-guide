@@ -43,6 +43,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ policy ](http://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\}  |  | 
 |   [ cert ](http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cert/$\{Certificate\}  |  | 
 |   [ cacert ](http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\}  |  | 
+|   [ stream ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:stream/$\{streamId\}  |  | 
+|   [ otaupdate ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:otaupdate/$\{otaUpdateId\}  |  | 
 
 ## Condition Keys for AWS IoT<a name="awsiot-policy-keys"></a>
 

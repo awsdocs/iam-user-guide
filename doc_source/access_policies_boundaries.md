@@ -171,7 +171,7 @@ Each statement serves a different purpose:
             ],
             "Resource": "*",
             "Condition": {"StringEquals": 
-                {"iam:PermissionBoundary": "arn:aws:iam::111122223333:policy/XCompanyBoundaries"}}
+                {"iam:PermissionsBoundary": "arn:aws:iam::111122223333:policy/XCompanyBoundaries"}}
         },
         {
             "Sid": "CloudWatchAndOtherIAMTasks",
@@ -189,6 +189,7 @@ Each statement serves a different purpose:
                 "iam:GetPolicyVersion",
                 "iam:GetUserPolicy",
                 "iam:GetRolePolicy",
+                "iam:ListPolicies",
                 "iam:ListPolicyVersions",
                 "iam:ListEntitiesForPolicy",
                 "iam:ListUserPolicies",
@@ -208,13 +209,18 @@ Each statement serves a different purpose:
                 "iam:CreatePolicyVersion",
                 "iam:DeletePolicy",
                 "iam:DeletePolicyVersion",
-                "iam:DeleteUserPermissionsBoundary",
                 "iam:SetDefaultPolicyVersion"
             ],
             "Resource": [
                 "arn:aws:iam::123456789012:policy/XCompanyBoundaries",
                 "arn:aws:iam::123456789012:policy/DelegatedUserBoundary"
             ]
+        },
+        {
+            "Sid": "NoBoundaryUserDelete",
+            "Effect": "Deny",
+            "Action": "iam:DeleteUserPermissionsBoundary",
+            "Resource": "*"
         }
     ]
 }
@@ -227,6 +233,8 @@ Each statement serves a different purpose:
 1. The `CloudWatchAndOtherIAMTasks` statement allows Zhang to complete other user, group, and policy management tasks\. Note that Zhang does not have the permission to delete the permissions boundary from himself or any other user\.
 
 1. The `NoBoundaryPolicyEdit` statement denies Zhang access to update the `XCompanyBoundaries` policy\. He is not allowed to change any policy that is used to set the permissions boundary for himself or other users\.
+
+1. The `NoBoundaryUserDelete` statement denies Zhang access to delete the permissions boundary for himself or other users\.
 
 María then assigns the `DelegatedUserBoundary` policy [as the permissions boundary](id_users_change-permissions.md#users_change_permissions-set-boundary-console) for the `Zhang` user\. 
 

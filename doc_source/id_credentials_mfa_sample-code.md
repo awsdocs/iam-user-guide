@@ -1,12 +1,12 @@
 # Sample Code: Requesting Credentials with Multi\-factor Authentication<a name="id_credentials_mfa_sample-code"></a>
 
-The following examples show how to call `GetSessionToken` and `AssumeRole` and pass MFA authentication\. The credentials returned are then used to list all S3 buckets in the account\.
+The following examples show how to call `GetSessionToken` and `AssumeRole` operations and pass MFA authentication parameters\. No permissions are required to call `GetSessionToken`, but you must have a policy that allows you to call `AssumeRole`\. The credentials returned are then used to list all S3 buckets in the account\.
 
 ## Calling GetSessionToken with MFA Authentication \(Python and C\#\)<a name="MFAProtectedAPI-example-getsessiontoken"></a>
 
-The following examples, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/) and [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/), show how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by `GetSessionToken` are then used to list all S3 buckets in the account\.
+The following examples, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/) and [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/), show how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by the `GetSessionToken` operation are then used to list all S3 buckets in the account\.
 
-The policy attached to the user who runs this code \(or to a group that the user is in\) is assumed to include an MFA check\. The policy also needs to grant the user permission to request the Amazon S3 `ListBuckets` action\. 
+The policy attached to the user who runs this code \(or to a group that the user is in\) provides the permissions for the returned temporary credentials\. For this example code, the policy must grant the user permission to request the Amazon S3 `ListBuckets` operation\. 
 
 ### Using Python<a name="MFAProtectedAPI-python-example"></a>
 
@@ -110,7 +110,7 @@ from boto.sts import STSConnection
 mfa_TOTP = raw_input("Enter the MFA code: ")
 
 # The calls to AWS STS AssumeRole must be signed with the access key ID and secret
-# access key of an IAM user. (The AssumeRole API can also be called using temporary
+# access key of an IAM user. (The AssumeRole API operation can also be called using temporary
 # credentials, but this example does not show that scenario.) 
 # The IAM user credentials can be in environment variables or in 
 # a configuration file and will be discovered automatically

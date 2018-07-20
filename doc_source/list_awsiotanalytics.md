@@ -18,39 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ BatchPutMessage ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html)  | Puts a batch of messages into the specified channel\. | Write |  |  |  | 
-|   [ CancelPipelineReprocessing ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CancelPipelineReprocessing.html)  | Cancels reprocessing for the specified pipeline\. | Write |  |  |  | 
-|   [ CreateChannel ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateChannel.html)  | Creates a channel\. | Write |  |  |  | 
-|   [ CreateDataset ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDataset.html)  | Creates a dataset\. | Write |  |  |  | 
-|   [ CreateDatasetContent ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatasetContent.html)  | Generates content of the specified dataset \(by executing the dataset actions\)\. | Write |  |  |  | 
-|   [ CreateDatastore ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreateDatastore.html)  | Creates a datastore\. | Write |  |  |  | 
-|   [ CreatePipeline ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_CreatePipeline.html)  | Creates a pipeline\. | Write |  |  |  | 
-|   [ DeleteChannel ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteChannel.html)  | Deletes the specified channel\. | Write |  |  |  | 
-|   [ DeleteDataset ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDataset.html)  | Deletes the specified dataset\. | Write |  |  |  | 
-|   [ DeleteDatasetContent ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatasetContent.html)  | Deletes the content of the specified dataset\. | Write |  |  |  | 
-|   [ DeleteDatastore ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeleteDatastore.html)  | Deletes the specified datastore\. | Write |  |  |  | 
-|   [ DeletePipeline ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeletePipeline.html)  | Deletes the specified pipeline\. | Write |  |  |  | 
-|   [ DescribeChannel ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeChannel.html)  | Describes the specified channel\. | Read |  |  |  | 
-|   [ DescribeDataset ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDataset.html)  | Describes the specified dataset\. | Read |  |  |  | 
-|   [ DescribeDatastore ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeDatastore.html)  | Describes the specified datastore\. | Read |  |  |  | 
-|   [ DescribeLoggingOptions ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribeLoggingOptions.html)  | Describes logging options for the the account\. | Read |  |  |  | 
-|   [ DescribePipeline ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DescribePipeline.html)  | Describes the specified pipeline\. | Read |  |  |  | 
-|   [ GetDatasetContent ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_GetDatasetContent.html)  | Gets the content of the specified dataset\. | Read |  |  |  | 
-|   [ ListChannels ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListChannels.html)  | Lists the channels for the account\. | List |  |  |  | 
-|   [ ListDatasets ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatasets.html)  | Lists the datasets for the account\. | List |  |  |  | 
-|   [ ListDatastores ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListDatastores.html)  | Lists the datastores for the account\. | List |  |  |  | 
-|   [ ListPipelines ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_ListPipelines.html)  | Lists the pipelines for the account\. | List |  |  |  | 
-|   [ PutLoggingOptions ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_PutLoggingOptions.html)  | Puts logging options for the the account\. | Write |  |  |  | 
-|   [ RunPipelineActivity ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_RunPipelineActivity.html)  | Runs the specified pipeline activity\. | Read |  |  |  | 
-|   [ SampleChannelData ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_SampleChannelData.html)  | Samples the specified channel's data\. | Read |  |  |  | 
-|   [ StartPipelineReprocessing ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_StartPipelineReprocessing.html)  | Starts reprocessing for the specified pipeline\. | Write |  |  |  | 
-|   [ UpdateChannel ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateChannel.html)  | Updates the specified channel\. | Write |  |  |  | 
-|   [ UpdateDataset ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDataset.html)  | Updates the specified dataset\. | Write |  |  |  | 
-|   [ UpdateDatastore ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdateDatastore.html)  | Updates the specified datastore\. | Write |  |  |  | 
-|   [ UpdatePipeline ](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_UpdatePipeline.html)  | Updates the specified pipeline\. | Write |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotanalytics.html)
 
 ## Resources Defined by IoT Analytics<a name="awsiotanalytics-resources-for-iam-policies"></a>
 

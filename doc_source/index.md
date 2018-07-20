@@ -232,7 +232,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon API Gateway](list_amazonapigateway.md)
          + [Actions, Resources, and Condition Keys for Application Auto Scaling](list_applicationautoscaling.md)
          + [Actions, Resources, and Condition Keys for Application Discovery](list_applicationdiscovery.md)
-         + [Actions, Resources, and Condition Keys for Amazon AppStream](list_amazonappstream.md)
+         + [Actions, Resources, and Condition Keys for Amazon AppStream 2.0](list_amazonappstream2.0.md)
          + [Actions, Resources, and Condition Keys for AWS AppSync](list_awsappsync.md)
          + [Actions, Resources, and Condition Keys for AWS Artifact](list_awsartifact.md)
          + [Actions, Resources, and Condition Keys for Amazon Athena](list_amazonathena.md)
