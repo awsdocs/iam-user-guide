@@ -255,7 +255,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Greengrass](http://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS IoT](http://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](http://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](http://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | No | Yes | No | 
 
-¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates\. You can attach AWS IoT policies to an X\.509 certificate to control what the device is authorized to do\. For more information, see [Create an AWS IoT Policy](http://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html) in the *AWS IoT Developer Guide*\. 
+¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](http://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 
 
 ## Game Development Services<a name="game_svcs"></a>
 

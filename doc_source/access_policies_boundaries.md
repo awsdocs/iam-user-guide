@@ -67,7 +67,7 @@ You can use permissions boundaries to delegate permissions management tasks, suc
 
 For example, assume that María is the administrator of the X\-Company AWS account\. She wants to delegate user creation duties to Zhang\. However, she must ensure that Zhang creates users that adhere to the following company rules:
 + Users cannot use IAM to create or manage users, groups, roles, or policies\.
-+ Users are denied access to the Amazon S3 `logs` bucket and cannot access the `production` Amazon EC2 instance\.
++ Users are denied access to the Amazon S3 `logs` bucket and cannot access the `i-1234567890abcdef0` Amazon EC2 instance\.
 + Users cannot remove their own boundary policies\.
 
 To enforce these rules, María completes the following tasks, for which details are included below:
@@ -80,7 +80,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 1. María tells Zhang about his new responsibilities and limitations\.
 
-**Task 1:** María must first create a managed policy to define the boundary for the new users\. María will allow Zhang to give users the permissions policies they need, but she wants those users to be restricted\. To do this, she creates the following customer managed policy with the name `XCompanyBoundaries`\. This policy allows users full access to several services, limited self\-managing access in IAM, and denies users access to the Amazon S3 logs bucket or the production Amazon EC2 instance\.
+**Task 1:** María must first create a managed policy to define the boundary for the new users\. María will allow Zhang to give users the permissions policies they need, but she wants those users to be restricted\. To do this, she creates the following customer managed policy with the name `XCompanyBoundaries`\. This policy allows users full access to several services, limited self\-managing access in IAM, and denies users access to the Amazon S3 logs bucket or the `i-1234567890abcdef0` Amazon EC2 instance\.
 
 ```
 {
@@ -135,7 +135,7 @@ To enforce these rules, María completes the following tasks, for which details 
             "Sid": "DenyEC2Production",
             "Effect": "Deny",
             "Action": "ec2:*",
-            "Resource": "arn:aws:ec2:*:123456789012:instance/production"
+            "Resource": "arn:aws:ec2:*:*:instance/i-1234567890abcdef0"
         }
     ]
 }
@@ -149,7 +149,7 @@ Each statement serves a different purpose:
 
 1. The `DenyS3Logs` statement explicitly denies access to the `logs` bucket\.
 
-1. The `DenyEC2Production` statement explicitly denies access to the `production` instance\.
+1. The `DenyEC2Production` statement explicitly denies access to the `i-1234567890abcdef0` instance\.
 
 **Task 2:** María wants to allow Zhang to create all X\-Company users, but only with the `XCompanyBoundaries` permissions boundary\. She creates the following customer managed policy named `DelegatedUserBoundary`\. This policy defines the maximum permissions that Zhang can have\.
 
@@ -181,6 +181,10 @@ Each statement serves a different purpose:
                 "iam:GetUser",
                 "iam:ListUsers",
                 "iam:DeleteUser",
+                "iam:CreateAccessKeys",
+                "iam:CreateLoginProfile",
+                "iam:GetAccountPasswordPolicy",
+                "iam:GetLoginProfile",
                 "iam:*Group*",
                 "iam:CreatePolicy",
                 "iam:DeletePolicy",
@@ -198,7 +202,7 @@ Each statement serves a different purpose:
                 "iam:ListAttachedRolePolicies",
                 "iam:SetDefaultPolicyVersion",
                 "iam:SimulatePrincipalPolicy",
-                "iam:SimulateCustomPolicy"
+                "iam:SimulateCustomPolicy" 
             ],
             "Resource": "*"
         },
