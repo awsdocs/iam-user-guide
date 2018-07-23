@@ -42,7 +42,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [  swf:workflowType\.name ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only a workflow of the specified type\. | String | 
 |   [ swf:activityType\.name ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only an activity type of the specified name\. | String | 
 |   [ swf:activityType\.version ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Contstrains the policy statement to only an activity type of the specified version\. | String | 
 |   [ swf:defaultTaskList\.name ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only requests that specify a matching defaultTaskList name\. | String | 
@@ -57,5 +56,6 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ swf:typeFilter\.name ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only requests that specify a type filter with the specified name\. | String | 
 |   [ swf:typeFilter\.version ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only requests that specify a type filter with the specified version\. | String | 
 |   [ swf:version ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only activities or workflows with the specified version\. | String | 
+|   [  swf:workflowType\.name ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only a workflow of the specified type\. | String | 
 |   [ swf:workflowType\.name ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only requests that specify a workflow type of the specified name\. | String | 
 |   [ swf:workflowType\.version ](http://docs.aws.amazon.com/amazonswf/latest/APIReference/swf-dev-iam.html#swf-dev-iam.api)  | Constrains the policy statement to only requests that specify a workflow type of the specified version\. | String | 

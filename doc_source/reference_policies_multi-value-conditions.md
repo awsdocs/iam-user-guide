@@ -37,44 +37,57 @@ For information about how set operators are used in DynamoDB to implement fine\-
 
 ## Examples of Condition Set Operators<a name="reference_policies_multi-value-conditions-examples"></a>
 
-The following example policy shows how to use the `ForAllValues` qualifier with the `StringLike` condition operator\. The condition allows a user to request *only* the attributes `PostDateTime`, `Message`, or `Tags` from the DynamoDB table named `Thread`\.
+The following example policy shows how to use the `ForAllValues` qualifier with the `StringEquals` condition operator\. The condition allows a user to request *only* the attributes `ID`, `Message`, or `Tags` from the DynamoDB table named `Thread`\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": "GetItem",
-    "Resource": "arn:aws:dynamodb:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:table/Thread",
-    "Condition": {"ForAllValues:StringLike": {"dynamodb:requestedAttributes": [
-      "PostDateTime",
-      "Message",
-      "Tags"
-    ]}}
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "dynamodb:GetItem",
+            "Resource": "arn:aws:dynamodb:*:*:table/Thread",
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "dynamodb:Attributes": [
+                        "ID",
+                        "Message",
+                        "Tags"
+                    ]
+                }
+            }
+        }
+    ]
 }
 ```
 
-If the user makes a request to DynamoDB to get the attributes `PostDateTime` and `Message` from the `Threads` table, the request is allowed, because the user's requested attributes all match values specified in the policy\. However, if the user's request includes the `ID` attribute, the request fails, because `ID` is not within the list of allowed attributes, and the `ForAllValues` qualifier requires all requested values to be listed in the policy\. 
+If the user makes a request to DynamoDB to get the attributes `Message` and `Tags` from the `Thread` table, the request is allowed, because the user's requested attributes all match values specified in the policy\. The `GetItem` operation requires the user to pass the `ID` attribute as the database table key, which is also allowed in the policy\. However, if the user's request includes the `UserName` attribute, the request fails, because `UserName` is not within the list of allowed attributes and the `ForAllValues` qualifier requires all requested values to be listed in the policy\.
 
-The following example shows how to use the `ForAnyValue` qualifier as part of a policy that denies access to the `ID` and `PostDateTime` attributes if the user tries to perform the `PutItem` action—that is, if the user tries to update either of those attributes\. Notice that the `Effect` element is set to `Deny`\.
+**Important**  
+If you use `dynamodb:Attributes`, you must specify the names of all of the primary key and index key attributes for the table and any secondary indexes that are listed in the policy\. Otherwise, DynamoDB can't use these key attributes to perform the requested action\.
+
+The following example shows how to use the `ForAnyValue` qualifier to deny access to the `ID` and `PostDateTime` attributes if the user tries to perform the `PutItem` action\. That is, if the user tries to update either of those attributes in the `Thread` table\. Notice that the `Effect` element is set to `Deny`\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Deny",
-    "Action": "PutItem",
-    "Resource": "arn:aws:dynamodb:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:table/Thread",
-    "Condition": {"ForAnyValue:StringLike": {"dynamodb:requestedAttributes": [
-      "ID",
-      "PostDateTime"
-    ]}}
-  }]
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Deny",
+        "Action": "dynamodb:PutItem",
+        "Resource": "arn:aws:dynamodb:*:*:table/Thread",
+        "Condition": {
+            "ForAnyValue:StringEquals": {
+                "dynamodb:Attributes": [
+                    "ID",
+                    "PostDateTime"
+                ]
+            }
+        }
+    }
 }
 ```
 
-Imagine that the user makes a request to update the `PostDateTime` and `Message` attributes\. The `ForAnyValue` qualifier determines whether any of the requested attributes appear in the list in the policy\. In this case, there is one match \(`PostDateTime`\), so the condition is true\. Assuming the other values in the request also match \(for example, the resource\), the overall policy evaluation returns true\. Because the policy's effect is `Deny`, the request is denied\. 
+Assume that the user makes a request to update the `PostDateTime` and `Message` attributes of the `Thread` table\. The `ForAnyValue` qualifier determines whether any of the requested attributes appear in the list in the policy\. In this case, there is one match \(`PostDateTime`\), so the condition is true\. Assuming the other values in the request also match \(for example, the resource\), the overall policy evaluation returns true\. Because the policy's effect is `Deny`, the request is denied\. 
 
 Imagine the user instead makes a request to perform `PutItem` with just the `UserName` attribute\. None of the attributes in the request \(just `UserName`\) match any of attributes listed in the policy \(`ID`, `PostDateTime`\)\. The condition returns false, so the effect of the policy \(`Deny`\) is also false, and the request is not denied by this policy\. \(For the request to succeed, it must be explicitly allowed by a different policy\. It is not explicitly denied by this policy, but all requests are implicitly denied\.\)
 
@@ -113,32 +126,25 @@ The following policy includes a `ForAllValues` qualifier:
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": "GetItem",
-    "Resource": "arn:aws:dynamodb:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:table/Thread",
-    "Condition": {"ForAllValues:StringLike": {"dynamodb:requestedAttributes": [
-      "PostDateTime",
-      "Message",
-      "Tags"
-    ]}}
-  }]
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": "dynamodb:GetItem",
+        "Resource": "arn:aws:dynamodb:*:*:table/Thread",
+        "Condition": {
+            "ForAllValues:StringEquals": {
+                "dynamodb:Attributes": [
+                    "PostDateTime",
+                    "Message",
+                    "Tags"
+                ]
+            }
+        }
+    }
 }
 ```
 
-Suppose that the user makes a request to DynamoDB to get the attributes `PostDateTime` and `UserName`\. The keys in the request and condition values in the policy are these: 
-
-
-****  
-
-| Key \(in the request\) | Condition Value \(in the policy\) | 
-| --- | --- | 
-| PostDateTime | PostDateTime | 
-| UserName | Message | 
-|   | Tags | 
-
-The evaluation for the combination is this:
+Suppose that the user makes a request to DynamoDB to get the attributes `PostDateTime` and `UserName`\. The evaluation for the combination is this:
 
 
 ****  
@@ -158,16 +164,20 @@ The following policy includes a `ForAnyValue` qualifier:
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Deny",
-    "Action": "PutItem",
-    "Resource": "arn:aws:dynamodb:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:table/Thread",
-    "Condition": {"ForAnyValue:StringLike": {"dynamodb:requestedAttributes": [
-      "ID",
-      "PostDateTime"
-    ]}}
-  }]
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Deny",
+        "Action": "dynamodb:PutItem",
+        "Resource": "arn:aws:dynamodb:*:*:table/Thread",
+        "Condition": {
+            "ForAnyValue:StringEquals": {
+                "dynamodb:Attributes": [
+                    "ID",
+                    "PostDateTime"
+                ]
+            }
+        }
+    }
 }
 ```
 

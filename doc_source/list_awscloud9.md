@@ -55,9 +55,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   cloud9:InstanceType  |  | String | 
-|   cloud9:SubnetId  |  | String | 
-|   cloud9:UserArn  |  | ARN | 
 |   cloud9:EnvironmentId  |  | String | 
 |   cloud9:EnvironmentName  |  | String | 
+|   cloud9:InstanceType  |  | String | 
 |   cloud9:Permissions  |  | String | 
+|   cloud9:SubnetId  |  | String | 
+|   cloud9:UserArn  |  | ARN | 

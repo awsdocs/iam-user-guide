@@ -11,7 +11,7 @@ During authorization, IAM uses values from the [request context](intro-structure
 AWS checks each policy that applies to the context of the request\. If a single policy denies the request, AWS denies the entire request and stops evaluating policies\. This is called an *explicit deny*\. Because requests are *denied by default*, IAM authorizes your request only if every part of your request is allowed by the applicable policies\. The [evaluation logic](reference_policies_evaluation-logic.md) follows these rules:
 + By default, all requests are denied\. \(In general, requests made using the AWS account root user credentials for resources in the account are always allowed\.\) 
 + An explicit allow in a permissions policy overrides this default\.
-+ A permissions boundary \(an AWS Organizations SCP or a user or role boundary\) or a policy used during AWS STS role assumption overrides the allow\. If one or more of these items exists, thy must all allow the request\. Otherwise, it is implicitly denied\.
++ A permissions boundary \(an AWS Organizations SCP or a user or role boundary\) or a policy used during AWS STS role assumption overrides the allow\. If one or more of these items exists, they must all allow the request\. Otherwise, it is implicitly denied\.
 + An explicit deny in any policy overrides any allows\.
 
 After your request has been authenticated and authorized, AWS approves the request\. If you need to make a request in a different account, the resource in that account must have a resource\-based policy that allows access from your account\. Otherwise, you must assume a role within that account with the permissions that you need\.

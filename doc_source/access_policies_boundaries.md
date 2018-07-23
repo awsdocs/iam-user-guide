@@ -63,7 +63,7 @@ When this policy is evaluated, it allows all IAM operations except those that ar
 
 ## Delegating Responsibility to Others Using Permissions Boundaries<a name="access_policies_boundaries-delegate"></a>
 
-You can use permissions boundaries to delegate permissions management tasks, such as user creation, to IAM users in your account\. This permits other to perform tasks on your behalf within a specific boundary of permissions\.
+You can use permissions boundaries to delegate permissions management tasks, such as user creation, to IAM users in your account\. This permits others to perform tasks on your behalf within a specific boundary of permissions\.
 
 For example, assume that María is the administrator of the X\-Company AWS account\. She wants to delegate user creation duties to Zhang\. However, she must ensure that Zhang creates users that adhere to the following company rules:
 + Users cannot use IAM to create or manage users, groups, roles, or policies\.
