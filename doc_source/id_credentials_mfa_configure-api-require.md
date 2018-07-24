@@ -179,7 +179,7 @@ For this policy to take effect, users must first sign out and then sign in again
 
    If user Sofía needs to stop or terminate an Amazon EC2 instance, she \(or an application that she is running\) calls `GetSessionToken`\. This API operation passes the ID of the MFA device and the current TOTP that Sofía gets from her device\.
 
-1. User Sofía \(or an application that Sofía is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `StopInstances` action\. 
+1. User Sofía \(or an application that Sofía is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `TerminateInstances` action\. 
 
    For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA Authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 
