@@ -16,7 +16,7 @@ When you delete a group in the AWS Management Console, the console automatically
 
 1. Choose **Delete policy** to delete the policy\.
 
-In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a group, you must first remove the users in the group\. Then delete any inline policies embedded in the group\. Next, detach any managed policies that attached to the group\. Only then can you delete the group itself\.
+In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a group, you must first remove the users in the group\. Then delete any inline policies embedded in the group\. Next, detach any managed policies that are attached to the group\. Only then can you delete the group itself\.
 
 ## Deleting an IAM Group \(Console\)<a name="id_groups_manage_delete_console"></a>
 
