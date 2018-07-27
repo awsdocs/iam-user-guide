@@ -4,7 +4,7 @@ AWS Elemental MediaPackage \(service prefix: `mediapackage`\) provides the follo
 
 References:
 + Learn how to [configure this service](http://docs.aws.amazon.com/mediapackage/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/mediapackage/latest/ug/)\.
++ View a [list of the API operations available for this service](http://docs.aws.amazon.com/mediapackage/latest/apireference/)\.
 + Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/mediapackage/latest/ug/setting-up.html#setting-up-create-iam-user) permission policies\.
 
 **Topics**
@@ -21,16 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-create.html)  | Creates a new AWS Elemental MediaPackage Channel\. | Write |  |  |  | 
-|   [ CreateOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-create.html)  | Creates a new AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
-|   [ DeleteChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-delete.html)  | Deletes an AWS Elemental MediaPackage Channel | Write |  |  |  | 
-|   [ DeleteOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-delete.html)  | Deletes an AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
-|   [ DescribeChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-view.html)  | Returns the configuration of an AWS Elemental MediaPackage Channel\. | Read |  |  |  | 
-|   [ DescribeOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view.html)  | Returns the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Read |  |  |  | 
-|   [ ListChannels ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels.html)  | Returns a list AWS Elemental MediaPackage Channels\. | Read |  |  |  | 
-|   [ ListOriginEndpoints ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-view-all.html)  | Returns a list of AWS Elemental MediaPackage OriginEndpoints\. | Read |  |  |  | 
-|   [ UpdateChannel ](http://docs.aws.amazon.com/mediapackage/latest/ug/channels-edit.html)  | Updates the configuration of an AWS Elemental MediaPackage Channel\. | Write |  |  |  | 
-|   [ UpdateOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/ug/endpoints-edit.html)  | Updates the configuration of an AWS Elemental MediaPackage OriginEndpoint\. | Write |  |  |  | 
+|   [ CreateChannel ](http://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost)  | Grants permission to create a channel in AWS Elemental MediaPackage\. | Write |  |  |  | 
+|   [ CreateOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost)  | Grants permission to create an endpoint in AWS Elemental MediaPackage\. | Write |  |  |  | 
+|   [ DeleteChannel ](http://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete)  | Grants permission to delete a channel in AWS Elemental MediaPackage\. | Write |  |  |  | 
+|   [ DeleteOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete)  | Grants permission to delete an endpoint in AWS Elemental MediaPackage\. | Write |  |  |  | 
+|   [ DescribeChannel ](http://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget)  | Grants permission to view the details of a channel in AWS Elemental MediaPackage\. | Read |  |  |  | 
+|   [ DescribeOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget)  | Grants permission to view the details of an endpoint in AWS Elemental MediaPackage\. | Read |  |  |  | 
+|   [ ListChannels ](http://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget)  | Grants permission to view a list of channels in AWS Elemental MediaPackage\. | Read |  |  |  | 
+|   [ ListOriginEndpoints ](http://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget)  | Grants permission to view a list of endpoints in AWS Elemental MediaPackage\. | Read |  |  |  | 
+|   [ UpdateChannel ](http://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput)  | Grants permission to make changes to a channel in AWS Elemental MediaPackage\. | Write |  |  |  | 
+|   [ UpdateOriginEndpoint ](http://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput)  | Grants permission to make changes to an endpoint in AWS Elemental MediaPackage\. | Write |  |  |  | 
 
 ## Resources Defined by MediaPackage<a name="awselementalmediapackage-resources-for-iam-policies"></a>
 
