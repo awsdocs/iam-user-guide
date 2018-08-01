@@ -118,6 +118,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon Machine Learning](list_amazonmachinelearning.md)
 + [Manage Amazon API Gateway](list_manageamazonapigateway.md)
 + [AWS Marketplace](list_awsmarketplace.md)
++ [AWS Marketplace Image Building Service](list_awsmarketplaceimagebuildingservice.md)
 + [AWS Marketplace Management Portal](list_awsmarketplacemanagementportal.md)
 + [AWS Marketplace Metering Service](list_awsmarketplacemeteringservice.md)
 + [Amazon Mechanical Turk](list_amazonmechanicalturk.md)
