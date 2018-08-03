@@ -272,6 +272,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon Data Lifecycle Manager](list_amazondatalifecyclemanager.md)
          + [Actions, Resources, and Condition Keys for Data Pipeline](list_datapipeline.md)
          + [Actions, Resources, and Condition Keys for AWS Database Migration Service](list_awsdatabasemigrationservice.md)
+         + [Actions, Resources, and Condition Keys for AWS DeepLens](list_awsdeeplens.md)
          + [Actions, Resources, and Condition Keys for AWS Device Farm](list_awsdevicefarm.md)
          + [Actions, Resources, and Condition Keys for AWS Direct Connect](list_awsdirectconnect.md)
          + [Actions, Resources, and Condition Keys for AWS Directory Service](list_awsdirectoryservice.md)

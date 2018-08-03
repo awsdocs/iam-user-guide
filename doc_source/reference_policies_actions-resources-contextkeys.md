@@ -72,6 +72,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon Data Lifecycle Manager](list_amazondatalifecyclemanager.md)
 + [Data Pipeline](list_datapipeline.md)
 + [AWS Database Migration Service](list_awsdatabasemigrationservice.md)
++ [AWS DeepLens](list_awsdeeplens.md)
 + [AWS Device Farm](list_awsdevicefarm.md)
 + [AWS Direct Connect](list_awsdirectconnect.md)
 + [AWS Directory Service](list_awsdirectoryservice.md)

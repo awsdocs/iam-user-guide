@@ -93,7 +93,8 @@ To enforce these rules, María completes the following tasks, for which details 
                 "s3:*",
                 "cloudwatch:*",
                 "ec2:*",
-                "dynamodb:*"
+                "dynamodb:*",
+                "iam:ListUsers"
             ],
             "Resource": "*"
         },
@@ -106,10 +107,20 @@ To enforce these rules, María completes the following tasks, for which details 
                 "iam:CreateLoginProfile",
                 "iam:DeleteAccessKey",
                 "iam:DeleteLoginProfile",
+                "iam:GetAccessKeyLastUsed",
                 "iam:GetLoginProfile",
+                "iam:GetUser",
+                "iam:GetUserPolicy",
                 "iam:ListAccessKeys",
+                "iam:ListAttachedUserPolicies",
+                "iam:ListGroupsForUser",
+                "iam:ListUserPolicies",
                 "iam:UpdateAccessKey",
                 "iam:UpdateLoginProfile",
+                "iam:DeactivateMFADevice",
+                "iam:EnableMFADevice",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice",
                 "iam:ListSigningCertificates",
                 "iam:DeleteSigningCertificate",
                 "iam:UpdateSigningCertificate",
@@ -143,7 +154,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 Each statement serves a different purpose:
 
-1. The `ServiceBoundaries` statement of this policy allows full access to the specified AWS services\. This means that a new user's actions in these services are limited only by the permissions policies that are attached to the user\.
+1. The `ServiceBoundaries` statement of this policy allows full access to the specified AWS services\. This means that a new user's actions in these services are limited only by the permissions policies that are attached to the user\. It also provides access to list all IAM users, which is necessary to navigate the **Users** page in the AWS Management Console\.
 
 1. The `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` statement lets the users [manage only their own credentials](tutorial_users-self-manage-mfa-and-creds.md)\. This is important because if Zhang or another administrator gives a new user a permissions policy with full IAM access, that user could then change their own or other users' permissions\. This statement prevents that from happening\.
 
@@ -163,10 +174,8 @@ Each statement serves a different purpose:
             "Action": [
                 "iam:CreateUser",
                 "iam:DeleteUserPolicy",
-                "iam:UpdateUser",
                 "iam:AttachUserPolicy",
                 "iam:DetachUserPolicy",
-                "iam:PutUserPolicy",
                 "iam:PutUserPermissionsBoundary"
             ],
             "Resource": "*",
@@ -181,6 +190,7 @@ Each statement serves a different purpose:
                 "iam:GetUser",
                 "iam:ListUsers",
                 "iam:DeleteUser",
+                "iam:UpdateUser",
                 "iam:CreateAccessKeys",
                 "iam:CreateLoginProfile",
                 "iam:GetAccountPasswordPolicy",
@@ -200,6 +210,7 @@ Each statement serves a different purpose:
                 "iam:ListAttachedUserPolicies",
                 "iam:ListRolePolicies",
                 "iam:ListAttachedRolePolicies",
+                "iam:PutUserPolicy",
                 "iam:SetDefaultPolicyVersion",
                 "iam:SimulatePrincipalPolicy",
                 "iam:SimulateCustomPolicy" 
@@ -267,7 +278,7 @@ María then assigns the `DelegatedUserBoundary` policy [as the permissions bound
             "Resource": "*"
         },
         {
-            "Sid": "S3Bucket",
+            "Sid": "S3BucketContents",
             "Effect": "Allow",
             "Action": "s3:ListBucket",
             "Resource": "arn:aws:s3:::ZhangBucket"
@@ -282,7 +293,7 @@ Each statement serves a different purpose:
 
 1. The `CloudWatchLimited` statement allows Zhang to perform five actions in CloudWatch\. His permissions boundary allows all actions in CloudWatch, so his effective CloudWatch permissions are limited only by his permissions policy\.
 
-1. The `S3Bucket` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. However, his permissions boundary does not allow any Amazon S3 action, he cannot perform any S3 operations, regardless of his permissions policy\.
+1. The `S3BucketContents` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. However, his permissions boundary does not allow any Amazon S3 action, he cannot perform any S3 operations, regardless of his permissions policy\.
 
 María then attaches the `DelegatedUserPermissions` policy as the permissions policy for the `Zhang` user\. 
 
