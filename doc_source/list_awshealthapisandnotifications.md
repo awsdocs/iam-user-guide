@@ -29,9 +29,18 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ entity ](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html)  |  arn:$\{Partition\}:health:$\{Region\}::entity/$\{EntityId\}  |  | 
-|   [ event ](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html)  |  arn:$\{Partition\}:health:$\{Region\}::event/$\{EventId\}  |  | 
+|   [ event ](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html)  |  arn:$\{Partition\}:health:\*::event/$\{Service\}/$\{EventTypeCode\}/\*  |  | 
 
 ## Condition Keys for AWS Health APIs and Notifications<a name="awshealthapisandnotifications-policy-keys"></a>
 
-Health has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Health APIs and Notifications defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ health:eventTypeCode ](http://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | The type of event\. | String | 
+|   [ health:service ](http://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | The service of the event\. | String | 

@@ -63,7 +63,7 @@ When you assign a policy like this as a permissions boundary for a user, remembe
 
 For detailed information about the procedures mentioned previously, refer to these resources:
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
-+ To learn how to attach an IAM policy to a principal, see [](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
++ To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
 + To see an example policy for granting full access to EC2, see [Amazon EC2: Allows Full EC2 Access Within a Specific Region, Programmatically and in the Console](reference_policies_examples_ec2_region.md)\.
 + To allow read\-only access to an S3 bucket, use the first two statements of the following example policy: [Amazon S3: Allows Read and Write Access to a Specific S3 Bucket, Programmatically and in the Console](reference_policies_examples_s3_rw-bucket-console.md)\.
 + To see an example policy for allowing users to rotate their credentials, see [IAM: Allows IAM Users to Rotate Their Own Credentials Programmatically and in the Console](reference_policies_examples_iam_credentials_console.md)\.
@@ -207,7 +207,7 @@ For example, you can give permissions to an account administrator to create, upd
 
 For more information, refer to these resources:
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
-+ To learn how to attach an IAM policy to a principal, see [](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
++ To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
 + To see an example policy for limiting the use of managed policies, see [IAM: Limits Managed Policies That Can Be Applied to a New IAM User, Group, or Role](reference_policies_examples_iam_limit-managed.md)\.
 
 ### Controlling Permissions for Creating, Updating, and Deleting Customer Managed Policies<a name="policies-controlling-access-create-update-delete"></a>
@@ -351,7 +351,7 @@ You can control access to resources using an identity\-based policy or a resourc
 
 For more information, refer to these resources:
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
-+ To learn how to attach an IAM policy to a principal, see [](access_policies_manage-attach-detach.md#attach-managed-policy-console)\.
++ To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
 + Amazon S3 supports using resource\-based policies on their buckets\. For more information, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 <a name="NoDefaultPermissions"></a>
 **Resource Creators Do Not Automatically Have Permissions**  

@@ -32,7 +32,7 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 
 You can use the AWS Management Console to attach or detach managed policies used as a permissions policy, or to set, change, or remove a policy used for a [permissions boundary](access_policies_boundaries.md)\. You can also embed or delete an inline policy\.
 
-### <a name="attach-managed-policy-console"></a>
+### <a name="access_policies_manage-attach-detach-console"></a>
 
 **To use a managed policy as a permissions policy for a principal \(console\)**
 

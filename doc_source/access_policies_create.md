@@ -7,7 +7,7 @@ You can create a new IAM policy in the AWS Management Console using one of the f
 + **Visual editor** — You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 + **JSON** — In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
-You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [](access_policies_manage-attach-detach.md#attach-managed-policy-console)\. You cannot create AWS managed policies\.
+You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\. You cannot create AWS managed policies\.
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
