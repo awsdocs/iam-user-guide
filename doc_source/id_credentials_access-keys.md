@@ -5,7 +5,12 @@ If you found this topic because you are trying to configure the Product Advertis
 [Getting Started with the Product Advertising API](http://docs.aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
 [Getting Started as a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
 
-Users need their own access keys to make programmatic calls to AWS from the [AWS Command Line Interface](https://aws.amazon.com/cli/) \(AWS CLI\), [Tools for Windows PowerShell](https://aws.amazon.com/documentation/powershell), the [AWS SDKs](https://aws.amazon.com/tools/), or direct HTTP calls using the API operations for individual AWS services\. To fill this need, you can create, modify, view, or rotate access keys \(access key IDs and secret access keys\) for IAM users\.
+Access keys consist of an access key ID \(for example, `AKIAIOSFODNN7EXAMPLE`\) and a secret access key \(for example, `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`\)\. You use access keys to sign programmatic requests that you make to AWS if you use the AWS SDKs, REST, or Query API operations\. The AWS SDKs use your access keys to sign requests for you, so that you don't have to handle the signing process\. You can also sign requests manually\. For more information about access keys, see [Access Keys \(Access Key ID and Secret Access Key\)](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) in the *Amazon Web Services General Reference*\.
+
+**Warning**  
+As a best practice, you should avoid generating account\-level \(root user\) access keys, use temporary security credentials \(IAM roles\) instead of accesss keys, and manage any access keys properly\. For more information, see [Best Practices for Managing AWS Access Keys](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) in the *Amazon Web Services General Reference*\.
+
+If you still need to provide an IAM user with long\-term access keys, you can create, modify, view, or rotate access keys \(access key IDs and secret access keys\) for IAM users\. IAM users are limited to two access keys\. This allows you to rotate the active keys according to best practices\.
 
 When you create an access key, IAM returns the access key ID and secret access key\. You should save these in a secure location and give them to the user\. 
 
@@ -16,9 +21,7 @@ By default, when you create an access key, its status is `Active`, which means t
 
 You can delete an access key at any time\. However, when you delete an access key, it's gone forever and cannot be retrieved\. \(You can always create new keys\.\)
 
-You can give your users permission to list, rotate, and manage their own keys\. For more information, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\. 
-
-For more information about the credentials used with AWS and IAM, see [Temporary Security Credentials](id_credentials_temp.md), and [Types of Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html) in the *Amazon Web Services General Reference*\.
+You can give your users permission to list, rotate, and manage their own keys\. For more information, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\.
 
 **Topics**
 + [Managing Access Keys \(Console\)](#Using_CreateAccessKey)

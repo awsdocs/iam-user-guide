@@ -14,22 +14,26 @@ This procedure describes how to use the AWS Management Console to create an IAM 
 **To create an administrator user for yourself and add the user to an administrators group \(console\)**
 
 1. Use your AWS account email address and password to sign in as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+**Note**  
+We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 1. In the navigation pane, choose **Users** and then choose **Add user**\.
 
-1. For **User name**, type a user name, such as **Administrator**\. The name can consist of letters, digits, and the following characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\. The name is not case sensitive and can be a maximum of 64 characters in length\.
+1. For **User name**, type **Administrator**\.
 
-1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type your new password in the text box\. If you're creating the user for someone other than yourself, you can optionally select **Require password reset** to force the user to create a new password when first signing in\.
+1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type your new password in the text box\. By default, AWS forces the new user to create a new password when first signing in\. You can optionally clear the check box next to **User must create a new password at next sign\-in** to allow the new user to reset their password after they sign in\.
 
 1. Choose **Next: Permissions**\.
 
-1. On the **Set permissions for user** page, choose **Add user to group**\.
+1. On the **Set permissions** page, choose **Add user to group**\.
 
 1. Choose **Create group**\.
 
-1. In the **Create group** dialog box, type the name for the new group\. The name can consist of letters, digits, and the following characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\. The name is not case sensitive and can be a maximum of 128 characters in length\.
+1. In the **Create group** dialog box, for **Group name** type **Administrators**\.
 
-1. In the policy list, select the check box next to **AdministratorAccess**\. Then choose **Create group**\.
+1. For **Filter policies**, select the check box for **AWS managed \- job function**\.
+
+1. In the policy list, select the check box for **AdministratorAccess**\. Then choose **Create group**\.
 
 1. Back in the list of groups, select the check box for your new group\. Choose **Refresh** if necessary to see the group in the list\.
 

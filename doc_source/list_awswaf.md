@@ -37,7 +37,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ sqlinjectionmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionmatchset/$\{Id\}  |  | 
 |   [ webacl ](http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:waf::$\{Account\}:webacl/$\{Id\}  |  | 
 |   [ xssmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:xssmatchset/$\{Id\}  |  | 
-|   [ regexmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:regexmatchset/$\{Id\}  |  | 
+|   [ regexmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:regexmatch/$\{Id\}  |  | 
 |   [ regexpatternset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:regexpatternset/$\{Id\}  |  | 
 |   [ geomatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:geomatchset/$\{Id\}  |  | 
 |   [ rulegroup ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:waf::$\{Account\}:rulegroup/$\{Id\}  |  | 

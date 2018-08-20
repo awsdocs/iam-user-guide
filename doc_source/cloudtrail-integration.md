@@ -1,17 +1,25 @@
-# Logging IAM Events with AWS CloudTrail<a name="cloudtrail-integration"></a>
+# Logging IAM and AWS STS API Calls with AWS CloudTrail<a name="cloudtrail-integration"></a>
 
-AWS Identity and Access Management \(IAM\) is integrated with AWS CloudTrail, a service that logs AWS events made by or on behalf of your AWS account\. CloudTrail logs authenticated AWS API calls and also AWS sign\-in events, and collects this event information in files that are delivered to Amazon S3 buckets\. Using information collected by CloudTrail, you can determine what requests were successfully made to AWS services, who made the request, when it was made, and so on\. 
+IAM and AWS STS are integrated with AWS CloudTrail, a service that provides a record of actions taken by an IAM user or role\. CloudTrail captures all API calls for IAM and AWS STS as events, including calls from the console and from API calls\. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket\. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in **Event history**\. Using the information collected by CloudTrail, you can determine the request that was made to IAM or AWS STS, the IP address from which the request was made, who made the request, when it was made, and additional details\. 
 
-To learn more about CloudTrail, including how to configure and enable it, see the [http://docs.aws.amazon.com/awscloudtrail/latest/userguide/](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\. 
+To learn more about CloudTrail, see the [AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
 **Topics**
-+ [Types of IAM Information Logged in CloudTrail](#cloudtrail-integration-iam-information)
++ [IAM and AWS STS Information in CloudTrail](#iam-info-in-cloudtrail)
 + [Examples of Logged Events in CloudTrail Files](#cloudtrail-integration-understanding-records)
 + [Preventing Duplicate Log Entries in CloudTrail](#cloudtrail-integration-global-service)
 
-## Types of IAM Information Logged in CloudTrail<a name="cloudtrail-integration-iam-information"></a>
+## IAM and AWS STS Information in CloudTrail<a name="iam-info-in-cloudtrail"></a>
 
- IAM information is available to CloudTrail in these ways: 
+CloudTrail is enabled on your AWS account when you create the account\. When activity occurs in IAM or AWS STS, that activity is recorded in a CloudTrail event along with other AWS service events in **Event history**\. You can view, search, and download recent events in your AWS account\. For more information, see [Viewing Events with CloudTrail Event History](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)\. 
+
+For an ongoing record of events in your AWS account, including events for IAM and AWS STS, create a trail\. A trail enables CloudTrail to deliver log files to an Amazon S3 bucket\. By default, when you create a trail in the console, the trail applies to all regions\. The trail logs events from all regions in the AWS partition and delivers the log files to the Amazon S3 bucket that you specify\. Additionally, you can configure other AWS services to further analyze and act upon the event data collected in CloudTrail logs\. For more information, see: 
++ [Overview for Creating a Trail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html)
++ [CloudTrail Supported Services and Integrations](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-aws-service-specific-topics.html#cloudtrail-aws-service-specific-topics-integrations)
++ [Configuring Amazon SNS Notifications for CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_notifications_top_level.html)
++ [Receiving CloudTrail Log Files from Multiple Regions](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/receive-cloudtrail-log-files-from-multiple-regions.html) and [Receiving CloudTrail Log Files from Multiple Accounts](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-receive-logs-from-multiple-accounts.html)
+
+All IAM and AWS STS actions are logged by CloudTrail and are documented in the [IAM API Reference](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Operations.html) and the [AWS Security Token Service API Reference](http://docs.aws.amazon.com/STS/latest/APIReference/API_Operations.html)\. IAM information is available to CloudTrail in the following ways: 
 + **API requests to IAM and AWS Security Token Service \(AWS STS\)** – CloudTrail logs all authenticated API requests \(made with credentials\) to IAM and AWS STS APIs, with the exception of `DecodeAuthorizationMessage`\. CloudTrail also logs nonauthenticated requests to the AWS STS actions, `AssumeRoleWithSAML` and `AssumeRoleWithWebIdentity` and logs information provided by the identity provider\. You can use this information to map calls made by a federated user with an assumed role back to the originating external federated caller\. In the case of `AssumeRole`, you can map calls back to the originating AWS service or to the account of the originating user\. The `userIdentity` section of the JSON data in the CloudTrail log entry contains the information that you need to map the AssumeRole\* request with a specific federated user\. For more information, see [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html) in the *AWS CloudTrail User Guide*\.
 
   For example, calls to the IAM `CreateUser`, `DeleteRole`, `ListGroups`, and other API operations are all logged by CloudTrail\. 
@@ -70,7 +78,7 @@ You forget which account you are signing in to and accidentally type the account
 
 CloudTrail log files contain events that are formatted using JSON\. An event represents a single API request or sign\-in event and includes information about the requested action, any parameters, and the date and time of the action\. 
 
-### IAM API Event in CloudTrail Log File<a name="w3ab1c19c31c11b4"></a>
+### IAM API Event in CloudTrail Log File<a name="cloudtrail-integration-iam-api-events"></a>
 
 The following example shows a CloudTrail log entry for a request made for the IAM `GetUserPolicy` action\. 
 
@@ -351,7 +359,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
 }
 ```
 
-### Sign\-in Failure Event in CloudTrail Log File<a name="w3ab1c19c31c11b8"></a>
+### Sign\-in Failure Event in CloudTrail Log File<a name="cloudtrail-integration-signin-failure"></a>
 
 The following example shows a CloudTrail log entry for a failed sign\-in event\.
 
@@ -422,7 +430,7 @@ The following example shows a CloudTrail log entry for an unsuccessful sign\-in 
 }
 ```
 
-### Sign\-in Success Event in CloudTrail Log File<a name="w3ab1c19c31c11c12"></a>
+### Sign\-in Success Event in CloudTrail Log File<a name="cloudtrail-integration-signin-success"></a>
 
 The following example shows a CloudTrail log entry for a successful sign\-in event\.
 

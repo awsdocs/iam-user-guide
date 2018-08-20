@@ -151,6 +151,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Serverless Application Repository](list_awsserverlessapplicationrepository.md)
 + [AWS Service Catalog](list_awsservicecatalog.md)
 + [Amazon SES](list_amazonses.md)
++ [Amazon Session Manager Messsage Gateway Service](list_amazonsessionmanagermesssagegatewayservice.md)
 + [AWS Shield](list_awsshield.md)
 + [Amazon Simple Systems Manager](list_amazonsimplesystemsmanager.md)
 + [Amazon Simple Workflow Service](list_amazonsimpleworkflowservice.md)

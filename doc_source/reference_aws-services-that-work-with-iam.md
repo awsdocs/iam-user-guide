@@ -16,7 +16,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Application Auto Scaling](http://docs.aws.amazon.com/autoscaling/application/APIReference/Welcome.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/autoscaling/application/APIReference/application-autoscaling-service-linked-roles.html) | 
+|  [Application Auto Scaling](http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-application-auto-scaling.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/autoscaling/plans/userguide/application-auto-scaling-service-linked-roles.html) | 
 |  [Amazon EC2 Auto Scaling](http://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)  | Yes | Yes | No | No | Yes | [Yes](http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
 |  [AWS Batch](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | No | No | No | Yes | No | 
 |  [Amazon Elastic Compute Cloud \(Amazon EC2\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | Yes¹ | 
@@ -37,6 +37,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [AWS Application Discovery Service](http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](http://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [Amazon Elastic Block Store \(Amazon EBS\)](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Elastic File System \(Amazon EFS\)](http://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Glacier](http://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 

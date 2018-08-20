@@ -13,6 +13,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Enable MFA for Privileged Users](#enable-mfa-for-privileged-users)
 + [Use Roles for Applications That Run on Amazon EC2 Instances](#use-roles-with-ec2)
 + [Use Roles to Delegate Permissions](#delegate-using-roles)
++ [Do Not Share Access Keys](#sharing-credentials)
 + [Rotate Credentials Regularly](#rotate-credentials)
 + [Remove Unnecessary Credentials](#remove-credentials)
 + [Use Policy Conditions for Extra Security](#use-policy-conditions)
@@ -111,6 +112,12 @@ For more information, see [Using an IAM Role to Grant Permissions to Application
 Don't share security credentials between accounts to allow users from another AWS account to access resources in your AWS account\. Instead, use IAM roles\. You can define a role that specifies what permissions the IAM users in the other account are allowed\. You can also designate which AWS accounts have the IAM users that are allowed to assume the role\. 
 
 For more information, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
+
+## Do Not Share Access Keys<a name="sharing-credentials"></a>
+
+Access keys provide programmatic access to AWS\. Do not embed access keys within unencrypted code or share these security credentials between users in your AWS account\. For applications that need access to AWS, configure the program to retrieve temporary security credentials using an IAM role\. To allow your users individual programmatic access, create an IAM user with personal access keys\.
+
+For more information, see [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md) and [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\.
 
 ## Rotate Credentials Regularly<a name="rotate-credentials"></a>
 
