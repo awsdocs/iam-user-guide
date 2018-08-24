@@ -293,7 +293,7 @@ Each statement serves a different purpose:
 
 1. The `CloudWatchLimited` statement allows Zhang to perform five actions in CloudWatch\. His permissions boundary allows all actions in CloudWatch, so his effective CloudWatch permissions are limited only by his permissions policy\.
 
-1. The `S3BucketContents` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. However, his permissions boundary does not allow any Amazon S3 action, he cannot perform any S3 operations, regardless of his permissions policy\.
+1. The `S3BucketContents` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. His permissions boundary deny all actions in S3 only on `logs` bucket, so he can only list his own `ZhangBucket` bucket as per his permissions policy.
 
 María then attaches the `DelegatedUserPermissions` policy as the permissions policy for the `Zhang` user\. 
 
