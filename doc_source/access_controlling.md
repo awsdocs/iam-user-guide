@@ -115,7 +115,7 @@ For example, you can create a group named **AllUsers**, and then attach that gro
 
 1. Choose **Specify request conditions \(optional\)** and then choose **Add condition**\. Complete the form with the following values:
    + **Key** – Choose **aws:username**
-   + **Qualifier** – Choose **For any value in request**
+   + **Qualifier** – Choose **Default**
    + **Operator** – Choose **StringNotEquals**
    + **Value** – Type **srodriguez** and then choose **Add another condition value**\. Type **mjackson** and then choose **Add another condition value**\. Type **adesai** and then choose **Add**\.
 
@@ -182,7 +182,7 @@ Alternatively, you can create the same policy using this example JSON policy doc
             ],
             "Resource": "arn:aws:iam::*:group/AllUsers",
             "Condition": {
-                "ForAnyValue:StringNotEquals": {
+                "StringNotEquals": {
                     "aws:username": [
                         "srodriguez",
                         "mjackson",

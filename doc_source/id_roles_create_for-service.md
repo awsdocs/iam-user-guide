@@ -4,6 +4,119 @@ Many AWS services require that you use roles to allow the service to access reso
 
 For information about how roles help you to delegate permissions, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
 
+## Service Role Permissions<a name="id_roles_create_service-permissions"></a>
+
+You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create or edit a service role\.
+
+**Note**  
+The ARN for a service\-linked role includes a service principal, which is indicated in the policies below as `SERVICE-NAME.amazonaws.com`\. Do not try to guess the service principal, because it is case sensitive and the format can vary across AWS services\. To view the service principal for a service, see its service\-linked role documentation\.
+
+**To allow an IAM entity to create a specific service role**
+
+Add the following policy to the IAM entity that needs to create the service role\. This policy allows you to create a service role for the specified service and with a specific name\. You can then attach managed or inline policies to that role\. 
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "CreateSpecificRoleForSpecificService",
+            "Effect": "Allow",
+            "Action": "iam:CreateRole",
+            "Resource": "arn:aws:iam::*:role/SERVICE-ROLE-NAME",
+            "Condition": {"StringLike": {"iam:AWSServiceName": "SERVICE-NAME.amazonaws.com"}}
+        },
+        {
+            "Sid": "AddPoliciesToSpecificRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachRolePolicy",
+                "iam:PutRolePolicy"
+            ],
+            "Resource": "arn:aws:iam::*:role/SERVICE-ROLE-NAME"
+        }
+    ]
+}
+```
+
+**To allow an IAM entity to create any service role**
+
+Add the following statement to the permissions policy for the IAM entity that needs to create a service role\. This statement allows you to create any service role for any service, and then attach managed or inline policies to that role\.
+
+```
+{
+    "Effect": "Allow",
+    "Action": [
+        "iam:AttachRolePolicy",
+        "iam:CreateRole",
+        "iam:PutRolePolicy"
+    ],
+    "Resource": "*"
+}
+```
+
+**To allow an IAM entity to edit a service role**
+
+Add the following policy to the IAM entity that needs to edit the service role\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EditSpecificServiceRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:AttachRolePolicy",
+                "iam:DeleteRolePolicy",
+                "iam:DetachRolePolicy",
+                "iam:GetRole",
+                "iam:GetRolePolicy",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListRolePolicies",
+                "iam:PutRolePolicy",
+                "iam:UpdateRole",
+                "iam:UpdateRoleDescription"
+            ],
+            "Resource": "arn:aws:iam::*:role/SERVICE-ROLE-NAME"
+        },
+        {
+            "Sid": "ViewRolesAndPolicies",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetPolicy",
+                "iam:ListRoles"
+            ],
+            "Resource": ""
+        }
+    ]
+}
+```
+
+**To allow an IAM entity to delete a specific service role**
+
+Add the following statement to the permissions policy for the IAM entity that needs to delete the specified service role\.
+
+```
+{
+    "Effect": "Allow",
+    "Action": "iam:DeleteRole",
+    "Resource": "arn:aws:iam::*:role/SERVICE-ROLE-NAME"
+}
+```
+
+**To allow an IAM entity to delete any service role**
+
+Add the following statement to the permissions policy for the IAM entity that needs to delete a service role\.
+
+```
+{
+    "Effect": "Allow",
+    "Action": "iam:DeleteRole",
+    "Resource": "*"
+}
+```
+
 ## Creating a Role for an AWS Service \(Console\)<a name="roles-creatingrole-service-console"></a>
 
 You can use the AWS Management Console to create a role for a service\. Because some services support more than one service role, see the [AWS documentation](http://docs.aws.amazon.com/) for your service to see which use case to choose\. You can learn how to assign the necessary trust and permissions policies to the role so that the service can assume the role on your behalf\. The steps that you can use to control the permissions for your role can vary, depending on how the service defines the use cases, and whether or not you create a service\-linked role\.

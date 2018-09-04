@@ -351,7 +351,6 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS Serverless Application Repository](list_awsserverlessapplicationrepository.md)
          + [Actions, Resources, and Condition Keys for AWS Service Catalog](list_awsservicecatalog.md)
          + [Actions, Resources, and Condition Keys for Amazon SES](list_amazonses.md)
-         + [Actions, Resources, and Condition Keys for Amazon Session Manager Messsage Gateway Service](list_amazonsessionmanagermesssagegatewayservice.md)
          + [Actions, Resources, and Condition Keys for AWS Shield](list_awsshield.md)
          + [Actions, Resources, and Condition Keys for Amazon Simple Systems Manager](list_amazonsimplesystemsmanager.md)
          + [Actions, Resources, and Condition Keys for Amazon Simple Workflow Service](list_amazonsimpleworkflowservice.md)

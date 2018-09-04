@@ -191,7 +191,7 @@ Each statement serves a different purpose:
                 "iam:ListUsers",
                 "iam:DeleteUser",
                 "iam:UpdateUser",
-                "iam:CreateAccessKeys",
+                "iam:CreateAccessKey",
                 "iam:CreateLoginProfile",
                 "iam:GetAccountPasswordPolicy",
                 "iam:GetLoginProfile",
@@ -293,7 +293,7 @@ Each statement serves a different purpose:
 
 1. The `CloudWatchLimited` statement allows Zhang to perform five actions in CloudWatch\. His permissions boundary allows all actions in CloudWatch, so his effective CloudWatch permissions are limited only by his permissions policy\.
 
-1. The `S3BucketContents` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. However, his permissions boundary does not allow any Amazon S3 action, he cannot perform any S3 operations, regardless of his permissions policy\.
+1. The `S3BucketContents` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. However, his permissions boundary does not allow any Amazon S3 action, so he cannot perform any S3 operations, regardless of his permissions policy\.
 
 María then attaches the `DelegatedUserPermissions` policy as the permissions policy for the `Zhang` user\. 
 
@@ -317,4 +317,4 @@ Zhang completes the following tasks:
 
    The user is created\. 
 
-When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. He can view and manage all the buckets in Amazon S3 except the `logs` bucket\.
+When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. He can view and manage all the buckets that he owns in Amazon S3, but he can't access the `logs` bucket\.

@@ -13,11 +13,11 @@ When you revoke permissions for a role using the procedure in this topic, AWS at
 **Important**  
 This deny policy applies to all users of the specified role, not just those with longer duration console sessions\.
 
-## Minimum Permissions to Revoke Session Permissions from a Role<a name="w4ab1c19c24c23c36c14"></a>
+## Minimum Permissions to Revoke Session Permissions from a Role<a name="w4aac19c24c22c36c14"></a>
 
 To successfully revoke session permissions from a role, you must have the `AttachRolePolicy` permission for the role\. This allows you to add the `AWSRevokeOlderSessions` policy to the role\.
 
-## Revoking Session Permissions<a name="w4ab1c19c24c23c36c16"></a>
+## Revoking Session Permissions<a name="w4aac19c24c22c36c16"></a>
 
 To revoke the session permissions from a role, take the following steps:
 

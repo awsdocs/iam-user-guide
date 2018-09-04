@@ -6,7 +6,7 @@ ACM is the preferred tool to provision, manage, and deploy your server certifica
 
 Use IAM as a certificate manager only when you must support HTTPS connections in a region that is not supported by ACM\. IAM securely encrypts your private keys and stores the encrypted version in IAM SSL certificate storage\. IAM supports deploying server certificates in all regions, but you must obtain your certificate from an external provider for use with AWS\. You cannot upload an ACM certificate to IAM\. Additionally, you cannot manage your certificates from the IAM Console\.
 
-For more information about requesting an ACM certificate, see [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\.
+For more information about requesting an ACM certificate, see [Request a Public Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) or [Request a Private Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html) in the *AWS Certificate Manager User Guide*\.
 
 For more information about importing third party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\.
 

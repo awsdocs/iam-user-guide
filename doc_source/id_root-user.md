@@ -5,7 +5,11 @@ When you first create an Amazon Web Services \(AWS\) account, you begin with a s
 **Important**  
 We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
 
-To manage your root user, follow the steps in the following procedures\.
+You can create, rotate, disable, or delete access keys \(access key IDs and secret access keys\) for your AWS account root user\. You can also change your root user password\. Anyone who has root user credentials for your AWS account has unrestricted access to all the resources in your account, including billing information\.
+
+When you create access keys, you create the access key ID and secret access key as a set\. During access key creation, AWS gives you one opportunity to view and download the secret access key part of the access key\. If you don't download it or if you lose it, you can delete the access key and then create a new one\. You can create IAM user access keys with the [IAM console](https://console.aws.amazon.com/iam/home?#), AWS CLI, or AWS API\. For more information, see [Managing Access Keys for IAM Users](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the *IAM User Guide*\. To create access keys for your AWS account root user, you must use the AWS Management Console\.
+
+A newly created access key has the status of *active*, which means that you can use the access key for CLI and API calls\. You are [limited to two access keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) for each IAM user, which is useful when you want to [rotate the access keys](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#iam-user-access-keys)\. You can also assign up to two access keys to the root user\. When you disable an access key, you can't use it for API calls, and inactive keys do count toward your limit\. You can create or delete an access key any time\. However, when you delete an access key, it's gone forever and can't be retrieved\.
 
 **Topics**
 + [Enable MFA on the AWS Account Root User](#id_root-user_manage_mfa)
@@ -35,11 +39,13 @@ If you previously signed in to the console with *[IAM user](http://docs.aws.amaz
 
 1. Expand the **Access keys \(access key ID and secret access key\)** section\.
 
-1. Choose **Create New Access Key**\. A warning explains that you have only this one opportunity to view or download the secret access key\. It cannot be retrieved later\. 
+1. Choose **Create New Access Key**\. If this feature is disabled, then you must delete one of the existing access keys before you can create a new key\. For more information, see [IAM Entity Object Limits](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entities) in the *IAM User Guide*\. 
+
+   A warning explains that you have only this one opportunity to view or download the secret access key\. It cannot be retrieved later\. 
    + If you choose **Show Access Key**, you can copy the access key ID and secret key from your browser window and paste it somewhere else\.
    + If you choose **Download Key File**, you receive a file named `rootkey.csv` that contains the access key ID and the secret key\. Save the file somewhere safe\. 
 
-1. When you no longer use the access key [we recommend that you delete it](best-practices.md#remove-credentials), or at least mark it inactive by choosing **Make Inactive** so that it cannot be misused if leaked\.
+1. When you no longer use the access key [we recommend that you delete it](best-practices.md#remove-credentials), or at least mark it inactive by choosing **Make Inactive** so that it cannot be misused\.
 
 **To create an access key for the root user \(AWS CLI or AWS API\)**
 

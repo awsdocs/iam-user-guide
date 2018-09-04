@@ -1,6 +1,8 @@
 # Managing IAM Users<a name="id_users_manage"></a>
 
-Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\.
+Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a group, or list all groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
+
+For more information about adding, changing, or removing managed policies for an IAM user, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md), [Editing IAM Policies](access_policies_manage-edit.md), and [Deleting IAM Policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
 
 **Topics**
 + [Listing IAM Users](#id_users_manage_list)
@@ -11,17 +13,17 @@ Amazon Web Services offers multiple tools for managing the IAM users in your AWS
 
 You can list the IAM users in your AWS account or in a specific IAM group, and list all the groups that a user is in\. For information about the permissions that you need in order to list users, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\. 
 
-### To list all the users in the account<a name="w4ab1c19c19c24b7b4"></a>
+### To list all the users in the account<a name="id_users_manage_list-users"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**\. The console displays the users in your AWS account\. 
 + AWS CLI: [aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)
 + AWS API: [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) 
 
-### To list the users in a specific group<a name="w4ab1c19c19c24b7b6"></a>
+### To list the users in a specific group<a name="id_users_manage_list-users-group"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups**, choose the name of the group, and then choose the **Users** tab\. 
 + AWS CLI: [aws iam get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html)
 + AWS API: [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html)
 
-### To list all the groups that a user is in<a name="w4ab1c19c19c24b7b8"></a>
+### To list all the groups that a user is in<a name="id_users_manage_list-groups-users"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**, choose the user name, and then choose the **Groups** tab\. 
 + AWS CLI: [aws iam list\-groups\-for\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)
 + AWS API: [ListGroupsForUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html)
@@ -50,7 +52,7 @@ arn:aws:iam::111122223333:user/division_abc/subdivision_xyz/Rich
 
 This is true also if an administrator changes the path; the administrator needs to update the policy to reflect the new path for the user\. 
 
-### To rename a user<a name="w4ab1c19c19c24b9c18"></a>
+### To rename a user<a name="id_users_manage_list-users-rename"></a>
 + AWS CLI: [aws iam update\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/update-user.html)
 + AWS API: [UpdateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html) 
 

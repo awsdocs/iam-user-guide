@@ -1,6 +1,6 @@
 # Using Service\-Linked Roles<a name="using-service-linked-roles"></a>
 
-A service\-linked role is a unique type of IAM role that is linked directly to an AWS service\. Service\-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf\. The linked service also defines how you create, modify, and delete a service\-linked role\. A service might automatically create or delete the role\. It might allow you to create, modify, or delete the role as part of a wizard or process in the service\. Or it might require that you use IAM to create or delete the role\. Regardless of the method, service\-linked roles make setting up a service easier because you don’t have to manually add the necessary permissions\.
+A service\-linked role is a unique type of IAM role that is linked directly to an AWS service\. Service\-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf\. The linked service also defines how you create, modify, and delete a service\-linked role\. A service might automatically create or delete the role\. It might allow you to create, modify, or delete the role as part of a wizard or process in the service\. Or it might require that you use IAM to create or delete the role\. Regardless of the method, service\-linked roles make setting up a service easier because you don’t have to manually add the necessary permissions for the service to complete actions on your behalf\.
 
 The linked service defines the permissions of its service\-linked roles, and unless defined otherwise, only that service can assume the roles\. The defined permissions include the trust policy and the permissions policy, and that permissions policy cannot be attached to any other IAM entity\.
 
@@ -11,7 +11,7 @@ For information about which services support using service\-linked roles, see [A
 
 ## Service\-Linked Role Permissions<a name="service-linked-role-permissions"></a>
 
-You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create or edit the description of a service\-linked role\.
+You must configure permissions for an IAM entity \(user, group, or role\) to allow the user or role to create or edit the service\-linked role\.
 
 **Note**  
 The ARN for a service\-linked role includes a service principal, which is indicated in the policies below as `SERVICE-NAME.amazonaws.com`\. Do not try to guess the service principal, because it is case sensitive and the format can vary across AWS services\. To view the service principal for a service, see its service\-linked role documentation\.
@@ -32,7 +32,10 @@ Add the following policy to the IAM entity that needs to create the service\-lin
         },
         {
             "Effect": "Allow",
-            "Action": "iam:PutRolePolicy",
+            "Action": [
+                "iam:AttachRolePolicy",
+                "iam:PutRolePolicy"
+            ],
             "Resource": "arn:aws:iam::*:role/aws-service-role/SERVICE-NAME.amazonaws.com/SERVICE-LINKED-ROLE-NAME-PREFIX*"
         }
     ]
@@ -78,9 +81,9 @@ Add the following statement to the permissions policy for the IAM entity that ne
 }
 ```
 
-**To allow an IAM entity to delete any service role**
+**To allow an IAM entity to delete any service\-linked role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to delete a service\-linked role, or any service\-role\.
+Add the following statement to the permissions policy for the IAM entity that needs to delete a service\-linked role, but not service role\.
 
 ```
 {
@@ -92,8 +95,6 @@ Add the following statement to the permissions policy for the IAM entity that ne
     "Resource": "arn:aws:iam::*:role/aws-service-role/*"
 }
 ```
-
-Alternatively, you can use an AWS managed policy to provide full access to the service\.
 
 ## Creating a Service\-Linked Role<a name="create-service-linked-role"></a>
 

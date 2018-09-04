@@ -95,7 +95,7 @@ The Condition element in this policy allows Example Corp to assume the role only
 
 1. Another AWS customer also starts using Example Corp's service, and as before, this customer also provides the ARN of **AWS1:ExampleRole** for Example Corp to use\. 
 
-1. But this time, when Example Corp attempts to assume the role **AWS1:ExampleRole**, it provides the external ID associated with the other customer \("67890"\)\. The other customer has no way to change this\. Example Corp does this because the request to use the role came from the other customer, so "67890" indicates the circumstance in which Example Corp is acting\. Because you added a condition with your own external ID \("12345"\) to the trust policy of **AWS1:ExampleRole**, the AssumeRole API call fails\. The other customer is prevented from gaining unauthorized access resources in your account \(indicated by the red "X" in the diagram\)\.
+1. But this time, when Example Corp attempts to assume the role **AWS1:ExampleRole**, it provides the external ID associated with the other customer \("67890"\)\. The other customer has no way to change this\. Example Corp does this because the request to use the role came from the other customer, so "67890" indicates the circumstance in which Example Corp is acting\. Because you added a condition with your own external ID \("12345"\) to the trust policy of **AWS1:ExampleRole**, the AssumeRole API call fails\. The other customer is prevented from gaining unauthorized access to resources in your account \(indicated by the red "X" in the diagram\)\.
 
 The external ID helps prevent any other customer from tricking Example Corp into unwittingly accessing your resources—it mitigates the confused deputy problem\.
 

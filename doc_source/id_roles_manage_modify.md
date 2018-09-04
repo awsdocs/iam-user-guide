@@ -344,7 +344,7 @@ For more information and detail about this procedure, see [Granting a User Permi
    + [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)
 
 1. To use a different managed policy to update the permissions boundary for a role, call the following operation: 
-   + [PutRolePermissionsBoundary](http://alpha-docs-aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
+   + [PutRolePermissionsBoundary](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 
    A role can have only one managed policy set as a permissions boundary\. If you change the permissions boundary, you change the maximum permissions allowed for a role\.
 
