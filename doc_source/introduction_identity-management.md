@@ -45,4 +45,4 @@ Federation is particularly useful in these cases:
 
   If you are creating a mobile app or web\-based app that can let users identify themselves through an Internet identity provider like Login with Amazon, Facebook, Google, or any OpenID Connect \(OIDC\) compatible identity provider, the app can use federation to access AWS\. For more information, see [About Web Identity Federation](id_roles_providers_oidc.md)\. 
 **Tip**  
-To use identity federation with Internet identity providers, we recommend you use [Amazon Cognito](http://docs.aws.amazon.com/cognito/devguide/)\.
+To use identity federation with Internet identity providers, we recommend you use [Amazon Cognito](https://docs.aws.amazon.com/cognito/devguide/)\.

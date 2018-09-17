@@ -3,9 +3,9 @@
 AWS XRay \(service prefix: `xray`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/xray/latest/devguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/xray/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/xray/latest/devguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/xray/latest/api/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS XRay](#awsxray-actions-as-permissions)
@@ -21,12 +21,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ BatchGetTraces ](http://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html)  | Retrieves a list of traces specified by ID\. Each trace is a collection of segment documents that originates from a single request\. Use GetTraceSummaries to get a list of trace IDs\. | Read |  |  |  | 
-|   [ GetServiceGraph ](http://docs.aws.amazon.com/xray/latest/api/API_GetServiceGraph.html)  | Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result\. | Read |  |  |  | 
-|   [ GetTraceGraph ](http://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html)  | Retrieves a service graph for one or more specific trace IDs\. | Read |  |  |  | 
-|   [ GetTraceSummaries ](http://docs.aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html)  | Retrieves IDs and metadata for traces available for a specified time frame using an optional filter\. To get the full traces, pass the trace IDs to BatchGetTraces\. | Read |  |  |  | 
-|   [ PutTelemetryRecords ](http://docs.aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html)  | Used by the AWS X\-Ray daemon to send telemetry to the service\. | Write |  |  |  | 
-|   [ PutTraceSegments ](http://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html)  | Uploads segment documents to AWS X\-Ray\. The X\-Ray SDK generates segment documents and sends them to the X\-Ray daemon, which uploads them in batches\. | Write |  |  |  | 
+|   [ BatchGetTraces ](https://docs.aws.amazon.com/xray/latest/api/API_BatchGetTraces.html)  | Retrieves a list of traces specified by ID\. Each trace is a collection of segment documents that originates from a single request\. Use GetTraceSummaries to get a list of trace IDs\. | Read |  |  |  | 
+|   [ GetServiceGraph ](https://docs.aws.amazon.com/xray/latest/api/API_GetServiceGraph.html)  | Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result\. | Read |  |  |  | 
+|   [ GetTraceGraph ](https://docs.aws.amazon.com/xray/latest/api/API_GetTraceGraph.html)  | Retrieves a service graph for one or more specific trace IDs\. | Read |  |  |  | 
+|   [ GetTraceSummaries ](https://docs.aws.amazon.com/xray/latest/api/API_GetTraceSummaries.html)  | Retrieves IDs and metadata for traces available for a specified time frame using an optional filter\. To get the full traces, pass the trace IDs to BatchGetTraces\. | Read |  |  |  | 
+|   [ PutTelemetryRecords ](https://docs.aws.amazon.com/xray/latest/api/API_PutTelemetryRecords.html)  | Used by the AWS X\-Ray daemon to send telemetry to the service\. | Write |  |  |  | 
+|   [ PutTraceSegments ](https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html)  | Uploads segment documents to AWS X\-Ray\. The X\-Ray SDK generates segment documents and sends them to the X\-Ray daemon, which uploads them in batches\. | Write |  |  |  | 
 
 ## Resources Defined by XRay<a name="awsxray-resources-for-iam-policies"></a>
 

@@ -3,9 +3,9 @@
 AWS Key Management Service \(service prefix: `kms`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/kms/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/kms/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/kms/latest/developerguide/control-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/kms/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/kms/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Key Management Service](#awskeymanagementservice-actions-as-permissions)
@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ alias ](http://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html)  |  arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:alias/$\{Alias\}  |  | 
-|   [ key ](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys)  |  arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:key/$\{KeyId\}  |  | 
+|   [ alias ](https://docs.aws.amazon.com/kms/latest/developerguide/programming-aliases.html)  |  arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:alias/$\{Alias\}  |  | 
+|   [ key ](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys)  |  arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:key/$\{KeyId\}  |  | 
 
 ## Condition Keys for AWS Key Management Service<a name="awskeymanagementservice-policy-keys"></a>
 
@@ -43,18 +43,18 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ kms:BypassPolicyLockoutSafetyCheck ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check)  | Controls access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request\. | Bool | 
-|   [ kms:CallerAccount ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account)  | Controls access to specified AWS KMS operations based on the AWS account ID of the caller\. You can use this condition to allow or deny access to to all IAM users and roles in an AWS account in a single policy statement\. | String | 
-|   [ kms:EncryptionContextKeys ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys)  | Controls access based on the presence of specified keys in the encryption context\. The encryption context is an optional element in a cryptographic operation\. | String | 
-|   [ kms:ExpirationModel ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model)  | Controls access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request\. | String | 
-|   [ kms:GrantConstraintType ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type)  | Controls access to the CreateGrant operation based on the grant constraint in the request\. | String | 
-|   [ kms:GrantIsForAWSResource ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource)  | Controls access to the CreateGrant operation when the request comes from a specified AWS service\. | Bool | 
-|   [ kms:GrantOperations ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations)  | Controls access to the CreateGrant operation based on the operations in the grant\. | String | 
-|   [ kms:GranteePrincipal ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal)  | Controls access to the CreateGrant operation based on the grantee principal in the grant\. | String | 
-|   [ kms:KeyOrigin ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin)  | Controls access to the CreateKey operation based on the value of the Origin parameter in the request\. The Origin parameter determines whether AWS KMS generates cryptographic material for the key or imports it\. | String | 
-|   [ kms:ReEncryptOnSameKey ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key)  | Controls access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation\. | Bool | 
-|   [ kms:RetiringPrincipal ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal)  | Controls access to the CreateGrant operation based on the retiring principal in the grant\. | String | 
-|   [ kms:ValidTo ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to)  | Controls access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request\. You can use this condition key to allow users to import key material only when it expires by the specified date\. | Numeric | 
-|   [ kms:ViaService ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service)  | Controls access when a request made on the principal's behalf comes from a specified AWS service\. | String | 
-|   [ kms:WrappingAlgorithm ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm)  | Controls access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request\. | String | 
-|   [ kms:WrappingKeySpec ](http://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec)  | Controls access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request\. | String | 
+|   [ kms:BypassPolicyLockoutSafetyCheck ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-bypass-policy-lockout-safety-check)  | Controls access to the CreateKey and PutKeyPolicy operations based on the value of the BypassPolicyLockoutSafetyCheck parameter in the request\. | Bool | 
+|   [ kms:CallerAccount ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account)  | Controls access to specified AWS KMS operations based on the AWS account ID of the caller\. You can use this condition to allow or deny access to to all IAM users and roles in an AWS account in a single policy statement\. | String | 
+|   [ kms:EncryptionContextKeys ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context-keys)  | Controls access based on the presence of specified keys in the encryption context\. The encryption context is an optional element in a cryptographic operation\. | String | 
+|   [ kms:ExpirationModel ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-expiration-model)  | Controls access to the ImportKeyMaterial operation based on the value of the ExpirationModel parameter in the request\. | String | 
+|   [ kms:GrantConstraintType ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-constraint-type)  | Controls access to the CreateGrant operation based on the grant constraint in the request\. | String | 
+|   [ kms:GrantIsForAWSResource ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-is-for-aws-resource)  | Controls access to the CreateGrant operation when the request comes from a specified AWS service\. | Bool | 
+|   [ kms:GrantOperations ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grant-operations)  | Controls access to the CreateGrant operation based on the operations in the grant\. | String | 
+|   [ kms:GranteePrincipal ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-grantee-principal)  | Controls access to the CreateGrant operation based on the grantee principal in the grant\. | String | 
+|   [ kms:KeyOrigin ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-key-origin)  | Controls access to the CreateKey operation based on the value of the Origin parameter in the request\. The Origin parameter determines whether AWS KMS generates cryptographic material for the key or imports it\. | String | 
+|   [ kms:ReEncryptOnSameKey ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-reencrypt-on-same-key)  | Controls access to the ReEncrypt operation when it uses the same customer master key that was used for the Encrypt operation\. | Bool | 
+|   [ kms:RetiringPrincipal ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-retiring-principal)  | Controls access to the CreateGrant operation based on the retiring principal in the grant\. | String | 
+|   [ kms:ValidTo ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-valid-to)  | Controls access to the ImportKeyMaterial operation based on the value of the ValidTo parameter in the request\. You can use this condition key to allow users to import key material only when it expires by the specified date\. | Numeric | 
+|   [ kms:ViaService ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service)  | Controls access when a request made on the principal's behalf comes from a specified AWS service\. | String | 
+|   [ kms:WrappingAlgorithm ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-algorithm)  | Controls access to the GetParametersForImport operation based on the value of the WrappingAlgorithm parameter in the request\. | String | 
+|   [ kms:WrappingKeySpec ](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-wrapping-key-spec)  | Controls access to the GetParametersForImport operation based on the value of the WrappingKeySpec parameter in the request\. | String | 

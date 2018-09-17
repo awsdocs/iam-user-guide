@@ -3,9 +3,9 @@
 AWS IoT \(service prefix: `iot`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/iot/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/iot/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/iot/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iot/latest/apireference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT](#awsiot-actions-as-permissions)
@@ -29,20 +29,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ client ](http://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:client/$\{ClientId\}  |  | 
-|   [ index ](http://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:index/$\{IndexName\}  |  | 
-|   [ job ](http://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:job/$\{JobId\}  |  | 
-|   [ thing ](http://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\}  |  | 
-|   [ thinggroup ](http://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thinggroup/$\{ThingGroupName\}  |  | 
-|   [ thingtype ](http://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thingtype/$\{ThingTypeName\}  |  | 
-|   [ topic ](http://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topic/$\{TopicName\}  |  | 
-|   [ topicfilter ](http://docs.aws.amazon.com/iot/latest/developerguide/topics.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topicfilter/$\{TopicFilter\}  |  | 
-|   [ rolealias ](http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rolealias/$\{RoleAlias\}  |  | 
+|   [ client ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:client/$\{ClientId\}  |  | 
+|   [ index ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:index/$\{IndexName\}  |  | 
+|   [ job ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:job/$\{JobId\}  |  | 
+|   [ thing ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\}  |  | 
+|   [ thinggroup ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thinggroup/$\{ThingGroupName\}  |  | 
+|   [ thingtype ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thingtype/$\{ThingTypeName\}  |  | 
+|   [ topic ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topic/$\{TopicName\}  |  | 
+|   [ topicfilter ](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topicfilter/$\{TopicFilter\}  |  | 
+|   [ rolealias ](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rolealias/$\{RoleAlias\}  |  | 
 |   [ role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{Role\}  |  | 
-|   [ authorizer ](http://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:authorizer/$\{AuthorizerName\}  |  | 
-|   [ policy ](http://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\}  |  | 
-|   [ cert ](http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cert/$\{Certificate\}  |  | 
-|   [ cacert ](http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\}  |  | 
+|   [ authorizer ](https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:authorizer/$\{AuthorizerName\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\}  |  | 
+|   [ cert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cert/$\{Certificate\}  |  | 
+|   [ cacert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\}  |  | 
 |   [ stream ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:stream/$\{streamId\}  |  | 
 |   [ otaupdate ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:otaupdate/$\{otaUpdateId\}  |  | 
 

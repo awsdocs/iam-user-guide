@@ -3,9 +3,9 @@
 Amazon Cognito Identity \(service prefix: `cognito-identity`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/cognito/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/cognito/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cognito Identity](#amazoncognitoidentity-actions-as-permissions)
@@ -21,24 +21,24 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateIdentityPool ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html)  | Creates a new identity pool\. | Write |  |  |  | 
-|   [ DeleteIdentities ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html)  | Deletes identities from an identity pool\. You can specify a list of 1\-60 identities that you want to delete\. | Write |  |  |  | 
-|   [ DeleteIdentityPool ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html)  | Deletes a user pool\. Once a pool is deleted, users will not be able to authenticate with the pool\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ DescribeIdentity ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html)  | Returns metadata related to the given identity, including when the identity was created and any associated linked logins\. | Read |  |  |  | 
-|   [ DescribeIdentityPool ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentityPool.html)  | Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ GetCredentialsForIdentity ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html)  | Returns credentials for the provided identity ID\. | Read |  |  |  | 
-|   [ GetId ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html)  | Generates \(or retrieves\) a Cognito ID\. Supplying multiple logins will create an implicit linked account\. | Write |  |  |  | 
-|   [ GetIdentityPoolRoles ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html)  | Gets the roles for an identity pool\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ GetOpenIdToken ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html)  | Gets an OpenID token, using a known Cognito ID\. | Read |  |  |  | 
-|   [ GetOpenIdTokenForDeveloperIdentity ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdTokenForDeveloperIdentity.html)  | Registers \(or retrieves\) a Cognito IdentityId and an OpenID Connect token for a user authenticated by your backend authentication process\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ ListIdentities ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentities.html)  | Lists the identities in a pool\. | List |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ ListIdentityPools ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentityPools.html)  | Lists all of the Cognito identity pools registered for your account\. | List |  |  |  | 
-|   [ LookupDeveloperIdentity ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_LookupDeveloperIdentity.html)  | Retrieves the IdentityID associated with a DeveloperUserIdentifier or the list of DeveloperUserIdentifiers associated with an IdentityId for an existing identity\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ MergeDeveloperIdentities ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_MergeDeveloperIdentities.html)  | Merges two users having different IdentityIds, existing in the same identity pool, and identified by the same developer provider\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ SetIdentityPoolRoles ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetIdentityPoolRoles.html)  | Sets the roles for an identity pool\. These roles are used when making calls to GetCredentialsForIdentity action\. | Write |  |  |  | 
-|   [ UnlinkDeveloperIdentity ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkDeveloperIdentity.html)  | Unlinks a DeveloperUserIdentifier from an existing identity\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ UnlinkIdentity ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html)  | Unlinks a federated identity from an existing account\. | Write |  |  |  | 
-|   [ UpdateIdentityPool ](http://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UpdateIdentityPool.html)  | Updates a user pool\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ CreateIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html)  | Creates a new identity pool\. | Write |  |  |  | 
+|   [ DeleteIdentities ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html)  | Deletes identities from an identity pool\. You can specify a list of 1\-60 identities that you want to delete\. | Write |  |  |  | 
+|   [ DeleteIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html)  | Deletes a user pool\. Once a pool is deleted, users will not be able to authenticate with the pool\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ DescribeIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html)  | Returns metadata related to the given identity, including when the identity was created and any associated linked logins\. | Read |  |  |  | 
+|   [ DescribeIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentityPool.html)  | Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ GetCredentialsForIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html)  | Returns credentials for the provided identity ID\. | Read |  |  |  | 
+|   [ GetId ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html)  | Generates \(or retrieves\) a Cognito ID\. Supplying multiple logins will create an implicit linked account\. | Write |  |  |  | 
+|   [ GetIdentityPoolRoles ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html)  | Gets the roles for an identity pool\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ GetOpenIdToken ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html)  | Gets an OpenID token, using a known Cognito ID\. | Read |  |  |  | 
+|   [ GetOpenIdTokenForDeveloperIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdTokenForDeveloperIdentity.html)  | Registers \(or retrieves\) a Cognito IdentityId and an OpenID Connect token for a user authenticated by your backend authentication process\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ ListIdentities ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentities.html)  | Lists the identities in a pool\. | List |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ ListIdentityPools ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentityPools.html)  | Lists all of the Cognito identity pools registered for your account\. | List |  |  |  | 
+|   [ LookupDeveloperIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_LookupDeveloperIdentity.html)  | Retrieves the IdentityID associated with a DeveloperUserIdentifier or the list of DeveloperUserIdentifiers associated with an IdentityId for an existing identity\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ MergeDeveloperIdentities ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_MergeDeveloperIdentities.html)  | Merges two users having different IdentityIds, existing in the same identity pool, and identified by the same developer provider\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ SetIdentityPoolRoles ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetIdentityPoolRoles.html)  | Sets the roles for an identity pool\. These roles are used when making calls to GetCredentialsForIdentity action\. | Write |  |  |  | 
+|   [ UnlinkDeveloperIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkDeveloperIdentity.html)  | Unlinks a DeveloperUserIdentifier from an existing identity\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+|   [ UnlinkIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html)  | Unlinks a federated identity from an existing account\. | Write |  |  |  | 
+|   [ UpdateIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UpdateIdentityPool.html)  | Updates a user pool\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
 
 ## Resources Defined by Cognito Identity<a name="amazoncognitoidentity-resources-for-iam-policies"></a>
 
@@ -49,7 +49,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ identitypool ](http://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)  |  arn:$\{Partition\}:cognito\-identity:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}  |  | 
+|   [ identitypool ](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)  |  arn:$\{Partition\}:cognito\-identity:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}  |  | 
 
 ## Condition Keys for Amazon Cognito Identity<a name="amazoncognitoidentity-policy-keys"></a>
 

@@ -53,7 +53,7 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
    }
    ```
 
-   This policy grants access to the [ChangePassword](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html) action, which lets users change only their own passwords from the console, the AWS CLI, Tools for Windows PowerShell, or the API\. It also grants access to the [GetAccountPasswordPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) action, which lets the user view the current password policy; this permission is required so that the user can display the **Change Password** page in the console\. The user must be able to read the current password policy to ensure the changed password meets the requirements of the policy\.
+   This policy grants access to the [ChangePassword](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html) action, which lets users change only their own passwords from the console, the AWS CLI, Tools for Windows PowerShell, or the API\. It also grants access to the [GetAccountPasswordPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) action, which lets the user view the current password policy; this permission is required so that the user can display the **Change Password** page in the console\. The user must be able to read the current password policy to ensure the changed password meets the requirements of the policy\.
 
 1. Point users to the following instructions that show how they can change their passwords: [How IAM Users Change Their Own Passwords](id_credentials_passwords_user-change-own.md)\. 
 

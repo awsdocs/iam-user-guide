@@ -147,7 +147,7 @@ If you are using Amazon Cognito, you should use the Amazon Cognito console to se
 You must create a separate role for each identity provider that you want to support\.
    + If you're creating an advanced scenario role for Amazon Cognito, choose **Amazon Cognito**\. 
 **Note**  
-You need to manually create a role for use with Amazon Cognito only when you are working on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you\. For more information about Amazon Cognito, see [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
+You need to manually create a role for use with Amazon Cognito only when you are working on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you\. For more information about Amazon Cognito, see [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
 
 1. Type the identifier for your application\. The label of the identifier changes depending on which provider you choose:
    + If you're creating a role for Login with Amazon, type the app ID into the **Application ID** box\.

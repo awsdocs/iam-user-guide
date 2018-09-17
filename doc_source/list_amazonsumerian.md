@@ -3,7 +3,7 @@
 Amazon Sumerian \(service prefix: `sumerian`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/sumerian/latest/userguide/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/sumerian/latest/userguide/)\.
 
 **Topics**
 + [Actions Defined by Amazon Sumerian](#amazonsumerian-actions-as-permissions)
@@ -19,7 +19,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ Login ](http://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Grant login access to the Sumerian console\. | Write |  |  |  | 
+|   [ Login ](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Grant login access to the Sumerian console\. | Write |  |  |  | 
 
 ## Resources Defined by Sumerian<a name="amazonsumerian-resources-for-iam-policies"></a>
 

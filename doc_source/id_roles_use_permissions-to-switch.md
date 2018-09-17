@@ -65,4 +65,4 @@ You can also use the following format to manually construct the link\. Substitut
 We recommend that you direct your users to the topic [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
 
 **Note**  
-For security purposes, you can use AWS CloudTrail to audit role switching\. If CloudTrail is turned on for the account, IAM logs actions that are performed with the role's temporary security credentials\. For more information, see [CloudTrail Event Reference](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html) in the *AWS CloudTrail User Guide*\.
+For security purposes, you can use AWS CloudTrail to audit role switching\. If CloudTrail is turned on for the account, IAM logs actions that are performed with the role's temporary security credentials\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html) in the *AWS CloudTrail User Guide*\.

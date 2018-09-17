@@ -2,13 +2,13 @@
 
 To enable HTTPS connections to your website or application in AWS, you need an SSL/TLS *server certificate*\. You can use a server certificate provided by [AWS Certificate Manager \(ACM\)](https://aws.amazon.com/certificate-manager/) or one that you obtained from an external provider\. You can use ACM or IAM to store and deploy server certificates\. 
 
-ACM is the preferred tool to provision, manage, and deploy your server certificates\. With ACM you can request a certificate or deploy an existing ACM or external certificate to AWS resources\. Certificates provided by ACM are free and automatically renew\. You can use ACM to manage server certificates from the console or programmatically\. For more information about using ACM, see the [http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html](http://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html)\.
+ACM is the preferred tool to provision, manage, and deploy your server certificates\. With ACM you can request a certificate or deploy an existing ACM or external certificate to AWS resources\. Certificates provided by ACM are free and automatically renew\. You can use ACM to manage server certificates from the console or programmatically\. For more information about using ACM, see the [https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html](https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html)\.
 
 Use IAM as a certificate manager only when you must support HTTPS connections in a region that is not supported by ACM\. IAM securely encrypts your private keys and stores the encrypted version in IAM SSL certificate storage\. IAM supports deploying server certificates in all regions, but you must obtain your certificate from an external provider for use with AWS\. You cannot upload an ACM certificate to IAM\. Additionally, you cannot manage your certificates from the IAM Console\.
 
-For more information about requesting an ACM certificate, see [Request a Public Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) or [Request a Private Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html) in the *AWS Certificate Manager User Guide*\.
+For more information about requesting an ACM certificate, see [Request a Public Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-public.html) or [Request a Private Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request-private.html) in the *AWS Certificate Manager User Guide*\.
 
-For more information about importing third party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\.
+For more information about importing third party certificates into ACM, see [Importing Certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\.
 
 For more information about uploading third party certificates to IAM, see the following topics\.
 
@@ -27,7 +27,7 @@ To upload a server certificate to IAM, you must provide the certificate and its 
 + The private key must be unencrypted\. You cannot upload a private key that is protected by a password or passphrase\. For help decrypting an encrypted private key, see [Troubleshooting](#server-certificate-troubleshooting)\.
 + The certificate, private key, and certificate chain must all be PEM\-encoded\. For help converting these items to PEM format, see [Troubleshooting](#server-certificate-troubleshooting)\.
 
-To use the [IAM API](http://docs.aws.amazon.com/IAM/latest/APIReference/) to upload a certificate, send an [UploadServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html) request\. The following example shows how to do this with the [AWS Command Line Interface \(AWS CLI\)](https://aws.amazon.com/cli/)\. The example assumes the following:
+To use the [IAM API](https://docs.aws.amazon.com/IAM/latest/APIReference/) to upload a certificate, send an [UploadServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UploadServerCertificate.html) request\. The following example shows how to do this with the [AWS Command Line Interface \(AWS CLI\)](https://aws.amazon.com/cli/)\. The example assumes the following:
 + The PEM\-encoded certificate is stored in a file named `Certificate.pem`\.
 + The PEM\-encoded certificate chain is stored in a file named `CertificateChain.pem`\.
 + The PEM\-encoded, unencrypted private key is stored in a file named `PrivateKey.pem`\.
@@ -41,16 +41,16 @@ $ aws iam upload-server-certificate --server-certificate-name ExampleCertificate
                                     --private-key file://PrivateKey.pem
 ```
 
-When the preceding command is successful, it returns metadata about the uploaded certificate, including its [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html), its friendly name, its identifier \(ID\), its expiration date, and more\.
+When the preceding command is successful, it returns metadata about the uploaded certificate, including its [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html), its friendly name, its identifier \(ID\), its expiration date, and more\.
 
 **Note**  
 If you are uploading a server certificate to use with Amazon CloudFront, you must specify a path using the `--path` option\. The path must begin with `/cloudfront` and must include a trailing slash \(for example, `/cloudfront/test/`\)\.
 
-To use the AWS Tools for Windows PowerShell to upload a certificate, use [Publish\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Publish-IAMServerCertificate.html&tocid=Publish-IAMServerCertificate)\.
+To use the AWS Tools for Windows PowerShell to upload a certificate, use [Publish\-IAMServerCertificate](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Publish-IAMServerCertificate.html&tocid=Publish-IAMServerCertificate)\.
 
 ## Retrieving a Server Certificate AWS API\)<a name="get-server-certificate"></a>
 
-To use the IAM API to retrieve a certificate, send a [GetServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\. Replace *ExampleCertificate* with the name of the certificate to retrieve\.
+To use the IAM API to retrieve a certificate, send a [GetServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\. Replace *ExampleCertificate* with the name of the certificate to retrieve\.
 
 ```
 $ aws iam get-server-certificate --server-certificate-name ExampleCertificate
@@ -61,11 +61,11 @@ When the preceding command is successful, it returns the certificate, the certif
 **Note**  
 You cannot download or retrieve a private key from IAM after you upload it\.
 
-To use the AWS Tools for Windows PowerShell to retrieve a certificate, use [Get\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificate.html&tocid=Get-IAMServerCertificate)\.
+To use the AWS Tools for Windows PowerShell to retrieve a certificate, use [Get\-IAMServerCertificate](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificate.html&tocid=Get-IAMServerCertificate)\.
 
 ## Listing Server Certificates \(AWS API\)<a name="list-server-certificates"></a>
 
-To use the IAM API to list your uploaded server certificates, send a [ListServerCertificates](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html) request\. The following example shows how to do this with the AWS CLI\.
+To use the IAM API to list your uploaded server certificates, send a [ListServerCertificates](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html) request\. The following example shows how to do this with the AWS CLI\.
 
 ```
 $ aws iam list-server-certificates
@@ -73,11 +73,11 @@ $ aws iam list-server-certificates
 
 When the preceding command is successful, it returns a list that contains metadata about each certificate\.
 
-To use the AWS Tools for Windows PowerShell to list your uploaded server certificates, use [Get\-IAMServerCertificates](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificates.html&tocid=Get-IAMServerCertificates)\.
+To use the AWS Tools for Windows PowerShell to list your uploaded server certificates, use [Get\-IAMServerCertificates](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificates.html&tocid=Get-IAMServerCertificates)\.
 
 ## Renaming a Server Certificate or Updating its Path \(AWS API\)<a name="rename-server-certificate"></a>
 
-To use the IAM API to rename a server certificate or update its path, send an [UpdateServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
+To use the IAM API to rename a server certificate or update its path, send an [UpdateServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
 
 To use the following example command, replace the old and new certificate names and the certificate path, and type the command on one continuous line\. The following example includes line breaks and extra spaces to make it easier to read\.
 
@@ -89,11 +89,11 @@ $ aws iam update-server-certificate --server-certificate-name ExampleCertificate
 
 When the preceding command is successful, it does not return any output\.
 
-To use the AWS Tools for Windows PowerShell to rename a server certificate or update its path, use [Update\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMServerCertificate.html&tocid=Update-IAMServerCertificate)\.
+To use the AWS Tools for Windows PowerShell to rename a server certificate or update its path, use [Update\-IAMServerCertificate](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Update-IAMServerCertificate.html&tocid=Update-IAMServerCertificate)\.
 
 ## Deleting a Server Certificate \(AWS API\)<a name="delete-server-certificate"></a>
 
-To use the IAM API to delete a server certificate, send a [DeleteServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
+To use the IAM API to delete a server certificate, send a [DeleteServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
 
 To use the following example command, replace *ExampleCertificate* with the name of the certificate to delete\.
 
@@ -103,7 +103,7 @@ $ aws iam delete-server-certificate --server-certificate-name ExampleCertificate
 
 When the preceding command is successful, it does not return any output\.
 
-To use the AWS Tools for Windows PowerShell to delete a server certificate, use [Remove\-IAMServerCertificate](http://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMServerCertificate.html&tocid=Remove-IAMServerCertificate)\.
+To use the AWS Tools for Windows PowerShell to delete a server certificate, use [Remove\-IAMServerCertificate](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Remove-IAMServerCertificate.html&tocid=Remove-IAMServerCertificate)\.
 
 ## Troubleshooting<a name="server-certificate-troubleshooting"></a>
 

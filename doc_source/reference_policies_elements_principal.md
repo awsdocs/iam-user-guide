@@ -133,7 +133,7 @@ The following example shows a policy that can be attached to a service role\. Th
 }
 ```
 
-Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
+Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
 
 ```
 "Principal": { "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be" }
@@ -157,9 +157,9 @@ In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Ano
 ## More Information<a name="Principal_more-info"></a>
 
 For more information, see the following:
-+ [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
-+ [Example Policies for Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
-+ [Amazon SQS Policy Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
-+ [Key Policies](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
-+ [Account Identifiers](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
++ [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
++ [Example Policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
++ [Amazon SQS Policy Examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
++ [Key Policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
++ [Account Identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
 + [About Web Identity Federation](id_roles_providers_oidc.md)

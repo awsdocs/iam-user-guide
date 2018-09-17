@@ -3,9 +3,9 @@
 Amazon EC2 Container Registry \(service prefix: `ecr`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/AmazonECR/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AmazonECR/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon EC2 Container Registry](#amazonec2containerregistry-actions-as-permissions)
@@ -21,23 +21,23 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ BatchCheckLayerAvailability ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html)  | Check the availability of multiple image layers in a specified registry and repository\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ BatchDeleteImage ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html)  | Deletes a list of specified images within a specified repository\.  | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ BatchGetImage ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html)  | Gets detailed information for specified images within a specified repository\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ CompleteLayerUpload ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html)  | Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ CreateRepository ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html)  | Creates an image repository\. | Write |  |  |  | 
-|   [ DeleteRepository ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html)  | Deletes an existing image repository\.  | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ DeleteRepositoryPolicy ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html)  | Deletes the repository policy from a specified repository\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ DescribeImages ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html)  | Returns metadata about the images in a repository, including image size, image tags, and creation date\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ DescribeRepositories ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html)  | Describes image repositories in a registry | List |   [ repository ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ GetAuthorizationToken ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html)  | Retrieves a token that is valid for a specified registry for 12 hours\. | Read |  |  |  | 
-|   [ GetDownloadUrlForLayer ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html)  | Retrieves the pre\-signed Amazon S3 download URL corresponding to an image layer\.  | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ GetRepositoryPolicy ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html)  | Retrieves the repository policy for a specified repository\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ InitiateLayerUpload ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html)  | Notify Amazon ECR that you intend to upload an image layer\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ ListImages ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html)  | Lists all the image IDs for a given repository\. | List |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ PutImage ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html)  | Creates or updates the image manifest associated with an image\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ SetRepositoryPolicy ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html)  | Applies a repository policy on a specified repository to control access permissions\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
-|   [ UploadLayerPart ](http://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html)  | Uploads an image layer part to Amazon ECR\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ BatchCheckLayerAvailability ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchCheckLayerAvailability.html)  | Check the availability of multiple image layers in a specified registry and repository\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ BatchDeleteImage ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchDeleteImage.html)  | Deletes a list of specified images within a specified repository\.  | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ BatchGetImage ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_BatchGetImage.html)  | Gets detailed information for specified images within a specified repository\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ CompleteLayerUpload ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CompleteLayerUpload.html)  | Inform Amazon ECR that the image layer upload for a specified registry, repository name, and upload ID, has completed\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ CreateRepository ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_CreateRepository.html)  | Creates an image repository\. | Write |  |  |  | 
+|   [ DeleteRepository ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepository.html)  | Deletes an existing image repository\.  | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ DeleteRepositoryPolicy ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DeleteRepositoryPolicy.html)  | Deletes the repository policy from a specified repository\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ DescribeImages ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeImages.html)  | Returns metadata about the images in a repository, including image size, image tags, and creation date\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ DescribeRepositories ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_DescribeRepositories.html)  | Describes image repositories in a registry | List |   [ repository ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ GetAuthorizationToken ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetAuthorizationToken.html)  | Retrieves a token that is valid for a specified registry for 12 hours\. | Read |  |  |  | 
+|   [ GetDownloadUrlForLayer ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetDownloadUrlForLayer.html)  | Retrieves the pre\-signed Amazon S3 download URL corresponding to an image layer\.  | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ GetRepositoryPolicy ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_GetRepositoryPolicy.html)  | Retrieves the repository policy for a specified repository\. | Read |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ InitiateLayerUpload ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_InitiateLayerUpload.html)  | Notify Amazon ECR that you intend to upload an image layer\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ ListImages ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_ListImages.html)  | Lists all the image IDs for a given repository\. | List |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ PutImage ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_PutImage.html)  | Creates or updates the image manifest associated with an image\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ SetRepositoryPolicy ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_SetRepositoryPolicy.html)  | Applies a repository policy on a specified repository to control access permissions\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
+|   [ UploadLayerPart ](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/API_UploadLayerPart.html)  | Uploads an image layer part to Amazon ECR\. | Write |   [ repository\* ](#amazonec2containerregistry-repository)   |  |  | 
 
 ## Resources Defined by EC2 Container Registry<a name="amazonec2containerregistry-resources-for-iam-policies"></a>
 
@@ -48,7 +48,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ repository ](http://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR_ARN_Format)  |  arn:$\{Partition\}:ecr:$\{Region\}:$\{Account\}:repository/$\{RepositoryName\}  |  | 
+|   [ repository ](https://docs.aws.amazon.com/AmazonECR/latest/userguide/iam-policy-structure.html#ECR_ARN_Format)  |  arn:$\{Partition\}:ecr:$\{Region\}:$\{Account\}:repository/$\{RepositoryName\}  |  | 
 
 ## Condition Keys for Amazon EC2 Container Registry<a name="amazonec2containerregistry-policy-keys"></a>
 

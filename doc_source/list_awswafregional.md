@@ -3,9 +3,9 @@
 AWS WAF Regional \(service prefix: `waf-regional`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/waf/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/waf/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/waf/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/waf/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS WAF Regional](#awswafregional-actions-as-permissions)
@@ -29,19 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ bytematchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:bytematchset/$\{Id\}  |  | 
-|   [ ipset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ipset/$\{Id\}  |  | 
-|   [ loadbalancer/app/ ](http://docs.aws.amazon.com/waf/latest/APIReference/API_regional_WebACL.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |  | 
-|   [ ratebasedrule ](http://docs.aws.amazon.com/waf/latest/APIReference/API_regional_RateBasedRule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ratebasedrule/$\{Id\}  |  | 
-|   [ rule ](http://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rule/$\{Id\}  |  | 
-|   [ sizeconstraintset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:sizeconstraintset/$\{Id\}  |  | 
-|   [ sqlinjectionmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:sqlinjectionmatchset/$\{Id\}  |  | 
-|   [ webacl ](http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:webacl/$\{Id\}  |  | 
-|   [ xssmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:xssmatchset/$\{Id\}  |  | 
-|   [ regexmatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:regexmatch/$\{Id\}  |  | 
-|   [ regexpatternset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:regexpatternset/$\{Id\}  |  | 
-|   [ geomatchset ](http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:geomatchset/$\{Id\}  |  | 
-|   [ rulegroup ](http://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rulegroup/$\{Id\}  |  | 
+|   [ bytematchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:bytematchset/$\{Id\}  |  | 
+|   [ ipset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ipset/$\{Id\}  |  | 
+|   [ loadbalancer/app/ ](https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_WebACL.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |  | 
+|   [ ratebasedrule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_RateBasedRule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ratebasedrule/$\{Id\}  |  | 
+|   [ rule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rule/$\{Id\}  |  | 
+|   [ sizeconstraintset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:sizeconstraintset/$\{Id\}  |  | 
+|   [ sqlinjectionmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:sqlinjectionmatchset/$\{Id\}  |  | 
+|   [ webacl ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:webacl/$\{Id\}  |  | 
+|   [ xssmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:xssmatchset/$\{Id\}  |  | 
+|   [ regexmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:regexmatch/$\{Id\}  |  | 
+|   [ regexpatternset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:regexpatternset/$\{Id\}  |  | 
+|   [ geomatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:geomatchset/$\{Id\}  |  | 
+|   [ rulegroup ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rulegroup/$\{Id\}  |  | 
 
 ## Condition Keys for AWS WAF Regional<a name="awswafregional-policy-keys"></a>
 

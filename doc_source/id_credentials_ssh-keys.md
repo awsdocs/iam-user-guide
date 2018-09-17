@@ -18,7 +18,7 @@ You cannot choose your own user name or password for Git credentials\. IAM gener
 
 See the following topics for more information: 
 + To create an IAM user, see [Creating an IAM User in Your AWS Account](id_users_create.md)\. 
-+ To generate and use Git credentials with AWS CodeCommit, see [For HTTPS Users Using Git Credentials](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html) in the *AWS CodeCommit User Guide*\. 
++ To generate and use Git credentials with AWS CodeCommit, see [For HTTPS Users Using Git Credentials](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html) in the *AWS CodeCommit User Guide*\. 
 
 **Note**  
 Changing the name of an IAM user after generating Git credentials does not change the user name of the Git credentials\. The user name and password remain the same and are still valid\. 
@@ -39,7 +39,7 @@ Changing the name of an IAM user after generating Git credentials does not chang
 
 With SSH connections, you create public and private key files on your local machine that Git and AWS CodeCommit use for SSH authentication\. You associate the public key with your IAM user and store the private key on your local machine\. See the following topics for more information: 
 + To create an IAM user, see [Creating an IAM User in Your AWS Account](id_users_create.md)\. 
-+ To create an SSH public key and associate it with an IAM user, see [For SSH Connections on Linux, macOS, or Unix](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) or see [For SSH Connections on Windows](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-windows.html) in the *AWS CodeCommit User Guide*\. 
++ To create an SSH public key and associate it with an IAM user, see [For SSH Connections on Linux, macOS, or Unix](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) or see [For SSH Connections on Windows](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-windows.html) in the *AWS CodeCommit User Guide*\. 
 
 **Note**  
 The public key must be encoded in ssh\-rsa format or PEM format\. The miminum bit\-length of the public key is 2048 bits, and the maximum length is 16384 bits\. This is separate from the size of the file you upload\. For example, you can generate a 2048\-bit key, and the resulting PEM file is 1679 bytes long\. If you provide your public key in another format or size, you will see an error message stating that the key format is not valid\.
@@ -48,6 +48,6 @@ The public key must be encoded in ssh\-rsa format or PEM format\. The miminum bi
 
 As an alternative to HTTPS connections with Git credentials, you can allow Git to use a cryptographically signed version of your IAM user credentials or Amazon EC2 instance role whenever Git needs to authenticate with AWS to interact with AWS CodeCommit repositories\. This is the only connection method for AWS CodeCommit repositories that does not require an IAM user\. This is also the only method that works with federated access and temporary credentials\. Unless your business needs require federated access or the use of temporary credentials, creating and using IAM users for access is strongly recommended\. See the following topics for more information:
 + To learn more about federated access, see [Identity Providers and Federation](id_roles_providers.md) and [Providing Access to Externally Authenticated Users \(Identity Federation\)](id_roles_common-scenarios_federated-users.md)\. 
-+ To learn more about temporary credentials, see [Temporary Security Credentials](id_credentials_temp.md) and [Temporary Access to AWS CodeCommit Repositories](http://docs.aws.amazon.com/codecommit/latest/userguide/temporary-access.html)\. 
++ To learn more about temporary credentials, see [Temporary Security Credentials](id_credentials_temp.md) and [Temporary Access to AWS CodeCommit Repositories](https://docs.aws.amazon.com/codecommit/latest/userguide/temporary-access.html)\. 
 
-The AWS CLI credential helper is not compatible with other credential helper systems, such as Keychain Access or Windows Credential Management\. There are additional configuration considerations when you configure HTTPS connections with the credential helper\. For more information, see [For HTTPS Connections on Linux, macOS, or Unix with the AWS CLI Credential Helper](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-unixes.html) or [HTTPS Connections on Windows with the AWS CLI Credential Helper](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-windows.html) in the *AWS CodeCommit User Guide*\.
+The AWS CLI credential helper is not compatible with other credential helper systems, such as Keychain Access or Windows Credential Management\. There are additional configuration considerations when you configure HTTPS connections with the credential helper\. For more information, see [For HTTPS Connections on Linux, macOS, or Unix with the AWS CLI Credential Helper](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-unixes.html) or [HTTPS Connections on Windows with the AWS CLI Credential Helper](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-https-windows.html) in the *AWS CodeCommit User Guide*\.

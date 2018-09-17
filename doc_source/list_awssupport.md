@@ -3,9 +3,9 @@
 AWS Support \(service prefix: `support`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/awssupport/latest/user/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/awssupport/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/awssupport/latest/user/access_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/awssupport/latest/user/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/awssupport/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awssupport/latest/user/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Support](#awssupport-actions-as-permissions)
@@ -23,20 +23,20 @@ AWS Support does not let you allow or deny access to individual actions; therefo
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ AddAttachmentsToSet ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddAttachmentsToSet.html)  | Adds one or more attachments to an attachment set\. If an attachmentSetId is not specified, a new attachment set is created\. | Write |  |  |  | 
-|   [ AddCommunicationToCase ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html)  | Adds additional customer communication to an AWS Support case\. | Write |  |  |  | 
-|   [ CreateCase ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html)  | Creates a new case in the AWS Support Center\. | Write |  |  |  | 
-|   [ DescribeAttachment ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeAttachment.html)  | Returns a description of an attachment\. | Read |  |  |  | 
-|   [ DescribeCases ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html)  | Returns a list of cases that matches the given inputs | List |  |  |  | 
-|   [ DescribeCommunications ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCommunications.html)  | Returns the communications \(and attachments\) for one or more support cases | Read |  |  |  | 
-|   [ DescribeServices ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html)  | Returns the current list of AWS services and a list of service categories that applies to each one\. | Read |  |  |  | 
-|   [ DescribeSeverityLevels ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html)  | Returns the list of severity levels that can be assigned to an AWS Support case\. | List |  |  |  | 
-|   [ DescribeTrustedAdvisorCheckRefreshStatuses ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckRefreshStatuses.html)  | Returns the refresh status of the Trusted Advisor checks that have the specified check identifiers\. | Read |  |  |  | 
-|   [ DescribeTrustedAdvisorCheckResult ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html)  | Returns the results of the Trusted Advisor check that has the specified check identifier\. | Read |  |  |  | 
-|   [ DescribeTrustedAdvisorCheckSummaries ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html)  | Returns the summaries of the results of the Trusted Advisor checks that have the specified check identifiers\. | Read |  |  |  | 
-|   [ DescribeTrustedAdvisorChecks ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html)  | Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata\. | Read |  |  |  | 
-|   [ RefreshTrustedAdvisorCheck ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html)  | Requests a refresh of the Trusted Advisor check that has the specified check ID\. | Write |  |  |  | 
-|   [ ResolveCase ](http://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html)  | Resolves a case\. | Write |  |  |  | 
+|   [ AddAttachmentsToSet ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddAttachmentsToSet.html)  | Adds one or more attachments to an attachment set\. If an attachmentSetId is not specified, a new attachment set is created\. | Write |  |  |  | 
+|   [ AddCommunicationToCase ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_AddCommunicationToCase.html)  | Adds additional customer communication to an AWS Support case\. | Write |  |  |  | 
+|   [ CreateCase ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CreateCase.html)  | Creates a new case in the AWS Support Center\. | Write |  |  |  | 
+|   [ DescribeAttachment ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeAttachment.html)  | Returns a description of an attachment\. | Read |  |  |  | 
+|   [ DescribeCases ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCases.html)  | Returns a list of cases that matches the given inputs | List |  |  |  | 
+|   [ DescribeCommunications ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeCommunications.html)  | Returns the communications \(and attachments\) for one or more support cases | Read |  |  |  | 
+|   [ DescribeServices ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeServices.html)  | Returns the current list of AWS services and a list of service categories that applies to each one\. | Read |  |  |  | 
+|   [ DescribeSeverityLevels ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeSeverityLevels.html)  | Returns the list of severity levels that can be assigned to an AWS Support case\. | List |  |  |  | 
+|   [ DescribeTrustedAdvisorCheckRefreshStatuses ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckRefreshStatuses.html)  | Returns the refresh status of the Trusted Advisor checks that have the specified check identifiers\. | Read |  |  |  | 
+|   [ DescribeTrustedAdvisorCheckResult ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckResult.html)  | Returns the results of the Trusted Advisor check that has the specified check identifier\. | Read |  |  |  | 
+|   [ DescribeTrustedAdvisorCheckSummaries ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorCheckSummaries.html)  | Returns the summaries of the results of the Trusted Advisor checks that have the specified check identifiers\. | Read |  |  |  | 
+|   [ DescribeTrustedAdvisorChecks ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_DescribeTrustedAdvisorChecks.html)  | Returns information about all available Trusted Advisor checks, including name, ID, category, description, and metadata\. | Read |  |  |  | 
+|   [ RefreshTrustedAdvisorCheck ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html)  | Requests a refresh of the Trusted Advisor check that has the specified check ID\. | Write |  |  |  | 
+|   [ ResolveCase ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html)  | Resolves a case\. | Write |  |  |  | 
 
 ## Resources Defined by Support<a name="awssupport-resources-for-iam-policies"></a>
 

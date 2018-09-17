@@ -2,13 +2,13 @@
 
 **Note**  
 If you found this topic because you are trying to configure the Product Advertising API to sell Amazon products on your website, see these topics:  
-[Getting Started with the Product Advertising API](http://docs.aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
-[Getting Started as a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
+[Getting Started with the Product Advertising API](https://docs.aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
+[Getting Started as a Product Advertising API Developer](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
 
-Access keys consist of an access key ID \(for example, `AKIAIOSFODNN7EXAMPLE`\) and a secret access key \(for example, `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`\)\. You use access keys to sign programmatic requests that you make to AWS if you use the AWS SDKs, REST, or Query API operations\. The AWS SDKs use your access keys to sign requests for you, so that you don't have to handle the signing process\. You can also sign requests manually\. For more information about access keys, see [Access Keys \(Access Key ID and Secret Access Key\)](http://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) in the *Amazon Web Services General Reference*\.
+Access keys consist of an access key ID \(for example, `AKIAIOSFODNN7EXAMPLE`\) and a secret access key \(for example, `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`\)\. You use access keys to sign programmatic requests that you make to AWS if you use the AWS SDKs, REST, or Query API operations\. The AWS SDKs use your access keys to sign requests for you, so that you don't have to handle the signing process\. You can also sign requests manually\. For more information about access keys, see [Access Keys \(Access Key ID and Secret Access Key\)](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) in the *Amazon Web Services General Reference*\.
 
 **Warning**  
-As a best practice, you should avoid generating account\-level \(root user\) access keys, use temporary security credentials \(IAM roles\) instead of accesss keys, and manage any access keys properly\. For more information, see [Best Practices for Managing AWS Access Keys](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) in the *Amazon Web Services General Reference*\.
+As a best practice, you should avoid generating account\-level \(root user\) access keys, use temporary security credentials \(IAM roles\) instead of accesss keys, and manage any access keys properly\. For more information, see [Best Practices for Managing AWS Access Keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) in the *Amazon Web Services General Reference*\.
 
 If you still need to provide an IAM user with long\-term access keys, you can create, modify, view, or rotate access keys \(access key IDs and secret access keys\) for IAM users\. IAM users are limited to two access keys\. This allows you to rotate the active keys according to best practices\.
 
@@ -96,20 +96,20 @@ Only the user's access key ID is visible\. The secret access key can only be ret
 ## Managing Access Keys \(AWS CLI\)<a name="Using_CreateAccessKey_CLIAPI"></a>
 
 To manage a user's access keys from the AWS CLI, run the following commands\.
-+ To create an access key: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
-+ To disable or reenable an access key: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
-+ To list a user's access keys: [http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)
-+ To determine when an access key was most recently used: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
-+ To delete an access key: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
++ To create an access key: [https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
++ To disable or reenable an access key: [https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
++ To list a user's access keys: [https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)
++ To determine when an access key was most recently used: [https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
++ To delete an access key: [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 
 ## Managing Access Keys \(AWS API\)<a name="Using_CreateAccessKey_API"></a>
 
 To manage a user's access keys from the AWS API, call the following operations\.
-+ To create an access key: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
-+ To disable or reenable an access key: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
-+ To list a user's access keys: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)
-+ To determine when an access key was most recently used: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
-+ To delete an access key: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
++ To create an access key: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
++ To disable or reenable an access key: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
++ To list a user's access keys: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)
++ To determine when an access key was most recently used: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
++ To delete an access key: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
 
 ## Rotating Access Keys<a name="Using_RotateAccessKey"></a>
 
@@ -184,24 +184,24 @@ You can rotate access keys from the AWS Command Line Interface\.
 **To rotate access keys without interrupting your applications \(AWS CLI\)**
 
 1. While the first access key is still active, create a second access key, which is active by default\. Run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 
      At this point, the user has two active access keys\.
 
 1. <a name="step-update-apps"></a>Update all applications and tools to use the new access key\.
 
 1. <a name="step-determine-use"></a>Determine whether the first access key is still in use by using this command:
-   +  [http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
+   +  [https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 
    One approach is to wait several days and then check the old access key for any use before proceeding\.
 
 1. Even if step [Step 3](#step-determine-use) indicates no use of the old key, we recommend that you do not immediately delete the first access key\. Instead, change the state of the first access key to `Inactive` using this command:
-   +  [http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
+   +  [https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/update-access-key.html)
 
 1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can switch its state back to `Active` to reenable the first access key\. Then return to step [Step 2](#step-update-apps) and update this application to use the new key\.
 
 1. After you wait some period of time to ensure that all applications and tools have been updated, you can delete the first access key with this command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
@@ -214,24 +214,24 @@ You can rotate access keys using the AWS API\.
 **To rotate access keys without interrupting your applications \(AWS API\)**
 
 1. While the first access key is still active, create a second access key, which is active by default\. Call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 
      At this point, the user has two active access keys\.
 
 1. <a name="step-update-apps-2"></a>Update all applications and tools to use the new access key\.
 
 1. <a name="step-determine-use-2"></a>Determine whether the first access key is still in use by calling this operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
 
    One approach is to wait several days and then check the old access key for any use before proceeding\.
 
 1. Even if step [Step 3](#step-determine-use-2) indicates no use of the old key, we recommend that you do not immediately delete the first access key\. Instead, change the state of the first access key to `Inactive` calling this operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccessKey.html)
 
 1. Use only the new access key to confirm that your applications are working\. Any applications and tools that still use the original access key will stop working at this point because they no longer have access to AWS resources\. If you find such an application or tool, you can switch its state back to `Active` to reenable the first access key\. Then return to step [Step 2](#step-update-apps-2) and update this application to use the new key\.
 
 1. After you wait some period of time to ensure that all applications and tools have been updated, you can delete the first access key calling this operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
 
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 

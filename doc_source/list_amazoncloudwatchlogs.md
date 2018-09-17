@@ -3,9 +3,9 @@
 Amazon CloudWatch Logs \(service prefix: `logs`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon CloudWatch Logs](#amazoncloudwatchlogs-actions-as-permissions)

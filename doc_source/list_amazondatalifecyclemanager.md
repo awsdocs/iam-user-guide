@@ -3,7 +3,7 @@
 Amazon Data Lifecycle Manager \(service prefix: `dlm`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/dlm/latest/APIReference/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/dlm/latest/APIReference/)\.
 
 **Topics**
 + [Actions Defined by Amazon Data Lifecycle Manager](#amazondatalifecyclemanager-actions-as-permissions)
@@ -19,11 +19,11 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateLifecyclePolicy ](http://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html)  | Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots\. You may have up to 100 policies\. | Write |  |  |  | 
-|   [ DeleteLifecyclePolicy ](http://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html)  | Delete an existing data lifecycle policy\. In addition, this action halts the creation and deletion of snapshots that the policy specified\. Existing snapshots are not affected\. | Write |  |  |  | 
-|   [ GetLifecyclePolicies ](http://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html)  | Returns a list of summary descriptions of data lifecycle policies\. | List |  |  |  | 
-|   [ GetLifecyclePolicy ](http://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html)  | Returns a complete description of a single data lifecycle policy\. | Read |  |  |  | 
-|   [ UpdateLifecyclePolicy ](http://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html)  | Updates an existing data lifecycle policy\. | Write |  |  |  | 
+|   [ CreateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html)  | Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots\. You may have up to 100 policies\. | Write |  |  |  | 
+|   [ DeleteLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html)  | Delete an existing data lifecycle policy\. In addition, this action halts the creation and deletion of snapshots that the policy specified\. Existing snapshots are not affected\. | Write |  |  |  | 
+|   [ GetLifecyclePolicies ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html)  | Returns a list of summary descriptions of data lifecycle policies\. | List |  |  |  | 
+|   [ GetLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html)  | Returns a complete description of a single data lifecycle policy\. | Read |  |  |  | 
+|   [ UpdateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html)  | Updates an existing data lifecycle policy\. | Write |  |  |  | 
 
 ## Resources Defined by Data Lifecycle Manager<a name="amazondatalifecyclemanager-resources-for-iam-policies"></a>
 

@@ -3,9 +3,9 @@
 AWS Organizations \(service prefix: `organizations`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/organizations/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/organizations/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/organizations/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/organizations/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Organizations](#awsorganizations-actions-as-permissions)
@@ -29,13 +29,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ account ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:account/o\-$\{OrganizationId\}/$\{AccountId\}  |  | 
-|   [ handshake ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:handshake/o\-$\{OrganizationId\}/$\{HandshakeType\}/h\-$\{HandshakeId\}  |  | 
-|   [ organization ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:organization/o\-$\{OrganizationId\}  |  | 
-|   [ organizationalunit ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:ou/o\-$\{OrganizationId\}/ou\-$\{OrganizationalUnitId\}  |  | 
-|   [ policy ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:policy/o\-$\{OrganizationId\}/$\{PolicyType\}/p\-$\{PolicyId\}  |  | 
-|   [ awspolicy ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::aws:policy/$\{PolicyType\}/p\-$\{PolicyId\}  |  | 
-|   [ root ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:root/o\-$\{OrganizationId\}/r\-$\{RootId\}  |  | 
+|   [ account ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:account/o\-$\{OrganizationId\}/$\{AccountId\}  |  | 
+|   [ handshake ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:handshake/o\-$\{OrganizationId\}/$\{HandshakeType\}/h\-$\{HandshakeId\}  |  | 
+|   [ organization ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:organization/o\-$\{OrganizationId\}  |  | 
+|   [ organizationalunit ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:ou/o\-$\{OrganizationId\}/ou\-$\{OrganizationalUnitId\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:policy/o\-$\{OrganizationId\}/$\{PolicyType\}/p\-$\{PolicyId\}  |  | 
+|   [ awspolicy ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::aws:policy/$\{PolicyType\}/p\-$\{PolicyId\}  |  | 
+|   [ root ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_arn-formats.html)  |  arn:$\{Partition\}:organizations::$\{MasterAccountId\}:root/o\-$\{OrganizationId\}/r\-$\{RootId\}  |  | 
 
 ## Condition Keys for AWS Organizations<a name="awsorganizations-policy-keys"></a>
 
@@ -48,4 +48,4 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ organizations:ServicePrincipal ](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys)  | Enables you to filter the request to only the specified service principal names\. | String | 
+|   [ organizations:ServicePrincipal ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys)  | Enables you to filter the request to only the specified service principal names\. | String | 

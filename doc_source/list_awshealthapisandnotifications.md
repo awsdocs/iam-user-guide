@@ -3,9 +3,9 @@
 AWS Health APIs and Notifications \(service prefix: `health`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/health/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/health/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/health/latest/ug/controlling-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/health/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/health/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Health APIs and Notifications](#awshealthapisandnotifications-actions-as-permissions)
@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ event ](http://docs.aws.amazon.com/health/latest/ug/supported-operations.html)  |  arn:$\{Partition\}:health:\*::event/$\{Service\}/$\{EventTypeCode\}/\*  |  | 
+|   [ event ](https://docs.aws.amazon.com/health/latest/ug/supported-operations.html)  |  arn:$\{Partition\}:health:\*::event/$\{Service\}/$\{EventTypeCode\}/\*  |  | 
 
 ## Condition Keys for AWS Health APIs and Notifications<a name="awshealthapisandnotifications-policy-keys"></a>
 
@@ -42,5 +42,5 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ health:eventTypeCode ](http://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | The type of event\. | String | 
-|   [ health:service ](http://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | The service of the event\. | String | 
+|   [ health:eventTypeCode ](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | The type of event\. | String | 
+|   [ health:service ](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | The service of the event\. | String | 

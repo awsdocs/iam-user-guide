@@ -3,9 +3,9 @@
 Amazon GuardDuty \(service prefix: `guardduty`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/guardduty/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/guardduty/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/guardduty/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/guardduty/latest/ug/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon GuardDuty](#amazonguardduty-actions-as-permissions)
@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ detector ](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}  |  | 
-|   [ ipset ](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\}  |  | 
-|   [ threatintelset ](http://docs.aws.amazon.com/guardduty/latest/ug/http://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\}  |  | 
+|   [ detector ](https://docs.aws.amazon.com/guardduty/latest/ug/https://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}  |  | 
+|   [ ipset ](https://docs.aws.amazon.com/guardduty/latest/ug/https://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\}  |  | 
+|   [ threatintelset ](https://docs.aws.amazon.com/guardduty/latest/ug/https://docs.aws.amazon.com/guardduty/latest/ug/)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\}  |  | 
 
 ## Condition Keys for Amazon GuardDuty<a name="amazonguardduty-policy-keys"></a>
 

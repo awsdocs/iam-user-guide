@@ -3,9 +3,9 @@
 AWS Marketplace Metering Service \(service prefix: `aws-marketplace`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace Metering Service](#awsmarketplacemeteringservice-actions-as-permissions)
@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ BatchMeterUsage ](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html)  | Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers\. | Write |  |  |  | 
-|   [ MeterUsage ](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html)  | Emits metering records\. | Write |  |  |  | 
-|   [ ResolveCustomer ](http://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html)  | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
+|   [ BatchMeterUsage ](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_BatchMeterUsage.html)  | Called from a SaaS application listed on the AWS Marketplace to post metering records for a set of customers\. | Write |  |  |  | 
+|   [ MeterUsage ](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_MeterUsage.html)  | Emits metering records\. | Write |  |  |  | 
+|   [ ResolveCustomer ](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html)  | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
 
 ## Resources Defined by Marketplace Metering<a name="awsmarketplacemeteringservice-resources-for-iam-policies"></a>
 

@@ -257,7 +257,7 @@ Note that all access keys and tokens are examples only and cannot be used as sho
    aws help
    ```
 **Note**  
-David's default environment uses the `David` user credentials from his default profile that he created with the `aws configure` command\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
+David's default environment uses the `David` user credentials from his default profile that he created with the `aws configure` command\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
 
 1. He begins the switch role process by running the following command to switch to the `UpdateApp` role in the Production account\. He got the role ARN from the administrator that created the role\. The command requires that you provide a session name as well, you can choose any text you like for that\.
 
@@ -287,7 +287,7 @@ David's default environment uses the `David` user credentials from his default p
    + `SecretAccessKey`
    + `SessionToken`
 
-   David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually type the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
+   David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually type the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
 
 1. To add the three values to the environment, David cuts and pastes the output of the previous step into the following commands\. Note that you might want to cut and paste into a simple text editor to address line wrap issues in the output of the session token\. It must be added as a single long string, even though it is shown line wrapped here for clarity\.
 **Note**  
@@ -329,7 +329,7 @@ For a code example \(using Python\), see [Switching to an IAM Role \(AWS API\)](
 
 ## Related Resources<a name="tutorial_cross-account-with-roles-related"></a>
 + For more information about IAM users and groups, see [Identities \(Users, Groups, and Roles\)](id.md) \.
-+ For more information about Amazon S3 buckets, see [Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
++ For more information about Amazon S3 buckets, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
 
 ## Summary<a name="tutorial_cross-account-with-roles-summary"></a>
 

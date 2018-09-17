@@ -6,7 +6,7 @@ AWS evaluates these policies when a principal, such as a user, makes a request\.
 
 ## Policies and Accounts<a name="intro-access-accounts"></a>
 
-If you manage a single account in AWS, then you define the permissions within that account using policies\. If you manage permissions across multiple accounts, it is more difficult to manage permissions for your users\. As a best practice, you can use the AWS Organizations service to help you manage those permissions\. For more information, see [What is AWS Organizations?](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *Organizations User Guide*\.
+If you manage a single account in AWS, then you define the permissions within that account using policies\. If you manage permissions across multiple accounts, it is more difficult to manage permissions for your users\. As a best practice, you can use the AWS Organizations service to help you manage those permissions\. For more information, see [What is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *Organizations User Guide*\.
 
 ## Policies and Users<a name="intro-access-users"></a>
 

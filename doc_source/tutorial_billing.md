@@ -7,7 +7,7 @@ This workflow has four basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Enable Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
-By default, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+By default, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 **[Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)**  
 After enabling billing access on your account, you must still explicitly grant access to billing data to specific IAM users or groups\. You grant this access with a customer managed policy\.
@@ -151,9 +151,9 @@ The following optional procedure demonstrates how you could alternatively use th
 ## Related Resources<a name="tutorial-billing-addl-resources"></a>
 
 For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
-+ [Activate Access to the AWS Website](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
-+ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
-+ [Billing Permissions Descriptions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
++ [Activate Access to the AWS Website](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
++ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
++ [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
 
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)

@@ -3,9 +3,9 @@
 AWS CodeBuild \(service prefix: `codebuild`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/codebuild/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/codebuild/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/codebuild/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/codebuild/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CodeBuild](#awscodebuild-actions-as-permissions)
@@ -21,21 +21,21 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ BatchDeleteBuilds ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchDeleteBuilds.html)  | Deletes one or more builds\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ BatchGetBuilds ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html)  | Gets information about one or more builds\. | Read |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ BatchGetProjects ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html)  | Gets information about one or more build projects\. | Read |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ CreateProject ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html)  | Creates a build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ DeleteProject ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html)  | Deletes a build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ ListBuilds ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html)  | Gets a list of build IDs, with each build ID representing a single build\. | List |  |  |  | 
-|   [ ListBuildsForProject ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html)  | Gets a list of build IDs for the specified build project, with each build ID representing a single build\. | List |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ ListConnectedOAuthAccounts ](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)  | Lists connected third\-party OAuth providers\. Only used in the AWS CodeBuild console\. | Read |  |  |  | 
-|   [ ListCuratedEnvironmentImages ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html)  | Gets information about Docker images that are managed by AWS CodeBuild\. | Read |  |  |  | 
-|   [ ListProjects ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html)  | Gets a list of build project names, with each build project name representing a single build project\. | List |  |  |  | 
-|   [ ListRepositories ](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)  | Lists source code repositories from a connected third\-party OAuth provider\. Only used in the AWS CodeBuild console\. | Read |  |  |  | 
-|   [ PersistOAuthToken ](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)  | Saves an OAuth token from a connected third\-party OAuth provider\. Only used in the AWS CodeBuild console\. | Write |  |  |  | 
-|   [ StartBuild ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html)  | Starts running a build\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ StopBuild ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html)  | Attempts to stop running a build\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
-|   [ UpdateProject ](http://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html)  | Changes the settings of an existing build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ BatchDeleteBuilds ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchDeleteBuilds.html)  | Deletes one or more builds\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ BatchGetBuilds ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetBuilds.html)  | Gets information about one or more builds\. | Read |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ BatchGetProjects ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_BatchGetProjects.html)  | Gets information about one or more build projects\. | Read |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ CreateProject ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_CreateProject.html)  | Creates a build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ DeleteProject ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteProject.html)  | Deletes a build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ ListBuilds ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuilds.html)  | Gets a list of build IDs, with each build ID representing a single build\. | List |  |  |  | 
+|   [ ListBuildsForProject ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListBuildsForProject.html)  | Gets a list of build IDs for the specified build project, with each build ID representing a single build\. | List |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ ListConnectedOAuthAccounts ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)  | Lists connected third\-party OAuth providers\. Only used in the AWS CodeBuild console\. | Read |  |  |  | 
+|   [ ListCuratedEnvironmentImages ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListCuratedEnvironmentImages.html)  | Gets information about Docker images that are managed by AWS CodeBuild\. | Read |  |  |  | 
+|   [ ListProjects ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListProjects.html)  | Gets a list of build project names, with each build project name representing a single build project\. | List |  |  |  | 
+|   [ ListRepositories ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)  | Lists source code repositories from a connected third\-party OAuth provider\. Only used in the AWS CodeBuild console\. | Read |  |  |  | 
+|   [ PersistOAuthToken ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-identity-based-access-control.html#console-policies)  | Saves an OAuth token from a connected third\-party OAuth provider\. Only used in the AWS CodeBuild console\. | Write |  |  |  | 
+|   [ StartBuild ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StartBuild.html)  | Starts running a build\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ StopBuild ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_StopBuild.html)  | Attempts to stop running a build\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
+|   [ UpdateProject ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html)  | Changes the settings of an existing build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
 
 ## Resources Defined by CodeBuild<a name="awscodebuild-resources-for-iam-policies"></a>
 
@@ -46,8 +46,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ build ](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:build/$\{BuildId\}  |  | 
-|   [ project ](http://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:project/$\{ProjectName\}  |  | 
+|   [ build ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:build/$\{BuildId\}  |  | 
+|   [ project ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:project/$\{ProjectName\}  |  | 
 
 ## Condition Keys for AWS CodeBuild<a name="awscodebuild-policy-keys"></a>
 

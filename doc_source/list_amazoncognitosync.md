@@ -3,9 +3,9 @@
 Amazon Cognito Sync \(service prefix: `cognito-sync`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/cognito/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/cognitosync/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/cognito/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cognitosync/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cognito Sync](#amazoncognitosync-actions-as-permissions)
@@ -21,25 +21,25 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ BulkPublish ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html)  | Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream\. | Write |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ DeleteDataset ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DeleteDataset.html)  | Deletes the specific dataset\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
-|   [ DescribeDataset ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeDataset.html)  | Gets meta data about a dataset by identity and dataset name\. | Read |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
-|   [ DescribeIdentityPoolUsage ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html)  | Gets usage details \(for example, data storage\) about a particular identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ DescribeIdentityUsage ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityUsage.html)  | Gets usage information for an identity, including number of datasets and data usage\. | Read |   [ identity\* ](#amazoncognitosync-identity)   |  |  | 
-|   [ GetBulkPublishDetails ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetBulkPublishDetails.html)  | Get the status of the last BulkPublish operation for an identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ GetCognitoEvents ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetCognitoEvents.html)  | Gets the events and the corresponding Lambda functions associated with an identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ GetIdentityPoolConfiguration ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetIdentityPoolConfiguration.html)  | Gets the configuration settings of an identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ ListDatasets ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListDatasets.html)  | Lists datasets for an identity\. | List |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
-|   [ ListIdentityPoolUsage ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListIdentityPoolUsage.html)  | Gets a list of identity pools registered with Cognito\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ ListRecords ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListRecords.html)  | Gets paginated records, optionally changed after a particular sync count for a dataset and identity\. | Read |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ BulkPublish ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_BulkPublish.html)  | Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream\. | Write |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ DeleteDataset ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DeleteDataset.html)  | Deletes the specific dataset\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ DescribeDataset ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeDataset.html)  | Gets meta data about a dataset by identity and dataset name\. | Read |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ DescribeIdentityPoolUsage ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityPoolUsage.html)  | Gets usage details \(for example, data storage\) about a particular identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ DescribeIdentityUsage ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_DescribeIdentityUsage.html)  | Gets usage information for an identity, including number of datasets and data usage\. | Read |   [ identity\* ](#amazoncognitosync-identity)   |  |  | 
+|   [ GetBulkPublishDetails ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetBulkPublishDetails.html)  | Get the status of the last BulkPublish operation for an identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ GetCognitoEvents ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetCognitoEvents.html)  | Gets the events and the corresponding Lambda functions associated with an identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ GetIdentityPoolConfiguration ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_GetIdentityPoolConfiguration.html)  | Gets the configuration settings of an identity pool\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ ListDatasets ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListDatasets.html)  | Lists datasets for an identity\. | List |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ ListIdentityPoolUsage ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListIdentityPoolUsage.html)  | Gets a list of identity pools registered with Cognito\. | Read |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ ListRecords ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_ListRecords.html)  | Gets paginated records, optionally changed after a particular sync count for a dataset and identity\. | Read |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
 |   QueryRecords \[permission only\] | A permission that grants the ability to query records\. | Read |  |  |  | 
-|   [ RegisterDevice ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html)  | Registers a device to receive push sync notifications\. | Write |   [ identity\* ](#amazoncognitosync-identity)   |  |  | 
-|   [ SetCognitoEvents ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetCognitoEvents.html)  | Sets the AWS Lambda function for a given event type for an identity pool\. | Write |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ RegisterDevice ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_RegisterDevice.html)  | Registers a device to receive push sync notifications\. | Write |   [ identity\* ](#amazoncognitosync-identity)   |  |  | 
+|   [ SetCognitoEvents ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetCognitoEvents.html)  | Sets the AWS Lambda function for a given event type for an identity pool\. | Write |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
 |   SetDatasetConfiguration \[permission only\] | A permission that grants ability to configure datasets\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
-|   [ SetIdentityPoolConfiguration ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetIdentityPoolConfiguration.html)  | Sets the necessary configuration for push sync\. | Write |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
-|   [ SubscribeToDataset ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SubscribeToDataset.html)  | Subscribes to receive notifications when a dataset is modified by another device\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
-|   [ UnsubscribeFromDataset ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html)  | Unsubscribes from receiving notifications when a dataset is modified by another device\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
-|   [ UpdateRecords ](http://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html)  | Posts updates to records and adds and deletes records for a dataset and user\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ SetIdentityPoolConfiguration ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SetIdentityPoolConfiguration.html)  | Sets the necessary configuration for push sync\. | Write |   [ identitypool\* ](#amazoncognitosync-identitypool)   |  |  | 
+|   [ SubscribeToDataset ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_SubscribeToDataset.html)  | Subscribes to receive notifications when a dataset is modified by another device\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ UnsubscribeFromDataset ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UnsubscribeFromDataset.html)  | Unsubscribes from receiving notifications when a dataset is modified by another device\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
+|   [ UpdateRecords ](https://docs.aws.amazon.com/cognitosync/latest/APIReference/API_UpdateRecords.html)  | Posts updates to records and adds and deletes records for a dataset and user\. | Write |   [ dataset\* ](#amazoncognitosync-dataset)   |  |  | 
 
 ## Resources Defined by Cognito Sync<a name="amazoncognitosync-resources-for-iam-policies"></a>
 
@@ -50,9 +50,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ dataset ](http://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets)  |  arn:$\{Partition\}:cognito\-sync:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}/identity/$\{IdentityId\}/dataset/$\{DatasetName\}  |  | 
-|   [ identity ](http://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html#authenticated-and-unauthenticated-identities)  |  arn:$\{Partition\}:cognito\-sync:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}/identity/$\{IdentityId\}  |  | 
-|   [ identitypool ](http://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)  |  arn:$\{Partition\}:cognito\-sync:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}  |  | 
+|   [ dataset ](https://docs.aws.amazon.com/cognito/latest/developerguide/synchronizing-data.html#understanding-datasets)  |  arn:$\{Partition\}:cognito\-sync:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}/identity/$\{IdentityId\}/dataset/$\{DatasetName\}  |  | 
+|   [ identity ](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html#authenticated-and-unauthenticated-identities)  |  arn:$\{Partition\}:cognito\-sync:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}/identity/$\{IdentityId\}  |  | 
+|   [ identitypool ](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)  |  arn:$\{Partition\}:cognito\-sync:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}  |  | 
 
 ## Condition Keys for Amazon Cognito Sync<a name="amazoncognitosync-policy-keys"></a>
 

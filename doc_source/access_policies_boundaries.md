@@ -4,7 +4,7 @@ AWS supports identity\-based policies, resource\-based policies, access control 
 
 You can use an AWS managed policy or a customer managed policy to set the boundary for a user or role\. That policy limits the maximum permissions for the user or role\.
 
-For example, assume that the user named `AnayaIyengar` should be allowed to manage only Amazon S3, Amazon CloudWatch, and Amazon EC2\. To enforce this rule, you can use the following policy to set the permissions boundary for the `AnayaIyengar` user:
+For example, assume that the user named `ShirleyRodriguez` should be allowed to manage only Amazon S3, Amazon CloudWatch, and Amazon EC2\. To enforce this rule, you can use the following policy to set the permissions boundary for the `ShirleyRodriguez` user:
 
 ```
 {
@@ -23,7 +23,7 @@ For example, assume that the user named `AnayaIyengar` should be allowed to mana
 }
 ```
 
-When you use a policy to set the permissions boundary for a user, it limits the user's permissions but does not provide permissions on its own\. In this example, the `AnayaIyengar` user boundary allows her to perform all operations in Amazon S3, CloudWatch, and Amazon EC2\. However, Anaya can never perform operations in any other service, including IAM, even if she has a permissions policy that allows it\. For example, you can add the following policy to the `AnayaIyengar` user:
+When you use a policy to set the permissions boundary for a user, it limits the user's permissions but does not provide permissions on its own\. In this example, the `ShirleyRodriguez` user boundary allows her to perform all operations in Amazon S3, CloudWatch, and Amazon EC2\. However, Shirley can never perform operations in any other service, including IAM, even if she has a permissions policy that allows it\. For example, you can add the following pol
 
 ```
 {
@@ -36,7 +36,7 @@ When you use a policy to set the permissions boundary for a user, it limits the 
 }
 ```
 
-This policy allows the principal to create a user in IAM\. If you attach this policy to the `AnayaIyengar` user, and Anaya tries to create a user, the operation fails\. It fails because the policy evaluation logic checks the policy used as the permissions boundary, which does not allow the `iam:CreateUser` operation\. To allow Anaya to perform operations in AWS, you must add a permissions policy with actions in Amazon S3, Amazon CloudWatch, or Amazon EC2\. 
+This policy allows the principal to create a user in IAM\. If you attach this policy to the `ShirleyRodriguez` user, and Shirley tries to create a user, the operation fails\. It fails because the policy evaluation logic checks the policy used as the permissions boundary, which does not allow the `iam:CreateUser` operation\. To allow Shirley to perform operations in AWS, you must add a permissions policy with actions in Amazon S3, Amazon CloudWatch, or Amazon EC2\. 
 
 ## Evaluating Effective Permissions with Boundaries<a name="access_policies_boundaries-eval-logic"></a>
 

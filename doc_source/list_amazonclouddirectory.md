@@ -3,9 +3,9 @@
 Amazon Cloud Directory \(service prefix: `clouddirectory`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/directoryservice/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_AuthNAccess.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/directoryservice/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_AuthNAccess.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cloud Directory](#amazonclouddirectory-actions-as-permissions)
@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ appliedSchema ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}/schema/$\{SchemaName\}/$\{Version\}  |  | 
-|   [ developmentSchema ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/development/$\{SchemaName\}  |  | 
-|   [ directory ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}  |  | 
-|   [ publishedSchema ](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/published/$\{SchemaName\}/$\{Version\}  |  | 
+|   [ appliedSchema ](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}/schema/$\{SchemaName\}/$\{Version\}  |  | 
+|   [ developmentSchema ](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/development/$\{SchemaName\}  |  | 
+|   [ directory ](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}  |  | 
+|   [ publishedSchema ](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/cd_key_concepts.html#whatisdirectory)  |  arn:$\{Partition\}:clouddirectory:$\{Region\}:$\{Account\}:schema/published/$\{SchemaName\}/$\{Version\}  |  | 
 
 ## Condition Keys for Amazon Cloud Directory<a name="amazonclouddirectory-policy-keys"></a>
 

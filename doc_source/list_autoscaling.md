@@ -3,9 +3,9 @@
 Auto Scaling \(service prefix: `autoscaling`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/autoscaling/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/autoscaling/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AutoScaling/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Auto Scaling](#autoscaling-actions-as-permissions)
@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ autoScalingGroup ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:autoScalingGroup:$\{GroupId\}:autoScalingGroupName/$\{GroupFriendlyName\}  |   [ autoscaling:ResourceTag/ ](#autoscaling-autoscaling_ResourceTag_)   | 
-|   [ launchConfiguration ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:launchConfiguration:$\{Id\}:launchConfigurationName/$\{LaunchConfigurationName\}  |  | 
+|   [ autoScalingGroup ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:autoScalingGroup:$\{GroupId\}:autoScalingGroupName/$\{GroupFriendlyName\}  |   [ autoscaling:ResourceTag/ ](#autoscaling-autoscaling_ResourceTag_)   | 
+|   [ launchConfiguration ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:launchConfiguration:$\{Id\}:launchConfigurationName/$\{LaunchConfigurationName\}  |  | 
 
 ## Condition Keys for Auto Scaling<a name="autoscaling-policy-keys"></a>
 
@@ -43,14 +43,14 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ autoscaling:ImageId ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The AMI used to create the instance\. | String | 
-|   [ autoscaling:InstanceType ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The type of instance, in terms of the hardware resources available\. | String | 
-|   [ autoscaling:LaunchConfigurationName ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The name of a launch configuration\. | String | 
-|   [ autoscaling:LoadBalancerNames ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The name of the load balancer\. | String | 
-|   [ autoscaling:MaxSize ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The maximum scaling size\. | Numeric | 
-|   [ autoscaling:MinSize ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The minimum scaling size\. | Numeric | 
-|   [ autoscaling:ResourceTag/ ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag attached to a resource\. | String | 
-|   [ autoscaling:SpotPrice ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The spot price associated with an instance\. | Numeric | 
-|   [ autoscaling:TargetGroupARNs ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The ARN of a target group\. | ARN | 
-|   [ autoscaling:VPCZoneIdentifiers ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The identifier of a VPC zone\. | String | 
-|   [ aws:RequestTag/ ](http://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag associated with the request\. | String | 
+|   [ autoscaling:ImageId ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The AMI used to create the instance\. | String | 
+|   [ autoscaling:InstanceType ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The type of instance, in terms of the hardware resources available\. | String | 
+|   [ autoscaling:LaunchConfigurationName ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The name of a launch configuration\. | String | 
+|   [ autoscaling:LoadBalancerNames ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The name of the load balancer\. | String | 
+|   [ autoscaling:MaxSize ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The maximum scaling size\. | Numeric | 
+|   [ autoscaling:MinSize ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The minimum scaling size\. | Numeric | 
+|   [ autoscaling:ResourceTag/ ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag attached to a resource\. | String | 
+|   [ autoscaling:SpotPrice ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The spot price associated with an instance\. | Numeric | 
+|   [ autoscaling:TargetGroupARNs ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The ARN of a target group\. | ARN | 
+|   [ autoscaling:VPCZoneIdentifiers ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The identifier of a VPC zone\. | String | 
+|   [ aws:RequestTag/ ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag associated with the request\. | String | 

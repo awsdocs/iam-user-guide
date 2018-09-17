@@ -18,19 +18,19 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 **To create a role for identity federation \(AWS CLI\)**
 
-1. Create a role: [aws iam create\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
+1. Create a role: [aws iam create\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/create-role.html)
 
-1. Attach a permissions policy to the role: [aws iam attach\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
+1. Attach a permissions policy to the role: [aws iam attach\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/attach-role-policy.html)
 
     or
 
-   Create an inline permissions policy for the role: [aws iam put\-role\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+   Create an inline permissions policy for the role: [aws iam put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
-1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](http://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
+1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.
 
-The following example shows the first two, and most common, steps for creating an identity provider role in a simple environment\. This example allows any user in the `123456789012` account to assume the role and view the `example_bucket` Amazon S3 bucket\. This example also assumes that you are running the AWS CLI on a computer running Windows, and have already configured the AWS CLI with your credentials\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
+The following example shows the first two, and most common, steps for creating an identity provider role in a simple environment\. This example allows any user in the `123456789012` account to assume the role and view the `example_bucket` Amazon S3 bucket\. This example also assumes that you are running the AWS CLI on a computer running Windows, and have already configured the AWS CLI with your credentials\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
 In this example, include the following trust policy in the first command when you create the role\. This trust policy allows users in the `123456789012` account to assume the role using the `AssumeRole` operation, but only if the user provides MFA authentication using the `SerialNumber` and `TokenCode` parameters\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
 
@@ -80,14 +80,14 @@ The steps to create a role for the supported identity providers \(OIDC or SAML\)
 
 **To create a role for identity federation \(AWS API\)**
 
-1. Create a role: [CreateRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
+1. Create a role: [CreateRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html)
 
-1. Attach a permissions policy to the role:[AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+1. Attach a permissions policy to the role:[AttachRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
 
     or
 
-   Create an inline permissions policy for the role: [PutRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+   Create an inline permissions policy for the role: [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
-1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](http://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
+1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.

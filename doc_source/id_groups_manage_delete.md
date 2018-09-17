@@ -41,16 +41,16 @@ You can delete an IAM group from the AWS CLI\.
 **To delete an IAM group \(AWS CLI\)**
 
 1. Remove all users from the group\.
-   + [aws iam get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) \(to get the list of users in the group\), and [aws iam remove\-user\-from\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) \(to remove a user from the group\) 
+   + [aws iam get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) \(to get the list of users in the group\), and [aws iam remove\-user\-from\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) \(to remove a user from the group\) 
 
 1. Delete all inline policies embedded in the group\.
-   + [aws iam list\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html) \(to get a list of the group's inline policies\), and [aws iam delete\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html) \(to delete the group's inline policies\) 
+   + [aws iam list\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html) \(to get a list of the group's inline policies\), and [aws iam delete\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html) \(to delete the group's inline policies\) 
 
 1. Detach all managed policies attached to the group\.
-   + [aws iam list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html) \(to get a list of the managed policies attached to the group\), and [aws iam detach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html) \(to detach a managed policy from the group\) 
+   + [aws iam list\-attached\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html) \(to get a list of the managed policies attached to the group\), and [aws iam detach\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/detach-group-policy.html) \(to detach a managed policy from the group\) 
 
 1. Delete the group\.
-   + [aws iam delete\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-group.html)
+   + [aws iam delete\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group.html)
 
 ## Deleting an IAM Group \(AWS API\)<a name="id_groups_manage_delete_api"></a>
 
@@ -59,13 +59,13 @@ You can use the AWS API to delete an IAM group\.
 **To delete an IAM group \(AWS API\)**
 
 1. Remove all users from the group\.
-   + [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) \(to get the list of users in the group\) and [RemoveUserFromGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html) \(to remove a user from the group\) 
+   + [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) \(to get the list of users in the group\) and [RemoveUserFromGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveUserFromGroup.html) \(to remove a user from the group\) 
 
 1. Delete all inline policies embedded in the group\.
-   + [ListGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html) \(to get a list of the group's inline policies\) and [DeleteGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html) \(to delete the group's inline policies\) 
+   + [ListGroupPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html) \(to get a list of the group's inline policies\) and [DeleteGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html) \(to delete the group's inline policies\) 
 
 1. Detach all managed policies attached to the group\.
-   + [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html) \(to get a list of the managed policies attached to the group\) and [DetachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html) \(to detach a managed policy from the group\)
+   + [ListAttachedGroupPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html) \(to get a list of the managed policies attached to the group\) and [DetachGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html) \(to detach a managed policy from the group\)
 
 1. Delete the group\.
-   +  [DeleteGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroup.html) 
+   +  [DeleteGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroup.html) 

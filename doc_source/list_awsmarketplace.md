@@ -3,9 +3,9 @@
 AWS Marketplace \(service prefix: `aws-marketplace`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace](#awsmarketplace-actions-as-permissions)
@@ -21,9 +21,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ Subscribe ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to add new software subscriptions on the Your Software page\. | Write |  |  |  | 
-|   [ Unsubscribe ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to remove software subscriptions from the Your Software page\. | Write |  |  |  | 
-|   [ ViewSubscriptions ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to see subscribed software\. Without this permission, no other permissions will work\. | List |  |  |  | 
+|   [ Subscribe ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to add new software subscriptions on the Your Software page\. | Write |  |  |  | 
+|   [ Unsubscribe ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to remove software subscriptions from the Your Software page\. | Write |  |  |  | 
+|   [ ViewSubscriptions ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to see subscribed software\. Without this permission, no other permissions will work\. | List |  |  |  | 
 
 ## Resources Defined by Marketplace<a name="awsmarketplace-resources-for-iam-policies"></a>
 

@@ -3,9 +3,9 @@
 Amazon AppStream 2\.0 \(service prefix: `appstream`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/appstream2/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/appstream2/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/appstream2/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/appstream2/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon AppStream 2\.0](#amazonappstream2.0-actions-as-permissions)
@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ fleet ](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:fleet/$\{FleetName\}  |  | 
-|   [ image ](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image/$\{ImageName\}  |  | 
-|   [ image\-builder ](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image\-builder/$\{ImageBuilderName\}  |  | 
-|   [ stack ](http://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:stack/$\{StackName\}  |  | 
+|   [ fleet ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:fleet/$\{FleetName\}  |  | 
+|   [ image ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image/$\{ImageName\}  |  | 
+|   [ image\-builder ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image\-builder/$\{ImageBuilderName\}  |  | 
+|   [ stack ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:stack/$\{StackName\}  |  | 
 
 ## Condition Keys for Amazon AppStream 2\.0<a name="amazonappstream2.0-policy-keys"></a>
 
@@ -45,4 +45,4 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ appstream:userId ](http://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role)  | Filters access by the ID of the AppStream 2\.0 user\. | String | 
+|   [ appstream:userId ](https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role)  | Filters access by the ID of the AppStream 2\.0 user\. | String | 

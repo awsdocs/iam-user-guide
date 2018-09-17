@@ -62,21 +62,21 @@ You can create and delete an account alias from the AWS Management Console\.
 ### Creating, Deleting, and Listing Aliases \(AWS CLI\)<a name="CreateAlias_APICLI"></a>
 
 To create an alias for your AWS Management Console sign\-in page URL, run the following command:
-+ `[aws iam create\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
++ `[aws iam create\-account\-alias](https://docs.aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
 
 To delete an AWS account ID alias, run the following command:
-+ `[aws iam delete\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
++ `[aws iam delete\-account\-alias](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
 
 To display your AWS account ID alias, run the following command: 
-+ `[aws iam list\-account\-aliases](http://docs.aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
++ `[aws iam list\-account\-aliases](https://docs.aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
 
 ### Creating, Deleting, and Listing Aliases \(AWS API\)<a name="CreateAlias_API"></a>
 
 To create an alias for your AWS Management Console sign\-in page URL, call the following operation:
-+ `[CreateAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
++ `[CreateAccountAlias](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
 
 To delete an AWS account ID alias, call the following operation:
-+ `[DeleteAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
++ `[DeleteAccountAlias](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
 
 To display your AWS account ID alias, call the following operation:
-+ `[ListAccountAliases](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 
++ `[ListAccountAliases](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 

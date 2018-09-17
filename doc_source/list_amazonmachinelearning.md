@@ -3,9 +3,9 @@
 Amazon Machine Learning \(service prefix: `machinelearning`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/machine-learning/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/machine-learning/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/machine-learning/latest/dg/controlling-access-to-amazon-ml-resources-by-using-iam.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/machine-learning/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/machine-learning/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/machine-learning/latest/dg/controlling-access-to-amazon-ml-resources-by-using-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Machine Learning](#amazonmachinelearning-actions-as-permissions)
@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ batchprediction ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:batchprediction/$\{BatchPredictionId\}  |  | 
-|   [ datasource ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:datasource/$\{DatasourceId\}  |  | 
-|   [ evaluation ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:evaluation/$\{EvaluationId\}  |  | 
-|   [ mlmodel ](http://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:mlmodel/$\{MlModelId\}  |  | 
+|   [ batchprediction ](https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#batch-predictions)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:batchprediction/$\{BatchPredictionId\}  |  | 
+|   [ datasource ](https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#datasources)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:datasource/$\{DatasourceId\}  |  | 
+|   [ evaluation ](https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#evaluations)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:evaluation/$\{EvaluationId\}  |  | 
+|   [ mlmodel ](https://docs.aws.amazon.com/machine-learning/latest/dg/amazon-machine-learning-key-concepts.html#ml-models)  |  arn:$\{Partition\}:machinelearning:$\{Region\}:$\{Account\}:mlmodel/$\{MlModelId\}  |  | 
 
 ## Condition Keys for Amazon Machine Learning<a name="amazonmachinelearning-policy-keys"></a>
 

@@ -3,7 +3,7 @@
 You can create one or more IAM users in your AWS account\. You might create an IAM user when someone joins your team, or when you create a new application that needs to make API calls to AWS\. 
 
 **Important**  
-If you arrived at this page while trying to enable Amazon Advertising for your application or website, see [Becoming a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.  
+If you arrived at this page while trying to enable Amazon Advertising for your application or website, see [Becoming a Product Advertising API Developer](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.  
 If you arrived at this page from the IAM console, it is possible that your account does not include IAM users, even though you are signed in\. You could be signed in as the AWS account root user, using a role, or signed in with temporary credentials\. To learn more about these IAM identities, see [Identities \(Users, Groups, and Roles\)](id.md)\.
 
 **Topics**
@@ -95,19 +95,19 @@ You can use the AWS CLI to create an IAM user\.
 **To create an IAM user \(AWS CLI\)**
 
 1. Create a user\.
-   + [aws iam create\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/create-user.html)
+   + [aws iam create\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/create-user.html)
 
 1. \(Optional\) Give the user access to the AWS Management Console\. This requires a password\. You must also give the user the [URL of your account's sign\-in page\.](id_users_sign-in.md)
-   +  [aws iam create\-login\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
+   +  [aws iam create\-login\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/create-login-profile.html)
 
 1. \(Optional\) Give the user programmatic access\. This requires access keys\. 
-   + [aws iam create\-access\-key](http://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
+   + [aws iam create\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 
 1. Add the user to one or more groups\. The groups that you specify should have attached policies that grant the appropriate permissions for the user\. 
-   + [aws iam add\-user\-to\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/add-user-to-group.html) 
+   + [aws iam add\-user\-to\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/add-user-to-group.html) 
 
 1. \(Optional\) Attach a policy to the user that defines the user's permissions\. **Note:** We recommend that you manage user permissions by adding the user to a group and attaching a policy to the group instead of attaching directly to a user\.
-   + [aws iam attach\-user\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
+   + [aws iam attach\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
 
 1. \(Optional\) Give the user permission to manage his or her own security credentials\. For more information, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\. 
 
@@ -118,20 +118,20 @@ You can use the AWS API to create an IAM user\.
 **To create an IAM user from the \(AWS API\)**
 
 1. Create a user\.
-   + [CreateUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html)
+   + [CreateUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateUser.html)
 
 1. \(Optional\) Give the user access to the AWS Management Console\. This requires a password\. You must also give the user the [URL of your account's sign\-in page\.](id_users_sign-in.md)
-   + [CreateLoginProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
+   + [CreateLoginProfile](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateLoginProfile.html)
 
 1. \(Optional\) Give the user programmatic access\. This requires access keys\. 
-   + [CreateAccessKey](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
+   + [CreateAccessKey](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
 **Important**  
 This is your only opportunity to view or download the secret access keys, and you must provide this information to your users before they can use the AWS API\. Save the user's new access key ID and secret access key in a safe and secure place\. **You will not have access to the secret keys again after this step\.** 
 
 1. Add the user to one or more groups\. The groups that you specify should have attached policies that grant the appropriate permissions for the user\. 
-   + [AddUserToGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html) 
+   + [AddUserToGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddUserToGroup.html) 
 
 1. \(Optional\) Attach a policy to the user that defines the user's permissions\. **Note:** We recommend that you manage user permissions by adding the user to a group and attaching a policy to the group instead of attaching directly to a user\.
-   + [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
+   + [AttachUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
 
 1. \(Optional\) Give the user permission to manage his or her own security credentials\. For more information, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\. 

@@ -3,7 +3,7 @@
 Amazon MQ \(service prefix: `mq`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/)\.
 
 **Topics**
 + [Actions Defined by Amazon MQ](#amazonmq-actions-as-permissions)
@@ -19,23 +19,23 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateBroker ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post)  | Grants permission to create a broker\. | Write |  |  |  | 
-|   [ CreateConfiguration ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post)  | Grants permission to create a new configuration for the specified configuration name\. Amazon MQ uses the default configuration \(the engine type and engine version\)\. | Write |  |  |  | 
-|   [ CreateUser ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post)  | Grants permission to create an ActiveMQ user\. | Write |  |  |  | 
-|   [ DeleteBroker ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete)  | Grants permission to delete a broker\. | Write |  |  |  | 
-|   [ DeleteUser ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete)  | Grants permission to delete an ActiveMQ user\. | Write |  |  |  | 
-|   [ DescribeBroker ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get)  | Grants permission to return information about the specified broker\. | Read |  |  |  | 
-|   [ DescribeConfiguration ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get)  | Grants permission to return information about the specified configuration\. | Read |  |  |  | 
-|   [ DescribeConfigurationRevision ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get)  | Grants permission to return the specified configuration revision for the specified configuration\. | Read |  |  |  | 
-|   [ DescribeUser ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get)  | Grants permission to return information about an ActiveMQ user\. | Read |  |  |  | 
-|   [ ListBrokers ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get)  | Grants permission to return a list of all brokers\. | List |  |  |  | 
-|   [ ListConfigurationRevisions ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get)  | Grants permission to return a list of all existing revisions for the specified configuration\. | List |  |  |  | 
-|   [ ListConfigurations ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get)  | Grants permission to return a list of all configurations\. | List |  |  |  | 
-|   [ ListUsers ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get)  | Grants permission to return a list of all ActiveMQ users\. | List |  |  |  | 
-|   [ RebootBroker ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post)  | Grants permission to reboot a broker\. | Write |  |  |  | 
-|   [ UpdateBroker ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get)  | Grants permission to add a pending configuration change to a broker\. | Write |  |  |  | 
-|   [ UpdateConfiguration ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put)  | Grants permission to update the specified configuration\. | Write |  |  |  | 
-|   [ UpdateUser ](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put)  | Grants permission to update the information for an ActiveMQ user\. | Write |  |  |  | 
+|   [ CreateBroker ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post)  | Grants permission to create a broker\. | Write |  |  |  | 
+|   [ CreateConfiguration ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post)  | Grants permission to create a new configuration for the specified configuration name\. Amazon MQ uses the default configuration \(the engine type and engine version\)\. | Write |  |  |  | 
+|   [ CreateUser ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post)  | Grants permission to create an ActiveMQ user\. | Write |  |  |  | 
+|   [ DeleteBroker ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete)  | Grants permission to delete a broker\. | Write |  |  |  | 
+|   [ DeleteUser ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete)  | Grants permission to delete an ActiveMQ user\. | Write |  |  |  | 
+|   [ DescribeBroker ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get)  | Grants permission to return information about the specified broker\. | Read |  |  |  | 
+|   [ DescribeConfiguration ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get)  | Grants permission to return information about the specified configuration\. | Read |  |  |  | 
+|   [ DescribeConfigurationRevision ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get)  | Grants permission to return the specified configuration revision for the specified configuration\. | Read |  |  |  | 
+|   [ DescribeUser ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get)  | Grants permission to return information about an ActiveMQ user\. | Read |  |  |  | 
+|   [ ListBrokers ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get)  | Grants permission to return a list of all brokers\. | List |  |  |  | 
+|   [ ListConfigurationRevisions ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get)  | Grants permission to return a list of all existing revisions for the specified configuration\. | List |  |  |  | 
+|   [ ListConfigurations ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get)  | Grants permission to return a list of all configurations\. | List |  |  |  | 
+|   [ ListUsers ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get)  | Grants permission to return a list of all ActiveMQ users\. | List |  |  |  | 
+|   [ RebootBroker ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post)  | Grants permission to reboot a broker\. | Write |  |  |  | 
+|   [ UpdateBroker ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get)  | Grants permission to add a pending configuration change to a broker\. | Write |  |  |  | 
+|   [ UpdateConfiguration ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put)  | Grants permission to update the specified configuration\. | Write |  |  |  | 
+|   [ UpdateUser ](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put)  | Grants permission to update the information for an ActiveMQ user\. | Write |  |  |  | 
 
 ## Resources Defined by MQ<a name="amazonmq-resources-for-iam-policies"></a>
 

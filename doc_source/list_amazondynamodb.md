@@ -3,9 +3,9 @@
 Amazon DynamoDB \(service prefix: `dynamodb`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/authentication-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon DynamoDB](#amazondynamodb-actions-as-permissions)
@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ index ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/index/$\{IndexName\}  |  | 
-|   [ stream ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/stream/$\{StreamLabel\}  |  | 
-|   [ table ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}  |  | 
+|   [ index ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/index/$\{IndexName\}  |  | 
+|   [ stream ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/stream/$\{StreamLabel\}  |  | 
+|   [ table ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}  |  | 
 |   [ backup ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/backup/$\{BackupName\}  |  | 
 |   [ global\-table ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_HowItWorks.html)  |  arn:$\{Partition\}:dynamodb::$\{Account\}:global\-table/$\{GlobalTableName\}  |  | 
 
@@ -41,15 +41,15 @@ Amazon DynamoDB defines the following condition keys that can be used in the `Co
 
 To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
-For information about how to use context keys to refine DynamoDB access using an IAM policy, see [Using IAM Policy Conditions for Fine\-Grained Access Control](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html) in the *Amazon DynamoDB Developer Guide*\.
+For information about how to use context keys to refine DynamoDB access using an IAM policy, see [Using IAM Policy Conditions for Fine\-Grained Access Control](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html) in the *Amazon DynamoDB Developer Guide*\.
 
 
 ****  
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ dynamodb:Attributes ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the attribute \(field or column\) names of the table\. | String | 
-|   [ dynamodb:LeadingKeys ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filters based on the partition key of the table\. | String | 
-|   [ dynamodb:ReturnConsumedCapacity ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the ReturnConsumedCapacity parameter of a request\. Contains either "TOTAL" or "NONE"\. | String | 
-|   [ dynamodb:ReturnValues ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the ReturnValues parameter of request\. Contains one of the following: "ALL\_OLD", "UPDATED\_OLD","ALL\_NEW","UPDATED\_NEW", or "NONE"\. | String | 
-|   [ dynamodb:Select ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the Select parameter of a Query or Scan request\. | String | 
+|   [ dynamodb:Attributes ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the attribute \(field or column\) names of the table\. | String | 
+|   [ dynamodb:LeadingKeys ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filters based on the partition key of the table\. | String | 
+|   [ dynamodb:ReturnConsumedCapacity ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the ReturnConsumedCapacity parameter of a request\. Contains either "TOTAL" or "NONE"\. | String | 
+|   [ dynamodb:ReturnValues ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the ReturnValues parameter of request\. Contains one of the following: "ALL\_OLD", "UPDATED\_OLD","ALL\_NEW","UPDATED\_NEW", or "NONE"\. | String | 
+|   [ dynamodb:Select ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the Select parameter of a Query or Scan request\. | String | 

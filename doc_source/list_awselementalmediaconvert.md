@@ -3,9 +3,9 @@
 AWS Elemental MediaConvert \(service prefix: `mediaconvert`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com//mediaconvert/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com//mediaconvert/latest/userguide/IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com//mediaconvert/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com//mediaconvert/latest/userguide/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaConvert](#awselementalmediaconvert-actions-as-permissions)
@@ -21,26 +21,26 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CancelJob ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CancelJob.html)  | Cancel a mediaconvert job that is waiting in queue | Write |  |  |  | 
-|   [ CreateJob ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateJob.html)  | Create and submit a mediaconvert job | Write |  |  |  | 
-|   [ CreateJobTemplate ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateJob.html)  | Create a mediaconvert custom job template | Write |  |  |  | 
-|   [ CreatePreset ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateJob.html)  | Create a mediaconvert custom output preset | Write |  |  |  | 
-|   [ CreateQueue ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateQueue.html)  | Create a mediaconvert job queue | Write |  |  |  | 
-|   [ DeleteJobTemplate ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeleteJobTemplate.html)  | Delete a mediaconvert custom job template | Write |  |  |  | 
-|   [ DeletePreset ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeletePreset.html)  | Delete a mediaconvert custom output preset | Write |  |  |  | 
-|   [ DeleteQueue ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeleteQueue.html)  | Delete a mediaconvert job queue | Write |  |  |  | 
-|   [ DescribeEndpoints ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DescribeEndpoints.html)  | Subscribe to mediaconvert service, returns one \(or more\) custom endpoints | List |  |  |  | 
-|   [ GetJob ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetJob.html)  | Get a mediaconvert job | Read |  |  |  | 
-|   [ GetJobTemplate ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetJobTemplate.html)  | Get a mediaconvert job template | Read |  |  |  | 
-|   [ GetPreset ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetPreset.html)  | Get a mediaconvert output preset | Read |  |  |  | 
-|   [ GetQueue ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetQueue.html)  | Get a mediaconvert job queue | Read |  |  |  | 
-|   [ ListJobTemplates ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListJobTemplates.html)  | List mediaconvert job templates | List |  |  |  | 
-|   [ ListJobs ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListJobs.html)  | List mediaconvert jobs | List |  |  |  | 
-|   [ ListPresets ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListPresets.html)  | List mediaconvert output presets | List |  |  |  | 
-|   [ ListQueues ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListQueues.html)  | List mediaconvert job queues | List |  |  |  | 
-|   [ UpdateJobTemplate ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_UpdateJobTemplate.html)  | Update a mediaconvert custom job template | Write |  |  |  | 
-|   [ UpdatePreset ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_UpdatePreset.html)  | Update a mediaconvert custom output preset | Write |  |  |  | 
-|   [ UpdateQueue ](http://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_UpdateQueue.html)  | Update a mediaconvert job queue | Write |  |  |  | 
+|   [ CancelJob ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CancelJob.html)  | Cancel a mediaconvert job that is waiting in queue | Write |  |  |  | 
+|   [ CreateJob ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateJob.html)  | Create and submit a mediaconvert job | Write |  |  |  | 
+|   [ CreateJobTemplate ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateJob.html)  | Create a mediaconvert custom job template | Write |  |  |  | 
+|   [ CreatePreset ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateJob.html)  | Create a mediaconvert custom output preset | Write |  |  |  | 
+|   [ CreateQueue ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_CreateQueue.html)  | Create a mediaconvert job queue | Write |  |  |  | 
+|   [ DeleteJobTemplate ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeleteJobTemplate.html)  | Delete a mediaconvert custom job template | Write |  |  |  | 
+|   [ DeletePreset ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeletePreset.html)  | Delete a mediaconvert custom output preset | Write |  |  |  | 
+|   [ DeleteQueue ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DeleteQueue.html)  | Delete a mediaconvert job queue | Write |  |  |  | 
+|   [ DescribeEndpoints ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_DescribeEndpoints.html)  | Subscribe to mediaconvert service, returns one \(or more\) custom endpoints | List |  |  |  | 
+|   [ GetJob ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetJob.html)  | Get a mediaconvert job | Read |  |  |  | 
+|   [ GetJobTemplate ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetJobTemplate.html)  | Get a mediaconvert job template | Read |  |  |  | 
+|   [ GetPreset ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetPreset.html)  | Get a mediaconvert output preset | Read |  |  |  | 
+|   [ GetQueue ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_GetQueue.html)  | Get a mediaconvert job queue | Read |  |  |  | 
+|   [ ListJobTemplates ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListJobTemplates.html)  | List mediaconvert job templates | List |  |  |  | 
+|   [ ListJobs ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListJobs.html)  | List mediaconvert jobs | List |  |  |  | 
+|   [ ListPresets ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListPresets.html)  | List mediaconvert output presets | List |  |  |  | 
+|   [ ListQueues ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_ListQueues.html)  | List mediaconvert job queues | List |  |  |  | 
+|   [ UpdateJobTemplate ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_UpdateJobTemplate.html)  | Update a mediaconvert custom job template | Write |  |  |  | 
+|   [ UpdatePreset ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_UpdatePreset.html)  | Update a mediaconvert custom output preset | Write |  |  |  | 
+|   [ UpdateQueue ](https://docs.aws.amazon.com//mediaconvert/latest/APIReference/API_UpdateQueue.html)  | Update a mediaconvert job queue | Write |  |  |  | 
 
 ## Resources Defined by MediaConvert<a name="awselementalmediaconvert-resources-for-iam-policies"></a>
 

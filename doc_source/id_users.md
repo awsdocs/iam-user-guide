@@ -5,7 +5,7 @@ An IAM *user* is an entity that you create in AWS to represent the person or ser
 An IAM user with administrator permissions is not the same thing as the AWS account root user\. For more information about the root user, see [The AWS Account Root User](id_root-user.md)\.
 
 **Important**  
-If you arrived at this page while trying to enable Amazon Advertising for your application or web site, see [Sign up for the Product Advertising API](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
+If you arrived at this page while trying to enable Amazon Advertising for your application or web site, see [Sign up for the Product Advertising API](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
 
 ## How AWS identifies an IAM user<a name="id_users_create_aws-identifiers"></a>
 
@@ -32,7 +32,7 @@ Take advantage of the following options to administer passwords, access keys, an
 + **[Manage passwords for your IAM users](id_credentials_passwords.md)\.** Create and change the passwords that permit access to the AWS Management Console\. Set a password policy to enforce a minimum password complexity\. Allow users to change their own passwords\. 
 + **[Manage access keys for your IAM users](id_credentials_access-keys.md)\.** Create and update access keys for programmatic access to the resources in your account\. 
 + You can enhance the security of the user's credentials by enabling [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) for the user\. With MFA, users have to provide two forms of identification: First, they provide the credentials that are part of their user identity \(a password or access key\)\. In addition, they provide a temporary numeric code that's generated on a hardware device or by an application on a smartphone or tablet, or sent by AWS to an SMS\-compatible mobile device\. 
-+ **[Find unused passwords and access keys](id_credentials_finding-unused.md)\.** Anyone who has a password or access keys for your account or an IAM user in your account has access to your AWS resources\. The security [best practice](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) is to remove passwords and access keys when users no longer need them\.
++ **[Find unused passwords and access keys](id_credentials_finding-unused.md)\.** Anyone who has a password or access keys for your account or an IAM user in your account has access to your AWS resources\. The security [best practice](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) is to remove passwords and access keys when users no longer need them\.
 + **[Download a credential report for your account](id_credentials_getting-report.md)\.** You can generate and download a credential report that lists all IAM users in your account and the status of their various credentials, including passwords, access keys, and MFA devices\. For passwords and access keys, the credential report shows how recently the password or access key has been used\.
 
 ## Users and permissions<a name="id_users_perms"></a>

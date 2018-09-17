@@ -166,7 +166,7 @@ When IAM creates a user, group, role, policy, instance profile, or server certif
 
 `AIDAJQABLZS4A3QDU576Q`
 
-For the most part, you use friendly names and [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities, so you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
+For the most part, you use friendly names and [ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities, so you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
 
 One example pertains to reusing friendly names in your AWS account\. Within your account, a friendly name for a user, group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee; the bucket has a resource\-based policy \(a bucket policy\) that lets users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the IAM user named David, the policy could end up granting the new David access to information in the Amazon S3 bucket that was left by the former David\. 
 
@@ -196,17 +196,17 @@ IAM uses the following prefixes to indicate what type of entity each unique ID a
 The unique ID for an IAM entity is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
 
 AWS CLI:
-+  [get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
-+  [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
-+  [get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
-+  [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) 
-+  [get\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
-+  [get\-server\-certificate](http://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
++  [get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
++  [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
++  [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
++  [get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) 
++  [get\-instance\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
++  [get\-server\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
 
 IAM API:
-+  [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
-+  [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
-+  [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 
-+  [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html) 
-+  [GetInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 
-+  [GetServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) 
++  [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
++  [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
++  [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 
++  [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html) 
++  [GetInstanceProfile](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 
++  [GetServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) 

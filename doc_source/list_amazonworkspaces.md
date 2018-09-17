@@ -3,9 +3,9 @@
 Amazon WorkSpaces \(service prefix: `workspaces`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/workspaces/latest/adminguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/workspaces/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/wsp_iam.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/workspaces/latest/adminguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/workspaces/latest/api/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/wsp_iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon WorkSpaces](#amazonworkspaces-actions-as-permissions)
@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ workspacebundle ](http://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\}  |  | 
-|   [ workspaceid ](http://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\}  |  | 
+|   [ workspacebundle ](https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\}  |  | 
+|   [ workspaceid ](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\}  |  | 
 
 ## Condition Keys for Amazon WorkSpaces<a name="amazonworkspaces-policy-keys"></a>
 

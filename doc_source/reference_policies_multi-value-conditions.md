@@ -2,7 +2,7 @@
 
 You can use the `Condition` element of a policy to test multiple values for a single key in a request\. When you make a request to AWS, either programmatically or through the AWS Management Console, you include information in the request\. You can use condition keys to test the values of the matching keys in the request\. For example, you can use a condition key to control access to specific attributes of a DynamoDB table, or to an Amazon EC2 instance based on tags\.
 
-For requests that include multiple values for a single key, test whether the entire set of request values matches the entire set of condition key values using the `ForAllValues` qualifier\. To test whether at least one member of the set of request values matches at least one member of the set of condition key values\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. 
+For requests that include multiple values for a single key, test whether the entire set of request values matches the entire set of condition key values using the `ForAllValues` qualifier\. To test whether at least one member of the set of request values matches at least one member of the set of condition key values, use the `ForAnyValue` qualifier\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. 
 
 When someone makes a request, AWS evaluates the policy to determine whether the condition is true or false\. For requests with multiple key values, AWS evaluates the condition based on the qualifier:
 + `ForAllValues` – The condition returns true if there's a match between every one of the specified key values in the request and at least one value in the policy\. It also returns true if there is no matching key in the request, or if the key values resolve to an empty data set, such as an empty string\.
@@ -26,7 +26,7 @@ You can create a policy to test multiple values in a request against one or more
 }
 ```
 
-For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 
+For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 
 
 You can create a policy that allows users to see only the `PostDateTime`, `Message`, and `Tags` attribures\. If the user's request contains any of these attributes, it is allowed; but if the request contains any other attributes \(for example, `ID`\), the request is denied\. Logically speaking, you want to create a list of allowed attributes \(`PostDateTime`, `Message`, `Tags`\) and indicate in the policy that all of the user's requested attributes must be in that list of allowed attributes\.
 

@@ -3,9 +3,9 @@
 Amazon Storage Gateway \(service prefix: `storagegateway`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/storagegateway/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/storagegateway/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/storagegateway/latest/userguide/UsingIAMWithStorageGateway.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/storagegateway/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/storagegateway/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/storagegateway/latest/userguide/UsingIAMWithStorageGateway.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Storage Gateway](#amazonstoragegateway-actions-as-permissions)
@@ -29,12 +29,12 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ device ](http://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/device/$\{Vtldevice\}  |  | 
-|   [ gateway ](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |  | 
-|   [ share ](http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\}  |  | 
-|   [ tape ](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{TapeBarcode\}  |  | 
-|   [ target ](http://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/target/$\{IscsiTarget\}  |  | 
-|   [ volume ](http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\}  |  | 
+|   [ device ](https://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/device/$\{Vtldevice\}  |  | 
+|   [ gateway ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |  | 
+|   [ share ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\}  |  | 
+|   [ tape ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{TapeBarcode\}  |  | 
+|   [ target ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/target/$\{IscsiTarget\}  |  | 
+|   [ volume ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\}  |  | 
 
 ## Condition Keys for Amazon Storage Gateway<a name="amazonstoragegateway-policy-keys"></a>
 

@@ -3,9 +3,9 @@
 AWS Security Token Service \(service prefix: `sts`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/STS/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/STS/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Security Token Service](#awssecuritytokenservice-actions-as-permissions)

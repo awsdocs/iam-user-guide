@@ -3,9 +3,9 @@
 Amazon Simple Systems Manager \(service prefix: `ssm`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/systems-manager/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/systems-manager/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-iam-create.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/systems-manager/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/systems-manager/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-iam-create.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Simple Systems Manager](#amazonsimplesystemsmanager-actions-as-permissions)
@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ document ](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\}  |  | 
+|   [ document ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\}  |  | 
 |   maintenancewindow  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:maintenancewindow/$\{ResourceId\}  |  | 
-|   [ managed\-instance ](http://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\}  |  | 
+|   [ managed\-instance ](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\}  |  | 
 |   parameter  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\}  |   [ ssm:resourceTag/tag\-key ](#amazonsimplesystemsmanager-ssm_resourceTag_tag-key)   | 
 |   patchbaseline  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\}  |  | 
 |   session  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:session/$\{ResourceId\}  |  | 
@@ -49,4 +49,4 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ ssm:resourceTag/tag\-key ](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-rc-setting-up-cmdsec.html)  | A tag key and value pair\. | String | 
+|   [ ssm:resourceTag/tag\-key ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-rc-setting-up-cmdsec.html)  | A tag key and value pair\. | String | 

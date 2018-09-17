@@ -101,35 +101,35 @@ A managed policy can have up to five versions\. If you need to make changes to a
 **To edit a customer managed policy \(AWS CLI\)**
 
 1. \(Optional\) To view information about a policy, run the following commands:
-   + To list managed policies: [list\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
-   + To retrieve detailed information about a managed policy: [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
+   + To list managed policies: [list\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
+   + To retrieve detailed information about a managed policy: [get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, run the following commands:
    + To list the identities \(users, groups, and roles\) to which a managed policy is attached: 
-     + [list\-entities\-for\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
+     + [list\-entities\-for\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
    + To list the managed policies attached to an identity \(a user, group, or role\):
-     + [list\-attached\-user\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
-     + [list\-attached\-group\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
-     + [list\-attached\-role\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
+     + [list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
+     + [list\-attached\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
+     + [list\-attached\-role\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
 
 1. To edit a customer managed policy, run the following command:
-   + [create\-policy\-version](http://docs.aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
+   + [create\-policy\-version](https://docs.aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
 
 **To set the default version of a customer managed policy \(AWS CLI\)**
 
 1. \(Optional\) To list managed policies, run the following command:
-   + [list\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
+   + [list\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
 
 1. To set the default version of a customer managed policy, run the following command:
-   + [set\-default\-policy\-version](http://docs.aws.amazon.com/cli/latest/reference/iam/set-default-policy-version.html)
+   + [set\-default\-policy\-version](https://docs.aws.amazon.com/cli/latest/reference/iam/set-default-policy-version.html)
 
 **To delete a version of a customer managed policy \(AWS CLI\)**
 
 1. \(Optional\) To list managed policies, run the following command:
-   + [list\-policies](http://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
+   + [list\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
 
 1. To delete a customer managed policy, run the following command:
-   + [delete\-policy\-version](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-policy-version.html)
+   + [delete\-policy\-version](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-policy-version.html)
 
 ## Editing IAM Policies \(AWS API\)<a name="edit-policies-api"></a>
 
@@ -141,32 +141,32 @@ A managed policy can have up to five versions\. If you need to make changes to a
 **To edit a customer managed policy \(AWS API\)**
 
 1. \(Optional\) To view information about a policy, call the following operations:
-   + To list managed policies: [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
-   + To retrieve detailed information about a managed policy: [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
+   + To list managed policies: [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
+   + To retrieve detailed information about a managed policy: [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, call the following operations:
    + To list the identities \(users, groups, and roles\) to which a managed policy is attached: 
-     + [ListEntitiesForPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
+     + [ListEntitiesForPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
    + To list the managed policies attached to an identity \(a user, group, or role\):
-     + [ListAttachedUserPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
-     + [ListAttachedGroupPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
-     + [ListAttachedRolePolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
+     + [ListAttachedUserPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
+     + [ListAttachedGroupPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
+     + [ListAttachedRolePolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
 
 1. To edit a customer managed policy, call the following operation:
-   + [CreatePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
+   + [CreatePolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
 
 **To set the default version of a customer managed policy \(AWS API\)**
 
 1. \(Optional\) To list managed policies, call the following operation:
-   + [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
+   + [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
 
 1. To set the default version of a customer managed policy, call the following operation:
-   + [SetDefaultPolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html)
+   + [SetDefaultPolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html)
 
 **To delete a version of a customer managed policy \(AWS API\)**
 
 1. \(Optional\) To list managed policies, call the following operation:
-   + [ListPolicies](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
+   + [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
 
 1. To delete a customer managed policy, call the following operation:
-   + [DeletePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html)
+   + [DeletePolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html)

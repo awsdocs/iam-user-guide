@@ -3,9 +3,9 @@
 AWS Batch \(service prefix: `batch`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/batch/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/batch/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/batch/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/batch/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Batch](#awsbatch-actions-as-permissions)
@@ -21,22 +21,22 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CancelJob ](http://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html)  | Cancels jobs in an AWS Batch job queue\. | Write |  |  |  | 
-|   [ CreateComputeEnvironment ](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html)  | Creates an AWS Batch compute environment\. | Write |  |  |  | 
-|   [ CreateJobQueue ](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html)  | Creates an AWS Batch job queue\. | Write |  |  |  | 
-|   [ DeleteComputeEnvironment ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html)  | Deletes an AWS Batch compute environment\. | Write |  |  |  | 
-|   [ DeleteJobQueue ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html)  | Deletes the specified job queue\. | Write |  |  |  | 
-|   [ DeregisterJobDefinition ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html)  | Deregisters an AWS Batch job definition\. | Write |  |  |  | 
-|   [ DescribeComputeEnvironments ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html)  | Describes one or more of your compute environments\. | Read |  |  |  | 
-|   [ DescribeJobDefinitions ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html)  | Describes a list of job definitions\. | Read |  |  |  | 
-|   [ DescribeJobQueues ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html)  | Describes one or more of your job queues\. | Read |  |  |  | 
-|   [ DescribeJobs ](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html)  | Describes a list of AWS Batch jobs\. | Read |  |  |  | 
-|   [ ListJobs ](http://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html)  | Returns a list of task jobs for a specified job queue\. | List |  |  |  | 
-|   [ RegisterJobDefinition ](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)  | Registers an AWS Batch job definition\. | Write |  |  |  | 
-|   [ SubmitJob ](http://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html)  | Submits an AWS Batch job from a job definition\. | Write |  |  |  | 
-|   [ TerminateJob ](http://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html)  | Terminates jobs in a job queue\. | Write |  |  |  | 
-|   [ UpdateComputeEnvironment ](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html)  | Updates an AWS Batch compute environment\. | Write |  |  |  | 
-|   [ UpdateJobQueue ](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html)  | Updates a job queue\. | Write |  |  |  | 
+|   [ CancelJob ](https://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html)  | Cancels jobs in an AWS Batch job queue\. | Write |  |  |  | 
+|   [ CreateComputeEnvironment ](https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html)  | Creates an AWS Batch compute environment\. | Write |  |  |  | 
+|   [ CreateJobQueue ](https://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html)  | Creates an AWS Batch job queue\. | Write |  |  |  | 
+|   [ DeleteComputeEnvironment ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html)  | Deletes an AWS Batch compute environment\. | Write |  |  |  | 
+|   [ DeleteJobQueue ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html)  | Deletes the specified job queue\. | Write |  |  |  | 
+|   [ DeregisterJobDefinition ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html)  | Deregisters an AWS Batch job definition\. | Write |  |  |  | 
+|   [ DescribeComputeEnvironments ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html)  | Describes one or more of your compute environments\. | Read |  |  |  | 
+|   [ DescribeJobDefinitions ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html)  | Describes a list of job definitions\. | Read |  |  |  | 
+|   [ DescribeJobQueues ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html)  | Describes one or more of your job queues\. | Read |  |  |  | 
+|   [ DescribeJobs ](https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html)  | Describes a list of AWS Batch jobs\. | Read |  |  |  | 
+|   [ ListJobs ](https://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html)  | Returns a list of task jobs for a specified job queue\. | List |  |  |  | 
+|   [ RegisterJobDefinition ](https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)  | Registers an AWS Batch job definition\. | Write |  |  |  | 
+|   [ SubmitJob ](https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html)  | Submits an AWS Batch job from a job definition\. | Write |  |  |  | 
+|   [ TerminateJob ](https://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html)  | Terminates jobs in a job queue\. | Write |  |  |  | 
+|   [ UpdateComputeEnvironment ](https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html)  | Updates an AWS Batch compute environment\. | Write |  |  |  | 
+|   [ UpdateJobQueue ](https://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html)  | Updates a job queue\. | Write |  |  |  | 
 
 ## Resources Defined by Batch<a name="awsbatch-resources-for-iam-policies"></a>
 

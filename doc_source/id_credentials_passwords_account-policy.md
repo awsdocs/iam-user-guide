@@ -90,13 +90,13 @@ You can use the AWS Management Console to create, change, or delete a password p
 ## Setting a Password Policy \(AWS CLI\)<a name="PasswordPolicy_CLI"></a>
 
 To manage an account password policy from the AWS CLI, run the following commands:
-+ To create or change a password policy: [http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)
-+ To retrieve the password policy: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html) 
-+ To delete a password policy: [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html) 
++ To create or change a password policy: [https://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/update-account-password-policy.html)
++ To retrieve the password policy: [https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-password-policy.html) 
++ To delete a password policy: [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-password-policy.html) 
 
 ## Setting a Password Policy \(AWS API\)<a name="PasswordPolicy_API"></a>
 
 To manage an account password policy from the AWS API, call the following operations:
-+ To create or change a password policy: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
-+ To retrieve the password policy: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
-+ To delete a password policy: [`DeleteAccountPasswordPolicy` ](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 
++ To create or change a password policy: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
++ To retrieve the password policy: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
++ To delete a password policy: [`DeleteAccountPasswordPolicy` ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 

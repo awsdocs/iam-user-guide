@@ -3,8 +3,8 @@
 AWS Code Signing for Amazon FreeRTOS \(service prefix: `signer`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/signer/latest/api/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/signer/latest/api/)\.
 
 **Topics**
 + [Actions Defined by AWS Code Signing for Amazon FreeRTOS](#awscodesigningforamazonfreertos-actions-as-permissions)
@@ -20,15 +20,15 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CancelSigningProfile ](http://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html)  | Cancels a signing profile\. | Write |  |  |  | 
-|   [ DescribeSigningJob ](http://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html)  | Describe a signing job\. | Read |  |  |  | 
-|   [ GetSigningPlatform ](http://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html)  | Retrieves a signing platform\. | Read |  |  |  | 
-|   [ GetSigningProfile ](http://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html)  | Retreives a signing profile\. | Read |  |  |  | 
-|   [ ListSigningJobs ](http://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html)  | List signing jobs\. | List |  |  |  | 
-|   [ ListSigningPlatforms ](http://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html)  | List all signing platforms\. | List |  |  |  | 
-|   [ ListSigningProfiles ](http://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html)  | List all signing profile associated with the account\. | List |  |  |  | 
-|   [ PutSigningProfile ](http://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html)  | Creates a new signing profile if not exists\. | Write |  |  |  | 
-|   [ StartSigningJob ](http://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html)  | Starts a code signing request\. | Write |   [ signing\-profile\* ](#awscodesigningforamazonfreertos-signing-profile)   |  |  | 
+|   [ CancelSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html)  | Cancels a signing profile\. | Write |  |  |  | 
+|   [ DescribeSigningJob ](https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html)  | Describe a signing job\. | Read |  |  |  | 
+|   [ GetSigningPlatform ](https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html)  | Retrieves a signing platform\. | Read |  |  |  | 
+|   [ GetSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html)  | Retreives a signing profile\. | Read |  |  |  | 
+|   [ ListSigningJobs ](https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html)  | List signing jobs\. | List |  |  |  | 
+|   [ ListSigningPlatforms ](https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html)  | List all signing platforms\. | List |  |  |  | 
+|   [ ListSigningProfiles ](https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html)  | List all signing profile associated with the account\. | List |  |  |  | 
+|   [ PutSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html)  | Creates a new signing profile if not exists\. | Write |  |  |  | 
+|   [ StartSigningJob ](https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html)  | Starts a code signing request\. | Write |   [ signing\-profile\* ](#awscodesigningforamazonfreertos-signing-profile)   |  |  | 
 
 ## Resources Defined by Signer<a name="awscodesigningforamazonfreertos-resources-for-iam-policies"></a>
 
@@ -39,7 +39,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ signing\-profile ](http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html)  |  arn:$\{Partition\}:signer:$\{Region\}::/signing\-profiles/$\{profileName\}  |  | 
+|   [ signing\-profile ](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html)  |  arn:$\{Partition\}:signer:$\{Region\}::/signing\-profiles/$\{profileName\}  |  | 
 
 ## Condition Keys for AWS Code Signing for Amazon FreeRTOS<a name="awscodesigningforamazonfreertos-policy-keys"></a>
 

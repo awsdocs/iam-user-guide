@@ -3,9 +3,9 @@
 AWS IoT Analytics \(service prefix: `iotanalytics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/iotanalytics/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/iotanalytics/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/iotanalytics/latest/developerguide/authorization.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iotanalytics/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/authorization.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT Analytics](#awsiotanalytics-actions-as-permissions)
@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ channel ](http://docs.aws.amazon.com/iotanalytics/latest/developerguide/channel.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:channel/$\{ChannelName\}  |  | 
-|   [ dataset ](http://docs.aws.amazon.com/iotanalytics/latest/developerguide/dataset.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:dataset/$\{DatasetName\}  |  | 
-|   [ datastore ](http://docs.aws.amazon.com/iotanalytics/latest/developerguide/datastore.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:datastore/$\{DatastoreName\}  |  | 
-|   [ pipeline ](http://docs.aws.amazon.com/iotanalytics/latest/developerguide/pipeline.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:pipeline/$\{PipelineName\}  |  | 
+|   [ channel ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/channel.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:channel/$\{ChannelName\}  |  | 
+|   [ dataset ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/dataset.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:dataset/$\{DatasetName\}  |  | 
+|   [ datastore ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/datastore.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:datastore/$\{DatastoreName\}  |  | 
+|   [ pipeline ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/pipeline.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:pipeline/$\{PipelineName\}  |  | 
 
 ## Condition Keys for AWS IoT Analytics<a name="awsiotanalytics-policy-keys"></a>
 

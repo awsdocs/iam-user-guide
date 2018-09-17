@@ -11,7 +11,7 @@ When you need to set the permissions for an identity in IAM, you must decide whe
 
 ## AWS Managed Policies<a name="aws-managed-policies"></a>
 
-An *AWS managed policy* is a standalone policy that is created and administered by AWS\. *Standalone policy* means that the policy has its own [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. 
+An *AWS managed policy* is a standalone policy that is created and administered by AWS\. *Standalone policy* means that the policy has its own [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. 
 
 AWS managed policies are designed to provide permissions for many common use cases\. There are AWS managed policies that define typical permissions for service administrators and grant full access to the service, such as [AmazonDynamoDBFullAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess) and [IAMFullAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMFullAccess)\. Some AWS managed policies are designed for power users, such as [AWSCodeCommitPowerUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AWSCodeCommitPowerUser) and [AWSKeyManagementServicePowerUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AWSKeyManagementServicePowerUser), which also depends on IAM permissions\. Other AWS managed policies provide various levels of access to AWS services, such as [AmazonMobileAnalyticsWriteOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonMobileAnalyticsWriteOnlyAccess) and [AmazonEC2ReadOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess), which provides access to additional related services\. AWS managed policies make it easier for you to assign appropriate permissions to users, groups, and roles than if you had to write the policies yourself\. 
 
@@ -29,7 +29,7 @@ You can create standalone policies that you administer in your own AWS account, 
 
 A great way to create a customer managed policy is to start by copying an existing AWS managed policy\. That way you know that the policy is correct at the beginning and all you need to do is customize it to your environment\.
 
-The following diagram illustrates customer managed policies\. Each policy is an entity in IAM with its own [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. Notice that the same policy can be attached to multiple principal entities—for example, the same **DynamoDB\-books\-app** policy is attached to two different IAM roles\.
+The following diagram illustrates customer managed policies\. Each policy is an entity in IAM with its own [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that includes the policy name\. Notice that the same policy can be attached to multiple principal entities—for example, the same **DynamoDB\-books\-app** policy is attached to two different IAM roles\.
 
 ![\[Diagram of customer managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-customer-managed-policies.diagram.png)
 

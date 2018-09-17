@@ -4,7 +4,7 @@ A virtual MFA device uses a software application to generate a six\-digit authen
 
 You can enable only one MFA device per AWS account root user or IAM user, and the device can only be used by the specified user\. Keep in mind that although some virtual MFA software apps appear to support multiple accounts, each account you add represents a single virtual MFA device\. In addition, that one virtual device can still associate with only one user\.
 
-For a list of virtual MFA apps that you can use on smartphones and tablets \(including Google Android, Apple iPhone and iPad, and Windows Phone\), go to the **Virtual MFA Applications** section at [http://aws.amazon.com/iam/details/mfa/](http://aws.amazon.com/iam/details/mfa/)\. Note that AWS requires a virtual MFA app that produces a six\-digit OTP\.
+For a list of virtual MFA apps that you can use on smartphones and tablets \(including Google Android, Apple iPhone and iPad, and Windows Phone\), see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\. Note that AWS requires a virtual MFA app that produces a six\-digit OTP\.
 
 Use the following steps to enable and manage MFA devices from the AWS Management Console\. To enable and manage MFA devices at the command line, or to use the API, see [Enabling and Managing Virtual MFA Devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)\.
 
@@ -37,7 +37,7 @@ You must have physical access to the hardware that will host the user's virtual 
 
    IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic\. The graphic is a representation of the 'secret configuration key' that is available for manual entry on devices that do not support QR codes\.
 
-1. Open your virtual MFA app\. \(For a list of apps that you can use for hosting virtual MFA devices, see [Virtual MFA Applications](https://aws.amazon.com/iam/details/mfa/#Virtual_MFA_Applications)\.\) If the virtual MFA app supports multiple accounts \(multiple virtual MFA devices\), choose the option to create a new account \(a new virtual MFA device\)\.
+1. Open your virtual MFA app\. \(For a list of apps that you can use for hosting virtual MFA devices, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.\) If the virtual MFA app supports multiple accounts \(multiple virtual MFA devices\), choose the option to create a new account \(a new virtual MFA device\)\.
 
 1. Determine whether the MFA app supports QR codes, and then do one of the following:
    + Use the app to scan the QR code\. For example, you might choose the camera icon or choose an option similar to **Scan code**, and then use the device's camera to scan the code\.

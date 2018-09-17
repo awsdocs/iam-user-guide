@@ -213,11 +213,11 @@ For more information, refer to these resources:
 ### Controlling Permissions for Creating, Updating, and Deleting Customer Managed Policies<a name="policies-controlling-access-create-update-delete"></a>
 
 You can use [IAM policies](access_policies.md) to control who is allowed to create, update, and delete customer managed policies in your AWS account\. The following list contains API operations that pertain directly to creating, updating, and deleting policies or policy versions: 
-+ [CreatePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
-+ [CreatePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
-+ [DeletePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html)
-+ [DeletePolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html)
-+ [SetDefaultPolicyVersion](http://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html)
++ [CreatePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html)
++ [CreatePolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
++ [DeletePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicy.html)
++ [DeletePolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeletePolicyVersion.html)
++ [SetDefaultPolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetDefaultPolicyVersion.html)
 
 The API operations in the preceding list correspond to actions that you can allow or deny—that is, permissions that you can grant—using an IAM policy\. 
 
@@ -273,12 +273,12 @@ For more information about using paths in the names of customer managed policies
 You can also use IAM policies to allow users to work with only specific managed policies\. In effect, you can control which permissions a user is allowed to grant to other principal entities\. 
 
 The following list shows API operations that pertain directly to attaching and detaching managed policies to and from principal entities:
-+  [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
-+ [AttachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
-+ [AttachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
-+ [DetachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html)
-+ [DetachRolePolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)
-+ [DetachUserPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html)
++  [AttachGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
++ [AttachRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
++ [AttachUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
++ [DetachGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachGroupPolicy.html)
++ [DetachRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachRolePolicy.html)
++ [DetachUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DetachUserPolicy.html)
 
 You can create policies that limit the use of these API operations to affect only the specific managed policies and/or principal entities that you specify\. For example, you might want to allow a user to attach managed policies, but only the managed policies that you specify\. Or, you might want to allow a user to attach managed policies, but only to the principal entities that you specify\. 
 
@@ -352,7 +352,7 @@ You can control access to resources using an identity\-based policy or a resourc
 For more information, refer to these resources:
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
 + To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
-+ Amazon S3 supports using resource\-based policies on their buckets\. For more information, see [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
++ Amazon S3 supports using resource\-based policies on their buckets\. For more information, see [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html)\.
 <a name="NoDefaultPermissions"></a>
 **Resource Creators Do Not Automatically Have Permissions**  
 If you sign in using the AWS account root user credentials, you have permission to perform any action on resources that belong to the account\. However, this isn't true for IAM users\. An IAM user might be granted access to create a resource, but the user's permissions, even for that resource, are limited to what's been explicitly granted\. This means that just because you create a resource, such as an IAM role, you do not automatically have permission to edit or delete that role\. Additionally, your permission can be revoked at any time by the account owner or by another user who has been granted access to manage your permissions\.

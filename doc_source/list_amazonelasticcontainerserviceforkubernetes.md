@@ -3,9 +3,9 @@
 Amazon Elastic Container Service for Kubernetes \(service prefix: `eks`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/eks/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/eks/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/eks/latest/userguide/IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/eks/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/eks/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/eks/latest/userguide/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic Container Service for Kubernetes](#amazonelasticcontainerserviceforkubernetes-actions-as-permissions)
@@ -21,10 +21,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateCluster ](http://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html)  | Creates an Amazon EKS cluster\. | Write |  |  |  | 
-|   [ DeleteCluster ](http://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html)  | Deletes an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ DescribeCluster ](http://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html)  | Returns descriptive information about an Amazon EKS cluster\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ ListClusters ](http://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html)  | Lists the Amazon EKS clusters in your AWS account \(in the specified or default region\)\. | List |  |  |  | 
+|   [ CreateCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html)  | Creates an Amazon EKS cluster\. | Write |  |  |  | 
+|   [ DeleteCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html)  | Deletes an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+|   [ DescribeCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html)  | Returns descriptive information about an Amazon EKS cluster\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+|   [ ListClusters ](https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html)  | Lists the Amazon EKS clusters in your AWS account \(in the specified or default region\)\. | List |  |  |  | 
 
 ## Resources Defined by EKS<a name="amazonelasticcontainerserviceforkubernetes-resources-for-iam-policies"></a>
 
@@ -35,7 +35,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ cluster ](http://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |  | 
+|   [ cluster ](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |  | 
 
 ## Condition Keys for Amazon Elastic Container Service for Kubernetes<a name="amazonelasticcontainerserviceforkubernetes-policy-keys"></a>
 

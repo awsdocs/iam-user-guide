@@ -3,8 +3,8 @@
 AWS Snowball \(service prefix: `snowball`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/snowball/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/snowball/latest/api-reference/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/snowball/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/snowball/latest/api-reference/)\.
 
 **Topics**
 + [Actions Defined by AWS Snowball](#awssnowball-actions-as-permissions)
@@ -20,23 +20,23 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CancelCluster ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelCluster.html)  | Cancels a cluster job\. | Write |  |  |  | 
-|   [ CancelJob ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelJob.html)  | Cancels the specified job\. | Write |  |  |  | 
-|   [ CreateAddress ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateAddress.html)  | Creates an address for a Snowball to be shipped to\. | Write |  |  |  | 
-|   [ CreateCluster ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateCluster.html)  | Creates an empty cluster\. | Write |  |  |  | 
-|   [ CreateJob ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateJob.html)  | Creates a job to import or export data between Amazon S3 and your on\-premises data center\. | Write |  |  |  | 
-|   [ DescribeAddress ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddress.html)  | Takes an AddressId and returns specific details about that address in the form of an Address object\. | Read |  |  |  | 
-|   [ DescribeAddresses ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddresses.html)  | Returns a specified number of ADDRESS objects\. | List |  |  |  | 
-|   [ DescribeCluster ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeCluster.html)  | Returns information about a specific cluster including shipping information, cluster status, and other important metadata\. | Read |  |  |  | 
-|   [ DescribeJob ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeJob.html)  | Returns information about a specific job including shipping information, job status, and other important metadata\. | Read |  |  |  | 
-|   [ GetJobManifest ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobManifest.html)  | Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value\. | Read |  |  |  | 
-|   [ GetJobUnlockCode ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobUnlockCode.html)  | Returns the UnlockCode code value for the specified job\. | Read |  |  |  | 
-|   [ GetSnowballUsage ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_GetSnowballUsage.html)  | Returns information about the Snowball service limit for your account, and also the number of Snowballs your account has in use\. | Read |  |  |  | 
-|   [ ListClusterJobs ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusterJobs.html)  | Returns an array of JobListEntry objects of the specified length\. | List |  |  |  | 
-|   [ ListClusters ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusters.html)  | Returns an array of ClusterListEntry objects of the specified length\. | List |  |  |  | 
-|   [ ListJobs ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html)  | Returns an array of JobListEntry objects of the specified length\. | List |  |  |  | 
-|   [ UpdateCluster ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateCluster.html)  | While a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster\. | Write |  |  |  | 
-|   [ UpdateJob ](http://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJob.html)  | While a job's JobState value is New, you can update some of the information associated with a job\. | Write |  |  |  | 
+|   [ CancelCluster ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelCluster.html)  | Cancels a cluster job\. | Write |  |  |  | 
+|   [ CancelJob ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_CancelJob.html)  | Cancels the specified job\. | Write |  |  |  | 
+|   [ CreateAddress ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateAddress.html)  | Creates an address for a Snowball to be shipped to\. | Write |  |  |  | 
+|   [ CreateCluster ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateCluster.html)  | Creates an empty cluster\. | Write |  |  |  | 
+|   [ CreateJob ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_CreateJob.html)  | Creates a job to import or export data between Amazon S3 and your on\-premises data center\. | Write |  |  |  | 
+|   [ DescribeAddress ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddress.html)  | Takes an AddressId and returns specific details about that address in the form of an Address object\. | Read |  |  |  | 
+|   [ DescribeAddresses ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeAddresses.html)  | Returns a specified number of ADDRESS objects\. | List |  |  |  | 
+|   [ DescribeCluster ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeCluster.html)  | Returns information about a specific cluster including shipping information, cluster status, and other important metadata\. | Read |  |  |  | 
+|   [ DescribeJob ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_DescribeJob.html)  | Returns information about a specific job including shipping information, job status, and other important metadata\. | Read |  |  |  | 
+|   [ GetJobManifest ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobManifest.html)  | Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified JobId value\. | Read |  |  |  | 
+|   [ GetJobUnlockCode ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetJobUnlockCode.html)  | Returns the UnlockCode code value for the specified job\. | Read |  |  |  | 
+|   [ GetSnowballUsage ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_GetSnowballUsage.html)  | Returns information about the Snowball service limit for your account, and also the number of Snowballs your account has in use\. | Read |  |  |  | 
+|   [ ListClusterJobs ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusterJobs.html)  | Returns an array of JobListEntry objects of the specified length\. | List |  |  |  | 
+|   [ ListClusters ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListClusters.html)  | Returns an array of ClusterListEntry objects of the specified length\. | List |  |  |  | 
+|   [ ListJobs ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_ListJobs.html)  | Returns an array of JobListEntry objects of the specified length\. | List |  |  |  | 
+|   [ UpdateCluster ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateCluster.html)  | While a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster\. | Write |  |  |  | 
+|   [ UpdateJob ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJob.html)  | While a job's JobState value is New, you can update some of the information associated with a job\. | Write |  |  |  | 
 
 ## Resources Defined by Snowball<a name="awssnowball-resources-for-iam-policies"></a>
 

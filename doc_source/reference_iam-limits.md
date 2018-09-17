@@ -3,7 +3,7 @@
 Entities and objects in IAM have size limitations\. IAM limits how you name an entity, the number of entities you can create, and the number of characters you can use in an entity\. 
 
 **Note**  
-To get account\-level information about entity usage and quotas, use the [GetAccountSummary](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API operation or the [get\-account\-summary](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
+To get account\-level information about entity usage and quotas, use the [GetAccountSummary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API operation or the [get\-account\-summary](https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
 
 ## IAM Entity Name Limits<a name="reference_iam-limits-names"></a>
 

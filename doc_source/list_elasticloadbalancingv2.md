@@ -3,9 +3,9 @@
 Elastic Load Balancing V2 \(service prefix: `elasticloadbalancing`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Elastic Load Balancing V2](#elasticloadbalancingv2-actions-as-permissions)
@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ listener ](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}  |  | 
-|   [ listener\-rule ](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener\-rule/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}/$\{ListenerRuleId\}  |  | 
-|   [ loadbalancer/app/ ](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
-|   [ loadbalancer/net/ ](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/net/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
-|   [ targetgroup ](http://docs.aws.amazon.com/elasticloadbalancing/latest/elasticloadbalancing/latest/application/load-balancer-target-groups.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:targetgroup/$\{TargetGroupName\}/$\{TargetGroupId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
+|   [ listener ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}  |  | 
+|   [ listener\-rule ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener\-rule/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}/$\{ListenerRuleId\}  |  | 
+|   [ loadbalancer/app/ ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html#application-load-balancer-overview)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
+|   [ loadbalancer/net/ ](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html#network-load-balancer-overview)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/net/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
+|   [ targetgroup ](https://docs.aws.amazon.com/elasticloadbalancing/latest/elasticloadbalancing/latest/application/load-balancer-target-groups.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:targetgroup/$\{TargetGroupName\}/$\{TargetGroupId\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancingv2-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancingv2-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancingv2-elasticloadbalancing_ResourceTag_tag-key)   | 
 
 ## Condition Keys for Elastic Load Balancing V2<a name="elasticloadbalancingv2-policy-keys"></a>
 

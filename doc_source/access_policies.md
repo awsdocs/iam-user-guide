@@ -2,7 +2,7 @@
 
 You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources\. A policy is an object in AWS that, when associated with an entity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Most policies are stored in AWS as JSON documents\.
 
-IAM policies define permissions for an action regardless of the method that you use to perform the operation\. For example, if a policy allows the [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) action, then a user with that policy can get user information from the AWS Management Console, the AWS CLI, or the AWS API\. When you create an IAM user, you can set up the user to allow console or programmatic access\. The IAM user can sign in to the console using a user name and password\. Or they can use access keys to work with the CLI or API\.
+IAM policies define permissions for an action regardless of the method that you use to perform the operation\. For example, if a policy allows the [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) action, then a user with that policy can get user information from the AWS Management Console, the AWS CLI, or the AWS API\. When you create an IAM user, you can set up the user to allow console or programmatic access\. The IAM user can sign in to the console using a user name and password\. Or they can use access keys to work with the CLI or API\.
 
 ## Policy Types<a name="access_policy-types"></a>
 
@@ -45,11 +45,11 @@ Although IAM identities are technically AWS resources, you cannot attach a resou
 
 AWS Organizations is a service for grouping centrally managing the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. SCPs are JSON policies that apply a permissions boundary to an AWS Organizations organization or organizational unit \(OU\)\. This permissions boundary controls the maximum services and actions that can be accessed by the entities in those accounts\.
 
-For more information about Organizations and SCPs, see [About Service Control Policies](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
+For more information about Organizations and SCPs, see [About Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
 
 ### Access Control Policies \(ACLs\)<a name="policies_acl"></a>
 
-Access control policies \(ACLs\) allow you to control what principals can access a resource\. ACLs are similar to resource\-based policies, although they are the only policy type that does not use the JSON policy document format\. Amazon S3, AWS WAF, and Amazon VPC are examples of services that support ACLs\. To learn more about ACLs, see [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*\.
+Access control policies \(ACLs\) allow you to control what principals can access a resource\. ACLs are similar to resource\-based policies, although they are the only policy type that does not use the JSON policy document format\. Amazon S3, AWS WAF, and Amazon VPC are examples of services that support ACLs\. To learn more about ACLs, see [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*\.
 
 ## Policies Passed During AWS STS Role Assumption<a name="access_policies-assume-roles"></a>
 

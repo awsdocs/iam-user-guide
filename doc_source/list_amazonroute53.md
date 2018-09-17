@@ -3,9 +3,9 @@
 Amazon Route 53 \(service prefix: `route53`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/Route53/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/Route53/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Route 53](#amazonroute53-actions-as-permissions)
@@ -29,13 +29,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ change ](http://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html)  |  arn:$\{Partition\}:route53:::change/$\{Id\}  |  | 
-|   [ delegationset ](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set)  |  arn:$\{Partition\}:route53:::delegationset/$\{Id\}  |  | 
-|   [ healthcheck ](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check)  |  arn:$\{Partition\}:route53:::healthcheck/$\{Id\}  |  | 
-|   [ hostedzone ](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone)  |  arn:$\{Partition\}:route53:::hostedzone/$\{Id\}  |  | 
-|   [ trafficpolicy ](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html)  |  arn:$\{Partition\}:route53:::trafficpolicy/$\{Id\}  |  | 
-|   [ trafficpolicyinstance ](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html)  |  arn:$\{Partition\}:route53:::trafficpolicyinstance/$\{Id\}  |  | 
-|   [ queryloggingconfig ](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html)  |  arn:$\{Partition\}:route53:::queryloggingconfig/$\{Id\}  |  | 
+|   [ change ](https://docs.aws.amazon.com/Route53/latest/APIReference/API_Change.html)  |  arn:$\{Partition\}:route53:::change/$\{Id\}  |  | 
+|   [ delegationset ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-reusable-delegation-set)  |  arn:$\{Partition\}:route53:::delegationset/$\{Id\}  |  | 
+|   [ healthcheck ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-health-check)  |  arn:$\{Partition\}:route53:::healthcheck/$\{Id\}  |  | 
+|   [ hostedzone ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html#route-53-concepts-hosted-zone)  |  arn:$\{Partition\}:route53:::hostedzone/$\{Id\}  |  | 
+|   [ trafficpolicy ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html)  |  arn:$\{Partition\}:route53:::trafficpolicy/$\{Id\}  |  | 
+|   [ trafficpolicyinstance ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html)  |  arn:$\{Partition\}:route53:::trafficpolicyinstance/$\{Id\}  |  | 
+|   [ queryloggingconfig ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html)  |  arn:$\{Partition\}:route53:::queryloggingconfig/$\{Id\}  |  | 
 
 ## Condition Keys for Amazon Route 53<a name="amazonroute53-policy-keys"></a>
 

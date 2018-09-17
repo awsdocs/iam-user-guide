@@ -3,7 +3,7 @@
 Alexa for Business \(service prefix: `a4b`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/a4b/latest/APIReference/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/a4b/latest/APIReference/)\.
 
 **Topics**
 + [Actions Defined by Alexa for Business](#alexaforbusiness-actions-as-permissions)

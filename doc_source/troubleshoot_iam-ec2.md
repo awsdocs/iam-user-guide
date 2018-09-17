@@ -38,7 +38,7 @@ Check the following:
 + If you are making requests as an IAM user, verify that you have the following permissions:
   + `ec2:RunInstances` with a wildcard resource \("\*"\)
   + `iam:PassRole` with the resource matching the role ARN \(for example, `arn:aws:iam::999999999999:role/ExampleRoleName`\)
-+ Call the IAM `GetInstanceProfile` action to ensure that you are using a valid instance profile name or a valid instance profile ARN\. For more information, see [ Using IAM roles with Amazon EC2 instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances)\.
++ Call the IAM `GetInstanceProfile` action to ensure that you are using a valid instance profile name or a valid instance profile ARN\. For more information, see [ Using IAM roles with Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances)\.
 + Call the IAM `GetInstanceProfile` action to ensure that the instance profile has a role\. Empty instance profiles will fail with an `AccessDenied` error\. For more information about creating a role, see [Creating IAM Roles](id_roles_create.md)\.
 
 For more information about the permissions necessary to work with roles, see "How Do I Get Started?" in [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\. For information about adding permissions to a user, see [Managing IAM Policies](access_policies_manage.md)\. 

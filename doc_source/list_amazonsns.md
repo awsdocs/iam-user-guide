@@ -3,9 +3,9 @@
 Amazon SNS \(service prefix: `sns`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/sns/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/sns/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/sns/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/sns/latest/api/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon SNS](#amazonsns-actions-as-permissions)
@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ topic ](http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)  |  arn:$\{Partition\}:sns:$\{Region\}:$\{Account\}:$\{TopicName\}  |  | 
+|   [ topic ](https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html)  |  arn:$\{Partition\}:sns:$\{Region\}:$\{Account\}:$\{TopicName\}  |  | 
 
 ## Condition Keys for Amazon SNS<a name="amazonsns-policy-keys"></a>
 
@@ -42,5 +42,5 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ sns:Endpoint ](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19)  | The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription\. | String | 
-|   [ sns:Protocol ](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19)  | The protocol value from a Subscribe request or a previously confirmed subscription\. | String | 
+|   [ sns:Endpoint ](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19)  | The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription\. | String | 
+|   [ sns:Protocol ](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19)  | The protocol value from a Subscribe request or a previously confirmed subscription\. | String | 

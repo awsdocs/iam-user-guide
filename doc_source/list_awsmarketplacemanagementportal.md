@@ -3,9 +3,9 @@
 AWS Marketplace Management Portal \(service prefix: `aws-marketplace-management`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace Management Portal](#awsmarketplacemanagementportal-actions-as-permissions)
@@ -21,10 +21,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ uploadFiles ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the File Upload page inside the AWS Marketplace Management Portal\. | Write |  |  |  | 
-|   [ viewMarketing ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Marketing page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
-|   [ viewReports ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Reports page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
-|   [ viewSupport ](http://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
+|   [ uploadFiles ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the File Upload page inside the AWS Marketplace Management Portal\. | Write |  |  |  | 
+|   [ viewMarketing ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Marketing page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
+|   [ viewReports ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Reports page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
+|   [ viewSupport ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
 
 ## Resources Defined by Marketplace Portal<a name="awsmarketplacemanagementportal-resources-for-iam-policies"></a>
 

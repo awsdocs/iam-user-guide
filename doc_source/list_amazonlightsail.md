@@ -4,7 +4,7 @@ Amazon Lightsail \(service prefix: `lightsail`\) provides the following service\
 
 References:
 + Learn how to [configure this service](https://lightsail.aws.amazon.com/ls/docs/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/)\.
 + Learn how to protect this service and its resources by [using IAM](https://lightsail.aws.amazon.com/ls/docs/how-to/article/create-policy-that-grants-access-to-amazon-lightsail) permission policies\.
 
 **Topics**
@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ Domain ](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Domain/$\{Id\}  |  | 
-|   [ Instance ](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Instance/$\{Id\}  |  | 
-|   [ InstanceSnapshot ](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\}  |  | 
-|   [ KeyPair ](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\}  |  | 
-|   [ StaticIp ](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\}  |  | 
+|   [ Domain ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Domain/$\{Id\}  |  | 
+|   [ Instance ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Instance/$\{Id\}  |  | 
+|   [ InstanceSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\}  |  | 
+|   [ KeyPair ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\}  |  | 
+|   [ StaticIp ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\}  |  | 
 
 ## Condition Keys for Amazon Lightsail<a name="amazonlightsail-policy-keys"></a>
 

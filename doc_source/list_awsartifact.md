@@ -3,9 +3,9 @@
 AWS Artifact \(service prefix: `artifact`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/artifact/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/artifact/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/artifact/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/artifact/latest/ug/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Artifact](#awsartifact-actions-as-permissions)
@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ report\-package ](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::report\-package/\*  |  | 
-|   [ customer\-agreement ](http://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\*  |  | 
-|   [ agreement ](http://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::agreement/\*  |  | 
+|   [ report\-package ](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::report\-package/\*  |  | 
+|   [ customer\-agreement ](https://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\*  |  | 
+|   [ agreement ](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::agreement/\*  |  | 
 
 ## Condition Keys for AWS Artifact<a name="awsartifact-policy-keys"></a>
 

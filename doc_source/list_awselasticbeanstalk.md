@@ -3,9 +3,9 @@
 AWS Elastic Beanstalk \(service prefix: `elasticbeanstalk`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/access_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elastic Beanstalk](#awselasticbeanstalk-actions-as-permissions)
@@ -29,11 +29,11 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ application ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:application/$\{ApplicationName\}  |  | 
-|   [ applicationversion ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:applicationversion/$\{ApplicationName\}/$\{VersionLabel\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
-|   [ configurationtemplate ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:configurationtemplate/$\{ApplicationName\}/$\{TemplateName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
-|   [ environment ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:environment/$\{ApplicationName\}/$\{EnvironmentName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
-|   [ solutionstack ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}::solutionstack/$\{SolutionStackName\}  |  | 
+|   [ application ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:application/$\{ApplicationName\}  |  | 
+|   [ applicationversion ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:applicationversion/$\{ApplicationName\}/$\{VersionLabel\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
+|   [ configurationtemplate ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:configurationtemplate/$\{ApplicationName\}/$\{TemplateName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
+|   [ environment ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:environment/$\{ApplicationName\}/$\{EnvironmentName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
+|   [ solutionstack ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}::solutionstack/$\{SolutionStackName\}  |  | 
 
 ## Condition Keys for AWS Elastic Beanstalk<a name="awselasticbeanstalk-policy-keys"></a>
 
@@ -46,9 +46,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ elasticbeanstalk:FromApplication ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | An application as a dependency or a constraint on an input parameter\. | ARN | 
-|   [ elasticbeanstalk:FromApplicationVersion ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | An application version as a dependency or a constraint on an input parameter\. | ARN | 
-|   [ elasticbeanstalk:FromConfigurationTemplate ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | A configuration template as a dependency or a constraint on an input parameter\. | ARN | 
-|   [ elasticbeanstalk:FromEnvironment ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | An environment as a dependency or a constraint on an input parameter\. | ARN | 
-|   [ elasticbeanstalk:FromSolutionStack ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | A solution stack as a dependency or a constraint on an input parameter\. | ARN | 
-|   [ elasticbeanstalk:InApplication ](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | The application that contains the resource that the action operates on\. | ARN | 
+|   [ elasticbeanstalk:FromApplication ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | An application as a dependency or a constraint on an input parameter\. | ARN | 
+|   [ elasticbeanstalk:FromApplicationVersion ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | An application version as a dependency or a constraint on an input parameter\. | ARN | 
+|   [ elasticbeanstalk:FromConfigurationTemplate ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | A configuration template as a dependency or a constraint on an input parameter\. | ARN | 
+|   [ elasticbeanstalk:FromEnvironment ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | An environment as a dependency or a constraint on an input parameter\. | ARN | 
+|   [ elasticbeanstalk:FromSolutionStack ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | A solution stack as a dependency or a constraint on an input parameter\. | ARN | 
+|   [ elasticbeanstalk:InApplication ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | The application that contains the resource that the action operates on\. | ARN | 

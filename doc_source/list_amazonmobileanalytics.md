@@ -3,9 +3,9 @@
 Amazon Mobile Analytics \(service prefix: `mobileanalytics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/mobileanalytics/latest/ug/access_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mobileanalytics/latest/ug/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Mobile Analytics](#amazonmobileanalytics-actions-as-permissions)
@@ -23,7 +23,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | --- | --- | --- | --- | --- | --- | 
 |   GetFinancialReports  | Grant access to financial metrics for an app | Read |  |  |  | 
 |   GetReports  | Grant access to standard metrics for an app | Read |  |  |  | 
-|   [ PutEvents ](http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)  | The PutEvents operation records one or more events | Write |  |  |  | 
+|   [ PutEvents ](https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)  | The PutEvents operation records one or more events | Write |  |  |  | 
 
 ## Resources Defined by Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
 

@@ -32,5 +32,5 @@ If the account has a password policy, the new password must meet the requirement
 The following procedure describes how IAM users can use the AWS CLI or AWS API to change their own password\.
 
 **To change your own IAM password, use the following**
-+ AWS CLI: [http://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html](http://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html)
-+ AWS API: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html)
++ AWS CLI: [https://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html](https://docs.aws.amazon.com/cli/latest/reference/iam/change-password.html)
++ AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ChangePassword.html)
