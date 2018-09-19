@@ -36,7 +36,7 @@ The following conditional example denies access to non\-IAM actions if the user 
 {
     "Version": "2012-10-17",
     "Statement": [{
-        "Sid": "DenyAllOutsideEU",
+        "Sid": "DenyAllUsersNotUsingMFA",
         "Effect": "Deny",
         "NotAction": "iam:*",
         "Resource": "*",
