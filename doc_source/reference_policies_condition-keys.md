@@ -29,7 +29,6 @@ Checks how long ago \(in seconds\) the MFA\-validated security credentials that 
 
 **aws:MultiFactorAuthPresent**  
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
-
 Checks whether multi\-factor authentication \(MFA\) was used to validate the temporary security credentials that made the current request\. This key is present in the request context only when the user uses temporary credentials to call the API\. Such credentials are used with IAM roles, federated users, IAM users with credentials from `sts:GetSessionToken`, and users of the AWS Management Console\. \(The console uses temporary credentials that are generated on the users' behalf in the background\.\) The `aws:MultiFactorAuthPresent` key is never present when an API or CLI command is called with long\-term credentials, such as standard access key pairs\.   
 You can use the `Bool`, `BoolIfExists`, or `Null` condition operators with the `aws:MultiFactorAuthPresent` condition key\.   
 Use `BoolIfExists` to allow access if the request was authenticated using MFA, or if it was not possible to use MFA\.   
