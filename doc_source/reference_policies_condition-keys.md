@@ -29,33 +29,40 @@ Checks how long ago \(in seconds\) the MFA\-validated security credentials that 
 
 **aws:MultiFactorAuthPresent**  
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
-Checks whether multi\-factor authentication \(MFA\) was used to validate the temporary security credentials that made the current request\. This key is present in the request context only when the user uses temporary credentials to call the API\. Such credentials are used with IAM roles, federated users, IAM users with credentials from `sts:GetSessionToken`, and users of the AWS Management Console\. \(The console uses temporary credentials that are generated on the users' behalf in the background\.\) The `aws:MultiFactorAuthPresent` key is never present when an API or CLI command is called with long\-term credentials, such as standard access key pairs\. Therefore we recommend that when you check for this key that you use the `[\.\.\.IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists)` versions of the condition operators\.  
-It is important to understand that the following Condition element is ***not*** a reliable way to check for the use of MFA:  
+Checks whether multi\-factor authentication \(MFA\) was used to validate the temporary security credentials that made the current request\. This key is present in the request context only when the user uses temporary credentials to call the API\. Such credentials are used with IAM roles, federated users, IAM users with credentials from `sts:GetSessionToken`, and users of the AWS Management Console\. \(The console uses temporary credentials that are generated on the users' behalf in the background\.\) The `aws:MultiFactorAuthPresent` key is never present when an API or CLI command is called with long\-term credentials, such as standard access key pairs\.   
+You can use the `Bool`, `BoolIfExists`, or `Null` condition operators with the `aws:MultiFactorAuthPresent` condition key\.   
+Use `BoolIfExists` to allow access if the request was authenticated using MFA, or if it was not possible to use MFA\.   
 
 ```
-#####     THIS EXAMPLE DOES NOT WORK      #####
+"Action" : "Allow",
+"Condition" : { "BoolIfExists" : { "aws:MultiFactorAuthPresent" : true } }
+```
+The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true\. This means that anyone authenticated using MFA is allowed to access the specified actions\. A user accessing an API with long\-term credentials, such as access keys, can perform the same actions\.  
+You can use the `Bool` or `Null` operators to allow access only if the request was authenticated using MFA\. This means that a user accessing an API with access keys is never allowed to perform the specified actions\.  
 
+```
+"Action" : "Allow",
+"Condition" : { "Bool" : { "aws:MultiFactorAuthPresent" : true } }
+```
+The `Bool` operator returns true if MFA is present in the request\.   
+
+```
+***  DO NOT USE  ***
+"Action" : "Allow",
+"Condition" : { "Null" : { "aws:MultiFactorAuthPresent" : false } }
+```
+The `Null` operator tests that the `aws:MultiFactorAuthPresent` condition key is null, or not present, at the time of authorization\. It returns true if MFA is not missing from the request\. Therefore, it allows access if the request was authenticated using MFA\. This returns the same results as the previous example\. Because this logic is more complicated than using `Bool`, we do not recommend using `Null` with `aws:MultiFactorAuthPresent`\.  
+You can use the `Bool`, `BoolIfExists`, or `Null` condition operators to deny access if the request was not authenticated using MFA\. IAM recommends that you use the most simple logic\.  
+
+```
+"Action" : "Deny",
 "Condition" : { "Bool" : { "aws:MultiFactorAuthPresent" : false } }
 ```
-This is because when long\-term credentials are used, the `aws:MultiFactorAuthPresent` key is not present in the request and the test *always* fails, resulting in a nonmatch\. Instead, we recommend that you use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to check the value\. For example:  
-
-```
-    "Condition" : { "BoolIfExists" : { "aws:MultiFactorAuthPresent" : false } }
-```
-The `*IfExists` operator indicates that the statement matches either if the value exists and has the value of "false" **or** if the value does not exist\. `*IfExists` means that you only care about the value if it is used\. Use this when you don't want the match to fail when the value is not used\.   
-***Do not*** use a policy construct similar to the following to check whether the MFA key is present:  
-
-```
-#####     THIS EXAMPLE DOES NOT WORK      #####
-
-"Action" : "Deny",
-"Condition" : { "Null" : { "aws:MultiFactorAuthPresent" : true } }
-```
-You might expect the previous example to deny access *only* if MFA is not used\. This is true when you make a request using IAM roles, federated users, the AWS Management Console, or credentials from `sts:GetSessionToken`\. However, when you make an API request with your IAM user's long\-term credentials \(access keys\), the MFA context is not available for testing\. Consequently, this condition key is always false, regardless of whether the user being tested was authenticated using MFA\.
+This combination of `Deny` and the `Bool` operator denies access if the request was not authenticated using MFA, regardless of whether temporary or long\-term credentials were used to make the request\. 
 
 **aws:PrincipalOrgID**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-The identifier of an organization that you created using AWS Organizations\.This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
+The identifier of an organization that you created using AWS Organizations\. This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
 For example, the following Amazon S3 bucket policy allows members of any account in the `o-xxxxxxxxxxx` organization to add an object into the `policy-ninja-dev` bucket\.   
 
 ```

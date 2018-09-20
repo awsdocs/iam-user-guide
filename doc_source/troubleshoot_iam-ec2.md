@@ -66,19 +66,17 @@ Check the following:
 
 ### The `iam/info` document indicates `"Code":"InstanceProfileNotFound".`<a name="w4aac24c14c17b2"></a>
 
-Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You will need to terminate your instances and restart with a valid instance profile\.
+Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You must attach a valid instance profile to your Amazon EC2 instance\.
 
-If an instance profile with that name exists, check that the instance profile wasn't deleted and another was created with the same name\.
+If an instance profile with that name exists, check that the instance profile wasn't deleted and another was created with the same name:
 
-To verify the status of the instance profile:
+1. Call the IAM `GetInstanceProfile` operation to get the `InstanceProfileId`\.
 
-1. Call the IAM `GetInstanceProfile` action to get the `InstanceProfileId`\.
+1. Call the Amazon EC2 `DescribeInstances` operation to get the `IamInstanceProfileId` for the instance\.
 
-1. Call the Amazon EC2 `DescribeInstances` action to get the `IamInstanceProfileId` for the instance\.
+1. Verify that the `InstanceProfileId` from the IAM operation matches the `IamInstanceProfileId` from the Amazon EC2 operation\.
 
-1. Verify that the `InstanceProfileId` from the IAM action matches the `IamInstanceProfileId` from the Amazon EC2 action\.
-
-If the IDs are different, then the instance profile attached to your instances is no longer valid\. You will need to terminate your instances and restart with a valid instance profile\. 
+If the IDs are different, then the instance profile attached to your instances is no longer valid\. You must attach a valid instance profile to the instance\. 
 
 ### The `iam/info` document indicates a success but indicates `"Message":"Instance Profile does not contain a role..."`<a name="w4aac24c14c17b4"></a>
 

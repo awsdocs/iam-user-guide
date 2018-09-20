@@ -29,7 +29,7 @@ For more information, see [Configuring SAML Assertions for the Authentication Re
 
 ## Error: Not authorized to perform sts:AssumeRoleWithSAML \(Service: AWSSecurityTokenService; Status Code: 403; Error Code: AccessDenied\)<a name="troubleshoot_saml_missing-role"></a>
 
-This error can occur if the IAM role specified in the SAML response is misspelled or does not exist\. Correct the name of the role in the SAML service provider configuration\.
+This error can occur if the IAM role specified in the SAML response is misspelled or does not exist\. Make sure to use the exact name of your role, because role names are case sensitive\. Correct the name of the role in the SAML service provider configuration\.
 
 This error can also occur if the federated users do not have permissions to assume the role\. The role must have a trust policy that specifies the ARN of the IAM SAML identity provider as the `Principal`\. The role also contains conditions that control which users can assume the role\. Ensure that your users meet the requirements of the conditions\.
 

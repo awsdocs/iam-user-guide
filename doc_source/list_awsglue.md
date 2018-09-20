@@ -64,7 +64,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetJobRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRun)  | Retrieves the metadata for a given job run\. | Read |  |  |  | 
 |   [ GetJobRuns ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRuns)  | Retrieves metadata for all runs of a given job\. | Read |  |  |  | 
 |   [ GetJobs ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJobs)  | Retrieves all current jobs\. | Read |  |  |  | 
-|   [ GetMapping ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-scripts-scripts.html#aws-glue-api-etl-scripts-scripts-GetMapping)  | Creates mappings\. | Write |  |  |  | 
+|   [ GetMapping ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-scripts-scripts.html#aws-glue-api-etl-scripts-scripts-GetMapping)  | Creates mappings\. | Read |  |  |  | 
 |   [ GetPartition ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition)  | Retrieves information about a specified partition\. | Read |  |  |  | 
 |   [ GetPartitions ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions)  | Retrieves information about the partitions in a table\. | Read |  |  |  | 
 |   [ GetPlan ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-scripts-scripts.html#aws-glue-api-etl-scripts-scripts-GetPlan)  | Gets a Python script to perform a specified mapping\. | Read |  |  |  | 

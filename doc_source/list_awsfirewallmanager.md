@@ -25,6 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   GetNotificationChannel  | Returns information about the Amazon Simple Notification Service \(SNS\) topic that is used to record AWS Firewall Manager SNS logs\. | Read |  |  |  | 
 |   GetPolicy  | Returns information about the specified AWS Firewall Manager policy\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
 |   ListComplianceStatus  | Returns an array of PolicyComplianceStatus objects in the response\. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy\. | List |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
+|   ListMemberAccounts  | Returns an array of member account ids if the caller is FMS admin account\. | List |  |  |  | 
 |   ListPolicies  | Returns an array of PolicySummary objects in the response\. | List |  |  |  | 
 |   PutNotificationChannel  | Designates the IAM role and Amazon Simple Notification Service \(SNS\) topic that AWS Firewall Manager \(FM\) could use to notify the FM administrator about major FM events and errors across the organization\. | Write |  |  |  | 
 |   PutPolicy  | Creates an AWS Firewall Manager policy\. | Write |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
