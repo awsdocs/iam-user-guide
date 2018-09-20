@@ -56,7 +56,7 @@ Submit your request immediately after generating the codes\. If you generate the
 You can resynchronize MFA devices from the AWS CLI\.
 
 **To resynchronize an MFA device for an IAM user \(AWS CLI\)**  
-At a command prompt, issue the [http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
+At a command prompt, issue the [https://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
 + Virtual MFA device: specify Amazon Resource Name \(ARN\) of device as `SerialNumber`\.
 
   ```
@@ -76,4 +76,4 @@ Submit your request immediately after generating the codes\. If you generate the
 IAM has an API call that performs synchronization\. In this case, we recommend that you give your MFA users permission to access this API call\. You should build a tool based on that API call that lets your users resynchronize their devices whenever they need to\.
 
 **To resynchronize an MFA device for an IAM user \(AWS API\)**
-+ Send the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.
++ Send the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.

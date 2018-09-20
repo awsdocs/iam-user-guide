@@ -4,24 +4,18 @@ This example shows how you might create a policy that allows full RDS database a
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-      {
-          "Effect": "Allow",
-          "Action": "rds:*",
-          "Resource": [
-              "arn:aws:rds:<REGION>:<ACCOUNTNUMBER>:*"
-          ]
-      },
-      {
-          "Effect": "Allow",
-          "Action": [
-              "rds:Describe*"
-          ],
-          "Resource": [
-              "*"
-          ]
-      }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "rds:*",
+            "Resource": ["arn:aws:rds:<REGION>:*:*"]
+        },
+        {
+            "Effect": "Allow",
+            "Action": ["rds:Describe*"],
+            "Resource": ["*"]
+        }
+    ]
 }
 ```

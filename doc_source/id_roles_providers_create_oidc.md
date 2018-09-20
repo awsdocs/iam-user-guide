@@ -65,39 +65,39 @@ You can use the following AWS CLI commands to create and manage OIDC providers\.
 **To create an OIDC identity provider \(AWS CLI\)**
 
 1. \(Optional\) To get a list of all the OIDC providers in your AWS account, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html)
 
 1. To create a new OIDC provider, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/create-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-open-id-connect-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/create-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-open-id-connect-provider.html)
 
 **To update the list of server certificate thumbprints for an existing OIDC provider \(AWS CLI\)**
 + To update the list of server certificate thumbprints for an OIDC provider, run the following command:
-  + [http://docs.aws.amazon.com/cli/latest/reference/iam/update-open-id-connect-provider-thumbprint.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-open-id-connect-provider-thumbprint.html)
+  + [https://docs.aws.amazon.com/cli/latest/reference/iam/update-open-id-connect-provider-thumbprint.html](https://docs.aws.amazon.com/cli/latest/reference/iam/update-open-id-connect-provider-thumbprint.html)
 
 **To add or remove a client ID from an existing OIDC provider \(AWS CLI\)**
 
 1. \(Optional\) To get a list of all the OIDC providers in your AWS account, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html)
 
 1. \(Optional\) To get detailed information about an OIDC provider, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html)
 
 1. To add a new client ID to an existing OIDC provider, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/add-client-id-to-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/add-client-id-to-open-id-connect-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/add-client-id-to-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/add-client-id-to-open-id-connect-provider.html)
 
 1. To remove a client from an existing OIDC provider, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/remove-client-id-from-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/remove-client-id-from-open-id-connect-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/remove-client-id-from-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/remove-client-id-from-open-id-connect-provider.html)
 
 **To delete an OIDC identity provider \(AWS CLI\)**
 
 1. \(Optional\) To get a list of all the OIDC providers in your AWS account, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-providers.html)
 
 1. \(Optional\) To get detailed information about an OIDC provider, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-open-id-connect-provider.html)
 
 1. To delete an OIDC provider, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html)
 
 ## Creating and Managing an OIDC Identity Provider \(AWS API\)<a name="manage-oidc-provider-api"></a>
 
@@ -106,36 +106,36 @@ You can use the following IAM API commands to create and manage OIDC providers\.
 **To create an OIDC identity provider \(AWS API\)**
 
 1. \(Optional\) To get a list of all the OIDC providers in your AWS account, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
 
 1. To create a new OIDC provider, call the following operation: 
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateOpenIDConnectProvider.html)
 
 **To update the list of server certificate thumbprints for an existing OIDC provider \(AWS API\)**
 + To update the list of server certificate thumbprints for an OIDC provider, call the following operation:
-  + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html)
+  + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html)
 
 **To add or remove a client ID from an existing OIDC provider \(AWS API\)**
 
 1. \(Optional\) To get a list of all the OIDC providers in your AWS account, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
 
 1. \(Optional\) To get detailed information about an OIDC provider, call the following operation: 
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)
 
 1. To add a new client ID to an existing OIDC provider, call the following operation: 
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddClientIDToOpenIDConnectProvider.html)
 
 1. To remove a client ID from an existing OIDC provider, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_RemoveClientIDFromOpenIDConnectProvider.html)
 
 **To delete an OIDC identity provider \(AWS API\)**
 
 1. \(Optional\) To get a list of all the OIDC providers in your AWS account, call the following operation: 
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviders.html)
 
 1. \(Optional\) To get detailed information about an OIDC provider, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)
 
 1. To delete an OIDC provider, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteOpenIDConnectProvider.html)

@@ -7,46 +7,42 @@ If you add these permissions for a user that is signed in to AWS, they might nee
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:CreateVirtualMFADevice",
-        "iam:EnableMFADevice",
-        "iam:ResyncMFADevice",
-        "iam:DeleteVirtualMFADevice"
-      ],
-      "Resource": [
-        "arn:aws:iam::*:mfa/${aws:username}",
-        "arn:aws:iam::*:user/${aws:username}"
-      ]
-    },
-    {
-      "Sid": "AllowUsersToDeactivateTheirOwnVirtualMFADevice",
-      "Effect": "Allow",
-      "Action": [
-        "iam:DeactivateMFADevice"
-      ],
-      "Resource": [
-        "arn:aws:iam::*:mfa/${aws:username}",
-        "arn:aws:iam::*:user/${aws:username}"
-      ],
-      "Condition": {
-        "Bool": {
-          "aws:MultiFactorAuthPresent": "true"
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateVirtualMFADevice",
+                "iam:EnableMFADevice",
+                "iam:ResyncMFADevice",
+                "iam:DeleteVirtualMFADevice"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:mfa/${aws:username}",
+                "arn:aws:iam::*:user/${aws:username}"
+            ]
+        },
+        {
+            "Sid": "AllowUsersToDeactivateTheirOwnVirtualMFADevice",
+            "Effect": "Allow",
+            "Action": ["iam:DeactivateMFADevice"],
+            "Resource": [
+                "arn:aws:iam::*:mfa/${aws:username}",
+                "arn:aws:iam::*:user/${aws:username}"
+            ],
+            "Condition": {
+                "Bool": {"aws:MultiFactorAuthPresent": "true"}
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListMFADevices",
+                "iam:ListVirtualMFADevices",
+                "iam:ListUsers"
+            ],
+            "Resource": "*"
         }
-      }
-    },
-    {
-      "Effect": "Allow",
-      "Action": [
-        "iam:ListMFADevices",
-        "iam:ListVirtualMFADevices",
-        "iam:ListUsers"
-      ],
-      "Resource": "*"
-    }
-  ]
+    ]
 }
 ```

@@ -38,7 +38,7 @@ Check the following:
 + If you are making requests as an IAM user, verify that you have the following permissions:
   + `ec2:RunInstances` with a wildcard resource \("\*"\)
   + `iam:PassRole` with the resource matching the role ARN \(for example, `arn:aws:iam::999999999999:role/ExampleRoleName`\)
-+ Call the IAM `GetInstanceProfile` action to ensure that you are using a valid instance profile name or a valid instance profile ARN\. For more information, see [ Using IAM roles with Amazon EC2 instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances)\.
++ Call the IAM `GetInstanceProfile` action to ensure that you are using a valid instance profile name or a valid instance profile ARN\. For more information, see [ Using IAM roles with Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances)\.
 + Call the IAM `GetInstanceProfile` action to ensure that the instance profile has a role\. Empty instance profiles will fail with an `AccessDenied` error\. For more information about creating a role, see [Creating IAM Roles](id_roles_create.md)\.
 
 For more information about the permissions necessary to work with roles, see "How Do I Get Started?" in [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\. For information about adding permissions to a user, see [Managing IAM Policies](access_policies_manage.md)\. 
@@ -64,27 +64,25 @@ Check the following:
 
 ## What do the errors from the `info` document in the IAM subtree mean?<a name="troubleshoot_iam-ec2_errors-info-doc"></a>
 
-### The `iam/info` document indicates `"Code":"InstanceProfileNotFound".`<a name="w3ab1c24c13c17b2"></a>
+### The `iam/info` document indicates `"Code":"InstanceProfileNotFound".`<a name="w4aac24c14c17b2"></a>
 
-Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You will need to terminate your instances and restart with a valid instance profile\.
+Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You must attach a valid instance profile to your Amazon EC2 instance\.
 
-If an instance profile with that name exists, check that the instance profile wasn't deleted and another was created with the same name\.
+If an instance profile with that name exists, check that the instance profile wasn't deleted and another was created with the same name:
 
-To verify the status of the instance profile:
+1. Call the IAM `GetInstanceProfile` operation to get the `InstanceProfileId`\.
 
-1. Call the IAM `GetInstanceProfile` action to get the `InstanceProfileId`\.
+1. Call the Amazon EC2 `DescribeInstances` operation to get the `IamInstanceProfileId` for the instance\.
 
-1. Call the Amazon EC2 `DescribeInstances` action to get the `IamInstanceProfileId` for the instance\.
+1. Verify that the `InstanceProfileId` from the IAM operation matches the `IamInstanceProfileId` from the Amazon EC2 operation\.
 
-1. Verify that the `InstanceProfileId` from the IAM action matches the `IamInstanceProfileId` from the Amazon EC2 action\.
+If the IDs are different, then the instance profile attached to your instances is no longer valid\. You must attach a valid instance profile to the instance\. 
 
-If the IDs are different, then the instance profile attached to your instances is no longer valid\. You will need to terminate your instances and restart with a valid instance profile\. 
-
-### The `iam/info` document indicates a success but indicates `"Message":"Instance Profile does not contain a role..."`<a name="w3ab1c24c13c17b4"></a>
+### The `iam/info` document indicates a success but indicates `"Message":"Instance Profile does not contain a role..."`<a name="w4aac24c14c17b4"></a>
 
 The role has been removed from the instance profile by the IAM `RemoveRoleFromInstanceProfile` action\. You can use the IAM `AddRoleToInstanceProfile` action to attach a role to the instance profile\. Your application will need to wait until the next scheduled refresh to access the credentials for the role\. 
 
-### The `iam/security-credentials/[role-name]` document indicates `"Code":"AssumeRoleUnauthorizedAccess"`\.<a name="w3ab1c24c13c17b6"></a>
+### The `iam/security-credentials/[role-name]` document indicates `"Code":"AssumeRoleUnauthorizedAccess"`\.<a name="w4aac24c14c17b6"></a>
 
 Amazon EC2 does not have permission to assume the role\. Permission to assume the role is controlled by the trust policy attached to the role, like the example that follows\. Use the IAM `UpdateAssumeRolePolicy` API to update the trust policy\. 
 

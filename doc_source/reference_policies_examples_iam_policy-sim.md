@@ -3,20 +3,20 @@
 This example shows how you might create a policy that allows using the policy simulator API for policies attached to a user, group, or role in the current AWS account\. This policy also allows access to simulate less sensitive policies passed to the API as strings\. This policy provides the permissions necessary to complete this action using the AWS API or AWS CLI only\.
 
 ```
-{    
-  "Version" : "2012-10-17",   
-  "Statement" : [
-    {
-      "Action" : [           
-        "iam:GetContextKeysForCustomPolicy",           
-        "iam:GetContextKeysForPrincipalPolicy",           
-        "iam:SimulateCustomPolicy",           
-        "iam:SimulatePrincipalPolicy"           
-      ],           
-      "Effect" : "Allow",           
-      "Resource" : "*"       
-    }
-  ]
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:GetContextKeysForCustomPolicy",
+                "iam:GetContextKeysForPrincipalPolicy",
+                "iam:SimulateCustomPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
 }
 ```
 

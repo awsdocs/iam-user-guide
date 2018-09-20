@@ -9,15 +9,19 @@ This policy does not allow any actions\. Use this policy in combination with oth
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Deny",
-    "Action": "*",
-    "Resource": "*",
-    "Condition": {"NotIpAddress": {"aws:SourceIp": [
-      "192.0.2.0/24",
-      "203.0.113.0/24"
-    ]}}
-  }
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Deny",
+        "Action": "*",
+        "Resource": "*",
+        "Condition": {
+            "NotIpAddress": {
+                "aws:SourceIp": [
+                    "192.0.2.0/24",
+                    "203.0.113.0/24"
+                ]
+            }
+        }
+    }
 }
 ```

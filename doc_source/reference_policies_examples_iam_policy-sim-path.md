@@ -4,17 +4,17 @@ This example shows how you might create a policy that allows using the policy si
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
-        "iam:GetContextKeysForPrincipalPolicy",
-        "iam:SimulatePrincipalPolicy"
-      ],
-      "Effect": "Allow",
-      "Resource":"arn:aws:iam::<ACCOUNTNUMBER>:user/<USER-PATH-NAME>/*"
-    }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "iam:GetContextKeysForPrincipalPolicy",
+                "iam:SimulatePrincipalPolicy"
+            ],
+            "Effect": "Allow",
+            "Resource": "arn:aws:iam::*:user/<USER-PATH-NAME>/*"
+        }
+    ]
 }
 ```
 

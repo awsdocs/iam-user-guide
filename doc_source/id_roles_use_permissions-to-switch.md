@@ -7,7 +7,7 @@ To grant a user permission to switch to a role, you create a new policy for the 
 Note that you can switch roles only when you sign in as an IAM user\. You cannot switch roles when you sign in as the AWS account root user\.
 
 **Important**  
-You cannot switch roles in the AWS Management Console to a role that requires an [ExternalID](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalID` parameter\.
+You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalId` parameter\.
 
 **Notes**  
 This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is [best practice not to grant permissions directly to an individual user](best-practices.md#use-groups-for-permissions)\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\. 
@@ -65,4 +65,4 @@ You can also use the following format to manually construct the link\. Substitut
 We recommend that you direct your users to the topic [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
 
 **Note**  
-For security purposes, you can use AWS CloudTrail to audit role switching\. If CloudTrail is turned on for the account, IAM logs actions that are performed with the role's temporary security credentials\. For more information, see [CloudTrail Event Reference](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html) in the *AWS CloudTrail User Guide*\.
+For security purposes, you can use AWS CloudTrail to audit role switching\. If CloudTrail is turned on for the account, IAM logs actions that are performed with the role's temporary security credentials\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html) in the *AWS CloudTrail User Guide*\.

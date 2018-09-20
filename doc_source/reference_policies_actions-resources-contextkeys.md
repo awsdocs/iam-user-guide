@@ -17,7 +17,7 @@ The **Actions** table lists all the actions that you can use in an IAM policy st
 ### The Resource Types Table<a name="resources_table"></a>
 
 The **Resource Types** table lists all the resource types that you can use in an IAM policy statement's `Resource` element\. Not every resource type can be specified with every action; certain actions only work with certain types of resources\. If you specify a resource type that is not valid for the action specified in the same statement, then you are denied access\. For more information about the `Resource` element, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
-+ The **ARN** column specifies the Amazon Resource Name \(ARN\) format that you must use to reference resources of this type\. The portions that are preceded by a $ must be replaced by the actual values for your scenario\. For example, if you see `$user-name` in an ARN, you must replace that string with either the actual IAM user's name or a [policy variable](reference_policies_variables.md) that contains an IAM user's name\. For more information about ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
++ The **ARN** column specifies the Amazon Resource Name \(ARN\) format that you must use to reference resources of this type\. The portions that are preceded by a $ must be replaced by the actual values for your scenario\. For example, if you see `$user-name` in an ARN, you must replace that string with either the actual IAM user's name or a [policy variable](reference_policies_variables.md) that contains an IAM user's name\. For more information about ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](aws-arns-and-namespaces.html)\.
 + The **Condition Keys** column specifies condition context keys that you can include in an IAM policy statement only when both this action and this resource are included in the statement\.
 
 ### The Condition Keys Table<a name="context_keys_table"></a>
@@ -33,11 +33,10 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon API Gateway](list_amazonapigateway.md)
 + [Application Auto Scaling](list_applicationautoscaling.md)
 + [Application Discovery](list_applicationdiscovery.md)
-+ [Amazon AppStream](list_amazonappstream.md)
++ [Amazon AppStream 2\.0](list_amazonappstream2.0.md)
 + [AWS AppSync](list_awsappsync.md)
 + [AWS Artifact](list_awsartifact.md)
 + [Amazon Athena](list_amazonathena.md)
-+ [Auto Scaling](list_autoscaling.md)
 + [Auto Scaling Plans](list_autoscalingplans.md)
 + [AWS Batch](list_awsbatch.md)
 + [AWS Billing](list_awsbilling.md)
@@ -69,14 +68,17 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon Connect](list_amazonconnect.md)
 + [AWS Cost and Usage Report](list_awscostandusagereport.md)
 + [AWS Cost Explorer Service](list_awscostexplorerservice.md)
++ [Amazon Data Lifecycle Manager](list_amazondatalifecyclemanager.md)
 + [Data Pipeline](list_datapipeline.md)
 + [AWS Database Migration Service](list_awsdatabasemigrationservice.md)
++ [AWS DeepLens](list_awsdeeplens.md)
 + [AWS Device Farm](list_awsdevicefarm.md)
 + [AWS Direct Connect](list_awsdirectconnect.md)
 + [AWS Directory Service](list_awsdirectoryservice.md)
 + [Amazon DynamoDB](list_amazondynamodb.md)
 + [Amazon DynamoDB Accelerator \(DAX\)](list_amazondynamodbacceleratordax.md)
 + [Amazon EC2](list_amazonec2.md)
++ [EC2 Auto Scaling](list_ec2autoscaling.md)
 + [Amazon EC2 Container Registry](list_amazonec2containerregistry.md)
 + [Amazon EC2 Container Service](list_amazonec2containerservice.md)
 + [AWS Elastic Beanstalk](list_awselasticbeanstalk.md)
@@ -117,6 +119,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon Machine Learning](list_amazonmachinelearning.md)
 + [Manage Amazon API Gateway](list_manageamazonapigateway.md)
 + [AWS Marketplace](list_awsmarketplace.md)
++ [AWS Marketplace Image Building Service](list_awsmarketplaceimagebuildingservice.md)
 + [AWS Marketplace Management Portal](list_awsmarketplacemanagementportal.md)
 + [AWS Marketplace Metering Service](list_awsmarketplacemeteringservice.md)
 + [Amazon Mechanical Turk](list_amazonmechanicalturk.md)
@@ -129,9 +132,11 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS OpsWorks](list_awsopsworks.md)
 + [AWS OpsWorks Configuration Management](list_awsopsworksconfigurationmanagement.md)
 + [AWS Organizations](list_awsorganizations.md)
++ [AWS Performance Insights](list_awsperformanceinsights.md)
 + [Amazon Pinpoint](list_amazonpinpoint.md)
 + [Amazon Polly](list_amazonpolly.md)
 + [AWS Price List](list_awspricelist.md)
++ [Amazon QuickSight](list_amazonquicksight.md)
 + [Amazon RDS](list_amazonrds.md)
 + [Amazon Redshift](list_amazonredshift.md)
 + [Amazon Rekognition](list_amazonrekognition.md)
@@ -147,6 +152,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Serverless Application Repository](list_awsserverlessapplicationrepository.md)
 + [AWS Service Catalog](list_awsservicecatalog.md)
 + [Amazon SES](list_amazonses.md)
++ [Amazon Session Manager Messsage Gateway Service](list_amazonsessionmanagermesssagegatewayservice.md)
 + [AWS Shield](list_awsshield.md)
 + [Amazon Simple Systems Manager](list_amazonsimplesystemsmanager.md)
 + [Amazon Simple Workflow Service](list_amazonsimpleworkflowservice.md)

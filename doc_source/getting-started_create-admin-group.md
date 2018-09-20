@@ -1,11 +1,11 @@
 # Creating Your First IAM Admin User and Group<a name="getting-started_create-admin-group"></a>
 
 **Important**  
-If you arrived at this page trying to enable Amazon Advertising for your application or web site, see [Becoming a Product Advertising API Developer](http://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
+If you arrived at this page trying to enable Amazon Advertising for your application or web site, see [Becoming a Product Advertising API Developer](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
 
 As a [best practice](best-practices.md#lock-away-credentials), do not use the AWS account root user for any task where it's not required\. Instead, create a new IAM user for each person that requires administrator access\. Then make those users administrators by placing the users into an "Administrators" group to which you attach the AdministratorAccess managed policy\. 
 
-Thereafter, the users in the administrators group should set up the groups, users, and so on, for the AWS account\. All future interaction should be through the AWS account's users and their own keys instead of the root user\. However, to perform some account and service management tasks, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+Thereafter, the users in the administrators group should set up the groups, users, and so on, for the AWS account\. All future interaction should be through the AWS account's users and their own keys instead of the root user\. However, to perform some account and service management tasks, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 ## Creating an Administrator IAM User and Group \(Console\)<a name="getting-started_create-admin-group-console"></a>
 
@@ -13,23 +13,27 @@ This procedure describes how to use the AWS Management Console to create an IAM 
 
 **To create an administrator user for yourself and add the user to an administrators group \(console\)**
 
-1. Use your AWS account email address and password to sign in as the *[AWS account root user](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Use your AWS account email address and password to sign in as the *[AWS account root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)* to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+**Note**  
+We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 1. In the navigation pane, choose **Users** and then choose **Add user**\.
 
-1. For **User name**, type a user name, such as **Administrator**\. The name can consist of letters, digits, and the following characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\. The name is not case sensitive and can be a maximum of 64 characters in length\.
+1. For **User name**, type **Administrator**\.
 
-1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type your new password in the text box\. If you're creating the user for someone other than yourself, you can optionally select **Require password reset** to force the user to create a new password when first signing in\.
+1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type your new password in the text box\. By default, AWS forces the new user to create a new password when first signing in\. You can optionally clear the check box next to **User must create a new password at next sign\-in** to allow the new user to reset their password after they sign in\.
 
 1. Choose **Next: Permissions**\.
 
-1. On the **Set permissions for user** page, choose **Add user to group**\.
+1. On the **Set permissions** page, choose **Add user to group**\.
 
 1. Choose **Create group**\.
 
-1. In the **Create group** dialog box, type the name for the new group\. The name can consist of letters, digits, and the following characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\. The name is not case sensitive and can be a maximum of 128 characters in length\.
+1. In the **Create group** dialog box, for **Group name** type **Administrators**\.
 
-1. In the policy list, select the check box next to **AdministratorAccess**\. Then choose **Create group**\.
+1. For **Filter policies**, select the check box for **AWS managed \- job function**\.
+
+1. In the policy list, select the check box for **AdministratorAccess**\. Then choose **Create group**\.
 
 1. Back in the list of groups, select the check box for your new group\. Choose **Refresh** if necessary to see the group in the list\.
 
@@ -55,7 +59,7 @@ This section shows how to create a group in the IAM system\.
 
 **To create an administrators group \(AWS CLI\)**
 
-1. Type the [http://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html) command with the name you've chosen for the group\. Optionally, you can include a path as part of the group name\. For more information about paths, see [Friendly Names and Paths](reference_identifiers.md#identifiers-friendly-names)\. The name can consist of letters, digits, and the following characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\. The name is not case sensitive and can be a maximum of 128 characters in length\.
+1. Type the [https://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html) command with the name you've chosen for the group\. Optionally, you can include a path as part of the group name\. For more information about paths, see [Friendly Names and Paths](reference_identifiers.md#identifiers-friendly-names)\. The name can consist of letters, digits, and the following characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\. The name is not case sensitive and can be a maximum of 128 characters in length\.
 
    In this example, you create a group named Admins\. 
 
@@ -72,7 +76,7 @@ This section shows how to create a group in the IAM system\.
    }
    ```
 
-1. Type the [http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html) command to list the groups in your AWS account and confirm the group was created\.
+1. Type the [https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups.html) command to list the groups in your AWS account and confirm the group was created\.
 
    ```
    aws iam list-groups
@@ -97,7 +101,7 @@ This section shows how to attach a policy that lets any user in the group perfor
 
 **To add a policy giving full administrator permissions \(AWS CLI\)**
 
-1. Type the [http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html) command to attach the policy called AdministratorAccess to your Admins group\. The command uses the ARN of the AWS managed policy called AdministratorAccess\. 
+1. Type the [https://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html) command to attach the policy called AdministratorAccess to your Admins group\. The command uses the ARN of the AWS managed policy called AdministratorAccess\. 
 
    ```
    aws iam attach-group-policy --group-name Admins --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
@@ -105,7 +109,7 @@ This section shows how to attach a policy that lets any user in the group perfor
 
    If the command is successful, there is no response\.
 
-1. Type the [http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html) command to confirm the policy is attached to the Admins group\.
+1. Type the [https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html) command to confirm the policy is attached to the Admins group\.
 
    ```
    aws iam list-attached-group-policies --group-name Admins
@@ -125,7 +129,7 @@ This section shows how to attach a policy that lets any user in the group perfor
    }
    ```
 
-You can confirm the contents of a particular policy with the [http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) command\. 
+You can confirm the contents of a particular policy with the [https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) command\. 
 
 **Important**  
 After you have the administrators group set up, you must add at least one user to it\. For more information about adding users to a group, see [Creating an IAM User in Your AWS Account](id_users_create.md)\. 
@@ -133,7 +137,7 @@ After you have the administrators group set up, you must add at least one user t
 ## Related Resources<a name="getting-started_create-admin-group-addl-resources"></a>
 
 For related information found in the *Amazon Web Services General Reference*, see the following resources:
-+ [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
++ [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
 
 For related information in the *IAM User Guide*, see the following resources:
 + [Reducing Policy Scope by Viewing User Activity](access_policies_access-advisor.md)

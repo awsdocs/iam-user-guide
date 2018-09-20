@@ -3,9 +3,9 @@
 Amazon CloudWatch Logs \(service prefix: `logs`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon CloudWatch Logs](#amazoncloudwatchlogs-actions-as-permissions)
@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| log\-group | arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\} |  | 
-| log\-stream | arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}:$\{LogStream\}:$\{LogStreamName\} |  | 
+|   log\-group  |  arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}  |  | 
+|   log\-stream  |  arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}:$\{LogStream\}:$\{LogStreamName\}  |  | 
 
 ## Condition Keys for Amazon CloudWatch Logs<a name="amazoncloudwatchlogs-policy-keys"></a>
 
-CloudWatch Logs has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+CloudWatch Logs has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

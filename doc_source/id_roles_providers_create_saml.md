@@ -55,39 +55,39 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 You can use the AWS CLI to create and manage SAML providers\.
 
 **To create an identity provider and upload a metadata document \(AWS CLI\)**
-+ Run this command: [http://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html) 
++ Run this command: [https://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html) 
 
 **To upload a new metadata document for a SAML identity provider \(AWS CLI\)**
-+ Run this command:[http://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html) 
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html) 
 
 **To delete a SAML identity provider \(AWS CLI\)**
 
 1. \(Optional\) To list information for all IdPs, such as the ARN, creation date, and expiration, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html](http://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-providers.html)
 
 1. \(Optional\) To get information about a specific provider, such as the ARN, creation date, and expiration, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-saml-provider.html)
 
 1. To delete an IdP, run the following command:
-   + [http://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html)
+   + [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html)
 
 ## Creating and Managing a SAML Provider \(AWS API\)<a name="idp-create-identityprovider-API"></a>
 
 You can use the AWS API to create and manage SAML providers\.
 
 **To create an identity provider and upload a metadata document \(AWS API\)**
-+ Call this operation: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html)
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html)
 
 **To upload a new metadata document for a SAML identity provider \(AWS API\)**
-+ Call this operation: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)
 
 **To delete a SAML identity provider \(AWS API\)**
 
 1. \(Optional\) To list information for all IdPs, such as the ARN, creation date, and expiration, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviders.html)
 
 1. \(Optional\) To get information about a specific provider, such as the ARN, creation date, and expiration, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html)
 
 1. To delete an IdP, call the following operation:
-   + [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html)
+   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteSAMLProvider.html)

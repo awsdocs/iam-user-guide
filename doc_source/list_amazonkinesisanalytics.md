@@ -3,9 +3,9 @@
 Amazon Kinesis Analytics \(service prefix: `kinesisanalytics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Kinesis Analytics](#amazonkinesisanalytics-actions-as-permissions)
@@ -21,19 +21,19 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html) | Adds input to the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html) | Adds output to the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html) | Adds reference data source to the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html) | Creates an application\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html) | Deletes the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html) | Deletes the specified output of the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html) | Deletes the specified reference data source of the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html) | Describes the specified application\. | Read | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html) | Discovers the input schema for the application\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html) | List applications for the account | List |  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html) | Starts the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html) | Stops the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html) | Updates the application\. | Write | [application\*](#amazonkinesisanalytics-application)  |  |  | 
+|   [ AddApplicationInput ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationInput.html)  | Adds input to the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ AddApplicationOutput ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationOutput.html)  | Adds output to the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ AddApplicationReferenceDataSource ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_AddApplicationReferenceDataSource.html)  | Adds reference data source to the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ CreateApplication ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_CreateApplication.html)  | Creates an application\. | Write |  |  |  | 
+|   [ DeleteApplication ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplication.html)  | Deletes the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ DeleteApplicationOutput ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationOutput.html)  | Deletes the specified output of the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ DeleteApplicationReferenceDataSource ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DeleteApplicationReferenceDataSource.html)  | Deletes the specified reference data source of the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ DescribeApplication ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html)  | Describes the specified application\. | Read |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ DiscoverInputSchema ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DiscoverInputSchema.html)  | Discovers the input schema for the application\. | Read |  |  |  | 
+|   [ ListApplications ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_ListApplications.html)  | List applications for the account | List |  |  |  | 
+|   [ StartApplication ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StartsApplication.html)  | Starts the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ StopApplication ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_StopApplication.html)  | Stops the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
+|   [ UpdateApplication ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_UpdateApplication.html)  | Updates the application\. | Write |   [ application\* ](#amazonkinesisanalytics-application)   |  |  | 
 
 ## Resources Defined by Kinesis Analytics<a name="amazonkinesisanalytics-resources-for-iam-policies"></a>
 
@@ -44,8 +44,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html](http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html) | arn:$\{Partition\}:kinesisanalytics:$\{Region\}:$\{Account\}:application/$\{ApplicationName\} |  | 
+|   [ application ](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works.html)  |  arn:$\{Partition\}:kinesisanalytics:$\{Region\}:$\{Account\}:application/$\{ApplicationName\}  |  | 
 
 ## Condition Keys for Amazon Kinesis Analytics<a name="amazonkinesisanalytics-policy-keys"></a>
 
-Kinesis Analytics has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Kinesis Analytics has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

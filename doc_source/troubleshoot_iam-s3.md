@@ -4,7 +4,7 @@ Use the information here to help you troubleshoot and fix issues that you might 
 
 ## How do I grant anonymous access to an Amazon S3 bucket?<a name="troubleshoot_iam-s3_anonymous-bucket-access"></a>
 
-You use an Amazon S3 bucket policy that specifies a wildcard \(\*\) in the `principal` element, which means anyone can access the bucket\. With anonymous access, anyone \(including users without an AWS account\) will be able to access the bucket\. For a sample policy, see [ Example Cases for Amazon S3 Bucket Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/AccessPolicyLanguage_UseCases_s3_a.html) in the *Amazon Simple Storage Service Developer Guide*\.
+You use an Amazon S3 bucket policy that specifies a wildcard \(\*\) in the `principal` element, which means anyone can access the bucket\. With anonymous access, anyone \(including users without an AWS account\) will be able to access the bucket\. For a sample policy, see [ Example Cases for Amazon S3 Bucket Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/AccessPolicyLanguage_UseCases_s3_a.html) in the *Amazon Simple Storage Service Developer Guide*\.
 
 ## I'm signed in as an AWS account root user, why can't I access an Amazon S3 bucket under my account?<a name="troubleshoot_iam-s3_root-bucket-access"></a>
 

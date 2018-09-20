@@ -22,5 +22,5 @@ For an example of how to set up an `Administrators` group, see [Creating Your Fi
 
 **To create IAM groups \(AWS CLI or AWS API\)**  
 Use one of the following:
-+ AWS CLI: [aws iam create\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html) 
-+ AWS API: [CreateGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html) 
++ AWS CLI: [aws iam create\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/create-group.html) 
++ AWS API: [CreateGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateGroup.html) 

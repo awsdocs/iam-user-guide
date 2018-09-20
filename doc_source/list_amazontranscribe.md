@@ -3,9 +3,9 @@
 Amazon Transcribe \(service prefix: `transcribe`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/transcribe/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/transcribe/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/transcribe/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/transcribe/latest/dg/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Transcribe](#amazontranscribe-actions-as-permissions)
@@ -21,14 +21,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html](http://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html) | Returns information about a transcription job\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html](http://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html) | Lists transcription jobs with the specified status\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html](http://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html) | Starts an asynchronous job to transcribe speech to text\. | Write |  |  |  | 
+|   [ GetTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html)  | Returns information about a transcription job\. | Read |  |  |  | 
+|   [ ListTranscriptionJobs ](https://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html)  | Lists transcription jobs with the specified status\. | List |  |  |  | 
+|   [ StartTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html)  | Starts an asynchronous job to transcribe speech to text\. | Write |  |  |   s3:GetObject   | 
 
 ## Resources Defined by Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
 
-Transcribe has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Transcribe has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon Transcribe<a name="amazontranscribe-policy-keys"></a>
 
-Transcribe has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Transcribe has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

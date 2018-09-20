@@ -261,7 +261,7 @@ The following example shows a policy you need to attach to any Amazon SNS queue 
 
 ## \.\.\.IfExists Condition Operators<a name="Conditions_IfExists"></a>
 
-You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, the condition evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\.
+You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\.
 
 **Example using `IfExists`**
 
@@ -286,21 +286,38 @@ For example, consider the following policy example:
 }
 ```
 
-The *intent* of the preceding policy is to enable the user to launch any instance that is type t1, t2 or m3\. However, launching an instance actually requires accessing many resources in addition to the instance itself; for example, images, key pairs, security groups, etc\. The entire statement is evaluated against every resource that is required to launch the instance\. These additional resources do not have the `ec2:InstanceType` condition key, so the `StringLike` check fails, and the user is not granted the ability to launch *any* instance type\. To address this, use the `StringLikeIfExists` condition operator instead\. This way, the test only happens if the condition key exists\. You could read the following as: "If the resource being checked has an "`ec2:InstanceType`" condition key, then allow the action only if the key value begins with "t1\.\*", "t2\.\*", or "m3\.\*"\. If the resource being checked does not have that condition key, then don't worry about it\."
+The *intent* of the preceding policy is to enable the user to launch any instance that is type t1, t2 or m3\. However, launching an instance actually requires accessing many resources in addition to the instance itself; for example, images, key pairs, security groups, etc\. The entire statement is evaluated against every resource that is required to launch the instance\. These additional resources do not have the `ec2:InstanceType` condition key, so the `StringLike` check fails, and the user is not granted the ability to launch *any* instance type\. To address this, use the `StringLikeIfExists` condition operator instead\. This way, the test only happens if the condition key exists\. You could read the following as: "If the resource being checked has an "`ec2:InstanceType`" condition key, then allow the action only if the key value begins with "t1\.\*", "t2\.\*", or "m3\.\*"\. If the resource being checked does not have that condition key, then don't worry about it\." The `DescribeActions` statement includes the actions required to view the instance in the console\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": "ec2:RunInstances",
-    "Resource": "*",
-    "Condition": {"StringLikeIfExists": {"ec2:InstanceType": [
-      "t1.*",
-      "t2.*",
-      "m3.*"
-    ]}}
-  }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RunInstance",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": "*",
+            "Condition": {
+                "StringLikeIfExists": {
+                    "ec2:InstanceType": [
+                        "t1.*",
+                        "t2.*",
+                        "m3.*"
+             ]}}
+        },
+        {
+            "Sid": "DescribeActions",
+            "Effect": "Allow",
+            "Action": [
+                "ec2:DescribeImages",
+                "ec2:DescribeInstances",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeKeyPairs",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeSecurityGroups"
+            ],
+            "Resource": "*"
+        }]
 }
 ```
 

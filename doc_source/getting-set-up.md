@@ -35,9 +35,9 @@ This might be unavailable in your browser if you previously signed into the AWS 
 ## Additional Resources<a name="HowDoI"></a>
 
 Here are some resources to help you get things done with IAM\.
-+ Manage your AWS account credentials: [AWS Security Credentials](http://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) in the *AWS General Reference*
++ Manage your AWS account credentials: [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) in the *AWS General Reference*
 + Get started with and learn more about [What Is IAM?](introduction.md)
-+ Set up a command line interface \(CLI\) to use with IAM\. For the cross\-platform AWS CLI, see the [ AWS Command Line Interface Documentation](http://aws.amazon.com/documentation/cli/) and [IAM CLI reference](http://docs.aws.amazon.com/cli/latest/reference/iam/index.html)\. You can also manage IAM with Windows PowerShell; see the [ AWS Tools for Windows PowerShell Documentation](http://aws.amazon.com/documentation/powershell/) and [IAM Windows PowerShell reference](http://docs.aws.amazon.com/powershell/latest/reference/items/AWS_Identity_and_Access_Management_cmdlets.html)\.
++ Set up a command line interface \(CLI\) to use with IAM\. For the cross\-platform AWS CLI, see the [ AWS Command Line Interface Documentation](http://aws.amazon.com/documentation/cli/) and [IAM CLI reference](https://docs.aws.amazon.com/cli/latest/reference/iam/index.html)\. You can also manage IAM with Windows PowerShell; see the [ AWS Tools for Windows PowerShell Documentation](http://aws.amazon.com/documentation/powershell/) and [IAM Windows PowerShell reference](https://docs.aws.amazon.com/powershell/latest/reference/items/AWS_Identity_and_Access_Management_cmdlets.html)\.
 + Download an AWS SDK for convenient programmatic access to IAM: [Tools for Amazon Web Services](http://aws.amazon.com/tools/)
 + Get the FAQ: [AWS Identity and Access Management FAQ](http://aws.amazon.com/iam/faqs/)
 + Get technical support: [AWS Support Center](https://console.aws.amazon.com/support/home#/)

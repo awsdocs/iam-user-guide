@@ -10,6 +10,7 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [Why Can't I Assume a Role with a 12\-hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
 
 ## I Can't Assume a Role<a name="troubleshoot_roles_cant-assume-role"></a>
++ Make sure to use the exact name of your role, because role names are case sensitive\.
 + Verify that your IAM policy grants you permission to call `sts:AssumeRole` for the role that you want to assume\. The `Action` element of your IAM policy must allow you to call the `AssumeRole` action, and the `Resource` element of your IAM policy must specify the role that you want to assume\. For example, the `Resource` element can specify a role by its Amazon Resource Name \(ARN\) or by using a wildcard \(\*\)\. For example, at least one policy applicable to you must grant permissions similar to the following:
 
   ```

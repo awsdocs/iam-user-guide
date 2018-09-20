@@ -4,27 +4,27 @@ This example shows how you might create a policy that allows restoring RDS datab
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-      {
-          "Effect": "Allow",
-          "Action": [
-              "ec2:Describe*",
-              "rds:CreateDBParameterGroup",
-              "rds:CreateDBSnapshot",
-              "rds:DeleteDBSnapshot",
-              "rds:Describe*",
-              "rds:DownloadDBLogFilePortion",
-              "rds:List*",
-              "rds:ModifyDBInstance",
-              "rds:ModifyDBParameterGroup",
-              "rds:ModifyOptionGroup",
-              "rds:RebootDBInstance",
-              "rds:RestoreDBInstanceFromDBSnapshot",
-              "rds:RestoreDBInstanceToPointInTime"
-          ],
-          "Resource": "*"
-      }
-  ]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "rds:CreateDBParameterGroup",
+                "rds:CreateDBSnapshot",
+                "rds:DeleteDBSnapshot",
+                "rds:Describe*",
+                "rds:DownloadDBLogFilePortion",
+                "rds:List*",
+                "rds:ModifyDBInstance",
+                "rds:ModifyDBParameterGroup",
+                "rds:ModifyOptionGroup",
+                "rds:RebootDBInstance",
+                "rds:RestoreDBInstanceFromDBSnapshot",
+                "rds:RestoreDBInstanceToPointInTime"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
 ```

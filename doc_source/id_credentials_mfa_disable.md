@@ -44,9 +44,9 @@ The MFA device is deactivated for the AWS account\.
 ## Deactivating MFA Devices \(AWS CLI\)<a name="deactivate-mfa-cli"></a>
 
 **To deactivate an MFA device for an IAM user \(AWS CLI\)**
-+ Run this command: [http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](http://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
++ Run this command: [https://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
 
 ## Deactivating MFA Devices \(AWS API\)<a name="deactivate-mfa-api"></a>
 
 **To deactivate an MFA device for an IAM user \(AWS API\)**
-+ Call this operation: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)

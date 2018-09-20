@@ -111,7 +111,7 @@ IAM roles that can be assumed by an AWS service are called *[service roles](id_r
 
 `long_service-name.amazonaws.com`
 
-The service principal is defined by the service\. To learn the service principal for a service, see the documentation for that service\. 
+The service principal is defined by the service\. To learn the service principal for a service, see the documentation for that service\. For some services, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\. View the **Service\-Linked Role Permissions** section for that service to view the service principal\.
 
 The following example shows a policy that can be attached to a service role\. The policy enables two services, Amazon EMR and AWS Data Pipeline, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. To specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
 
@@ -133,7 +133,7 @@ The following example shows a policy that can be attached to a service role\. Th
 }
 ```
 
-Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
+Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
 
 ```
 "Principal": { "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be" }
@@ -157,9 +157,9 @@ In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Ano
 ## More Information<a name="Principal_more-info"></a>
 
 For more information, see the following:
-+ [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
-+ [Example Policies for Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
-+ [Amazon SQS Policy Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
-+ [Key Policies](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
-+ [Account Identifiers](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
++ [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
++ [Example Policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
++ [Amazon SQS Policy Examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
++ [Key Policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
++ [Account Identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
 + [About Web Identity Federation](id_roles_providers_oidc.md)

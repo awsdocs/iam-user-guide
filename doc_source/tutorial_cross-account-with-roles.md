@@ -215,7 +215,7 @@ You can switch to a role only when you are signed in as an IAM user or a federat
 If David needs to work with in the Production environment in the AWS Management Console, he can do so by using **Switch Role**\. He specifies the account ID or alias and the role name, and his permissions immediately switch to those permitted by the role\. He can then use the console to work with the `productionapp` bucket, but cannot work with any other resources in Production\. While David is using the role, he also cannot make use of his power\-user privileges in the Development account\. That's because only one set of permissions can be in effect at a time\.
 
 **Important**  
-Switching roles using the AWS Management Console works only with accounts that do not require an `ExternalID`\. If you grant access to your account to a third party and require an `ExternalID` in a `Condition` element in your permission policy, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalID`\. For more information about this scenario, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the *AWS Security Blog*\.
+Switching roles using the AWS Management Console works only with accounts that do not require an `ExternalId`\. If you grant access to your account to a third party and require an `ExternalId` in a `Condition` element in your permission policy, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalId`\. For more information about this scenario, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the *AWS Security Blog*\.
 
 There are two ways that David can use to enter the **Switch Role** page:
 + David receives a link from his administrator that points to a pre\-defined Switch Role configuration\. The link is provided to the administrator on the final page of the **Create role** wizard or on the **Role Summary** page for a cross\-account role\. Choosing this link takes David to the **Switch Role** page with the **Account ID** and **Role name** fields already filled in\. All David needs to do is choose **Switch Role** and he's done\.
@@ -257,7 +257,7 @@ Note that all access keys and tokens are examples only and cannot be used as sho
    aws help
    ```
 **Note**  
-David's default environment uses the `David` user credentials from his default profile that he created with the `aws configure` command\. For more information, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
+David's default environment uses the `David` user credentials from his default profile that he created with the `aws configure` command\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
 
 1. He begins the switch role process by running the following command to switch to the `UpdateApp` role in the Production account\. He got the role ARN from the administrator that created the role\. The command requires that you provide a session name as well, you can choose any text you like for that\.
 
@@ -287,7 +287,7 @@ David's default environment uses the `David` user credentials from his default p
    + `SecretAccessKey`
    + `SessionToken`
 
-   David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually type the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
+   David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually type the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
 
 1. To add the three values to the environment, David cuts and pastes the output of the previous step into the following commands\. Note that you might want to cut and paste into a simple text editor to address line wrap issues in the output of the session token\. It must be added as a single long string, even though it is shown line wrapped here for clarity\.
 **Note**  
@@ -329,7 +329,7 @@ For a code example \(using Python\), see [Switching to an IAM Role \(AWS API\)](
 
 ## Related Resources<a name="tutorial_cross-account-with-roles-related"></a>
 + For more information about IAM users and groups, see [Identities \(Users, Groups, and Roles\)](id.md) \.
-+ For more information about Amazon S3 buckets, see [Create a Bucket](http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
++ For more information about Amazon S3 buckets, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
 
 ## Summary<a name="tutorial_cross-account-with-roles-summary"></a>
 

@@ -13,13 +13,13 @@ When you revoke permissions for a role using the procedure in this topic, AWS at
 **Important**  
 This deny policy applies to all users of the specified role, not just those with longer duration console sessions\.
 
-## Minimum Permissions to Revoke Session Permissions from a Role<a name="w3ab1c19c23c23c38c14"></a>
+## Minimum Permissions to Revoke Session Permissions from a Role<a name="revoke-session-permissions"></a>
 
-To successfully revoke session permissions from a role, you must have the `AttachRolePolicy` permission for the role\. This allows you to add the `AWSRevokeOlderSessions` policy to the role\.
+To successfully revoke session permissions from a role, you must have the `PutRolePolicy` permission for the role\. This allows you to attach the `AWSRevokeOlderSessions` inline policy to the role\.
 
-## Revoking Session Permissions<a name="w3ab1c19c23c23c38c16"></a>
+## Revoking Session Permissions<a name="revoke-session"></a>
 
-To revoke the session permissions from a role, take the following steps:
+You can revoke the session permissions from a role\.
 
 **To immediately deny all permissions to any current user of role credentials**
 
@@ -34,8 +34,8 @@ To revoke the session permissions from a role, take the following steps:
 1. AWS asks you to confirm the action\. Choose **Revoke active sessions** on the dialog box\.
 
    IAM immediately attaches a policy named `AWSRevokeOlderSessions` to the role\. The policy denies all access to users who assumed the role before the moment you chose **Revoke active sessions**\. Any user who assumes the role ***after ***you chose **Revoke active sessions** is **not** affected\.
-**Important**  
-When you update existing policy permissions, or when you apply a new policy to a user or a resource, it may take a few minutes for policy updates to take effect\.
+
+   When you apply a new policy to a user or a resource, it may take a few minutes for policy updates to take effect\.
 
 **Note**  
 Don't worry about remembering to delete the policy\. Any user who assumes the role *after* you revoked sessions is not affected by the policy\. If you choose to **Revoke Sessions** again later, then the date/time stamp in the policy is refreshed and it again denies all permissions to any user who assumed the role before the new specified time\.

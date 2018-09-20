@@ -13,6 +13,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Enable MFA for Privileged Users](#enable-mfa-for-privileged-users)
 + [Use Roles for Applications That Run on Amazon EC2 Instances](#use-roles-with-ec2)
 + [Use Roles to Delegate Permissions](#delegate-using-roles)
++ [Do Not Share Access Keys](#sharing-credentials)
 + [Rotate Credentials Regularly](#rotate-credentials)
 + [Remove Unnecessary Credentials](#remove-credentials)
 + [Use Policy Conditions for Extra Security](#use-policy-conditions)
@@ -68,9 +69,9 @@ One feature that can help with this is the **Access Advisor** tab\. This tab is 
 For more information, see the following:
 + [Access Management](access.md)
 + Policy topics for individual services, which provide examples of how to write policies for service\-specific resources\. Examples:
-  + [Authentication and Access Control for Amazon DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html) in the *Amazon DynamoDB Developer Guide*
-  + [Using Bucket Policies and User Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*
-  + [Access Control List \(ACL\) Overview](http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*
+  + [Authentication and Access Control for Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html) in the *Amazon DynamoDB Developer Guide*
+  + [Using Bucket Policies and User Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*
+  + [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*
 
 ## Use Access Levels to Review IAM Permissions<a name="use-access-levels-to-review-permissions"></a>
 
@@ -112,6 +113,12 @@ Don't share security credentials between accounts to allow users from another AW
 
 For more information, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
 
+## Do Not Share Access Keys<a name="sharing-credentials"></a>
+
+Access keys provide programmatic access to AWS\. Do not embed access keys within unencrypted code or share these security credentials between users in your AWS account\. For applications that need access to AWS, configure the program to retrieve temporary security credentials using an IAM role\. To allow your users individual programmatic access, create an IAM user with personal access keys\.
+
+For more information, see [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md) and [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\.
+
 ## Rotate Credentials Regularly<a name="rotate-credentials"></a>
 
 Change your own passwords and access keys regularly, and make sure that all IAM users in your account do as well\. That way, if a password or access key is compromised without your knowledge, you limit how long the credentials can be used to access your resources\. You can apply a password policy to your account to require all your IAM users to rotate their passwords, and you can choose how often they must do so\. 
@@ -143,11 +150,11 @@ For more information, see [IAM JSON Policy Elements: Condition](reference_polici
 You can use logging features in AWS to determine the actions users have taken in your account and the resources that were used\. The log files show the time and date of actions, the source IP for an action, which actions failed due to inadequate permissions, and more\.
 
 Logging features are available in the following AWS services:
-+ [Amazon CloudFront](https://aws.amazon.com/cloudfront/) – Logs user requests that CloudFront receives\. For more information, see [Access Logs](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) in the *Amazon CloudFront Developer Guide*\.
-+ [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) – Logs AWS API calls and related events made by or on behalf of an AWS account\. For more information, see the [http://docs.aws.amazon.com/awscloudtrail/latest/userguide/](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
-+ [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) – Monitors your AWS Cloud resources and the applications you run on AWS\. You can set alarms in CloudWatch based on metrics that you define\. For more information, see the [http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/)\.
-+ [AWS Config](https://aws.amazon.com/config/) – Provides detailed historical information about the configuration of your AWS resources, including your IAM users, groups, roles, and policies\. For example, you can use AWS Config to determine the permissions that belonged to a user or group at a specific time\. For more information, see the [http://docs.aws.amazon.com/config/latest/developerguide/](http://docs.aws.amazon.com/config/latest/developerguide/)\.
-+ [Amazon Simple Storage Service \(Amazon S3\)](https://aws.amazon.com/s3/) – Logs access requests to your Amazon S3 buckets\. For more information, see [Server Access Logging](http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service Developer Guide*\.
++ [Amazon CloudFront](https://aws.amazon.com/cloudfront/) – Logs user requests that CloudFront receives\. For more information, see [Access Logs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html) in the *Amazon CloudFront Developer Guide*\.
++ [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) – Logs AWS API calls and related events made by or on behalf of an AWS account\. For more information, see the [https://docs.aws.amazon.com/awscloudtrail/latest/userguide/](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
++ [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) – Monitors your AWS Cloud resources and the applications you run on AWS\. You can set alarms in CloudWatch based on metrics that you define\. For more information, see the [https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/)\.
++ [AWS Config](https://aws.amazon.com/config/) – Provides detailed historical information about the configuration of your AWS resources, including your IAM users, groups, roles, and policies\. For example, you can use AWS Config to determine the permissions that belonged to a user or group at a specific time\. For more information, see the [https://docs.aws.amazon.com/config/latest/developerguide/](https://docs.aws.amazon.com/config/latest/developerguide/)\.
++ [Amazon Simple Storage Service \(Amazon S3\)](https://aws.amazon.com/s3/) – Logs access requests to your Amazon S3 buckets\. For more information, see [Server Access Logging](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service Developer Guide*\.
 
 ## Video Presentation About IAM Best Practices<a name="top-practices-video"></a>
 

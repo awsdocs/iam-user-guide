@@ -81,16 +81,28 @@ The following examples show ARNs for different types of IAM resources\.
 
   `arn:aws:iam::123456789012:oidc-provider/GoogleProvider` 
 
-The following example shows a policy you could assign to Bob to allow him to manage his own access keys\. Notice that the resource is the IAM user Bob\.
+The following example shows a policy you could assign to Richard to allow him to manage his own access keys\. Notice that the resource is the IAM user Richard\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": ["iam:*AccessKey*"],
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/division_abc/subdivision_xyz/Bob"
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ManageRichardAccessKeys",
+            "Effect": "Allow",
+            "Action": [
+                "iam:*AccessKey*",
+                "iam:GetUser"
+            ],
+            "Resource": "arn:aws:iam::*:user/division_abc/subdivision_xyz/Richard"
+        },
+        {
+            "Sid": "ListForConsole",
+            "Effect": "Allow",
+            "Action": "iam:ListUsers",
+            "Resource": "*"
+        }
+    ]
 }
 ```
 
@@ -154,7 +166,7 @@ When IAM creates a user, group, role, policy, instance profile, or server certif
 
 `AIDAJQABLZS4A3QDU576Q`
 
-For the most part, you use friendly names and [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities, so you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
+For the most part, you use friendly names and [ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities, so you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
 
 One example pertains to reusing friendly names in your AWS account\. Within your account, a friendly name for a user, group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee; the bucket has a resource\-based policy \(a bucket policy\) that lets users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the IAM user named David, the policy could end up granting the new David access to information in the Amazon S3 bucket that was left by the former David\. 
 
@@ -162,22 +174,39 @@ However, every IAM user has a unique ID, even if you create a new IAM user that 
 
 Another example where user IDs can be useful is if you maintain your own database \(or other store\) of IAM user information\. The unique ID can provide a unique identifier for each IAM user you create, even if over time you have IAM users that reuse a name, as in the previous example\.
 
+### Understanding Unique ID Prefixes<a name="identifiers-prefixes"></a>
+
+IAM uses the following prefixes to indicate what type of entity each unique ID applies to\.
+
+
+| Prefix | Entity Type | 
+| --- | --- | 
+| A3T |  Root user  | 
+| AKIA |  Access key  | 
+|  AGPA  | Group | 
+|  AIDA  |  IAM user   | 
+|  AROA  |  Role  | 
+| AIPA | Amazon EC2 instance profile | 
+| ANPA |  Managed policy  | 
+|  ANVA  |  Version in a managed policy  | 
+|  ASIA  |  Temporary \(AWS STS\) keys  | 
+
 ### Getting the Unique ID<a name="identifiers-get-unique-id"></a>
 
 The unique ID for an IAM entity is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
 
 AWS CLI:
-+  [get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
-+  [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
-+  [get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
-+  [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) 
-+  [get\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
-+  [get\-server\-certificate](http://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
++  [get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
++  [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
++  [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
++  [get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) 
++  [get\-instance\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
++  [get\-server\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
 
 IAM API:
-+  [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
-+  [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
-+  [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 
-+  [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html) 
-+  [GetInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 
-+  [GetServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) 
++  [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
++  [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
++  [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 
++  [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html) 
++  [GetInstanceProfile](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 
++  [GetServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) 

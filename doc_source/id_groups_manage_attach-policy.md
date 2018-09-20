@@ -21,5 +21,5 @@ For more information about permissions and policies, see [Access Management](acc
 **To attach a policy to a group \(AWS CLI or AWS API\)**
 
 Do either of the following:
-+ AWS CLI: [aws iam attach\-group\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
-+ AWS API: [AttachGroupPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html) 
++ AWS CLI: [aws iam attach\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/attach-group-policy.html)
++ AWS API: [AttachGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html) 

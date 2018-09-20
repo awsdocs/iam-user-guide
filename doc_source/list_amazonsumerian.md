@@ -2,6 +2,9 @@
 
 Amazon Sumerian \(service prefix: `sumerian`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
+References:
++ Learn how to [configure this service](https://docs.aws.amazon.com/sumerian/latest/userguide/)\.
+
 **Topics**
 + [Actions Defined by Amazon Sumerian](#amazonsumerian-actions-as-permissions)
 + [Resources Defined by Sumerian](#amazonsumerian-resources-for-iam-policies)
@@ -16,12 +19,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html](http://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html) | Grant login access to the Sumerian console\. | Write |  |  |  | 
+|   [ Login ](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Grant login access to the Sumerian console\. | Write |  |  |  | 
 
 ## Resources Defined by Sumerian<a name="amazonsumerian-resources-for-iam-policies"></a>
 
-Sumerian has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Sumerian has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon Sumerian<a name="amazonsumerian-policy-keys"></a>
 
-Sumerian has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Sumerian has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

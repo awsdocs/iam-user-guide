@@ -1,6 +1,6 @@
 # Switching to a Role \(Console\)<a name="id_roles_use_switch-role-console"></a>
 
-A *role* specifies a set of permissions that you can use to access AWS resources that you need\. In that sense, it is similar to a [user in AWS Identity and Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) \(IAM\)\. When you sign in as a user, you get a specific set of permissions\. However, you don't sign in to a role, but once signed in you can switch to a role\. This temporarily sets aside your original user permissions and instead gives you the permissions assigned to the role\. The role can be in your own account or any other AWS account\. For more information about roles, their benefits, and how to create them, see [IAM Roles](id_roles.md), and [Creating IAM Roles](id_roles_create.md)\.
+A *role* specifies a set of permissions that you can use to access AWS resources that you need\. In that sense, it is similar to a [user in AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) \(IAM\)\. When you sign in as a user, you get a specific set of permissions\. However, you don't sign in to a role, but once signed in you can switch to a role\. This temporarily sets aside your original user permissions and instead gives you the permissions assigned to the role\. The role can be in your own account or any other AWS account\. For more information about roles, their benefits, and how to create them, see [IAM Roles](id_roles.md), and [Creating IAM Roles](id_roles_create.md)\.
 
 **Important**  
 The permissions of your IAM user and any roles that you switch to are not cumulative\. Only one set of permissions is active at a time\. When you switch to a role, you temporarily give up your user permissions and work with the permissions that are assigned to the role\. When you exit the role, your user permissions are automatically restored\.
@@ -45,6 +45,9 @@ The last several roles that you used appear on the menu\. The next time you need
 
 **To stop using a role \(console\)**
 
-1. In the IAM console, choose your role's **Display Name** on the right side of the navigation bar\.
+1. In the IAM console, choose your role's **Display Name** on the navigation bar in the upper right\. It typically looks like this: ***rolename*@*account\_ID\_number\_or\_alias***\.
 
-1. Choose **Back to *UserName***\. The role and its permissions are deactivated, and the permissions associated with your IAM user and groups are automatically restored\.
+1. Choose **Back to *username***\. The role and its permissions are deactivated, and the permissions associated with your IAM user and groups are automatically restored\.
+
+   For example, assume you are signed in to account number `123456789012` using the user name `RichardRoe`\. After you use the `AdminRole` role, you want to stop using the role and return to your original permissions\. To stop using a role, choose **AdminRole @ 123456789012**, and then choose **Back to RichardRoe**\.  
+![\[Richard Roe stops using the AdminRole role\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/role-stop-using.png)

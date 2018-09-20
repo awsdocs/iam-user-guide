@@ -1,6 +1,6 @@
 # About SAML 2\.0\-based Federation<a name="id_roles_providers_saml"></a>
 
-AWS supports identity federation with [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security), an open standard that many identity providers \(IdPs\) use\. This feature enables federated single sign\-on \(SSO\), so users can log into the AWS Management Console or call the AWS API operations without you having to create an IAM user for everyone in your organization\. By using SAML, you can simplify the process of configuring federation with AWS, because you can use the IdP's service instead of [writing custom identity proxy code](http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html)\.
+AWS supports identity federation with [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security), an open standard that many identity providers \(IdPs\) use\. This feature enables federated single sign\-on \(SSO\), so users can log into the AWS Management Console or call the AWS API operations without you having to create an IAM user for everyone in your organization\. By using SAML, you can simplify the process of configuring federation with AWS, because you can use the IdP's service instead of [writing custom identity proxy code](https://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingFedTokens.html)\.
 
 IAM federation supports these use cases: 
 + [**Federated access to allow a user or application in your organization to call AWS API operations**](#CreatingSAML-configuring)\. You use a SAML assertion \(as part of the authentication response\) that is generated in your organization to get temporary security credentials\. This scenario is similar to other federation scenarios that IAM supports, like those described in [Requesting Temporary Security Credentials](id_credentials_temp_request.md) and [About Web Identity Federation](id_roles_providers_oidc.md)\. However, SAML 2\.0–based identity providers in your organization handle many of the details at run time for performing authentication and authorization checking\. This is the scenario discussed in this topic\.
@@ -18,7 +18,7 @@ Imagine that in your organization, you want to provide a way for users to copy d
 
 1. The IdP constructs a SAML assertion with information about the user and sends the assertion to the client app\.
 
-1. The client app calls the AWS STS [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API, passing the ARN of the SAML provider, the ARN of the role to assume, and the SAML assertion from IdP\.
+1. The client app calls the AWS STS [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API, passing the ARN of the SAML provider, the ARN of the role to assume, and the SAML assertion from IdP\.
 
 1. The API response to the client app includes temporary security credentials\.
 
@@ -48,7 +48,7 @@ The AWS implementation of SAML 2\.0 federation does not support encrypted SAML a
 
 1. In the application that you're creating, you call the AWS Security Token Service `AssumeRoleWithSAML` API, passing it the ARN of the SAML provider you created in [Step 3](#samlovrcreateentity), the ARN of the role to assume that you created in [Step 4](#samlovrcreaterole), and the SAML assertion about the current user that you get from your IdP\. AWS makes sure that the request to assume the role comes from the IdP referenced in the SAML provider\. 
 
-   For more information, see [AssumeRoleWithSAML](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) in the *AWS Security Token Service API Reference*\. 
+   For more information, see [AssumeRoleWithSAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) in the *AWS Security Token Service API Reference*\. 
 
 1. If the request is successful, the API returns a set of temporary security credentials, which your application can use to make signed requests to AWS\. Your application has information about the current user and can access user\-specific folders in Amazon S3, as described in the previous scenario\. 
 

@@ -3,9 +3,9 @@
 Amazon WorkSpaces Application Manager \(service prefix: `wam`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/wam/latest/adminguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/wam/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/wam/latest/adminguide/access_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/wam/latest/adminguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/wam/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/wam/latest/adminguide/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon WorkSpaces Application Manager](#amazonworkspacesapplicationmanager-actions-as-permissions)
@@ -21,12 +21,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html](http://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html) | Description for AuthenticatePackager | Write |  |  |  | 
+|   [ AuthenticatePackager ](https://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html)  | Description for AuthenticatePackager | Write |  |  |  | 
 
 ## Resources Defined by WAM<a name="amazonworkspacesapplicationmanager-resources-for-iam-policies"></a>
 
-WAM has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon WorkSpaces Application Manager has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 
 ## Condition Keys for Amazon WorkSpaces Application Manager<a name="amazonworkspacesapplicationmanager-policy-keys"></a>
 
-WAM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+WAM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

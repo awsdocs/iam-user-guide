@@ -6,39 +6,35 @@ This example shows how you might create a policy that denies access to pipelines
 This policy does not allow any actions\. Use this policy in combination with other policies that allow specific actions\. 
 
 ```
- {
-   "Version": "2012-10-17",
-   "Statement": [
-       {
-           "Sid": "ExplicitDenyIfNotTheOwner",
-           "Effect": "Deny",
-           "Action": [
-               "datapipeline:ActivatePipeline",
-               "datapipeline:AddTags",
-               "datapipeline:DeactivatePipeline",
-               "datapipeline:DeletePipeline",
-               "datapipeline:DescribeObjects",
-               "datapipeline:EvaluateExpression",
-               "datapipeline:GetPipelineDefinition",
-               "datapipeline:PollForTask",
-               "datapipeline:PutPipelineDefinition",
-               "datapipeline:QueryObjects",
-               "datapipeline:RemoveTags",
-               "datapipeline:ReportTaskProgress",
-               "datapipeline:ReportTaskRunnerHeartbeat",
-               "datapipeline:SetStatus",
-               "datapipeline:SetTaskStatus",
-               "datapipeline:ValidatePipelineDefinition"
-           ],
-           "Resource": [
-               "*"
-           ],
-           "Condition": {
-               "StringNotEquals": {
-                   "datapipeline:PipelineCreator": "${aws:userid}"
-               }
-           }
-       }
-   ]
- }
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ExplicitDenyIfNotTheOwner",
+            "Effect": "Deny",
+            "Action": [
+                "datapipeline:ActivatePipeline",
+                "datapipeline:AddTags",
+                "datapipeline:DeactivatePipeline",
+                "datapipeline:DeletePipeline",
+                "datapipeline:DescribeObjects",
+                "datapipeline:EvaluateExpression",
+                "datapipeline:GetPipelineDefinition",
+                "datapipeline:PollForTask",
+                "datapipeline:PutPipelineDefinition",
+                "datapipeline:QueryObjects",
+                "datapipeline:RemoveTags",
+                "datapipeline:ReportTaskProgress",
+                "datapipeline:ReportTaskRunnerHeartbeat",
+                "datapipeline:SetStatus",
+                "datapipeline:SetTaskStatus",
+                "datapipeline:ValidatePipelineDefinition"
+            ],
+            "Resource": ["*"],
+            "Condition": {
+                "StringNotEquals": {"datapipeline:PipelineCreator": "${aws:userid}"}
+            }
+        }
+    ]
+}
 ```

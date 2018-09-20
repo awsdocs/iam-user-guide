@@ -55,11 +55,11 @@ IAM might restructure complex policies or policies that have permission blocks o
 
 When you create or edit a policy using the visual editor, you must first choose a service, and then choose actions from that service\. If the service and actions that you selected support choosing [specific resources](access_controlling.md#access_controlling-resources), then the visual editor lists the supported resource types\. You can then choose **Add ARN** to provide the details about your resource\. You can choose from the following options for adding an ARN for a resource type\.
 + **Use the ARN builder** – Based on the resource type, you might see different fields to build your ARN\. You can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the region and instance ID, then the policy grants permissions to any instance in your account\.
-+ **Type or paste the ARN** – You can specify resources by their [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\. You can include a wildcard character \(**\***\) in any field of the ARN \(between each pair of colons\)\. For more information, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
++ **Type or paste the ARN** – You can specify resources by their [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\. You can include a wildcard character \(**\***\) in any field of the ARN \(between each pair of colons\)\. For more information, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
 
 ### Denying Permissions in the Visual Editor<a name="troubleshoot_policies-switch-deny"></a>
 
-By default, the policy that you create using the visual editor allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because requests are *denied by default*, we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a statement to deny permissions \("blacklisting"\) only if you want to override a permission separately that is allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\. For more information about how IAM evaluates policy logic, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+By default, the policy that you create using the visual editor allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because requests are *denied by default*, we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a statement to deny permissions \("blacklisting"\) only if you want to override a permission separately that is allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\. For more information about how IAM evaluates policy logic, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
 **Note**  
 By default, only the AWS account root user has access to all the resources in that account\. So if you are not signed in as the root user, you must have permissions granted by a policy\.
@@ -74,7 +74,7 @@ Alternatively, to use JSON syntax \(such as wildcards\) for services, create, ed
 
 ### Reducing the Size of Your Policy in the Visual Editor<a name="troubleshoot_policy-size"></a>
 
-When you use the visual editor to create or a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM Entity Character Limits](reference_iam-limits.md#reference_iam-limits-entity-length)\. 
+When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM Entity Character Limits](reference_iam-limits.md#reference_iam-limits-entity-length)\. 
 
 To reduce the size of your policy in the visual editor, edit your policy or move permission blocks to another policy\. The error message includes the number of characters that your policy document contains, and you can use this information to help you reduce the size of your policy\.
 
@@ -186,7 +186,7 @@ To view examples of policy summaries that include warnings, see [Policy Summary 
 
 #### An Action Is Defined Without an Applicable Resource<a name="mismatch_action-no-resource"></a>
 
-The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's [`Resource`](reference_policies_elements_resource.md) element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's [`Resource`](reference_policies_elements_resource.md) element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 ```
 {
@@ -292,7 +292,7 @@ The policy below defines two Amazon S3 actions for all S3 resources, if the S3 p
 }
 ```
 
-This policy provides permissions for the `s3:ListBucket` action and the `s3:ListBucket` action if the bucket name includes the `custom` prefix\. But because the `s3:VersionId` condition is not supported by any of the defined actions, the policy summary includes the following error:
+This policy provides permissions for the `s3:ListBucketVersions` action and the `s3:ListBucket` action if the bucket name includes the `custom` prefix\. But because the `s3:VersionId` condition is not supported by any of the defined actions, the policy summary includes the following error:
 
 `This policy does not grant any permissions. To grant access, policies must have an action that has an applicable resource or condition.`
 

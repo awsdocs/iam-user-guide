@@ -3,9 +3,9 @@
 Amazon API Gateway \(service prefix: `execute-api`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/apigateway/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/apigateway/api-reference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/apigateway/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/apigateway/api-reference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon API Gateway](#amazonapigateway-actions-as-permissions)
@@ -21,8 +21,8 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html](http://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html) | Used to invalidate API cache upon a client request | Write | [execute\-api\-general\*](#amazonapigateway-execute-api-general)  |  |  | 
-| [http://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html](http://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html) | Used to invoke an API upon a client request | Write | [execute\-api\-general\*](#amazonapigateway-execute-api-general)  |  |  | 
+|   [ InvalidateCache ](https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html)  | Used to invalidate API cache upon a client request | Write |   [ execute\-api\-general\* ](#amazonapigateway-execute-api-general)   |  |  | 
+|   [ Invoke ](https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html)  | Used to invoke an API upon a client request | Write |   [ execute\-api\-general\* ](#amazonapigateway-execute-api-general)   |  |  | 
 
 ## Resources Defined by ExecuteAPI<a name="amazonapigateway-resources-for-iam-policies"></a>
 
@@ -33,8 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| execute\-api\-general | arn:$\{Partition\}:execute\-api:$\{Region\}:$\{Account\}:$\{ApiId\}/$\{Stage\}/$\{Method\}/$\{ApiSpecificResourcePath\} |  | 
+|   execute\-api\-general  |  arn:$\{Partition\}:execute\-api:$\{Region\}:$\{Account\}:$\{ApiId\}/$\{Stage\}/$\{Method\}/$\{ApiSpecificResourcePath\}  |  | 
 
 ## Condition Keys for Amazon API Gateway<a name="amazonapigateway-policy-keys"></a>
 
-ExecuteAPI has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+ExecuteAPI has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

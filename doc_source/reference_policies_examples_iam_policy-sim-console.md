@@ -6,10 +6,10 @@ You can access the IAM Policy Simulator console at: [https://policysim\.aws\.ama
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": [
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
                 "iam:GetGroup",
                 "iam:GetGroupPolicy",
                 "iam:GetPolicy",
@@ -28,10 +28,10 @@ You can access the IAM Policy Simulator console at: [https://policysim\.aws\.ama
                 "iam:ListRoles",
                 "iam:ListUserPolicies",
                 "iam:ListUsers"
-       ],
-      "Effect": "Allow",
-      "Resource":"*"
-    }
-  ]
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
 }
 ```

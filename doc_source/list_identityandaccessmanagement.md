@@ -3,9 +3,9 @@
 Identity And Access Management \(service prefix: `iam`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/IAM/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/IAM/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Identity And Access Management](#identityandaccessmanagement-actions-as-permissions)
@@ -29,35 +29,31 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html) | arn:$\{Partition\}:iam::$\{Account\}:assumed\-role/$\{RoleName\}/$\{RoleSessionName\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html) | arn:$\{Partition\}:iam::$\{Account\}:federated\-user/$\{UserName\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_Group.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Group.html) | arn:$\{Partition\}:iam::$\{Account\}:group/$\{GroupNameWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_Group.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Group.html) | arn:$\{Partition\}:iam::$\{Account\}:$\{GroupPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_InstanceProfile.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_InstanceProfile.html) | arn:$\{Partition\}:iam::$\{Account\}:instance\-profile/$\{InstanceProfileNameWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_MFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_MFADevice.html) | arn:$\{Partition\}:iam::$\{Account\}:mfa/$\{Path\}/$\{MfaTokenId\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html) | arn:$\{Partition\}:iam::$\{Account\}:oidc\-provider/$\{OidcProviderName\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_Policy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Policy.html) | arn:$\{Partition\}:iam::$\{Account\}:policy/$\{PolicyNameWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_Policy.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Policy.html) | arn:$\{Partition\}:iam::$\{Account\}:$\{PolicyPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html) | arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html) | arn:$\{Partition\}:iam::$\{Account\}:$\{RolePath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html) | arn:$\{Partition\}:iam::$\{Account\}:saml\-provider/$\{SamlProviderName\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html) | arn:$\{Partition\}:iam::$\{Account\}:server\-certificate/$\{CertificateNameWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html) | arn:$\{Partition\}:iam::$\{Account\}:$\{ServerCertificatePath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html) | arn:$\{Partition\}:iam::$\{Account\}:sms\-mfa/$\{MfaTokenIdWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html) | arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\} |  | 
-| [http://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html) | arn:$\{Partition\}:iam::$\{Account\}:$\{UserPath\} |  | 
+|   [ assumed\-role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)  |  arn:$\{Partition\}:iam::$\{Account\}:assumed\-role/$\{RoleName\}/$\{RoleSessionName\}  |  | 
+|   [ federated\-user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html)  |  arn:$\{Partition\}:iam::$\{Account\}:federated\-user/$\{UserName\}  |  | 
+|   [ group ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Group.html)  |  arn:$\{Partition\}:iam::$\{Account\}:group/$\{GroupNameWithPath\}  |  | 
+|   [ instance\-profile ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_InstanceProfile.html)  |  arn:$\{Partition\}:iam::$\{Account\}:instance\-profile/$\{InstanceProfileNameWithPath\}  |  | 
+|   [ mfa ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_MFADevice.html)  |  arn:$\{Partition\}:iam::$\{Account\}:mfa/$\{Path\}/$\{MfaTokenId\}  |  | 
+|   [ oidc\-provider ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)  |  arn:$\{Partition\}:iam::$\{Account\}:oidc\-provider/$\{OidcProviderName\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Policy.html)  |  arn:$\{Partition\}:iam::$\{Account\}:policy/$\{PolicyNameWithPath\}  |  | 
+|   [ role ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |  | 
+|   [ saml\-provider ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html)  |  arn:$\{Partition\}:iam::$\{Account\}:saml\-provider/$\{SamlProviderName\}  |  | 
+|   [ server\-certificate ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html)  |  arn:$\{Partition\}:iam::$\{Account\}:server\-certificate/$\{CertificateNameWithPath\}  |  | 
+|   [ sms\-mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  |  arn:$\{Partition\}:iam::$\{Account\}:sms\-mfa/$\{MfaTokenIdWithPath\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html)  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\}  |  | 
 
 ## Condition Keys for Identity And Access Management<a name="identityandaccessmanagement-policy-keys"></a>
 
 Identity And Access Management defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
 
 ****  
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam) | The ARN of an IAM policy\. | ARN | 
-| iam:PassedToService | The AWS service to which this role is passed\. | String | 
-| iam:AWSServiceName | The AWS service to which this role is attached\. | String | 
+|   iam:AWSServiceName  | The AWS service to which this role is attached\. | String | 
+|   iam:PassedToService  | The AWS service to which this role is passed\. | String | 
+|   iam:PermissionsBoundary  | Policy attached as permissions boundary to an IAM principal\. | String | 
+|   [ iam:PolicyARN ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam)  | The ARN of an IAM policy\. | ARN | 

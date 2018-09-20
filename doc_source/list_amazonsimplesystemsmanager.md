@@ -3,9 +3,9 @@
 Amazon Simple Systems Manager \(service prefix: `ssm`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/systems-manager/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/systems-manager/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-iam-create.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/systems-manager/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/systems-manager/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-iam-create.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Simple Systems Manager](#amazonsimplesystemsmanager-actions-as-permissions)
@@ -29,14 +29,24 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html](http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html) | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\} |  | 
-| maintenancewindow | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:maintenancewindow/$\{ResourceId\} |  | 
-| [http://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html](http://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html) | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\} |  | 
-| parameter | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\} |  | 
-| patchbaseline | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\} |  | 
-| windowtarget | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtarget/$\{ResourceId\} |  | 
-| windowtask | arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtask/$\{ResourceId\} |  | 
+|   [ document ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\}  |  | 
+|   maintenancewindow  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:maintenancewindow/$\{ResourceId\}  |  | 
+|   [ managed\-instance ](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\}  |  | 
+|   parameter  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\}  |   [ ssm:resourceTag/tag\-key ](#amazonsimplesystemsmanager-ssm_resourceTag_tag-key)   | 
+|   patchbaseline  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\}  |  | 
+|   session  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:session/$\{ResourceId\}  |  | 
+|   windowtarget  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtarget/$\{ResourceId\}  |  | 
+|   windowtask  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:windowtask/$\{ResourceId\}  |  | 
 
 ## Condition Keys for Amazon Simple Systems Manager<a name="amazonsimplesystemsmanager-policy-keys"></a>
 
-SSM has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Simple Systems Manager defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ ssm:resourceTag/tag\-key ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-rc-setting-up-cmdsec.html)  | A tag key and value pair\. | String | 

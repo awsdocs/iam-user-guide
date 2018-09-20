@@ -24,9 +24,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| namespace | arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:stack/$\{NamespaceName\} |  | 
-| service | arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceName\} |  | 
+|   namespace  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:stack/$\{NamespaceName\}  |  | 
+|   service  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceName\}  |  | 
 
 ## Condition Keys for Amazon Route 53 Auto Naming<a name="amazonroute53autonaming-policy-keys"></a>
 
-Route 53 Auto Naming has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Route 53 Auto Naming has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

@@ -4,24 +4,22 @@ This example shows how you might create a policy that allows `Read` access to a 
 
 ```
 {
-     "Version": "2012-10-17",
-     "Statement": [
-         {
-             "Effect": "Allow",
-             "Action": [
-                 "codecommit:GitPull"
-             ],
-             "Resource": "arn:aws:codecommit:<REGION>:<ACCOUNTNUMBER>:<REPO-NAME>"
-         },
-         {
-             "Effect": "Allow",
-             "Action": [
-                 "codecommit:Get*",
-                 "codecommit:BatchGetRepositories",
-                 "codecommit:List*"
-             ],
-             "Resource": "*"
-         }
-     ]
- }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": ["codecommit:GitPull"],
+            "Resource": "arn:aws:codecommit:*:*:<REPO-NAME>"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codecommit:Get*",
+                "codecommit:BatchGetRepositories",
+                "codecommit:List*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
 ```

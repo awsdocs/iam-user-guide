@@ -3,9 +3,9 @@
 Amazon Rekognition \(service prefix: `rekognition`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/rekognition/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/rekognition/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/rekognition/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/rekognition/latest/dg/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Rekognition](#amazonrekognition-actions-as-permissions)
@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html](http://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html) | arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:collection/$\{CollectionId\} |  | 
-| streamprocessor | arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:streamprocessor/$\{StreamprocessorId\} |  | 
+|   [ collection ](https://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html)  |  arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:collection/$\{CollectionId\}  |  | 
+|   streamprocessor  |  arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:streamprocessor/$\{StreamprocessorId\}  |  | 
 
 ## Condition Keys for Amazon Rekognition<a name="amazonrekognition-policy-keys"></a>
 
-Rekognition has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Rekognition has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

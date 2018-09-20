@@ -3,9 +3,9 @@
 Amazon Elastic Transcoder \(service prefix: `elastictranscoder`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic Transcoder](#amazonelastictranscoder-actions-as-permissions)
@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html) | arn:$\{Partition\}:elastictranscoder:$\{Region\}:$\{Account\}:job/$\{JobId\} |  | 
-| [http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html) | arn:$\{Partition\}:elastictranscoder:$\{Region\}:$\{Account\}:pipeline/$\{PipelineId\} |  | 
-| [http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html) | arn:$\{Partition\}:elastictranscoder:$\{Region\}:$\{Account\}:preset/$\{PresetId\} |  | 
+|   [ job ](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-jobs.html)  |  arn:$\{Partition\}:elastictranscoder:$\{Region\}:$\{Account\}:job/$\{JobId\}  |  | 
+|   [ pipeline ](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-pipelines.html)  |  arn:$\{Partition\}:elastictranscoder:$\{Region\}:$\{Account\}:pipeline/$\{PipelineId\}  |  | 
+|   [ preset ](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/operations-presets.html)  |  arn:$\{Partition\}:elastictranscoder:$\{Region\}:$\{Account\}:preset/$\{PresetId\}  |  | 
 
 ## Condition Keys for Amazon Elastic Transcoder<a name="amazonelastictranscoder-policy-keys"></a>
 
-Elastic Transcoder has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Elastic Transcoder has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

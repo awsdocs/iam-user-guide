@@ -3,9 +3,9 @@
 Elastic Load Balancing \(service prefix: `elasticloadbalancing`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/load-balancer-authentication-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Elastic Load Balancing](#elasticloadbalancing-actions-as-permissions)
@@ -29,12 +29,12 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\} |  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listenerrule/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}/$\{ListenerRuleId\} |  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/$\{LoadBalancerName\} |  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\} |  | 
-| [http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html) | arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:targetgroup/$\{TargetGroupName\}/$\{TargetGroupId\} |  | 
+|   [ listener ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}  |  | 
+|   [ listenerrule ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listenerrule/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}/$\{ListenerRuleId\}  |  | 
+|   [ loadbalancer ](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/$\{LoadBalancerName\}  |  | 
+|   [ loadbalancer/app/ ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/application-load-balancers.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |  | 
+|   [ targetgroup ](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:targetgroup/$\{TargetGroupName\}/$\{TargetGroupId\}  |  | 
 
 ## Condition Keys for Elastic Load Balancing<a name="elasticloadbalancing-policy-keys"></a>
 
-ELB has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+ELB has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

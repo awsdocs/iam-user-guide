@@ -23,7 +23,7 @@ John also creates a group called *AllUsers* so that he can easily apply any acco
 
 ## Use Case for IAM with Amazon EC2<a name="UseCase_EC2"></a>
 
-A company like Example Corp typically uses IAM to interact with services like Amazon EC2\. To understand this part of the use case, you need a basic understanding of Amazon EC2\. For more information about Amazon EC2, go to the [Amazon EC2 User Guide for Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/)\.
+A company like Example Corp typically uses IAM to interact with services like Amazon EC2\. To understand this part of the use case, you need a basic understanding of Amazon EC2\. For more information about Amazon EC2, go to the [Amazon EC2 User Guide for Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/)\.
 
 ### Amazon EC2 Permissions for the Groups<a name="EC2_PermissionsGroups"></a>
 
@@ -36,7 +36,7 @@ At Example Corp, different groups require different permissions:
 Amazon EC2 uses SSH keys, Windows passwords, and security groups to control who has access to the operating system of specific Amazon EC2 instances\. There's no method in the IAM system to allow or deny access to the operating system of a specific instance\.
 + **Managers** – Should not be able to perform any Amazon EC2 actions except listing the Amazon EC2 resources currently available\. Therefore, John attaches a policy to the Managers group that only lets them call Amazon EC2 "Describe" API operations\.
 
-For examples of what these policies might look like, see [Example Policies](access_policies_examples.md) and [Using AWS Identity and Access Management](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?UsingIAM.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+For examples of what these policies might look like, see [Example Policies](access_policies_examples.md) and [Using AWS Identity and Access Management](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?UsingIAM.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ### User's Role Change<a name="EC2_UserRoleChange"></a>
 
@@ -71,7 +71,7 @@ Now John creates a set of policies to assign permissions to the users and groups
 **Note**  
 Amazon S3 doesn't automatically give a user who creates a bucket or object permission to perform other actions on that bucket or object\. Therefore, in your IAM policies, you must explicitly give users permission to use the Amazon S3 resources they create\.
 
-For examples of what these policies might look like, see [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. For information on how policies are evaluated at run time, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
+For examples of what these policies might look like, see [Access Control](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. For information on how policies are evaluated at run time, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
 
 ### User's Role Change<a name="S3_UserRoleChange"></a>
 

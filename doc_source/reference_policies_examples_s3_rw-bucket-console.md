@@ -4,29 +4,29 @@ This example shows how you might create a policy that allows `Read` and `Write` 
 
 ```
 {
-   "Version": "2012-10-17",
-   "Statement": [
-     {
-       "Effect": "Allow",
-       "Action": [
-         "s3:GetBucketLocation",
-         "s3:ListAllMyBuckets"
-       ],
-       "Resource": "*"
-     },
-     {
-       "Effect": "Allow",
-       "Action": ["s3:ListBucket"],
-       "Resource": ["arn:aws:s3:::<BUCKET-NAME>"]
-     },
-     {
-       "Effect": "Allow",
-       "Action": [
-         "s3:PutObject",
-         "s3:GetObject"
-       ],
-       "Resource": ["arn:aws:s3:::<BUCKET-NAME>/*"]
-     }
-   ]
- }
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:ListAllMyBuckets"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": ["s3:ListBucket"],
+            "Resource": ["arn:aws:s3:::<BUCKET-NAME>"]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject"
+            ],
+            "Resource": ["arn:aws:s3:::<BUCKET-NAME>/*"]
+        }
+    ]
+}
 ```

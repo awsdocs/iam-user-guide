@@ -3,18 +3,18 @@
 Entities and objects in IAM have size limitations\. IAM limits how you name an entity, the number of entities you can create, and the number of characters you can use in an entity\. 
 
 **Note**  
-To get account\-level information about entity usage and quotas, use the [GetAccountSummary](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API action or the [get\-account\-summary](http://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
+To get account\-level information about entity usage and quotas, use the [GetAccountSummary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API operation or the [get\-account\-summary](https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
 
 ## IAM Entity Name Limits<a name="reference_iam-limits-names"></a>
 
 The following are restrictions on IAM names:
 + Policy documents can contain only the following Unicode characters: horizontal tab \(U\+0009\), linefeed \(U\+000A\), carriage return \(U\+000D\), and characters in the range U\+0020 to U\+00FF\. 
 + Names of users, groups, roles, policies, instance profiles, and server certificates must be alphanumeric, including the following common characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), underscore \(\_\), and hyphen \(\-\)\.
-+ Names of users, groups, and roles must be unique within the account\. They are not distinguished by case, for example, you cannot create groups named both "ADMINS" and "admins"\.
++ Names of users, groups, and roles must be unique within the account\. They are not distinguished by case, for example, you cannot create groups named both **ADMINS** and **admins**\.
 + Path names must begin and end with a forward slash \(/\)\.
 + Policy names for [inline policies](access_policies_managed-vs-inline.md) must be unique to the user, group, or role they are embedded in\. The names can contain any Basic Latin \(ASCII\) characters minus the following reserved characters: backward slash \(\\\), forward slash \(/\), asterisk \(\*\), question mark \(?\), and white space\. These characters are reserved according to [RFC 3986](https://tools.ietf.org/html/rfc3986#section-2.2)\. 
 + User passwords \(login profiles\) can contain any Basic Latin \(ASCII\) characters\.
-+ AWS account ID aliases must be unique across AWS products, and must be alphanumeric following DNS naming conventions\. An alias must be lowercase, it must not start or end with a hyphen, it cannot contain two consecutive hyphens, and it cannot be a 12 digit number\. 
++ AWS account ID aliases must be unique across AWS products, and must be alphanumeric following DNS naming conventions\. An alias must be lowercase, it must not start or end with a hyphen, it cannot contain two consecutive hyphens, and it cannot be a 12\-digit number\. 
 
 For a list of Basic Latin \(ASCII\) characters, go to the [Library of Congress Basic Latin \(ASCII\) Code Table](http://lcweb2.loc.gov/diglib/codetables/42.html)\. 
 
@@ -30,12 +30,13 @@ AWS allows you to request an increase to default IAM entity limits\. To learn ho
 | Customer managed policies in an AWS account | 1500 | 
 | Groups in an AWS account | 300 | 
 | Roles in an AWS account | 1000 | 
-| Users in an AWS account | 5000 \(If you need to add a large number of users, consider using [temporary security credentials](id_credentials_temp.md)\.\) | 
+| Managed policies attached to an IAM role | 10 | 
+| Managed policies attached to an IAM user | 10 | 
 | Virtual MFA devices \(assigned or unassigned\) in an AWS account | Equal to the user quota for the account | 
 | Instance profiles in an AWS account | 1000 | 
 | Server certificates stored in an AWS account | 20 | 
 
-For most IAM entity limits, you cannot request a limit increase\.
+You cannot request a limit increase for the following limits\.
 
 
 **Limits for IAM entities:**  
@@ -47,12 +48,13 @@ For most IAM entity limits, you cannot request a limit increase\.
 | Aliases for an AWS account | 1 | 
 | Groups an IAM user can be a member of | 10 | 
 | IAM users in a group | Equal to the user quota for the account | 
+| Users in an AWS account | 5000 \(If you need to add a large number of users, consider using [temporary security credentials](id_credentials_temp.md)\.\) | 
 | Identity providers \(IdPs\) associated with an IAM SAML provider object | 10 | 
 | Keys per SAML provider | 10 | 
 | Login profiles for an IAM user | 1 | 
 | Managed policies attached to an IAM group | 10 | 
-| Managed policies attached to an IAM role | 10 | 
-| Managed policies attached to an IAM user | 10 | 
+| Permissions boundaries for an IAM user | 1 | 
+| Permissions boundaries for an IAM role | 1 | 
 | MFA devices in use by an IAM user | 1 | 
 | MFA devices in use by the AWS account root user | 1 | 
 | Roles in an instance profile | 1 | 

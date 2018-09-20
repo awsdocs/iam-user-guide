@@ -3,9 +3,9 @@
 AWS WAF \(service prefix: `waf`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/waf/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/waf/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/waf/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/waf/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS WAF](#awswaf-actions-as-permissions)
@@ -29,19 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:bytematchset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:geomatchset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html) | arn:$\{Partition\}:waf::$\{Account\}:ipset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RateBasedRule.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RateBasedRule.html) | arn:$\{Partition\}:waf::$\{Account\}:ratebasedrule/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:regexmatchset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html) | arn:$\{Partition\}:waf::$\{Account\}:regexpatternset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html) | arn:$\{Partition\}:waf::$\{Account\}:rule/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html) | arn:$\{Partition\}:waf::$\{Account\}:rulegroup/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html) | arn:$\{Partition\}:waf::$\{Account\}:sizeconstraintset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionmatchset/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html) | arn:$\{Partition\}:waf::$\{Account\}:webacl/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html](http://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html) | arn:$\{Partition\}:waf::$\{Account\}:xssmatchset/$\{Id\} |  | 
+|   [ bytematchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:bytematchset/$\{Id\}  |  | 
+|   [ ipset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:ipset/$\{Id\}  |  | 
+|   [ ratebasedrule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RateBasedRule.html)  |  arn:$\{Partition\}:waf::$\{Account\}:ratebasedrule/$\{Id\}  |  | 
+|   [ rule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html)  |  arn:$\{Partition\}:waf::$\{Account\}:rule/$\{Id\}  |  | 
+|   [ sizeconstraintset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:sizeconstraintset/$\{Id\}  |  | 
+|   [ sqlinjectionmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionmatchset/$\{Id\}  |  | 
+|   [ webacl ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:waf::$\{Account\}:webacl/$\{Id\}  |  | 
+|   [ xssmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:xssmatchset/$\{Id\}  |  | 
+|   [ regexmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:regexmatch/$\{Id\}  |  | 
+|   [ regexpatternset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:regexpatternset/$\{Id\}  |  | 
+|   [ geomatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:geomatchset/$\{Id\}  |  | 
+|   [ rulegroup ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:waf::$\{Account\}:rulegroup/$\{Id\}  |  | 
 
 ## Condition Keys for AWS WAF<a name="awswaf-policy-keys"></a>
 
-WAF has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+WAF has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

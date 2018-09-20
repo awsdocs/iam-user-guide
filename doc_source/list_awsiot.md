@@ -3,9 +3,9 @@
 AWS IoT \(service prefix: `iot`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/iot/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/iot/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/iot/latest/developerguide/authorization.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/iot/latest/developerguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iot/latest/apireference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iot/latest/developerguide/authorization.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT](#awsiot-actions-as-permissions)
@@ -29,21 +29,23 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html](http://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:authorizer/$\{AuthorizerName\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html](http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html](http://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cert/$\{Certificate\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html](http://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:client/$\{ClientId\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html](http://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:index/$\{IndexName\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html](http://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:job/$\{JobId\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html](http://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\} |  | 
-| [https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) | arn:$\{Partition\}:iam::$\{Account\}:role/$\{Role\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html](http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rolealias/$\{RoleAlias\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html](http://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html](http://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thinggroup/$\{ThingGroupName\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html](http://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thingtype/$\{ThingTypeName\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html](http://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topic/$\{TopicName\} |  | 
-| [http://docs.aws.amazon.com/iot/latest/developerguide/topics.html](http://docs.aws.amazon.com/iot/latest/developerguide/topics.html) | arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topicfilter/$\{TopicFilter\} |  | 
+|   [ client ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:client/$\{ClientId\}  |  | 
+|   [ index ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:index/$\{IndexName\}  |  | 
+|   [ job ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:job/$\{JobId\}  |  | 
+|   [ thing ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\}  |  | 
+|   [ thinggroup ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thinggroup/$\{ThingGroupName\}  |  | 
+|   [ thingtype ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thingtype/$\{ThingTypeName\}  |  | 
+|   [ topic ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topic/$\{TopicName\}  |  | 
+|   [ topicfilter ](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topicfilter/$\{TopicFilter\}  |  | 
+|   [ rolealias ](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rolealias/$\{RoleAlias\}  |  | 
+|   [ role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{Role\}  |  | 
+|   [ authorizer ](https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:authorizer/$\{AuthorizerName\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\}  |  | 
+|   [ cert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cert/$\{Certificate\}  |  | 
+|   [ cacert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\}  |  | 
+|   [ stream ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:stream/$\{streamId\}  |  | 
+|   [ otaupdate ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:otaupdate/$\{otaUpdateId\}  |  | 
 
 ## Condition Keys for AWS IoT<a name="awsiot-policy-keys"></a>
 
-IoT has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+IoT has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
