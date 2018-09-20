@@ -31,6 +31,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetDashboard ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html)  | Displays the details of the CloudWatch dashboard you specify | Read |  |  |  | 
 |   [ GetMetricData ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html)  | Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data | Read |  |  |  | 
 |   [ GetMetricStatistics ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html)  | Gets statistics for the specified metric | Read |  |  |  | 
+|   [ GetMetricWidgetImage ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricWidgetImage.html)  | Required to retrieve snapshots of metric widgets | Read |  |  |  | 
 |   [ ListDashboards ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html)  | Returns a list of all CloudWatch dashboards in your account | List |  |  |  | 
 |   [ ListMetrics ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html)  | Returns a list of valid metrics stored for the AWS account owner | List |  |  |  | 
 |   [ PutDashboard ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html)  | Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists | Write |  |  |  | 
