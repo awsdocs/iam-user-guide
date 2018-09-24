@@ -30,7 +30,7 @@ A company like Example Corp typically uses IAM to interact with services like Am
 To provide "perimeter" control, John attaches a policy to the AllUsers group\. This policy denies any AWS request from a user if the originating IP address is outside Example Corp's corporate network\.
 
 At Example Corp, different groups require different permissions:
-+ **System Administrators** – Need permission to create and manage AMIs, instances, snapshots, volumes, security groups, and so on\. John attaches a policy to the SysAdmins group that gives members of the group permission to use all the Amazon EC2 actions\.
++ **System administrators** – Need permission to create and manage AMIs, instances, snapshots, volumes, security groups, and so on\. John attaches a policy to the SysAdmins group that gives members of the group permission to use all the Amazon EC2 actions\.
 + **Developers** – Need the ability to work with instances only\. John therefore attaches a policy to the Developers group that allows developers to call `DescribeInstances`, `RunInstances`, `StopInstances`, `StartInstances`, and `TerminateInstances`\. 
 **Note**  
 Amazon EC2 uses SSH keys, Windows passwords, and security groups to control who has access to the operating system of specific Amazon EC2 instances\. There's no method in the IAM system to allow or deny access to the operating system of a specific instance\.
@@ -71,7 +71,7 @@ Now John creates a set of policies to assign permissions to the users and groups
 **Note**  
 Amazon S3 doesn't automatically give a user who creates a bucket or object permission to perform other actions on that bucket or object\. Therefore, in your IAM policies, you must explicitly give users permission to use the Amazon S3 resources they create\.
 
-For examples of what these policies might look like, see [Access Control](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. For information on how policies are evaluated at run time, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
+For examples of what these policies might look like, see [Access Control](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. For information on how policies are evaluated at runtime, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
 
 ### User's Role Change<a name="S3_UserRoleChange"></a>
 

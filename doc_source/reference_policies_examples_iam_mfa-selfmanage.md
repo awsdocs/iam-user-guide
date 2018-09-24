@@ -19,16 +19,18 @@ If you add these permissions for a user that is signed in to AWS, they might nee
             ],
             "Resource": [
                 "arn:aws:iam::*:mfa/${aws:username}",
-                "arn:aws:iam::*:user/${aws:username}"
+                "arn:aws:iam::*:user/${aws:username}",
+                "arn:aws:iam::*:u2f/${aws:username}"
             ]
         },
         {
-            "Sid": "AllowUsersToDeactivateTheirOwnVirtualMFADevice",
+            "Sid": "AllowUsersToDeactivateTheirOwnMFADevice",
             "Effect": "Allow",
             "Action": ["iam:DeactivateMFADevice"],
             "Resource": [
                 "arn:aws:iam::*:mfa/${aws:username}",
-                "arn:aws:iam::*:user/${aws:username}"
+                "arn:aws:iam::*:user/${aws:username}",
+                "arn:aws:iam::*:u2f/${aws:username}"
             ],
             "Condition": {
                 "Bool": {"aws:MultiFactorAuthPresent": "true"}

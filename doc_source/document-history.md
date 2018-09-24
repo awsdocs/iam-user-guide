@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [U2F security keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_u2f.html) | You can now use U2F security keys as a multi\-factor authentication \(MFA\) option when signing in to the AWS Management Console\.  | September 25, 2018 | 
 | [Support for Amazon VPC endpoints](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts_vpce.html) | You can now establish a private connection between your VPC and AWS STS in the US West \(Oregon\) Region\.  | July 31, 2018 | 
 | [Delegated administrator](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html) | New feature makes it easier to grant trusted employees the ability to manage IAM permissions without also granting full IAM administrative access\. | July 12, 2018 | 
 | [aws:PrincipalOrgID](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) | New condition key provides an easier way to control access to AWS resources by specifying the AWS organization of IAM principals\. | May 17, 2018 | 

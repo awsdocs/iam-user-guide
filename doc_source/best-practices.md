@@ -25,7 +25,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account gives full access to all your resources for all AWS services, including your billing information\. You cannot restrict the permissions associated with your AWS account access key\. 
 
 Therefore, protect your AWS account access key like you would your credit card numbers or any other sensitive secret\. Here are some ways to do that: 
-+ If you don't already have an access key for your AWS account, don't create one unless you absolutely need to\. Instead, use your account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) and create an IAM user for yourself that has administrative privileges, as explained in the next section\.
++ If you don't already have an access key for your AWS account, don't create one unless you absolutely need to\. Instead, use your account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) and create an IAM user for yourself that has administrative permissions, as explained in the next section\.
 + If you do have an access key for your AWS account, delete it\. If you must keep it, rotate \(change\) the access key regularly\. To delete or rotate your AWS account access keys, go to the [Security Credentials page](https://console.aws.amazon.com/iam/home?#security_credential) in the AWS Management Console and sign in with your account's email address and password\. You can manage your access keys in the **Access keys** section\.
 + Never share your AWS account password or access keys with anyone\. The remaining sections of this document discuss various ways to avoid having to share your AWS account root user credentials with other users and to avoid having to embed them in an application\. 
 + Use a strong password to help protect account\-level access to the AWS Management Console\. For information about managing your AWS account root user password, see [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)\.
@@ -33,7 +33,7 @@ Therefore, protect your AWS account access key like you would your credit card n
 
 ## Create Individual IAM Users<a name="create-iam-users"></a>
 
-Don't use your AWS account root user credentials to access AWS, and don't give your credentials to anyone else\. Instead, create individual users for anyone who needs access to your AWS account\. Create an IAM user for yourself as well, give that user administrative privileges, and use that IAM user for all your work\. For information about how to do this, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\. 
+Don't use your AWS account root user credentials to access AWS, and don't give your credentials to anyone else\. Instead, create individual users for anyone who needs access to your AWS account\. Create an IAM user for yourself as well, give that user administrative permissions, and use that IAM user for all your work\. For information about how to do this, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\. 
 
 By creating individual IAM users for people accessing your account, you can give each IAM user a unique set of security credentials\. You can also grant different permissions to each IAM user\. If necessary, you can change or revoke an IAM user's permissions any time\. \(If you give out your root user credentials, it can be difficult to revoke them, and it is impossible to restrict their permissions\.\)
 
@@ -52,7 +52,7 @@ For more information, see the following:
 
 We recommend that you use the managed policies that are created and maintained by AWS to grant permissions whenever possible\. A key advantage of using these policies is that they are maintained and updated by AWS as new services or new API operations are introduced\. 
 
-AWS\-managed policies are designed to support common tasks\. They typically provide access to a single service or a limited set of actions\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
+AWS managed policies are designed to support common tasks\. They typically provide access to a single service or a limited set of actions\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
 
 AWS managed policies for job functions can span multiple services and align with common job functions in the IT industry\. For a list and descriptions of job function policies, see [AWS Managed Policies for Job Functions](access_policies_job-functions.md)\.
 
@@ -95,7 +95,9 @@ For more information, see [Setting an Account Password Policy for IAM Users](id_
 
 ## Enable MFA for Privileged Users<a name="enable-mfa-for-privileged-users"></a>
 
-For extra security, enable multi\-factor authentication \(MFA\) for privileged IAM users \(users who are allowed access to sensitive resources or API operations\)\. With MFA, users have a device that generates a unique authentication code \(a one\-time password, or OTP\)\. Users must provide both their normal credentials \(like their user name and password\) and the OTP\. The MFA device can either be a special piece of hardware, or it can be a virtual device \(for example, it can run in an app on a smartphone\)\. 
+For extra security, enable multi\-factor authentication \(MFA\) for privileged IAM users \(users who are allowed access to sensitive resources or API operations\)\. With MFA, users have a device that generates a response to an authentication challenge\. Both the user's credentials and the device\-generated response are required to complete the sign\-in process\. The response is generated in one of the following ways: 
++ Virtual and hardware MFA devices generate a code that you view on the app or device and then enter on the sign\-in screen\. 
++ U2F security keys generate a response when you tap the device\. The user does not manually enter a code on the sign\-in screen\.
 
 For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
 

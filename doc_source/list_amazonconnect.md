@@ -23,8 +23,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   CreateInstance  | Grants permissions to create a new Amazon Connect instance\. The associated required actions grant permissions to configure instance settings\. | Write |  |  |   ds:CreateAlias   ds:DeleteDirectory   ds:DescribeDirectories   firehose:DescribeDeliveryStream   firehose:ListDeliveryStreams   kinesis:DescribeStream   kinesis:ListStreams   kms:CreateGrant   kms:DescribeKey   kms:ListAliases   kms:RetireGrant   s3:CreateBucket   s3:ListAllMyBuckets   | 
 |   DescribeInstance  | Grants permissions to view details of an Amazon Connect instance\. This is required to create an instance\. | Read |   [ instance\* ](#amazonconnect-instance)   |  |   firehose:DescribeDeliveryStream   firehose:ListDeliveryStreams   kinesis:DescribeStream   kinesis:ListStreams   kms:DescribeKey   kms:ListAliases   s3:ListAllMyBuckets   | 
 |   DestroyInstance  | Grants permissions to delete an Amazon Connect instance\. When you remove an instance, the link to an existing AWS directory is also removed\. | Write |   [ instance\* ](#amazonconnect-instance)   |  |  | 
+|   GetCurrentMetricData  | Grants permissions to get current metric data that it happens in the instance for specific queue using Amazon Connect API | Read |   [ queue\* ](#amazonconnect-queue)   |  |  | 
 |   GetFederationToken  | Allows federation into an instance when using SAML\-based authentication for identity management\. | Read |   [ instance\* ](#amazonconnect-instance)   |  |  | 
-|   GetFederationTokens  | Grants permissions to federate in to an Amazon Connect instance \(Log in as administrator functionality in the AWS console\)\. | Read |   [ instance\* ](#amazonconnect-instance)   |  |   connect:DescribeInstance   connect:DestroyInstance   connect:ListInstances   ds:DeleteDirectory   ds:DescribeDirectories   ds:UnauthorizeApplication   kms:RetireGrant   | 
+|   GetFederationTokens  | Grants permissions to federate in to an Amazon Connect instance \(Log in as administrator functionality in the AWS console\)\. | Write |   [ instance\* ](#amazonconnect-instance)   |  |   connect:DescribeInstance   connect:ListInstances   ds:DescribeDirectories   | 
+|   GetMetricData  | Grants permissions to get historical metric data that it happens in the instance for specific queue using Amazon Connect API | Read |   [ queue\* ](#amazonconnect-queue)   |  |  | 
 |   ListInstances  | Grants permissions to view the Amazon Connect instances associated with an AWS account\. | List |  |  |  | 
 |   ModifyInstance  | Grants permissions to modify configuration settings for an existing Amazon Connect instance\. The associated required actions grant permission modify the settings for the instance\.  | Write |   [ instance\* ](#amazonconnect-instance)   |  |   firehose:DescribeDeliveryStream   firehose:ListDeliveryStreams   kinesis:DescribeStream   kinesis:ListStreams   kms:CreateGrant   kms:DescribeKey   kms:ListAliases   kms:RetireGrant   s3:CreateBucket   s3:ListAllMyBuckets   | 
 |   StartOutboundVoiceContact  | Grants permissions to initiate outbound calls using the Amazon Connect API\. | Write |   [ contact\* ](#amazonconnect-contact)   |  |  | 
@@ -41,6 +43,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   instance  |  arn:$\{Partition\}:connect::$\{Account\}:instance/$\{InstanceId\}  |  | 
 |   contact  |  arn:$\{Partition\}:connect::$\{Account\}:instance/$\{InstanceId\}/contact/$\{ContactId\}  |  | 
+|   queue  |  arn:$\{Partition\}:connect::$\{Account\}:instance/$\{InstanceId\}/queue/$\{QueueId\}  |  | 
 
 ## Condition Keys for Amazon Connect<a name="amazonconnect-policy-keys"></a>
 

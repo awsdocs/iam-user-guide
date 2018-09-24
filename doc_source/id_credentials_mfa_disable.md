@@ -20,17 +20,17 @@ If you use the API or AWS CLI to delete a user from your AWS account, you must d
 
 1. To deactivate the MFA device for a user, choose the name of the user whose MFA you want to remove\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
 
-1. In the **Manage MFA Device** wizard, choose **Deactivate MFA device**, and then choose **Next Step**\.
+1. In the **Manage MFA Device** wizard, choose **Deactivate MFA device**, and then choose **Continue**\.
 
    The device is removed from AWS\. It cannot be used to sign in or authenticate requests until it is reactivated and associated with an AWS user or AWS account root user\.<a name="deactivate-mfa-for-root"></a>
 
 **To deactivate the MFA device for your AWS account root user \(console\)**
 
-1. Use your AWS account root user credentials to sign in to the [AWS Management Console](https://console.aws.amazon.com//iam/home)\.
+1. Use your AWS account root user credentials *and MFA* to sign in to the [AWS Management Console](https://console.aws.amazon.com//iam/home)\.
 **Important**  
-To manage MFA devices for the AWS account, you must sign in to AWS with your AWS account root user credentials\. You cannot manage MFA devices for the root user with other credentials\.
+To manage MFA devices for the AWS account, you must sign in to AWS with your AWS account root user credentials and MFA\. You cannot manage MFA devices for the root user with other credentials, or without using MFA\.
 
 1. On the navigation bar, choose your account name, and then choose **My Security Credentials**\. If a prompt appears, choose **Continue to Security Credentials**\.  
 ![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)

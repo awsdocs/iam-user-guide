@@ -1,6 +1,6 @@
 # Permissions Boundaries for IAM Identities<a name="access_policies_boundaries"></a>
 
-AWS supports identity\-based policies, resource\-based policies, access control lists \(ACLs\), and AWS Organizations service control policies \(SCPs\)\. Those [policy types](access_policies.md#access_policy-types) can be categorized as *permissions policies* or *permissions boundaries*\. Permissions policies define the permissions for the object to which they’re attached\. These include identity\-based policies \(most common\), resource\-based policies, and ACLs\. A permissions boundary is an advanced feature in which you limit the maximum permissions that a principal can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\.
+AWS supports identity\-based policies, resource\-based policies, access control lists \(ACLs\), and AWS Organizations service control policies \(SCPs\)\. Those [policy types](access_policies.md#access_policy-types) can be categorized as *permissions policies* or *permissions boundaries*\. Permissions policies define the permissions for the object to which they’re attached\. These include identity\-based policies \(most common\), resource\-based policies, and ACLs\. A permissions boundary is an advanced feature in which you limit the maximum permissions that a principal can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. For more information about these policy types, see [Policy Types](access_policies.md#access_policy-types)\.
 
 You can use an AWS managed policy or a customer managed policy to set the boundary for a user or role\. That policy limits the maximum permissions for the user or role\.
 
@@ -23,7 +23,7 @@ For example, assume that the user named `ShirleyRodriguez` should be allowed to 
 }
 ```
 
-When you use a policy to set the permissions boundary for a user, it limits the user's permissions but does not provide permissions on its own\. In this example, the `ShirleyRodriguez` user boundary allows her to perform all operations in Amazon S3, CloudWatch, and Amazon EC2\. However, Shirley can never perform operations in any other service, including IAM, even if she has a permissions policy that allows it\. For example, you can add the following pol
+When you use a policy to set the permissions boundary for a user, it limits the user's permissions but does not provide permissions on its own\. In this example, the `ShirleyRodriguez` user boundary allows her to perform all operations in Amazon S3, CloudWatch, and Amazon EC2\. However, Shirley can never perform operations in any other service, including IAM, even if she has a permissions policy that allows it\. For example, you can add the following policy to the `ShirleyRodriguez` user:
 
 ```
 {

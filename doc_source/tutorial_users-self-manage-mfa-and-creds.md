@@ -9,7 +9,7 @@ This workflow has three basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Create a Policy to Enforce MFA Sign\-In](#tutorial_mfa_step1)**  
-Create a customer managed policy that prohibits all actions ***except*** the few IAM API operations that enable changing credentials and managing MFA devices\.
+Create a customer managed policy that prohibits all actions ***except*** the few IAM API operations that enable changing credentials and managing MFA devices\. Note that MFA permissions are the same for all MFA devices that AWS supports\.
 
 **[Step 2: Attach Policies to Your Test Group](#tutorial_mfa_step2)**  
 Create a group whose members have full access to all Amazon EC2 actions if they sign in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
@@ -24,13 +24,13 @@ To perform the steps in this tutorial, you must already have the following:
 + Your account ID number, which you type into the policy in Step 1\. 
 
   To find your account ID number, on the navigation bar at the top of the page, choose **Support** and then choose **Support Center**\. You can find your account ID under this page's **Support** menu\. 
-+ A [hardware\-based](id_credentials_mfa_enable_physical.md) or [virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA device\.
++ A [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [U2F security key](id_credentials_mfa_enable_u2f.md), or [hardware\-based MFA device](id_credentials_mfa_enable_physical.md)\.
 + A test IAM user who is a member of a group as follows:
 
 
 ****  
 
-| *Create user account* | *Create and configure group account* | User Name | Other instructions | Group Name | Add user as a member | Other instructions | 
+| *Create User Account* | *Create and Configure Group Account* | User Name | Other Instructions | Group Name | Add User as a Member | Other Instructions | 
 | --- | --- | --- | --- | --- | --- | --- | 
 | MFAUser | Choose only the option for AWS Management Console access, and assign a password\. | EC2MFA | MFAUser | Do NOT attach any policies or otherwise grant permissions to this group\. | 
 
@@ -152,9 +152,9 @@ This example policy does not allow users to reset a password while signing in\. 
    What does this policy do? 
    + The `AllowAllUsersToListAccounts` statement enables the user to see basic information about the account and its users in the IAM console\. These permissions must be in their own statement because they do not support or do not need to specify a specific resource ARN, and instead specify `"Resource" : "*"`\.
    + The `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` statement enables the user to manage his or her own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\. It also allows users to sign in for the first time in an administrator requires them to set a first\-time password\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
-   + The `AllowIndividualUserToViewAndManageTheirOwnMFA` statement enables the user to view or manage his or her own MFA device\. Notice that the resource ARNs in this statement allows access to only an MFA device or user that has the exact same name as the currently signed\-in user\. Users can't create or alter any MFA device other than their own\.
+   + The `AllowIndividualUserToViewAndManageTheirOwnMFA` statement enables the user to view or manage his or her own MFA device\. Notice that the resource ARNs in this statement allow access to only an MFA device or user that has the same name as the currently signed\-in user\. Users can't create or alter any MFA device other than their own\.
    + The `AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA` statement allows the user to deactivate only his or her own MFA device, and only if the user signed in using MFA\. This prevents others with only the access keys \(and not the MFA device\) from deactivating the MFA device and accessing the account\.
-   + The `BlockMostAccessUnlessSignedInWithMFA` statement uses a combination of `"Deny"` and `"NotAction"` to deny access to all but a few actions in IAM and other AWS services ***if*** the user is not signed\-in with MFA\. For more information about the logic for this statement, see [NotAction with Deny](reference_policies_elements_notaction.md)\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other policies or statements for the user determine the user's permissions\. This statement ensures that when the user is not signed\-in with MFA that they can perform only the listed actions, and only if another statement or policy allows access to those actions\.
+   + The `BlockMostAccessUnlessSignedInWithMFA` statement uses a combination of `"Deny"` and `"NotAction"` to deny access to all but a few actions in IAM and other AWS services ***if*** the user is not signed\-in with MFA\. For more information about the logic for this statement, see [NotAction with Deny](reference_policies_elements_notaction.md)\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other policies or statements for the user determine the user's permissions\. This statement ensures that when the user is not signed\-in with MFA, they can perform only the listed actions and only if another statement or policy allows access to those actions\.
 
      The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true\. This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
 
@@ -194,23 +194,23 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 
 1. In the navigation pane, choose **Users**, and then choose the user \(not the check box\) **MFAUser**\. If the **Groups** tab appears by default, note that it says that you don't have permissions to see your group memberships\.
 
-1. Now add an MFA device\. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose the edit icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Now add an MFA device\. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
 
-1. For this tutorial, we use a virtual \(software\-based\) MFA device, such as the Google Authenticator app on a mobile phone\. Choose **A virtual MFA device**, and then click **Next Step**\.
+1. For this tutorial, we use a virtual \(software\-based\) MFA device, such as the Google Authenticator app on a mobile phone\. Choose **Virtual MFA device**, and then click **Continue**\.
 
    IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic\. The graphic is a representation of the secret configuration key that is available for manual entry on devices that do not support QR codes\.
 
 1. Open your virtual MFA app\. \(For a list of apps that you can use for hosting virtual MFA devices, see [Virtual MFA Applications](https://aws.amazon.com/iam/details/mfa/#Virtual_MFA_Applications)\.\) If the virtual MFA app supports multiple accounts \(multiple virtual MFA devices\), choose the option to create a new account \(a new virtual MFA device\)\.
 
 1. Determine whether the MFA app supports QR codes, and then do one of the following:
-   + Use the app to scan the QR code\. For example, you might choose the camera icon or choose an option similar to **Scan code**, and then use the device's camera to scan the code\.
-   + In the **Manage MFA Device** wizard, choose **Show secret key for manual configuration**, and then type the secret configuration key into your MFA app\.
+   + From the wizard, choose **Show QR code**\. Then use the app to scan the QR code\. For example, you might choose the camera icon or choose an option similar to **Scan code**, and then use the device's camera to scan the code\.
+   + In the **Manage MFA Device** wizard, choose **Show secret key**, and then type the secret key into your MFA app\.
 
    When you are finished, the virtual MFA device starts generating one\-time passwords\. 
 
-1. In the **Manage MFA Device** wizard, in the **Authentication Code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **Authentication Code 2** box\. Choose **Active Virtual MFA**\. 
+1. In the **Manage MFA Device** wizard, in the **MFA Code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **MFA Code 2** box\. Choose **Assign MFA**\. 
 **Important**  
-Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device is successfully associated with the user\. However,t the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
+Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device is successfully associated with the user\. However, the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
    The virtual MFA device is now ready to use with AWS\. 
 

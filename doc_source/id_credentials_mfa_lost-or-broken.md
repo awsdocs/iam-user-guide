@@ -1,8 +1,8 @@
 # What If an MFA Device Is Lost or Stops Working?<a name="id_credentials_mfa_lost-or-broken"></a>
 
-If your AWS account root user multi\-factor authentication \(MFA\) device is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
+If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
 
-If the device appears to be functioning properly, but you cannot use it to access your AWS resources, then it might be out of synchronization with the AWS system\. For information about synchronizing an MFA device, see [Resynchronizing MFA Devices](id_credentials_mfa_sync.md)\.
+If your [virtual MFA device](id_credentials_mfa_enable_virtual.md) or [hardware MFA device](id_credentials_mfa_enable_physical.md) appears to be functioning properly, but you cannot use it to access your AWS resources, it might be out of synchronization with AWS\. For information about synchronizing a virtual MFA device or hardware MFA device, see [Resynchronizing Virtual and Hardware MFA Devices](id_credentials_mfa_sync.md)\. [U2F security keys](id_credentials_mfa_enable_u2f.md) do not go out of sync\.
 
 If the MFA device associated with an IAM user is lost or stops working, the user can't recover it\. IAM users must contact an administrator to deactivate the device\.
 
@@ -12,7 +12,7 @@ Before you sign in as a root user using alternative factors of authentication, m
 
 1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the *[AWS account root user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html)*\.
 
-1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
+1. On the **Amazon Web Services Sign In Using MFA** page, choose **Having problems with your authentication device? Click here**\.
 **Note**  
 If you are using an AWS account created after September 14, 2017, you might see the following console text: **Sign in with authentication device**, **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
 
@@ -34,9 +34,12 @@ If you are using an AWS account created after September 14, 2017, you might see 
 
 1. After you verify your phone number, you can sign in to your account by choosing **Sign in to the console**\.
 
-1. If you are using a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. You can continue to sign in using alternative factors of authentication until you receive your new device\. After you have the new physical MFA device, go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA hardware device entity before you create a new one\.
-
-   If you are using a virtual MFA device, remove the account from your device\. Then go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA virtual device entity before you create a new one\.
+1. The next step varies depending on the type of MFA you are using:
+   + For a virtual MFA device, remove the account from your device\. Then go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA virtual device entity before you create a new one\.
+   + For a U2F security key, go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and deactivate the old U2F key before enabling a new one\.
+   + For a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. You can continue to sign in using alternative factors of authentication until you receive your new device\. After you have the new hardware MFA device, go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA hardware device entity before you create a new one\.
+**Note**  
+You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your U2F security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new U2F security key\.
 
 1. If your MFA device is missing or stolen, also [change your AWS password](id_credentials_passwords_change-root.md) in case an attacker has stolen the authentication device and might also have your current password\.
 
@@ -44,8 +47,11 @@ If you are using an AWS account created after September 14, 2017, you might see 
 
 1. Contact the AWS administrator or other person who gave you the user name and password for the IAM user\. The administrator must deactivate the MFA device as described in [Deactivating MFA Devices](id_credentials_mfa_disable.md) so that you can sign in\.
 
-1. If you are using a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. After you have the new physical MFA device, enable the device as described in [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)\.
-
-   If you are using a virtual MFA device, remove the account from your device\. Then enable the virtual device as described in [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)\.
+1. The next step varies depending on the type of MFA you are using:
+   + For a virtual MFA device, remove the account from your device\. Then enable the virtual device as described in [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)\.
+   + For a U2F security key, contact the third\-party provider for help replacing the device\. When you receive the new U2F security key, enable it as described in [Enabling a U2F Security Key \(Console\)](id_credentials_mfa_enable_u2f.md)\.
+   + For a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. After you have the new physical MFA device, enable the device as described in [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)\.
+**Note**  
+You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your U2F security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new U2F security key\.
 
 1. If your MFA device is missing or stolen, also [change your password](id_credentials_passwords_user-change-own.md) in case an attacker has stolen the authentication device and might also have your current password\.
