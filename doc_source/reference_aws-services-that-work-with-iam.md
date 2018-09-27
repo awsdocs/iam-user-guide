@@ -93,7 +93,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | No | No | No | 
+|  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | No | Yes | No | 
 
 ## Management Tools and Services<a name="management_svcs"></a>
 
@@ -157,12 +157,12 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/access.html)  | Yes | No | No | No | No | No | 
+|  [Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/access.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon CloudSearch](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configureaccess.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Data Pipeline](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-concepts-roles.html)  | Yes | No | No | Yes | Yes | No | 
 |  [Amazon Elasticsearch Service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html) | 
 |  [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)  | Yes | No | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/using-service-linked-roles.html) | 
-|  [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/authentication-and-access-control.html)  | Yes | No | No | No | No | No | 
+|  [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/authentication-and-access-control.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Kinesis Data Analytics](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 | [Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html) | Yes | Yes | No | No | Yes | No | 
 | [Amazon Kinesis Data Streams](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html) | Yes | Yes | No | No | Yes | No | 

@@ -2,18 +2,17 @@
 
 You can use the `Condition` element of a JSON policy in IAM to test the value of keys that are included in the evaluation context of all AWS API requests\. These keys provide information about the request itself or the resources that the request references\. You can check that keys have specified values before allowing the action that is requested by the user\. This gives you granular control over when your JSON policy statements match or don't match an incoming API request\. For information about how to use the `Condition` element in a JSON policy, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
 
-This topic describes the globally available keys \(with an `aws:` prefix\), as well as the keys that are defined and provided by the IAM service \(with an `iam:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources that are defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
+This topic describes the globally available keys \(with an `aws:` prefix\)\. AWS services, [such as IAM,](reference_policies_iam-condition-keys.md) provide service\-specific keys that are relevant to the actions and resources that are defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
 
-**Note**  
-If you use condition keys that are available only in some scenarios \(such as `aws:SourceIp` and `aws:SourceVpc`\), you can use the [IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) versions of the comparison operators\. If the condition keys are missing from a request context \(and you haven't set `IfExists`\), the policy engine can fail the evaluation\. For example, if you want to write a policy that restricts access from a particular IP range or from a particular VPC, you can construct the conditions as follows:   
+Some global condition keys are available for all AWS services, and some are only supported by some services\.
 
-```
-"Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] },
-      "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }
-```
-This condition matches \(1\) if the `aws:SourceIp` context key exists and has the value `xxx` ***or*** \(2\) if the `aws:SourceVpc` context key exists and has the value `yyy`\. If either or both keys do not exist, the condition still matches\. The test is only made if the specified key exists in the request context\. If it is not there, it is treated as "I don't care\."
+**Topics**
++ [Keys Avaliable for All Services](#condition-keys-globally-available)
++ [Keys Avaliable for Some Services](#condition-keys-service-available)
 
- AWS provides the following predefined condition keys for all AWS services that support IAM for access control:
+## Keys Avaliable for All Services<a name="condition-keys-globally-available"></a>
+
+ AWS provides the following predefined condition keys for all AWS services that support IAM access control\. To learn more about writing policies for these services, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
 **aws:CurrentTime**  
 Works with [date operators](reference_policies_elements_condition_operators.md#Conditions_Date)\.  
@@ -70,6 +69,27 @@ This combination of the `Allow`, `Bool`, and `true` allows only MFA\-authenticat
 "Condition" : { "Null" : { "aws:MultiFactorAuthPresent" : false } }
 ```
 This combination of the `Allow` effect, `Null` element, and `false` value allows only requests that can be authenticated using MFA, regardless of whether the request is actually authenticated\. This allows all requests made using temporary credentials, and denies access for long\-term credentials\. Use this example with caution because it does not test whether MFA\-authentication was actually used\. 
+
+**aws:SecureTransport**  
+Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
+Checks whether the request was sent using SSL\.
+
+**aws:UserAgent**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks the requester's client application\.  
+This key should be used carefully\. Since the `aws:UserAgent` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:UserAgent` value that they choose\. As a result, `aws:UserAgent` should not be used to prevent unauthorized parties from making direct AWS requests\. You can use it to allow only specific client applications, and only after testing your policy\.
+
+## Keys Avaliable for Some Services<a name="condition-keys-service-available"></a>
+
+ AWS provides the following predefined condition keys for only some AWS services that support these features\. To learn whether a service supports one of these condition keys, you must view the documentation for that service\. 
+
+**Note**  
+If you use condition keys that are available only in some scenarios, you can use the [IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) versions of the condition operators\. If the condition keys are missing from a request context, the policy engine can fail the evaluation\. For example, use the following policy with `...IfExists` operators to match if a request comes from a specific IP range or from a specific VPC\. If either or both keys don't exist, the condition still matches\. The values are only checked if the specified key exists in the request\.   
+
+```
+"Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] },
+      "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }
+```
 
 **aws:PrincipalOrgID**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -172,11 +192,7 @@ This condition key is available for only some services\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.  
 Checks a tag and its value in an AWS request\. For example, you could check to see that the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\.   
-This AWS condition key was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
-
-**aws:SecureTransport**  
-Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
-Checks whether the request was sent using SSL\.
+This condition key is available for only some services, and was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 **aws:SourceAccount**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -196,7 +212,8 @@ If the request comes from a host that uses an Amazon VPC endpoint, then the `aws
 
 **aws:SourceVpc**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Restricts access to a specific VPC\. For more information, see [Restricting Access to a Specific VPC](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc) in the *Amazon Simple Storage Service Developer Guide*\. \(This condition key is supported for traffic to an AWS service over a VPC endpoint\.\)
+Restricts access to a specific VPC\. For more information, see [Restricting Access to a Specific VPC](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc) in the *Amazon Simple Storage Service Developer Guide*\.   
+This condition key is available for only some services that support traffic over a VPC endpoint\.
 
 **aws:SourceVpce**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -206,15 +223,13 @@ This condition key is available for only some services\.
 **aws:TagKeys**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.  
-Checks the tag keys that are present in an AWS request\. This AWS condition key was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) and is supported by a limited number of additional services\. Check your service to see whether it supports using this condition key\.
+Checks the tag keys that are present in an AWS request\.   
+This condition key is available for only some services, and was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 **aws:TokenIssueTime**  
 Works with [date operators](reference_policies_elements_condition_operators.md#Conditions_Date)\.  
-Checks the date/time that temporary security credentials were issued\. This key is only present in requests that are signed using temporary security credentials\. For more information about temporary security credentials, see [Temporary Security Credentials](id_credentials_temp.md)\.
-
-**aws:UserAgent**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks the requester's client application\.
+Checks the date/time that temporary security credentials were issued\.   
+This condition key is available for only some services that support using temporary security credentials\. To learn which services support using temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 **aws:userid**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

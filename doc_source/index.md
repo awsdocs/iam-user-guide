@@ -320,6 +320,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon Lex](list_amazonlex.md)
          + [Actions, Resources, and Condition Keys for Amazon Lightsail](list_amazonlightsail.md)
          + [Actions, Resources, and Condition Keys for Amazon Machine Learning](list_amazonmachinelearning.md)
+         + [Actions, Resources, and Condition Keys for Amazon Macie](list_amazonmacie.md)
          + [Actions, Resources, and Condition Keys for Manage Amazon API Gateway](list_manageamazonapigateway.md)
          + [Actions, Resources, and Condition Keys for AWS Marketplace](list_awsmarketplace.md)
          + [Actions, Resources, and Condition Keys for AWS Marketplace Image Building Service](list_awsmarketplaceimagebuildingservice.md)

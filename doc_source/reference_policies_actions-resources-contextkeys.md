@@ -117,6 +117,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon Lex](list_amazonlex.md)
 + [Amazon Lightsail](list_amazonlightsail.md)
 + [Amazon Machine Learning](list_amazonmachinelearning.md)
++ [Amazon Macie](list_amazonmacie.md)
 + [Manage Amazon API Gateway](list_manageamazonapigateway.md)
 + [AWS Marketplace](list_awsmarketplace.md)
 + [AWS Marketplace Image Building Service](list_awsmarketplaceimagebuildingservice.md)
