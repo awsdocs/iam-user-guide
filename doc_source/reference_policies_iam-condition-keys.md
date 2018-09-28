@@ -37,6 +37,10 @@ You can use `iam:PassedToService` to restrict your users so that they can pass r
 ```
 By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail because the user does not have permission to pass the role to Amazon EC2\. 
 
+**iam:PermissionsBoundary**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions Boundaries for IAM Identities](access_policies_boundaries.md)
+
 **iam:PolicyARN**  
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that involve a managed policy\. For more information, see [Controlling Access to Policies](access_controlling.md#access_controlling-policies)\. 

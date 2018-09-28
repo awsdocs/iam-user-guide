@@ -7,10 +7,10 @@ This topic describes the globally available keys \(with an `aws:` prefix\)\. AWS
 Some global condition keys are available for all AWS services, and some are only supported by some services\.
 
 **Topics**
-+ [Keys Avaliable for All Services](#condition-keys-globally-available)
-+ [Keys Avaliable for Some Services](#condition-keys-service-available)
++ [Keys Available for All Services](#condition-keys-globally-available)
++ [Keys Available for Some Services](#condition-keys-service-available)
 
-## Keys Avaliable for All Services<a name="condition-keys-globally-available"></a>
+## Keys Available for All Services<a name="condition-keys-globally-available"></a>
 
  AWS provides the following predefined condition keys for all AWS services that support IAM access control\. To learn more about writing policies for these services, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
@@ -79,7 +79,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Checks the requester's client application\.  
 This key should be used carefully\. Since the `aws:UserAgent` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:UserAgent` value that they choose\. As a result, `aws:UserAgent` should not be used to prevent unauthorized parties from making direct AWS requests\. You can use it to allow only specific client applications, and only after testing your policy\.
 
-## Keys Avaliable for Some Services<a name="condition-keys-service-available"></a>
+## Keys Available for Some Services<a name="condition-keys-service-available"></a>
 
  AWS provides the following predefined condition keys for only some AWS services that support these features\. To learn whether a service supports one of these condition keys, you must view the documentation for that service\. 
 

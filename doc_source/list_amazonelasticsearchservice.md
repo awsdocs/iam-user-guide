@@ -49,7 +49,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ domain ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-gsg.html)  |  arn:$\{Partition\}:es:$\{Region\}:$\{Account\}:domain/$\{DomainName\}  |  | 
+|   [ domain ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html)  |  arn:$\{Partition\}:es:$\{Region\}:$\{Account\}:domain/$\{DomainName\}  |  | 
 
 ## Condition Keys for Amazon Elasticsearch Service<a name="amazonelasticsearchservice-policy-keys"></a>
 
