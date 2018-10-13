@@ -26,7 +26,7 @@ You can access AWS in different ways depending on the user credentials:
 + [**SSH keys for use with AWS CodeCommit**](id_credentials_ssh-keys.md): An SSH public key in the OpenSSH format that can be used to authenticate with AWS CodeCommit\.
 + [**Server certificates**](id_credentials_server-certs.md): SSL/TLS certificates that you can use to authenticate with some AWS services\. We recommend that you use AWS Certificate Manager \(ACM\) to provision, manage, and deploy your server certificates\. Use IAM only when you must support HTTPS connections in a region that is not supported by ACM\. To learn which regions support ACM, see the [AWS Certificate Manager](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region) section of the *AWS General Reference*\.
 
-By default, a brand new IAM user has no password and no access key \(neither an access key ID nor a secret access key\)—no credentials of any kind\. You must create the type of credentials for an IAM user based on what the user will be doing\. 
+By default, a brand new IAM user which was created using the AWS CLI or the AWS API, has no password and no access key \(neither an access key ID nor a secret access key\)—no credentials of any kind\. You must create the type of credentials for an IAM user based on what the user will be doing\. 
 
 Take advantage of the following options to administer passwords, access keys, and MFA devices:
 + **[Manage passwords for your IAM users](id_credentials_passwords.md)\.** Create and change the passwords that permit access to the AWS Management Console\. Set a password policy to enforce a minimum password complexity\. Allow users to change their own passwords\. 
