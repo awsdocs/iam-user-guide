@@ -77,7 +77,7 @@ Checks whether the request was sent using SSL\.
 **aws:UserAgent**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks the requester's client application\.  
-This key should be used carefully\. Since the `aws:UserAgent` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:UserAgent` value that they choose\. As a result, `aws:UserAgent` should not be used to prevent unauthorized parties from making direct AWS requests\. You can use it to allow only specific client applications, and only after testing your policy\.
+This key should be used carefully\. Since the `aws:UserAgent` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:UserAgent` value that they choose\. As a result, `aws:UserAgent` should not be used to prevent unauthorized parties from making direct AWS requests\. You can use it to allow only specific client applications, and only after testing your policy\. You can only use this context key from the AWS CLI\. 
 
 ## Keys Available for Some Services<a name="condition-keys-service-available"></a>
 
