@@ -7,7 +7,7 @@ If you want to grant access to an account that you do not own or control, see [P
 
 Imagine that you have Amazon EC2 instances that are critical to your organization\. Instead of directly granting your users permission to terminate the instances, you can create a role with those privileges\. Then allow administrators to switch to the role when they need to terminate an instance\. Doing this adds the following layers of protection to the instances:
 + You must explicitly grant your users permission to assume the role\.
-+ Your users must actively switch to the role using the AWS Management Console\.
++ Your users must actively switch to the role\.
 + You can add multi\-factor authentication \(MFA\) protection to the role so that only users who sign in with an MFA device can assume the role\. To learn how to configure a role so that users who assume the role must first be authenticated using multi\-factor authentication \(MFA\), see [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\.
 
 We recommend using this approach to enforce the *principle of least access*\. That means restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with [auditing](cloudtrail-integration.md) to help ensure that roles are only used when needed\.
