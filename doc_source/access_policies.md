@@ -43,7 +43,7 @@ Although IAM identities are technically AWS resources, you cannot attach a resou
 
 ### Service Control Policies \(SCPs\)<a name="policies_scp"></a>
 
-AWS Organizations is a service for grouping centrally managing the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. SCPs are JSON policies that apply a permissions boundary to an AWS Organizations organization or organizational unit \(OU\)\. This permissions boundary controls the maximum services and actions that can be accessed by the entities in those accounts\.
+AWS Organizations is a service for grouping and centrally managing the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. SCPs are JSON policies that apply a permissions boundary to an AWS Organizations organization or organizational unit \(OU\)\. This permissions boundary controls the maximum services and actions that can be accessed by the entities in those accounts, including each AWS account root user\.
 
 For more information about Organizations and SCPs, see [About Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
 

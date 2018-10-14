@@ -23,9 +23,9 @@ These policies are all maintained by AWS and are kept up to date to include supp
 + [Data Scientist](#jf_data-scientist)
 + [Developer Power User](#jf_developer-power-user)
 + [Network Administrator](#jf_network-administrator)
-+ [System Administrator](#jf_system-administrator)
 + [Security Auditor](#jf_security-auditor)
 + [Support User](#jf_support-user)
++ [System Administrator](#jf_system-administrator)
 + [View\-Only User](#jf_view-only-user)
 
 In the following sections, each policy's name is a link to the policy details page in the AWS Management Console\. There you can see the policy document and review the permissions it grants\.
@@ -42,9 +42,9 @@ In the following sections, each policy's name is a link to the policy details pa
 
 **AWS managed policy name:** [Billing](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/Billing)
 
-**Use case:** This user needs to view billing information, set up payment, and authorize payment\. The user can monitor the costs accumulated for each AWS service\.
+**Use case:** This user needs to view billing information, set up payments, and authorize payments\. The user can monitor the costs accumulated for the entire AWS service\.
 
-**Policy description:** This policy grants permissions for managing billing and costs\. The permissions include viewing and modifying both budgets and payment methods\.
+**Policy description:** This policy grants full permissions for managing billing, costs, payment methods, budgets, and reports\.\.
 
 **Note**  
 Before an IAM user can access the AWS Billing and Cost Management console with this policy, you must first enable Billing and Cost Management console access for the account\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
@@ -99,7 +99,7 @@ This job function supports the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user performs application development tasks and can create and configure resources and services that support AWS aware application development\.
 
-**Policy description:** This policy grants permissions to view, read, and write permissions for a variety of AWS services intended for application development, including Amazon API Gateway, Amazon AppStream, Amazon CloudSearch, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline, AWS Device Farm, Amazon DynamoDB, Amazon Elastic Compute Cloud, Amazon Elastic Container Service \(ECS\), AWS Lambda, Amazon RDS, Amazon Route 53, Amazon Simple Storage Service \(S3\), Amazon Simple Email Service \(SES\), Amazon Simple Queue Service \(SQS\), and Amazon Simple Workflow Service \(SWF\)\.
+**Policy description:** This policy grants all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations\. It grants IAM permissions to create a service\-linked role\. This is required by some services that must access resources in another service, such as an Amazon S3 bucket\. It grants Organizations permissions to view information about the user's organization, including the master account email and organization limitations\.
 
 ### Network Administrator<a name="jf_network-administrator"></a>
 
@@ -107,7 +107,7 @@ This job function supports the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user is tasked with setting up and maintaining AWS network resources\.
 
-**Policy description:** This policy grants permissions to create and maintain network resources in Amazon EC2, Route 53, Amazon Virtual Private Cloud \(VPC\), and AWS Direct Connect\. 
+**Policy description:** This policy grants permissions to create and maintain network resources in Auto Scaling, Amazon EC2, AWS Direct Connect, Route 53, Amazon CloudFront, Elastic Load Balancing, AWS Elastic Beanstalk, Amazon SNS, CloudWatch, CloudWatch Logs, Amazon S3, IAM, and Amazon Virtual Private Cloud\.
 
 This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
@@ -117,6 +117,22 @@ This job function requires the ability to pass roles to AWS services\. The polic
 | Use case | Role name \(\* is a wildcard\) | Service role type to select | AWS managed policy to select | 
 | --- | --- | --- | --- | 
 | Allows Amazon VPC to create and manage logs in CloudWatch Logs on the user's behalf to monitor IP traffic going in and out of your VPC | [flow\-logs\-\*](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-iam) | Create a role with a trust policy as defined in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-iam) | This use case does not have an existing AWS managed policy, but the documentation lists the required permissions\. See [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-iam)\. | 
+
+### Security Auditor<a name="jf_security-auditor"></a>
+
+**AWS managed policy name:** [SecurityAudit](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit)
+
+**Use case:** This user monitors accounts for compliance with security requirements\. This user can access logs and events to investigate potential security breaches or potential malicious activity\.
+
+**Policy description:** This policy grants permissions to view configuration data for many AWS services and to review their logs\. 
+
+### Support User<a name="jf_support-user"></a>
+
+**AWS managed policy name:** [SupportUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/SupportUser)
+
+**Use case:** This user contacts AWS Support, creates support cases, and views the status of existing cases\.
+
+**Policy description:** This policy grants permissions to create and update AWS Support cases\.
 
 ### System Administrator<a name="jf_system-administrator"></a>
 
@@ -138,29 +154,13 @@ This job function requires the ability to pass roles to AWS services\. The polic
 | Allow apps running in EC2 instances to access AWS resources\. | [ec2\-sysadmin\-\*](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) | Amazon EC2 | Sample policy for role that grants access to an S3 bucket as shown in the [Amazon EC2 User Guide for Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html); customize as needed | 
 | Allow Lambda to read DynamoDB streams and write to CloudWatch Logs | [lambda\-sysadmin\-\*](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html) | AWS Lambda | [AWSLambdaDynamoDBExecutionRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AWSLambdaDynamoDBExecutionRole) | 
 
-### Security Auditor<a name="jf_security-auditor"></a>
-
-**AWS managed policy name:** [SecurityAudit](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit)
-
-**Use case:** This user monitors accounts for compliance with security requirements\. This user can access logs and events to investigate potential security breaches or potential malicious activity\.
-
-**Policy description:** This policy grants permissions to view configuration data for many AWS services and to review their logs\. 
-
-### Support User<a name="jf_support-user"></a>
-
-**AWS managed policy name:** [SupportUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/SupportUser)
-
-**Use case:** This user contacts AWS Support, creates support cases, and views the status of existing cases\.
-
-**Policy description:** This policy grants permissions to create and update AWS Support cases\.
-
 ### View\-Only User<a name="jf_view-only-user"></a>
 
 **AWS managed policy name:** [ViewOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/ViewOnlyAccess)
 
 **Use case:** This user can view a list of AWS resources and basic metadata in the account across all services\. The user cannot read resource content or metadata that goes beyond the quota and list information for resources\.
 
-**Policy description:** This policy grants `List*` and `Describe*` access to resources for every AWS service\.
+**Policy description:** This policy grants `List*`, `Describe*`, `Get*`, `View*`, and `Lookup*` access to resources for every AWS service\.
 
 ## Creating the Roles and Attaching the Policies \(Console\)<a name="access_policies_job-functions_create-policies"></a>
 
