@@ -32,7 +32,7 @@ In IAM policies, many actions allow you to provide a name for the specific resou
 }
 ```
 
-In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. However, instead of creating a separate policy for each user that explicitly specifies the user's name as part of the resource, you want to create a single group policy that works for any user in that group\. 
+In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy allowing each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. However, instead of creating a separate policy for each user that explicitly specifies the user's name as part of the resource, you want to create a single group policy that works for any user in that group\. 
 
 You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\. 
 
