@@ -8,7 +8,7 @@
 
 ## Introduction<a name="policy-vars-intro"></a>
 
-In IAM policies, many actions allow you to provide a name for the specific resources that want to control access to\. For example, the following policy allows the user to list, read, and write objects with a prefix `David` in the Amazon S3 bucket `mybucket`\. 
+In IAM policies, many actions allow you to provide a name for the specific resources that you want to control access to\. For example, the following policy allows the user to list, read, and write objects with a prefix `David` in the Amazon S3 bucket `mybucket`\. 
 
 ```
 {
