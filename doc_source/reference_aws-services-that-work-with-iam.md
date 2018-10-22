@@ -257,6 +257,14 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 
 
+## Customer Engagement Services<a name="engagement_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
+
 ## Game Development Services<a name="game_svcs"></a>
 
 

@@ -41,6 +41,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ server\-certificate ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html)  |  arn:$\{Partition\}:iam::$\{Account\}:server\-certificate/$\{CertificateNameWithPath\}  |  | 
 |   [ sms\-mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  |  arn:$\{Partition\}:iam::$\{Account\}:sms\-mfa/$\{MfaTokenIdWithPath\}  |  | 
 |   [ user ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html)  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\}  |  | 
+|   [ u2f ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_MFADevice.html)  |  arn:$\{Partition\}:iam::$\{Account\}:u2f/$\{Path\}/$\{U2FTokenId\}  |  | 
 
 ## Condition Keys for Identity And Access Management<a name="identityandaccessmanagement-policy-keys"></a>
 

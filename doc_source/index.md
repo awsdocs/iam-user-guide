@@ -363,6 +363,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS Snowball](list_awssnowball.md)
          + [Actions, Resources, and Condition Keys for Amazon SNS](list_amazonsns.md)
          + [Actions, Resources, and Condition Keys for Amazon SQS](list_amazonsqs.md)
+         + [Actions, Resources, and Condition Keys for SSO Directory that AWS SSO provides by default](list_ssodirectorythatawsssoprovidesbydefault.md)
          + [Actions, Resources, and Condition Keys for AWS Step Functions](list_awsstepfunctions.md)
          + [Actions, Resources, and Condition Keys for Amazon Storage Gateway](list_amazonstoragegateway.md)
          + [Actions, Resources, and Condition Keys for Amazon Sumerian](list_amazonsumerian.md)

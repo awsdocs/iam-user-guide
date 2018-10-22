@@ -20,10 +20,18 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ Login ](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Grant login access to the Sumerian console\. | Write |  |  |  | 
+|   [ ViewRelease ](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Grant access to view a project release\. | Read |   [ project\* ](#amazonsumerian-project)   |  |  | 
 
 ## Resources Defined by Sumerian<a name="amazonsumerian-resources-for-iam-policies"></a>
 
-Amazon Sumerian has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonsumerian-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   project  |  arn:$\{Partition\}:sumerian:$\{Region\}:$\{Account\}:project:$\{ProjectName\}  |  | 
 
 ## Condition Keys for Amazon Sumerian<a name="amazonsumerian-policy-keys"></a>
 

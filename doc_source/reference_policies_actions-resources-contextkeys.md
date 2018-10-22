@@ -160,6 +160,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Snowball](list_awssnowball.md)
 + [Amazon SNS](list_amazonsns.md)
 + [Amazon SQS](list_amazonsqs.md)
++ [SSO Directory that AWS SSO provides by default](list_ssodirectorythatawsssoprovidesbydefault.md)
 + [AWS Step Functions](list_awsstepfunctions.md)
 + [Amazon Storage Gateway](list_amazonstoragegateway.md)
 + [Amazon Sumerian](list_amazonsumerian.md)
