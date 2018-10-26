@@ -48,9 +48,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateAvailabilityOptions ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateAvailabilityOptions.html)  | Configures the availability options for a domain\. | Write |   [ domain\* ](#amazoncloudsearch-domain)   |  |  | 
 |   [ UpdateScalingParameters ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateScalingParameters.html)  | Configures scaling parameters for a domain\. | Write |   [ domain\* ](#amazoncloudsearch-domain)   |  |  | 
 |   [ UpdateServiceAccessPolicies ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/API_UpdateServiceAccessPolicies.html)  | Configures the access rules that control access to the domain's document and search endpoints\. | Permissions management |   [ domain\* ](#amazoncloudsearch-domain)   |  |  | 
-|   [ document ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the document service operations\.  | Write |  |  |  | 
-|   [ search ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the search operations\. | Read |  |  |  | 
-|   [ suggest ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the suggest operations\. | Read |  |  |  | 
+|   [ document ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the document service operations\.  | Write |   [ domain ](#amazoncloudsearch-domain)   |  |  | 
+|   [ search ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the search operations\. | Read |   [ domain ](#amazoncloudsearch-domain)   |  |  | 
+|   [ suggest ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the suggest operations\. | Read |   [ domain ](#amazoncloudsearch-domain)   |  |  | 
 
 ## Resources Defined by CloudSearch<a name="amazoncloudsearch-resources-for-iam-policies"></a>
 

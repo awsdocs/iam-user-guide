@@ -146,6 +146,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Permissions Boundaries for IAM Identities](access_policies_boundaries.md)
       + [Identity-Based Policies and Resource-Based Policies](access_policies_identity-vs-resource.md)
       + [Controlling Access Using Policies](access_controlling.md)
+      + [Controlling Access Using Tags](access_tags.md)
       + [Example Policies](access_policies_examples.md)
          + [AWS: Allows Access Within Specific Dates](reference_policies_examples_aws-dates.md)
          + [AWS: Allows Specific Access Using MFA Within Specific Dates](reference_policies_examples_aws_mfa-dates.md)

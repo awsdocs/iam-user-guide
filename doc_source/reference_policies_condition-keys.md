@@ -224,6 +224,8 @@ This condition key is available for only some services\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.  
 Checks the tag keys that are present in an AWS request\.   
+As a best practice when you use policies to control access using tags, you should use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling Tag Keys](access_tags.md#access_tags_control-tag-keys)   
+Some services support tagging with resource operations, such as creating, modifying, or deleting a resource\. To allow tagging and operations as a single call, you must create a policy that includes both the tagging action and the resource\-modifying action\. You can then use the `aws:TagKeys` condition key to enforce using specific tag keys in the request\. For example, to limit tags when someone creates an Amazon EC2 snapshot, you must include the `ec2:CreateSnapshot` creation action ***and*** the `ec2:CreateTags` tagging action in the policy\. To view a policy for this scenario that uses `aws:TagKeys`, see [Creating a Snapshot with Tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-creating-snapshot-with-tags) in the *Amazon EC2 User Guide for Linux Instances*\. 
 This condition key is available for only some services, and was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 **aws:TokenIssueTime**  
