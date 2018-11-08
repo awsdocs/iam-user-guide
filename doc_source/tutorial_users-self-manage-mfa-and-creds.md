@@ -101,6 +101,7 @@ This example policy does not allow users to reset a password while signing in\. 
                ],
                "Resource": [
                    "arn:aws:iam::*:mfa/${aws:username}",
+                   "arn:aws:iam::*:u2f/${aws:username}",
                    "arn:aws:iam::*:user/${aws:username}"
                ]
            },
@@ -112,6 +113,7 @@ This example policy does not allow users to reset a password while signing in\. 
                ],
                "Resource": [
                    "arn:aws:iam::*:mfa/${aws:username}",
+                   "arn:aws:iam::*:u2f/${aws:username}",
                    "arn:aws:iam::*:user/${aws:username}"
                ],
                "Condition": {
