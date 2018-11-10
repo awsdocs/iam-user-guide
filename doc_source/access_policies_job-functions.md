@@ -38,16 +38,19 @@ In the following sections, each policy's name is a link to the policy details pa
 
 **Policy description:** This policy grants all actions for all AWS services and for all resources in the account\. 
 
+**Note**  
+Before an IAM user or role can access the AWS Billing and Cost Management console with the permissions in this policy, you must first activate IAM user and role access\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
+
 ### Billing<a name="jf_accounts-payable"></a>
 
 **AWS managed policy name:** [Billing](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/Billing)
 
 **Use case:** This user needs to view billing information, set up payments, and authorize payments\. The user can monitor the costs accumulated for the entire AWS service\.
 
-**Policy description:** This policy grants full permissions for managing billing, costs, payment methods, budgets, and reports\.\.
+**Policy description:** This policy grants full permissions for managing billing, costs, payment methods, budgets, and reports\.
 
 **Note**  
-Before an IAM user can access the AWS Billing and Cost Management console with this policy, you must first enable Billing and Cost Management console access for the account\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
+Before an IAM user or role can access the AWS Billing and Cost Management console with the permissions in this policy, you must first activate IAM user and role access\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
 
 ### Database Administrator<a name="jf_database-administrator"></a>
 
@@ -160,7 +163,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user can view a list of AWS resources and basic metadata in the account across all services\. The user cannot read resource content or metadata that goes beyond the quota and list information for resources\.
 
-**Policy description:** This policy grants `List*`, `Describe*`, `Get*`, `View*`, and `Lookup*` access to resources for every AWS service\.
+**Policy description:** This policy grants `List*`, `Describe*`, `Get*`, `View*`, and `Lookup*` access to resources for most AWS services\. To see what actions this policy includes for each service, see [ViewOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/ViewOnlyAccess)\.
 
 ## Creating the Roles and Attaching the Policies \(Console\)<a name="access_policies_job-functions_create-policies"></a>
 

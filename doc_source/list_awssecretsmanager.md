@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ Secret ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources)  |  arn:$\{Partition\}:secretsmanager:$\{Region\}:$\{Account\}:secret:$\{SecretId\}  |   [ secretsmanager:resource/AllowRotationLambdaArn ](#awssecretsmanager-secretsmanager_resource_AllowRotationLambdaArn)   | 
+|   [ Secret ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources)  |  arn:$\{Partition\}:secretsmanager:$\{Region\}:$\{Account\}:secret:$\{SecretId\}  |   [ aws:RequestTag/tag\-key ](#awssecretsmanager-aws_RequestTag_tag-key)   [ aws:TagKeys ](#awssecretsmanager-aws_TagKeys)   [ secretsmanager:ResourceTag/tag\-key ](#awssecretsmanager-secretsmanager_ResourceTag_tag-key)   [ secretsmanager:resource/AllowRotationLambdaArn ](#awssecretsmanager-secretsmanager_resource_AllowRotationLambdaArn)   | 
 
 ## Condition Keys for AWS Secrets Manager<a name="awssecretsmanager-policy-keys"></a>
 

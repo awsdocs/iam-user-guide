@@ -7,7 +7,7 @@ This workflow has four basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Enable Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
-By default, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+By default, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner activates IAM access and attaches policies that provide billing actions to the user or role\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 **[Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)**  
 After enabling billing access on your account, you must still explicitly grant access to billing data to specific IAM users or groups\. You grant this access with a customer managed policy\.
@@ -38,7 +38,10 @@ Sign into your test account and turn on billing access\. For information about h
 
 1. On the navigation bar, choose your account name, and then choose **My Account**\.
 
-1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**, and then select the check box to activate IAM user and federated user access to the Billing and Cost Management pages\.
+1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\.
+
+1. Then select the check box to **Activate IAM Access** and choose **Update**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 1. Sign out of the console, and then proceed to [Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)\.
 

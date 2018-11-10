@@ -317,4 +317,4 @@ Zhang completes the following tasks:
 
    The user is created\. 
 
-When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. He can view and manage all the buckets that he owns in Amazon S3, but he can't access the `logs` bucket\.
+When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. Nikhil has read\-only access to all the buckets that he owns in Amazon S3\. However, even if someone grants him ownership to the `logs` bucket, he cannot view it\. For more information about bucket ownership, see [Managing Access Permissions to your Amazon S3 Resources](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in the *Amazon Simple Storage Service Developer Guide*\.

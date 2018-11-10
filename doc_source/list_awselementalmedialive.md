@@ -21,6 +21,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ BatchUpdateSchedule ](https://docs.aws.amazon.com//medialive/latest/ug/batching-actions.html)  | Grants permission to add and remove actions from a channel's schedule\. | Write |  |  |  | 
 |   [ CreateChannel ](https://docs.aws.amazon.com//medialive/latest/ug/creating-channel-scratch.html)  | Grants permission to create a channel | Write |  |  |  | 
 |   [ CreateInput ](https://docs.aws.amazon.com//medialive/latest/ug/creating-input.html)  | Grants permission to create an input | Write |  |  |  | 
 |   [ CreateInputSecurityGroup ](https://docs.aws.amazon.com//medialive/latest/ug/working-with-input-security-groups.html)  | Grants permission to create an input security group | Write |  |  |  | 
@@ -33,6 +34,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DescribeInputSecurityGroup ](https://docs.aws.amazon.com//medialive/latest/ug/edit-input-security-group.html)  | Grants permission to describe an input security group | Read |  |  |  | 
 |   [ DescribeOffering ](https://docs.aws.amazon.com//medialive/latest/ug/purchasing-reservations.html)  | Grants permission to get details about a reservation offering | Read |  |  |  | 
 |   [ DescribeReservation ](https://docs.aws.amazon.com//medialive/latest/ug/view-reservations.html)  | Grants permission to get details about a reservation | Read |  |  |  | 
+|   [ DescribeSchedule ](https://docs.aws.amazon.com//medialive/latest/ug/viewing-actions-schedule.html)  | Grants permission to view a list of actions scheduled on a channel\. | Read |  |  |  | 
 |   [ ListChannels ](https://docs.aws.amazon.com//medialive/latest/ug/viewing-channel-configuration.html)  | Grants permission to list channels | List |  |  |  | 
 |   [ ListInputSecurityGroups ](https://docs.aws.amazon.com//medialive/latest/ug/edit-input-security-group.html)  | Grants permission to list input security groups | List |  |  |  | 
 |   [ ListInputs ](https://docs.aws.amazon.com//medialive/latest/ug/edit-input.html)  | Grants permission to list inputs | List |  |  |  | 

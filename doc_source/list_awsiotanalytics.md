@@ -3,9 +3,9 @@
 AWS IoT Analytics \(service prefix: `iotanalytics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/iotanalytics/latest/userguide/)\.
 + View a [list of the API operations available for this service](https://docs.aws.amazon.com/iotanalytics/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/authorization.html) permission policies\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-step-create-role) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT Analytics](#awsiotanalytics-actions-as-permissions)
@@ -29,11 +29,22 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ channel ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/channel.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:channel/$\{ChannelName\}  |  | 
-|   [ dataset ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/dataset.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:dataset/$\{DatasetName\}  |  | 
-|   [ datastore ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/datastore.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:datastore/$\{DatastoreName\}  |  | 
-|   [ pipeline ](https://docs.aws.amazon.com/iotanalytics/latest/developerguide/pipeline.html)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:pipeline/$\{PipelineName\}  |  | 
+|   [ channel ](https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:channel/$\{ChannelName\}  |   [ aws:RequestTag/$\{TagKey\} ](#awsiotanalytics-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awsiotanalytics-aws_TagKeys)   [ iotanalytics:ResourceTag/$\{TagKey\} ](#awsiotanalytics-iotanalytics_ResourceTag___TagKey_)   | 
+|   [ dataset ](https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:dataset/$\{DatasetName\}  |   [ aws:RequestTag/$\{TagKey\} ](#awsiotanalytics-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awsiotanalytics-aws_TagKeys)   [ iotanalytics:ResourceTag/$\{TagKey\} ](#awsiotanalytics-iotanalytics_ResourceTag___TagKey_)   | 
+|   [ datastore ](https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:datastore/$\{DatastoreName\}  |   [ aws:RequestTag/$\{TagKey\} ](#awsiotanalytics-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awsiotanalytics-aws_TagKeys)   [ iotanalytics:ResourceTag/$\{TagKey\} ](#awsiotanalytics-iotanalytics_ResourceTag___TagKey_)   | 
+|   [ pipeline ](https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html#aws-iot-analytics-how)  |  arn:$\{Partition\}:iotanalytics:$\{Region\}:$\{Account\}:pipeline/$\{PipelineName\}  |   [ aws:RequestTag/$\{TagKey\} ](#awsiotanalytics-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awsiotanalytics-aws_TagKeys)   [ iotanalytics:ResourceTag/$\{TagKey\} ](#awsiotanalytics-iotanalytics_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS IoT Analytics<a name="awsiotanalytics-policy-keys"></a>
 
-IoT Analytics has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS IoT Analytics defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | A tag key that is present in the request that the user makes to IoT Analytics\. | String | 
+|   aws:TagKeys  | The list of all the tag key names associated with the IoT Analytics resource in the request\. | String | 
+|   iotanalytics:ResourceTag/$\{TagKey\}  | The preface string for a tag key and value pair attached to an IoT Analytics resource\. | String | 

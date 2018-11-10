@@ -34,6 +34,8 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 1. For **Filter policies**, select the check box for **AWS managed \- job function**\.
 
 1. In the policy list, select the check box for **AdministratorAccess**\. Then choose **Create group**\.
+**Note**  
+You must activate IAM user and role access to Billiing before you can use the `AdministratorAccess` premissions to access the AWS Billing and Cost Management console\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
 
 1. Back in the list of groups, select the check box for your new group\. Choose **Refresh** if necessary to see the group in the list\.
 

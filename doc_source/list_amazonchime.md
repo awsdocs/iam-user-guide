@@ -26,6 +26,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ AddDomain ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Adds a domain to your Amazon Chime account | Write |  |  |  | 
 |   [ AddOrUpdateGroups ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Adds new or updates existing Active Directory or Okta user groups associated with your Amazon Chime enterprise account | Write |  |  |  | 
 |   [ AuthorizeDirectory ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Authorize an Active Directory to your Amazon Chime enterprise account | Write |  |  |  | 
+|   [ BatchUpdateUser ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates details for multiple users | Write |  |  |  | 
 |   [ ConnectDirectory ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Connects an Active Directory to your Amazon Chime enterprise account | Write |  |  |   ds:ConnectDirectory   | 
 |   [ CreateAccount ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Creates a new Amazon Chime account | Write |  |  |  | 
 |   [ CreateApiKey ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Generates a new SCIM access key for your Amazon Chime account and Okta configuration | Write |  |  |  | 
@@ -71,11 +72,13 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ SubmitSupportRequest ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Submits a customer service support request | Write |  |  |  | 
 |   [ SuspendUsers ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Suspend users from an Amazon Chime enterprise account | Write |  |  |  | 
 |   [ UnauthorizeDirectory ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Unauthorize an Active Directory to your Amazon Chime enterprise account | Write |  |  |  | 
+|   [ UpdateAccount ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates an existing account's details | Write |  |  |  | 
 |   [ UpdateAccountOpenIdConfig ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates the OpenIdConfig attributes for your Amazon Chime account | Write |  |  |  | 
 |   [ UpdateAccountResource ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates the account resource in your Amazon Chime account | Write |  |  |  | 
 |   [ UpdateAccountSettings ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Modifies your Amazon Chime account settings | Write |  |  |  | 
 |   [ UpdateCDRBucket ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates your Call Detail Record S3 bucket | Write |  |  |   s3:CreateBucket   s3:DeleteBucket   s3:ListAllMyBuckets   | 
 |   [ UpdateSupportedLicenses ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates the supported license tiers available for users in your Amazon Chime account | Write |  |  |  | 
+|   [ UpdateUser ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates an existing user's details | Write |  |  |  | 
 |   [ UpdateUserLicenses ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Manages the licenses for your Amazon Chime users | Write |  |  |  | 
 |   [ ValidateAccountResource ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Validates the account resource in your Amazon Chime account | Read |  |  |  | 
 
