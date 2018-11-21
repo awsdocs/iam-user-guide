@@ -61,6 +61,8 @@ You cannot request a limit increase for the following limits\.
 | SAML providers in an AWS account | 100 | 
 | Signing certificates assigned to an IAM user | 2 | 
 | SSH public keys assigned to an IAM user | 5 | 
+| Tags that can be attached to an IAM role | 50 | 
+| Tags that can be attached to an IAM user | 50 | 
 | Versions of a managed policy that can be stored | 5 | 
 
 ## IAM Entity Character Limits<a name="reference_iam-limits-entity-length"></a>
@@ -74,6 +76,8 @@ The following are the maximum lengths for entities:
 | User name | 64 characters | 
 | Group name | 128 characters | 
 | Role name | 64 characters If you intend to use a role with the Switch Role feature in the AWS console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
+| Tag key | 128 characters | 
+| Tag value | 256 charactersTag values can be empty\. That is, tag values can have a length of 0 characters\. | 
 | Instance profile name | 128 characters | 
 |  Unique IDs created by IAM, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 128 characters | 
 | Policy name | 128 characters | 
@@ -82,5 +86,5 @@ The following are the maximum lengths for entities:
 | Role trust policy JSON text \(the policy that determines who is allowed to assume the role\) | 2,048 characters | 
 | Role session name | 64 characters | 
 | Role session duration |  12 hours When you assume a role from the AWS CLI or API, you can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer role session\. You can specify a value from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role, which can range from 1 hour to 12 hours\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. If you don't specify a value for the `DurationSeconds` parameter, your security credentials are valid for one hour\.  | 
-| For [inline policies](access_policies_managed-vs-inline.md) | You can add as many inline policies as you want to an IAM user, role, or group\. But the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count white space when calculating the size of a policy against these limitations\.  | 
-| For [managed policies](access_policies_managed-vs-inline.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count white space when calculating the size of a policy against this limitation\.   | 
+| For [inline policies](access_policies_managed-vs-inline.md) | You can add as many inline policies as you want to an IAM user, role, or group, but the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html)  IAM does not count whitespace when calculating the size of a policy against these limitations\.  | 
+| For [managed policies](access_policies_managed-vs-inline.md) | [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) IAM does not count whitespace when calculating the size of a policy against this limitation\.  | 

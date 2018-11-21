@@ -107,7 +107,7 @@ The following example shows a policy you could assign to Richard to allow him to
 ```
 
 **Note**  
-When you use ARNs to identify resources in an IAM policy, you can include *policy variables* that let you include placeholders for run\-time information \(such as the user's name\) as part of the ARN\. For more information, see [IAM Policy Elements: Variables](reference_policies_variables.md) 
+When you use ARNs to identify resources in an IAM policy, you can include *policy variables* that let you include placeholders for run\-time information \(such as the user's name\) as part of the ARN\. For more information, see [IAM Policy Elements: Variables and Tags](reference_policies_variables.md) 
 
 You can use wildcards in the *resource* portion of the ARN to specify multiple users or groups or policies\. For example, to specify all users working on product\_1234, you would use:
 

@@ -147,7 +147,11 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
    If possible, open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
-1. Choose **Next: Review**\.
+1. Choose **Next: Tagging**\.
+
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
+
+1. Choose **Next: Review**\. 
 
 1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, this option is not editable\. In other cases, the service might define a prefix for the role and allow you to type an optional suffix\. Some services allow you to specify the entire name of your role\.
 
@@ -159,7 +163,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 ## Creating a Role for a Service \(AWS CLI\)<a name="roles-creatingrole-service-cli"></a>
 
-Creating a role from the AWS CLI involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the AWS CLI you must explicitly perform each step yourself\. You must create the role and then assign a permission policy to the role\. If the service you are working with is Amazon EC2, then you must also create an instance profile and add the role to it\. Optionally, you can also set the [permissions boundary](access_policies_boundaries.md) for your role\.
+Creating a role from the AWS CLI involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the AWS CLI you must explicitly perform each step yourself\. You must create the role and then assign a permissions policy to the role\. If the service you are working with is Amazon EC2, then you must also create an instance profile and add the role to it\. Optionally, you can also set the [permissions boundary](access_policies_boundaries.md) for your role\.
 
 **To create a role for an AWS service from the AWS CLI**
 
@@ -170,6 +174,10 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
     or
 
    Create an inline permissions policy for the role: [aws iam put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+
+1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
+
+   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
@@ -211,7 +219,7 @@ When you use the second command, you must attach a permissions policy to the rol
 }
 ```
 
-To create create this `Test-Role-for-EC2` role, you must first save the previous trust policy with the name `trustpolicyforec2.json` and the previous permissions policy with the name `permissionspolicyforec2.json` to the `policies` directory in your local `C:` drive\. You can then use the following commands to create the role, attach the policy, create the instance profile, and add the role to the instance profile\.
+To create this `Test-Role-for-EC2` role, you must first save the previous trust policy with the name `trustpolicyforec2.json` and the previous permissions policy with the name `permissionspolicyforec2.json` to the `policies` directory in your local `C:` drive\. You can then use the following commands to create the role, attach the policy, create the instance profile, and add the role to the instance profile\.
 
 ```
 # Create the role and attach the trust policy that allows EC2 to assume this role.
@@ -233,7 +241,7 @@ When you launch the EC2 instance, specify the instance profile name in the **Con
 
 ### <a name="roles-creatingrole-servicerole-api"></a>
 
-Creating a role from the AWS API involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the API you must explicitly perform each step yourself\. You must create the role and then assign a permission policy to the role\. If the service you are working with is Amazon EC2, then you must also create an instance profile and add the role to it\. Optionally, you can also set the [permissions boundary](access_policies_boundaries.md) for your role\.
+Creating a role from the AWS API involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the API you must explicitly perform each step yourself\. You must create the role and then assign a permissions policy to the role\. If the service you are working with is Amazon EC2, then you must also create an instance profile and add the role to it\. Optionally, you can also set the [permissions boundary](access_policies_boundaries.md) for your role\.
 
 **To create a role for an AWS service \(AWS API\)**
 
@@ -241,11 +249,15 @@ Creating a role from the AWS API involves multiple steps\. When you use the cons
 
    For the role's trust policy, you can specify a file location\.
 
-1. Attach a managed permission policy to the role: [AttachRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
+1. Attach a managed permissions policy to the role: [AttachRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html)
 
     or
 
-   Create an inline permission policy for the role: [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+   Create an inline permissions policy for the role: [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+
+1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
+
+   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 

@@ -127,9 +127,11 @@ Before you create a service\-linked role in IAM, find out whether the linked ser
    + Allow you to choose from any permissions
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role\.
 
-   Select the box next to the policy that assigns the permissions that you want the role to have, and then choose **Next: Review**\. 
+   Select the box next to the policy that assigns the permissions that you want the role to have, and then choose **Next: Tagging**\. 
 **Note**  
 The permissions that you specify are available to any entity that uses the role\. By default, a role has no permissions\.
+
+1. Choose **Next: Review**\. You cannot attach tags to service\-linked roles during creation\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
 
 1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, then this option is not editable\. In other cases, the service might define a prefix for the role and allow you to type an optional suffix\.
 

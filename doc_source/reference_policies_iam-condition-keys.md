@@ -45,6 +45,24 @@ Checks that the specified policy is attached as permissions boundary on the IAM 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that involve a managed policy\. For more information, see [Controlling Access to Policies](access_controlling.md#access_controlling-policies)\. 
 
+**iam:ResourceTag/*key\-name***  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
+You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Identities](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the red italicized text in the example policy with your own information\.  
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Action": "iam:DeleteUser",
+        "Resource": "*",
+        "Condition": {"StringLike": {"iam:ResourceTag/status": "terminated"}}
+    }]
+}
+```
+
 ## Available Keys for Web Identity Federation<a name="condition-keys-wif"></a>
 
 You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\) such as Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that make sure that federated users can get access only to resources that are associated with a specific provider, app, or user\. 

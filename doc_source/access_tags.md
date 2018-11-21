@@ -19,7 +19,7 @@ You can create an IAM policy visually, using JSON, or by importing an existing m
 
 You can use conditions in your IAM policies to control access to AWS resources based on tags\.
 
- This example shows how you might create a policy that allows starting or stopping Amazon EC2 instances, but only if the instance tag `Owner` has the value of that user's user name\. This policy also provides the permissions necessary to complete this action on the console\. 
+ This example shows how you might create a policy that allows starting or stopping Amazon EC2 instances, but only if the instance tag `Owner` has the value of that user's user name\. This policy also grants the permissions necessary to complete this action on the console\. 
 
 ```
 {

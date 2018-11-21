@@ -1,6 +1,6 @@
 # AWS CodeCommit: Allows `Read` Access to an AWS CodeCommit Repository, Programmatically and in the Console<a name="reference_policies_examples_codecommit_pull"></a>
 
-This example shows how you might create a policy that allows `Read` access to a specific CodeCommit repository\. This policy also provides the permissions necessary to complete this action on the console\. To use this policy, replace the red text in the example policy with your own information\.
+This example shows how you might create a policy that allows `Read` access to a specific CodeCommit repository\. This policy also grants the permissions necessary to complete this action on the console\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {

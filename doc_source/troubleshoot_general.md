@@ -76,7 +76,7 @@ If you are signing requests manually \(without using the [AWS SDKs](http://aws.a
 + Verify that all policies that include variables include the following version number in the policy: `"Version": "2012-10-17"`\. Without the correct version number, the variables are not replaced during evaluation\. Instead, the variables are evaluated literally\. Any policies that don't include variables will still work if you include the latest version number\.
 
   A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
-+ Verify that your policy variables are in the right case\. For details, see [IAM Policy Elements: Variables](reference_policies_variables.md)\.
++ Verify that your policy variables are in the right case\. For details, see [IAM Policy Elements: Variables and Tags](reference_policies_variables.md)\.
 
 ## Changes that I make are not always immediately visible<a name="troubleshoot_general_eventual-consistency"></a>
 

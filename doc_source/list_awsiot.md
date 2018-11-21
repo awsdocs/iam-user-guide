@@ -34,6 +34,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ job ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:job/$\{JobId\}  |  | 
 |   [ thing ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\}  |  | 
 |   [ thinggroup ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thinggroup/$\{ThingGroupName\}  |  | 
+|   [ billinggroup ](https://docs.aws.amazon.com/iot/latest/developerguide/billing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:billinggroup/$\{BillingGroupName\}  |  | 
 |   [ thingtype ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thingtype/$\{ThingTypeName\}  |  | 
 |   [ topic ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topic/$\{TopicName\}  |  | 
 |   [ topicfilter ](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topicfilter/$\{TopicFilter\}  |  | 

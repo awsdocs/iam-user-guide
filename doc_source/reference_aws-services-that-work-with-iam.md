@@ -18,7 +18,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) | 
 |  [Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
-|  [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | No | No | No | Yes | No | 
+|  [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | [Yes](https://docs.aws.amazon.com/batch/latest/userguide/batch-supported-iam-actions-resources.html) | No | No | Yes | No | 
 |  [Amazon Elastic Compute Cloud \(Amazon EC2\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | Yes¹ | 
 |  [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
 |  [Amazon Elastic Container Registry \(Amazon ECR\)](https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html)  | Yes | Yes | Yes | No | Yes | No | 
@@ -252,8 +252,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Greengrass](https://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
-|  [AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | No | Yes | No | 
+|  [AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
+|  [AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html) | Yes | No | 
 
 ¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 
 

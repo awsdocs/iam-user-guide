@@ -53,7 +53,7 @@ This example policy does not allow users to reset a password while signing in\. 
        "Version": "2012-10-17",
        "Statement": [
            {
-               "Sid": "AllowAllUsersToListAccounts",
+               "Sid": "AllowListActions",
                "Effect": "Allow",
                "Action": [
                    "iam:ListAccountAliases",
@@ -65,7 +65,7 @@ This example policy does not allow users to reset a password while signing in\. 
                "Resource": "*"
            },
            {
-               "Sid": "AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation",
+               "Sid": "AllowIndividualUserToViewAndManageOnlyTheirOwnAccountInformation",
                "Effect": "Allow",
                "Action": [
                    "iam:ChangePassword",
@@ -94,6 +94,7 @@ This example policy does not allow users to reset a password while signing in\. 
                "Effect": "Allow",
                "Action": [
                    "iam:CreateVirtualMFADevice",
+                   "iam:DeactivateMFADevice"
                    "iam:DeleteVirtualMFADevice",
                    "iam:EnableMFADevice",
                    "iam:ListMFADevices",
@@ -105,26 +106,11 @@ This example policy does not allow users to reset a password while signing in\. 
                ]
            },
            {
-               "Sid": "AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:DeactivateMFADevice"
-               ],
-               "Resource": [
-                   "arn:aws:iam::*:mfa/${aws:username}",
-                   "arn:aws:iam::*:user/${aws:username}"
-               ],
-               "Condition": {
-                   "Bool": {
-                       "aws:MultiFactorAuthPresent": "true"
-                   }
-               }
-           },
-           {
                "Sid": "BlockMostAccessUnlessSignedInWithMFA",
                "Effect": "Deny",
                "NotAction": [
                    "iam:CreateVirtualMFADevice",
+                   "iam:DeactivateMFADevice"
                    "iam:DeleteVirtualMFADevice",
                    "iam:ListVirtualMFADevices",
                    "iam:EnableMFADevice",

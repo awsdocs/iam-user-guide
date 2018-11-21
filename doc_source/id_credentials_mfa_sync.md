@@ -34,7 +34,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
 **Note**  
-If you are using an AWS account created after September 14, 2017, on the **Sign in usingMFA** page, choose **Troubleshoot your authentication device**\.
+You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\.
 
 1. In the **Re\-Sync With Our Servers** section, type the next two sequentially generated codes from the device into **MFA Code 1** and **MFA Code 2**\. Then choose **Re\-sync authentication device**\.
 

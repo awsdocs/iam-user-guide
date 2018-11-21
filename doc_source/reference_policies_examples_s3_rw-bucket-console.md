@@ -1,6 +1,6 @@
 # Amazon S3: Allows Read and Write Access to a Specific S3 Bucket, Programmatically and in the Console<a name="reference_policies_examples_s3_rw-bucket-console"></a>
 
-This example shows how you might create a policy that allows `Read` and `Write` access to a specific S3 bucket\. This policy also provides the permissions necessary to complete this action on the console\. To use this policy, replace the red text in the example policy with your own information\.
+This example shows how you might create a policy that allows `Read` and `Write` access to a specific S3 bucket\. This policy also grants the permissions necessary to complete this action on the console\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {

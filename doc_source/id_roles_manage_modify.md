@@ -4,6 +4,7 @@ You can change or modify a role in IAM using the following methods:
 + To change who can assume a role, modify the role's trust policy\. You cannot modify the trust policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
 + To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\. You cannot modify the permissions policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. You might be able to modify the permissions policy within the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 + To change the description of the role, modify the description text\.
++ To change the set of tags on a role, see [Managing Tags on IAM Identities \(Console\)](id_tags.md#id_tags_procs-console)\.
 + To specify the maximum session duration setting for roles that are assumed using the AWS CLI or API, modify the maximum session duration setting's value\. This setting can have a value from 1 hour to 12 hours\. If you do not specify a value, the default maximum of 1 hour is applied\. 
 **Note**  
 Anyone who assumes the role from the AWS CLI or API can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer session\. The `MaxSessionDuration` setting determines the maximum duration of the role session that can be requested using the `DurationSeconds` parameter\. If users don't specify a value for the `DurationSeconds` parameter, their security credentials are valid for one hour\.
@@ -78,7 +79,7 @@ For more information and detail about this procedure, see [Granting a User Permi
    {
      "Effect": "Allow",
      "Action": "sts:AssumeRole",
-     "Resource": "arn:aws:iam::ACCOUNT-ID-THAT-CONTAINS-ROLE:role/ROLE-NAME"
+     "Resource": "arn:aws:iam::ACCOUNT-ID:role/ROLE-NAME"
    }
    ```
 
@@ -142,7 +143,7 @@ You cannot edit an AWS managed policy\. AWS managed policy appear with the AWS i
 
 1. Choose **Change boundary**\.
 
-Your changes don't take effect until the next time someone assumes this role\.
+   Your changes don't take effect until the next time someone assumes this role\.
 
 ## Modifying a Role \(AWS CLI\)<a name="roles-managingrole-editing-cli"></a>
 

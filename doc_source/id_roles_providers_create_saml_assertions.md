@@ -11,18 +11,18 @@ The following excerpt shows an example\. Substitute your own values for the mark
 <Subject>
   <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">_cbb88bf52c2510eabe00c1642d4643f41430fe25e3</NameID>
   <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-    <SubjectConfirmationData NotOnOrAfter="2013-11-05T02:06:42.876Z" Recipient="https://signin.aws.amazon.com/saml"/>
+    <SubjectConfirmationData NotOnOrAfter="2013-11-05T02:06:42.876Z" Recipient="https://signin.&awsdomain;/saml"/>
   </SubjectConfirmation>
 </Subject>
 ```
 
 **`AudienceRestriction` and `Audience`**  
-For security reasons, AWS must be included as an audience in the SAML assertion your IdP sends to AWS\. Therefore, the value of the `Audience` element should match one of the following two values, either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. The following sample XML snippets from SAML assertions show how this key can be specified by the IdP\. Include whichever sample applies to your use case\.  
+For security reasons, AWS must be included as an audience in the SAML assertion your IdP sends to AWS\. For the value of the `Audience` element, specify either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. The following sample XML snippets from SAML assertions show how this key can be specified by the IdP\. Include whichever sample applies to your use case\.  
 
 ```
 <Conditions>
   <AudienceRestriction>
-    <Audience>https://signin.aws.amazon.com/saml</Audience>
+    <Audience>https://signin.&awsdomain;/saml</Audience>
   </AudienceRestriction>
 </Conditions>
 ```

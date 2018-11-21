@@ -29,10 +29,16 @@ To add a hardware MFA device, see one of the following:
 + [Enable a Hardware MFA Device for an IAM User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)
 
 **Get an access key**  
-You need an access key if you want to make AWS requests using the [AWS SDKs](https://aws.amazon.com/tools/), the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), [Tools for Windows PowerShell](https://aws.amazon.com/powershell/), or the API operations\.   
+You need an access key if you want to make AWS requests using the [AWS SDKs](https://aws.amazon.com/tools/), the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or the API operations\.   
 You can view and download your secret access key *only* when you create the access key\. You cannot view or recover a secret access key later\. However, if you lose your secret access key, you can create a new access key\. 
 For your AWS account, see [Managing Access Keys for your AWS Account](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)\.   
 For an IAM user, see [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\. 
+
+**Tag a user or role**  
+You can tag an IAM user or role using the IAM console, the AWS CLI, or the API through one of the AWS SDKs\.   
+To learn about tags in IAM, see [Tagging IAM Identities](id_tags.md)\.  
+For details about how to manage tags in IAM, see [Managing Tags on IAM Identities \(Console\)](id_tags.md#id_tags_procs-console)\.  
+To learn about using IAM tags to control access to AWS, see [Controlling Access Using IAM Tags](access_iam-tags.md)\. 
 
 **Get started with all of AWS**  
 This set of documentation deals primarily with the IAM service\. To learn about getting started with AWS and using multiple services to solve a problem such as building and launching your first project, see the [Getting Started Resource Center](https://aws.amazon.com/getting-started/)\. 

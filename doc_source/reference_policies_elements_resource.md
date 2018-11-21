@@ -53,4 +53,4 @@ In the `Resource` element, you can use JSON [policy variables](reference_policie
 }
 ```
 
-For more information about JSON policy variables, see [IAM Policy Elements: Variables](reference_policies_variables.md)\.
+For more information about JSON policy variables, see [IAM Policy Elements: Variables and Tags](reference_policies_variables.md)\.

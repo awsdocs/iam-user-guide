@@ -165,7 +165,11 @@ You need to manually create a role for use with Amazon Cognito only when you are
 
    Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. Select the policy to use for the permissions boundary\.
 
-1. Choose **Next: Review**\.
+1. Choose **Next: Tagging**\.
+
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
+
+1. Choose **Next: Review**\. 
 
 1. For **Role name**, type a role name\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because other AWS resources might reference the role, you cannot edit the name of the role after it has been created\.
 

@@ -8,7 +8,7 @@ AWS then checks that you \(the principal\) are authenticated \(signed in\) and a
 
 AWS checks all the policies that apply to the context of your request\. AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram of this process, see [Understanding How IAM Works](intro-structure.md)\. For details about how AWS determines whether a request is allowed, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
 
-When you write an IAM policy, you can control access to the following:
+When you create an IAM policy, you can control access to the following:
 + **[AWS for Principals](#access_controlling-principals)** – Control what the person making the request \(the [principal](intro-structure.md#intro-structure-principal)\) is allowed to do\. 
 + **[IAM Identities](#access_controlling-identities)** – Control which IAM identities \(groups, users, and roles\) can be accessed and how\.
 + **[IAM Policies](#access_controlling-policies)** – Control who can create, edit, and delete customer managed policies, and who can attach and detach all managed policies\.

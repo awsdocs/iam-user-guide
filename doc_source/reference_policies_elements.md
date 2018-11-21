@@ -19,5 +19,5 @@ The details of what goes into a policy vary for each service, depending on what 
 + [Resource](reference_policies_elements_resource.md)
 + [NotResource](reference_policies_elements_notresource.md)
 + [Condition](reference_policies_elements_condition.md)
-+ [Variables](reference_policies_variables.md)
++ [Variables and Tags](reference_policies_variables.md)
 + [Supported Data Types](reference_policies_elements_datatypes.md)

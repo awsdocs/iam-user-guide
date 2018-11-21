@@ -115,6 +115,26 @@ This global condition also applies to the master account of an AWS organization\
 For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.  
 This condition key is available for only some services\.
 
+**aws:PrincipalTag/*tag\-key***  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the tag attached to the principal making the request matches the specified key name and value\.  
+You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Identities](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.  
+This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the red italicized text in the example policy with your own information\.  
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:*",
+      "Resource": "*",
+      "Condition": {"StringEquals": {"aws:PrincipalTag/tagManager": "true"}}
+    }
+  ]
+}
+```
+
 **aws:PrincipalType**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks the type of principal \(user, account, federated user, etc\.\) for the current request\.  

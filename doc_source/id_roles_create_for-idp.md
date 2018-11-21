@@ -26,6 +26,10 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
    Create an inline permissions policy for the role: [aws iam put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
 
+1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
+
+   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.
@@ -87,6 +91,10 @@ The steps to create a role for the supported identity providers \(OIDC or SAML\)
     or
 
    Create an inline permissions policy for the role: [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+
+1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
+
+   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 

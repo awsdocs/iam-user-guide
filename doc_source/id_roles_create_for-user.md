@@ -38,6 +38,10 @@ Choosing this option restricts access to the role only through the AWS CLI, Tool
 
    Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. Select the policy to use for the permissions boundary\.
 
+1. Choose **Next: Tagging**\.
+
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
+
 1. Choose **Next: Review**\. 
 
 1. For **Role name**, type a name for your role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because other AWS resources might reference the role, you cannot edit the name of the role after it has been created\.
@@ -61,6 +65,10 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
     or
 
    Create an inline permissions policy for the role: [aws iam put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+
+1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
+
+   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
@@ -130,6 +138,10 @@ Creating a role from the AWS API involves multiple steps\. When you use the cons
    Create an inline permission policy for the role: [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 **Important**  
 Remember that this is only the first half of the configuration required\. You must also give individual users in the trusted account permissions to switch to the role\. For more information about this step, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+
+1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
+
+   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 

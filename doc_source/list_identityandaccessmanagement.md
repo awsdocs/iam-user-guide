@@ -36,12 +36,11 @@ The following resource types are defined by this service and can be used in the 
 |   [ mfa ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_MFADevice.html)  |  arn:$\{Partition\}:iam::$\{Account\}:mfa/$\{Path\}/$\{MfaTokenId\}  |  | 
 |   [ oidc\-provider ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetOpenIDConnectProvider.html)  |  arn:$\{Partition\}:iam::$\{Account\}:oidc\-provider/$\{OidcProviderName\}  |  | 
 |   [ policy ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Policy.html)  |  arn:$\{Partition\}:iam::$\{Account\}:policy/$\{PolicyNameWithPath\}  |  | 
-|   [ role ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |  | 
+|   [ role ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Role.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |   [ iam:ResourceTag/tag\-key ](#identityandaccessmanagement-iam_ResourceTag_tag-key)   | 
 |   [ saml\-provider ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetSAMLProvider.html)  |  arn:$\{Partition\}:iam::$\{Account\}:saml\-provider/$\{SamlProviderName\}  |  | 
 |   [ server\-certificate ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ServerCertificate.html)  |  arn:$\{Partition\}:iam::$\{Account\}:server\-certificate/$\{CertificateNameWithPath\}  |  | 
 |   [ sms\-mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  |  arn:$\{Partition\}:iam::$\{Account\}:sms\-mfa/$\{MfaTokenIdWithPath\}  |  | 
-|   [ user ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html)  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\}  |  | 
-|   [ u2f ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_MFADevice.html)  |  arn:$\{Partition\}:iam::$\{Account\}:u2f/$\{Path\}/$\{U2FTokenId\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html)  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\}  |   [ iam:ResourceTag/tag\-key ](#identityandaccessmanagement-iam_ResourceTag_tag-key)   | 
 
 ## Condition Keys for Identity And Access Management<a name="identityandaccessmanagement-policy-keys"></a>
 
@@ -58,3 +57,4 @@ To view the global condition keys that are available to all services, see [Avail
 |   iam:PassedToService  | The AWS service to which this role is passed\. | String | 
 |   iam:PermissionsBoundary  | Policy attached as permissions boundary to an IAM principal\. | String | 
 |   [ iam:PolicyARN ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#available-keys-for-iam)  | The ARN of an IAM policy\. | ARN | 
+|   iam:ResourceTag/tag\-key  | Tags attached to an IAM principal\. | String | 
