@@ -94,7 +94,7 @@ This example policy does not allow users to reset a password while signing in\. 
                "Effect": "Allow",
                "Action": [
                    "iam:CreateVirtualMFADevice",
-                   "iam:DeactivateMFADevice"
+                   "iam:DeactivateMFADevice",
                    "iam:DeleteVirtualMFADevice",
                    "iam:EnableMFADevice",
                    "iam:ListMFADevices",
@@ -110,7 +110,7 @@ This example policy does not allow users to reset a password while signing in\. 
                "Effect": "Deny",
                "NotAction": [
                    "iam:CreateVirtualMFADevice",
-                   "iam:DeactivateMFADevice"
+                   "iam:DeactivateMFADevice",
                    "iam:DeleteVirtualMFADevice",
                    "iam:ListVirtualMFADevices",
                    "iam:EnableMFADevice",
