@@ -39,7 +39,7 @@ It is important to understand that the following Condition element is ***not*** 
 ```
 This combination of the `Deny` effect, `Bool` element, and `false` value denies requests that can be authenticated using MFA, but were not\. This applies only to temporary credentials that support using MFA\. This statement does not deny access to requests made using long\-term credentials, or to requests that were authenticated using MFA\. Use this example with caution because its logic is complicated and it does not test whether MFA\-authentication was actually used\.   
 Also do not use the combination of the `Deny` effect, `Null` element, and `true` because it behaves the same way and the logic is even more complicated\.  
-Instead, we recommend that you use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to check whether a requews is autenticated using MFA\.  
+Instead, we recommend that you use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to check whether a request is authenticated using MFA\.  
 
 ```
 "Effect" : "Deny",

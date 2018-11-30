@@ -49,6 +49,7 @@ For information about how to use context keys to refine DynamoDB access using an
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
 |   [ dynamodb:Attributes ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the attribute \(field or column\) names of the table\. | String | 
+|   [ dynamodb:EnclosingOperation ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Used to block Transactions APIs calls and allow the non\-Transaction APIs calls and vice\-versa\. | String | 
 |   [ dynamodb:LeadingKeys ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filters based on the partition key of the table\. | String | 
 |   [ dynamodb:ReturnConsumedCapacity ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the ReturnConsumedCapacity parameter of a request\. Contains either "TOTAL" or "NONE"\. | String | 
 |   [ dynamodb:ReturnValues ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html#FGAC_DDB.ConditionKeys)  | Filter based on the ReturnValues parameter of request\. Contains one of the following: "ALL\_OLD", "UPDATED\_OLD","ALL\_NEW","UPDATED\_NEW", or "NONE"\. | String | 

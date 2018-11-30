@@ -53,7 +53,7 @@ This example policy does not allow users to reset a password while signing in\. 
        "Version": "2012-10-17",
        "Statement": [
            {
-               "Sid": "AllowListActions",
+               "Sid": "AllowAllUsersToListAccounts",
                "Effect": "Allow",
                "Action": [
                    "iam:ListAccountAliases",
@@ -65,7 +65,7 @@ This example policy does not allow users to reset a password while signing in\. 
                "Resource": "*"
            },
            {
-               "Sid": "AllowIndividualUserToViewAndManageOnlyTheirOwnAccountInformation",
+               "Sid": "AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation",
                "Effect": "Allow",
                "Action": [
                    "iam:ChangePassword",
@@ -90,14 +90,23 @@ This example policy does not allow users to reset a password while signing in\. 
                "Resource": "arn:aws:iam::*:user/${aws:username}"
            },
            {
-               "Sid": "AllowIndividualUserToViewAndManageTheirOwnMFA",
+               "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
+               "Effect": "Allow",
+               "Action": [
+                   "iam:ListMFADevices"
+               ],
+               "Resource": [
+                   "arn:aws:iam::*:mfa/*",
+                   "arn:aws:iam::*:user/${aws:username}"
+               ]
+           },
+           {
+               "Sid": "AllowIndividualUserToManageTheirOwnMFA",
                "Effect": "Allow",
                "Action": [
                    "iam:CreateVirtualMFADevice",
-                   "iam:DeactivateMFADevice"
                    "iam:DeleteVirtualMFADevice",
                    "iam:EnableMFADevice",
-                   "iam:ListMFADevices",
                    "iam:ResyncMFADevice"
                ],
                "Resource": [
@@ -106,12 +115,26 @@ This example policy does not allow users to reset a password while signing in\. 
                ]
            },
            {
+               "Sid": "AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA",
+               "Effect": "Allow",
+               "Action": [
+                   "iam:DeactivateMFADevice"
+               ],
+               "Resource": [
+                   "arn:aws:iam::*:mfa/${aws:username}",
+                   "arn:aws:iam::*:user/${aws:username}"
+               ],
+               "Condition": {
+                   "Bool": {
+                       "aws:MultiFactorAuthPresent": "true"
+                   }
+               }
+           },
+           {
                "Sid": "BlockMostAccessUnlessSignedInWithMFA",
                "Effect": "Deny",
                "NotAction": [
                    "iam:CreateVirtualMFADevice",
-                   "iam:DeactivateMFADevice",
-                   "iam:DeleteVirtualMFADevice",
                    "iam:ListVirtualMFADevices",
                    "iam:EnableMFADevice",
                    "iam:ResyncMFADevice",
@@ -137,10 +160,11 @@ This example policy does not allow users to reset a password while signing in\. 
 
    What does this policy do? 
    + The `AllowAllUsersToListAccounts` statement enables the user to see basic information about the account and its users in the IAM console\. These permissions must be in their own statement because they do not support or do not need to specify a specific resource ARN, and instead specify `"Resource" : "*"`\.
-   + The `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` statement enables the user to manage his or her own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\. It also allows users to sign in for the first time in an administrator requires them to set a first\-time password\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
-   + The `AllowIndividualUserToViewAndManageTheirOwnMFA` statement enables the user to view or manage his or her own MFA device\. Notice that the resource ARNs in this statement allow access to only an MFA device or user that has the same name as the currently signed\-in user\. Users can't create or alter any MFA device other than their own\.
-   + The `AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA` statement allows the user to deactivate only his or her own MFA device, and only if the user signed in using MFA\. This prevents others with only the access keys \(and not the MFA device\) from deactivating the MFA device and accessing the account\.
-   + The `BlockMostAccessUnlessSignedInWithMFA` statement uses a combination of `"Deny"` and `"NotAction"` to deny access to all but a few actions in IAM and other AWS services ***if*** the user is not signed\-in with MFA\. For more information about the logic for this statement, see [NotAction with Deny](reference_policies_elements_notaction.md)\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other policies or statements for the user determine the user's permissions\. This statement ensures that when the user is not signed\-in with MFA, they can perform only the listed actions and only if another statement or policy allows access to those actions\.
+   + The `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` statement enables the user to manage their own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\. It also allows users to sign in for the first time in an administrator requires them to set a first\-time password\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
+   + The `AllowIndividualUserToListOnlyTheirOwnMFA` statement enables the user to list their own MFA device\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\. Users can't list the MFA devices of other users\.
+   + The `AllowIndividualUserToManageTheirOwnMFA` statement enables the user to manage their own MFA device\. Notice that the resource ARNs in this statement allow access to only an MFA device or user that has the exact same name as the currently signed\-in user\. Users can't create or alter any MFA device other than their own\.
+   + The `AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA` statement allows the user to deactivate only their own MFA device, and only if the user signed in using MFA\. This prevents others with only the access keys \(and not the MFA device\) from deactivating the MFA device and accessing the account\.
+   + The `BlockMostAccessUnlessSignedInWithMFA` statement uses a combination of `"Deny"` and `"NotAction"` to deny access to all but a few actions in IAM and other AWS services ***if*** the user is not signed\-in with MFA\. For more information about the logic for this statement, see [NotAction with Deny](reference_policies_elements_notaction.md)\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other policies or statements for the user determine the user's permissions\. This statement ensures that when the user is not signed\-in with MFA that they can perform only the listed actions, and only if another statement or policy allows access to those actions\.
 
      The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true\. This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
 

@@ -33,14 +33,23 @@ To manage virtual MFA devices for your IAM user, you must have the permissions f
             "Resource": "*"
         },
         {
-            "Sid": "AllowIndividualUserToViewAndManageTheirOwnMFA",
+            "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListMFADevices"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:mfa/*",
+                "arn:aws:iam::*:user/${aws:username}"
+            ]
+        },
+        {
+            "Sid": "AllowIndividualUserToManageTheirOwnMFA",
             "Effect": "Allow",
             "Action": [
                 "iam:CreateVirtualMFADevice",
-                "iam:DeactivateMFADevice",
                 "iam:DeleteVirtualMFADevice",
                 "iam:EnableMFADevice",
-                "iam:ListMFADevices",
                 "iam:ResyncMFADevice"
             ],
             "Resource": [
@@ -49,12 +58,26 @@ To manage virtual MFA devices for your IAM user, you must have the permissions f
             ]
         },
         {
+            "Sid": "AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA",
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeactivateMFADevice"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:mfa/${aws:username}",
+                "arn:aws:iam::*:user/${aws:username}"
+            ],
+            "Condition": {
+                "Bool": {
+                    "aws:MultiFactorAuthPresent": "true"
+                }
+            }
+        },
+        {
             "Sid": "BlockMostAccessUnlessSignedInWithMFA",
             "Effect": "Deny",
             "NotAction": [
                 "iam:CreateVirtualMFADevice",
-                "iam:DeactivateMFADevice",
-                "iam:DeleteVirtualMFADevice",
                 "iam:EnableMFADevice",
                 "iam:ListMFADevices",
                 "iam:ListUsers",

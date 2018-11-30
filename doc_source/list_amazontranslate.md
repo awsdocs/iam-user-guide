@@ -21,6 +21,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ DeleteTerminology ](https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html)  | A synchronous action that deletes a custom terminology\. | Write |  |  |  | 
+|   [ GetTerminology ](https://docs.aws.amazon.com/translate/latest/dg/API_GetTerminology.html)  | Retrieves a custom terminology\. | Read |  |  |  | 
+|   [ ImportTerminology ](https://docs.aws.amazon.com/translate/latest/dg/API_ImportTerminology.html)  | Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology name\. | Write |  |  |  | 
+|   [ ListTerminologies ](https://docs.aws.amazon.com/translate/latest/dg/API_ListTerminologies.html)  | Provides a list of custom terminologies associated with your account\. | Read |  |  |  | 
 |   [ TranslateText ](https://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html)  | Translate text from a source language to a target language\. | Read |  |  |  | 
 
 ## Resources Defined by Translate<a name="amazontranslate-resources-for-iam-policies"></a>

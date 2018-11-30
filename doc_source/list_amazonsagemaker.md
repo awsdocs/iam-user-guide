@@ -29,14 +29,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
+|   labeling\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:labeling\-job/$\{LabelingJobName\}  |  | 
+|   workteam  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:workteam/$\{WorkteamName\}  |  | 
 |   notebook\-instance  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\}  |  | 
+|   notebook\-instance\-lifecycle\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance\-lifecycle\-config/$\{NotebookInstanceLifecycleConfigName\}  |  | 
+|   algorithm  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:algorithm/$\{AlgorithmName\}  |  | 
 |   training\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\}  |  | 
+|   hyper\-parameter\-tuning\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\}  |  | 
+|   model\-package  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model\-package/$\{ModelPackageName\}  |  | 
 |   model  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\}  |  | 
 |   endpoint\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\}  |  | 
 |   endpoint  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\}  |  | 
-|   notebook\-instance\-lifecycle\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance\-lifecycle\-config/$\{NotebookInstanceLifecycleConfigName\}  |  | 
-|   hyper\-parameter\-tuning\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\}  |  | 
 |   transform\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:transform\-job/$\{TransformJobName\}  |  | 
+|   compilation\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:compilation\-job/$\{CompilationJobName\}  |  | 
+|   code\-repository  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:code\-repository/$\{CodeRepositoryName\}  |  | 
 
 ## Condition Keys for Amazon SageMaker<a name="amazonsagemaker-policy-keys"></a>
 
@@ -49,7 +55,7 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/tag\-key  | A key that is present in the request the user makes to the SageMaker service\. | String | 
-|   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
-|   sagemaker:ResourceTag/  | The preface string for a tag key and value pair attached to a resource\. | String | 
-|   sagemaker:ResourceTag/tag\-key  | A tag key and value pair\. | String | 
+|   [ aws:RequestTag/tag\-key ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A key that is present in the request the user makes to the SageMaker service\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   [ sagemaker:ResourceTag/ ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The preface string for a tag key and value pair attached to a resource\. | String | 
+|   [ sagemaker:ResourceTag/tag\-key ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 

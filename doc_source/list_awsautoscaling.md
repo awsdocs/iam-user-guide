@@ -25,6 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DeleteScalingPlan ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DeleteScalingPlan.html)  | Deletes the specified scaling plan\. | Write |  |  |  | 
 |   [ DescribeScalingPlanResources ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlanResources.html)  | Describes the scalable resources in the specified scaling plan\. | Read |  |  |  | 
 |   [ DescribeScalingPlans ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_DescribeScalingPlans.html)  | Describes the specified scaling plans or all of your scaling plans\. | Read |  |  |  | 
+|   [ GetScalingPlanResourceForecastData ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html)  | Retrieves the forecast data for a scalable resource\. | Read |  |  |  | 
 |   [ UpdateScalingPlan ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html)  | Updates a scaling plan\. | Write |  |  |  | 
 
 ## Resources Defined by Auto Scaling<a name="awsautoscaling-resources-for-iam-policies"></a>
