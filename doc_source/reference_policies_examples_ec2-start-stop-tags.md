@@ -18,7 +18,7 @@ As a best practice, attach policies with the `aws:PrincipalTag` condition key to
         ],
         "Resource": "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:instance/*",
         "Condition": {"StringEquals": {
-            "ec2:ResourceTag/,Project": "DataAnalytics"
+            "ec2:ResourceTag/Project": "DataAnalytics",
             "aws:PrincipalTag/Department": "Data"
         }}
     }]
