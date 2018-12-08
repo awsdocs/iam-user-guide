@@ -1,7 +1,7 @@
 # Modifying a Role<a name="id_roles_manage_modify"></a>
 
 You can change or modify a role in IAM using the following methods: 
-+ To change who can assume a role, modify the role's trust policy\. You cannot modify the trust policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
++ To change who can assume a role, you must modify the role's trust policy\. You cannot modify the trust policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
 + To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\. You cannot modify the permissions policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. You might be able to modify the permissions policy within the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 + To change the description of the role, modify the description text\.
 + To change the set of tags on a role, see [Managing Tags on IAM Identities \(Console\)](id_tags.md#id_tags_procs-console)\.
@@ -13,9 +13,14 @@ Anyone who assumes the role from the AWS CLI or API can use the `duration-second
 You can use the AWS Management Console, the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), the Tools for Windows PowerShell, or the IAM API to make these changes\.
 
 **Topics**
++ [View Role Access](#roles-modify_prerequisites)
 + [Modifying a Role \(Console\)](#roles-managingrole-editing-console)
 + [Modifying a Role \(AWS CLI\)](#roles-managingrole-editing-cli)
 + [Modifying a Role \(AWS API\)](#roles-managingrole-editing-api)
+
+## View Role Access<a name="roles-modify_prerequisites"></a>
+
+Before you change the permissions for a role, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Modifying a Role \(Console\)<a name="roles-managingrole-editing-console"></a>
 

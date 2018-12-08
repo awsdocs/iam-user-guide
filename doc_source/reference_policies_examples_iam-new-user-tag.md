@@ -8,7 +8,10 @@ This example shows how you might create a policy that allows the creation of IAM
     "Statement": [{
         "Sid": "TagUsersWithOnlyTheseTags",
         "Effect": "Allow",
-        "Action": "iam:CreateUser",
+        "Action": [
+            "iam:CreateUser",
+            "iam:TagUser"
+        ],
         "Resource": "*",
         "Condition": {"StringEquals": [
             {"aws:RequestTag/<Department>": [

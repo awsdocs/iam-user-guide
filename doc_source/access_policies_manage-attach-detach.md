@@ -1,22 +1,26 @@
-# Adding and Removing IAM Policies<a name="access_policies_manage-attach-detach"></a>
+# Adding and Removing IAM Identity Permissions<a name="access_policies_manage-attach-detach"></a>
 
-You can use policies as permissions policies for users, groups, and roles using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or the AWS API\. You can use policies to set [permissions boundaries](access_policies_boundaries.md) for users and roles only, using the same methods\. Use a policy to set a permissions boundary to control the maximum permissions that a principal can have\. Permissions boundaries are an advanced AWS feature\.
+You use policies to define the permissions for an identity \(user, group, or role\)\. You can add and remove permissions by attaching and detaching IAM policies for an identity using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or the AWS API\. You can also use policies to set [permissions boundaries](access_policies_boundaries.md) for only entities \(users or roles\) using the same methods\. Permissions boundaries are an advanced AWS feature that control the maximum permissions that an entity can have\.
 
 **Topics**
 + [Terminology](#attach-detach-etc-terminology)
-+ [Adding and Removing IAM Policies \(Console\)](#add-remove-policies-console)
-+ [Adding and Removing IAM Policies \(AWS CLI\)](#attach-detaching-policy-cli)
-+ [Adding and Removing IAM Policies \(AWS API\)](#attach-detaching-policy-api)
++ [View Identity Activity](#attach-detach_prerequisites)
++ [Adding IAM Identity Permissions \(Console\)](#add-policies-console)
++ [Removing IAM Identity Permissions \(Console\)](#remove-policies-console)
++ [Adding IAM Policies \(AWS CLI\)](#add-policy-cli)
++ [Removing IAM Policies \(AWS CLI\)](#remove-policy-cli)
++ [Adding IAM Policies \(AWS API\)](#add-policy-api)
++ [Removing IAM Policies \(AWS API\)](#remove-policy-api)
 
 ## Terminology<a name="attach-detach-etc-terminology"></a>
 
-When you associate permissions policies with identities \(users, groups, and roles\), you might notice that terminology and procedures vary depending on whether you are working with a managed or inline policy:
+When you associate permissions policies with identities \(users, groups, and roles\), terminology and procedures vary depending on whether you are working with a managed or inline policy:
 + **Attach** – Used with managed policies\. You attach a managed policy to an identity \(a user, group, or role\)\. Attaching a policy applies the permissions in the policy to the identity\.
-+ **Detach** – Used with managed policies\. You detach a managed policy from a principal entity \(a user, group, or role\)\. Detaching a policy removes its permissions from the principal entity\.
++ **Detach** – Used with managed policies\. You detach a managed policy from an entity \(a user, group, or role\)\. Detaching a policy removes its permissions from the principal entity\.
 + **Embed** – Used with inline policies\. You embed an inline policy in an identity \(a user, group, or role\)\. Embedding a policy applies the permissions in the policy to the identity\. Because an inline policy is stored in the identity, it is embedded rather than attached, though the results are similar\.
 **Note**  
 You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
-+ **Delete** – Used with inline policies\. You delete an inline policy from a principal entity \(a user, group, or role\)\. Deleting a policy removes its permissions from the principal entity\.
++ **Delete** – Used with inline policies\. You delete an inline policy from an entity \(a user, group, or role\)\. Deleting a policy removes its permissions from the principal entity\.
 **Note**  
 You can delete an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 
@@ -26,15 +30,17 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 + For more information about the difference between managed and inline policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\. 
 + For more information about permissions boundaries, see [Permissions Boundaries for IAM Identities](access_policies_boundaries.md)\.
 + For general information about IAM policies, see [Policies and Permissions](access_policies.md)\.
-+ For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
++ For information about policy size limitations, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
-## Adding and Removing IAM Policies \(Console\)<a name="add-remove-policies-console"></a>
+## View Identity Activity<a name="attach-detach_prerequisites"></a>
 
-You can use the AWS Management Console to attach or detach managed policies used as a permissions policy, or to set, change, or remove a policy used for a [permissions boundary](access_policies_boundaries.md)\. You can also embed or delete an inline policy\.
+Before you change the permissions for an identity \(user, group, or role\), you should review their recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
-### <a name="access_policies_manage-attach-detach-console"></a>
+## Adding IAM Identity Permissions \(Console\)<a name="add-policies-console"></a>
 
-**To use a managed policy as a permissions policy for a principal \(console\)**
+You can use the AWS Management Console to add permissions to an identity \(user, group, or role\)\. To do this, attach managed policies that control permissions, or specify a policy that serves as a [permissions boundary](access_policies_boundaries.md)\. You can also embed an inline policy\.<a name="access_policies_manage-attach-detach-console"></a>
+
+**To use a managed policy as a permissions policy for an identity \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -44,9 +50,7 @@ You can use the AWS Management Console to attach or detach managed policies used
 
 1. Choose **Policy actions**, and then choose **Attach**\.
 
-1. Select one or more identities to attach the policy to\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the identities, choose **Attach policy**\.
-
-### <a name="set-managed-policy-boundary-console"></a>
+1. Select one or more identities to attach the policy to\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the identities, choose **Attach policy**\.<a name="set-managed-policy-boundary-console"></a>
 
 **To use a managed policy to set a permissions boundary \(console\)**
 
@@ -58,9 +62,7 @@ You can use the AWS Management Console to attach or detach managed policies used
 
 1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section and choose **Set boundary**\.
 
-1. Select one or more users or roles on which to use the policy for a permissions boundary\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the principals, choose **Set boundaries**\.
-
-### <a name="embed-inline-policy-console"></a>
+1. Select one or more users or roles on which to use the policy for a permissions boundary\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the principals, choose **Set boundaries**\.<a name="embed-inline-policy-console"></a>
 
 **To embed an inline policy for a user or role \(console\)**
 
@@ -101,11 +103,9 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
    + If you chose **Custom Policy**, specify a name for the policy and create your policy document\.[ Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
    + If you are using the policy generator to create your policy, choose the appropriate **Effect**, **AWS Service**, and **Actions** options\. Type the Amazon Resource Name \(ARN\) \(if applicable\), and add any conditions that you want to include\. Then choose **Add Statement**\. You can add as many statements as you want to the policy\. When you are finished adding statements, choose **Next Step**\. 
 
-1. When you are satisfied with the policy, choose **Apply Policy**\.
+1. When you are satisfied with the policy, choose **Apply Policy**\.<a name="replace-managed-policy-boundary-console"></a>
 
-### <a name="replace-managed-policy-boundary-console"></a>
-
-**To change the permissions boundary for one or more principals \(console\)**
+**To change the permissions boundary for one or more entities \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -117,7 +117,9 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 
 1. Select a new policy to use for a permissions boundary\. You can use the **Filter** menu and the search box to filter the list of policies\. After selecting the policy, choose **Change boundary**\.
 
-### <a name="detach-managed-policy-console"></a>
+## Removing IAM Identity Permissions \(Console\)<a name="remove-policies-console"></a>
+
+You can use the AWS Management Console to remove permissions from an identity \(user, group, or role\)\. To do this, detach managed policies that control permissions, or remove a policy that served as a [permissions boundary](access_policies_boundaries.md)\. You can also delete an inline policy\.<a name="detach-managed-policy-console"></a>
 
 **To detach a managed policy used as a permissions policy \(console\)**
 
@@ -129,9 +131,7 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 
 1. Choose **Policy actions**, and then choose **Detach**\.
 
-1. Select the identities to detach the policy from\. You can use the **Filter** menu and the search box to filter the list of identities\. After selecting the identities, choose **Detach policy**\.
-
-### <a name="remove-managed-policy-boundary-console"></a>
+1. Select the identities to detach the policy from\. You can use the **Filter** menu and the search box to filter the list of identities\. After selecting the identities, choose **Detach policy**\.<a name="remove-managed-policy-boundary-console"></a>
 
 **To remove a permissions boundary \(console\)**
 
@@ -143,9 +143,7 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 
 1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section and choose **Remove boundary**\.
 
-1. Confirm that you want to remove the boundary and choose **Remove**\.
-
-### <a name="delete-inline-policy-console"></a>
+1. Confirm that you want to remove the boundary and choose **Remove**\.<a name="delete-inline-policy-console"></a>
 
 **To delete an inline policy \(console\)**
 
@@ -159,11 +157,11 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 
 1. If in **Groups**, choose **Remove Policy**\. If in **Users** or **Roles**, choose **X**\.
 
-## Adding and Removing IAM Policies \(AWS CLI\)<a name="attach-detaching-policy-cli"></a>
+## Adding IAM Policies \(AWS CLI\)<a name="add-policy-cli"></a>
 
-You can use the AWS CLI to attach or detach managed policies used for permissions, or to set, change, or remove a policy used for a [permissions boundary](access_policies_boundaries.md)\. You can also embed or delete an inline policy\.
+You can use the AWS CLI to add permissions to an identity \(user, group, or role\)\. To do this, attach managed policies that control permissions, or specify a policy that serves as a [permissions boundary](access_policies_boundaries.md)\. You can also embed an inline policy\.
 
-**To use a managed policy as a permissions policy for a principal \(AWS CLI\)**
+**To use a managed policy as a permissions policy for an entity \(AWS CLI\)**
 
 1. \(Optional\) To view information about a managed policy, run the following commands: 
    + To list managed policies: [aws iam list\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
@@ -180,7 +178,7 @@ You can use the AWS CLI to attach or detach managed policies used for permission
    + To list managed policies: [aws iam list\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies.html)
    + To retrieve detailed information about a managed policy: [aws iam get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
-1. To use a managed policy to set the permissions boundary for a principal \(user or role\), use one of the following commands: 
+1. To use a managed policy to set the permissions boundary for an entity \(user or role\), use one of the following commands: 
    + [aws iam put\-user\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-user-permissions-boundary.html)
    + [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
@@ -189,6 +187,10 @@ To embed an inline policy to an identity \(user, group, or role that is not a *[
 + [aws iam put\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html)
 + [aws iam put\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-group-policy.html)
 + [aws iam put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html)
+
+## Removing IAM Policies \(AWS CLI\)<a name="remove-policy-cli"></a>
+
+You can use the AWS CLI to detach managed policies that control permissions, or remove a policy that added a [permissions boundary](access_policies_boundaries.md)\. You can also delete an inline policy\.
 
 **To detach a managed policy used as a permissions policy \(AWS CLI\)**
 
@@ -243,11 +245,11 @@ To embed an inline policy to an identity \(user, group, or role that is not a *[
    + [aws iam delete\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html)
    + [aws iam delete\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-role-policy.html)
 
-## Adding and Removing IAM Policies \(AWS API\)<a name="attach-detaching-policy-api"></a>
+## Adding IAM Policies \(AWS API\)<a name="add-policy-api"></a>
 
-You can use the AWS API to attach or detach managed policies used for permissions, or to set, change, or remove a policy used for a [permissions boundary](access_policies_boundaries.md)\. You can also embed or delete an inline policy\.
+You can use the AWS API to attach managed policies that control permissions or specify a policy that serves as a [permissions boundary](access_policies_boundaries.md)\. You can also embed an inline policy\.
 
-**To use a managed policy as a permissions policy for a principal \(AWS API\)**
+**To use a managed policy as a permissions policy for an entity \(AWS API\)**
 
 1. \(Optional\) To view information about a policy, call the following operations: 
    + To list managed policies: [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html) 
@@ -264,7 +266,7 @@ You can use the AWS API to attach or detach managed policies used for permission
    + To list managed policies: [ListPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPolicies.html)
    + To retrieve detailed information about a managed policy: [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
-1. To use a managed policy to set the permissions boundary for a principal \(user or role\), call one of the following operations: 
+1. To use a managed policy to set the permissions boundary for an entity \(user or role\), call one of the following operations: 
    + [PutUserPermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPermissionsBoundary.html)
    + [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 
@@ -273,6 +275,10 @@ To embed an inline policy in an identity \(user, group, or role that is not a *[
 + [PutUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 + [PutGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html)
 + [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
+
+## Removing IAM Policies \(AWS API\)<a name="remove-policy-api"></a>
+
+You can use the AWS API to detach managed policies that control permissions or remove a policy that served as a [permissions boundary](access_policies_boundaries.md)\. You can also delete an inline policy\.
 
 **To detach a managed policy used as a permissions policy \(AWS API\)**
 

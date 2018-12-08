@@ -2,12 +2,17 @@
 
 Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a group, or list all groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
 
-For more information about adding, changing, or removing managed policies for an IAM user, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md), [Editing IAM Policies](access_policies_manage-edit.md), and [Deleting IAM Policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
+For more information about adding, changing, or removing managed policies for an IAM user, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md), [Editing IAM Policies](access_policies_manage-edit.md), and [Deleting IAM Policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
 
 **Topics**
++ [View User Access](#users-manage_prerequisites)
 + [Listing IAM Users](#id_users_manage_list)
 + [Renaming an IAM User](#id_users_renaming)
 + [Deleting an IAM User](#id_users_deleting)
+
+## View User Access<a name="users-manage_prerequisites"></a>
+
+Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Listing IAM Users<a name="id_users_manage_list"></a>
 

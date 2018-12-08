@@ -42,7 +42,7 @@ With SSH connections, you create public and private key files on your local mach
 + To create an SSH public key and associate it with an IAM user, see [For SSH Connections on Linux, macOS, or Unix](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-unixes.html) or see [For SSH Connections on Windows](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-ssh-windows.html) in the *AWS CodeCommit User Guide*\. 
 
 **Note**  
-The public key must be encoded in ssh\-rsa format or PEM format\. The miminum bit\-length of the public key is 2048 bits, and the maximum length is 16384 bits\. This is separate from the size of the file you upload\. For example, you can generate a 2048\-bit key, and the resulting PEM file is 1679 bytes long\. If you provide your public key in another format or size, you will see an error message stating that the key format is not valid\.
+The public key must be encoded in ssh\-rsa format or PEM format\. The minimum bit\-length of the public key is 2048 bits, and the maximum length is 16384 bits\. This is separate from the size of the file you upload\. For example, you can generate a 2048\-bit key, and the resulting PEM file is 1679 bytes long\. If you provide your public key in another format or size, you will see an error message stating that the key format is not valid\.
 
 ## Use HTTPS with the AWS CLI Credential Helper and AWS CodeCommit<a name="access-keys-code-commit"></a>
 

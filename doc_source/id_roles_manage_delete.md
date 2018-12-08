@@ -8,11 +8,16 @@ If the role was associated with an EC2 instance, then you can also remove the ro
 Make sure that you do not have any Amazon EC2 instances running with the role or instance profile you are about to delete\. Deleting a role or instance profile that is associated with a running instance will break any applications that are running on the instance\.
 
 **Topics**
++ [View Role Access](#roles-delete_prerequisites)
 + [Deleting a Service\-Linked Role](#id_roles_manage_delete_slr)
 + [Deleting an IAM Role \(Console\)](#roles-managingrole-deleting-console)
 + [Deleting an IAM Role \(AWS CLI\)](#roles-managingrole-deleting-cli)
 + [Deleting an IAM Role \(AWS API\)](#roles-managingrole-deleting-api)
 + [Related Information](#roles-managingrole-deleting-related-info)
+
+## View Role Access<a name="roles-delete_prerequisites"></a>
+
+Before you delete a role, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Deleting a Service\-Linked Role<a name="id_roles_manage_delete_slr"></a>
 

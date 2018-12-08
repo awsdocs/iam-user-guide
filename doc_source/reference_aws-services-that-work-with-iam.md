@@ -16,14 +16,16 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) | 
-|  [Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
+|  [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/auth-and-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) | 
+|  [AWS Auto Scaling](https://docs.aws.amazon.com/autoscaling/plans/userguide/auth-and-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/plans/userguide/aws-auto-scaling-service-linked-roles.html) | 
 |  [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | [Yes](https://docs.aws.amazon.com/batch/latest/userguide/batch-supported-iam-actions-resources.html) | No | No | Yes | No | 
 |  [Amazon Elastic Compute Cloud \(Amazon EC2\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | Yes¹ | 
+|  [Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
 |  [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
 |  [Amazon Elastic Container Registry \(Amazon ECR\)](https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Elastic Container Service \(Amazon ECS\)](https://docs.aws.amazon.com/AmazonECS/latest/developerguide//IAM_policies.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon Elastic Container Service for Kubernetes \(Amazon EKS\)](https://docs.aws.amazon.com/eks/latest/userguide/IAM_policies.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon Elastic Inference](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-inference.html)  | Yes | Yes | Yes | No | No | No | 
 |  [Elastic Load Balancing](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/index.html?UsingIAM.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html) | 
 |  [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | Yes² | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
 |  [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/all) | Yes | No | No | No | Yes | No | 
@@ -32,16 +34,15 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ² The only AWS Lambda API action that can be specified in a resource\-based policy is [lambda:InvokeFunction](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. For more information, see [Using Resource\-Based Policies for AWS Lambda \(Lambda Function Policies\)](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *AWS Lambda Developer Guide*\.
 
-## Storage and Migration Services<a name="storage_svcs"></a>
+## Storage Services<a name="storage_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [Amazon Elastic Block Store \(Amazon EBS\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Elastic File System \(Amazon EFS\)](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
+|  [Amazon S3 Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
 |  [AWS Import/Export](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Simple Storage Service \(Amazon S3\)](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)  | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html) | Yes | No | 
@@ -55,7 +56,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html)  | Yes | No¹ | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/using-service-linked-roles.html) | 
 |  [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/redshift/latest/mgmt/using-service-linked-roles.html) | 
@@ -64,25 +64,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ Two API operations specify an Amazon S3 ARN resource when seeding a cluster/replication group\.
 
-## Networking and Content Delivery Services<a name="networking_svcs"></a>
-
-
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  | Yes | Yes | Yes | No | Yes | No | 
-|   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/index.html?UsingWithIAM.html)   | Yes¹ | No | No | No | Yes | No | 
-|  [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html)  | Yes | No | No | No | Yes | No | 
-|  [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide//auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon Virtual Private Cloud \(Amazon VPC\)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_IAM.html)  | Yes | Yes² | Yes³ | Yes | Yes | No | 
-
-¹ CloudFront does not support action\-level permissions for creating CloudFront key pairs\. You must use an AWS account root user to create a CloudFront key pair\. For more information, see [Creating CloudFront Key Pairs for Your Trusted Signers](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs) in the *Amazon CloudFront Developer Guide*\. 
-
-² In an IAM user policy, you cannot restrict permissions to a specific Amazon VPC endpoint\. Any `Action` element that includes the `ec2:*VpcEndpoint*` or `ec2:DescribePrefixLists` API actions must specify "`"Resource": "*"`"\. For more information, see [Controlling the Use of Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\. 
-
-³ Amazon VPC supports attaching a single resource policy to a VPC endpoint to restrict what can be accessed through that endpoint\. For more information about using resource\-based policies to control access to resources from specific Amazon VPC endpoints, see [Using Endpoint Policies](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoint-policies) in the *Amazon VPC User Guide*\.
-
-## Developer Tools and Services<a name="deploy_svcs"></a>
+## Developer Tools Services<a name="deploy_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
@@ -95,7 +77,56 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | No | Yes | No | 
 
-## Management Tools and Services<a name="management_svcs"></a>
+## Security, Identity, and Compliance Services<a name="admin_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [AWS Artifact](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/assets.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS CloudHSM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | No | No | No | Yes | Yes | 
+|  [AWS CloudHSM Classic](https://docs.aws.amazon.com/cloudhsm/classic/userguide/iam-policy.html)  | Yes | No | No | No | No | No | 
+|  [Amazon Cognito](https://docs.aws.amazon.com/cognito/devguide/resource-permissions/)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS Directory Service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/guardduty/latest/ug/using-service-linked-roles.html) | 
+|  [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | No | No | Yes¹ | No | 
+|  [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
+|  [AWS Key Management Service \(AWS KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/kms/latest/developerguide/using-service-linked-roles.html) | 
+|  [Amazon Macie ](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
+| [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs) | 
+| [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | [Yes](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html) | Yes | Yes | No | 
+| [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/securityhub/latest/userguide/using-service-linked-roles.html) | 
+|  [AWS Single Sign\-On \(AWS SSO\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | Yes | 
+|  [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes² | No | No | Yes³ | No | 
+|  [AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
+
+¹ Only some of the API actions for IAM can be called with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)
+
+² AWS STS does not have "resources," but does allow restricting access in a similar way to users\. For more information, see [Denying Access to Temporary Security Credentials by Name](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_disable-perms.html#denying-access-to-credentials-by-name)\. 
+
+³ Only some of the API operations for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
+
+## Machine Learning Services<a name="machine_learning"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+| [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
+| [AWS DeepRacer](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-security.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-understand-required-permissions-and-iam-roles.html) | 
+| [Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/auth-and-access-control.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/lex/latest/dg/howitworks-service-permissions.html) | 
+|  [Amazon Machine Learning](https://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam)  | Yes | Yes | No | Yes | Yes | No | 
+|  [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | No | No | 
+|  [Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | Yes¹ | Yes | No | 
+| [Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
+| [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | Yes | No | No | No | Yes | No | 
+
+¹ Amazon SageMaker does not support using tag\-based authorization for calls to `InvokeEndpoint`\.
+
+## Management and Governance Services<a name="management_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
@@ -122,6 +153,47 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ⁴ Trusted Advisor supports the following tagging condition: `ssm:resourceTag` for Key/Value pairs and `ssm:Overwrite`\.
 
+## Migration and Transfer Services<a name="migration_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
+|  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
+
+## Mobile Services<a name="mobile_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Yes | Yes | Yes | No | No | No | 
+|  [AWS Device Farm](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | No | Yes | No | 
+
+## Networking and Content Delivery Services<a name="networking_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  | Yes | Yes | Yes | No | Yes | No | 
+|   [AWS App Mesh](https://docs.aws.amazon.com/app-mesh/latest/userguide/IAM_policies.html)   | Yes | No | No | No | Yes | No | 
+|   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/index.html?UsingWithIAM.html)   | Yes¹ | No | No | No | Yes | No | 
+|   [AWS Cloud Map](https://docs.aws.amazon.com/cloud-map/latest/dg/auth-and-access-control.html)   | Yes | No | No | No | Yes | No | 
+|  [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html)  | Yes | No | No | No | Yes | No | 
+|   [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html)   | Yes | Yes | No | No | Yes | No | 
+|  [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide//auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon Virtual Private Cloud \(Amazon VPC\)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_IAM.html)  | Yes | Yes² | Yes³ | Yes | Yes | No | 
+
+¹ CloudFront does not support action\-level permissions for creating CloudFront key pairs\. You must use an AWS account root user to create a CloudFront key pair\. For more information, see [Creating CloudFront Key Pairs for Your Trusted Signers](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-trusted-signers.html#private-content-creating-cloudfront-key-pairs) in the *Amazon CloudFront Developer Guide*\. 
+
+² In an IAM user policy, you cannot restrict permissions to a specific Amazon VPC endpoint\. Any `Action` element that includes the `ec2:*VpcEndpoint*` or `ec2:DescribePrefixLists` API actions must specify "`"Resource": "*"`"\. For more information, see [Controlling the Use of Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\. 
+
+³ Amazon VPC supports attaching a single resource policy to a VPC endpoint to restrict what can be accessed through that endpoint\. For more information about using resource\-based policies to control access to resources from specific Amazon VPC endpoints, see [Using Endpoint Policies](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoint-policies) in the *Amazon VPC User Guide*\.
+
 ## Media Services<a name="media_svcs"></a>
 
 
@@ -129,27 +201,22 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Elastic Transcoder](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/security.html)  | Yes | Yes | No | No | Yes | No | 
+| [Elemental MediaConnect](https://docs.aws.amazon.com/mediaconnect/latest/ug/auth-and-access-control.html) | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html) | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaStore](https://docs.aws.amazon.com/mediastore/latest/ug/setting-up.html) | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaTailor](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up.html) | Yes | Yes | Yes | No | Yes | No | 
 | [Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-iam.html) | Yes | Yes | No | No | Yes | No | 
 
-## Machine Learning Services<a name="machine_learning"></a>
+## Desktop and App Streaming Services<a name="desktop-app_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-| [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
-| [Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/auth-and-access-control.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/lex/latest/dg/howitworks-service-permissions.html) | 
-|  [Amazon Machine Learning](https://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam)  | Yes | Yes | No | Yes | Yes | No | 
-|  [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | No | No | 
-|  [Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | Yes¹ | Yes | No | 
-| [Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
-| [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | Yes | No | No | No | Yes | No | 
-
-¹ Amazon SageMaker does not support using tag\-based authorization for calls to `InvokeEndpoint`\.
+|  [Amazon AppStream](https://docs.aws.amazon.com//appstream/latest/developerguide/appstream-security.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon AppStream 2\.0](https://docs.aws.amazon.com//appstream2/latest/developerguide/controlling-access.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_iam.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon WAM](http://docs.aws.amazon.com/wam/latest/adminguide/iam.html)  | Yes | No | No | No | Yes | No | 
 
 ## Analytics Services<a name="analytics_svcs"></a>
 
@@ -162,52 +229,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Data Pipeline](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-concepts-roles.html)  | Yes | No | No | Yes | Yes | No | 
 |  [Amazon Elasticsearch Service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html) | 
 |  [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)  | Yes | No | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/using-service-linked-roles.html) | 
-|  [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/authentication-and-access-control.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/authentication-and-access-control.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Kinesis Data Analytics](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 | [Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html) | Yes | Yes | No | No | Yes | No | 
 | [Amazon Kinesis Data Streams](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html) | Yes | Yes | No | No | Yes | No | 
 | [Amazon QuickSight](https://docs.aws.amazon.com/quicksight/latest/user/managing-access.html) | Yes | No | No | No | No | No | 
-
-## Security, Identity, and Compliance Services<a name="admin_svcs"></a>
-
-
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Artifact](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/assets.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS CloudHSM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | No | No | No | Yes | Yes | 
-|  [AWS CloudHSM Classic](https://docs.aws.amazon.com/cloudhsm/classic/userguide/iam-policy.html)  | Yes | No | No | No | No | No | 
-|  [Amazon Cognito](https://docs.aws.amazon.com/cognito/devguide/resource-permissions/)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS Directory Service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | No | No | No | Yes | No | 
-|  [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/guardduty/latest/ug/using-service-linked-roles.html) | 
-|  [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | No | No | Yes¹ | No | 
-|  [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
-|  [AWS Key Management Service \(AWS KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)  | Yes | Yes | Yes | No | Yes | No | 
-|  [Amazon Macie ](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
-| [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs) | 
-| [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | [Yes](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html) | Yes | Yes | No | 
-|  [AWS Single Sign\-On \(AWS SSO\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | Yes | 
-|  [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes² | No | No | Yes³ | No | 
-|  [AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
-
-¹ Only some of the API actions for IAM can be called with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)
-
-² AWS STS does not have "resources," but does allow restricting access in a similar way to users\. For more information, see [Denying Access to Temporary Security Credentials by Name](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_disable-perms.html#denying-access-to-credentials-by-name)\. 
-
-³ Only some of the API operations for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
-
-## Mobile Services<a name="mobile_svcs"></a>
-
-
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Device Farm](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html)  | Yes | No | No | No | Yes | No | 
-| Amazon Mobile Analytics | Yes | No | No | No | Yes | No | 
-| [AWS Mobile Hub](https://docs.aws.amazon.com/aws-mobile/latest/developerguide/reference-mobile-hub-iam.html) | Yes | Yes | No | No | Yes | No | 
-|  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | No | Yes | No | 
 
 ## Application Integration Services<a name="app_integration_svcs"></a>
 
@@ -225,7 +251,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ² Only the Amazon SES API supports temporary security credentials\. The Amazon SES SMTP interface does not support SMTP credentials that are derived from temporary security credentials\. 
 
-## Business Productivity Services<a name="enterprise_svcs"></a>
+## Business Applications Services<a name="enterprise_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
@@ -235,17 +261,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon WorkDocs](https://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)  | Yes | No | No | No | Yes | No | 
 |  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/iam_users_groups.html)  | Yes | No | No | No | Yes | No | 
 
-## Desktop and App Streaming Services<a name="desktop-app_svcs"></a>
-
-
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon AppStream](https://docs.aws.amazon.com//appstream/latest/developerguide/appstream-security.html)  | Yes | No | No | No | Yes | No | 
-|  [Amazon AppStream 2\.0](https://docs.aws.amazon.com//appstream2/latest/developerguide/controlling-access.html)  | Yes | No | No | No | Yes | No | 
-|  [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_iam.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon WAM](http://docs.aws.amazon.com/wam/latest/adminguide/iam.html)  | Yes | No | No | No | Yes | No | 
-
 ## Internet of Things Services<a name="iot_svcs"></a>
 
 
@@ -254,16 +269,17 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html) | Yes | No | 
+|  [AWS IoT Things Graph](https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-security.html)  | Yes | No | No | No | Yes | No | 
 
 ¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 
 
-## Customer Engagement Services<a name="engagement_svcs"></a>
+## Robotics Services<a name="robotics_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
+|  [RoboMaker](https://docs.aws.amazon.com/robomaker/latest/dg/what-is-robomaker.html)  | Yes | Yes | No | No | No | [Yes](https://docs.aws.amazon.com/robomaker/latest/dg/using-service-linked-roles.html) | 
 
 ## Game Development Services<a name="game_svcs"></a>
 
@@ -273,13 +289,13 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon GameLift](https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-intro.html)  | Yes | No | No | No | Yes | No | 
 
-## Software Services<a name="software_svcs"></a>
+## Customer Engagement Services<a name="engagement_svcs"></a>
 
 
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Marketplace](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
 
 ## Additional Resources<a name="resources_svcs"></a>
 
@@ -288,4 +304,5 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ControllingAccessWebsite.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Marketplace](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | No | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 

@@ -1,6 +1,6 @@
 # IAM Users<a name="id_users"></a>
 
-An IAM *user* is an entity that you create in AWS to represent the person or service that uses it to interact with AWS\. A user in AWS consists of a name and credentials\.
+An AWS Identity and Access Management \(IAM\) *user* is an entity that you create in AWS to represent the person or application that uses it to interact with AWS\. A user in AWS consists of a name and credentials\.
 
 An IAM user with administrator permissions is not the same thing as the AWS account root user\. For more information about the root user, see [The AWS Account Root User](id_root-user.md)\.
 

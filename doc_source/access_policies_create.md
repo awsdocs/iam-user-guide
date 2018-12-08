@@ -7,7 +7,7 @@ You can create a new IAM policy in the AWS Management Console using one of the f
 + **Visual editor** — You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 + **JSON** — In the **JSON** tab, you can create a policy using JSON syntax\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
-You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\. You cannot create AWS managed policies\.
+You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\. You cannot create AWS managed policies\.
 
 For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
@@ -73,7 +73,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
 
 ### Creating Policies with the Visual Editor<a name="access_policies_create-visual-editor"></a>
 
@@ -122,7 +122,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy summary to make sure that you have granted the intended permissions, and then choose **Create policy** to save your new policy\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
 
 ### Creating Policies on the JSON Tab<a name="access_policies_create-json-editor"></a>
 
@@ -144,7 +144,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
 
 ## Creating IAM Policies \(AWS CLI\)<a name="create-policies-cli-api"></a>
 

@@ -6,8 +6,9 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Lock Away Your AWS Account Root User Access Keys](#lock-away-credentials)
 + [Create Individual IAM Users](#create-iam-users)
 + [Use Groups to Assign Permissions to IAM Users](#use-groups-for-permissions)
-+ [Use AWS Defined Policies to Assign Permissions Whenever Possible](#bp-use-aws-defined-policies)
 + [Grant Least Privilege](#grant-least-privilege)
++ [Get Started Using Permissions With AWS Managed Policies](#bp-use-aws-defined-policies)
++ [Use Customer Managed Policies Instead of Inline Policies](#best-practice-managed-vs-inline)
 + [Use Access Levels to Review IAM Permissions](#use-access-levels-to-review-permissions)
 + [Configure a Strong Password Policy for Your Users](#configure-strong-password-policy)
 + [Enable MFA for Privileged Users](#enable-mfa-for-privileged-users)
@@ -22,14 +23,14 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 
 ## Lock Away Your AWS Account Root User Access Keys<a name="lock-away-credentials"></a>
 
-You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account gives full access to all your resources for all AWS services, including your billing information\. You cannot restrict the permissions associated with your AWS account access key\. 
+You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account root user gives full access to all your resources for all AWS services, including your billing information\. You cannot reduce the permissions associated with your AWS account root user access key\. 
 
-Therefore, protect your AWS account access key like you would your credit card numbers or any other sensitive secret\. Here are some ways to do that: 
-+ If you don't already have an access key for your AWS account, don't create one unless you absolutely need to\. Instead, use your account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) and create an IAM user for yourself that has administrative permissions, as explained in the next section\.
-+ If you do have an access key for your AWS account, delete it\. If you must keep it, rotate \(change\) the access key regularly\. To delete or rotate your AWS account access keys, go to the [Security Credentials page](https://console.aws.amazon.com/iam/home?#security_credential) in the AWS Management Console and sign in with your account's email address and password\. You can manage your access keys in the **Access keys** section\.
-+ Never share your AWS account password or access keys with anyone\. The remaining sections of this document discuss various ways to avoid having to share your AWS account root user credentials with other users and to avoid having to embed them in an application\. 
+Therefore, protect your root user access key like you would your credit card numbers or any other sensitive secret\. Here are some ways to do that: 
++ If you don't already have an access key for your AWS account root user, don't create one unless you absolutely need to\. Instead, use your account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) and create an IAM user for yourself that has administrative permissions, as explained in the next section\.
++ If you do have an access key for your AWS account root user, delete it\. If you must keep it, rotate \(change\) the access key regularly\. To delete or rotate your root user access keys, go to the [Security Credentials page](https://console.aws.amazon.com/iam/home?#security_credential) in the AWS Management Console and sign in with your account's email address and password\. You can manage your access keys in the **Access keys** section\.
++ Never share your AWS account root user password or access keys with anyone\. The remaining sections of this document discuss various ways to avoid having to share your AWS account root user credentials with other users and to avoid having to embed them in an application\. 
 + Use a strong password to help protect account\-level access to the AWS Management Console\. For information about managing your AWS account root user password, see [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)\.
-+ Enable AWS multi\-factor authentication \(MFA\) on your AWS account\. For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
++ Enable AWS multi\-factor authentication \(MFA\) on your AWS account root user account\. For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
 
 ## Create Individual IAM Users<a name="create-iam-users"></a>
 
@@ -48,23 +49,17 @@ For more information, see the following:
 + [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)
 + [Managing IAM Groups](id_groups_manage.md)
 
-## Use AWS Defined Policies to Assign Permissions Whenever Possible<a name="bp-use-aws-defined-policies"></a>
-
-We recommend that you use the managed policies that are created and maintained by AWS to grant permissions whenever possible\. A key advantage of using these policies is that they are maintained and updated by AWS as new services or new API operations are introduced\. 
-
-AWS managed policies are designed to support common tasks\. They typically provide access to a single service or a limited set of actions\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
-
-AWS managed policies for job functions can span multiple services and align with common job functions in the IT industry\. For a list and descriptions of job function policies, see [AWS Managed Policies for Job Functions](access_policies_job-functions.md)\.
-
 ## Grant Least Privilege<a name="grant-least-privilege"></a>
 
-When you create IAM policies, follow the standard security advice of granting *least privilege*—that is, granting only the permissions required to perform a task\. Determine what users need to do and then craft policies for them that let the users perform *only* those tasks\. 
+When you create IAM policies, follow the standard security advice of granting *least privilege*, or granting only the permissions required to perform a task\. Determine what users need to do and then craft policies for them that let the users perform *only* those tasks\. 
 
 Start with a minimum set of permissions and grant additional permissions as necessary\. Doing so is more secure than starting with permissions that are too lenient and then trying to tighten them later\.
 
 You can use access level groupings to understand the level of access that a policy grants\. [Policy actions](reference_policies_elements_action.md) are classified as `List`, `Read`, `Write`, `Permissions management`, or `Tagging`\. For example, you can choose actions from the `List` and `Read` access levels to grant read\-only access to your users\. To learn how to use policy summaries to understand access level permissions, see [Use Access Levels to Review IAM Permissions](#use-access-levels-to-review-permissions)\.
 
-One feature that can help with this is the **Access Advisor** tab\. This tab is available on the IAM console details page whenever you inspect a user, group, role, or policy\. The tab includes information about which services are actually used by a user, group, role, or by anyone that uses a policy\. You can use this information to identify unnecessary permissions so that you can refine your IAM policies to better adhere to the principle of least privilege\. For more information, see [Reducing Policy Scope by Viewing User Activity](access_policies_access-advisor.md)\.
+One feature that can help with this is *service last accessed data*\. View this data on the **Access Advisor** tab on the IAM console details page for a user, group, role, or policy\. You can also use the AWS CLI or AWS API to retrieve service last accessed data\. This data includes information about which services a user, group, role, or anyone using a policy attempted to access and when\. You can use this information to identify unnecessary permissions so that you can refine your IAM policies to better adhere to the principle of least privilege\. For more information, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+
+To further reduce permissions, you can view your account's events in CloudTrail **Event history**\. CloudTrail event logs include detailed event information that you can use to reduce the policy's permissions and include only the actions and resources that your IAM entities need\. For more information, see [Viewing CloudTrail Events in the CloudTrail Console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) in the *AWS CloudTrail User Guide*\.
 
 For more information, see the following:
 + [Access Management](access.md)
@@ -73,13 +68,63 @@ For more information, see the following:
   + [Using Bucket Policies and User Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html) in the *Amazon Simple Storage Service Developer Guide*
   + [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*
 
+## Get Started Using Permissions With AWS Managed Policies<a name="bp-use-aws-defined-policies"></a>
+
+Providing your employees with only the permissions they need requires time and detailed knowledge of IAM policies\. Employees need time to learn which AWS services they want or need to use\. Administrators need time to learn about and test IAM\. 
+
+To get started quickly, you can use AWS managed policies to give your employees the permissions they need to get started\. These policies are already available in your account and are maintained and updated by AWS\. For more information about AWS managed policies, see [AWS Managed Policies](access_policies_managed-vs-inline.md#aws-managed-policies)\.
+
+AWS managed policies are designed to provide permissions for many common use cases\. Full access AWS managed policies such as [AmazonDynamoDBFullAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess) and [IAMFullAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMFullAccess) define permissions for service administrators by granting full access to a service\. Power\-user AWS managed policies such as [AWSCodeCommitPowerUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AWSCodeCommitPowerUser) and [AWSKeyManagementServicePowerUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AWSKeyManagementServicePowerUser) provide multiple levels of access to AWS services without allowing permissions management permissions\. Partial\-access AWS managed policies such as [AmazonMobileAnalyticsWriteOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonMobileAnalyticsWriteOnlyAccess) and [AmazonEC2ReadOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess) provide specific levels of access to AWS services\. AWS managed policies make it easier for you to assign appropriate permissions to users, groups, and roles than if you had to write the policies yourself\. 
+
+AWS managed policies for job functions can span multiple services and align with common job functions in the IT industry\. For a list and descriptions of job function policies, see [AWS Managed Policies for Job Functions](access_policies_job-functions.md)\.
+
+## Use Customer Managed Policies Instead of Inline Policies<a name="best-practice-managed-vs-inline"></a>
+
+For custom policies, we recommend that you use managed policies instead of inline policies\. A key advantage of using these policies is that you can view all of your managed policies in one place in the console\. You can also view this information with a single AWS CLI or AWS API operation\. Inline policies are policies that exist only on an IAM identity \(user, group, or role\)\. Managed policies are separate IAM resources that you can attach to multiple identities\. For more information, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
+
+If you have inline policies in your account, you can convert them to managed policies\. To do this, copy the policy to a new managed policy, attach the new policy to the identity that has the inline policy, and then delete the inline policy\. You can do this using the instructions below\.
+
+**To convert an inline policy to a managed policy**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Groups**, **Users**, or **Roles**\.
+
+1. In the list, choose the name of the group, user, or role that has the policy you want to remove\.
+
+1. Choose the **Permissions** tab\. If you chose **Groups**, expand the **Inline Policies** section if necessary\.
+
+1. For groups, choose **Show Policy** next to the inline policy that you want to remove\. For users and roles, choose **Show *n* more**, if necessary, and then choose the arrow next to the inline policy that you want to remove\.
+
+1. Copy the JSON policy document for the policy\.
+
+1. In the navigation pane, choose **Policies**\.
+
+1. Choose **Create policy** and then choose the **JSON** tab\.
+
+1. Replace the existing text with your JSON policy text, and then choose **Review policy**\.
+
+1. Enter a name for your policy and choose **Create policy**\.
+
+1. In the navigation pane, choose **Groups**, **Users**, or **Roles**, and again choose the name of the group, user, or role that has the policy you want to remove\.
+
+1. For groups, choose **Attach Policy**\. For users and roles, choose **Add permissions**\.
+
+1. For groups, select the check box next to the name of your new policy, and then choose **Attach Policy**\. For users or roles, choose **Add permissions**\. On the next page, choose **Attach existing policies directly**, select the check box next to the name of your new policy, choose **Next: Review**, and then choose **Add permissions**\.
+
+   You are returned to the **Summary** page for your group, user, or role\.
+
+1. For groups, choose **Remove Policy** next to the inline policy that you want to remove\. For users or roles, choose **X** next to the inline policy that you want to remove\.
+
+In some circumstances, we do recommend choosing inline policies over managed policies\. For details, see [Choosing Between Managed Policies and Inline Policies](access_policies_managed-vs-inline.md#choosing-managed-or-inline)\.
+
 ## Use Access Levels to Review IAM Permissions<a name="use-access-levels-to-review-permissions"></a>
 
 To improve the security of your AWS account, you should regularly review and monitor each of your IAM policies\. Make sure that your policies grant the [least privilege](#grant-least-privilege) that is needed to perform only the necessary actions\.
 
 When you review a policy, you can view the [policy summary](access_policies_understand.md) that includes a summary of the access level for each service within that policy\. AWS categorizes each service action into one of four *access levels* based on what each action does: `List`, `Read`, `Write`, or `Permissions management`\. You can use these access levels to determine which actions to include in your policies\.
 
-For example, in the Amazon S3 service, you might want to allow a large group of users to access `List` and `Read` actions\. Such actions permit those users to list the buckets and get objects in Amazon S3\. However, you should allow only a small group of users to access the Amazon S3 `Write` actions to delete buckets or put objects into an S3 bucket\. Additionally, you should restrict permissions to allow only administrators to access the Amazon S3 `Permissions management` actions\. This ensures that only a limited number of people can manage bucket policies in Amazon S3\. This is especially important for `Permissions management` actions in IAM and AWS Organizations services\.
+For example, in the Amazon S3 service, you might want to allow a large group of users to access `List` and `Read` actions\. Such actions permit those users to list the buckets and get objects in Amazon S3\. However, you should allow only a small group of users to access the Amazon S3 `Write` actions to delete buckets or put objects into an S3 bucket\. Additionally, you should reduce permissions to allow only administrators to access the Amazon S3 `Permissions management` actions\. This ensures that only a limited number of people can manage bucket policies in Amazon S3\. This is especially important for `Permissions management` actions in IAM and AWS Organizations services\.
 
 To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
@@ -131,7 +176,7 @@ For more information about rotating access keys for IAM users, see [Rotating Acc
 
 ## Remove Unnecessary Credentials<a name="remove-credentials"></a>
 
-Remove IAM user credentials \(that is, passwords and access keys\) that are not needed\. For example, an IAM user that is used for an application does not need a password \(passwords are necessary only to sign in to AWS websites\)\. Similarly, if a user does not and will never use access keys, there's no reason for the user to have them\. Passwords and access keys that have not been used recently might be good candidates for removal\. You can find unused passwords or access keys using the console, using the API, or by downloading the credentials report\.
+Remove IAM user credentials \(passwords and access keys\) that are not needed\. For example, if you created an IAM user for an application that does not use the console, then the IAM user does not need a password\. Similarly, if a user only uses the console, remove their access keys\. Passwords and access keys that have not been used recently might be good candidates for removal\. You can find unused passwords or access keys using the console, using the CLI or API, or by downloading the credentials report\.
 
 For more information about finding IAM user credentials that have not been used recently, see [Finding Unused Credentials](id_credentials_finding-unused.md)\.
 

@@ -3,17 +3,19 @@
 A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\. You can edit customer managed policies and inline policies in IAM\. AWS managed policies cannot be edited\. For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
 
 **Topics**
-+ [Editing Policies \(Console\)](#editing-policies-all-console)
-+ [Editing IAM Policies \(AWS CLI\)](#edit-policies-cli-api)
-+ [Editing IAM Policies \(AWS API\)](#edit-policies-api)
++ [View Policy Access](#manage-edit_prerequisites)
++ [Editing Customer Managed Policies \(Console\)](#edit-managed-policy-console)
++ [Editing Inline Policies \(Console\)](#edit-inline-policy-console)
++ [Editing Customer Managed Policies \(AWS CLI\)](#edit-policies-cli-api)
++ [Editing Customer Managed Policies \(AWS API\)](#edit-policies-api)
 
-## Editing Policies \(Console\)<a name="editing-policies-all-console"></a>
+## View Policy Access<a name="manage-edit_prerequisites"></a>
 
-You can edit IAM policies from the AWS Management Console\.
+Before you change the permissions for a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
-### Editing Customer Managed Policies \(Console\)<a name="edit-managed-policy-console"></a>
+## Editing Customer Managed Policies \(Console\)<a name="edit-managed-policy-console"></a>
 
-You edit customer managed policies to change the permissions that are defined in the policy\. A customer managed policy can have up to five versions\. This is important because if you make changes to a managed policy beyond five versions, the AWS Management Console prompts you to decide which version to delete\. You can also change the default version or delete a version of a policy before you edit it to avoid being prompted\. To learn more about versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
+You can edit customer managed policies to change the permissions that are defined in the policy\. A customer managed policy can have up to five versions\. This is important because if you make changes to a managed policy beyond five versions, the AWS Management Console prompts you to decide which version to delete\. You can also change the default version or delete a version of a policy before you edit it to avoid being prompted\. To learn more about versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
 
 **To edit a customer managed policy \(console\)**
 
@@ -61,7 +63,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. Confirm that you want to delete the version, and then choose **Delete**\.
 
-### Editing Inline Policies \(Console\)<a name="edit-inline-policy-console"></a>
+## Editing Inline Policies \(Console\)<a name="edit-inline-policy-console"></a>
 
 You can edit an inline policy from the AWS Management Console\.
 
@@ -91,7 +93,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. After you have modified your JSON policy, choose **Save** to save your changes\.
 
-## Editing IAM Policies \(AWS CLI\)<a name="edit-policies-cli-api"></a>
+## Editing Customer Managed Policies \(AWS CLI\)<a name="edit-policies-cli-api"></a>
 
 You can edit a customer managed policy from the AWS Command Line Interface \(AWS CLI\)\.
 
@@ -131,7 +133,7 @@ A managed policy can have up to five versions\. If you need to make changes to a
 1. To delete a customer managed policy, run the following command:
    + [delete\-policy\-version](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-policy-version.html)
 
-## Editing IAM Policies \(AWS API\)<a name="edit-policies-api"></a>
+## Editing Customer Managed Policies \(AWS API\)<a name="edit-policies-api"></a>
 
 You can edit a customer managed policy using the AWS API\.
 

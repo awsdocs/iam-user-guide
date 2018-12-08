@@ -23,11 +23,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | --- | --- | --- | --- | --- | --- | 
 |   [ DELETE ](https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html)  | Used to delete resources | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
 |   [ GET ](https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html)  | Used to get information about resources | Read |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   [ HEAD ](https://docs.aws.amazon.com/apigateway/api-reference/API_HEAD.html)  | Same as GET but does not return the resource representation\. Used in testing scenarios | Read |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   [ OPTIONS ](https://docs.aws.amazon.com/apigateway/api-reference/API_OPTIONS.html)  | Used by callers to get information about available communication options for the target service | Read |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
 |   [ PATCH ](https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html)  | Used to update resources | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
 |   [ POST ](https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html)  | Used to create child resources | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
 |   [ PUT ](https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html)  | Used to update resources \(and, although not recommended, can be used to create child resources\) | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
+|   UpdateRestApiPolicy  | Used to update the Resource Policy for a given API | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
 
 ## Resources Defined by API Gateway<a name="manageamazonapigateway-resources-for-iam-policies"></a>
 

@@ -5,11 +5,16 @@ You can change the permissions for an IAM user in your AWS account by changing i
 For information about the permissions that you need in order to modify the permissions for a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\.
 
 **Topics**
++ [View User Access](#users-modify_prerequisites)
 + [Adding Permissions to a User \(Console\)](#users_change_permissions-add-console)
 + [Changing Permissions for a User \(Console\)](#users_change_permissions-change-console)
 + [Removing a Permissions Policy from a User \(Console\)](#users_change_permissions-remove-policy-console)
 + [Removing the Permissions Boundary from a User \(Console\)](#users_change_permissions-remove-boundary-console)
 + [Adding and Removing a User's Permissions \(AWS CLI or AWS API\)](#users_change_permissions-add-programmatic)
+
+## View User Access<a name="users-modify_prerequisites"></a>
+
+Before you change the permissions for a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Adding Permissions to a User \(Console\)<a name="users_change_permissions-add-console"></a>
 
@@ -196,4 +201,4 @@ Removing a permissions boundary affects the user immediately\.
 
 To add or remove permissions programmatically, you must add or remove the group memberships, attach or detach the managed policies, or add or delete the inline policies\. For more information, see the following topics:
 + [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)
-+ [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)
++ [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)

@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Access Advisor API](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html) | You can now use the AWS CLI and AWS API to view service last accessed data\.  | December 7, 2018 | 
 | [Tagging IAM Users and Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) | You can now use IAM tags to add custom attributes to an identity \(IAM user or role\) using a tag key–value pair\. You can also use tags to control an identity's access to resources or to control what tags can be attached to an identity\.  | November 14, 2018 | 
 | [U2F security keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_u2f.html) | You can now use U2F security keys as a multi\-factor authentication \(MFA\) option when signing in to the AWS Management Console\.  | September 25, 2018 | 
 | [Support for Amazon VPC endpoints](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts_vpce.html) | You can now establish a private connection between your VPC and AWS STS in the US West \(Oregon\) Region\.  | July 31, 2018 | 
