@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ report\-package ](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::report\-package/\*  |  | 
-|   [ customer\-agreement ](https://docs.aws.amazon.com/artifact/latest/ug/$getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\*  |  | 
-|   [ agreement ](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy)  |  arn:$\{Partition\}:artifact:::agreement/\*  |  | 
+|   [ report\-package ](https://docs.aws.amazon.com/artifact/latest/ug/what-is-aws-artifact.html)  |  arn:$\{Partition\}:artifact:::report\-package/\*  |  | 
+|   [ customer\-agreement ](https://docs.aws.amazon.com/artifact/latest/ug/$managingagreements.html)  |  arn:$\{Partition\}:artifact::$\{Account\}:customer\-agreement/\*  |  | 
+|   [ agreement ](https://docs.aws.amazon.com/artifact/latest/ug/managingagreements.html)  |  arn:$\{Partition\}:artifact:::agreement/\*  |  | 
 
 ## Condition Keys for AWS Artifact<a name="awsartifact-policy-keys"></a>
 

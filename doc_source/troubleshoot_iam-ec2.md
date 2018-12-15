@@ -64,7 +64,7 @@ Check the following:
 
 ## What do the errors from the `info` document in the IAM subtree mean?<a name="troubleshoot_iam-ec2_errors-info-doc"></a>
 
-### The `iam/info` document indicates `"Code":"InstanceProfileNotFound".`<a name="w4aac25c17c17b2"></a>
+### The `iam/info` document indicates `"Code":"InstanceProfileNotFound".`<a name="w4aac24c17c17b2"></a>
 
 Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You must attach a valid instance profile to your Amazon EC2 instance\.
 
@@ -78,11 +78,11 @@ If an instance profile with that name exists, check that the instance profile wa
 
 If the IDs are different, then the instance profile attached to your instances is no longer valid\. You must attach a valid instance profile to the instance\. 
 
-### The `iam/info` document indicates a success but indicates `"Message":"Instance Profile does not contain a role..."`<a name="w4aac25c17c17b4"></a>
+### The `iam/info` document indicates a success but indicates `"Message":"Instance Profile does not contain a role..."`<a name="w4aac24c17c17b4"></a>
 
 The role has been removed from the instance profile by the IAM `RemoveRoleFromInstanceProfile` action\. You can use the IAM `AddRoleToInstanceProfile` action to attach a role to the instance profile\. Your application will need to wait until the next scheduled refresh to access the credentials for the role\. 
 
-### The `iam/security-credentials/[role-name]` document indicates `"Code":"AssumeRoleUnauthorizedAccess"`\.<a name="w4aac25c17c17b6"></a>
+### The `iam/security-credentials/[role-name]` document indicates `"Code":"AssumeRoleUnauthorizedAccess"`\.<a name="w4aac24c17c17b6"></a>
 
 Amazon EC2 does not have permission to assume the role\. Permission to assume the role is controlled by the trust policy attached to the role, like the example that follows\. Use the IAM `UpdateAssumeRolePolicy` API to update the trust policy\. 
 

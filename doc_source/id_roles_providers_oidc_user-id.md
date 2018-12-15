@@ -1,6 +1,6 @@
 # Identifying Users with Web Identity Federation<a name="id_roles_providers_oidc_user-id"></a>
 
-When you create access policies in IAM, it's often useful to be able to specify permissions based on configured apps and on the ID of users who have authenticated using an identity provider\. For example, your mobile app that's using web identity federation might keep information in Amazon S3 using a structure like this:
+When you create access policies in IAM, it's often useful to be able to specify permissions based on configured apps and on the ID of users who have authenticated using an external identity provider \(IdP\)\. For example, your mobile app that's using web identity federation might keep information in Amazon S3 using a structure like this:
 
 ```
 myBucket/app1/user1

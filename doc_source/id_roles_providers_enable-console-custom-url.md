@@ -5,7 +5,7 @@ You can write and run code to create a URL that lets users who sign in to your o
 **Note**  
 If your organization uses an identity provider \(IdP\) that is compatible with SAML, you can set up access to the console without writing code\. This works with providers like Microsoft's Active Directory Federation Services or open\-source Shibboleth\. For details, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md)\. 
 
-To enable your organization's users to access the AWS Management Console, you can create a custom "identity broker" that performs the following steps:
+To enable your organization's users to access the AWS Management Console, you can create a custom *identity broker* that performs the following steps:
 
 1. Verify that the user is authenticated by your local identity system\.
 

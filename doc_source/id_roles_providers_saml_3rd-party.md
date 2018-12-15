@@ -1,6 +1,6 @@
 # Integrating Third\-Party SAML Solution Providers with AWS<a name="id_roles_providers_saml_3rd-party"></a>
 
-The following links help you configure third\-party SAML 2\.0 identity provider solutions to work with AWS federation\.
+The following links help you configure third\-party SAML 2\.0 identity provider \(IdP\) solutions to work with AWS federation\.
 
 **Note**  
 AWS Support engineers can assist customers who have Business and Enterprise support plans with some integration tasks that involve third\-party software\. For a current list of supported platforms and applications, see see [Third\-Party Software Support](https://aws.amazon.com/premiumsupport/features/) on the *AWS Support Features page*\.

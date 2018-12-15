@@ -96,7 +96,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Creating IAM Identity Providers](id_roles_providers_create.md)
             + [Creating OpenID Connect (OIDC) Identity Providers](id_roles_providers_create_oidc.md)
                + [Obtaining the Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
-            + [Creating SAML Identity Providers](id_roles_providers_create_saml.md)
+            + [Creating IAM SAML Identity Providers](id_roles_providers_create_saml.md)
                + [Configuring your SAML 2.0 IdP with Relying Party Trust and Adding Claims](id_roles_providers_create_saml_relying-party.md)
                + [Integrating Third-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)
                + [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)

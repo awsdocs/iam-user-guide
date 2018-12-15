@@ -25,7 +25,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ BatchGetQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html)  | Grants permissions to get information about one or more query executions\. | Read |  |  |  | 
 |   [ CancelQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html)  | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StopQueryExecution otherwise\. | Write |  |  |  | 
 |   [ CreateNamedQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html)  | Grants permissions to create a named query\. | Write |  |  |  | 
+|   [ CreateWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html)  | Grants permissions to create a workgroup\. | Write |  |  |  | 
 |   [ DeleteNamedQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html)  | Grants permissions to delete a named query specified\. | Write |  |  |  | 
+|   [ DeleteWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteWorkGroup.html)  | Grants permissions to delete a workgroup\. | Write |  |  |  | 
 |   [ GetCatalogs ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to databases and tables\. | Read |  |  |  | 
 |   [ GetExecutionEngine ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to the specified database and table\. | Read |  |  |  | 
 |   [ GetExecutionEngines ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to databases and tables\. | Read |  |  |  | 
@@ -38,11 +40,14 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetQueryResultsStream ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Grants permissions to get the query results stream\. | Read |  |  |  | 
 |   [ GetTable ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to the specified table\. | Read |  |  |  | 
 |   [ GetTables ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to tables\. | Read |  |  |  | 
+|   [ GetWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_GetWorkGroup.html)  | Grants permissions to get a workgroup\. | Read |  |  |  | 
 |   [ ListNamedQueries ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html)  | Grants permissions to return a list of named queries in Amazon Athena for the specified AWS account\. | List |  |  |  | 
 |   [ ListQueryExecutions ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html)  | Grants permissions to return a list of query executions for the specified AWS account\. | List |  |  |  | 
+|   [ ListWorkGroups ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListWorkGroups.html)  | Grants permissions to return a list of workgroups for the specified AWS account\. | List |  |  |  | 
 |   [ RunQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_startQueryExecution.html)  | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StartQueryExecution otherwise\. | Write |  |  |  | 
 |   [ StartQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html)  | Grants permissions to start a query execution using an SQL query provided as a string\. | Write |  |  |  | 
 |   [ StopQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html)  | Grants permissions to stop the specified query execution\. | Write |  |  |  | 
+|   [ UpdateWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateWorkGroup.html)  | Grants permissions to update a workgroup\. | Write |  |  |  | 
 
 ## Resources Defined by Athena<a name="amazonathena-resources-for-iam-policies"></a>
 

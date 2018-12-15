@@ -181,14 +181,17 @@ IAM uses the following prefixes to indicate what type of entity each unique ID a
 
 | Prefix | Entity Type | 
 | --- | --- | 
-| A3T |  Root user  | 
-| AKIA |  Access key  | 
+| AAGA | Action group | 
+| ACCA | Context Specific Credential | 
 |  AGPA  | Group | 
 |  AIDA  |  IAM user   | 
-|  AROA  |  Role  | 
 | AIPA | Amazon EC2 instance profile | 
+| AKIA | Access key | 
 | ANPA |  Managed policy  | 
 |  ANVA  |  Version in a managed policy  | 
+| APKA | Public key | 
+| AROA | Role | 
+| ASCA | Certificate | 
 |  ASIA  |  Temporary \(AWS STS\) keys  | 
 
 ### Getting the Unique ID<a name="identifiers-get-unique-id"></a>

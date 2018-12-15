@@ -19,6 +19,7 @@ Keep in mind that all IAM policies are stored using syntax that begins with the 
   + [My Policy Does Not Grant the Expected Permissions](#policy-summary-not-grant-permissions)
 + [Troubleshoot Policy Management](#troubleshoot_policies-policy-manage)
   + [Attaching or Detaching a Policy in an IAM Account](#troubleshoot_roles_cant-attach-detach-policy)
+  + [Changing Policies for your IAM Identities Based on Their Activity](#troubleshoot_change-policies-based-on-activity)
 + [Troubleshoot JSON Policy Documents](#troubleshoot_policies-json)
   + [More Than One JSON Policy Object](#morethanonepolicyblock)
   + [More Than One JSON Statement Element](#morethanonestatement)
@@ -367,6 +368,10 @@ You can diagnose and resolve issues relating to policy management\.
 ### Attaching or Detaching a Policy in an IAM Account<a name="troubleshoot_roles_cant-attach-detach-policy"></a>
 
 Some AWS managed policies are linked to a service\. These policies are used only with a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) for that service\. In the IAM console, when you view the **Summary** page for a policy, the page includes a banner to indicate that the policy is linked to a service\. You cannot attach this policy to a user, group, or role within IAM\. When you create a service\-linked role for the service, this policy is automatically attached to your new role\. Because the policy is required, you cannot detach the policy from the service\-linked role\. 
+
+### Changing Policies for your IAM Identities Based on Their Activity<a name="troubleshoot_change-policies-based-on-activity"></a>
+
+You can update policies for your IAM identities \(users, groups, and roles\) based on their activity\. To do this, view your account's events in CloudTrail **Event history**\. CloudTrail event logs include detailed event information that you can use to change the policy's permissions\. If a user or role is attempting to peform an action in AWS and that request is denied, then you can consider whether they should have permission to peform the action\. If so, you can add the action and even the ARN of the resource that they attempted to access to their policy\. Alternatively, if the user or role has permissions that they are not using, you might consider removing those permissions from their policy\. Make sure that your policies grant the [least privilege](best-practices.md#grant-least-privilege) that is needed to perform only the necessary actions\. For more information about using CloudTrail, see [Viewing CloudTrail Events in the CloudTrail Console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) in the *AWS CloudTrail User Guide*\.
 
 ## Troubleshoot JSON Policy Documents<a name="troubleshoot_policies-json"></a>
 

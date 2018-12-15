@@ -24,7 +24,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ CreateCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html)  | Creates an Amazon EKS cluster\. | Write |  |  |  | 
 |   [ DeleteCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html)  | Deletes an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
 |   [ DescribeCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html)  | Returns descriptive information about an Amazon EKS cluster\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+|   [ DescribeUpdate ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html)  | Describes a given update for a given Amazon EKS cluster \(in the specified or default region\)\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
 |   [ ListClusters ](https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html)  | Lists the Amazon EKS clusters in your AWS account \(in the specified or default region\)\. | List |  |  |  | 
+|   [ ListUpdates ](https://docs.aws.amazon.com/eks/latest/APIReference/API_ListUpdates.html)  | Lists the updates for a given Amazon EKS cluster \(in the specified or default region\)\. | List |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+|   [ UpdateClusterVersion ](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html)  | Update the Kubernetes version of an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
 
 ## Resources Defined by EKS<a name="amazonelasticcontainerserviceforkubernetes-resources-for-iam-policies"></a>
 

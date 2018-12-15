@@ -2,9 +2,6 @@
 
 You can use AWS CLI commands or AWS API operations to enable a virtual MFA device for an IAM user\. You cannot enable an MFA device for the AWS account root user with the AWS CLI, AWS API, Tools for Windows PowerShell, or any other command line tool\. However, you can use the AWS Management Console to enable an MFA device for the root user\. 
 
-**Note**  
-You cannot use AWS CLI commands or AWS API operations to enable [U2F security keys](id_credentials_mfa_enable_u2f.md)\.
-
 When you enable an MFA device from the AWS Management Console, the console performs multiple steps for you\. If you instead create a virtual device using the AWS CLI, Tools for Windows PowerShell, or AWS API, then you must perform the steps manually and in the correct order\. For example, to create a virtual MFA device, you must create the IAM object and extract the code as either a string or a QR code graphic\. Then you must sync the device and associate it with an IAM user\. See the **Examples** section of [New\-IAMVirtualMFADevice](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=New-IAMVirtualMFADevice.html&tocid=New-IAMVirtualMFADevice) for more details\. For a physical device, you skip the creation step and go directly to syncing the device and associating it with the user\. 
 
 **To create the virtual device entity in IAM to represent a virtual MFA device**  
@@ -39,3 +36,6 @@ Use these commands if the device is generating codes that are not accepted by AW
 After the device is disassociated from the user, you can delete the device entity\.
 + AWS CLI: [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html) 
 + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html) 
+
+**To recover a virtual MFA device that is lost or not working**  
+Sometimes, an IAM user's mobile device where the virtual MFA app is hosted is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. IAM users must contact an administrator to deactivate the device\. For more information, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\.

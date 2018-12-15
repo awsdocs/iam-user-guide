@@ -1,6 +1,6 @@
 # Configuring your SAML 2\.0 IdP with Relying Party Trust and Adding Claims<a name="id_roles_providers_create_saml_relying-party"></a>
 
-When you create a SAML provider and the role for SAML access in IAM, you are essentially telling AWS about the identity provider \(IdP\) and what its users are allowed to do\. Your next step is to then tell the IdP about AWS as a service provider\. This is called adding *relying party trust* between your IdP and AWS\. The exact process for adding relying party trust depends on what IdP you're using; for details, see the documentation for your identity management software\. 
+When you create an IAM identity provider and role for SAML access, you are telling AWS about the external identity provider \(IdP\) and what its users are allowed to do\. Your next step is to then tell the IdP about AWS as a service provider\. This is called adding *relying party trust* between your IdP and AWS\. The exact process for adding relying party trust depends on what IdP you're using\. For details, see the documentation for your identity management software\. 
 
 Many IdPs allow you to specify a URL from which the IdP can read an XML document that contains relying party information and certificates\. For AWS, you can use `https://signin.aws.amazon.com/static/saml-metadata.xml`
 
