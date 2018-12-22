@@ -9,7 +9,7 @@ To learn about using multiple conditions within the `Condition` block of an IAM 
     "Version": "2012-10-17",
     "Statement": {
         "Effect": "Allow",
-        "Action": "<SERVICE-NAME>:<ACTION-NAME>",
+        "Action": "service-prefix:action-name",
         "Resource": "*",
         "Condition": {
             "DateGreaterThan": {"aws:CurrentTime": "2017-07-01T00:00:00Z"},

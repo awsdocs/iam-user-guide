@@ -1,10 +1,12 @@
-# Permissions Boundaries for IAM Identities<a name="access_policies_boundaries"></a>
+# Permissions Boundaries for IAM Entities<a name="access_policies_boundaries"></a>
 
-AWS supports identity\-based policies, resource\-based policies, access control lists \(ACLs\), and AWS Organizations service control policies \(SCPs\)\. Those [policy types](access_policies.md#access_policy-types) can be categorized as *permissions policies* or *permissions boundaries*\. Permissions policies define the permissions for the object to which they’re attached\. These include identity\-based policies \(most common\), resource\-based policies, and ACLs\. A permissions boundary is an advanced feature in which you limit the maximum permissions that a principal can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. For more information about these policy types, see [Policy Types](access_policies.md#access_policy-types)\.
+AWS supports *permissions boundaries* for IAM entities \(users or roles\)\. A permissions boundary is an advanced feature in which you use a managed policy to set the maximum permissions that an identity\-based policy can grant to an IAM entity\. When you set a permissions boundary for an entity, the entity can perform only the actions that are allowed by both its identity\-based policies and its permissions boundaries\.
 
-You can use an AWS managed policy or a customer managed policy to set the boundary for a user or role\. That policy limits the maximum permissions for the user or role\.
+For more information about policy types, see [Policy Types](access_policies.md#access_policy-types)\.
 
-For example, assume that the user named `ShirleyRodriguez` should be allowed to manage only Amazon S3, Amazon CloudWatch, and Amazon EC2\. To enforce this rule, you can use the following policy to set the permissions boundary for the `ShirleyRodriguez` user:
+You can use an AWS managed policy or a customer managed policy to set the boundary for an IAM entity \(user or role\)\. That policy limits the maximum permissions for the user or role\.
+
+For example, assume that the IAM user named `ShirleyRodriguez` should be allowed to manage only Amazon S3, Amazon CloudWatch, and Amazon EC2\. To enforce this rule, you can use the following policy to set the permissions boundary for the `ShirleyRodriguez` user:
 
 ```
 {
@@ -23,7 +25,7 @@ For example, assume that the user named `ShirleyRodriguez` should be allowed to 
 }
 ```
 
-When you use a policy to set the permissions boundary for a user, it limits the user's permissions but does not provide permissions on its own\. In this example, the `ShirleyRodriguez` user boundary allows her to perform all operations in Amazon S3, CloudWatch, and Amazon EC2\. However, Shirley can never perform operations in any other service, including IAM, even if she has a permissions policy that allows it\. For example, you can add the following policy to the `ShirleyRodriguez` user:
+When you use a policy to set the permissions boundary for a user, it limits the user's permissions but does not provide permissions on its own\. In this example, the policy sets the maximum permissions of `ShirleyRodriguez` as all operations in Amazon S3, CloudWatch, and Amazon EC2\. Shirley can never perform operations in any other service, including IAM, even if she has a permissions policy that allows it\. For example, you can add the following policy to the `ShirleyRodriguez` user:
 
 ```
 {
@@ -36,30 +38,29 @@ When you use a policy to set the permissions boundary for a user, it limits the 
 }
 ```
 
-This policy allows the principal to create a user in IAM\. If you attach this policy to the `ShirleyRodriguez` user, and Shirley tries to create a user, the operation fails\. It fails because the policy evaluation logic checks the policy used as the permissions boundary, which does not allow the `iam:CreateUser` operation\. To allow Shirley to perform operations in AWS, you must add a permissions policy with actions in Amazon S3, Amazon CloudWatch, or Amazon EC2\. 
+This policy allows creating a user in IAM\. If you attach this policy to the `ShirleyRodriguez` user, and Shirley tries to create a user, the operation fails\. It fails because the policy evaluation logic checks the policy used as the permissions boundary, which does not allow the `iam:CreateUser` operation\. To allow Shirley to perform any operations in AWS, you must add a permissions policy with actions in Amazon S3, Amazon CloudWatch, or Amazon EC2\. Alternatively, you could update the permissions boundary to allow her to create a user in IAM\.
 
 ## Evaluating Effective Permissions with Boundaries<a name="access_policies_boundaries-eval-logic"></a>
 
-The permissions boundary for a user or role limits the maximum permissions that the entity can have\. This can change the effective permissions for that user or role\. The effective permissions for an entity are the permissions granted when all of the policies that affect the user or role are evaluated\. For more information about how policies are evaluated, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+The permissions boundary for an IAM entity \(user or role\) sets the maximum permissions that the entity can have\. This can change the effective permissions for that user or role\. The effective permissions for an entity are the permissions that are granted by all the policies that affect the user or role\. Within an account, the permissions for an entity can be affected by identity\-based policies, resource\-based policies, permissions boundaries, Organizations SCPs, or session policies\. For more information about the different types of policies, see [Policies and Permissions](access_policies.md)\.
 
-AWS evaluates the policies that apply to a request context based on the policy type and category\. If a user or role has a permissions boundary, then operations are allowed only for the intersection of the permissions boundary and the permissions policies\. A permissions boundary limits the maximum permissions, but does not grant access on its own\. Permissions policies alone provide permission but can be limited by the permissions boundary\.
+If any one of these policy types explicitly denies access for an operation, then the request is denied\. The permissions granted to an entity by multiple permissions types are more complex\. For more details about how AWS evaluates policies, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
-![\[effective_permissions_policy-types_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_boundary.png)
+**Identity\-based policies with boundaries** – Identity\-based policies are inline or managed policies that are attached to a user, group of users, or role\. Identity\-based policies grant permission to the entity, and permissions boundaries limit those permissions\. The effective permissions are everything that is allowed by both policy types\. An explicit deny in either of these policies overrides the allow\.
 
-Assume that the `people-admin` user has one permissions policy that allows only Amazon S3 operations\. Also assume that the policy used to set the permissions boundary allows only IAM operations\. In this case, the effective permissions of both policies implicitly deny access for all operations\. To provide the expected effective permissions to access IAM, you must attach the following permissions policy to the user\. This policy allows all IAM operations\.
+![\[Evaluation of identity-based policies and permissions boundaries\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_boundary.png)
 
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": "iam:*",
-    "Resource": "*"
-  }
-}
-```
+**Resource\-based policies** – Resource\-based policies control how the specified principal can access the resource to which the policy is attached\. Within an account, permissions boundaries do not reduce the permissions granted by resource\-based policies\. Permissions boundaries reduce permissions granted to an entity by identity\-based policies, and then resource\-based policies provide additional permissions to the entity\. The effective permissions for this set of policy types are everything that is allowed by the resource\-based policy *and* everything that is allowed by both the permissions boundary and the identity\-based policy\. An explicit deny in any of these policies overrides the allow\.
 
-When this policy is evaluated, it allows all IAM operations except those that are explicitly denied by the policy that is set as the permissions boundary\.
+![\[Evaluation of a resource-based policy, permissions boundary, and identity-based policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-rbp-boundary-id.png)
+
+**Organizations SCPs** – SCPs are applied to an entire AWS account\. They limit permissions for every request made by a principal within the account\. If an IAM entity \(user or role\) makes a request that is affected by an SCP, a permissions boundary, and an identity\-based policy, then the request is allowed only if all three policy types allow it\. An explicit deny in any of these policies overrides the allow\.
+
+![\[Evaluation of an SCP, permissions boundary, and identity-based policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-scp-boundary-id.png)
+
+**Session policies** – Session policies are advanced policies that you pass as a parameter when you programmatically create a temporary session for a role or federated user\. The permissions for a session come from the IAM entity \(user or role\) used to create the session and from the session policy\. The entity's identity\-based policy permissions are limited by the session policy and the permissions boundary\. The effective permissions for this set of policy types are everything that is allowed by all three types\. An explicit deny in any of these policies overrides the allow\. For more information about session policies, see [Session Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session)\.
+
+![\[Evaluation of a session policy, permissions boundary, and identity-based policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-boundary-id.png)
 
 ## Delegating Responsibility to Others Using Permissions Boundaries<a name="access_policies_boundaries-delegate"></a>
 
@@ -93,45 +94,30 @@ To enforce these rules, María completes the following tasks, for which details 
                 "s3:*",
                 "cloudwatch:*",
                 "ec2:*",
-                "dynamodb:*",
-                "iam:ListUsers"
+                "dynamodb:*"
             ],
             "Resource": "*"
         },
         {
-            "Sid": "AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation",
+            "Sid": "AllowIAMConsoleForCredentials",
             "Effect": "Allow",
             "Action": [
-                "iam:ChangePassword",
-                "iam:CreateAccessKey",
-                "iam:CreateLoginProfile",
-                "iam:DeleteAccessKey",
-                "iam:DeleteLoginProfile",
-                "iam:GetAccessKeyLastUsed",
-                "iam:GetLoginProfile",
-                "iam:GetUser",
-                "iam:GetUserPolicy",
-                "iam:ListAccessKeys",
-                "iam:ListAttachedUserPolicies",
-                "iam:ListGroupsForUser",
-                "iam:ListUserPolicies",
-                "iam:UpdateAccessKey",
-                "iam:UpdateLoginProfile",
-                "iam:DeactivateMFADevice",
-                "iam:EnableMFADevice",
-                "iam:ListMFADevices",
-                "iam:ResyncMFADevice",
-                "iam:ListSigningCertificates",
-                "iam:DeleteSigningCertificate",
-                "iam:UpdateSigningCertificate",
-                "iam:UploadSigningCertificate",
-                "iam:ListSSHPublicKeys",
-                "iam:GetSSHPublicKey",
-                "iam:DeleteSSHPublicKey",
-                "iam:UpdateSSHPublicKey",
-                "iam:UploadSSHPublicKey"
+                "iam:ListUsers",
+                "iam:GetAccountPasswordPolicy"
             ],
-            "Resource": "arn:aws:iam::*:user/${aws:username}"
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowManageOwnPasswordAndAccessKeys",
+            "Effect": "Allow",
+            "Action": [
+                "iam:*AccessKey*",
+                "iam:ChangePassword",
+                "iam:GetUser",
+                "iam:*ServiceSpecificCredential*",
+                "iam:*SigningCertificate*"
+            ],
+            "Resource": ["arn:aws:iam::*:user/${aws:username}"]
         },
         {
             "Sid": "DenyS3Logs",
@@ -154,9 +140,11 @@ To enforce these rules, María completes the following tasks, for which details 
 
 Each statement serves a different purpose:
 
-1. The `ServiceBoundaries` statement of this policy allows full access to the specified AWS services\. This means that a new user's actions in these services are limited only by the permissions policies that are attached to the user\. It also provides access to list all IAM users, which is necessary to navigate the **Users** page in the AWS Management Console\.
+1. The `ServiceBoundaries` statement of this policy allows full access to the specified AWS services\. This means that a new user's actions in these services are limited only by the permissions policies that are attached to the user\.
 
-1. The `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` statement lets the users [manage only their own credentials](tutorial_users-self-manage-mfa-and-creds.md)\. This is important because if Zhang or another administrator gives a new user a permissions policy with full IAM access, that user could then change their own or other users' permissions\. This statement prevents that from happening\.
+1. The `AllowIAMConsoleForCredentials` statement allows access to list all IAM users\. This access is necessary to navigate the **Users** page in the AWS Management Console\. It also allows viewing the password requirements for the account, which is necessary when changing your own password\.
+
+1. The `AllowManageOwnPasswordAndAccessKeys` statement allows the users manage only their own console password and programmatic access keys\. This is important because if Zhang or another administrator gives a new user a permissions policy with full IAM access, that user could then change their own or other users' permissions\. This statement prevents that from happening\.
 
 1. The `DenyS3Logs` statement explicitly denies access to the `logs` bucket\.
 
@@ -317,4 +305,6 @@ Zhang completes the following tasks:
 
    The user is created\. 
 
-When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. Nikhil has read\-only access to all the buckets that he owns in Amazon S3\. However, even if someone grants him ownership to the `logs` bucket, he cannot view it\. For more information about bucket ownership, see [Managing Access Permissions to your Amazon S3 Resources](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in the *Amazon Simple Storage Service Developer Guide*\.
+When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. Nikhil has read\-only access to all the buckets that he owns in Amazon S3\. However, even if someone grants him ownership to the `logs` bucket, he cannot view it\. For more information about bucket ownership, see [Managing Access Permissions to your Amazon S3 Resources](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+
+If someone adds a resource\-based policy to the `i-1234567890abcdef0` instance that allows Nikhil to start and stop the instance, he still cannot manage the instance\. The reason is that any actions on the `i-1234567890abcdef0` instance are explicitly denied by his permissions boundary\. An explicit deny in any policy type results in a request being denied\. However, if a resource\-based policy attached to a Secrets Manager secret allows Nikhil to perform the `secretsmanager:GetSecretsValue` action, then Nikhil can retrieve and decrypt the secret\. The reason is that Secrets Manager operations are not explicitly denied by his permissions boundary, and permissions boundaries do not limit resource\-based policies\.

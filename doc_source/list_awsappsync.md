@@ -33,6 +33,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ graphqlapi ](https://docs.aws.amazon.com/appsync/latest/devguide/designing-a-graphql-api.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}  |  | 
 |   [ field ](https://docs.aws.amazon.com/appsync/latest/devguide/configuring-resolvers.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}/fields/$\{FieldName\}  |  | 
 |   [ type ](https://docs.aws.amazon.com/appsync/latest/devguide/designing-your-schema.html#adding-a-root-query-type)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/types/$\{TypeName\}  |  | 
+|   [ function ](https://docs.aws.amazon.com/appsync/latest/devguide/pipeline-resolvers.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}/functions/$\{FunctionId\}  |  | 
 
 ## Condition Keys for AWS AppSync<a name="awsappsync-policy-keys"></a>
 

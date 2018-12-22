@@ -184,6 +184,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Systems Manager](list_awssystemsmanager.md)
 + [Amazon Textract](list_amazontextract.md)
 + [Amazon Transcribe](list_amazontranscribe.md)
++ [AWS Transfer for SFTP](list_awstransferforsftp.md)
 + [Amazon Translate](list_amazontranslate.md)
 + [AWS Trusted Advisor](list_awstrustedadvisor.md)
 + [AWS WAF](list_awswaf.md)
@@ -193,4 +194,4 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon WorkMail](list_amazonworkmail.md)
 + [Amazon WorkSpaces](list_amazonworkspaces.md)
 + [Amazon WorkSpaces Application Manager](list_amazonworkspacesapplicationmanager.md)
-+ [AWS XRay](list_awsxray.md)
++ [AWS X\-Ray](list_awsx-ray.md)

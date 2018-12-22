@@ -1,6 +1,12 @@
 # IAM: Add a Specific Tag with Specific Values<a name="reference_policies_examples_iam-add-tag-user-role"></a>
 
-This example shows how you might create a policy that allows adding only the tag key `CostCenter` and either the tag value `A-123` or the tag value `B-456` to any IAM user or role\. This policy allows you to limit tagging to a specific tag key and set of tag values\. This policy also grants the permissions necessary to complete this action on the console\. To use this policy, replace the red italicized text in the example policy with your own information\. 
+This example shows how you might create a policy that allows adding only the tag key `CostCenter` and either the tag value `A-123` or the tag value `B-456` to any IAM user or role\. You can use this policy to limit tagging to a specific tag key and set of tag values\. This policy also grants the permissions necessary to complete this action on the console\. To use this policy, replace the red italicized text in the example policy with your own information\. 
+
+The `ConsoleDisplay` statement allows the viewing of tags for all users and roles in your account\. 
+
+The first condition in the `AddTag` statement uses the `StringEquals` condition operator\. The condition returns true if the request includes the `CostCenter` tag key with one of the listed tag values\. 
+
+The second condition uses the `ForAllValues:StringEquals` condition operator\. The condition returns true if all of the tag keys in the request match the key in the policy\. This means that the only tag key in the request must be `CostCenter`\. For more information about using `ForAllValues`, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)\.
 
 ```
 {
@@ -28,11 +34,11 @@ This example shows how you might create a policy that allows adding only the tag
             ],
             "Resource": "*",
             "Condition": [
-                {"StringEquals": {"aws:RequestTag/<CostCenter>": [
-                    "<A-123>",
-                    "<B-456>"
+                {"StringEquals": {"aws:RequestTag/CostCenter": [
+                    "A-123",
+                    "B-456"
                 ]}},
-                {"ForAllValues:StringEquals": {"aws:TagKeys": "<CostCenter>"}}
+                {"ForAllValues:StringEquals": {"aws:TagKeys": "CostCenter"}}
             ]
         }
     ]

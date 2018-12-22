@@ -39,7 +39,7 @@ By using this condition key, you can ensure that users create service roles only
 
 **iam:PermissionsBoundary**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions Boundaries for IAM Identities](access_policies_boundaries.md)
+Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions Boundaries for IAM Entities](access_policies_boundaries.md)
 
 **iam:PolicyARN**  
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  

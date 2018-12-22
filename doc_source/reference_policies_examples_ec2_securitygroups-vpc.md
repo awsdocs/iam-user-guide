@@ -18,7 +18,7 @@ This example shows how you might create a policy that allows managing Amazon EC2
             "Resource": "arn:aws:ec2:*:*:security-group/*",
             "Condition": {
                 "StringEquals": {
-                    "ec2:Vpc": "arn:aws:ec2:*:*:vpc/vpc-<VPC-ID>"
+                    "ec2:Vpc": "arn:aws:ec2:*:*:vpc/vpc-vpc-id"
                 }
             }
         },

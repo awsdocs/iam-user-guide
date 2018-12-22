@@ -19,7 +19,7 @@ Amazon EC2 instances can run AWS commands with permissions granted by an [AWS se
                 "arn:aws:ec2:*:*:instance/*"
             ],
             "Condition": {
-                "ArnEquals": {"ec2:SourceInstanceARN": "arn:aws:ec2:*:*:instance/<INSTANCE-ID>"}
+                "ArnEquals": {"ec2:SourceInstanceARN": "arn:aws:ec2:*:*:instance/instance-id"}
             }
         }
     ]

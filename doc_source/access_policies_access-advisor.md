@@ -70,7 +70,7 @@ If the AWS Management Console service last accessed data table is empty, or your
 + For a group, verify that the group has at least one inline or managed policy attached\.
 + For a group, the report returns only the service last access data for members that used the group's policies to access a service\. To learn whether a member used other policies, review the service last accessed data for that user\.
 + For a role, verify that the role has at least one inline or managed policy attached\.
-+ For an entity \(user or role\), review other policy types that might affect the permissions of that entity\. These include resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or AWS STS assume role policies\. For more information, see [Policy Types](access_policies.md#access_policy-types) or [Evaluating Policies](reference_policies_evaluation-logic.md#policy-eval-basics)\.
++ For an entity \(user or role\), review other policy types that might affect the permissions of that entity\. These include resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or AWS STS assume role policies\. For more information, see [Policy Types](access_policies.md#access_policy-types) or [Evaluating Policies Within a Single Account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
 + For a policy, make sure that the specified managed policy is attached to at least one user, group with members, or role\.
 
 When you make changes, wait at least 4 hours for activity to appear in your report\. If you use the AWS CLI or AWS API, you must generate a new report to view the updated data\.

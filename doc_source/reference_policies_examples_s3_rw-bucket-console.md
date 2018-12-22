@@ -17,7 +17,7 @@ This example shows how you might create a policy that allows `Read` and `Write` 
         {
             "Effect": "Allow",
             "Action": ["s3:ListBucket"],
-            "Resource": ["arn:aws:s3:::<BUCKET-NAME>"]
+            "Resource": ["arn:aws:s3:::bucket-name"]
         },
         {
             "Effect": "Allow",
@@ -25,7 +25,7 @@ This example shows how you might create a policy that allows `Read` and `Write` 
                 "s3:PutObject",
                 "s3:GetObject"
             ],
-            "Resource": ["arn:aws:s3:::<BUCKET-NAME>/*"]
+            "Resource": ["arn:aws:s3:::bucket-name/*"]
         }
     ]
 }

@@ -2,11 +2,11 @@
 
 You can use a policy to control access to resources within IAM or all of AWS\. 
 
-To use a [policy](access_policies.md) to control access in AWS, you must understand how AWS grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to perform an operation \(such as creating a user\), you send a *request* for that operation\. Your request specifies an action, a resource, a *principal* \(group, user, or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
+To use a [policy](access_policies.md) to control access in AWS, you must understand how AWS grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to perform an operation \(such as creating a user\), you send a *request* for that operation\. Your request specifies an action, a resource, a *principal entity* \(user or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
 
-AWS then checks that you \(the principal\) are authenticated \(signed in\) and authorized \(have permission\) to perform the specified action on the specified resource\. During authorization, AWS evaluates the policies that apply to your request context based on the policy type and category\. AWS supports identity\-based policies, resource\-based policies, access control lists \(ACLs\), and AWS Organizations service control policies \(SCPs\)\. Those policies types can be categorized as *permissions policies* or *permissions boundaries*\. Permissions policies define the permissions for the entity to which they’re attached\. These include identity\-based policies \(most common\), resource\-based policies, and ACLs\. A permissions boundary is an advanced feature that allows you to use a policy to limit the maximum permissions that a principal can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
+AWS then checks that you \(the principal entity\) are authenticated \(signed in\) and authorized \(have permission\) to perform the specified action on the specified resource\. During authorization, AWS checks all the policies that apply to the context of your request\. Most policies are stored in AWS as [JSON documents](access_policies.md#access_policies-json) and specify the permissions for principal entities\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
 
-AWS checks all the policies that apply to the context of your request\. AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram of this process, see [Understanding How IAM Works](intro-structure.md)\. For details about how AWS determines whether a request is allowed, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
+AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram of this process, see [Understanding How IAM Works](intro-structure.md)\. For details about how AWS determines whether a request is allowed, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. 
 
 When you create an IAM policy, you can control access to the following:
 + **[AWS for Principals](#access_controlling-principals)** – Control what the person making the request \(the [principal](intro-structure.md#intro-structure-principal)\) is allowed to do\. 
@@ -25,7 +25,7 @@ For information about how to delegate basic permissions to your users, groups, a
 
 ## Controlling Access for Principals<a name="access_controlling-principals"></a>
 
-You can use permissions policies to control what the person making the request \(the principal\) is allowed to do\. To do this, you must attach an identity\-based policy to that person's identity \(group, user, or role\)\. You can also use a [permissions boundary](access_policies_boundaries.md) to define the maximum permissions that a principal can have\.
+You can use policies to control what the person making the request \(the principal\) is allowed to do\. To do this, you must attach an identity\-based policy to that person's identity \(user, group of users, or role\)\. You can also use a [permissions boundary](access_policies_boundaries.md) to set the maximum permissions that an entity \(user or role\) can have\.
 
 For example, assume that you want the user Zhang Wei to have full access to CloudWatch, Amazon DynamoDB, Amazon EC2, and Amazon S3\. You can create two different policies so that you can later break them up if you need one set of permissions for a different user\. Or you can put both the permissions together in a single policy, and then attach that policy to the IAM user that is named Zhang Wei\. You could also attach a policy to a group to which Zhang belongs, or a role that Zhang can assume\. As a result, when Zhang views the contents of an S3 bucket, his requests are allowed\. If he tries to create a new IAM user, his request is denied because he doesn't have permission\. 
 
@@ -59,7 +59,7 @@ You can use a permissions boundary on Zhang to make sure that he is never given 
 }
 ```
 
-When you assign a policy like this as a permissions boundary for a user, remember that it does not grant any permissions\. It limits the maximum permissions that the user can be assigned using permissions policies\. For more information about permissions boundaries, see [Permissions Boundaries for IAM Identities](access_policies_boundaries.md)\.
+When you assign a policy like this as a permissions boundary for a user, remember that it does not grant any permissions\. It sets the maximum permissions that an identity\-based policy can grant to an IAM entity\. For more information about permissions boundaries, see [Permissions Boundaries for IAM Entities](access_policies_boundaries.md)\.
 
 For detailed information about the procedures mentioned previously, refer to these resources:
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
@@ -208,7 +208,7 @@ For example, you can give permissions to an account administrator to create, upd
 For more information, refer to these resources:
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
 + To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
-+ To see an example policy for limiting the use of managed policies, see [IAM: Limits Managed Policies That Can Be Applied to a New IAM User, Group, or Role](reference_policies_examples_iam_limit-managed.md)\.
++ To see an example policy for limiting the use of managed policies, see [IAM: Limits Managed Policies That Can Be Applied to an IAM User, Group, or Role](reference_policies_examples_iam_limit-managed.md)\.
 
 ### Controlling Permissions for Creating, Updating, and Deleting Customer Managed Policies<a name="policies-controlling-access-create-update-delete"></a>
 

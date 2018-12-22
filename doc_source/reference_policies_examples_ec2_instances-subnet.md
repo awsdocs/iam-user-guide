@@ -18,7 +18,7 @@ This example shows how you might create a policy that allows listing information
             "Effect": "Allow",
             "Action": "ec2:RunInstances",
             "Resource": [
-                "arn:aws:ec2:*:*:subnet/subnet-<SUBNET-ID>",
+                "arn:aws:ec2:*:*:subnet/subnet-subnet-id",
                 "arn:aws:ec2:*:*:network-interface/*",
                 "arn:aws:ec2:*:*:instance/*",
                 "arn:aws:ec2:*:*:volume/*",

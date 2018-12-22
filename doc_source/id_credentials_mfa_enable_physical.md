@@ -9,7 +9,7 @@ You can enable a hardware MFA device for an IAM user from the AWS Management Con
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\.
 
 **Note**  
-If you want to enable the device from the command line, use [https://docs.aws.amazon.com/IAM/latest/CLIReference/userenablemfadevice.html](https://docs.aws.amazon.com/IAM/latest/CLIReference/userenablemfadevice.html) [aws iam enable\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
+If you want to enable the device from the command line, use [https://docs.aws.amazon.com/cli/latest/reference/iam/userenablemfadevice.html](https://docs.aws.amazon.com/cli/latest/reference/iam/userenablemfadevice.html) [aws iam enable\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
 
 **Topics**
 + [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user)

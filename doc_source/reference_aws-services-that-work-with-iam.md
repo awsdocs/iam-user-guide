@@ -21,18 +21,16 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html )  | Yes | [Yes](https://docs.aws.amazon.com/batch/latest/userguide/batch-supported-iam-actions-resources.html) | No | No | Yes | No | 
 |  [Amazon Elastic Compute Cloud \(Amazon EC2\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | Yes¹ | 
 |  [Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
-|  [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
+|  [AWS Elastic Beanstalk](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.html)  | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.access-tags.html) | Yes | [Yes](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-service-linked-roles.html) | 
 |  [Amazon Elastic Container Registry \(Amazon ECR\)](https://docs.aws.amazon.com/AmazonECR/latest/userguide/ECR_IAM_policies.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Elastic Container Service \(Amazon ECS\)](https://docs.aws.amazon.com/AmazonECS/latest/developerguide//IAM_policies.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon Elastic Container Service for Kubernetes \(Amazon EKS\)](https://docs.aws.amazon.com/eks/latest/userguide/IAM_policies.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Elastic Inference](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-inference.html)  | Yes | Yes | Yes | No | No | No | 
 |  [Elastic Load Balancing](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/index.html?UsingIAM.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-service-linked-roles.html) | 
-|  [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | Yes² | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
+|  [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | [Yes](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
 |  [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/all) | Yes | No | No | No | Yes | No | 
 
 ¹ Amazon EC2 service\-linked roles cannot be created using the AWS Management Console, and can be used only for the following features: [Scheduled Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html#service-linked-roles-scheduled-instances), [Spot Instance Requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html#service-linked-roles-spot-instance-requests), [Spot Fleet Requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#service-linked-roles-spot-fleet-requests) 
-
-² The only AWS Lambda API action that can be specified in a resource\-based policy is [lambda:InvokeFunction](https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html)\. For more information, see [Using Resource\-Based Policies for AWS Lambda \(Lambda Function Policies\)](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) in the *AWS Lambda Developer Guide*\.
 
 ## Storage Services<a name="storage_svcs"></a>
 
@@ -90,7 +88,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Cognito](https://docs.aws.amazon.com/cognito/devguide/resource-permissions/)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Directory Service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/guardduty/latest/ug/using-service-linked-roles.html) | 
-|  [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | No | No | Yes¹ | No | 
+|  [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | Yes¹ | No | Yes² | No | 
 |  [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
 |  [AWS Key Management Service \(AWS KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/kms/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon Macie ](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
@@ -98,15 +96,28 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | [Yes](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html) | Yes | Yes | No | 
 | [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/securityhub/latest/userguide/using-service-linked-roles.html) | 
 |  [AWS Single Sign\-On \(AWS SSO\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | Yes | 
-|  [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes² | No | No | Yes³ | No | 
+|  [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes³ | No | No | Yes⁴ | No | 
 |  [AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
 
-¹ Only some of the API actions for IAM can be called with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)
+¹ IAM supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. For more information, see [ Granting a User Permissions to Switch RolesGranting a User Permissions to Switch Roles  Grant permissions to an IAM user so that user can switch roles\.   When you [create a role for cross\-account access](id_roles_create_for-user.md), you establish trust from the account that owns the role and the resources \(trusting account\) to the account that contains the users \(trusted account\)\. To do this, you specify the trusted account number as the `Principal` in the role's trust policy\. That allows *potentially* any user in the trusted account to assume the role\. To complete the configuration, the administrator of the trusted account must give specific groups or users in that account permission to switch to the role\. To grant a user permission to switch to a role, you create a new policy for the user or edit an existing policy to add the required elements\. You can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, you can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\.  Note that you can switch roles only when you sign in as an IAM user\. You cannot switch roles when you sign in as the AWS account root user\.  You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalId` parameter\.   Notes   This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is [best practice not to grant permissions directly to an individual user](best-practices.md#use-groups-for-permissions)\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\.    When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, it uses your original user or federated role credentials to determine if you are allowed to assume RoleA\. If you then try to switch to RoleB *while you are using RoleA*, your **original** user or federated role credentials are used to authorize your attempt, not the credentials for RoleA\.     Creating or Editing the Policy A policy that grants a user permission to assume a role must include a statement with the `Allow` effect on the following:    The `sts:AssumeRole` action The Amazon Resource Name \(ARN\) of the role in a `Resource` element   This is as shown in the following example\. Users that get the policy \(either through group membership or directly attached\) are allowed to switch to the specified role\.  Note that if `Resource` is set to `*`, the user can assume any role in any account that trusts the user's account \(the role's trust policy specifies the user's account as `Principal`\)\. As a best practice, we recommend that you follow the [principle of least privilege](http://en.wikipedia.org/wiki/Principle_of_least_privilege) and specify the complete ARN for only the roles that the user needs\.  The following example shows a policy that lets the user assume roles in only one account\. In addition, the policy uses a wildcard \(\*\) to specify that the user can switch to a role only if the role name begins with the letters `Test`\. 
 
-² AWS STS does not have "resources," but does allow restricting access in a similar way to users\. For more information, see [Denying Access to Temporary Security Credentials by Name](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_disable-perms.html#denying-access-to-credentials-by-name)\. 
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "sts:AssumeRole",
+    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/Test*"
+  }
+}
+```  The permissions that the role grants to the user do not add to the permissions already granted to the user\. When a user switches to a role, the user temporarily gives up his or her original permissions in exchange for those granted by the role\. When the user exits the role, then the original user permissions are automatically restored\. For example, let's say the user's permissions allow working with Amazon EC2 instances, but the role's permissions policy does not grant those permissions\. In that case, while using the role, the user cannot work with Amazon EC2 instances in the console\. In addition, temporary credentials obtained via `AssumeRole` do not work with Amazon EC2 instances programmatically\.   Providing Information to the User After you create a role and grant your user permissions to switch to it, you must provide the user with the following:  The role name  The account ID number or account alias that contains the role  You can make things easier for your users by sending them a link that is preconfigured with the account ID and role name\. You can see the role link on the final page of the **Create Role** wizard or in the **Role Summary** page for any cross\-account enabled role\.  If you create the role with the AWS CLI , Tools for Windows PowerShell,or the AWS API, then you can create the role with a *path* in addition to a name\. If you do so, then you must provide the complete path and role name to your users to type on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.   If you create the role programmatically instead of in the IAM console, then you can add a `Path` of up to 512 characters in addition to the `RoleName`\. The `RoleName` can be up to 64 characters long\. However, to use a role with the Switch Role feature in the AWS console, the combined `Path` and `RoleName` cannot exceed 64 characters\.  You can also use the following format to manually construct the link\. Substitute your account ID or alias and the role name for the two parameters in the request: `https://signin.aws.amazon.com/switchrole?account=YourAccountIDorAliasHere&roleName=pathIfAny/YourRoleNameHere` We recommend that you direct your users to the topic [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.  For security purposes, you can use AWS CloudTrail to audit role switching\. If CloudTrail is turned on for the account, IAM logs actions that are performed with the role's temporary security credentials\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html) in the *AWS CloudTrail User Guide*\.   ](id_roles_use_permissions-to-switch.md)\.
 
-³ Only some of the API operations for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
+² Only some of the API actions for IAM can be called with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)
+
+³ AWS STS does not have "resources," but does allow restricting access in a similar way to users\. For more information, see [Denying Access to Temporary Security Credentials by Name](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_disable-perms.html#denying-access-to-credentials-by-name)\. 
+
+⁴ Only some of the API operations for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
 
 ## Machine Learning Services<a name="machine_learning"></a>
 
@@ -139,8 +150,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon CloudWatch Logs ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/auth-and-access-control-cwl.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/recommended-iam-permissions-using-aws-config-console-cli.html)  | Yes | Yes² | No | No | Yes | [Yes](https://docs.aws.amazon.com/config/latest/developerguide/using-service-linked-roles.html) | 
 |  [AWS Health](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS OpsWorks](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
-|  [AWS OpsWorks for Chef Automate](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | Yes | No | Yes | No | 
+|  [AWS OpsWorks](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS OpsWorks for Chef Automate](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Service Catalog](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
 | [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes³ | Yes | No | No | Yes⁴ | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-ta.html) | 
@@ -169,7 +180,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Yes | Yes | Yes | No | No | No | 
+|  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Yes | Yes | No | No | No | No | 
 |  [AWS Device Farm](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | No | Yes | No | 
 
@@ -201,10 +212,10 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Elastic Transcoder](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/security.html)  | Yes | Yes | No | No | Yes | No | 
-| [Elemental MediaConnect](https://docs.aws.amazon.com/mediaconnect/latest/ug/auth-and-access-control.html) | Yes | Yes | No | No | Yes | No | 
+| [AWS Elemental MediaConnect](https://docs.aws.amazon.com/mediaconnect/latest/ug/auth-and-access-control.html) | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html) | Yes | Yes | No | No | Yes | No | 
-| [AWS Elemental MediaStore](https://docs.aws.amazon.com/mediastore/latest/ug/setting-up.html) | Yes | Yes | No | No | Yes | No | 
-| [AWS Elemental MediaTailor](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up.html) | Yes | Yes | Yes | No | Yes | No | 
+| [AWS Elemental MediaStore](https://docs.aws.amazon.com/mediastore/latest/ug/setting-up.html) | Yes | Yes | Yes | No | Yes | No | 
+| [AWS Elemental MediaTailor](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up.html) | Yes | Yes | No | No | Yes | No | 
 | [Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-iam.html) | Yes | Yes | No | No | Yes | No | 
 
 ## Desktop and App Streaming Services<a name="desktop-app_svcs"></a>
@@ -267,7 +278,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | Yes | No | Yes | No | 
+|  [AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html) | Yes | No | 
 |  [AWS IoT Things Graph](https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-security.html)  | Yes | No | No | No | Yes | No | 
 

@@ -17,7 +17,7 @@ You can also sign in at the following general sign\-in endpoint and type your ac
 
 For convenience, the AWS sign\-in page uses a browser cookie to remember the IAM user name and account information\. The next time the user goes to any page in the AWS Management Console, the console uses the cookie to redirect the user to the account sign\-in page\.
 
-You have access only to the AWS resources that your administrator specifies in the policy that is attached to your IAM user identity\. To work in the console, you must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example Policies](access_policies_examples.md)\.
+You have access only to the AWS resources that your administrator specifies in the policy that is attached to your IAM user identity\. To work in the console, you must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\.
 
 **Note**  
 If your organization has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console for your account without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\. 

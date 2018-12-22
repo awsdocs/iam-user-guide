@@ -10,9 +10,9 @@ To learn about using multiple conditions within the `Condition` block of an IAM 
     "Statement": {
         "Effect": "Allow",
         "Action": [
-            "<SERVICE-NAME-1>:*",
-            "<SERVICE-NAME-2>:<ACTION-NAME-A>",
-            "<SERVICE-NAME-2>:<ACTION-NAME-B>"
+            "service-prefix-1:*",
+            "service-prefix-2:action-name-a",
+            "service-prefix-2:action-name-b"
         ],
         "Resource": "*",
         "Condition": {

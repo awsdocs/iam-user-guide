@@ -2,13 +2,15 @@
 
 You can change or modify a role in IAM using the following methods: 
 + To change who can assume a role, you must modify the role's trust policy\. You cannot modify the trust policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
-+ To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\. You cannot modify the permissions policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. You might be able to modify the permissions policy within the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+**Note**  
+If a user is listed as the principal in a role's trust policy but cannot assume the role, check the user's [permissions boundary](access_policies_boundaries.md)\. If a permissions boundary is set for the user, then it must allow the `sts:AssumeRole` action\.
++ To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\. You cannot modify the permissions policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. You might be able to modify the permissions policy within the service that depends on the role\. To check whether a service supports this feature, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-linked roles** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
 + To change the description of the role, modify the description text\.
 + To change the set of tags on a role, see [Managing Tags on IAM Identities \(Console\)](id_tags.md#id_tags_procs-console)\.
 + To specify the maximum session duration setting for roles that are assumed using the AWS CLI or API, modify the maximum session duration setting's value\. This setting can have a value from 1 hour to 12 hours\. If you do not specify a value, the default maximum of 1 hour is applied\. 
 **Note**  
 Anyone who assumes the role from the AWS CLI or API can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer session\. The `MaxSessionDuration` setting determines the maximum duration of the role session that can be requested using the `DurationSeconds` parameter\. If users don't specify a value for the `DurationSeconds` parameter, their security credentials are valid for one hour\.
-+ To change the maximum permissions allowed for a role, modify the [permissions boundary](access_policies_boundaries.md)\.
++ To change the maximum permissions allowed for a role, modify the role's [permissions boundary](access_policies_boundaries.md)\.
 
 You can use the AWS Management Console, the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), the Tools for Windows PowerShell, or the IAM API to make these changes\.
 
@@ -47,7 +49,7 @@ You can use the AWS Management Console to modify a role\.
    },
    ```
 
-   Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+   If you specify a principal in another account, adding an account to the trust policy of a role is only half of establishing the cross\-account trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
    The following policy snippet shows how to reference two AWSservices in the `Principal` element:
 
@@ -180,7 +182,7 @@ You can use the AWS Command Line Interface to modify a role\.
    }
    ```
 
-   Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+   If you specify a principal in another account, adding an account to the trust policy of a role is only half of establishing the cross\-account trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
 1. To use the file that you just created to update the trust policy, run the following command:
    + [aws iam update\-assume\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/update-assume-role-policy.html)
@@ -291,7 +293,7 @@ You can use the AWS API to modify a role\.
    }
    ```
 
-   Remember that adding an account to the trust policy of a role is only half of establishing the trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+   If you specify a principal in another account, adding an account to the trust policy of a role is only half of establishing the cross\-account trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
 1. To use the file that you just created to update the trust policy, call the following operation:
    + [UpdateAssumeRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html)

@@ -36,7 +36,7 @@ At Example Corp, different groups require different permissions:
 Amazon EC2 uses SSH keys, Windows passwords, and security groups to control who has access to the operating system of specific Amazon EC2 instances\. There's no method in the IAM system to allow or deny access to the operating system of a specific instance\.
 + **Managers** – Should not be able to perform any Amazon EC2 actions except listing the Amazon EC2 resources currently available\. Therefore, John attaches a policy to the Managers group that only lets them call Amazon EC2 "Describe" API operations\.
 
-For examples of what these policies might look like, see [Example Policies](access_policies_examples.md) and [Using AWS Identity and Access Management](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?UsingIAM.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+For examples of what these policies might look like, see [Example IAM Identity\-Based Policies](access_policies_examples.md) and [Using AWS Identity and Access Management](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?UsingIAM.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ### User's Role Change<a name="EC2_UserRoleChange"></a>
 

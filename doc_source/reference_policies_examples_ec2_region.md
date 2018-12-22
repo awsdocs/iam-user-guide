@@ -12,7 +12,7 @@ This example shows how you might create a policy that allows full EC2 access wit
             "Effect": "Allow",
             "Condition": {
                 "StringEquals": {
-                    "ec2:Region": "<REGION>"
+                    "ec2:Region": "region"
                 }
             }
         }

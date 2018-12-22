@@ -25,7 +25,7 @@ https://signin.aws.amazon.com/console
 
 ## Permissions Required for Console Activities<a name="console_signin-permissions-required"></a>
 
-IAM users in your account have access only to the AWS resources that you specify in the policy that is attached to the user or to an IAM group that the user belongs to\. To work in the console, users must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example Policies](access_policies_examples.md)\.
+IAM users in your account have access only to the AWS resources that you specify in the policy that is attached to the user or to an IAM group that the user belongs to\. To work in the console, users must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\.
 
 ## Logging Sign\-In Details in CloudTrail<a name="console_signin-cloudtrail"></a>
 

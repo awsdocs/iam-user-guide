@@ -17,7 +17,7 @@ This example shows how you might create a policy that allows IAM users to access
         {
             "Effect": "Allow",
             "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::<BUCKET-NAME>",
+            "Resource": "arn:aws:s3:::bucket-name",
             "Condition": {
                 "StringLike": {
                     "s3:prefix": [
@@ -32,8 +32,8 @@ This example shows how you might create a policy that allows IAM users to access
             "Effect": "Allow",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::<BUCKET-NAME>/home/${aws:username}",
-                "arn:aws:s3:::<BUCKET-NAME>/home/${aws:username}/*"
+                "arn:aws:s3:::bucket-name/home/${aws:username}",
+                "arn:aws:s3:::bucket-name/home/${aws:username}/*"
             ]
         }
     ]

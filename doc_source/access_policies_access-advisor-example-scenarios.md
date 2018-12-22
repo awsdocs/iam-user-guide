@@ -3,7 +3,7 @@
 You can use service last accessed data to make decisions about the permissions that you grant to your IAM entities \(users or roles\)\. For more information, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\. 
 
 **Note**  
-Before you view view the access data for a resource in IAM, make sure you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to Know](access_policies_access-advisor.md#access_policies_access-advisor-know)
+Before you view the access data for a resource in IAM, make sure you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to Know](access_policies_access-advisor.md#access_policies_access-advisor-know)
 
 It’s up to you as an IAM administrator to balance the accessibility and least privilege that’s appropriate for your organization\. 
 
@@ -46,7 +46,7 @@ Paulo creates a managed policy named `ExampleDevelopment` using the following JS
 
 Paulo decides to wait for 90 days before he [views the service last accessed data](access_policies_access-advisor-view-data.md#access_policies_access-advisor-viewing) for the `Development` group using the AWS Management Console\. He views the list of services that the group members accessed\. He learns that the users accessed five services within the last week: AWS CloudTrail, Amazon CloudWatch Logs, Amazon EC2, AWS KMS, and Amazon S3\. They accessed a few other services when they were first evaluating AWS, but not since then\.
 
-Paulo decides to reduce the policy permisisons to include only those five services and the required IAM and Organizations actions\. He edits `ExampleDevelopment` policy using the following JSON text\.
+Paulo decides to reduce the policy permissions to include only those five services and the required IAM and Organizations actions\. He edits `ExampleDevelopment` policy using the following JSON text\.
 
 ```
 {

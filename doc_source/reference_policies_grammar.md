@@ -4,7 +4,7 @@ This page presents a formal grammar for the language used to create JSON policie
 
 For examples of policies, see the following topics:
 + [Policies and Permissions](access_policies.md)
-+ [Example Policies](access_policies_examples.md)
++ [Example IAM Identity\-Based Policies](access_policies_examples.md)
 + [Example Policies for Working in the Amazon EC2 Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-ec2-console.html) and [Example Policies for Working With the AWS CLI, the Amazon EC2 CLI, or an AWS SDK](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 +  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 

@@ -41,7 +41,7 @@ You must activate IAM user and role access to Billing before you can use the `Ad
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create user**\.
 
-You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access Management](access.md) and [Example Policies](access_policies_examples.md)\. To add additional users to the group after it's created, see [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)\.
+You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\. To add additional users to the group after it's created, see [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)\.
 
 ## Creating an IAM User and Group \(AWS CLI\)<a name="getting-started_create-admin-group-cli"></a>
 

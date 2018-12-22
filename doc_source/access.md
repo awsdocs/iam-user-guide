@@ -1,20 +1,20 @@
 # Access Management<a name="access"></a>
 
-AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. The access management portion of IAM helps you define what a user or other entity is allowed to do in an account, often referred to as *authorization*\. Permissions are defined using permissions policies and permissions boundaries\. Most permission policies are JSON policy documents in AWS that, when attached to an identity or resource, defines their permissions\. A permissions boundary is an advanced feature in which you use policies to limit the maximum permissions that a principal can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
+AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a [principal](intro-structure.md#intro-structure-principal) makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources\. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
 
-When a [principal](intro-structure.md#intro-structure-principal) makes a request in AWS, the IAM service checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access in AWS by creating policies and attaching them to IAM identities, AWS resources, or other AWS objects \(such as AWS Organizations organizations\)\. Those policies specify the permissions that are allowed or denied\. For details about the rest of the authentication and authorization process, see [Understanding How IAM Works](intro-structure.md)\.
+For details about the rest of the authentication and authorization process, see [Understanding How IAM Works](intro-structure.md)\.
 
 ![\[AccessManagement_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/access-diagram_800.png)
 
-During authorization, IAM uses values from the [request context](intro-structure.md#intro-structure-request) to check for matching policies and determine whether to allow or deny the request\. 
+During authorization, the AWS enforcement code uses values from the [request context](intro-structure.md#intro-structure-request) to check for matching policies and determine whether to allow or deny the request\. 
 
-AWS checks each policy that applies to the context of the request\. If a single policy denies the request, AWS denies the entire request and stops evaluating policies\. This is called an *explicit deny*\. Because requests are *denied by default*, IAM authorizes your request only if every part of your request is allowed by the applicable policies\. The [evaluation logic](reference_policies_evaluation-logic.md) follows these rules:
-+ By default, all requests are denied\. \(In general, requests made using the AWS account root user credentials for resources in the account are always allowed\.\) 
-+ An explicit allow in a permissions policy overrides this default\.
-+ A permissions boundary \(an AWS Organizations SCP or a user or role boundary\) or a policy used during AWS STS role assumption overrides the allow\. If one or more of these items exists, they must all allow the request\. Otherwise, it is implicitly denied\.
+AWS checks each policy that applies to the context of the request\. If a single policy denies the request, AWS denies the entire request and stops evaluating policies\. This is called an *explicit deny*\. Because requests are *denied by default*, IAM authorizes your request only if every part of your request is allowed by the applicable policies\. The [evaluation logic](reference_policies_evaluation-logic.md) for a request within a single account follows these rules:
++ By default, all requests are implicitly denied\. \(Alternatively, by default, the AWS account root user has full access\.\) 
++ An explicit allow in an identity\-based or resource\-based policy overrides this default\.
++ If a permissions boundary, Organizations SCP, or session policy is present, it might override the allow with an implicit deny\.
 + An explicit deny in any policy overrides any allows\.
 
-After your request has been authenticated and authorized, AWS approves the request\. If you need to make a request in a different account, the resource in that account must have a resource\-based policy that allows access from your account\. Otherwise, you must assume a role within that account with the permissions that you need\.
+After your request has been authenticated and authorized, AWS approves the request\. If you need to make a request in a different account, a policy in the other account must allow you to access the resource\. In addition, the IAM entity that you use to make the request must have an identity\-based policy that allows the request\.
 
 ## Access Management Resources<a name="access_resources"></a>
 

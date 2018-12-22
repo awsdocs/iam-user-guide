@@ -9,10 +9,10 @@ This example shows how you might create a policy that allows Amazon Cognito user
         {
             "Effect": "Allow",
             "Action": ["s3:ListBucket"],
-            "Resource": ["arn:aws:s3:::<BUCKET-NAME>"],
+            "Resource": ["arn:aws:s3:::bucket-name"],
             "Condition": {
                 "StringLike": {
-                    "s3:prefix": ["cognito/<APPLICATION-NAME>/"]
+                    "s3:prefix": ["cognito/application-name/"]
                 }
             }
         },
@@ -24,8 +24,8 @@ This example shows how you might create a policy that allows Amazon Cognito user
                 "s3:DeleteObject"
             ],
             "Resource": [
-                "arn:aws:s3:::<BUCKET-NAME>/cognito/<APPLICATION-NAME>/${cognito-identity.amazonaws.com:sub}",
-                "arn:aws:s3:::<BUCKET-NAME>/cognito/<APPLICATION-NAME>/${cognito-identity.amazonaws.com:sub}/*"
+                "arn:aws:s3:::bucket-name/cognito/application-name/${cognito-identity.amazonaws.com:sub}",
+                "arn:aws:s3:::bucket-name/cognito/application-name/${cognito-identity.amazonaws.com:sub}/*"
             ]
         }
     ]

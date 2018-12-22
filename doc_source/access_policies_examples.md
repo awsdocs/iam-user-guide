@@ -1,6 +1,6 @@
-# Example Policies<a name="access_policies_examples"></a>
+# Example IAM Identity\-Based Policies<a name="access_policies_examples"></a>
 
-A [policy](access_policies.md) is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents that are attached to principals as *identity\-based policies* or to resources as *resource\-based policies*\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. To learn how to create an IAM policy using these example JSON policy documents, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+A [policy](access_policies.md) is an object in AWS that, when associated with an identity or resource, defines their permissions\. AWS evaluates these policies when a principal entity \(user or role\) makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Most policies are stored in AWS as JSON documents that are attached to an IAM identity \(user, group of users, or role\)\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. To learn how to create an IAM policy using these example JSON policy documents, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 By default all requests are denied, so you must provide access to the services, actions, and resources that you intend for the identity to access\. If you also want to allow access to complete the specified actions in the IAM console, you need to provide additional permissions\.
 
@@ -48,7 +48,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows using the policy simulator console for users with a specific path \([View this policy](reference_policies_examples_iam_policy-sim-path-console.md)\)
 + Allows IAM users to self\-manage an MFA device \([View this policy](reference_policies_examples_iam_mfa-selfmanage.md)\)
 + Allows IAM users to rotate their own credentials, programmatically and in the console \([View this policy](reference_policies_examples_iam_credentials_console.md)\)
-+ Limits managed policies that can be applied to a new IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\)
++ Limits managed policies that can be applied to an IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\)
 
 ## Example Policies: Amazon RDS<a name="policy_library_RDS"></a>
 + Allows full Amazon RDS database access within a specific region \([View this policy](reference_policies_examples_rds_region.md)\)

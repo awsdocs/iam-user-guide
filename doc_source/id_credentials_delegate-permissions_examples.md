@@ -2,7 +2,7 @@
 
 Following are examples of IAM policies that allow users to perform tasks associated with managing IAM users, groups, and credentials\. This includes policies that permit users manage their own passwords, access keys, and multi\-factor authentication \(MFA\) devices\.
 
-For examples of policies that let users perform tasks with other AWS services, like Amazon S3, Amazon EC2, and DynamoDB, see [Example Policies](access_policies_examples.md)\. 
+For examples of policies that let users perform tasks with other AWS services, like Amazon S3, Amazon EC2, and DynamoDB, see [Example IAM Identity\-Based Policies](access_policies_examples.md)\. 
 
 **Topics**
 + [Allow Users to Manage Their Own Passwords \(from the My Password Page\)](#creds-policies-password-self)

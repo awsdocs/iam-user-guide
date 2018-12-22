@@ -26,6 +26,8 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ AddDomain ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Adds a domain to your Amazon Chime account | Write |  |  |  | 
 |   [ AddOrUpdateGroups ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Adds new or updates existing Active Directory or Okta user groups associated with your Amazon Chime enterprise account | Write |  |  |  | 
 |   [ AuthorizeDirectory ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Authorize an Active Directory to your Amazon Chime enterprise account | Write |  |  |  | 
+|   [ BatchSuspendUser ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Suspends multiple users | Write |  |  |  | 
+|   [ BatchUnsuspendUser ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Removes the suspension of multiple users | Write |  |  |  | 
 |   [ BatchUpdateUser ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Updates details for multiple users | Write |  |  |  | 
 |   [ ConnectDirectory ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Connects an Active Directory to your Amazon Chime enterprise account | Write |  |  |   ds:ConnectDirectory   | 
 |   [ CreateAccount ](https://docs.aws.amazon.com/chime/latest/ag/working-users.html#available-actions)  | Creates a new Amazon Chime account | Write |  |  |  | 

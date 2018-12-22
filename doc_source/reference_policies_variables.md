@@ -268,7 +268,7 @@ These predefined policy variables can be used in any string where you can use re
 
  For more information about policies, see the following: 
 +  [Policies and Permissions](access_policies.md) 
-+  [Example Policies](access_policies_examples.md) 
++  [Example IAM Identity\-Based Policies](access_policies_examples.md) 
 +  [IAM JSON Policy Elements Reference](reference_policies_elements.md) 
 +  [Policy Evaluation Logic](reference_policies_evaluation-logic.md) 
 +  [About Web Identity Federation](id_roles_providers_oidc.md)

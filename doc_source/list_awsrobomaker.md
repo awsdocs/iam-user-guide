@@ -25,11 +25,11 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ CancelSimulationJob ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CancelSimulationJob.html)  | End a simulation job | Write |  |  |  | 
 |   [ CreateDeploymentJob ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateDeploymentJob.html)  | Create a deployment job | Write |  |  |   iam:CreateServiceLinkedRole   | 
 |   [ CreateFleet ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateFleet.html)  | Create a fleet that represents a logical group of robots running the same robot application | Write |  |  |  | 
-|   [ CreateRobot ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateRobot.html)  | Create a robot that can be registered to a fleet | Write |  |  |  | 
+|   [ CreateRobot ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateRobot.html)  | Create a robot that can be registered to a fleet | Write |  |  |   iam:CreateServiceLinkedRole   | 
 |   [ CreateRobotApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateRobotApplication.html)  | Create a robot application | Write |  |  |  | 
 |   [ CreateRobotApplicationVersion ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateRobotApplicationVersion.html)  | Create a snapshot of a robot application | Write |  |  |   s3:GetObject   | 
 |   [ CreateSimulationApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateSimulationApplication.html)  | Create a robot application | Write |  |  |  | 
-|   [ CreateSimulationApplicationVersion ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateSimulationApplicationVersion.html)  | Create a snapshot of a robot application | Write |  |  |  | 
+|   [ CreateSimulationApplicationVersion ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateSimulationApplicationVersion.html)  | Create a snapshot of a robot application | Write |  |  |   s3:GetObject   | 
 |   [ CreateSimulationJob ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_CreateSimulationJob.html)  | Create a simulation job | Write |  |  |   iam:CreateServiceLinkedRole   | 
 |   [ DeleteRobot ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_DeleteRobot.html)  | Delete a robot | Write |  |  |  | 
 |   [ DeleteRobotApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_DeleteRobotApplication.html)  | Delete a robot application | Write |  |  |  | 
@@ -51,7 +51,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ RestartSimulationJob ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_RestartSimulationJob.html)  | Restart a running simulation job | Write |  |  |  | 
 |   [ SyncDeploymentJob ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_SyncDeploymentJob.html)  | Ensures the most recently deployed robot application is deployed to all robots in the fleet | Write |  |  |   iam:CreateServiceLinkedRole   | 
 |   [ UpdateRobotApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_UpdateRobotApplication.html)  | Update a robot application | Write |  |  |  | 
-|   [ UpdateSimulationApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_UpdateSimulationApplication.html)  | Update a robot application | Write |  |  |   s3:GetObject   | 
+|   [ UpdateSimulationApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Operations.htmlAPI_UpdateSimulationApplication.html)  | Update a robot application | Write |  |  |  | 
 
 ## Resources Defined by RoboMaker<a name="awsrobomaker-resources-for-iam-policies"></a>
 
@@ -62,11 +62,12 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ robotApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-robot-applications.html)  |  arn:$\{Partition\}:robomaker:<region>:<account>:robot\-application/<applicationName>/<createdOnEpoch>  |  | 
-|   [ simulationApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:<region>:<account>:simulation\-application/<applicationName>/<createdOnEpoch>  |  | 
-|   [ simulationJob ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlsimulation.html)  |  arn:$\{Partition\}:robomaker:<region>:<account>:simulation\-job/<simulationJobId>  |  | 
-|   [ deploymentJob ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmldeployment.html)  |  arn:$\{Partition\}:robomaker:<region>:<account>:deployment\-job/<deploymentJobId>  |  | 
-|   [ robot ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-robots.html)  |  arn:$\{Partition\}:robomaker:<region>:<account>:robot/<robotName>/<createdOnEpoch>  |  | 
+|   [ robotApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-robot-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot\-application/$\{ApplicationName\}/$\{CreatedOnEpoch\}  |  | 
+|   [ simulationApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-application/$\{ApplicationName\}/$\{CreatedOnEpoch\}  |  | 
+|   [ simulationJob ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlsimulation.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-job/$\{SimulationJobId\}  |  | 
+|   [ deploymentJob ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmldeployment.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-job/$\{DeploymentJobId\}  |  | 
+|   [ robot ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlfleets.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot/$\{RobotName\}/$\{CreatedOnEpoch\}  |  | 
+|   [ deploymentFleet ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-fleet/$\{FleetName\}/$\{CreatedOnEpoch\}  |  | 
 
 ## Condition Keys for AWS RoboMaker<a name="awsrobomaker-policy-keys"></a>
 

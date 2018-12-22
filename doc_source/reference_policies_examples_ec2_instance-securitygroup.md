@@ -26,8 +26,8 @@ This example shows how you might create a policy that allows starting or stoppin
                 "ec2:StopInstances"
             ],
             "Resource": [
-                "arn:aws:ec2:*:*:instance/i-<INSTANCE-ID>",
-                "arn:aws:ec2:*:*:security-group/sg-<SECURITY-GROUP-ID>"
+                "arn:aws:ec2:*:*:instance/i-instance-id",
+                "arn:aws:ec2:*:*:security-group/sg-security-group-id"
             ],
             "Effect": "Allow"
         }

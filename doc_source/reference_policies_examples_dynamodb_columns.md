@@ -19,13 +19,13 @@ The `dynamodb:Select` requirement prevents the API action from returning any att
                 "dynamodb:DeleteItem",
                 "dynamodb:BatchWriteItem"
             ],
-            "Resource": ["arn:aws:dynamodb:*:*:table/<TABLE-NAME>"],
+            "Resource": ["arn:aws:dynamodb:*:*:table/table-name"],
             "Condition": {
                 "ForAllValues:StringEquals": {
                     "dynamodb:Attributes": [
-                        "<COLUMN-NAME-1>",
-                        "<COLUMN-NAME-2>",
-                        "<COLUMN-NAME-3>"
+                        "column-name-1",
+                        "column-name-2",
+                        "column-name-3"
                     ]
                 },
                 "StringEqualsIfExists": {"dynamodb:Select": "SPECIFIC_ATTRIBUTES"}

@@ -9,7 +9,7 @@ This example shows how you might create a policy that allows full RDS database a
         {
             "Effect": "Allow",
             "Action": "rds:*",
-            "Resource": ["arn:aws:rds:<REGION>:*:*"]
+            "Resource": ["arn:aws:rds:region:*:*"]
         },
         {
             "Effect": "Allow",

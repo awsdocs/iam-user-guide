@@ -1,8 +1,8 @@
 # Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity<a name="id_credentials_temp_control-access_assumerole"></a>
 
-The permission policy of the role that is being assumed determines the permissions for the temporary security credentials that are returned by `AssumeRole`, `AssumeRoleWithSAML`, and `AssumeRoleWithWebIdentity`\. You define these permissions when you create or update the role\. 
+The permissions policy of the role that is being assumed determines the permissions for the temporary security credentials that are returned by `AssumeRole`, `AssumeRoleWithSAML`, and `AssumeRoleWithWebIdentity`\. You define these permissions when you create or update the role\. 
 
-Optionally, you can pass a JSON policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API call\. This allows you to restrict permissions for that for the role's temporary credentials by setting a permissions boundary for the role\. You can use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the role\. You cannot use the passed policy to grant permissions that are in excess of those allowed by the permissions policy of the role that is being assumed\. To learn more about how AWS determines the effective permissions of a role, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+Optionally, you can pass a JSON policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. This *session policy* limits the permissions for that for the role's temporary credential session\. You can use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the role\. You cannot use the session policy to grant permissions that are in excess of those allowed by the identity\-based policy of the role that is being assumed\. To learn more about how AWS determines the effective permissions of a role, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
 ![\[PermissionsWhenPassingRoles_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/role_passed_policy_permissions.png)
 
@@ -12,11 +12,11 @@ The policies that are attached to the credentials that made the original call to
 
 You can use the `AssumeRole` API operation with different kinds of policies\. Here are a few examples\.
 
-### Role Permission Policy<a name="permissions-assume-role-example-role-access-policy"></a>
+### Role Permissions Policy<a name="permissions-assume-role-example-role-access-policy"></a>
 
-In this example, you call the `AssumeRole` API operation without the optional `Policy` parameter\. The permissions assigned to the temporary credentials are determined by the permissions policy of the role being assumed\. The following example permissions policy grants the role permission to list all objects that are contained in an S3 bucket named `productionapp`\. It also allows the role to get, put, and delete objects within that bucket\.
+In this example, you call the `AssumeRole` API operation without specifying the session policy in the optional `Policy` parameter\. The permissions assigned to the temporary credentials are determined by the permissions policy of the role being assumed\. The following example permissions policy grants the role permission to list all objects that are contained in an S3 bucket named `productionapp`\. It also allows the role to get, put, and delete objects within that bucket\.
 
-**Example Role Permission Policy**  
+**Example Role Permissions Policy**  
 
 ```
 {
@@ -40,15 +40,17 @@ In this example, you call the `AssumeRole` API operation without the optional `P
 }
 ```
 
-### Policy Passed as a Parameter<a name="permissions-assume-role-example-passed-policy"></a>
+### Session Policy Passed as a Parameter<a name="permissions-assume-role-example-passed-policy"></a>
 
-Imagine that you want to allow a user to assume the same role as in the previous example, but you want the assumed role user to have permission only to get and put objects in the `productionapp` S3 bucket\. You do not want to allow them to delete objects\. One way to accomplish this is to create a new role and specify the desired permissions in that role's permission policy\. Another way to accomplish this is to call the `AssumeRole` API and include a permissions boundary policy in the optional `Policy` parameter as part of the API call\. For example, imagine that the following policy is passed as a parameter of the API call\. The assumed role user would have permissions to perform only these actions: 
+Imagine that you want to allow a user to assume the same role as in the previous example\. But in this case you want the role session to have permission only to get and put objects in the `productionapp` S3 bucket\. You do not want to allow them to delete objects\. One way to accomplish this is to create a new role and specify the desired permissions in that role's permissions policy\. Another way to accomplish this is to call the `AssumeRole` API and include a session policy in the optional `Policy` parameter as part of the API operation\. The resulting session has only the permissions granted by both the role's identity\-based policy and the session policy\. Note that this policy cannot be used to elevate permissions beyond what the assumed role is allowed to access\. For more information about role session permissions, see [Session Policies](access_policies.md#policies_session)\. 
+
+For example, imagine that the following policy is passed as a parameter of the API call\. The person using the session has permissions to perform only these actions: 
 + List all objects in the `productionapp` bucket\.
 + Get and put objects in the `productionapp` bucket\.
 
-In the following policy, the `s3:DeleteObject` permission is filtered out and the assumed role user is not granted the `s3:DeleteObject` permission\. The policy sets the permissions boundary for the role so that it overrides any existing permissions policies on the role\.
+In the following session policy, the `s3:DeleteObject` permission is filtered out and the assumed session is not granted the `s3:DeleteObject` permission\. The policy sets the maximum permissions for the role session so that it overrides any existing permissions policies on the role\.
 
-**Example Policy Passed with `AssumeRole` API call**  
+**Example Session Policy Passed with `AssumeRole` API call**  
 
 ```
 {
@@ -71,11 +73,11 @@ In the following policy, the `s3:DeleteObject` permission is filtered out and th
 }
 ```
 
-### Resource\-based Policy<a name="permissions-assume-role-example-resource-based-policy"></a>
+### Resource\-Based Policy<a name="permissions-assume-role-example-resource-based-policy"></a>
 
 Some AWS resources support resource\-based policies, and these policies provide another mechanism to define permissions that affect temporary security credentials\. Only a few resources, like Amazon S3 buckets, Amazon SNS topics, and Amazon SQS queues support resource\-based policies\. The following example expands on the previous examples, using an S3 bucket named `productionapp`\. The following policy is attached to the bucket\. 
 
-When you attach the following policy to the `productionapp` bucket, *all* users are denied permission to delete objects from the bucket \(note the `Principal` element in the policy\)\. This includes all assumed role users, even though the role permission policy grants the `DeleteObject` permission\. An explicit `Deny` statement always takes precedence over an explicit `Allow` statement, and a policy set as the permissions boundary still overrides the bucket policy\.
+When you attach the following resource\-based policy to the `productionapp` bucket, *all* users are denied permission to delete objects from the bucket \(note the `Principal` element in the policy\)\. This includes all assumed role users, even though the role permissions policy grants the `DeleteObject` permission\. An explicit `Deny` statement always takes precedence over an `Allow` statement\.
 
 **Example Bucket Policy**  
 
@@ -91,4 +93,4 @@ When you attach the following policy to the `productionapp` bucket, *all* users 
 }
 ```
 
-For more information about how multiple policies are combined and evaluated by AWS, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+For more information about how multiple policy types are combined and evaluated by AWS, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.

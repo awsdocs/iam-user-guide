@@ -44,7 +44,7 @@ A document in [JSON](http://www.json.org) format in which you define who is allo
 A permissions document in [JSON](http://www.json.org) format in which you define what actions and resources the role can use\. The document is written according to the rules of the [IAM policy language](reference_policies.md)\.
 
 ****Permissions boundary****  
-An advanced feature in which you use policies to limit the maximum permissions that a role can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. You cannot apply a permissions boundary to a service\-linked role\. For more information, see [Permissions Boundaries for IAM Identities](access_policies_boundaries.md)\.
+An advanced feature in which you use policies to limit the maximum permissions that a role can have\. These boundaries can be applied to AWS Organizations organizations or to IAM users or roles\. You cannot apply a permissions boundary to a service\-linked role\. For more information, see [Permissions Boundaries for IAM Entities](access_policies_boundaries.md)\.
 
 ****Principal****  
 An entity in AWS that can perform actions and access resources\. A principal can be an AWS account root user, an IAM user, or a role\. You can grant permissions to access a resource in one of two ways:  
