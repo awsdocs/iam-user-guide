@@ -164,7 +164,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Secrets Manager](list_awssecretsmanager.md)
 + [AWS Security Hub](list_awssecurityhub.md)
 + [AWS Security Token Service](list_awssecuritytokenservice.md)
-+ [AWS Server Migration Service automates the migration of your on\-premises VMware vSphere or Microsoft Hyper\-V/SCVMM virtual machines to the AWS Cloud\.](list_awsservermigrationserviceautomatesthemigrationofyouron-premisesvmwarevsphereormicrosofthyper-v_scvmmvirtualmachinestotheawscloud..md)
++ [AWS Server Migration Service](list_awsservermigrationservice.md)
 + [AWS Serverless Application Repository](list_awsserverlessapplicationrepository.md)
 + [AWS Service Catalog](list_awsservicecatalog.md)
 + [Amazon SES](list_amazonses.md)
