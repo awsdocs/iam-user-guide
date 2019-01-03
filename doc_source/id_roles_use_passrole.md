@@ -64,7 +64,13 @@ Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enha
 
 1. Choose the **AWS Service** role type, and then choose the **Amazon RDS Role for Enhanced Monitoring** service\. Then choose **Next: Permissions**\.
 
-1. Choose the **AmazonRDSEnhancedMonitoringRole**, permissions policy and then choose **Next: Review**\.
+1. Choose the **AmazonRDSEnhancedMonitoringRole**, permissions policy\.
+
+1. Choose **Next: Tagging**\.
+
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
+
+1. Choose **Next: Review**\.
 
 1. For **Role name**, type a role name that helps you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\. 
 

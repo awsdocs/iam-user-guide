@@ -51,7 +51,6 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetPermissionSet ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve details of a permission set | Read |  |  |  | 
 |   [ GetPermissionsPolicy ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve all permission policies associated with a permission set | Read |  |  |   sso:DescribePermissionsPolicies   | 
 |   [ GetProfile ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve a profile for an application instance | Read |  |  |  | 
-|   [ GetSSOConfiguration ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve configuration for the current SSO instance | Read |  |  |  | 
 |   [ GetSSOStatus ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Check if AWS Single Sign\-On is enabled | Read |  |  |  | 
 |   [ GetTrust ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve the federation trust in a target account | Read |  |  |  | 
 |   [ GetUserPoolInfo ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve User Pool information | Read |  |  |  | 
@@ -82,7 +81,6 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateDirectoryAssociation ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the user attribute mappings for your connected directory | Write |  |  |  | 
 |   [ UpdateGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates group information | Write |  |  |  | 
 |   [ UpdateProfile ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the profile for an application instance | Write |  |  |  | 
-|   [ UpdateSSOConfiguration ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the configuration for the current SSO instance | Write |  |  |  | 
 |   [ UpdateTrust ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the federation trust in a target account | Write |  |  |  | 
 |   [ UpdateUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates user information | Write |  |  |  | 
 

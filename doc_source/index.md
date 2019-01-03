@@ -1,7 +1,7 @@
 # AWS Identity and Access Management User Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -298,8 +298,8 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon EC2](list_amazonec2.md)
          + [Actions, Resources, and Condition Keys for Amazon EC2 Auto Scaling](list_amazonec2autoscaling.md)
          + [Actions, Resources, and Condition Keys for Amazon EC2 Container Registry](list_amazonec2containerregistry.md)
-         + [Actions, Resources, and Condition Keys for Amazon EC2 Container Service](list_amazonec2containerservice.md)
          + [Actions, Resources, and Condition Keys for AWS Elastic Beanstalk](list_awselasticbeanstalk.md)
+         + [Actions, Resources, and Condition Keys for Amazon Elastic Container Service](list_amazonelasticcontainerservice.md)
          + [Actions, Resources, and Condition Keys for Amazon Elastic Container Service for Kubernetes](list_amazonelasticcontainerserviceforkubernetes.md)
          + [Actions, Resources, and Condition Keys for Amazon Elastic File System](list_amazonelasticfilesystem.md)
          + [Actions, Resources, and Condition Keys for Elastic Load Balancing](list_elasticloadbalancing.md)
@@ -379,7 +379,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS Secrets Manager](list_awssecretsmanager.md)
          + [Actions, Resources, and Condition Keys for AWS Security Hub](list_awssecurityhub.md)
          + [Actions, Resources, and Condition Keys for AWS Security Token Service](list_awssecuritytokenservice.md)
-         + [Actions, Resources, and Condition Keys for AWS Server Migration Service automates the migration of your on-premises VMware vSphere or Microsoft Hyper-V/SCVMM virtual machines to the AWS Cloud.](list_awsservermigrationserviceautomatesthemigrationofyouron-premisesvmwarevsphereormicrosofthyper-v_scvmmvirtualmachinestotheawscloud..md)
+         + [Actions, Resources, and Condition Keys for AWS Server Migration Service](list_awsservermigrationservice.md)
          + [Actions, Resources, and Condition Keys for AWS Serverless Application Repository](list_awsserverlessapplicationrepository.md)
          + [Actions, Resources, and Condition Keys for AWS Service Catalog](list_awsservicecatalog.md)
          + [Actions, Resources, and Condition Keys for Amazon SES](list_amazonses.md)

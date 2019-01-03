@@ -96,6 +96,21 @@ Add the following statement to the permissions policy for the IAM entity that ne
 }
 ```
 
+**To allow an IAM entity to pass an existing role to the service**
+
+Some AWS services allow you to pass an existing role to the service, instead of creating a new service\-linked role\. To do this, a user must have permissions to *pass the role* to the service\. Add the following statement to the permissions policy for the IAM entity that needs to pass a role\. This policy statement also allows the entity to view a list of roles from which they can choose the role to pass\. For more information, see [Granting a User Permissions to Pass a Role to an AWS Service](id_roles_use_passrole.md)\.
+
+```
+{
+    "Effect": "Allow",
+    "Action": [
+        "iam:ListRoles",
+        "iam:PassRole"
+    ],
+    "Resource": "arn:aws:iam::123456789012:role/my-role-for-XYZ"
+}
+```
+
 ## Creating a Service\-Linked Role<a name="create-service-linked-role"></a>
 
 The method that you use to create a service\-linked role depends on the service\. In some cases, you don't need to manually create a service\-linked role\. For example, when you complete a specific action \(such as creating a resource\) in the service, the service might create the service\-linked role for you\. Or if you were using a service before it began supporting service\-linked roles, then the service might have automatically created the role in your account\. To learn more, see [A New Role Appeared in My AWS Account](troubleshoot_roles.md#troubleshoot_roles_new-role-appeared)\.

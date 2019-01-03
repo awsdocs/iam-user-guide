@@ -60,7 +60,6 @@ This example shows how you might create a policy that allows viewing service las
         ],
         "Resource": "*"
     }
-}
 ```
 
 ## Troubleshooting Entity Activity<a name="access_policies_access-advisor-troubleshooting"></a>
@@ -84,8 +83,8 @@ AWS collects service last accessed data in most regions\. Data is stored for a m
 
 | Region name | Region | Tracking start date | 
 | --- | --- | --- | 
-| US East \(Ohio\) | us\-east\-2 | October 27, 2015 | 
-| US East \(N\. Virginia\) | us\-east\-1 | October 1, 2017 | 
+| US East \(Ohio\) | us\-east\-2 | October 27, 2017 | 
+| US East \(N\. Virginia\) | us\-east\-1 | October 1, 2015 | 
 | US West \(N\. California\) | us\-west\-1 | October 1, 2015 | 
 | US West \(Oregon\) | us\-west\-2 | October 1, 2015 | 
 | Asia Pacific \(Tokyo\) | ap\-northeast\-1 | October 1, 2015 | 

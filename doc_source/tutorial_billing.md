@@ -26,8 +26,8 @@ Create a test AWS account to use with this tutorial\. In this account create two
 
 | *Create user accounts* | *Create and configure group accounts* | User Name | Group Name | Add user as a member | 
 | --- | --- | --- | --- | --- | 
-| FinanceManager | FullAccess | FinanceManager | 
-| FinanceUser | ViewAccess | FinanceUser | 
+| FinanceManager | BillingFullAccessGroup | FinanceManager | 
+| FinanceUser | BillingViewAccessGroup | FinanceUser | 
 
 ## Step 1: Enable Access to Billing Data on Your AWS Test Account<a name="tutorial-billing-step1"></a>
 
@@ -95,19 +95,19 @@ Now that you have custom billing policies available, you can attach them to thei
 
    **Full access**
 
-   1. In the search box, type **BillingFullAccess**, and then select the check box next to the policy name\. 
+   1. In the policy search box, type **BillingFullAccess**, and then select the check box next to the policy name\. 
 
    1. Choose **Policy actions**, and then choose **Attach**\.
 
-   1. In the search box, type **FinanceManager**, select the check box next to the name of the group, and then choose **Attach policy**\.
+   1. In the identity \(user, group, and role\) search box, type **BillingFullAccessGroup**, select the check box next to the name of the group, and then choose **Attach policy**\.
 
    **Read\-only access**
 
-   1. In the search box, type **BillingViewAccess**, and then select the check box next to the policy name\.
+   1. In the policy search box, type **BillingViewAccess**, and then select the check box next to the policy name\.
 
    1. Choose **Policy actions**, and then choose **Attach**\.
 
-   1. For **Filter**, choose **Groups**\. In the search box, type **FinanceUser**, select the check box next to the name of the group, and then choose **Attach policy**\.
+   1. In the identity \(user, group, and role\) search box, type **BillingViewAccessGroup**, select the check box next to the name of the group, and then choose **Attach policy**\.
 
 1. Sign out of the console, and then proceed to [Step 4: Test Access to the Billing Console](#tutorial-billing-step4)\.
 
