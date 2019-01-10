@@ -184,6 +184,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Amazon RDS: Allows Restoring RDS Databases, Programmatically and In the Console](reference_policies_examples_rds_db-console.md)
          + [Amazon RDS: Allows Tag Owners Full Access to RDS Resources That They Have Tagged](reference_policies_examples_rds_tag-owner.md)
          + [Amazon S3: Allows Amazon Cognito Users to Access Objects in Their Bucket](reference_policies_examples_s3_cognito-bucket.md)
+         + [Amazon S3: Allows Federated Users Access to Their S3 Home Directory, Programmatically and In the Console](reference_policies_examples_s3_federated-home-directory-console.md)
          + [Amazon S3: Allows IAM Users Access to Their S3 Home Directory, Programmatically and In the Console](reference_policies_examples_s3_home-directory-console.md)
          + [Amazon S3: Limits Managing to a Specific S3 Bucket](reference_policies_examples_s3_deny-except-bucket.md)
          + [Amazon S3: Allows Read and Write Access to a Specific S3 Bucket](reference_policies_examples_s3_rw-bucket.md)

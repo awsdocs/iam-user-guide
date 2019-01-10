@@ -32,6 +32,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DescribeMountTargets ](https://docs.aws.amazon.com/efs/latest/ug/API_DescribeMountTargets.html)  | Returns the descriptions of all the current mount targets, or a specific mount target, for a file system\. | Read |   [ file\-system\* ](#amazonelasticfilesystem-file-system)   |  |  | 
 |   [ DescribeTags ](https://docs.aws.amazon.com/efs/latest/ug/API_DescribeTags.html)  | Returns the tags associated with a file system\. | Read |   [ file\-system\* ](#amazonelasticfilesystem-file-system)   |  |  | 
 |   [ ModifyMountTargetSecurityGroups ](https://docs.aws.amazon.com/efs/latest/ug/API_ModifyMountTargetSecurityGroups.html)  | Modifies the set of security groups in effect for a mount target\. | Write |   [ file\-system\* ](#amazonelasticfilesystem-file-system)   |  |  | 
+|   [ UpdateFileSystem ](https://docs.aws.amazon.com/efs/latest/ug/API_UpdateFileSystem.html)  | Updates the throughput mode or the amount of provisioned throughput of an existing file system\. | Write |   [ file\-system\* ](#amazonelasticfilesystem-file-system)   |  |  | 
 
 ## Resources Defined by EFS<a name="amazonelasticfilesystem-resources-for-iam-policies"></a>
 

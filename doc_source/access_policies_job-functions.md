@@ -58,9 +58,9 @@ Before an IAM user or role can access the AWS Billing and Cost Management consol
 
 **Use case:** This user sets up, configures, and maintains databases in the AWS Cloud\.
 
-**Policy description:** This policy grants permissions to create, configure, and maintain databases\. It includes access to all AWS database services, such as Amazon DynamoDB, Amazon ElastiCache, Amazon Relational Database Service \(RDS\), Amazon Redshift, and other supporting services\.
+**Policy description:** This policy grants permissions to create, configure, and maintain databases\. It includes access to AWS database services, such as Amazon DynamoDB, Amazon Relational Database Service \(RDS\), and Amazon Redshift\. View the policy for the full list of database services that this policy supports\.
 
-This policy supports the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function policy supports the ability to pass roles to AWS services\. The policy allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
 **Optional IAM service roles for the Database Administrator job function**  
@@ -81,9 +81,9 @@ This policy supports the ability to pass roles to AWS services\. The policy gran
 
 **Use case:** This user runs Hadoop jobs and queries\. The user also accesses and analyzes information for data analytics and business intelligence\.
 
-**Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to AWS Data Pipeline, Amazon EC2, Amazon Elasticsearch Service, Amazon Elastic File System, Amazon EMR, Amazon Kinesis, Amazon Kinesis Data Analytics, Amazon Machine Learning, Amazon RDS, and Amazon Redshift\.
+**Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to additional data scientist services, such as AWS Data Pipeline, Amazon EC2, Amazon Kinesis, Amazon Machine Learning, and Amazon SageMaker\. View the policy for the full list of data scientist services that this policy supports\.
 
-This job function supports the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function policy supports the ability to pass roles to AWS services\. One statement allows passing any role to Amazon SageMaker\. Another statement allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
 **Optional IAM service roles for the Data Scientist job function**  
@@ -112,7 +112,7 @@ This job function supports the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants permissions to create and maintain network resources in Auto Scaling, Amazon EC2, AWS Direct Connect, Route 53, Amazon CloudFront, Elastic Load Balancing, AWS Elastic Beanstalk, Amazon SNS, CloudWatch, CloudWatch Logs, Amazon S3, IAM, and Amazon Virtual Private Cloud\.
 
-This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
 **Optional IAM service roles for the Network Administrator job function**  
@@ -145,7 +145,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
 
-This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating the Roles and Attaching the Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
 **Optional IAM service roles for the System Administrator job function**  
@@ -165,7 +165,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants `List*`, `Describe*`, `Get*`, `View*`, and `Lookup*` access to resources for most AWS services\. To see what actions this policy includes for each service, see [ViewOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/ViewOnlyAccess)\.
 
-## Creating the Roles and Attaching the Policies \(Console\)<a name="access_policies_job-functions_create-policies"></a>
+## Creating Roles and Attaching Policies \(Console\)<a name="access_policies_job-functions_create-policies"></a>
 
 Several of the previously listed policies grant the ability to configure AWS services with roles that enable those services to perform operations on your behalf\. The job function policies either specify exact role names that you must use or at least include a prefix that specifies the first part of the name that can be used\. To create one of these roles, perform the steps in the following procedure\.
 

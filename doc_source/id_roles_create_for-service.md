@@ -191,7 +191,7 @@ If you are going to use the role with Amazon EC2 or another AWS service that use
 
 1. Add the role to the instance profile: [aws iam add\-role\-to\-instance\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/add-role-to-instance-profile.html)
 
-The following example demonstrates the first two steps for creating a role and attaching permissions\. It also shows the two steps for creating an instance profile and adding the role to the profile\. This example allows the Amazon EC2 service to assume the role and view the `example_bucket` Amazon S3 bucket\. The example also assumes that you are running on a client computer running Windows and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
+The AWS CLI example command set below demonstrates the first two steps for creating a role and attaching permissions\. It also shows the two steps for creating an instance profile and adding the role to the profile\. This example trust policy allows the Amazon EC2 service to assume the role and view the `example_bucket` Amazon S3 bucket\. The example also assumes that you are running on a client computer running Windows and have already configured your command line interface with your account credentials and region\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
 In this example, include the following trust policy in the first command when you create the role\. This trust policy allows the Amazon EC2 service to assume the role\. 
 
