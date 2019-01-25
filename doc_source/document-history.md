@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [IAM User My Security Credentials Page](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.html) | IAM users can now manage all of their own credentials on the **My Security Credentials** page\. This AWS Management Console page displays account information such as the account ID and canonical user ID\. Users can also view and edit their own passwords, access keys, X\.509 certificates, SSH keys, and Git credentials\. | January 24, 2019 | 
 | [Access Advisor API](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html) | You can now use the AWS CLI and AWS API to view service last accessed data\.  | December 7, 2018 | 
 | [Tagging IAM Users and Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) | You can now use IAM tags to add custom attributes to an identity \(IAM user or role\) using a tag key–value pair\. You can also use tags to control an identity's access to resources or to control what tags can be attached to an identity\.  | November 14, 2018 | 
 | [U2F security keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_u2f.html) | You can now use U2F security keys as a multi\-factor authentication \(MFA\) option when signing in to the AWS Management Console\.  | September 25, 2018 | 

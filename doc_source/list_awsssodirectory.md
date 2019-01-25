@@ -38,6 +38,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   UpdateGroup  | Updates information about group in the directory that AWS SSO provides by default | Write |  |  |  | 
 |   UpdatePassword  | Updates password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default | Write |  |  |  | 
 |   UpdateUser  | Updates user information in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   VerifyEmail  | Verify email address of an User | Write |  |  |  | 
 
 ## Resources Defined by SSO Directory<a name="awsssodirectory-resources-for-iam-policies"></a>
 

@@ -34,7 +34,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ container\-instance ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_instances.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:container\-instance/$\{ContainerInstanceId\}  |  | 
 |   [ service ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:service/$\{ServiceName\}  |  | 
 |   [ task ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task/$\{TaskId\}  |  | 
-|   [ task\-definition ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task\-definition/$\{TaskDefinitionFamilyName:$\{TaskDefinitionRevisionNumber\}  |  | 
+|   [ task\-definition ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task\-definition/$\{TaskDefinitionFamilyName\}:$\{TaskDefinitionRevisionNumber\}  |  | 
 
 ## Condition Keys for Amazon Elastic Container Service<a name="amazonelasticcontainerservice-policy-keys"></a>
 
@@ -47,5 +47,7 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  |  | String | 
+|   aws:TagKeys  |  | String | 
 |   [ ecs:cluster ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS cluster\. | ARN | 
 |   [ ecs:container\-instances ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS container instance\. | ARN | 

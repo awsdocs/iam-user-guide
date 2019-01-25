@@ -23,10 +23,10 @@ To add a virtual MFA device, see one of the following:
 + [Enable a Virtual MFA Device for an IAM User \(Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-iam-user)
 To add a U2F security key, see one of the following:   
 + [Enable a U2F Security Key for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-root)
-+ [Enable a U2F Security Key for an IAM User \(Console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-iam-user)
++ [Enable a U2F Security Key for Another IAM User \(Console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-iam-user)
 To add a hardware MFA device, see one of the following:   
 + [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)\.
-+ [Enable a Hardware MFA Device for an IAM User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)
++ [Enable a Hardware MFA Device for Another IAM User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)
 
 **Get an access key**  
 You need an access key if you want to make AWS requests using the [AWS SDKs](https://aws.amazon.com/tools/), the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or the API operations\.   
@@ -36,8 +36,8 @@ For an IAM user, see [Managing Access Keys for IAM Users](id_credentials_access-
 
 **Tag a user or role**  
 You can tag an IAM user or role using the IAM console, the AWS CLI, or the API through one of the AWS SDKs\.   
-To learn about tags in IAM, see [Tagging IAM Identities](id_tags.md)\.  
-For details about how to manage tags in IAM, see [Managing Tags on IAM Identities \(Console\)](id_tags.md#id_tags_procs-console)\.  
+To learn about tags in IAM, see [Tagging IAM Entities](id_tags.md)\.  
+For details about how to manage tags in IAM, see [Managing Tags on IAM Entities \(Console\)](id_tags.md#id_tags_procs-console)\.  
 To learn about using IAM tags to control access to AWS, see [Controlling Access Using IAM Tags](access_iam-tags.md)\. 
 
 **Get started with all of AWS**  

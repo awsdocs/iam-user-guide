@@ -7,26 +7,97 @@ U2F is an open authentication standard hosted by the [FIDO Alliance](https://fid
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\. 
 
 **Topics**
-+ [Enable a U2F Security Key for an IAM User \(Console\)](#enable-u2f-mfa-for-iam-user)
++ [Permissions Required](#enable-u2f-mfa-for-iam-user-permissions-required)
++ [Enable a U2F Security Key for Your Own IAM User \(Console\)](#enable-u2f-mfa-for-own-iam-user)
++ [Enable a U2F Security Key for Another IAM User \(Console\)](#enable-u2f-mfa-for-iam-user)
 + [Enable a U2F Security Key for the AWS Account Root User \(Console\)](#enable-u2f-mfa-for-root)
 + [Replace a U2F Security Key](#replace-u2f-mfa)
 + [Supported Configurations for Using U2F Security Keys](id_credentials_mfa_u2f_supported_configurations.md)
 
-## Enable a U2F Security Key for an IAM User \(Console\)<a name="enable-u2f-mfa-for-iam-user"></a>
+## Permissions Required<a name="enable-u2f-mfa-for-iam-user-permissions-required"></a>
 
-You can enable a U2F security key for an IAM user from the AWS Management Console only, not from the AWS CLI or AWS API\. To enable a U2F security key for your AWS account root user, see [Enable a U2F Security Key for the AWS Account Root User \(Console\)](#enable-u2f-mfa-for-root)\.
+To manage a U2F security key for your own IAM user while protecting sensitive MFA\-related actions, you must have the permissions from the following policy:
 
-**To enable a U2F security key for an IAM user \(console\)**
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowManageOwnUserMFA",
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeactivateMFADevice",
+                "iam:EnableMFADevice",
+                "iam:GetUser",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Sid": "DenyAllExceptListedIfNoMFA",
+            "Effect": "Deny",
+            "NotAction": [
+                "iam:EnableMFADevice",
+                "iam:GetUser",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
+            "Condition": {
+                "BoolIfExists": {
+                    "aws:MultiFactorAuthPresent": "false"
+                }
+            }
+        }
+    ]
+}
+```
+
+## Enable a U2F Security Key for Your Own IAM User \(Console\)<a name="enable-u2f-mfa-for-own-iam-user"></a>
+
+You can enable a U2F security key for your own IAM user from the AWS Management Console only, not from the AWS CLI or AWS API\.
+
+**Note**  
+Before you can enable a U2F security key, you must have physical access to the device\.
+
+**To enable a U2F security key for your own IAM user \(console\)**
+
+1. Use your AWS account ID or account alias, your IAM user name, and your password to sign in to the [IAM console](https://console.aws.amazon.com/iam)\.
+**Note**  
+For your convenience, the AWS sign\-in page uses a browser cookie to remember your IAM user name and account information\. If you previously signed in as a different user, choose **Sign in to a different account** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account ID or account alias to be redirected to the IAM user sign\-in page for your account\.
+
+   To get your AWS account ID, contact your administrator\.
+
+1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
+![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
+
+1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication** section, choose **Manage MFA device**\.
+
+1. In the **Manage MFA device** wizard, choose **U2F security key**, and then choose **Continue**\.
+
+1. Insert the U2F security key into your computer's USB port\.  
+![\[U2F Security Key\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
+
+1. Tap the U2F security key, and then choose **Close** when U2F setup is complete\. 
+
+The U2F security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md)\.
+
+## Enable a U2F Security Key for Another IAM User \(Console\)<a name="enable-u2f-mfa-for-iam-user"></a>
+
+You can enable a U2F security key for another IAM user from the AWS Management Console only, not from the AWS CLI or AWS API\.
+
+**To enable a U2F security key for another IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security Credentials** tab\.
+1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security credentials** tab\.
 
 1. Next to **Assigned MFA device**, choose **Manage**\.
 
-1. In the **Manage MFA Device** wizard, choose **U2F security key**, and then choose **Continue**\.
+1. In the **Manage MFA device** wizard, choose **U2F security key**, and then choose **Continue**\.
 
 1. Insert the U2F security key into your computer's USB port\.  
 ![\[U2F Security Key\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
@@ -37,23 +108,20 @@ The U2F security key is ready for use with AWS\. For information about using MFA
 
 ## Enable a U2F Security Key for the AWS Account Root User \(Console\)<a name="enable-u2f-mfa-for-root"></a>
 
-You can use IAM in the AWS Management Console to configure and enable a U2F security key for your AWS account root user\. To enable MFA devices for the AWS account, you must be signed in to AWS using your root user credentials\. 
+You can configure and enable a virtual MFA device for your root user from the AWS Management Console only, not from the AWS CLI or AWS API\. 
 
-If your U2F security key is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. If you can't sign in with your U2F security key, you can sign in by verifying your identity using the email and phone that are registered with your account\. Before you enable a U2F security key for your root user, review your account settings and contact information to make sure that you have access to the email and phone number\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
-
-**Note**  
-You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.<a name="enable_u2f_root"></a>
+If your U2F security key is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.<a name="enable_u2f_root"></a>
 
 **To enable the U2F key for your root user \(console\)**
 
-1. Sign in to the AWS Management Console\.
-**Important**  
-To manage MFA devices for the AWS account, you must use your root user credentials to sign in to AWS\. You cannot manage MFA devices for the root user while signed in with other credentials\.
+1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the AWS account root user\.
+**Note**  
+If you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root user credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account email address and password\.
 
-1. Do one of the following:
-   + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root account**\. 
-   + **Option 2**: On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
+1. On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.  
 ![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+
+1. Expand the **Multi\-factor authentication \(MFA\)** section\.
 
 1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
 

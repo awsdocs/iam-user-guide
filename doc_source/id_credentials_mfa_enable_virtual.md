@@ -17,90 +17,14 @@ When you configure a virtual MFA device to work with AWS, we recommend that you 
 
 ## Permissions Required<a name="mfa_enable_virtual_permissions-required"></a>
 
-To manage virtual MFA devices for your IAM user, you must have the permissions from the following policy:
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowListActions",
-            "Effect": "Allow",
-            "Action": [
-                "iam:ListUsers",
-                "iam:ListVirtualMFADevices"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
-            "Effect": "Allow",
-            "Action": [
-                "iam:ListMFADevices"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:mfa/*",
-                "arn:aws:iam::*:user/${aws:username}"
-            ]
-        },
-        {
-            "Sid": "AllowIndividualUserToManageTheirOwnMFA",
-            "Effect": "Allow",
-            "Action": [
-                "iam:CreateVirtualMFADevice",
-                "iam:DeleteVirtualMFADevice",
-                "iam:EnableMFADevice",
-                "iam:ResyncMFADevice"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:mfa/${aws:username}",
-                "arn:aws:iam::*:user/${aws:username}"
-            ]
-        },
-        {
-            "Sid": "AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA",
-            "Effect": "Allow",
-            "Action": [
-                "iam:DeactivateMFADevice"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:mfa/${aws:username}",
-                "arn:aws:iam::*:user/${aws:username}"
-            ],
-            "Condition": {
-                "Bool": {
-                    "aws:MultiFactorAuthPresent": "true"
-                }
-            }
-        },
-        {
-            "Sid": "BlockMostAccessUnlessSignedInWithMFA",
-            "Effect": "Deny",
-            "NotAction": [
-                "iam:CreateVirtualMFADevice",
-                "iam:EnableMFADevice",
-                "iam:ListMFADevices",
-                "iam:ListUsers",
-                "iam:ListVirtualMFADevices",
-                "iam:ResyncMFADevice"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "BoolIfExists": {
-                    "aws:MultiFactorAuthPresent": "false"
-                }
-            }
-        }
-    ]
-}
-```
+To manage virtual MFA devices for your IAM user, you must have the permissions from the following policy: [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own MFA Device on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.
 
 ## Enable a Virtual MFA Device for an IAM User \(Console\)<a name="enable-virt-mfa-for-iam-user"></a>
 
 You can use IAM in the AWS Management Console to enable and manage a virtual MFA device for an IAM user in your account\. To enable and manage an MFA device using the AWS CLI or AWS API, see [Enabling and Managing Virtual MFA Devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)\.
 
 **Note**  
-You must have physical access to the hardware that will host the user's virtual MFA device in order to configure MFA\. For example, you might configure MFA for a user who will use a virtual MFA device running on a smartphone\. In that case, you must have the smartphone available in order to finish the wizard\. Because of this, you might want to let users configure and manage their own virtual MFA devices\. In that case, you must grant users the permissions to perform the necessary IAM actions\. For more information and for an example of an IAM policy that grants these permissions, see [Allow Users to Manage Only Their Own Virtual MFA Devices](id_credentials_delegate-permissions_examples.md#creds-policies-mfa-console)\. 
+You must have physical access to the hardware that will host the user's virtual MFA device in order to configure MFA\. For example, you might configure MFA for a user who will use a virtual MFA device running on a smartphone\. In that case, you must have the smartphone available in order to finish the wizard\. Because of this, you might want to let users configure and manage their own virtual MFA devices\. In that case, you must grant users the permissions to perform the necessary IAM actions\. For more information and for an example of an IAM policy that grants these permissions, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own MFA Device on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\. 
 
 **To enable a virtual MFA device for an IAM user \(console\)**
 

@@ -28,8 +28,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ user ](https://docs.aws.amazon.com/transfer/latest/userguide/users.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:user/$\{serverId\}/$\{username\}  |   [ aws:RequestTag/tag\-key ](#awstransferforsftp-aws_RequestTag_tag-key)   [ aws:TagKeys ](#awstransferforsftp-aws_TagKeys)   | 
-|   [ server ](https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:server/$\{serverId\}  |   [ aws:RequestTag/tag\-key ](#awstransferforsftp-aws_RequestTag_tag-key)   [ aws:TagKeys ](#awstransferforsftp-aws_TagKeys)   | 
+|   [ user ](https://docs.aws.amazon.com/transfer/latest/userguide/users.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:user/$\{serverId\}/$\{username\}  |   [ aws:RequestTag/$\{TagKey\} ](#awstransferforsftp-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awstransferforsftp-aws_TagKeys)   | 
+|   [ server ](https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:server/$\{serverId\}  |   [ aws:RequestTag/$\{TagKey\} ](#awstransferforsftp-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awstransferforsftp-aws_TagKeys)   | 
 
 ## Condition Keys for AWS Transfer for SFTP<a name="awstransferforsftp-policy-keys"></a>
 
@@ -42,5 +42,5 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/tag\-key  | A key that is present in the request the user makes\. | String | 
+|   aws:RequestTag/$\{TagKey\}  | A key that is present in the request the user makes\. | String | 
 |   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 

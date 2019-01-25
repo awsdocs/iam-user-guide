@@ -133,23 +133,21 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
-1. Choose one or more permissions policies to attach to the role\. Depending on the use case that you selected, the service might do any of the following:
-   + Define the permissions that the role uses
+1. If possible, select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want the service to have\.
+
+   Depending on the use case that you selected, the service might allow you to do any of the following:
+   + Nothing, becuase the service defines the permissions for the role
    + Allow you to choose from a limited set of permissions
    + Allow you to choose from any permissions
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role
 
-   If possible, select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want the service to have\.
-
-1. If possible, select the check box next to the policy that assigns the permissions that you want the users to have\. 
-
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature that is available for service roles, but not service\-linked roles\. 
 
-   If possible, open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
+   Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
 1. Choose **Next: Tagging**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 
 1. Choose **Next: Review**\. 
 
@@ -177,7 +175,7 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
 
-   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing Tags on IAM Entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
@@ -257,7 +255,7 @@ Creating a role from the AWS API involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
 
-   For more information, see [Managing Tags on IAM Identities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing Tags on IAM Entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 

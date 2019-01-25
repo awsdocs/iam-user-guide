@@ -1,6 +1,6 @@
-# Tagging IAM Identities<a name="id_tags"></a>
+# Tagging IAM Entities<a name="id_tags"></a>
 
-You can use IAM tags to add custom attributes to an IAM user or role using a tag key–value pair\. For example, to add location information to a user, you can add the tag key **location** and the tag value **us\_wa\_seattle**\. Or you could use three separate location tag key–value pairs: **loc\-country = us**, **loc\-state = wa**, and **loc\-city = seattle**\. You can use tags to control an identity's access to resources or to control what tags can be attached to an identity\. To learn more about using tags to control access, see [Controlling Access Using IAM Tags](access_iam-tags.md)\.
+You can use IAM tags to add custom attributes to an IAM user or role using a tag key–value pair\. For example, to add location information to a user, you can add the tag key **location** and the tag value **us\_wa\_seattle**\. Or you could use three separate location tag key–value pairs: **loc\-country = us**, **loc\-state = wa**, and **loc\-city = seattle**\. You can use tags to control an entity's access to resources or to control what tags can be attached to an entity\. To learn more about using tags to control access, see [Controlling Access Using IAM Tags](access_iam-tags.md)\.
 
 ## Choose an AWS Tag Naming Convention<a name="id_tags_naming"></a>
 
@@ -9,13 +9,13 @@ When you begin attaching tags to your IAM users and roles, choose your tag namin
 **Note**  
 If your account is a member of AWS Organizations, examine any [service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) that restrict access based on tags\. Then make sure that those policies use key names with a similar naming convention as your accounts\. If you use tags with one set of key names in the organization and a different set of key names in your accounts, permissions might not work as you intend\.
 
-## Rules for Tagging IAM Identities<a name="id_tags_rules"></a>
+## Rules for Tagging IAM Entities<a name="id_tags_rules"></a>
 
 A number of conventions govern the creation and application of tags in IAM\.
 
 ### Naming Tags<a name="id_tags_rules_creating"></a>
 
-Observe the following conventions when formulating a tag naming convention for IAM identities:
+Observe the following conventions when formulating a tag naming convention for IAM entities \(users and roles\):
 + Tag keys and values can include any combination of letters, numbers, spaces, and \_ \. : / = \+ \- @ \. symbols\.
 + Tag key–value pairs are not case sensitive, but case is preserved\. This means that you cannot have separate **Department** and **department** tag keys\. If you have tagged a user with the **Department=foo** tag and you add the **department=bar** tag, it replaces the first tag\. A second tag is not added\.
 + You cannot create a tag key or value that begins with the text **aws:**\. This tag prefix is reserved for AWS internal use\.
@@ -26,18 +26,18 @@ To control access to engineers in this example using the **team** tag, you must 
 
 ### Applying and Editing Tags<a name="id_tags_rules_applying"></a>
 
-Observe the following conventions when attaching tags to IAM identities:
+Observe the following conventions when attaching tags to IAM entities \(users or roles\):
 + You can tag users or roles but not groups or policies\.
-+ You cannot use Tag Editor to tag IAM identities\. Tag Editor does not support IAM tags\. For information about using Tag Editor with other services, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Management Console User Guide*\.
-+ To tag an IAM identity, you must have specific permissions\. To tag or untag roles and users, you must also have permission to list tags\. For more information, see [Permissions Required for Tagging IAM Identities](#id_tags_permissions) following\.
++ You cannot use Tag Editor to tag IAM entities\. Tag Editor does not support IAM tags\. For information about using Tag Editor with other services, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Management Console User Guide*\.
++ To tag an IAM entity, you must have specific permissions\. To tag or untag roles and users, you must also have permission to list tags\. For more information, see [Permissions Required for Tagging IAM Entities](#id_tags_permissions) following\.
 + There are limits to the number and size of tags you can attach to a user or role\. For details, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
-+ You can apply the same tag to multiple IAM identities\. For example, if you have a department named AWS\_Development with 12 members, you can have 12 users and a role with the tag key of **department** and a value of **awsDevelopment** \(**department = awsDevelopment**\)\. You can also use the same tag on resources in other [services that support tagging](reference_aws-services-that-work-with-iam.md)\.
-+ An IAM identity cannot have multiple instances of the same tag key\. For example, if you have a user with the tag key–value pair **costCenter = 1234**, you can then attach the tag key–value pair **costCenter = 5678**\. IAM updates the value of the **costCenter** tag to **5678**\.
++ You can apply the same tag to multiple IAM entities\. For example, if you have a department named AWS\_Development with 12 members, you can have 12 users and a role with the tag key of **department** and a value of **awsDevelopment** \(**department = awsDevelopment**\)\. You can also use the same tag on resources in other [services that support tagging](reference_aws-services-that-work-with-iam.md)\.
++ An IAM entity cannot have multiple instances of the same tag key\. For example, if you have a user with the tag key–value pair **costCenter = 1234**, you can then attach the tag key–value pair **costCenter = 5678**\. IAM updates the value of the **costCenter** tag to **5678**\.
 + To edit a tag that is attached to an IAM user or role, attach a tag with a new value to overwrite the existing tag\. For example, assume that you have a user with the tag key–value pair **department = Engineering**\. If you need to move the user to the QA department, then you can attach the **department = QA** tag key–value pair to the user\. This results in the **Engineering** value of the **department** tag key being replaced with the **QA** value\.
 
-## Permissions Required for Tagging IAM Identities<a name="id_tags_permissions"></a>
+## Permissions Required for Tagging IAM Entities<a name="id_tags_permissions"></a>
 
-You must configure permissions to allow an IAM identity \(such as a user, group, or role\) to tag other identities\. You can specify one or all of the following IAM tag actions in an IAM policy:
+You must configure permissions to allow an IAM entity \(user or role\) to tag other entities\. You can specify one or all of the following IAM tag actions in an IAM policy:
 + `iam:ListRoleTags`
 + `iam:ListUserTags`
 + `iam:TagRole`
@@ -45,9 +45,9 @@ You must configure permissions to allow an IAM identity \(such as a user, group,
 + `iam:UntagRole`
 + `iam:UntagUser`
 
-**To allow an IAM identity to add, list, or remove a tag for a specific user**
+**To allow an IAM entity to add, list, or remove a tag for a specific user**
 
-Add the following statement to the permissions policy for the IAM identity that needs to manage tags\. Use your account number and replace *<username>* with the name of the user that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<username>* with the name of the user that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -77,9 +77,9 @@ Add the following statement to the permissions policy for users to allow users t
 }
 ```
 
-**To allow an IAM identity to add a tag to a specific user**
+**To allow an IAM entity to add a tag to a specific user**
 
-Add the following statement to the permissions policy for the IAM identity that needs to add, but not remove, tags for a specific user\. 
+Add the following statement to the permissions policy for the IAM entity that needs to add, but not remove, tags for a specific user\. 
 
 **Note**  
 The `iam:AddRoleTags` and `iam:AddUserTags` actions require that you also include the `iam:ListRoleTags` and `iam:ListUserTags` actions\.
@@ -97,9 +97,9 @@ To use this policy, replace *<username>* with the name of the user that needs to
 }
 ```
 
-**To allow an IAM identity to add, list, or remove a tag for a specific role**
+**To allow an IAM entity to add, list, or remove a tag for a specific role**
 
-Add the following statement to the permissions policy for the IAM identity that needs to manage tags, replacing *<rolename>* with the name of the role that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for the IAM entity that needs to manage tags, replacing *<rolename>* with the name of the role that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -115,7 +115,7 @@ Add the following statement to the permissions policy for the IAM identity that 
 
 Alternatively, you can use an AWS managed policy such as [IAMFullAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMFullAccess) to provide full access to IAM\.
 
-## Managing Tags on IAM Identities \(Console\)<a name="id_tags_procs-console"></a>
+## Managing Tags on IAM Entities \(Console\)<a name="id_tags_procs-console"></a>
 
 You can manage tags for IAM users or roles from the AWS Management Console\.
 
@@ -123,15 +123,15 @@ You can manage tags for IAM users or roles from the AWS Management Console\.
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane of the console, choose **Roles** or **Users** and then choose the name of the identity that you want to edit\.
+1. In the navigation pane of the console, choose **Roles** or **Users** and then choose the name of the entity that you want to edit\.
 
 1. Choose the **Tags** tab and then complete one of the following actions:
-   + Choose **Add tags** if the identity does not yet have tags\.
+   + Choose **Add tags** if the entity does not yet have tags\.
    + Choose **Edit tags** to manage the existing set of tags\.
 
 1. Add or remove tags to complete the set of tags\. Then choose **Save changes**\.
 
-## Managing Tags on IAM Identities \(AWS CLI or AWS API\)<a name="id_tags_procs-cli-api"></a>
+## Managing Tags on IAM Entities \(AWS CLI or AWS API\)<a name="id_tags_procs-cli-api"></a>
 
 You can list, attach, or remove tags for IAM users and roles\. You can use the AWS CLI or the AWS API to manage tags for IAM users and roles\.
 

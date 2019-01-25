@@ -1,6 +1,8 @@
 # IAM JSON Policy Reference<a name="reference_policies"></a>
 
-This section presents detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\. It includes the following sections\.
+This section presents detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\. For more general information, see [Overview of JSON Policies](access_policies.md#access_policies-json)\.
+
+This reference includes the following sections\.
 +  [IAM JSON Policy Elements Reference](reference_policies_elements.md) — Learn more about the elements that you can use when you create a policy\. View additional policy examples and learn about conditions, supported data types, and how they are used in various services\. 
 + [Policy Evaluation Logic](reference_policies_evaluation-logic.md) — This section describes AWS requests, how they are authenticated, and how AWS uses policies to determine access to resources\. 
 + [Grammar of the IAM JSON Policy Language ](reference_policies_grammar.md) — This section presents a formal grammar for the language that is used to create policies in IAM\.

@@ -1,6 +1,6 @@
 # Controlling Access Using IAM Tags<a name="access_iam-tags"></a>
 
-With IAM tags, you can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Identities](id_tags.md)\. You can use tags to control permissions in AWS\. That is, you can control what a user or role can do or what can be done to a user or role resource\.
+With IAM tags, you can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use tags to control permissions in AWS\. That is, you can control what a user or role can do or what can be done to a user or role resource\.
 
 To use tags to control access, you must understand how AWS grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to perform an operation \(such as creating a user\), you send a *request* for that operation\. Your request specifies an action, a resource, a *principal entity* \(user or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
 

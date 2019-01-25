@@ -27,56 +27,44 @@ When you create an access key pair, save the access key ID and secret access key
 
 ## Permissions Required<a name="access-keys_required-permissions"></a>
 
-To create access keys for your IAM user, you must have the permissions from the following policy:
+To create access keys for your own IAM user, you must have the permissions from the following policy:
 
 ```
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "ViewAddAccessKeysForUser",
+            "Sid": "CreateOwnAccessKeys",
             "Effect": "Allow",
             "Action": [
-                "iam:GetUser",
                 "iam:CreateAccessKey",
+                "iam:GetUser",
                 "iam:ListAccessKeys"
             ],
             "Resource": "arn:aws:iam::*:user/${aws:username}"
-        },
-        {
-            "Sid": "ListUsersInConsole",
-            "Effect": "Allow",
-            "Action": "iam:ListUsers",
-            "Resource": "*"
         }
     ]
 }
 ```
 
-To rotate access keys for your IAM user, you must have the permissions from the following policy:
+To rotate access keys for your own IAM user, you must have the permissions from the following policy:
 
 ```
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "ManageAccessKeysForUser",
+            "Sid": "ManageOwnAccessKeys",
             "Effect": "Allow",
             "Action": [
+                "iam:CreateAccessKey",
                 "iam:DeleteAccessKey",
                 "iam:GetAccessKeyLastUsed",
-                "iam:UpdateAccessKey",
                 "iam:GetUser",
-                "iam:CreateAccessKey",
-                "iam:ListAccessKeys"
+                "iam:ListAccessKeys",
+                "iam:UpdateAccessKey"
             ],
             "Resource": "arn:aws:iam::*:user/${aws:username}"
-        },
-        {
-            "Sid": "ListUsersInConsole",
-            "Effect": "Allow",
-            "Action": "iam:ListUsers",
-            "Resource": "*"
         }
     ]
 }
@@ -86,16 +74,33 @@ To rotate access keys for your IAM user, you must have the permissions from the 
 
 You can use the AWS Management Console to manage an IAM user's access keys\.
 
-**To create, modify, or delete an IAM user's access keys \(console\)**
+**To create, modify, or delete your own IAM user access keys \(console\)**
+
+1. Use your AWS account ID or account alias, your IAM user name, and your password to sign in to the [IAM console](https://console.aws.amazon.com/iam)\.
+**Note**  
+For your convenience, the AWS sign\-in page uses a browser cookie to remember your IAM user name and account information\. If you previously signed in as a different user, choose **Sign in to a different account** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account ID or account alias to be redirected to the IAM user sign\-in page for your account\.
+
+   To get your AWS account ID, contact your administrator\.
+
+1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
+![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
+
+1. On the **AWS IAM Credentials** tab, in the **Access keys for CLI, SDK, and API access** section, do any of the following:
+   + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a `.csv` file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you have downloaded the `.csv` file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
+   + To disable an active access key, choose **Make inactive**\.
+   + To reenable an inactive access key, choose **Make active**\.
+   + To delete an access key, choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\. When you delete an access key, it's gone forever and cannot be retrieved\. However, you can always create new keys\.
+
+**To create, modify, or delete another IAM user's access keys \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the user whose access keys you want to manage, and then choose the **Security credentials** tab\. 
+1. Choose the name of the user whose access keys you want to manage, and then choose the **Security credentials** tab\.
 
 1. In the **Access keys** section, do any of the following:
-   + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a CSV file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you have downloaded the CSV file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
+   + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a CSV file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you download the CSV file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
    + To disable an active access key, choose **Make inactive**\.
    + To reenable an inactive access key, choose **Make active**\.
    + To delete an access key, choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\. When you delete an access key, it's gone forever and cannot be retrieved\. However, you can always create new keys\.
@@ -168,21 +173,21 @@ To manage an IAM user's access keys from the AWS API, call the following operati
 
 As a security best practice, we recommend that you regularly rotate \(change\) IAM user access keys\. If your administrator granted you the necessary permissions, you can rotate your own access keys\.
 
-Administrators, for details about granting your users permissions to rotate their own access keys, see [Allow Users to Manage Their Own Passwords, Access Keys, and SSH Keys](id_credentials_delegate-permissions_examples.md#creds-policies-credentials)\. You can also apply a password policy to your account to require that all of your IAM users periodically rotate their passwords\. You can choose how often they must do so\. For more information, see [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)\. 
+Administrators, for details about granting your users permissions to rotate their own access keys, see [AWS: Allows IAM Users to Manage Their Own Password, Access Keys, and SSH Public Keys on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\. You can also apply a password policy to your account to require that all of your IAM users periodically rotate their passwords\. You can choose how often they must do so\. For more information, see [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)\. 
 
 **Important**  
 As a best practice, do not use your AWS account root user\. If you use the AWS account root user credentials, we recommend that you also regularly rotate them\. The account password policy does not apply to the root user credentials\. IAM users cannot manage credentials for the AWS account root user, so you must use the root user credentials \(not a user's\) to change the root user credentials\. Note that we recommend against using the root user for everyday work in AWS\. 
 
 **Topics**
-+ [Rotating Access Keys \(Console\)](#rotating_access_keys_console)
++ [Rotating IAM User Access Keys \(Console\)](#rotating_access_keys_console)
 + [Rotating Access Keys \(AWS CLI\)](#rotating_access_keys_cli)
 + [Rotating Access Keys \(AWS API\)](#rotating_access_keys_api)
 
-### Rotating Access Keys \(Console\)<a name="rotating_access_keys_console"></a>
+### Rotating IAM User Access Keys \(Console\)<a name="rotating_access_keys_console"></a>
 
 You can rotate access keys from the AWS Management Console\.
 
-**To rotate access keys without interrupting your applications \(console\)**
+**To rotate access keys for an IAM user without interrupting your applications \(console\)**
 
 1. While the first access key is still active, create a second access key\.
 

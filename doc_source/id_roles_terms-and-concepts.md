@@ -3,16 +3,15 @@
 Here are some basic terms to help you get started with roles\.
 
 **Role**  <a name="iam-term-role"></a>
-A set of permissions that grant access to actions and resources in AWS\. These permissions are attached to the role, not to an IAM user or group\. Roles can be used by the following:  
+An IAM identity that you can create in your account that has specific permissions\. An IAM role is similar to an IAM user, in that it is an AWS identity with permission policies that determine what the identity can and cannot do in AWS\. However, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it\. Also, a role does not have standard long\-term credentials such as a password or access keys associated with it\. Instead, when you assume a role, it provides you with temporary security credentials for your role session\.  
+Roles can be used by the following:  
 + An IAM user in the same AWS account as the role
-+ An IAM user in a different AWS account as the role
++ An IAM user in a different AWS account than the role
 + A web service offered by AWS such as Amazon Elastic Compute Cloud \(Amazon EC2\)
 + An external user authenticated by an external identity provider \(IdP\) service that is compatible with SAML 2\.0 or OpenID Connect, or a custom\-built identity broker\.
 
-   
-
 ****AWS service role****  <a name="iam-term-service-role"></a>
-A role that a service assumes to perform actions in your account on your behalf\. When you set up most AWS service environments, you must define a role for the service to assume\. This service role must include all the permissions required for the service to access the AWS resources that it needs\. Service roles vary from service to service, but many allow you to choose your permissions, as long as you meet the documented requirements for that service\. Service roles provide access only within your account and cannot be used to grant access to services in other accounts\. You can create, modify, and delete a service role from within IAM\.
+A role that a service assumes to perform actions in your account on your behalf\. When you set up some AWS service environments, you must define a role for the service to assume\. This service role must include all the permissions required for the service to access the AWS resources that it needs\. Service roles vary from service to service, but many allow you to choose your permissions, as long as you meet the documented requirements for that service\. Service roles provide access only within your account and cannot be used to grant access to services in other accounts\. You can create, modify, and delete a service role from within IAM\.
 
 ****AWS service role for an EC2 instance****  <a name="iam-term-service-role-ec2"></a>
 A special type of service role that an application running on an Amazon EC2 instance can assume to perform actions in your account\. This role is assigned to the EC2 instance when it is launched\. Applications running on that instance can retrieve temporary security credentials and perform actions that the role allows\. For details about using a service role for an EC2 instance, see [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\.
@@ -37,6 +36,9 @@ When you create a trust policy, you cannot specify a wildcard \(\*\) as a princi
 ****Federation****  
 The creation of a trust relationship between an external identity provider and AWS\. Users can sign in to a web identity provider, such as **Login with Amazon**, **Facebook**, **Google**, or any IdP that is compatible with **OpenID Connect** \(OIDC\)\. Users can also sign in to an enterprise identity system that is compatible with Security Assertion Markup Language \(SAML\) 2\.0, such as Microsoft Active Directory Federation Services\. When you use OIDC and SAML 2\.0 to configure a trust relationship between these external identity providers and AWS, the user is assigned to an IAM role\. The user also receives temporary credentials that allow the user to access your AWS resources\. 
 
+****Federated user****  <a name="term_federated-user"></a>
+Instead of creating an IAM user, you can use existing identities from AWS Directory Service, your enterprise user directory, or a web identity provider\. These are known as *federated users*\. AWS assigns a role to a federated user when access is requested through an [identity provider](id_roles_providers.md)\. For more information about federated users, see [Federated Users and Roles](introduction_access-management.md#intro-access-roles) in the *IAM User Guide*\.
+
 ****Trust policy****  <a name="term_trust-policy"></a>
 A document in [JSON](http://www.json.org) format in which you define who is allowed to assume the role\. This trusted entity is included in the policy as the *principal* element in the document\. The document is written according to the rules of the [IAM policy language](reference_policies.md)\.
 
@@ -54,4 +56,4 @@ If you reference an AWS account as principal, it generally means any principal d
 You cannot use a wildcard \(\*\) in the `Principal` element in a role's trust policy\.
 
 ****Role for cross\-account access****  
-Granting access to resources in one account to a trusted principal in a different account\. Roles are the primary way to grant cross\-account access\. However, with some of the web services offered by AWS you can attach a policy directly to a resource \(instead of using a role as a proxy\)\. These are called resource\-based policies, and you can use them to grant principals in another AWS account access to the resource\. The following services support resource\-based policies for the specified resources: Amazon Simple Storage Service \(S3\) buckets, Glacier vaults, Amazon Simple Notification Service \(SNS\) topics, and Amazon Simple Queue Service \(SQS\) queues\. For more information, see [How IAM Roles Differ from Resource\-based Policies](id_roles_compare-resource-policies.md)\.
+A role that grants access to resources in one account to a trusted principal in a different account\. Roles are the primary way to grant cross\-account access\. However, some AWS services allow you to attach a policy directly to a resource \(instead of using a role as a proxy\)\. These are called resource\-based policies, and you can use them to grant principals in another AWS account access to the resource\. The following services support resource\-based policies for the specified resources: Amazon Simple Storage Service \(S3\) buckets, Glacier vaults, Amazon Simple Notification Service \(SNS\) topics, and Amazon Simple Queue Service \(SQS\) queues\. For more information, see [How IAM Roles Differ from Resource\-based Policies](id_roles_compare-resource-policies.md)\.

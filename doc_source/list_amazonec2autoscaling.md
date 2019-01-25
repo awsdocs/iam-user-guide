@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ autoScalingGroup ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:autoScalingGroup:$\{GroupId\}:autoScalingGroupName/$\{GroupFriendlyName\}  |   [ autoscaling:ResourceTag/tag\-key ](#amazonec2autoscaling-autoscaling_ResourceTag_tag-key)   | 
+|   [ autoScalingGroup ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:autoScalingGroup:$\{GroupId\}:autoScalingGroupName/$\{GroupFriendlyName\}  |   [ autoscaling:ResourceTag/$\{TagKey\} ](#amazonec2autoscaling-autoscaling_ResourceTag___TagKey_)   | 
 |   [ launchConfiguration ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:launchConfiguration:$\{Id\}:launchConfigurationName/$\{LaunchConfigurationName\}  |  | 
 
 ## Condition Keys for Amazon EC2 Auto Scaling<a name="amazonec2autoscaling-policy-keys"></a>
@@ -50,8 +50,9 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ autoscaling:LoadBalancerNames ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The name of the load balancer\. | String | 
 |   [ autoscaling:MaxSize ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The maximum scaling size\. | Numeric | 
 |   [ autoscaling:MinSize ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The minimum scaling size\. | Numeric | 
-|   [ autoscaling:ResourceTag/tag\-key ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag attached to a resource\. | String | 
+|   [ autoscaling:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag attached to a resource\. | String | 
 |   [ autoscaling:SpotPrice ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The spot price associated with an instance\. | Numeric | 
 |   [ autoscaling:TargetGroupARNs ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The ARN of a target group\. | ARN | 
 |   [ autoscaling:VPCZoneIdentifiers ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The identifier of a VPC zone\. | String | 
-|   [ aws:RequestTag/ ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag associated with the request\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag associated with the request\. | String | 
+|   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

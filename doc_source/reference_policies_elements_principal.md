@@ -1,6 +1,6 @@
-# IAM JSON Policy Elements: Principal<a name="reference_policies_elements_principal"></a>
+# AWS JSON Policy Elements: Principal<a name="reference_policies_elements_principal"></a>
 
-Use the `Principal` element to specify the user \(IAM user, federated user, or assumed\-role user\), AWS account, AWS service, or other principal entity that is allowed or denied access to a resource\. You use the `Principal` element in the trust policies for IAM roles and in resource\-based policies—that is, in policies that you embed directly in a resource\. For example, you can embed such policies in an Amazon S3 bucket, an Glacier vault, an Amazon SNS topic, an Amazon SQS queue, or an AWS KMS customer master key \(CMK\)\.
+Use the `Principal` element to specify the IAM user, federated user, IAM role, AWS account, AWS service, or other principal entity that is allowed or denied access to a resource\. You cannot use the `Principal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in an IAM resource\. For example, you can embed policies in an Amazon S3 bucket or an AWS KMS customer master key \(CMK\)\.
 
 Use the `Principal` element in these ways:
 + In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. 

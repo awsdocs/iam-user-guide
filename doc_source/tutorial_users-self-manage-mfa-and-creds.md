@@ -1,15 +1,15 @@
 # Tutorial: Enable Your Users to Configure Their Own Credentials and MFA Settings<a name="tutorial_users-self-manage-mfa-and-creds"></a>
 
-You can enable your users to self\-manage their own multi\-factor authentication \(MFA\) devices and credentials\. You can use the AWS Management Console to configure credentials \(access keys, passwords, signing certificates, and SSH public keys\) and MFA devices for your users in small numbers\. But that is a task that could quickly become time consuming as the number of users grows\. Security best practice specifies that users should regularly change their passwords and rotate their access keys\. They should also delete or deactivate credentials that are not needed and use MFA, at the very least, for sensitive operations\. Showing you how to enable these best practices without burdening your administrators is the goal of this tutorial\.
+You can enable your users to self\-manage their own multi\-factor authentication \(MFA\) devices and credentials on the **My Security Credentials** page\. You can use the AWS Management Console to configure credentials \(access keys, passwords, signing certificates, and SSH public keys\) and MFA devices for your users in small numbers\. But that task could quickly become time consuming as the number of users grows\. Security best practices specify that users should regularly change their passwords and rotate their access keys\. They should also delete or deactivate credentials that are not needed\. We also highly recommend that they use MFA for sensitive operations\. This tutorial shows you how to enable these best practices without burdening your administrators\.
 
-This tutorial shows how to grant users access to AWS services, but **only** when they sign in with MFA\. If they are not signed in with an MFA device, then users cannot access other services\.
+This tutorial shows how to allow users to access AWS services, but **only** when they sign in with MFA\. If they are not signed in with an MFA device, then users cannot access other services\.
 
 This workflow has three basic steps\. 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Create a Policy to Enforce MFA Sign\-In](#tutorial_mfa_step1)**  
-Create a customer managed policy that prohibits all actions ***except*** the few IAM API operations that enable changing credentials and managing MFA devices\. Note that MFA permissions are the same for all MFA devices that AWS supports\.
+Create a customer managed policy that prohibits all actions ***except*** the few IAM action that allow a user to change their own credentials and manage their MFA devices on the **My Security Credentials** page\. For more information about accessing that page
 
 **[Step 2: Attach Policies to Your Test Group](#tutorial_mfa_step2)**  
 Create a group whose members have full access to all Amazon EC2 actions if they sign in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
@@ -44,131 +44,9 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
 1. In the navigation pane, choose **Policies**, and then choose **Create policy**\.
 
-1. Choose the **JSON** tab and copy the text from the following JSON policy document\. Paste this text into the **JSON** text box\.
-**Note**  
-This example policy does not allow users to reset a password while signing in\. New users and users with an expired password might try to do so\. You can allow this by adding `iam:ChangePassword` and `iam:CreateLoginProfile` to the statement `BlockMostAccessUnlessSignedInWithMFA`\. However, IAM does not recommend this\.
+1. Choose the **JSON** tab and copy the text from the following JSON policy document: [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
-   ```
-   {
-       "Version": "2012-10-17",
-       "Statement": [
-           {
-               "Sid": "AllowAllUsersToListAccounts",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:ListAccountAliases",
-                   "iam:ListUsers",
-                   "iam:ListVirtualMFADevices",
-                   "iam:GetAccountPasswordPolicy",
-                   "iam:GetAccountSummary"
-               ],
-               "Resource": "*"
-           },
-           {
-               "Sid": "AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:ChangePassword",
-                   "iam:CreateAccessKey",
-                   "iam:CreateLoginProfile",
-                   "iam:DeleteAccessKey",
-                   "iam:DeleteLoginProfile",
-                   "iam:GetLoginProfile",
-                   "iam:ListAccessKeys",
-                   "iam:UpdateAccessKey",
-                   "iam:UpdateLoginProfile",
-                   "iam:ListSigningCertificates",
-                   "iam:DeleteSigningCertificate",
-                   "iam:UpdateSigningCertificate",
-                   "iam:UploadSigningCertificate",
-                   "iam:ListSSHPublicKeys",
-                   "iam:GetSSHPublicKey",
-                   "iam:DeleteSSHPublicKey",
-                   "iam:UpdateSSHPublicKey",
-                   "iam:UploadSSHPublicKey"
-               ],
-               "Resource": "arn:aws:iam::*:user/${aws:username}"
-           },
-           {
-               "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:ListMFADevices"
-               ],
-               "Resource": [
-                   "arn:aws:iam::*:mfa/*",
-                   "arn:aws:iam::*:user/${aws:username}"
-               ]
-           },
-           {
-               "Sid": "AllowIndividualUserToManageTheirOwnMFA",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:CreateVirtualMFADevice",
-                   "iam:DeleteVirtualMFADevice",
-                   "iam:EnableMFADevice",
-                   "iam:ResyncMFADevice"
-               ],
-               "Resource": [
-                   "arn:aws:iam::*:mfa/${aws:username}",
-                   "arn:aws:iam::*:user/${aws:username}"
-               ]
-           },
-           {
-               "Sid": "AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA",
-               "Effect": "Allow",
-               "Action": [
-                   "iam:DeactivateMFADevice"
-               ],
-               "Resource": [
-                   "arn:aws:iam::*:mfa/${aws:username}",
-                   "arn:aws:iam::*:user/${aws:username}"
-               ],
-               "Condition": {
-                   "Bool": {
-                       "aws:MultiFactorAuthPresent": "true"
-                   }
-               }
-           },
-           {
-               "Sid": "BlockMostAccessUnlessSignedInWithMFA",
-               "Effect": "Deny",
-               "NotAction": [
-                   "iam:CreateVirtualMFADevice",
-                   "iam:ListVirtualMFADevices",
-                   "iam:EnableMFADevice",
-                   "iam:ResyncMFADevice",
-                   "iam:ListAccountAliases",
-                   "iam:ListUsers",
-                   "iam:ListSSHPublicKeys",
-                   "iam:ListAccessKeys",
-                   "iam:ListServiceSpecificCredentials",
-                   "iam:ListMFADevices",
-                   "iam:GetAccountSummary",
-                   "sts:GetSessionToken"
-               ],
-               "Resource": "*",
-               "Condition": {
-                   "BoolIfExists": {
-                       "aws:MultiFactorAuthPresent": "false"
-                   }
-               }
-           }
-       ]
-   }
-   ```
-
-   What does this policy do? 
-   + The `AllowAllUsersToListAccounts` statement enables the user to see basic information about the account and its users in the IAM console\. These permissions must be in their own statement because they do not support or do not need to specify a specific resource ARN, and instead specify `"Resource" : "*"`\.
-   + The `AllowIndividualUserToSeeAndManageOnlyTheirOwnAccountInformation` statement enables the user to manage their own user, password, access keys, signing certificates, SSH public keys, and MFA information in the IAM console\. It also allows users to sign in for the first time in an administrator requires them to set a first\-time password\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\.
-   + The `AllowIndividualUserToListOnlyTheirOwnMFA` statement enables the user to list their own MFA device\. The resource ARN limits the use of these permissions to only the user's own IAM user entity\. Users can't list the MFA devices of other users\.
-   + The `AllowIndividualUserToManageTheirOwnMFA` statement enables the user to manage their own MFA device\. Notice that the resource ARNs in this statement allow access to only an MFA device or user that has the exact same name as the currently signed\-in user\. Users can't create or alter any MFA device other than their own\.
-   + The `AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA` statement allows the user to deactivate only their own MFA device, and only if the user signed in using MFA\. This prevents others with only the access keys \(and not the MFA device\) from deactivating the MFA device and accessing the account\.
-   + The `BlockMostAccessUnlessSignedInWithMFA` statement uses a combination of `"Deny"` and `"NotAction"` to deny access to all but a few actions in IAM and other AWS services ***if*** the user is not signed\-in with MFA\. For more information about the logic for this statement, see [NotAction with Deny](reference_policies_elements_notaction.md)\. If the user is signed\-in with MFA, then the `"Condition"` test fails and the final "deny" statement has no effect and other policies or statements for the user determine the user's permissions\. This statement ensures that when the user is not signed\-in with MFA that they can perform only the listed actions, and only if another statement or policy allows access to those actions\.
-
-     The `...IfExists` version of the `Bool` operator ensures that if the `aws:MultiFactorAuthPresent` key is missing, the condition returns true\. This means that a user accessing an API with long\-term credentials, such as an access key, is denied access to the non\-IAM API operations\.
-
-1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
+1. Paste the policy text into the **JSON** text box, then choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.
 

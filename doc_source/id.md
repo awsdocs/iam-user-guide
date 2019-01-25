@@ -4,9 +4,10 @@ This section describes *IAM identities*, which you create to provide authenticat
 
 ## [The AWS Account Root User](id_root-user.md)<a name="id_root"></a>
 
-When you first create an AWS account, you create an account \(or root user\) identity, which you use to sign in to AWS\. You can sign in to the AWS Management Console as the root user—that is, the email address and password that you provide when you create the account\. This combination of your email address and password is called your root user credentials\.
+When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\.
 
-When you sign in as the root user, you have complete, unrestricted access to all resources in your AWS account, including access to your billing information and the ability to change your password\. This level of access is necessary when you initially set up the account\. However, we recommend that you ***don't*** use root user credentials for everyday access\. We especially recommend that you do not share your root user credentials with anyone, because doing so gives them unrestricted access to your account\. It is not possible to restrict the permissions that are granted to the AWS account\. Instead, we strongly recommend that you adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users) and then securely locking away the root user credentials\. 
+**Important**  
+We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
 ## [IAM Users](id_users.md)<a name="id_iam-users"></a>
 

@@ -3,9 +3,9 @@
 AWS CloudFormation \(service prefix: `cloudformation`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/cloudformation/latest/UserGuide/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
 + View a [list of the API operations available for this service](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cloudformation/latest/UserGuide/using-iam-template.html) permission policies\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CloudFormation](#awscloudformation-actions-as-permissions)
@@ -29,8 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ stack ](https://docs.aws.amazon.com/cloudformation/latest/UserGuide/cfn-whatis-concepts.html#w1ab2b5c17c11)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\}  |  | 
-|   [ stackset ](https://docs.aws.amazon.com/cloudformation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stackset/$\{StackSetName\}:$\{Id\}  |  | 
+|   [ stack ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\}  |  | 
+|   [ stackset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stackset/$\{StackSetName\}:$\{Id\}  |  | 
+|   [ changeset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:changeSet/$\{ChangeSetName\}:$\{Id\}  |  | 
 
 ## Condition Keys for AWS CloudFormation<a name="awscloudformation-policy-keys"></a>
 

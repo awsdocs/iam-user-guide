@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ deliverystream ](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)  |  arn:$\{Partition\}:firehose:$\{Region\}:$\{Account\}:deliverystream/$\{DeliveryStreamName\}  |  | 
+|   [ deliverystream ](https://docs.aws.amazon.com/firehose/latest/dev/basic-create.html)  |  arn:$\{Partition\}:firehose:$\{Region\}:$\{Account\}:deliverystream/$\{DeliveryStreamName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkinesisfirehose-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Kinesis Firehose<a name="amazonkinesisfirehose-policy-keys"></a>
 
@@ -42,6 +42,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/tag\-key  | Filters create requests based on the allowed set of values for each of the tags | String | 
-|   aws:ResourceTag/tag\-key  | Filters actions based on tag\-value assoicated with the resource\. | String | 
+|   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
 |   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request | String | 

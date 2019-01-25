@@ -6,9 +6,6 @@ You can use U2F as a multi\-factor authentication \(MFA\) method in AWS using cu
 
 AWS currently supports U2F\-compliant security devices that plug into USB ports on your computer\.
 
-**Note**  
-If you are using security devices manufactured by [Yubico](https://www.yubico.com), we recommend using the Yubico YubiKey 4 or 5\. If you have an earlier version, we recommend that you check the security guidelines on the [Yubico support site](https://support.yubico.com/support/home)\.
-
 For information on purchasing a supported device, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
 
 ## Browsers That Support U2F<a name="id_credentials_mfa_u2f_browsers"></a>

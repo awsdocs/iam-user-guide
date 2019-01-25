@@ -297,6 +297,14 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
 
+## End User Computing Services<a name="end-user-computing_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | Yes | No | Yes | No | 
+
 ## Additional Resources<a name="resources_svcs"></a>
 
 

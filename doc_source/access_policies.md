@@ -74,9 +74,9 @@ The AWS account root user is affected by some policy types but not others\. You 
 
 ## Overview of JSON Policies<a name="access_policies-json"></a>
 
-Most policies are stored in AWS as JSON documents\. Identity\-based policies, policies used to set boundaries, or AWS STS boundary policies are JSON policy documents that you attach to a user or role\. Resource\-based policies are JSON policy documents that you attach to a resource\. SCPs are JSON policy documents with restricted syntax that you attach to an AWS Organizations organizational unit \(OU\)\. ACLs are also attached to a resource, but you must use a different syntax\.
+Most policies are stored in AWS as JSON documents\. Identity\-based policies and policies used to set permissions boundaries are JSON policy documents that you attach to a user or role\. Resource\-based policies are JSON policy documents that you attach to a resource\. SCPs are JSON policy documents with restricted syntax that you attach to an AWS Organizations organizational unit \(OU\)\. ACLs are also attached to a resource, but you must use a different syntax\. Session policies are JSON policies that you provide when you assume a role session\.
 
-It is not necessary for you to understand the JSON syntax\. You can use the visual editor in the AWS Management Console to create and edit customer managed policies without ever using JSON\. However, if you choose to use inline policies for groups, you are still required to create and edit those policies in the JSON editor using the console\. For more information about using the visual editor, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
+It is not necessary for you to understand the JSON syntax\. You can use the visual editor in the AWS Management Console to create and edit customer managed policies without ever using JSON\. However, if you choose to use inline policies for groups or complex policies, you are still required to create and edit those policies in the JSON editor using the console\. For more information about using the visual editor, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
 
 ### JSON Policy Document Structure<a name="policies-introduction"></a>
 

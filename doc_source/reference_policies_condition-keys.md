@@ -118,7 +118,7 @@ This condition key is available for only some services\.
 **aws:PrincipalTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the principal making the request matches the specified key name and value\.  
-You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Identities](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.  
+You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.  
 This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the red italicized text in the example policy with your own information\.  
 
 ```

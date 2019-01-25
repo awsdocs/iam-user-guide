@@ -52,7 +52,7 @@ You can use the AWS Management Console to create an IAM group with delegated per
 
 1. Choose **Next: Tagging**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Identities](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create users**\.
 
