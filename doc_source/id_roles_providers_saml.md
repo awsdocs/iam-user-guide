@@ -74,7 +74,7 @@ The role or roles that you create in IAM define what federated users from your o
 }
 ```
 
-For more information about the SAML keys that you can check in a policy, see [Available Keys for SAML\-Based Federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
+For more information about the SAML keys that you can check in a policy, see [Available Keys for SAML\-Based AWS STS Federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
 
 For the permission policy in the role, you specify permissions as you would for any role\. For example, if users from your organization are allowed to administer Amazon Elastic Compute Cloud instances, you must explicitly allow Amazon EC2 actions in the permissions policy, such as those in the **AmazonEC2FullAccess** managed policy\. 
 
@@ -91,13 +91,13 @@ myBucket/app1/user3
 You can create the bucket \(`myBucket`\) and folder \(`app1`\) through the Amazon S3 console or the AWS CLI, since those are static values\. However, the user\-specific folders \(*user1*, *user2*, *user3*, etc\.\) have to be created at run time using code, since the value that identifies the user isn't known until the first time the user signs in through the federation process\. 
 
 To write policies that reference user\-specific details as part of a resource name, the user identity has to be available in SAML keys that can be used in policy conditions\. The following keys are available for SAML 2\.0–based federation for use in IAM policies\. You can use the values returned by the following keys to create unique user identifiers for resources like Amazon S3 folders\. 
-+ `saml:namequalifier`\. A hash value based on the concatenation of the `Issuer` response value \(`saml:iss`\) and a string with the `AWS` account ID and the friendly name \(the last part of the ARN\) of the SAML provider in IAM\. The concatenation of the account ID and friendly name of the SAML provider is available to IAM policies as the key `saml:doc`\. The account ID and provider name must be separated by a '/' as in "123456789012/provider\_name"\. For more information, see the `saml:doc` key at [Available Keys for SAML\-Based Federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
++ `saml:namequalifier`\. A hash value based on the concatenation of the `Issuer` response value \(`saml:iss`\) and a string with the `AWS` account ID and the friendly name \(the last part of the ARN\) of the SAML provider in IAM\. The concatenation of the account ID and friendly name of the SAML provider is available to IAM policies as the key `saml:doc`\. The account ID and provider name must be separated by a '/' as in "123456789012/provider\_name"\. For more information, see the `saml:doc` key at [Available Keys for SAML\-Based AWS STS Federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
 
   The combination of `NameQualifier` and `Subject` can be used to uniquely identify a federated user\. The following pseudocode shows how this value is calculated\. In this pseudocode `+` indicates concatenation, `SHA1` represents a function that produces a message digest using SHA\-1, and `Base64` represents a function that produces Base\-64 encoded version of the hash output\.
 
    `Base64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )` 
 
-   For more information about the policy keys that are available for SAML\-based federation, see [Available Keys for SAML\-Based Federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
+   For more information about the policy keys that are available for SAML\-based federation, see [Available Keys for SAML\-Based AWS STS Federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
 + `saml:sub` \(string\)\. This is the subject of the claim, which includes a value that uniquely identifies an individual user within an organization \(for example, `_cbb88bf52c2510eabe00c1642d4643f41430fe25e3`\)\. 
 + `saml:sub_type` \(string\)\. This key can be `persistent`, `transient`, or the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. A value of `persistent` indicates that the value in `saml:sub` is the same for a user across all sessions\. If the value is `transient`, the user has a different `saml:sub` value for each session\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\. 
 

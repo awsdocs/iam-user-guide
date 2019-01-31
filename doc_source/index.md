@@ -248,7 +248,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Grammar of the IAM JSON Policy Language](reference_policies_grammar.md)
       + [AWS Managed Policies for Job Functions](access_policies_job-functions.md)
       + [AWS Global Condition Context Keys](reference_policies_condition-keys.md)
-      + [IAM Condition Context Keys](reference_policies_iam-condition-keys.md)
+      + [IAM and AWS STS Condition Context Keys](reference_policies_iam-condition-keys.md)
       + [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)
          + [Actions, Resources, and Condition Keys for Alexa for Business](list_alexaforbusiness.md)
          + [Actions, Resources, and Condition Keys for AWS Amplify](list_awsamplify.md)

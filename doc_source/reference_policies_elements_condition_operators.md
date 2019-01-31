@@ -244,7 +244,7 @@ Amazon Resource Name \(ARN\) condition operators let you construct `Condition` e
 |   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\)\. These behave identically\.  | 
 |   `ArnNotEquals`, `ArnNotLike`  |  Negated matching for ARN\. These behave identically\.  | 
 
-The following example shows a policy you need to attach to any Amazon SNS queue to which you want to send SNS messages\. It gives Amazon SNS permission to send messages to the queue \(or queues\) of your choice, but only if the service is sending the messages on behalf of a particular Amazon SNS topic \(or topics\)\. You specify the queue in the `Resource` field, and the Amazon SNS topic as the value for the `SourceArn` key\.
+The following example shows a policy you need to attach to any Amazon SQS queue to which you want to send SNS messages\. It gives Amazon SNS permission to send messages to the queue \(or queues\) of your choice, but only if the service is sending the messages on behalf of a particular Amazon SNS topic \(or topics\)\. You specify the queue in the `Resource` field, and the Amazon SNS topic as the value for the `SourceArn` key\.
 
 ```
 {

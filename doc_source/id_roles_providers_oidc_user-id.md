@@ -81,4 +81,4 @@ The example assumes that the user is signed in using Login with Amazon, and that
 
 You would create similar policies for users who sign in using Amazon Cognito, Facebook, Google, or another OpenID Connect–compatible IdP\. Those policies would use a different provider name as part of the path as well as different app IDs\.
 
-For more information about the web identity federation keys available for condition checks in policies, see [Available Keys for Web Identity Federation](reference_policies_iam-condition-keys.md#condition-keys-wif)\.
+For more information about the web identity federation keys available for condition checks in policies, see [Available Keys for AWS Web Identity Federation](reference_policies_iam-condition-keys.md#condition-keys-wif)\.
