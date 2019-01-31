@@ -65,5 +65,5 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows federated users to access their own home directory in Amazon S3, programmatically and in the console \([View this policy](reference_policies_examples_s3_federated-home-directory-console.md)\)
 + Allows IAM users to access their own home directory in Amazon S3, programmatically and in the console\. \([View this policy](reference_policies_examples_s3_home-directory-console.md)\.\)
 + Allows a user to manage a single Amazon S3 bucket and denies every other AWS action and resource\. \([View this policy](reference_policies_examples_s3_deny-except-bucket.md)\.\)
-+ Allows `Read` and `Write` access to a specific Amazon S3 bucket\. \([View this policy](reference_policies_examples_s3_rw-bucket.md)\.\)
-+ Allows `Read` and `Write` access to a specific Amazon S3 bucket, programmatically and in the console\. \([View this policy](reference_policies_examples_s3_rw-bucket-console.md)\.\)
++ Allows `Read` and `Write` access to objects in an Amazon S3 bucket\. \([View this policy](reference_policies_examples_s3_rw-bucket.md)\.\)
++ Allows `Read` and `Write` access to objects in an Amazon S3 bucket, programmatically and in the console\. \([View this policy](reference_policies_examples_s3_rw-bucket-console.md)\.\)

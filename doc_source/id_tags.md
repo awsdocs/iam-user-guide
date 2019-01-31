@@ -6,9 +6,6 @@ You can use IAM tags to add custom attributes to an IAM user or role using a tag
 
 When you begin attaching tags to your IAM users and roles, choose your tag naming convention carefully and apply the same convention to all of your AWS tags\. This is especially important if you use tags in policies to control access to AWS resources\. If you already use tags in AWS, review your naming convention and adjust it accordingly\. To learn more about creating a naming strategy, see [AWS Tagging Strategies](https://aws.amazon.com/answers/account-management/aws-tagging-strategies/)\.
 
-**Note**  
-If your account is a member of AWS Organizations, examine any [service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) that restrict access based on tags\. Then make sure that those policies use key names with a similar naming convention as your accounts\. If you use tags with one set of key names in the organization and a different set of key names in your accounts, permissions might not work as you intend\.
-
 ## Rules for Tagging IAM Entities<a name="id_tags_rules"></a>
 
 A number of conventions govern the creation and application of tags in IAM\.

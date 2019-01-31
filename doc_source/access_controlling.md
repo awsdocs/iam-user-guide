@@ -65,7 +65,7 @@ For detailed information about the procedures mentioned previously, refer to the
 + To learn more about creating an IAM policy that you can attach to a principal, see [Creating IAM Policies](access_policies_create.md)\.
 + To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
 + To see an example policy for granting full access to EC2, see [Amazon EC2: Allows Full EC2 Access Within a Specific Region, Programmatically and in the Console](reference_policies_examples_ec2_region.md)\.
-+ To allow read\-only access to an S3 bucket, use the first two statements of the following example policy: [Amazon S3: Allows Read and Write Access to a Specific S3 Bucket, Programmatically and in the Console](reference_policies_examples_s3_rw-bucket-console.md)\.
++ To allow read\-only access to an S3 bucket, use the first two statements of the following example policy: [Amazon S3: Allows Read and Write Access to Objects in an S3 Bucket, Programmatically and in the Console](reference_policies_examples_s3_rw-bucket-console.md)\.
 + To see an example policy for allowing users to rotate their credentials, see [IAM: Allows IAM Users to Rotate Their Own Credentials Programmatically and in the Console](reference_policies_examples_iam_credentials_console.md)\.
 
 ## Controlling Access to Identities<a name="access_controlling-identities"></a>
