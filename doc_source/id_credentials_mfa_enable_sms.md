@@ -3,7 +3,7 @@
 
 |  | 
 | --- |
-|   AWS will stop supporting SMS MFA on February 1, 2019\. If your account is already participating in the SMS MFA Preview program, you can continue using this feature until then\. We encourage you to use MFA with one of the following: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  Tip You can view users in your account with an assigned SMS MFA device\. To do so, go to the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.   | 
+|   AWS will soon end support for SMS multi\-factor authentication \(MFA\)\. We are not allowing new customers to preview this feature\. We recommend that existing customers switch to one of the following alternative methods of MFA: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  Tip You can view users in your account with an assigned SMS MFA device\. In the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.   | 
 
 An SMS \(short message service\) MFA device can be any mobile device with a phone number that can receive standard [SMS text messages](http://wikipedia.org/wiki/Short_Message_Service)\. When an MFA code is needed, AWS sends it to the phone number that is configured for the IAM user\. 
 

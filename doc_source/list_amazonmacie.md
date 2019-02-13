@@ -22,12 +22,12 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ AssociateMemberAccount ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_AssociateMemberAccount.html)  | Enables the user to associate a specified AWS account with Amazon Macie as a member account\. | Write |  |  |  | 
-|   [ AssociateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_AssociateS3Resources.html)  | Enables the user to associate specified S3 resources with Amazon Macie for monitoring and data classification\. | Write |  |  |  | 
+|   [ AssociateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_AssociateS3Resources.html)  | Enables the user to associate specified S3 resources with Amazon Macie for monitoring and data classification\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
 |   [ DisassociateMemberAccount ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_DisassociateMemberAccount.html)  | Enables the user to remove the specified member account from Amazon Macie\. | Write |  |  |  | 
-|   [ DisassociateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_DisassociateS3Resources.html)  | Enables the user to remove specified S3 resources from being monitored by Amazon Macie\. | Write |  |  |  | 
+|   [ DisassociateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_DisassociateS3Resources.html)  | Enables the user to remove specified S3 resources from being monitored by Amazon Macie\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
 |   [ ListMemberAccounts ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_ListMemberAccounts.html)  | Enables the user to list all Amazon Macie member accounts for the current Macie master account\. | List |  |  |  | 
 |   [ ListS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_ListS3Resources.html)  | Enables the user to list all the S3 resources associated with Amazon Macie\. | List |  |  |  | 
-|   [ UpdateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_UpdateS3Resources.html)  | Enables the user to update the classification types for the specified S3 resources\. | Write |  |  |  | 
+|   [ UpdateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_UpdateS3Resources.html)  | Enables the user to update the classification types for the specified S3 resources\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
 
 ## Resources Defined by Macie<a name="amazonmacie-resources-for-iam-policies"></a>
 
@@ -35,4 +35,13 @@ Amazon Macie has no service\-defined resources that can be used as the `Resource
 
 ## Condition Keys for Amazon Macie<a name="amazonmacie-policy-keys"></a>
 
-Macie has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Macie defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:SourceArn  | Allow access to the specified actions only when the request operates on the specified aws resource | Arn | 

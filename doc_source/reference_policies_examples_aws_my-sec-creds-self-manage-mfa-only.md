@@ -2,7 +2,9 @@
 
 This example shows how you might create a policy that allows IAM users that are authenticated through multi\-factor authentication \(MFA\) to manage their own MFA device on the **My Security Credentials** page\. This AWS Management Console page displays account and user information, but the user can only view and edit their own MFA device\. To allow users to manage all of their own credentials with MFA, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
-What does this policy do? 
+To learn how users can access the **My Security Credentials** page, see [How IAM Users Change Their Own Password \(Console\)](id_credentials_passwords_user-change-own.md#ManagingUserPwdSelf-Console)\.
+
+**What does this policy do? **
 + The `AllowViewAccountInfo` statement allows the user to view details about a virtual MFA device that is enabled for the user\. This permission must be in its own statement because it does not support specifying a resource ARN\. Instead you must specify `"Resource" : "*"`\.
 + The `AllowManageOwnVirtualMFADevice` statement allows the user to create and delete their own virtual MFA device\. The resource ARN in this statement allows access to only an MFA device that has the same name as the currently signed\-in user\. Users can't create or delete any virtual MFA device other than their own\.
 + The `AllowManageOwnUserMFA` statement allows the user to view or manage their own virtual, U2F, or hardware MFA device\. The resource ARN in this statement allows access to only the user's own IAM user\. Users can't view or manage the MFA device for other users\.

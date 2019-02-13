@@ -21,7 +21,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 1. Use the OpenSSL command line tool to execute the following command\. Replace *keys\.example\.com* with the domain name you obtained in [Step 3](#thumbstep2)\.
 
    ```
-   openssl s_client -showcerts -connect keys.example.com:443
+   openssl s_client -servername keys.example.com -showcerts -connect keys.example.com:443
    ```
 
 1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate that is displayed \(at the bottom of the command output\)\.

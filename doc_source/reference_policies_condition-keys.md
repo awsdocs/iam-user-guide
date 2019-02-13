@@ -233,12 +233,12 @@ If the request comes from a host that uses an Amazon VPC endpoint, then the `aws
 **aws:SourceVpc**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Restricts access to a specific VPC\. For more information, see [Restricting Access to a Specific VPC](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc) in the *Amazon Simple Storage Service Developer Guide*\.   
-This condition key is available for only some services that support traffic over a VPC endpoint\.
+This condition key is available for services that support traffic over a VPC endpoint\.
 
 **aws:SourceVpce**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Restricts access to a specific VPC endpoint\. For more information, see [Restricting Access to a Specific VPC Endpoint](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies-vpc-endpoint.html#example-bucket-policies-restrict-access-vpc-endpoint) in the *Amazon Simple Storage Service Developer Guide*\.  
-This condition key is available for only some services\.
+This condition key is available for services that support traffic over a VPC endpoint\.
 
 **aws:TagKeys**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

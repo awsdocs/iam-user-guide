@@ -19,8 +19,8 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows specific access when using MFA during a specific range of dates\. \([View this policy](reference_policies_examples_aws_mfa-dates.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
 
-## Example Policies: AWS CodeCommit<a name="policy_library_CodeCommit"></a>
-+ Allows `Read` access to an AWS CodeCommit repository, programmatically and in the console\. \([View this policy](reference_policies_examples_codecommit_pull.md)\.\)
+## Example Policies: CodeCommit<a name="policy_library_CodeCommit"></a>
++ Allows `Read` access to an CodeCommit repository, programmatically and in the console\. \([View this policy](reference_policies_examples_codecommit_pull.md)\.\)
 
 ## Example Policies: AWS Data Pipeline<a name="policy_library_DataPipeline"></a>
 + Denies access to pipelines that a user did not create\. \([View this policy](reference_policies_examples_datapipeline_not-owned.md)\.\)

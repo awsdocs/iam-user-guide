@@ -89,6 +89,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [Amazon Elastic Container Service](list_amazonelasticcontainerservice.md)
 + [Amazon Elastic Container Service for Kubernetes](list_amazonelasticcontainerserviceforkubernetes.md)
 + [Amazon Elastic File System](list_amazonelasticfilesystem.md)
++ [Amazon Elastic Inference](list_amazonelasticinference.md)
 + [Elastic Load Balancing](list_elasticloadbalancing.md)
 + [Elastic Load Balancing V2](list_elasticloadbalancingv2.md)
 + [Amazon Elastic MapReduce](list_amazonelasticmapreduce.md)

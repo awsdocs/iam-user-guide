@@ -18,24 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ DeleteRule ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DeleteRule.html)  | Deletes a rule\. You must remove all targets from a rule using RemoveTargets before you can delete the rule\. | Write |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ DescribeEventBus ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DescribeEventBus.html)  | Displays the external AWS accounts that are permitted to write events to your account using your account's event bus, and the associated policy\. | Read |  |  |  | 
-|   [ DescribeRule ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DescribeRule.html)  | Describes the details of the specified rule | Read |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ DisableRule ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_DisableRule.html)  | Disables a rule\. A disabled rule won't match any events, and won't self\-trigger if it has a schedule expression\. | Write |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ EnableRule ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_EnableRule.html)  | Enables a rule\. If the rule does not exist, the operation fails | Write |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ ListRuleNamesByTarget ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRuleNamesByTarget.html)  | Lists the names of the rules that the given target is put to | List |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ ListRules ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListRules.html)  | Lists the Amazon CloudWatch Events rules in your account | List |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ ListTargetsByRule ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_ListTargetsByRule.html)  | Lists of targets assigned to the rule | List |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ PutEvents ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutEvents.html)  | Sends custom events to Amazon CloudWatch Events so that they can be matched to rules | Write |  |  |  | 
-|   [ PutPermission ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutPermission.html)  | Running PutPermission permits the specified AWS account to put events to your account's default event bus\. | Write |  |  |  | 
-|   [ PutRule ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutRule.html)  | Creates or updates a rule\. Rules are enabled by default, or based on value of the State parameter | Write |  |   [ events:detail\.userIdentity\.principalId ](#amazoncloudwatchevents-events_detail.userIdentity.principalId)   [ events:detail\-type ](#amazoncloudwatchevents-events_detail-type)   [ events:source ](#amazoncloudwatchevents-events_source)   [ events:detail\.service ](#amazoncloudwatchevents-events_detail.service)   [ events:detail\.eventTypeCode ](#amazoncloudwatchevents-events_detail.eventTypeCode)   |  | 
-|   [ PutTargets ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_PutTargets.html)  | Adds target\(s\) to a rule\. Targets are the resources that can be invoked when a rule is triggered | Write |  |   [ events:TargetArn ](#amazoncloudwatchevents-events_TargetArn)   |  | 
-|   [ RemovePermission ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_RemovePermission.html)  | Revokes the permission of another AWS account to be able to put events to your default event bus\. | Write |  |  |  | 
-|   [ RemoveTargets ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_RemoveTargets.html)  | Removes target\(s\) from a rule so that when the rule is triggered, those targets will no longer be invoked | Write |   [ rule\* ](#amazoncloudwatchevents-rule)   |  |  | 
-|   [ TestEventPattern ](https://docs.aws.amazon.com/AmazonCloudWatchEvents/latest/APIReference/API_TestEventPattern.html)  | Tests whether an event pattern matches the provided event | Read |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchevents.html)
 
 ## Resources Defined by CloudWatch Events<a name="amazoncloudwatchevents-resources-for-iam-policies"></a>
 

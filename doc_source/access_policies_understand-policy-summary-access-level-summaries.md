@@ -31,3 +31,4 @@ Access level summaries that include partial access to actions are grouped using 
 + **Permissions management**: Permission to grant or modify resource permissions in the service\. For example, most IAM and AWS Organizations actions, as well as actions like the Amazon S3 actions `PutBucketPolicy` and `DeleteBucketPolicy` have the **Permissions management** access level\.
 **Tip**  
 To improve the security of your AWS account, restrict or regularly monitor policies that include the **Permissions management** access level classification\.
++ **Tagging**: Permission to create, delete, or modify resources in the service that support tagging\. For example, the IAM actions `CreateUser`, `TabGuser` and `UntagUser` have the **Tagging** access level\. These actions grant permissions to modify a resource, including adding or removing tags\.

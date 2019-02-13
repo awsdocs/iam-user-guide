@@ -2,10 +2,12 @@
 
 This example shows how you might create a policy that allows IAM users that are authenticated using multi\-factor authentication \(MFA\) to manage their own credentials on the **My Security Credentials** page\. This AWS Management Console page displays account information such as the account ID and canonical user ID\. Users can also view and edit their own passwords, access keys, MFA devices, X\.509 certificates, and SSH keys and Git credentials\. This example policy includes the permissions required to view and edit all of the information on the page\. It also requires the user to set up and authenticate using MFA before performing any other operations in AWS\. To allow users to manage their own credentials without using MFA, see [AWS: Allows IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.md)\.
 
+To learn how users can access the **My Security Credentials** page, see [How IAM Users Change Their Own Password \(Console\)](id_credentials_passwords_user-change-own.md#ManagingUserPwdSelf-Console)\.
+
 **Note**  
 This example policy does not allow users to reset a password while signing in\. New users and users with an expired password might try to do so\. You can allow this by adding `iam:ChangePassword` to the statement `DenyAllExceptListedIfNoMFA`\. However, IAM does not recommend this\. Allowing users to change their password without MFA can be a security risk\.
 
-What does this policy do?
+**What does this policy do?**
 + The `AllowViewAccountInfo` statement allows the user to view account\-level information\. These permissions must be in their own statement because they do not support or do not need to specify a resource ARN\. Instead the permissions specify `"Resource" : "*"`\. This statement includes the following actions that allow the user to view specific information: 
   + `GetAccountSummary` – View the account ID and the account [canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId)\.
   + `GetAccountPasswordPolicy` – View the account password requirements while changing their own IAM user password\.
@@ -13,8 +15,8 @@ What does this policy do?
 + The `AllowManageOwnPasswords` statement allows the user to change their own password\. This statement also includes the `GetUser` action, which is required to view most of the information on the **My Security Credentials** page\.
 + The `AllowManageOwnAccessKeys` statement allows the user to create, update, and delete their own access keys\.
 + The `AllowManageOwnSigningCertificates` statement allows the user to upload, update, and delete their own signing certificates\.
-+ The `AllowManageOwnSSHPublicKeys` statement allows the user to upload, update, and delete their own SSH public keys for AWS CodeCommit\.
-+ The `AllowManageOwnGitCredentials` statement allows the user to create, update, and delete their own Git credentials for AWS CodeCommit\.
++ The `AllowManageOwnSSHPublicKeys` statement allows the user to upload, update, and delete their own SSH public keys for CodeCommit\.
++ The `AllowManageOwnGitCredentials` statement allows the user to create, update, and delete their own Git credentials for CodeCommit\.
 + The `AllowManageOwnVirtualMFADevice` statement allows the user to create and delete their own virtual MFA device\. The resource ARN in this statement allows access to only an MFA device that has the same name as the currently signed\-in user\. Users can't create or delete any virtual MFA device other than their own\.
 + The `AllowManageOwnUserMFA` statement allows the user to view or manage the virtual, U2F, or hardware MFA device for their own user\. The resource ARN in this statement allows access to only the user's own IAM user\. Users can't view or manage the MFA device for other users\.
 + The `DenyAllExceptListedIfNoMFA` statement denies access to every action in all AWS services, except a few listed actions, but ***only if*** the user is not signed in with MFA\. The statement uses a combination of `"Deny"` and `"NotAction"` to explicitly deny access to every action that is not listed\. The items listed are not denied or allowed by this statement\. However, the actions are allowed by other statements in the policy\. For more information about the logic for this statement, see [NotAction with Deny](reference_policies_elements_notaction.md)\. If the user is signed in with MFA, then the `Condition` test fails and this statement does not deny any actions\. In this case, other policies or statements for the user determine the user's permissions\.
