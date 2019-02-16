@@ -20,17 +20,10 @@ Add the following policy to the IAM entity that needs to create the service role
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "CreateSpecificRoleForSpecificService",
-            "Effect": "Allow",
-            "Action": "iam:CreateRole",
-            "Resource": "arn:aws:iam::*:role/SERVICE-ROLE-NAME",
-            "Condition": {"StringLike": {"iam:AWSServiceName": "SERVICE-NAME.amazonaws.com"}}
-        },
-        {
-            "Sid": "AddPoliciesToSpecificRole",
             "Effect": "Allow",
             "Action": [
                 "iam:AttachRolePolicy",
+                "iam:CreateRole",
                 "iam:PutRolePolicy"
             ],
             "Resource": "arn:aws:iam::*:role/SERVICE-ROLE-NAME"

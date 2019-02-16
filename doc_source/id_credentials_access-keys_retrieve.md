@@ -16,7 +16,7 @@ When you first created your AWS account, you provided an email address and passw
 
 1. Use your AWS account email address to begin signing in to the [AWS Management Console](https://console.aws.amazon.com/) as the root user\.
 **Note**  
- If you are signed in to the [AWS Management Console](https://console.aws.amazon.com/home) with *IAM user* credentials, then you must sign out before you can reset the root user password\. If you see the account\-specific IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page\. If necessary, provide your account email address to access the **Root user sign in** page\. 
+ If you are signed in to the [AWS Management Console](https://console.aws.amazon.com/) with *IAM user* credentials, then you must sign out before you can reset the root user password\. If you see the account\-specific IAM user sign\-in page, choose **Sign\-in using root account credentials** near the bottom of the page\. If necessary, provide your account email address to access the **Root user sign in** page\. 
 
 1. Choose **Forgot your password?**\.
 
