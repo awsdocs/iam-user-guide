@@ -1,0 +1,60 @@
+# Actions, Resources, and Condition Keys for Identity And Access Management<a name="list_identityandaccessmanagement"></a>
+
+Identity And Access Management \(service prefix: `iam`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
+
+References:
++ Learn how to [configure this service](https://docs.aws.amazon.com/IAM/latest/UserGuide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/IAM/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) permission policies\.
+
+**Topics**
++ [Actions Defined by Identity And Access Management](#identityandaccessmanagement-actions-as-permissions)
++ [Resources Defined by IAM](#identityandaccessmanagement-resources-for-iam-policies)
++ [Condition Keys for Identity And Access Management](#identityandaccessmanagement-policy-keys)
+
+## Actions Defined by Identity And Access Management<a name="identityandaccessmanagement-actions-as-permissions"></a>
+
+You can specify the following actions in the `Action` element of an IAM policy statement\. By using policies, you define the permissions for anyone performing an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\. For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
+
+
+****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_identityandaccessmanagement.html)
+
+## Resources Defined by IAM<a name="identityandaccessmanagement-resources-for-iam-policies"></a>
+
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#identityandaccessmanagement-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ assumed\-role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)  |  arn:$\{Partition\}:iam::$\{Account\}:assumed\-role/$\{RoleName\}/$\{RoleSessionName\}  |  | 
+|   [ federated\-user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html)  |  arn:$\{Partition\}:iam::$\{Account\}:federated\-user/$\{UserName\}  |  | 
+|   [ group ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html)  |  arn:$\{Partition\}:iam::$\{Account\}:group/$\{GroupNameWithPath\}  |  | 
+|   [ instance\-profile ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:instance\-profile/$\{InstanceProfileNameWithPath\}  |  | 
+|   [ mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html)  |  arn:$\{Partition\}:iam::$\{Account\}:mfa/$\{Path\}/$\{MfaTokenId\}  |  | 
+|   [ oidc\-provider ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html)  |  arn:$\{Partition\}:iam::$\{Account\}:oidc\-provider/$\{OidcProviderName\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html)  |  arn:$\{Partition\}:iam::$\{Account\}:policy/$\{PolicyNameWithPath\}  |  | 
+|   [ role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |   [ iam:ResourceTag/$\{TagKey\} ](#identityandaccessmanagement-iam_ResourceTag___TagKey_)   | 
+|   [ saml\-provider ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html)  |  arn:$\{Partition\}:iam::$\{Account\}:saml\-provider/$\{SamlProviderName\}  |  | 
+|   [ server\-certificate ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html)  |  arn:$\{Partition\}:iam::$\{Account\}:server\-certificate/$\{CertificateNameWithPath\}  |  | 
+|   [ sms\-mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  |  arn:$\{Partition\}:iam::$\{Account\}:sms\-mfa/$\{MfaTokenIdWithPath\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\}  |   [ iam:ResourceTag/$\{TagKey\} ](#identityandaccessmanagement-iam_ResourceTag___TagKey_)   | 
+
+## Condition Keys for Identity And Access Management<a name="identityandaccessmanagement-policy-keys"></a>
+
+Identity And Access Management defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ iam:AWSServiceName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName)  | Filters access by the AWS service to which this role is attached | String | 
+|   [ iam:PassedToService ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService)  | Filters access by the AWS service to which this role is passed | String | 
+|   [ iam:PermissionsBoundary ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary)  | Filters access if the specified policy is set as the permissions boundary on the IAM entity \(user or role\) | String | 
+|   [ iam:PolicyARN ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PolicyARN)  | Filters access by the ARN of an IAM policy | ARN | 
+|   [ iam:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag)  | Filters access by the tags attached to an IAM entity \(user or role\)\. | String | 
