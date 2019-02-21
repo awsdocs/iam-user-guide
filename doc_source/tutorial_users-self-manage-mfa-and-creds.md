@@ -78,11 +78,10 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 
 1. Choose **EC2** to open the Amazon EC2 console and verify that the user has no permissions to do anything\.
 
-1. On the navigation bar, choose **Services**, and then choose **IAM** to open the IAM console\.
+1. In the navigation bar on the upper right, choose the `MFAUser` user name, and then choose **My Security Credentials**\.   
+![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
-1. In the navigation pane, choose **Users**, and then choose the user \(not the check box\) **MFAUser**\. If the **Groups** tab appears by default, note that it says that you don't have permissions to see your group memberships\.
-
-1. Now add an MFA device\. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
+1. Now add an MFA device\. In the **Multi\-factor Authentication \(MFA\)** section, choose **Assign MFA device**\.
 
 1. For this tutorial, we use a virtual \(software\-based\) MFA device, such as the Google Authenticator app on a mobile phone\. Choose **Virtual MFA device**, and then click **Continue**\.
 
