@@ -10,7 +10,7 @@ Imagine that you have Amazon EC2 instances that are critical to your organizatio
 + Your users must actively switch to the role using the AWS Management Console or assume the role using the AWS CLI or AWS API\.\.
 + You can add multi\-factor authentication \(MFA\) protection to the role so that only users who sign in with an MFA device can assume the role\. To learn how to configure a role so that users who assume the role must first be authenticated using multi\-factor authentication \(MFA\), see [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\.
 
-We recommend using this approach to enforce the *principle of least access*\. That means restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with [auditing](cloudtrail-integration.md) to help ensure that roles are only used when needed\.
+We recommend using this approach to enforce the *principle of least privilege*\. That means restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with [auditing](cloudtrail-integration.md) to help ensure that roles are only used when needed\.
 
 When you create a role for this purpose, you specify the accounts by ID whose users need access in the `Principal` element of the role's trust policy\. You can then grant specific users in those other accounts permissions to switch to the role\.
 
