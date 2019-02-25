@@ -141,7 +141,7 @@ Some AWS services support additional options for specifying a principal\. For ex
 
 **Everyone \(anonymous users\)** 
 
-This enables any IAM user in any account to access the role. See the important note below for additional information. The following are equivalent:
+The following are equivalent:
 
 ```
 "Principal": "*"
