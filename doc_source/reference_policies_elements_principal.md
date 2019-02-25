@@ -141,7 +141,7 @@ Some AWS services support additional options for specifying a principal\. For ex
 
 **Everyone \(anonymous users\)** 
 
-The following are equivalent:
+This enables any IAM user in any account to access the role. See the important note below for additional information. The following are equivalent:
 
 ```
 "Principal": "*"
@@ -151,7 +151,7 @@ The following are equivalent:
 "Principal" : { "AWS" : "*" }
 ```
 
-**Note**  
+**Important**  
 In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Anonymous\. You cannot use it as a wildcard to match part of a name or an ARN\. We also strongly recommend that you do not use a wildcard in the `Principal` element in a role's trust policy unless you otherwise restrict access through a `Condition` element in the policy\. Otherwise, any IAM user in any account can access the role\.
 
 ## More Information<a name="Principal_more-info"></a>
