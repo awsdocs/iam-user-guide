@@ -6,6 +6,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Lock Away Your AWS Account Root User Access Keys](#lock-away-credentials)
 + [Create Individual IAM Users](#create-iam-users)
 + [Use Groups to Assign Permissions to IAM Users](#use-groups-for-permissions)
++ [Use Federation to Enable Single Sign-on (SSO)](#use-federation)
 + [Grant Least Privilege](#grant-least-privilege)
 + [Get Started Using Permissions With AWS Managed Policies](#bp-use-aws-defined-policies)
 + [Use Customer Managed Policies Instead of Inline Policies](#best-practice-managed-vs-inline)
@@ -41,6 +42,9 @@ By creating individual IAM users for people accessing your account, you can give
 **Note**  
 Before you set permissions for individual IAM users, though, see the next point about groups\.
 
+**Tip**  
+However, if you currently have an identity directory of your corporate users, it would be wise to federate that existing identity directory to AWS IAM\. See the [Use Federation to Enable Single Sign-on (SSO)](#use-federation) section for more information\.
+
 ## Use Groups to Assign Permissions to IAM Users<a name="use-groups-for-permissions"></a>
 
 Instead of defining permissions for individual IAM users, it's usually more convenient to create groups that relate to job functions \(administrators, developers, accounting, etc\.\)\. Next, define the relevant permissions for each group\. Finally, assign IAM users to those groups\. All the users in an IAM group inherit the permissions assigned to the group\. That way, you can make changes for everyone in a group in just one place\. As people move around in your company, you can simply change what IAM group their IAM user belongs to\. 
@@ -48,6 +52,12 @@ Instead of defining permissions for individual IAM users, it's usually more conv
 For more information, see the following:
 + [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)
 + [Managing IAM Groups](id_groups_manage.md)
+
+## Use Federation to Enable Single Sign-on (SSO)<a name="use-federation"></a>
+
+If you already have an identity directory of your corporate users, you can enable single sign-on (SSO) to your AWS accounts by using federation and AWS Identity and Access Management (IAM)\. By federating your AWS accounts, users can sign in to the AWS Management Console and AWS Command Line Interface (CLI) using credentials from your corporate directory\. To help you manage federation for multiple AWS accounts centrally, you can use [AWS Single Sign-On](https://aws.amazon.com/single-sign-on/) to manage SSO access for all of your accounts in [AWS Organizations](https://aws.amazon.com/organizations/)\. Federation also enables you to manage access to your AWS accounts by adding and removing users from your corporate directory, such as [Microsoft Active Directory](https://aws.amazon.com/directoryservice/active-directory/)\.
+
+To learn more, see [Enabling SAML 2.0 Federated Users to Access the AWS Management Console](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html)\.
 
 ## Grant Least Privilege<a name="grant-least-privilege"></a>
 
