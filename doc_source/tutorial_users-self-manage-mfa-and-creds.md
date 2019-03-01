@@ -1,6 +1,6 @@
 # Tutorial: Enable Your Users to Configure Their Own Credentials and MFA Settings<a name="tutorial_users-self-manage-mfa-and-creds"></a>
 
-You can enable your users to self\-manage their own multi\-factor authentication \(MFA\) devices and credentials on the **My Security Credentials** page\. You can use the AWS Management Console to configure credentials \(access keys, passwords, signing certificates, and SSH public keys\) and MFA devices for your users in small numbers\. But that task could quickly become time consuming as the number of users grows\. Security best practices specify that users should regularly change their passwords and rotate their access keys\. They should also delete or deactivate credentials that are not needed\. We also highly recommend that they use MFA for sensitive operations\. This tutorial shows you how to enable these best practices without burdening your administrators\.
+You can enable your users to self\-manage their own multi\-factor authentication \(MFA\) devices and credentials on the **My Security Credentials** page\. You can use the AWS Management Console to configure credentials \(access keys, passwords, signing certificates, and SSH public keys\) and MFA devices for your users\. This is useful for a small number of users\. But that task could quickly become time consuming as the number of users grows\. Security best practices specify that users should regularly change their passwords and rotate their access keys\. They should also delete or deactivate credentials that are not needed\. We also highly recommend that they use MFA for sensitive operations\. This tutorial shows you how to enable these best practices without burdening your administrators\.
 
 This tutorial shows how to allow users to access AWS services, but **only** when they sign in with MFA\. If they are not signed in with an MFA device, then users cannot access other services\.
 
@@ -82,6 +82,8 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 ![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
 1. Now add an MFA device\. In the **Multi\-factor Authentication \(MFA\)** section, choose **Assign MFA device**\.
+**Note**  
+You might receive an error that you are not authorized to perform `iam:DeleteVirtualMFADevice`\. This could happen if someone previously began assigning a virtual MFA device to this user and cancelled the process\. To continue, you or another administrator must delete the user's existing MFA device\. For more information, see [I am not authorized to perform: iam:DeleteVirtualMFADevice](troubleshoot_general.md#troubleshoot_general_access-denied-delete-mfa)\.
 
 1. For this tutorial, we use a virtual \(software\-based\) MFA device, such as the Google Authenticator app on a mobile phone\. Choose **Virtual MFA device**, and then click **Continue**\.
 

@@ -10,6 +10,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [I get "access denied" when I make a request with temporary security credentials](#troubleshoot_general_access-denied-temp-creds)
 + [Policy variables aren't working](#troubleshoot_general_policy-variables-dont-work)
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
++ [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
 
 ## I lost my access keys<a name="troubleshoot_general_access-keys"></a>
 
@@ -76,7 +77,7 @@ If you provided your account email address and password, AWS sometimes requires 
 
 ## Changes that I make are not always immediately visible<a name="troubleshoot_general_eventual-consistency"></a>
 
-As a service that is accessed through computers in data centers around the world, IAM uses a distributed computing model called [eventual consistency](https://wikipedia.org/wiki/Eventual_consistency)\. Any change that you make in IAM \(or other AWS services\) takes time to become visible from all possible endpoints\. Some of the delay results from the time it takes to send the data from server to server, from replication zone to replication zone, and from region to region around the world\. IAM also uses caching to improve performance, but in some cases this can add time; the change might not be visible until the previously cached data times out\.
+As a service that is accessed through computers in data centers around the world, IAM uses a distributed computing model called [eventual consistency](https://wikipedia.org/wiki/Eventual_consistency)\. Any change that you make in IAM \(or other AWS services\) takes time to become visible from all possible endpoints\. Some of the delay results from the time it takes to send the data from server to server, from replication zone to replication zone, and from region to region around the world\. IAM also uses caching to improve performance, but in some cases this can add time: The change might not be visible until the previously cached data times out\.
 
 You must design your global applications to account for these potential delays\. Ensure that they work as expected, even when a change made in one location is not instantly visible at another\. Such changes include creating or updating users, groups, roles, or policies\. We recommend that you do not include such IAM changes in the critical, high\-availability code paths of your application\. Instead, make IAM changes in a separate initialization or setup routine that you run less frequently\. Also, be sure to verify that the changes have been propagated before production workflows depend on them\. 
 
@@ -86,3 +87,13 @@ For more information about how some other AWS services are affected by this, con
 + **Amazon EMR**: [Ensuring Consistency When Using Amazon S3 and Amazon Elastic MapReduce for ETL Workflows](http://aws.amazon.com/blogs/big-data/ensuring-consistency-when-using-amazon-s3-and-amazon-elastic-mapreduce-for-etl-workflows/) in the AWS Big Data Blog
 + **Amazon Redshift**: [Managing Data Consistency](https://docs.aws.amazon.com/redshift/latest/dg/managing-data-consistency.html) in the *Amazon Redshift Database Developer Guide*
 + **Amazon S3**: [Amazon S3 Data Consistency Model](https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel) in the *Amazon Simple Storage Service Developer Guide*
+
+## I am not authorized to perform: iam:DeleteVirtualMFADevice<a name="troubleshoot_general_access-denied-delete-mfa"></a>
+
+You might receive the following error when you attempt to assign an MFA device to yourself or another user:
+
+```
+User: arn:aws:iam::123456789012:user/Diego is not authorized to perform: iam:DeleteVirtualMFADevice on resource: arn:aws:iam::123456789012:mfa/Diego with an explicit deny
+```
+
+This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and cancelled the process\. This creates an MFA device for the user in IAM but never fully associates it with the user\. The IAM console requires that the old MFA device be deleted before allowing you to associate a new device with the user\. If you do not have a policy that allows you to delete a virtual MFA device, then you are denied access to associate a new MFA key with the user\.

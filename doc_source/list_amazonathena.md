@@ -18,41 +18,30 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ BatchGetNamedQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetNamedQuery.html)  | Grants permissions to get information about one or more named queries\. | Read |  |  |  | 
-|   [ BatchGetQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_BatchGetQueryExecution.html)  | Grants permissions to get information about one or more query executions\. | Read |  |  |  | 
-|   [ CancelQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html)  | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StopQueryExecution otherwise\. | Write |  |  |  | 
-|   [ CreateNamedQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateNamedQuery.html)  | Grants permissions to create a named query\. | Write |  |  |  | 
-|   [ CreateWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_CreateWorkGroup.html)  | Grants permissions to create a workgroup\. | Write |  |  |  | 
-|   [ DeleteNamedQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteNamedQuery.html)  | Grants permissions to delete a named query specified\. | Write |  |  |  | 
-|   [ DeleteWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_DeleteWorkGroup.html)  | Grants permissions to delete a workgroup\. | Write |  |  |  | 
-|   [ GetCatalogs ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to databases and tables\. | Read |  |  |  | 
-|   [ GetExecutionEngine ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to the specified database and table\. | Read |  |  |  | 
-|   [ GetExecutionEngines ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to databases and tables\. | Read |  |  |  | 
-|   [ GetNamedQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_GetNamedQuery.html)  | Grants permissions to get information about the specified named query\. | Read |  |  |  | 
-|   [ GetNamespace ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to the specified database and table\. | Read |  |  |  | 
-|   [ GetNamespaces ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to databases and tables\. | Read |  |  |  | 
-|   [ GetQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryExecution.html)  | Grants permissions to get information about the specified query execution\. | Read |  |  |  | 
-|   [ GetQueryExecutions ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html)  | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use ListQueryExecutions otherwise\. | Read |  |  |  | 
-|   [ GetQueryResults ](https://docs.aws.amazon.com/athena/latest/APIReference/API_GetQueryResults.html)  | Grants permissions to get the query results\. | Read |  |  |  | 
-|   [ GetQueryResultsStream ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Grants permissions to get the query results stream\. | Read |  |  |  | 
-|   [ GetTable ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to the specified table\. | Read |  |  |  | 
-|   [ GetTables ](https://docs.aws.amazon.com/athena/latest/ug/connect-with-previous-jdbc.html#jdbc-prev-version-policies)  | Applies only to AWS services managed policy and principals that use an Athena JDBC driver version 1\.1\.0\. Grants permissions to enable access to tables\. | Read |  |  |  | 
-|   [ GetWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_GetWorkGroup.html)  | Grants permissions to get a workgroup\. | Read |  |  |  | 
-|   [ ListNamedQueries ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListNamedQueries.html)  | Grants permissions to return a list of named queries in Amazon Athena for the specified AWS account\. | List |  |  |  | 
-|   [ ListQueryExecutions ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListQueryExecutions.html)  | Grants permissions to return a list of query executions for the specified AWS account\. | List |  |  |  | 
-|   [ ListWorkGroups ](https://docs.aws.amazon.com/athena/latest/APIReference/API_ListWorkGroups.html)  | Grants permissions to return a list of workgroups for the specified AWS account\. | List |  |  |  | 
-|   [ RunQuery ](https://docs.aws.amazon.com/athena/latest/APIReference/API_startQueryExecution.html)  | Deprecated\. Applies only to AWS services and principals that use Athena JDBC driver earlier than 1\.1\.0\. Use StartQueryExecution otherwise\. | Write |  |  |  | 
-|   [ StartQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_StartQueryExecution.html)  | Grants permissions to start a query execution using an SQL query provided as a string\. | Write |  |  |  | 
-|   [ StopQueryExecution ](https://docs.aws.amazon.com/athena/latest/APIReference/API_StopQueryExecution.html)  | Grants permissions to stop the specified query execution\. | Write |  |  |  | 
-|   [ UpdateWorkGroup ](https://docs.aws.amazon.com/athena/latest/APIReference/API_UpdateWorkGroup.html)  | Grants permissions to update a workgroup\. | Write |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonathena.html)
 
 ## Resources Defined by Athena<a name="amazonathena-resources-for-iam-policies"></a>
 
-Amazon Athena has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonathena-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ workgroup ](https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html)  |  arn:$\{Partition\}:athena:$\{Region\}:$\{Account\}:workgroup/$\{WorkGroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonathena-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Athena<a name="amazonathena-policy-keys"></a>
 
-Athena has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Athena defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

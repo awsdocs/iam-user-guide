@@ -10,6 +10,8 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [Why Can't I Assume a Role with a 12\-hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
 
 ## I Can't Assume a Role<a name="troubleshoot_roles_cant-assume-role"></a>
+
+Check the following:
 + Make sure to use the exact name of your role, because role names are case sensitive\.
 + Verify that your IAM policy grants you permission to call `sts:AssumeRole` for the role that you want to assume\. The `Action` element of your IAM policy must allow you to call the `AssumeRole` action\. In addition, the `Resource` element of your IAM policy must specify the role that you want to assume\. For example, the `Resource` element can specify a role by its Amazon Resource Name \(ARN\) or by a wildcard \(\*\)\. For example, at least one policy applicable to you must grant permissions similar to the following:
 
@@ -29,7 +31,7 @@ Use the information here to help you diagnose and fix common issues that you mig
               "CS"
           ]}}
   ```
-+ Verify that you meet all the conditions that are specified in the role's trust policy\. A `Condition` can specify an expiration date, an external ID, or that a request must come only from specific IP addresses\. In the following example, if the current date is any time after the specified date, then the policy never matches and cannot grant you the permission to assume the role\.
++ Verify that you meet all the conditions that are specified in the role's trust policy\. A `Condition` can specify an expiration date, an external ID, or that a request must come only from specific IP addresses\. Consider the following example: If the current date is any time after the specified date, then the policy never matches and cannot grant you the permission to assume the role\.
 
   ```
       "Effect": "Allow",
@@ -41,7 +43,7 @@ Use the information here to help you diagnose and fix common issues that you mig
           }
       }
   ```
-+ Verify that the AWS account from which you are calling `AssumeRole` is a trusted entity for the role that you are assuming\. Trusted entities are defined as a `Principal` in a role's trust policy\. The following example is a trust policy that is attached to the role you want to assume\. In this example, the account ID with the IAM user you signed in with must be 123456789012\. If your account number is not listed in the `Principal` element of the role's trust policy, then you cannot assume the role\. It does not matter what permissions are granted to you in access policies\. Note that the example policy limits permissions to actions that occur between July 1, 2017 and December 31, 2017 \(UTC\), inclusive\. If you log in before or after those dates, then the policy does not match, and you cannot assume the role\. 
++ Verify that the AWS account from which you are calling `AssumeRole` is a trusted entity for the role that you are assuming\. Trusted entities are defined as a `Principal` in a role's trust policy\. The following example is a trust policy that is attached to the role that you want to assume\. In this example, the account ID with the IAM user that you signed in with must be 123456789012\. If your account number is not listed in the `Principal` element of the role's trust policy, then you cannot assume the role\. It does not matter what permissions are granted to you in access policies\. Note that the example policy limits permissions to actions that occur between July 1, 2017 and December 31, 2017 \(UTC\), inclusive\. If you log in before or after those dates, then the policy does not match, and you cannot assume the role\. 
 
   ```
       "Effect": "Allow",

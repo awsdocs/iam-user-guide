@@ -29,11 +29,21 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ apps ](https://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}  |  | 
-|   [ campaigns ](https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-campaigns.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\}  |  | 
-|   [ endpoints ](https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-endpoints.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/endpoints/$\{EndpointId\}  |  | 
-|   [ segments ](https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\}  |  | 
+|   [ apps ](https://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonpinpoint-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonpinpoint-aws_TagKeys)   | 
+|   [ campaigns ](https://docs.aws.amazon.com/pinpoint/latest/apireference//rest-api-campaigns.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonpinpoint-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonpinpoint-aws_TagKeys)   | 
+|   [ segments ](https://docs.aws.amazon.com/pinpoint/latest/apireference//rest-api-segments.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonpinpoint-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonpinpoint-aws_TagKeys)   | 
 
 ## Condition Keys for Amazon Pinpoint<a name="amazonpinpoint-policy-keys"></a>
 
-Pinpoint has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Pinpoint defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the pinpoint service\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a tag key and value pair\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key names present in the request the user makes to the pinpoint service\. | String | 

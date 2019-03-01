@@ -4,7 +4,7 @@ AWS Elemental MediaStore \(service prefix: `mediastore`\) provides the following
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/mediastore/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mediastore/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mediastore/latest/apireference/)\.
 + Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mediastore/latest/ug/IAM-user-create.html) permission policies\.
 
 **Topics**
@@ -21,18 +21,26 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateContainer ](https://docs.aws.amazon.com/mediastore/latest/ug/containers-create.html)  | Creates a storage container | Write |  |  |  | 
-|   [ DeleteContainer ](https://docs.aws.amazon.com/mediastore/latest/ug/containers-delete.html)  | Deletes a storage container | Write |  |  |  | 
-|   [ DeleteContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html)  | Deletes a container storage policy\. | Permissions management |  |  |  | 
-|   [ DeleteObject ](https://docs.aws.amazon.com/mediastore/latest/ug/objects-delete.html)  | Deletes an object\. | Write |  |  |  | 
-|   [ DescribeContainer ](https://docs.aws.amazon.com/mediastore/latest/ug/containers-view-details.html)  | Retrieves details of a specific container | List |  |  |  | 
-|   [ DescribeObject ](https://docs.aws.amazon.com/mediastore/latest/ug/objects-view-details.html)  | Retrieves an objects metadata\. | Read |  |  |  | 
-|   [ GetContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/ug/policies-view.html)  | Retrieves a container resource policy\. | Read |  |  |  | 
-|   [ GetObject ](https://docs.aws.amazon.com/mediastore/latest/ug/objects-download.html)  | Retrieves an object\. | Read |  |  |  | 
-|   [ ListContainers ](https://docs.aws.amazon.com/mediastore/latest/ug/ccontainers-view-list.html)  | Retrieves a list of storage containers\. | List |  |  |  | 
-|   [ ListItems ](https://docs.aws.amazon.com/mediastore/latest/ug/objects-view-list.html)  | Retrieves a list of items like objects or folders\. | List |  |  |  | 
-|   [ PutContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/ug/policies-edit.html)  | Adds or modifies a container resource policy\. | Permissions management |  |  |  | 
-|   [ PutObject ](https://docs.aws.amazon.com/mediastore/latest/ug/objects-upload.html)  | Uploads an object\. | Write |  |  |  | 
+|   [ CreateContainer ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_CreateContainer.html)  | Grants permission to create containers\. | Write |  |  |  | 
+|   [ DeleteContainer ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainer.html)  | Grants permission to delete any container in the current account\. | Write |  |  |  | 
+|   [ DeleteContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteContainerPolicy.html)  | Grants permission to delete the access policy of any container in the current account\. | Permissions management |  |  |  | 
+|   [ DeleteCorsPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteCorsPolicy.html)  | Grants permission to delete the CORS policy from any container in the current account\. | Write |  |  |  | 
+|   [ DeleteLifecyclePolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_DeleteLifecyclePolicy.html)  | Grants permission to delete the lifecycle policy from any container in the current account\. | Write |  |  |  | 
+|   [ DeleteObject ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DeleteObject.html)  | Grants permission to delete objects\. | Write |  |  |  | 
+|   [ DescribeContainer ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_DescribeContainer.html)  | Grants permission to retrieve details on any container in the current account\. | List |  |  |  | 
+|   [ DescribeObject ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_DescribeObject.html)  | Grants permission to retrieve object metadata\. | List |  |  |  | 
+|   [ GetContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetContainerPolicy.html)  | Grants permission to retrieve the access policy of any container in the current account\. | Read |  |  |  | 
+|   [ GetCorsPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetCorsPolicy.html)  | Grants permission to retrieve the CORS policy of any container in the current account\. | Read |  |  |  | 
+|   [ GetLifecyclePolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_GetLifecyclePolicy.html)  | Grants permission to retrieve the lifecycle policy that is assigned to any container in the current account\. | Read |  |  |  | 
+|   [ GetObject ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_GetObject.html)  | Grants permission to retrieve objects\. | Read |  |  |  | 
+|   [ ListContainers ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListContainers.html)  | Grants permission to retrieve a list of containers in the current account\. | List |  |  |  | 
+|   [ ListItems ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_ListItems.html)  | Grants permission to retrieve a list of objects and folders in the current account\. | List |  |  |  | 
+|   [ PutContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutContainerPolicy.html)  | Grants permission to create or replace the access policy of any container in the current account\. | Permissions management |  |  |  | 
+|   [ PutCorsPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutCorsPolicy.html)  | Grants permission to add or modify the CORS policy of any container in the current account\. | Write |  |  |  | 
+|   [ PutLifecyclePolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutLifecyclePolicy.html)  | Grants permission to add or modify the lifecycle policy that is assigned to any container in the current account\. | Write |  |  |  | 
+|   [ PutObject ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_PutObject.html)  | Grants permission to upload objects\. | Write |  |  |  | 
+|   [ StartAccessLogging ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html)  | Grants permission to enable access logging on any container in the current account\. | Write |  |  |  | 
+|   [ StopAccessLogging ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_StopAccessLogging.html)  | Grants permission to disable access logging on any container in the current account\. | Write |  |  |  | 
 
 ## Resources Defined by MediaStore<a name="awselementalmediastore-resources-for-iam-policies"></a>
 

@@ -214,7 +214,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/access.html)  | Yes | No | No | No | Yes | No | 
+|  [Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/access.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon CloudSearch](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configureaccess.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Data Pipeline](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-concepts-roles.html)  | Yes | No | No | Yes | Yes | No | 
 |  [Amazon Elasticsearch Service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html) | 
@@ -235,10 +235,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Simple Notification Service \(Amazon SNS\)](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Simple Queue Service \(Amazon SQS\)](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UsingIAM.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Simple Workflow Service \(Amazon SWF\)](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
-
-¹ Amazon SES supports resource\-level permissions in policies that grant permissions to delegate senders to access specific SES identities\.
-
-² Only the Amazon SES API supports temporary security credentials\. The Amazon SES SMTP interface does not support SMTP credentials that are derived from temporary security credentials\. 
 
 ## Business Applications Services<a name="enterprise_svcs"></a>
 
@@ -293,7 +289,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
 |  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/UsingWithIAM.html)  | Yes | Yes¹ | No | No | Yes² | No | 
+|  [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/UsingWithIAM.html)  | Yes | Yes¹ | Yes | No | Yes² | No | 
+
+¹ You can only use resource\-level permissions in policy statements that refer to actions related to sending email, such as `ses:SendEmail` or `ses:SendRawEmail`\. For policy statements that refer to any other actions, the Resource element can only contain `*`\.
+
+² Only the Amazon SES API supports temporary security credentials\. The Amazon SES SMTP interface does not support SMTP credentials that are derived from temporary security credentials\. 
 
 ## End User Computing Services<a name="end-user-computing_svcs"></a>
 
