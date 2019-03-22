@@ -173,7 +173,7 @@ json_string_with_temp_credentials += '}'
 # the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials 
 # as parameters.
 request_parameters = "?Action=getSigninToken"
-request_parameters += "&SessionDuration=43200"
+request_parameters += "&DurationSeconds=43200"
 request_parameters += "&Session=" + urllib.quote_plus(json_string_with_temp_credentials)
 request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 r = requests.get(request_url)
