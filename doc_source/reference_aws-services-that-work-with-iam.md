@@ -92,7 +92,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
 |  [AWS Key Management Service \(AWS KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/kms/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon Macie ](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
-| [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs) | 
 | [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | [Yes](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html) | Yes | Yes | No | 
 | [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/securityhub/latest/userguide/using-service-linked-roles.html) | 
 |  [AWS Single Sign\-On \(AWS SSO\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | Yes | 
@@ -143,6 +142,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Health](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS OpsWorks](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS OpsWorks for Chef Automate](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | No | No | Yes | No | 
+| [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs) | 
 |  [AWS Service Catalog](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
 | [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes³ | Yes | No | No | Yes⁴ | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-ta.html) | 
@@ -203,7 +203,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Elastic Transcoder](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/security.html)  | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaConnect](https://docs.aws.amazon.com/mediaconnect/latest/ug/auth-and-access-control.html) | Yes | Yes | No | No | Yes | No | 
-| [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html) | Yes | Yes | No | No | Yes | No | 
+| [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/auth-and-access-control.html) | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/mediaconvert/latest/ug/auth-and-access-control.html#auth_access_service-with-iam) | Yes | No | 
 | [AWS Elemental MediaStore](https://docs.aws.amazon.com/mediastore/latest/ug/setting-up.html) | Yes | Yes | Yes | No | Yes | No | 
 | [AWS Elemental MediaTailor](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up.html) | Yes | Yes | No | Yes | Yes | No | 
 | [Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-iam.html) | Yes | Yes | No | No | Yes | No | 
@@ -234,6 +234,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Simple Notification Service \(Amazon SNS\)](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Simple Queue Service \(Amazon SQS\)](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UsingIAM.html)  | Yes | Yes | Yes | No | Yes | No | 
+|  [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/security.html)  | Yes | Yes | [Yes](https://docs.aws.amazon.com/step-functions/latest/dg/resource-based-policies.html) | [Yes](https://docs.aws.amazon.com/step-functions/latest/dg/tag-based-policies.html) | Yes | No | 
 |  [Amazon Simple Workflow Service \(Amazon SWF\)](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Business Applications Services<a name="enterprise_svcs"></a>
@@ -288,7 +289,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
-|  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/UsingWithIAM.html)  | Yes | Yes¹ | Yes | No | Yes² | No | 
 
 ¹ You can only use resource\-level permissions in policy statements that refer to actions related to sending email, such as `ses:SendEmail` or `ses:SendRawEmail`\. For policy statements that refer to any other actions, the Resource element can only contain `*`\.

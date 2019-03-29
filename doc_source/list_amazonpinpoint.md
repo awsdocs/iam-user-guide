@@ -29,9 +29,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ apps ](https://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonpinpoint-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonpinpoint-aws_TagKeys)   | 
-|   [ campaigns ](https://docs.aws.amazon.com/pinpoint/latest/apireference//rest-api-campaigns.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonpinpoint-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonpinpoint-aws_TagKeys)   | 
-|   [ segments ](https://docs.aws.amazon.com/pinpoint/latest/apireference//rest-api-segments.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonpinpoint-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonpinpoint-aws_TagKeys)   | 
+|   [ apps ](https://docs.aws.amazon.com/pinpoint/latest/developerguide/gettingstarted.html#gettingstarted-addapp)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   | 
+|   [ campaigns ](https://docs.aws.amazon.com/pinpoint/latest/apireference//rest-api-campaigns.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/campaigns/$\{CampaignId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   | 
+|   [ segments ](https://docs.aws.amazon.com/pinpoint/latest/apireference//rest-api-segments.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Pinpoint<a name="amazonpinpoint-policy-keys"></a>
 

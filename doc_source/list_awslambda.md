@@ -30,9 +30,9 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ function ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:function:$\{FunctionName\}  |  | 
-|   layer  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:layer:$\{LayerName\}  |  | 
-|   layerVersion  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:layer:$\{LayerName\}:$\{LayerVersion\}  |  | 
-|   eventSourceMapping  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:event\-source\-mapping:$\{UUID\}  |  | 
+|   [ layer ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:layer:$\{LayerName\}  |  | 
+|   [ layerVersion ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:layer:$\{LayerName\}:$\{LayerVersion\}  |  | 
+|   [ eventSourceMapping ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:event\-source\-mapping:$\{UUID\}  |  | 
 
 ## Condition Keys for AWS Lambda<a name="awslambda-policy-keys"></a>
 

@@ -24,9 +24,10 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DeletePolicy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)  | Permanently deletes an AWS Firewall Manager policy\. | Write |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
 |   [ DisassociateAdminAccount ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html)  | Disassociates the account that has been set as the AWS Firewall Manager administrator account and and disables the service in all organization accounts | Write |  |  |  | 
 |   [ GetAdminAccount ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html)  | Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator\. | Read |  |  |  | 
-|   [ GetComplianceDetail ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html)  | Returns detailed compliance information about the specified member account\. Details include resources that are in and out of compliance with the specified policy\. | Write |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
+|   [ GetComplianceDetail ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html)  | Returns detailed compliance information about the specified member account\. Details include resources that are in and out of compliance with the specified policy\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
 |   [ GetNotificationChannel ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html)  | Returns information about the Amazon Simple Notification Service \(SNS\) topic that is used to record AWS Firewall Manager SNS logs\. | Read |  |  |  | 
 |   [ GetPolicy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html)  | Returns information about the specified AWS Firewall Manager policy\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
+|   [ GetProtectionStatus ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html)  | Returns policy\-level attack summary information in the event of a potential DDoS attack\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
 |   [ ListComplianceStatus ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html)  | Returns an array of PolicyComplianceStatus objects in the response\. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy\. | List |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
 |   [ ListMemberAccounts ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html)  | Returns an array of member account ids if the caller is FMS admin account\. | List |  |  |  | 
 |   [ ListPolicies ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html)  | Returns an array of PolicySummary objects in the response\. | List |  |  |  | 
@@ -42,7 +43,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ policy ](https://docs.aws.amazon.com/waf/latest/developerguide/API_Policy.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:policy/$\{Id\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:policy/$\{Id\}  |  | 
 
 ## Condition Keys for AWS Firewall Manager<a name="awsfirewallmanager-policy-keys"></a>
 

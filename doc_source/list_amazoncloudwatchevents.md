@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ rule ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/iam-access-control-identity-based-cwe.html#CWE_ARN_Format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:rule/$\{RuleName\}  |  | 
+|   [ rule ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/iam-access-control-identity-based-cwe.html#CWE_ARN_Format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:rule/$\{RuleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncloudwatchevents-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon CloudWatch Events<a name="amazoncloudwatchevents-policy-keys"></a>
 
@@ -44,6 +44,9 @@ For information about using condition keys to provide more granular control over
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 
 |   [ events:TargetArn ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/policy-keys-cwe.html#LimitingAccessToTargets)  | The ARN of a target that can be put to a rule\. | ARN | 
 |   [ events:detail\-type ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/policy-keys-cwe.html#EventsPatternDetailType)  | Matches the literal string of the detail\-type filed of the event\. | String | 
 |   [ events:detail\.eventTypeCode ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/policy-keys-cwe.html#LimitRuleByTypeCode)  | Matches the literal string for the detail\.eventTypeCode field of the event\. | String | 

@@ -95,30 +95,46 @@ Any managed policies attached to the user are detached from the user when the us
 
 ### Deleting an IAM User \(AWS CLI\)<a name="id_users_deleting_cli"></a>
 
-Unlike the AWS Management Console, when you delete a user with the AWS CLI, you have to delete the items attached to the user manually\. This procedure illustrates the process\. 
+Unlike the AWS Management Console, when you delete a user with the AWS CLI, you must delete the items attached to the user manually\. This procedure illustrates the process\. 
 
 **To delete a user from your account \(AWS CLI\)**
 
-1. Delete the user's keys and certificates\. This helps ensure that the user can't access your AWS account's resources anymore\. Note that when you delete a security credential, it's gone forever and can't be retrieved\. 
-
-   [aws iam delete\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html) and [aws iam delete\-signing\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-signing-certificate.html) 
-
 1. Delete the user's password, if the user has one\.
 
-   [aws iam delete\-login\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
+   `[aws iam delete\-login\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)`
 
-1. Deactivate the user's MFA device, if the user has one\.
+1. Delete the user's access keys, if the user has them\.
 
-   [aws iam deactivate\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html) 
+   `[aws iam list\-access\-keys](https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)` \(to list the user's access keys\) and `[aws iam delete\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)`
 
-1. Detach any policies that are attached to the user\. 
+1. Delete the user's signing certificate\. Note that when you delete a security credential, it's gone forever and can't be retrieved\.
 
-   [aws iam list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html) \(to list the policies attached to the user\) and [https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html) \(to detach the policies\) 
+   `[aws iam list\-signing\-certificates](https://docs.aws.amazon.com/cli/latest/reference/iam/list-signing-certificates.html)` \(to list the user's signing certificates\) and `[aws iam delete\-signing\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-signing-certificate.html)`
 
-1. Get a list of any groups the user was in, and remove the user from those groups\. 
+1. Delete the user's SSH public key, if the user has them\.
 
-   [aws iam list\-groups\-for\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html) and [aws iam remove\-user\-from\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html) 
+   `[aws iam list\-ssh\-public\-keys](https://docs.aws.amazon.com/cli/latest/reference/iam/list-ssh-public-keys.html)` \(to list the user's SSH public keys\) and `[aws iam delete\-ssh\-public\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-ssh-public-key.html)`
+
+1. Delete the user's Git credentials\.
+
+   `[aws iam list\-service\-specific\-credentials](https://docs.aws.amazon.com/cli/latest/reference/iam/list-service-specific-credentials.html)` \(to list the user's git credentials\) and `[aws iam delete\-service\-specific\-credential](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-service-specific-credential.html)`
+
+1. Deactivate the user's multi\-factor authentication \(MFA\) device, if the user has one\.
+
+   `[aws iam list\-mfa\-devices](https://docs.aws.amazon.com/cli/latest/reference/iam/list-mfa-devices.html)` \(to list the user's MFA devices\), `[aws iam deactivate\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)` \(to deactivate the device\), and `[aws iam delete\-virtual\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html)` \(to permanently delete a virtual MFA device\) 
+
+1. Delete the user's inline policies\. 
+
+   `[aws iam list\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-user-policies.html)` \(to list the inline policies for the user\) and [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html) \(to delete the policy\) 
+
+1. Detach any managed policies that are attached to the user\. 
+
+   `[aws iam list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)` \(to list the managed policies attached to the user\) and [https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html) \(to detach the policy\) 
+
+1. Remove the user from any groups\. 
+
+   `[aws iam list\-groups\-for\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)` \(to list the groups to which the user belongs\) and `[aws iam remove\-user\-from\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html)` 
 
 1. Delete the user\.
 
-   [aws iam delete\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user.html) 
+   `[aws iam delete\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user.html)` 

@@ -133,9 +133,9 @@ You can use the AWS Management Console to download a credential report as a comm
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, click **Credential report**\.
+1. In the navigation pane, choose **Credential report**\.
 
-1. Click **Download Report**\.
+1. Choose **Download Report**\.
 
 ## Getting Credential Reports \(AWS CLI\)<a name="getting-credential-reports-cliapi"></a>
 

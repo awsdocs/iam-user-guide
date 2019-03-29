@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ fleet ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:fleet/$\{FleetName\}  |  | 
-|   [ image ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image/$\{ImageName\}  |  | 
-|   [ image\-builder ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image\-builder/$\{ImageBuilderName\}  |  | 
-|   [ stack ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:stack/$\{StackName\}  |  | 
+|   [ fleet ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:fleet/$\{FleetName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonappstream2.0-aws_ResourceTag___TagKey_)   | 
+|   [ image ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image/$\{ImageName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonappstream2.0-aws_ResourceTag___TagKey_)   | 
+|   [ image\-builder ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:image\-builder/$\{ImageBuilderName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonappstream2.0-aws_ResourceTag___TagKey_)   | 
+|   [ stack ](https://docs.aws.amazon.com/appstream2/latest/developerguide/what-is-appstream.html#what-is-concepts)  |  arn:$\{Partition\}:appstream:$\{Region\}:$\{Account\}:stack/$\{StackName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonappstream2.0-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon AppStream 2\.0<a name="amazonappstream2.0-policy-keys"></a>
 
@@ -45,4 +45,7 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ appstream:userId ](https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role)  | Filters access by the ID of the AppStream 2\.0 user\. | String | 
+|   [ appstream:userId ](https://docs.aws.amazon.com/appstream2/latest/developerguide/external-identity-providers-setting-up-saml.html#external-identity-providers-embed-inline-policy-for-IAM-role)  | Filters access by the ID of the AppStream 2\.0 user | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

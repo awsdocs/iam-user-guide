@@ -27,11 +27,15 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   profile  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\}  |  | 
-|   room  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\}  |  | 
-|   device  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\}  |  | 
-|   skillgroup  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\}  |  | 
-|   user  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\}  |  | 
+|   [ profile ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Profile.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\}  |  | 
+|   [ room ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Room.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\}  |  | 
+|   [ device ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Device.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\}  |  | 
+|   [ skillgroup ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_SkillGroup.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_UserData.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\}  |  | 
+|   [ addressbook ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_AddressBook.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:address\-book/$\{Resource\_id\}  |  | 
+|   [ conferenceprovider ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_ConferenceProvider.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:conference\-provider/$\{Resource\_id\}  |  | 
+|   [ contact ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Contact.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:contact/$\{Resource\_id\}  |  | 
+|   [ schedule ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_BusinessReportSchedule.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:schedule/$\{Resource\_id\}  |  | 
 
 ## Condition Keys for Alexa for Business<a name="alexaforbusiness-policy-keys"></a>
 

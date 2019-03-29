@@ -21,9 +21,16 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ CreateVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateVocabulary.html)  | Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an audio file\. | Write |  |  |   s3:GetObject   | 
+|   [ DeleteTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteTranscriptionJob.html)  | Deletes a previously submitted transcription job along with any other generated results such as the transcription, models, and so on\. | Write |  |  |  | 
+|   [ DeleteVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_DeleteVocabulary.html)  | Deletes a vocabulary from Amazon Transcribe\. | Write |  |  |  | 
 |   [ GetTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_GetTranscriptionJob.html)  | Returns information about a transcription job\. | Read |  |  |  | 
+|   [ GetVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_GetVocabulary.html)  | Gets information about a vocabulary\. | Read |  |  |  | 
 |   [ ListTranscriptionJobs ](https://docs.aws.amazon.com/transcribe/latest/dg/API_ListTranscriptionJobs.html)  | Lists transcription jobs with the specified status\. | List |  |  |  | 
+|   [ ListVocabularies ](https://docs.aws.amazon.com/transcribe/latest/dg/API_ListVocabularies.html)  | Returns a list of vocabularies that match the specified criteria\. If no criteria are specified, returns the entire list of vocabularies\. | List |  |  |  | 
+|   [ StartStreamTranscription ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartStreamTranscription.html)  | Starts a bidirectional HTTP2 stream to transcribe speech to text in real time\. | Write |  |  |  | 
 |   [ StartTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html)  | Starts an asynchronous job to transcribe speech to text\. | Write |  |  |   s3:GetObject   | 
+|   [ UpdateVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html)  | Updates an existing vocabulary with new values\. The UpdateVocabulary operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
 
 ## Resources Defined by Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
 

@@ -30,12 +30,23 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ device ](https://docs.aws.amazon.com/storagegateway/latest/userguide/resource_vtl-devices.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/device/$\{Vtldevice\}  |  | 
-|   [ gateway ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |  | 
-|   [ share ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\}  |  | 
-|   [ tape ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{TapeBarcode\}  |  | 
+|   [ gateway ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
+|   [ share ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
+|   [ tape ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{TapeBarcode\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
 |   [ target ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/target/$\{IscsiTarget\}  |  | 
-|   [ volume ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\}  |  | 
+|   [ volume ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Storage Gateway<a name="amazonstoragegateway-policy-keys"></a>
 
-Storage Gateway has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Storage Gateway defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
+|   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

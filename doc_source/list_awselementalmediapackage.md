@@ -18,19 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateChannel ](https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelspost)  | Grants permission to create a channel in AWS Elemental MediaPackage\. | Write |  |  |  | 
-|   [ CreateOriginEndpoint ](https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointspost)  | Grants permission to create an endpoint in AWS Elemental MediaPackage\. | Write |  |  |  | 
-|   [ DeleteChannel ](https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-iddelete)  | Grants permission to delete a channel in AWS Elemental MediaPackage\. | Write |  |  |  | 
-|   [ DeleteOriginEndpoint ](https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-iddelete)  | Grants permission to delete an endpoint in AWS Elemental MediaPackage\. | Write |  |  |  | 
-|   [ DescribeChannel ](https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idget)  | Grants permission to view the details of a channel in AWS Elemental MediaPackage\. | Read |  |  |  | 
-|   [ DescribeOriginEndpoint ](https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idget)  | Grants permission to view the details of an endpoint in AWS Elemental MediaPackage\. | Read |  |  |  | 
-|   [ ListChannels ](https://docs.aws.amazon.com/mediapackage/latest/apireference/channels.html#channelsget)  | Grants permission to view a list of channels in AWS Elemental MediaPackage\. | Read |  |  |  | 
-|   [ ListOriginEndpoints ](https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints.html#origin_endpointsget)  | Grants permission to view a list of endpoints in AWS Elemental MediaPackage\. | Read |  |  |  | 
-|   [ UpdateChannel ](https://docs.aws.amazon.com/mediapackage/latest/apireference/channels-id.html#channels-idput)  | Grants permission to make changes to a channel in AWS Elemental MediaPackage\. | Write |  |  |  | 
-|   [ UpdateOriginEndpoint ](https://docs.aws.amazon.com/mediapackage/latest/apireference/origin_endpoints-id.html#origin_endpoints-idput)  | Grants permission to make changes to an endpoint in AWS Elemental MediaPackage\. | Write |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackage.html)
 
 ## Resources Defined by MediaPackage<a name="awselementalmediapackage-resources-for-iam-policies"></a>
 
@@ -41,9 +29,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ channels ](https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:channels/$\{ChannelIdentifier\}  |  | 
-|   [ origin\_endpoints ](https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:origin\_endpoints/$\{OriginEndpointIdentifier\}  |  | 
+|   [ channels ](https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:channels/$\{ChannelIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackage-aws_ResourceTag___TagKey_)   | 
+|   [ origin\_endpoints ](https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:origin\_endpoints/$\{OriginEndpointIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackage-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Elemental MediaPackage<a name="awselementalmediapackage-policy-keys"></a>
 
-MediaPackage has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Elemental MediaPackage defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  |  | String | 
+|   aws:ResourceTag/$\{TagKey\}  |  | String | 
+|   aws:TagKeys  |  | String | 

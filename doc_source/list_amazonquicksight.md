@@ -31,6 +31,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DeleteUser ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | Delete the QuickSight user that is associated with the identity of the IAM user/role making the call\. The IAM user is not deleted as a result of this call\. | Write |   [ user\* ](#amazonquicksight-user)   |  |  | 
 |   [ DescribeGroup ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | Return a QuickSight group’s description and ARN\. | Read |   [ group\* ](#amazonquicksight-group)   |  |  | 
 |   [ DescribeUser ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | Return information about a user, given the user name\. | Read |   [ user\* ](#amazonquicksight-user)   |  |  | 
+|   [ GetDashboardEmbedUrl ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | Return a QuickSight dashboard embedding URL\. | Read |   [ dashboard\* ](#amazonquicksight-dashboard)   |  |  | 
 |   [ GetGroupMapping ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html) \[permission only\] | GetGroupMapping is used only in Amazon QuickSight Enterprise edition accounts\. It enables the user to use Amazon QuickSight to identify and display the Microsoft Active Directory \(Microsoft Active Directory\) directory groups that are mapped to roles in Amazon QuickSight\. | Write |  |  |  | 
 |   [ ListGroupMemberships ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | Return a list of member users in a group\. | List |   [ group\* ](#amazonquicksight-group)   |  |  | 
 |   [ ListGroups ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | Get a list of all user groups in QuickSight\. | List |   [ group\* ](#amazonquicksight-group)   |  |  | 
@@ -54,6 +55,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   user  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:user/$\{ResourceId\}  |  | 
 |   group  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:group/$\{ResourceId\}  |  | 
+|   dashboard  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:dashboard/$\{ResourceId\}  |  | 
 
 ## Condition Keys for Amazon QuickSight<a name="amazonquicksight-policy-keys"></a>
 

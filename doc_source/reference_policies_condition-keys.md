@@ -70,6 +70,33 @@ This combination of the `Allow`, `Bool`, and `true` allows only MFA\-authenticat
 ```
 This combination of the `Allow` effect, `Null` element, and `false` value allows only requests that can be authenticated using MFA, regardless of whether the request is actually authenticated\. This allows all requests made using temporary credentials, and denies access for long\-term credentials\. Use this example with caution because it does not test whether MFA\-authentication was actually used\. 
 
+**aws:PrincipalOrgID**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+The identifier of an organization that you created using AWS Organizations\. This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
+For example, the following Amazon S3 bucket policy allows members of any account in the `o-xxxxxxxxxxx` organization to add an object into the `policy-ninja-dev` bucket\.   
+
+```
+ {
+    "Version": "2012-10-17",
+    "Statement": {
+      "Sid": "AllowPutObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::policy-ninja-dev/*",
+      "Condition": {"StringEquals":
+        {"aws:PrincipalOrgID":["o-xxxxxxxxxxx"]}
+      }
+    }
+}
+```
+This global condition also applies to the master account of an AWS organization\.
+For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
+
+**aws:PrincipalArn**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks the [Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of the IAM user or role that made the request\.
+
 **aws:SecureTransport**  
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
 Checks whether the request was sent using SSL\.
@@ -90,30 +117,6 @@ If you use condition keys that are available only in some scenarios, you can use
 "Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] },
       "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }
 ```
-
-**aws:PrincipalOrgID**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-The identifier of an organization that you created using AWS Organizations\. This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. Instead of listing all the accounts that are members of an organization, you can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include `aws:PrincipalOrgID` automatically include the correct accounts and don't require manual updating\.  
-For example, the following Amazon S3 bucket policy allows members of any account in the `o-xxxxxxxxxxx` organization to add an object into the `policy-ninja-dev` bucket\.   
-
-```
- {
-    "Version": "2012-10-17",
-    "Statement": {
-      "Sid": "AllowPutObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:putobject",
-      "Resource": "arn:aws:s3:::policy-ninja-dev/*",
-      "Condition": {"StringEquals":
-        {"aws:PrincipalOrgID":["o-xxxxxxxxxxx"]}
-      }
-    }
-}
-```
-This global condition also applies to the master account of an AWS organization\.
-For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.  
-This condition key is available for only some services\.
 
 **aws:PrincipalTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -268,3 +271,8 @@ Checks the requester's user ID\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks the requester's user name\.  
  This condition key is available for only some services\.
+
+**aws:VpcSourceIp**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+When used in VPC endpoint policies, restricts access to specific IPs from within the principal’s VPC\.   
+This condition key can be used only in VPC endpoint policies\. For more information, see [Controlling Access to Services with VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html) in the *Amazon VPC User Guide*\.

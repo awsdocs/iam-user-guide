@@ -42,6 +42,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ securitygroupingress\-ec2securitygroup ](https://docs.aws.amazon.com/redshift/latest/mgmt/mgmt/working-with-security-groups.html)  |  arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:securitygroupingress:$\{SecurityGroupName\}/ec2securitygroup/$\{Owner\}/$\{Ece2SecuritygroupId\}  |  | 
 |   [ snapshot ](https://docs.aws.amazon.com/redshift/latest/mgmt/mgmt/working-with-snapshots.html)  |  arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:snapshot:$\{ClusterName\}/$\{SnapshotName\}  |  | 
 |   [ snapshotcopygrant ](https://docs.aws.amazon.com/redshift/latest/mgmt/mgmt/working-with-db-encryption.html#configure-snapshot-copy-grant)  |  arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:snapshotcopygrant:$\{SnapshotCopyGrantName\}  |  | 
+|   [ snapshotschedule ](https://docs.aws.amazon.com/redshift/latest/mgmt/mgmt/working-with-snapshots.html)  |  arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:snapshotschedule:$\{ParameterGroupName\}  |  | 
 |   [ subnetgroup ](https://docs.aws.amazon.com/redshift/latest/mgmt/mgmt/working-with-cluster-subnet-groups.html)  |  arn:$\{Partition\}:redshift:$\{Region\}:$\{Account\}:subnetgroup:$\{SubnetGroupName\}  |  | 
 
 ## Condition Keys for Amazon Redshift<a name="amazonredshift-policy-keys"></a>

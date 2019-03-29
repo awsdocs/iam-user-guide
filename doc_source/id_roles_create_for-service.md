@@ -129,7 +129,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 1. If possible, select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want the service to have\.
 
    Depending on the use case that you selected, the service might allow you to do any of the following:
-   + Nothing, becuase the service defines the permissions for the role
+   + Nothing, because the service defines the permissions for the role
    + Allow you to choose from a limited set of permissions
    + Allow you to choose from any permissions
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role

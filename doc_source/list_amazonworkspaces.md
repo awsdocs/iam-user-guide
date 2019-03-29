@@ -29,8 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ workspacebundle ](https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\}  |  | 
-|   [ workspaceid ](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html)  |  arn:$\{Partition\}:sky:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\}  |  | 
+|   [ workspacebundle ](https://docs.aws.amazon.com/workspaces/latest/adminguide/bundles.html)  |  arn:$\{Partition\}:workspaces:$\{Region\}:$\{Account\}:workspacebundle/$\{BundleId\}  |  | 
+|   [ workspaceipgroup ](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-ip-access-control-groups.html)  |  arn:$\{Partition\}:workspaces:$\{Region\}:$\{Account\}:workspaceipgroup/$\{GroupId\}  |  | 
+|   [ directoryid ](https://docs.aws.amazon.com/workspaces/latest/adminguide/manage-workspaces-directory.html)  |  arn:$\{Partition\}:workspaces:$\{Region\}:$\{Account\}:directory/$\{DirectoryId\}  |  | 
+|   [ workspaceid ](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_workspace_management.html)  |  arn:$\{Partition\}:workspaces:$\{Region\}:$\{Account\}:workspace/$\{WorkspaceId\}  |  | 
 
 ## Condition Keys for Amazon WorkSpaces<a name="amazonworkspaces-policy-keys"></a>
 

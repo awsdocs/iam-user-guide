@@ -24,6 +24,9 @@ You can switch roles from the AWS Management Console\. You can assume a role by 
 
 ² The maximum session duration is a setting that you can apply to a role from the console, the AWS CLI, or the API\. This setting specifies the maximum session duration for the role when it is assumed from the CLI or API\. This setting can have a value from 1 hour to 12 hours\. For details about the maximum session duration setting, see [Modifying a Role](id_roles_manage_modify.md)\. This setting determines the maximum session duration that you can request when you get the role credentials\. For example, when you use the [AssumeRole\*](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operations to assume a role, you can specify a session length using the `DurationSeconds` parameter\. Use this parameter to specify the length of the role session from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session) later in this page\.
 
+**Note**  
+The maximum session duration setting applies only to sessions created using the `AssumeRole*` API operations or `assume-role*` CLI commands\. The setting does not limit sessions assumed by AWS services\.
+
 **Topics**
 + [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session)
 + [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)

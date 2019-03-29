@@ -55,7 +55,8 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ aws:RequestTag/tag\-key ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A key that is present in the request the user makes to the SageMaker service\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A key that is present in the request the user makes to the SageMaker service\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all the tag key names associated with the resource in the request\. | String | 
 |   [ sagemaker:ResourceTag/ ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The preface string for a tag key and value pair attached to a resource\. | String | 
-|   [ sagemaker:ResourceTag/tag\-key ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 
+|   [ sagemaker:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 

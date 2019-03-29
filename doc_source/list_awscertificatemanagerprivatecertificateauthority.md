@@ -18,26 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html)  | Creates an ACM Private CA and its associated private key and configuration\. | Write |  |  |  | 
-|   [ CreateCertificateAuthorityAuditReport ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html)  | Creates an audit report for an ACM Private CA\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ DeleteCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthority.html)  | Deletes an ACM Private CA and its associated private key and configuration\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ DescribeCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthority.html)  | Returns a list of the configuration and status fields contained in the specified ACM Private CA\. | Read |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ DescribeCertificateAuthorityAuditReport ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DescribeCertificateAuthorityAuditReport.html)  | Returns the status and information about an ACM Private CA audit report\. | Read |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ GetCertificate ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificate.html)  | Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN\. | Read |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ GetCertificateAuthorityCertificate ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html)  | Retrieves an ACM Private CA certificate and certificate chain for the certificate authority specified by an ARN\. | Read |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ GetCertificateAuthorityCsr ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCsr.html)  | Retrieves an ACM Private CA certificate signing request \(CSR\) for the certificate\-authority specified by an ARN\. | Read |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ ImportCertificateAuthorityCertificate ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html)  | Imports an SSL/TLS certificate into ACM Private CA for use as the CA certificate of an ACM Private CA\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ IssueCertificate ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_IssueCertificate.html)  | Issues an ACM Private CA certificate\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ ListCertificateAuthorities ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html)  | Retrieves a list of the ACM Private CA certificate authority ARNs, and a summary of the status of each CA in the calling account\. | List |  |  |  | 
-|   [ ListTags ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListTags.html)  | Lists the tags that have been applied to the ACM Private CA certificate authority\. | Read |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ RestoreCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RestoreCertificateAuthority.html)  | Restores an ACM Private CA from the deleted state to the state it was in when deleted\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ RevokeCertificate ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html)  | Revokes a certificate issued by an ACM Private CA\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ TagCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html)  | Adds one or more tags to an ACM Private CA\. | Tagging |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ UntagCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html)  | Remove one or more tags from an ACM Private CA\. | Tagging |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
-|   [ UpdateCertificateAuthority ](https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html)  | Updates the configuration of an ACM Private CA\. | Write |   [ certificate\-authority\* ](#awscertificatemanagerprivatecertificateauthority-certificate-authority)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanagerprivatecertificateauthority.html)
 
 ## Resources Defined by Certificate Manager Private Certificate Authority<a name="awscertificatemanagerprivatecertificateauthority-resources-for-iam-policies"></a>
 
@@ -48,8 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ certificate\-authority ](https://docs.aws.amazon.com/acm-pca/latest/userguide/authen-overview.html#acm-pca-resources-operations)  |  arn:$\{Partition\}:acm\-pca:$\{Region\}:$\{Account\}:certificate\-authority/$\{CertificateAuthorityId\}  |  | 
+|   [ certificate\-authority ](https://docs.aws.amazon.com/acm-pca/latest/userguide/authen-overview.html#acm-pca-resources-operations)  |  arn:$\{Partition\}:acm\-pca:$\{Region\}:$\{Account\}:certificate\-authority/$\{CertificateAuthorityId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscertificatemanagerprivatecertificateauthority-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Certificate Manager Private Certificate Authority<a name="awscertificatemanagerprivatecertificateauthority-policy-keys"></a>
 
-Certificate Manager Private Certificate Authority has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Certificate Manager Private Certificate Authority defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
+|   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

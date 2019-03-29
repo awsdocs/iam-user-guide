@@ -31,7 +31,7 @@ Example Corp can use any string value they want for the ExternalId, as long as i
 
 1. After you create the role, you provide the Amazon Resource Name \(ARN\) of the role to Example Corp\.
 
-1. When Example Corp needs to access your AWS resources, someone from the company calls the AWS `sts:AssumeRole` API\. The call includes the ARN of the role to assume and the ExternalId parameter that corresponds to your customer ID\.
+1. When Example Corp needs to access your AWS resources, someone from the company calls the AWS `sts:AssumeRole` API\. The call includes the ARN of the role to assume and the ExternalId parameter that corresponds to their customer ID\.
 
 If the request comes from someone using Example Corp's AWS account, and if the role ARN and the external ID are correct, the request succeeds\. It then provides temporary security credentials that Example Corp can use to access the AWS resources that your role allows\.
 

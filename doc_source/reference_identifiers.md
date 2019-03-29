@@ -24,7 +24,7 @@ arn:partition:service:region:account:resource
 ```
 
 Where:
-+ `partition` identifies the partition that the resource is in\. For standard AWS regions, the partition is `aws`\. If you have resourses in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) region is `aws-cn`\.
++ `partition` identifies the partition that the resource is in\. For standard AWS regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) region is `aws-cn`\.
 + `service` identifies the AWS product\. For IAM resources, this is always `iam`\.
 + `region` is the region the resource resides in\. For IAM resources, this is always left blank\.
 + `account` is the AWS account ID with no hyphens \(for example, 123456789012\)\.
