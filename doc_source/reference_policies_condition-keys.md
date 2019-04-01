@@ -94,7 +94,7 @@ This global condition also applies to the master account of an AWS organization\
 For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
 
 **aws:PrincipalArn**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks the [Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of the IAM user or role that made the request\.
 
 **aws:SecureTransport**  

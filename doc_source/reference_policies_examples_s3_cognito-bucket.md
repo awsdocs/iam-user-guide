@@ -7,16 +7,18 @@ This example shows how you might create a policy that allows Amazon Cognito user
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "ListYourObjects",
             "Effect": "Allow",
-            "Action": ["s3:ListBucket"],
+            "Action": "s3:ListBucket",
             "Resource": ["arn:aws:s3:::bucket-name"],
             "Condition": {
                 "StringLike": {
-                    "s3:prefix": ["cognito/application-name/"]
+                    "s3:prefix": ["cognito/application-name//${cognito-identity.amazonaws.com:sub}"]
                 }
             }
         },
         {
+            "Sid": "ReadWriteDeleteYourObjects",
             "Effect": "Allow",
             "Action": [
                 "s3:GetObject",
