@@ -13,7 +13,7 @@ This example shows how you might create a policy that allows Amazon Cognito user
             "Resource": ["arn:aws:s3:::bucket-name"],
             "Condition": {
                 "StringLike": {
-                    "s3:prefix": ["cognito/application-name//${cognito-identity.amazonaws.com:sub}"]
+                    "s3:prefix": ["cognito/application-name/${cognito-identity.amazonaws.com:sub}"]
                 }
             }
         },
