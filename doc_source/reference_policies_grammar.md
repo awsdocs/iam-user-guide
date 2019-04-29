@@ -109,7 +109,7 @@ policy  = {
     ("*" | [<resource_string>, <resource_string>, ...])
 
 <condition_block> = "Condition" : { <condition_map> }
-<condition_map> { 
+<condition_map> = { 
   <condition_type_string> : { <condition_key_string> : <condition_value_list> },
   <condition_type_string> : { <condition_key_string> : <condition_value_list> }, ...
 }  
