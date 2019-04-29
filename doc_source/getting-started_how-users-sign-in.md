@@ -30,28 +30,28 @@ IAM users in your account have access only to the AWS resources that you specify
 ## Logging Sign\-In Details in CloudTrail<a name="console_signin-cloudtrail"></a>
 
 If you enable CloudTrail to log sign\-in events, you must understand how CloudTrail logs the events\.
-+ If your users sign in directly to a console, they are redirected to either a global or a regional sign\-in endpoint\. This redirection is based on whether the selected service console supports regions\. For example, the main console home page supports regions, so if you sign in to the following URL, you are redirected to a ''default" regional sign\-in endpoint `https://us-east-1.signin.aws.amazon.com`\.
++ If your users sign in directly to a console, they are redirected to either a global or a Regional sign\-in endpoint\. This redirection is based on whether the selected service console supports Regions\. For example, the main console home page supports Regions, so if you sign in to the following URL, you are redirected to a ''default" Regional sign\-in endpoint `https://us-east-1.signin.aws.amazon.com`\.
 
   ```
   https://alias.signin.aws.amazon.com/console
   ```
 
-  This results in a regional CloudTrail log entry in that region's log\.
+  This results in a Regional CloudTrail log entry in that Region's log\.
 
-  The console for some services, such as Amazon S3, do not support regions\. This means that if you sign in to that service using the following URL, AWS redirects you to the global sign\-in endpoint at `https://signin.aws.amazon.com`\.
+  The console for some services, such as Amazon S3, do not support Regions\. This means that if you sign in to that service using the following URL, AWS redirects you to the global sign\-in endpoint at `https://signin.aws.amazon.com`\.
 
   ```
   https://alias.signin.aws.amazon.com/console/s3
   ```
 
   This results in a global CloudTrail log entry\.
-+ You can manually request a specific regional sign\-in endpoint by signing in to the region\-enabled main console home page\. To do this, use a URL like the following example:
++ You can manually request a specific Regional sign\-in endpoint by signing in to the Region\-enabled main console home page\. To do this, use a URL like the following example:
 
   ```
   https://alias.signin.aws.amazon.com/console?region=ap-southeast-1
   ```
 
-  AWS then redirects you to the `ap-southeast-1` regional sign\-in endpoint\. This results in a regional CloudTrail log entry in that region's log\.
+  AWS then redirects you to the `ap-southeast-1` Regional sign\-in endpoint\. This results in a Regional CloudTrail log entry in that Region's log\.
 
 For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
 

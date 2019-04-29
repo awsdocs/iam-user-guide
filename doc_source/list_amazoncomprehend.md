@@ -18,51 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ BatchDetectDominantLanguage ](https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html)  | Detects the language or languages present in the list of text documents\. | Read |  |  |  | 
-|   [ BatchDetectEntities ](https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html)  | Detects the named entities \("People", "Places", "Locations", etc\) within the given list of text documents\. | Read |  |  |  | 
-|   [ BatchDetectKeyPhrases ](https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html)  | Detects the phrases in the list of text documents that are most indicative of the content\. | Read |  |  |  | 
-|   [ BatchDetectSentiment ](https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html)  | Detects the sentiment of a text in the list of documents \(Positive, Negative, Neutral, or Mixed\)\. | Read |  |  |  | 
-|   [ BatchDetectSyntax ](https://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSyntax.html)  | Detects syntactic information \(like Part of Speech, Tokens\) in a list of text documents\. | Read |  |  |  | 
-|   [ CreateDocumentClassifier ](https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateDocumentClassifier.html)  | Creates a new document classifier that you can use to categorize documents\. | Write |   [ document\-classifier\* ](#amazoncomprehend-document-classifier)   |  |  | 
-|   [ CreateEntityRecognizer ](https://docs.aws.amazon.com/comprehend/latest/dg/API_CreateEntityRecognizer.html)  | Creates an entity recognizer using submitted files\. | Write |   [ entity\-recognizer\* ](#amazoncomprehend-entity-recognizer)   |  |  | 
-|   [ DeleteDocumentClassifier ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteDocumentClassifier.html)  | Deletes a previously created document classifier\. | Write |   [ document\-classifier\* ](#amazoncomprehend-document-classifier)   |  |  | 
-|   [ DeleteEntityRecognizer ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DeleteEntityRecognizer.html)  | Deletes a submitted entity recognizer\. | Write |   [ entity\-recognizer\* ](#amazoncomprehend-entity-recognizer)   |  |  | 
-|   [ DescribeDocumentClassificationJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDocumentClassificationJob.html)  | Gets the properties associated with a document classification job\. | Read |  |  |  | 
-|   [ DescribeDocumentClassifier ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDocumentClassifier.html)  | Gets the properties associated with a document classifier\. | Read |   [ document\-classifier\* ](#amazoncomprehend-document-classifier)   |  |  | 
-|   [ DescribeDominantLanguageDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeDominantLanguageDetectionJob.html)  | Gets the properties associated with a dominant language detection job\. | Read |  |  |  | 
-|   [ DescribeEntitiesDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEntitiesDetectionJob.html)  | Gets the properties associated with an entities detection job\. | Read |  |  |  | 
-|   [ DescribeEntityRecognizer ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeEntityRecognizer.html)  | Provides details about an entity recognizer including status, S3 buckets containing training data, recognizer metadata, metrics, and so on\. | Read |   [ entity\-recognizer\* ](#amazoncomprehend-entity-recognizer)   |  |  | 
-|   [ DescribeKeyPhrasesDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeKeyPhrasesDetectionJob.html)  | Gets the properties associated with a key phrases detection job\. | Read |  |  |  | 
-|   [ DescribeSentimentDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeSentimentDetectionJob.html)  | Gets the properties associated with a sentiment detection job\. | Read |  |  |  | 
-|   [ DescribeTopicsDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html)  | Gets the properties associated with a topic detection job\. | Read |  |  |  | 
-|   [ DetectDominantLanguage ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html)  | Detects the language or languages present in the text\. | Read |  |  |  | 
-|   [ DetectEntities ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html)  | Detects the named entities \("People", "Places", "Locations", etc\) within the given text document\. | Read |  |  |  | 
-|   [ DetectKeyPhrases ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html)  | Detects the phrases in the text that are most indicative of the content\. | Read |  |  |  | 
-|   [ DetectSentiment ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html)  | Detects the sentiment of a text in a document \(Positive, Negative, Neutral, or Mixed\)\. | Read |  |  |  | 
-|   [ DetectSyntax ](https://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSyntax.html)  | Detects syntactic information \(like Part of Speech, Tokens\) in a text document\. | Read |  |  |  | 
-|   [ ListDocumentClassificationJobs ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassificationJobs.html)  | Gets a list of the document classification jobs that you have submitted\. | List |  |  |  | 
-|   [ ListDocumentClassifiers ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDocumentClassifiers.html)  | Gets a list of the document classifiers that you have created\. | List |  |  |  | 
-|   [ ListDominantLanguageDetectionJobs ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListDominantLanguageDetectionJobs.html)  | Gets a list of the dominant language detection jobs that you have submitted\. | List |  |  |  | 
-|   [ ListEntitiesDetectionJobs ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntitiesDetectionJobs.html)  | Gets a list of the entity detection jobs that you have submitted\. | List |  |  |  | 
-|   [ ListEntityRecognizers ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListEntityRecognizers.html)  | Gets a list of the properties of all entity recognizers that you created, including recognizers currently in training\. | List |  |  |  | 
-|   [ ListKeyPhrasesDetectionJobs ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListKeyPhrasesDetectionJobs.html)  | Get a list of key phrase detection jobs that you have submitted\. | List |  |  |  | 
-|   [ ListSentimentDetectionJobs ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListSentimentDetectionJobs.html)  | Gets a list of sentiment detection jobs that you have submitted\. | List |  |  |  | 
-|   [ ListTopicsDetectionJobs ](https://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html)  | Gets a list of the topic detection jobs that you have submitted\. | List |  |  |  | 
-|   [ StartDocumentClassificationJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDocumentClassificationJob.html)  | Starts an asynchronous document classification job\. | Write |   [ document\-classifier\* ](#amazoncomprehend-document-classifier)   |  |  | 
-|   [ StartDominantLanguageDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StartDominantLanguageDetectionJob.html)  | Starts an asynchronous dominant language detection job for a collection of documents\. | Write |  |  |  | 
-|   [ StartEntitiesDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StartEntitiesDetectionJob.html)  | Starts an asynchronous entity detection job for a collection of documents\. | Write |  |  |  | 
-|   [ StartKeyPhrasesDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StartKeyPhrasesDetectionJob.html)  | Starts an asynchronous key phrase detection job for a collection of documents\. | Write |  |  |  | 
-|   [ StartSentimentDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StartSentimentDetectionJob.html)  | Starts an asynchronous sentiment detection job for a collection of documents\. | Write |  |  |  | 
-|   [ StartTopicsDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html)  | Starts an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic\. | Write |  |  |  | 
-|   [ StopDominantLanguageDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StopDominantLanguageDetectionJob.html)  | Stops a dominant language detection job\. | Write |  |  |  | 
-|   [ StopEntitiesDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StopEntitiesDetectionJob.html)  | Stops an entity detection job\. | Write |  |  |  | 
-|   [ StopKeyPhrasesDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StopKeyPhrasesDetectionJob.html)  | Stops a key phrase detection job\. | Write |  |  |  | 
-|   [ StopSentimentDetectionJob ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StopSentimentDetectionJob.html)  | Stops a sentiment detection job\. | Write |  |  |  | 
-|   [ StopTrainingDocumentClassifier ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTrainingDocumentClassifier.html)  | Stop a previously created document classifier training job\. | Write |   [ document\-classifier\* ](#amazoncomprehend-document-classifier)   |  |  | 
-|   [ StopTrainingEntityRecognizer ](https://docs.aws.amazon.com/comprehend/latest/dg/API_StopTrainingEntityRecognizer.html)  | Stop a previously created entity recognizer training job\. | Write |   [ entity\-recognizer\* ](#amazoncomprehend-entity-recognizer)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html)
 
 ## Resources Defined by Comprehend<a name="amazoncomprehend-resources-for-iam-policies"></a>
 
@@ -73,9 +29,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   document\-classifier  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:document\-classifier/$\{DocumentClassifierName\}  |  | 
-|   entity\-recognizer  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:entity\-recognizer/$\{EntityRecognizerName\}  |  | 
+|   document\-classifier  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:document\-classifier/$\{DocumentClassifierName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
+|   entity\-recognizer  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:entity\-recognizer/$\{EntityRecognizerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Comprehend<a name="amazoncomprehend-policy-keys"></a>
 
-Comprehend has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Comprehend defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters create requests based on the allowed set of values for each of the mandatory tags\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters actions based on the tag value associated with the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

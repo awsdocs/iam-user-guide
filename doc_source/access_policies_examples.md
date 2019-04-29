@@ -11,6 +11,7 @@ If you would like to submit a policy to be included in this reference guide, use
 
 ## Example Policies: AWS<a name="policy_library_AWS"></a>
 + Allows access during a specific range of dates\. \([View this policy](reference_policies_examples_aws-dates.md)\.\)
++ Allows enabling and disabling AWS Regions\. \([View this policy](reference_policies_examples_aws-enable-disable-regions.md)\.\)
 + Allows MFA\-authenticated users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.\)
 + Allows users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.md)\.\)
 + Allows users to manage their own MFA device on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.\)
@@ -38,7 +39,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows starting or stopping Amazon EC2 instances a user has tagged, programmatically and in the console\. \([View this policy](reference_policies_examples_ec2_tag-owner.md)\.\)
 + Allows starting or stopping Amazon EC2 instances based on resource and principal tags, programmatically and in the console\. \([View this policy](reference_policies_examples_ec2-start-stop-tags.md)\.\)
 + Allows starting or stopping Amazon EC2 instances when the resource and principal tags match\. \([View this policy](reference_policies_examples_ec2-start-stop-match-tags.md)\.\)
-+ Allows full Amazon EC2 access within a specific region, programmatically and in the console\. \([View this policy](reference_policies_examples_ec2_region.md)\.\)
++ Allows full Amazon EC2 access within a specific Region, programmatically and in the console\. \([View this policy](reference_policies_examples_ec2_region.md)\.\)
 + Allows starting or stopping a specific Amazon EC2 instance and modifying a specific security group, programmatically and in the console\. \([View this policy](reference_policies_examples_ec2_instance-securitygroup.md)\.\)
 + Limits terminating Amazon EC2 instances to a specific IP address range\. \([View this policy](reference_policies_examples_ec2_terminate-ip.md)\.\)
 
@@ -56,7 +57,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Limits managed policies that can be applied to an IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\.\)
 
 ## Example Policies: Amazon RDS<a name="policy_library_RDS"></a>
-+ Allows full Amazon RDS database access within a specific region\. \([View this policy](reference_policies_examples_rds_region.md)\.\)
++ Allows full Amazon RDS database access within a specific Region\. \([View this policy](reference_policies_examples_rds_region.md)\.\)
 + Allows restoring Amazon RDS databases, programmatically and in the console\. \([View this policy](reference_policies_examples_rds_db-console.md)\.\)
 + Allows tag owners full access to Amazon RDS resources that they have tagged\. \([View this policy](reference_policies_examples_rds_tag-owner.md)\.\)
 

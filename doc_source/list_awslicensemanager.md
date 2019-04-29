@@ -18,24 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateLicenseConfiguration ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_CreateLicenseConfiguration.html)  | Creates a new license configuration | Tagging |  |  |  | 
-|   [ DeleteLicenseConfiguration ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_DeleteLicenseConfiguration.html)  | Permanently deletes a license configuration | Write |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ GetLicenseConfiguration ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetLicenseConfiguration.html)  | Gets a license configuration | List |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ GetServiceSettings ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_GetServiceSettings.html)  | Gets service settings | List |  |  |  | 
-|   [ ListAssociationsForLicenseConfiguration ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListAssociationsForLicenseConfiguration.html)  | Lists associations for a selected license configuration | List |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ ListLicenseConfigurations ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseConfigurations.html)  | Lists license configurations | List |  |  |  | 
-|   [ ListLicenseSpecificationsForResource ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListLicenseSpecificationsForResource.html)  | Lists license specifications associated with a selected resource | List |  |  |  | 
-|   [ ListResourceInventory ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListResourceInventory.html)  | Lists resource inventory | List |  |  |  | 
-|   [ ListTagsForResource ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListTagsForResource.html)  | Lists tags for a selected resource | List |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ ListUsageForLicenseConfiguration ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_ListUsageForLicenseConfiguration.html)  | Lists usage records for selected license configuration | List |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ TagResource ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_TagResource.html)  | Tags a selected resource | Tagging |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ UntagResource ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UntagResource.html)  | Untags a selected resource | Tagging |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ UpdateLicenseConfiguration ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseConfiguration.html)  | Updates an existing license configuration | Write |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ UpdateLicenseSpecificationsForResource ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateLicenseSpecificationsForResource.html)  | Updates license specifications for a selected resource | Write |   [ license\-configuration\* ](#awslicensemanager-license-configuration)   |  |  | 
-|   [ UpdateServiceSettings ](https://docs.aws.amazon.com/license-manager/latest/APIReference/API_UpdateServiceSettings.html)  | Updates service settings | Permissions management |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslicensemanager.html)
 
 ## Resources Defined by License Manager<a name="awslicensemanager-resources-for-iam-policies"></a>
 
@@ -46,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   license\-configuration  |  arn:$\{Partition\}:license\-manager:$\{Region\}:$\{Account\}:license\-configuration/$\{LicenseConfigurationId\}  |  | 
+|   license\-configuration  |  arn:$\{Partition\}:license\-manager:$\{Region\}:$\{Account\}:license\-configuration/$\{LicenseConfigurationId\}  |   [ license\-manager:ResourceTag/$\{TagKey\} ](#awslicensemanager-license-manager_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS License Manager<a name="awslicensemanager-policy-keys"></a>
 
@@ -59,4 +42,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | Filters create requests based on allowed set of values for each of the mandatory tags | String | 
 |   aws:TagKeys  | Enforce tag keys that are used in the request | String | 
+|   license\-manager:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 

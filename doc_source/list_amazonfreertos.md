@@ -18,25 +18,30 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   CreateSoftwareConfiguration  | Creates a software configuration\. | Write |  |  |  | 
-|   DeleteSoftwareConfiguration  | Deletes the software configuration\. | Write |  |  |  | 
-|   DescribeHardwarePlatform  | Describes the hardware platform\. | Read |  |  |  | 
-|   DescribeSoftwareConfiguration  | Describes the software configuration\. | Read |  |  |  | 
-|   GetSoftwareURL  | Get the URL for Amazon FreeRTOS software download\. | Read |  |  |  | 
-|   GetSoftwareURLForConfiguration  | Get the URL for Amazon FreeRTOS software download based on the configuration\. | Read |  |  |  | 
-|   ListFreeRTOSVersions  | Lists versions of AmazonFreeRTOS\. | List |  |  |  | 
-|   ListHardwarePlatforms  | Lists the hardware platforms\. | List |  |  |  | 
-|   ListHardwareVendors  | Lists the hardware vendors\. | List |  |  |  | 
-|   ListSoftwareConfigurations  | Lists the software configurations\. | List |  |  |  | 
-|   UpdateSoftwareConfiguration  | Updates the software configuration\. | Write |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonfreertos.html)
 
 ## Resources Defined by FreeRTOS<a name="amazonfreertos-resources-for-iam-policies"></a>
 
-Amazon FreeRTOS has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonfreertos-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ configuration ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw-ug.html)  |  arn:$\{Partition\}:freertos:$\{Region\}:$\{Account\}:configuration/$\{configurationName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfreertos-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon FreeRTOS<a name="amazonfreertos-policy-keys"></a>
 
-FreeRTOS has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon FreeRTOS defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | A tag key that is present in the request that the user makes to Amazon FreeRTOS\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | The tag key component of a tag attached to an Amazon FreeRTOS resource\. | String | 
+|   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 

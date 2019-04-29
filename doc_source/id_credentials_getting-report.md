@@ -71,12 +71,12 @@ The value in this field is `N/A` \(not applicable\) in these cases:
 + The access key has not been used after IAM started tracking this information on April 22, 2015\.
 
 **access\_key\_1\_last\_used\_region**  
-The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html) in which the access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
+The [AWS Region](https://docs.aws.amazon.com/general/latest/gr/rande.html) in which the access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
 The value in this field is `N/A` \(not applicable\) in these cases:  
 + The user does not have an access key\.
 + The access key has never been used\.
 + The access key was last used before IAM started tracking this information on April 22, 2015\.
-+ The last used service is not region\-specific, such as Amazon S3\.
++ The last used service is not Region\-specific, such as Amazon S3\.
 
 **access\_key\_1\_last\_used\_service**  
 The AWS service that was most recently accessed with the access key\. The value in this field uses the service's [namespace](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces)—for example, `s3` for Amazon S3 and `ec2` for Amazon EC2\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
@@ -100,11 +100,11 @@ The value in this field is `N/A` \(not applicable\) in these cases:
 + The user's second access key was last used before IAM started tracking this information on April 22, 2015\.
 
 **access\_key\_2\_last\_used\_region**  
-The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html) in which the user's second access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  
+The [AWS Region](https://docs.aws.amazon.com/general/latest/gr/rande.html) in which the user's second access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  
 + The user does not have a second access key\.
 + The user's second access key has never been used\.
 + The user's second access key was last used before IAM started tracking this information on April 22, 2015\.
-+ The last used service is not region\-specific, such as Amazon S3\.
++ The last used service is not Region\-specific, such as Amazon S3\.
 
 **access\_key\_2\_last\_used\_service**  
 The AWS service that was most recently accessed with the user's second access key\. The value in this field uses the service's [namespace](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces)—for example, `s3` for Amazon S3 and `ec2` for Amazon EC2\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  

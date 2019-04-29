@@ -28,8 +28,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ user ](https://docs.aws.amazon.com/transfer/latest/userguide/users.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:user/$\{serverId\}/$\{username\}  |   [ aws:RequestTag/$\{TagKey\} ](#awstransferforsftp-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awstransferforsftp-aws_TagKeys)   | 
-|   [ server ](https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:server/$\{serverId\}  |   [ aws:RequestTag/$\{TagKey\} ](#awstransferforsftp-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awstransferforsftp-aws_TagKeys)   | 
+|   [ user ](https://docs.aws.amazon.com/transfer/latest/userguide/users.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:user/$\{serverId\}/$\{username\}  |  | 
+|   [ server ](https://docs.aws.amazon.com/transfer/latest/userguide/configuring-servers.html)  |  arn:$\{Partition\}:transfer:$\{region\}:$\{account\}:server/$\{serverId\}  |  | 
 
 ## Condition Keys for AWS Transfer for SFTP<a name="awstransferforsftp-policy-keys"></a>
 

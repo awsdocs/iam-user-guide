@@ -151,6 +151,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Organizations](list_awsorganizations.md)
 + [AWS Performance Insights](list_awsperformanceinsights.md)
 + [Amazon Pinpoint](list_amazonpinpoint.md)
++ [Amazon Pinpoint Email Service](list_amazonpinpointemailservice.md)
 + [Amazon Pinpoint SMS and Voice Service](list_amazonpinpointsmsandvoiceservice.md)
 + [Amazon Polly](list_amazonpolly.md)
 + [AWS Price List](list_awspricelist.md)

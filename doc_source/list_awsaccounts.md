@@ -23,7 +23,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | --- | --- | --- | --- | --- | --- | 
 |   DisableRegion  | Grants permission to disable a region | Write |  |   [ account:TargetRegion ](#awsaccounts-account_TargetRegion)   |  | 
 |   EnableRegion  | Grants permission to enable a region | Write |  |   [ account:TargetRegion ](#awsaccounts-account_TargetRegion)   |  | 
-|   ListRegions  | Grants permission to list regions | List |  |   [ account:TargetRegion ](#awsaccounts-account_TargetRegion)   |  | 
+|   ListRegions  | Grants permission to list regions | List |  |  |  | 
 
 ## Resources Defined by Account<a name="awsaccounts-resources-for-iam-policies"></a>
 

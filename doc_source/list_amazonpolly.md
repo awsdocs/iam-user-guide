@@ -27,7 +27,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetSpeechSynthesisTask ](https://docs.aws.amazon.com/polly/latest/dg/API_GetSpeechSynthesisTask.html)  | Enables the user to get information about specific speech synthesis task\. | Read |  |  |  | 
 |   [ ListLexicons ](https://docs.aws.amazon.com/polly/latest/dg/API_ListLexicons.html)  | Returns a list of pronunciation lexicons stored in an AWS Region\. | List |  |  |  | 
 |   [ ListSpeechSynthesisTasks ](https://docs.aws.amazon.com/polly/latest/dg/API_ListSpeechSynthesisTasks.html)  | Enables the user to list requested speech synthesis tasks\. | List |  |  |  | 
-|   [ PutLexicon ](https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)  | Stores a pronunciation lexicon in an AWS Region\. | Write |   [ lexicon\* ](#amazonpolly-lexicon)   |  |  | 
+|   [ PutLexicon ](https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html)  | Stores a pronunciation lexicon in an AWS Region\. | Write |  |  |  | 
 |   [ StartSpeechSynthesisTask ](https://docs.aws.amazon.com/polly/latest/dg/API_StartSpeechSynthesisTask.html)  | Enables the user to synthesize long inputs to provided S3 location\. | Write |   [ lexicon ](#amazonpolly-lexicon)   |  |   s3:PutObject   | 
 |   [ SynthesizeSpeech ](https://docs.aws.amazon.com/polly/latest/dg/API_SynthesizeSpeech.html)  | Synthesizes UTF\-8 input, plain text or SSML, to a stream of bytes\. | Read |   [ lexicon ](#amazonpolly-lexicon)   |  |  | 
 

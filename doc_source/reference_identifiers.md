@@ -24,13 +24,13 @@ arn:partition:service:region:account:resource
 ```
 
 Where:
-+ `partition` identifies the partition that the resource is in\. For standard AWS regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) region is `aws-cn`\.
++ `partition` identifies the partition that the resource is in\. For standard AWS regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\.
 + `service` identifies the AWS product\. For IAM resources, this is always `iam`\.
-+ `region` is the region the resource resides in\. For IAM resources, this is always left blank\.
++ `region` is the Region the resource resides in\. For IAM resources, this is always left blank\.
 + `account` is the AWS account ID with no hyphens \(for example, 123456789012\)\.
 + `resource` is the portion that identifies the specific resource by name\.
 
-You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies, instance profiles, virtual MFA devices, and [server certificates](id_credentials_server-certs.md)\. The following table shows the ARN format for each and an example\. The region portion of the ARN is blank because IAM resources are global\. 
+You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies, instance profiles, virtual MFA devices, and [server certificates](id_credentials_server-certs.md)\. The following table shows the ARN format for each and an example\. The Region portion of the ARN is blank because IAM resources are global\. 
 
 **Note**  
 Many of the following examples include paths in the resource part of the ARN\. Paths cannot be created or manipulated in the AWS Management Console\. To use paths you must work with the resource by using the AWS API, the AWS CLI, or the Tools for Windows PowerShell\.

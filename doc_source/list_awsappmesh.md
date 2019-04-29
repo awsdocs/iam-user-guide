@@ -29,12 +29,23 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ mesh ](https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}  |  | 
-|   [ virtualservice ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualService/$\{VirtualServiceName\}  |  | 
-|   [ virtualnode ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualNode/$\{VirtualNodeName\}  |  | 
-|   [ virtualrouter ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}  |  | 
-|   [ route ](https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}/route/$\{RouteName\}  |  | 
+|   [ mesh ](https://docs.aws.amazon.com/app-mesh/latest/userguide/meshes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
+|   [ virtualService ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_services.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualService/$\{VirtualServiceName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
+|   [ virtualNode ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualNode/$\{VirtualNodeName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
+|   [ virtualRouter ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
+|   [ route ](https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}/route/$\{RouteName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS App Mesh<a name="awsappmesh-policy-keys"></a>
 
-App Mesh has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS App Mesh defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request\. | String | 

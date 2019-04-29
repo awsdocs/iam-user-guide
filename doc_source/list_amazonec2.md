@@ -30,6 +30,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ capacity\-reservation ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:capacity\-reservation/$\{CapacityReservationId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonec2-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#amazonec2-aws_TagKeys)   [ ec2:Region ](#amazonec2-ec2_Region)   [ ec2:ResourceTag/$\{TagKey\} ](#amazonec2-ec2_ResourceTag___TagKey_)   | 
+|   [ client\-vpn\-endpoint ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:client\-vpn\-endpoint/$\{ClientVpnEndpointId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonec2-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#amazonec2-aws_TagKeys)   [ ec2:Region ](#amazonec2-ec2_Region)   [ ec2:ResourceTag/$\{TagKey\} ](#amazonec2-ec2_ResourceTag___TagKey_)   | 
 |   [ customer\-gateway ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:customer\-gateway/$\{CustomerGatewayId\}  |   [ ec2:Region ](#amazonec2-ec2_Region)   [ ec2:ResourceTag/$\{TagKey\} ](#amazonec2-ec2_ResourceTag___TagKey_)   | 
 |   [ dhcp\-options ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:dhcp\-options/$\{DhcpOptionsId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonec2-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#amazonec2-aws_TagKeys)   [ ec2:Region ](#amazonec2-ec2_Region)   [ ec2:ResourceTag/$\{TagKey\} ](#amazonec2-ec2_ResourceTag___TagKey_)   | 
 |   [ elastic\-gpu ](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:elasticGpu/$\{ElasticGpuId\}  |  | 
@@ -70,7 +71,7 @@ To view the global condition keys that are available to all services, see [Avail
 | --- | --- | --- | 
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | A key that is present in the request the user makes to the EC2 service\. | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The list of all the tag key names associated with the resource in the request\. | String | 
-|   [ ec2:AccepterVpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of an accepter VPC in a VPC peering connection\. | String | 
+|   [ ec2:AccepterVpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of an accepter VPC in a VPC peering connection\. | ARN | 
 |   [ ec2:AuthorizedService ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The AWS service that has permission to use a resource\. | String | 
 |   [ ec2:AuthorizedUser ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The IAM principal that has permission to use a resource\. | String | 
 |   [ ec2:AvailabilityZone ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of an Availability Zone in a region\. | String | 
@@ -80,29 +81,29 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ ec2:Encrypted ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Whether the volume is encrypted\. | String | 
 |   [ ec2:ImageType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of the type of image\. | String | 
 |   [ ec2:InstanceMarketType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of the market type\. | String | 
-|   [ ec2:InstanceProfile ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the instance profile\. | String | 
+|   [ ec2:InstanceProfile ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the instance profile\. | ARN | 
 |   [ ec2:InstanceType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of the instance type\. | String | 
 |   [ ec2:IsLaunchTemplateResource ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Launch template resource flag\. | String | 
-|   [ ec2:LaunchTemplate ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the launch template\. | String | 
+|   [ ec2:LaunchTemplate ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the launch template\. | ARN | 
 |   [ ec2:Owner ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name or account ID of the owner\. | String | 
-|   [ ec2:ParentSnapshot ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the parent snapshot\. | String | 
-|   [ ec2:ParentVolume ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the parent volume\. | String | 
+|   [ ec2:ParentSnapshot ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the parent snapshot\. | ARN | 
+|   [ ec2:ParentVolume ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the parent volume\. | ARN | 
 |   [ ec2:Permission ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The type of permission for a resource\. | String | 
-|   [ ec2:PlacementGroup ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the placement group\. | String | 
+|   [ ec2:PlacementGroup ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the placement group\. | ARN | 
 |   [ ec2:PlacementGroupStrategy ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of the placement group strategy\. | String | 
 |   [ ec2:ProductCode ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The product code of the product\. | String | 
 |   [ ec2:Public ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Whether the image is public\. | String | 
 |   [ ec2:Region ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of the region\. | String | 
-|   [ ec2:RequesterVpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of a requester VPC in a VPC peering connection\. | String | 
+|   [ ec2:RequesterVpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of a requester VPC in a VPC peering connection\. | ARN | 
 |   [ ec2:ReservedInstancesOfferingType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html#ri-payment-options)  | The payment option for a Reserved Instance\. | String | 
 |   [ ec2:ResourceTag/ ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The preface string for a tag key and value pair attached to a resource\. | String | 
 |   [ ec2:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | A tag key and value pair\. | String | 
 |   [ ec2:RootDeviceType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The root device type: ebs or instance\-store\. | String | 
 |   [ ec2:SnapshotTime ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The snapshot creation time\. | String | 
 |   [ ec2:SourceInstanceARN ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the instance from which the request originated\. | ARN | 
-|   [ ec2:Subnet ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the subnet\. | String | 
+|   [ ec2:Subnet ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the subnet\. | ARN | 
 |   [ ec2:Tenancy ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The tenancy of the instance or VPC\. | String | 
 |   [ ec2:VolumeIops ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The number of input/output operations per second\. | Numeric | 
 |   [ ec2:VolumeSize ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The size of the volume, in GiB\. | Numeric | 
 |   [ ec2:VolumeType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The name of the type of volume\. | String | 
-|   [ ec2:Vpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the VPC\. | String | 
+|   [ ec2:Vpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | The ARN of the VPC\. | ARN | 

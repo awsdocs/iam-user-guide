@@ -24,7 +24,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   namespace  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:stack/$\{NamespaceName\}  |  | 
+|   namespace  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:namespace/$\{NamespaceName\}  |  | 
 |   service  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceName\}  |  | 
 
 ## Condition Keys for AWS Cloud Map<a name="awscloudmap-policy-keys"></a>

@@ -82,23 +82,19 @@ Include the following actions in your policy:
 To test resource\-based policies, users must have permission to retrieve the resource's policy\.
 
 **To allow console users to test resource\-based policies in an Amazon S3 bucket**  
-Include the following actions in your policy:
+Include the following action in your policy:
 + `s3:GetBucketPolicy`
-+ `s3:GetObject`
 
-For example, the following policy uses these actions to allow console users to simulate a resource\-based policy in a specific Amazon S3 bucket\.
+For example, the following policy uses this action to allow console users to simulate a resource\-based policy in a specific Amazon S3 bucket\.
 
 ```
 {
         "Version": "2012-10-17",
         "Statement": [
-          {
-            "Action": [
-              "s3:GetBucketPolicy",           
-              "s3:GetObject"
-            ],
+          {,
             "Effect": "Allow",
-            "Resource":"arn:aws:s3:::<BUCKET-NAME>/*"
+            "Action": "s3:GetBucketPolicy",
+            "Resource":"arn:aws:s3:::bucket-name/*"
           }
         ]
       }

@@ -8,7 +8,7 @@ You can create and manage an IAM OIDC identity provider using the AWS Management
 + [Creating and Managing an OIDC Provider \(Console\)](#manage-oidc-provider-console)
 + [Creating and Managing an IAM OIDC Identity Provider \(AWS CLI\)](#manage-oidc-provider-cli)
 + [Creating and Managing an OIDC Identity Provider \(AWS API\)](#manage-oidc-provider-api)
-+ [Obtaining the Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
++ [Obtaining the Root CA Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
 
 ## Creating and Managing an OIDC Provider \(Console\)<a name="manage-oidc-provider-console"></a>
 
@@ -32,7 +32,7 @@ Follow these instructions to create and manage an IAM OIDC identity provider in 
 
 1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\. Choose **Next Step**\. 
 
-1. Use the **Thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\. Choose **Create**\.
+1. Use the **Thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the Root CA Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\. Choose **Create**\.
 
 1. In the confirmation message at the top of the screen, choose **Do this now** to go to the **Roles** tab to create a role for this identity provider\. For more information about creating a role for an OIDC identity provider, see [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\. OIDC identity providers must have a role in order to access your AWS account\. To skip this step and create the role later, choose **Close**\. 
 

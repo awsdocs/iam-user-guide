@@ -15,7 +15,7 @@ For example scenarios for using service last accessed data to make decisions abo
 ## Things to Know<a name="access_policies_access-advisor-know"></a>
 
 Before you use service last accessed data from a report to change the permissions for an entity, review the following details about the data\.
-+ **Reporting period** – Recent activity usually appears within 4 hours\. IAM reports activity for the last 365 days, or less if your region began supporting this feature within the last year\. For more information, see [Regions Where Data Is Tracked](#access-advisor_tracking-period)\.
++ **Reporting period** – Recent activity usually appears within 4 hours\. IAM reports activity for the last 365 days, or less if your Region began supporting this feature within the last year\. For more information, see [Regions Where Data Is Tracked](#access-advisor_tracking-period)\.
 + **Authenticated entities** – Your report includes data only for authenticated entities \(users or roles\) in your account\. The report does not include data about unauthenticated attempts\. It also does not include data for attempts made from other accounts 
 + **Policy types** – Your report includes data for only services that are allowed by an entity's policy\. These are policies attached to a role or attached to a user directly or through a group\. Access allowed by other policy types is not included in your report\. The excluded policy types include resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, and session policies\. To learn how the different policy types are evaluated to allow or deny access, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
@@ -76,7 +76,7 @@ When you make changes, wait at least 4 hours for activity to appear in your repo
 
 ## Regions Where Data Is Tracked<a name="access-advisor_tracking-period"></a>
 
-AWS collects service last accessed data in most regions\. Data is stored for a maximum of 365 days\. When AWS adds additional regions, those regions are added to the following table, including the date that AWS started tracking data in each region:
+AWS collects service last accessed data in most regions\. Data is stored for a maximum of 365 days\. When AWS adds additional regions, those regions are added to the following table, including the date that AWS started tracking data in each Region:
 
 
 ****  
@@ -99,4 +99,4 @@ AWS collects service last accessed data in most regions\. Data is stored for a m
 | EU \(Paris\) | eu\-west\-3 | December 18, 2017 | 
 | South America \(São Paulo\) | sa\-east\-1 | December 11, 2015 | 
 
-If a region is not listed in the previous table, then that region does not yet provide service last accessed data\.
+If a Region is not listed in the previous table, then that Region does not yet provide service last accessed data\.

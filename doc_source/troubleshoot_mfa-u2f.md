@@ -10,7 +10,7 @@ Use the information here to help you diagnose common issues that you might encou
 
 ## I can't enable my U2F security key<a name="troubleshoot_mfa-u2f-cant-enable"></a>
 
-Consult the following solutions depending on your status as an IAM user or system administrator\.
+Consult the following solutions depending on your status as an IAM user or system administrator
 
 ### IAM Users<a name="troubleshoot_mfa-u2f-cant-enable-iam-user"></a>
 

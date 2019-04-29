@@ -29,11 +29,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ cluster ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:cluster:$\{DbClusteInstanceName\}  |   [ rds:DatabaseEngine ](#amazonrds-rds_DatabaseEngine)   [ rds:DatabaseName ](#amazonrds-rds_DatabaseName)   [ rds:Vpc ](#amazonrds-rds_Vpc)   [ rds:cluster\-tag ](#amazonrds-rds_cluster-tag)   | 
+|   [ cluster ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Managing.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:cluster:$\{DbClusterInstanceName\}  |   [ rds:DatabaseEngine ](#amazonrds-rds_DatabaseEngine)   [ rds:DatabaseName ](#amazonrds-rds_DatabaseName)   [ rds:Vpc ](#amazonrds-rds_Vpc)   [ rds:cluster\-tag ](#amazonrds-rds_cluster-tag)   | 
+|   [ cluster\-endpoint ]({ActionsDocRoot}API_DBClusterEndpoint.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:cluster\-endpoint:$\{DbClusterEndpoint\}  |   [ rds:EndpointType ](#amazonrds-rds_EndpointType)   | 
 |   [ cluster\-pg ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:cluster\-pg:$\{ClusterParameterGroupName\}  |   [ rds:cluster\-pg\-tag ](#amazonrds-rds_cluster-pg-tag)   | 
 |   [ cluster\-snapshot ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:cluster\-snapshot:$\{ClusterSnapshotName\}  |   [ rds:cluster\-snapshot\-tag ](#amazonrds-rds_cluster-snapshot-tag)   | 
 |   [ db ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:db:$\{DbInstanceName\}  |   [ rds:DatabaseClass ](#amazonrds-rds_DatabaseClass)   [ rds:DatabaseEngine ](#amazonrds-rds_DatabaseEngine)   [ rds:DatabaseName ](#amazonrds-rds_DatabaseName)   [ rds:MultiAz ](#amazonrds-rds_MultiAz)   [ rds:Piops ](#amazonrds-rds_Piops)   [ rds:StorageSize ](#amazonrds-rds_StorageSize)   [ rds:Vpc ](#amazonrds-rds_Vpc)   [ rds:db\-tag ](#amazonrds-rds_db-tag)   | 
 |   [ es ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:es:$\{SubscriptionName\}  |   [ rds:es\-tag ](#amazonrds-rds_es-tag)   | 
+|   [ global\-cluster ](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html)  |  arn:$\{Partition\}:rds:$\{Account\}:global\-cluster:$\{GlobalCluster\}  |  | 
 |   [ iam\-role ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |  | 
 |   [ og ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithOptionGroups.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:og:$\{OptionGroupName\}  |   [ rds:og\-tag ](#amazonrds-rds_og-tag)   | 
 |   [ pg ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithParamGroups.html)  |  arn:$\{Partition\}:rds:$\{Region\}:$\{Account\}:pg:$\{ParameterGroupName\}  |   [ rds:pg\-tag ](#amazonrds-rds_pg-tag)   | 
@@ -57,8 +59,10 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ rds:DatabaseClass ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A type of DB instance class\. | String | 
 |   [ rds:DatabaseEngine ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A database engine, such as MySQL\. | String | 
 |   [ rds:DatabaseName ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | The user\-defined name of the database on the DB instance\. | String | 
+|   [ rds:EndpointType ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | The type of the endpoint\. One of: READER, WRITER, CUSTOM\. | String | 
 |   [ rds:MultiAz ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that specifies whether the DB instance runs in multiple Availability Zones\. To indicate that the DB instance is using Multi\-AZ, specify true\. | Numeric | 
 |   [ rds:Piops ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that contains the number of Provisioned IOPS \(PIOPS\) that the instance supports\. To indicate a DB instance that does not have PIOPS enabled, specify 0\. | Numeric | 
+|   [ rds:StorageEncrypted ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that specifies whether the DB instance storage should be encrypted\. To enforce storage encryption, specify true\. | Boolean | 
 |   [ rds:StorageSize ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | The storage volume size \(in GB\)\. | Numeric | 
 |   [ rds:Vpc ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud \(Amazon VPC\)\. To indicate that the DB instance runs in an Amazon VPC, specify true\. | Boolean | 
 |   [ rds:cluster\-pg\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB cluster parameter group\. | String | 
@@ -67,7 +71,8 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ rds:db\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB instance\. | String | 
 |   [ rds:es\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to an event subscription\. | String | 
 |   [ rds:og\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB option group\. | String | 
-|   [ rds:pg\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB parameter group | String | 
+|   [ rds:pg\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB parameter group\. | String | 
+|   [ rds:req\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | Limits the set of tag keys and values that can be used to tag a resource\. | String | 
 |   [ rds:ri\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a reserved DB instance\. | String | 
 |   [ rds:secgrp\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB security group\. | String | 
 |   [ rds:snapshot\-tag ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB snapshot\. | String | 

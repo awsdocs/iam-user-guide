@@ -22,7 +22,7 @@ Adding MFA protection to API operations involves these tasks:
 **Note**  
 MFA protection for a service's API operations is available only if the service supports temporary security credentials\. For a list of these services, see [ Using Temporary Security Credentials to Access AWS](https://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html)\.
 
-If authorization fails, AWS returns an "Access Denied" error message \(as it does for any unauthorized access\)\. With MFA\-protected API policies in place, AWS denies access to the API operations specified in the policies if the user attempts to call an API operation without valid MFA authentication\. The operation is also denied if the time stamp of the request for the API operation is outside of the allowed range specified in the policy\. The user must be reauthenticated with MFA by requesting new temporary security credentials with an MFA code and device serial number\.
+If authorization fails, AWS returns an access denied error message \(as it does for any unauthorized access\)\. With MFA\-protected API policies in place, AWS denies access to the API operations specified in the policies if the user attempts to call an API operation without valid MFA authentication\. The operation is also denied if the time stamp of the request for the API operation is outside of the allowed range specified in the policy\. The user must be reauthenticated with MFA by requesting new temporary security credentials with an MFA code and device serial number\.
 
 ### IAM Policies with MFA Conditions<a name="MFAProtectedAPI-policies"></a>
 

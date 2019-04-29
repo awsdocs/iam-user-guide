@@ -149,7 +149,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ Amazon CloudWatch service\-linked roles cannot be created using the AWS Management Console, and support only the [ Alarm Actions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html) feature\.
 
-² AWS Config supports resource\-level permissions for multi\-account multi\-region data aggregation and AWS Config Rules\. For a list of supported resources, see the **Multi\-Account Multi\-Region Data Aggregation** section and **AWS Config Rules** section of [AWS Config API Guide](https://docs.aws.amazon.com/config/latest/APIReference/Welcome.html)\.
+² AWS Config supports resource\-level permissions for multi\-account multi\-Region data aggregation and AWS Config Rules\. For a list of supported resources, see the **Multi\-Account Multi\-Region Data Aggregation** section and **AWS Config Rules** section of [AWS Config API Guide](https://docs.aws.amazon.com/config/latest/APIReference/Welcome.html)\.
 
 ³ API access to Trusted Advisor is through the AWS Support API and is controlled by AWS Support IAM policies\.
 
@@ -180,7 +180,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  | Yes | Yes | Yes | No | Yes | No | 
+|  [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  | Yes | Yes | Yes | No | Yes | Yes | 
 |   [AWS App Mesh](https://docs.aws.amazon.com/app-mesh/latest/userguide/IAM_policies.html)   | Yes | No | No | No | Yes | No | 
 |   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/index.html?UsingWithIAM.html)   | Yes¹ | No | No | No | Yes | No | 
 |   [AWS Cloud Map](https://docs.aws.amazon.com/cloud-map/latest/dg/auth-and-access-control.html)   | Yes | No | No | No | Yes | No | 
@@ -234,7 +234,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-setting-up.html#create-iam-user)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Simple Notification Service \(Amazon SNS\)](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Simple Queue Service \(Amazon SQS\)](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/UsingIAM.html)  | Yes | Yes | Yes | No | Yes | No | 
-|  [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/security.html)  | Yes | Yes | [Yes](https://docs.aws.amazon.com/step-functions/latest/dg/resource-based-policies.html) | [Yes](https://docs.aws.amazon.com/step-functions/latest/dg/tag-based-policies.html) | Yes | No | 
+|  [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/security.html)  | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/step-functions/latest/dg/tag-based-policies.html) | Yes | No | 
 |  [Amazon Simple Workflow Service \(Amazon SWF\)](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Business Applications Services<a name="enterprise_svcs"></a>
@@ -306,7 +306,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon AppStream 2\.0](https://docs.aws.amazon.com//appstream2/latest/developerguide/controlling-access.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon WAM](http://docs.aws.amazon.com/wam/latest/adminguide/iam.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon WorkDocs](https://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)  | Yes | No | No | No | Yes | No | 
-|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | Yes | No | Yes | No | 
+|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/worklink/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_iam.html)  | Yes | Yes | No | No | Yes | No | 
 
 ## Additional Resources<a name="resources_svcs"></a>

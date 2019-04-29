@@ -18,27 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CreateIdentityPool.html)  | Creates a new identity pool\. | Write |  |  |  | 
-|   [ DeleteIdentities ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentities.html)  | Deletes identities from an identity pool\. You can specify a list of 1\-60 identities that you want to delete\. | Write |  |  |  | 
-|   [ DeleteIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DeleteIdentityPool.html)  | Deletes a user pool\. Once a pool is deleted, users will not be able to authenticate with the pool\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ DescribeIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentity.html)  | Returns metadata related to the given identity, including when the identity was created and any associated linked logins\. | Read |  |  |  | 
-|   [ DescribeIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_DescribeIdentityPool.html)  | Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ GetCredentialsForIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html)  | Returns credentials for the provided identity ID\. | Read |  |  |  | 
-|   [ GetId ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html)  | Generates \(or retrieves\) a Cognito ID\. Supplying multiple logins will create an implicit linked account\. | Write |  |  |  | 
-|   [ GetIdentityPoolRoles ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html)  | Gets the roles for an identity pool\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ GetOpenIdToken ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdToken.html)  | Gets an OpenID token, using a known Cognito ID\. | Read |  |  |  | 
-|   [ GetOpenIdTokenForDeveloperIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetOpenIdTokenForDeveloperIdentity.html)  | Registers \(or retrieves\) a Cognito IdentityId and an OpenID Connect token for a user authenticated by your backend authentication process\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ ListIdentities ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentities.html)  | Lists the identities in a pool\. | List |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ ListIdentityPools ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_ListIdentityPools.html)  | Lists all of the Cognito identity pools registered for your account\. | List |  |  |  | 
-|   [ LookupDeveloperIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_LookupDeveloperIdentity.html)  | Retrieves the IdentityID associated with a DeveloperUserIdentifier or the list of DeveloperUserIdentifiers associated with an IdentityId for an existing identity\. | Read |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ MergeDeveloperIdentities ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_MergeDeveloperIdentities.html)  | Merges two users having different IdentityIds, existing in the same identity pool, and identified by the same developer provider\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ SetIdentityPoolRoles ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_SetIdentityPoolRoles.html)  | Sets the roles for an identity pool\. These roles are used when making calls to GetCredentialsForIdentity action\. | Write |  |  |  | 
-|   [ UnlinkDeveloperIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkDeveloperIdentity.html)  | Unlinks a DeveloperUserIdentifier from an existing identity\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
-|   [ UnlinkIdentity ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UnlinkIdentity.html)  | Unlinks a federated identity from an existing account\. | Write |  |  |  | 
-|   [ UpdateIdentityPool ](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_UpdateIdentityPool.html)  | Updates a user pool\. | Write |   [ identitypool\* ](#amazoncognitoidentity-identitypool)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncognitoidentity.html)
 
 ## Resources Defined by Cognito Identity<a name="amazoncognitoidentity-resources-for-iam-policies"></a>
 
@@ -49,8 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ identitypool ](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)  |  arn:$\{Partition\}:cognito\-identity:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}  |  | 
+|   [ identitypool ](https://docs.aws.amazon.com/cognito/latest/developerguide/identity-pools.html)  |  arn:$\{Partition\}:cognito\-identity:$\{Region\}:$\{Account\}:identitypool/$\{IdentityPoolId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncognitoidentity-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Cognito Identity<a name="amazoncognitoidentity-policy-keys"></a>
 
-Cognito Identity has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Cognito Identity defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters access by a key that is present in the request\. | String | 

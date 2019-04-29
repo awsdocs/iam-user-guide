@@ -4,7 +4,7 @@ Global Accelerator \(service prefix: `globalaccelerator`\) provides the followin
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/global-accelerator/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/global-accelerator/latest/api/)\.
 + Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html) permission policies\.
 
 **Topics**
@@ -21,23 +21,23 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_CreateAccelerator.html)  | Create an accelerator\. | Write |  |  |  | 
-|   [ CreateEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_CreateEndpointGroup.html)  | Add an endpoint group\. | Write |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
-|   [ CreateListener ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_CreateListener.html)  | Add a listener\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ DeleteAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DeleteAccelerator.html)  | Delete the accelerator\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ DeleteEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DeleteEndpointGroup.html)  | Delete the endpoint group\. | Write |   [ endpointgroup\* ](#globalaccelerator-endpointgroup)   |  |  | 
-|   [ DeleteListener ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DeleteListener.html)  | Delete the listener\. | Write |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
-|   [ DescribeAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DescribeAccelerator.html)  | Describe the accelerator\. | Read |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ DescribeAcceleratorAttributes ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DescribeAcceleratorAttributes.html)  | Describe the accelerator Attributes\. | Read |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ DescribeEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DescribeEndpointGroup.html)  | Describe the endpoint group\. | Read |   [ endpointgroup\* ](#globalaccelerator-endpointgroup)   |  |  | 
-|   [ DescribeListener ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_DescribeListener.html)  | Describe the listener\. | Read |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
-|   [ ListAccelerators ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_ListAccelerators.html)  | List the accelerators\. | List |  |  |  | 
-|   [ ListEndpointGroups ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_ListEndpointGroups.html)  | List the endpoint groups\. | List |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
-|   [ ListListeners ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_ListListeners.html)  | List the listeners\. | List |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ UpdateAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_UpdateAccelerator.html)  | Update the accelerator\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ UpdateAcceleratorAttributes ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_UpdateAcceleratorAttributes.html)  | Update the accelerator attributes\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
-|   [ UpdateEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_UpdateEndpointGroup.html)  | Update the endpoint group\. | Write |   [ endpointgroup\* ](#globalaccelerator-endpointgroup)   |  |  | 
-|   [ UpdateListener ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_UpdateListener.html)  | Update the listener\. | Write |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
+|   [ CreateAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateAccelerator.html)  | Create an accelerator\. | Write |  |  |  | 
+|   [ CreateEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html)  | Add an endpoint group\. | Write |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
+|   [ CreateListener ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateListener.html)  | Add a listener\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ DeleteAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteAccelerator.html)  | Delete the accelerator\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ DeleteEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteEndpointGroup.html)  | Delete the endpoint group\. | Write |   [ endpointgroup\* ](#globalaccelerator-endpointgroup)   |  |  | 
+|   [ DeleteListener ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DeleteListener.html)  | Delete the listener\. | Write |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
+|   [ DescribeAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAccelerator.html)  | Describe the accelerator\. | Read |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ DescribeAcceleratorAttributes ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeAcceleratorAttributes.html)  | Describe the accelerator Attributes\. | Read |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ DescribeEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeEndpointGroup.html)  | Describe the endpoint group\. | Read |   [ endpointgroup\* ](#globalaccelerator-endpointgroup)   |  |  | 
+|   [ DescribeListener ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_DescribeListener.html)  | Describe the listener\. | Read |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
+|   [ ListAccelerators ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListAccelerators.html)  | List the accelerators\. | List |  |  |  | 
+|   [ ListEndpointGroups ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListEndpointGroups.html)  | List the endpoint groups\. | List |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
+|   [ ListListeners ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_ListListeners.html)  | List the listeners\. | List |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ UpdateAccelerator ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAccelerator.html)  | Update the accelerator\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ UpdateAcceleratorAttributes ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateAcceleratorAttributes.html)  | Update the accelerator attributes\. | Write |   [ accelerator\* ](#globalaccelerator-accelerator)   |  |  | 
+|   [ UpdateEndpointGroup ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html)  | Update the endpoint group\. | Write |   [ endpointgroup\* ](#globalaccelerator-endpointgroup)   |  |  | 
+|   [ UpdateListener ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateListener.html)  | Update the listener\. | Write |   [ listener\* ](#globalaccelerator-listener)   |  |  | 
 
 ## Resources Defined by GlobalAccelerator<a name="globalaccelerator-resources-for-iam-policies"></a>
 
@@ -48,9 +48,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ accelerator ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_Accelerator.html)  |  arn:$\{Partition\}:globalaccelerator::$\{Account\}:accelerator/$\{AcceleratorId\}  |  | 
-|   [ listener ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_Listener.html)  |  arn:$\{Partition\}:globalaccelerator::$\{Account\}:accelerator/$\{AcceleratorId\}/listener/$\{ListenerId\}  |  | 
-|   [ endpointgroup ](https://docs.aws.amazon.com/global-accelerator/latest/APIReference/API_EndpointGroup.html)  |  arn:$\{Partition\}:globalaccelerator::$\{Account\}:accelerator/$\{AcceleratorId\}/listener/$\{ListenerId\}/endpoint\-group/$\{EndpointGroupId\}  |  | 
+|   [ accelerator ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_Accelerator.html)  |  arn:$\{Partition\}:globalaccelerator::$\{Account\}:accelerator/$\{AcceleratorId\}  |  | 
+|   [ listener ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_Listener.html)  |  arn:$\{Partition\}:globalaccelerator::$\{Account\}:accelerator/$\{AcceleratorId\}/listener/$\{ListenerId\}  |  | 
+|   [ endpointgroup ](https://docs.aws.amazon.com/global-accelerator/latest/api/API_EndpointGroup.html)  |  arn:$\{Partition\}:globalaccelerator::$\{Account\}:accelerator/$\{AcceleratorId\}/listener/$\{ListenerId\}/endpoint\-group/$\{EndpointGroupId\}  |  | 
 
 ## Condition Keys for Global Accelerator<a name="globalaccelerator-policy-keys"></a>
 

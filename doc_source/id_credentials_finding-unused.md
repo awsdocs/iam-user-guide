@@ -73,7 +73,7 @@ You can use the AWS Management Console to view access key usage information for 
 
 1. In the navigation pane, choose **Credential Report**\.
 
-1. Choose **Download Report** to download a comma\-separated value \(CSV\) file named `status_reports_<date>T<time>.csv`\. Columns 11 through 13 contain the last used date, region, and service information for access key 1\. Columns 16 through 18 contain the same information for access key 2\. The value is **N/A** if the user does not have an access key or the user has not used the access key since IAM began tracking access key age on April 22, 2015\.
+1. Choose **Download Report** to download a comma\-separated value \(CSV\) file named `status_reports_<date>T<time>.csv`\. Columns 11 through 13 contain the last used date, Region, and service information for access key 1\. Columns 16 through 18 contain the same information for access key 2\. The value is **N/A** if the user does not have an access key or the user has not used the access key since IAM began tracking access key age on April 22, 2015\.
 
 **To find unused access keys \(AWS CLI\)**  
 Run the following commands to find unused access keys:
