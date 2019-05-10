@@ -34,6 +34,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ service ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:service/$\{ServiceName\}  |  | 
 |   [ task ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task/$\{TaskId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerservice-aws_ResourceTag___TagKey_)   [ ecs:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerservice-ecs_ResourceTag___TagKey_)   | 
 |   [ task\-definition ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)  |  arn:$\{Partition\}:ecs:$\{Region\}:$\{Account\}:task\-definition/$\{TaskDefinitionFamilyName\}:$\{TaskDefinitionRevisionNumber\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerservice-aws_ResourceTag___TagKey_)   [ ecs:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerservice-ecs_ResourceTag___TagKey_)   | 
+|   [ task\-set ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_sets.html)  |  arn:$\{Partition\}:ecs:$\{region\}:$\{Account\}:task\-set/$\{ClusterName\}/$\{ServiceName\}/$\{TaskSetId\}  |  | 
 
 ## Condition Keys for Amazon Elastic Container Service<a name="amazonelasticcontainerservice-policy-keys"></a>
 
@@ -52,3 +53,5 @@ To view the global condition keys that are available to all services, see [Avail
 |   ecs:ResourceTag/$\{TagKey\}  |  | String | 
 |   [ ecs:cluster ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS cluster\. | ARN | 
 |   [ ecs:container\-instances ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS container instance\. | ARN | 
+|   [ ecs:service ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS service\. | ARN | 
+|   [ ecs:task\-definition ](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/iam-policy-structure.html#amazon-ecs-keys)  | The ARN of an ECS task definition\. | ARN | 

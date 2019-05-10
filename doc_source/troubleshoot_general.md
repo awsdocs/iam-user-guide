@@ -33,7 +33,7 @@ You can try to recover access to your email using one of the following options:
 If you’re still not able to access your AWS account, you can find alternate support options at [Contact us](https://aws.amazon.com//contact-us/) by expanding the **I'm an AWS customer and I'm looking for billing or account support** menu\. When you contact Customer Service, you must provide the following information:
 + All the details that are listed on the account, including your full name, phone number, address, email address, and last four digits of the credit card\. You might need to create a new AWS account for the purpose of contacting Customer Service, but this is necessary to assist in the investigation of your request\.
 + The reason that you're unable to access the email account to receive password reset instructions\.
-+ Also request that the support team delete any accounts that you are not using\. It’s a good idea not to have open accounts in your name that could result in charges to you\.
++ After you recover your account, close any accounts that you are not using\. It’s a good idea not to have open accounts in your name that could result in charges to you\. For more information, see [Closing an Account](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html) in the *Billing and Cost Management User Guide*\.
 
 ## I can't sign in to my account<a name="troubleshoot_general_cant-sign-in"></a>
 

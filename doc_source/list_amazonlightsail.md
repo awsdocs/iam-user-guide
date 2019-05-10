@@ -34,6 +34,13 @@ The following resource types are defined by this service and can be used in the 
 |   [ InstanceSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\}  |  | 
 |   [ KeyPair ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\}  |  | 
 |   [ StaticIp ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\}  |  | 
+|   [ Disk ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Disk/$\{Id\}  |  | 
+|   [ DiskSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:DiskSnapshot/$\{Id\}  |  | 
+|   [ LoadBalancer ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:LoadBalancer/$\{Id\}  |  | 
+|   [ ExportSnapshotRecord ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:ExportSnapshotRecord/$\{Id\}  |  | 
+|   [ CloudFormationStackRecord ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:CloudFormationStackRecord/$\{Id\}  |  | 
+|   [ RelationalDatabase ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabase/$\{Id\}  |  | 
+|   [ RelationalDatabaseSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabaseSnapshot/$\{Id\}  |  | 
 
 ## Condition Keys for Amazon Lightsail<a name="amazonlightsail-policy-keys"></a>
 

@@ -2,6 +2,9 @@
 
 AWS Cloud Map \(service prefix: `servicediscovery`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
+References:
++ Learn how to [configure this service](https://docs.aws.amazon.com//cloud-map/latest/dg/)\.
+
 **Topics**
 + [Actions Defined by AWS Cloud Map](#awscloudmap-actions-as-permissions)
 + [Resources Defined by Cloud Map](#awscloudmap-resources-for-iam-policies)
@@ -29,4 +32,16 @@ The following resource types are defined by this service and can be used in the 
 
 ## Condition Keys for AWS Cloud Map<a name="awscloudmap-policy-keys"></a>
 
-Cloud Map has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Cloud Map defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ servicediscovery:NamespaceArn ](https://docs.aws.amazon.com//cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the Amazon Resource Name \(ARN\) for the related namespace\. | String | 
+|   [ servicediscovery:NamespaceName ](https://docs.aws.amazon.com//cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the name of the related namespace\. | String | 
+|   [ servicediscovery:ServiceArn ](https://docs.aws.amazon.com//cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the Amazon Resource Name \(ARN\) for the related service\. | String | 
+|   [ servicediscovery:ServiceName ](https://docs.aws.amazon.com//cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the name of the related service\. | String | 

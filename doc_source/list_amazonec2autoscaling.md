@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ autoScalingGroup ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:autoScalingGroup:$\{GroupId\}:autoScalingGroupName/$\{GroupFriendlyName\}  |   [ autoscaling:ResourceTag/$\{TagKey\} ](#amazonec2autoscaling-autoscaling_ResourceTag___TagKey_)   | 
+|   [ autoScalingGroup ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:autoScalingGroup:$\{GroupId\}:autoScalingGroupName/$\{GroupFriendlyName\}  |   [ autoscaling:ResourceTag/$\{TagKey\} ](#amazonec2autoscaling-autoscaling_ResourceTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonec2autoscaling-aws_ResourceTag___TagKey_)   | 
 |   [ launchConfiguration ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-resources)  |  arn:$\{Partition\}:autoscaling:$\{Region\}:$\{Account\}:launchConfiguration:$\{Id\}:launchConfigurationName/$\{LaunchConfigurationName\}  |  | 
 
 ## Condition Keys for Amazon EC2 Auto Scaling<a name="amazonec2autoscaling-policy-keys"></a>
@@ -55,4 +55,5 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ autoscaling:TargetGroupARNs ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The ARN of a target group\. | ARN | 
 |   [ autoscaling:VPCZoneIdentifiers ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The identifier of a VPC zone\. | String | 
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html#policy-auto-scaling-condition-keys)  | The value of a tag associated with the request\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
 |   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

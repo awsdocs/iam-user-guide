@@ -81,6 +81,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateApplicationInstanceStatus ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the status of an application instance | Write |  |  |  | 
 |   [ UpdateDirectoryAssociation ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the user attribute mappings for your connected directory | Write |  |  |  | 
 |   [ UpdateGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates group information | Write |  |  |  | 
+|   [ UpdatePermissionSet ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the permission set\. | Write |  |  |  | 
 |   [ UpdateProfile ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the profile for an application instance | Write |  |  |  | 
 |   [ UpdateSSOConfiguration ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the configuration for the current SSO instance | Write |  |  |  | 
 |   [ UpdateTrust ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the federation trust in a target account | Write |  |  |  | 

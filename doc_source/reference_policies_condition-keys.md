@@ -221,7 +221,7 @@ This condition key is available for only some services, and was [introduced for 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.  
 Checks that the tag key–value pair is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling Access to Resources](access_tags.md#access_tags_control-resources)\.  
-This condition key is available for only some services, and was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
+This condition key is available for only some services\.
 
 **aws:SourceAccount**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

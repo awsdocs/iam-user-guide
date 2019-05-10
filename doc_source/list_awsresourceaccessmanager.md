@@ -3,9 +3,9 @@
 AWS Resource Access Manager \(service prefix: `ram`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/AWSResourceSharing/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSResourceSharing/latest/UserGuide/UsingRAM.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/ram/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/ram/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/ram/latest/userguide/control-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Resource Access Manager](#awsresourceaccessmanager-actions-as-permissions)
@@ -29,10 +29,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   resource\-share  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share/$\{ResourcePath\}  |  | 
-|   resource\-share\-invitation  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share\-invitation/$\{ResourcePath\}  |  | 
-|   resource  |  arn:$\{Partition\}:$\{Service\}:$\{Region\}:\#\{Account\}:$\{ResourceType\}/$\{ResourcePath\}  |  | 
-|   principal  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{User\}  |  | 
+|   [ resource\-share ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share/$\{ResourcePath\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsresourceaccessmanager-aws_ResourceTag___TagKey_)   | 
+|   [ resource\-share\-invitation ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShareInvitation.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share\-invitation/$\{ResourcePath\}  |  | 
+|   [ resource ](https://docs.aws.amazon.com/ram/latest/APIReference/API_Resource.html)  |  arn:$\{Partition\}:$\{Service\}:$\{Region\}:\#\{Account\}:$\{ResourceType\}/$\{ResourcePath\}  |  | 
+|   [ principal ](https://docs.aws.amazon.com/ram/latest/APIReference/API_Principal.html)  |  arn:$\{Partition\}:iam::$\{Account\}:root  |  | 
 
 ## Condition Keys for AWS Resource Access Manager<a name="awsresourceaccessmanager-policy-keys"></a>
 
@@ -45,10 +45,12 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:TagKeys  | Enforce tag keys that are used in the request | String | 
+|   aws:RequestTag/$\{TagKey\}  |  | String | 
+|   aws:ResourceTag/$\{TagKey\}  |  | String | 
+|   aws:TagKeys  |  | String | 
 |   ram:AllowsExternalPrincipals  | Resource shares can only be acted on if the share allows external principals | Bool | 
-|   ram:Principals  | Principals with the specified format can be associated to or disassociated from a resource share | Arn | 
+|   ram:Principals  | Principals with the specified format can be associated to or disassociated from a resource share | String | 
+|   ram:RequestedResourceType  | Resources of RequestedResourceType can be associated with the specified resource share | String | 
 |   ram:ResourceArns  | Resources with the specified arn format can be associated to or disassociated from a resource share | Arn | 
 |   ram:ResourceShareNames  | Resource shares with the following names can be used in specified action | String | 
-|   ram:ResourceType  | Resources of ResourceType can be associated with the specified resource share | String | 
 |   ram:ShareOwnerAccountIds  | Resource share invitations can only be accepted/rejected if owned by the specified account id | String | 
