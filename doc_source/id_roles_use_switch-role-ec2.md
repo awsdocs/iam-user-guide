@@ -148,7 +148,7 @@ The `abcd` role must allow the Amazon EC2 service to assume the role\. To do thi
             "Sid": "abcdTrustPolicy",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Principal": {"AWS": "arn:aws:iam::111111111111:role/abcd"}
+            "Principal": {"Service": "ec2.amazonaws.com"}
         }
     ]
 }
@@ -199,7 +199,7 @@ The `efgh` role must allow the `abcd` instance profile role to assume it\. To do
             "Sid": "efghTrustPolicy",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Principal": {"Service": "ec2.amazonaws.com"}
+            "Principal": {"AWS": "arn:aws:iam::111111111111:role/abcd"}
         }
     ]
 }
