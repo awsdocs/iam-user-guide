@@ -175,25 +175,33 @@ Several of the previously listed policies grant the ability to configure AWS ser
 
 1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. Choose the **AWS Service** role type, and then choose the service that you want to allow to assume this role\.
+1. Choose the **AWS service** role type, and then choose the service that you want to allow to assume this role\.
 
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
-1. Choose one or more permissions policies to attach to the role\. Depending on the use case that you selected, the service might do any of the following:
-   + Define the permissions that the role uses
+1. If possible, select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-start) in the *IAM User Guide*\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want the service to have\.
+
+   Depending on the use case that you selected, the service might allow you to do any of the following:
+   + Nothing, because the service defines the permissions for the role
    + Allow you to choose from a limited set of permissions
    + Allow you to choose from any permissions
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role
 
-   Select the box next to the policy that assigns the permissions that you want the users to have, and then choose **Next: Review**\. 
-**Note**  
-The permissions that you specify are available to any entity that uses the role\. By default, a role has no permissions\.
+1. \(Optional\) Set a [permissions boundary](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html)\. This is an advanced feature that is available for service roles, but not service\-linked roles\. 
 
-1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, this option is not editable\. In other cases, the service might define a prefix for the role and allow you to type an optional suffix\. Some services allow you to specify the entire name of your role\.
+   Expand the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-start) in the *IAM User Guide*\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
-   If possible, type a role name or role name suffix to help you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\.
+1. Choose **Next: Tags**\.
 
-1. \(Optional\) For **Role description**, type a description for the new role\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) in the *IAM User Guide*\.
+
+1. Choose **Next: Review**\.
+
+1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, this option is not editable\. In other cases, the service might define a prefix for the role and allow you to enter an optional suffix\. Some services allow you to specify the entire name of your role\.
+
+   If possible, enter a role name or role name suffix to help you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\.
+
+1. \(Optional\) For **Role description**, enter a description for the new role\.
 
 1. Review the role and then choose **Create role**\.
 

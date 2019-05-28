@@ -2,7 +2,7 @@
 
 The permissions policy of the role that is being assumed determines the permissions for the temporary security credentials that are returned by `AssumeRole`, `AssumeRoleWithSAML`, and `AssumeRoleWithWebIdentity`\. You define these permissions when you create or update the role\. 
 
-Optionally, you can pass a JSON policy as a parameter of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. This *session policy* limits the permissions for that for the role's temporary credential session\. You can use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the role\. You cannot use the session policy to grant permissions that are in excess of those allowed by the identity\-based policy of the role that is being assumed\. To learn more about how AWS determines the effective permissions of a role, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+Optionally, you can pass inline or managed [session policies](access_policies.md#policies_session) as parameters of the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. Session policies limit the permissions for the role's temporary credential session\. The resulting session's permissions are the intersection of the role's identity\-based policy and the session policies\. You can use the role's temporary credentials in subsequent AWS API calls to access resources in the account that owns the role\. You cannot use session policies to grant more permissions than those allowed by the identity\-based policy of the role that is being assumed\. To learn more about how AWS determines the effective permissions of a role, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
 ![\[PermissionsWhenPassingRoles_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/role_passed_policy_permissions.png)
 
@@ -42,7 +42,9 @@ In this example, you call the `AssumeRole` API operation without specifying the 
 
 ### Session Policy Passed as a Parameter<a name="permissions-assume-role-example-passed-policy"></a>
 
-Imagine that you want to allow a user to assume the same role as in the previous example\. But in this case you want the role session to have permission only to get and put objects in the `productionapp` S3 bucket\. You do not want to allow them to delete objects\. One way to accomplish this is to create a new role and specify the desired permissions in that role's permissions policy\. Another way to accomplish this is to call the `AssumeRole` API and include a session policy in the optional `Policy` parameter as part of the API operation\. The resulting session has only the permissions granted by both the role's identity\-based policy and the session policy\. Note that this policy cannot be used to elevate permissions beyond what the assumed role is allowed to access\. For more information about role session permissions, see [Session Policies](access_policies.md#policies_session)\. 
+Imagine that you want to allow a user to assume the same role as in the previous example\. But in this case you want the role session to have permission only to get and put objects in the `productionapp` S3 bucket\. You do not want to allow them to delete objects\. One way to accomplish this is to create a new role and specify the desired permissions in that role's permissions policy\. Another way to accomplish this is to call the `AssumeRole` API and include session policies in the optional `Policy` parameter as part of the API operation\. The resulting session's permissions are the intersection of the role's identity\-based policies and the session policies\. Session policies cannot be used to grant more permissions than those allowed by the identity\-based policy of the role that is being assumed\. For more information about role session permissions, see [Session Policies](access_policies.md#policies_session)\. 
+
+After you retrieve the new session's temporary credentials, you can pass them to the user that you want to have those permissions\.
 
 For example, imagine that the following policy is passed as a parameter of the API call\. The person using the session has permissions to perform only these actions: 
 + List all objects in the `productionapp` bucket\.
@@ -77,7 +79,7 @@ In the following session policy, the `s3:DeleteObject` permission is filtered ou
 
 Some AWS resources support resource\-based policies, and these policies provide another mechanism to define permissions that affect temporary security credentials\. Only a few resources, like Amazon S3 buckets, Amazon SNS topics, and Amazon SQS queues support resource\-based policies\. The following example expands on the previous examples, using an S3 bucket named `productionapp`\. The following policy is attached to the bucket\. 
 
-When you attach the following resource\-based policy to the `productionapp` bucket, *all* users are denied permission to delete objects from the bucket \(note the `Principal` element in the policy\)\. This includes all assumed role users, even though the role permissions policy grants the `DeleteObject` permission\. An explicit `Deny` statement always takes precedence over an `Allow` statement\.
+When you attach the following resource\-based policy to the `productionapp` bucket, *all* users are denied permission to delete objects from the bucket\. \(See the `Principal` element in the policy\.\) This includes all assumed role users, even though the role permissions policy grants the `DeleteObject` permission\. An explicit `Deny` statement always takes precedence over an `Allow` statement\.
 
 **Example Bucket Policy**  
 

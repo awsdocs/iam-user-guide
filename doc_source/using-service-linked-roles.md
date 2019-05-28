@@ -142,7 +142,7 @@ Before you create a service\-linked role in IAM, find out whether the linked ser
    + Allow you to choose from any permissions
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role\.
 
-   Select the box next to the policy that assigns the permissions that you want the role to have, and then choose **Next: Tagging**\. 
+   Select the box next to the policy that assigns the permissions that you want the role to have, and then choose **Next: Tags**\. 
 **Note**  
 The permissions that you specify are available to any entity that uses the role\. By default, a role has no permissions\.
 

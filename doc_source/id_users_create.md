@@ -70,7 +70,7 @@ If you have *not* enabled [the account\-wide password policy setting **Allow use
 
    Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum user permissions**\. IAM displays a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
-1. Choose **Next: Tagging**\.
+1. Choose **Next: Tags**\.
 
 1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 

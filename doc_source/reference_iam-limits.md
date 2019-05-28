@@ -21,7 +21,7 @@ For a list of Basic Latin \(ASCII\) characters, go to the [Library of Congress B
 
 ## IAM Entity Object Limits<a name="reference_iam-limits-entities"></a>
 
-AWS allows you to request an increase to default IAM entity limits\. To learn how to request a limit increase to these default limits, see [AWS Service Limits](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference* documentation\.
+AWS allows you to request an increase to default IAM entity limits\. To learn how to request a limit increase to these default limits, see [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html) in the *Amazon Web Services General Reference* documentation\.
 
 
 **Default limits for IAM entities:**  

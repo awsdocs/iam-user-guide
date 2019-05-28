@@ -69,7 +69,7 @@ Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enha
 
 1. Choose the **AmazonRDSEnhancedMonitoringRole**, permissions policy\.
 
-1. Choose **Next: Tagging**\.
+1. Choose **Next: Tags**\.
 
 1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 

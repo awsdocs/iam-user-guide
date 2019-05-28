@@ -161,7 +161,7 @@ Use one of the following commands:
 + [put\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-user-policy.html)
 
 **Note**  
-You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](https://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 
 ## Creating IAM Policies \(AWS API\)<a name="create-policies-api"></a>
 
@@ -178,4 +178,4 @@ Call one of the following operations:
 + [PutUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html)
 
 **Note**  
-You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](http://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
+You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](https://docs.aws.amazon.com/) for your service to see whether it supports this feature\.

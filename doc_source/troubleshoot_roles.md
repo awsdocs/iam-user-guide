@@ -6,8 +6,9 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [I Can't Assume a Role](#troubleshoot_roles_cant-assume-role)
 + [A New Role Appeared in My AWS Account](#troubleshoot_roles_new-role-appeared)
 + [I Can't Edit or Delete a Role in My AWS Account](#troubleshoot_roles_cant-edit-delete-role)
-+ [I'm not authorized to perform: iam:PassRole](#troubleshoot_roles_not-auth-passrole)
-+ [Why Can't I Assume a Role with a 12\-hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
++ [I'm Not Authorized to Perform: iam:PassRole](#troubleshoot_roles_not-auth-passrole)
++ [Why Can't I Assume a Role with a 12\-Hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
++ [My Role Has a Policy That Allows Me to Perform an Action, But I Get "Access Denied"](#troubleshoot_roles_session-policy)
 
 ## I Can't Assume a Role<a name="troubleshoot_roles_cant-assume-role"></a>
 
@@ -69,7 +70,7 @@ You cannot delete or edit the permissions for a [service\-linked role](id_roles_
 
 For information about which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. 
 
-## I'm not authorized to perform: iam:PassRole<a name="troubleshoot_roles_not-auth-passrole"></a>
+## I'm Not Authorized to Perform: iam:PassRole<a name="troubleshoot_roles_not-auth-passrole"></a>
 
 When you create a service\-linked role, you must have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you the first time that you create an Auto Scaling group\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive the following error:
 
@@ -77,10 +78,14 @@ When you create a service\-linked role, you must have permission to pass that ro
 
 To fix this error, ask your administrator to add the `iam:PassRole` permission for you\.
 
-To learn which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which services automatically create a service\-linked role when you perform an action in that service, choose the **Yes** link and view the service\-linked role documentation for the service\.
+To learn which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn whether a service automatically creates a service\-linked role for you, choose the **Yes** link to view the service\-linked role documentation for the service\.
 
-## Why Can't I Assume a Role with a 12\-hour Session? \(AWS CLI, AWS API\)<a name="troubleshoot_roles_cant-set-session"></a>
+## Why Can't I Assume a Role with a 12\-Hour Session? \(AWS CLI, AWS API\)<a name="troubleshoot_roles_cant-set-session"></a>
 
 When you use the AWS STS `AssumeRole*` API or `assume-role*` CLI operations to assume a role, you can specify a value for the `DurationSeconds` parameter\. You can specify a value from 900 seconds \(15 minutes\) up to the **Maximum CLI/API session duration** setting for the role\. If you specify a value higher than this setting, the operation fails\. This setting can have a maximum value of 12 hours\. For example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
 
 If you use [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining) \(using a role to assume a second role\), your session is limited to a maximum of one hour\. If you then use the `DurationSeconds` parameter to provide a value greater than one hour, the operation fails\. 
+
+## My Role Has a Policy That Allows Me to Perform an Action, But I Get "Access Denied"<a name="troubleshoot_roles_session-policy"></a>
+
+Your role session might be limited by session policies\. When you [request temporary security credentials](id_credentials_temp_request.md) programmatically using AWS STS, you can optionally pass inline or managed [session policies](access_policies.md#policies_session)\. Session policies are advanced policies that you pass as a parameter when you programmatically create a temporary credential session for a role\. You can pass a single JSON inline session policy document using the `Policy` parameter\. You can use the `PolicyArns` parameter to specify up to 10 managed session policies\. The resulting session's permissions are the intersection of the role's identity\-based policies and the session policies\. Alternatively, if your administrator or a custom program provides you with temporary credentials, they might have included a session policy to limit your access\.

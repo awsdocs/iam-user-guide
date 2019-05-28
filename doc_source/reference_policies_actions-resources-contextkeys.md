@@ -112,6 +112,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Global Accelerator](list_awsglobalaccelerator.md)
 + [AWS Glue](list_awsglue.md)
 + [AWS Greengrass](list_awsgreengrass.md)
++ [AWS Ground Station](list_awsgroundstation.md)
 + [Amazon GroundTruth Labeling](list_amazongroundtruthlabeling.md)
 + [Amazon GuardDuty](list_amazonguardduty.md)
 + [AWS Health APIs and Notifications](list_awshealthapisandnotifications.md)

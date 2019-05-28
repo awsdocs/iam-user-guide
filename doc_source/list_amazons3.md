@@ -31,6 +31,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ bucket ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html)  |  arn:$\{Partition\}:s3:::$\{BucketName\}  |  | 
 |   [ object ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html)  |  arn:$\{Partition\}:s3:::$\{BucketName\}/$\{ObjectName\}  |  | 
+|   [ job ](https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html)  |  arn:$\{Partition\}:s3:$\{Region\}:$\{Account\}:job/$\{JobId\}  |  | 
 
 ## Condition Keys for Amazon S3<a name="amazons3-policy-keys"></a>
 
@@ -43,8 +44,13 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   s3:ExistingJobOperation  |  | String | 
+|   s3:ExistingJobPriority  |  | Numeric | 
 |   [ s3:ExistingObjectTag/<key> ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Enables you to verify that an existing object tag has the specific tag key and value\. | String | 
+|   s3:JobSuspendedCause  |  | String | 
 |   [ s3:LocationConstraint ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to restrict users to creating buckets in only a specific region\. | String | 
+|   s3:RequestJobOperation  |  | String | 
+|   s3:RequestJobPriority  |  | Numeric | 
 |   [ s3:RequestObjectTag/<key> ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Restrict the tag keys and values that you want to allow on objects\. | String | 
 |   [ s3:RequestObjectTagKeys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  |  restrict the tag keys that you want to allow on objects\. | String | 
 |   [ s3:VersionId ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies)  | Enables you to limit the permission for the s3:PutObjectVersionTagging action to a specific object version\. | String | 
@@ -52,6 +58,10 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ s3:delimiter ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to require the user to specify the delimiter parameter in the GET Bucket Object versions request\. | String | 
 |   [ s3:locationconstraint ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to restrict the user to creating a bucket in only a specific region\. | String | 
 |   [ s3:max\-keys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to limit the number of keys Amazon S3 returns in response to ListBucket requests by requiring the user to specify the max\-keys parameter\. | Numeric | 
+|   s3:object\-lock\-legal\-hold  | Enables enforcement of the specified object legal hold status | String | 
+|   s3:object\-lock\-mode  | Enables enforcement of the specified object retention mode | String | 
+|   s3:object\-lock\-remaining\-retention\-days  | Enables enforcement of an object relative to the remaining retention days | String | 
+|   s3:object\-lock\-retain\-until\-date  | Enables enforcement of a specific retain\-until\-date | String | 
 |   [ s3:prefix ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to limit the response of the ListBucket API to key names with specific prefix\. | String | 
 |   s3:signatureage  |  | Numeric | 
 |   s3:signatureversion  |  | String | 

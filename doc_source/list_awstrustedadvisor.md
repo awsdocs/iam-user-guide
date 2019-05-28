@@ -21,6 +21,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   DescribeAccountAccess  | Resolve whether Account has disabled Trusted Advisor | List |  |  |  | 
 |   DescribeCheckItems  | View details for the check items | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
 |   DescribeCheckRefreshStatuses  | Describe check refresh statuses | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
 |   DescribeCheckSummaries  | Describes the check's summaries | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
@@ -28,6 +29,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   ExcludeCheckItems  | Exclude recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
 |   IncludeCheckItems  | Include recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
 |   RefreshCheck  | Enqueue a refresh for the specified check | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   SetAccountAccess  | Toggle whether TrustedAdvisor is enabled/disabled for the account | Write |  |  |  | 
 |   UpdateNotificationPreferences  | Update notification preferences  | Write |  |  |  | 
 
 ## Resources Defined by Trusted Advisor<a name="awstrustedadvisor-resources-for-iam-policies"></a>

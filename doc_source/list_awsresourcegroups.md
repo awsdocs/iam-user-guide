@@ -18,21 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateGroup ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_CreateGroup.html)  | Creates a group with a specified name, description, and resource query\. | Tagging |  |  |  | 
-|   [ DeleteGroup ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_DeleteGroup.html)  | Deletes a specified resource group | Write |  |  |  | 
-|   [ GetGroup ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroup.html)  | Gets information of a specified resource group | Read |  |  |  | 
-|   [ GetGroupQuery ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetGroupQuery.html)  | Gets the query associated with a specified resource group | Read |  |  |  | 
-|   [ GetTags ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_GetTags.html)  | Gets the tags associated with a specified resource group | Read |  |  |  | 
-|   [ ListGroupResources ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroupResources.html)  | Lists the resources that are member of a specified resource group | List |  |  |  | 
-|   [ ListGroups ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_ListGroups.html)  | Lists all resource groups | List |  |  |  | 
-|   [ SearchResources ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_SearchResources.html)  | Returns a list of AWS resource identifiers matching the given query | List |  |  |  | 
-|   [ Tag ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_Tag.html)  | Tags a specified resource group | Tagging |  |  |  | 
-|   [ Untag ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_Untag.html)  | Removes tags associated with a specified resource group | Tagging |  |  |  | 
-|   [ UpdateGroup ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroup.html)  | Updates a specified resource group | Write |  |  |  | 
-|   [ UpdateGroupQuery ](https://docs.aws.amazon.com/ARG/latest/APIReference/API_UpdateGroupQuery.html)  | Updates the query associated with a specified resource group | Write |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsresourcegroups.html)
 
 ## Resources Defined by Resource Groups<a name="awsresourcegroups-resources-for-iam-policies"></a>
 
@@ -43,8 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ group ](https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html)  |  arn:$\{Partition\}:resource\-groups:$\{Region\}:$\{Account\}:group/$\{GroupName\}  |  | 
+|   [ group ](https://docs.aws.amazon.com/ARG/latest/userguide/welcome.html)  |  arn:$\{Partition\}:resource\-groups:$\{Region\}:$\{Account\}:group/$\{GroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsresourcegroups-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Resource Groups<a name="awsresourcegroups-policy-keys"></a>
 
-Resource Groups has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Resource Groups defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

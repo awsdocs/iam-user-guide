@@ -4,8 +4,8 @@ AWS IoT Events \(service prefix: `iotevents`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/iotevents/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iotevents/latest/developerguide/authorization) permission policies\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iotevents/latest/apireference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iotevents/latest/developerguide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT Events](#awsiotevents-actions-as-permissions)
@@ -18,25 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ BatchPutMessage ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_BatchPutMessage.html)  | Sends a set of messages to the AWS IoT Events system\. | Write |   [ input\* ](#awsiotevents-input)   |  |  | 
-|   [ CreateDetectorModel ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_CreateDetectorModel.html)  | Creates a detector model\. | Write |  |  |  | 
-|   [ CreateInput ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_CreateInput.html)  | Creates an input\. | Write |  |  |  | 
-|   [ DeleteDetectorModel ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_DeleteDetectorModel.html)  | Deletes a detector model\. | Write |   [ detectorModel\* ](#awsiotevents-detectorModel)   |  |  | 
-|   [ DeleteInput ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_DeleteInput.html)  | Deletes an input\. | Write |   [ input\* ](#awsiotevents-input)   |  |  | 
-|   [ DescribeDetector ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_DescribeDetector.html)  | Returns information about the specified detector \(instance\)\. | Read |   [ detectorModel\* ](#awsiotevents-detectorModel)   |  |  | 
-|   [ DescribeDetectorModel ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_DescribeDetectorModel.html)  | Describes a detector model\. | Read |   [ detectorModel\* ](#awsiotevents-detectorModel)   |  |  | 
-|   [ DescribeInput ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_DescribeInput.html)  | Describes an input\. | Read |   [ input\* ](#awsiotevents-input)   |  |  | 
-|   [ DescribeLoggingOptions ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_DescribeLoggingOptions.html)  | Retrieves the current settings of the AWS IoT Events logging options\. | Read |  |  |  | 
-|   [ ListDetectorModelVersions ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_ListDetectorModelVersions.html)  | Lists all the versions of a detector model\. Only the metadata associated with each detector model version is returned\. | List |   [ detectorModel\* ](#awsiotevents-detectorModel)   |  |  | 
-|   [ ListDetectorModels ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_ListDetectorModels.html)  | Lists the detector models you have created\. Only the metadata associated with each detector model is returned\. | List |  |  |  | 
-|   [ ListDetectors ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_ListDetectors.html)  | Lists detectors \(the instances of a detector model\)\. | List |   [ detectorModel\* ](#awsiotevents-detectorModel)   |  |  | 
-|   ListInputs  | Lists the inputs you have created\. | List |  |  |  | 
-|   [ PutLoggingOptions ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_PutLoggingOptions.html)  | Sets or updates the AWS IoT Events logging options\. | Write |  |  |  | 
-|   [ UpdateDetectorModel ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_UpdateDetectorModel.html)  | Updates a detector model\. | Write |   [ detectorModel\* ](#awsiotevents-detectorModel)   |  |  | 
-|   [ UpdateInput ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents/latest/APIReference/API_UpdateInput.html)  | Updates an input\. | Write |   [ input\* ](#awsiotevents-input)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsiotevents.html)
 
 ## Resources Defined by IoT Events<a name="awsiotevents-resources-for-iam-policies"></a>
 
@@ -47,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ detectorModel ](https://docs.aws.amazon.com/iotevents/latest/developerguide/detectormodel.html)  |  arn:$\{Partition\}:iotevents:$\{Region\}:$\{Account\}:detectorModel/$\{DetectorModelName\}  |  | 
-|   [ input ](https://docs.aws.amazon.com/iotevents/latest/developerguide/input.html)  |  arn:$\{Partition\}:iotevents:$\{Region\}:$\{Account\}:input/$\{inputName\}  |  | 
+|   [ detectorModel ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html)  |  arn:$\{Partition\}:iotevents:$\{Region\}:$\{Account\}:detectorModel/$\{DetectorModelName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotevents-aws_ResourceTag___TagKey_)   | 
+|   [ input ](https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-getting-started.html)  |  arn:$\{Partition\}:iotevents:$\{Region\}:$\{Account\}:input/$\{inputName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotevents-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS IoT Events<a name="awsiotevents-policy-keys"></a>
 
@@ -61,4 +43,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ iotevents:KeyValue ](${DocumentationLink}keyvalue.html)  | The value of the key \(identifying the device or system\) which caused the creation of this detector \(instance\)\. | String | 
+|   aws:RequestTag/$\{TagKey\}  | A tag key that is present in the request that the user makes to IoT Events\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | The tag key by which a tag value is attached to an IoT Events resource\. | String | 
+|   aws:TagKeys  | The list of all the tag key names associated with the IoT Events resource in the request\. | String | 

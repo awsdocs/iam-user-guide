@@ -33,13 +33,13 @@ How AWS evaluates policies depends on the types of policies that apply to the re
 
 1. **AWS Organizations service control policies \(SCPs\)** – Organizations SCPs specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP maximum applies to entities in member accounts, including each AWS account root user\. If an SCP is present, identity\-based and resource\-based policies grant permissions to entities only if those policies and the SCP allow the action\. If both a permissions boundary and an SCP are present, then the boundary, the SCP, and the identity\-based policy must all allow the action\.
 
-1. **Session policies** – Session policies are advanced policies that you pass as a parameter when you programmatically create a temporary session for a role or federated user\. To create a role session programmatically, use one of the `AssumeRole*` API operations\. When you do this and pass a session policy, the resulting session has only the permissions granted by both the role's identity\-based policy and the session policy\. To create a federated user session, you use an IAM user's access keys to programmatically call the `GetFederationToken` API operation\. When you do this and pass a session policy, the resulting session has only the permissions granted by both the IAM user's identity\-based policy and the session policy\. A resource\-based policy has a different effect on the evaluation of session policy permissions, depending whether the user or role's ARN or the session's ARN is listed as the principal in the resource\-based policy\. For more information, see [Session Policies](access_policies.md#policies_session)\.
+1. **Session policies** – Session policies are advanced policies that you pass as parameters when you programmatically create a temporary session for a role or federated user\. To create a role session programmatically, use one of the `AssumeRole*` API operations\. When you do this and pass session policies, the resulting session's permissions are the intersection of the IAM entity's identity\-based policy and the session policies\. To create a federated user session, you use an IAM user's access keys to programmatically call the `GetFederationToken` API operation\. A resource\-based policy has a different effect on the evaluation of session policy permissions\. The difference depends on whether the user or role's ARN or the session's ARN is listed as the principal in the resource\-based policy\. For more information, see [Session Policies](access_policies.md#policies_session)\.
 
 Remember, an explicit deny in any of these policies overrides the allow\.
 
 ### Evaluating Identity\-Based Policies with Resource\-Based Policies<a name="policy-eval-basics-id-rdp"></a>
 
-Identity\-based policies and resource\-based policies grant permissions to the identities or resources to which they are attached\. When an IAM entity \(user or role\) requests access to a resource within the same account, AWS evaluates all the permissions granted by the identity\-based policies and the resource\-based policies\. The resulting permissions are the total permissions of the two types\. If an action is allowed by an identity\-based policy, a resource\-based policy, or both, then AWS allows the action\. An explicit deny in either of these policies overrides the allow\.
+Identity\-based policies and resource\-based policies grant permissions to the identities or resources to which they are attached\. When an IAM entity \(user or role\) requests access to a resource within the same account, AWS evaluates all the permissions granted by the identity\-based and resource\-based policies\. The resulting permissions are the total permissions of the two types\. If an action is allowed by an identity\-based policy, a resource\-based policy, or both, then AWS allows the action\. An explicit deny in either of these policies overrides the allow\.
 
 ![\[Evaluation of identity-based policies and resource-based policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_policies_effective.png)
 
@@ -51,13 +51,13 @@ When AWS evaluates the identity\-based policies and permissions boundary for a u
 
 ### Evaluating Identity\-Based Policies with Organizations SCPs<a name="policy-eval-basics-id-scp"></a>
 
-When AWS evaluates the identity\-based policies for a user and an SCP for the organization to which the user's account belongs, the resulting permissions are the intersection of the two categories\. This means that an action must be allowed by both the identity\-based policy and the SCP\. An explicit deny in either of these policies overrides the allow\.
+When a user belongs to an account that is a member of an organization, the resulting permissions are the intersection of the user's policies and the SCP\. This means that an action must be allowed by both the identity\-based policy and the SCP\. An explicit deny in either of these policies overrides the allow\.
 
 ![\[Evaluation of identity-based policies and SCPs\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_scp-idp.png)
 
 ## Determining Whether a Request Is Allowed or Denied Within an Account<a name="policy-eval-denyallow"></a>
 
-When a principal sends a request to AWS to access a resource in the same account as the principal's entity, the AWS enforcement code decides whether a given request should be allowed or denied\. AWS gathers all of the policies that apply to the request context\. The following is a high\-level summary of the AWS evaluation logic on those policies within a single account\.
+Assume that a principal sends a request to AWS to access a resource in the same account as the principal's entity\. The AWS enforcement code decides whether the request should be allowed or denied\. AWS gathers all of the policies that apply to the request context\. The following is a high\-level summary of the AWS evaluation logic on those policies within a single account\.
 + By default, all requests are implicitly denied\. \(Alternatively, by default, the AWS account root user has full access\.\) 
 + An explicit allow in an identity\-based or resource\-based policy overrides this default\.
 + If a permissions boundary, Organizations SCP, or session policy is present, it might override the allow with an implicit deny\.
@@ -73,7 +73,7 @@ The following flow chart provides details about how the decision is made\.
 
 1. **Resource\-based policies** – If the requested resource has a resource\-based policy that allows the principal entity to perform the requested action, then the code returns a final decision of **Allow**\. If there is no resource\-based policy, or if the policy does not include an `Allow` statement, then the code continues\.
 **Note**  
-This logic behaves differently if you specify the ARN of an IAM role or user as the principal of the resource\-based policy, and then someone uses a session policy to create a temporary session for that role or federated user\. For more information, see [Session Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session)\.
+This logic can behave differently if you specify the ARN of an IAM role or user as the principal of the resource\-based policy\. Someone can use session policies to create a temporary credential session for that role or federated user\. In that case, the effective permissions for the session might not exceed those allowed by the identity\-based policy of the user or role\. For more information, see [Session Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session)\.
 
 1. **IAM permissions boundaries** – The enforcement code then checks whether the IAM entity that is used by the principal has a permissions boundary\. If the policy that is used to set the permissions boundary does not allow the requested action, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no permissions boundary, or if the permissions boundary allows the requested action, the code continues\.
 

@@ -4,7 +4,7 @@ You can use the `Condition` element of a JSON policy in IAM to test the value of
 
 This topic describes the globally available keys \(with an `aws:` prefix\)\. AWS services, [such as IAM,](reference_policies_iam-condition-keys.md) provide service\-specific keys that are relevant to the actions and resources that are defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
 
-Some global condition keys are available for all AWS services, and some are only supported by some services\.
+Some global condition keys are available for all AWS services, and some are only supported by some services\. You can use these keys in IAM policies, but not necessarily in resource\-based policies\.
 
 **Topics**
 + [Keys Available for All Services](#condition-keys-globally-available)
@@ -97,58 +97,6 @@ For more information about AWS Organizations, see [What Is AWS Organizations?](h
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks the [Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of the IAM user or role that made the request\.
 
-**aws:SecureTransport**  
-Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
-Checks whether the request was sent using SSL\.
-
-**aws:UserAgent**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks the requester's client application\.  
-This key should be used carefully\. Since the `aws:UserAgent` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:UserAgent` value that they choose\. As a result, `aws:UserAgent` should not be used to prevent unauthorized parties from making direct AWS requests\. You can use it to allow only specific client applications, and only after testing your policy\.
-
-## Keys Available for Some Services<a name="condition-keys-service-available"></a>
-
- AWS provides the following predefined condition keys for only some AWS services that support these features\. To learn whether a service supports one of these condition keys, you must view the documentation for that service\. 
-
-**Note**  
-If you use condition keys that are available only in some scenarios, you can use the [IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) versions of the condition operators\. If the condition keys are missing from a request context, the policy engine can fail the evaluation\. For example, use the following policy with `...IfExists` operators to match if a request comes from a specific IP range or from a specific VPC\. If either or both keys don't exist, the condition still matches\. The values are only checked if the specified key exists in the request\.   
-
-```
-"Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] },
-      "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }
-```
-
-**aws:PrincipalTag/*tag\-key***  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks that the tag attached to the principal making the request matches the specified key name and value\.  
-You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.  
-This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the red italicized text in the example policy with your own information\.  
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "iam:*",
-      "Resource": "*",
-      "Condition": {"StringEquals": {"aws:PrincipalTag/tagManager": "true"}}
-    }
-  ]
-}
-```
-
-**aws:PrincipalType**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks the type of principal \(user, account, federated user, etc\.\) for the current request\.  
-This condition key is available for only some services\.
-
-**aws:Referer**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks who referred the client browser to the address that the request is being sent to\. It is only supported by some services, such as [Amazon S3, as a service that can be directly addressed by a web browser](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. The value comes from the referer header in the HTTPS request that is made to AWS\.  
-This key should be used carefully: `aws:referer` allows Amazon S3 bucket owners to help prevent their content from being served up by unauthorized third\-party sites to standard web browsers\. For more information, see the link in the previous paragraph\. Since the `aws:referer` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:referer` value that they choose\. As a result, `aws:referer` should not be used to prevent unauthorized parties from making direct AWS requests\. It is offered only to allow customers to protect their digital content, stored in Amazon S3, from being referenced on unauthorized third\-party sites\.
- This condition key is available for only some services\.
-
 **aws:RequestedRegion**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks whether an AWS request is made to a specific Region\. You can use this global condition key to control which Regions your users can make calls to\. To view the AWS Regions for each service, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *Amazon Web Services General Reference*\.  
@@ -209,7 +157,58 @@ You can use this context key to limit access to AWS services within a given set 
     ]
 }
 ```
+
+**aws:SecureTransport**  
+Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
+Checks whether the request was sent using SSL\.
+
+**aws:UserAgent**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks the requester's client application\.  
+This key should be used carefully\. Since the `aws:UserAgent` value is provided by the caller in an HTTP header, unauthorized parties can use modified or custom browsers to provide any `aws:UserAgent` value that they choose\. As a result, `aws:UserAgent` should not be used to prevent unauthorized parties from making direct AWS requests\. You can use it to allow only specific client applications, and only after testing your policy\.
+
+## Keys Available for Some Services<a name="condition-keys-service-available"></a>
+
+ AWS provides the following predefined condition keys for only some AWS services that support these features\. To learn whether a service supports one of these condition keys, you must view the documentation for that service\. 
+
+**Note**  
+If you use condition keys that are available only in some scenarios, you can use the [IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) versions of the condition operators\. If the condition keys are missing from a request context, the policy engine can fail the evaluation\. For example, use the following policy with `...IfExists` operators to match if a request comes from a specific IP range or from a specific VPC\. If either or both keys don't exist, the condition still matches\. The values are only checked if the specified key exists in the request\.   
+
+```
+"Condition": {"IpAddressIfExists": {"aws:SourceIp" : ["xxx"] },
+      "StringEqualsIfExists" : {"aws:SourceVpc" : ["yyy"]} }
+```
+
+**aws:PrincipalTag/*tag\-key***  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the tag attached to the principal making the request matches the specified key name and value\.  
+You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.  
+This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the red italicized text in the example policy with your own information\.  
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:*",
+      "Resource": "*",
+      "Condition": {"StringEquals": {"aws:PrincipalTag/tagManager": "true"}}
+    }
+  ]
+}
+```
+
+**aws:PrincipalType**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks the type of principal \(user, account, federated user, etc\.\) for the current request\.  
 This condition key is available for only some services\.
+
+**aws:Referer**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks who referred the client browser to the address that the request is being sent to\. It is only supported by some services, such as [Amazon S3, as a service that can be directly addressed by a web browser](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. `aws:referer` allows Amazon S3 bucket owners to help prevent their content from being served up by unauthorized third\-party sites to standard web browsers\. The value comes from the referer header in the HTTPS request that is made to AWS\. The `aws:referer` value is provided by the caller in an HTTP header\.  
+This key should be used carefully\. It is dangerous to include a publicly\-known referer header value\. Unauthorized parties can use modified or custom browsers to provide any `aws:referer` value that they choose\. As a result, `aws:referer` should not be used to prevent unauthorized parties from making direct AWS requests\. It is offered only to allow customers to protect their digital content, stored in Amazon S3, from being referenced on unauthorized third\-party sites\.
+ This condition key is available for only some services\.
 
 **aws:RequestTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -273,6 +272,6 @@ Checks the requester's user name\.
  This condition key is available for only some services\.
 
 **aws:VpcSourceIp**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Works with [IP address operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress)\.  
 When used in VPC endpoint policies, restricts access to specific IPs from within the principal’s VPC\.   
 This condition key can be used only in VPC endpoint policies\. For more information, see [Controlling Access to Services with VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html) in the *Amazon VPC User Guide*\.

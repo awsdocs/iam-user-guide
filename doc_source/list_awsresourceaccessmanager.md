@@ -45,12 +45,12 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  |  | String | 
-|   aws:ResourceTag/$\{TagKey\}  |  | String | 
-|   aws:TagKeys  |  | String | 
-|   ram:AllowsExternalPrincipals  | Resource shares can only be acted on if the share allows external principals | Bool | 
-|   ram:Principals  | Principals with the specified format can be associated to or disassociated from a resource share | String | 
-|   ram:RequestedResourceType  | Resources of RequestedResourceType can be associated with the specified resource share | String | 
-|   ram:ResourceArns  | Resources with the specified arn format can be associated to or disassociated from a resource share | Arn | 
-|   ram:ResourceShareNames  | Resource shares with the following names can be used in specified action | String | 
-|   ram:ShareOwnerAccountIds  | Resource share invitations can only be accepted/rejected if owned by the specified account id | String | 
+|   aws:RequestTag/$\{TagKey\}  | Specifies a tag key and value pair that must be used when creating or tagging a resource share\. If users don't pass these specific tags, or if they don't specify tags at all, the request fails\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Indicates that the action can only be performed on resources that have the specified tag key and value pair\. | String | 
+|   aws:TagKeys  | Specifies the tag keys that can be used when creating or tagging a resource share | String | 
+|   ram:AllowsExternalPrincipals  | Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals\. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals\. External principals are AWS accounts that are outside of its AWS organization  | Bool | 
+|   ram:Principal  | Principals with the specified format can be associated to or disassociated from a resource share | String | 
+|   ram:RequestedResourceType  | Indicates that the action can only be performed on the specified resource type | String | 
+|   ram:ResourceArn  | Indicates that the action can only be performed on a resource with the specified ARN\. | Arn | 
+|   ram:ResourceShareName  | Indicates that the action can only be performed on a resource share with the specified name\. | String | 
+|   ram:ShareOwnerAccountId  | Indicates that the action can only be performed on resource shares owned by a specific account\. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID\. | String | 

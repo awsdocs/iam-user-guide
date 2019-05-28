@@ -18,20 +18,20 @@ Before you create users, you should understand how IAM works\. IAM provides the 
 Learn more about IAM terms\.
 
 Resources  
-The user, role, group, and policy objects that are stored in IAM\. As with other AWS services, you can add, edit, and remove resources from IAM\.
+The user, group, role, policy, and identity provider objects that are stored in IAM\. As with other AWS services, you can add, edit, and remove resources from IAM\.
 
 Identities  
-The IAM resource objects that are used to identify and group\. These include users, groups, and roles\.
+The IAM resource objects that are used to identify and group\. You can attach a policy to an IAM identity\. These include users, groups, and roles\.
 
 Entities  
-The IAM resource objects that AWS uses for authentication\. These include users and roles\. Roles can be assumed by IAM users in your or another account as well as users federated through a web identity or SAML\. 
+The IAM resource objects that AWS uses for authentication\. These include users and roles\. Roles can be assumed by IAM users and roles in your or another account\. They can also be assumed by users federated through a web identity or SAML\. 
 
 Principals  
-A person or application that uses an entity to sign in and make requests to AWS\.
+A person or application that uses the AWS account root user, an IAM user, or an IAM role to sign in and make requests to AWS\.
 
 ## Principal<a name="intro-structure-principal"></a>
 
-A *principal* is a person or application that can make a request for an action or operation on an AWS resource\. As a principal, you first sign in as the AWS account root user\. As a best practice, do not use your root user for your daily work\. Instead, create IAM entities \(users and roles\)\. You can also support federated users or programmatic access to allow an application to access your AWS account\.
+A *principal* is a person or application that can make a request for an action or operation on an AWS resource\. The principal is authenticated as the AWS account root user or an IAM entity to make requests to AWS\. As a best practice, do not use your root user credentials for your daily work\. Instead, create IAM entities \(users and roles\)\. You can also support federated users or programmatic access to allow an application to access your AWS account\.
 
 ## Request<a name="intro-structure-request"></a>
 
@@ -46,9 +46,9 @@ AWS gathers the request information into a *request context*, which is used to e
 
 ## Authentication<a name="intro-structure-authentication"></a>
 
-As a principal, you must be authenticated \(signed in to AWS\) using an IAM entity to send a request to AWS\. Although some services, such as Amazon S3 and AWS STS, allow a few requests from anonymous users, they are the exception to the rule\.
+A principal must be authenticated \(signed in to AWS\) their credentials to send a request to AWS\. Some services, such as Amazon S3 and AWS STS, allow a few requests from anonymous users\. However, they are the exception to the rule\.
 
-To authenticate from the console as a user, you must sign in with your user name and password\. To authenticate from the API or AWS CLI, you must provide your access key and secret key\. You might also be required to provide additional security information\. For example, AWS recommends that you use multi\-factor authentication \(MFA\) to increase the security of your account\. To learn more about the IAM entities that AWS can authenticate, see [IAM Users](id_users.md) and [IAM Roles](id_roles.md)\.
+To authenticate from the console as a root user, you must sign in with your email address and password\. As an IAM user, provide your account ID or alias, and then your user name and password\. To authenticate from the API or AWS CLI, you must provide your access key and secret key\. You might also be required to provide additional security information\. For example, AWS recommends that you use multi\-factor authentication \(MFA\) to increase the security of your account\. To learn more about the IAM entities that AWS can authenticate, see [IAM Users](id_users.md) and [IAM Roles](id_roles.md)\.
 
 ## Authorization<a name="intro-structure-authorization"></a>
 

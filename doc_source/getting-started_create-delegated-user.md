@@ -50,7 +50,7 @@ You can use the AWS Management Console to create an IAM group with delegated per
 
 1. On the **Set permissions** page, choose **Add user to group** and select the check box next to **PowerUsers**\.
 
-1. Choose **Next: Tagging**\.
+1. Choose **Next: Tags**\.
 
 1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 

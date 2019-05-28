@@ -31,7 +31,7 @@ Create a test AWS account to use with this tutorial\. In this account create two
 
 ## Step 1: Enable Access to Billing Data on Your AWS Test Account<a name="tutorial-billing-step1"></a>
 
-Sign into your test account and turn on billing access\. For information about how to follow this process in a production environment, see [Activate Access to the AWS Website](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
+Sign into your test account and turn on billing access\. For information about how to follow this process in a production environment, see [Activate Access to the AWS Website](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
 
 **Note**  
 If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
@@ -83,7 +83,7 @@ Next, create custom policies that grant both view and full access permissions to
 
    1. On the **Review** page, for **Name**, type **BillingViewAccess**\. Then choose **Create policy** to save it\.
 
-   To review descriptions for each of the permissions available in IAM policies that grant users access to the Billing and Cost Management console, see [Billing Permissions Descriptions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)\.
+   To review descriptions for each of the permissions available in IAM policies that grant users access to the Billing and Cost Management console, see [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)\.
 
 ## Step 3: Attach Billing Policies to Your Groups<a name="tutorial-billing-step3"></a>
 

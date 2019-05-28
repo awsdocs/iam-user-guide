@@ -30,7 +30,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ device ](https://docs.aws.amazon.com/iot-1-click/1.0/devices-apireference/resources.html)  |  arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:devices/$\{DeviceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot1-click-aws_ResourceTag___TagKey_)   | 
-|   [ project ](https://docs.aws.amazon.com/iot-1-click/latest/developerguide/https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_Operations.html)  |  arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:projects/$\{ProjectName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot1-click-aws_ResourceTag___TagKey_)   | 
+|   [ project ](https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/API_Operations.html)  |  arn:$\{Partition\}:iot1click:$\{Region\}:$\{Account\}:projects/$\{ProjectName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot1-click-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS IoT 1\-Click<a name="awsiot1-click-policy-keys"></a>
 

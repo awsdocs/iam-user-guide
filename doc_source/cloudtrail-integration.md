@@ -438,7 +438,7 @@ The following example shows a CloudTrail log entry for a successful sign\-in eve
   },
   "additionalEventData": {
     "MobileVersion": "No",
-    "LoginTo": "https://console.aws.amazon.com/s3",
+    "LoginTo": "[https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)",
     "MFAUsed": "No"
   },
   "eventID": "3fcfb182-98f8-4744-bd45-10a395ab61cb"

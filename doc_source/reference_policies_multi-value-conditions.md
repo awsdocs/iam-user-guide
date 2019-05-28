@@ -21,7 +21,7 @@ You can create a policy to test multiple values in a request against one or more
   ID=101
   UserName=Bob
   PostDateTime=20130930T231548Z
-  Message="A good resource for this question is http://aws.amazon.com/documentation/"
+  Message="A good resource for this question is docs.aws.amazon.com"
   Tags=["AWS", "Database", "Security"]
 }
 ```

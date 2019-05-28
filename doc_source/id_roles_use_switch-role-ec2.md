@@ -9,7 +9,7 @@ Using roles to grant permissions to applications that run on EC2 instances requi
 Using roles in this way has several benefits\. Because role credentials are temporary and rotated automatically, you don't have to manage credentials, and you don't have to worry about long\-term security risks\. In addition, if you use a single role for multiple instances, you can make a change to that one role and the change is propagated automatically to all the instances\. 
 
 **Note**  
-Although a role is usually assigned to an EC2 instance when you launch it, a role can also be attached to an EC2 instance that is already running\. To learn how to attach a role to a running instance, see [IAM Roles for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
+Although a role is usually assigned to an EC2 instance when you launch it, a role can also be attached to an EC2 instance that is already running\. To learn how to attach a role to a running instance, see [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
 
 **Topics**
 + [How Do Roles for EC2 Instances Work?](#roles-usingrole-ec2instance-roles)
@@ -97,7 +97,11 @@ The following sample policy allows users to use the Amazon EC2 API to launch an 
 
 You can allow an application running on an Amazon EC2 instance to run commands in another account\. To do this, you must allow the EC2 instance role in in the first account to switch to a role in the second account\.
 
-Imagine that you are using two AWS accounts and you want to allow an application running on an Amazon EC2 instance to run [AWS CLI](http://aws.amazon.com/cli/) commands in both accounts\. Assume that the EC2 instance exists in account `111111111111`\. That instance includes the `abcd` instance profile role that allows the application to perform read\-only Amazon S3 tasks on the `my-bucket-1` bucket within the same `111111111111` account\. However, the application must also be allowed to assume the `efgh` cross\-account role to perform tasks in account `222222222222`\. To do this, the `abcd` EC2 instance profile role must have the following permissions policy:
+Imagine that you are using two AWS accounts and you want to allow an application running on an Amazon EC2 instance to run [AWS CLI](http://aws.amazon.com/cli/) commands in both accounts\. Assume that the EC2 instance exists in account `111111111111`\. That instance includes the `abcd` instance profile role that allows the application to perform read\-only Amazon S3 tasks on the `my-bucket-1` bucket within the same `111111111111` account\. However, the application must also be allowed to assume the `efgh` cross\-account role to access the `my-bucket-2` Amazon S3 bucket in account `222222222222`\.
+
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/roles-instance-profile-cross-account.png)
+
+The `abcd` EC2 instance profile role must have the following permissions policy to allow the application to access the `my-bucket-1` Amazon S3 bucket:
 
 ***Account 111111111111 `abcd` Role Permissions Policy***
 
@@ -136,7 +140,7 @@ Imagine that you are using two AWS accounts and you want to allow an application
 }
 ```
 
-The `abcd` role must allow the Amazon EC2 service to assume the role\. To do this, the `abcd` role must have the following trust policy:
+The `abcd` role must trust the Amazon EC2 service to assume the role\. To do this, the `abcd` role must have the following trust policy:
 
 ***Account 111111111111 `abcd` Role Trust Policy***
 
@@ -148,7 +152,7 @@ The `abcd` role must allow the Amazon EC2 service to assume the role\. To do thi
             "Sid": "abcdTrustPolicy",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Principal": {"AWS": "arn:aws:iam::111111111111:role/abcd"}
+            "Principal": {"Service": "ec2.amazonaws.com"}
         }
     ]
 }
@@ -187,7 +191,7 @@ Assume that the `efgh` cross\-account role allows read\-only Amazon S3 tasks on 
 }
 ```
 
-The `efgh` role must allow the `abcd` instance profile role to assume it\. To do this, the `efgh` role must have the following trust policy:
+The `efgh` role must trust the `abcd` instance profile role to assume it\. To do this, the `efgh` role must have the following trust policy:
 
 ***Account 222222222222 `efgh` Role Trust Policy***
 
@@ -199,7 +203,7 @@ The `efgh` role must allow the `abcd` instance profile role to assume it\. To do
             "Sid": "efghTrustPolicy",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
-            "Principal": {"Service": "ec2.amazonaws.com"}
+            "Principal": {"AWS": "arn:aws:iam::111111111111:role/abcd"}
         }
     ]
 }

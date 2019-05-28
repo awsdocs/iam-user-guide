@@ -24,7 +24,7 @@ Most Firefox versions that currently support U2F do not enable support by defaul
 
 AWS currently supports only browsers that natively support the U2F standard\. AWS does not support using plugins to add U2F browser support\. Also note that some browser plugins are incompatible with the U2F standard and can cause unexpected results with U2F security keys\. 
 
-For information on disabling browser plugins and other troubleshooting tips, see [I can't enable my U2F security key](troubleshoot_mfa-u2f.md#troubleshoot_mfa-u2f-cant-enable)\. 
+For information on disabling browser plugins and other troubleshooting tips, see [I Can't Enable My U2F Security Key](troubleshoot_mfa-u2f.md#troubleshoot_mfa-u2f-cant-enable)\. 
 
 ## Mobile Environments<a name="id_credentials_mfa_u2f_mobile_environments"></a>
 

@@ -111,7 +111,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 **Tip**  
 For **Filter**, choose **Customer managed** to filter the list to include only the policies that you have created\. This hides the AWS created policies and makes it much easier to find the one you're looking for\.
 
-   Then choose **Next: Tagging**\. 
+   Then choose **Next: Tags**\. 
 
 1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 

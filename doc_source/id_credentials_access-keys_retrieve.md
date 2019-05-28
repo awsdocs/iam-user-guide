@@ -22,4 +22,4 @@ When you first created your AWS account, you provided an email address and passw
 
 1. Provide the email address that you used to create the account\. Then provide the CAPTCHA text and choose **Continue**\.
 
-1. Check the email that is associated with your AWS account for a message from Amazon Web Services\. The email will come from an address ending in `@amazon.com` or `@aws.amazon.com`\. Follow the directions in the email\. If you don't see the email in your account, check your spam folder\. If you no longer have access to the email, see [I need to access an old account](troubleshoot_general.md#troubleshoot_general_lost-root-creds)\.
+1. Check the email that is associated with your AWS account for a message from Amazon Web Services\. The email will come from an address ending in `@amazon.com` or `@aws.amazon.com`\. Follow the directions in the email\. If you don't see the email in your account, check your spam folder\. If you no longer have access to the email, see [I Need to Access an Old Account](troubleshoot_general.md#troubleshoot_general_lost-root-creds)\.

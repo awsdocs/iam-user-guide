@@ -3,12 +3,12 @@
 Use the information here to help you diagnose common issues that you might encounter when working with U2F security keys\.
 
 **Topics**
-+ [I can't enable my U2F security key](#troubleshoot_mfa-u2f-cant-enable)
-+ [I can't sign in using my U2F security key](#troubleshoot_mfa-u2f-signin)
-+ [I lost or broke my U2F key](#troubleshoot_mfa-u2f-lost)
++ [I Can't Enable My U2F Security Key](#troubleshoot_mfa-u2f-cant-enable)
++ [I Can't Sign in Using My U2F Security Key](#troubleshoot_mfa-u2f-signin)
++ [I Lost or Broke My U2F Key](#troubleshoot_mfa-u2f-lost)
 + [Other Issues](#troubleshoot_mfa-u2f-other-issues)
 
-## I can't enable my U2F security key<a name="troubleshoot_mfa-u2f-cant-enable"></a>
+## I Can't Enable My U2F Security Key<a name="troubleshoot_mfa-u2f-cant-enable"></a>
 
 Consult the following solutions depending on your status as an IAM user or system administrator
 
@@ -40,11 +40,11 @@ If you can't enable your U2F security key, check the following:
 
 If you're an administrator and your IAM users can't enable their U2F security keys despite using a supported configuration, make sure they have the appropriate permissions\. For a detailed example, see [Tutorial: Enable Your Users to Configure Their Own Credentials and MFA Settings](tutorial_users-self-manage-mfa-and-creds.md)\.
 
-## I can't sign in using my U2F security key<a name="troubleshoot_mfa-u2f-signin"></a>
+## I Can't Sign in Using My U2F Security Key<a name="troubleshoot_mfa-u2f-signin"></a>
 
 If you're an IAM user and you can't sign in to the AWS Management Console using U2F, first see [Supported Configurations for Using U2F Security Keys](id_credentials_mfa_u2f_supported_configurations.md)\. If you're using a supported configuration but cannot sign in, contact your system administrator for assistance\. 
 
-## I lost or broke my U2F key<a name="troubleshoot_mfa-u2f-lost"></a>
+## I Lost or Broke My U2F Key<a name="troubleshoot_mfa-u2f-lost"></a>
 
 Only *one* MFA device \(virtual, U2F security key, or hardware\) is assigned to a user at a time\. Replacing a U2F security key is similar to replacing a hardware MFA device\. For information on what to do if you lose or break any type of MFA device, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\.
 

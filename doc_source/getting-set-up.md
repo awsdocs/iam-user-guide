@@ -24,13 +24,11 @@ IAM works only with AWS products that are integrated with IAM\. For a list of se
 
 **To sign up for AWS**
 
-1. Open [https://aws\.amazon\.com/](https://aws.amazon.com/), and then choose **Create an AWS Account**\.
-**Note**  
-If you previously signed in to the AWS Management Console using AWS account root user credentials, choose **Sign in to a different account**\. If you previously signed in to the console using IAM credentials, choose **Sign\-in using root account credentials**\. Then choose **Create a new AWS account**\.
+1. Open [https://portal\.aws\.amazon\.com/billing/signup](https://portal.aws.amazon.com/billing/signup)\.
 
 1. Follow the online instructions\.
 
-   Part of the sign\-up procedure involves receiving a phone call and entering a verification code using the phone keypad\.
+   Part of the sign\-up procedure involves receiving a phone call and entering a verification code on the phone keypad\.
 
 ## Additional Resources<a name="HowDoI"></a>
 
@@ -42,6 +40,6 @@ Here are some resources to help you get things done with IAM\.
 + Get the FAQ: [AWS Identity and Access Management FAQ](http://aws.amazon.com/iam/faqs/)
 + Get technical support: [AWS Support Center](https://console.aws.amazon.com/support/home#/)
 + Get premium technical support: [AWS Premium Support Center](https://aws.amazon.com/premiumsupport/)
-+ Find definitions of AWS terms: [ Amazon Web Services Glossary](http://docs.aws.amazon.com/general/latest/gr/glos-chap.html) 
++ Find definitions of AWS terms: [ Amazon Web Services Glossary](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html) 
 + Get community support: [IAM Discussion Forums](https://forums.aws.amazon.com/forum.jspa?forumID=76)
 + Contact AWS: [Contact Us](http://aws.amazon.com/contact-us/)

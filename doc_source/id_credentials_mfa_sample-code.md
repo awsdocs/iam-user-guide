@@ -59,7 +59,7 @@ string mfaTOTP = Console.ReadLine(); // Get string from user
    access key of an IAM user. The credentials can be in environment variables or in 
    a configuration file and will be discovered automatically
    by the AmazonSecurityTokenServiceClient constructor. For more information, see 
-   http://docs.aws.amazon.com/AWSSdkDocsNET/latest/DeveloperGuide/net-dg-config-creds.html
+   https://docs.aws.amazon.com/sdk-for-net/v2/developer-guide/net-dg-config-creds.html
 */
 AmazonSecurityTokenServiceClient stsClient = 
     new AmazonSecurityTokenServiceClient();

@@ -112,7 +112,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 
 ## Creating a Role for an AWS Service \(Console\)<a name="roles-creatingrole-service-console"></a>
 
-You can use the AWS Management Console to create a role for a service\. Because some services support more than one service role, see the [AWS documentation](http://docs.aws.amazon.com/) for your service to see which use case to choose\. You can learn how to assign the necessary trust and permissions policies to the role so that the service can assume the role on your behalf\. The steps that you can use to control the permissions for your role can vary, depending on how the service defines the use cases, and whether or not you create a service\-linked role\.
+You can use the AWS Management Console to create a role for a service\. Because some services support more than one service role, see the [AWS documentation](https://docs.aws.amazon.com/) for your service to see which use case to choose\. You can learn how to assign the necessary trust and permissions policies to the role so that the service can assume the role on your behalf\. The steps that you can use to control the permissions for your role can vary, depending on how the service defines the use cases, and whether or not you create a service\-linked role\.
 
 **To create a role for an AWS service \(console\)**
 
@@ -138,7 +138,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
    Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
-1. Choose **Next: Tagging**\.
+1. Choose **Next: Tags**\.
 
 1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
 

@@ -38,7 +38,7 @@ To perform the steps in this tutorial, you must already have the following:
 
 You begin by creating an IAM customer managed policy that denies all permissions except those required for IAM users to manage their own credentials and MFA devices\.
 
-1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don’t sign in with your AWS account root user credentials\. For more information, see [Create individual IAM users](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users)\.
+1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don’t sign in with your AWS account root user credentials\. For more information, see [Create individual IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users)\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -83,7 +83,7 @@ In this part of the tutorial, you sign in as the test user and verify that the p
 
 1. Now add an MFA device\. In the **Multi\-factor Authentication \(MFA\)** section, choose **Assign MFA device**\.
 **Note**  
-You might receive an error that you are not authorized to perform `iam:DeleteVirtualMFADevice`\. This could happen if someone previously began assigning a virtual MFA device to this user and cancelled the process\. To continue, you or another administrator must delete the user's existing MFA device\. For more information, see [I am not authorized to perform: iam:DeleteVirtualMFADevice](troubleshoot_general.md#troubleshoot_general_access-denied-delete-mfa)\.
+You might receive an error that you are not authorized to perform `iam:DeleteVirtualMFADevice`\. This could happen if someone previously began assigning a virtual MFA device to this user and cancelled the process\. To continue, you or another administrator must delete the user's existing MFA device\. For more information, see [I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice](troubleshoot_general.md#troubleshoot_general_access-denied-delete-mfa)\.
 
 1. For this tutorial, we use a virtual \(software\-based\) MFA device, such as the Google Authenticator app on a mobile phone\. Choose **Virtual MFA device**, and then click **Continue**\.
 

@@ -9,7 +9,7 @@ For all browsers, go to the page where you can reproduce the issue\. Then follow
 + [Mozilla Firefox](#firefox)
 + [Apple Safari](#safari)
 + [Microsoft Internet Explorer](#ie)
-+ [What to do with the Base64\-encoded SAML response](#whatnext)
++ [What to Do with the Base64\-Encoded SAML Response](#whatnext)
 
 ## Google Chrome<a name="chrome"></a>
 
@@ -63,10 +63,10 @@ These steps were tested using version 8\.0\.6 \(10600\.6\.3\)\. If you use anoth
 
 **To view a SAML response in Internet Explorer**
 
-The best way analyze network traffic in Internet Explorer is through the use of a third\-party tool\.
+The best way to analyze network traffic in Internet Explorer is through the use of a third\-party tool\.
 + Follow the steps at [http://social.technet.microsoft.com/wiki/contents/articles/3286.ad-fs-2-0-how-to-use-fiddler-web-debugger-to-analyze-a-ws-federation-passive-sign-in.aspx](http://social.technet.microsoft.com/wiki/contents/articles/3286.ad-fs-2-0-how-to-use-fiddler-web-debugger-to-analyze-a-ws-federation-passive-sign-in.aspx) to download and install Fiddler and capture the data\.
 
-## What to do with the Base64\-encoded SAML response<a name="whatnext"></a>
+## What to Do with the Base64\-Encoded SAML Response<a name="whatnext"></a>
 
 Once you find the Base64\-encoded SAML response element in your browser, copy it and use your favorite Base\-64 decoding tool to extract the XML tagged response\.
 
