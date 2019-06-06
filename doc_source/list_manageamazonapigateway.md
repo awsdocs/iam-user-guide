@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Manage Amazon API Gateway](#manageamazonapigateway-actions-as-permissions)
-+ [Resources Defined by API Gateway](#manageamazonapigateway-resources-for-iam-policies)
++ [Resources Defined by Manage Amazon API Gateway](#manageamazonapigateway-resources-for-iam-policies)
 + [Condition Keys for Manage Amazon API Gateway](#manageamazonapigateway-policy-keys)
 
 ## Actions Defined by Manage Amazon API Gateway<a name="manageamazonapigateway-actions-as-permissions"></a>
@@ -18,17 +18,9 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_manageamazonapigateway.html)
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ DELETE ](https://docs.aws.amazon.com/apigateway/api-reference/API_DELETE.html)  | Used to delete resources | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   [ GET ](https://docs.aws.amazon.com/apigateway/api-reference/API_GET.html)  | Used to get information about resources | Read |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   [ PATCH ](https://docs.aws.amazon.com/apigateway/api-reference/API_PATCH.html)  | Used to update resources | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   [ POST ](https://docs.aws.amazon.com/apigateway/api-reference/API_POST.html)  | Used to create child resources | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   [ PUT ](https://docs.aws.amazon.com/apigateway/api-reference/API_PUT.html)  | Used to update resources \(and, although not recommended, can be used to create child resources\) | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-|   UpdateRestApiPolicy  | Used to update the Resource Policy for a given API | Write |   [ apigateway\-general\* ](#manageamazonapigateway-apigateway-general)   |  |  | 
-
-## Resources Defined by API Gateway<a name="manageamazonapigateway-resources-for-iam-policies"></a>
+## Resources Defined by Manage Amazon API Gateway<a name="manageamazonapigateway-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#manageamazonapigateway-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
@@ -37,8 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ apigateway\-general ](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  |  arn:$\{Partition\}:apigateway:$\{Region\}::$\{ApiGatewayResourcePath\}  |  | 
+|   [ apigateway\-general ](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  |  arn:$\{Partition\}:apigateway:$\{Region\}::$\{ApiGatewayResourcePath\}  |   [ aws:ResourceTag/$\{TagKey\} ](#manageamazonapigateway-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Manage Amazon API Gateway<a name="manageamazonapigateway-policy-keys"></a>
 
-API Gateway has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Manage Amazon API Gateway defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  |  | String | 
+|   aws:ResourceTag/$\{TagKey\}  |  | String | 
+|   aws:TagKeys  |  | String | 

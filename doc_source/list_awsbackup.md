@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Backup](#awsbackup-actions-as-permissions)
-+ [Resources Defined by Backup](#awsbackup-resources-for-iam-policies)
++ [Resources Defined by AWS Backup](#awsbackup-resources-for-iam-policies)
 + [Condition Keys for AWS Backup](#awsbackup-policy-keys)
 
 ## Actions Defined by AWS Backup<a name="awsbackup-actions-as-permissions"></a>
@@ -65,7 +65,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateBackupPlan ](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html)  | Updates a backup plan\. | Write |  |  |  | 
 |   [ UpdateRecoveryPointLifecycle ](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateRecoveryPointLifecycle.html)  | Updates the lifecycle of the recovery point\. | Write |   [ backupVault\* ](#awsbackup-backupVault)   |  |  | 
 
-## Resources Defined by Backup<a name="awsbackup-resources-for-iam-policies"></a>
+## Resources Defined by AWS Backup<a name="awsbackup-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsbackup-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

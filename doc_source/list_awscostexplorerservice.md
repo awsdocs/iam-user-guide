@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Cost Explorer Service](#awscostexplorerservice-actions-as-permissions)
-+ [Resources Defined by Cost Explorer Service](#awscostexplorerservice-resources-for-iam-policies)
++ [Resources Defined by AWS Cost Explorer Service](#awscostexplorerservice-resources-for-iam-policies)
 + [Condition Keys for AWS Cost Explorer Service](#awscostexplorerservice-policy-keys)
 
 ## Actions Defined by AWS Cost Explorer Service<a name="awscostexplorerservice-actions-as-permissions"></a>
@@ -29,7 +29,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetReservationUtilization ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html)  | Grants permission to retrieve the reservation utilization for your account\. | Read |  |  |  | 
 |   [ GetTags ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html)  | Grants permission to query tags for a specified time period\. | Read |  |  |  | 
 
-## Resources Defined by Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
+## Resources Defined by AWS Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 
 AWS Cost Explorer Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

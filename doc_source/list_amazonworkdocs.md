@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon WorkDocs](#amazonworkdocs-actions-as-permissions)
-+ [Resources Defined by WorkDocs](#amazonworkdocs-resources-for-iam-policies)
++ [Resources Defined by Amazon WorkDocs](#amazonworkdocs-resources-for-iam-policies)
 + [Condition Keys for Amazon WorkDocs](#amazonworkdocs-policy-keys)
 
 ## Actions Defined by Amazon WorkDocs<a name="amazonworkdocs-actions-as-permissions"></a>
@@ -73,7 +73,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateInstanceAlias ](https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html) \[permission only\] | Grants permission to update an instance alias\. | Write |  |  |  | 
 |   [ UpdateUser ](https://docs.aws.amazon.com/workdocs/latest/APIReference/API_UpdateUser.html)  | Grants permission to update the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site\. | Write |  |  |  | 
 
-## Resources Defined by WorkDocs<a name="amazonworkdocs-resources-for-iam-policies"></a>
+## Resources Defined by Amazon WorkDocs<a name="amazonworkdocs-resources-for-iam-policies"></a>
 
 Amazon WorkDocs has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

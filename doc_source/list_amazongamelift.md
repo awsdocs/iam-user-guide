@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon GameLift](#amazongamelift-actions-as-permissions)
-+ [Resources Defined by GameLift](#amazongamelift-resources-for-iam-policies)
++ [Resources Defined by Amazon GameLift](#amazongamelift-resources-for-iam-policies)
 + [Condition Keys for Amazon GameLift](#amazongamelift-policy-keys)
 
 ## Actions Defined by Amazon GameLift<a name="amazongamelift-actions-as-permissions"></a>
@@ -62,7 +62,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateGameSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html)  | Sets game session properties | Write |  |  |  | 
 |   [ UpdateRuntimeConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html)  | Sets a fleet's runtime configuration, which specifies how to launch server processes on the fleet | Write |  |  |  | 
 
-## Resources Defined by GameLift<a name="amazongamelift-resources-for-iam-policies"></a>
+## Resources Defined by Amazon GameLift<a name="amazongamelift-resources-for-iam-policies"></a>
 
 Amazon GameLift has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

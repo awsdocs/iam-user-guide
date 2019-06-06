@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Database Migration Service](#awsdatabasemigrationservice-actions-as-permissions)
-+ [Resources Defined by DMS](#awsdatabasemigrationservice-resources-for-iam-policies)
++ [Resources Defined by AWS Database Migration Service](#awsdatabasemigrationservice-resources-for-iam-policies)
 + [Condition Keys for AWS Database Migration Service](#awsdatabasemigrationservice-policy-keys)
 
 ## Actions Defined by AWS Database Migration Service<a name="awsdatabasemigrationservice-actions-as-permissions"></a>
@@ -58,7 +58,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ StopReplicationTask ](https://docs.aws.amazon.com/dms/latest/APIReference/API_StopReplicationTask.html)  | Stops the replication task | Write |  |  |  | 
 |   [ TestConnection ](https://docs.aws.amazon.com/dms/latest/APIReference/API_TestConnection.html)  | Tests the connection between the replication instance and the endpoint | Read |  |  |  | 
 
-## Resources Defined by DMS<a name="awsdatabasemigrationservice-resources-for-iam-policies"></a>
+## Resources Defined by AWS Database Migration Service<a name="awsdatabasemigrationservice-resources-for-iam-policies"></a>
 
 AWS Database Migration Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

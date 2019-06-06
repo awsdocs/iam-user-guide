@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Comprehend Medical](#comprehendmedical-actions-as-permissions)
-+ [Resources Defined by ComprehendMedical](#comprehendmedical-resources-for-iam-policies)
++ [Resources Defined by Comprehend Medical](#comprehendmedical-resources-for-iam-policies)
 + [Condition Keys for Comprehend Medical](#comprehendmedical-policy-keys)
 
 ## Actions Defined by Comprehend Medical<a name="comprehendmedical-actions-as-permissions"></a>
@@ -24,7 +24,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ DetectEntities ](https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectEntities.html)  | Inspects the specified text for the specified type of entities and returns information about them\. | Read |  |  |  | 
 |   [ DetectPHI ](https://docs.aws.amazon.com/comprehend/latest/dg/API_hera_DetectPHI.html)  | Inspects the specified text for PHI entities and returns information about them\. | Read |  |  |  | 
 
-## Resources Defined by ComprehendMedical<a name="comprehendmedical-resources-for-iam-policies"></a>
+## Resources Defined by Comprehend Medical<a name="comprehendmedical-resources-for-iam-policies"></a>
 
 Comprehend Medical has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Route53 Domains](#amazonroute53domains-actions-as-permissions)
-+ [Resources Defined by Route53 Domains](#amazonroute53domains-resources-for-iam-policies)
++ [Resources Defined by Amazon Route53 Domains](#amazonroute53domains-resources-for-iam-policies)
 + [Condition Keys for Amazon Route53 Domains](#amazonroute53domains-policy-keys)
 
 ## Actions Defined by Amazon Route53 Domains<a name="amazonroute53domains-actions-as-permissions"></a>
@@ -45,7 +45,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateTagsForDomain ](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateTagsForDomain.html)  | Grants permission to add or update tags for a specified domain | Tagging |  |  |  | 
 |   [ ViewBilling ](https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ViewBilling.html)  | Grants permission to get all the domain\-related billing records for the current AWS account for a specified period | Read |  |  |  | 
 
-## Resources Defined by Route53 Domains<a name="amazonroute53domains-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Route53 Domains<a name="amazonroute53domains-resources-for-iam-policies"></a>
 
 Amazon Route53 Domains has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

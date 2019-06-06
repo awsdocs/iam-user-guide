@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Import Export Disk Service](#awsimportexportdiskservice-actions-as-permissions)
-+ [Resources Defined by Import/Export](#awsimportexportdiskservice-resources-for-iam-policies)
++ [Resources Defined by AWS Import Export Disk Service](#awsimportexportdiskservice-resources-for-iam-policies)
 + [Condition Keys for AWS Import Export Disk Service](#awsimportexportdiskservice-policy-keys)
 
 ## Actions Defined by AWS Import Export Disk Service<a name="awsimportexportdiskservice-actions-as-permissions"></a>
@@ -28,7 +28,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ ListJobs ](https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebListJobs.html)  | This action returns the jobs associated with the requester\. | List |  |  |  | 
 |   [ UpdateJob ](https://docs.aws.amazon.com/AWSImportExport/latest/DG/WebUpdateJob.html)  | You use this action to change the parameters specified in the original manifest file by supplying a new manifest file\. | Write |  |  |  | 
 
-## Resources Defined by Import/Export<a name="awsimportexportdiskservice-resources-for-iam-policies"></a>
+## Resources Defined by AWS Import Export Disk Service<a name="awsimportexportdiskservice-resources-for-iam-policies"></a>
 
 AWS Import Export Disk Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

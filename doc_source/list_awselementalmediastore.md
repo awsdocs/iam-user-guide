@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaStore](#awselementalmediastore-actions-as-permissions)
-+ [Resources Defined by MediaStore](#awselementalmediastore-resources-for-iam-policies)
++ [Resources Defined by AWS Elemental MediaStore](#awselementalmediastore-resources-for-iam-policies)
 + [Condition Keys for AWS Elemental MediaStore](#awselementalmediastore-policy-keys)
 
 ## Actions Defined by AWS Elemental MediaStore<a name="awselementalmediastore-actions-as-permissions"></a>
@@ -42,7 +42,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ StartAccessLogging ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html)  | Grants permission to enable access logging on any container in the current account\. | Write |  |  |  | 
 |   [ StopAccessLogging ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_StopAccessLogging.html)  | Grants permission to disable access logging on any container in the current account\. | Write |  |  |  | 
 
-## Resources Defined by MediaStore<a name="awselementalmediastore-resources-for-iam-policies"></a>
+## Resources Defined by AWS Elemental MediaStore<a name="awselementalmediastore-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awselementalmediastore-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

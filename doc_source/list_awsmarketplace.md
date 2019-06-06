@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Marketplace](#awsmarketplace-actions-as-permissions)
-+ [Resources Defined by Marketplace](#awsmarketplace-resources-for-iam-policies)
++ [Resources Defined by AWS Marketplace](#awsmarketplace-resources-for-iam-policies)
 + [Condition Keys for AWS Marketplace](#awsmarketplace-policy-keys)
 
 ## Actions Defined by AWS Marketplace<a name="awsmarketplace-actions-as-permissions"></a>
@@ -25,7 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ Unsubscribe ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to remove software subscriptions from the Your Software page\. | Write |  |  |  | 
 |   [ ViewSubscriptions ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to see subscribed software\. Without this permission, no other permissions will work\. | List |  |  |  | 
 
-## Resources Defined by Marketplace<a name="awsmarketplace-resources-for-iam-policies"></a>
+## Resources Defined by AWS Marketplace<a name="awsmarketplace-resources-for-iam-policies"></a>
 
 AWS Marketplace has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

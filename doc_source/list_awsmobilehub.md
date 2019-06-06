@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Mobile Hub](#awsmobilehub-actions-as-permissions)
-+ [Resources Defined by Mobile Hub](#awsmobilehub-resources-for-iam-policies)
++ [Resources Defined by AWS Mobile Hub](#awsmobilehub-resources-for-iam-policies)
 + [Condition Keys for AWS Mobile Hub](#awsmobilehub-policy-keys)
 
 ## Actions Defined by AWS Mobile Hub<a name="awsmobilehub-actions-as-permissions"></a>
@@ -44,7 +44,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateProject ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | Update project | Write |   [ project\* ](#awsmobilehub-project)   |  |  | 
 |   [ VerifyServiceRole ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | Verify AWS Mobile Hub is enabled in the account | Read |  |  |  | 
 
-## Resources Defined by Mobile Hub<a name="awsmobilehub-resources-for-iam-policies"></a>
+## Resources Defined by AWS Mobile Hub<a name="awsmobilehub-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsmobilehub-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Mobile Analytics](#amazonmobileanalytics-actions-as-permissions)
-+ [Resources Defined by Mobile Analytics](#amazonmobileanalytics-resources-for-iam-policies)
++ [Resources Defined by Amazon Mobile Analytics](#amazonmobileanalytics-resources-for-iam-policies)
 + [Condition Keys for Amazon Mobile Analytics](#amazonmobileanalytics-policy-keys)
 
 ## Actions Defined by Amazon Mobile Analytics<a name="amazonmobileanalytics-actions-as-permissions"></a>
@@ -25,7 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   GetReports  | Grant access to standard metrics for an app | Read |  |  |  | 
 |   [ PutEvents ](https://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html)  | The PutEvents operation records one or more events | Write |  |  |  | 
 
-## Resources Defined by Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
 
 Amazon Mobile Analytics has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

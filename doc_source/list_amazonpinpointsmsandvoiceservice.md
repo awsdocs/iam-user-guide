@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Pinpoint SMS and Voice Service](#amazonpinpointsmsandvoiceservice-actions-as-permissions)
-+ [Resources Defined by Pinpoint SMS Voice](#amazonpinpointsmsandvoiceservice-resources-for-iam-policies)
++ [Resources Defined by Amazon Pinpoint SMS and Voice Service](#amazonpinpointsmsandvoiceservice-resources-for-iam-policies)
 + [Condition Keys for Amazon Pinpoint SMS and Voice Service](#amazonpinpointsmsandvoiceservice-policy-keys)
 
 ## Actions Defined by Amazon Pinpoint SMS and Voice Service<a name="amazonpinpointsmsandvoiceservice-actions-as-permissions"></a>
@@ -30,7 +30,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ SendVoiceMessage ](https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-voice-message.html)  | Create a new voice message and send it to a recipient's phone number\. | Write |  |  |  | 
 |   [ UpdateConfigurationSetEventDestination ](https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/v1-sms-voice-configuration-sets-configurationsetname-event-destinations-eventdestinationname.html)  | Update an event destination in a configuration set\. An event destination is a location that you publish information about your voice calls to\. For example, you can log an event to an Amazon CloudWatch destination when a call fails\. | Write |  |  |   iam:PassRole   | 
 
-## Resources Defined by Pinpoint SMS Voice<a name="amazonpinpointsmsandvoiceservice-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Pinpoint SMS and Voice Service<a name="amazonpinpointsmsandvoiceservice-resources-for-iam-policies"></a>
 
 Amazon Pinpoint SMS and Voice Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

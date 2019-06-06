@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS CodeDeploy](#awscodedeploy-actions-as-permissions)
-+ [Resources Defined by CodeDeploy](#awscodedeploy-resources-for-iam-policies)
++ [Resources Defined by AWS CodeDeploy](#awscodedeploy-resources-for-iam-policies)
 + [Condition Keys for AWS CodeDeploy](#awscodedeploy-policy-keys)
 
 ## Actions Defined by AWS CodeDeploy<a name="awscodedeploy-actions-as-permissions"></a>
@@ -59,7 +59,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateApplication ](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateApplication.html)  | Description for UpdateApplication | Write |   [ application\* ](#awscodedeploy-application)   |  |  | 
 |   [ UpdateDeploymentGroup ](https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_UpdateDeploymentGroup.html)  | Change information about a single deployment group for an application associated with the IAM user\. | Write |   [ deploymentgroup\* ](#awscodedeploy-deploymentgroup)   |  |  | 
 
-## Resources Defined by CodeDeploy<a name="awscodedeploy-resources-for-iam-policies"></a>
+## Resources Defined by AWS CodeDeploy<a name="awscodedeploy-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awscodedeploy-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

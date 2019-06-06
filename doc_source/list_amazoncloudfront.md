@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon CloudFront](#amazoncloudfront-actions-as-permissions)
-+ [Resources Defined by CloudFront](#amazoncloudfront-resources-for-iam-policies)
++ [Resources Defined by Amazon CloudFront](#amazoncloudfront-resources-for-iam-policies)
 + [Condition Keys for Amazon CloudFront](#amazoncloudfront-policy-keys)
 
 ## Actions Defined by Amazon CloudFront<a name="amazoncloudfront-actions-as-permissions"></a>
@@ -49,7 +49,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateDistribution ](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html)  | This action updates the configuration for a web distribution \(PUT /2016\-11\-25/distribution/<DISTRIBUTION\_ID>/config\)\. | Write |  |  |  | 
 |   [ UpdateStreamingDistribution ](https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateStreamingDistribution.html)  | This action updates the configuration for an RTMP distribution \(PUT /2016\-11\-25/streaming\-distribution/<DISTRIBUTION\_ID>/config\)\. | Write |  |  |  | 
 
-## Resources Defined by CloudFront<a name="amazoncloudfront-resources-for-iam-policies"></a>
+## Resources Defined by Amazon CloudFront<a name="amazoncloudfront-resources-for-iam-policies"></a>
 
 Amazon CloudFront has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

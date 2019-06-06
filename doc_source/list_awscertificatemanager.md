@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Certificate Manager](#awscertificatemanager-actions-as-permissions)
-+ [Resources Defined by Certificate Manager](#awscertificatemanager-resources-for-iam-policies)
++ [Resources Defined by AWS Certificate Manager](#awscertificatemanager-resources-for-iam-policies)
 + [Condition Keys for AWS Certificate Manager](#awscertificatemanager-policy-keys)
 
 ## Actions Defined by AWS Certificate Manager<a name="awscertificatemanager-actions-as-permissions"></a>
@@ -35,7 +35,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ ResendValidationEmail ](https://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html)  | Resends an email to request domain ownership validation\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
 |   [ UpdateCertificateOptions ](https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificateOptions.html)  | Updates a certificate\. Use to specify whether to opt in to or out of certificate transparency logging\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
 
-## Resources Defined by Certificate Manager<a name="awscertificatemanager-resources-for-iam-policies"></a>
+## Resources Defined by AWS Certificate Manager<a name="awscertificatemanager-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awscertificatemanager-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

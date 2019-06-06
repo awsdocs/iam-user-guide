@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Marketplace Metering Service](#awsmarketplacemeteringservice-actions-as-permissions)
-+ [Resources Defined by Marketplace Metering](#awsmarketplacemeteringservice-resources-for-iam-policies)
++ [Resources Defined by AWS Marketplace Metering Service](#awsmarketplacemeteringservice-resources-for-iam-policies)
 + [Condition Keys for AWS Marketplace Metering Service](#awsmarketplacemeteringservice-policy-keys)
 
 ## Actions Defined by AWS Marketplace Metering Service<a name="awsmarketplacemeteringservice-actions-as-permissions"></a>
@@ -26,7 +26,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ RegisterUsage ](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_RegisterUsage.html)  | Allows you to verify that the customer running your paid software is subscribed to your product on AWS Marketplace, enabling you to guard against unauthorized use\. Meters software use per ECS task, per hour, with usage prorated to the second\. | Write |  |  |  | 
 |   [ ResolveCustomer ](https://docs.aws.amazon.com/marketplacemetering/latest/APIReference/API_ResolveCustomer.html)  | Resolves a registration token to obtain a CustomerIdentifier and product code\. | Write |  |  |  | 
 
-## Resources Defined by Marketplace Metering<a name="awsmarketplacemeteringservice-resources-for-iam-policies"></a>
+## Resources Defined by AWS Marketplace Metering Service<a name="awsmarketplacemeteringservice-resources-for-iam-policies"></a>
 
 AWS Marketplace Metering Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

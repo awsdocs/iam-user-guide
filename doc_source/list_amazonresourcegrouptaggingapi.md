@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Resource Group Tagging API](#amazonresourcegrouptaggingapi-actions-as-permissions)
-+ [Resources Defined by Resource Group Tagging](#amazonresourcegrouptaggingapi-resources-for-iam-policies)
++ [Resources Defined by Amazon Resource Group Tagging API](#amazonresourcegrouptaggingapi-resources-for-iam-policies)
 + [Condition Keys for Amazon Resource Group Tagging API](#amazonresourcegrouptaggingapi-policy-keys)
 
 ## Actions Defined by Amazon Resource Group Tagging API<a name="amazonresourcegrouptaggingapi-actions-as-permissions"></a>
@@ -27,7 +27,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ TagResources ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html)  | Add tags to AWS resources | Tagging |  |  |  | 
 |   [ UntagResources ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html)  | Remove tags from AWS resources | Tagging |  |  |  | 
 
-## Resources Defined by Resource Group Tagging<a name="amazonresourcegrouptaggingapi-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Resource Group Tagging API<a name="amazonresourcegrouptaggingapi-resources-for-iam-policies"></a>
 
 Amazon Resource Group Tagging API has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

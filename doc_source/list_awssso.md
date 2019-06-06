@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS SSO](#awssso-actions-as-permissions)
-+ [Resources Defined by SSO](#awssso-resources-for-iam-policies)
++ [Resources Defined by AWS SSO](#awssso-resources-for-iam-policies)
 + [Condition Keys for AWS SSO](#awssso-policy-keys)
 
 ## Actions Defined by AWS SSO<a name="awssso-actions-as-permissions"></a>
@@ -87,7 +87,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateTrust ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Update the federation trust in a target account | Write |  |  |  | 
 |   [ UpdateUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates user information | Write |  |  |  | 
 
-## Resources Defined by SSO<a name="awssso-resources-for-iam-policies"></a>
+## Resources Defined by AWS SSO<a name="awssso-resources-for-iam-policies"></a>
 
 AWS SSO has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

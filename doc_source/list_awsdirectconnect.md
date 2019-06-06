@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Direct Connect](#awsdirectconnect-actions-as-permissions)
-+ [Resources Defined by Direct Connect](#awsdirectconnect-resources-for-iam-policies)
++ [Resources Defined by AWS Direct Connect](#awsdirectconnect-resources-for-iam-policies)
 + [Condition Keys for AWS Direct Connect](#awsdirectconnect-policy-keys)
 
 ## Actions Defined by AWS Direct Connect<a name="awsdirectconnect-actions-as-permissions"></a>
@@ -67,7 +67,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateLag ](https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateLag.html)  | Updates the attributes of the specified link aggregation group \(LAG\)\. | Read |  |  |  | 
 |   [ UpdateVirtualInterfaceAttributes ](https://docs.aws.amazon.com/directconnect/latest/APIReference/API_UpdateVirtualInterfaceAttributes.html)  | Updates the specified attributes of the specified virtual private interface\. | Read |  |  |  | 
 
-## Resources Defined by Direct Connect<a name="awsdirectconnect-resources-for-iam-policies"></a>
+## Resources Defined by AWS Direct Connect<a name="awsdirectconnect-resources-for-iam-policies"></a>
 
 AWS Direct Connect has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

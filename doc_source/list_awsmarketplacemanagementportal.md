@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Marketplace Management Portal](#awsmarketplacemanagementportal-actions-as-permissions)
-+ [Resources Defined by Marketplace Portal](#awsmarketplacemanagementportal-resources-for-iam-policies)
++ [Resources Defined by AWS Marketplace Management Portal](#awsmarketplacemanagementportal-resources-for-iam-policies)
 + [Condition Keys for AWS Marketplace Management Portal](#awsmarketplacemanagementportal-policy-keys)
 
 ## Actions Defined by AWS Marketplace Management Portal<a name="awsmarketplacemanagementportal-actions-as-permissions"></a>
@@ -27,7 +27,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ viewSettings ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Settings page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
 |   [ viewSupport ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Allows a user to access the Customer Support Eligibility page inside the AWS Marketplace Management Portal\. | List |  |  |  | 
 
-## Resources Defined by Marketplace Portal<a name="awsmarketplacemanagementportal-resources-for-iam-policies"></a>
+## Resources Defined by AWS Marketplace Management Portal<a name="awsmarketplacemanagementportal-resources-for-iam-policies"></a>
 
 AWS Marketplace Management Portal has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

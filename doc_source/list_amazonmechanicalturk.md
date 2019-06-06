@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Mechanical Turk](#amazonmechanicalturk-actions-as-permissions)
-+ [Resources Defined by MechanicalTurk](#amazonmechanicalturk-resources-for-iam-policies)
++ [Resources Defined by Amazon Mechanical Turk](#amazonmechanicalturk-resources-for-iam-policies)
 + [Condition Keys for Amazon Mechanical Turk](#amazonmechanicalturk-policy-keys)
 
 ## Actions Defined by Amazon Mechanical Turk<a name="amazonmechanicalturk-actions-as-permissions"></a>
@@ -65,7 +65,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateQualificationScore ](https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateQualificationScoreOperation.html)  | The UpdateQualificationScore operation changes the value of a Qualification previously granted to a Worker | Write |  |  |  | 
 |   [ UpdateQualificationType ](https://docs.aws.amazon.com/AWSMechTurk/latest/AWSMturkAPI/ApiReference_UpdateQualificationTypeOperation.html)  | The UpdateQualificationType operation modifies the attributes of an existing Qualification type, which is represented by a QualificationType data structure | Write |  |  |  | 
 
-## Resources Defined by MechanicalTurk<a name="amazonmechanicalturk-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Mechanical Turk<a name="amazonmechanicalturk-resources-for-iam-policies"></a>
 
 Amazon Mechanical Turk has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

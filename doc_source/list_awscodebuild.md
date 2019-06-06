@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS CodeBuild](#awscodebuild-actions-as-permissions)
-+ [Resources Defined by CodeBuild](#awscodebuild-resources-for-iam-policies)
++ [Resources Defined by AWS CodeBuild](#awscodebuild-resources-for-iam-policies)
 + [Condition Keys for AWS CodeBuild](#awscodebuild-policy-keys)
 
 ## Actions Defined by AWS CodeBuild<a name="awscodebuild-actions-as-permissions"></a>
@@ -45,7 +45,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateProject ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateProject.html)  | Changes the settings of an existing build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
 |   [ UpdateWebhook ](https://docs.aws.amazon.com/codebuild/latest/APIReference/API_UpdateWebhook.html)  | Updates the webhook associated with an AWS CodeBuild build project\. | Write |   [ project\* ](#awscodebuild-project)   |  |  | 
 
-## Resources Defined by CodeBuild<a name="awscodebuild-resources-for-iam-policies"></a>
+## Resources Defined by AWS CodeBuild<a name="awscodebuild-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awscodebuild-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

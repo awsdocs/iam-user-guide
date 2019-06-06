@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Support](#awssupport-actions-as-permissions)
-+ [Resources Defined by Support](#awssupport-resources-for-iam-policies)
++ [Resources Defined by AWS Support](#awssupport-resources-for-iam-policies)
 + [Condition Keys for AWS Support](#awssupport-policy-keys)
 
 ## Actions Defined by AWS Support<a name="awssupport-actions-as-permissions"></a>
@@ -38,7 +38,7 @@ AWS Support does not let you allow or deny access to individual actions; therefo
 |   [ RefreshTrustedAdvisorCheck ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_RefreshTrustedAdvisorCheck.html)  | Requests a refresh of the Trusted Advisor check that has the specified check ID\. | Write |  |  |  | 
 |   [ ResolveCase ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_ResolveCase.html)  | Resolves a case\. | Write |  |  |  | 
 
-## Resources Defined by Support<a name="awssupport-resources-for-iam-policies"></a>
+## Resources Defined by AWS Support<a name="awssupport-resources-for-iam-policies"></a>
 
 AWS Support has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

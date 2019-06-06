@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Transcribe](#amazontranscribe-actions-as-permissions)
-+ [Resources Defined by Transcribe](#amazontranscribe-resources-for-iam-policies)
++ [Resources Defined by Amazon Transcribe](#amazontranscribe-resources-for-iam-policies)
 + [Condition Keys for Amazon Transcribe](#amazontranscribe-policy-keys)
 
 ## Actions Defined by Amazon Transcribe<a name="amazontranscribe-actions-as-permissions"></a>
@@ -32,7 +32,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ StartTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html)  | Starts an asynchronous job to transcribe speech to text\. | Write |  |  |   s3:GetObject   | 
 |   [ UpdateVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html)  | Updates an existing vocabulary with new values\. The UpdateVocabulary operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
 
-## Resources Defined by Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
 
 Amazon Transcribe has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -8,7 +8,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Code Signing for Amazon FreeRTOS](#awscodesigningforamazonfreertos-actions-as-permissions)
-+ [Resources Defined by Signer](#awscodesigningforamazonfreertos-resources-for-iam-policies)
++ [Resources Defined by AWS Code Signing for Amazon FreeRTOS](#awscodesigningforamazonfreertos-resources-for-iam-policies)
 + [Condition Keys for AWS Code Signing for Amazon FreeRTOS](#awscodesigningforamazonfreertos-policy-keys)
 
 ## Actions Defined by AWS Code Signing for Amazon FreeRTOS<a name="awscodesigningforamazonfreertos-actions-as-permissions"></a>
@@ -30,7 +30,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ PutSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html)  | Creates a new signing profile if not exists\. | Write |  |  |  | 
 |   [ StartSigningJob ](https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html)  | Starts a code signing request\. | Write |   [ signing\-profile\* ](#awscodesigningforamazonfreertos-signing-profile)   |  |  | 
 
-## Resources Defined by Signer<a name="awscodesigningforamazonfreertos-resources-for-iam-policies"></a>
+## Resources Defined by AWS Code Signing for Amazon FreeRTOS<a name="awscodesigningforamazonfreertos-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awscodesigningforamazonfreertos-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

@@ -8,7 +8,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Snowball](#awssnowball-actions-as-permissions)
-+ [Resources Defined by Snowball](#awssnowball-resources-for-iam-policies)
++ [Resources Defined by AWS Snowball](#awssnowball-resources-for-iam-policies)
 + [Condition Keys for AWS Snowball](#awssnowball-policy-keys)
 
 ## Actions Defined by AWS Snowball<a name="awssnowball-actions-as-permissions"></a>
@@ -38,7 +38,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateCluster ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateCluster.html)  | While a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster\. | Write |  |  |  | 
 |   [ UpdateJob ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJob.html)  | While a job's JobState value is New, you can update some of the information associated with a job\. | Write |  |  |  | 
 
-## Resources Defined by Snowball<a name="awssnowball-resources-for-iam-policies"></a>
+## Resources Defined by AWS Snowball<a name="awssnowball-resources-for-iam-policies"></a>
 
 AWS Snowball has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

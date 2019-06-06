@@ -7,7 +7,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon GroundTruth Labeling](#amazongroundtruthlabeling-actions-as-permissions)
-+ [Resources Defined by GroundTruth Labeling](#amazongroundtruthlabeling-resources-for-iam-policies)
++ [Resources Defined by Amazon GroundTruth Labeling](#amazongroundtruthlabeling-resources-for-iam-policies)
 + [Condition Keys for Amazon GroundTruth Labeling](#amazongroundtruthlabeling-policy-keys)
 
 ## Actions Defined by Amazon GroundTruth Labeling<a name="amazongroundtruthlabeling-actions-as-permissions"></a>
@@ -24,7 +24,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ RunFilterOrSampleDatasetJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunFilterOrSampleDatasetJob.html)  | Filter records from a manifest file using S3 select\. Get Sample entries based on random sampling\. | Write |  |  |  | 
 |   [ RunGenerateManifestByCrawlingJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunGenerateManifestByCrawlingJob.html)  | List a S3 prefix and create manifest files from objects in there\. | Write |  |  |  | 
 
-## Resources Defined by GroundTruth Labeling<a name="amazongroundtruthlabeling-resources-for-iam-policies"></a>
+## Resources Defined by Amazon GroundTruth Labeling<a name="amazongroundtruthlabeling-resources-for-iam-policies"></a>
 
 Amazon GroundTruth Labeling has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

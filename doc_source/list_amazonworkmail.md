@@ -8,7 +8,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon WorkMail](#amazonworkmail-actions-as-permissions)
-+ [Resources Defined by WorkMail](#amazonworkmail-resources-for-iam-policies)
++ [Resources Defined by Amazon WorkMail](#amazonworkmail-resources-for-iam-policies)
 + [Condition Keys for Amazon WorkMail](#amazonworkmail-policy-keys)
 
 ## Actions Defined by Amazon WorkMail<a name="amazonworkmail-actions-as-permissions"></a>
@@ -57,7 +57,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   SetMobilePolicyDetails  | Description for SetMobilePolicyDetails | Write |  |  |  | 
 |   WipeMobileDevice  | Description for WipeMobileDevice | Write |  |  |  | 
 
-## Resources Defined by WorkMail<a name="amazonworkmail-resources-for-iam-policies"></a>
+## Resources Defined by Amazon WorkMail<a name="amazonworkmail-resources-for-iam-policies"></a>
 
 Amazon WorkMail has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

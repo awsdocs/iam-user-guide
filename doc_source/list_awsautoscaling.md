@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Auto Scaling](#awsautoscaling-actions-as-permissions)
-+ [Resources Defined by Auto Scaling](#awsautoscaling-resources-for-iam-policies)
++ [Resources Defined by AWS Auto Scaling](#awsautoscaling-resources-for-iam-policies)
 + [Condition Keys for AWS Auto Scaling](#awsautoscaling-policy-keys)
 
 ## Actions Defined by AWS Auto Scaling<a name="awsautoscaling-actions-as-permissions"></a>
@@ -28,7 +28,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetScalingPlanResourceForecastData ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_GetScalingPlanResourceForecastData.html)  | Retrieves the forecast data for a scalable resource\. | Read |  |  |  | 
 |   [ UpdateScalingPlan ](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_UpdateScalingPlan.html)  | Updates a scaling plan\. | Write |  |  |  | 
 
-## Resources Defined by Auto Scaling<a name="awsautoscaling-resources-for-iam-policies"></a>
+## Resources Defined by AWS Auto Scaling<a name="awsautoscaling-resources-for-iam-policies"></a>
 
 AWS Auto Scaling has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

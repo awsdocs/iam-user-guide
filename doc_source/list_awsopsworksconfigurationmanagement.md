@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS OpsWorks Configuration Management](#awsopsworksconfigurationmanagement-actions-as-permissions)
-+ [Resources Defined by OpsworksCM](#awsopsworksconfigurationmanagement-resources-for-iam-policies)
++ [Resources Defined by AWS OpsWorks Configuration Management](#awsopsworksconfigurationmanagement-resources-for-iam-policies)
 + [Condition Keys for AWS OpsWorks Configuration Management](#awsopsworksconfigurationmanagement-policy-keys)
 
 ## Actions Defined by AWS OpsWorks Configuration Management<a name="awsopsworksconfigurationmanagement-actions-as-permissions"></a>
@@ -37,7 +37,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateServer ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html)  | Update general server settings\. | Write |  |  |  | 
 |   [ UpdateServerEngineAttributes ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html)  | Update server settings specific to the configuration management type\. | Write |  |  |  | 
 
-## Resources Defined by OpsworksCM<a name="awsopsworksconfigurationmanagement-resources-for-iam-policies"></a>
+## Resources Defined by AWS OpsWorks Configuration Management<a name="awsopsworksconfigurationmanagement-resources-for-iam-policies"></a>
 
 AWS OpsWorks Configuration Management has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Amplify](#awsamplify-actions-as-permissions)
-+ [Resources Defined by Amplify](#awsamplify-resources-for-iam-policies)
++ [Resources Defined by AWS Amplify](#awsamplify-resources-for-iam-policies)
 + [Condition Keys for AWS Amplify](#awsamplify-policy-keys)
 
 ## Actions Defined by AWS Amplify<a name="awsamplify-actions-as-permissions"></a>
@@ -42,7 +42,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateBranch ](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Updates a branch for an Amplify App\. | Write |   [ branches\* ](#awsamplify-branches)   |  |  | 
 |   [ UpdateDomainAssociation ](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Update a DomainAssociation on an App\. | Write |   [ domains\* ](#awsamplify-domains)   |  |  | 
 
-## Resources Defined by Amplify<a name="awsamplify-resources-for-iam-policies"></a>
+## Resources Defined by AWS Amplify<a name="awsamplify-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsamplify-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

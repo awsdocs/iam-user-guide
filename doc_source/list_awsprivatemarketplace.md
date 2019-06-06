@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Private Marketplace](#awsprivatemarketplace-actions-as-permissions)
-+ [Resources Defined by Private Marketplace](#awsprivatemarketplace-resources-for-iam-policies)
++ [Resources Defined by AWS Private Marketplace](#awsprivatemarketplace-resources-for-iam-policies)
 + [Condition Keys for AWS Private Marketplace](#awsprivatemarketplace-policy-keys)
 
 ## Actions Defined by AWS Private Marketplace<a name="awsprivatemarketplace-actions-as-permissions"></a>
@@ -33,7 +33,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ StopPrivateMarketplace ](https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html) \[permission only\] | Stops the Private Marketplace, disabling the customized AWS Marketplace experience and removing the Private Marketplace procurement restrictions on products\. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it\. | Write |  |  |  | 
 |   [ UpdatePrivateMarketplaceProfile ](https://docs.aws.amazon.com/marketplace/latest/buyerguide/private-marketplace.html) \[permission only\] | Updates the Private Marketplace Profile that customizes the white label experience on the AWS Marketplace website for the individual account, or for the entire AWS Organization if one exists\. This action can be performed by any account in an AWS Organization, provided the user has permissions to do so, and the Organization's Service Control Policies allow it\. | Write |  |  |  | 
 
-## Resources Defined by Private Marketplace<a name="awsprivatemarketplace-resources-for-iam-policies"></a>
+## Resources Defined by AWS Private Marketplace<a name="awsprivatemarketplace-resources-for-iam-policies"></a>
 
 AWS Private Marketplace has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Pinpoint](#amazonpinpoint-actions-as-permissions)
-+ [Resources Defined by Pinpoint](#amazonpinpoint-resources-for-iam-policies)
++ [Resources Defined by Amazon Pinpoint](#amazonpinpoint-resources-for-iam-policies)
 + [Condition Keys for Amazon Pinpoint](#amazonpinpoint-policy-keys)
 
 ## Actions Defined by Amazon Pinpoint<a name="amazonpinpoint-actions-as-permissions"></a>
@@ -20,7 +20,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 ****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpoint.html)
 
-## Resources Defined by Pinpoint<a name="amazonpinpoint-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Pinpoint<a name="amazonpinpoint-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonpinpoint-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

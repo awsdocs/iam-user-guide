@@ -3,13 +3,11 @@
 Amazon Pinpoint Email Service \(service prefix: `ses`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/pinpoint-email/latest/DeveloperGuide/)\.
 + View a [list of the API operations available for this service](https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/pinpoint-email/latest/DeveloperGuide/control-user-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Pinpoint Email Service](#amazonpinpointemailservice-actions-as-permissions)
-+ [Resources Defined by Pinpoint Email](#amazonpinpointemailservice-resources-for-iam-policies)
++ [Resources Defined by Amazon Pinpoint Email Service](#amazonpinpointemailservice-resources-for-iam-policies)
 + [Condition Keys for Amazon Pinpoint Email Service](#amazonpinpointemailservice-policy-keys)
 
 ## Actions Defined by Amazon Pinpoint Email Service<a name="amazonpinpointemailservice-actions-as-permissions"></a>
@@ -20,7 +18,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 ****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonpinpointemailservice.html)
 
-## Resources Defined by Pinpoint Email<a name="amazonpinpointemailservice-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Pinpoint Email Service<a name="amazonpinpointemailservice-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonpinpointemailservice-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
@@ -49,7 +47,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 
-|   [ ses:FeedbackAddress ](https://docs.aws.amazon.com/pinpoint-email/latest/DeveloperGuide/email-format.html#email-header)  | The "Return\-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding\. | String | 
-|   [ ses:FromAddress ](https://docs.aws.amazon.com/pinpoint-email/latest/DeveloperGuide/email-format.html#email-header)  | The "From" address of a message\. | String | 
-|   [ ses:FromDisplayName ](https://docs.aws.amazon.com/pinpoint-email/latest/DeveloperGuide/email-format.html#email-header)  | The "From" address that is used as the display name of a message\. | String | 
-|   [ ses:Recipients ](https://docs.aws.amazon.com/pinpoint-email/latest/DeveloperGuide/email-format.html#email-header)  | The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses\. | String | 
+|   ses:FeedbackAddress  | The "Return\-Path" address, which specifies where bounces and complaints are sent by email feedback forwarding\. | String | 
+|   ses:FromAddress  | The "From" address of a message\. | String | 
+|   ses:FromDisplayName  | The "From" address that is used as the display name of a message\. | String | 
+|   ses:Recipients  | The recipient addresses of a message, which include the "To", "CC", and "BCC" addresses\. | String | 

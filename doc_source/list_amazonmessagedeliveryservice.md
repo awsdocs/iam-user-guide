@@ -4,7 +4,7 @@ Amazon Message Delivery Service \(service prefix: `ec2messages`\) provides the f
 
 **Topics**
 + [Actions Defined by Amazon Message Delivery Service](#amazonmessagedeliveryservice-actions-as-permissions)
-+ [Resources Defined by EC2 Messages](#amazonmessagedeliveryservice-resources-for-iam-policies)
++ [Resources Defined by Amazon Message Delivery Service](#amazonmessagedeliveryservice-resources-for-iam-policies)
 + [Condition Keys for Amazon Message Delivery Service](#amazonmessagedeliveryservice-policy-keys)
 
 ## Actions Defined by Amazon Message Delivery Service<a name="amazonmessagedeliveryservice-actions-as-permissions"></a>
@@ -23,7 +23,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   GetMessages  | Delivers messages to clients/instances using long polling | Read |  |  |  | 
 |   SendReply  | Sends replies from clients/instances to upstream service | Write |  |  |  | 
 
-## Resources Defined by EC2 Messages<a name="amazonmessagedeliveryservice-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Message Delivery Service<a name="amazonmessagedeliveryservice-resources-for-iam-policies"></a>
 
 Amazon Message Delivery Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

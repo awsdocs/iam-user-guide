@@ -71,7 +71,7 @@ Your condition block has three separate condition operators, and all three of th
 The following shows what the condition block looks like in your policy\. The two values for `aws:SourceIp` are evaluated using OR\. The three separate condition operators are evaluated using AND\.
 
 ```
- 1. "Condition" :  {
+ 1. "Condition" :  [
  2.       "DateGreaterThan" : {
  3.          "aws:CurrentTime" : "2013-08-16T12:00:00Z"
  4.        },
@@ -81,7 +81,7 @@ The following shows what the condition block looks like in your policy\. The two
  8.        "IpAddress" : {
  9.           "aws:SourceIp" : ["192.0.2.0/24", "203.0.113.0/24"]
 10.       }
-11. }
+11. ]
 ```
 
 Finally, under some circumstances, individual keys in a policy can contain multiple values\. You can use *condition set operators* to test these multivalued keys against one or more values listed in the policy\. For more information, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)\. 

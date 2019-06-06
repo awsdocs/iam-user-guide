@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS X\-Ray](#awsx-ray-actions-as-permissions)
-+ [Resources Defined by X\-Ray](#awsx-ray-resources-for-iam-policies)
++ [Resources Defined by AWS X\-Ray](#awsx-ray-resources-for-iam-policies)
 + [Condition Keys for AWS X\-Ray](#awsx-ray-policy-keys)
 
 ## Actions Defined by AWS X\-Ray<a name="awsx-ray-actions-as-permissions"></a>
@@ -42,7 +42,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateGroup ](https://docs.aws.amazon.com/xray/latest/api/API_UpdateGroup.html)  | Updates a group resource\. | Write |   [ group\* ](#awsx-ray-group)   |  |  | 
 |   [ UpdateSamplingRule ](https://docs.aws.amazon.com/xray/latest/api/API_UpdateSamplingRule.html)  | Modifies a sampling rule's configuration\. | Write |   [ sampling\-rule\* ](#awsx-ray-sampling-rule)   |  |  | 
 
-## Resources Defined by X\-Ray<a name="awsx-ray-resources-for-iam-policies"></a>
+## Resources Defined by AWS X\-Ray<a name="awsx-ray-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsx-ray-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

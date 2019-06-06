@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Textract](#amazontextract-actions-as-permissions)
-+ [Resources Defined by Textract](#amazontextract-resources-for-iam-policies)
++ [Resources Defined by Amazon Textract](#amazontextract-resources-for-iam-policies)
 + [Condition Keys for Amazon Textract](#amazontextract-policy-keys)
 
 ## Actions Defined by Amazon Textract<a name="amazontextract-actions-as-permissions"></a>
@@ -28,7 +28,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ StartDocumentAnalysis ](https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentAnalysis.html)  | Starts an asynchronous job to detect instances of real\-world document entities within an image or pdf provided as input\. | Write |  |  |   s3:GetObject   | 
 |   [ StartDocumentTextDetection ](https://docs.aws.amazon.com/textract/latest/dg/API_StartDocumentTextDetection.html)  | Starts an asynchronous job to detect text in document images or pdfs\. | Write |  |  |   s3:GetObject   | 
 
-## Resources Defined by Textract<a name="amazontextract-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Textract<a name="amazontextract-resources-for-iam-policies"></a>
 
 Amazon Textract has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

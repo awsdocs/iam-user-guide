@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon ElastiCache](#amazonelasticache-actions-as-permissions)
-+ [Resources Defined by ElastiCache](#amazonelasticache-resources-for-iam-policies)
++ [Resources Defined by Amazon ElastiCache](#amazonelasticache-resources-for-iam-policies)
 + [Condition Keys for Amazon ElastiCache](#amazonelasticache-policy-keys)
 
 ## Actions Defined by Amazon ElastiCache<a name="amazonelasticache-actions-as-permissions"></a>
@@ -66,7 +66,7 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 |   [ RevokeCacheSecurityGroupIngress ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RevokeCacheSecurityGroupIngress.html)  | The RevokeCacheSecurityGroupIngress action revokes ingress from a cache security group\. | Write |  |  |  | 
 |   [ TestFailover ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestFailover.html)  | The TestFailover action allows you to test automatic failover on a specified node group in a replication group | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   | 
 
-## Resources Defined by ElastiCache<a name="amazonelasticache-resources-for-iam-policies"></a>
+## Resources Defined by Amazon ElastiCache<a name="amazonelasticache-resources-for-iam-policies"></a>
 
 Amazon ElastiCache has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

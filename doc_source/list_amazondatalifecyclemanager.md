@@ -7,7 +7,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Data Lifecycle Manager](#amazondatalifecyclemanager-actions-as-permissions)
-+ [Resources Defined by Data Lifecycle Manager](#amazondatalifecyclemanager-resources-for-iam-policies)
++ [Resources Defined by Amazon Data Lifecycle Manager](#amazondatalifecyclemanager-resources-for-iam-policies)
 + [Condition Keys for Amazon Data Lifecycle Manager](#amazondatalifecyclemanager-policy-keys)
 
 ## Actions Defined by Amazon Data Lifecycle Manager<a name="amazondatalifecyclemanager-actions-as-permissions"></a>
@@ -25,7 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html)  | Returns a complete description of a single data lifecycle policy\. | Read |  |  |  | 
 |   [ UpdateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html)  | Updates an existing data lifecycle policy\. | Write |  |  |  | 
 
-## Resources Defined by Data Lifecycle Manager<a name="amazondatalifecyclemanager-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Data Lifecycle Manager<a name="amazondatalifecyclemanager-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazondatalifecyclemanager-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

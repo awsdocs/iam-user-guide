@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Elastic Load Balancing](#elasticloadbalancing-actions-as-permissions)
-+ [Resources Defined by ELB](#elasticloadbalancing-resources-for-iam-policies)
++ [Resources Defined by Elastic Load Balancing](#elasticloadbalancing-resources-for-iam-policies)
 + [Condition Keys for Elastic Load Balancing](#elasticloadbalancing-policy-keys)
 
 ## Actions Defined by Elastic Load Balancing<a name="elasticloadbalancing-actions-as-permissions"></a>
@@ -50,7 +50,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ SetLoadBalancerPoliciesForBackendServer ](https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesForBackendServer.html)  | Replaces the set of policies associated with the specified port on which the back\-end server is listening with a new set of policies\. | Write |   [ loadbalancer\* ](#elasticloadbalancing-loadbalancer)   |  |  | 
 |   [ SetLoadBalancerPoliciesOfListener ](https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_SetLoadBalancerPoliciesOfListener.html)  | Replaces the current set of policies for the specified load balancer port with the specified set of policies\. | Write |   [ loadbalancer\* ](#elasticloadbalancing-loadbalancer)   |  |  | 
 
-## Resources Defined by ELB<a name="elasticloadbalancing-resources-for-iam-policies"></a>
+## Resources Defined by Elastic Load Balancing<a name="elasticloadbalancing-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#elasticloadbalancing-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

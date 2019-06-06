@@ -4,7 +4,7 @@ AWS Performance Insights \(service prefix: `pi`\) provides the following service
 
 **Topics**
 + [Actions Defined by AWS Performance Insights](#awsperformanceinsights-actions-as-permissions)
-+ [Resources Defined by Performance Insights](#awsperformanceinsights-resources-for-iam-policies)
++ [Resources Defined by AWS Performance Insights](#awsperformanceinsights-resources-for-iam-policies)
 + [Condition Keys for AWS Performance Insights](#awsperformanceinsights-policy-keys)
 
 ## Actions Defined by AWS Performance Insights<a name="awsperformanceinsights-actions-as-permissions"></a>
@@ -19,7 +19,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   DescribeDimensionKeys  | For a specific time period, retrieve the top N dimension keys for a metric\. | Read |   [ metric\-resource\* ](#awsperformanceinsights-metric-resource)   |  |  | 
 |   GetResourceMetrics  | Retrieve PI metrics for a set of data sources, over a time period\. | Read |   [ metric\-resource\* ](#awsperformanceinsights-metric-resource)   |  |  | 
 
-## Resources Defined by Performance Insights<a name="awsperformanceinsights-resources-for-iam-policies"></a>
+## Resources Defined by AWS Performance Insights<a name="awsperformanceinsights-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsperformanceinsights-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

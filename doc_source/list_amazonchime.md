@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Chime](#amazonchime-actions-as-permissions)
-+ [Resources Defined by Chime](#amazonchime-resources-for-iam-policies)
++ [Resources Defined by Amazon Chime](#amazonchime-resources-for-iam-policies)
 + [Condition Keys for Amazon Chime](#amazonchime-policy-keys)
 
 ## Actions Defined by Amazon Chime<a name="amazonchime-actions-as-permissions"></a>
@@ -129,7 +129,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateVoiceConnector ](https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateVoiceConnector.html)  | Grants permission to update voice connector details for the specified voice connector | Write |  |  |  | 
 |   [ ValidateAccountResource ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to validate the account resource in your Amazon Chime account | Read |  |  |  | 
 
-## Resources Defined by Chime<a name="amazonchime-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Chime<a name="amazonchime-resources-for-iam-policies"></a>
 
 Amazon Chime has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

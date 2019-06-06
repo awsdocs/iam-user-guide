@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Inspector](#amazoninspector-actions-as-permissions)
-+ [Resources Defined by Inspector](#amazoninspector-resources-for-iam-policies)
++ [Resources Defined by Amazon Inspector](#amazoninspector-resources-for-iam-policies)
 + [Condition Keys for Amazon Inspector](#amazoninspector-policy-keys)
 
 ## Actions Defined by Amazon Inspector<a name="amazoninspector-actions-as-permissions"></a>
@@ -54,7 +54,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UnsubscribeFromEvent ](https://docs.aws.amazon.com/inspector/latest/APIReference/API_UnsubscribeFromEvent.html)  | Disables the process of sending Amazon Simple Notification Service \(SNS\) notifications about a specified event to a specified SNS topic\. | Write |  |  |  | 
 |   [ UpdateAssessmentTarget ](https://docs.aws.amazon.com/inspector/latest/APIReference/API_UpdateAssessmentTarget.html)  | Updates the assessment target that is specified by the ARN of the assessment target\. | Write |  |  |  | 
 
-## Resources Defined by Inspector<a name="amazoninspector-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Inspector<a name="amazoninspector-resources-for-iam-policies"></a>
 
 Amazon Inspector has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

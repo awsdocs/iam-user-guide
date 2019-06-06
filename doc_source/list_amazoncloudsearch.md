@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon CloudSearch](#amazoncloudsearch-actions-as-permissions)
-+ [Resources Defined by CloudSearch](#amazoncloudsearch-resources-for-iam-policies)
++ [Resources Defined by Amazon CloudSearch](#amazoncloudsearch-resources-for-iam-policies)
 + [Condition Keys for Amazon CloudSearch](#amazoncloudsearch-policy-keys)
 
 ## Actions Defined by Amazon CloudSearch<a name="amazoncloudsearch-actions-as-permissions"></a>
@@ -52,7 +52,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ search ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the search operations\. | Read |   [ domain ](#amazoncloudsearch-domain)   |  |  | 
 |   [ suggest ](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-actions) \[permission only\] | Allows access to the suggest operations\. | Read |   [ domain ](#amazoncloudsearch-domain)   |  |  | 
 
-## Resources Defined by CloudSearch<a name="amazoncloudsearch-resources-for-iam-policies"></a>
+## Resources Defined by Amazon CloudSearch<a name="amazoncloudsearch-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazoncloudsearch-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

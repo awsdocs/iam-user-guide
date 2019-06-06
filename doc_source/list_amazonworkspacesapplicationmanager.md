@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon WorkSpaces Application Manager](#amazonworkspacesapplicationmanager-actions-as-permissions)
-+ [Resources Defined by WAM](#amazonworkspacesapplicationmanager-resources-for-iam-policies)
++ [Resources Defined by Amazon WorkSpaces Application Manager](#amazonworkspacesapplicationmanager-resources-for-iam-policies)
 + [Condition Keys for Amazon WorkSpaces Application Manager](#amazonworkspacesapplicationmanager-policy-keys)
 
 ## Actions Defined by Amazon WorkSpaces Application Manager<a name="amazonworkspacesapplicationmanager-actions-as-permissions"></a>
@@ -23,7 +23,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | --- | --- | --- | --- | --- | --- | 
 |   [ AuthenticatePackager ](https://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html)  | Description for AuthenticatePackager | Write |  |  |  | 
 
-## Resources Defined by WAM<a name="amazonworkspacesapplicationmanager-resources-for-iam-policies"></a>
+## Resources Defined by Amazon WorkSpaces Application Manager<a name="amazonworkspacesapplicationmanager-resources-for-iam-policies"></a>
 
 Amazon WorkSpaces Application Manager has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

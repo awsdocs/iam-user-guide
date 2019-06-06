@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Server Migration Service](#awsservermigrationservice-actions-as-permissions)
-+ [Resources Defined by ServerMigrationService](#awsservermigrationservice-resources-for-iam-policies)
++ [Resources Defined by AWS Server Migration Service](#awsservermigrationservice-resources-for-iam-policies)
 + [Condition Keys for AWS Server Migration Service](#awsservermigrationservice-policy-keys)
 
 ## Actions Defined by AWS Server Migration Service<a name="awsservermigrationservice-actions-as-permissions"></a>
@@ -50,7 +50,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateApp ](https://docs.aws.amazon.com/ServerMigration/latest/APIReference/API_UpdateApp.html)  | Update an existing application configuration | Write |  |  |  | 
 |   [ UpdateReplicationJob ](https://docs.aws.amazon.com/ServerMigration/latest/APIReference/API_UpdateReplicationJob.html)  | Update an existing job to migrate on\-premise server onto AWS\. | Write |  |  |  | 
 
-## Resources Defined by ServerMigrationService<a name="awsservermigrationservice-resources-for-iam-policies"></a>
+## Resources Defined by AWS Server Migration Service<a name="awsservermigrationservice-resources-for-iam-policies"></a>
 
 AWS Server Migration Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

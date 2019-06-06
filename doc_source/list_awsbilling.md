@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Billing](#awsbilling-actions-as-permissions)
-+ [Resources Defined by Billing](#awsbilling-resources-for-iam-policies)
++ [Resources Defined by AWS Billing](#awsbilling-resources-for-iam-policies)
 + [Condition Keys for AWS Billing](#awsbilling-policy-keys)
 
 ## Actions Defined by AWS Billing<a name="awsbilling-actions-as-permissions"></a>
@@ -29,7 +29,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ ViewPaymentMethods ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Allow or deny IAM users permission to view payment methods\. | Read |  |  |  | 
 |   [ ViewUsage ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Allow or deny IAM users permission to view AWS usage reports\. | Read |  |  |  | 
 
-## Resources Defined by Billing<a name="awsbilling-resources-for-iam-policies"></a>
+## Resources Defined by AWS Billing<a name="awsbilling-resources-for-iam-policies"></a>
 
 AWS Billing has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Macie](#amazonmacie-actions-as-permissions)
-+ [Resources Defined by Macie](#amazonmacie-resources-for-iam-policies)
++ [Resources Defined by Amazon Macie](#amazonmacie-resources-for-iam-policies)
 + [Condition Keys for Amazon Macie](#amazonmacie-policy-keys)
 
 ## Actions Defined by Amazon Macie<a name="amazonmacie-actions-as-permissions"></a>
@@ -29,7 +29,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ ListS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_ListS3Resources.html)  | Enables the user to list all the S3 resources associated with Amazon Macie\. | List |  |  |  | 
 |   [ UpdateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_UpdateS3Resources.html)  | Enables the user to update the classification types for the specified S3 resources\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
 
-## Resources Defined by Macie<a name="amazonmacie-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Macie<a name="amazonmacie-resources-for-iam-policies"></a>
 
 Amazon Macie has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

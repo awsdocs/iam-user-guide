@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Price List](#awspricelist-actions-as-permissions)
-+ [Resources Defined by Price List](#awspricelist-resources-for-iam-policies)
++ [Resources Defined by AWS Price List](#awspricelist-resources-for-iam-policies)
 + [Condition Keys for AWS Price List](#awspricelist-policy-keys)
 
 ## Actions Defined by AWS Price List<a name="awspricelist-actions-as-permissions"></a>
@@ -25,7 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetAttributeValues ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAttributeValues.html)  | Returns all \(paginated\) possible values for a given attribute\. | Read |  |  |  | 
 |   [ GetProducts ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetProducts.html)  | Returns all matching products with given search criteria\. | Read |  |  |  | 
 
-## Resources Defined by Price List<a name="awspricelist-resources-for-iam-policies"></a>
+## Resources Defined by AWS Price List<a name="awspricelist-resources-for-iam-policies"></a>
 
 AWS Price List has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

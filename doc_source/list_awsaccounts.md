@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Accounts](#awsaccounts-actions-as-permissions)
-+ [Resources Defined by Account](#awsaccounts-resources-for-iam-policies)
++ [Resources Defined by AWS Accounts](#awsaccounts-resources-for-iam-policies)
 + [Condition Keys for AWS Accounts](#awsaccounts-policy-keys)
 
 ## Actions Defined by AWS Accounts<a name="awsaccounts-actions-as-permissions"></a>
@@ -25,7 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   EnableRegion  | Grants permission to enable a region | Write |  |   [ account:TargetRegion ](#awsaccounts-account_TargetRegion)   |  | 
 |   ListRegions  | Grants permission to list regions | List |  |  |  | 
 
-## Resources Defined by Account<a name="awsaccounts-resources-for-iam-policies"></a>
+## Resources Defined by AWS Accounts<a name="awsaccounts-resources-for-iam-policies"></a>
 
 AWS Accounts has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS CloudHSM](#awscloudhsm-actions-as-permissions)
-+ [Resources Defined by CloudHSM](#awscloudhsm-resources-for-iam-policies)
++ [Resources Defined by AWS CloudHSM](#awscloudhsm-resources-for-iam-policies)
 + [Condition Keys for AWS CloudHSM](#awscloudhsm-policy-keys)
 
 ## Actions Defined by AWS CloudHSM<a name="awscloudhsm-actions-as-permissions"></a>
@@ -50,7 +50,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ TagResource ](https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_TagResource.html)  | Adds or overwrites one or more tags for the specified AWS CloudHSM cluster\. | Tagging |  |  |  | 
 |   [ UntagResource ](https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_UntagResource.html)  | Removes the specified tag or tags from the specified AWS CloudHSM cluster\. | Tagging |  |  |  | 
 
-## Resources Defined by CloudHSM<a name="awscloudhsm-resources-for-iam-policies"></a>
+## Resources Defined by AWS CloudHSM<a name="awscloudhsm-resources-for-iam-policies"></a>
 
 AWS CloudHSM has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS SSO Directory](#awsssodirectory-actions-as-permissions)
-+ [Resources Defined by SSO Directory](#awsssodirectory-resources-for-iam-policies)
++ [Resources Defined by AWS SSO Directory](#awsssodirectory-resources-for-iam-policies)
 + [Condition Keys for AWS SSO Directory](#awsssodirectory-policy-keys)
 
 ## Actions Defined by AWS SSO Directory<a name="awsssodirectory-actions-as-permissions"></a>
@@ -40,7 +40,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   UpdateUser  | Updates user information in the directory that AWS SSO provides by default | Write |  |  |  | 
 |   VerifyEmail  | Verify email address of an User | Write |  |  |  | 
 
-## Resources Defined by SSO Directory<a name="awsssodirectory-resources-for-iam-policies"></a>
+## Resources Defined by AWS SSO Directory<a name="awsssodirectory-resources-for-iam-policies"></a>
 
 AWS SSO Directory has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

@@ -9,7 +9,7 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Device Farm](#awsdevicefarm-actions-as-permissions)
-+ [Resources Defined by Device Farm](#awsdevicefarm-resources-for-iam-policies)
++ [Resources Defined by AWS Device Farm](#awsdevicefarm-resources-for-iam-policies)
 + [Condition Keys for AWS Device Farm](#awsdevicefarm-policy-keys)
 
 ## Actions Defined by AWS Device Farm<a name="awsdevicefarm-actions-as-permissions"></a>
@@ -65,7 +65,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ UpdateDevicePool ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateDevicePool.html)  | Modifies the name, description, and rules in a device pool given the attributes and the pool ARN | Write |  |  |  | 
 |   [ UpdateProject ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_UpdateProject.html)  | Modifies the specified project name, given the project ARN and a new name | Write |  |  |  | 
 
-## Resources Defined by Device Farm<a name="awsdevicefarm-resources-for-iam-policies"></a>
+## Resources Defined by AWS Device Farm<a name="awsdevicefarm-resources-for-iam-policies"></a>
 
 AWS Device Farm has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

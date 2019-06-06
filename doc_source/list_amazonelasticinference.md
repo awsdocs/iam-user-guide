@@ -8,7 +8,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Elastic Inference](#amazonelasticinference-actions-as-permissions)
-+ [Resources Defined by EI](#amazonelasticinference-resources-for-iam-policies)
++ [Resources Defined by Amazon Elastic Inference](#amazonelasticinference-resources-for-iam-policies)
 + [Condition Keys for Amazon Elastic Inference](#amazonelasticinference-policy-keys)
 
 ## Actions Defined by Amazon Elastic Inference<a name="amazonelasticinference-actions-as-permissions"></a>
@@ -22,7 +22,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 | --- | --- | --- | --- | --- | --- | 
 |   Connect  | Connects customer to Elastic Inference accelerator | Write |   [ accelerator\* ](#amazonelasticinference-accelerator)   |  |  | 
 
-## Resources Defined by EI<a name="amazonelasticinference-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Elastic Inference<a name="amazonelasticinference-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonelasticinference-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 

@@ -8,7 +8,7 @@ References:
 
 **Topics**
 + [Actions Defined by Amazon Session Manager Message Gateway Service](#amazonsessionmanagermessagegatewayservice-actions-as-permissions)
-+ [Resources Defined by SSM Messages](#amazonsessionmanagermessagegatewayservice-resources-for-iam-policies)
++ [Resources Defined by Amazon Session Manager Message Gateway Service](#amazonsessionmanagermessagegatewayservice-resources-for-iam-policies)
 + [Condition Keys for Amazon Session Manager Message Gateway Service](#amazonsessionmanagermessagegatewayservice-policy-keys)
 
 ## Actions Defined by Amazon Session Manager Message Gateway Service<a name="amazonsessionmanagermessagegatewayservice-actions-as-permissions"></a>
@@ -25,7 +25,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   OpenControlChannel  | Opens a websocket connection for a registered control channel stream from an instance to Systems Manager service\. | Write |  |  |  | 
 |   OpenDataChannel  | Opens a websocket connection for a registered data channel stream from an instance to Systems Manager service\. | Write |  |  |  | 
 
-## Resources Defined by SSM Messages<a name="amazonsessionmanagermessagegatewayservice-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Session Manager Message Gateway Service<a name="amazonsessionmanagermessagegatewayservice-resources-for-iam-policies"></a>
 
 Amazon Session Manager Message Gateway Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
 

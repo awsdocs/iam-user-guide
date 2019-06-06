@@ -33,13 +33,15 @@ The second condition uses the `ForAllValues:StringEquals` condition operator\. T
                 "iam:TagRole"
             ],
             "Resource": "*",
-            "Condition": [
-                {"StringEquals": {"aws:RequestTag/CostCenter": [
-                    "A-123",
-                    "B-456"
-                ]}},
-                {"ForAllValues:StringEquals": {"aws:TagKeys": "CostCenter"}}
-            ]
+            "Condition": {
+                "StringEquals": {
+                    "aws:RequestTag/CostCenter": [
+                        "A-123",
+                        "B-456"
+                    ]
+                },
+                "ForAllValues:StringEquals": {"aws:TagKeys": "CostCenter"}
+            }
         }
     ]
 }
