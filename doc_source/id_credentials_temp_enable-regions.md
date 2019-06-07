@@ -7,7 +7,7 @@ By default, the AWS Security Token Service \(AWS STS\) is available as a global 
 
 ## Managing Global Endpoint Session Tokens<a name="sts-regions-manage-tokens"></a>
 
-Most AWS Regions are enabled for operations in all AWS services by default\. Those Regions are automatically activated for use with AWS STS\. Some Regions, such as Asia Pacific \(Hong Kong\), must be manually enabled\. To learn more about enabling and disabling AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. When you enable these AWS Regions, they are automatically activated for use with AWS STS\. You cannot activate the STS endpoint for a Region that is disabled\. Tokens that are valid in all AWS Regions are longer than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
+Most AWS Regions are enabled for operations in all AWS services by default\. Those Regions are automatically activated for use with AWS STS\. Some Regions, such as Asia Pacific \(Hong Kong\), must be manually enabled\. To learn more about enabling and disabling AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. When you enable these AWS Regions, they are automatically activated for use with AWS STS\. You cannot activate the STS endpoint for a Region that is disabled\. Tokens that are valid in all AWS Regions are larger than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
 
 **To change the Region compatibility of session tokens for the global endpoint \(console\)**
 
@@ -19,7 +19,7 @@ Most AWS Regions are enabled for operations in all AWS services by default\. Tho
 
 1. 4\. In the **Change region compatibility of session tokens for global endpoint** dialog box, select **Valid in all AWS Regions**\. Then choose **Save changes**\.
 **Note**  
-Tokens that are valid in all AWS Regions are longer than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
+Tokens that are valid in all AWS Regions are larger than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
 
 ## Activating and Deactivating AWS STS in an AWS Region<a name="sts-regions-activate-deactivate"></a>
 
