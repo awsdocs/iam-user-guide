@@ -29,13 +29,12 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ application ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:application/$\{ApplicationName\}  |  | 
-|   [ applicationversion ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:applicationversion/$\{ApplicationName\}/$\{VersionLabel\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
-|   [ configurationtemplate ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:configurationtemplate/$\{ApplicationName\}/$\{TemplateName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
-|   [ environment ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:environment/$\{ApplicationName\}/$\{EnvironmentName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
+|   [ application ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:application/$\{ApplicationName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselasticbeanstalk-aws_ResourceTag___TagKey_)   | 
+|   [ applicationversion ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:applicationversion/$\{ApplicationName\}/$\{VersionLabel\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselasticbeanstalk-aws_ResourceTag___TagKey_)   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
+|   [ configurationtemplate ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:configurationtemplate/$\{ApplicationName\}/$\{TemplateName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselasticbeanstalk-aws_ResourceTag___TagKey_)   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
+|   [ environment ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:environment/$\{ApplicationName\}/$\{EnvironmentName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselasticbeanstalk-aws_ResourceTag___TagKey_)   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
 |   [ solutionstack ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}::solutionstack/$\{SolutionStackName\}  |  | 
 |   [ platform ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}::platform/$\{PlatformNameWithVersion\}  |  | 
-|   [ resource ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.arn.html)  |  arn:$\{Partition\}:elasticbeanstalk:$\{Region\}:$\{Account\}:environment/$\{ApplicationName\}/$\{EnvironmentName\}  |   [ elasticbeanstalk:InApplication ](#awselasticbeanstalk-elasticbeanstalk_InApplication)   | 
 
 ## Condition Keys for AWS Elastic Beanstalk<a name="awselasticbeanstalk-policy-keys"></a>
 
@@ -48,6 +47,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | Filters actions based on the presence of tag key\-value pairs in the request\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | Filters actions based on tag key\-value pairs attached to the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | Filters actions based on the presence of tag keys in the request\. | String | 
 |   [ elasticbeanstalk:FromApplication ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | Filters access by an application as a dependency or a constraint on an input parameter\. | ARN | 
 |   [ elasticbeanstalk:FromApplicationVersion ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | Filters access by an application version as a dependency or a constraint on an input parameter\. | ARN | 
 |   [ elasticbeanstalk:FromConfigurationTemplate ](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.policies.actions.html#AWSHowTo.iam.policies.conditions)  | Filters access by a configuration template as a dependency or a constraint on an input parameter\. | ARN | 

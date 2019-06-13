@@ -59,7 +59,6 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ ListSolutions ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutions.html)  | Lists solutions | List |  |  |  | 
 |   [ PutEvents ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutEvents.html)  | Records real time event data | Write |   [ eventTracker\* ](#amazonpersonalize-eventTracker)   |  |  | 
 |   [ UpdateCampaign ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UpdateCampaign.html)  | Updates a campaign | Write |   [ campaign\* ](#amazonpersonalize-campaign)   |  |  | 
-|   [ UpdateDataset ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UpdateDataset.html)  | Updates a dataset | Write |   [ dataset\* ](#amazonpersonalize-dataset)   |  |  | 
 
 ## Resources Defined by Amazon Personalize<a name="amazonpersonalize-resources-for-iam-policies"></a>
 

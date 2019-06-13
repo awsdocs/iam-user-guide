@@ -28,10 +28,10 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ profile ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Profile.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:profile/$\{Resource\_id\}  |  | 
-|   [ room ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Room.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\}  |  | 
-|   [ device ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Device.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\}  |  | 
+|   [ room ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Room.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:room/$\{Resource\_id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#alexaforbusiness-aws_ResourceTag___TagKey_)   | 
+|   [ device ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Device.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:device/$\{Resource\_id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#alexaforbusiness-aws_ResourceTag___TagKey_)   | 
 |   [ skillgroup ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_SkillGroup.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:skill\-group/$\{Resource\_id\}  |  | 
-|   [ user ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_UserData.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_UserData.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:user/$\{Resource\_id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#alexaforbusiness-aws_ResourceTag___TagKey_)   | 
 |   [ addressbook ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_AddressBook.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:address\-book/$\{Resource\_id\}  |  | 
 |   [ conferenceprovider ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_ConferenceProvider.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:conference\-provider/$\{Resource\_id\}  |  | 
 |   [ contact ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Contact.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:contact/$\{Resource\_id\}  |  | 
@@ -39,4 +39,17 @@ The following resource types are defined by this service and can be used in the 
 
 ## Condition Keys for Alexa for Business<a name="alexaforbusiness-policy-keys"></a>
 
-Alexa for Business has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Alexa for Business defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ a4b:amazonId ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_RegisterAVSDevice.html)  | Filters actions based on the Amazon Id in the request | String | 
+|   [ a4b:filters\_deviceType ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_SearchDevices.html)  | Filters actions based on the device type in the request | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 
