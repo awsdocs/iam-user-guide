@@ -29,6 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
+|   [ access\-report ](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor-view-data-orgs.html)  |  arn:$\{Partition\}:iam::$\{Account\}:access\-report/$\{EntityPath\}  |  | 
 |   [ assumed\-role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_use-resources.html)  |  arn:$\{Partition\}:iam::$\{Account\}:assumed\-role/$\{RoleName\}/$\{RoleSessionName\}  |  | 
 |   [ federated\-user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html)  |  arn:$\{Partition\}:iam::$\{Account\}:federated\-user/$\{UserName\}  |  | 
 |   [ group ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html)  |  arn:$\{Partition\}:iam::$\{Account\}:group/$\{GroupNameWithPath\}  |  | 
@@ -54,6 +55,7 @@ To view the global condition keys that are available to all services, see [Avail
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
 |   [ iam:AWSServiceName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName)  | Filters access by the AWS service to which this role is attached | String | 
+|   [ iam:OrganizationsPolicyId ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId)  | Filters access by the ID of an AWS Organizations policy | String | 
 |   [ iam:PassedToService ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService)  | Filters access by the AWS service to which this role is passed | String | 
 |   [ iam:PermissionsBoundary ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary)  | Filters access if the specified policy is set as the permissions boundary on the IAM entity \(user or role\) | String | 
 |   [ iam:PolicyARN ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PolicyARN)  | Filters access by the ARN of an IAM policy | ARN | 

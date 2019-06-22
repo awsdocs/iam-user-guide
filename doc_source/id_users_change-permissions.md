@@ -14,7 +14,7 @@ For information about the permissions that you need in order to modify the permi
 
 ## View User Access<a name="users-modify_prerequisites"></a>
 
-Before you change the permissions for a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you change the permissions for a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Adding Permissions to a User \(Console\)<a name="users_change_permissions-add-console"></a>
 

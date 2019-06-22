@@ -55,6 +55,8 @@ When a user belongs to an account that is a member of an organization, the resul
 
 ![\[Evaluation of identity-based policies and SCPs\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_scp-idp.png)
 
+You can learn [whether your account is a member of an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html#orgs_view_account) in AWS Organizations\. Organization members might be affected by an SCP\. To view this data using the AWS CLI command or AWS API operation, you must have permissions for the `organizations:DescribeOrganization` action for your Organizations entity\. You must have additional permissions to perform the operation in the Organizations console\. To learn whether an SCP is denying access to a specific request, or to change your effective permissions, contact your AWS Organizations administrator\.
+
 ## Determining Whether a Request Is Allowed or Denied Within an Account<a name="policy-eval-denyallow"></a>
 
 Assume that a principal sends a request to AWS to access a resource in the same account as the principal's entity\. The AWS enforcement code decides whether the request should be allowed or denied\. AWS gathers all of the policies that apply to the request context\. The following is a high\-level summary of the AWS evaluation logic on those policies within a single account\.
@@ -79,7 +81,7 @@ This logic can behave differently if you specify the ARN of an IAM role or user 
 
 1. **Session policies** – The code then checks whether the principal entity is using a session that was assumed by passing a session policy\. You can pass a session policy while using the AWS CLI or AWS API to get temporary credentials for a role or federated user\. If the session policy is present and does not allow the requested action, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no session policy, or if the policy allows the requested action, the code continues\.
 
-1. **Identity\-based policies** – The code then checks the identity\-based policies for the principal entity\. For an IAM user, these include user policies and policies from groups to which the user belongs\. If any statement in any applicable identity\-based policies allow the requested action, then the enforcement code returns a final decision of **Allow**\. If there are no statements that allow the requested action, then the request is implicitly denied, and the code returns a final decision of **Deny**\.
+1. **Identity\-based policies** – The code then checks the identity\-based policies for the principal entity\. For an IAM user, these include user policies and policies from groups to which the user belongs\. If any statement in any applicable identity\-based policies allows the requested action, then the enforcement code returns a final decision of **Allow**\. If there are no statements that allow the requested action, then the request is implicitly denied, and the code returns a final decision of **Deny**\.
 
 1. **Errors** – If the AWS enforcement code encounters an error at any point during the evaluation, then it generates an exception and closes\.
 

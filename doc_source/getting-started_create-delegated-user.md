@@ -62,7 +62,7 @@ You can use the AWS Management Console to create an IAM group with delegated per
 
 Members of the `PowerUser` group have full access to all services except a few that provide user management actions \(like IAM and Organizations\)\. After a predefined period of inactivity \(such as 90 days\) has passed, you can review the services that your group members have accessed\. Then you can reduce the permissions of the `PowerUserExampleCorp` policy to include only the services that your team needs\.
 
-For more information about the service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+For more information about the service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ### Reviewing Service Last Accessed Data<a name="getting-started_reduce-permissions-review"></a>
 

@@ -1,15 +1,15 @@
-# Example Scenarios for Using Access Data<a name="access_policies_access-advisor-example-scenarios"></a>
+# Example Scenarios for Using Service Last Accessed Data<a name="access_policies_access-advisor-example-scenarios"></a>
 
-You can use service last accessed data to make decisions about the permissions that you grant to your IAM entities \(users or roles\)\. For more information, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\. 
+You can use service last accessed data to make decisions about the permissions that you grant to your IAM entities or AWS Organizations entities\. For more information, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\. 
 
 **Note**  
-Before you view the access data for a resource in IAM, make sure you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to Know](access_policies_access-advisor.md#access_policies_access-advisor-know)
+Before you view the access data for an entity or policy in IAM or AWS Organizations, make sure that you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to Know](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
-It’s up to you as an IAM administrator to balance the accessibility and least privilege that’s appropriate for your organization\. 
+It’s up to you as an administrator to balance the accessibility and least privilege that’s appropriate for your company\. 
 
-## Using Data to Reduce Permissions for a Group<a name="access-advisor-sample-reduce-permissions-group"></a>
+## Using Data to Reduce Permissions for an IAM Group<a name="access-advisor-sample-reduce-permissions-group"></a>
 
-You can use service last accessed data to reduce group permissions to include only those services that your users need\. This method is an important step in [granting least privilege](best-practices.md#grant-least-privilege) at a service level\.
+You can use service last accessed data to reduce IAM group permissions to include only those services that your users need\. This method is an important step in [granting least privilege](best-practices.md#grant-least-privilege) at a service level\.
 
 For example, Paulo Santos is the administrator in charge of defining AWS user permissions for Example Corp\. This company just started using AWS, and the software development team has not yet defined what AWS services they will use\. Paulo wants to give the team permission to access only the services they need, but since that is not yet defined, he temporarily gives them power\-user permissions\. Then he uses service last accessed data to reduce the group's permissions\.
 
@@ -105,13 +105,17 @@ Nikhil's permissions to access to Route 53 and Elastic Transcoder are granted b
 
 Martha then reviews the service last accessed data for the `App-Dev-ElasticTranscoder` customer managed policy\. She learns that the policy is not attached to any other IAM identities\. She investigates within her company to make sure that the policy will not be needed in the future, and then she deletes it\.
 
-## Using Data Before Deleting Resources<a name="access-advisor-sample-delete-resources"></a>
+## Using Data Before Deleting IAM Resources<a name="access-advisor-sample-delete-resources"></a>
 
-You can use service last accessed data before you delete an IAM resource to make sure that a certain amount of time has passed since someone last used the resource\. This applies to users, groups, roles, and policies\.
+You can use service last accessed data before you delete an IAM resource to make sure that a certain amount of time has passed since someone last used the resource\. This applies to users, groups, roles, and policies\. To learn more about these actions, see the following topics:
++ **Users** – [Deleting a user](id_users_manage.md#id_users_deleting)
++ **Groups** – [Deleting a group](id_groups_manage_delete.md)
++ **Roles** – [Deleting a role](id_roles_manage_delete.md)
++ **Policies** – [Deleting a managed policy \(this also detaches the policy from identities\)](access_policies_manage-delete.md)
 
-## Using Data Before Editing Policies<a name="access-advisor-sample-edit-policies"></a>
+## Using Data Before Editing IAM Policies<a name="access-advisor-sample-edit-policies"></a>
 
-You can review the service last accessed data for an IAM identity \(user, group, or role\), or for a policy before editing a policy that affects that resource\. This is important because you don't want to remove access for someone that is using it\.
+You can review service last accessed data for an IAM identity \(user, group, or role\), or for an IAM policy before editing a policy that affects that resource\. This is important because you don't want to remove access for someone that is using it\.
 
 For example, Arnav Desai is a developer and AWS administrator for Example Corp\. When his team started using AWS, they gave all developers power\-user access that allowed them full access to all services except IAM and Organizations\. As a first step towards [granting least privilege](best-practices.md#grant-least-privilege), Arnav wants to use the AWS CLI to review the managed policies in his account\. 
 
@@ -121,7 +125,7 @@ To do this, Arnav first lists the customer managed permissions policies in his a
 aws iam list-policies --scope Local --only-attached --policy-usage-filter PermissionsPolicy
 ```
 
-From the response, he captures the ARN for each policy\. Arnav then generates a service last accessed data report for each policy using the following command\.
+From the response, he captures the ARN for each policy\. Arnav then generates a report for service last accessed data for each policy using the following command\.
 
 ```
 aws iam generate-service-last-accessed-details --arn arn:aws:iam::123456789012:policy/ExamplePolicy1
@@ -175,7 +179,7 @@ From the response, Arnav collects the current default version number from the `V
 aws iam get-policy-version --policy-arn arn:aws:iam::123456789012:policy/ExamplePolicy1 --version-id v2
 ```
 
-Arnav stores the JSON policy document returned in the `Document` field of the `PolicyVersion` array\. Within the policy document, Arnav searches for actions with in the `ec2` namespace\. If there are no actions from other namespaces remaining in the policy, then he detaches the policy from the affected identities \(users, groups, and roles\) and then deletes the policy\. In this case, the policy does include the Amazon DynamoDB and Amazon S3 services, so Arnav removes the Amazon EC2 actions from the document and saves his changes\. He then uses the following command to update the policy using the new version of the document and to set that version as the default policy version\.
+Arnav stores the JSON policy document returned in the `Document` field of the `PolicyVersion` array\. Within the policy document, Arnav searches for actions with in the `ec2` namespace\. If there are no actions from other namespaces remaining in the policy, then he detaches the policy from the affected identities \(users, groups, and roles\)\. He then deletes the policy\. In this case, the policy does include the Amazon DynamoDB and Amazon S3 services\. So Arnav removes the Amazon EC2 actions from the document and saves his changes\. He then uses the following command to update the policy using the new version of the document and to set that version as the default policy version\.
 
 ```
 aws iam create-policy-version --policy-arn arn:aws:iam::123456789012:policy/ExamplePolicy1 --policy-document file://UpdatedPolicy.json --set-as-default
@@ -183,16 +187,24 @@ aws iam create-policy-version --policy-arn arn:aws:iam::123456789012:policy/Exam
 
 The `ExamplePolicy1` policy is now updated to remove access to the unnecessary Amazon EC2 service\.
 
-## Other Scenarios<a name="access-advisor-scenarios-other"></a>
+## Other IAM Scenarios<a name="access-advisor-scenarios-other"></a>
 
 Information about when an IAM resource \(user, group, role, or policy\) last attempted to access a service can help you when you complete any of the following tasks:
 + **Policies** – [Editing an existing customer\-managed or inline policy to remove permissions](access_policies_manage-edit.md)
 + **Policies** – [Converting an inline policy to a managed policy and then deleting it](best-practices.md#best-practice-managed-vs-inline)
 + **Policies** – [Adding an explicit deny to an existing policy](reference_policies_evaluation-logic.md#AccessPolicyLanguage_Interplay)
 + **Policies** – [Detaching a managed policy from an identity \(user, group, or role\)](access_policies_manage-attach-detach.md#detach-managed-policy-console)
-+ **Policies** – [Deleting a managed policy \(this also detaches the policy from identities\)](access_policies_manage-delete.md)
 + **Entities** – [Set a permissions boundary to control the maximum permissions that an entity \(user or role\) can have](access_policies_manage-attach-detach.md)
 + **Groups** – [Removing users from a group](id_groups_manage_add-remove-users.md)
-+ **Groups** – [Deleting a group](id_groups_manage_delete.md)
-+ **Users** – [Deleting a user](id_users_manage.md#id_users_deleting)
-+ **Roles** – [Deleting a role](id_roles_manage_delete.md)
+
+## Using Data to Refine Permissions for an Organizational Unit<a name="access_policies_access-advisor-reduce-permissions-orgs"></a>
+
+You can use service last accessed data to refine the permissions for an organizational unit \(OU\) in AWS Organizations\.
+
+For example, John Stiles is an AWS Organizations administrator\. He is responsible for ensuring that people in company AWS accounts do not have excess permissions\. As part of a periodic security audit, he reviews the permissions of his organization\. His `Development` OU contains accounts that are often used to test new AWS services\. John decides to periodically review the report for services that have not been accessed in more than 180 days\. He then removes permissions for the OU members to access those services\. 
+
+John signs into the IAM console using his master account credentials\. In the IAM console, he locates the Organizations data for the `Development` OU\. He reviews the **Service access report** table and sees two AWS services that have not been accessed in more than his preferred period of 180 days\. He remembers adding permissions for the development teams to access Amazon Lex and AWS Database Migration Service\. John contacts the development teams and confirms that they no longer have a business need to test these services\.
+
+John is now ready to act on the service last accessed data\. He chooses **Edit in AWS Organizations** and is reminded that the SCP is attached to multiple entities\. He chooses **Continue**\. In AWS Organizations, he reviews the targets to learn to which Organizations entities that the SCP is attached\. All of entities are within the `Development` OU\.
+
+John decides to deny access to the Amazon Lex and AWS Database Migration Service actions in the `NewServiceTest` SCP\. This action removes the unnecessary access to the services\.

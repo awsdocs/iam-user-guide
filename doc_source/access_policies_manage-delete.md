@@ -16,7 +16,7 @@ For information about policy size limitations and other quotas, see [Limitations
 
 ## View Policy Access<a name="manage-delete_prerequisites"></a>
 
-Before you delete a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you delete a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Deleting IAM Policies \(Console\)<a name="delete-managed-policy"></a>
 

@@ -17,7 +17,7 @@ Make sure that you do not have any Amazon EC2 instances running with the role or
 
 ## View Role Access<a name="roles-delete_prerequisites"></a>
 
-Before you delete a role, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you delete a role, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Deleting a Service\-Linked Role<a name="id_roles_manage_delete_slr"></a>
 

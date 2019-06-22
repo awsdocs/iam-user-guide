@@ -38,6 +38,10 @@ You can use `iam:PassedToService` to restrict your users so that they can pass r
 ```
 By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail because the user does not have permission to pass the role to Amazon EC2\. 
 
+**iam:OrganizationsPolicyId**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the policy with the specified AWS Organizations ID matches the policy used in the request\. To view an example IAM policy that uses this condition key, see [IAM: View Service Last Accessed Data for an Organizations Policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.
+
 **iam:PermissionsBoundary**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions Boundaries for IAM Entities](access_policies_boundaries.md)
@@ -226,9 +230,9 @@ Condition keys whose type is a list can include multiple values\. To create cond
 }
 ```
 
-### SAML Role Permission Policies<a name="condition-keys-saml_permission-policy"></a>
+### SAML Role Permissions Policies<a name="condition-keys-saml_permission-policy"></a>
 
-In the permission policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
+In the permissions policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
 
 **saml:namequalifier**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

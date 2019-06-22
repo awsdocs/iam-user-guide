@@ -13,11 +13,11 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows access during a specific range of dates\. \([View this policy](reference_policies_examples_aws-dates.md)\.\)
 + Allows enabling and disabling AWS Regions\. \([View this policy](reference_policies_examples_aws-enable-disable-regions.md)\.\)
 + Allows MFA\-authenticated users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.\)
++ Allows specific access when using MFA during a specific range of dates\. \([View this policy](reference_policies_examples_aws_mfa-dates.md)\.\)
 + Allows users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.md)\.\)
 + Allows users to manage their own MFA device on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.\)
 + Allows users to manage their own password on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-password-only.md)\.\)
 + Allows users to manage their own password, access keys, and SSH public keys on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\.\)
-+ Allows specific access when using MFA during a specific range of dates\. \([View this policy](reference_policies_examples_aws_mfa-dates.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
 
 ## Example Policies: CodeCommit<a name="policy_library_CodeCommit"></a>
@@ -54,6 +54,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows using the policy simulator console for users with a specific path\. \([View this policy](reference_policies_examples_iam_policy-sim-path-console.md)\.\)
 + Allows IAM users to self\-manage an MFA device\. \([View this policy](reference_policies_examples_iam_mfa-selfmanage.md)\.\)
 + Allows IAM users to rotate their own credentials, programmatically and in the console\. \([View this policy](reference_policies_examples_iam_credentials_console.md)\.\)
++ Allows viewing service last accessed data for an AWS Organizations policy in the IAM console\. \([View this policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.\)
 + Limits managed policies that can be applied to an IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\.\)
 
 ## Example Policies: Amazon RDS<a name="policy_library_RDS"></a>

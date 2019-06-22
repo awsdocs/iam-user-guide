@@ -22,7 +22,7 @@ You can use the AWS Management Console, the [AWS Command Line Tools](https://aws
 
 ## View Role Access<a name="roles-modify_prerequisites"></a>
 
-Before you change the permissions for a role, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you change the permissions for a role, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Modifying a Role \(Console\)<a name="roles-managingrole-editing-console"></a>
 

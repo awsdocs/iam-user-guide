@@ -1,15 +1,21 @@
-# Viewing Service Last Accessed Data<a name="access_policies_access-advisor-view-data"></a>
+# Viewing Service Last Accessed Data for IAM<a name="access_policies_access-advisor-view-data"></a>
 
-You can view service last accessed data using the AWS Management Console, AWS CLI, or AWS API\. For more information about service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+You can view service last accessed data for IAM using the AWS Management Console, AWS CLI, or AWS API\. For more information about service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+
+You can view data for each type of resource in IAM\. In each case, the data includes allowed services for the given reporting period:
++ **User** – View the last time that the user tried to access each allowed service\.
++ **Group** – View information about the last time that a group member attempted to access each allowed service\. This report also includes the total number of members that attempted access\.
++ **Role** – View the last time that someone used the role in an attempt to access each allowed service\.
++ **Policy** – View information about the last time that a user or role attempted to access each allowed service\. This report also includes the total number of entities that attempted access\.
 
 **Note**  
 Before you view the access data for a resource in IAM, make sure you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to Know](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
-## Viewing Entity Activity \(Console\)<a name="access_policies_access-advisor-viewing"></a>
+## Viewing Data for IAM \(Console\)<a name="access_policies_access-advisor-viewing"></a>
 
-In the IAM console, you can view service last accessed data on the **Access Advisor** tab for users, groups, roles, or policies\.
+You can view service last accessed data for IAM on the **Access Advisor** tab in the IAM console\.
 
-**To view service last accessed data \(console\)**
+**To view data for IAM \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -21,11 +27,11 @@ In the IAM console, you can view service last accessed data on the **Access Advi
    + **Role** – View the list of services that the role can access, when the role last accessed the service, and what policies were used\. Choose the name of the policy to learn whether it is a managed policy or an inline role policy\.
    + **Policy** – View the list of services with allowed actions in the policy, when the policy was last used to access the service, and which entity \(user or role\) used the policy\. Choose the name of the entity to learn which entities have this policy attached and when they last accessed the service\.
 
-## Viewing Entity Activity \(AWS CLI\)<a name="access_policies_access-advisor-viewing-cli"></a>
+## Viewing Data for IAM \(AWS CLI\)<a name="access_policies_access-advisor-viewing-cli"></a>
 
-You can use the AWS CLI to retrieve data about the last time that an IAM resource \(user, group, role, or policy\) was used to attempt to access AWS services\.
+You can use the AWS CLI to retrieve data about the last time that an IAM resource was used to attempt to access AWS services\. An IAM resource can be a user, group, role, or policy\.
 
-**To view service last accessed data \(AWS CLI\)**
+**To view data for IAM \(AWS CLI\)**
 
 1. Generate a report\. The request must include the ARN of the IAM resource \(user, group, role, or policy\) for which you want a report\. It returns a `job-id` that you can then use in the `get-service-last-accessed-details` and `get-service-last-accessed-details-with-entities` operations to monitor the `job-status` until the job is complete\.
    + [aws iam generate\-service\-last\-accessed\-details](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-service-last-accessed-details.html)
@@ -45,11 +51,11 @@ You can use the AWS CLI to retrieve data about the last time that an IAM resourc
 1. Learn more about the identity\-based policies that an identity \(user, group, or role\) used in an attempt to access a specific service\. When you specify an identity and service, this operation returns a list of permissions policies that the identity can use to access the specified service\. This operation gives the current state of policies and does not depend on the generated report\. It also does not return other policy types, such as resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or session policies\. For more information, see [Policy Types](access_policies.md#access_policy-types) or [Evaluating Policies Within a Single Account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
    + [aws iam list\-policies\-granting\-service\-access](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies-granting-service-access.html)
 
-## Viewing Entity Activity \(AWS API\)<a name="access_policies_access-advisor-viewing-api"></a>
+## Viewing Data for IAM \(AWS API\)<a name="access_policies_access-advisor-viewing-api"></a>
 
-You can use the AWS API to retrieve data about the last time that an IAM resource \(user, group, role, or policy\) was used to attempt to access AWS services\.
+You can use the AWS API to retrieve data about the last time that an IAM resource was used to attempt to access AWS services\. An IAM resource can be a user, group, role, or policy\.
 
-**To view service last accessed data \(AWS API\)**
+**To view data for IAM \(AWS API\)**
 
 1. Generate a report\. The request must include the ARN of the IAM resource \(user, group, role, or policy\) for which you want a report\. It returns a `JobId` that you can then use in the `GetServiceLastAccessedDetails` and `GetServiceLastAccessedDetailsWithEntities` operations to monitor the `JobStatus` until the job is complete\.
    + [GenerateServiceLastAccessedDetails](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateServiceLastAccessedDetails.html)

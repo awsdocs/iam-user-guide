@@ -4,7 +4,7 @@ Use groups to apply the same permissions policies across multiple users at once\
 
 ## View Policy Access<a name="groups-remove_prerequisites"></a>
 
-Before you change the permissions for a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you change the permissions for a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Add or Remove a User in a Group \(Console\)<a name="groups-add-remove-console"></a>
 

@@ -11,7 +11,7 @@ A [policy](access_policies.md) is an entity that, when attached to an identity o
 
 ## View Policy Access<a name="manage-edit_prerequisites"></a>
 
-Before you change the permissions for a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you change the permissions for a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Editing Customer Managed Policies \(Console\)<a name="edit-managed-policy-console"></a>
 
