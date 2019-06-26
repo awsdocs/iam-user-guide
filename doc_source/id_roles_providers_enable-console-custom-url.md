@@ -165,11 +165,11 @@ assumed_role_object = sts_connection.assume_role(
 )
 
 # Step 3: Format resulting temporary credentials into JSON
-json_string_with_temp_credentials = '{'
-json_string_with_temp_credentials += '"sessionId":"' + assumed_role_object['Credentials']['AccessKeyId'] + '",'
-json_string_with_temp_credentials += '"sessionKey":"' + assumed_role_object['Credentials']['SecretAccessKey'] + '",'
-json_string_with_temp_credentials += '"sessionToken":"' + assumed_role_object['Credentials']['SessionToken'] + '"'
-json_string_with_temp_credentials += '}'
+url_credentials = {}
+url_credentials['sessionId'] = assumed_role_object.get('Credentials').get('AccessKeyId')
+url_credentials['sessionKey'] = assumed_role_object.get('Credentials').get('SecretAccessKey')
+url_credentials['sessionToken'] = assumed_role_object.get('Credentials').get('SessionToken')
+json_string_with_temp_credentials = json.dumps(url_credentials)
 
 # Step 4. Make request to AWS federation endpoint to get sign-in token. Construct the parameter string with
 # the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials 
