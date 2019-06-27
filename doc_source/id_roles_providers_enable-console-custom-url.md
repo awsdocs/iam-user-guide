@@ -135,14 +135,14 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
 
 ## Example Code Using Python<a name="STSConsoleLink_programPython"></a>
 
-The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto\)](https://aws.amazon.com/tools/)\. 
+The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto3\)](https://aws.amazon.com/tools/)\. 
 
 The code uses the [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
 
 ```
-import urllib, json
+import urllib, json, sys
 import requests # 'pip install requests'
-from boto.sts import STSConnection # AWS SDK for Python (Boto) 'pip install boto'
+import boto3 # AWS SDK for Python (Boto3) 'pip install boto3'
 
 # Step 1: Authenticate user in your own identity system.
 
@@ -153,28 +153,36 @@ from boto.sts import STSConnection # AWS SDK for Python (Boto) 'pip install boto
 # and secret access key of an IAM user or using existing temporary credentials.
 # The credentials can be in EC2 instance metadata, in environment variables, 
 # or in a configuration file, and will be discovered automatically by the 
-# STSConnection() function. For more information, see the Python SDK docs:
-# http://boto.readthedocs.org/en/latest/boto_config_tut.html
-sts_connection = STSConnection()
+# client('sts') function. For more information, see the Python SDK docs:
+# http://boto3.readthedocs.io/en/latest/reference/services/sts.html
+# http://boto3.readthedocs.io/en/latest/reference/services/sts.html#STS.Client.assume_role
+
+sts_connection = boto3.client('sts')
 
 assumed_role_object = sts_connection.assume_role(
-    role_arn="arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME",
-    role_session_name="AssumeRoleSession"
+    RoleArn="arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME",
+    RoleSessionName="AssumeRoleSession",
 )
 
 # Step 3: Format resulting temporary credentials into JSON
-json_string_with_temp_credentials = '{'
-json_string_with_temp_credentials += '"sessionId":"' + assumed_role_object.credentials.access_key + '",'
-json_string_with_temp_credentials += '"sessionKey":"' + assumed_role_object.credentials.secret_key + '",'
-json_string_with_temp_credentials += '"sessionToken":"' + assumed_role_object.credentials.session_token + '"'
-json_string_with_temp_credentials += '}'
+url_credentials = {}
+url_credentials['sessionId'] = assumed_role_object.get('Credentials').get('AccessKeyId')
+url_credentials['sessionKey'] = assumed_role_object.get('Credentials').get('SecretAccessKey')
+url_credentials['sessionToken'] = assumed_role_object.get('Credentials').get('SessionToken')
+json_string_with_temp_credentials = json.dumps(url_credentials)
 
 # Step 4. Make request to AWS federation endpoint to get sign-in token. Construct the parameter string with
 # the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials 
 # as parameters.
 request_parameters = "?Action=getSigninToken"
 request_parameters += "&SessionDuration=43200"
-request_parameters += "&Session=" + urllib.quote_plus(json_string_with_temp_credentials)
+if sys.version_info[0] < 3:
+    def quote_plus_function(s):
+        return urllib.quote_plus(s)
+else:
+    def quote_plus_function(s):
+        return urllib.parse.quote_plus(s)
+request_parameters += "&Session=" + quote_plus_function(json_string_with_temp_credentials)
 request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 r = requests.get(request_url)
 # Returns a JSON document with a single element named SigninToken.
@@ -185,12 +193,12 @@ signin_token = json.loads(r.text)
 # sign-in token was issued.
 request_parameters = "?Action=login" 
 request_parameters += "&Issuer=Example.org" 
-request_parameters += "&Destination=" + urllib.quote_plus("https://console.aws.amazon.com/")
+request_parameters += "&Destination=" + quote_plus_function("https://console.aws.amazon.com/")
 request_parameters += "&SigninToken=" + signin_token["SigninToken"]
 request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 
 # Send final URL to stdout
-print request_url
+print (request_url)
 ```
 
 ## Example Code Using Java<a name="STSConsoleLink_programJava"></a>
