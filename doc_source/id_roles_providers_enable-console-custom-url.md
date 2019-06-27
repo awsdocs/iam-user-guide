@@ -135,7 +135,7 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
 
 ## Example Code Using Python<a name="STSConsoleLink_programPython"></a>
 
-The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto3\)](https://aws.amazon.com/tools/)\. 
+The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto 3\)](https://aws.amazon.com/tools/)\. 
 
 The code uses the [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
 
@@ -156,7 +156,6 @@ import boto3 # AWS SDK for Python (Boto3) 'pip install boto3'
 # client('sts') function. For more information, see the Python SDK docs:
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html#STS.Client.assume_role
-
 sts_connection = boto3.client('sts')
 
 assumed_role_object = sts_connection.assume_role(
@@ -182,8 +181,7 @@ if sys.version_info[0] < 3:
 else:
     def quote_plus_function(s):
         return urllib.parse.quote_plus(s)
-request_parameters += "&Session=" + quote_plus_function(json_string_with_temp_credentials)
-request_url = "https://signin.aws.amazon.com/federation" + request_parameters
+request_parameters += "&Session=" + quote_plus_function(json_string_with_temp_credentials)request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 r = requests.get(request_url)
 # Returns a JSON document with a single element named SigninToken.
 signin_token = json.loads(r.text)

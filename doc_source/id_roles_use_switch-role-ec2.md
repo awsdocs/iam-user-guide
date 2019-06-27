@@ -222,7 +222,7 @@ To understand how roles work with EC2 instances, you need to use the IAM console
 ## Related Information<a name="roles-usingrole-ec2instance-related-info"></a>
 
 For more information about creating roles or roles for EC2 instances, see the following information:
-+ For more information about [using IAM roles with Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances), go to the *Amazon EC2 User Guide for Linux Instances*\.
++ For more information about [using IAM roles with Amazon EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html), go to the *Amazon EC2 User Guide for Linux Instances*\.
 + To create a role, see [Creating IAM Roles](id_roles_create.md)
 + For more information about using temporary security credentials, see [Temporary Security Credentials](id_credentials_temp.md)\.
 + If you work with the IAM API or CLI, you must create and manage IAM instance profiles\. For more information about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\.

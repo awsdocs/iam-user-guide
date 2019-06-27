@@ -122,7 +122,8 @@ Base64-encoded private key
 ```
 
 **Example PEM\-encoded certificate chain**  
-A certificate chain contains one or more certificates\. The following example contains three certificates, but your certificate chain might contain more or fewer\.  
+A certificate chain contains one or more certificates\. You can use a text editor, the copy command in Windows, or the Linux cat command to concatenate your certificate files into a chain\. When you include multiple certificates, each certificate must certify the preceding certificate\. You accomplish this by concatenating the certificates, including the root CA certificate last\.  
+The following example contains three certificates, but your certificate chain might contain more or fewer certificates\.  
 
 ```
 -----BEGIN CERTIFICATE-----

@@ -21,7 +21,6 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-
 |   [ AssociateConfigurationItemsToApplication ](https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_AssociateConfigurationItemsToApplication.html)  | Associates one or more configuration items with an application\. | Write |  |  |  | 
 |   [ BatchDeleteImportData ](https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_BatchDeleteImportData.html)  | Deletes one or more Migration Hub import tasks, each identified by their import ID\. Each import task has a number of records, which can identify servers or applications\. | Write |  |  |  | 
 |   [ CreateApplication ](https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_CreateApplication.html)  | Creates an application with the given name and description\. | Write |  |  |  | 
