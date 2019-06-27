@@ -3,13 +3,13 @@
 AWS Batch \(service prefix: `batch`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/batch/latest/userguide/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/batch/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/batch/latest/userguide/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/batch/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Batch](#awsbatch-actions-as-permissions)
-+ [Resources Defined by Batch](#awsbatch-resources-for-iam-policies)
++ [Resources Defined by AWS Batch](#awsbatch-resources-for-iam-policies)
 + [Condition Keys for AWS Batch](#awsbatch-policy-keys)
 
 ## Actions Defined by AWS Batch<a name="awsbatch-actions-as-permissions"></a>
@@ -18,30 +18,31 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html)
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_CancelJob.html) | Cancels jobs in an AWS Batch job queue\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateComputeEnvironment.html) | Creates an AWS Batch compute environment\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_CreateJobQueue.html) | Creates an AWS Batch job queue\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteComputeEnvironment.html) | Deletes an AWS Batch compute environment\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeleteJobQueue.html) | Deletes the specified job queue\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DeregisterJobDefinition.html) | Deregisters an AWS Batch job definition\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeComputeEnvironments.html) | Describes one or more of your compute environments\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html) | Describes a list of job definitions\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobQueues.html) | Describes one or more of your job queues\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html) | Describes a list of AWS Batch jobs\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_ListJobs.html) | Returns a list of task jobs for a specified job queue\. | List |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html) | Registers an AWS Batch job definition\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html) | Submits an AWS Batch job from a job definition\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_TerminateJob.html) | Terminates jobs in a job queue\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateComputeEnvironment.html) | Updates an AWS Batch compute environment\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html](http://docs.aws.amazon.com/batch/latest/APIReference/API_UpdateJobQueue.html) | Updates a job queue\. | Write |  |  |  | 
+## Resources Defined by AWS Batch<a name="awsbatch-resources-for-iam-policies"></a>
 
-## Resources Defined by Batch<a name="awsbatch-resources-for-iam-policies"></a>
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsbatch-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
-Batch has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   job\-queue  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-queue/$\{JobQueueName\}  |  | 
+|   job\-definition  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-definition/$\{JobDefinitionName\}:$\{Revision\}  |  | 
 
 ## Condition Keys for AWS Batch<a name="awsbatch-policy-keys"></a>
 
-Batch has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Batch defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   batch:Image  | The image used to start a container\. | String | 
+|   batch:Privileged  | When this parameter is true, the container is given elevated privileges on the host container instance \(similar to the root user\)\. | Boolean | 
+|   batch:User  | The user name or numeric uid to use inside the container\. | String | 

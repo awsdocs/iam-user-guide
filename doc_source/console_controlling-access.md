@@ -15,7 +15,7 @@ Even if your users have passwords, they still need permission to access your AWS
 Anyone can read the posts on the [AWS Discussion Forums](https://forums.aws.amazon.com/)\. Users who want to post questions or comments to the AWS Discussion Forum can do so using their user name\. The first time a user posts to the AWS Discussion Forum, the user is prompted to enter a nickname and email address for use only by that user in the AWS Discussion Forums\. 
 
 **Your AWS account billing and usage information**  
-You can grant users access your AWS account billing and usage information\. For more information, see [ Controlling Access to Your Billing Information](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) in the *AWS Billing and Cost Management User Guide*\. 
+You can grant users access your AWS account billing and usage information\. For more information, see [ Controlling Access to Your Billing Information](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) in the *AWS Billing and Cost Management User Guide*\. 
 
 **Your AWS account profile information**  
 Users cannot access your AWS account profile information\.

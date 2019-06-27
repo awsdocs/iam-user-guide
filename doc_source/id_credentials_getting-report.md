@@ -45,14 +45,14 @@ The date and time when the AWS account root user or IAM user's password was last
 + The value in this field is `N/A` \(not applicable\) when the user does not have a password\.
 
 **Important**  
-Due to a service issue, password last used data does not include password use from May 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT\. This affects [last sign\-in](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html) dates shown in the IAM console and password last used dates in the [IAM credential report](http://docs.aws.amazon.com/IAM/latest/UserGuide/SupportedTypes.xmlid_credentials_getting-report.html), and returned by the [GetUser API operation](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)\. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3rd 2018\. For users that signed in after May 23rd 2018 14:08 PDT, the returned password last used date is accurate\.  
+Due to a service issue, password last used data does not include password use from May 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT\. This affects [last sign\-in](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html) dates shown in the IAM console and password last used dates in the [IAM credential report](https://docs.aws.amazon.com/IAM/latest/UserGuide/SupportedTypes.xmlid_credentials_getting-report.html), and returned by the [GetUser API operation](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)\. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3rd 2018\. For users that signed in after May 23rd 2018 14:08 PDT, the returned password last used date is accurate\.  
 If you use password last used information to identify unused credentials for deletion, such as deleting users who did not sign in to AWS in the last 90 days, we recommend that you adjust your evaluation window to include dates after May 23rd 2018\. Alternatively, if your users use access keys to access AWS programmatically you can refer to access key last used information because it is accurate for all dates\. 
 
 **password\_last\_changed**  
 The date and time when the user's password was last set, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601)\. If the user does not have a password, the value in this field is `N/A` \(not applicable\)\. The value for the AWS account \(root\) is always `not_supported`\.
 
 **password\_next\_rotation**  
-When the account has a [password policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html) that requires password rotation, this field contains the date and time, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601), when the user is required to set a new password\. The value for the AWS account \(root\) is always `not_supported`\.
+When the account has a [password policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html) that requires password rotation, this field contains the date and time, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601), when the user is required to set a new password\. The value for the AWS account \(root\) is always `not_supported`\.
 
 **mfa\_active**  
 When a [multi\-factor authentication](id_credentials_mfa.md) \(MFA\) device has been enabled for the user, this value is `TRUE`\. Otherwise it is `FALSE`\.
@@ -71,15 +71,15 @@ The value in this field is `N/A` \(not applicable\) in these cases:
 + The access key has not been used after IAM started tracking this information on April 22, 2015\.
 
 **access\_key\_1\_last\_used\_region**  
-The [AWS region](http://docs.aws.amazon.com/general/latest/gr/rande.html) in which the access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
+The [AWS Region](https://docs.aws.amazon.com/general/latest/gr/rande.html) in which the access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
 The value in this field is `N/A` \(not applicable\) in these cases:  
 + The user does not have an access key\.
 + The access key has never been used\.
 + The access key was last used before IAM started tracking this information on April 22, 2015\.
-+ The last used service is not region\-specific, such as Amazon S3\.
++ The last used service is not Region\-specific, such as Amazon S3\.
 
 **access\_key\_1\_last\_used\_service**  
-The AWS service that was most recently accessed with the access key\. The value in this field uses the service's [namespace](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces)—for example, `s3` for Amazon S3 and `ec2` for Amazon EC2\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
+The AWS service that was most recently accessed with the access key\. The value in this field uses the service's [namespace](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces)—for example, `s3` for Amazon S3 and `ec2` for Amazon EC2\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\.   
 The value in this field is `N/A` \(not applicable\) in these cases:  
 + The user does not have an access key\.
 + The access key has never been used\.
@@ -100,14 +100,14 @@ The value in this field is `N/A` \(not applicable\) in these cases:
 + The user's second access key was last used before IAM started tracking this information on April 22, 2015\.
 
 **access\_key\_2\_last\_used\_region**  
-The [AWS region](http://docs.aws.amazon.com/general/latest/gr/rande.html) in which the user's second access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  
+The [AWS Region](https://docs.aws.amazon.com/general/latest/gr/rande.html) in which the user's second access key was most recently used\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  
 + The user does not have a second access key\.
 + The user's second access key has never been used\.
 + The user's second access key was last used before IAM started tracking this information on April 22, 2015\.
-+ The last used service is not region\-specific, such as Amazon S3\.
++ The last used service is not Region\-specific, such as Amazon S3\.
 
 **access\_key\_2\_last\_used\_service**  
-The AWS service that was most recently accessed with the user's second access key\. The value in this field uses the service's [namespace](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces)—for example, `s3` for Amazon S3 and `ec2` for Amazon EC2\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  
+The AWS service that was most recently accessed with the user's second access key\. The value in this field uses the service's [namespace](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces)—for example, `s3` for Amazon S3 and `ec2` for Amazon EC2\. When an access key is used more than once in a 15\-minute span, only the first use is recorded in this field\. The value in this field is `N/A` \(not applicable\) in these cases:  
 + The user does not have a second access key\.
 + The user's second access key has never been used\.
 + The user's second access key was last used before IAM started tracking this information on April 22, 2015\.
@@ -133,18 +133,18 @@ You can use the AWS Management Console to download a credential report as a comm
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, click **Credential report**\.
+1. In the navigation pane, choose **Credential report**\.
 
-1. Click **Download Report**\.
+1. Choose **Download Report**\.
 
 ## Getting Credential Reports \(AWS CLI\)<a name="getting-credential-reports-cliapi"></a>
 
 Run the following commands:
-+ To generate a credential report: [http://docs.aws.amazon.com/cli/latest/reference/iam/generate-credential-report.html](http://docs.aws.amazon.com/cli/latest/reference/iam/generate-credential-report.html)
-+ To retrieve a credential report: [http://docs.aws.amazon.com/cli/latest/reference/iam/get-credential-report.html](http://docs.aws.amazon.com/cli/latest/reference/iam/get-credential-report.html)
++ To generate a credential report: [https://docs.aws.amazon.com/cli/latest/reference/iam/generate-credential-report.html](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-credential-report.html)
++ To retrieve a credential report: [https://docs.aws.amazon.com/cli/latest/reference/iam/get-credential-report.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-credential-report.html)
 
 ## Getting Credential Reports \(AWS API\)<a name="getting-credential-reports-api"></a>
 
 Call the following operations:
-+ To generate a credential report: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html)
-+ To retrieve a credential report: [http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCredentialReport.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCredentialReport.html)
++ To generate a credential report: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html)
++ To retrieve a credential report: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCredentialReport.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCredentialReport.html)

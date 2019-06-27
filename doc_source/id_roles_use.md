@@ -1,6 +1,6 @@
 # Using IAM Roles<a name="id_roles_use"></a>
 
-Before an IAM user, application, or service can use a role that you created, you must grant permissions to switch to the role\. You can use any policy attached to one of an IAM user's groups or to the user itself to grant the necessary permissions\. This section describes how to grant users permission to use a role, and then how the user can switch to a role using the AWS Management Console, the Tools for Windows PowerShell, the AWS Command Line Interface \(AWS CLI\) and the [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API\.
+Before an IAM user, application, or service can use a role that you created, you must grant permissions to switch to the role\. You can use any policy attached to one of an IAM user's groups or to the user itself to grant the necessary permissions\. This section describes how to grant users permission to use a role, and then how the user can switch to a role using the AWS Management Console, the Tools for Windows PowerShell, the AWS Command Line Interface \(AWS CLI\) and the [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API\.
 
 **Important**  
 If you create a role programmatically instead of in the IAM console, then you have an option to add a `Path` of up to 512 characters in addition to the `RoleName`, which can be up to 64 characters long\. However, if you intend to use a role with the **Switch Role** feature in the AWS console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.
@@ -13,16 +13,19 @@ You can switch roles from the AWS Management Console\. You can assume a role by 
 |  Method |  **Who can assume the role**  | **Method to specify credential lifetime** |  **Credential lifetime \(min \| max \| default\)**  | 
 | --- | --- | --- | --- | 
 | AWS Management Console | IAM user \(by [switching roles](id_roles_use_switch-role-console.md)\) | None | 1h \| 1h \| 1h | 
-| [http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) CLI or [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation | IAM user or role¹ | duration\-seconds CLI or DurationSeconds API parameter | 15m \| Maximum session duration setting² \| 1hr  | 
-| [http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html) CLI or [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API operation | Any user authenticated using SAML | duration\-seconds CLI or DurationSeconds API parameter | 15m \| Maximum session duration setting² \| 1hr  | 
-| [http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-web-identity.html](http://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-web-identity.html) CLI or [http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) API operation | Any user authenticated using a web identity provider | duration\-seconds CLI or DurationSeconds API parameter | 15m \| Maximum session duration setting² \| 1hr  | 
+| [https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) CLI or [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation | IAM user or role¹ | duration\-seconds CLI or DurationSeconds API parameter | 15m \| Maximum session duration setting² \| 1hr  | 
+| [https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html) CLI or [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API operation | Any user authenticated using SAML | duration\-seconds CLI or DurationSeconds API parameter | 15m \| Maximum session duration setting² \| 1hr  | 
+| [https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-web-identity.html](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-web-identity.html) CLI or [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithWebIdentity.html) API operation | Any user authenticated using a web identity provider | duration\-seconds CLI or DurationSeconds API parameter | 15m \| Maximum session duration setting² \| 1hr  | 
 | [Console URL](id_roles_providers_enable-console-custom-url.md) constructed with AssumeRole  | IAM user or role | SessionDuration HTML parameter in the URL | 15m \| 12hr \| 1hr  | 
 | [Console URL](id_roles_providers_enable-console-custom-url.md) constructed with AssumeRoleWithSAML  | Any user authenticated using SAML | SessionDuration HTML parameter in the URL | 15m \| 12hr \| 1hr | 
 | [Console URL](id_roles_providers_enable-console-custom-url.md) constructed with AssumeRoleWithWebIdentity  | Any user authenticated using a web identity provider | SessionDuration HTML parameter in the URL | 15m \| 12hr \| 1hr  | 
 
 ¹ Using the credentials for one role to assume a different role is called [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. When you use role chaining, your new credentials are limited to a maximum duration of one hour\.
 
-² The maximum session duration is a setting that you can apply to a role from the console, the AWS CLI, or the API\. This setting specifies the maximum session duration for the role when it is assumed from the CLI or API\. This setting can have a value from 1 hour to 12 hours\. For details about the maximum session duration setting, see [Modifying a Role](id_roles_manage_modify.md)\. This setting determines the maximum session duration that you can request when you get the role credentials\. For example, when you use the [AssumeRole\*](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operations to assume a role, you can specify a session length using the `DurationSeconds` parameter\. Use this parameter to specify the length of the role session from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session) later in this page\.
+² The maximum session duration is a setting that you can apply to a role from the console, the AWS CLI, or the API\. This setting specifies the maximum session duration for the role when it is assumed from the CLI or API\. This setting can have a value from 1 hour to 12 hours\. For details about the maximum session duration setting, see [Modifying a Role](id_roles_manage_modify.md)\. This setting determines the maximum session duration that you can request when you get the role credentials\. For example, when you use the [AssumeRole\*](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operations to assume a role, you can specify a session length using the `DurationSeconds` parameter\. Use this parameter to specify the length of the role session from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session) later in this page\.
+
+**Note**  
+The maximum session duration setting applies only to sessions created using the `AssumeRole*` API operations or `assume-role*` CLI commands\. The setting does not limit sessions assumed by AWS services\.
 
 **Topics**
 + [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session)
@@ -50,15 +53,15 @@ When you use an AWS CLI or API operation to assume a role, you can specify a val
 **To view a role's maximum session duration setting \(AWS CLI\)**
 
 1. If you don't know the name of the role that you want to assume, run the following command to list the roles in your account:
-   + [aws iam list\-roles](http://docs.aws.amazon.com/cli/latest/reference/iam/list-roles.html)
+   + [aws iam list\-roles](https://docs.aws.amazon.com/cli/latest/reference/iam/list-roles.html)
 
 1. To view the role's maximum session duration, run the following command\. Then view the maximum session duration parameter\.
-   + [aws iam get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
+   + [aws iam get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
 **To view a role's maximum session duration setting \(AWS API\)**
 
 1. If you don't know the name of the role that you want to assume, call the following operation to list the roles in your account:
-   + [ListRoles](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html)
+   + [ListRoles](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRoles.html)
 
 1. To view the role's maximum session duration, run the following operation\. Then view the maximum session duration parameter\.
-   + [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)
+   + [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html)

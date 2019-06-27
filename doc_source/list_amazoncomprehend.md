@@ -3,13 +3,13 @@
 Amazon Comprehend \(service prefix: `comprehend`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/comprehend/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/comprehend/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/comprehend/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/comprehend/latest/dg/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Comprehend](#amazoncomprehend-actions-as-permissions)
-+ [Resources Defined by Comprehend](#amazoncomprehend-resources-for-iam-policies)
++ [Resources Defined by Amazon Comprehend](#amazoncomprehend-resources-for-iam-policies)
 + [Condition Keys for Amazon Comprehend](#amazoncomprehend-policy-keys)
 
 ## Actions Defined by Amazon Comprehend<a name="amazoncomprehend-actions-as-permissions"></a>
@@ -18,25 +18,31 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncomprehend.html)
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectDominantLanguage.html) | Detects the language or languages present in the list of text documents\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectEntities.html) | Detects the named entities \("People", "Places", "Locations", etc\) within the given list of text documents\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectKeyPhrases.html) | Detects the phrases in the list of text documents that are most indicative of the content\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_BatchDetectSentiment.html) | Detects the sentiment of a text in the list of documents \(Positive, Negative, Neutral, or Mixed\)\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_DescribeTopicsDetectionJob.html) | Gets the properties associated with a topic detection job\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectDominantLanguage.html) | Detects the language or languages present in the text\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectEntities.html) | Detects the named entities \("People", "Places", "Locations", etc\) within the given text document\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectKeyPhrases.html) | Detects the phrases in the text that are most indicative of the content\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_DetectSentiment.html) | Detects the sentiment of a text in a document \(Positive, Negative, Neutral, or Mixed\)\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_ListTopicsDetectionJobs.html) | Gets a list of the topic detection jobs that you have submitted\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html](http://docs.aws.amazon.com/comprehend/latest/dg/API_StartTopicsDetectionJob.html) | Starts an asynchronous job to detect the most common topics in the collection of documents and the phrases associated with each topic\. | Write |  |  |  | 
+## Resources Defined by Amazon Comprehend<a name="amazoncomprehend-resources-for-iam-policies"></a>
 
-## Resources Defined by Comprehend<a name="amazoncomprehend-resources-for-iam-policies"></a>
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazoncomprehend-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
-Comprehend has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   document\-classifier  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:document\-classifier/$\{DocumentClassifierName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
+|   entity\-recognizer  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:entity\-recognizer/$\{EntityRecognizerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Comprehend<a name="amazoncomprehend-policy-keys"></a>
 
-Comprehend has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Comprehend defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters create requests based on the allowed set of values for each of the mandatory tags\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters actions based on the tag value associated with the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

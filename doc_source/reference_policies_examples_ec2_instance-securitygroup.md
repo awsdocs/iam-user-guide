@@ -1,6 +1,6 @@
 # Amazon EC2: Allows Starting or Stopping an EC2 Instance and Modifying a Security Group, Programmatically and in the Console<a name="reference_policies_examples_ec2_instance-securitygroup"></a>
 
-This example shows how you might create a policy that allows starting or stopping a specific EC2 instance and modifying a specific security group\. This policy also provides the permissions necessary to complete this action on the console\. To use this policy, replace the red text in the example policy with your own information\.
+This example shows how you might create a policy that allows starting or stopping a specific EC2 instance and modifying a specific security group\. This policy also grants the permissions necessary to complete this action on the console\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {
@@ -26,8 +26,8 @@ This example shows how you might create a policy that allows starting or stoppin
                 "ec2:StopInstances"
             ],
             "Resource": [
-                "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:instance/i-<INSTANCE-ID>",
-                "arn:aws:ec2:<REGION>:<ACCOUNTNUMBER>:security-group/sg-<SECURITY-GROUP-ID>"
+                "arn:aws:ec2:*:*:instance/i-instance-id",
+                "arn:aws:ec2:*:*:security-group/sg-security-group-id"
             ],
             "Effect": "Allow"
         }

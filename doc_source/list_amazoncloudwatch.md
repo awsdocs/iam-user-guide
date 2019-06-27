@@ -3,13 +3,13 @@
 Amazon CloudWatch \(service prefix: `cloudwatch`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon CloudWatch](#amazoncloudwatch-actions-as-permissions)
-+ [Resources Defined by CloudWatch](#amazoncloudwatch-resources-for-iam-policies)
++ [Resources Defined by Amazon CloudWatch](#amazoncloudwatch-resources-for-iam-policies)
 + [Condition Keys for Amazon CloudWatch](#amazoncloudwatch-policy-keys)
 
 ## Actions Defined by Amazon CloudWatch<a name="amazoncloudwatch-actions-as-permissions"></a>
@@ -18,30 +18,31 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html)
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteAlarms.html) | Deletes all specified alarms\. In the event of an error, no alarms are deleted | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DeleteDashboards.html) | Deletes all CloudWatch dashboards that you specify | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmHistory.html) | Retrieves history for the specified alarm | Read |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html) | Retrieves alarms with the specified names | Read |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarmsForMetric.html) | Retrieves all alarms for a single metric | Read |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DisableAlarmActions.html) | Disables actions for the specified alarms | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_EnableAlarmActions.html) | Enables actions for the specified alarms | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetDashboard.html) | Displays the details of the CloudWatch dashboard you specify | Read |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html) | Required to retrieve batch amounts of CloudWatch metric data and perform metric math on retrieved data | Read |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html) | Gets statistics for the specified metric | Read |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListDashboards.html) | Returns a list of all CloudWatch dashboards in your account | List |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html) | Returns a list of valid metrics stored for the AWS account owner | List |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutDashboard.html) | Creates a CloudWatch dashboard, or updates an existing dashboard if it already exists | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricAlarm.html) | Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_PutMetricData.html) | Publishes metric data points to Amazon CloudWatch | Write |  |  |  | 
-| [http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html](http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_SetAlarmState.html) | Temporarily sets the state of an alarm for testing purposes | Write |  |  |  | 
+## Resources Defined by Amazon CloudWatch<a name="amazoncloudwatch-resources-for-iam-policies"></a>
 
-## Resources Defined by CloudWatch<a name="amazoncloudwatch-resources-for-iam-policies"></a>
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazoncloudwatch-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
-CloudWatch has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ alarm ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html)  |  arn:$\{Partition\}:cloudwatch:$\{Region\}:$\{Account\}:alarm:$\{AlarmName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncloudwatch-aws_ResourceTag___TagKey_)   | 
+|   [ dashboard ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html)  |  arn:$\{Partition\}:cloudwatch::$\{Account\}:dashboard/$\{DashboardName\}  |  | 
 
 ## Condition Keys for Amazon CloudWatch<a name="amazoncloudwatch-policy-keys"></a>
 
-CloudWatch has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon CloudWatch defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value associated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 

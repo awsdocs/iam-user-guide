@@ -3,13 +3,13 @@
 AWS Budget Service \(service prefix: `budgets`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Budget Service](#awsbudgetservice-actions-as-permissions)
-+ [Resources Defined by Budget](#awsbudgetservice-resources-for-iam-policies)
++ [Resources Defined by AWS Budget Service](#awsbudgetservice-resources-for-iam-policies)
 + [Condition Keys for AWS Budget Service](#awsbudgetservice-policy-keys)
 
 ## Actions Defined by AWS Budget Service<a name="awsbudgetservice-actions-as-permissions"></a>
@@ -23,10 +23,10 @@ The actions in this table are not APIs, but are instead permissions that grant a
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | Modify budgets and budget details | Write | [budget\*](#awsbudgetservice-budget)  |  |  | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) | View budgets and budget details | Read | [budget\*](#awsbudgetservice-budget)  |  |  | 
+|   [ ModifyBudget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Modify budgets and budget details | Write |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
+|   [ ViewBudget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | View budgets and budget details | Read |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
 
-## Resources Defined by Budget<a name="awsbudgetservice-resources-for-iam-policies"></a>
+## Resources Defined by AWS Budget Service<a name="awsbudgetservice-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsbudgetservice-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
@@ -35,8 +35,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html) | arn:$\{Partition\}:budgets::$\{Account\}:budget/$\{BudgetName\} |  | 
+|   [ budget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html)  |  arn:$\{Partition\}:budgets::$\{Account\}:budget/$\{BudgetName\}  |  | 
 
 ## Condition Keys for AWS Budget Service<a name="awsbudgetservice-policy-keys"></a>
 
-Budget has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Budget has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

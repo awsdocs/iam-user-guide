@@ -3,13 +3,13 @@
 AWS Elemental MediaLive \(service prefix: `medialive`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com//medialive/latest/ug/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com//medialive/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com//medialive/latest/ug/IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com//medialive/latest/ug/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com//medialive/latest/ug/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com//medialive/latest/ug/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaLive](#awselementalmedialive-actions-as-permissions)
-+ [Resources Defined by MediaLive](#awselementalmedialive-resources-for-iam-policies)
++ [Resources Defined by AWS Elemental MediaLive](#awselementalmedialive-resources-for-iam-policies)
 + [Condition Keys for AWS Elemental MediaLive](#awselementalmedialive-policy-keys)
 
 ## Actions Defined by AWS Elemental MediaLive<a name="awselementalmedialive-actions-as-permissions"></a>
@@ -18,28 +18,34 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmedialive.html)
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/channels.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels.html) | Create a medialive channel | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html) | Create a medialive input | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html) | Create a medialive input security group | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html) | Delete a medialive channel | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html) | Delete a medialive input | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html) | Delete a medialive input security group | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid.html) | Get details about a medialive channel | Read |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs-inputid.html) | Describe a medialive input | Read |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups-inputsecuritygroupid.html) | Describe a medialive input security group | Read |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/channels.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels.html) | List medialive channels | List |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputsecuritygroups.html) | List medialive input security groups | List |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html](http://docs.aws.amazon.com//medialive/latest/apireference/inputs.html) | List medialive inputs | List |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-start.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-start.html) | Start a medialive channel | Write |  |  |  | 
-| [http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-stop.html](http://docs.aws.amazon.com//medialive/latest/apireference/channels-channelid-stop.html) | Stop a medialive channel | Write |  |  |  | 
+## Resources Defined by AWS Elemental MediaLive<a name="awselementalmedialive-resources-for-iam-policies"></a>
 
-## Resources Defined by MediaLive<a name="awselementalmedialive-resources-for-iam-policies"></a>
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awselementalmedialive-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
-MediaLive has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ channel ](https://docs.aws.amazon.com//medialive/latest/ug/channels.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:channel:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
+|   [ input ](https://docs.aws.amazon.com//medialive/latest/ug/inputs.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:input:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
+|   [ input\-security\-group ](https://docs.aws.amazon.com//medialive/latest/ug/inputsecuritygroups.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:inputSecurityGroup:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
+|   [ reservation ](https://docs.aws.amazon.com//medialive/latest/ug/reservations.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:reservation:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
+|   [ offering ](https://docs.aws.amazon.com//medialive/latest/ug/input-output-reservations.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:offering:\*  |  | 
 
 ## Condition Keys for AWS Elemental MediaLive<a name="awselementalmedialive-policy-keys"></a>
 
-MediaLive has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Elemental MediaLive defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  |  | String | 
+|   aws:ResourceTag/$\{TagKey\}  |  | String | 
+|   aws:TagKeys  |  | String | 

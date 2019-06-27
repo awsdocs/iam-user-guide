@@ -1,14 +1,15 @@
-# IAM Policy Elements: Variables<a name="reference_policies_variables"></a>
+# IAM Policy Elements: Variables and Tags<a name="reference_policies_variables"></a>
 
 **Topics**
 + [Introduction](#policy-vars-intro)
++ [Tags as Policy Variables](#policy-vars-tags)
 + [Where You Can Use Policy Variables](#policy-vars-wheretouse)
 + [Request Information That You Can Use for Policy Variables](#policy-vars-infotouse)
 + [For More Information](#policy-vars-formoreinfo)
 
 ## Introduction<a name="policy-vars-intro"></a>
 
-In IAM policies, many actions allow you to provide a name for the specific resources that want to control access to\. For example, the following policy allows the user to list, read, and write objects with a prefix `David` in the Amazon S3 bucket `mybucket`\. 
+In IAM policies, many actions allow you to provide a name for the specific resources that you want to control access to\. For example, the following policy allows the user to list, read, and write objects with a prefix `David` in the Amazon S3 bucket `mybucket`\. 
 
 ```
 {
@@ -32,7 +33,7 @@ In IAM policies, many actions allow you to provide a name for the specific resou
 }
 ```
 
-In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. However, instead of creating a separate policy for each user that explicitly specifies the user's name as part of the resource, you want to create a single group policy that works for any user in that group\. 
+In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy to allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. But don't create a separate policy for each user that explicitly specifies the user's name as part of the resource\. Instead, create a single group policy that works for any user in that group\. 
 
 You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\. 
 
@@ -66,7 +67,7 @@ The variable is marked using a `$` prefix followed by a pair of curly braces \(`
 
 **Note**  
 In order to use policy variables, you must include the `Version` element in a statement, and the version must be set to a version that supports policy variables\. Variables were introduced in version `2012-10-17`\. Earlier versions of the policy language don't support policy variables\. If you don't include the `Version` element and set it to an appropriate version date, variables like `${aws:username}` are treated as literal strings in the policy\.   
-A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
+A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you change a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
 
 You can use policy variables in a similar way to allow each user to manage his or her own access keys\. A policy that allows a user to programmatically change the access key for user `David` looks like this: 
 
@@ -98,13 +99,19 @@ By using a policy variable, you can create a policy like this:
 
 When you use a policy variable for the user name like this, you don't have to have a separate policy for each individual user\. Instead, you can attach this new policy to an IAM group that includes everyone who should be allowed to manage their own access keys\. When a user makes a request to modify his or her access key, IAM substitutes the user name from the current request for the `${aws:username}` variable and evaluates the policy\. 
 
+## Tags as Policy Variables<a name="policy-vars-tags"></a>
+
+In some AWS services you can attach your own custom attributes to resources that are created by those services\. For example, you can apply tags to Amazon S3 buckets or to IAM users and roles\. These tags are key–value pairs\. You define the tag key name and the value associated with that key name\. For example, you might create a tag with a **department** key and a **Human Resources** value\. For more information about tagging IAM entities, see [Tagging IAM Entities](id_tags.md)\. For information about tagging resources created by other AWS services, see the documentation for that service\. For information about using Tag Editor, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Management Console User Guide*\.
+
+You can tag IAM identities to simplify discovering, organizing, and tracking your IAM resources\. You can also tag IAM identities to control access to resources or to tagging itself\. To learn more about using tags to control access, see [Controlling Access Using IAM Tags](access_iam-tags.md)\. 
+
 ## Where You Can Use Policy Variables<a name="policy-vars-wheretouse"></a>
 
 You can use policy variables in the `Resource` element and in string comparisons in the `Condition` element\.
 
 ### Resource Element<a name="policy-vars-resourceelement"></a>
 
-A policy variable can appear as the last part of the [ARN](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that identifies a resource\. The following policy might be attached to a group\. It gives each of the users in the group full programmatic access to a user\-specific object \(their own "home directory"\) in Amazon S3\. 
+A policy variable can appear as the last part of the [ARN](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) that identifies a resource\. The following policy might be attached to a group\. It gives each of the users in the group full programmatic access to a user\-specific object \(their own "home directory"\) in Amazon S3\. 
 
 ```
 {
@@ -131,17 +138,32 @@ A policy variable can appear as the last part of the [ARN](http://docs.aws.amazo
 **Note**  
 This example uses the `aws:username` key, which returns the user's friendly name \(like "Adele" or "David"\)\. Under some circumstances, you might want to use the `aws:userid` key instead, which is a globally unique value\. For more information, see [Unique IDs](reference_identifiers.md#identifiers-unique-ids)\.
 
-The following policy might be used for an IAM group\. It gives users in that group the ability to create, use, and delete queues that have their names and that are in the us\-east\-2 region\.
+The following policy might be used for an IAM group\. It gives users in that group the ability to create, use, and delete queues that have their names and that are in the us\-east\-2 Region\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": "sqs:*",
-    "Resource": "arn:aws:sqs:us-east-2:*:${aws:username}-queue"
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ListForConsole",
+            "Effect": "Allow",
+            "Action": "sqs:ListQueues",
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllQueueActions",
+            "Effect": "Allow",
+            "Action": "sqs:*",
+            "Resource": "arn:aws:sqs:us-east-2:*:${aws:username}-queue"
+        }
+    ]
 }
+```
+
+To replace part of an ARN with a tag value, surround the prefix and key name with $\{\}\. For example, the following `Resource` element refers to only a bucket that is named the same as the value in the requesting user's `department` tag\.
+
+```
+    "Resource": ["arn:aws:s3:::bucket/${aws:PrincipalTag/department}"]
 ```
 
 ### Condition Element<a name="policy-vars-conditionelement"></a>
@@ -160,6 +182,26 @@ A policy variable can also be used for `Condition` values in any condition that 
 }
 ```
 
+When referencing a tag in a `Condition` element expression, use the relevant prefix and key name as the condition key\. Then use the value that you want to test in the condition value\. For example, the following policy example allows access to a resource only if the tag `costCenter` is attached to the resource\. The tag must also have a value of either `12345` or `67890`\. If the tag has no value, or has any other value, then the request fails\.
+
+```
+{
+  "Version": "2015-01-01",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "*",
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "iam:ResourceTag/costCenter": [ "12345", "67890" ]
+        }
+      }
+    }
+  ]
+}
+```
+
 ## Request Information That You Can Use for Policy Variables<a name="policy-vars-infotouse"></a>
 
  The values that can be substituted for policy variables must come from the current [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext)\. 
@@ -168,12 +210,12 @@ A policy variable can also be used for `Condition` values in any condition that 
 
 Policies contain keys whose values you can use as policy variables\. \(Under some circumstances, the keys do not contain a value—see the information that follows this list\.\) 
 + **`aws:CurrentTime`** This can be used for conditions that check the date and time\.
-+ **`aws:EpochTime`** This is the date in epoch or UNIX time, for use with date/time conditions\.
++ **`aws:EpochTime`** This is the date in epoch or Unix time, for use with date/time conditions\.
 + **`aws:TokenIssueTime`** This is the date and time that temporary security credentials were issued and can be used with date/time conditions\. **Note:** This key is only available in requests that are signed using temporary security credentials\. For more information about temporary security credentials, see [Temporary Security Credentials](id_credentials_temp.md)\.
 + **`aws:principaltype`** This value indicates whether the principal is an account, user, federated, or assumed role—see the explanation that follows later\.
 + **`aws:SecureTransport`** This is a Boolean value that represents whether the request was sent using SSL\.
 + **`aws:SourceIp`** This is the requester's IP address, for use with IP address conditions\. Refer to [IP Address Condition Operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress) for information about when `SourceIp` is valid and when you should use a VPC\-specific key instead\. 
-+ **`aws:UserAgent`** This value is a string that contains information about the requester's client application\.
++ **`aws:UserAgent`** This value is a string that contains information about the requester's client application\. This string is generated by the client and can be unreliable\. You can only use this context key from the AWS CLI\.
 + **`aws:userid`** This value is the unique ID for the current user—see the chart that follows\.
 + **`aws:username`** This is a string containing the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the current user—see the chart that follows\.
 + **`ec2:SourceInstanceARN`** This is the Amazon Resource Name \(ARN\) of the Amazon EC2 instance from which the request is made\. This key is present only when the request comes from an Amazon EC2 instance using an IAM role associated with an EC2 instance profile\.
@@ -181,9 +223,9 @@ Policies contain keys whose values you can use as policy variables\. \(Under som
 **Important**  
 Key names are case\-insensitive\. For example, `aws:CurrentTime` is equivalent to `AWS:currenttime`\. 
 
-The values for `aws:username`, `aws:userid`, and `aws:principaltype` depend on what type of principal initiated the request—whether the request was made using the credentials of an AWS account, an IAM user, an IAM role, and so on\. The following shows values for these keys for different types of principal\. 
+The values for `aws:username`, `aws:userid`, and `aws:principaltype` depend on what type of principal initiated the request\. For example, the request could be made using the credentials of an AWS account, an IAM user, an IAM role, and so on\. The following shows values for these keys for different types of principal\. 
 
-In this 
+For the items in this note the following:
 + *not present* means that the value is not in the current request information, and any attempt to match it fails and causes the request to be denied\. 
 + *role\-id* is a unique identifier assigned to each role at creation\. You can display the role ID with the AWS CLI command: `aws iam get-role --role-name rolename`
 + *caller\-specified\-name* and *caller\-specified\-role\-name* are names that are passed by the calling process \(such as an application or service\) when it makes a call to get temporary credentials\.
@@ -196,8 +238,8 @@ Federated users are users who are authenticated using a system other than IAM\. 
 Similarly, you might create an app for a mobile device in which the app needs to access AWS resources\. In that case, you might use *web identity federation*, where the app authenticates the user using a well\-known identity provider like Login with Amazon, Amazon Cognito, Facebook, or Google\. The app can then use the user's authentication information from these providers to get temporary security credentials for accessing AWS resources\. 
 
 The recommended way to use web identity federation is by taking advantage of Amazon Cognito and the AWS mobile SDKs\. For more information, see the following:
-+ [Amazon Cognito Overview ](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* 
-+ [Amazon Cognito Overview ](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* 
++ [Amazon Cognito Overview ](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* 
++ [Amazon Cognito Overview ](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* 
 + [Common Scenarios for Temporary Credentials](id_credentials_temp.md#sts-introduction)\.
 
 ### Service\-Specific Information<a name="policy-vars-infoperservice"></a>
@@ -210,8 +252,8 @@ Requests can also include service\-specific keys and values in its request conte
 + `sns:Protocol`
 
 For information about service\-specific keys that you can use to get values for policy variables, refer to the documentation for the individual services\. For example, see the following topics: 
-+  [Bucket Keys in Amazon S3 Policies](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
-+  [Amazon SNS Keys](http://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
++  [Bucket Keys in Amazon S3 Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
++  [Amazon SNS Keys](https://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
 
 ### Special Characters<a name="policy-vars-specialchars"></a>
 
@@ -225,8 +267,8 @@ These predefined policy variables can be used in any string where you can use re
 ## For More Information<a name="policy-vars-formoreinfo"></a>
 
  For more information about policies, see the following: 
-+  [IAM Policies](access_policies.md) 
-+  [Example Policies](access_policies_examples.md) 
++  [Policies and Permissions](access_policies.md) 
++  [Example IAM Identity\-Based Policies](access_policies_examples.md) 
 +  [IAM JSON Policy Elements Reference](reference_policies_elements.md) 
-+  [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md) 
++  [Policy Evaluation Logic](reference_policies_evaluation-logic.md) 
 +  [About Web Identity Federation](id_roles_providers_oidc.md)

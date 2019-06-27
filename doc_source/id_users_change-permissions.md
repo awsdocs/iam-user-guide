@@ -1,26 +1,34 @@
 # Changing Permissions for an IAM User<a name="id_users_change-permissions"></a>
 
-You can change the permissions for an IAM user in your AWS account by changing its group memberships or by attaching and detaching managed policies\. A user gets its permissions through one of the following methods:
-
-**Group membership**  
-+ Add or remove a user from a group\.
-+ Add, remove, or edit a managed policy attached to the group\. This policy can be an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies) or a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) that you create\.
-+ Add, remove, or edit a group's [inline policies](access_policies_managed-vs-inline.md#inline-policies)\.
-
-**Direct policy attachment**  
-+ Add, remove, or edit a managed policy attached directly to a user\. This policy can be an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies) or a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) that you create\.
-+ Add, remove, or edit a user's [inline policies](access_policies_managed-vs-inline.md#inline-policies)\.
+You can change the permissions for an IAM user in your AWS account by changing its group memberships, by copying permissions from an existing user, by attaching policies directly to a user, or by setting a [permissions boundary](access_policies_boundaries.md)\. A permissions boundary controls the maximum permissions that a user can have\. Permissions boundaries are an advanced AWS feature\.
 
 For information about the permissions that you need in order to modify the permissions for a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\.
 
-## Adding Permissions to a New or Existing User \(Console\)<a name="w3ab1c19c19c26b9"></a>
+**Topics**
++ [View User Access](#users-modify_prerequisites)
++ [Adding Permissions to a User \(Console\)](#users_change_permissions-add-console)
++ [Changing Permissions for a User \(Console\)](#users_change_permissions-change-console)
++ [Removing a Permissions Policy from a User \(Console\)](#users_change_permissions-remove-policy-console)
++ [Removing the Permissions Boundary from a User \(Console\)](#users_change_permissions-remove-boundary-console)
++ [Adding and Removing a User's Permissions \(AWS CLI or AWS API\)](#users_change_permissions-add-programmatic)
 
-You can change permissions associated with a user through one of three techniques:
-+ [**Add user to group**](#by-add-users-to-group) – Make the user a member of a group that already has policies attached\. Every member of the group receives the permissions granted by the group's policies\.
-+ [**Copy permissions from existing user**](#by-copying-user) – Copy all group memberships and attached managed policies as well as all inline policies embedded in the source user\.
-+ [**Attach policies directly to user**](#by-direct-attach-policy) – Attach a managed policy directly to the user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
+## View User Access<a name="users-modify_prerequisites"></a>
 
-### Adding Permissions by Adding the User to a Group<a name="w3ab1c19c19c26b9b6"></a><a name="by-add-users-to-group"></a>
+Before you change the permissions for a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+
+## Adding Permissions to a User \(Console\)<a name="users_change_permissions-add-console"></a>
+
+IAM offers three ways to add permissions policies to a user:
++ **Add user to group** – Make the user a member of a group\. The policies from the group are attached to the user\.
++ **Copy permissions from existing user** – Copy all group memberships, attached managed policies, inline policies, and any existing permissions boundaries from the source user\.
++ **Attach policies directly to user** – Attach a managed policy directly to the user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
+
+**Important**  
+If the user has a permissions boundary, then you cannot add more permissions to a user than are allowed by the permissions boundary\.
+
+### Adding Permissions by Adding the User to a Group<a name="users_change_permissions-add-group-console"></a>
+
+Adding a user to a group affects the user immediately\.<a name="by-add-users-to-group"></a>
 
 **To add permissions to a user by adding the user to a group**
 
@@ -36,17 +44,17 @@ You can change permissions associated with a user through one of three technique
 
    1. Choose **Close** to return to the list of users\.
 
-   The **Groups** column tells you to which groups the user belongs\. The field includes the group names for up to two groups\. If the user is a member of three or more groups, the first two groups are shown \(ordered\.alphabetically\), and the number of additional group memberships is included\. For example, if the user belongs to Group A, Group B, Group C, and Group D, then the field contains the value **Group A, Group B \+ 2 more**\. To see the total number of groups to which the user belongs, you can add the **Group count** column to the users table\.
+   The **Groups** column tells you to which groups the user belongs\. The column includes the group names for up to two groups\. If the user is a member of three or more groups, the first two groups are shown \(ordered alphabetically\), and the number of additional group memberships is included\. For example, if the user belongs to Group A, Group B, Group C, and Group D, then the field contains the value **Group A, Group B \+ 2 more**\. To see the total number of groups to which the user belongs, you can add the **Group count** column to the users table\.
 
 1. Choose the name of the user whose permissions you want to modify\. 
 
-1. Choose the **Permissions** tab, and then choose **Add permissions**\. Under **Grant permissions** choose **Add user to group**\. 
+1. Choose the **Permissions** tab, and then choose **Add permissions**\. Choose **Add user to group**\. 
 
-1. Select the check box for each group that you want the user to join\. The list shows each group's name and the policies that the user receives if made a member of that group\. The permissions in each selected group apply to the user as soon as you complete the process\.
+1. Select the check box for each group that you want the user to join\. The list shows each group's name and the policies that the user receives if made a member of that group\.
 
 1. \(Optional\) In addition to selecting from existing groups, you can choose **Create group** to define a new group:
 
-   1. For **Group name**, type a name for your new group\.
+   1. In the new tab, for **Group name**, type a name for your new group\.
 **Note**  
 Group names can be a combination of up to 128 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two groups named *TESTGROUP* and *testgroup*\. For more information about limitations on IAM entities, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\. 
 
@@ -54,13 +62,13 @@ Group names can be a combination of up to 128 letters, digits, and these charact
 
    1. Choose **Create group**\.
 
-   1. Back in the list of groups, select the check box for your new group\.
+   1. Return to the original tab, refresh your list of groups\. Then select the check box for your new group\.
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the user\. Then choose **Add permissions**\.
 
-The new permissions affect the user immediately\.
+### Adding Permissions by Copying from Another User<a name="users_change_permissions-add-copy-console"></a>
 
-### Adding Permissions by Copying from Another User<a name="w3ab1c19c19c26b9b8"></a><a name="by-copying-user"></a>
+Copying permissions affects the user immediately\.<a name="by-copying-user"></a>
 
 **To add permissions to a user by copying permissions from another user**
 
@@ -68,15 +76,15 @@ The new permissions affect the user immediately\.
 
 1. Choose **Users** in the navigation pane, choose the name of the user whose permissions you want to modify, and then choose the **Permissions** tab\.
 
-1. Choose **Add permissions**, and then under **Grant permissions** choose **Copy permissions from existing user**\. The list displays available users along with their group memberships and attached policies\. If the full list of groups or policies don't fit on one line, you can choose the link for **and *n* more**\. Doing that opens a new browser tab and see the full list of policies \(**Permissions** tab\) and groups \(**Groups** tab\)\.
+1. Choose **Add permissions**, and then choose **Copy permissions from existing user**\. The list displays available users along with their group memberships and attached policies\. If the full list of groups or policies don't fit on one line, you can choose the link for **and *n* more**\. Doing that opens a new browser tab and see the full list of policies \(**Permissions** tab\) and groups \(**Groups** tab\)\.
 
 1. Select the radio button next to the user whose permissions you want to copy\. 
 
 1. Choose **Next: Review** to see the list of changes that are to be made to the user\. Then choose **Add permissions**\.
 
-The new permissions affect the user immediately\.
+### Adding Permissions by Attaching Policies Directly to the User<a name="users_change_permissions-add-directly-console"></a>
 
-### Adding Permissions by Attaching Policies Directly to the User<a name="w3ab1c19c19c26b9c10"></a><a name="by-direct-attach-policy"></a>
+Attaching policies affects the user immediately\.<a name="by-direct-attach-policy"></a>
 
 **To add permissions to a user by directly attaching managed policies**
 
@@ -84,31 +92,113 @@ The new permissions affect the user immediately\.
 
 1. Choose **Users** in the navigation pane, choose the name of the user whose permissions you want to modify, and then choose the **Permissions** tab\.
 
-1. Choose **Add permissions**, and then under **Grant permissions**, choose **Attach existing policies directly to user**\. 
+1. Choose **Add permissions**, and then choose **Attach existing policies directly to user**\. 
 
-1. Select one or more check boxes for the managed policies that you want to attach to the group\. You can also create a new managed policy by choosing **Create policy**\. If you do, return to this browser tab or window when the new policy is done\. Choose **Refresh**; and then select the check box for the new policy to attach it to your user\. For more information, see [Creating IAM Policies](access_policies_create.md)\.
+1. Select one or more check boxes for the managed policies that you want to attach to the user\. You can also create a new managed policy by choosing **Create policy**\. If you do, return to this browser tab or window when the new policy is done\. Choose **Refresh**; and then select the check box for the new policy to attach it to your user\. For more information, see [Creating IAM Policies](access_policies_create.md)\.
 
 1. Choose **Next: Review** to see the list of policies that are to be attached to the user\. Then choose **Add permissions**\.
 
-The new permissions affect the user immediately\.
+### Setting the Permissions Boundary for a User<a name="users_change_permissions-set-boundary-console"></a>
 
-## Removing Permissions from an Existing User \(Console\)<a name="w3ab1c19c19c26c11"></a>
+Setting a permissions boundary affects the user immediately\.
+
+**To set the permissions boundary for a user**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Users**\.
+
+1. Choose the name of the user whose permissions boundary you want to change\. 
+
+1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Set boundary**\.
+
+1. Select the policy that you want to use for the permissions boundary\.
+
+1. Choose **Set boundary**\.
+
+## Changing Permissions for a User \(Console\)<a name="users_change_permissions-change-console"></a>
+
+IAM offers three ways to change permissions that are associated with a user:
++ **Edit a permissions policy** – Edit a user's inline policy, the inline policy of the user's group, or edit a managed policy that is attached to the user directly or from a group\. If the user has a permissions boundary, then you cannot provide more permissions than are allowed by the policy that was used as the user's permissions boundary\.
++ **Changing the permissions boundary** – Change the policy that is used as the permissions boundary for the user\. This can expand or restrict the maximum permissions that a user can have\. 
+
+### Editing a Permissions Policy Attached to a User<a name="users_change_permissions-edit-policy-console"></a>
+
+Changing permissions affects the user immediately\.
+
+**To edit a user's attached managed policies**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Users**\.
+
+1. Choose the name of the user whose permissions policy you want to change\. 
+
+1. Choose the **Permissions** tab\. If necessary, open the **Permissions policies** section\.
+
+1. Choose the name of the policy that you want to edit to view details about the policy\. Choose the **Used as** tab to view other entities that might be affected if you edit the policy\. 
+
+1. Choose the **Permissions tab** and review the permissions granted by the policy\. Then choose **Edit policy**\. 
+
+1. Edit the policy using the **Visual editor** tab or the **JSON** tab\. For more information, see [Editing IAM Policies](access_policies_manage-edit.md)\.
+
+1. Choose **Review policy**, review the policy summary, and then choose **Save changes**\.
+
+### Changing the Permissions Boundary for a User<a name="users_change_permissions-change-boundary-console"></a>
+
+Changing a permissions boundary affects the user immediately\.
+
+**To change the policy used to set the permissions boundary for a user**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Users**\.
+
+1. Choose the name of the user whose permissions boundary you want to change\. 
+
+1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Change boundary**\.
+
+1. Select the policy that you want to use for the permissions boundary\.
+
+1. Choose **Change boundary**\.
+
+## Removing a Permissions Policy from a User \(Console\)<a name="users_change_permissions-remove-policy-console"></a>
+
+Removing a policy affects the user immediately\.
 
 **To revoke permissions for IAM users**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Users**, choose the name of the user whose permissions you want to modify, and then choose the **Permissions** tab\.
+1. In the navigation pane, choose **Users**\.
 
-   The **Permissions** tab displays each policy that applies to the user, and how the user gets that policy\.
+1. Choose the name of the user whose permissions boundary you want to remove\. 
+
+1. Choose the **Permissions** tab\. 
 
 1. If you want to revoke permissions by removing an existing policy, view the **Policy type** to understand how the user is getting that policy before choosing **X** to remove the policy:
    + If the policy applies because of group membership, then choosing **X** removes the user from the group\. Remember that you might have multiple policies attached to a single group\. If you remove a user from a group, the user loses access to *all* policies that it received through that group membership\.
    + If the policy is a managed policy attached directly to the user, then choosing **X** detaches the policy from the user\. This does not affect the policy itself or any other entity that the policy might be attached to\.
    + If the policy is an inline embedded policy, then choosing **X** removes the policy from IAM\. Inline policies that are attached directly to a user exist only on that user\.
 
-## Adding and Removing Permissions from a User \(AWS CLI or AWS API\)<a name="w3ab1c19c19c26c13"></a>
+## Removing the Permissions Boundary from a User \(Console\)<a name="users_change_permissions-remove-boundary-console"></a>
+
+Removing a permissions boundary affects the user immediately\.
+
+**To remove the permissions boundary from a user**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Users**\.
+
+1. Choose the name of the user whose permissions boundary you want to remove\. 
+
+1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Remove boundary**\.
+
+1. Choose **Remove** to confirm that you want to remove the permissions boundary\.
+
+## Adding and Removing a User's Permissions \(AWS CLI or AWS API\)<a name="users_change_permissions-add-programmatic"></a>
 
 To add or remove permissions programmatically, you must add or remove the group memberships, attach or detach the managed policies, or add or delete the inline policies\. For more information, see the following topics:
 + [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)
-+ [Adding and Removing IAM Policies](access_policies_manage-attach-detach.md)
++ [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)

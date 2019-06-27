@@ -1,13 +1,14 @@
-# IAM Condition Context Keys<a name="reference_policies_iam-condition-keys"></a>
+# IAM and AWS STS Condition Context Keys<a name="reference_policies_iam-condition-keys"></a>
 
 You can use the `Condition` element of a JSON policy in IAM to test the value of keys that are included in the evaluation context of all AWS API requests\. These keys provide information about the request itself or the resources that the request references\. You can check that keys have specified values before allowing the action requested by the user\. This gives you granular control over when your JSON policy statements match or don't match an incoming API request\. For information about how to use the `Condition` element in a JSON policy, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
 
-This topic describes the keys defined and provided by the IAM service \(with an `iam:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
+This topic describes the keys defined and provided by the IAM service \(with an `iam:` prefix\) and the AWS Security Token Service \(AWS STS\) service \(with an `sts:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
 
 **Topics**
 + [Available Keys for IAM](#available-keys-for-iam)
-+ [Available Keys for Web Identity Federation](#condition-keys-wif)
-+ [Available Keys for SAML\-Based Federation](#condition-keys-saml)
++ [Available Keys for AWS Web Identity Federation](#condition-keys-wif)
++ [Available Keys for SAML\-Based AWS STS Federation](#condition-keys-saml)
++ [Available Keys for AWS STS](#condition-keys-sts)
 
 ## Available Keys for IAM<a name="available-keys-for-iam"></a>
 
@@ -37,13 +38,39 @@ You can use `iam:PassedToService` to restrict your users so that they can pass r
 ```
 By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail because the user does not have permission to pass the role to Amazon EC2\. 
 
+**iam:OrganizationsPolicyId**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the policy with the specified AWS Organizations ID matches the policy used in the request\. To view an example IAM policy that uses this condition key, see [IAM: View Service Last Accessed Data for an Organizations Policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.
+
+**iam:PermissionsBoundary**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions Boundaries for IAM Entities](access_policies_boundaries.md)
+
 **iam:PolicyARN**  
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that involve a managed policy\. For more information, see [Controlling Access to Policies](access_controlling.md#access_controlling-policies)\. 
 
-## Available Keys for Web Identity Federation<a name="condition-keys-wif"></a>
+**iam:ResourceTag/*key\-name***  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
+You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the red italicized text in the example policy with your own information\.  
 
-You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\) such as Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that make sure that federated users can get access only to resources that are associated with a specific provider, app, or user\. 
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Action": "iam:DeleteUser",
+        "Resource": "*",
+        "Condition": {"StringLike": {"iam:ResourceTag/status": "terminated"}}
+    }]
+}
+```
+
+## Available Keys for AWS Web Identity Federation<a name="condition-keys-wif"></a>
+
+You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\)\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that make sure that federated users can get access only to resources that are associated with a specific provider, app, or user\. 
 
 **aws:FederatedProvider**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -87,13 +114,13 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 
 **More Information About Web Identity Federation**  
 For more information about web identity federation, see the following:  
-+ [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
-+ [Amazon Cognito Overview](http://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
++ [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
++ [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
 + [About Web Identity Federation](id_roles_providers_oidc.md)
 
-## Available Keys for SAML\-Based Federation<a name="condition-keys-saml"></a>
+## Available Keys for SAML\-Based AWS STS Federation<a name="condition-keys-saml"></a>
 
-If you are working with [SAML\-based federation](http://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html), you can include additional condition keys in the policy\. 
+If you are working with [SAML\-based federation](https://docs.aws.amazon.com/STS/latest/UsingSTS/CreatingSAML.html) using AWS Security Token Service \(AWS STS\), you can include additional condition keys in the policy\. 
 
 ### SAML Role Trust Policies<a name="condition-keys-saml_trust-policy"></a>
 
@@ -203,9 +230,9 @@ Condition keys whose type is a list can include multiple values\. To create cond
 }
 ```
 
-### SAML Role Permission Policies<a name="condition-keys-saml_permission-policy"></a>
+### SAML Role Permissions Policies<a name="condition-keys-saml_permission-policy"></a>
 
-In the permission policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
+In the permissions policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
 
 **saml:namequalifier**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -220,3 +247,12 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 This key can have the value `persistent`, `transient`, or consist of the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. A value of `persistent` indicates that the value in `saml:sub` is the same for a user between sessions\. If the value is `transient`, the user has a different `saml:sub` value for each session\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\.
 
 For more information about using these keys, see [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\. 
+
+## Available Keys for AWS STS<a name="condition-keys-sts"></a>
+
+You can use the following condition keys in IAM role trust policies for roles that are assumed using AWS Security Token Service \(AWS STS\) operations\. 
+
+**sts:ExternalId**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+A unique identifier that might be required when you assume a role in another account\. If the administrator of the account to which the role belongs provided you with an external ID, then provide that value in the `ExternalId` parameter\. This value can be any string, such as a passphrase or account number\. The primary function of the external ID is to address and prevent the confused deputy problem\. For more information about the external ID and the confused deputy problem, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md)\.  
+The `ExternalId` value must have a minimum of 2 characters and a maximum of 1,224 characters\. The value must be alphanumeric without white space\. It can also include the following symbols: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), colon \(:\), forward slash \(/\), and hyphen \(\-\)\.

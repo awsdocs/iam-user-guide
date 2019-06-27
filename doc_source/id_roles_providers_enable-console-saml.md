@@ -1,6 +1,6 @@
 # Enabling SAML 2\.0 Federated Users to Access the AWS Management Console<a name="id_roles_providers_enable-console-saml"></a>
 
-You can use a role to configure your SAML 2\.0\-compliant IdP and AWS to permit your federated users to access the AWS Management Console\. The role grants the user permissions to carry out tasks in the console\. If instead you want to give SAML federated users other ways to access AWS, see one of these topics:
+You can use a role to configure your SAML 2\.0\-compliant identity provider \(IdP\) and AWS to permit your federated users to access the AWS Management Console\. The role grants the user permissions to carry out tasks in the console\. If instead you want to give SAML federated users other ways to access AWS, see one of these topics:
 + AWS CLI: [Switching to an IAM Role \(AWS CLI\)](id_roles_use_switch-role-cli.md)
 + Tools for Windows PowerShell: [Switching to an IAM Role \(Tools for Windows PowerShell\)](id_roles_use_switch-role-twp.md)
 + AWS API : [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)
@@ -16,7 +16,7 @@ This specific use of SAML differs from the more general one illustrated at [Abou
 
 The diagram illustrates the following steps:
 
-1. The user browses to your organization's portal and selects the option to go to the AWS Management Console\. In your organization, the portal is typically a function of your identity provider \(IdP\) that handles the exchange of trust between your organization and AWS\. For example, in Active Directory Federation Services, the portal URL is: `https://ADFSServiceName/adfs/ls/IdpInitiatedSignOn.aspx` 
+1. The user browses to your organization's portal and selects the option to go to the AWS Management Console\. In your organization, the portal is typically a function of your IdP that handles the exchange of trust between your organization and AWS\. For example, in Active Directory Federation Services, the portal URL is: `https://ADFSServiceName/adfs/ls/IdpInitiatedSignOn.aspx` 
 
 1. The portal verifies the user's identity in your organization\.
 
@@ -36,11 +36,11 @@ Consult the following sections for an overview of how to configure this behavior
 
 ### Configure your network as a SAML provider for AWS<a name="fedconsole-config-network-as-saml"></a>
 
-Inside your organization's network, you configure your identity store \(such as Windows Active Directory\) to work with a SAML\-based identity provider \(IdP\) like Windows Active Directory Federation Services, Shibboleth, etc\. Using your IdP, you generate a metadata document that describes your organization as an identity provider and includes authentication keys\. You also configure your organization's portal to route user requests for the AWS Management Console to the AWS SAML endpoint for authentication using SAML assertions\. How you configure your IdP to produce the metadata\.xml file depends on your IdP\. Refer to your IdP's documentation for instructions, or see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md) for links to the web documentation for many of the SAML providers supported\.
+Inside your organization's network, you configure your identity store \(such as Windows Active Directory\) to work with a SAML\-based IdP like Windows Active Directory Federation Services, Shibboleth, etc\. Using your IdP, you generate a metadata document that describes your organization as an IdP and includes authentication keys\. You also configure your organization's portal to route user requests for the AWS Management Console to the AWS SAML endpoint for authentication using SAML assertions\. How you configure your IdP to produce the metadata\.xml file depends on your IdP\. Refer to your IdP's documentation for instructions, or see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md) for links to the web documentation for many of the SAML providers supported\.
 
 ### Create a SAML provider in IAM<a name="fedconsole-create-saml-provider"></a>
 
-Next, you sign in to the AWS Management Console and go to the IAM console\. There you create a new SAML provider, which is an entity in IAM that holds information about your organization's identity provider\. As part of this process, you upload the metadata document produced by the IdP software in your organization in the previous section\. For details, see [Creating SAML Identity Providers](id_roles_providers_create_saml.md)\. 
+Next, you sign in to the AWS Management Console and go to the IAM console\. There you create a new SAML provider, which is an entity in IAM that holds information about your organization's IdP\. As part of this process, you upload the metadata document produced by the IdP software in your organization in the previous section\. For details, see [Creating IAM SAML Identity Providers](id_roles_providers_create_saml.md)\. 
 
 ### Configure permissions in AWS for your federated users<a name="fedconsole-grantperms"></a>
 

@@ -24,13 +24,13 @@ arn:partition:service:region:account:resource
 ```
 
 Where:
-+ `partition` identifies the partition that the resource is in\. For standard AWS regions, the partition is `aws`\. If you have resourses in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) region is `aws-cn`\.
++ `partition` identifies the partition that the resource is in\. For standard AWS regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\.
 + `service` identifies the AWS product\. For IAM resources, this is always `iam`\.
-+ `region` is the region the resource resides in\. For IAM resources, this is always left blank\.
++ `region` is the Region the resource resides in\. For IAM resources, this is always left blank\.
 + `account` is the AWS account ID with no hyphens \(for example, 123456789012\)\.
 + `resource` is the portion that identifies the specific resource by name\.
 
-You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies, instance profiles, virtual MFA devices, and [server certificates](id_credentials_server-certs.md)\. The following table shows the ARN format for each and an example\. The region portion of the ARN is blank because IAM resources are global\. 
+You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies, instance profiles, virtual MFA devices, and [server certificates](id_credentials_server-certs.md)\. The following table shows the ARN format for each and an example\. The Region portion of the ARN is blank because IAM resources are global\. 
 
 **Note**  
 Many of the following examples include paths in the resource part of the ARN\. Paths cannot be created or manipulated in the AWS Management Console\. To use paths you must work with the resource by using the AWS API, the AWS CLI, or the Tools for Windows PowerShell\.
@@ -81,21 +81,33 @@ The following examples show ARNs for different types of IAM resources\.
 
   `arn:aws:iam::123456789012:oidc-provider/GoogleProvider` 
 
-The following example shows a policy you could assign to Bob to allow him to manage his own access keys\. Notice that the resource is the IAM user Bob\.
+The following example shows a policy you could assign to Richard to allow him to manage his own access keys\. Notice that the resource is the IAM user Richard\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": ["iam:*AccessKey*"],
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/division_abc/subdivision_xyz/Bob"
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "ManageRichardAccessKeys",
+            "Effect": "Allow",
+            "Action": [
+                "iam:*AccessKey*",
+                "iam:GetUser"
+            ],
+            "Resource": "arn:aws:iam::*:user/division_abc/subdivision_xyz/Richard"
+        },
+        {
+            "Sid": "ListForConsole",
+            "Effect": "Allow",
+            "Action": "iam:ListUsers",
+            "Resource": "*"
+        }
+    ]
 }
 ```
 
 **Note**  
-When you use ARNs to identify resources in an IAM policy, you can include *policy variables* that let you include placeholders for run\-time information \(such as the user's name\) as part of the ARN\. For more information, see [IAM Policy Elements: Variables](reference_policies_variables.md) 
+When you use ARNs to identify resources in an IAM policy, you can include *policy variables* that let you include placeholders for run\-time information \(such as the user's name\) as part of the ARN\. For more information, see [IAM Policy Elements: Variables and Tags](reference_policies_variables.md) 
 
 You can use wildcards in the *resource* portion of the ARN to specify multiple users or groups or policies\. For example, to specify all users working on product\_1234, you would use:
 
@@ -154,7 +166,7 @@ When IAM creates a user, group, role, policy, instance profile, or server certif
 
 `AIDAJQABLZS4A3QDU576Q`
 
-For the most part, you use friendly names and [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities, so you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
+For the most part, you use friendly names and [ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities, so you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
 
 One example pertains to reusing friendly names in your AWS account\. Within your account, a friendly name for a user, group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee; the bucket has a resource\-based policy \(a bucket policy\) that lets users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the IAM user named David, the policy could end up granting the new David access to information in the Amazon S3 bucket that was left by the former David\. 
 
@@ -162,22 +174,42 @@ However, every IAM user has a unique ID, even if you create a new IAM user that 
 
 Another example where user IDs can be useful is if you maintain your own database \(or other store\) of IAM user information\. The unique ID can provide a unique identifier for each IAM user you create, even if over time you have IAM users that reuse a name, as in the previous example\.
 
+### Understanding Unique ID Prefixes<a name="identifiers-prefixes"></a>
+
+IAM uses the following prefixes to indicate what type of entity each unique ID applies to\.
+
+
+| Prefix | Entity Type | 
+| --- | --- | 
+| AAGA | Action group | 
+| ACCA | Context Specific Credential | 
+|  AGPA  | Group | 
+|  AIDA  |  IAM user   | 
+| AIPA | Amazon EC2 instance profile | 
+| AKIA | Access key | 
+| ANPA |  Managed policy  | 
+|  ANVA  |  Version in a managed policy  | 
+| APKA | Public key | 
+| AROA | Role | 
+| ASCA | Certificate | 
+|  ASIA  |  Temporary \(AWS STS\) keys  | 
+
 ### Getting the Unique ID<a name="identifiers-get-unique-id"></a>
 
 The unique ID for an IAM entity is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
 
 AWS CLI:
-+  [get\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
-+  [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
-+  [get\-user](http://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
-+  [get\-policy](http://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) 
-+  [get\-instance\-profile](http://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
-+  [get\-server\-certificate](http://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
++  [get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
++  [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
++  [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
++  [get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html) 
++  [get\-instance\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
++  [get\-server\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
 
 IAM API:
-+  [GetGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
-+  [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
-+  [GetUser](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 
-+  [GetPolicy](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html) 
-+  [GetInstanceProfile](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 
-+  [GetServerCertificate](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) 
++  [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
++  [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
++  [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 
++  [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html) 
++  [GetInstanceProfile](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 
++  [GetServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) 

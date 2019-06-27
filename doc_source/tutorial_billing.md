@@ -7,7 +7,8 @@ This workflow has four basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Enable Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
-By default, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner provides the user with permission\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+If you create a single AWS account, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner activates IAM access and attaches policies that provide billing actions to the user or role\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.  
+If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
 
 **[Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)**  
 After enabling billing access on your account, you must still explicitly grant access to billing data to specific IAM users or groups\. You grant this access with a customer managed policy\.
@@ -25,12 +26,15 @@ Create a test AWS account to use with this tutorial\. In this account create two
 
 | *Create user accounts* | *Create and configure group accounts* | User Name | Group Name | Add user as a member | 
 | --- | --- | --- | --- | --- | 
-| FinanceManager | FullAccess | FinanceManager | 
-| FinanceUser | ViewAccess | FinanceUser | 
+| FinanceManager | BillingFullAccessGroup | FinanceManager | 
+| FinanceUser | BillingViewAccessGroup | FinanceUser | 
 
 ## Step 1: Enable Access to Billing Data on Your AWS Test Account<a name="tutorial-billing-step1"></a>
 
-Sign into your test account and turn on billing access\. For information about how to follow this process in a production environment, see [Activate Access to the AWS Website](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
+Sign into your test account and turn on billing access\. For information about how to follow this process in a production environment, see [Activate Access to the AWS Website](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
+
+**Note**  
+If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
 
 **To enable access to billing data on your AWS test account**
 
@@ -38,7 +42,10 @@ Sign into your test account and turn on billing access\. For information about h
 
 1. On the navigation bar, choose your account name, and then choose **My Account**\.
 
-1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**, and then select the check box to activate IAM user and federated user access to the Billing and Cost Management pages\.
+1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\.
+
+1. Then select the check box to **Activate IAM Access** and choose **Update**\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 1. Sign out of the console, and then proceed to [Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)\.
 
@@ -76,7 +83,7 @@ Next, create custom policies that grant both view and full access permissions to
 
    1. On the **Review** page, for **Name**, type **BillingViewAccess**\. Then choose **Create policy** to save it\.
 
-   To review descriptions for each of the permissions available in IAM policies that grant users access to the Billing and Cost Management console, see [Billing Permissions Descriptions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)\.
+   To review descriptions for each of the permissions available in IAM policies that grant users access to the Billing and Cost Management console, see [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)\.
 
 ## Step 3: Attach Billing Policies to Your Groups<a name="tutorial-billing-step3"></a>
 
@@ -88,19 +95,19 @@ Now that you have custom billing policies available, you can attach them to thei
 
    **Full access**
 
-   1. In the search box, type **BillingFullAccess**, and then select the check box next to the policy name\. 
+   1. In the policy search box, type **BillingFullAccess**, and then select the check box next to the policy name\. 
 
    1. Choose **Policy actions**, and then choose **Attach**\.
 
-   1. In the search box, type **FinanceManager**, select the check box next to the name of the group, and then choose **Attach policy**\.
+   1. In the identity \(user, group, and role\) search box, type **BillingFullAccessGroup**, select the check box next to the name of the group, and then choose **Attach policy**\.
 
    **Read\-only access**
 
-   1. In the search box, type **BillingViewAccess**, and then select the check box next to the policy name\.
+   1. In the policy search box, type **BillingViewAccess**, and then select the check box next to the policy name\.
 
    1. Choose **Policy actions**, and then choose **Attach**\.
 
-   1. For **Filter**, choose **Groups**\. In the search box, type **FinanceUser**, select the check box next to the name of the group, and then choose **Attach policy**\.
+   1. In the identity \(user, group, and role\) search box, type **BillingViewAccessGroup**, select the check box next to the name of the group, and then choose **Attach policy**\.
 
 1. Sign out of the console, and then proceed to [Step 4: Test Access to the Billing Console](#tutorial-billing-step4)\.
 
@@ -122,7 +129,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    1. Sign in to your AWS account as the user FinanceManager\.
 
-   1. On the navigation bar, choose **FinanceManager@*<account alias or ID number>*** , and then choose **Billing & Cost Management**\.
+   1. On the navigation bar, choose **FinanceManager@*<account alias or ID number>*** , and then choose **My Billing Dashboard**\.
 
    1. Browse through the pages and choose the various buttons to ensure that you have full modify permissions\. 
 
@@ -130,7 +137,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    1. Sign in to your AWS account as the user FinanceUser\.
 
-   1. On the navigation bar, choose **FinanceUser@*<account alias or ID number>***, and then choose **Billing & Cost Management**\.
+   1. On the navigation bar, choose **FinanceUser@*<account alias or ID number>***, and then choose **My Billing Dashboard**\.
 
    1. Browse through the pages\. Notice that you can display costs, reports, and billing data with no problems\. However, if you choose an option to modify a value, you receive an **Access Denied **message\. For example, on the **Preferences** page, choose any of the check boxes on the page, and then choose **Save preferences**\. The console message informs you that you need **ModifyBilling** permissions to make changes to that page\.
 
@@ -151,9 +158,9 @@ The following optional procedure demonstrates how you could alternatively use th
 ## Related Resources<a name="tutorial-billing-addl-resources"></a>
 
 For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
-+ [Activate Access to the AWS Website](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
-+ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
-+ [Billing Permissions Descriptions](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
++ [Activate Access to the AWS Website](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
++ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
++ [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
 
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)

@@ -46,11 +46,11 @@ The following icons identify the types of items that are found by a search:
 ## Sample Search Phrases<a name="search_phrases"></a>
 
 You can use the following phrases in the IAM search\. Replace terms in italics with the names of actual IAM users, groups, roles, access keys, policies, or identity providers respectively that you want to locate\.
-+ *user\_name* or *group\_name* or *role\_name* or *policy\_name* or *identity\_provider\_name*
-+ *access\_key*
++ ***user\_name*** or ***group\_name* ** or ***role\_name*** or ***policy\_name*** or ***identity\_provider\_name***
++ ***access\_key***
 + **add user *user\_name* to groups** or **add users to group *group\_name***
 + **remove user *user\_name* from groups**
-+ ****delete *user\_name*** or **delete *group\_name*** or **delete *role\_name***, or **delete *policy\_name***, or **delete *identity\_provider\_name*****
++ **delete *user\_name*** or **delete *group\_name*** or **delete *role\_name***, or **delete *policy\_name***, or **delete *identity\_provider\_name***
 + **manage access keys *user\_name***
 + **manage signing certificates *user\_name***
 + **users**

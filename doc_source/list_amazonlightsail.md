@@ -4,12 +4,12 @@ Amazon Lightsail \(service prefix: `lightsail`\) provides the following service\
 
 References:
 + Learn how to [configure this service](https://lightsail.aws.amazon.com/ls/docs/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/)\.
 + Learn how to protect this service and its resources by [using IAM](https://lightsail.aws.amazon.com/ls/docs/how-to/article/create-policy-that-grants-access-to-amazon-lightsail) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Lightsail](#amazonlightsail-actions-as-permissions)
-+ [Resources Defined by Lightsail](#amazonlightsail-resources-for-iam-policies)
++ [Resources Defined by Amazon Lightsail](#amazonlightsail-resources-for-iam-policies)
 + [Condition Keys for Amazon Lightsail](#amazonlightsail-policy-keys)
 
 ## Actions Defined by Amazon Lightsail<a name="amazonlightsail-actions-as-permissions"></a>
@@ -20,7 +20,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 ****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonlightsail.html)
 
-## Resources Defined by Lightsail<a name="amazonlightsail-resources-for-iam-policies"></a>
+## Resources Defined by Amazon Lightsail<a name="amazonlightsail-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonlightsail-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
@@ -29,12 +29,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| [http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html) | arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Domain/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html) | arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Instance/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html) | arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html) | arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\} |  | 
-| [http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html](http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html) | arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\} |  | 
+|   [ Domain ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Domain/$\{Id\}  |  | 
+|   [ Instance ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Instance/$\{Id\}  |  | 
+|   [ InstanceSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\}  |  | 
+|   [ KeyPair ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\}  |  | 
+|   [ StaticIp ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\}  |  | 
+|   [ Disk ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Disk/$\{Id\}  |  | 
+|   [ DiskSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:DiskSnapshot/$\{Id\}  |  | 
+|   [ LoadBalancer ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:LoadBalancer/$\{Id\}  |  | 
+|   [ ExportSnapshotRecord ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:ExportSnapshotRecord/$\{Id\}  |  | 
+|   [ CloudFormationStackRecord ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:CloudFormationStackRecord/$\{Id\}  |  | 
+|   [ RelationalDatabase ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabase/$\{Id\}  |  | 
+|   [ RelationalDatabaseSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabaseSnapshot/$\{Id\}  |  | 
 
 ## Condition Keys for Amazon Lightsail<a name="amazonlightsail-policy-keys"></a>
 
-Lightsail has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Lightsail has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.

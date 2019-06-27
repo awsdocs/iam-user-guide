@@ -3,13 +3,13 @@
 Amazon SageMaker \(service prefix: `sagemaker`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](http://docs.aws.amazon.com/sagemaker/latest/dg/)\.
-+ View a [list of the API operations available for this service](http://docs.aws.amazon.com/sagemaker/latest/dg)\.
-+ Learn how to protect this service and its resources by [using IAM](http://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/sagemaker/latest/dg/)\.
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com/sagemaker/latest/dg/)\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon SageMaker](#amazonsagemaker-actions-as-permissions)
-+ [Resources Defined by SageMaker](#amazonsagemaker-resources-for-iam-policies)
++ [Resources Defined by Amazon SageMaker](#amazonsagemaker-resources-for-iam-policies)
 + [Condition Keys for Amazon SageMaker](#amazonsagemaker-policy-keys)
 
 ## Actions Defined by Amazon SageMaker<a name="amazonsagemaker-actions-as-permissions"></a>
@@ -20,7 +20,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 ****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html)
 
-## Resources Defined by SageMaker<a name="amazonsagemaker-resources-for-iam-policies"></a>
+## Resources Defined by Amazon SageMaker<a name="amazonsagemaker-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonsagemaker-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
@@ -29,14 +29,34 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| endpoint | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\} |  | 
-| endpoint\-config | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\} |  | 
-| hyper\-parameter\-tuning\-job | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\} |  | 
-| model | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\} |  | 
-| notebook\-instance | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\} |  | 
-| notebook\-instance\-lifecycle\-config | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance\-lifecycle\-config/$\{NotebookInstanceLifecycleConfigName\} |  | 
-| training\-job | arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\} |  | 
+|   labeling\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:labeling\-job/$\{LabelingJobName\}  |  | 
+|   workteam  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:workteam/$\{WorkteamName\}  |  | 
+|   notebook\-instance  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\}  |  | 
+|   notebook\-instance\-lifecycle\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance\-lifecycle\-config/$\{NotebookInstanceLifecycleConfigName\}  |  | 
+|   code\-repository  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:code\-repository/$\{CodeRepositoryName\}  |  | 
+|   algorithm  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:algorithm/$\{AlgorithmName\}  |  | 
+|   training\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\}  |  | 
+|   hyper\-parameter\-tuning\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\}  |  | 
+|   model\-package  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model\-package/$\{ModelPackageName\}  |  | 
+|   model  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\}  |  | 
+|   endpoint\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\}  |  | 
+|   endpoint  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\}  |  | 
+|   transform\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:transform\-job/$\{TransformJobName\}  |  | 
+|   compilation\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:compilation\-job/$\{CompilationJobName\}  |  | 
 
 ## Condition Keys for Amazon SageMaker<a name="amazonsagemaker-policy-keys"></a>
 
-SageMaker has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon SageMaker defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A key that is present in the request the user makes to the SageMaker service\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   [ sagemaker:ResourceTag/ ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The preface string for a tag key and value pair attached to a resource\. | String | 
+|   [ sagemaker:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 

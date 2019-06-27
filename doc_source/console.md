@@ -5,7 +5,7 @@ The AWS Management Console provides a web\-based way to administer AWS services\
 When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\.
 
 **Important**  
-We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](http://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
+We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
 
 This section provides information about the AWS Management Console sign\-in page\. It explains how to create a unique sign\-in URL for IAM users in your account, and how to sign in as the root user\. 
 
@@ -41,7 +41,7 @@ IAM users can also sign in at the following general sign\-in endpoint and type a
 ```
 
 **Note**  
-To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account ID appears in the upper\-right corner below the **Support** menu\.  
+To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account number \(ID\) appears in the **Support Center** title bar\.  
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
 
