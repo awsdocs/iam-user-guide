@@ -99,7 +99,7 @@ policy  = {
 
 <principal_map> = { <principal_map_entry>, <principal_map_entry>, ... }
 
-<principal_map_entry> = ("AWS" | "Federated" | "Service") :   
+<principal_map_entry> = ("AWS" | "Federated" | "Service" | "CanonicalUser") :   
     [<principal_id_string>, <principal_id_string>, ...]
 
 <action_block> = ("Action" | "NotAction") : 
@@ -124,6 +124,7 @@ policy  = {
 + Blocks can appear in any order\. For example, `version_block` can follow `id_block` in a policy\. Similarly, `effect_block`, `principal_block`, `action_block` can appear in any order within a statement\.
 + The `id_block` is optional in resource\-based policies\. It must *not* be included in identity\-based policies\.
 + The `principal_block` element is required in resource\-based policies \(for example, in Amazon S3 bucket policies\) and in trust policies for IAM roles\. It must *not* be included in identity\-based policies\.
++ The `principal_map` element in Amazon S3 bucket policies can include the `CanonicalUser` ID\. Most resource\-based policies do not support this mapping\. To learn more about using the canonical user ID in a bucket policy, see [Specifying a Principal in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html) in the *Amazon Simple Storage Service Developer Guide*\.
 + Each string value \(`policy_id_string`, `sid_string`, `principal_id_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
 
 ### Notes About String Values<a name="policies-grammar-notes-strings"></a>

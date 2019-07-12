@@ -22,7 +22,7 @@ You can use conditions in your IAM policies to control access to AWS resources b
 **Note**  
 Do not use the `ResourceTag` condition key in a policy with the `iam:PassRole` action\. You cannot use the tag on an IAM role to control access to who can pass that role\. For more information about permissions required to pass a role to a service, see [Granting a User Permissions to Pass a Role to an AWS Service](id_roles_use_passrole.md)\.
 
- This example shows how you might create a policy that allows starting or stopping Amazon EC2 instances, but only if the instance tag `Owner` has the value of that user's user name\. This policy also grants the permissions necessary to complete this action on the console\. 
+ This example shows how you might create a policy that allows starting or stopping Amazon EC2 instances, but only if the instance tag `Owner` has the value of that user's user name\. This policy also grants the necessary permissions to complete this action on the console\. 
 
 ```
 {

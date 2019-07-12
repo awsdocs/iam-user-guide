@@ -64,7 +64,7 @@ A resource\-based policy can specify the ARN of the session as a principal\. In 
 
 ![\[Evaluation of the session policy with a resource-based policy specifying the session ARN\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-rbpsession-id.png)
 
-A permissions boundary can set the maximum permissions for a user or role that is used to create a session\. In that case, the resulting session's permissions are the intersection of the session policy, the permissions boundary, and the identity\-based policy\.
+A permissions boundary can set the maximum permissions for a user or role that is used to create a session\. In that case, the resulting session's permissions are the intersection of the session policy, the permissions boundary, and the identity\-based policy\. However, a permissions boundary does not limit permissions granted by a resource\-based policy that specifies the ARN of the resulting session\.
 
 ![\[Evaluation of the session policy with a permissions boundary\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-boundary-id.png)
 

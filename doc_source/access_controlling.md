@@ -66,7 +66,7 @@ For detailed information about the procedures mentioned previously, refer to the
 + To learn how to attach an IAM policy to a principal, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
 + To see an example policy for granting full access to EC2, see [Amazon EC2: Allows Full EC2 Access Within a Specific Region, Programmatically and in the Console](reference_policies_examples_ec2_region.md)\.
 + To allow read\-only access to an S3 bucket, use the first two statements of the following example policy: [Amazon S3: Allows Read and Write Access to Objects in an S3 Bucket, Programmatically and in the Console](reference_policies_examples_s3_rw-bucket-console.md)\.
-+ To see an example policy for allowing users to rotate their credentials, see [IAM: Allows IAM Users to Rotate Their Own Credentials Programmatically and in the Console](reference_policies_examples_iam_credentials_console.md)\.
++ To see an example policy for allowing users to set or rotate their credentials, such as their console password, their programmatic access keys, and their MFA devices, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
 ## Controlling Access to Identities<a name="access_controlling-identities"></a>
 
@@ -129,71 +129,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. Attach the policy to your group\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
 
-Alternatively, you can create the same policy using this example JSON policy document\. For more information, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
-
-**Example Example policy that allows all users Read\-only access to a specific group, and allows only specific users access to make changes to the group**  
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowAllUsersToListAllGroups",
-            "Effect": "Allow",
-            "Action": "iam:ListGroups",
-            "Resource": "arn:aws:iam::*:*"
-        },
-        {
-            "Sid": "AllowAllUsersToViewAndManageThisGroup",
-            "Effect": "Allow",
-            "Action": [
-                "iam:CreateGroup",
-                "iam:DeleteGroup",
-                "iam:ListGroupPolicies",
-                "iam:UpdateGroup",
-                "iam:GetGroup",
-                "iam:RemoveUserFromGroup",
-                "iam:AddUserToGroup",
-                "iam:ListGroupsForUser",
-                "iam:AttachGroupPolicy",
-                "iam:DetachGroupPolicy",
-                "iam:ListAttachedGroupPolicies",
-                "iam:GetGroupPolicy",
-                "iam:DeleteGroupPolicy",
-                "iam:PutGroupPolicy"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:user/*",
-                "arn:aws:iam::*:group/AllUsers"
-            ]
-        },
-        {
-            "Sid": "LimitGroupManagementAccessToSpecificUsers",
-            "Effect": "Deny",
-            "Action": [
-                "iam:CreateGroup",
-                "iam:RemoveUserFromGroup",
-                "iam:DeleteGroup",
-                "iam:AttachGroupPolicy",
-                "iam:UpdateGroup",
-                "iam:DetachGroupPolicy",
-                "iam:DeleteGroupPolicy",
-                "iam:PutGroupPolicy"
-            ],
-            "Resource": "arn:aws:iam::*:group/AllUsers",
-            "Condition": {
-                "StringNotEquals": {
-                    "aws:username": [
-                        "srodriguez",
-                        "mjackson",
-                        "adesai"
-                    ]
-                }
-            }
-        }
-    ]
-}
-```
+Alternatively, you can create the same policy using this example JSON policy document\. To view this JSON policy, see [IAM: Allows Specific IAM Users to Manage a Group Programmatically and in the Console](reference_policies_examples_iam_users-manage-group.md)\. For detailed instructions for creating a policy using a JSON document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
 
 ## Controlling Access to Policies<a name="access_controlling-policies"></a>
 

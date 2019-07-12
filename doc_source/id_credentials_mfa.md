@@ -10,7 +10,6 @@ For increased security, we recommend that you configure multi\-factor authentica
 + [Deactivating MFA Devices](id_credentials_mfa_disable.md)
 + [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)
 + [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)
-+ [Sample Policies with MFA Conditions](id_credentials_mfa_sample-policies.md)
 + [Sample Code: Requesting Credentials with Multi\-factor Authentication](id_credentials_mfa_sample-code.md)
 
 ## What Is MFA?<a name="id_credentials_mfa-what-is-mfa"></a>

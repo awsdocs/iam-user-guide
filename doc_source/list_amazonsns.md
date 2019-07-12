@@ -42,5 +42,7 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | Tags from request | String | 
+|   aws:TagKeys  | Tag keys from request | String | 
 |   [ sns:Endpoint ](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19)  | The URL, email address, or ARN from a Subscribe request or a previously confirmed subscription\. | String | 
 |   [ sns:Protocol ](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#w2ab1c11c23c19)  | The protocol value from a Subscribe request or a previously confirmed subscription\. | String | 

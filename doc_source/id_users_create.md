@@ -119,7 +119,7 @@ This is your only opportunity to view or download the secret access keys, and yo
 
 1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing Tags on IAM Entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
-1. \(Optional\) Give the user permission to manage his or her own security credentials\. For more information, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
+1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
 
 ## Creating IAM Users \(AWS API\)<a name="id_users_create_api"></a>
 
@@ -146,4 +146,4 @@ This is your only opportunity to view or download the secret access keys, and yo
 
 1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing Tags on IAM Entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
-1. \(Optional\) Give the user permission to manage his or her own security credentials\. For more information, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
+1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.

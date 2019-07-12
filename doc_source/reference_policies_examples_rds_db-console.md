@@ -1,6 +1,6 @@
 # Amazon RDS: Allows Restoring RDS Databases, Programmatically and In the Console<a name="reference_policies_examples_rds_db-console"></a>
 
-This example shows how you might create a policy that allows restoring RDS databases\. This policy also grants the permissions necessary to complete this action on the console\.
+This example shows how you might create a policy that allows restoring RDS databases\. This policy also grants the necessary permissions to complete this action on the console\.
 
 ```
 {

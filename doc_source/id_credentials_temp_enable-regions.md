@@ -7,7 +7,9 @@ By default, the AWS Security Token Service \(AWS STS\) is available as a global 
 
 ## Managing Global Endpoint Session Tokens<a name="sts-regions-manage-tokens"></a>
 
-Most AWS Regions are enabled for operations in all AWS services by default\. Those Regions are automatically activated for use with AWS STS\. Some Regions, such as Asia Pacific \(Hong Kong\), must be manually enabled\. To learn more about enabling and disabling AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. When you enable these AWS Regions, they are automatically activated for use with AWS STS\. You cannot activate the STS endpoint for a Region that is disabled\. Tokens that are valid in all AWS Regions are longer than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
+Most AWS Regions are enabled for operations in all AWS services by default\. Those Regions are automatically activated for use with AWS STS\. Some Regions, such as Asia Pacific \(Hong Kong\), must be manually enabled\. To learn more about enabling and disabling AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. When you enable these AWS Regions, they are automatically activated for use with AWS STS\. You cannot activate the STS endpoint for a Region that is disabled\. Tokens that are valid in all AWS Regions include more characters than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
+
+You can change this setting using the AWS Management Console, AWS CLI, or AWS API\.
 
 **To change the Region compatibility of session tokens for the global endpoint \(console\)**
 
@@ -21,6 +23,14 @@ Most AWS Regions are enabled for operations in all AWS services by default\. Tho
 **Note**  
 Tokens that are valid in all AWS Regions are longer than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
 
+**To change the Region compatibility of session tokens for the global endpoint \(AWS CLI\)**  
+Set the security token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
++ [https://docs.aws.amazon.com/cli/latest/reference/iam/set-security-token-service-preferences.html](https://docs.aws.amazon.com/cli/latest/reference/iam/set-security-token-service-preferences.html)
+
+**To change the Region compatibility of session tokens for the global endpoint \(AWS API\)**  
+Set the security token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
++ [https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetSecurityTokenServicePreferences.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetSecurityTokenServicePreferences.html) 
+
 ## Activating and Deactivating AWS STS in an AWS Region<a name="sts-regions-activate-deactivate"></a>
 
 When you activate STS endpoints for a Region, AWS STS can issue temporary credentials to users and roles in your account that make an AWS STS request\. Those credentials can then be used in any Region that is enabled by default or is manually enabled\. You must activate the Region in the account where the temporary credentials are generated\. It does not matter whether a user is signed into the same account or a different account when they make the request\.
@@ -30,7 +40,7 @@ For example, imagine a user in account A wants to send an `sts:AssumeRole` API r
 **Note**  
 Active Regions are available to everyone that uses temporary credentials in that account\. To control which IAM users or roles can access the Region, use the `[aws:RequestedRegion](reference_policies_condition-keys.md#condition-keys-requestedregion)` condition key in your permissions policies\.
 
-**To activate or deactivate AWS STS in a Region that is enabled by default**
+**To activate or deactivate AWS STS in a Region that is enabled by default \(console\)**
 
 1. Sign in as a root user or an IAM user with permissions to perform IAM administration tasks\.
 
@@ -53,6 +63,8 @@ AWS STS recommends that you use both the `setRegion` and `setEndpoint` methods t
 In the example, the first line instantiates an `AWSSecurityTokenServiceClient` object called `stsClient`\. The second line configures the `stsClient` object by calling its `setEndpoint` method and passing the URL of the endpoint as the only parameter\. All API calls that use this `stsClient` object are now directed to the specified endpoint\.
 
 For all other language and programming environment combinations, refer to the [documentation for the relevant SDK](https://aws.amazon.com/tools/)\. 
+
+## Region Endpoints<a name="id_credentials_region-endpoints"></a>
 
 The following table lists the Regions and their endpoints\. It indicates which ones are activated by default and which ones you can activate or deactivate\.
 

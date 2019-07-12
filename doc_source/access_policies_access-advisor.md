@@ -50,7 +50,7 @@ To use the AWS CLI or AWS API to view service last accessed data for IAM, you mu
 + `iam:GetServiceLastAccessedDetailsWithEntities`
 + `iam:ListPoliciesGrantingServiceAccess`
 
-This example shows how you might create a policy that allows viewing IAM service last accessed data\. Additionally, it allows read\-only access to all of IAM\. This policy also grants the permissions necessary to complete this action on the console\. 
+This example shows how you might create a policy that allows viewing IAM service last accessed data\. Additionally, it allows read\-only access to all of IAM\. This policy also grants the necessary permissions to complete this action on the console\. 
 
 ```
 {
@@ -91,7 +91,7 @@ To use the AWS CLI or AWS API to view service last accessed data for Organizatio
 + `organizations:ListRoots`
 + `organizations:ListTargetsForPolicy`
 
-This example shows how you might create a policy that allows viewing service last accessed data for Organizations\. Additionally, it allows read\-only access to all of Organizations\. This policy also grants the permissions necessary to complete this action on the console\. 
+This example shows how you might create a policy that allows viewing service last accessed data for Organizations\. Additionally, it allows read\-only access to all of Organizations\. This policy also grants the necessary permissions to complete this action on the console\. 
 
 ```
 {
