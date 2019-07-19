@@ -11,7 +11,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Use Customer Managed Policies Instead of Inline Policies](#best-practice-managed-vs-inline)
 + [Use Access Levels to Review IAM Permissions](#use-access-levels-to-review-permissions)
 + [Configure a Strong Password Policy for Your Users](#configure-strong-password-policy)
-+ [Enable MFA for Privileged Users](#enable-mfa-for-privileged-users)
++ [Enable MFA](#enable-mfa-for-privileged-users)
 + [Use Roles for Applications That Run on Amazon EC2 Instances](#use-roles-with-ec2)
 + [Use Roles to Delegate Permissions](#delegate-using-roles)
 + [Do Not Share Access Keys](#sharing-credentials)
@@ -138,13 +138,19 @@ If you allow users to change their own passwords, require that they create stron
 
 For more information, see [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)\.
 
-## Enable MFA for Privileged Users<a name="enable-mfa-for-privileged-users"></a>
+## Enable MFA<a name="enable-mfa-for-privileged-users"></a>
 
-For extra security, enable multi\-factor authentication \(MFA\) for privileged IAM users \(users who are allowed access to sensitive resources or API operations\)\. With MFA, users have a device that generates a response to an authentication challenge\. Both the user's credentials and the device\-generated response are required to complete the sign\-in process\. The response is generated in one of the following ways: 
+For extra security, we recommend that you require multi\-factor authentication \(MFA\) for all users in your account\. With MFA, users have a device that generates a response to an authentication challenge\. Both the user's credentials and the device\-generated response are required to complete the sign\-in process\. If a user's password or access keys are compromised, your account resources are still secure because of the additional authentication requirement\. 
+
+The response is generated in one of the following ways: 
 + Virtual and hardware MFA devices generate a code that you view on the app or device and then enter on the sign\-in screen\. 
 + U2F security keys generate a response when you tap the device\. The user does not manually enter a code on the sign\-in screen\.
 
-For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
+For privileged IAM users who are allowed to access sensitive resources or API operations, we recommend using U2F or hardware MFA devices\.
+
+For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
+
+To learn how to configure MFA\-protected API access for access keys, see [Configuring MFA\-Protected API Access](id_credentials_mfa_configure-api-require.md)\.
 
 ## Use Roles for Applications That Run on Amazon EC2 Instances<a name="use-roles-with-ec2"></a>
 

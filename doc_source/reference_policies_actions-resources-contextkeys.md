@@ -126,6 +126,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS IoT Analytics](list_awsiotanalytics.md)
 + [AWS IoT Events](list_awsiotevents.md)
 + [AWS IoT SiteWise](list_awsiotsitewise.md)
++ [AWS IoT Things Graph](list_awsiotthingsgraph.md)
 + [AWS Key Management Service](list_awskeymanagementservice.md)
 + [Amazon Kinesis](list_amazonkinesis.md)
 + [Amazon Kinesis Analytics](list_amazonkinesisanalytics.md)

@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ cluster ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html)  |  arn:$\{Partition\}:elasticmapreduce:$\{Region\}:$\{Account\}:cluster/$\{ClusterId\}  |   [ elasticmapreduce:ResourceTag/$\{TagKey\} ](#amazonelasticmapreduce-elasticmapreduce_ResourceTag___TagKey_)   | 
-|   [ editor ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html)  |  arn:$\{Partition\}:elasticmapreduce:$\{Region\}:$\{Account\}:editor/$\{EditorId\}  |   [ elasticmapreduce:ResourceTag/$\{TagKey\} ](#amazonelasticmapreduce-elasticmapreduce_ResourceTag___TagKey_)   | 
+|   [ cluster ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-overview.html)  |  arn:$\{Partition\}:elasticmapreduce:$\{Region\}:$\{Account\}:cluster/$\{ClusterId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticmapreduce-aws_ResourceTag___TagKey_)   [ elasticmapreduce:ResourceTag/$\{TagKey\} ](#amazonelasticmapreduce-elasticmapreduce_ResourceTag___TagKey_)   | 
+|   [ editor ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks.html)  |  arn:$\{Partition\}:elasticmapreduce:$\{Region\}:$\{Account\}:editor/$\{EditorId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticmapreduce-aws_ResourceTag___TagKey_)   [ elasticmapreduce:ResourceTag/$\{TagKey\} ](#amazonelasticmapreduce-elasticmapreduce_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Elastic MapReduce<a name="amazonelasticmapreduce-policy-keys"></a>
 
@@ -43,5 +43,8 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ elasticmapreduce:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters access to actions based on whether the tag and value pair is created for an Amazon EMR resource along with the action\. | String | 
-|   [ elasticmapreduce:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters access to actions based on the tag and value pair associated with an Amazon EMR resource\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters access based on whether the tag and value pair is provided with the action | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters access based on the tag and value pair associated with an Amazon EMR resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters access based on whether the tag keys are provided with the action regardless of tag value | String | 
+|   [ elasticmapreduce:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters actions based on whether the tag and value pair is provided with the action | String | 
+|   [ elasticmapreduce:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html#emr-fine-grained-cluster-access)  | Filters actions based on the tag and value pair associated with an Amazon EMR resource | String | 

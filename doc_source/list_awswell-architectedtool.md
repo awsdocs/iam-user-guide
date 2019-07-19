@@ -21,7 +21,8 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateWorkload ](https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html)  | Creates a new workload | Write |  |  |  | 
+|   [ CreateWorkload ](https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html)  | Creates a new workload\. | Write |  |  |  | 
+|   [ DeleteWorkload ](https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-delete.html)  | Deletes an existing workload\. | Write |   [ workload\* ](#awswell-architectedtool-workload)   |  |  | 
 |   [ GetWorkload ](https://docs.aws.amazon.com/wellarchitected/latest/userguide/workload-details.html)  | Retrieves the specified workload\. | Read |   [ workload\* ](#awswell-architectedtool-workload)   |  |  | 
 |   [ ListWorkloads ](https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-page.html)  | Lists the workloads in this account\. | List |  |  |  | 
 

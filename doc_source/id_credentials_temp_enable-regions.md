@@ -7,7 +7,6 @@ By default, the AWS Security Token Service \(AWS STS\) is available as a global 
 
 ## Managing Global Endpoint Session Tokens<a name="sts-regions-manage-tokens"></a>
 
-
 Most AWS Regions are enabled for operations in all AWS services by default\. Those Regions are automatically activated for use with AWS STS\. Some Regions, such as Asia Pacific \(Hong Kong\), must be manually enabled\. To learn more about enabling and disabling AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. When you enable these AWS Regions, they are automatically activated for use with AWS STS\. You cannot activate the STS endpoint for a Region that is disabled\. Tokens that are valid in all AWS Regions include more characters than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
 
 You can change this setting using the AWS Management Console, AWS CLI, or AWS API\.
@@ -22,7 +21,7 @@ You can change this setting using the AWS Management Console, AWS CLI, or AWS AP
 
 1. 4\. In the **Change region compatibility of session tokens for global endpoint** dialog box, select **Valid in all AWS Regions**\. Then choose **Save changes**\.
 **Note**  
-Tokens that are valid in all AWS Regions are larger than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
+Tokens that are valid in all AWS Regions include more characters than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
 
 **To change the Region compatibility of session tokens for the global endpoint \(AWS CLI\)**  
 Set the security token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
