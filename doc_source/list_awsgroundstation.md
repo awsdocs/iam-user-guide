@@ -47,13 +47,13 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  |  | String | 
-|   aws:ResourceTag/$\{TagKey\}  |  | String | 
-|   aws:TagKeys  |  | String | 
-|   groundstation:configId  |  | String | 
-|   groundstation:configType  |  | String | 
-|   groundstation:contactId  |  | String | 
-|   groundstation:dataflowEndpointGroupId  |  | String | 
-|   groundstation:groundStationId  |  | String | 
-|   groundstation:missionProfileId  |  | String | 
-|   groundstation:satelliteId  |  | String | 
+|   aws:RequestTag/$\{TagKey\}  | Filters access by a key that is present in the request the user makes to the Ground Station service\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters access by a tag key and value pair\. | String | 
+|   aws:TagKeys  | Filters access by the list of all the tag key names present in the request the user makes to the Ground Station service\. | String | 
+|   groundstation:configId  | Filters access by the ID of a config | String | 
+|   groundstation:configType  | Filters access by the type of a config | String | 
+|   groundstation:contactId  | Filters access by the ID of a contact | String | 
+|   groundstation:dataflowEndpointGroupId  | Filters access by the ID of a dataflow endpoint group | String | 
+|   groundstation:groundStationId  | Filters access by the ID of a ground station | String | 
+|   groundstation:missionProfileId  | Filters access by the ID of a mission profile | String | 
+|   groundstation:satelliteId  | Filters access by the ID of a satellite | String | 

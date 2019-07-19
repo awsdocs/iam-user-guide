@@ -14,55 +14,11 @@ For examples of policies that let users perform tasks with other AWS services, l
 
 ## Allow a User to List the Account's Groups, Users, Policies, and More for Reporting Purposes<a name="iampolicy-example-userlistall"></a>
 
-The following policy allows the user to call any IAM action that starts with the string `Get` or `List`\.
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-      "iam:Get*",
-      "iam:List*"
-    ],
-    "Resource": "*"
-  }
-}
-```
-
-Using `Get*` and `List*` actions allows all existing and future IAM actions that begin with `Get` and `List`\. For example, if IAM adds a new *widget* resource, then this policy allows the `GetWidget` and `ListWidgets` actions\.
+The following policy allows the user to call any IAM action that starts with the string `Get` or `List`, and to generate reports\. To view the example policy, see [IAM: Allows Read\-Only Access to the IAM Console](reference_policies_examples_iam_read-only-console.md)\. 
 
 ## Allow a User to Manage a Group's Membership<a name="iampolicy-example-usermanagegroups"></a>
 
-The following policy allows the user to update the membership of the group called *MarketingGroup*\.
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "ViewGroups",
-            "Effect": "Allow",
-            "Action": [
-                "iam:ListGroups",
-                "iam:GetUser",
-                "iam:ListGroupsForUser"
-            ],
-            "Resource": "*"
-        },
-        {
-            "Sid": "ViewEditThisGroup",
-            "Effect": "Allow",
-            "Action": [
-                "iam:AddUserToGroup",
-                "iam:RemoveUserFromGroup",
-                "iam:GetGroup"
-            ],
-            "Resource": "arn:aws:iam::*:group/MarketingGroup"
-        }
-    ]
-}
-```
+The following policy allows the user to update the membership of the group called *MarketingGroup*\. To view the example policy, see [IAM: Allows Managing a Group's Membership Programmatically and in the Console](reference_policies_examples_iam_manage-group-membership.md)\. 
 
 ## Allow a User to Manage IAM Users<a name="creds-policies-users"></a>
 
@@ -123,41 +79,11 @@ The following permissions in the policy allow access to user tasks via the AWS M
 
 ## Allow Users to Set Account Password Policy<a name="creds-policies-set-password-policy"></a>
 
-You might give some users permissions to get and update your AWS account's [password policy](id_credentials_passwords_account-policy.md)\. The following example policy grants these permissions\. 
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-      "iam:GetAccountPasswordPolicy",
-      "iam:UpdateAccountPasswordPolicy"
-    ],
-    "Resource": "*"
-  }
-}
-```
+You might give some users permissions to get and update your AWS account's [password policy](id_credentials_passwords_account-policy.md)\. To view the example policy, see [IAM: Allows Setting the Account Password Requirements Programmatically and in the Console](reference_policies_examples_iam_set-account-pass-policy.md)\. 
 
 ## Allow Users to Generate and Retrieve IAM Credential Reports<a name="iampolicy-generate-credential-report"></a>
 
-You can give users permission to generate and download a report that lists all users in your AWS account\. The report also lists the status of various user credentials, including passwords, access keys, MFA devices, and signing certificates\. The following example policy grants these permissions\.
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": [
-      "iam:GenerateCredentialReport",
-      "iam:GetCredentialReport"
-    ],
-    "Resource": "*"
-  }
-}
-```
-
-For more information about credential reports, see [Getting Credential Reports for Your AWS Account](id_credentials_getting-report.md)\.
+You can give users permission to generate and download a report that lists all users in your AWS account\. The report also lists the status of various user credentials, including passwords, access keys, MFA devices, and signing certificates\. For more information about credential reports, see [Getting Credential Reports for Your AWS Account](id_credentials_getting-report.md)\. To view the example policy, see [](reference_policies_examples_iam-credential-report.md)\. 
 
 ## Allow All IAM Actions \(Admin Access\)<a name="creds-policies-all-iam"></a>
 

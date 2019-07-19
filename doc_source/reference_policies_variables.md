@@ -1,5 +1,10 @@
 # IAM Policy Elements: Variables and Tags<a name="reference_policies_variables"></a>
 
+Use AWS Identity and Access Management \(IAM\) policy variables as placeholders when you don't know the exact value of a resource or condition key when you write the policy\.
+
+**Note**  
+If AWS cannot resolve a variable, this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
+
 **Topics**
 + [Introduction](#policy-vars-intro)
 + [Tags as Policy Variables](#policy-vars-tags)
@@ -226,7 +231,7 @@ Key names are case\-insensitive\. For example, `aws:CurrentTime` is equivalent t
 The values for `aws:username`, `aws:userid`, and `aws:principaltype` depend on what type of principal initiated the request\. For example, the request could be made using the credentials of an AWS account, an IAM user, an IAM role, and so on\. The following shows values for these keys for different types of principal\. 
 
 For the items in this note the following:
-+ *not present* means that the value is not in the current request information, and any attempt to match it fails and causes the request to be denied\. 
++ *not present* means that the value is not in the current request information, and any attempt to match it fails and causes the statement to be invalid\. 
 + *role\-id* is a unique identifier assigned to each role at creation\. You can display the role ID with the AWS CLI command: `aws iam get-role --role-name rolename`
 + *caller\-specified\-name* and *caller\-specified\-role\-name* are names that are passed by the calling process \(such as an application or service\) when it makes a call to get temporary credentials\.
 + *ec2\-instance\-id* is a value assigned to the instance when it is launched and appears on the **Instances** page of the Amazon EC2 console\. You can also display the instance ID by running the AWS CLI command: `aws ec2 describe-instances`

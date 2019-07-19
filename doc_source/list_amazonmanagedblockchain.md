@@ -18,7 +18,27 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmanagedblockchain.html)
+
+| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
+| --- | --- | --- | --- | --- | --- | 
+|   [ CreateMember ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateMember.html)  | Grants permission to create a member of an Amazon Managed Blockchain network\. | Write |   [ network\* ](#amazonmanagedblockchain-network)   |  |  | 
+|   [ CreateNetwork ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNetwork.html)  | Grants permission to create an Amazon Managed Blockchain network\. | Write |  |  |  | 
+|   [ CreateNode ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateNode.html)  | Grants permission to create a node within a member of an Amazon Managed Blockchain network\. | Write |   [ member\* ](#amazonmanagedblockchain-member)   |  |  | 
+|   [ CreateProposal ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_CreateProposal.html)  | Grants permission to create a proposal that other blockchain network members can vote on to add or remove a member in an Amazon Managed Blockchain network\. | Write |   [ network\* ](#amazonmanagedblockchain-network)   |  |  | 
+|   [ DeleteMember ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteMember.html)  | Grants permission to delete a member and all associated resources from an Amazon Managed Blockchain network\. | Write |   [ member\* ](#amazonmanagedblockchain-member)   |  |  | 
+|   [ DeleteNode ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_DeleteNode.html)  | Grants permission to delete a node from a member of an Amazon Managed Blockchain network\. | Write |   [ node\* ](#amazonmanagedblockchain-node)   |  |  | 
+|   [ GetMember ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetMember.html)  | Grants permission to return detailed information about a member of an Amazon Managed Blockchain network\. | Read |   [ member\* ](#amazonmanagedblockchain-member)   |  |  | 
+|   [ GetNetwork ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNetwork.html)  | Grants permission to return detailed information about an Amazon Managed Blockchain network\. | Read |   [ network\* ](#amazonmanagedblockchain-network)   |  |  | 
+|   [ GetNode ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetNode.html)  | Grants permission to return detailed information about a node within a member of an Amazon Managed Blockchain network\. | Read |   [ node\* ](#amazonmanagedblockchain-node)   |  |  | 
+|   [ GetProposal ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_GetProposal.html)  | Grants permission to return detailed information about a proposal of an Amazon Managed Blockchain network\. | Read |   [ proposal\* ](#amazonmanagedblockchain-proposal)   |  |  | 
+|   [ ListInvitations ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListInvitations.html)  | Grants permission to list the invitations extended to the active AWS account from any Managed Blockchain network\. | List |  |  |  | 
+|   [ ListMembers ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListMembers.html)  | Grants permission to list the members of an Amazon Managed Blockchain network and the properties of their memberships\. | List |   [ network\* ](#amazonmanagedblockchain-network)   |  |  | 
+|   [ ListNetworks ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNetworks.html)  | Grants permission to return information about the Amazon Managed Blockchain networks in which the current AWS account has members\. | List |  |  |  | 
+|   [ ListNodes ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListNodes.html)  | Grants permission to list the nodes within a member of an Amazon Managed Blockchain network\. | List |   [ member\* ](#amazonmanagedblockchain-member)   |  |  | 
+|   [ ListProposalVotes ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposalVotes.html)  | Grants permission to list all votes for a proposal, including the value of the vote and the unique identifier of the member that cast the vote for the given Amazon Managed Blockchain network\. | List |   [ proposal\* ](#amazonmanagedblockchain-proposal)   |  |  | 
+|   [ ListProposals ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_ListProposals.html)  | Grants permission to list proposals for the given Amazon Managed Blockchain network\. | List |   [ network\* ](#amazonmanagedblockchain-network)   |  |  | 
+|   [ RejectInvitation ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_RejectInvitation.html)  | Grants permission to reject the invitation to join the blockchain network\. | Write |   [ invitation\* ](#amazonmanagedblockchain-invitation)   |  |  | 
+|   [ VoteOnProposal ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_VoteOnProposal.html)  | Grants permission to cast a vote for a proposal on behalf of the blockchain network member specified\. | Write |   [ proposal\* ](#amazonmanagedblockchain-proposal)   |  |  | 
 
 ## Resources Defined by Amazon Managed Blockchain<a name="amazonmanagedblockchain-resources-for-iam-policies"></a>
 
@@ -29,10 +49,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ network ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:network/$\{NetworkId\}  |  | 
-|   [ member ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Member.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:member/$\{NetworkId\}/$\{MemberId\}  |  | 
-|   [ node ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Node.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:node/$\{NetworkId\}/$\{MemberId\}/$\{NodeId\}  |  | 
-|   [ proposal ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:networks/$\{NetworkId\}/$\{ProposalId\}  |  | 
+|   [ network ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Network.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}::networks/$\{NetworkId\}  |  | 
+|   [ member ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Member.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:members/$\{MemberId\}  |  | 
+|   [ node ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Node.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:nodes/$\{NodeId\}  |  | 
+|   [ proposal ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Proposal.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}::proposals/$\{ProposalId\}  |  | 
 |   [ invitation ](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/API_Invitation.html)  |  arn:$\{Partition\}:managedblockchain:$\{Region\}:$\{Account\}:invitations/$\{InvitationId\}  |  | 
 
 ## Condition Keys for Amazon Managed Blockchain<a name="amazonmanagedblockchain-policy-keys"></a>

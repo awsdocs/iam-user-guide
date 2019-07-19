@@ -16,4 +16,4 @@ Consult these resources for details:
 + [Versioning IAM Policies](access_policies_managed-versioning.md)
 + [Editing IAM Policies](access_policies_manage-edit.md)
 + [Deleting IAM Policies](access_policies_manage-delete.md)
-+ [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)
++ [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)

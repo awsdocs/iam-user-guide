@@ -32,17 +32,28 @@ The following resource types are defined by this service and can be used in the 
 |   [ bytematchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_ByteMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:bytematchset/$\{Id\}  |  | 
 |   [ ipset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_IPSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ipset/$\{Id\}  |  | 
 |   [ loadbalancer/app/ ](https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_WebACL.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |  | 
-|   [ ratebasedrule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_RateBasedRule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ratebasedrule/$\{Id\}  |  | 
-|   [ rule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rule/$\{Id\}  |  | 
+|   [ ratebasedrule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_regional_RateBasedRule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:ratebasedrule/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafregional-aws_ResourceTag___TagKey_)   | 
+|   [ rule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_Rule.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rule/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafregional-aws_ResourceTag___TagKey_)   | 
 |   [ sizeconstraintset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_SizeConstraintSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:sizeconstraintset/$\{Id\}  |  | 
 |   [ sqlinjectionmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:sqlinjectionmatchset/$\{Id\}  |  | 
-|   [ webacl ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:webacl/$\{Id\}  |  | 
+|   [ webacl ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:webacl/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafregional-aws_ResourceTag___TagKey_)   | 
 |   [ xssmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_XssMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:xssmatchset/$\{Id\}  |  | 
 |   [ regexmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:regexmatch/$\{Id\}  |  | 
 |   [ regexpatternset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:regexpatternset/$\{Id\}  |  | 
 |   [ geomatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_GeoMatchSet.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:geomatchset/$\{Id\}  |  | 
-|   [ rulegroup ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rulegroup/$\{Id\}  |  | 
+|   [ rulegroup ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:waf\-regional:$\{Region\}:$\{Account\}:rulegroup/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafregional-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS WAF Regional<a name="awswafregional-policy-keys"></a>
 
-WAF Regional has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS WAF Regional defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 

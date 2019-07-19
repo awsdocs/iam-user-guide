@@ -20,7 +20,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ connect ](https://docs.aws.amazon.com/neptune/latest/userguide/https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html)  | Connect to database | Write |   [ database\* ](#amazonneptune-database)   |  |  | 
+|   [ connect ](https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html)  | Connect to database | Write |   [ database\* ](#amazonneptune-database)   |  |  | 
 
 ## Resources Defined by Amazon Neptune<a name="amazonneptune-resources-for-iam-policies"></a>
 
@@ -31,7 +31,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ database ](https://docs.aws.amazon.com/neptune/latest/userguide/https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html)  |  arn:$\{Partition\}:neptune\-db:$\{Region\}:$\{Account\}:$\{RelativeId\}/database  |  | 
+|   [ database ](https://docs.aws.amazon.com/neptune/latest/userguide/get-started.html)  |  arn:$\{Partition\}:neptune\-db:$\{Region\}:$\{Account\}:$\{RelativeId\}/database  |  | 
 
 ## Condition Keys for Amazon Neptune<a name="amazonneptune-policy-keys"></a>
 

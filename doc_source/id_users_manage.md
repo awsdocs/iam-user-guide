@@ -12,7 +12,7 @@ For more information about adding, changing, or removing managed policies for an
 
 ## View User Access<a name="users-manage_prerequisites"></a>
 
-Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Listing IAM Users<a name="id_users_manage_list"></a>
 

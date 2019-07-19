@@ -34,7 +34,7 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 
 ## View Identity Activity<a name="attach-detach_prerequisites"></a>
 
-Before you change the permissions for an identity \(user, group, or role\), you should review their recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Reducing Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you change the permissions for an identity \(user, group, or role\), you should review their recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
 
 ## Adding IAM Identity Permissions \(Console\)<a name="add-policies-console"></a>
 

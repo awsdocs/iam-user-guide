@@ -52,7 +52,7 @@ Access control policies \(ACLs\) allow you to control which principals in anothe
 
 Session policies are advanced policies that you pass in a parameter when you programmatically create a temporary session for a role or federated user\. The permissions for a session are the intersection of the identity\-based policies for the IAM entity \(user or role\) used to create the session and the session policies\. Permissions can also come from a resource\-based policy\. An explicit deny in any of these policies overrides the allow\.
 
-You can create a role session and pass session policies programmatically using the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. You can pass a single JSON inline session policy document using the `Policy` parameter\. You can use the `PolicyArns` parameter to specify up to 10 managed session policies\. For more information about creating a role session, see [Requesting Temporary Security Credentials](id_credentials_temp_request.md)\.
+You can create role session and pass session policies programmatically using the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. You can pass a single JSON inline session policy document using the `Policy` parameter\. You can use the `PolicyArns` parameter to specify up to 10 managed session policies\. For more information about creating a role session, see [Requesting Temporary Security Credentials](id_credentials_temp_request.md)\.
 
 When you create a federated user session, you use an IAM user's access keys to programmatically call the `GetFederationToken` API operation\. You must also pass session policies\. The resulting session's permissions are the intersection of the IAM user's identity\-based policy and the session policy\. For more information about creating a federated user session, see [[GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)—Federation Through a Custom Identity Broker](id_credentials_temp_request.md#api_getfederationtoken)\.
 
@@ -64,7 +64,7 @@ A resource\-based policy can specify the ARN of the session as a principal\. In 
 
 ![\[Evaluation of the session policy with a resource-based policy specifying the session ARN\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-rbpsession-id.png)
 
-A permissions boundary can set the maximum permissions for a user or role that is used to create a session\. In that case, the resulting session's permissions are the intersection of the session policy, the permissions boundary, and the identity\-based policy\.
+A permissions boundary can set the maximum permissions for a user or role that is used to create a session\. In that case, the resulting session's permissions are the intersection of the session policy, the permissions boundary, and the identity\-based policy\. However, a permissions boundary does not limit permissions granted by a resource\-based policy that specifies the ARN of the resulting session\.
 
 ![\[Evaluation of the session policy with a permissions boundary\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-boundary-id.png)
 

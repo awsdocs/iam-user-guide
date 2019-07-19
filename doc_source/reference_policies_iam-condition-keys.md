@@ -21,22 +21,12 @@ Specifies the AWS service to which this role is attached\.
 **iam:PassedToService**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Specifies the service principal of the service to which a role can be passed\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. This is the usual format: `SERVICE_NAME_URL.amazonaws.com`\. In the `iam:PassedToService` condition key, provide the service principal of the service that will assume the role\.   
-You can use `iam:PassedToService` to restrict your users so that they can pass roles only to specific services\. For example, a user might create a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) that trusts CloudWatch to write log data to an Amazon S3 bucket on their behalf\. Then the user must attach a permissions policy and a trust policy to the new service role\. In this case, the trust policy must specify `cloudwatch.amazonaws.com` in the `Principal` element\. Attach the following policy to allow the user to pass the role to CloudWatch:  
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": "iam:PassRole",
-            "Resource": "*",
-            "Condition": {"StringEquals": {"iam:PassedToService": "cloudwatch.amazonaws.com"}}
-        }
-    ]
-}
-```
+You can use `iam:PassedToService` to restrict your users so that they can pass roles only to specific services\. For example, a user might create a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) that trusts CloudWatch to write log data to an Amazon S3 bucket on their behalf\. Then the user must attach a permissions policy and a trust policy to the new service role\. In this case, the trust policy must specify `cloudwatch.amazonaws.com` in the `Principal` element\. To view a policy that allows the user to pass the role to CloudWatch, see [](reference_policies_examples_iam-passrole-service.md)\.  
 By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail because the user does not have permission to pass the role to Amazon EC2\. 
+
+**iam:OrganizationsPolicyId**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Checks that the policy with the specified AWS Organizations ID matches the policy used in the request\. To view an example IAM policy that uses this condition key, see [IAM: View Service Last Accessed Data for an Organizations Policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.
 
 **iam:PermissionsBoundary**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -226,9 +216,9 @@ Condition keys whose type is a list can include multiple values\. To create cond
 }
 ```
 
-### SAML Role Permission Policies<a name="condition-keys-saml_permission-policy"></a>
+### SAML Role Permissions Policies<a name="condition-keys-saml_permission-policy"></a>
 
-In the permission policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
+In the permissions policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
 
 **saml:namequalifier**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

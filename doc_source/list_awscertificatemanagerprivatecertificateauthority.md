@@ -42,6 +42,7 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   acm\-pca:TemplateArn  | Filters issue certificate requests based on the presence of TemplateArn in the request\. | String | 
 |   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags\. | String | 
 |   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
 |   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

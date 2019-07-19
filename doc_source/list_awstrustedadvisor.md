@@ -21,11 +21,13 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   DescribeAccountAccess  | Resolve whether Account has disabled Trusted Advisor | List |  |  |  | 
-|   DescribeCheckItems  | View details for the check items | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   DescribeCheckRefreshStatuses  | Describe check refresh statuses | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   DescribeCheckSummaries  | Describes the check's summaries | List |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   DescribeNotificationPreferences  | Describes the notification preferences for the account | List |  |  |  | 
+|   DescribeAccount  | View support plan and various TA preferences\. | Read |  |  |  | 
+|   DescribeAccountAccess  | Resolve whether Account has disabled Trusted Advisor | Read |  |  |  | 
+|   DescribeCheckItems  | View details for the check items | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   DescribeCheckRefreshStatuses  | Describe check refresh statuses | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   DescribeCheckSummaries  | Describes the check's summaries | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   DescribeChecks  | List valid Trusted Advisor checks and details\. | Read |  |  |  | 
+|   DescribeNotificationPreferences  | Describes the notification preferences for the account | Read |  |  |  | 
 |   ExcludeCheckItems  | Exclude recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
 |   IncludeCheckItems  | Include recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
 |   RefreshCheck  | Enqueue a refresh for the specified check | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
@@ -41,7 +43,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ checks ](https://docs.aws.amazon.com/trustedadvisor/latest/APIReference/API_TrustedAdvisorCheckDescription.html)  |  arn:$\{Partition\}:trustedadvisor:$\{Region\}:$\{Account\}:checks/$\{CategoryCode\}/$\{CheckId\}  |  | 
+|   [ checks ](https://docs.aws.amazon.com/awssupport/latest/APIReference/API_TrustedAdvisorCheckDescription.html)  |  arn:$\{Partition\}:trustedadvisor:$\{Region\}:$\{Account\}:checks/$\{CategoryCode\}/$\{CheckId\}  |  | 
 
 ## Condition Keys for AWS Trusted Advisor<a name="awstrustedadvisor-policy-keys"></a>
 
