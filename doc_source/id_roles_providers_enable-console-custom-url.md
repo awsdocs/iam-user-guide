@@ -181,7 +181,8 @@ if sys.version_info[0] < 3:
 else:
     def quote_plus_function(s):
         return urllib.parse.quote_plus(s)
-request_parameters += "&Session=" + quote_plus_function(json_string_with_temp_credentials)request_url = "https://signin.aws.amazon.com/federation" + request_parameters
+request_parameters += "&Session=" + quote_plus_function(json_string_with_temp_credentials)
+request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 r = requests.get(request_url)
 # Returns a JSON document with a single element named SigninToken.
 signin_token = json.loads(r.text)
