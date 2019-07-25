@@ -1,28 +1,22 @@
-# Controlling Access Using IAM Tags<a name="access_iam-tags"></a>
+# Controlling Access to and for IAM Users and Roles Using IAM Resource Tags<a name="access_iam-tags"></a>
 
-With IAM tags, you can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use tags to control permissions in AWS\. That is, you can control what a user or role can do or what can be done to a user or role resource\.
+Use the information in the following section to control who can access your IAM users and roles and what resources your users and roles can access\. For more general information and examples for controlling access to other AWS resources, see [Controlling Access to AWS Resources Using Resource Tags](access_tags.md)\.
 
-To use tags to control access, you must understand how AWS grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to perform an operation \(such as creating a user\), you send a *request* for that operation\. Your request specifies an action, a resource, a *principal entity* \(user or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
+Tags can be attached to the IAM *resource*, passed in the *request*, or attached to the *principal* that is making the request\. An IAM user or role can be both a resource and principal\. For example, you can write a policy that allows a user to list the groups for a user\. This operation is allowed only if the user making the request \(the principal\) has the same `project=blue` tag as the user they're trying to view\. In this example, the user can view the group membership for any user, including themselves, as long as they are working on the same project\.
 
-AWS then checks that you \(the principal entity\) are authenticated \(signed in\) and authorized \(have permission\) to perform the specified action on the specified resource\. During authorization, AWS checks all the policies that apply to the context of your request\. Most policies are stored in AWS as [JSON documents](access_policies.md#access_policies-json) and specify the permissions for principal entities\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
+To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\. When you create an IAM policy, you can use IAM tags and the associated tag condition key to control access to any of the following:
++ **[Resource](#access_iam-tags_control-resources)** – Control access to user or role resources based on their tags\. To do this, use the **iam:ResourceTag/*key\-name*** condition key to specify which tag key\-value pair must be attached to the resource\. A similar service\-specific key, such as `ec2:ResourceTag`, is used other AWS resources\. For more information, see [Controlling Access to AWS Resources](access_tags.md#access_tags_control-resources)\.
++ **[Request](#access_iam-tags_control-requests)** – Control what tags can be passed in an IAM request\. To do this, use the **aws:RequestTag/*key\-name*** condition key to specify what tags can be added, changed, or removed from an IAM user or role\. This key is used the same way for IAM resources and other AWS resources\. For more information, see [Controlling Access During AWS Requests](access_tags.md#access_tags_control-requests)\.
++ **[Principal](#access_iam-tags_control-principals)** – Control what the person making the request \(the principal\) is allowed to do based on the tags that are attached to that person's IAM user or role\. To do this, use the **aws:PrincipalTag/*key\-name*** condition key to specify what tags must be attached to the IAM user or role before the request is allowed\.
++ **[Any part of the authorization process](#access_iam-tags_control-tag-keys)** – Use the **aws:TagKeys** condition key to control whether specific tag keys can be used on a resource, in a request, or by a principal\. In this case, the key value does not matter\. This key behaves similarly for IAM resources and other AWS resources\. However, when you tag a user in IAM, this also controls whether the principal can make the request to any service\. For more information, see [Controlling Access Based on Tag Keys](access_tags.md#access_tags_control-tag-keys)\.
 
-AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram and learn more about the IAM infrastructure, see [Understanding How IAM Works](intro-structure.md)\. For details about how IAM determines whether a request is allowed, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+You can create an IAM policy using the visual editor, using JSON, or by importing an existing managed policy\. For details, see [Creating IAM Policies](access_policies_create.md)\.
 
-Tags can complicate this process because tags can be attached to the *resource*, passed in the *request*, or attached to the *principal* that is making the request\. To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\. 
+## Controlling Access to IAM Resources<a name="access_iam-tags_control-resources"></a>
 
-When you create an IAM policy, you can use IAM tags and the associated tag condition key to control access to do any of the following:
-+ **[Resource](#access_iam-tags_control-resources)** – Control access to users or roles based on the tags on those resources\. To do this, use the **iam:ResourceTag/*key\-name*** condition key to determine whether to allow access to the IAM resource based on the tags that are attached to the resource\.
-+ **[Request](#access_iam-tags_control-requests)** – Control what tags can be passed in an IAM request\. To do this, use the **aws:RequestTag/*key\-name*** condition key to specify what tags can be added, changed, or removed from an IAM user or role\.
-+ **[Principal](#access_iam-tags_control-principals)** – Control what the person making the request \(the principal\) is allowed to do based on the tags that are attached to that person's identity\. To do this, use the **aws:PrincipalTag/*key\-name*** condition key to specify what tags must be attached to the principal before the request is allowed\.
-+ **[Any part of the authorization process](#access_iam-tags_control-tag-keys)** – Use the **aws:TagKeys** condition key to control whether specific tag keys can be used on a resource, in a request, or by a principal\. In this case, the value does not matter\. 
+You can use tags in your IAM policies to control access to IAM user and role resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.
 
-You can create an IAM policy visually, using JSON, or by importing an existing managed policy\. For details, see [Creating IAM Policies](access_policies_create.md)\.
-
-## Controlling Access to Resources<a name="access_iam-tags_control-resources"></a>
-
-You can use tags in your IAM policies to control access to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.
-
-This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the red italicized text in the example policy with your own information\.
+This example shows how you might create a policy that allows deleting users with the `status=terminated` tag\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {
@@ -36,7 +30,7 @@ This example shows how you might create a policy that allows deleting users with
 }
 ```
 
-This example shows how you might create a policy that allows editing tags for all users with the **jobFunction = employee** tag\. To use this policy, replace the red italicized text in the example policy with your own information\.
+This example shows how you might create a policy that allows editing tags for all users with the `jobFunction = employee` tag\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {
@@ -54,11 +48,11 @@ This example shows how you might create a policy that allows editing tags for al
 }
 ```
 
-## Controlling Access to Requests<a name="access_iam-tags_control-requests"></a>
+## Controlling Access During IAM Requests<a name="access_iam-tags_control-requests"></a>
 
-You can use tags in your IAM policies to control what tags can be added, changed, or removed from an IAM user or role\. 
+You can use tags in your IAM policies to control what tags can be passed in the IAM request\. You can specify which tag key\-value pairs can be added, changed, or removed from an IAM user or role\. 
 
-This example shows how you might create a policy that allows tagging users only with a **department = HR** or **department = CS** tag\. To use this policy, replace the red italicized text in the example policy with your own information\. 
+This example shows how you might create a policy that allows tagging users only with a `department = HR` or `department = CS` tag\. To use this policy, replace the red italicized text in the example policy with your own information\. 
 
 ```
 {
@@ -75,31 +69,33 @@ This example shows how you might create a policy that allows tagging users only 
 }
 ```
 
-## Controlling Access to Principals<a name="access_iam-tags_control-principals"></a>
+## Controlling Access for IAM Principals<a name="access_iam-tags_control-principals"></a>
 
-You can use tags in your IAM policies to control what the person making the request \(the principal\) is allowed to do based on the tags attached to that person's identity\. 
+IAM tags enable you to control what the principal is allowed to do based on the tags attached to that person's identity\. 
 
-This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the red italicized text in the example policy with your own information\.
+This example shows how you might create a policy that allows a principal to start or stop an Amazon EC2 instance\. This operation is allowed only when the instance's resource tag and the principal's tag have the same value for the tag key `cost-center`\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": "iam:*",
-      "Resource": "*",
-      "Condition": {"StringEquals": {"aws:PrincipalTag/tagManager": "true"}}
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": [
+            "ec2:startInstances",
+            "ec2:stopInstances"
+        ],
+        "Resource": "*",
+        "Condition": {"StringEquals": 
+            {"ec2:ResourceTag/costcenter": "${aws:PrincipalTag/cost-center}"}}
     }
-  ]
 }
 ```
 
-## Controlling Access Using Tag Keys<a name="access_iam-tags_control-tag-keys"></a>
+## Controlling Access Based on Tag Keys<a name="access_iam-tags_control-tag-keys"></a>
 
 You can use tags in your IAM policies to control whether specific tag keys can be used on a resource, in a request, or by a principal\.
 
-This example shows how you might create a policy that allows removing only the tag with the **project** key from users\. To use this policy, replace the red italicized text in the example policy with your own information\.
+This example shows how you might create a policy that allows removing only the tag with the `temporary` key from users\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
 ```
 {
@@ -108,7 +104,7 @@ This example shows how you might create a policy that allows removing only the t
         "Effect": "Allow",
         "Action": "iam:UntagUser",
         "Resource": "*",
-        "Condition": {"ForAllValues:StringEquals": {"aws:TagKeys": ["project"]}}
+        "Condition": {"ForAllValues:StringEquals": {"aws:TagKeys": ["temporary"]}}
     }]
 }
 ```

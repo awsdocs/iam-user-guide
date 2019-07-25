@@ -36,6 +36,7 @@ The following resource types are defined by this service and can be used in the 
 |   parameter  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   patchbaseline  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   session  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:session/$\{ResourceId\}  |  | 
+|   opsitem  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:opsitem/$\{ResourceId\}  |  | 
 
 ## Condition Keys for AWS Systems Manager<a name="awssystemsmanager-policy-keys"></a>
 
@@ -51,4 +52,5 @@ To view the global condition keys that are available to all services, see [Avail
 |   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags | String | 
 |   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value assoicated with the resource\. | String | 
 |   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request | String | 
+|   [ ssm:SessionDocumentAccessCheck ](https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions)  | Filters access by verifying that a user also has access to the default Session Manager configuration document\. | Boolean | 
 |   [ ssm:resourceTag/tag\-key ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-rc-setting-up-cmdsec.html)  | A tag key and value pair\. | String | 

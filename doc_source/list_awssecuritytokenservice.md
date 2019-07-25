@@ -45,10 +45,15 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   <web\-identity\-provider>:aud  |  | String | 
-|   <web\-identity\-provider>:oaud  |  | String | 
-|   <web\-identity\-provider>:sub  |  | String | 
+|   accounts\.google\.com:aud  |  | String | 
+|   accounts\.google\.com:oaud  |  | String | 
+|   accounts\.google\.com:sub  |  | String | 
 |   aws:FederatedProvider  |  | String | 
+|   cognito\-identity\.amazonaws\.com:amr  |  | String | 
+|   cognito\-identity\.amazonaws\.com:aud  |  | String | 
+|   cognito\-identity\.amazonaws\.com:sub  |  | String | 
+|   graph\.facebook\.com:app\_id  |  | String | 
+|   graph\.facebook\.com:id  |  | String | 
 |   saml:aud  |  | String | 
 |   saml:cn  |  | String | 
 |   saml:commonName  |  | String | 
@@ -82,3 +87,5 @@ To view the global condition keys that are available to all services, see [Avail
 |   saml:uid  |  | String | 
 |   saml:x500UniqueIdentifier  |  | String | 
 |   sts:ExternalId  |  | String | 
+|   www\.amazon\.com:app\_id  |  | String | 
+|   www\.amazon\.com:user\_id  |  | String | 

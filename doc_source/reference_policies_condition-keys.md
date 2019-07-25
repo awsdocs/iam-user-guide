@@ -213,13 +213,13 @@ This key should be used carefully\. It is dangerous to include a publicly\-known
 **aws:RequestTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.  
-Checks that the tag key–value pair is present in an AWS request\. For example, you could check to see that the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\. For more information, see [Controlling Access to Requests](access_tags.md#access_tags_control-requests)\.  
+Checks that the tag key–value pair is present in an AWS request\. For example, you could check to see that the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\. For more information, see [Controlling Access During AWS Requests](access_tags.md#access_tags_control-requests)\.  
 This condition key is available for only some services, and was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 
 **aws:ResourceTag/*tag\-key***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.  
-Checks that the tag key–value pair is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling Access to Resources](access_tags.md#access_tags_control-resources)\.  
+Checks that the tag key–value pair is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling Access to AWS Resources](access_tags.md#access_tags_control-resources)\.  
 This condition key is available for only some services\.
 
 **aws:SourceAccount**  
@@ -252,7 +252,7 @@ This condition key is available for services that support traffic over a VPC end
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.  
 Checks the tag keys that are present in an AWS request\.   
-As a best practice when you use policies to control access using tags, you should use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling Tag Keys](access_tags.md#access_tags_control-tag-keys)   
+As a best practice when you use policies to control access using tags, you should use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling Access Based on Tag Keys](access_tags.md#access_tags_control-tag-keys)   
 Some services support tagging with resource operations, such as creating, modifying, or deleting a resource\. To allow tagging and operations as a single call, you must create a policy that includes both the tagging action and the resource\-modifying action\. You can then use the `aws:TagKeys` condition key to enforce using specific tag keys in the request\. For example, to limit tags when someone creates an Amazon EC2 snapshot, you must include the `ec2:CreateSnapshot` creation action ***and*** the `ec2:CreateTags` tagging action in the policy\. To view a policy for this scenario that uses `aws:TagKeys`, see [Creating a Snapshot with Tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-creating-snapshot-with-tags) in the *Amazon EC2 User Guide for Linux Instances*\. 
 This condition key is available for only some services, and was [introduced for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html)\.
 

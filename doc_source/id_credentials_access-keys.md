@@ -24,6 +24,7 @@ When you create an access key pair, save the access key ID and secret access key
 + [Managing Access Keys \(AWS CLI\)](#Using_CreateAccessKey_CLIAPI)
 + [Managing Access Keys \(AWS API\)](#Using_CreateAccessKey_API)
 + [Rotating Access Keys](#Using_RotateAccessKey)
++ [Auditing Access Keys](#Using_access-keys-audit)
 
 ## Permissions Required<a name="access-keys_required-permissions"></a>
 
@@ -294,3 +295,11 @@ You can rotate access keys using the AWS API\.
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
 + [IAM Best Practices](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
+
+## Auditing Access Keys<a name="Using_access-keys-audit"></a>
+
+You can review the AWS access keys in your code to determine whether the keys are from an account that you own\. You can pass an access key ID using the [https://docs.aws.amazon.com/cli/latest/reference/sts/get-access-key-info.html](https://docs.aws.amazon.com/cli/latest/reference/sts/get-access-key-info.html) AWS CLI command or the [https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html) AWS API operation\.
+
+The AWS CLI and AWS API operations return the ID of the AWS account to which the access key belongs\. Access key IDs beginning with `AKIA` are long\-term credentials for an IAM user or an AWS account root user\. Access key IDs beginning with `ASIA` are temporary credentials that are created using AWS STS operations\. If the account in the response belongs to you, you can sign in as the root user and review your root user access keys\. Then, you can pull a [credentials report](id_credentials_getting-report.md) to learn which IAM user owns the keys\. To learn who requested the temporary credentials for an `ASIA` access key, view the AWS STS events in your [CloudTrail logs](cloudtrail-integration.md)\.
+
+This operation does not indicate the state of the access key\. The key might be active, inactive, or deleted\. Active keys might not have permissions to perform an operation\. Providing a deleted keys might return an error that the key doesn't exist\.

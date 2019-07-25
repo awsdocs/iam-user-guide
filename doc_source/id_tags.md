@@ -1,6 +1,6 @@
 # Tagging IAM Entities<a name="id_tags"></a>
 
-You can use IAM tags to add custom attributes to an IAM user or role using a tag key–value pair\. For example, to add location information to a user, you can add the tag key **location** and the tag value **us\_wa\_seattle**\. Or you could use three separate location tag key–value pairs: **loc\-country = us**, **loc\-state = wa**, and **loc\-city = seattle**\. You can use tags to control an entity's access to resources or to control what tags can be attached to an entity\. To learn more about using tags to control access, see [Controlling Access Using IAM Tags](access_iam-tags.md)\.
+You can use IAM tags to add custom attributes to an IAM user or role using a tag key–value pair\. For example, to add location information to a user, you can add the tag key **location** and the tag value **us\_wa\_seattle**\. Or you could use three separate location tag key–value pairs: **loc\-country = us**, **loc\-state = wa**, and **loc\-city = seattle**\. You can use tags to control an entity's access to resources or to control what tags can be attached to an entity\. To learn more about using tags to control access, see [Controlling Access to and for IAM Users and Roles Using IAM Resource Tags](access_iam-tags.md)\.
 
 ## Choose an AWS Tag Naming Convention<a name="id_tags_naming"></a>
 
@@ -19,7 +19,7 @@ Observe the following conventions when formulating a tag naming convention for I
 + You can create a tag with an empty value such as **phoneNumber = **\. You cannot create an empty tag key\.
 + You cannot specify multiple values in a single tag, but you can create a custom multivalue structure in the single value\. For example, assume that the user Zhang works on the engineering team and the QA team\. If you attach the **team = Engineering** tag and then attach the **team = QA** tag, you change the value of the tag from **Engineering** to **QA**\. Instead, you can include multiple values in a single tag with a custom separator\. In this example, you could attach the **team = Engineering:QA** tag to Zhang\.
 **Note**  
-To control access to engineers in this example using the **team** tag, you must create a policy that allows for every configuration that might include **Engineering**, including **Engineering:QA**\. To learn more about using tags in policies, see [Controlling Access Using IAM Tags](access_iam-tags.md)\.
+To control access to engineers in this example using the **team** tag, you must create a policy that allows for every configuration that might include **Engineering**, including **Engineering:QA**\. To learn more about using tags in policies, see [Controlling Access to and for IAM Users and Roles Using IAM Resource Tags](access_iam-tags.md)\.
 
 ### Applying and Editing Tags<a name="id_tags_rules_applying"></a>
 

@@ -47,6 +47,7 @@ The **Condition Keys** table lists all of the condition keys that you can use in
 + [AWS Budget Service](list_awsbudgetservice.md)
 + [AWS Certificate Manager](list_awscertificatemanager.md)
 + [AWS Certificate Manager Private Certificate Authority](list_awscertificatemanagerprivatecertificateauthority.md)
++ [AWS Chatbot](list_awschatbot.md)
 + [Amazon Chime](list_amazonchime.md)
 + [Amazon Cloud Directory](list_amazonclouddirectory.md)
 + [AWS Cloud Map](list_awscloudmap.md)

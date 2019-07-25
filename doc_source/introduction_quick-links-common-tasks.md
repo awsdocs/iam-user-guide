@@ -38,7 +38,7 @@ For an IAM user, see [Managing Access Keys for IAM Users](id_credentials_access-
 You can tag an IAM user or role using the IAM console, the AWS CLI, or the API through one of the AWS SDKs\.   
 To learn about tags in IAM, see [Tagging IAM Entities](id_tags.md)\.  
 For details about how to manage tags in IAM, see [Managing Tags on IAM Entities \(Console\)](id_tags.md#id_tags_procs-console)\.  
-To learn about using IAM tags to control access to AWS, see [Controlling Access Using IAM Tags](access_iam-tags.md)\. 
+To learn about using IAM tags to control access to AWS, see [Controlling Access to and for IAM Users and Roles Using IAM Resource Tags](access_iam-tags.md)\. 
 
 **Get started with all of AWS**  
 This set of documentation deals primarily with the IAM service\. To learn about getting started with AWS and using multiple services to solve a problem such as building and launching your first project, see the [Getting Started Resource Center](https://aws.amazon.com/getting-started/)\. 

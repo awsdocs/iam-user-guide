@@ -108,7 +108,7 @@ When you use a policy variable for the user name like this, you don't have to ha
 
 In some AWS services you can attach your own custom attributes to resources that are created by those services\. For example, you can apply tags to Amazon S3 buckets or to IAM users and roles\. These tags are key–value pairs\. You define the tag key name and the value associated with that key name\. For example, you might create a tag with a **department** key and a **Human Resources** value\. For more information about tagging IAM entities, see [Tagging IAM Entities](id_tags.md)\. For information about tagging resources created by other AWS services, see the documentation for that service\. For information about using Tag Editor, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Management Console User Guide*\.
 
-You can tag IAM identities to simplify discovering, organizing, and tracking your IAM resources\. You can also tag IAM identities to control access to resources or to tagging itself\. To learn more about using tags to control access, see [Controlling Access Using IAM Tags](access_iam-tags.md)\. 
+You can tag IAM identities to simplify discovering, organizing, and tracking your IAM resources\. You can also tag IAM identities to control access to resources or to tagging itself\. To learn more about using tags to control access, see [Controlling Access to and for IAM Users and Roles Using IAM Resource Tags](access_iam-tags.md)\. 
 
 ## Where You Can Use Policy Variables<a name="policy-vars-wheretouse"></a>
 
@@ -228,7 +228,7 @@ Policies contain keys whose values you can use as policy variables\. \(Under som
 **Important**  
 Key names are case\-insensitive\. For example, `aws:CurrentTime` is equivalent to `AWS:currenttime`\. 
 
-The values for `aws:username`, `aws:userid`, and `aws:principaltype` depend on what type of principal initiated the request\. For example, the request could be made using the credentials of an AWS account, an IAM user, an IAM role, and so on\. The following shows values for these keys for different types of principal\. 
+The values for `aws:username`, `aws:userid`, and `aws:principaltype` depend on what type of principal initiated the request\. For example, the request could be made using the credentials of an IAM user, an IAM role, or the AWS account root user\. The following shows values for these keys for different types of principals\. 
 
 For the items in this note the following:
 + *not present* means that the value is not in the current request information, and any attempt to match it fails and causes the statement to be invalid\. 

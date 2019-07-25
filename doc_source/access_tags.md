@@ -1,6 +1,8 @@
-# Controlling Access Using Tags<a name="access_tags"></a>
+# Controlling Access to AWS Resources Using Resource Tags<a name="access_tags"></a>
 
-Before you use tags to control access, you must understand how AWS grants access\. AWS is composed of collections of *resources*\. An IAM user is a resource\. An Amazon S3 bucket is a resource\. When you use the AWS API, the AWS CLI, or the AWS Management Console to perform an operation \(such as creating a user\), you send a *request* for that operation\. Your request specifies an action, a resource, a *principal entity* \(user or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
+You can use tags to control access to your AWS resources that support tagging\. You can also tag IAM users and roles to control what they can access\. To learn how to tag IAM users and roles, see [Tagging IAM Entities](id_tags.md)\. To learn how to create IAM policies that control access based on IAM user or role tags, see [Controlling Access to and for IAM Users and Roles Using IAM Resource Tags](access_iam-tags.md)\. Use the information in the following section to control access to other AWS services without tagging IAM users or roles\.
+
+Before you use tags to control access to your AWS resources, you must understand how AWS grants access\. AWS is composed of collections of *resources*\. An Amazon EC2 instance is a resource\. An Amazon S3 bucket is a resource\. You can use the AWS API, the AWS CLI, or the AWS Management Console to perform an operation, such as creating a bucket in Amazon S3\. When you do, you send a *request* for that operation\. Your request specifies an action, a resource, a *principal entity* \(user or role\), a *principal account*, and any necessary request information\. All of this information provides *context*\.
 
 AWS then checks that you \(the principal entity\) are authenticated \(signed in\) and authorized \(have permission\) to perform the specified action on the specified resource\. During authorization, AWS checks all the policies that apply to the context of your request\. Most policies are stored in AWS as [JSON documents](access_policies.md#access_policies-json) and specify the permissions for principal entities\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
 
@@ -8,21 +10,21 @@ AWS authorizes the request only if each part of your request is allowed by the p
 
 Tags can complicate this process because tags can be attached to the *resource* or passed in the *request* to services that support tagging\. To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\. To learn whether an AWS service supports controlling access using tags, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Authorization based on tags** column\. Choose the name of the service to view the authorization and access control documentation for that service\.
 
-When you create an IAM policy, you can use tag condition keys to control access to do any of the following:
+You can then create an IAM policy that allows or denies access to a resource based on that resource's tag\. In that policy, you can use tag condition keys to control access to any of the following:
 + **[Resource](#access_tags_control-resources)** – Control access to AWS service resources based on the tags on those resources\. To do this, use the **ResourceTag/*key\-name*** condition key to determine whether to allow access to the resource based on the tags that are attached to the resource\.
-+ **[Request](#access_tags_control-requests)** – Control what tags can be passed in an IAM request\. To do this, use the **aws:RequestTag/*key\-name*** condition key to specify what tag key–value pairs can be passed in a request that tags an AWS resource\.
-+ **[Tag Keys](#access_tags_control-tag-keys)** – Use the **aws:TagKeys** condition key to control whether specific tag keys can be used on a resource or in a request\. 
++ **[Request](#access_tags_control-requests)** – Control what tags can be passed in a request\. To do this, use the **aws:RequestTag/*key\-name*** condition key to specify what tag key\-value pairs can be passed in a request to tag or untag an AWS resource\.
++ **[Any part of the authorization process](#access_tags_control-tag-keys)** – Use the **aws:TagKeys** condition key to control whether specific tag keys can be used on a resource or in a request\. 
 
 You can create an IAM policy visually, using JSON, or by importing an existing managed policy\. For details, see [Creating IAM Policies](access_policies_create.md)\.
 
-## Controlling Access to Resources<a name="access_tags_control-resources"></a>
+## Controlling Access to AWS Resources<a name="access_tags_control-resources"></a>
 
-You can use conditions in your IAM policies to control access to AWS resources based on the tags on that resource\. You can do this using the global `aws:ResourceTag/tag-key` condition key, or a service\-specific key such as `aws:RequestTag/tag-key`\. You can also use these condition keys to allow untagging resources only with specific tag key–value pairs\.
+You can use conditions in your IAM policies to control access to AWS resources based on the tags on that resource\. You can do this using the global `aws:ResourceTag/tag-key` condition key, or a service\-specific key such as `aws:RequestTag/tag-key`\. You can also use these condition keys to allow untagging resources only with specific tag key\-value pairs\.
 
 **Note**  
 Do not use the `ResourceTag` condition key in a policy with the `iam:PassRole` action\. You cannot use the tag on an IAM role to control access to who can pass that role\. For more information about permissions required to pass a role to a service, see [Granting a User Permissions to Pass a Role to an AWS Service](id_roles_use_passrole.md)\.
 
- This example shows how you might create a policy that allows starting or stopping Amazon EC2 instances, but only if the instance tag `Owner` has the value of that user's user name\. This policy also grants the necessary permissions to complete this action on the console\. 
+ This example shows how you might create a policy that allows starting or stopping Amazon EC2 instances\. These operations are allowed only if the instance tag `Owner` has the value of that user's user name\. This policy also grants the necessary permissions to complete this action on the console\. 
 
 ```
 {
@@ -50,11 +52,11 @@ Do not use the `ResourceTag` condition key in a policy with the `iam:PassRole` a
 
 You can attach this policy to the IAM users in your account\. If a user named `richard-roe` attempts to start an Amazon EC2 instance, the instance must be tagged `Owner=richard-roe` or `owner=richard-roe`\. Otherwise he will be denied access\. The tag key `Owner` matches both `Owner` and `owner` because condition key names are not case\-sensitive\. For more information, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
 
-## Controlling Access to Requests<a name="access_tags_control-requests"></a>
+## Controlling Access During AWS Requests<a name="access_tags_control-requests"></a>
 
-You can use conditions in your IAM policies to control what tag key–value pairs can be passed in a request that tags an AWS resource\.
+You can use conditions in your IAM policies to control what tag key\-value pairs can be passed in a request that tags an AWS resource\.
 
-This example shows how you might create a policy that allows using the Amazon EC2 `CreateTags` action to attach tags to an instance only if the tag contains the `environment` key and the `preprod` or `production` values\. As a best practice, use the `ForAllValues` modifier with the `aws:TagKeys` condition key to indicate that only the key `environment` is allowed in the request\. This stops users from including other keys, such as accidentally using `Environment` instead of `environment`\. 
+This example shows how you might create a policy that allows using the Amazon EC2 `CreateTags` action to attach tags to an instance\. You can attach tags only if the tag contains the `environment` key and the `preprod` or `production` values\. If you want, you can use the `ForAllValues` modifier with the `aws:TagKeys` condition key to indicate that only the key `environment` is allowed in the request\. This stops users from including other keys, such as accidentally using `Environment` instead of `environment`\. 
 
 ```
 {
@@ -76,7 +78,7 @@ This example shows how you might create a policy that allows using the Amazon EC
 }
 ```
 
-## Controlling Tag Keys<a name="access_tags_control-tag-keys"></a>
+## Controlling Access Based on Tag Keys<a name="access_tags_control-tag-keys"></a>
 
 You can use a condition in your IAM policies to control whether specific tag keys can be used on a resource or in a request\.
 

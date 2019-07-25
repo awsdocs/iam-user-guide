@@ -16,7 +16,29 @@ You can specify the following actions in the `Action` element of an IAM policy s
 
 
 ****  
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html)
+
+| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
+| --- | --- | --- | --- | --- | --- | 
+|   CreateHttpNamespace  | Creates an HTTP namespace\. | Write |  |  |  | 
+|   CreatePrivateDnsNamespace  | Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC\. | Write |  |  |  | 
+|   CreatePublicDnsNamespace  | Creates a public namespace based on DNS, which will be visible on the internet\. | Write |  |  |  | 
+|   CreateService  | Creates a service\. | Write |  |   [ servicediscovery:NamespaceArn ](#awscloudmap-servicediscovery_NamespaceArn)   |  | 
+|   DeleteNamespace  | Deletes a specified namespace\. | Write |   [ namespace\* ](#awscloudmap-namespace)   |  |  | 
+|   DeleteService  | Deletes a specified service\. | Write |   [ service\* ](#awscloudmap-service)   |  |  | 
+|   DeregisterInstance  | Deletes the records and the health check, if any, that Amazon Route 53 created for the specified instance\. | Write |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
+|   DiscoverInstances  | Discovers registered instances for a specified namespace and service\. | Read |  |   [ servicediscovery:NamespaceName ](#awscloudmap-servicediscovery_NamespaceName)   [ servicediscovery:ServiceName ](#awscloudmap-servicediscovery_ServiceName)   |  | 
+|   GetInstance  | Gets information about a specified instance\. | Read |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
+|   GetInstancesHealthStatus  | Gets the current health status \(Healthy, Unhealthy, or Unknown\) of one or more instances\. | Read |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
+|   GetNamespace  | Gets information about a namespace\. | Read |   [ namespace\* ](#awscloudmap-namespace)   |  |  | 
+|   GetOperation  | Gets information about a specific operation\. | Read |  |  |  | 
+|   GetService  | Gets the settings for a specified service\. | Read |   [ service\* ](#awscloudmap-service)   |  |  | 
+|   ListInstances  | Gets summary information about the instances that were registered with a specified service\. | List |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
+|   ListNamespaces  | Gets information about the namespaces\. | List |  |  |  | 
+|   ListOperations  | Lists operations that match the criteria that you specify\. | List |  |  |  | 
+|   ListServices  | Gets settings for all the services that match specified filters\. | List |  |  |  | 
+|   RegisterInstance  | Registers an instance based on the settings in a specified service\. | Write |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
+|   UpdateInstanceCustomHealthStatus  | Updates the current health status for an instance that has a custom health check\. | Write |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
+|   UpdateService  | Updates the settings in a specified service\. | Write |   [ service\* ](#awscloudmap-service)   |  |  | 
 
 ## Resources Defined by AWS Cloud Map<a name="awscloudmap-resources-for-iam-policies"></a>
 
@@ -27,8 +49,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   namespace  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:namespace/$\{NamespaceName\}  |  | 
-|   service  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceName\}  |  | 
+|   namespace  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:namespace/$\{NamespaceId\}  |  | 
+|   service  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceId\}  |  | 
 
 ## Condition Keys for AWS Cloud Map<a name="awscloudmap-policy-keys"></a>
 

@@ -27,6 +27,7 @@ You can specify the following actions in the `Action` element of an IAM policy s
 |   [ GetReservationCoverage ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html)  | Grants permission to retrieve the reservation coverage for your account\. | Read |  |  |  | 
 |   [ GetReservationPurchaseRecommendation ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html)  | Grants permission to retrieve the reservation recommendations for your account\. | Read |  |  |  | 
 |   [ GetReservationUtilization ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html)  | Grants permission to retrieve the reservation utilization for your account\. | Read |  |  |  | 
+|   [ GetRightsizingRecommendation ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetRightsizingRecommendation.html)  | Grants permission to retrieve the rightsizing recommendations for your account\. | Read |  |  |  | 
 |   [ GetTags ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html)  | Grants permission to query tags for a specified time period\. | Read |  |  |  | 
 |   [ GetUsageForecast ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html)  | Grants permission to retrieve a usage forecast for a forecast time period\. | Read |  |  |  | 
 
