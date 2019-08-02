@@ -29,8 +29,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ stack ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\}  |  | 
-|   [ stackset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stackset/$\{StackSetName\}:$\{Id\}  |  | 
+|   [ stack ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscloudformation-aws_ResourceTag___TagKey_)   | 
+|   [ stackset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stackset/$\{StackSetName\}:$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscloudformation-aws_ResourceTag___TagKey_)   | 
 |   [ changeset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:changeSet/$\{ChangeSetName\}:$\{Id\}  |  | 
 
 ## Condition Keys for AWS CloudFormation<a name="awscloudformation-policy-keys"></a>
@@ -44,6 +44,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  |  | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  |  | String | 
+|   [ aws:TagKeys ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  |  | String | 
 |   [ cloudformation:ChangeSetName ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | An AWS CloudFormation change set name\. Use to control which change sets IAM users can execute or delete\. | String | 
 |   [ cloudformation:ResourceTypes ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | The template resource types, such as <code>AWS::EC2::Instance</code>\. Use to control which resource types IAM users can work with when they create or update a stack | String | 
 |   [ cloudformation:RoleArn ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | The ARN of an IAM service role\. Use to control which service role IAM users can use to work with stacks or change sets\. | ARN | 

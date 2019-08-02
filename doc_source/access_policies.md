@@ -44,9 +44,9 @@ AWS Organizations is a service for grouping and centrally managing the AWS accou
 
 For more information about Organizations and SCPs, see [About Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
 
-### Access Control Policies \(ACLs\)<a name="policies_acl"></a>
+### Access Control Lists \(ACLs\)<a name="policies_acl"></a>
 
-Access control policies \(ACLs\) allow you to control which principals in another account can access a resource\. ACLs cannot be used to control access for a principal within the same account\. ACLs are similar to resource\-based policies, although they are the only policy type that does not use the JSON policy document format\. Amazon S3, AWS WAF, and Amazon VPC are examples of services that support ACLs\. To learn more about ACLs, see [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*\.
+Access control lists \(ACLs\) are service policies that allow you to control which principals in another account can access a resource\. ACLs cannot be used to control access for a principal within the same account\. ACLs are similar to resource\-based policies, although they are the only policy type that does not use the JSON policy document format\. Amazon S3, AWS WAF, and Amazon VPC are examples of services that support ACLs\. To learn more about ACLs, see [Access Control List \(ACL\) Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html) in the *Amazon Simple Storage Service Developer Guide*\.
 
 ### Session Policies<a name="policies_session"></a>
 

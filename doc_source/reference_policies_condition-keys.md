@@ -28,38 +28,42 @@ Checks how long ago \(in seconds\) the MFA\-validated security credentials that 
 
 **aws:MultiFactorAuthPresent**  
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.  
-Checks whether multi\-factor authentication \(MFA\) was used to validate the temporary security credentials that made the current request\. This key is present in the request context only when the user uses temporary credentials to call the API\. Such credentials are used with IAM roles, federated users, IAM users with credentials from `sts:GetSessionToken`, and users of the AWS Management Console\. \(The console uses temporary credentials that are generated on the users' behalf in the background\.\) The `aws:MultiFactorAuthPresent` key is never present when an API or CLI command is called with long\-term credentials, such as standard access key pairs\. Therefore we recommend that when you check for this key that you use the `[\.\.\.IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists)` versions of the condition operators\.  
+Checks whether multi\-factor authentication \(MFA\) was used to validate the temporary security credentials that made the current request\. This key is present in the request context only when the user uses temporary credentials to make the request\. They key is not present in AWS CLI, AWS API, or AWS SDK requests made using access keys\.  
+Temporary credentials are used with IAM roles, federated users, IAM users with temporary tokens from `sts:GetSessionToken`, and users of the AWS Management Console\. Users sign into the console using long\-term user name and password credentials\. However, in the background, the console generates temporary credentials on behalf of the user\. The `aws:MultiFactorAuthPresent` key is never present when an API or CLI command is called with long\-term credentials, such as access key pairs\. Therefore we recommend that when you check for this key that you use the `[\.\.\.IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists)` versions of the condition operators\.  
 It is important to understand that the following Condition element is ***not*** a reliable way to check whether a request is authenticated using MFA\.  
 
 ```
-#####   WARNING: USE WITH CAUTION   #####
+#####   WARNING: NOT RECOMMENDED   #####
 
 "Effect" : "Deny",
 "Condition" : { "Bool" : { "aws:MultiFactorAuthPresent" : false } }
 ```
 This combination of the `Deny` effect, `Bool` element, and `false` value denies requests that can be authenticated using MFA, but were not\. This applies only to temporary credentials that support using MFA\. This statement does not deny access to requests made using long\-term credentials, or to requests that were authenticated using MFA\. Use this example with caution because its logic is complicated and it does not test whether MFA\-authentication was actually used\.   
 Also do not use the combination of the `Deny` effect, `Null` element, and `true` because it behaves the same way and the logic is even more complicated\.  
-Instead, we recommend that you use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to check whether a request is authenticated using MFA\.  
+**Recommended Combination**  
+We recommend that you use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to check whether a request is authenticated using MFA\.  
 
 ```
 "Effect" : "Deny",
 "Condition" : { "BoolIfExists" : { "aws:MultiFactorAuthPresent" : false } }
 ```
-This combination of `Deny`, `BoolIfExists`, and `false` denies requests that are not authenticated using MFA\. Specifically, it denies requests from temporary credentials that do not include MFA\. It also denies requests made using long\-term credentials, such as IAM user access keys\. The `*IfExists` operator checks for the presence of the `aws:MultiFactorAuthPresent` key and whether or not it COULD be present, as indicated by its existence\. Use this when you want to deny any request that is not authenticated using MFA\.  
-You can also use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to allow MFA\-authenticated requests and requests made using long\-term credentials\.  
+This combination of `Deny`, `BoolIfExists`, and `false` denies requests that are not authenticated using MFA\. Specifically, it denies requests from temporary credentials that do not include MFA\. It also denies requests made using long\-term credentials, such as AWS CLI or AWS API operations made using access keys\. The `*IfExists` operator checks for the presence of the `aws:MultiFactorAuthPresent` key and whether or not it COULD be present, as indicated by its existence\. Use this when you want to deny any request that is not authenticated using MFA\. This is more secure, but can break any code or scripts that use access keys to access the AWS CLI or AWS API\.   
+**Alternative Combinations**  
+You can also use the [`BoolIfExists`](reference_policies_elements_condition_operators.md#Conditions_IfExists) operator to allow MFA\-authenticated requests and AWS CLI or AWS API requests made using long\-term credentials\.  
 
 ```
 "Effect" : "Allow",
 "Condition" : { "BoolIfExists" : { "aws:MultiFactorAuthPresent" : true } }
 ```
-This condition matches either if the key exists and is present **or** if the key does not exist\. This combination of `Allow`, `BoolIfExists`, and `true` allows requests that are authenticated using MFA, or requests that cannot be authenticated using MFA\. It does not allow requests from temporary credentials that do not include MFA\. Use this to allow MFA requests and requests made with long\-term credentials\.   
-Alternatively, you can allow only requests that are authenticated using MFA\.  
+This condition matches either if the key exists and is present **or** if the key does not exist\. This combination of `Allow`, `BoolIfExists`, and `true` allows requests that are authenticated using MFA, or requests that cannot be authenticated using MFA\. This means that AWS CLI, AWS API, and AWS SDK operations are allowed when the requester uses their long\-term access keys\. This combination does not allow requests from temporary credentials that could, but do not include MFA\.   
+When you create a policy using the IAM console visual editor and choose **MFA required**, this combination is applied\. This setting requires MFA for console access, but allows programmatic access with no MFA\.   
+Alternatively, you can use the `Bool` operator to allow programmatic and console requests only when authenticated using MFA\.  
 
 ```
 "Effect" : "Allow",
 "Condition" : { "Bool" : { "aws:MultiFactorAuthPresent" : true } }
 ```
-This combination of the `Allow`, `Bool`, and `true` allows only MFA\-authenticated requests\. This applies only to temporary credentials that support using MFA\. This statement does not allow access to requests made using long\-term credentials, or to requests made using temporary credentials without MFA\.   
+This combination of the `Allow`, `Bool`, and `true` allows only MFA\-authenticated requests\. This applies only to temporary credentials that support using MFA\. This statement does not allow access to requests made using long\-term access keys, or to requests made using temporary credentials without MFA\.   
 ***Do not*** use a policy construct similar to the following to check whether the MFA key is present:  
 
 ```

@@ -111,6 +111,12 @@ Some AWS services allow you to pass an existing role to the service, instead of 
 }
 ```
 
+### Transferring Service\-Linked Role Permissions<a name="create-service-linked-role-permissions-transfer"></a>
+
+The permissions granted by a service\-linked role are indirectly transferable to other users and roles\. When you allow a service to perform operations in other services, the service can use those permissions in the future\. If another user or role has permission to perform actions in the service, the service can then assume the role and access resources in other services\. This means that the other user or role can indirectly access the other services\.
+
+For example, when you create an Amazon RDS DB instance, [RDS creates the service\-linked role](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) for you\. This role allows RDS to call Amazon EC2, Amazon SNS, Amazon CloudWatch Logs, and Amazon Kinesis on your behalf whenever you edit the DB instance\. If you create a policy to allow users and roles in your account or another account to access that Amazon RDS instance, then RDS can still use that role make changes to EC2, SNS, CloudWatch Logs, and Kinesis on their behalf\. The new user or role can indirectly edit resources in those other services\.
+
 ## Creating a Service\-Linked Role<a name="create-service-linked-role"></a>
 
 The method that you use to create a service\-linked role depends on the service\. In some cases, you don't need to manually create a service\-linked role\. For example, when you complete a specific action \(such as creating a resource\) in the service, the service might create the service\-linked role for you\. Or if you were using a service before it began supporting service\-linked roles, then the service might have automatically created the role in your account\. To learn more, see [A New Role Appeared in My AWS Account](troubleshoot_roles.md#troubleshoot_roles_new-role-appeared)\.

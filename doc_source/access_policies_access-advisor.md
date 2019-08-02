@@ -145,6 +145,7 @@ AWS collects service last accessed data in most Regions\. Data is stored for a m
 | Asia Pacific \(Mumbai\) | ap\-south\-1 | June 27, 2016 | 
 | Canada \(Central\) | ca\-central\-1 | October 28, 2017 | 
 | EU \(Frankfurt\) | eu\-central\-1 | October 1, 2015 | 
+| EU \(Stockholm\) | eu\-north\-1 | December 12, 2018 | 
 | EU \(Ireland\) | eu\-west\-1 | October 1, 2015 | 
 | EU \(London\) | eu\-west\-2 | October 28, 2017 | 
 | EU \(Paris\) | eu\-west\-3 | December 18, 2017 | 

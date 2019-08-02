@@ -29,7 +29,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ repository ](https://docs.aws.amazon.com/codecommit/latest/userguide/https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codecommit:$\{Region\}:$\{Account\}:$\{RepositoryName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscodecommit-aws_ResourceTag___TagKey_)   | 
+|   [ repository ](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codecommit:$\{Region\}:$\{Account\}:$\{RepositoryName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscodecommit-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS CodeCommit<a name="awscodecommit-policy-keys"></a>
 
@@ -45,4 +45,4 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 
-|   codecommit:References  | Filters access by Git reference to specified AWS CodeCommit actions | String | 
+|   [ codecommit:References ](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-conditional-branch.html)  | Filters access by Git reference to specified AWS CodeCommit actions | String | 
