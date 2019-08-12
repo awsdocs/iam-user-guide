@@ -18,7 +18,7 @@ The following examples show various ways in which principals can be specified\.
 
 **Specific AWS accounts**
 
-When you use an AWS account identifier as the principal in a policy, the permissions in the policy statement can be granted to all identities contained in that account\. This includes IAM users and roles in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*AWS\-account\-ID*:root\), or a shortened form that consists of the `AWS:` prefix followed by the account ID\.
+When you use an AWS account identifier as the principal in a policy, you delegate authority to the account\. Within that account, the permissions in the policy statement can be granted to all identities\. This includes IAM users and roles in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*AWS\-account\-ID*:root\), or a shortened form that consists of the `AWS:` prefix followed by the account ID\.
 
 For example, given an account ID of `123456789012`, you can use either of the following methods to specify that account in the `Principal` element:
 

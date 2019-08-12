@@ -21,12 +21,9 @@ Specifies the AWS service to which this role is attached\.
 **iam:PassedToService**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Specifies the service principal of the service to which a role can be passed\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. This is the usual format: `SERVICE_NAME_URL.amazonaws.com`\. In the `iam:PassedToService` condition key, provide the service principal of the service that will assume the role\.   
-You can use `iam:PassedToService` to restrict your users so that they can pass roles only to specific services\. For example, a user might create a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) that trusts CloudWatch to write log data to an Amazon S3 bucket on their behalf\. Then the user must attach a permissions policy and a trust policy to the new service role\. In this case, the trust policy must specify `cloudwatch.amazonaws.com` in the `Principal` element\. To view a policy that allows the user to pass the role to CloudWatch, see [](reference_policies_examples_iam-passrole-service.md)\.  
-By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail because the user does not have permission to pass the role to Amazon EC2\. 
-
-**Note**
-There are several services in AWS that do not currently support the `iam:PassedToService` condition key\. For instance AWS CodeBuild and AWS CloudFormation the do not support this IAM feature\.
-
+You can use `iam:PassedToService` to restrict your users so that they can pass roles only to specific services\. For example, a user might create a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) that trusts CloudWatch to write log data to an Amazon S3 bucket on their behalf\. Then the user must attach a permissions policy and a trust policy to the new service role\. In this case, the trust policy must specify `cloudwatch.amazonaws.com` in the `Principal` element\. To view a policy that allows the user to pass the role to CloudWatch, see [IAM: Pass an IAM Role to a Specific AWS Service](reference_policies_examples_iam-passrole-service.md)\.  
+By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail because the user does not have permission to pass the role to Amazon EC2\.   
+Some services, such as AWS CodeBuild and AWS CodeCommit do not support this condition key\.
 
 **iam:OrganizationsPolicyId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

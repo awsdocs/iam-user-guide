@@ -38,4 +38,4 @@ After the device is disassociated from the user, you can delete the device entit
 + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html) 
 
 **To recover a virtual MFA device that is lost or not working**  
-Sometimes, an IAM user's mobile device where the virtual MFA app is hosted is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. IAM users must contact an administrator to deactivate the device\. For more information, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\.
+Sometimes, an IAM user's device that hosts the virtual MFA app is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. IAM users must contact an administrator to deactivate the device\. For more information, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\.
