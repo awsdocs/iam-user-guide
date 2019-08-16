@@ -118,8 +118,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ Portfolio ](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_PortfolioDetail.html)  |  arn:$\{Partition\}:servicecatalog:$\{Region\}:$\{Account\}:portfolio/$\{PortfolioId\}  |  | 
-|   [ Product ](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProductViewDetail.html)  |  arn:$\{Partition\}:servicecatalog:$\{Region\}:$\{Account\}:product/$\{ProductId\}  |  | 
+|   [ Portfolio ](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_PortfolioDetail.html)  |  arn:$\{Partition\}:catalog:$\{Region\}:$\{Account\}:portfolio/$\{PortfolioId\}  |  | 
+|   [ Product ](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProductViewDetail.html)  |  arn:$\{Partition\}:catalog:$\{Region\}:$\{Account\}:product/$\{ProductId\}  |  | 
 |   [ ProvisionedProduct ](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_ProvisionedProductDetail.html)  |  arn:$\{Partition\}:servicecatalog:$\{Region\}:$\{Account\}:stack/$\{ProvisionedProductName\}/$\{ProvisionedProductId\}  |  | 
 
 ## Condition Keys for AWS Service Catalog<a name="awsservicecatalog-policy-keys"></a>

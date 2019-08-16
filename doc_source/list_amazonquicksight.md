@@ -59,9 +59,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   user  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:user/$\{ResourceId\}  |  | 
-|   group  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:group/$\{ResourceId\}  |  | 
-|   dashboard  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:dashboard/$\{ResourceId\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:user/$\{ResourceId\}  |  | 
+|   [ group ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:group/$\{ResourceId\}  |  | 
+|   [ dashboard ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:dashboard/$\{ResourceId\}  |  | 
 
 ## Condition Keys for Amazon QuickSight<a name="amazonquicksight-policy-keys"></a>
 
@@ -74,6 +74,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   quicksight:IamArn  | IAM user ARN or role ARN\. | String | 
-|   quicksight:SessionName  | The session name\. | String | 
-|   quicksight:UserName  | The user name\. | String | 
+|   [ quicksight:IamArn ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | IAM user ARN or role ARN\. | String | 
+|   [ quicksight:SessionName ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | The session name\. | String | 
+|   [ quicksight:UserName ](https://docs.aws.amazon.com/quicksight/latest/user/iam-actions.html)  | The user name\. | String | 

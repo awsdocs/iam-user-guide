@@ -6,7 +6,7 @@ The `ListTagsForAllUsers` statement allows the viewing of tags for all users in 
 
 The first condition in the `TagManagerWithSpecificDepartment` statement uses the `StringEquals` condition operator\. The condition returns true if both parts of the condition are true\. The user to be tagged must already have the `JobFunction=Manager` tag\. The request must include the `Department` tag key with one of the listed tag values\. 
 
-The second condition uses the `ForAllValues:StringEquals` condition operator\. The condition returns true if all of the tag keys in the request match the key in the policy\. This means that the only tag key in the request must be `Department`\. For more information about using `ForAllValues`, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)\.
+The second condition uses the `ForAllValues:StringEquals` condition operator\. The condition returns true if all of the tag keys in the request match the key in the policy\. This means that the only tag key in the request must be `Department`\. For more information about using `ForAllValues`, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.
 
 ```
 {

@@ -9,9 +9,23 @@ An account alias substitutes for an account ID in the web address for your accou
 
 ## Finding Your AWS Account ID<a name="FindingYourAWSId"></a>
 
-To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account number \(ID\) appears in the **Support Center** title bar\.
+You can find your account ID in the AWS Management Console, or using the AWS CLI or AWS API\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
+### Finding your account ID \(Console\)<a name="FindId_Console"></a>
+
+Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. The account to which you are signed in appears at the top of the navigation pane\.
+
+![\[Finding your account ID\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-iam-console.png)
+
+### Finding your account ID \(AWS CLI\)<a name="FindId_CLI"></a>
+
+To view your user ID, account ID, and your user ARN:
++ `[aws sts get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html)`
+
+### Finding your account ID \(AWS API\)<a name="FindId_API"></a>
+
+To view your user ID, account ID, and your user ARN:
++ `[GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)` 
 
 ## About Account Aliases<a name="AboutAccountAlias"></a>
 

@@ -83,7 +83,7 @@ You might give some users permissions to get and update your AWS account's [pass
 
 ## Allow Users to Generate and Retrieve IAM Credential Reports<a name="iampolicy-generate-credential-report"></a>
 
-You can give users permission to generate and download a report that lists all users in your AWS account\. The report also lists the status of various user credentials, including passwords, access keys, MFA devices, and signing certificates\. For more information about credential reports, see [Getting Credential Reports for Your AWS Account](id_credentials_getting-report.md)\. To view the example policy, see [](reference_policies_examples_iam-credential-report.md)\. 
+You can give users permission to generate and download a report that lists all users in your AWS account\. The report also lists the status of various user credentials, including passwords, access keys, MFA devices, and signing certificates\. For more information about credential reports, see [Getting Credential Reports for Your AWS Account](id_credentials_getting-report.md)\. To view the example policy, see [IAM: Generate and Retrieve IAM Credential Reports](reference_policies_examples_iam-credential-report.md)\. 
 
 ## Allow All IAM Actions \(Admin Access\)<a name="creds-policies-all-iam"></a>
 

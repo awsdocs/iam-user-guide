@@ -1,20 +1,65 @@
-# Creating a Condition That Tests Multiple Key Values \(Set Operations\)<a name="reference_policies_multi-value-conditions"></a>
+# Creating a Condition with Multiple Keys or Values<a name="reference_policies_multi-value-conditions"></a>
 
-You can use the `Condition` element of a policy to test multiple values for a single key in a request\. When you make a request to AWS, either programmatically or through the AWS Management Console, you include information in the request\. You can use condition keys to test the values of the matching keys in the request\. For example, you can use a condition key to control access to specific attributes of a DynamoDB table, or to an Amazon EC2 instance based on tags\.
+You can use the `Condition` element of a policy to test multiple keys or multiple values for a single key in a request\. When you make a request to AWS, either programmatically or through the AWS Management Console, your request includes information about your principal, operation, tags, and more\. To learn about information and data included in a request, see [Request](intro-structure.md#intro-structure-request)\. You can use condition keys to test the values of the matching keys in the request\. For example, you can use a condition key to control access to specific attributes of a DynamoDB table or to an Amazon EC2 instance based on tags\.
 
-For requests that include multiple values for a single key, test whether the entire set of request values matches the entire set of condition key values using the `ForAllValues` qualifier\. To test whether at least one member of the set of request values matches at least one member of the set of condition key values, use the `ForAnyValue` qualifier\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. 
+A `Condition` element can contain multiple conditions, and each condition can contain multiple key\-value pairs\. Most condition keys support using multiple values\. The following figure illustrates this\. Unless otherwise specified, all keys can have multiple values\.
 
-When someone makes a request, AWS evaluates the policy to determine whether the condition is true or false\. For requests with multiple key values, AWS evaluates the condition based on the qualifier:
-+ `ForAllValues` – The condition returns true if there's a match between every one of the specified key values in the request and at least one value in the policy\. It also returns true if there is no matching key in the request, or if the key values resolve to an empty data set, such as an empty string\.
-+ `ForAnyValue` – The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or an empty data set, the condition returns false\.
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block.diagram.png)
 
-**Contents**
-+ [Examples of Condition Set Operators](#reference_policies_multi-value-conditions-examples)
-+ [Evaluation Logic for Condition Set Operators](#reference_policies_multi-value-conditions-eval)
+**Topics**
++ [Evaluation Logic for Conditions with Multiple Keys or Values](#reference_policies_multiple-conditions-eval)
++ [Using Multiple Keys and Values](#reference_policies_multi-key-or-value-conditions)
++ [Examples of Using Multiple Values with Condition Set Operators](#reference_policies_multi-value-conditions-examples)
++ [Evaluation Logic for Multiple Values with Condition Set Operators](#reference_policies_multi-value-conditions-eval)
 
-## Examples of Condition Set Operators<a name="reference_policies_multi-value-conditions-examples"></a>
+## Evaluation Logic for Conditions with Multiple Keys or Values<a name="reference_policies_multiple-conditions-eval"></a>
 
-You can create a policy to test multiple values in a request against one or more values that you specify in the policy\. Assume that you have an Amazon DynamoDB table named `Thread` that is used to store information about threads in a technical support forum\. The table might as attributes named `ID`, `UserName`, `PostDateTime`, `Message`, and `Tags`\. 
+If your policy has multiple condition operators or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All condition operators must be met for an allow or an explicit deny decision\. If any one condition operator isn't met, the result is a deny\.
+
+![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
+
+## Using Multiple Keys and Values<a name="reference_policies_multi-key-or-value-conditions"></a>
+
+For requests that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key2":\["Value2A", "Value2B"\]\)\. You must also use the `ForAllValues` or `ForAnyValue` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String)\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\.
++ `ForAllValues` – Tests whether the entire set of request values matches the entire set of condition key values\. The condition returns true if all specified key values in the request match at least one value in the policy\. It also returns true if there is no matching key in the request, or if the key values resolve to an empty data set, such as an empty string\.
++ `ForAnyValue` – Tests whether at least one number of the set of request values matches at least one member of the set of condition key values\. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or an empty dataset, the condition returns false\.
+
+Assume that you want to let John use a resource only if a numeric value *foo* equals either A or B, and another numeric value *bar* equals C\. You would create a condition block that looks like the following figure\.
+
+![\[Condition block that includes two NumericEquals conditions\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example1.diagram.png)
+
+Assume that you also want to restrict John's access to after January 1, 2019\. You would add another condition, `DateGreaterThan`, with a date equal to January 1, 2019\. The condition block would then look like the following figure\.
+
+![\[Condition block that includes DateGreaterThan condition\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example2.diagram.png)
+
+AWS has predefined condition operators and keys \(like `aws:CurrentTime`\)\. Individual AWS services also define service\-specific keys\.
+
+As an example, assume that you want to let user John access your Amazon SQS queue under the following conditions:
++ The time is after 12:00 p\.m\. on 7/16/2019
++ The time is before 3:00 p\.m\. on 7/16/2019
++ The request comes from an IP address within the range 192\.0\.2\.0 to 192\.0\.2\.255 *or* 203\.0\.113\.0 to 203\.0\.113\.255\.
+
+Your condition block has three separate condition operators, and all three of them must be met for John to have access to your queue, topic, or resource\.
+
+The following shows what the condition block looks like in your policy\. The two values for `aws:SourceIp` are evaluated using `OR`\. The three separate condition operators are evaluated using `AND`\.
+
+```
+ 1. "Condition" :  {
+ 2.       "DateGreaterThan" : {
+ 3.          "aws:CurrentTime" : "2019-07-16T12:00:00Z"
+ 4.        },
+ 5.       "DateLessThan": {
+ 6.          "aws:CurrentTime" : "2019-07-16T15:00:00Z"
+ 7.        },
+ 8.        "IpAddress" : {
+ 9.           "aws:SourceIp" : ["192.0.2.0/24", "203.0.113.0/24"]
+10.       }
+11. }
+```
+
+## Examples of Using Multiple Values with Condition Set Operators<a name="reference_policies_multi-value-conditions-examples"></a>
+
+You can create a policy to test multiple values in a request against one or more values that you specify in the policy\. Assume that you have an Amazon DynamoDB table named `Thread` that is used to store information about threads in a technical support forum\. The table has attributes named `ID`, `UserName`, `PostDateTime`, `Message`, and `Tags`\. 
 
 ```
 {	
@@ -26,9 +71,9 @@ You can create a policy to test multiple values in a request against one or more
 }
 ```
 
-For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide* guide\. 
+For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide*\. 
 
-You can create a policy that allows users to see only the `PostDateTime`, `Message`, and `Tags` attribures\. If the user's request contains any of these attributes, it is allowed; but if the request contains any other attributes \(for example, `ID`\), the request is denied\. Logically speaking, you want to create a list of allowed attributes \(`PostDateTime`, `Message`, `Tags`\) and indicate in the policy that all of the user's requested attributes must be in that list of allowed attributes\.
+You can create a policy that allows users to see only the `PostDateTime`, `Message`, and `Tags` attributes\. If the user's request contains any of these attributes, it is allowed\. But if the request contains any other attributes \(for example, `ID`\), the request is denied\. Logically speaking, you want to create a list of allowed attributes \(`PostDateTime`, `Message`, `Tags`\)\. You also want to indicate in the policy that all of the user's requested attributes must be in that list of allowed attributes\.
 
 The following example policy shows how to use the `ForAllValues` qualifier with the `StringEquals` condition operator\. The condition allows a user to request *only* the attributes `ID`, `Message`, or `Tags` from the DynamoDB table named `Thread`\.
 
@@ -54,12 +99,12 @@ The following example policy shows how to use the `ForAllValues` qualifier with 
 }
 ```
 
-If the user makes a request to DynamoDB to get the attributes `Message` and `Tags` from the `Thread` table, the request is allowed, because the user's requested attributes all match values specified in the policy\. The `GetItem` operation requires the user to pass the `ID` attribute as the database table key, which is also allowed in the policy\. However, if the user's request includes the `UserName` attribute, the request fails, because `UserName` is not within the list of allowed attributes and the `ForAllValues` qualifier requires all requested values to be listed in the policy\.
+Assume the user makes a request to DynamoDB to get the attributes `Message` and `Tags` from the `Thread` table\. In that case, the request is allowed because the user's requested attributes all match values specified in the policy\. The `GetItem` operation requires the user to pass the `ID` attribute as the database table key, which is also allowed in the policy\. However, if the user's request includes the `UserName` attribute, the request fails\. The reason is that `UserName` is not within the list of allowed attributes and the `ForAllValues` qualifier requires all requested values to be listed in the policy\.
 
 **Important**  
-If you use `dynamodb:Attributes`, you must specify the names of all of the primary key and index key attributes for the table and any secondary indexes that are listed in the policy\. Otherwise, DynamoDB can't use these key attributes to perform the requested action\.
+If you use `dynamodb:Attributes`, you must specify the names of all of the primary key and index key attributes for the table\. You must also specify any secondary indexes that are listed in the policy\. Otherwise, DynamoDB can't use these key attributes to perform the requested action\.
 
-Alternatively, you might want to make sure that users are explicitly forbidden to include some attributes in a request, such as the `ID` and `UserName` attributes\. For example, you might exclude attributes when the user is updating the DynamoDB table, because an update \(`PUT` operation\) should not change certain attributes\. In that case, you create a list of forbidden attributes \(`ID`, `UserName`\), and if any of the user's requested attributes match any of the forbidden attributes, the request is denied\. 
+Alternatively, you might want to make sure that users are explicitly forbidden to include some attributes in a request, such as the `ID` and `UserName` attributes\. For example, you might exclude attributes when the user is updating the DynamoDB table, because an update \(`PUT` operation\) should not change certain attributes\. In that case, you create a list of forbidden attributes \(`ID`, `UserName`\)\. If any of the user's requested attributes match any of the forbidden attributes, the request is denied\. 
 
 The following example shows how to use the `ForAnyValue` qualifier to deny access to the `ID` and `PostDateTime` attributes if the user tries to perform the `PutItem` action\. That is, if the user tries to update either of those attributes in the `Thread` table\. Notice that the `Effect` element is set to `Deny`\.
 
@@ -86,18 +131,18 @@ Assume that the user makes a request to update the `PostDateTime` and `Message` 
 
 Imagine the user instead makes a request to perform `PutItem` with just the `UserName` attribute\. None of the attributes in the request \(just `UserName`\) match any of attributes listed in the policy \(`ID`, `PostDateTime`\)\. The condition returns false, so the effect of the policy \(`Deny`\) is also false, and the request is not denied by this policy\. \(For the request to succeed, it must be explicitly allowed by a different policy\. It is not explicitly denied by this policy, but all requests are implicitly denied\.\)
 
-## Evaluation Logic for Condition Set Operators<a name="reference_policies_multi-value-conditions-eval"></a>
+## Evaluation Logic for Multiple Values with Condition Set Operators<a name="reference_policies_multi-value-conditions-eval"></a>
 
 This section discusses the specifics of the evaluation logic used with the `ForAllValues` and `ForAnyValue` qualifiers\. The following table illustrates possible keys that might be included in a request \(`PostDateTime` and `UserName`\) and a policy condition that includes the values `PostDateTime`, `Message`, and `Tags`\. 
 
 
 ****  
 
-| Key \(in the request\) | Condition Value \(in the policy\) | 
+|  Key \(in the Request\)  |  Condition Value \(in the Policy\)  | 
 | --- | --- | 
-| `PostDateTime` | `PostDateTime` | 
-| `UserName` | `Message` | 
-|   | `Tags` | 
+|  `PostDateTime`  |  `PostDateTime`  | 
+|  `UserName`  |  `Message`  | 
+|     |  `Tags`  | 
 
 The evaluation for the combination is this:
 
@@ -147,7 +192,7 @@ Suppose that the user makes a request to DynamoDB to get the attributes `PostDat
 |  |  | 
 | --- |--- |
 |  `PostDateTime` matches `PostDateTime`?  |  `True`  | 
-| `PostDateTime` matches `Message`? |  `False`  | 
+|  `PostDateTime` matches `Message`?  |  `False`  | 
 |  `PostDateTime` matches `Tags`?  |  `False`  | 
 |  `UserName` matches `PostDateTime`?  |  `False`  | 
 |  `UserName` matches `Message`?  |  `False`  | 
@@ -193,4 +238,4 @@ Notice that the policy includes `"Effect":"Deny"` and the action is `PutItem`\. 
 With the modifier `ForAnyValue`, if any one of these tests returns true, the condition returns true\. The last test returns true, so the condition is true; because the `Effect` element is set to `Deny`, the request is denied\. 
 
 **Note**  
-If the key values in the request resolve to an empty data set \(for example, an empty string\), a condition operator modified by `ForAllValues` returns true, and a condition operator modified by `ForAnyValue` returns false\. 
+If the key values in the request resolve to an empty data set \(for example, an empty string\), a condition operator modified by `ForAllValues` returns true\. In addition, a condition operator modified by `ForAnyValue` returns false\. 

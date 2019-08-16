@@ -91,7 +91,7 @@ For example, the following policy uses this action to allow console users to sim
 {
         "Version": "2012-10-17",
         "Statement": [
-          {,
+          {
             "Effect": "Allow",
             "Action": "s3:GetBucketPolicy",
             "Resource":"arn:aws:s3:::bucket-name/*"

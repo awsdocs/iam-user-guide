@@ -2,7 +2,8 @@
 
 This example shows how you might create a policy that allows an administrator to enable and disable the Asia Pacific \(Hong Kong\) Region \(ap\-east\-1\)\. This policy also grants the necessary permissions to complete this action on the console\. This setting appears in the **Account settings** page in the AWS Management Console\. This page includes sensitive account\-level information that should be viewed and managed only by account administrators\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
-To learn more about enabling and disabling AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\.
+**Important**  
+You cannot enable or disable regions that are enabled by default\. You can only include regions that are *disabled* by default\. For more information, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\.
 
 ```
 {

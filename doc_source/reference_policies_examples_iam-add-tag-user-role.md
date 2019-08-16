@@ -6,7 +6,7 @@ The `ConsoleDisplay` statement allows the viewing of tags for all users and role
 
 The first condition in the `AddTag` statement uses the `StringEquals` condition operator\. The condition returns true if the request includes the `CostCenter` tag key with one of the listed tag values\. 
 
-The second condition uses the `ForAllValues:StringEquals` condition operator\. The condition returns true if all of the tag keys in the request match the key in the policy\. This means that the only tag key in the request must be `CostCenter`\. For more information about using `ForAllValues`, see [Creating a Condition That Tests Multiple Key Values \(Set Operations\)](reference_policies_multi-value-conditions.md)\.
+The second condition uses the `ForAllValues:StringEquals` condition operator\. The condition returns true if all of the tag keys in the request match the key in the policy\. This means that the only tag key in the request must be `CostCenter`\. For more information about using `ForAllValues`, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.
 
 ```
 {
