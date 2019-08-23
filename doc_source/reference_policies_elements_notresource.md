@@ -4,7 +4,7 @@
 
 Be careful using the `NotResource` element and `"Effect": "Allow"` in the same statement or in a different statement within a policy\. `NotResource` allows all services and resources that are not explicitly listed, and could result in granting users more permissions than you intended\. Using the `NotResource` element and `"Effect": "Deny"` in the same statement denies services and resources that are not explicitly listed\.
 
-For example, imagine you have a group named `HRPayroll`\. Members of `HRPayroll` should not be allowed to access any Amazon S3 resources except the `Payroll` folder in the `HRBucket` bucket\. The following policy explicitly denies access to all Amazon S3 resources other than the listed resources\. Note, however, that this policy does not grant the user access to any resources\.
+For example, imagine you have a group named `HRPayroll`\. Members of `HRPayroll` should not be allowed to access any Amazon S3 resources except the `Payroll` folder in the `HRBucket` bucket\. The following policy explicitly denies access to all Amazon S3 resources (and all other Amazon services like EC2, SQS, etc) other than the listed resources\. Note, however, that this policy does not grant the user access to any resources\.
 
 ```
 {
