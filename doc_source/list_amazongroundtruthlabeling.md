@@ -23,10 +23,10 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ DescribeConsoleJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_DescribeConsoleJob.html)  | Get status of GroundTruthLabeling Jobs | Read |  |  |  | 
-|   [ ListDatasetObjects ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_ListDatasetObjects.html)  | Paginated list api to list dataset objects in a manifest file | Read |  |  |  | 
-|   [ RunFilterOrSampleDatasetJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunFilterOrSampleDatasetJob.html)  | Filter records from a manifest file using S3 select\. Get Sample entries based on random sampling\. | Write |  |  |  | 
-|   [ RunGenerateManifestByCrawlingJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunGenerateManifestByCrawlingJob.html)  | List a S3 prefix and create manifest files from objects in there\. | Write |  |  |  | 
+|   [ DescribeConsoleJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_DescribeConsoleJob.html) \[permission only\] | Get status of GroundTruthLabeling Jobs | Read |  |  |  | 
+|   [ ListDatasetObjects ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_ListDatasetObjects.html) \[permission only\] | Paginated list api to list dataset objects in a manifest file | Read |  |  |  | 
+|   [ RunFilterOrSampleDatasetJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunFilterOrSampleDatasetJob.html) \[permission only\] | Filter records from a manifest file using S3 select\. Get Sample entries based on random sampling\. | Write |  |  |  | 
+|   [ RunGenerateManifestByCrawlingJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunGenerateManifestByCrawlingJob.html) \[permission only\] | List a S3 prefix and create manifest files from objects in there\. | Write |  |  |  | 
 
 ## Resources Defined by Amazon GroundTruth Labeling<a name="amazongroundtruthlabeling-resources-for-iam-policies"></a>
 

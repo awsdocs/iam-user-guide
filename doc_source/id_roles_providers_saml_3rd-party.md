@@ -3,7 +3,7 @@
 The following links help you configure third\-party SAML 2\.0 identity provider \(IdP\) solutions to work with AWS federation\.
 
 **Note**  
-AWS Support engineers can assist customers who have Business and Enterprise support plans with some integration tasks that involve third\-party software\. For a current list of supported platforms and applications, see see [What third\-party software is supported?](https://aws.amazon.com/premiumsupport/faqs/#what3rdParty) in the *AWS Support FAQs*\.
+AWS Support engineers can assist customers who have Business and Enterprise support plans with some integration tasks that involve third\-party software\. For a current list of supported platforms and applications, see [What third\-party software is supported?](https://aws.amazon.com/premiumsupport/faqs/#what3rdParty) in the *AWS Support FAQs*\.
 
 
 ****  
@@ -22,7 +22,7 @@ AWS Support engineers can assist customers who have Business and Enterprise supp
 | miniOrange | [SSO for AWS](http://miniorange.com/amazon-web-services-%28aws%29-single-sign-on-%28sso%29) – This page on the miniOrange website describes how to establish secure access to AWS for enterprises and full control over access of AWS applications\.  | 
 | Okta |  [ Integrating the Amazon Web Services Command Line Interface Using Okta](https://support.okta.com/help/Documentation/Knowledge_Article/Integrating-the-Amazon-Web-Services-Command-Line-Interface-Using-Okta) – From this page on the Okta support site you can learn how to configure Okta for use with AWS\.  | 
 | OneLogin | From the [OneLogin Knowledgebase](https://onelogin.service-now.com/support?id=csm_index), search for SAML AWS for a list of articles that explain how to set up AWS SSO functionality between OneLogin and AWS for a single\-role and multi\-role scenarios\.  | 
-| Ping Identity |  [PingFederate AWS Connector](http://documentation.pingidentity.com/display/AWS10/PingFederate+Amazon+Connector) – From this page on the Ping Identity website, you can download a PDF file that describes how to configure a PingFederate server to enable SSO for user accounts with AWS\.  From the [Ping Identity Support page](https://support.pingidentity.com/s/), search for **SSO AWS** for a list of articles that explain how to set up AWS SSO functionality between PingOne and AWS\. | 
+| Ping Identity |  [PingFederate AWS Connector](https://support.pingidentity.com/s/marketplace-integration-details?recordId=a7i1W0000004HBwQAM) – View details about the PingFederate AWS Connector, a quick connection template to easily set up a single sign\-on \(SSO\) and provisioning connection\. Read documentation and download the latest PingFederate AWS Connector for integrations with AWS\.  | 
 | RadiantLogic |  [Radiant Logic Technology Partners](http://www.radiantlogic.com/about/partners/technology-partners/) – Radiant Logic's RadiantOne Federated Identity Service integrates with AWS to provide an identity hub for SAML\-based SSO\.  | 
 | Salesforce\.com |  [How to configure SSO from Salesforce to AWS](https://developer.salesforce.com/page/Configuring-SAML-SSO-to-AWS) – This how\-to article on the Salesforce\.com developer site describes how to set up an identity provider \(IdP\) in Salesforce and configure AWS as a service provider\.  | 
 | SecureAuth |  [AWS \- SecureAuth SAML SSO](https://docs.secureauth.com/display/docs/Amazon+Web+Services+%28AWS%29+%28IdP-initiated%29+Integration+Guide) – This article on the SecureAuth website describes how to set up SAML integration with AWS for a SecureAuth appliance\.  | 
