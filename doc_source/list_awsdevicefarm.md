@@ -5,7 +5,7 @@ AWS Device Farm \(service prefix: `devicefarm`\) provides the following service\
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/devicefarm/latest/developerguide/)\.
 + View a [list of the API operations available for this service](https://docs.aws.amazon.com/devicefarm/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/devicefarm/latest/developerguide/access_permissions.html) permission policies\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Device Farm](#awsdevicefarm-actions-as-permissions)
@@ -33,21 +33,21 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   project  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:project:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   run  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:run:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   job  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:job:$\{ResourceId\}  |  | 
-|   suite  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:suite:$\{ResourceId\}  |  | 
-|   test  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:test:$\{ResourceId\}  |  | 
-|   upload  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:upload:$\{ResourceId\}  |  | 
-|   artifact  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:artifact:$\{ResourceId\}  |  | 
-|   sample  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:sample:$\{ResourceId\}  |  | 
-|   networkprofile  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:networkprofile:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   deviceinstance  |  arn:$\{Partition\}:devicefarm:$\{Region\}::deviceinstance:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   session  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:session:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   devicepool  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:devicepool:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   device  |  arn:$\{Partition\}:devicefarm:$\{Region\}::device:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   instanceprofile  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:instanceprofile:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
-|   vpceconfiguration  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:vpceconfiguration:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ project ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Project.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:project:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ run ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Run.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:run:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ job ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Job.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:job:$\{ResourceId\}  |  | 
+|   [ suite ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Suite.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:suite:$\{ResourceId\}  |  | 
+|   [ test ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Test.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:test:$\{ResourceId\}  |  | 
+|   [ upload ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Upload.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:upload:$\{ResourceId\}  |  | 
+|   [ artifact ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Artifact.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:artifact:$\{ResourceId\}  |  | 
+|   [ sample ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Sample.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:sample:$\{ResourceId\}  |  | 
+|   [ networkprofile ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_NetworkProfile.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:networkprofile:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ deviceinstance ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DeviceInstance.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}::deviceinstance:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ session ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_RemoteAccessSession.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:session:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ devicepool ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_DevicePool.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:devicepool:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ device ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}::device:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ instanceprofile ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:instanceprofile:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ vpceconfiguration ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:vpceconfiguration:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Device Farm<a name="awsdevicefarm-policy-keys"></a>
 

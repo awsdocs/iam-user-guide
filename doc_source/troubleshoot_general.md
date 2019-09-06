@@ -1,6 +1,6 @@
 # Troubleshooting General Issues<a name="troubleshoot_general"></a>
 
-Use the information here to help you diagnose and fix access\-denied or other common issues that you might encounter when working with AWS Identity and Access Management \(IAM\)\.
+Use the information here to help you diagnose and fix access\-denied or other common issues when you work with AWS Identity and Access Management \(IAM\)\.
 
 **Topics**
 + [I Lost My Access Keys](#troubleshoot_general_access-keys)
@@ -30,8 +30,8 @@ You can try to recover access to your email using one of the following options:
 + If you own the domain where the email address is hosted, you can add the email address back to your email server\. Alternatively, you can set up a catch\-all for your email account\. The catch\-all setting on your domain "catches all" messages that are sent to email addresses that do not exist in the mail server\. It redirects those messages to a specific email address\. For example, assume that your AWS account root user email address is `paulo@sample-domain.com`, but you changed your only domain email address to `paulo.santos@sample-domain.com`\. In that case, you could set your new email as the catch\-all\. That way, when someone like AWS sends a message to `paulo@sample-domain.com` or any other `text@sample-domain.com`, you receive that message at `paulo.santos@sample-domain.com`\.
 + If the email address on the account is part of your corporate email system, we recommend that you contact your IT system administrators\. They might be able to help you regain access to the email address\.
 
-If you’re still not able to access your AWS account, you can find alternate support options at [Contact us](https://aws.amazon.com//contact-us/) by expanding the **I'm an AWS customer and I'm looking for billing or account support** menu\. When you contact Customer Service, you must provide the following information:
-+ All the details that are listed on the account, including your full name, phone number, address, email address, and last four digits of the credit card\. You might need to create a new AWS account for the purpose of contacting Customer Service\. This is necessary to assist in the investigation of your request\.
+If you’re still not able to access your AWS account, you can find alternate support options at [Contact us](https://aws.amazon.com//contact-us/) by expanding the **I'm an AWS customer and I'm looking for billing or account support** menu\. When you contact AWS Support, you must provide the following information:
++ All the details that are listed on the account, including your full name, phone number, address, email address, and last four digits of the credit card\. You might need to create a new AWS account for the purpose of contacting AWS Support\. This is necessary to assist in the investigation of your request\.
 + The reason that you're unable to access the email account to receive password reset instructions\.
 + After you recover your account, close any accounts that you are not using\. It’s a good idea not to have open accounts in your name that could result in charges to you\. For more information, see [Closing an Account](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html) in the *Billing and Cost Management User Guide*\.
 
@@ -92,10 +92,26 @@ For more information about how some other AWS services are affected by this, con
 
 ## I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice<a name="troubleshoot_general_access-denied-delete-mfa"></a>
 
-You might receive the following error when you attempt to assign an MFA device to yourself or another user:
+You might receive the following error when you attempt to assign or remove a virtual MFA device for yourself or others:
 
 ```
 User: arn:aws:iam::123456789012:user/Diego is not authorized to perform: iam:DeleteVirtualMFADevice on resource: arn:aws:iam::123456789012:mfa/Diego with an explicit deny
 ```
 
-This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and cancelled the process\. This creates an MFA device for the user in IAM but never fully associates it with the user\. The IAM console requires that the old MFA device be deleted before allowing you to associate a new device with the user\. If you do not have a policy that allows you to delete a virtual MFA device, then you are denied access to associate a new MFA key with the user\.
+This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and then cancelled the process\. This creates an MFA device for the user in IAM but never activates it\.\. You must delete the existing MFA device before you can associate a new device with the user\.
+
+AWS recommends a policy that allows a user to delete their own virtual MFA device only if they are authenticated using MFA\. For more information, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
+
+To fix this issue, an administrator should **not** edit policy permissions\. Instead, the administrator must use the AWS CLI or AWS API to remove the existing but deactivated device\.
+
+**To delete an existing but deactivated MFA device**
+
+1. View the virtual MFA devices in your account\.
+   + AWS CLI: [aws iam list\-virtual\-mfa\-devices](https://docs.aws.amazon.com/cli/latest/reference/iam/list-virtual-mfa-devices.html)
+   + AWS API: [ListVirtualMFADevices](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListVirtualMFADevices.html)
+
+1. In the response, locate the ARN of the virtual device for the user you are trying to fix\.
+
+1. Delete the device\.
+   + AWS CLI: [aws iam delete\-virtual\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html)
+   + AWS API: [DeleteVirtualMFADevice](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html)

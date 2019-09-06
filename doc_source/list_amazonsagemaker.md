@@ -33,19 +33,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   labeling\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:labeling\-job/$\{LabelingJobName\}  |  | 
-|   workteam  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:workteam/$\{WorkteamName\}  |  | 
-|   notebook\-instance  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\}  |  | 
+|   labeling\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:labeling\-job/$\{LabelingJobName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
+|   workteam  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:workteam/$\{WorkteamName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
+|   notebook\-instance  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance/$\{NotebookInstanceName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
 |   notebook\-instance\-lifecycle\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:notebook\-instance\-lifecycle\-config/$\{NotebookInstanceLifecycleConfigName\}  |  | 
 |   code\-repository  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:code\-repository/$\{CodeRepositoryName\}  |  | 
 |   algorithm  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:algorithm/$\{AlgorithmName\}  |  | 
-|   training\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\}  |  | 
-|   hyper\-parameter\-tuning\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\}  |  | 
+|   training\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:training\-job/$\{TrainingJobName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
+|   hyper\-parameter\-tuning\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:hyper\-parameter\-tuning\-job/$\{HyperParameterTuningJobName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
 |   model\-package  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model\-package/$\{ModelPackageName\}  |  | 
-|   model  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\}  |  | 
-|   endpoint\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\}  |  | 
-|   endpoint  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\}  |  | 
-|   transform\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:transform\-job/$\{TransformJobName\}  |  | 
+|   model  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:model/$\{ModelName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
+|   endpoint\-config  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint\-config/$\{EndpointConfigName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
+|   endpoint  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:endpoint/$\{EndpointName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
+|   transform\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:transform\-job/$\{TransformJobName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonsagemaker-aws_ResourceTag___TagKey_)   [ sagemaker:ResourceTag/$\{TagKey\} ](#amazonsagemaker-sagemaker_ResourceTag___TagKey_)   | 
 |   compilation\-job  |  arn:$\{Partition\}:sagemaker:$\{Region\}:$\{Account\}:compilation\-job/$\{CompilationJobName\}  |  | 
 
 ## Condition Keys for Amazon SageMaker<a name="amazonsagemaker-policy-keys"></a>
@@ -62,5 +62,21 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A key that is present in the request the user makes to the SageMaker service\. | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   [ sagemaker:AcceleratorTypes ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all accelerator types associated with the resource in the request\. | String | 
+|   [ sagemaker:DirectInternetAccess ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The direct internet access associated with the resource in the request\. | String | 
+|   [ sagemaker:FileSystemAccessMode ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | File system access mode associated with the resource in the request\. | String | 
+|   [ sagemaker:FileSystemDirectoryPath ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | File system directory path associated with the resource in the request\. | String | 
+|   [ sagemaker:FileSystemId ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A file system ID associated with the resource in the request\. | String | 
+|   [ sagemaker:FileSystemType ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | File system type associated with the resource in the request\. | String | 
+|   [ sagemaker:InstanceTypes ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all instance types associated with the resource in the request\. | String | 
+|   [ sagemaker:InterContainerTrafficEncryption ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The inter container traffic encryption associated with the resource in the request\. | String | 
+|   [ sagemaker:MaxRuntimeInSeconds ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The max runtime in seconds associated with the resource in the request\. | String | 
+|   [ sagemaker:ModelArn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The model arn associated with the resource in the request\. | String | 
+|   [ sagemaker:NetworkIsolation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The network isolation associated with the resource in the request\. | String | 
+|   [ sagemaker:OutputKmsKey ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The output kms key associated with the resource in the request\. | String | 
 |   [ sagemaker:ResourceTag/ ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The preface string for a tag key and value pair attached to a resource\. | String | 
 |   [ sagemaker:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | A tag key and value pair\. | String | 
+|   [ sagemaker:RootAccess ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The root access associated with the resource in the request\. | String | 
+|   [ sagemaker:VolumeKmsKey ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The volume kms key associated with the resource in the request\. | String | 
+|   [ sagemaker:VpcSecurityGroupIds ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all vpc security group ids associated with the resource in the request\. | String | 
+|   [ sagemaker:VpcSubnets ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonsagemaker.html#amazonsagemaker-policy-keys)  | The list of all vpc subnets associated with the resource in the request\. | String | 

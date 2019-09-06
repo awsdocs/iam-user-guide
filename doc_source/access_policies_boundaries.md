@@ -85,7 +85,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 **Task 1:** María must first create a managed policy to define the boundary for the new users\. María will allow Zhang to give users the permissions policies they need, but she wants those users to be restricted\. To do this, she creates the following customer managed policy with the name `XCompanyBoundaries`\. This policy does the following:
 + Allows users full access to several services
-+ Allows limited self\-managing access in IAM 
++ Allows limited self\-managing access in the IAM console\. This means they can change their password after signing into the console\. They cannot use access keys to programmatically change their password\. They also can't set their initial password\. To allow this, add the `"*LoginProfile"` action to the `AllowManageOwnPasswordAndAccessKeys` statement\.
 + Denies users access to the Amazon S3 logs bucket or the `i-1234567890abcdef0` Amazon EC2 instance
 
 ```
@@ -294,7 +294,7 @@ María then attaches the `DelegatedUserPermissions` policy as the permissions po
 
 Zhang completes the following tasks:
 
-1. Zhang [creates a user](id_users_create.md#id_users_create_console) with the AWS Management Console\. He types the user name `Nikhil` and enables console access for the user\. 
+1. Zhang [creates a user](id_users_create.md#id_users_create_console) with the AWS Management Console\. He types the user name `Nikhil` and enables console access for the user\. He clears the checkbox next to **Requires password reset**, because the policies above allow Zhang to change his password only after he is signed in to the IAM console\.
 
 1. On the **Set permissions** page, Zhang chooses the **IAMFullAccess** and ** AmazonS3ReadOnlyAccess** permissions policies that allow Nikhil to do his work\. 
 

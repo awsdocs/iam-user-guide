@@ -11,11 +11,19 @@ The following steps are for users of Amazon VPC\. For more information, see [Get
 ## Availability<a name="id_credentials_sts_vpce_availability"></a>
 
 AWS STS currently supports VPC endpoints in the following Regions:
-+ US East \(N\. Virginia\)
 + US East \(Ohio\)
++ US East \(N\. Virginia\)
++ US West \(N\. California\)
 + US West \(Oregon\)
-+ EU \(Ireland\)
++ Asia Pacific \(Mumbai\)
++ Asia Pacific \(Seoul\)
++ Asia Pacific \(Singapore\)
++ Asia Pacific \(Sydney\)
 + Asia Pacific \(Tokyo\)
++ EU \(Frankfurt\)
++ EU \(Ireland\)
++ EU \(London\)
++ South America \(São Paulo\)
 
 ## Create a VPC for AWS STS<a name="id_credentials_sts_vpce_create"></a>
 
