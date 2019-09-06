@@ -1,8 +1,11 @@
-# Obtaining the Thumbprint for an OpenID Connect Identity Provider<a name="id_roles_providers_create_oidc_verify-thumbprint"></a>
+# Obtaining the Root CA Thumbprint for an OpenID Connect Identity Provider<a name="id_roles_providers_create_oidc_verify-thumbprint"></a>
 
-When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint for the identity provider \(IdP\)\. The thumbprint is a signature for the unique server certificate that is used by the OIDC\-compatible IdP\. When you create an OIDC identity provider in IAM, you are trusting identities authenticated by that IdP with access to your AWS account\. By supplying the OIDC IdP's thumbprint, you assert to AWS that you want to trust a particular OIDC IdP with this access\.
+When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint\. IAM requires the thumbprint for the root certificate authority \(CA\) that signed the certificate used by the external identity provider \(IdP\)\. The thumbprint is a signature for the CA's certificate that was used to issue the certificate for the OIDC\-compatible IdP\. When you create an IAM OIDC identity provider, you are trusting identities authenticated by that IdP to have access to your AWS account\. By supplying the CA's certificate thumbprint, you trust any certificate issued by that CA with the same DNS name as the one registered\. This eliminates the need to update trusts in each account when you renew the IdP's signing certificate\.
 
-When you create an OIDC identity provider with [the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API](id_roles_providers_create_oidc.md#manage-oidc-provider-cli), you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with [the IAM console](id_roles_providers_create_oidc.md), the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually\. Then verify that the thumbprint obtained by the IAM console matches the one you expect for your OIDC provider\. 
+**Important**  
+In most cases, the federation server uses two different certificates\. The first establishes an HTTPS connection between the clients and the federation endpoint\. This can be safely issued by a public root CA, such as AWS Certificate Manager\. The second is used to sign tokens\. We recommend that you issue this using a private CA\.
+
+You can create an IAM OIDC identity provider with [the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API](id_roles_providers_create_oidc.md#manage-oidc-provider-cli)\. When you use these methods, you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with [the IAM console](id_roles_providers_create_oidc.md), the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually and verify that the console fetched the correct thumbprint\. 
 
 You use a web browser and the OpenSSL command line tool to obtain the thumbprint for an OIDC provider\. For more information, see the following sections\. 
 
@@ -10,7 +13,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
 1. Before you can obtain the thumbprint for an OIDC IdP, you need to obtain the OpenSSL command\-line tool\. You use this tool to download the OIDC IdP's certificate chain and produce a thumbprint of the final certificate in the certificate chain\. If you need to install and configure OpenSSL, follow the instructions at [Install OpenSSL](#oidc-install-openssl) and [Configure OpenSSL](#oidc-configure-openssl)\. 
 
-1. Start with the OIDC IdP's URL \(for example, `https://server.example.com`\), and then add `/.well-known/openid-configuration` to form the URL for the IdP's configuration document, like the following: 
+1. Start with the OIDC IdP's URL \(for example, `https://server.example.com`\), and then add `/.well-known/openid-configuration` to form the URL for the IdP's configuration document, such as the following: 
 
    **https://*server\.example\.com*/\.well\-known/openid\-configuration**
 
@@ -21,10 +24,10 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 1. Use the OpenSSL command line tool to execute the following command\. Replace *keys\.example\.com* with the domain name you obtained in [Step 3](#thumbstep2)\.
 
    ```
-   openssl s_client -showcerts -connect keys.example.com:443
+   openssl s_client -servername keys.example.com -showcerts -connect keys.example.com:443
    ```
 
-1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate that is displayed \(at the bottom of the command output\)\.
+1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate that is displayed \(at the bottom of the command output\)\. This will be the certificate of the root CA in the certificate authority chain\.
 
    ```
    -----BEGIN CERTIFICATE-----
@@ -65,11 +68,11 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
    990F4193972F2BECF12DDEDA5237F9C952F20D9E
    ```
 
-1. If you are creating the IAM identity provider with the AWS CLI, Tools for Windows PowerShell, or the IAM API, supply this thumbprint when creating the provider\. 
+1. If you are creating the IAM OIDC identity provider with the AWS CLI, Tools for Windows PowerShell, or the IAM API, supply this thumbprint when creating the provider\. 
 
-   If you are creating the OIDC provider in the IAM console, compare this thumbprint to the thumbprint shown on the console **Verify Provider Information** page when you create an OIDC provider\. 
+   If you are creating the IAM OIDC identity provider in the IAM console, compare this thumbprint to the thumbprint shown on the console **Verify Provider Information** page when you create an OIDC provider\. 
 **Important**  
-If the thumbprint you obtained does not match the one you see in the console, you should not create the OIDC provider in IAM\. Instead, you should wait a while and then try again to create the OIDC provider, ensuring that the thumbprints match before you create the provider\. If the thumbprints still do not match after a second attempt, use the [IAM Forum](https://forums.aws.amazon.com/forum.jspa?forumID=76) to contact AWS\.
+If the thumbprint you obtained does not match the one you see in the console, you should not create the OIDC provider in the console\. Instead, you should wait a while and then try again to create the OIDC provider, ensuring that the thumbprints match before you create the provider\. If the thumbprints still do not match after a second attempt, use the [IAM Forum](https://forums.aws.amazon.com/forum.jspa?forumID=76) to contact AWS\.
 
 ## Install OpenSSL<a name="oidc-install-openssl"></a>
 

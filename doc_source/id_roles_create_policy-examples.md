@@ -40,7 +40,7 @@ The following example shows a policy that can be attached to a role\. The policy
 
 ## Using a Resource\-Based Policy to Delegate Access to an Amazon S3 Bucket in Another Account<a name="example-delegate-xaccount-S3"></a>
 
-In this example, account A uses a resource\-based policy \(an Amazon S3 [bucket policy](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucketPolicies.html)\) to grant account B full access to account A's S3 bucket\. Then account B creates an IAM user policy to delegate that access to account A's bucket to one of the users in account B\. 
+In this example, account A uses a resource\-based policy \(an Amazon S3 [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucketPolicies.html)\) to grant account B full access to account A's S3 bucket\. Then account B creates an IAM user policy to delegate that access to account A's bucket to one of the users in account B\. 
 
 The S3 bucket policy in account A might look like the following policy\. In this example, account A's S3 bucket is named *mybucket*, and account B's account number is 111122223333\. It does not specify any individual users or groups in account B, only the account itself\.
 
@@ -60,7 +60,7 @@ The S3 bucket policy in account A might look like the following policy\. In this
 }
 ```
 
-Alternatively, account A can use Amazon S3 [Access Control Lists \(ACLs\)](http://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) to grant account B access to an S3 bucket or a single object within a bucket\. In that case, the only thing that changes is how account A grants access to account B\. Account B still uses a policy to delegate access to an IAM group in account B, as described in the next part of this example\. For more information about controlling access on S3 buckets and objects, go to [Access Control](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+Alternatively, account A can use Amazon S3 [Access Control Lists \(ACLs\)](https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html) to grant account B access to an S3 bucket or a single object within a bucket\. In that case, the only thing that changes is how account A grants access to account B\. Account B still uses a policy to delegate access to an IAM group in account B, as described in the next part of this example\. For more information about controlling access on S3 buckets and objects, go to [Access Control](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAuthAccess.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 The administrator of account B might create the following policy sample\. The policy allows read access to a group or user in account B\. The preceding policy grants access to account B\. However, individual groups and users in account B cannot access the resource until a group or user policy explicitly grants permissions to the resource\. The permissions in this policy can only be a subset of those in the preceding cross\-account policy\. Account B cannot grant more permissions to its groups and users than account A granted to account B in the first policy\. In this policy, the `Action` element is explicitly defined to allow only `List` actions, and the `Resource` element of this policy matches the `Resource` for the bucket policy implemented by account A\.
 
@@ -124,7 +124,7 @@ In the preceding IAM user policy example, account B uses a wildcard to grant its
 
 An AWS account cannot delegate access to another account's resources if the other account has explicitly denied access to the user's parent account\. The deny propagates to the users under that account whether or not the users have existing policies granting them access\.
 
-For example, account A writes a bucket policy on account A's S3 bucket that explicitly denies account B access to account A's bucket\. But account B writes an IAM user policy that grants a user in account B access to account A's bucket\. The explicit deny applied to account A's S3 bucket propagates to the users in account B\. It overrides the IAM user policy granting access to the user in account B\. \(For detailed information how permissions are evaluated, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.\) 
+For example, account A writes a bucket policy on account A's S3 bucket that explicitly denies account B access to account A's bucket\. But account B writes an IAM user policy that grants a user in account B access to account A's bucket\. The explicit deny applied to account A's S3 bucket propagates to the users in account B\. It overrides the IAM user policy granting access to the user in account B\. \(For detailed information how permissions are evaluated, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.\) 
 
 Account A's bucket policy might look like the following policy\. In this example, account A's S3 bucket is named *mybucket*, and account B's account number is 1111\-2222\-3333\. Account A uses Amazon S3 to implement this policy\. 
 

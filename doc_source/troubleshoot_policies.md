@@ -19,6 +19,7 @@ Keep in mind that all IAM policies are stored using syntax that begins with the 
   + [My Policy Does Not Grant the Expected Permissions](#policy-summary-not-grant-permissions)
 + [Troubleshoot Policy Management](#troubleshoot_policies-policy-manage)
   + [Attaching or Detaching a Policy in an IAM Account](#troubleshoot_roles_cant-attach-detach-policy)
+  + [Changing Policies for Your IAM Identities Based on Their Activity](#troubleshoot_change-policies-based-on-activity)
 + [Troubleshoot JSON Policy Documents](#troubleshoot_policies-json)
   + [More Than One JSON Policy Object](#morethanonepolicyblock)
   + [More Than One JSON Statement Element](#morethanonestatement)
@@ -54,12 +55,12 @@ IAM might restructure complex policies or policies that have permission blocks o
 ### Choosing a Resource ARN in the Visual Editor<a name="troubleshoot_policies-resource-arn"></a>
 
 When you create or edit a policy using the visual editor, you must first choose a service, and then choose actions from that service\. If the service and actions that you selected support choosing [specific resources](access_controlling.md#access_controlling-resources), then the visual editor lists the supported resource types\. You can then choose **Add ARN** to provide the details about your resource\. You can choose from the following options for adding an ARN for a resource type\.
-+ **Use the ARN builder** – Based on the resource type, you might see different fields to build your ARN\. You can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the region and instance ID, then the policy grants permissions to any instance in your account\.
-+ **Type or paste the ARN** – You can specify resources by their [Amazon Resource Name \(ARN\)](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\. You can include a wildcard character \(**\***\) in any field of the ARN \(between each pair of colons\)\. For more information, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
++ **Use the ARN builder** – Based on the resource type, you might see different fields to build your ARN\. You can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the Region and instance ID, then the policy grants permissions to any instance in your account\.
++ **Type or paste the ARN** – You can specify resources by their [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\. You can include a wildcard character \(**\***\) in any field of the ARN \(between each pair of colons\)\. For more information, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
 
 ### Denying Permissions in the Visual Editor<a name="troubleshoot_policies-switch-deny"></a>
 
-By default, the policy that you create using the visual editor allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because requests are *denied by default*, we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a statement to deny permissions \("blacklisting"\) only if you want to override a permission separately that is allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\. For more information about how IAM evaluates policy logic, see [IAM JSON Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+By default, the policy that you create using the visual editor allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because requests are *denied by default*, we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a statement to deny permissions \("blacklisting"\) only if you want to override a permission separately that is allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\. For more information about how IAM evaluates policy logic, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 
 **Note**  
 By default, only the AWS account root user has access to all the resources in that account\. So if you are not signed in as the root user, you must have permissions granted by a policy\.
@@ -74,7 +75,7 @@ Alternatively, to use JSON syntax \(such as wildcards\) for services, create, ed
 
 ### Reducing the Size of Your Policy in the Visual Editor<a name="troubleshoot_policy-size"></a>
 
-When you use the visual editor to create or a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM Entity Character Limits](reference_iam-limits.md#reference_iam-limits-entity-length)\. 
+When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM Entity Character Limits](reference_iam-limits.md#reference_iam-limits-entity-length)\. 
 
 To reduce the size of your policy in the visual editor, edit your policy or move permission blocks to another policy\. The error message includes the number of characters that your policy document contains, and you can use this information to help you reduce the size of your policy\.
 
@@ -186,7 +187,7 @@ To view examples of policy summaries that include warnings, see [Policy Summary 
 
 #### An Action Is Defined Without an Applicable Resource<a name="mismatch_action-no-resource"></a>
 
-The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's [`Resource`](reference_policies_elements_resource.md) element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+The policy below defines all `ec2:Describe*` actions and defines a specific resource\. None of the `ec2:Describe` actions are granted because none of these actions support resource\-level permissions\. Resource\-level permissions mean that the action supports resources using [ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the policy's [`Resource`](reference_policies_elements_resource.md) element\. If an action does not support resource\-level permissions, then that statement in the policy must use a wildcard \(`*`\) in the `Resource` element\. To learn which services support resource\-level permissions, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 ```
 {
@@ -292,7 +293,7 @@ The policy below defines two Amazon S3 actions for all S3 resources, if the S3 p
 }
 ```
 
-This policy provides permissions for the `s3:ListBucket` action and the `s3:ListBucket` action if the bucket name includes the `custom` prefix\. But because the `s3:VersionId` condition is not supported by any of the defined actions, the policy summary includes the following error:
+This policy provides permissions for the `s3:ListBucketVersions` action and the `s3:ListBucket` action if the bucket name includes the `custom` prefix\. But because the `s3:VersionId` condition is not supported by any of the defined actions, the policy summary includes the following error:
 
 `This policy does not grant any permissions. To grant access, policies must have an action that has an applicable resource or condition.`
 
@@ -367,6 +368,10 @@ You can diagnose and resolve issues relating to policy management\.
 ### Attaching or Detaching a Policy in an IAM Account<a name="troubleshoot_roles_cant-attach-detach-policy"></a>
 
 Some AWS managed policies are linked to a service\. These policies are used only with a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) for that service\. In the IAM console, when you view the **Summary** page for a policy, the page includes a banner to indicate that the policy is linked to a service\. You cannot attach this policy to a user, group, or role within IAM\. When you create a service\-linked role for the service, this policy is automatically attached to your new role\. Because the policy is required, you cannot detach the policy from the service\-linked role\. 
+
+### Changing Policies for Your IAM Identities Based on Their Activity<a name="troubleshoot_change-policies-based-on-activity"></a>
+
+You can update policies for your IAM identities \(users, groups, and roles\) based on their activity\. To do this, view your account's events in CloudTrail **Event history**\. CloudTrail event logs include detailed event information that you can use to change the policy's permissions\. You might find that a user or role is attempting to perform an action in AWS and that request is denied\. In that case, you can consider whether the user or role should have permission to perform the action\. If so, you can add the action and even the ARN of the resource that they attempted to access to their policy\. Alternatively, if the user or role has permissions that they are not using, you might consider removing those permissions from their policy\. Make sure that your policies grant the [least privilege](best-practices.md#grant-least-privilege) that is needed to perform only the necessary actions\. For more information about using CloudTrail, see [Viewing CloudTrail Events in the CloudTrail Console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) in the *AWS CloudTrail User Guide*\.
 
 ## Troubleshoot JSON Policy Documents<a name="troubleshoot_policies-json"></a>
 
@@ -528,7 +533,7 @@ Each of the required elements in a `Statement` element's value object can be pre
 
 A `Version` policy element is different from a policy version\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
 
-As AWS features evolve, new capabilities are added to IAM policies to support those features\. Sometimes, an update to the policy syntax includes a new version number\. If you use newer features of the policy grammar in your policy, then you must tell the policy parsing engine which version you are using\. The default policy version is "2008\-10\-17\." If you want to use any policy feature that was introduced later, then you must specify the version number that supports the feature you want\. We recommend that you *always* include the latest policy syntax version number, which is currently `"Version": "2012-10-17"`\. For example, the following policy is incorrect because it uses a policy variable `${...}` in the ARN for a resource without specifying a policy syntax version that supports policy variables \(called out in *red*\):
+As AWS features evolve, new capabilities are added to IAM policies to support those features\. Sometimes, an update to the policy syntax includes a new version number\. If you use newer features of the policy grammar in your policy, then you must tell the policy parsing engine which version you are using\. The default policy version is "2008\-10\-17\." If you want to use any policy feature that was introduced later, then you must specify the version number that supports the feature you want\. We recommend that you *always* include the latest policy syntax version number, which is currently `"Version": "2012-10-17"`\. For example, the following policy is incorrect because it uses a policy variable `${...}` in the ARN for a resource\. But it fails to specify a policy syntax version that supports policy variables \(called out in *red*\):
 
 ```
 {

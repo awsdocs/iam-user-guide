@@ -27,7 +27,10 @@ As [previously mentioned](access_policies_understand-policy-summary.md#full-vs-l
 Access level summaries that include partial access to actions are grouped using the following access level classifications:
 + **List**: Permission to list resources within the service to determine whether an object exists\. Actions with this level of access can list objects but cannot see the contents of a resource\. For example, the Amazon S3 action `ListBucket` has the **List** access level\. 
 + **Read**: Permission to read but not edit the contents and attributes of resources in the service\. For example, the Amazon S3 actions `GetObject` and `GetBucketLocation` have the **Read** access level\.
-+ **Write**: Permission to create, delete, or modify resources in the service\. For example, the Amazon S3 actions `CreateBucket`, `DeleteBucket` and `PutObject` have the **Write** access level\.
++ **Write**: Permission to create, delete, or modify resources in the service\. For example, the Amazon S3 actions `CreateBucket`, `DeleteBucket` and `PutObject` have the **Write** access level\. `Write` actions might also allow modifying a resource tag\. However, an action that allows only changes to tags has the `Tagging` access level\.
 + **Permissions management**: Permission to grant or modify resource permissions in the service\. For example, most IAM and AWS Organizations actions, as well as actions like the Amazon S3 actions `PutBucketPolicy` and `DeleteBucketPolicy` have the **Permissions management** access level\.
 **Tip**  
 To improve the security of your AWS account, restrict or regularly monitor policies that include the **Permissions management** access level classification\.
++ **Tagging**: Permission to perform actions that only change the state of resource tags\. For example, the IAM actions `TagRole` and `UntagRole` have the **Tagging** access level because they allow only tagging or untagging a role\. However, the `CreateRole` action allows tagging a role resource when you create that role\. Because the action does not only add a tag, it has the `Write` access level\.
+
+To view the access level classification for all of the actions in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.

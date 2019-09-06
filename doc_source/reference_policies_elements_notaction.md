@@ -36,7 +36,7 @@ The following conditional example denies access to non\-IAM actions if the user 
 {
     "Version": "2012-10-17",
     "Statement": [{
-        "Sid": "DenyAllOutsideEU",
+        "Sid": "DenyAllUsersNotUsingMFA",
         "Effect": "Deny",
         "NotAction": "iam:*",
         "Resource": "*",
@@ -45,25 +45,4 @@ The following conditional example denies access to non\-IAM actions if the user 
 }
 ```
 
-The following example policy denies access to any operations outside of the `eu-central-1` and `eu-west-1` regions, except for actions in the listed services\. The services listed in the `NotActions` element are some of the AWS global services with a single endpoint physically located in the `us-east-1` region\. Operations in these services would fail otherwise\. This policy denies access and requires another policy to grant access\.
-
-```
-    "Version": "2012-10-17",
-    "Statement": [{
-        "Sid": "DenyAllOutsideEU",
-        "Effect": "Deny",
-        "NotAction": [
-            "aws-portal:*",
-            "iam:*",
-            "organizations:*",
-            "support:*",
-            "sts:*"
-        ],
-        "Resource": "*",
-        "Condition": {"StringNotEquals": {"aws:RequestedRegion": [
-            "eu-central-1",
-            "eu-west-1"
-        ]}}
-    }]
-}
-```
+The following example policy denies access to any operations outside of the `eu-central-1` and `eu-west-1` regions, except for actions in the listed services\. The services listed in the `NotActions` element are some of the AWS global services with a single endpoint physically located in the `us-east-1` Region\. Operations in these services would fail otherwise\. This policy denies access and requires another policy to grant access\. To view the example policy, see [](reference_policies_examples_aws_deny-requested-region.md)\. 

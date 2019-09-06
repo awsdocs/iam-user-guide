@@ -1,6 +1,6 @@
 # Configuring SAML Assertions for the Authentication Response<a name="id_roles_providers_create_saml_assertions"></a>
 
-In your organization, after a user's identity has been verified, the IdP sends an authentication response to the AWS SAML endpoint at `https://signin.aws.amazon.com/saml`\. This response is a POST request that includes a SAML token that adheres to the [HTTP POST Binding for SAML 2\.0](http://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf) standard and that contains the following elements, or *claims*\. You configure these claims in your SAML\-compatible IdP\. Refer to the documentation for your IdP for instructions on how to enter these claims\.
+In your organization, after a user's identity has been verified, the external identity provider \(IdP\) sends an authentication response to the AWS SAML endpoint at `https://signin.aws.amazon.com/saml`\. This response is a POST request that includes a SAML token that adheres to the [HTTP POST Binding for SAML 2\.0](http://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf) standard and that contains the following elements, or *claims*\. You configure these claims in your SAML\-compatible IdP\. Refer to the documentation for your IdP for instructions on how to enter these claims\.
 
 When the IdP sends the response containing the claims to AWS, many of the incoming claims map to AWS context keys\. These context keys can be checked in IAM policies using the `Condition` element\. A listing of the available mappings follows in the section [Mapping SAML Attributes to AWS Trust Policy Context Keys](#saml-attribute-mapping)\.
 
@@ -11,18 +11,18 @@ The following excerpt shows an example\. Substitute your own values for the mark
 <Subject>
   <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">_cbb88bf52c2510eabe00c1642d4643f41430fe25e3</NameID>
   <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-    <SubjectConfirmationData NotOnOrAfter="2013-11-05T02:06:42.876Z" Recipient="https://signin.aws.amazon.com/saml"/>
+    <SubjectConfirmationData NotOnOrAfter="2013-11-05T02:06:42.876Z" Recipient="https://signin.&home-domain;/saml"/>
   </SubjectConfirmation>
 </Subject>
 ```
 
 **`AudienceRestriction` and `Audience`**  
-For security reasons, AWS must be included as an audience in the SAML assertion your IdP sends to AWS\. Therefore, the value of the `Audience` element should match one of the following two values, either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. The following sample XML snippets from SAML assertions show how this key can be specified by the IdP\. Include whichever sample applies to your use case\.  
+For security reasons, AWS should be included as an audience in the SAML assertion your IdP sends to AWS\. For the value of the `Audience` element, specify either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. The following sample XML snippets from SAML assertions show how this key can be specified by the IdP\. Include whichever sample applies to your use case\.  
 
 ```
 <Conditions>
   <AudienceRestriction>
-    <Audience>https://signin.aws.amazon.com/saml</Audience>
+    <Audience>https://signin.&home-domain;/saml</Audience>
   </AudienceRestriction>
 </Conditions>
 ```
@@ -37,7 +37,7 @@ For security reasons, AWS must be included as an audience in the SAML assertion 
 The SAML `AudienceRestriction` value in the SAML assertion from the IdP does *not* map to the `saml:aud` context key that you can test in an IAM policy\. Instead, the `saml:aud` context key comes from the SAML *recipient* attribute because it is the SAML equivalent to the OIDC audience field, for example, by `accounts.google.com:aud`\.
 
 **An `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/Role`**  
-This element contains one or more `AttributeValue` elements that list the IAM role and SAML identity provider to which the user is mapped by your IdP\. The role and identity provider are specified as a comma\-delimited pair of ARNs in the same format as the `RoleArn` and `PrincipalArn` parameters that are passed to [AssumeRoleWithSAML](http://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)\. This element must contain at least one role\-provider pair—that is, at least one `AttributeValue` element—and can contain multiple pairs\. If the element contains multiple pairs, then the user is asked to select which role to assume when he or she uses WebSSO to sign into the AWS Management Console\.  
+This element contains one or more `AttributeValue` elements that list the IAM identity provider and role to which the user is mapped by your IdP\. The IAM role and IAM identity provider are specified as a comma\-delimited pair of ARNs in the same format as the `RoleArn` and `PrincipalArn` parameters that are passed to [AssumeRoleWithSAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)\. This element must contain at least one role\-provider pair—that is, at least one `AttributeValue` element—and can contain multiple pairs\. If the element contains multiple pairs, then the user is asked to select which role to assume when he or she uses WebSSO to sign into the AWS Management Console\.  
 The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It must be set to `https://aws.amazon.com/SAML/Attributes/Role` exactly\.
 
 ```
@@ -58,7 +58,7 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 </Attribute>
 ```
 
-**An optional `Attribute` element with the `SessionDuration` attribute set to `https://aws.amazon.com/SAML/Attributes/SessionDuration`**  
+**An optional `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/SessionDuration`**  
 This element contains one `AttributeValue` element that specifies how long that the user can access the AWS Management Console before having to request new temporary credentials\. The value is an integer representing the number of seconds for the session\. The value can range from 900 seconds \(15 minutes\) to 43200 seconds \(12 hours\)\. If this attribute is not present, then the credential last for one hour \(the default value of the `DurationSeconds` parameter of the `AssumeRoleWithSAML` API\)\.  
 To use this attribute, you must configure the SAML provider to provide single sign\-on access to the AWS Management Console through the console sign\-in web endpoint at `https://signin.aws.amazon.com/saml`\. Note that this attribute extends sessions only to the AWS Management Console\. It cannot extend the lifetime of other credentials\. However, if it is present in an `AssumeRoleWithSAML` API call, it can be used to *shorten* the lifetime of the credentials returned by the call to less than the default of 60 minutes\.   
 Note, too, that if a `SessionNotOnOrAfter` attribute is also defined, then the ***lesser*** value of the two attributes, `SessionDuration` or `SessionNotOnOrAfter`, establishes the maximum duration of the console session\.  

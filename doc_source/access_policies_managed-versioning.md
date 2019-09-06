@@ -20,7 +20,10 @@ The following sections explain how you can use versioning for managed policies\.
 
 ## Permissions for Setting the Default Version of a Policy<a name="policy-version-permissions"></a>
 
-The permissions that are required to set the default version of a policy correspond to the AWSAPI operations for the task\. You can use the `CreatePolicyVersion` or `SetDefaultPolicyVersion` API operations to set the default version of a policy\. To allow someone to set the default policy version of an existing policy, you can allow access to either the `iam:CreatePolicyVersion` action or the `iam:SetDefaultPolicyVersion` action\. The `iam:CreatePolicyVersion` action allows them to create a new version of the policy and to set that version as the default\. The `iam:SetDefaultPolicyVersion` action allows them to set any existing version of the policy as the default\.
+The permissions that are required to set the default version of a policy correspond to the AWS API operations for the task\. You can use the `CreatePolicyVersion` or `SetDefaultPolicyVersion` API operations to set the default version of a policy\. To allow someone to set the default policy version of an existing policy, you can allow access to either the `iam:CreatePolicyVersion` action or the `iam:SetDefaultPolicyVersion` action\. The `iam:CreatePolicyVersion` action allows them to create a new version of the policy and to set that version as the default\. The `iam:SetDefaultPolicyVersion` action allows them to set any existing version of the policy as the default\.
+
+**Important**  
+Denying the `iam:SetDefaultPolicyVersion` action in a user's policy does not stop the user from creating a new policy version and setting it as the default\.
 
 You can use the following policy to deny a user access to change an existing customer managed policy:
 
@@ -64,7 +67,7 @@ You can set the default version of a customer managed policy to apply that versi
 
 1. Choose the **Policy versions** tab\. Select the check box next to the version that you want to set as the default version, and then choose **Set as default**\.
 
-To learn how to set the default version of a customer managed policy from the AWS Command Line Interface or the AWS API, see [Editing IAM Policies \(AWS CLI\)](access_policies_manage-edit.md#edit-policies-cli-api)\. 
+To learn how to set the default version of a customer managed policy from the AWS Command Line Interface or the AWS API, see [Editing Customer Managed Policies \(AWS CLI\)](access_policies_manage-edit.md#edit-policies-cli-api)\. 
 
 ## Using Versions to Roll Back Changes<a name="versions-roll-back"></a>
 

@@ -4,6 +4,9 @@ To configure many AWS services, you must *pass* an IAM role to the service\. Thi
 
 To pass a role \(and its permissions\) to an AWS service, a user must have permissions to *pass the role* to the service\. This helps administrators ensure that only approved users can configure a service with a role that grants permissions\. To allow a user to pass a role to an AWS service, you must grant the `PassRole` permission to the user's IAM user, role, or group\.
 
+**Note**  
+You cannot limit permissions to pass a role based on tags attached to that role using the `ResourceTag/key-name` condition key\. For more information, see [Controlling Access to AWS Resources](access_tags.md#access_tags_control-resources)\.
+
 When you create a service\-linked role, you must also have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you the first time that you create an Auto Scaling group\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive an error\. To learn which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which services automatically create a service\-linked role when you perform an action in that service, choose the **Yes** link and view the service\-linked role documentation for the service\.
 
 A user can pass a role ARN as a parameter in any API operation that uses the role to assign permissions to the service\. The service then checks whether that user has the `iam:PassRole` permission\. To limit the user to passing only approved roles, you can filter the `iam:PassRole` permission with the `Resources` element of the IAM policy statement\. 
@@ -64,7 +67,13 @@ Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enha
 
 1. Choose the **AWS Service** role type, and then choose the **Amazon RDS Role for Enhanced Monitoring** service\. Then choose **Next: Permissions**\.
 
-1. Choose the **AmazonRDSEnhancedMonitoringRole**, permissions policy and then choose **Next: Review**\.
+1. Choose the **AmazonRDSEnhancedMonitoringRole**, permissions policy\.
+
+1. Choose **Next: Tags**\.
+
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
+
+1. Choose **Next: Review**\.
 
 1. For **Role name**, type a role name that helps you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\. 
 

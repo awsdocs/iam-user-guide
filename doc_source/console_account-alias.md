@@ -9,9 +9,23 @@ An account alias substitutes for an account ID in the web address for your accou
 
 ## Finding Your AWS Account ID<a name="FindingYourAWSId"></a>
 
-To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account ID appears in the upper\-right corner below the **Support** menu\.
+You can find your account ID in the AWS Management Console, or using the AWS CLI or AWS API\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
+### Finding your account ID \(Console\)<a name="FindId_Console"></a>
+
+Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. The account to which you are signed in appears at the top of the navigation pane\.
+
+![\[Finding your account ID\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-iam-console.png)
+
+### Finding your account ID \(AWS CLI\)<a name="FindId_CLI"></a>
+
+To view your user ID, account ID, and your user ARN:
++ `[aws sts get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html)`
+
+### Finding your account ID \(AWS API\)<a name="FindId_API"></a>
+
+To view your user ID, account ID, and your user ARN:
++ `[GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)` 
 
 ## About Account Aliases<a name="AboutAccountAlias"></a>
 
@@ -62,21 +76,21 @@ You can create and delete an account alias from the AWS Management Console\.
 ### Creating, Deleting, and Listing Aliases \(AWS CLI\)<a name="CreateAlias_APICLI"></a>
 
 To create an alias for your AWS Management Console sign\-in page URL, run the following command:
-+ `[aws iam create\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
++ `[aws iam create\-account\-alias](https://docs.aws.amazon.com/cli/latest/reference/iam/create-account-alias.html)`
 
 To delete an AWS account ID alias, run the following command:
-+ `[aws iam delete\-account\-alias](http://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
++ `[aws iam delete\-account\-alias](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-account-alias.html)`
 
 To display your AWS account ID alias, run the following command: 
-+ `[aws iam list\-account\-aliases](http://docs.aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
++ `[aws iam list\-account\-aliases](https://docs.aws.amazon.com/cli/latest/reference/iam/list-account-aliases.html)`
 
 ### Creating, Deleting, and Listing Aliases \(AWS API\)<a name="CreateAlias_API"></a>
 
 To create an alias for your AWS Management Console sign\-in page URL, call the following operation:
-+ `[CreateAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
++ `[CreateAccountAlias](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccountAlias.html)` 
 
 To delete an AWS account ID alias, call the following operation:
-+ `[DeleteAccountAlias](http://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
++ `[DeleteAccountAlias](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountAlias.html)` 
 
 To display your AWS account ID alias, call the following operation:
-+ `[ListAccountAliases](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 
++ `[ListAccountAliases](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccountAliases.html)` 

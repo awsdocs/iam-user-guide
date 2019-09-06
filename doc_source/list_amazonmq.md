@@ -2,39 +2,27 @@
 
 Amazon MQ \(service prefix: `mq`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
+References:
++ View a [list of the API operations available for this service](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/)\.
+
 **Topics**
 + [Actions Defined by Amazon MQ](#amazonmq-actions-as-permissions)
-+ [Resources Defined by MQ](#amazonmq-resources-for-iam-policies)
++ [Resources Defined by Amazon MQ](#amazonmq-resources-for-iam-policies)
 + [Condition Keys for Amazon MQ](#amazonmq-policy-keys)
 
 ## Actions Defined by Amazon MQ<a name="amazonmq-actions-as-permissions"></a>
 
-You can specify the following actions in the `Action` element of an IAM policy statement\. By using policies, you define the permissions for anyone performing an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\. For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
+You can specify the following actions in the `Action` element of an IAM policy statement\. Use policies to grant permissions to perform an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\.
+
+The **Resource** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
+
+For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
 
 ****  
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmq.html)
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-post) | Grants permission to create a broker\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-post) | Grants permission to create a new configuration for the specified configuration name\. Amazon MQ uses the default configuration \(the engine type and engine version\)\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-post) | Grants permission to create an ActiveMQ user\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-delete) | Grants permission to delete a broker\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-delete) | Grants permission to delete an ActiveMQ user\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get) | Grants permission to return information about the specified broker\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-get) | Grants permission to return information about the specified configuration\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration-revision.html#rest-api-configuration-revision-methods-get) | Grants permission to return the specified configuration revision for the specified configuration\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-get) | Grants permission to return information about an ActiveMQ user\. | Read |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-brokers.html#rest-api-brokers-methods-get) | Grants permission to return a list of all brokers\. | List |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-revisions.html#rest-api-revisions-methods-get) | Grants permission to return a list of all existing revisions for the specified configuration\. | List |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configurations.html#rest-api-configurations-methods-get) | Grants permission to return a list of all configurations\. | List |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-users.html#rest-api-users-methods-get) | Grants permission to return a list of all ActiveMQ users\. | List |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-restart.html#rest-api-reboot-methods-post) | Grants permission to reboot a broker\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-broker.html#rest-api-broker-methods-get) | Grants permission to add a pending configuration change to a broker\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-configuration.html#rest-api-configuration-methods-put) | Grants permission to update the specified configuration\. | Write |  |  |  | 
-| [http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put](http://docs.aws.amazon.com//amazon-mq/latest/api-reference/rest-api-username.html#rest-api-username-methods-put) | Grants permission to update the information for an ActiveMQ user\. | Write |  |  |  | 
-
-## Resources Defined by MQ<a name="amazonmq-resources-for-iam-policies"></a>
+## Resources Defined by Amazon MQ<a name="amazonmq-resources-for-iam-policies"></a>
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonmq-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
@@ -43,9 +31,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-| brokers | arn:$\{Partition\}:mq:$\{Region\}:$\{Account\}:broker:$\{broker\-id\} |  | 
-| configurations | arn:$\{Partition\}:mq:$\{Region\}:$\{Account\}:configuration:$\{configuration\-id\} |  | 
+|   brokers  |  arn:$\{Partition\}:mq:$\{Region\}:$\{Account\}:broker:$\{broker\-id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmq-aws_ResourceTag___TagKey_)   | 
+|   configurations  |  arn:$\{Partition\}:mq:$\{Region\}:$\{Account\}:configuration:$\{configuration\-id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmq-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon MQ<a name="amazonmq-policy-keys"></a>
 
-MQ has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon MQ defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  |  | String | 
+|   aws:ResourceTag/$\{TagKey\}  |  | String | 
+|   aws:TagKeys  |  | String | 

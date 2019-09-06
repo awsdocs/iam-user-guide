@@ -7,4 +7,4 @@ You can manage passwords for your AWS account root user and for IAM users in you
 + [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)
 + [Managing Passwords for IAM Users](id_credentials_passwords_admin-change-user.md)
 + [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)
-+ [How IAM Users Change Their Own Passwords](id_credentials_passwords_user-change-own.md)
++ [How an IAM User Changes Their Own Password](id_credentials_passwords_user-change-own.md)

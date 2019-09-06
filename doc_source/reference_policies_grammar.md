@@ -3,10 +3,10 @@
 This page presents a formal grammar for the language used to create JSON policies in IAM\. We present this grammar so that you can understand how to construct and validate policies\.
 
 For examples of policies, see the following topics:
-+ [IAM Policies](access_policies.md)
-+ [Example Policies](access_policies_examples.md)
-+ [Example Policies for Working in the Amazon EC2 Console](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-ec2-console.html) and [Example Policies for Working With the AWS CLI, the Amazon EC2 CLI, or an AWS SDK](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
-+  [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service Developer Guide*\. 
++ [Policies and Permissions](access_policies.md)
++ [Example IAM Identity\-Based Policies](access_policies_examples.md)
++ [Example Policies for Working in the Amazon EC2 Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-ec2-console.html) and [Example Policies for Working With the AWS CLI, the Amazon EC2 CLI, or an AWS SDK](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
++  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service Developer Guide*\. 
 
 For examples of policies used in other AWS services, go to the documentation for those services\.
 
@@ -99,7 +99,7 @@ policy  = {
 
 <principal_map> = { <principal_map_entry>, <principal_map_entry>, ... }
 
-<principal_map_entry> = ("AWS" | "Federated" | "Service") :   
+<principal_map_entry> = ("AWS" | "Federated" | "Service" | "CanonicalUser") :   
     [<principal_id_string>, <principal_id_string>, ...]
 
 <action_block> = ("Action" | "NotAction") : 
@@ -109,7 +109,7 @@ policy  = {
     ("*" | [<resource_string>, <resource_string>, ...])
 
 <condition_block> = "Condition" : { <condition_map> }
-<condition_map> { 
+<condition_map> = { 
   <condition_type_string> : { <condition_key_string> : <condition_value_list> },
   <condition_type_string> : { <condition_key_string> : <condition_value_list> }, ...
 }  
@@ -124,6 +124,7 @@ policy  = {
 + Blocks can appear in any order\. For example, `version_block` can follow `id_block` in a policy\. Similarly, `effect_block`, `principal_block`, `action_block` can appear in any order within a statement\.
 + The `id_block` is optional in resource\-based policies\. It must *not* be included in identity\-based policies\.
 + The `principal_block` element is required in resource\-based policies \(for example, in Amazon S3 bucket policies\) and in trust policies for IAM roles\. It must *not* be included in identity\-based policies\.
++ The `principal_map` element in Amazon S3 bucket policies can include the `CanonicalUser` ID\. Most resource\-based policies do not support this mapping\. To learn more about using the canonical user ID in a bucket policy, see [Specifying a Principal in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html) in the *Amazon Simple Storage Service Developer Guide*\.
 + Each string value \(`policy_id_string`, `sid_string`, `principal_id_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
 
 ### Notes About String Values<a name="policies-grammar-notes-strings"></a>
@@ -176,7 +177,7 @@ Provides a way to specify a principal using the [*Amazon Resource Name* \(ARN\)]
 Note that you can use \* only to specify "everyone/anonymous\." You cannot use it to specify part of a name or ARN\.
 
 **`resource_string`**  
-In most cases, consists of an [Amazon Resource Name](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\)\.  
+In most cases, consists of an [Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\)\.  
 
 ```
 "Resource":"arn:aws:iam::123456789012:user/Bob"
@@ -210,8 +211,8 @@ Identifies the type of condition being tested, such as `StringEquals`, `StringLi
 **`condition_key_string`**  
 Identifies the condition key whose value will be tested to determine whether the condition is met\. AWS defines a set of condition keys that are available in all AWS services, including `aws:principaltype`, `aws:SecureTransport`, and `aws:userid`\.  
 For a list of AWS condition keys, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\. For condition keys that are specific to a service, see the documentation for that service such as the following:  
-+ [Specifying Conditions in a Policy](http://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service Developer Guide*
-+ [IAM Policies for Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide for Linux Instances*\.
++ [Specifying Conditions in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service Developer Guide*
++ [IAM Policies for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ```
 "Condition":{

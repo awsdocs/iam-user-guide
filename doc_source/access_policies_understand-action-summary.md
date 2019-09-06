@@ -74,9 +74,9 @@ The action summary page includes the following information:
 
 1. **Resource** – This column lists the resources that the policy defines for the chosen service\. In this example, the **PutObject** action is allowed on all object paths, but on only the `developer_bucket` Amazon S3 bucket resource\. Depending on the information that the service provides to IAM, you might see an ARN such as `arn:aws:s3:::developer_bucket/*`, or you might see the defined resource type, such as `BucketName = developer_bucket, ObjectPath = All`\.
 
-1. **Region** – This column shows the region in which the resource is defined\. Resources can be defined for all regions, or a single region\. They cannot exist in more than one specific region\.
-   + **All regions** – The actions that are associated with the resource apply to all regions\. In this example, the action belongs to a global service, Amazon S3\. Actions that belong to global services apply to all regions\.
-   + Region text – The actions associated with the resource apply to one region\. For example, a policy can specify the `us-east-2` region for a resource\.
+1. **Region** – This column shows the Region in which the resource is defined\. Resources can be defined for all Regions, or a single Region\. They cannot exist in more than one specific Region\.
+   + **All Regions** – The actions that are associated with the resource apply to all Regions\. In this example, the action belongs to a global service, Amazon S3\. Actions that belong to global services apply to all Regions\.
+   + Region text – The actions associated with the resource apply to one Region\. For example, a policy can specify the `us-east-2` Region for a resource\.
 
 1. **Account** – This column indicates whether the services or actions associated with the resource apply to a specific account\. Resources can exist in all accounts or a single account\. They cannot exist in more than one specific account\.
    + **All accounts** – The actions that are associated with the resource apply to all accounts\. In this example, the action belongs to a global service, Amazon S3\. Actions that belong to global services apply to all accounts\.

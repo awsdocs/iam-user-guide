@@ -1,6 +1,6 @@
-# IAM JSON Policy Elements: Principal<a name="reference_policies_elements_principal"></a>
+# AWS JSON Policy Elements: Principal<a name="reference_policies_elements_principal"></a>
 
-Use the `Principal` element to specify the user \(IAM user, federated user, or assumed\-role user\), AWS account, AWS service, or other principal entity that is allowed or denied access to a resource\. You use the `Principal` element in the trust policies for IAM roles and in resource\-based policies—that is, in policies that you embed directly in a resource\. For example, you can embed such policies in an Amazon S3 bucket, an Amazon Glacier vault, an Amazon SNS topic, an Amazon SQS queue, or an AWS KMS customer master key \(CMK\)\.
+Use the `Principal` element to specify the IAM user, federated user, IAM role, AWS account, AWS service, or other principal entity that is allowed or denied access to a resource\. You cannot use the `Principal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in an IAM resource\. For example, you can embed policies in an Amazon S3 bucket or an AWS KMS customer master key \(CMK\)\.
 
 Use the `Principal` element in these ways:
 + In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. 
@@ -18,7 +18,7 @@ The following examples show various ways in which principals can be specified\.
 
 **Specific AWS accounts**
 
-When you use an AWS account identifier as the principal in a policy, the permissions in the policy statement can be granted to all identities contained in that account\. This includes IAM users and roles in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*AWS\-account\-ID*:root\), or a shortened form that consists of the `AWS:` prefix followed by the account ID\.
+When you use an AWS account identifier as the principal in a policy, you delegate authority to the account\. Within that account, the permissions in the policy statement can be granted to all identities\. This includes IAM users and roles in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*AWS\-account\-ID*:root\), or a shortened form that consists of the `AWS:` prefix followed by the account ID\.
 
 For example, given an account ID of `123456789012`, you can use either of the following methods to specify that account in the `Principal` element:
 
@@ -107,11 +107,11 @@ If your `Principal` element in a role trust policy contains an ARN that points t
 
 **AWS service**
 
-IAM roles that can be assumed by an AWS service are called *[service roles](id_roles_terms-and-concepts.md#iam-term-service-role)*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service role have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:
+IAM roles that can be assumed by an AWS service are called *[service roles](id_roles_terms-and-concepts.md#iam-term-service-role)*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service roles have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:
 
 `long_service-name.amazonaws.com`
 
-The service principal is defined by the service\. To learn the service principal for a service, see the documentation for that service\. 
+The service principal is defined by the service\. To learn the service principal for a service, see the documentation for that service\. For some services, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\. View the **Service\-Linked Role Permissions** section for that service to view the service principal\.
 
 The following example shows a policy that can be attached to a service role\. The policy enables two services, Amazon EMR and AWS Data Pipeline, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. To specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
 
@@ -133,7 +133,7 @@ The following example shows a policy that can be attached to a service role\. Th
 }
 ```
 
-Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
+Some AWS services support additional options for specifying a principal\. For example, Amazon S3 lets you specify a [canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId) using the following format:
 
 ```
 "Principal": { "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be" }
@@ -151,15 +151,15 @@ The following are equivalent:
 "Principal" : { "AWS" : "*" }
 ```
 
-**Note**  
+**Important**  
 In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Anonymous\. You cannot use it as a wildcard to match part of a name or an ARN\. We also strongly recommend that you do not use a wildcard in the `Principal` element in a role's trust policy unless you otherwise restrict access through a `Condition` element in the policy\. Otherwise, any IAM user in any account can access the role\.
 
 ## More Information<a name="Principal_more-info"></a>
 
 For more information, see the following:
-+ [Bucket Policy Examples](http://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
-+ [Example Policies for Amazon SNS](http://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
-+ [Amazon SQS Policy Examples](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
-+ [Key Policies](http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
-+ [Account Identifiers](http://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
++ [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service Developer Guide*
++ [Example Policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
++ [Amazon SQS Policy Examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
++ [Key Policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
++ [Account Identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
 + [About Web Identity Federation](id_roles_providers_oidc.md)

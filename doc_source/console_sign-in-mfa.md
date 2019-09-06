@@ -1,7 +1,32 @@
 # Using MFA Devices With Your IAM Sign\-in Page<a name="console_sign-in-mfa"></a>
 
-IAM users who are configured with multi\-factor authentication \(MFA\) devices must use their MFA devices to sign in to the AWS Management Console\. After the user types the user name and password, AWS checks the user's account to see if MFA is required for that user\. If so, a second sign\-in page appears with an **MFA code** box to enter the numeric code provided by an MFA token device or sent to the user's mobile device as an SMS text message, depending on the type of MFA configured for the user\.
+IAM users who are configured with [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) devices must use their MFA devices to sign in to the AWS Management Console\. After the user enters the user name and password, AWS checks the user's account to see if MFA is required for that user\. The following sections provide information on how users complete signing in when MFA is required\. 
 
-If the MFA code is correct, then the user can access the AWS Management Console\. If the code is incorrect, the user can try again with another code from a token device or by requesting that AWS send another SMS text message code\. This is helpful if the first code was not received or does not work\. 
+**Topics**
++ [Signing in with a Virtual MFA Device](#console_sign-in-mfa-virtual)
++ [Signing in with a U2F Security Key](#console_sign-in-mfa-u2f)
++ [Signing in with a Hardware MFA Device](#console_sign-in-mfa-hardware)
 
-It's possible for an MFA token device to get out of synchronization\. If after several unsuccessful tries a user cannot sign in to the AWS Management Console, the user is prompted to synchronize the MFA token device\. The user can follow the on\-screen prompts to synchronize the MFA token device\. For information about how you can synchronize a device on behalf of a user in your AWS account, see [Resynchronizing MFA Devices](id_credentials_mfa_sync.md)\. 
+## Signing in with a Virtual MFA Device<a name="console_sign-in-mfa-virtual"></a>
+
+If MFA is required for the user, a second sign\-in page appears\. In the **MFA code** box, the user must enter the numeric code provided by the MFA application\.
+
+If the MFA code is correct, the user can access the AWS Management Console\. If the code is incorrect, the user can try again with another code\. 
+
+A virtual MFA device can go out of sync\. If a user cannot sign in to the AWS Management Console after several tries, the user is prompted to synchronize the virtual MFA device\. The user can follow the on\-screen prompts to synchronize the virtual MFA device\. For information about how you can synchronize a device on behalf of a user in your AWS account, see [Resynchronizing Virtual and Hardware MFA Devices](id_credentials_mfa_sync.md)\. 
+
+## Signing in with a U2F Security Key<a name="console_sign-in-mfa-u2f"></a>
+
+If MFA is required for the user, a second sign\-in page appears\. The user needs to tap the U2F security key\.
+
+Unlike other MFA devices, U2F security keys do not go out of sync\. Administrators can deactivate a U2F security key if it's lost or broken\. For more information, see [Deactivating MFA Devices \(Console\)](id_credentials_mfa_disable.md#deactive-mfa-console)\.
+
+For information on browsers that support U2F and U2F devices that AWS supports, see [Supported Configurations for Using U2F Security Keys](id_credentials_mfa_u2f_supported_configurations.md)\.
+
+## Signing in with a Hardware MFA Device<a name="console_sign-in-mfa-hardware"></a>
+
+If MFA is required for the user, a second sign\-in page appears\. In the **MFA code** box, the user must enter the numeric code provided by a hardware MFA device\. 
+
+If the MFA code is correct, the user can access the AWS Management Console\. If the code is incorrect, the user can try again with another code\. 
+
+A hardware MFA device can go out of sync\. If a user cannot sign in to the AWS Management Console after several tries, the user is prompted to synchronize the MFA token device\. The user can follow the on\-screen prompts to synchronize the MFA token device\. For information about how you can synchronize a device on behalf of a user in your AWS account, see [Resynchronizing Virtual and Hardware MFA Devices](id_credentials_mfa_sync.md)\. 

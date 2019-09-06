@@ -1,130 +1,209 @@
-# IAM JSON Policy Evaluation Logic<a name="reference_policies_evaluation-logic"></a>
+# Policy Evaluation Logic<a name="reference_policies_evaluation-logic"></a>
 
-**Topics**
-+ [Policy Evaluation Basics](#policy-eval-basics)
-+ [The Impact of AWS Organizations on IAM Policies](#evaluation-logic-organizations)
-+ [The Request Context](#policy-eval-reqcontext)
-+ [Determining Whether a Request is Allowed or Denied](#policy-eval-denyallow)
-+ [The Difference Between Denying by Default and Explicit Deny](#AccessPolicyLanguage_Interplay)
+When a principal tries to use the AWS Management Console, the AWS API, or the AWS CLI, that principal sends a *request* to AWS\. When an AWS service receives the request, AWS completes several steps to determine whether to allow or deny the request\.
 
-## Policy Evaluation Basics<a name="policy-eval-basics"></a>
+1. **Authentication** – AWS first authenticates the principal that makes the request, if necessary\. This step is not necessary for a few services, such as Amazon S3, that allow some requests from anonymous users\.
 
-When an AWS service receives a request, the request is first authenticated using information about the access key ID and signature\. \(A few services, like Amazon S3, allow requests from anonymous users\.\) If the request passes authentication, AWS then determines whether the requester is authorized to perform the action represented by the request\. 
+1. **[Processing the Request Context](#policy-eval-reqcontext)** – AWS processes the information gathered in the request to determine which policies apply to the request\.
 
-Requests that are made by the AWS account root user are allowed for resources in that account\. However, the request might be made using the credentials of an IAM user\. Or the request could be signed using temporary credentials that are granted by AWS STS\., In either of those cases, AWS uses the permissions that are defined in one or more IAM policies to determine whether the user's request is authorized\. 
+1. **[Evaluating Policies Within a Single Account](#policy-eval-basics)** – AWS evaluates all of the policy types, which affect the order in which the policies are evaluated\.
 
-**Note**  
-Amazon S3 supports Access Control Lists \(ACLs\) and resource\-level policies for buckets and objects\. The permissions established using ACLs and bucket\-level policies can affect what actions the root user is allowed to perform on a bucket\. For more information, see [Guidelines for Using the Available Access Policy Options](http://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-alternatives-guidelines.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+1. **[Determining Whether a Request Is Allowed or Denied Within an Account](#policy-eval-denyallow)** – AWS then processes the policies against the request context to determine whether the request is allowed or denied\.
 
-## The Impact of AWS Organizations on IAM Policies<a name="evaluation-logic-organizations"></a>
+## Processing the Request Context<a name="policy-eval-reqcontext"></a>
 
-AWS Organizations is a service that enables you to group together and centrally manage the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. These SCPs serve as "filters" or "guardrails" that limit what services and actions can be accessed by the IAM users, groups, and roles in those accounts\. If an SCP that is attached to an account denies access to a service, such as Amazon S3, then no user in that account can access any Amazon S3 API\. This is so even if the user has administrator permissions in the account\. Even the AWS account root user is denied access to Amazon S3 API operations\.
+AWS processes the request to gather the following information into a *request context*:
++ **Actions \(or operations\)** – The actions or operations that the principal wants to perform\.
++ **Resources** – The AWS resource object upon which the actions or operations are performed\.
++ **Principal** – The user, role, federated user, or application that sent the request\. Information about the principal includes the policies that are associated with that principal\. 
++ **Environment data** – Information about the IP address, user agent, SSL enabled status, or the time of day\.
++ **Resource data** – Data related to the resource that is being requested\. This can include information such as a DynamoDB table name or a tag on an Amazon EC2 instance\.
 
-An IAM user in an account that is in an organization can use the *intersection* of all permissions defined in Organizations, IAM, and other affected services\. IAM permissions policies are attached to the entity that you use to sign in to AWS\. Organizations SCPs apply to the account that you use to sign in\. Resource\-based policies are attached to a resource within a service and define who can access the resource\.
+AWS then uses this information to find policies that apply to the request context\.
 
-For more information about Organizations and SCPs, see [About Service Control Policies](http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
+## Evaluating Policies Within a Single Account<a name="policy-eval-basics"></a>
 
-## The Request Context<a name="policy-eval-reqcontext"></a>
+How AWS evaluates policies depends on the types of policies that apply to the request context\. The following policy types, listed in order of frequency, are available for use within a single AWS account\. For more information about these policy types, see [Policies and Permissions](access_policies.md)\. To learn about cross\-account authorization, see [How IAM Roles Differ from Resource\-based Policies](id_roles_compare-resource-policies.md)\.
 
-When AWS authorizes a request, information about the request is assembled from several sources:
-+ Principal \(the requester\), which is determined based on the secret access key\. This might represent the root user, an IAM user, a federated user \(via AWS STS\), or an assumed role, and includes the aggregate permissions that are associated with that principal\. 
-+ Environment data, such as the IP address, user agent, SSL enabled, the time of day, etc\. This information is determined from the request\.
-+ Resource data, which pertains to information that is part of the resource being requested\. This can include information such as a DynamoDB table name, a tag on an Amazon EC2 instance, etc\. 
+1. **Identity\-based policies** – Identity\-based policies are attached to an IAM identity \(user, group of users, or role\) and grant permissions to IAM entities \(users and roles\)\. If only identity\-based policies apply to a request, then AWS checks all of those policies for at least one `Allow`\.
 
-This information is gathered into a *request context*, which is a collection of information that's derived from the request\. During evaluation, AWS uses values from the request context to determine whether to allow or deny the request\. For example, does the action in the request context match an action in the `Action` element? If not, the request is denied\. Similarly, does the resource in the request context match one of the resources in the `Resource` element? If not, the request is denied\.
+1. **Resource\-based policies** – Resource\-based policies grant permissions to the principal entity \(account, user, role, or federated user\) specified as the principal\. The permissions define what the principal can do with the resource to which the policy is attached\. If resource\-based policies and identity\-based policies both apply to a request, then AWS checks all the policies for at least one `Allow`\.
 
-This is also how the keys work that you can use in the `Condition` element\. For example, for the following policy fragment, AWS uses the date and time from the current request context for the `aws:CurrentTime` key and then performs the `DateGreaterThan` and `DateLessThan` comparisons\.
+1. **IAM permissions boundaries** – Permissions boundaries are an advanced feature that sets the maximum permissions that an identity\-based policy can grant to an IAM entity \(user or role\)\. When you set a permissions boundary for an entity, the entity can perform only the actions that are allowed by both its identity\-based policies and its permissions boundaries\. Permissions boundaries do not affect the permissions granted by a resource\-based policy\.
 
-```
-"Condition" :  {
-  "DateGreaterThan" : {
-    "aws:CurrentTime" : "2013-08-16T12:00:00Z"
-  },
-  "DateLessThan": {
-    "aws:CurrentTime" : "2013-08-16T15:00:00Z"
-  }
-}
-```
+1. **AWS Organizations service control policies \(SCPs\)** – Organizations SCPs specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP maximum applies to entities in member accounts, including each AWS account root user\. If an SCP is present, identity\-based and resource\-based policies grant permissions to entities only if those policies and the SCP allow the action\. If both a permissions boundary and an SCP are present, then the boundary, the SCP, and the identity\-based policy must all allow the action\.
 
-Policy variables like `${aws:username}` also work like this\. In the following policy fragment, AWS gets the user name from the request context and uses it in the policy at the place where the `${aws:username}` occurs\.
+1. **Session policies** – Session policies are advanced policies that you pass as parameters when you programmatically create a temporary session for a role or federated user\. To create a role session programmatically, use one of the `AssumeRole*` API operations\. When you do this and pass session policies, the resulting session's permissions are the intersection of the IAM entity's identity\-based policy and the session policies\. To create a federated user session, you use an IAM user's access keys to programmatically call the `GetFederationToken` API operation\. A resource\-based policy has a different effect on the evaluation of session policy permissions\. The difference depends on whether the user or role's ARN or the session's ARN is listed as the principal in the resource\-based policy\. For more information, see [Session Policies](access_policies.md#policies_session)\.
 
-```
-"Resource": [
-  "arn:aws:s3:::mybucket/${aws:username}/*"
-]
-```
+Remember, an explicit deny in any of these policies overrides the allow\.
 
-## Determining Whether a Request is Allowed or Denied<a name="policy-eval-denyallow"></a>
+### Evaluating Identity\-Based Policies with Resource\-Based Policies<a name="policy-eval-basics-id-rdp"></a>
 
-When a request is made, the AWS service decides whether a given request should be allowed or denied\. The evaluation logic follows these rules:
-+ By default, all requests are denied\. \(In general, requests made using the AWS account root user credentials for resources in the account are always allowed\.\) 
-+ An explicit allow overrides this default\.
-+ An explicit deny overrides any allows\.
+Identity\-based policies and resource\-based policies grant permissions to the identities or resources to which they are attached\. When an IAM entity \(user or role\) requests access to a resource within the same account, AWS evaluates all the permissions granted by the identity\-based and resource\-based policies\. The resulting permissions are the total permissions of the two types\. If an action is allowed by an identity\-based policy, a resource\-based policy, or both, then AWS allows the action\. An explicit deny in either of these policies overrides the allow\.
 
-The order in which the policies are evaluated has no effect on the outcome of the evaluation\. All policies are evaluated, and the result is always that the request is either allowed or denied\.
+![\[Evaluation of identity-based policies and resource-based policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_policies_effective.png)
+
+### Evaluating Identity\-Based Policies with Permissions Boundaries<a name="policy-eval-basics-id-bound"></a>
+
+When AWS evaluates the identity\-based policies and permissions boundary for a user, the resulting permissions are the intersection of the two categories\. That means that when you add a permissions boundary to a user with existing identity\-based policies, you might reduce the actions that the user can perform\. Alternatively, when you remove a permissions boundary from a user, you might increase the actions they can perform\. An explicit deny in either of these policies overrides the allow\. To view information about how other policy types are evaluated with permissions boundaries, see [Evaluating Effective Permissions with Boundaries](access_policies_boundaries.md#access_policies_boundaries-eval-logic)\.
+
+![\[Evaluation of identity-based policies and permissions boundaries\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_boundary.png)
+
+### Evaluating Identity\-Based Policies with Organizations SCPs<a name="policy-eval-basics-id-scp"></a>
+
+When a user belongs to an account that is a member of an organization, the resulting permissions are the intersection of the user's policies and the SCP\. This means that an action must be allowed by both the identity\-based policy and the SCP\. An explicit deny in either of these policies overrides the allow\.
+
+![\[Evaluation of identity-based policies and SCPs\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_scp-idp.png)
+
+You can learn [whether your account is a member of an organization](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html#orgs_view_account) in AWS Organizations\. Organization members might be affected by an SCP\. To view this data using the AWS CLI command or AWS API operation, you must have permissions for the `organizations:DescribeOrganization` action for your Organizations entity\. You must have additional permissions to perform the operation in the Organizations console\. To learn whether an SCP is denying access to a specific request, or to change your effective permissions, contact your AWS Organizations administrator\.
+
+## Determining Whether a Request Is Allowed or Denied Within an Account<a name="policy-eval-denyallow"></a>
+
+Assume that a principal sends a request to AWS to access a resource in the same account as the principal's entity\. The AWS enforcement code decides whether the request should be allowed or denied\. AWS gathers all of the policies that apply to the request context\. The following is a high\-level summary of the AWS evaluation logic on those policies within a single account\.
++ By default, all requests are implicitly denied\. \(Alternatively, by default, the AWS account root user has full access\.\) 
++ An explicit allow in an identity\-based or resource\-based policy overrides this default\.
++ If a permissions boundary, Organizations SCP, or session policy is present, it might override the allow with an implicit deny\.
++ An explicit deny in any policy overrides any allows\.
 
 The following flow chart provides details about how the decision is made\.
 
-![\[Evaluation flow chart\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Evaluation_Flow.diagram.png)
+![\[Evaluation flow chart\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal.png)
 
-1. The decision starts by assuming that the request will be denied\.
+1. **Deny evaluation** – By default, all requests are denied\. This is called an [implicit deny](#AccessPolicyLanguage_Interplay)\. The AWS enforcement code evaluates all policies within the account that apply to the request\. These include AWS Organizations SCPs, resource\-based policies, IAM permissions boundaries, role session policies, and identity\-based policies\. In all those policies, the enforcement code looks for a `Deny` statement that applies to the request\. This is called an [explicit deny](#AccessPolicyLanguage_Interplay)\. If the code finds even one explicit deny that applies, the code returns a final decision of **Deny**\. If there is no explicit deny, the code continues\.
 
-1. The enforcement code evaluates all user\-based and resource\-based policies that are applicable to the request \(based on the resource, principal, action, and conditions\)\. 
+1. **Organizations SCPs** – Then the code evaluates AWS Organizations service control policies \(SCPs\) that apply to the request\. SCPs apply if the request is made in an account to which the SCP is attached\. If the enforcement code does not find any applicable `Allow` statements in the SCPs, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no SCP, or if the SCP allows the requested action, the code continues\.
 
-   The order in which the enforcement code evaluates the policies is not important\.
+1. **Resource\-based policies** – If the requested resource has a resource\-based policy that allows the principal entity to perform the requested action, then the code returns a final decision of **Allow**\. If there is no resource\-based policy, or if the policy does not include an `Allow` statement, then the code continues\.
+**Note**  
+This logic can behave differently if you specify the ARN of an IAM role or user as the principal of the resource\-based policy\. Someone can use session policies to create a temporary credential session for that role or federated user\. In that case, the effective permissions for the session might not exceed those allowed by the identity\-based policy of the user or role\. For more information, see [Session Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session)\.
 
-1. In all those policies, the enforcement code looks for an explicit deny instruction that would apply to the request\.
+1. **IAM permissions boundaries** – The enforcement code then checks whether the IAM entity that is used by the principal has a permissions boundary\. If the policy that is used to set the permissions boundary does not allow the requested action, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no permissions boundary, or if the permissions boundary allows the requested action, the code continues\.
 
-   If the code finds even one explicit deny that applies, the code returns a decision of `Deny` and the process is finished\.
+1. **Session policies** – The code then checks whether the principal entity is using a session that was assumed by passing a session policy\. You can pass a session policy while using the AWS CLI or AWS API to get temporary credentials for a role or federated user\. If the session policy is present and does not allow the requested action, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no session policy, or if the policy allows the requested action, the code continues\.
 
-1. If no explicit deny is found, the code looks for any `Allow` instructions that would apply to the request\.
+1. **Identity\-based policies** – The code then checks the identity\-based policies for the principal entity\. For an IAM user, these include user policies and policies from groups to which the user belongs\. If any statement in any applicable identity\-based policies allows the requested action, then the enforcement code returns a final decision of **Allow**\. If there are no statements that allow the requested action, then the request is implicitly denied, and the code returns a final decision of **Deny**\.
 
-   If it finds even one explicit allow, the code returns a decision of `Allow` and the service continues to process the request\. 
+1. **Errors** – If the AWS enforcement code encounters an error at any point during the evaluation, then it generates an exception and closes\.
 
-1. If no allow is found, the final decision is `Deny`\.
+## Example Identity\-Based and Resource\-Based Policy Evaluation<a name="policies_evaluation_example"></a>
 
-   If the code encounters an error at any point during the evaluation, then it will generate an exception and close\.
+The most common types of policies are identity\-based policies and resource\-based policies\.
 
-The following example illustrates how you can use an explicit deny to override a broad policy that allows access to a wide set of resources\. Let's say that you give an IAM group permissions to use any Amazon SQS queues in your AWS account whose names begin with the string `test`\. 
+Assume that Carlos has the user name `carlossalazar` and he tries to save a file to the `carlossalazar-logs` Amazon S3 bucket\. 
 
-The following diagram represents that set of queues\.
+Also assume that the following policy is attached to the `carlossalazar` IAM user\.
 
-![\[Set of queues whose names start with test\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_1.diagram.png)
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowS3ListRead",
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListAllMyBuckets",
+                "s3:HeadBucket"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowS3Self",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::carlossalazar/*",
+                "arn:aws:s3:::carlossalazar"
+            ]
+        },
+        {
+            "Sid": "DenyS3Logs",
+            "Effect": "Deny",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::*log*",
+                "arn:aws:s3:::*log*/*"
+            ]
+        }
+    ]
+}
+```
 
-Let's say that you have a queue called `test0` that you want to remove the group's access to\. The following diagram represents that set of queues\.
+The `AllowS3ListRead` statement in this policy allows Carlos to view a list of all of the buckets in the account\. The `AllowS3Self` statement allows Carlos full access to the bucket with the same name as his user name\. The `DenyS3Logs` statement denies Carlos access to any S3 bucket with `log` in its name\. 
 
-![\[Set of queues whose names start with test, except for test0\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_2.diagram.png)
+Additionally, the following resource\-based policy \(called a bucket policy\) is attached to the `carlossalazar` bucket\. 
 
-You could add another policy to the group, or another statement to the existing policy, that explicitly denies the group's access to the `test0` queue\. The group would still have access to all other queues whose names begin with the string `test`\. The following diagram illustrates those two statements in the policy\.
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Principal": { "AWS": "arn:aws:iam::111122223333:user/carlossalazar" },
+            "Resource": "*"
+        }
+    ]
+}
+```
 
-![\[Example policy for explicit deny overriding allow\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Explicit_Deny_Override_3.diagram.png)
+This policy specifies that only the `carlossalazar` user can access the `carlossalazar` bucket\.
 
-When any user in the group makes a request to use the queue `test0`, the explicit deny overrides the allow, and the user is denied access to the queue\.
+When Carlos makes his request to save a file to the `carlossalazar-logs` bucket, AWS determines what policies apply to the request\. In this case, only the identity\-based policy and the resource\-based policy apply\. These are both permissions policies\. Because no permissions boundaries apply, the evaluation logic is reduced to the following logic\.
 
-## The Difference Between Denying by Default and Explicit Deny<a name="AccessPolicyLanguage_Interplay"></a>
+![\[Evaluation flow chart\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissionsShort.png)
 
-A policy results in a deny if the policy doesn't directly apply to the request\. For example, a user might make a request to use Amazon SQS, but the only policy that applies to the user states that the user can use Amazon S3\. In that case, the request is denied\. 
+AWS first checks for a `Deny` statement that applies to the context of the request\. It finds one, because the identity\-based policy explicitly denies Carlos access to any S3 buckets used for logging\. Carlos is denied access\. 
 
-A policy also results in a deny if a condition in a statement isn't met\. If all conditions in the statement are met, the policy results in either an allow or an explicit deny, based on the value of the `Effect` element in the policy\. Policies don't specify what to do if a condition isn't met, so the result in that case is `Deny`\.
+Assume that he then realizes his mistake and tries to save the file to the `carlossalazar` bucket\. AWS checks for a `Deny` statement and does not find one\. It then checks the permissions policies\. The identity\-based policy allows the request\. Therefore, AWS allows the request\. If either of them explicitly denied the statement, the request would have been denied\.
 
-For example, let's say you want to prevent requests that come from Antarctica\. You write a policy called Policy A1 that allows a request only if it doesn't come from Antarctica\. The following diagram illustrates the policy\.
+## The Difference Between Explicit and Implicit Denies<a name="AccessPolicyLanguage_Interplay"></a>
 
-![\[Policy allowing request if it's not from Antarctica\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_1.diagram.png)
+A request results in an explicit deny if an applicable policy includes a `Deny` statement\. If policies that apply to a request include an `Allow` statement and a `Deny` statement, the `Deny` statement trumps the `Allow` statement\. The request is explicitly denied\.
 
-If someone sends a request from the US, the condition is met \(the request is not from Antarctica\)\. Therefore, the result is `Allow`\. But if someone sends a request from Antarctica, the condition isn't met, and the policy's result is therefore `Deny`\. 
+An implicit denial occurs when there is no applicable `Deny` statement but also no applicable `Allow` statement\. Because an IAM user, role, or federated user is denied access by default, they must be explicitly allowed to perform an action\. Otherwise, they are implicitly denied access\.
 
-You could *explicitly* deny access from Antarctica by creating a different policy \(named Policy A2\) as in the following diagram\.
+When you design your authorization strategy, you must create policies with `Allow` statements to allow your principals to successfully make requests\. However, you can choose any combination of explicit and implicit denies\. For example, you can create the following policy to allow an administrator full access to all resources in AWS, but explicitly deny access to billing\. If someone adds another policy to this administrator granting them access to billing, it is still denied because of this explicit deny\.
 
-![\[Policy denying request if it's from Antarctica\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override_2.diagram.png)
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Deny",
+            "Action": "aws-portal:*",
+            "Resource": "*"
+        }
+    ]
+}
+```
 
-If this policy applies to a user who sends a request from Antarctica, the condition is met, and the policy's result is therefore `Deny`\.
+Alternatively, you can create the following policy to allow a user to manage users, but not groups or any other resources in IAM\. Those actions are implicitly denied, as are actions in other services\. However, if someone adds a policy to the user that allows them to perform these other actions, then they are allowed\.
 
-The distinction between a request being denied by default and an explicit deny in a policy is important\. By default, a request is denied, but this can be overridden by an allow\. In contrast, if a policy explicitly denies a request, that deny can't be overridden\. 
-
-For example, let's say there's another policy that allows requests if they arrive on June 1, 2010\. How does this policy affect the outcome when evaluated together with the policy that restricts access from Antarctica? We'll compare the outcome when evaluating the date\-based policy \(we'll call it Policy B\) with the preceding policies \(A1 and A2\)\. Scenario 1 evaluates Policy A1 with Policy B, and Scenario 2 evaluates Policy A2 with Policy B\. The following figure shows the results when a request comes in from Antarctica on June 1, 2010\.
-
-![\[Override of deny by default\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Allow_Override.diagram.png)
-
-In Scenario 1, Policy A1 returns `Deny` because requests are allowed only if they don't come from Antarctica; any other condition \(requests that do come from Antarctica\) are denied by default\. Policy B returns an allow because the request arrives on June 1, 2010\. The allow from Policy B overrides the default deny from Policy A1, and the request is therefore allowed\.
-
-In Scenario 2, Policy A2 returns an explicit deny, as described earlier in this section\. Again, Policy B returns an allow\. However, the explicit deny from Policy A2 overrides the allow from Policy B, and the request is therefore `Deny`\.
+```
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Effect": "Allow",
+        "Action": [
+            "iam:AttachUserPolicy",
+            "iam:CreateUser",
+            "iam:DeleteUser",
+            "iam:DeleteUserPolicy",
+            "iam:DetachUserPolicy",
+            "iam:GetUser",
+            "iam:GetUserPolicy",
+            "iam:ListAttachedUserPolicies",
+            "iam:ListUserPolicies",
+            "iam:ListUsers",
+            "iam:PutUserPolicy",
+            "iam:UpdateUser"
+        ],
+        "Resource": "*"
+    }
+}
+```

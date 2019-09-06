@@ -1,41 +1,122 @@
 # Enabling a Hardware MFA Device \(Console\)<a name="id_credentials_mfa_enable_physical"></a>
 
+A hardware MFA device generates a six\-digit numeric code based upon a time\-synchronized one\-time password algorithm\. The user must type a valid code from the device when prompted during the sign\-in process\. Each MFA device assigned to a user must be unique; a user cannot type a code from another user's device to be authenticated\. 
+
+Hardware MFA devices and [U2F security keys](id_credentials_mfa_enable_u2f.md) are both physical devices that you purchase\. The difference is that hardware MFA devices generate a code that you view and then enter when prompted when signing it to AWS\. With a U2F security key, you don't see or type an authentication code\. Instead, the U2F security key generates a response without presenting it to the user and the service validates it\. For specifications and purchase information for both device types, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
+
 You can enable a hardware MFA device for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)\.
 
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\.
 
 **Note**  
-If you want to enable the device from the command line, use [http://docs.aws.amazon.com/IAM/latest/CLIReference/userenablemfadevice.html](http://docs.aws.amazon.com/IAM/latest/CLIReference/userenablemfadevice.html) [aws iam enable\-mfa\-device](http://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](http://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) action\. 
+If you want to enable the device from the command line, use [https://docs.aws.amazon.com/cli/latest/reference/iam/userenablemfadevice.html](https://docs.aws.amazon.com/cli/latest/reference/iam/userenablemfadevice.html) [https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) operation\. 
 
 **Topics**
-+ [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user)
++ [Permissions Required](#enable-hw-mfa-for-iam-user-permissions-required)
++ [Enable a Hardware MFA Device for Your Own IAM User \(Console\)](#enable-hw-mfa-for-own-iam-user)
++ [Enable a Hardware MFA Device for Another IAM User \(Console\)](#enable-hw-mfa-for-iam-user)
 + [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root)
 + [Replace or "Rotate" a Physical MFA Device](#replace-phys-mfa)
 
-## Enable a Hardware MFA Device for an IAM User \(Console\)<a name="enable-hw-mfa-for-iam-user"></a>
+## Permissions Required<a name="enable-hw-mfa-for-iam-user-permissions-required"></a>
 
- You can enable a hardware MFA device from the AWS Management Console\.
+To manage a hardware MFA device for your own IAM user while protecting sensitive MFA\-related actions, you must have the permissions from the following policy:
 
-**To enable a hardware MFA device for an IAM user \(console\)**
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowManageOwnUserMFA",
+            "Effect": "Allow",
+            "Action": [
+                "iam:DeactivateMFADevice",
+                "iam:EnableMFADevice",
+                "iam:GetUser",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Sid": "DenyAllExceptListedIfNoMFA",
+            "Effect": "Deny",
+            "NotAction": [
+                "iam:EnableMFADevice",
+                "iam:GetUser",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}",
+            "Condition": {
+                "BoolIfExists": {
+                    "aws:MultiFactorAuthPresent": "false"
+                }
+            }
+        }
+    ]
+}
+```
+
+## Enable a Hardware MFA Device for Your Own IAM User \(Console\)<a name="enable-hw-mfa-for-own-iam-user"></a>
+
+ You can enable your own hardware MFA device from the AWS Management Console\.
+
+**Note**  
+Before you can enable a hardware MFA device, you must have physical access to the device\.
+
+**To enable a hardware MFA device for your own IAM user \(console\)**
+
+1. Use your AWS account ID or account alias, your IAM user name, and your password to sign in to the [IAM console](https://console.aws.amazon.com/iam)\.
+**Note**  
+For your convenience, the AWS sign\-in page uses a browser cookie to remember your IAM user name and account information\. If you previously signed in as a different user, choose **Sign in to a different account** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account ID or account alias to be redirected to the IAM user sign\-in page for your account\.
+
+   To get your AWS account ID, contact your administrator\.
+
+1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
+![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
+
+1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication** section, choose **Manage MFA device**\.
+
+1. In the **Manage MFA device** wizard, choose **Hardware MFA device** and then choose **Continue**\.
+
+1. Type the device serial number\. The serial number is usually on the back of the device\.
+
+1. In the **MFA code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
+![\[IAM Dashboard, MFA Device\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
+
+1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **MFA code 2** box\. You might need to press the button on the front of the device again to display the second number\.
+
+1. Choose **Assign MFA**\.
+**Important**  
+Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
+
+The device is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md)\.
+
+## Enable a Hardware MFA Device for Another IAM User \(Console\)<a name="enable-hw-mfa-for-iam-user"></a>
+
+ You can enable a hardware MFA device for another IAM user from the AWS Management Console\.
+
+**To enable a hardware MFA device for another IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security Credentials** tab\.
+1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security credentials** tab\.
 
-1. Next to **Assigned MFA device**, choose the pencil icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/pencil_edit_icon.png)\)\.
+1. Next to **Assigned MFA device**, choose **Manage**\.
 
-1. In the **Manage MFA Device** wizard, choose **A hardware MFA device** and then choose **Next Step**\.
+1. In the **Manage MFA device** wizard, choose **Hardware MFA device** and then choose **Continue**\.
 
 1. Type the device serial number\. The serial number is usually on the back of the device\.
 
-1. In the **Authentication Code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
+1. In the **MFA code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
 ![\[IAM Dashboard, MFA Device\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
 
-1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **Authentication Code 2** box\. You might need to press the button on the front of the device again to display the second number\.
+1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **MFA code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 
-1. Choose **Next Step**\.
+1. Choose **Assign MFA**\.
 **Important**  
 Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
@@ -43,36 +124,36 @@ The device is ready for use with AWS\. For information about using MFA with the 
 
 ## Enable a Hardware MFA Device for the AWS Account Root User \(Console\)<a name="enable-hw-mfa-for-root"></a>
 
-You can use IAM in the AWS Management Console to configure and enable a hardware MFA device for your root user\. To enable MFA devices for the AWS account, you must be signed in to AWS using your root user credentials\. You cannot enable an MFA device for the AWS account root user with the AWS CLI, AWS API, Tools for Windows PowerShell, or any other command\-line tool\.
+You can configure and enable a virtual MFA device for your root user from the AWS Management Console only, not from the AWS CLI or AWS API\.
 
-If your MFA device is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. Before you enable MFA for your root user, review your account settings and contact information to make sure that you have access to the email and phone number\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
+If your MFA device is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. If you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. Before you enable MFA for your root user, review your account settings and contact information to make sure that you have access to the email and phone number\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
 
 **Note**  
-If you are using an AWS account created after September 14, 2017, you might see differences in the following console pages: **Sign in with authentication device** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.<a name="enable_physical_root"></a>
+You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.<a name="enable_physical_root"></a>
 
 **To enable the MFA device for your root user \(console\)**
 
-1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-**Important**  
-To manage MFA devices for the AWS account, you must use your root user credentials to sign in to AWS\. You cannot manage MFA devices for the root user while signed in with other credentials\.
+1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the AWS account root user\.
+**Note**  
+If you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials, your browser might remember this preference and open your account\-specific sign\-in page\. You cannot use the IAM user sign\-in page to sign in with your AWS account root user credentials\. If you see the IAM user sign\-in page, choose **Sign\-in using root user credentials** near the bottom of the page to return to the main sign\-in page\. From there, you can enter your AWS account email address and password\.
 
-1. Do one of the following:
-   + **Option 1**: Choose **Dashboard**, and under **Security Status**, expand **Activate MFA on your root account**\. 
-   + **Option 2**: On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
+1. On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.  
 ![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+
+1. Expand the **Multi\-factor authentication \(MFA\)** section\.
 
 1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
 
-1. In the wizard, choose **A hardware MFA device** and then choose **Next Step**\.
+1. In the wizard, choose **Hardware MFA device** and then choose **Continue**\.
 
-1. In the **Serial Number** box, type the serial number that is found on the back of the MFA device\.
+1. In the **Serial number** box, type the serial number that is found on the back of the MFA device\.
 
-1. In the **Authentication Code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
+1. In the **MFA code 1** box, type the six\-digit number displayed by the MFA device\. You might need to press the button on the front of the device to display the number\.  
 ![\[IAM Dashboard, MFA Device\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/MFADevice.png)
 
-1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **Authentication Code 2** box\. You might need to press the button on the front of the device again to display the second number\.
+1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **MFA code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 
-1. Choose **Next Step**\. The MFA device is now associated with the AWS account\.
+1. Choose **Assign MFA**\. The MFA device is now associated with the AWS account\.
 **Important**  
 Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
@@ -82,5 +163,5 @@ Submit your request immediately after generating the authentication codes\. If y
 
 You can have only one MFA device assigned to a user at a time\. If the user loses a device or needs to replace it for any reason, you must first deactivate the old device\. Then you can add the new device for the user\.
 + To deactivate the device currently associated with a user, see [Deactivating MFA Devices](id_credentials_mfa_disable.md)\.
-+ To add a replacement hardware MFA device for an IAM user, follow the steps in the procedure [Enable a Hardware MFA Device for an IAM User \(Console\)](#enable-hw-mfa-for-iam-user) earlier in this topic\.
++ To add a replacement hardware MFA device for an IAM user, follow the steps in the procedure [Enable a Hardware MFA Device for Another IAM User \(Console\)](#enable-hw-mfa-for-iam-user) earlier in this topic\.
 + To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](#enable-hw-mfa-for-root) earlier in this topic\.

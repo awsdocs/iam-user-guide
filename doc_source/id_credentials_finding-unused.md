@@ -24,7 +24,7 @@ You can use the AWS Management Console to view password usage information for yo
 
 1. The **Console last sign\-in** column shows the number of days since the user last signed in to AWS through the console\. You can use this information to find users with passwords who have not signed in for more than a specified period of time\. The column displays **Never** for users with passwords that have never signed in\. **None** indicates users with no passwords\. Passwords that have not been used recently might be good candidates for removal\.
 **Important**  
-Due to a service issue, password last used data does not include password use from May 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT\. This affects [last sign\-in](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html) dates shown in the IAM console and password last used dates in the [IAM credential report](http://docs.aws.amazon.com/IAM/latest/UserGuide/SupportedTypes.xmlid_credentials_getting-report.html), and returned by the [GetUser API operation](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)\. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3rd 2018\. For users that signed in after May 23rd 2018 14:08 PDT, the returned password last used date is accurate\.  
+Due to a service issue, password last used data does not include password use from May 3rd 2018 22:50 PDT to May 23rd 2018 14:08 PDT\. This affects [last sign\-in](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_finding-unused.html) dates shown in the IAM console and password last used dates in the [IAM credential report](https://docs.aws.amazon.com/IAM/latest/UserGuide/SupportedTypes.xmlid_credentials_getting-report.html), and returned by the [GetUser API operation](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html)\. If users signed in during the affected time, the password last used date that is returned is the date the user last signed in before May 3rd 2018\. For users that signed in after May 23rd 2018 14:08 PDT, the returned password last used date is accurate\.  
 If you use password last used information to identify unused credentials for deletion, such as deleting users who did not sign in to AWS in the last 90 days, we recommend that you adjust your evaluation window to include dates after May 23rd 2018\. Alternatively, if your users use access keys to access AWS programmatically you can refer to access key last used information because it is accurate for all dates\. 
 
 **To find unused passwords by downloading the credentials report \(console\)**
@@ -39,11 +39,11 @@ If you use password last used information to identify unused credentials for del
 
 **To find unused passwords \(AWS CLI\)**  
 Run the following command to find unused passwords:
-+ `[aws iam list\-users](http://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns a list of users, each with a `PasswordLastUsed` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
++ `[aws iam list\-users](https://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)` returns a list of users, each with a `PasswordLastUsed` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
 
 **To find unused passwords \(AWS API\)**  
 Call the following operation to find unused passwords:
-+  ` [ListUsers](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html)` returns a collection of users, each of which has a `<PasswordLastUsed>` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
++  ` [ListUsers](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html)` returns a collection of users, each of which has a `<PasswordLastUsed>` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
 
 For information about the commands to download the credentials report, see [Getting Credential Reports \(AWS CLI\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.
 
@@ -73,16 +73,16 @@ You can use the AWS Management Console to view access key usage information for 
 
 1. In the navigation pane, choose **Credential Report**\.
 
-1. Choose **Download Report** to download a comma\-separated value \(CSV\) file named `status_reports_<date>T<time>.csv`\. Columns 11 through 13 contain the last used date, region, and service information for access key 1\. Columns 16 through 18 contain the same information for access key 2\. The value is **N/A** if the user does not have an access key or the user has not used the access key since IAM began tracking access key age on April 22, 2015\.
+1. Choose **Download Report** to download a comma\-separated value \(CSV\) file named `status_reports_<date>T<time>.csv`\. Columns 11 through 13 contain the last used date, Region, and service information for access key 1\. Columns 16 through 18 contain the same information for access key 2\. The value is **N/A** if the user does not have an access key or the user has not used the access key since IAM began tracking access key age on April 22, 2015\.
 
 **To find unused access keys \(AWS CLI\)**  
 Run the following commands to find unused access keys:
-+ `[aws iam list\-access\-keys](http://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)` returns information about the access keys for a user, including the `AccessKeyID`\.
-+ `[aws iam get\-access\-key\-last\-used](http://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)` takes an access key ID and returns output that includes the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If `LastUsedDate` is missing, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
++ `[aws iam list\-access\-keys](https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html)` returns information about the access keys for a user, including the `AccessKeyID`\.
++ `[aws iam get\-access\-key\-last\-used](https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)` takes an access key ID and returns output that includes the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If `LastUsedDate` is missing, then the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
 **To find unused access keys \(AWS API\)**  
 Call the following operations to find unused access keys:
-+ `[ListAccessKeys](http://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)` returns a list of `AccessKeyID` values for access keys that are associated with the specified user\. 
-+ `[GetAccessKeyLastUsed](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)` takes an access key ID and returns a collection of values\. Included are the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the value is missing, then either the user has no access key or the access key has not been used since IAM began tracking access key age on April 22, 2015\.
++ `[ListAccessKeys](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)` returns a list of `AccessKeyID` values for access keys that are associated with the specified user\. 
++ `[GetAccessKeyLastUsed](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)` takes an access key ID and returns a collection of values\. Included are the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the value is missing, then either the user has no access key or the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
 For information about the commands to download the credentials report, see [Getting Credential Reports \(AWS CLI\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.

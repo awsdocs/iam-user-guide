@@ -25,5 +25,5 @@ Because IAM does not automatically update policies that refer to the group as a 
 
 Do any of the following:
 +  [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups** and then select the check box next to the group name\. From the **Group Actions** list at the top of the page, choose **Edit Group Name**\. Type the new group name and then choose **Yes, Edit**\.
-+ AWS CLI: [aws iam update\-group](http://docs.aws.amazon.com/cli/latest/reference/iam/update-group.html) 
-+ AWS API: [UpdateGroup](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html) 
++ AWS CLI: [aws iam update\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/update-group.html) 
++ AWS API: [UpdateGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateGroup.html) 

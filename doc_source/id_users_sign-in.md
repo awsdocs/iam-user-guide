@@ -17,7 +17,7 @@ You can also sign in at the following general sign\-in endpoint and type your ac
 
 For convenience, the AWS sign\-in page uses a browser cookie to remember the IAM user name and account information\. The next time the user goes to any page in the AWS Management Console, the console uses the cookie to redirect the user to the account sign\-in page\.
 
-You have access only to the AWS resources that your administrator specifies in the policy that is attached to your IAM user identity\. To work in the console, you must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example Policies](access_policies_examples.md)\.
+You have access only to the AWS resources that your administrator specifies in the policy that is attached to your IAM user identity\. To work in the console, you must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\.
 
 **Note**  
 If your organization has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console for your account without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\. 
@@ -47,6 +47,6 @@ If you enable CloudTrail to log sign\-in events to your logs, you need to be awa
 
   AWS redirects you to the `ap-southeast-1` regional sign\-in endpoint and results in a regional CloudTrail log event\.
 
-For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](http://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
+For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
 
 If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Managing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.
