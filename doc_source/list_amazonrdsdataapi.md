@@ -5,7 +5,7 @@ Amazon RDS Data API \(service prefix: `rds-data`\) provides the following servic
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/RDS/DataAPIReference)\.
 + View a [list of the API operations available for this service](https://docs.aws.amazon.com/RDS/DataAPIReference/API_Operations.html/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/RDS/DataAPIReference/API_Operations.html/) permission policies\.
++ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonrds.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon RDS Data API](#amazonrdsdataapi-actions-as-permissions)
