@@ -32,7 +32,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   cluster  |  arn:$\{Partition\}:kafka:$\{Region\}:$\{Account\}:kafka/$\{ClusterName\}/$\{UUID\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmanagedstreamingforkafka-aws_ResourceTag___TagKey_)   | 
+|   cluster  |  arn:$\{Partition\}:kafka:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}/$\{UUID\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmanagedstreamingforkafka-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Managed Streaming for Kafka<a name="amazonmanagedstreamingforkafka-policy-keys"></a>
 

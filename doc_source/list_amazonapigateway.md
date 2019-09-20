@@ -27,6 +27,7 @@ For details about the columns in the following table, see [The Actions Table](re
 | --- | --- | --- | --- | --- | --- | 
 |   [ InvalidateCache ](https://docs.aws.amazon.com/apigateway/api-reference/api-gateway-caching.html)  | Used to invalidate API cache upon a client request | Write |   [ execute\-api\-general\* ](#amazonapigateway-execute-api-general)   |  |  | 
 |   [ Invoke ](https://docs.aws.amazon.com/apigateway/api-reference/how-to-call-api.html)  | Used to invoke an API upon a client request | Write |   [ execute\-api\-general\* ](#amazonapigateway-execute-api-general)   |  |  | 
+|   [ ManageConnections ](https://docs.aws.amazon.com/apigateway/api-reference/apigateway-websocket-control-access-iam.html)  | ManageConnections controls access to the @connections API | Write |   [ execute\-api\-general\* ](#amazonapigateway-execute-api-general)   |  |  | 
 
 ## Resources Defined by Amazon API Gateway<a name="amazonapigateway-resources-for-iam-policies"></a>
 

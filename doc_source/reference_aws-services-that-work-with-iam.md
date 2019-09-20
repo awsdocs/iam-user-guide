@@ -41,7 +41,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Backup](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [Amazon Elastic Block Store \(Amazon EBS\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using                 .html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Elastic File System \(Amazon EFS\)](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
-|  [Amazon FSx](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [Amazon FSx](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/;using-service-linked-roles.html) | 
 |  [Amazon S3 Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
 |  [AWS Import/Export](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
@@ -60,6 +60,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html)  | Yes | No¹ | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/using-service-linked-roles.html) | 
+|  [Amazon Quantum Ledger Database \(Amazon QLDB\)](https://docs.aws.amazon.com/qldb/latest/developerguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/redshift/latest/mgmt/using-service-linked-roles.html) | 
 |  [Amazon Relational Database Service \(Amazon RDS\)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) | 
 |  [Amazon SimpleDB](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingIAMWithSDB.html)  | Yes | Yes | No | No | Yes | No | 
@@ -201,7 +202,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/index.html?UsingWithIAM.html)   | Yes¹ | No | No | No | Yes | No | 
 |   [AWS Cloud Map](https://docs.aws.amazon.com/cloud-map/latest/dg/auth-and-access-control.html)   | Yes | Yes | No | No | Yes | No | 
 |  [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html)  | Yes | No | No | No | Yes | No | 
-|   [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html)   | Yes | Yes | No | No | Yes | No | 
+|  [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-service-linked-roles.html) | 
 |  [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide//auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Route 53 Resolver](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide//auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Virtual Private Cloud \(Amazon VPC\)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_IAM.html)  | Yes | Yes² | Yes³ | No | Yes | No | 

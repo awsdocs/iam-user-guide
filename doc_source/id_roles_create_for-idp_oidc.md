@@ -21,16 +21,17 @@ Before you can create a role for web identity federation, you must first complet
 
    ```
    {
-         "Version": "2012-10-17",
-         "Statement": [{
-             "Effect": "Allow",
-             "Principal": {"Federated": "cognito-identity.amazonaws.com"},
-             "Action": "sts:AssumeRoleWithWebIdentity",
-             "Condition": {
-           "StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east-2:12345678-abcd-abcd-abcd-123456"},
-           "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "unauthenticated"}
-         }]
-     }
+       "Version": "2012-10-17",
+       "Statement": {
+           "Effect": "Allow",
+           "Principal": {"Federated": "cognito-identity.amazonaws.com"},
+           "Action": "sts:AssumeRoleWithWebIdentity",
+           "Condition": {
+               "StringEquals": {"cognito-identity.amazonaws.com:aud": "us-east-2:12345678-abcd-abcd-abcd-123456"},
+               "ForAnyValue:StringLike": {"cognito-identity.amazonaws.com:amr": "unauthenticated"}
+           }
+       }
+   }
    ```
 
    Replace `us-east-2:12345678-abcd-abcd-abcd-123456` with the identity pool ID that Amazon Cognito assigned to you\.
