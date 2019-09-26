@@ -213,9 +213,9 @@ The `efgh` role must trust the `abcd` instance profile role to assume it\. To do
 
 To understand how roles work with EC2 instances, you need to use the IAM console to create a role, launch an EC2 instance that uses that role, and then examine the running instance\. You can examine the [instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) to see how the role's temporary credentials are made available to an instance\. You can also see how an application that runs on an instance can use the role\. Use the following resources to learn more\. 
 + SDK walkthroughs\. The AWS SDK documentation includes walkthroughs that show an application running on an EC2 instance that uses temporary credentials for roles to read an Amazon S3 bucket\. Each of the following walkthroughs presents similar steps with a different programming language:
-  + [ Using IAM Roles for EC2 Instances with the SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 
-  + [ Using IAM Roles for EC2 Instances with the SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-roles.html) in the *AWS SDK for \.NET Developer Guide*
-  + [ Using IAM Roles for EC2 Instances with the SDK for Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/developer-guide/ruby-dg-roles.html) in the *AWS SDK for Ruby Developer Guide*
+  + [Using IAM Roles for EC2 Instances with the SDK for Java](https://docs.aws.amazon.com/en_pv/sdk-for-java/v2/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 
+  + [Using IAM Roles for EC2 Instances with the SDK for \.NET](https://docs.aws.amazon.com/en_pv/sdk-for-net/v3/developer-guide/net-dg-hosm.html) in the *AWS SDK for \.NET Developer Guide*
+  + [Using IAM Roles for EC2 Instances with the SDK for Ruby](https://docs.aws.amazon.com/en_pv/sdk-for-ruby/v3/developer-guide/setup-config.html) in the *AWS SDK for Ruby Developer Guide*
 
     The walkthroughs provide complete step\-by\-step instructions for creating and compiling the example program, creating the role, launching the instance, connecting to the instance, deploying the example program, and testing it\.
 
