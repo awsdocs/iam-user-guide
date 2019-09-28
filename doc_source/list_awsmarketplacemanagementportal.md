@@ -4,8 +4,8 @@ AWS Marketplace Management Portal \(service prefix: `aws-marketplace-management`
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/marketplaceentitlement/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace Management Portal](#awsmarketplacemanagementportal-actions-as-permissions)
@@ -33,7 +33,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Marketplace Management Portal<a name="awsmarketplacemanagementportal-resources-for-iam-policies"></a>
 
-AWS Marketplace Management Portal has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace Management Portal does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Marketplace Management Portal, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Marketplace Management Portal<a name="awsmarketplacemanagementportal-policy-keys"></a>
 

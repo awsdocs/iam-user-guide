@@ -4,8 +4,8 @@ AWS Well\-Architected Tool \(service prefix: `wellarchitected`\) provides the fo
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/wellarchitected/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/wellarchitected/latest/userguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/wellarchitected/latest/userguide/iam-auth-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/wellarchitected/latest/userguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/wellarchitected/latest/userguide/iam-auth-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Well\-Architected Tool](#awswell-architectedtool-actions-as-permissions)

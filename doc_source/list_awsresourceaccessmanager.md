@@ -3,9 +3,9 @@
 AWS Resource Access Manager \(service prefix: `ram`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/ram/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/ram/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/ram/latest/userguide/control-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/ram/latest/userguide/what-is-resource-access-manager.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/ram/latest/APIReference/API_Operations.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/ram/latest/userguide/control-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Resource Access Manager](#awsresourceaccessmanager-actions-as-permissions)

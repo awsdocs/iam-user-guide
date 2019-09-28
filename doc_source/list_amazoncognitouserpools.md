@@ -4,8 +4,8 @@ Amazon Cognito User Pools \(service prefix: `cognito-idp`\) provides the followi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/cognito/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cognito User Pools](#amazoncognitouserpools-actions-as-permissions)

@@ -3,7 +3,7 @@
 Amazon Data Lifecycle Manager \(service prefix: `dlm`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/dlm/latest/APIReference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/dlm/latest/APIReference/)\.
 
 **Topics**
 + [Actions Defined by Amazon Data Lifecycle Manager](#amazondatalifecyclemanager-actions-as-permissions)

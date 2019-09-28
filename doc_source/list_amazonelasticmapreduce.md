@@ -3,9 +3,9 @@
 Amazon Elastic MapReduce \(service prefix: `elasticmapreduce`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/emr/latest/ManagementGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/emr/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/emr/latest/APIReference/Welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic MapReduce](#amazonelasticmapreduce-actions-as-permissions)

@@ -4,8 +4,8 @@ AWS Marketplace Procurement Systems Integration \(service prefix: `aws-marketpla
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/buyerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/buyerguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/buyerguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-systems-integration.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace Procurement Systems Integration](#awsmarketplaceprocurementsystemsintegration-actions-as-permissions)
@@ -30,7 +30,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Marketplace Procurement Systems Integration<a name="awsmarketplaceprocurementsystemsintegration-resources-for-iam-policies"></a>
 
-AWS Marketplace Procurement Systems Integration has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace Procurement Systems Integration does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Marketplace Procurement Systems Integration, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Marketplace Procurement Systems Integration<a name="awsmarketplaceprocurementsystemsintegration-policy-keys"></a>
 

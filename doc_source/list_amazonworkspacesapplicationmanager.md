@@ -4,8 +4,8 @@ Amazon WorkSpaces Application Manager \(service prefix: `wam`\) provides the fol
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/wam/latest/adminguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/wam/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/wam/latest/adminguide/access_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/wam/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/wam/latest/adminguide/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon WorkSpaces Application Manager](#amazonworkspacesapplicationmanager-actions-as-permissions)
@@ -29,7 +29,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon WorkSpaces Application Manager<a name="amazonworkspacesapplicationmanager-resources-for-iam-policies"></a>
 
-Amazon WorkSpaces Application Manager has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon WorkSpaces Application Manager does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon WorkSpaces Application Manager, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon WorkSpaces Application Manager<a name="amazonworkspacesapplicationmanager-policy-keys"></a>
 

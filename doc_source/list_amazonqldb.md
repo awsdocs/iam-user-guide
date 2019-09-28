@@ -3,9 +3,9 @@
 Amazon QLDB \(service prefix: `qldb`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/qldb/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/qldb/latest/developerguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/qldb/latest/developerguide/security-iam.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/qldb/latest/developerguide/index.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/qldb/latest/developerguide/api-reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/qldb/latest/developerguide/security-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon QLDB](#amazonqldb-actions-as-permissions)

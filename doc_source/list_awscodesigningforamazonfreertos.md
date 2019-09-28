@@ -4,7 +4,7 @@ AWS Code Signing for Amazon FreeRTOS \(service prefix: `signer`\) provides the f
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/signer/latest/api/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/signer/latest/api/API_Operations.html)\.
 
 **Topics**
 + [Actions Defined by AWS Code Signing for Amazon FreeRTOS](#awscodesigningforamazonfreertos-actions-as-permissions)

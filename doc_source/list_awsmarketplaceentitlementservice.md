@@ -24,7 +24,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Marketplace Entitlement Service<a name="awsmarketplaceentitlementservice-resources-for-iam-policies"></a>
 
-AWS Marketplace Entitlement Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace Entitlement Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Marketplace Entitlement Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Marketplace Entitlement Service<a name="awsmarketplaceentitlementservice-policy-keys"></a>
 

@@ -4,8 +4,8 @@ Amazon Elastic Container Service \(service prefix: `ecs`\) provides the followin
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/IAM_policies.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic Container Service](#amazonelasticcontainerservice-actions-as-permissions)

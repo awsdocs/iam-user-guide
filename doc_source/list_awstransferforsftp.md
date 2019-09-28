@@ -4,7 +4,7 @@ AWS Transfer for SFTP \(service prefix: `transfer`\) provides the following serv
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/transfer/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/transfer/latest/userguide/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/transfer/latest/userguide/API_Reference.html)\.
 
 **Topics**
 + [Actions Defined by AWS Transfer for SFTP](#awstransferforsftp-actions-as-permissions)

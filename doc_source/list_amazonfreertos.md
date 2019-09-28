@@ -4,8 +4,8 @@ Amazon FreeRTOS \(service prefix: `freertos`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/freertos/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/freertos/latest/userguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/freertos/latest/userguide/) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/freertos/latest/userguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/freertos/latest/userguide/) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon FreeRTOS](#amazonfreertos-actions-as-permissions)

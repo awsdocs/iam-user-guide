@@ -4,8 +4,8 @@ AWS Artifact \(service prefix: `artifact`\) provides the following service\-spec
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/artifact/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/artifact/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/artifact/latest/ug/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html#create-iam-policy) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Artifact](#awsartifact-actions-as-permissions)

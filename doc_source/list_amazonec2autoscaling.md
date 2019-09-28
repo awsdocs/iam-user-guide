@@ -4,8 +4,8 @@ Amazon EC2 Auto Scaling \(service prefix: `autoscaling`\) provides the following
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/autoscaling/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AutoScaling/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AutoScaling/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/latest/userguide/IAM.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon EC2 Auto Scaling](#amazonec2autoscaling-actions-as-permissions)

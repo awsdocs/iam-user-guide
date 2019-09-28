@@ -3,9 +3,9 @@
 Amazon Cognito Sync \(service prefix: `cognito-sync`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/cognito/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cognitosync/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sync.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/cognitosync/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html#amazon-cognito-amazon-resource-names) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cognito Sync](#amazoncognitosync-actions-as-permissions)

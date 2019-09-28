@@ -4,8 +4,8 @@ Amazon Route53 Domains \(service prefix: `route53domains`\) provides the followi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/Route53/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/Route53/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Route53 Domains](#amazonroute53domains-actions-as-permissions)
@@ -51,7 +51,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Route53 Domains<a name="amazonroute53domains-resources-for-iam-policies"></a>
 
-Amazon Route53 Domains has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Route53 Domains does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Route53 Domains, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Route53 Domains<a name="amazonroute53domains-policy-keys"></a>
 

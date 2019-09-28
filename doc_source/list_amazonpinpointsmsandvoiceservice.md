@@ -3,9 +3,9 @@
 Amazon Pinpoint SMS and Voice Service \(service prefix: `sms-voice`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/pinpoint/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/pinpoint/latest/developerguide)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/pinpoint-sms-voice/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html#permissions-actions-apiactions) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Pinpoint SMS and Voice Service](#amazonpinpointsmsandvoiceservice-actions-as-permissions)
@@ -36,7 +36,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Pinpoint SMS and Voice Service<a name="amazonpinpointsmsandvoiceservice-resources-for-iam-policies"></a>
 
-Amazon Pinpoint SMS and Voice Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Pinpoint SMS and Voice Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Pinpoint SMS and Voice Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Pinpoint SMS and Voice Service<a name="amazonpinpointsmsandvoiceservice-policy-keys"></a>
 

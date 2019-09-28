@@ -1,6 +1,10 @@
 # IAM JSON Policy Elements: Condition Operators<a name="reference_policies_elements_condition_operators"></a>
 
-Condition operators are the "verbs" of conditions and specify the type of comparison that IAM performs\. The condition operators can be grouped into the following categories:
+Use condition operators in the `Condition` element to match the condition key and value in the policy against values in the request context\. For more information about the `Condition` element, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
+
+The condition operator that you can use in a policy depends on the condition key you choose\. You can choose a global condition key or a service\-specific condition key\. To learn which condition operator you can use for a global condition key, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\. To learn which condition operator you can use for a service\-specific condition key, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) and choose the service that you want to view\.
+
+The condition operators can be grouped into the following categories:
 + [String](#Conditions_String)
 + [Numeric](#Conditions_Numeric)
 + [Date and time](#Conditions_Date)

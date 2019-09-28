@@ -4,8 +4,8 @@ AWS Health APIs and Notifications \(service prefix: `health`\) provides the foll
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/health/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/health/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/health/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Health APIs and Notifications](#awshealthapisandnotifications-actions-as-permissions)

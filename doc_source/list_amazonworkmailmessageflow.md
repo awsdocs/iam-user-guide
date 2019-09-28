@@ -3,9 +3,9 @@
 Amazon WorkMail Message Flow \(service prefix: `workmailmessageflow`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/workmail/latest/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/workmail/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/workmail/latest/adminguide/lambda-content.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/workmail/latest/adminguide/lambda-content.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/workmail/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/workmail/latest/adminguide/lambda-content.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon WorkMail Message Flow](#amazonworkmailmessageflow-actions-as-permissions)

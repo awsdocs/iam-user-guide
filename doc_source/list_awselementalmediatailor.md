@@ -4,8 +4,8 @@ AWS Elemental MediaTailor \(service prefix: `mediatailor`\) provides the followi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/mediatailor/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mediatailor/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up-non-admin-policies.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/mediatailor/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up-non-admin-policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaTailor](#awselementalmediatailor-actions-as-permissions)

@@ -4,8 +4,8 @@ AWS Cost and Usage Report \(service prefix: `cur`\) provides the following servi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/api-reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Cost and Usage Report](#awscostandusagereport-actions-as-permissions)

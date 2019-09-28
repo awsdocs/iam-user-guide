@@ -4,8 +4,8 @@ Amazon Simple Workflow Service \(service prefix: `swf`\) provides the following 
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/amazonswf/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/amazonswf/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/amazonswf/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Simple Workflow Service](#amazonsimpleworkflowservice-actions-as-permissions)

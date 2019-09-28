@@ -4,8 +4,8 @@ Amazon ElastiCache \(service prefix: `elasticache`\) provides the following serv
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon ElastiCache](#amazonelasticache-actions-as-permissions)
@@ -20,6 +20,7 @@ The **Resource** column indicates whether each action supports resource\-level p
 
 For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
+**Note**  
 When you create an ElastiCache policy in IAM you must use the "\*" wildcard character for the Resource block\. For information about using the following ElastiCache API actions in an IAM policy, see [ElastiCache Actions and IAM](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/UsingIAM.html#UsingIAM.ElastiCacheActions) in the *Amazon ElastiCache User Guide*\.
 
 
@@ -72,10 +73,11 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 
 ## Resources Defined by Amazon ElastiCache<a name="amazonelasticache-resources-for-iam-policies"></a>
 
-Amazon ElastiCache has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon ElastiCache does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon ElastiCache, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon ElastiCache<a name="amazonelasticache-policy-keys"></a>
 
 ElastiCache has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
+**Note**  
 For information about conditions in an IAM policy to control access to ElastiCache, see [ElastiCache Keys](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/UsingIAM.html#UsingIAM.Keys) in the *Amazon ElastiCache User Guide*\.

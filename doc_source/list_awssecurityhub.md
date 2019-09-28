@@ -4,8 +4,8 @@ AWS Security Hub \(service prefix: `securityhub`\) provides the following servic
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/securityhub/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/securityhub/1.0/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/securityhub/1.0/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Security Hub](#awssecurityhub-actions-as-permissions)

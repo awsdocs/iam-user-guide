@@ -4,8 +4,8 @@ Amazon Lightsail \(service prefix: `lightsail`\) provides the following service\
 
 References:
 + Learn how to [configure this service](https://lightsail.aws.amazon.com/ls/docs/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://lightsail.aws.amazon.com/ls/docs/how-to/article/create-policy-that-grants-access-to-amazon-lightsail) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://lightsail.aws.amazon.com/ls/docs/how-to/article/create-policy-that-grants-access-to-amazon-lightsail) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Lightsail](#amazonlightsail-actions-as-permissions)

@@ -4,8 +4,8 @@ AWS SSO Directory \(service prefix: `sso-directory`\) provides the following ser
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/singlesignon/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS SSO Directory](#awsssodirectory-actions-as-permissions)
@@ -46,7 +46,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS SSO Directory<a name="awsssodirectory-resources-for-iam-policies"></a>
 
-AWS SSO Directory has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS SSO Directory does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS SSO Directory, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS SSO Directory<a name="awsssodirectory-policy-keys"></a>
 

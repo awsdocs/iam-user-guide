@@ -4,8 +4,8 @@ AWS Global Accelerator \(service prefix: `globalaccelerator`\) provides the foll
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/global-accelerator/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/global-accelerator/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/global-accelerator/latest/api/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Global Accelerator](#awsglobalaccelerator-actions-as-permissions)

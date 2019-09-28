@@ -4,8 +4,8 @@ Amazon SNS \(service prefix: `sns`\) provides the following service\-specific re
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/sns/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/sns/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/sns/latest/api/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon SNS](#amazonsns-actions-as-permissions)

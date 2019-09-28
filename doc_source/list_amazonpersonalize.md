@@ -4,7 +4,7 @@ Amazon Personalize \(service prefix: `personalize`\) provides the following serv
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/personalize/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/personalize/latest/dg/API_Reference.html)\.
 
 **Topics**
 + [Actions Defined by Amazon Personalize](#amazonpersonalize-actions-as-permissions)

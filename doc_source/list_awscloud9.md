@@ -3,9 +3,9 @@
 AWS Cloud9 \(service prefix: `cloud9`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/cloud9/latest/user-guide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cloud9/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cloud9/latest/user-guide/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/cloud9/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/cloud9/latest/user-guide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Cloud9](#awscloud9-actions-as-permissions)

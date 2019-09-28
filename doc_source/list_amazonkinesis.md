@@ -4,8 +4,8 @@ Amazon Kinesis \(service prefix: `kinesis`\) provides the following service\-spe
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/kinesis/latest/dev/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/kinesis/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/kinesis/latest/dev/controlling-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/kinesis/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/kinesis/latest/dev/controlling-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Kinesis](#amazonkinesis-actions-as-permissions)

@@ -4,8 +4,8 @@ Amazon CloudSearch \(service prefix: `cloudsearch`\) provides the following serv
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/access_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon CloudSearch](#amazoncloudsearch-actions-as-permissions)
@@ -60,6 +60,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazoncloudsearch-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
+**Note**  
 For information about using Amazon CloudSearch resource ARNs in an IAM policy, see [Amazon CloudSearch ARNs](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html#cloudsearch-arns) in the *Amazon CloudSearch Developer Guide*\.
 
 

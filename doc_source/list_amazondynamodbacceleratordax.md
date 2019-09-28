@@ -4,8 +4,8 @@ Amazon DynamoDB Accelerator \(DAX\) \(service prefix: `dax`\) provides the follo
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/access_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon DynamoDB Accelerator \(DAX\)](#amazondynamodbacceleratordax-actions-as-permissions)

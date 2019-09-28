@@ -4,8 +4,8 @@ DataSync \(service prefix: `datasync`\) provides the following service\-specific
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/datasync/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/datasync/latest/userguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/datasync/latest/userguide/iam.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/datasync/latest/userguide/API_Reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/datasync/latest/userguide/iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by DataSync](#datasync-actions-as-permissions)

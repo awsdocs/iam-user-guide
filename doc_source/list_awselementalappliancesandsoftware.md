@@ -4,8 +4,8 @@ AWS Elemental Appliances and Software \(service prefix: `aesop`\) provides the f
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/IAM/aesop/UserGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/aesop/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/aesop/UserGuide/assets.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/aesop/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/aesop/UserGuide/assets.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental Appliances and Software](#awselementalappliancesandsoftware-actions-as-permissions)

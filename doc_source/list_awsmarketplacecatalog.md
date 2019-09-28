@@ -4,8 +4,8 @@ AWS Marketplace Catalog \(service prefix: `aws-marketplace`\) provides the follo
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/userguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/userguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace Catalog](#awsmarketplacecatalog-actions-as-permissions)
@@ -34,7 +34,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Marketplace Catalog<a name="awsmarketplacecatalog-resources-for-iam-policies"></a>
 
-AWS Marketplace Catalog has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace Catalog does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Marketplace Catalog, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Marketplace Catalog<a name="awsmarketplacecatalog-policy-keys"></a>
 

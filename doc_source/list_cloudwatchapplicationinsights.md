@@ -4,8 +4,8 @@ CloudWatch Application Insights \(service prefix: `applicationinsights`\) provid
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
-+ View a [list of the API operations available for this service]({DocHomeURL}appinsights/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html) permission policies\.
++ View a list of the [API operations available for this service]({DocHomeURL}appinsights/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html) permission policies\.
 
 **Topics**
 + [Actions Defined by CloudWatch Application Insights](#cloudwatchapplicationinsights-actions-as-permissions)
@@ -47,7 +47,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by CloudWatch Application Insights<a name="cloudwatchapplicationinsights-resources-for-iam-policies"></a>
 
-CloudWatch Application Insights has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+CloudWatch Application Insights does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to CloudWatch Application Insights, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for CloudWatch Application Insights<a name="cloudwatchapplicationinsights-policy-keys"></a>
 

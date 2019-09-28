@@ -4,8 +4,8 @@ Amazon Route 53 Resolver \(service prefix: `route53resolver`\) provides the foll
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/Route53/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/Route53/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Route 53 Resolver](#amazonroute53resolver-actions-as-permissions)

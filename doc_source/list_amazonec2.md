@@ -4,8 +4,8 @@ Amazon EC2 \(service prefix: `ec2`\) provides the following service\-specific re
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon EC2](#amazonec2-actions-as-permissions)

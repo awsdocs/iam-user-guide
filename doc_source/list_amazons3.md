@@ -4,8 +4,8 @@ Amazon S3 \(service prefix: `s3`\) provides the following service\-specific reso
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonS3/latest/dev/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonS3/latest/API/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-overview.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AmazonS3/latest/API/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-overview.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon S3](#amazons3-actions-as-permissions)

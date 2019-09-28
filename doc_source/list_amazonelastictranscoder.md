@@ -4,8 +4,8 @@ Amazon Elastic Transcoder \(service prefix: `elastictranscoder`\) provides the f
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/api-reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic Transcoder](#amazonelastictranscoder-actions-as-permissions)

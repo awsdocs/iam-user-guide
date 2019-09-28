@@ -4,8 +4,8 @@ AWS CloudTrail \(service prefix: `cloudtrail`\) provides the following service\-
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/grant-custom-permissions-for-cloudtrail-users.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/grant-custom-permissions-for-cloudtrail-users.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CloudTrail](#awscloudtrail-actions-as-permissions)
@@ -44,6 +44,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awscloudtrail-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
+**Note**  
 For policies that control access to CloudTrail actions, the Resource element is always set to "\*"\. For information about using resource ARNs in an IAM policy, see [Granting Custom Permissions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/controlling_access_granting_custom_permissions.html) in the *AWS CloudTrail User Guide*\.
 
 

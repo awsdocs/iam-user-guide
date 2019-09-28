@@ -4,8 +4,8 @@ Amazon Machine Learning \(service prefix: `machinelearning`\) provides the follo
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/machine-learning/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/machine-learning/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/machine-learning/latest/dg/controlling-access-to-amazon-ml-resources-by-using-iam.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/machine-learning/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/machine-learning/latest/dg/controlling-access-to-amazon-ml-resources-by-using-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Machine Learning](#amazonmachinelearning-actions-as-permissions)

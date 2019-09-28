@@ -4,8 +4,8 @@ AWS CloudHSM \(service prefix: `cloudhsm`\) provides the following service\-spec
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/cloudhsm/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cloudhsm/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/iam-policy.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/cloudhsm/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/iam-policy.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CloudHSM](#awscloudhsm-actions-as-permissions)
@@ -56,7 +56,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS CloudHSM<a name="awscloudhsm-resources-for-iam-policies"></a>
 
-AWS CloudHSM has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS CloudHSM does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS CloudHSM, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS CloudHSM<a name="awscloudhsm-policy-keys"></a>
 

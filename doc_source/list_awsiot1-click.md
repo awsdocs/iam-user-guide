@@ -4,8 +4,8 @@ AWS IoT 1\-Click \(service prefix: `iot1click`\) provides the following service\
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/iot-1-click/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iot-1-click/latest/developerguide/authentication.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/iot-1-click/latest/projects-apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/iot-1-click/latest/developerguide/authentication.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT 1\-Click](#awsiot1-click-actions-as-permissions)

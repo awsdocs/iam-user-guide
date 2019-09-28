@@ -4,8 +4,8 @@ AWS Key Management Service \(service prefix: `kms`\) provides the following serv
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/kms/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/kms/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/kms/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Key Management Service](#awskeymanagementservice-actions-as-permissions)

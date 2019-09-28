@@ -3,7 +3,7 @@
 Amazon GroundTruth Labeling \(service prefix: `groundtruthlabeling`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/)\.
 
 **Topics**
 + [Actions Defined by Amazon GroundTruth Labeling](#amazongroundtruthlabeling-actions-as-permissions)
@@ -30,7 +30,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon GroundTruth Labeling<a name="amazongroundtruthlabeling-resources-for-iam-policies"></a>
 
-Amazon GroundTruth Labeling has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon GroundTruth Labeling does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon GroundTruth Labeling, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon GroundTruth Labeling<a name="amazongroundtruthlabeling-policy-keys"></a>
 

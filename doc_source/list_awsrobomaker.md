@@ -3,9 +3,9 @@
 AWS RoboMaker \(service prefix: `robomaker`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/robomaker/latest/what-is-robomaker.html)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/robomaker/latest/API_Operations.html)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/robomaker/latest/what-is-robomaker.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/robomaker/latest/what-is-robomaker.html/robomaker/how-it-works.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/robomaker/latest/API_Reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/robomaker/latest/what-is-robomaker.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS RoboMaker](#awsrobomaker-actions-as-permissions)

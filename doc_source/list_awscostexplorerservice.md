@@ -3,9 +3,9 @@
 AWS Cost Explorer Service \(service prefix: `ce`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-explorer-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-explorer-what-is.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Operations_AWS_Cost_Explorer_Service.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-explorer-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Cost Explorer Service](#awscostexplorerservice-actions-as-permissions)
@@ -37,7 +37,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 
-AWS Cost Explorer Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Cost Explorer Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Cost Explorer Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Cost Explorer Service<a name="awscostexplorerservice-policy-keys"></a>
 

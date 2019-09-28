@@ -4,8 +4,8 @@ Amazon Glacier \(service prefix: `glacier`\) provides the following service\-spe
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/amazonglacier/latest/dev/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/amazonglacier/latest/dev/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-api.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Glacier](#amazonglacier-actions-as-permissions)

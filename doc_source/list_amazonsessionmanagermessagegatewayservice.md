@@ -4,7 +4,7 @@ Amazon Session Manager Message Gateway Service \(service prefix: `ssmmessages`\)
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/systems-manager/latest/userguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-iam-create.html) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-configuring-access-iam-create.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Session Manager Message Gateway Service](#amazonsessionmanagermessagegatewayservice-actions-as-permissions)
@@ -31,7 +31,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Session Manager Message Gateway Service<a name="amazonsessionmanagermessagegatewayservice-resources-for-iam-policies"></a>
 
-Amazon Session Manager Message Gateway Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Session Manager Message Gateway Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Session Manager Message Gateway Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Session Manager Message Gateway Service<a name="amazonsessionmanagermessagegatewayservice-policy-keys"></a>
 

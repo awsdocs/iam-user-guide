@@ -4,8 +4,8 @@ AWS Step Functions \(service prefix: `states`\) provides the following service\-
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/step-functions/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/step-functions/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/step-functions/latest/dg/procedure-create-iam-role.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/step-functions/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/step-functions/latest/dg/procedure-create-iam-role.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Step Functions](#awsstepfunctions-actions-as-permissions)

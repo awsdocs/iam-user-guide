@@ -4,8 +4,8 @@ Amazon Storage Gateway \(service prefix: `storagegateway`\) provides the followi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/storagegateway/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/storagegateway/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/storagegateway/latest/userguide/UsingIAMWithStorageGateway.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/storagegateway/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/storagegateway/latest/userguide/UsingIAMWithStorageGateway.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Storage Gateway](#amazonstoragegateway-actions-as-permissions)

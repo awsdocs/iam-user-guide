@@ -4,8 +4,8 @@ AWS IoT SiteWise \(service prefix: `iotsitewise`\) provides the following servic
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT SiteWise](#awsiotsitewise-actions-as-permissions)

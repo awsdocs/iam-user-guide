@@ -4,8 +4,8 @@ Amazon Mobile Analytics \(service prefix: `mobileanalytics`\) provides the follo
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mobileanalytics/latest/ug/access_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/mobileanalytics/latest/ug/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/mobileanalytics/latest/ug/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Mobile Analytics](#amazonmobileanalytics-actions-as-permissions)
@@ -31,7 +31,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Mobile Analytics<a name="amazonmobileanalytics-resources-for-iam-policies"></a>
 
-Amazon Mobile Analytics has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Mobile Analytics does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Mobile Analytics, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Mobile Analytics<a name="amazonmobileanalytics-policy-keys"></a>
 

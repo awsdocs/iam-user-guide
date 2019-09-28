@@ -3,9 +3,9 @@
 Amazon Chime \(service prefix: `chime`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/chime/latest/ag/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/chime/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/chime/latest/ug/what-is-chime.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/chime/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Chime](#amazonchime-actions-as-permissions)
@@ -135,7 +135,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Chime<a name="amazonchime-resources-for-iam-policies"></a>
 
-Amazon Chime has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Chime does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Chime, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Chime<a name="amazonchime-policy-keys"></a>
 

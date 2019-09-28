@@ -4,8 +4,8 @@ Amazon Textract \(service prefix: `textract`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/textract/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/textract/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/textract/latest/dg/authentication-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/textract/latest/dg/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/textract/latest/dg/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Textract](#amazontextract-actions-as-permissions)
@@ -34,7 +34,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Textract<a name="amazontextract-resources-for-iam-policies"></a>
 
-Amazon Textract has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Textract does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Textract, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Textract<a name="amazontextract-policy-keys"></a>
 

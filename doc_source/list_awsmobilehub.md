@@ -4,8 +4,8 @@ AWS Mobile Hub \(service prefix: `mobilehub`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/reference-mobile-hub-iam-auth-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/reference-mobile-hub-iam-auth-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Mobile Hub](#awsmobilehub-actions-as-permissions)

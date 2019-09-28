@@ -4,8 +4,8 @@ AWS Trusted Advisor \(service prefix: `trustedadvisor`\) provides the following 
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#trusted-advisor)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/trustedadvisor/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#trusted-advisoraccess_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/trustedadvisor/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#trusted-advisoraccess_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Trusted Advisor](#awstrustedadvisor-actions-as-permissions)

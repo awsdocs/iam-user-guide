@@ -4,8 +4,8 @@ Amazon WorkSpaces \(service prefix: `workspaces`\) provides the following servic
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/workspaces/latest/adminguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/workspaces/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/workspaces/latest/api/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon WorkSpaces](#amazonworkspaces-actions-as-permissions)

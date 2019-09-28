@@ -3,8 +3,9 @@
 Amazon Elastic Inference \(service prefix: `elastic-inference`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-ei.html#ei-role-policy) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-inference.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AWSEC2/latest/APIReference)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-ei.html#ei-role-policy) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic Inference](#amazonelasticinference-actions-as-permissions)

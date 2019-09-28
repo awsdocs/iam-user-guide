@@ -4,8 +4,8 @@ AWS Marketplace \(service prefix: `aws-marketplace`\) provides the following ser
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/controlling-access/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace](#awsmarketplace-actions-as-permissions)
@@ -31,7 +31,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Marketplace<a name="awsmarketplace-resources-for-iam-policies"></a>
 
-AWS Marketplace has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Marketplace does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Marketplace, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Marketplace<a name="awsmarketplace-policy-keys"></a>
 

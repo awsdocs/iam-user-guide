@@ -3,9 +3,9 @@
 Amazon Cloud Directory \(service prefix: `clouddirectory`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/directoryservice/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_AuthNAccess.html) permission policies\.
++ Learn how to [configure this service](${ConceptsDocHome}directory_amazon_cd.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/directoryservice/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_AuthNAccess.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cloud Directory](#amazonclouddirectory-actions-as-permissions)

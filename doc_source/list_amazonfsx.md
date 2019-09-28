@@ -3,9 +3,9 @@
 Amazon FSx \(service prefix: `fsx`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/fsx/latest/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/fsx/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/fsx/latest/APIReference/welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon FSx](#amazonfsx-actions-as-permissions)

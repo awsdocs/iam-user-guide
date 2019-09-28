@@ -4,7 +4,7 @@ Amazon Managed Streaming for Kafka \(service prefix: `kafka`\) provides the foll
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/msk/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/msk/1.0/apireference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/msk/1.0/apireference/)\.
 
 **Topics**
 + [Actions Defined by Amazon Managed Streaming for Kafka](#amazonmanagedstreamingforkafka-actions-as-permissions)

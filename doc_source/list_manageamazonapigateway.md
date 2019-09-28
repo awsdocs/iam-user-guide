@@ -4,8 +4,8 @@ Manage Amazon API Gateway \(service prefix: `apigateway`\) provides the followin
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/apigateway/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/apigateway/api-reference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/apigateway/api-reference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-control-access-to-api.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Manage Amazon API Gateway](#manageamazonapigateway-actions-as-permissions)

@@ -4,8 +4,8 @@ AWS App Mesh \(service prefix: `appmesh`\) provides the following service\-speci
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/app-mesh/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/app-mesh/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/app-mesh/latest/userguide/IAM_policies.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/app-mesh/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/app-mesh/latest/userguide/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS App Mesh](#awsappmesh-actions-as-permissions)

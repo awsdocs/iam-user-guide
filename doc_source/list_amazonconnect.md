@@ -4,7 +4,7 @@ Amazon Connect \(service prefix: `connect`\) provides the following service\-spe
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/connect/latest/adminguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/connect/latest/adminguide/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/connect/latest/adminguide/)\.
 
 **Topics**
 + [Actions Defined by Amazon Connect](#amazonconnect-actions-as-permissions)

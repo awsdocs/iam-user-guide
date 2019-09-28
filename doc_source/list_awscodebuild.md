@@ -4,8 +4,8 @@ AWS CodeBuild \(service prefix: `codebuild`\) provides the following service\-sp
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/codebuild/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/codebuild/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/codebuild/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CodeBuild](#awscodebuild-actions-as-permissions)

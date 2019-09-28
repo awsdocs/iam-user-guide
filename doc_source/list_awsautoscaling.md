@@ -3,9 +3,9 @@
 AWS Auto Scaling \(service prefix: `autoscaling-plans`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/autoscaling/plans/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/autoscaling/plans/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/plans/userguide/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/autoscaling/plans/APIReference/Welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/plans/userguide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Auto Scaling](#awsautoscaling-actions-as-permissions)
@@ -34,7 +34,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Auto Scaling<a name="awsautoscaling-resources-for-iam-policies"></a>
 
-AWS Auto Scaling has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Auto Scaling does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Auto Scaling, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Auto Scaling<a name="awsautoscaling-policy-keys"></a>
 

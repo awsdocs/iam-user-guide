@@ -4,8 +4,8 @@ AWS Import Export Disk Service \(service prefix: `importexport`\) provides the f
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AWSImportExport/latest/DG/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AWSImportExport/latest/DG/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AWSImportExport/latest/DG/api-reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Import Export Disk Service](#awsimportexportdiskservice-actions-as-permissions)
@@ -34,7 +34,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Import Export Disk Service<a name="awsimportexportdiskservice-resources-for-iam-policies"></a>
 
-AWS Import Export Disk Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Import Export Disk Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Import Export Disk Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Import Export Disk Service<a name="awsimportexportdiskservice-policy-keys"></a>
 

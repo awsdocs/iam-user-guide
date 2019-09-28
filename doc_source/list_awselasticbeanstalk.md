@@ -4,8 +4,8 @@ AWS Elastic Beanstalk \(service prefix: `elasticbeanstalk`\) provides the follow
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/access_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elastic Beanstalk](#awselasticbeanstalk-actions-as-permissions)

@@ -4,8 +4,8 @@ Amazon EventBridge \(service prefix: `events`\) provides the following service\-
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/eventbridge/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/eventbridge/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/eventbridge/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon EventBridge](#amazoneventbridge-actions-as-permissions)

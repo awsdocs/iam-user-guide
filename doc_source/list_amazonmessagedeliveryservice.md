@@ -29,7 +29,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Message Delivery Service<a name="amazonmessagedeliveryservice-resources-for-iam-policies"></a>
 
-Amazon Message Delivery Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Message Delivery Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Message Delivery Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Message Delivery Service<a name="amazonmessagedeliveryservice-policy-keys"></a>
 

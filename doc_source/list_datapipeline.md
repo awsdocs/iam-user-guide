@@ -4,8 +4,8 @@ Data Pipeline \(service prefix: `datapipeline`\) provides the following service\
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/datapipeline/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/datapipeline/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Data Pipeline](#datapipeline-actions-as-permissions)
@@ -49,7 +49,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Data Pipeline<a name="datapipeline-resources-for-iam-policies"></a>
 
-Data Pipeline has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Data Pipeline does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Data Pipeline, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Data Pipeline<a name="datapipeline-policy-keys"></a>
 

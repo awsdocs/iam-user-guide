@@ -4,8 +4,8 @@ AWS Migration Hub \(service prefix: `mgh`\) provides the following service\-spec
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/migrationhub/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/migrationhub/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/migrationhub/latest/ug/access_permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/migrationhub/latest/ug/api-reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/migrationhub/latest/ug/access_permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Migration Hub](#awsmigrationhub-actions-as-permissions)

@@ -4,8 +4,8 @@ Amazon Managed Blockchain \(service prefix: `managedblockchain`\) provides the f
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/managed-blockchain/latest/managementguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/managed-blockchain/latest/managementguide/) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/managed-blockchain/latest/managementguide/) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Managed Blockchain](#amazonmanagedblockchain-actions-as-permissions)

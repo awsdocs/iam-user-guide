@@ -4,8 +4,8 @@ Amazon DynamoDB \(service prefix: `dynamodb`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/authentication-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon DynamoDB](#amazondynamodb-actions-as-permissions)
@@ -45,6 +45,7 @@ Amazon DynamoDB defines the following condition keys that can be used in the `Co
 
 To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
+**Note**  
 For information about how to use context keys to refine DynamoDB access using an IAM policy, see [Using IAM Policy Conditions for Fine\-Grained Access Control](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html) in the *Amazon DynamoDB Developer Guide*\.
 
 

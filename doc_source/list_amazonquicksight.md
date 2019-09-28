@@ -3,9 +3,9 @@
 Amazon QuickSight \(service prefix: `quicksight`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/quicksight/latest/user/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/quicksight/latest/user/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/quicksight/latest/user/working-with-iam.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/quicksight/latest/user/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/quicksight/latest/user/working-with-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon QuickSight](#amazonquicksight-actions-as-permissions)

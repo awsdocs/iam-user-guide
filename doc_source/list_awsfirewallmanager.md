@@ -3,7 +3,7 @@
 AWS Firewall Manager \(service prefix: `fms`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/)\.
 
 **Topics**
 + [Actions Defined by AWS Firewall Manager](#awsfirewallmanager-actions-as-permissions)

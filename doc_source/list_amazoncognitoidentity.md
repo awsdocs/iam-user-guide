@@ -4,8 +4,8 @@ Amazon Cognito Identity \(service prefix: `cognito-identity`\) provides the foll
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/cognito/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Cognito Identity](#amazoncognitoidentity-actions-as-permissions)

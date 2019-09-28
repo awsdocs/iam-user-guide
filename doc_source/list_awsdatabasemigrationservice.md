@@ -4,8 +4,8 @@ AWS Database Migration Service \(service prefix: `dms`\) provides the following 
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/dms/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/dms/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/dms/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Database Migration Service](#awsdatabasemigrationservice-actions-as-permissions)

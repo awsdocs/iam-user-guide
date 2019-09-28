@@ -4,8 +4,8 @@ AWS Direct Connect \(service prefix: `directconnect`\) provides the following se
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/directconnect/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/directconnect/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Direct Connect](#awsdirectconnect-actions-as-permissions)

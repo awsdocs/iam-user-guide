@@ -4,8 +4,8 @@ Amazon Rekognition \(service prefix: `rekognition`\) provides the following serv
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/rekognition/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/rekognition/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/rekognition/latest/dg/API_Reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Rekognition](#amazonrekognition-actions-as-permissions)

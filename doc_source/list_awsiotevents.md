@@ -4,8 +4,8 @@ AWS IoT Events \(service prefix: `iotevents`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/iotevents/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/iotevents/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/iotevents/latest/developerguide/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/iotevents/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/iotevents/latest/developerguide/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT Events](#awsiotevents-actions-as-permissions)

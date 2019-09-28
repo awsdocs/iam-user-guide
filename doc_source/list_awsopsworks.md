@@ -4,8 +4,8 @@ AWS OpsWorks \(service prefix: `opsworks`\) provides the following service\-spec
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/opsworks/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/opsworks/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/opsworks/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS OpsWorks](#awsopsworks-actions-as-permissions)

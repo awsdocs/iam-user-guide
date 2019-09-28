@@ -4,8 +4,8 @@ Amazon Kinesis Analytics \(service prefix: `kinesisanalytics`\) provides the fol
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_Reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Kinesis Analytics](#amazonkinesisanalytics-actions-as-permissions)
@@ -46,6 +46,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  | Filters actions based on the allowed set of values for each of the tags | String | 
-|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value assoicated with the resource | String | 
-|   aws:TagKeys  | Filters actions based on the presence of mandatory tag keys in the request | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tag keys in the request | String | 

@@ -4,8 +4,8 @@ Amazon Elastic File System \(service prefix: `elasticfilesystem`\) provides the 
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/efs/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/efs/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/efs/latest/ug/api-reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Elastic File System](#amazonelasticfilesystem-actions-as-permissions)

@@ -1,6 +1,12 @@
 # IAM JSON Policy Elements: Condition<a name="reference_policies_elements_condition"></a>
 
-The `Condition` element \(or `Condition` *block*\) lets you specify conditions for when a policy is in effect\. The `Condition` element is optional\. In the `Condition` element, you build expressions in which you use [condition operators](reference_policies_elements_condition_operators.md) \(equal, less than, etc\.\) to match the condition in the policy against values in the request\. For example, you can use the date or the IP address of the requester in the condition value\. Some services let you specify additional values in conditions; for example, Amazon EC2 lets you write a condition using the `ec2:InstanceType` key, which is unique to that service\.
+The `Condition` element \(or `Condition` *block*\) lets you specify conditions for when a policy is in effect\. The `Condition` element is optional\. In the `Condition` element, you build expressions in which you use [condition operators](reference_policies_elements_condition_operators.md) \(equal, less than, etc\.\) to match the condition keys and values in the policy against keys and values in the request context\. To learn more about the request context, see [Request](intro-structure.md#intro-structure-request)\.
+
+```
+"Condition" : { "{condition-operator}" : { "{condition-key}" : "{condition-value}" }}
+```
+
+The condition key that you specify can be a [global condition key](reference_policies_condition-keys.md) or a service\-specific condition key\. Global condition keys have the `aws:` prefix\. Service\-specific condition keys have the service's prefix\. For example, Amazon EC2 lets you write a condition using the `ec2:InstanceType` key, which is unique to that service\. To view service\-specific IAM condition keys with the `iam:` prefix, see [IAM and AWS STS Condition Context Keys](reference_policies_iam-condition-keys.md)\.
 
 Condition key *names* are not case\-sensitive\. For example, including the `aws:SourceIP` condition key is equivalent to testing for `AWS:SourceIp`\. Case\-sensitivity of condition key *values* depends on the [condition operator](reference_policies_elements_condition_operators.md) that you use\. For example, the following condition includes the `StringEquals` operator to ensure that only requests made by `johndoe` will match\. Users named `JohnDoe` are denied access\.
 

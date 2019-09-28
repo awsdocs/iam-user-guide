@@ -3,9 +3,9 @@
 Amazon Resource Group Tagging API \(service prefix: `tag`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/tag-editor.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Resource Group Tagging API](#amazonresourcegrouptaggingapi-actions-as-permissions)
@@ -33,7 +33,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Resource Group Tagging API<a name="amazonresourcegrouptaggingapi-resources-for-iam-policies"></a>
 
-Amazon Resource Group Tagging API has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Resource Group Tagging API does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Resource Group Tagging API, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Resource Group Tagging API<a name="amazonresourcegrouptaggingapi-policy-keys"></a>
 

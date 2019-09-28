@@ -3,9 +3,9 @@
 AWS Cloud Map \(service prefix: `servicediscovery`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com//cloud-map/latest/dg/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com//cloud-map/latest/api/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com//cloud-map/latest/dg/auth-and-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com//cloud-map/latest/dg/what-is-cloud-map.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com//cloud-map/latest/api/Welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com//cloud-map/latest/dg/auth-and-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Cloud Map](#awscloudmap-actions-as-permissions)

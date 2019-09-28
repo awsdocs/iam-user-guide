@@ -4,8 +4,8 @@ AWS CloudFormation \(service prefix: `cloudformation`\) provides the following s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CloudFormation](#awscloudformation-actions-as-permissions)
@@ -52,6 +52,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:ResourceTag/$\{TagKey\} ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  |  | String | 
 |   [ aws:TagKeys ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  |  | String | 
 |   [ cloudformation:ChangeSetName ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | An AWS CloudFormation change set name\. Use to control which change sets IAM users can execute or delete\. | String | 
+|   [ cloudformation:ImportResourceTypes ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | The template resource types, such as <code>AWS::EC2::Instance</code>\. Use to control which resource types IAM users can work with when they want to import a resource in a stack | String | 
 |   [ cloudformation:ResourceTypes ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | The template resource types, such as <code>AWS::EC2::Instance</code>\. Use to control which resource types IAM users can work with when they create or update a stack | String | 
 |   [ cloudformation:RoleArn ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | The ARN of an IAM service role\. Use to control which service role IAM users can use to work with stacks or change sets\. | ARN | 
 |   [ cloudformation:StackPolicyUrl ](${DocumenationLink}using-iam-template.html#using-iam-template-conditions)  | An Amazon S3 stack policy URL\. Use to control which stack policies IAM users can associate with a stack during a create or update stack action\. | String | 

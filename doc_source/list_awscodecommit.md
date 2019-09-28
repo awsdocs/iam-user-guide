@@ -3,9 +3,9 @@
 AWS CodeCommit \(service prefix: `codecommit`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/codecommit/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/codecommit/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/codecommit/latest/APIReference/Welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-permissions-reference.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CodeCommit](#awscodecommit-actions-as-permissions)

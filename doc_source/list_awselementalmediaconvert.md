@@ -4,8 +4,8 @@ AWS Elemental MediaConvert \(service prefix: `mediaconvert`\) provides the follo
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/mediaconvert/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mediaconvert/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mediaconvert/latest/ug/IAM_policies.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/mediaconvert/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/mediaconvert/latest/ug/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaConvert](#awselementalmediaconvert-actions-as-permissions)

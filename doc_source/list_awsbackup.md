@@ -4,8 +4,8 @@ AWS Backup \(service prefix: `backup`\) provides the following service\-specific
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/aws-backup/latest/devguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/aws-backup/latest/devguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html#authentication) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/aws-backup/latest/devguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html#authentication) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Backup](#awsbackup-actions-as-permissions)

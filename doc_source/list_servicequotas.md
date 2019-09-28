@@ -4,8 +4,8 @@ Service Quotas \(service prefix: `servicequotas`\) provides the following servic
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/servicequotas/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/servicequotas/latest/userguide/auth-and-access_determining-access.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/servicequotas/latest/userguide/auth-and-access_determining-access.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Service Quotas](#servicequotas-actions-as-permissions)

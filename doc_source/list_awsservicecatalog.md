@@ -4,8 +4,8 @@ AWS Service Catalog \(service prefix: `servicecatalog`\) provides the following 
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/servicecatalog/latest/dg/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/servicecatalog/latest/dg/API_Reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Service Catalog](#awsservicecatalog-actions-as-permissions)
@@ -128,6 +128,7 @@ AWS Service Catalog defines the following condition keys that can be used in the
 
 To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
+**Note**  
 For example policies that show how these condition keys can be used in an IAM policy, see [Example Access Policies for Provisioned Product Management](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html) in the *AWS Service Catalog Administrator Guide*\.
 
 

@@ -3,8 +3,8 @@
 Amazon Neptune \(service prefix: `neptune-db`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/neptune/latest/userguide/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/neptune/latest/userguide/iam-auth.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/neptune/latest/userguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/neptune/latest/userguide/iam-auth.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Neptune](#amazonneptune-actions-as-permissions)

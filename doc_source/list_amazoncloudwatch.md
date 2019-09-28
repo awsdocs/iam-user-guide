@@ -4,8 +4,8 @@ Amazon CloudWatch \(service prefix: `cloudwatch`\) provides the following servic
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon CloudWatch](#amazoncloudwatch-actions-as-permissions)

@@ -3,9 +3,9 @@
 AWS Elemental MediaLive \(service prefix: `medialive`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com//medialive/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com//medialive/latest/ug/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com//medialive/latest/ug/IAM_policies.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com//medialive/latest/ug/what-is.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com//medialive/latest/ug/welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com//medialive/latest/ug/IAM_policies.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaLive](#awselementalmedialive-actions-as-permissions)

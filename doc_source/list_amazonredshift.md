@@ -4,8 +4,8 @@ Amazon Redshift \(service prefix: `redshift`\) provides the following service\-s
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/redshift/latest/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/redshift/latest/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/redshift/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Redshift](#amazonredshift-actions-as-permissions)

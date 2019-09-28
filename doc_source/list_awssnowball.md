@@ -4,7 +4,7 @@ AWS Snowball \(service prefix: `snowball`\) provides the following service\-spec
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/snowball/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/snowball/latest/api-reference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/snowball/latest/api-reference/)\.
 
 **Topics**
 + [Actions Defined by AWS Snowball](#awssnowball-actions-as-permissions)
@@ -44,7 +44,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by AWS Snowball<a name="awssnowball-resources-for-iam-policies"></a>
 
-AWS Snowball has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+AWS Snowball does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Snowball, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for AWS Snowball<a name="awssnowball-policy-keys"></a>
 

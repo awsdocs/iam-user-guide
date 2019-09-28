@@ -4,8 +4,8 @@ AWS Elemental MediaPackage VOD \(service prefix: `mediapackage-vod`\) provides t
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/mediapackage/latest/ug/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up.html#setting-up-create-iam-user) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up.html#setting-up-create-iam-user) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Elemental MediaPackage VOD](#awselementalmediapackagevod-actions-as-permissions)

@@ -3,7 +3,7 @@
 Amazon Pinpoint Email Service \(service prefix: `ses`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/pinpoint-email/latest/APIReference/)\.
 
 **Topics**
 + [Actions Defined by Amazon Pinpoint Email Service](#amazonpinpointemailservice-actions-as-permissions)

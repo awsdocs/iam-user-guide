@@ -4,7 +4,7 @@ Amazon Elasticsearch Service \(service prefix: `es`\) provides the following ser
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html)\.
 
 **Topics**
 + [Actions Defined by Amazon Elasticsearch Service](#amazonelasticsearchservice-actions-as-permissions)

@@ -4,8 +4,8 @@ Database Query Metadata Service \(service prefix: `dbqms`\) provides the followi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/qldb/latest/developerguide/dbqms-api.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Database Query Metadata Service](#databasequerymetadataservice-actions-as-permissions)
@@ -37,10 +37,11 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Database Query Metadata Service<a name="databasequerymetadataservice-resources-for-iam-policies"></a>
 
-Database Query Metadata Service has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Database Query Metadata Service does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Database Query Metadata Service, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Database Query Metadata Service<a name="databasequerymetadataservice-policy-keys"></a>
 
 DBQMS has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
 
+**Note**  
 $\{ConceptsDocRoot\}

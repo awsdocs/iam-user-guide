@@ -4,8 +4,8 @@ Amazon Macie \(service prefix: `macie`\) provides the following service\-specifi
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com//macie/latest/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com//macie/1.0/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com//macie/latest/userguide/macie-access-control.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com//macie/1.0/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com//macie/latest/userguide/macie-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Macie](#amazonmacie-actions-as-permissions)
@@ -35,7 +35,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Amazon Macie<a name="amazonmacie-resources-for-iam-policies"></a>
 
-Amazon Macie has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Amazon Macie does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Macie, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Amazon Macie<a name="amazonmacie-policy-keys"></a>
 

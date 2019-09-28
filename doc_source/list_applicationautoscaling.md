@@ -4,8 +4,8 @@ Application Auto Scaling \(service prefix: `application-autoscaling`\) provides 
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/autoscaling/application/userguide/)\.
-+ View a [list of the API operations available for this service](https://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
-+ Learn how to protect this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/application/userguide/IAM.html) permission policies\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/autoscaling/application/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/autoscaling/application/userguide/IAM.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Application Auto Scaling](#applicationautoscaling-actions-as-permissions)
@@ -38,7 +38,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 ## Resources Defined by Application Auto Scaling<a name="applicationautoscaling-resources-for-iam-policies"></a>
 
-Application Auto Scaling has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\.
+Application Auto Scaling does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Application Auto Scaling, specify `“Resource”: “*”` in your policy\.
 
 ## Condition Keys for Application Auto Scaling<a name="applicationautoscaling-policy-keys"></a>
 
