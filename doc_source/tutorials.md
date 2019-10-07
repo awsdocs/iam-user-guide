@@ -6,4 +6,5 @@ This section contains walkthroughs that present complete end\-to\-end procedures
 + [Tutorial: Delegate Access to the Billing Console](tutorial_billing.md)
 + [Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](tutorial_cross-account-with-roles.md)
 + [Tutorial: Create and Attach Your First Customer Managed Policy](tutorial_managed-policies.md)
++ [Tutorial: Using Tags for Attribute\-Based Access Control in AWS](tutorial_attribute-based-access-control.md)
 + [Tutorial: Enable Your Users to Configure Their Own Credentials and MFA Settings](tutorial_users-self-manage-mfa-and-creds.md)

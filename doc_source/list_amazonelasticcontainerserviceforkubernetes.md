@@ -22,17 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_CreateCluster.html)  | Creates an Amazon EKS cluster\. | Write |  |  |  | 
-|   [ DeleteCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DeleteCluster.html)  | Deletes an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ DescribeCluster ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeCluster.html)  | Returns descriptive information about an Amazon EKS cluster\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ DescribeUpdate ](https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html)  | Describes a given update for a given Amazon EKS cluster \(in the specified or default region\)\. | Read |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ ListClusters ](https://docs.aws.amazon.com/eks/latest/APIReference/API_ListClusters.html)  | Lists the Amazon EKS clusters in your AWS account \(in the specified or default region\)\. | List |  |  |  | 
-|   [ ListUpdates ](https://docs.aws.amazon.com/eks/latest/APIReference/API_ListUpdates.html)  | Lists the updates for a given Amazon EKS cluster \(in the specified or default region\)\. | List |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ UpdateClusterConfig ](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterConfig.html)  | Update Amazon EKS cluster configurations \(eg: API server endpoint access\)\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
-|   [ UpdateClusterVersion ](https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html)  | Update the Kubernetes version of an Amazon EKS cluster\. | Write |   [ cluster\* ](#amazonelasticcontainerserviceforkubernetes-cluster)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticcontainerserviceforkubernetes.html)
 
 ## Resources Defined by Amazon Elastic Container Service for Kubernetes<a name="amazonelasticcontainerserviceforkubernetes-resources-for-iam-policies"></a>
 
@@ -43,8 +33,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ cluster ](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |  | 
+|   [ cluster ](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Elastic Container Service for Kubernetes<a name="amazonelasticcontainerserviceforkubernetes-policy-keys"></a>
 
-EKS has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Elastic Container Service for Kubernetes defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/eks/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the EKS service\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/eks/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a tag key and value pair\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/eks/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key names present in the request the user makes to the EKS service\. | String | 

@@ -33,19 +33,32 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ Domain ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Domain/$\{Id\}  |  | 
-|   [ Instance ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Instance/$\{Id\}  |  | 
-|   [ InstanceSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\}  |  | 
-|   [ KeyPair ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\}  |  | 
-|   [ StaticIp ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\}  |  | 
-|   [ Disk ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Disk/$\{Id\}  |  | 
-|   [ DiskSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:DiskSnapshot/$\{Id\}  |  | 
-|   [ LoadBalancer ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:LoadBalancer/$\{Id\}  |  | 
+|   [ Domain ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Domain.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Domain/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ Instance ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Instance.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Instance/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ InstanceSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_InstanceSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:InstanceSnapshot/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ KeyPair ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_KeyPair.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:KeyPair/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ StaticIp ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_StaticIp.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:StaticIp/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ Disk ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_Disk.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:Disk/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ DiskSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_DiskSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:DiskSnapshot/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ LoadBalancer ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_LoadBalancer.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:LoadBalancer/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ PeeredVpc ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/PeeredVpc.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:PeeredVpc/$\{Id\}  |  | 
+|   [ LoadBalancerTlsCertificate ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/LoadBalancerTlsCertificate.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:LoadBalancerTlsCertificate/$\{Id\}  |  | 
 |   [ ExportSnapshotRecord ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_ExportSnapshotRecord.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:ExportSnapshotRecord/$\{Id\}  |  | 
 |   [ CloudFormationStackRecord ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CloudFormationStackRecord.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:CloudFormationStackRecord/$\{Id\}  |  | 
-|   [ RelationalDatabase ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabase/$\{Id\}  |  | 
-|   [ RelationalDatabaseSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabaseSnapshot/$\{Id\}  |  | 
+|   [ RelationalDatabase ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabase.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabase/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
+|   [ RelationalDatabaseSnapshot ](https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_RelationalDatabaseSnapshot.html)  |  arn:$\{Partition\}:lightsail:$\{Region\}:$\{Account\}:RelationalDatabaseSnapshot/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonlightsail-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Lightsail<a name="amazonlightsail-policy-keys"></a>
 
-Lightsail has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Lightsail defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

@@ -46,6 +46,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ListProjects ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | List projects | List |  |  |  | 
 |   [ SynchronizeProject ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | Synchronize state of resources into project | Write |   [ project\* ](#awsmobilehub-project)   |  |  | 
 |   [ UpdateProject ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | Update project | Write |   [ project\* ](#awsmobilehub-project)   |  |  | 
+|   [ ValidateProject ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | Validate a mobile hub project\. | Read |  |  |  | 
 |   [ VerifyServiceRole ](https://docs.aws.amazon.com/mobile-hub/latest/developerguide/managed-policies.html)  | Verify AWS Mobile Hub is enabled in the account | Read |  |  |  | 
 
 ## Resources Defined by AWS Mobile Hub<a name="awsmobilehub-resources-for-iam-policies"></a>

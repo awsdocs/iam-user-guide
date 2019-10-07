@@ -1,6 +1,6 @@
 # Tutorial: Delegate Access to the Billing Console<a name="tutorial_billing"></a>
 
-AWS account owners can delegate access to specific IAM users who need to view or manage the AWS Billing and Cost Management data for an AWS account\. The instructions that follow will help you set up a pretested scenario so you can gain hands\-on experience configuring billing permissions, without concern for affecting your main AWS production account\. 
+AWS account owners can delegate access to specific IAM users who need to view or manage the AWS Billing and Cost Management data for an AWS account\. The instructions that follow will help you set up a pretested scenario\. This scenario will help you gain hands\-on experience configuring billing permissions without concern for affecting your main AWS production account\. 
 
 This workflow has four basic steps\. 
 
@@ -51,7 +51,7 @@ If you [create a member account](https://docs.aws.amazon.com/cli/latest/referenc
 
 ## Step 2: Create IAM Policies That Grant Permissions to Billing Data<a name="tutorial-billing-step2"></a>
 
-Next, create custom policies that grant both view and full access permissions to the pages within the Billing and Cost Management console\. For general information about IAM permission policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
+Next, create custom policies that grant both view and full access permissions to the pages within the Billing and Cost Management console\. For general information about IAM permissions policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
 
 **To create IAM policies that grant permissions to billing data**
 
@@ -113,7 +113,7 @@ Now that you have custom billing policies available, you can attach them to thei
 
 ## Step 4: Test Access to the Billing Console<a name="tutorial-billing-step4"></a>
 
-You can test user access in a couple of ways\. For this tutorial, we recommend that you test access by signing in as each of the test users so you can see what your users might experience\. Another \(optional\) way to test user access permissions is to use the [IAM policy simulator](https://policysim.aws.amazon.com/)\. Use the following steps if you want to see another way to view the effective result of these actions\.
+You can test user access in a couple of ways\. For this tutorial, we recommend that you test access by signing in as each of the test users to learn what your users might experience\. Another \(optional\) way to test user access permissions is to use the [IAM policy simulator](https://policysim.aws.amazon.com/)\. Use the following steps if you want to see another way to view the effective result of these actions\.
 
 Select either of the following procedures based on your preferred testing method\. In the first one, you sign in using both test accounts to see the difference between access rights\.
 
@@ -123,7 +123,7 @@ Select either of the following procedures based on your preferred testing method
 **Note**  
 For your convenience, the AWS sign\-in page uses a browser cookie to remember your IAM user name and account information\. If you previously signed in as a different user, choose **Sign in to a different account** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account ID or account alias to be redirected to the IAM user sign\-in page for your account\.
 
-1. Sign\-in with each account using the steps provided below so you can compare the different user experiences\.
+1. Sign in with each account using the steps provided below so you can compare the different user experiences\.
 
    **Full access**
 
@@ -169,4 +169,4 @@ For related information in the *IAM User Guide*, see the following resources:
 
 ## Summary<a name="tutorial-billing-summary"></a>
 
-You’ve now successfully completed all of the steps necessary to delegate user access to the Billing and Cost Management console\. As a result, you've seen firsthand what your users billing console experience will be like and can now proceed to implement this logic in your production environment at your convenience\. 
+You’ve now successfully completed all of the steps necessary to delegate user access to the Billing and Cost Management console\. As a result, you've seen firsthand what your users billing console experience will be like\. You can now proceed to implement this logic in your production environment at your convenience\. 

@@ -6,9 +6,6 @@ Most virtual MFA apps support creating multiple virtual devices, allowing you to
 
 For a list of virtual MFA apps that you can use, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\. Note that AWS requires a virtual MFA app that produces a six\-digit OTP\.
 
-**Important**  
-When you configure a virtual MFA device to work with AWS, we recommend that you save a copy of the QR code or the secret key ***in a secure place***\. That way, if you lose your phone or have to reinstall the MFA software app for any reason, you can reconfigure the app to use the same virtual MFA\. This avoids the need to create a new virtual MFA in AWS for the user or root user\.
-
 **Topics**
 + [Permissions Required](#mfa_enable_virtual_permissions-required)
 + [Enable a Virtual MFA Device for an IAM User \(Console\)](#enable-virt-mfa-for-iam-user)

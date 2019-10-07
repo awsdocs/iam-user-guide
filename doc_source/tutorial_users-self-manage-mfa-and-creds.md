@@ -9,13 +9,13 @@ This workflow has three basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Create a Policy to Enforce MFA Sign\-In](#tutorial_mfa_step1)**  
-Create a customer managed policy that prohibits all actions ***except*** the few IAM action that allow a user to change their own credentials and manage their MFA devices on the **My Security Credentials** page\. For more information about accessing that page
+Create a customer managed policy that prohibits all actions ***except*** the few IAM actions that allow a user to change their own credentials and manage their MFA devices on the **My Security Credentials** page\. For more information about accessing that page
 
 **[Step 2: Attach Policies to Your Test Group](#tutorial_mfa_step2)**  
 Create a group whose members have full access to all Amazon EC2 actions if they sign in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.
 
 **[Step 3: Test Your User's Access](#tutorial_mfa_step3)**  
-Sign in as the test user to verify that access to Amazon EC2 is blocked *until* the user creates an MFA device and then signs in using that device\. 
+Sign in as the test user to verify that access to Amazon EC2 is blocked *until* the user creates an MFA device\. The user can then sign in using that device\. 
 
 ## Prerequisites<a name="tutorial_mfa_prereqs"></a>
 
@@ -48,7 +48,7 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
 1. Paste the policy text into the **JSON** text box, then choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs any time\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.
 
 1. On the **Review** page, type **Force\_MFA** for the policy name\. For the policy description, type **This policy allows users to manage their own passwords and MFA devices but nothing else unless they authenticate with MFA\.** Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
 
@@ -105,7 +105,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 1. Sign out of the console and then sign in as **MFAUser** again\. This time AWS prompts you for an MFA code from your phone\. When you get it, type the code in the box and then choose **Submit**\.
 
-1. Choose **EC2** to open the Amazon EC2 console again\. Note that this time you can see all the information and perform any actions you want\. If you go to any other console as this user, you see access denied messages because the policies in this tutorial grant access only to Amazon EC2\. 
+1. Choose **EC2** to open the Amazon EC2 console again\. Note that this time you can see all the information and perform any actions you want\. If you go to any other console as this user, you see access denied messages\. The reason is that the policies in this tutorial grant access only to Amazon EC2\. 
 
 ## Related Resources<a name="tutorial_mfa_related"></a>
 

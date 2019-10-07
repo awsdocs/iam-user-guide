@@ -29,6 +29,36 @@ As a best practice, make sure that members of your account follow a consistent n
 + For a list of all of the globally available condition keys, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\.
 + For conditions keys that are defined by each service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 
+## The Request Context<a name="AccessPolicyLanguage_RequestContext"></a>
+
+When a [principal](intro-structure.md#intro-structure-principal) makes a [request](intro-structure.md#intro-structure-request) to AWS, AWS gathers the request information into a request context\. The information is used to evaluate and authorize the request\. You can use the `Condition` element of a JSON policy to test specific conditions against the request context\. For example, you can create a policy that uses the [aws:CurrentTime](reference_policies_condition-keys.md#condition-keys-currenttime) condition key to [allow a user to perform specific actions only during business hours](reference_policies_examples_aws-dates.md)\.
+
+When a request is submitted, AWS evaluates each condition key in the policy returns a value of *true*, *false*, *not present*, and occasionally *null* \(an empty data string\)\. A key that is not present in the request is not considered a mismatch\. For example, the following policy allows removing your own multifactor authentication \(MFA\) device, but only if you have signed in using MFA in the last hour \(3,600 seconds\)\. 
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": {
+        "Sid": "AllowRemoveMfaOnlyIfRecentMfa",
+        "Effect": "Allow",
+        "Action": [
+            "iam:DeactivateMFADevice",
+            "iam:DeleteVirtualMFADevice"
+        ],
+        "Resource": "arn:aws:iam::*:user/${aws:username}",
+        "Condition": {
+            "NumericLessThanEquals": {"aws:MultiFactorAuthAge": "3600"}
+        }
+    }
+}
+```
+
+The request context can return the following values:
++ **True** – If the requester signed in using MFA in the last one hour or less, then the condition returns *true*\. 
++ **False** – If the requester signed in using MFA more than one hour ago, then the condition returns *false*\. 
++ **Not present** – If the requester made a request using their IAM user access keys in the AWS CLI or AWS API, the key is not present\. In this case, the key is not present, and it won't match\. 
++ **Null** – For condition keys that are defined by the user, such as passing tags in a request, it is possible to include an empty string\. In this case, the value in the request context is *null*\. A null value might return true in some cases\. For example, if you use the multivalued `[ForAllValues](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)` condition operator with the `[aws:TagKeys](reference_policies_condition-keys.md#condition-keys-tagkeys)` condition key, you can experience unexpected results if the request context returns *null*\. For more information, see [aws:TagKeys](reference_policies_condition-keys.md#condition-keys-tagkeys) and [Using Multiple Keys and Values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+
 ## The Condition Block<a name="AccessPolicyLanguage_ConditionBlock"></a>
 
 The following example shows the basic format of a `Condition` element:

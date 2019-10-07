@@ -21,8 +21,8 @@ If your policy has multiple condition operators or multiple keys attached to a s
 ## Using Multiple Keys and Values<a name="reference_policies_multi-key-or-value-conditions"></a>
 
 For requests that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key2":\["Value2A", "Value2B"\]\)\. You must also use the `ForAllValues` or `ForAnyValue` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String)\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\.
-+ `ForAllValues` – Tests whether the entire set of request values matches the entire set of condition key values\. The condition returns true if all specified key values in the request match at least one value in the policy\. It also returns true if there is no matching key in the request, or if the key values resolve to an empty data set, such as an empty string\.
-+ `ForAnyValue` – Tests whether at least one member of the set of request values matches at least one member of the set of condition key values\. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or an empty dataset, the condition returns false\.
++ `ForAllValues` – Tests whether the value of every member of the request set is a subset of the condition key set\. The condition returns true if every key value in the request matches at least one value in the policy\. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\.
++ `ForAnyValue` – Tests whether at least one member of the set of request values matches at least one member of the set of condition key values\. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or a null dataset, the condition returns false\.
 
 Assume that you want to let John use a resource only if a numeric value *foo* equals either A or B, and another numeric value *bar* equals C\. You would create a condition block that looks like the following figure\.
 
@@ -131,9 +131,12 @@ Assume that the user makes a request to update the `PostDateTime` and `Message` 
 
 Imagine the user instead makes a request to perform `PutItem` with just the `UserName` attribute\. None of the attributes in the request \(just `UserName`\) match any of attributes listed in the policy \(`ID`, `PostDateTime`\)\. The condition returns false, so the effect of the policy \(`Deny`\) is also false, and the request is not denied by this policy\. \(For the request to succeed, it must be explicitly allowed by a different policy\. It is not explicitly denied by this policy, but all requests are implicitly denied\.\)
 
+**Warning**  
+When you use the `ForAllValues` condition operator, it returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. To require that the request includes at least one value, you must use another condition in the policy\. For an example, see [Controlling Access During AWS Requests](access_tags.md#access_tags_control-requests)\.
+
 ## Evaluation Logic for Multiple Values with Condition Set Operators<a name="reference_policies_multi-value-conditions-eval"></a>
 
-This section discusses the specifics of the evaluation logic used with the `ForAllValues` and `ForAnyValue` qualifiers\. The following table illustrates possible keys that might be included in a request \(`PostDateTime` and `UserName`\) and a policy condition that includes the values `PostDateTime`, `Message`, and `Tags`\. 
+This section discusses the specifics of the evaluation logic used with the `ForAllValues` and `ForAnyValue` operators\. The following table illustrates possible keys that might be included in a request \(`PostDateTime` and `UserName`\) and a policy condition that includes the values `PostDateTime`, `Message`, and `Tags`\. 
 
 
 ****  

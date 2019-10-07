@@ -21,7 +21,7 @@ Check the following:
       "Action": "sts:AssumeRole",
       "Resource": "arn:aws:iam::account_id_number:role/role-name-you-want-to-assume"
   ```
-+ Verify that your IAM identity is tagged with any tags that the IAM policy requires\. For example, in the following policy permissions, the `Condition` element requires that you, as the principal requesting to assume the role, must have a specific tag\. You must be tagged with `department = HR` or `department = CS`\. Otherwise, you cannot assume the role\. To learn about tagging IAM users and roles, see [Tagging IAM Entities](id_tags.md)\.
++ Verify that your IAM identity is tagged with any tags that the IAM policy requires\. For example, in the following policy permissions, the `Condition` element requires that you, as the principal requesting to assume the role, must have a specific tag\. You must be tagged with `department = HR` or `department = CS`\. Otherwise, you cannot assume the role\. To learn about tagging IAM users and roles, see [Tagging IAM Users and Roles](id_tags.md)\.
 
   ```
       "Effect": "Allow",

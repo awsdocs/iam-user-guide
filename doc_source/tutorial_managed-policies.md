@@ -54,7 +54,7 @@ In this step, you create a customer managed policy that allows any attached user
 
 1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review** page, type **UsersReadOnlyAccessToIAMConsole** for the policy name\. Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
 
@@ -68,13 +68,13 @@ Next you attach the policy you just created to your test IAM user\.
 
 1. In the IAM console, in the navigation pane, choose **Policies**\.
 
-1. At the top of the policy list, in the search box, start typing **UsersReadOnlyAccesstoIAMConsole** until you can see your policy, and then check the box next to **UsersReadOnlyAccessToIAMConsole** in the list\. 
+1. At the top of the policy list, in the search box, start typing **UsersReadOnlyAccesstoIAMConsole** until you can see your policy\. Then check the box next to **UsersReadOnlyAccessToIAMConsole** in the list\. 
 
 1. Choose the **Policy actions** button, and then chose **Attach**\. 
 
 1. For **Filter**, choose **Users**\. 
 
-1. In the search box, start typing **PolicyUser** until that user is visible on the list, and then check the box next to that user in the list\.
+1. In the search box, start typing **PolicyUser** until that user is visible on the list\. Then check the box next to that user in the list\.
 
 1. Choose **Attach Policy**\. 
 
@@ -82,7 +82,7 @@ You have attached the policy to your IAM test user, which means that user now ha
 
 ## Step 3: Test User Access<a name="step3-test-access"></a>
 
-For this tutorial, we recommend that you test access by signing in as the test user so you can observe the results and see what your users might experience\. 
+For this tutorial, we recommend that you test access by signing in as the test user so you can see what your users might experience\. 
 
 **To test access by signing in with your test user account**
 
@@ -99,4 +99,4 @@ For related information in the *IAM User Guide*, see the following resources:
 
 ## Summary<a name="tutorial-managed-policies-summary"></a>
 
-You’ve now successfully completed all of the steps necessary to create and attach a customer managed policy\. As a result, you are able to sign in to the IAM console with your test account and have seen firsthand what the experience would be like for your users\.
+You’ve now successfully completed all of the steps necessary to create and attach a customer managed policy\. As a result, you are able to sign in to the IAM console with your test account to see what the experience is like for your users\.

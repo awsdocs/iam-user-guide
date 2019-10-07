@@ -40,7 +40,7 @@ Choosing this option restricts access to the role only through the AWS CLI, Tool
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
 
 1. Choose **Next: Review**\. 
 

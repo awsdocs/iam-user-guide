@@ -23,7 +23,7 @@ The process of creating a user and enabling that user to perform work tasks cons
 
 1. Give the user permissions to perform the required tasks by adding the user to one or more groups\. You can also grant permissions by attaching permission policies directly to the user\. However, we recommend instead that you put your users in groups and manage permissions through policies that are attached to those groups\. You can also use a [permissions boundary](access_policies_boundaries.md) to limit the permissions that a user can have, though this is not common\. 
 
-1. \(Optional\) Add metadata to the user by attaching tags\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
 
 1. Provide the user with the necessary sign\-in information\. This includes the password and the console URL for the account sign\-in page where the user provides those credentials\. For more information, see [How IAM Users Sign In to AWS](id_users_sign-in.md)\.
 
@@ -72,7 +72,7 @@ If you have *not* enabled [the account\-wide password policy setting **Allow use
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
 
 1. Choose **Next: Review** to see all of the choices you made up to this point\. When you are ready to proceed, choose **Create user**\.
 

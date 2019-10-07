@@ -36,9 +36,6 @@ You can use ARNs in IAM for users \(IAM and federated\), groups, roles, policies
 Many of the following examples include paths in the resource part of the ARN\. Paths cannot be created or manipulated in the AWS Management Console\. To use paths you must work with the resource by using the AWS API, the AWS CLI, or the Tools for Windows PowerShell\.
 
 The following examples show ARNs for different types of IAM resources\.
-+ *The AWS account \- the account itself:*
-
-  `arn:aws:iam::123456789012:root`
 + *An IAM user in the account:*
 
   `arn:aws:iam::123456789012:user/Bob`
@@ -79,7 +76,12 @@ The following examples show ARNs for different types of IAM resources\.
 
   `arn:aws:iam::123456789012:saml-provider/ADFSProvider`
 
-  `arn:aws:iam::123456789012:oidc-provider/GoogleProvider` 
+  `arn:aws:iam::123456789012:oidc-provider/GoogleProvider`
+
+Another important ARN is the root user ARN\. Although this is not an IAM resource, you should be familiar with the format of this ARN\. It is often used in the [`Principal` element](reference_policies_elements_principal.md) of a policy\.
++ *The AWS account \- the account itself:*
+
+  `arn:aws:iam::123456789012:root`
 
 The following example shows a policy you could assign to Richard to allow him to manage his own access keys\. Notice that the resource is the IAM user Richard\.
 

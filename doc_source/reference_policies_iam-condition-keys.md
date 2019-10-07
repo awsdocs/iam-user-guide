@@ -40,7 +40,7 @@ Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that inv
 **iam:ResourceTag/*key\-name***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
-You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Entities](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+You can add custom attributes to a user or role in the form of a key–value pair\. For more information about IAM tags, see [Tagging IAM Users and Roles](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
 This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the red italicized text in the example policy with your own information\.  
 
 ```
@@ -99,6 +99,12 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 }
 ```
 
+**The oaud Key in Google**  
+Works with string operators  
+If you use Google for web identity federation, the accounts\.google\.com:oaud key in a trust policy specifies the Google audience for the account\. If that app\_id value is scoped to a particular device or client, but you waish to authorize against the service ID or project ID, The key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
++ If the user is unauthenticated, the key contains only `unauthenticated`\.
++ If the user is authenticated, the key contains the value `authenticated` and the name of the login provider used in the call \(`graph.facebook.com`, `accounts.google.com`, or `www.amazon.com`\)\. 
+
 **More Information About Web Identity Federation**  
 For more information about web identity federation, see the following:  
 + [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
@@ -116,6 +122,10 @@ In the trust policy of a role, you can include the following keys, which help yo
 **saml:aud**   
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 An endpoint URL to which SAML assertions are presented\. The value for this key comes from the `SAML Recipient` field in the assertion, ***not ***the `Audience` field\.
+
+**saml:commonName**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is a `commonName` attribute\.
 
 **saml:cn**\[\]  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -189,13 +199,33 @@ This is an `eduOrg` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:namequalifier**\*  
+**saml:givenName**\[\]  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-A hash value based on the concatenation of the `Issuer` response value \(`saml:iss`\), the `AWS` account ID and the friendly name \(the last part of the ARN\) of the SAML provider in IAM, separated by a '/' character\. The concatenation of the account ID and friendly name of the SAML provider is available to IAM policies as the key `saml:doc`\. For more information, see [Uniquely Identifying Users in SAML\-Based Federation](id_roles_providers_saml.md#CreatingSAML-userid)\.
+This is a `givenName` attribute\.
 
 **saml:iss**\*  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 The issuer, which is represented by a URN\. 
+
+**saml:mail**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is a `mail` attribute\.
+
+**saml:name**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is a `name` attribute\.
+
+**saml:namequalifier**\*  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+A hash value based on the concatenation of the `Issuer` response value \(`saml:iss`\), the `AWS` account ID and the friendly name \(the last part of the ARN\) of the SAML provider in IAM, separated by a '/' character\. The concatenation of the account ID and friendly name of the SAML provider is available to IAM policies as the key `saml:doc`\. For more information, see [Uniquely Identifying Users in SAML\-Based Federation](id_roles_providers_saml.md#CreatingSAML-userid)\.
+
+**saml:organizationStatus**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is an `organizationStatus` attribute\.
+
+**saml:primaryGroupSID**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is a `primaryGroupSID` attribute\.
 
 **saml:sub**\*  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -204,6 +234,18 @@ This is the subject of the claim, which includes a value that uniquely identifie
 **saml:sub\_type**\*  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This key can have the value `persistent`, `transient`, or consist of the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. A value of `persistent` indicates that the value in `saml:sub` is the same for a user between sessions\. If the value is `transient`, the user has a different `saml:sub` value for each session\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\.
+
+**saml:surname**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is a `surnameuid` attribute\.
+
+**saml:uid**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is a `uid` attribute\.
+
+**saml:x500UniqueIdentifier**\[\]  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+This is an `x500UniqueIdentifier` attribute\.
 
 For general information about `eduPerson` and `eduOrg` attributes, see the [Internet2 website](https://www.internet2.edu/products-services/trust-identity-middleware/eduperson-eduorg/eduperson-eduorg-documentation/)\. For a list of `eduPerson` attributes, see [eduPerson Object Class Specification \(201203\)](https://www.internet2.edu/media/medialibrary/2013/09/04/internet2-mace-dir-eduperson-201203.html)\. 
 

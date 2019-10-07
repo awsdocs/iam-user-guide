@@ -3,8 +3,8 @@
 Amazon WorkMail \(service prefix: `workmail`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](${DocHomeUrl}workmail/latest/userguide/)\.
-+ View a list of the [API operations available for this service](${DocHomeUrl}workmail/latest/APIReference/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/workmail/latest/userguide/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/workmail/latest/APIReference/)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/workmail/latest/adminguide/iam_users_groups.html) permission policies\.
 
 **Topics**
@@ -26,71 +26,90 @@ For details about the columns in the following table, see [The Actions Table](re
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ AddMembersToGroup ](https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html) \[permission only\] | Adds a list of members \(users or groups\) to a group\. | Write |  |  |  | 
-|   [ AssociateDelegateToResource ](${APIReferenceDocPage}API_AssociateDelegateToResource.html)  | Adds a member \(user or group\) to the resource's set of delegates\. | Write |  |  |  | 
-|   [ AssociateMemberToGroup ](${APIReferenceDocPage}API_AssociateMemberToGroup.html)  | Adds a member \(user or group\) to the group's set\. | Write |  |  |  | 
-|   [ CreateAlias ](${APIReferenceDocPage}API_CreateAlias.html)  | Adds an alias to the set of a given member \(user or group\) of WorkMail\. | Write |  |  |  | 
-|   [ CreateGroup ](${APIReferenceDocPage}API_CreateGroup.html)  | Creates a group that can be used in WorkMail by calling the RegisterToWorkMail operation\. | Write |  |  |  | 
+|   [ AssociateDelegateToResource ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssociateDelegateToResource.html)  | Adds a member \(user or group\) to the resource's set of delegates\. | Write |  |  |  | 
+|   [ AssociateMemberToGroup ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_AssociateMemberToGroup.html)  | Adds a member \(user or group\) to the group's set\. | Write |  |  |  | 
+|   [ CreateAlias ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateAlias.html)  | Adds an alias to the set of a given member \(user or group\) of WorkMail\. | Write |  |  |  | 
+|   [ CreateGroup ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateGroup.html)  | Creates a group that can be used in WorkMail by calling the RegisterToWorkMail operation\. | Write |  |  |  | 
+|   [ CreateInboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html) \[permission only\] | Create an inbound email flow rule which will apply to all email sent to an organization | Write |  |  |  | 
 |   [ CreateMailDomain ](https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html) \[permission only\] | Creates a mail domain\. | Write |  |  |  | 
 |   [ CreateMailUser ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html) \[permission only\] | Creates a user in the directory and the WorkMail storage but does not enable the user for mail\. | Write |  |  |  | 
 |   [ CreateOrganization ](https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html) \[permission only\] | Creates an organization, either using an existing directory or creates a new directory on\-the\-fly\. Also creates and enables the complementary mail domain\. Optionally creates KMS key | Write |  |  |  | 
-|   [ CreateResource ](${APIReferenceDocPage}API_CreateResource.html)  | Creates a new WorkMail resource\.  | Write |  |  |  | 
-|   [ CreateUser ](${APIReferenceDocPage}API_CreateUser.html)  | Creates a user who can be used in WorkMail by calling the RegisterToWorkMail operation\. | Write |  |  |  | 
-|   [ DeleteAlias ](${APIReferenceDocPage}API_DeleteAlias.html)  | Remove one or more specified aliases from a set of aliases for a given user\. | Write |  |  |  | 
-|   [ DeleteGroup ](${APIReferenceDocPage}API_DeleteGroup.html)  | Deletes a group from WorkMail\. | Write |  |  |  | 
+|   [ CreateOutboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/create-email-rules.html) \[permission only\] | Create an outbound email flow rule which will apply to all email sent from an organization | Write |  |  |  | 
+|   [ CreateResource ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateResource.html)  | Creates a new WorkMail resource\.  | Write |  |  |  | 
+|   [ CreateSmtpGateway ](https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html) \[permission only\] | Register an SMTP device against a WorkMail organization | Write |  |  |  | 
+|   [ CreateUser ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_CreateUser.html)  | Creates a user who can be used in WorkMail by calling the RegisterToWorkMail operation\. | Write |  |  |  | 
+|   [ DeleteAlias ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteAlias.html)  | Remove one or more specified aliases from a set of aliases for a given user\. | Write |  |  |  | 
+|   [ DeleteGroup ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteGroup.html)  | Deletes a group from WorkMail\. | Write |  |  |  | 
+|   [ DeleteInboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html) \[permission only\] | Remove an inbound email flow rule to no longer apply to emails sent to an organization | Write |  |  |  | 
 |   [ DeleteMailDomain ](https://docs.aws.amazon.com/workmail/latest/adminguide/remove_domain.html) \[permission only\] | Removes an unused mail domain from an organization | Write |  |  |  | 
-|   [ DeleteMailboxPermissions ](${APIReferenceDocPage}API_DeleteMailboxPermissions.html)  | Deletes permissions granted to a member \(user or group\)\. | Write |  |  |  | 
+|   [ DeleteMailboxPermissions ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteMailboxPermissions.html)  | Deletes permissions granted to a member \(user or group\)\. | Write |  |  |  | 
 |   [ DeleteMobileDevice ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remove_mobile_device) \[permission only\] | Removes a mobile device from a user | Write |  |  |  | 
 |   [ DeleteOrganization ](https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html) \[permission only\] | Removes an organization from an account, either removing the directory from directory services or leaving it available for re\-use | Write |  |  |  | 
-|   [ DeleteResource ](${APIReferenceDocPage}API_DeleteResource.html)  | Deletes the specified resource\. | Write |  |  |  | 
-|   [ DeleteUser ](${APIReferenceDocPage}API_DeleteUser.html)  | Deletes a user from WorkMail and all subsequent systems\. The action cannot be undone\. | Write |  |  |  | 
-|   [ DeregisterFromWorkMail ](${APIReferenceDocPage}API_DeregisterFromWorkMail.html)  | Mark a user, group, or resource as no longer used in WorkMail\. | Write |  |  |  | 
+|   [ DeleteOutboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/remove-email-flow-rule.html) \[permission only\] | Remove an outbound email flow rule to no longer apply to emails sent from an organization | Write |  |  |  | 
+|   [ DeleteResource ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteResource.html)  | Deletes the specified resource\. | Write |  |  |  | 
+|   [ DeleteSmtpGateway ](https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html) \[permission only\] | Remove an SMTP device from an organization | Write |  |  |  | 
+|   [ DeleteUser ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeleteUser.html)  | Deletes a user from WorkMail and all subsequent systems\. The action cannot be undone\. | Write |  |  |  | 
+|   [ DeregisterFromWorkMail ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DeregisterFromWorkMail.html)  | Mark a user, group, or resource as no longer used in WorkMail\. | Write |  |  |  | 
 |   [ DescribeDirectories ](https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html) \[permission only\] | Shows a list of directories available for use in creating an organization | List |  |  |  | 
-|   [ DescribeGroup ](${APIReferenceDocPage}API_DescribeGroup.html)  | Returns the data available for the group\. | List |  |  |  | 
+|   [ DescribeGroup ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeGroup.html)  | Returns the data available for the group\. | List |  |  |  | 
+|   [ DescribeInboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions) \[permission only\] | Returns the details of an inbound mail flow rule configured for an organization | Read |  |  |  | 
 |   [ DescribeKmsKeys ](https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html) \[permission only\] | Shows a list of KMS Keys available for use in creating an organization | List |  |  |  | 
 |   [ DescribeMailDomains ](https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html) \[permission only\] | Shows the details of all mail domains associated with the organization | List |  |  |  | 
 |   [ DescribeMailGroups ](https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html) \[permission only\] | Shows the details of all groups associated with the organization | List |  |  |  | 
 |   [ DescribeMailUsers ](https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html) \[permission only\] | Shows the details of all users associated with the orgaization | List |  |  |  | 
-|   [ DescribeOrganization ](${APIReferenceDocPage}API_DescribeOrganization.html)  | Provides more information regarding a given organization based on its identifier\. | List |  |  |  | 
+|   [ DescribeOrganization ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeOrganization.html)  | Provides more information regarding a given organization based on its identifier\. | List |  |  |  | 
 |   [ DescribeOrganizations ](https://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html) \[permission only\] | Shows a summary of all organizations associated with the account | List |  |  |  | 
-|   [ DescribeResource ](${APIReferenceDocPage}API_DescribeResource.html)  | Returns the data available for the resource\. | List |  |  |  | 
-|   [ DescribeUser ](${APIReferenceDocPage}API_DescribeUser.html)  | Provides information regarding the user\. | List |  |  |  | 
+|   [ DescribeOutboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound) \[permission only\] | Returns the details of an outbound mail flow rule configured for an organization | Read |  |  |  | 
+|   [ DescribeResource ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeResource.html)  | Returns the data available for the resource\. | List |  |  |  | 
+|   [ DescribeSmtpGateway ](https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html) \[permission only\] | Returns the details of an SMTP device registered against an organization | Read |  |  |  | 
+|   [ DescribeUser ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DescribeUser.html)  | Provides information regarding the user\. | List |  |  |  | 
 |   [ DisableMailGroups ](https://docs.aws.amazon.com/workmail/latest/adminguide/remove_group.html) \[permission only\] | Disable a mail group when it is not being used and, to allow it to be deleted | Write |  |  |  | 
 |   [ DisableMailUsers ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-mailboxes.html#delete_user_mailbox) \[permission only\] | Disable a user mailbox when it is no longer being used, and to allow it to be deleted | Write |  |  |  | 
-|   [ DisassociateDelegateFromResource ](${APIReferenceDocPage}API_DisassociateDelegateFromResource.html)  | Removes a member from the resource's set of delegates\. | Write |  |  |  | 
-|   [ DisassociateMemberFromGroup ](${APIReferenceDocPage}API_DisassociateMemberFromGroup.html)  | Removes a member from a group\. | Write |  |  |  | 
+|   [ DisassociateDelegateFromResource ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DisassociateDelegateFromResource.html)  | Removes a member from the resource's set of delegates\. | Write |  |  |  | 
+|   [ DisassociateMemberFromGroup ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_DisassociateMemberFromGroup.html)  | Removes a member from a group\. | Write |  |  |  | 
 |   [ EnableMailDomain ](https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html) \[permission only\] | Enable a mail domain in the organization | Write |  |  |  | 
 |   [ EnableMailGroups ](https://docs.aws.amazon.com/workmail/latest/adminguide/enable_existing_group.html) \[permission only\] | Enable a mail group after it has been created to allow it to receive mail | Write |  |  |  | 
 |   [ EnableMailUsers ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html#enable_existing_user) \[permission only\] | Enable a user's mailbox after it has been created to allow it to receive mail | Write |  |  |  | 
+|   [ GetJournalingRules ](https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html) \[permission only\] | Returns journaling and fallback email addresses configured for email journaling | Read |  |  |  | 
 |   [ GetMailDomainDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/domains_overview.html) \[permission only\] | Get the details of the mail domain | Read |  |  |  | 
 |   [ GetMailGroupDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html) \[permission only\] | Get the details of the mail group | Read |  |  |  | 
 |   [ GetMailUserDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html) \[permission only\] | Get the details of the user's mailbox and account | Read |  |  |  | 
-|   [ GetMailboxDetails ](${APIReferenceDocPage}API_GetMailboxDetails.html)  | Returns the details of the user's mailbox\. | Read |  |  |  | 
+|   [ GetMailboxDetails ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_GetMailboxDetails.html)  | Returns the details of the user's mailbox\. | Read |  |  |  | 
 |   [ GetMobileDeviceDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html) \[permission only\] | Get the details of the mobile device | Read |  |  |  | 
 |   [ GetMobileDevicesForUser ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html) \[permission only\] | Get a list of the mobile devices associated with the user | Read |  |  |  | 
 |   [ GetMobilePolicyDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html) \[permission only\] | Get the details of the mobile device policy associated with the organization | Read |  |  |  | 
-|   [ ListAliases ](${APIReferenceDocPage}API_ListAliases.html)  | Creates a paginated call to list the aliases associated with a given entity\. | List |  |  |  | 
-|   [ ListGroupMembers ](${APIReferenceDocPage}API_ListGroupMembers.html)  | Returns an overview of the members of a group\. Users and groups can be members of a group\. | List |  |  |  | 
-|   [ ListGroups ](${APIReferenceDocPage}API_ListGroups.html)  | Returns summaries of the organization's groups\. | List |  |  |  | 
-|   [ ListMailboxPermissions ](${APIReferenceDocPage}API_ListMailboxPermissions.html)  | Lists the mailbox permissions associated with a user, group, or resource mailbox\. | List |  |  |  | 
+|   [ ListAliases ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListAliases.html)  | Creates a paginated call to list the aliases associated with a given entity\. | List |  |  |  | 
+|   [ ListGroupMembers ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroupMembers.html)  | Returns an overview of the members of a group\. Users and groups can be members of a group\. | List |  |  |  | 
+|   [ ListGroups ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListGroups.html)  | Returns summaries of the organization's groups\. | List |  |  |  | 
+|   [ ListInboundMailFlowRules ](https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-actions) \[permission only\] | Returns a list of inbound mail flow rules configured for an organization | List |  |  |  | 
+|   [ ListMailboxPermissions ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListMailboxPermissions.html)  | Lists the mailbox permissions associated with a user, group, or resource mailbox\. | List |  |  |  | 
 |   [ ListMembersInMailGroup ](https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html) \[permission only\] | Get a list of all the members in a mail group | Read |  |  |  | 
-|   [ ListOrganizations ](${APIReferenceDocPage}API_ListOrganizations.html)  | Returns summaries of the customer's non\-deleted organizations\. | List |  |  |  | 
-|   [ ListResourceDelegates ](${APIReferenceDocPage}API_ListResourceDelegates.html)  | Lists the delegates associated with a resource\. | List |  |  |  | 
-|   [ ListResources ](${APIReferenceDocPage}API_ListResources.html)  | Returns summaries of the organization's resources\. | List |  |  |  | 
-|   [ ListUsers ](${APIReferenceDocPage}API_ListUsers.html)  | Returns summaries of the organization's users\. | List |  |  |  | 
-|   [ PutMailboxPermissions ](${APIReferenceDocPage}API_PutMailboxPermissions.html)  | Sets permissions for a user, group, or resource\. This replaces any pre\-existing permissions\. | Write |  |  |  | 
-|   [ RegisterToWorkMail ](${APIReferenceDocPage}API_RegisterToWorkMail.html)  | Registers an existing and disabled user, group, or resource for use by associating a mailbox and calendaring capabilities\. | Write |  |  |  | 
+|   [ ListOrganizations ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html)  | Returns summaries of the customer's non\-deleted organizations\. | List |  |  |  | 
+|   [ ListOutboundMailFlowRules ](https://docs.aws.amazon.com/workmail/latest/adminguide/email-flows.html#email-flows-rule-outbound) \[permission only\] | Returns a list of outbound mail flow rules configured for an organization | List |  |  |  | 
+|   [ ListResourceDelegates ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListResourceDelegates.html)  | Lists the delegates associated with a resource\. | List |  |  |  | 
+|   [ ListResources ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListResources.html)  | Returns summaries of the organization's resources\. | List |  |  |  | 
+|   [ ListSmtpGateways ](https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html) \[permission only\] | Returns a list of SMTP devices registered against the organization | List |  |  |  | 
+|   [ ListUsers ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListUsers.html)  | Returns summaries of the organization's users\. | List |  |  |  | 
+|   [ PutMailboxPermissions ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_PutMailboxPermissions.html)  | Sets permissions for a user, group, or resource\. This replaces any pre\-existing permissions\. | Write |  |  |  | 
+|   [ RegisterToWorkMail ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_RegisterToWorkMail.html)  | Registers an existing and disabled user, group, or resource for use by associating a mailbox and calendaring capabilities\. | Write |  |  |  | 
 |   [ RemoveMembersFromGroup ](https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html) \[permission only\] | Remove members from a mail group | Write |  |  |  | 
-|   [ ResetPassword ](${APIReferenceDocPage}API_ResetPassword.html)  | Allows the administrator to reset the password for a user\. | Write |  |  |  | 
+|   [ ResetPassword ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_ResetPassword.html)  | Allows the administrator to reset the password for a user\. | Write |  |  |  | 
 |   [ ResetUserPassword ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html#reset_user_password) \[permission only\] | Reset the password for a user's account | Write |  |  |  | 
 |   [ SearchMembers ](https://docs.aws.amazon.com/workmail/latest/adminguide/groups_overview.html) \[permission only\] | Prefix search to find a specific user in a mail group | Read |  |  |  | 
 |   [ SetAdmin ](https://docs.aws.amazon.com/workmail/latest/adminguide/users_overview.html) \[permission only\] | Mark a user as being an administrator | Write |  |  |  | 
 |   [ SetDefaultMailDomain ](https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html) \[permission only\] | Set the default mail domain for the organization | Write |  |  |  | 
+|   [ SetJournalingRules ](https://docs.aws.amazon.com/workmail/latest/adminguide/journaling_overview.html) \[permission only\] | Set journaling and fallback email addresses for email journaling | Write |  |  |  | 
 |   [ SetMailGroupDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_group.html) \[permission only\] | Set the details of the mail group which has just been created | Write |  |  |  | 
 |   [ SetMailUserDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-users.html) \[permission only\] | Set the details for the user account which has just been created | Write |  |  |  | 
 |   [ SetMobilePolicyDetails ](https://docs.aws.amazon.com/workmail/latest/adminguide/edit_organization_mobile_policy.html) \[permission only\] | Set the details of a mobile policy associated with the organization | Write |  |  |  | 
-|   [ UpdateMailboxQuota ](${APIReferenceDocPage}API_UpdateMailboxQuota.html)  | Updates the maximum size \(in MB\) of the user's mailbox\. | Write |  |  |  | 
-|   [ UpdatePrimaryEmailAddress ](${APIReferenceDocPage}API_UpdatePrimaryEmailAddress.html)  | Updates the primary email for a user, group, or resource\. | Write |  |  |  | 
-|   [ UpdateResource ](${APIReferenceDocPage}API_UpdateResource.html)  | Updates data for the resource\. To retrieve the latest information, it must be preceded by a DescribeResource call\. | Write |  |  |  | 
+|   [ TestInboundMailFlowRules ](https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html) \[permission only\] | Test what inbound rules will apply to an email with a given sender and recipient | Write |  |  |  | 
+|   [ TestOutboundMailFlowRules ](https://docs.aws.amazon.com/workmail/latest/adminguide/test-email-flow-rule.html) \[permission only\] | Test what outbound rules will apply to an email with a given sender and recipient | Write |  |  |  | 
+|   [ UpdateInboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html) \[permission only\] | Update the details of an inbound email flow rule which will apply to all email sent to an organization | Write |  |  |  | 
+|   [ UpdateMailboxQuota ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateMailboxQuota.html)  | Updates the maximum size \(in MB\) of the user's mailbox\. | Write |  |  |  | 
+|   [ UpdateOutboundMailFlowRule ](https://docs.aws.amazon.com/workmail/latest/adminguide/modify-email-flow-rule.html) \[permission only\] | Update the details of an outbound email flow rule which will apply to all email sent from an organization | Write |  |  |  | 
+|   [ UpdatePrimaryEmailAddress ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdatePrimaryEmailAddress.html)  | Updates the primary email for a user, group, or resource\. | Write |  |  |  | 
+|   [ UpdateResource ](https://docs.aws.amazon.com/workmail/latest/APIReference/API_UpdateResource.html)  | Updates data for the resource\. To retrieve the latest information, it must be preceded by a DescribeResource call\. | Write |  |  |  | 
+|   [ UpdateSmtpGateway ](https://docs.aws.amazon.com/workmail/latest/adminguide/smtp-gateway.html) \[permission only\] | Update the details of an existing SMTP device registered against an organization | Write |  |  |  | 
 |   [ WipeMobileDevice ](https://docs.aws.amazon.com/workmail/latest/adminguide/manage-devices.html#remote_wipe_device) \[permission only\] | Remotely wipe the mobile device associated with a user's account | Write |  |  |  | 
 
 ## Resources Defined by Amazon WorkMail<a name="amazonworkmail-resources-for-iam-policies"></a>
