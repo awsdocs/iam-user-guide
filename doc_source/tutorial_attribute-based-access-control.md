@@ -28,7 +28,7 @@ Your Engineering and Quality Assurance team members are on either the **Pegasus*
 + `access-project` = `peg` for the **Pegasus** project
 + `access-project` = `uni` for the **Unicorn** project
 + `access-team` = `eng` for the Engineering team
-+ `access-project` = `qas` for the Quality Assurance team
++ `access-team` = `qas` for the Quality Assurance team
 
 Additionally, you choose to require the `cost-center` cost allocation tag to enable custom AWS billing reports\. For more information, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing and Cost Management User Guide*\.
 
