@@ -39,6 +39,8 @@ For details about the columns in the following table, see [The Actions Table](re
 |   ListGroupsForUser  | Lists groups for a user from the directory that AWS SSO provides by default  | List |  |  |  | 
 |   ListMembersInGroup  | Retrieves all members that are part of the group in the directory that AWS SSO provides by default | List |  |  |  | 
 |   RemoveMemberFromGroup  | Removes member that are part of the group in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   SearchGroups  | Search for groups within the associated directory | Read |  |  |  | 
+|   SearchUsers  | Search for users within the associated directory | Read |  |  |  | 
 |   UpdateGroup  | Updates information about group in the directory that AWS SSO provides by default | Write |  |  |  | 
 |   UpdatePassword  | Updates password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default | Write |  |  |  | 
 |   UpdateUser  | Updates user information in the directory that AWS SSO provides by default | Write |  |  |  | 

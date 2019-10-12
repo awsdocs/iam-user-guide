@@ -37,12 +37,14 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ BatchGetTriggers ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-BatchGetTriggers)  | Grants permission to retrieve one or more triggers | Read |  |  |  | 
 |   [ BatchGetWorkflows ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-BatchGetWorkflows)  | Grants permission to retrieve one or more workflows | Read |  |  |  | 
 |   [ BatchStopJobRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-BatchStopStartJobRun)  | Grants permission to stop one or more job runs for a job | Write |  |  |  | 
+|   [ CancelMLTaskRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CancelMLTaskRun)  | Grants permission to stop a running ML Task Run | Write |  |  |  | 
 |   [ CreateClassifier ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-classifiers.html#aws-glue-api-crawler-classifiers-CreateClassifier)  | Grants permission to create a classifier | Write |  |  |  | 
 |   [ CreateConnection ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-connections.html#aws-glue-api-catalog-connections-CreateConnection)  | Grants permission to create a connection | Write |  |  |  | 
 |   [ CreateCrawler ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-CreateCrawler)  | Grants permission to create a crawler | Write |  |  |  | 
 |   [ CreateDatabase ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-CreateDatabase)  | Grants permission to create a database | Write |  |  |  | 
 |   [ CreateDevEndpoint ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-CreateDevEndpoint)  | Grants permission to create a development endpoint | Write |  |  |  | 
 |   [ CreateJob ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-CreateJob)  | Grants permission to create a job | Write |  |  |  | 
+|   [ CreateMLTransform ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-CreateMLTransform)  | Grants permission to create an ML Transform | Write |  |  |  | 
 |   [ CreatePartition ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-CreatePartition)  | Grants permission to create a partition | Write |  |  |  | 
 |   [ CreateScript ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-CreateScript)  | Grants permission to create a script | Write |  |  |  | 
 |   [ CreateSecurityConfiguration ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-CreateSecurityConfiguration)  | Grants permission to create a security configuration | Write |  |  |  | 
@@ -56,6 +58,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ DeleteDatabase ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-DeleteDatabase)  | Grants permission to delete a database | Write |  |  |  | 
 |   [ DeleteDevEndpoint ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-DeleteDevEndpoint)  | Grants permission to delete a development endpoint | Write |  |  |  | 
 |   [ DeleteJob ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-DeleteJob)  | Grants permission to delete a job | Write |  |  |  | 
+|   [ DeleteMLTransform ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-DeleteMLTransform)  | Grants permission to delete an ML Transform | Write |  |  |  | 
 |   [ DeletePartition ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-DeletePartition)  | Grants permission to delete a partition | Write |  |  |  | 
 |   [ DeleteResourcePolicy ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteResourcePolicy)  | Grants permission to delete a resource policy | Write |   [ catalog\* ](#awsglue-catalog)   |  |  | 
 |   [ DeleteSecurityConfiguration ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-security.html#aws-glue-api-jobs-security-DeleteSecurityConfiguration)  | Grants permission to delete a security configuration | Write |  |  |  | 
@@ -82,6 +85,10 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ GetJobRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRun)  | Grants permission to retrieve a job run | Read |  |  |  | 
 |   [ GetJobRuns ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-GetJobRuns)  | Grants permission to retrieve all job runs of a job | Read |  |  |  | 
 |   [ GetJobs ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-GetJobs)  | Grants permission to retrieve all current jobs | Read |  |  |  | 
+|   [ GetMLTaskRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRun)  | Grants permission to retrieve an ML Task Run | Read |  |  |  | 
+|   [ GetMLTaskRuns ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTaskRuns)  | Grants permission to retrieve all ML Task Runs | List |  |  |  | 
+|   [ GetMLTransform ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransform)  | Grants permission to retrieve an ML Transform | Read |  |  |  | 
+|   [ GetMLTransforms ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-GetMLTransforms)  | Grants permission to retrieve all ML Transforms | List |  |  |  | 
 |   [ GetMapping ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-etl-script-generation.html#aws-glue-api-etl-script-generation-GetMapping)  | Grants permission to create a mapping | Write |  |  |  | 
 |   [ GetPartition ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartition)  | Grants permission to retrieve a partition | Read |  |  |  | 
 |   [ GetPartitions ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-GetPartitions)  | Grants permission to retrieve the partitions of a table | Read |  |  |  | 
@@ -114,7 +121,11 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ResetJobBookmark ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-ResetJobBookmark)  | Grants permission to reset a job bookmark | Write |  |  |  | 
 |   [ StartCrawler ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StartCrawler)  | Grants permission to start a crawler | Write |  |  |  | 
 |   [ StartCrawlerSchedule ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-scheduler.html#aws-glue-api-crawler-scheduler-StartCrawlerSchedule)  | Grants permission to change the schedule state of a crawler to SCHEDULED | Write |  |  |  | 
+|   [ StartExportLabelsTaskRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartExportLabelsTaskRun)  | Grants permission to start an Export Labels ML Task Run | Write |  |  |  | 
+|   [ StartImportLabelsTaskRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartImportLabelsTaskRun)  | Grants permission to start an Import Labels ML Task Run | Write |  |  |  | 
 |   [ StartJobRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-runs.html#aws-glue-api-jobs-runs-StartJobRun)  | Grants permission to start running a job | Write |  |  |  | 
+|   [ StartMLEvaluationTaskRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLEvaluationTaskRun)  | Grants permission to start an Evaluation ML Task Run | Write |  |  |  | 
+|   [ StartMLLabelingSetGenerationTaskRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-StartMLLabelingSetGenerationTaskRun)  | Grants permission to start a Labeling Set Generation ML Task Run | Write |  |  |  | 
 |   [ StartTrigger ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-StartTrigger)  | Grants permission to start a trigger | Write |  |  |  | 
 |   [ StartWorkflowRun ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-StartWorkflowRun)  | Grants permission to start running a workflow | Write |  |  |  | 
 |   [ StopCrawler ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-crawling.html#aws-glue-api-crawler-crawling-StopCrawler)  | Grants permission to stop a running crawler | Write |  |  |  | 
@@ -128,11 +139,13 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ UpdateDatabase ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-databases.html#aws-glue-api-catalog-databases-UpdateDatabase)  | Grants permission to update a database | Write |  |  |  | 
 |   [ UpdateDevEndpoint ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-dev-endpoint.html#aws-glue-api-dev-endpoint-UpdateDevEndpoint)  | Grants permission to update a development endpoint | Write |  |  |  | 
 |   [ UpdateJob ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-UpdateJob)  | Grants permission to update a job | Write |  |  |  | 
+|   [ UpdateMLTransform ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html#aws-glue-api-machine-learning-api-UpdateMLTransform)  | Grants permission to update an ML Transform | Write |  |  |  | 
 |   [ UpdatePartition ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-partitions.html#aws-glue-api-catalog-partitions-UpdatePartition)  | Grants permission to update a partition | Write |  |  |  | 
 |   [ UpdateTable ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-tables.html#aws-glue-api-catalog-tables-UpdateTable)  | Grants permission to update a table | Write |  |  |  | 
 |   [ UpdateTrigger ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-trigger.html#aws-glue-api-jobs-trigger-UpdateTrigger)  | Grants permission to update a trigger | Write |  |  |  | 
 |   [ UpdateUserDefinedFunction ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-catalog-functions.html#aws-glue-api-catalog-functions-UpdateUserDefinedFunction)  | Grants permission to update a function definition | Write |  |  |  | 
 |   [ UpdateWorkflow ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-workflow.html#aws-glue-api-workflow-UpdateWorkflow)  | Grants permission to update a workflow | Write |  |  |  | 
+|   [ UseMLTransforms ](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-machine-learning-api.html)  | Grants permission to use an ML Transform from within a Glue ETL Script | Write |  |  |  | 
 
 ## Resources Defined by AWS Glue<a name="awsglue-resources-for-iam-policies"></a>
 

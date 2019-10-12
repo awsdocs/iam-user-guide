@@ -4,7 +4,7 @@ CloudWatch Application Insights \(service prefix: `applicationinsights`\) provid
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
-+ View a list of the [API operations available for this service]({DocHomeURL}appinsights/latest/APIReference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/appinsights/1.0/APIReference/)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-application-insights.html) permission policies\.
 
 **Topics**
@@ -25,25 +25,23 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateApplication ]({DocHomeURL}appinsights/latest/APIReference/API_CreateApplication.html)  | Creates an application from a resource group | Write |  |  |  | 
-|   [ CreateComponent ]({DocHomeURL}appinsights/latest/APIReference/API_CreateComponent.html)  | Creates a component from a group of resources | Write |  |  |  | 
-|   [ DeleteApplication ]({DocHomeURL}appinsights/latest/APIReference/API_DeleteApplication.html)  | Deletes an application | Write |  |  |  | 
-|   [ DeleteComponent ]({DocHomeURL}appinsights/latest/APIReference/API_DeleteComponent.html)  | Deletes a component | Write |  |  |  | 
-|   [ DescribeApplication ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeApplication.html)  | Describes an application | Read |  |  |  | 
-|   [ DescribeComponent ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeComponent.html)  | Describes a component | Read |  |  |  | 
-|   [ DescribeComponentConfiguration ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeComponentConfiguration.html)  | Describes a component configuration | Read |  |  |  | 
-|   [ DescribeComponentConfigurationRecommendation ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeComponentConfigurationRecommendation.html)  | Describe the recommended application component configuration | Read |  |  |  | 
-|   [ DescribeObservation ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeObservation.html)  | Describes an observation | Read |  |  |  | 
-|   [ DescribeProblem ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeProblem.html)  | Describes a problem | Read |  |  |  | 
-|   [ DescribeProblemDashboard ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeProblemDashboard.html)  | Describes a problem dashboard | Read |  |  |  | 
-|   [ DescribeProblemObservations ]({DocHomeURL}appinsights/latest/APIReference/API_DescribeProblemObservations.html)  | Describes the observation in a problem | Read |  |  |  | 
-|   [ ListApplications ]({DocHomeURL}appinsights/latest/APIReference/API_ListApplications.html)  | Lists all applications | List |  |  |  | 
-|   [ ListComponents ]({DocHomeURL}appinsights/latest/APIReference/API_ListComponents.html)  | List an application's components | List |  |  |  | 
-|   [ ListProblems ]({DocHomeURL}appinsights/latest/APIReference/API_ListProblems.html)  | Lists the problems in an application | List |  |  |  | 
-|   [ UpdateApplication ]({DocHomeURL}appinsights/latest/APIReference/API_UpdateApplication.html)  | Updates an application | Write |  |  |  | 
-|   [ UpdateComponent ]({DocHomeURL}appinsights/latest/APIReference/API_UpdateComponent.html)  | Updates a component | Write |  |  |  | 
-|   [ UpdateComponentConfiguration ]({DocHomeURL}appinsights/latest/APIReference/API_UpdateComponentConfiguration.html)  | Updates a component configuration | Write |  |  |  | 
-|   [ UpdateProblem ]({DocHomeURL}appinsights/latest/APIReference/API_UpdateProblem.html)  | Updates a problem | Write |  |  |  | 
+|   [ CreateApplication ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_CreateApplication.html)  | Creates an application from a resource group | Write |  |  |  | 
+|   [ CreateComponent ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_CreateComponent.html)  | Creates a component from a group of resources | Write |  |  |  | 
+|   [ DeleteApplication ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DeleteApplication.html)  | Deletes an application | Write |  |  |  | 
+|   [ DeleteComponent ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DeleteComponent.html)  | Deletes a component | Write |  |  |  | 
+|   [ DescribeApplication ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeApplication.html)  | Describes an application | Read |  |  |  | 
+|   [ DescribeComponent ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponent.html)  | Describes a component | Read |  |  |  | 
+|   [ DescribeComponentConfiguration ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponentConfiguration.html)  | Describes a component configuration | Read |  |  |  | 
+|   [ DescribeComponentConfigurationRecommendation ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeComponentConfigurationRecommendation.html)  | Describe the recommended application component configuration | Read |  |  |  | 
+|   [ DescribeObservation ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeObservation.html)  | Describes an observation | Read |  |  |  | 
+|   [ DescribeProblem ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeProblem.html)  | Describes a problem | Read |  |  |  | 
+|   [ DescribeProblemObservations ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_DescribeProblemObservations.html)  | Describes the observation in a problem | Read |  |  |  | 
+|   [ ListApplications ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListApplications.html)  | Lists all applications | List |  |  |  | 
+|   [ ListComponents ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListComponents.html)  | List an application's components | List |  |  |  | 
+|   [ ListProblems ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_ListProblems.html)  | Lists the problems in an application | List |  |  |  | 
+|   [ UpdateApplication ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateApplication.html)  | Updates an application | Write |  |  |  | 
+|   [ UpdateComponent ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateComponent.html)  | Updates a component | Write |  |  |  | 
+|   [ UpdateComponentConfiguration ](https://docs.aws.amazon.com/appinsights/1.0/APIReference/API_UpdateComponentConfiguration.html)  | Updates a component configuration | Write |  |  |  | 
 
 ## Resources Defined by CloudWatch Application Insights<a name="cloudwatchapplicationinsights-resources-for-iam-policies"></a>
 

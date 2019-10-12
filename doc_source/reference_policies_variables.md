@@ -187,7 +187,7 @@ A policy variable can also be used for `Condition` values in any condition that 
 }
 ```
 
-When referencing a tag in a `Condition` element expression, use the relevant prefix and key name as the condition key\. Then use the value that you want to test in the condition value\. For example, the following policy example allows access to a resource only if the tag `costCenter` is attached to the resource\. The tag must also have a value of either `12345` or `67890`\. If the tag has no value, or has any other value, then the request fails\.
+When referencing a tag in a `Condition` element expression, use the relevant prefix and key name as the condition key\. Then use the value that you want to test in the condition value\. For example, the following policy example allows full access to IAM resources, but only if the tag `costCenter` is attached to the resource\. The tag must also have a value of either `12345` or `67890`\. If the tag has no value, or has any other value, then the request fails\.
 
 ```
 {
@@ -195,7 +195,7 @@ When referencing a tag in a `Condition` element expression, use the relevant pre
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": "*",
+      "Action": "iam:*",
       "Resource": "*",
       "Condition": {
         "StringLike": {

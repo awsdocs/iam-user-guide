@@ -98,7 +98,7 @@ You might receive the following error when you attempt to assign or remove a vir
 User: arn:aws:iam::123456789012:user/Diego is not authorized to perform: iam:DeleteVirtualMFADevice on resource: arn:aws:iam::123456789012:mfa/Diego with an explicit deny
 ```
 
-This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and then cancelled the process\. This creates an MFA device for the user in IAM but never activates it\.\. You must delete the existing MFA device before you can associate a new device with the user\.
+This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and then cancelled the process\. This creates an MFA device for the user in IAM but never activates it\. You must delete the existing MFA device before you can associate a new device with the user\.
 
 AWS recommends a policy that allows a user to delete their own virtual MFA device only if they are authenticated using MFA\. For more information, see [AWS: Allows MFA\-Authenticated IAM Users to Manage Their Own Credentials on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
 

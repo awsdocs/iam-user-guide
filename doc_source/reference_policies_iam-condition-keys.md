@@ -57,7 +57,7 @@ This example shows how you might create a policy that allows deleting users with
 
 ## Available Keys for AWS Web Identity Federation<a name="condition-keys-wif"></a>
 
-You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\)\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that make sure that federated users can get access only to resources that are associated with a specific provider, app, or user\. 
+You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\)\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that make sure that federated users can get access only to resources that are associated with a specific provider, app, or user\. These keys are typically used in the trust policy for a role\.
 
 **aws:FederatedProvider**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -75,17 +75,10 @@ The `FederatedProvider` key identifies which of the IdPs was used to authenticat
 }
 ```
 
-**Application ID and User ID**  
+**amr**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-You can also use two keys that provide a unique identifier for the user and an identifier for the application or site that the user authenticated with\. These keys have the following IdP\-specific names:  
-+ For Amazon Cognito users, the keys are `cognito-identity.amazonaws.com:aud` \(for the identity pool ID\) and `cognito-identity.amazonaws.com:sub` \(for the user ID\)\. 
-+ For Login with Amazon users, the keys are `www.amazon.com:app_id` and `www.amazon.com:user_id`
-+ For Facebook users, the keys are `graph.facebook.com:app_id` and `graph.facebook.com:id`
-+ For Google users, the keys are `accounts.google.com:aud` \(for the app ID\) and `accounts.google.com:sub` \(for the user ID\)\.
-
-**The amr Key in Amazon Cognito**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-If you are using Amazon Cognito for web identity federation, the `cognito-identity.amazonaws.com:amr` key \(Authentication Methods Reference\) in a trust policy includes login information about the user\. The key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
+**Example**: `cognito-identity.amazonaws.com.com:amr`  
+If you are using Amazon Cognito for web identity federation, the `cognito-identity.amazonaws.com:amr` key \(Authentication Methods Reference\) includes login information about the user\. The key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
 + If the user is unauthenticated, the key contains only `unauthenticated`\.
 + If the user is authenticated, the key contains the value `authenticated` and the name of the login provider used in the call \(`graph.facebook.com`, `accounts.google.com`, or `www.amazon.com`\)\. 
 As an example, the following condition in the trust policy for an Amazon Cognito role tests whether the user is unauthenticated:  
@@ -99,11 +92,35 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 }
 ```
 
-**The oaud Key in Google**  
-Works with string operators  
-If you use Google for web identity federation, the accounts\.google\.com:oaud key in a trust policy specifies the Google audience for the account\. If that app\_id value is scoped to a particular device or client, but you waish to authorize against the service ID or project ID, The key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
+**aud**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+**Examples**:   
++ `accounts.google.com:aud`
++ `cognito-identity.amazonaws.com:aud`
+Use these keys to verify that the Google application ID or Amazon Cognito identity pool ID matches the one that you specify in the policy\. You can use the `aud` key with the `sub` key for the same identity provider\.
+
+**id**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+**Examples**:  
++ `graph.facebook.com:app_id`
++ `graph.facebook.com:id`
++ `www.amazon.com:app_id`
++ `www.amazon.com:user_id`
+Use these keys to verify that the application \(or site\) ID or user ID matches the one that you specify in the policy\. This works for Facebook or Login with Amazon\. You can use the `app_id` key with the `id` key for the same identity provider\.
+
+**oaud**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+**Example**: `accounts.google.com:oaud`  
+If you use Google for web identity federation, this key specifies the Google audience for the account\. Use the key if the `app_id` value is scoped to a particular device or client, but you wish to authorize against the service ID or project ID\. This key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
 + If the user is unauthenticated, the key contains only `unauthenticated`\.
-+ If the user is authenticated, the key contains the value `authenticated` and the name of the login provider used in the call \(`graph.facebook.com`, `accounts.google.com`, or `www.amazon.com`\)\. 
++ If the user is authenticated, the key contains the value `authenticated` and the name of the web identity provider that was used in the call\. 
+
+**sub**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+**Examples**:   
++ `accounts.google.com:sub`
++ `cognito-identity.amazonaws.com:sub`
+Use these keys to verify that the user ID matches the one that you specify in the policy\. You can use the `sub` key with the `aud` key for the same identity provider\.
 
 **More Information About Web Identity Federation**  
 For more information about web identity federation, see the following:  

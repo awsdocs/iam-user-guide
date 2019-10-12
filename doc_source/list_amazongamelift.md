@@ -25,46 +25,79 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html)  | Creates an alias for a fleet | Write |  |  |  | 
-|   [ CreateBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html)  | Initializes a new build record and generates information required to upload a game build to Amazon GameLift | Write |  |  |  | 
-|   [ CreateFleet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html)  | Creates a new fleet of computing resources to run your game servers | Write |  |  |  | 
-|   [ CreateGameSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSession.html)  | Creates a game session for players to join | Write |  |  |  | 
-|   [ CreatePlayerSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html)  | Adds a player to a game session | Write |  |  |  | 
-|   [ CreatePlayerSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html)  | Adds a group of players to a game session | Write |  |  |  | 
-|   [ DeleteAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteAlias.html)  | Deletes an alias | Write |  |  |  | 
-|   [ DeleteBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteBuild.html)  | Deletes a build | Write |  |  |  | 
-|   [ DeleteFleet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleet.html)  | Deletes an empty fleet | Write |  |  |  | 
-|   [ DeleteScalingPolicy ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScalingPolicy.html)  | Deletes a set of scaling rules | Write |  |  |  | 
-|   [ DescribeAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeAlias.html)  | Retrieves properties for an alias | Read |  |  |  | 
-|   [ DescribeBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeBuild.html)  | Retrieves properties for a build | Read |  |  |  | 
-|   [ DescribeEC2InstanceLimits ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html)  | Retrieves maximum allowed usage and current usage for all EC2 instance types or a specified type | Read |  |  |  | 
-|   [ DescribeFleetAttributes ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes.html)  | Retrieves general fleet properties for a fleet | Read |  |  |  | 
-|   [ DescribeFleetCapacity ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html)  | Retrieves the current capacity status for a fleet | Read |  |  |  | 
-|   [ DescribeFleetEvents ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html)  | Retrieves entries from a fleet's event log | Read |  |  |  | 
-|   [ DescribeFleetPortSettings ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetPortSettings.html)  | Retrieves the inbound connection permissions set for a fleet | Read |  |  |  | 
-|   [ DescribeFleetUtilization ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html)  | Retrieves utilization statistics for a fleet | Read |  |  |  | 
-|   [ DescribeGameSessionDetails ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html)  | Retrieves game session properties plus game session protection policy | Read |  |  |  | 
-|   [ DescribeGameSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html)  | Retrieves game session properties for a fleet | Read |  |  |  | 
-|   [ DescribeInstances ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html)  | Retrieves information about a fleet's instances, including instance IDs\. | Read |  |  |  | 
-|   [ DescribePlayerSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html)  | Retrieves player session properties for a game session | Read |  |  |  | 
-|   [ DescribeRuntimeConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeRuntimeConfiguration.html)  | Retrieves the runtime configuration for a fleet | Read |  |  |  | 
-|   [ DescribeScalingPolicies ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScalingPolicies.html)  | Retrieves all scaling policies applied to a fleet | Read |  |  |  | 
-|   [ GetGameSessionLogUrl ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html)  | Retrieves the location of stored logs for a game session | Read |  |  |  | 
-|   [ GetInstanceAccess ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html)  | Requests remote access to a fleet instance\. | Read |  |  |  | 
-|   [ ListAliases ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListAliases.html)  | Retrieves the fleet aliases used with this AWS account | List |  |  |  | 
-|   [ ListBuilds ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListBuilds.html)  | Retrieves the builds for this AWS account | List |  |  |  | 
-|   [ ListFleets ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleets.html)  | Retrieves the fleet for this AWS account | List |  |  |  | 
-|   [ PutScalingPolicy ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_PutScalingPolicy.html)  | Creates or updates a fleet scaling policy | Write |  |  |  | 
-|   [ RequestUploadCredentials ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html)  | Retrieves a fresh set of upload credentials and the Amazon S3 storage location for a specific build | Read |  |  |  | 
-|   [ ResolveAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResolveAlias.html)  | Retrieves the fleet ID associated with an alias | Read |  |  |  | 
-|   [ SearchGameSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_SearchGameSessions.html)  | Retrieves game sessions that match the search criteria and sorts them as specified | Read |  |  |  | 
-|   [ UpdateAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateAlias.html)  | Updates properties for an alias | Write |  |  |  | 
-|   [ UpdateBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateBuild.html)  | Updates a build's name and version | Write |  |  |  | 
-|   [ UpdateFleetAttributes ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetAttributes.html)  | Sets a fleet's general properties | Write |  |  |  | 
-|   [ UpdateFleetCapacity ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html)  | Sets a fleet's capacity settings | Write |  |  |  | 
-|   [ UpdateFleetPortSettings ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings.html)  | Sets a fleet's port settings | Write |  |  |  | 
-|   [ UpdateGameSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html)  | Sets game session properties | Write |  |  |  | 
-|   [ UpdateRuntimeConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html)  | Sets a fleet's runtime configuration, which specifies how to launch server processes on the fleet | Write |  |  |  | 
+|   [ AcceptMatch ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_AcceptMatch.html)  | Registers player acceptance or rejection of a proposed FlexMatch match\. | Write |  |  |  | 
+|   [ CreateAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateAlias.html)  | Defines a new alias for a fleet\. | Write |  |  |  | 
+|   [ CreateBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html)  | Creates a new game build using files stored in an Amazon S3 bucket\. | Write |  |  |  | 
+|   [ CreateFleet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html)  | Creates a new fleet of computing resources to run your game servers\. | Write |  |  |  | 
+|   [ CreateGameSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSession.html)  | Starts a new game session on a specified fleet\. | Write |  |  |  | 
+|   [ CreateGameSessionQueue ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html)  | Sets up a new queue for processing new game session placement requests\. | Write |  |  |  | 
+|   [ CreateMatchmakingConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingConfiguration.html)  | Creates a new FlexMatch matchmaker\. | Write |  |  |  | 
+|   [ CreateMatchmakingRuleSet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateMatchmakingRuleSet.html)  | Creates a new matchmaking rule set for FlexMatch\. | Write |  |  |  | 
+|   [ CreatePlayerSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html)  | Reserves an available game session slot for a player\. | Write |  |  |  | 
+|   [ CreatePlayerSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html)  | Reserves available game session slots for multiple players\. | Write |  |  |  | 
+|   [ CreateScript ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateScript.html)  | Creates a new Realtime Servers script\. | Write |  |  |  | 
+|   [ CreateVpcPeeringAuthorization ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringAuthorization.html)  | Allows GameLift to create or delete a peering connection between a GameLift fleet VPC and a VPC on another AWS account\. | Write |  |  |  | 
+|   [ CreateVpcPeeringConnection ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html)  | Establishes a peering connection between your GameLift fleet VPC and a VPC on another account\. | Write |  |  |  | 
+|   [ DeleteAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteAlias.html)  | Deletes an alias\. | Write |  |  |  | 
+|   [ DeleteBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteBuild.html)  | Deletes a game build\. | Write |  |  |  | 
+|   [ DeleteFleet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteFleet.html)  | Deletes an empty fleet\. | Write |  |  |  | 
+|   [ DeleteGameSessionQueue ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteGameSessionQueue.html)  | Deletes an existing game session queue\. | Write |  |  |  | 
+|   [ DeleteMatchmakingConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingConfiguration.html)  | Deletes an existing FlexMatch matchmaker\. | Write |  |  |  | 
+|   [ DeleteMatchmakingRuleSet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteMatchmakingRuleSet.html)  | Deletes an existing FlexMatch matchmaking rule set\. | Write |  |  |  | 
+|   [ DeleteScalingPolicy ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScalingPolicy.html)  | Deletes a set of auto\-scaling rules\. | Write |  |  |  | 
+|   [ DeleteScript ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteScript.html)  | Deletes a Realtime Servers script\. | Write |  |  |  | 
+|   [ DeleteVpcPeeringAuthorization ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringAuthorization.html)  | Cancels a VPC peering authorization\. | Write |  |  |  | 
+|   [ DeleteVpcPeeringConnection ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringConnection.html)  | Removes a peering connection between VPCs\. | Write |  |  |  | 
+|   [ DescribeAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeAlias.html)  | Retrieves properties for an alias\. | Read |  |  |  | 
+|   [ DescribeBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeBuild.html)  | Retrieves properties for a game build\. | Read |  |  |  | 
+|   [ DescribeEC2InstanceLimits ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeEC2InstanceLimits.html)  | Retrieves the maximum allowed and current usage for EC2 instance types\. | Read |  |  |  | 
+|   [ DescribeFleetAttributes ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetAttributes.html)  | Retrieves general properties, including status, for fleets\. | Read |  |  |  | 
+|   [ DescribeFleetCapacity ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html)  | Retrieves the current capacity setting for fleets\. | Read |  |  |  | 
+|   [ DescribeFleetEvents ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html)  | Retrieves entries from a fleet's event log\. | Read |  |  |  | 
+|   [ DescribeFleetPortSettings ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetPortSettings.html)  | Retrieves the inbound connection permissions for a fleet\. | Read |  |  |  | 
+|   [ DescribeFleetUtilization ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetUtilization.html)  | Retrieves utilization statistics for fleets\. | Read |  |  |  | 
+|   [ DescribeGameSessionDetails ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionDetails.html)  | Retrieves properties for game sessions in a fleet, including the protection policy\. | Read |  |  |  | 
+|   [ DescribeGameSessionPlacement ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html)  | Retrieves details of a game session placement request\. | Read |  |  |  | 
+|   [ DescribeGameSessionQueues ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html)  | Retrieves properties for game session queues\. | Read |  |  |  | 
+|   [ DescribeGameSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html)  | Retrieves properties for game sessions in a fleet\. | Read |  |  |  | 
+|   [ DescribeInstances ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeInstances.html)  | Retrieves information about instances in a fleet\. | Read |  |  |  | 
+|   [ DescribeMatchmaking ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html)  | Retrieves details of matchmaking tickets\. | Read |  |  |  | 
+|   [ DescribeMatchmakingConfigurations ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingConfigurations.html)  | Retrieves properties for FlexMatch matchmakers\. | Read |  |  |  | 
+|   [ DescribeMatchmakingRuleSets ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmakingRuleSets.html)  | Retrieves properties for FlexMatch matchmaking rule sets\. | Read |  |  |  | 
+|   [ DescribePlayerSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html)  | Retrieves properties for player sessions in a game session\. | Read |  |  |  | 
+|   [ DescribeRuntimeConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeRuntimeConfiguration.html)  | Retrieves the current runtime configuration for a fleet\. | Read |  |  |  | 
+|   [ DescribeScalingPolicies ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScalingPolicies.html)  | Retrieves all scaling policies that are applied to a fleet\. | Read |  |  |  | 
+|   [ DescribeScript ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeScript.html)  | Retrieves properties for a Realtime Servers script\. | Read |  |  |  | 
+|   [ DescribeVpcPeeringAuthorizations ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringAuthorizations.html)  | Retrieves valid VPC peering authorizations\. | Read |  |  |  | 
+|   [ DescribeVpcPeeringConnections ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeVpcPeeringConnections.html)  | Retrieves details on active or pending VPC peering connections\. | Read |  |  |  | 
+|   [ GetGameSessionLogUrl ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetGameSessionLogUrl.html)  | Retrieves the location of stored logs for a game session\. | Read |  |  |  | 
+|   [ GetInstanceAccess ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html)  | Requests remote access to a specified fleet instance\. | Read |  |  |  | 
+|   [ ListAliases ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListAliases.html)  | Retrieves all aliases that are defined in the current region\. | List |  |  |  | 
+|   [ ListBuilds ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListBuilds.html)  | Retrieves all game build in the current region\. | List |  |  |  | 
+|   [ ListFleets ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListFleets.html)  | Retrieves a list of fleet IDs for all fleets in the current region\. | List |  |  |  | 
+|   [ ListScripts ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListScripts.html)  | Retrieves properties for all Realtime Servers scripts in the current region\. | List |  |  |  | 
+|   [ PutScalingPolicy ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_PutScalingPolicy.html)  | Creates or updates a fleet auto\-scaling policy\. | Write |  |  |  | 
+|   [ RequestUploadCredentials ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html)  | Retrieves fresh upload credentials to use when uploading a new game build\. | Read |  |  |  | 
+|   [ ResolveAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ResolveAlias.html)  | Retrieves the fleet ID associated with an alias\. | Read |  |  |  | 
+|   [ SearchGameSessions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_SearchGameSessions.html)  | Retrieves game sessions that match a set of search criteria\. | Read |  |  |  | 
+|   [ StartFleetActions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartFleetActions.html)  | Resumes auto\-scaling activity on a fleet after it was suspended with StopFleetActions\(\)\. | Write |  |  |  | 
+|   [ StartGameSessionPlacement ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html)  | Sends a game session placement request to a game session queue\. | Write |  |  |  | 
+|   [ StartMatchBackfill ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html)  | Requests FlexMatch matchmaking to fill available player slots in an existing game session\. | Write |  |  |  | 
+|   [ StartMatchmaking ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html)  | Requests FlexMatch matchmaking for one or a group of players and game session placement for a resulting match\. | Write |  |  |  | 
+|   [ StopFleetActions ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html)  | Suspends auto\-scaling activity on a fleet\. | Write |  |  |  | 
+|   [ StopGameSessionPlacement ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopGameSessionPlacement.html)  | Cancels a game session placement request that is in progress\. | Write |  |  |  | 
+|   [ StopMatchmaking ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopMatchmaking.html)  | Cancels a matchmaking or match backfill request that is in progress\. | Write |  |  |  | 
+|   [ UpdateAlias ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateAlias.html)  | Updates the properties of an existing alias\. | Write |  |  |  | 
+|   [ UpdateBuild ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateBuild.html)  | Updates an existing build's metadata\. | Write |  |  |  | 
+|   [ UpdateFleetAttributes ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetAttributes.html)  | Updates the general properties of an existing fleet\. | Write |  |  |  | 
+|   [ UpdateFleetCapacity ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetCapacity.html)  | Adjusts a fleet's capacity settings\. | Write |  |  |  | 
+|   [ UpdateFleetPortSettings ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateFleetPortSettings.html)  | Adjusts a fleet's port settings\. | Write |  |  |  | 
+|   [ UpdateGameSession ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html)  | Updates the properties of an existing game session\. | Write |  |  |  | 
+|   [ UpdateGameSessionQueue ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html)  | Updates properties of an existing game session queue\. | Write |  |  |  | 
+|   [ UpdateMatchmakingConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateMatchmakingConfiguration.html)  | Updates properties of an existing FlexMatch matchmaking configuration\. | Write |  |  |  | 
+|   [ UpdateRuntimeConfiguration ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateRuntimeConfiguration.html)  | Updates how server processes are configured on instances in an existing fleet\. | Write |  |  |  | 
+|   [ UpdateScript ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html)  | Updates the metadata and content of an existing Realtime Servers script\. | Write |  |  |  | 
+|   [ ValidateMatchmakingRuleSet ](https://docs.aws.amazon.com/gamelift/latest/apireference/API_ValidateMatchmakingRuleSet.html)  | Validates the syntax of a FlexMatch matchmaking rule set\. | Read |  |  |  | 
 
 ## Resources Defined by Amazon GameLift<a name="amazongamelift-resources-for-iam-policies"></a>
 
