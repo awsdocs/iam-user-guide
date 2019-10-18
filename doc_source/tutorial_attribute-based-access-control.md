@@ -98,7 +98,7 @@ For additional policies that you can adapt for this tutorial, see the following 
 + [Amazon EC2: Allows Starting or Stopping EC2 Instances a User Has Tagged, Programmatically and in the Console](reference_policies_examples_ec2_tag-owner.md)
 + [EC2: Start or Stop Instances Based on Matching Principal and Resource Tags](reference_policies_examples_ec2-start-stop-match-tags.md)
 + [EC2: Start or Stop Instances Based on Tags](reference_policies_examples_ec2-start-stop-tags.md)
-+ [](reference_policies_examples_iam-assume-tagged-role.md)
++ [IAM: Assume Roles That Have a Specific Tag](reference_policies_examples_iam-assume-tagged-role.md)
 
 **ABAC Policy: Access Secrets Manager Resources Only When the Principal and Resource Tags Match**  
 The following policy allows principals to create, read, edit, and delete resources, but only when those resources are tagged with the same key\-value pairs as the principal\. When a principal creates a resource, they must add `access-project`, `access-team`, and `cost-center` tags with values that match the principal's tags\. The policy also allows adding optional `Name` or `OwnedBy` tags\.

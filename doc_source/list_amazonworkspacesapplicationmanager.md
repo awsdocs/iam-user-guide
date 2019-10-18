@@ -3,9 +3,9 @@
 Amazon WorkSpaces Application Manager \(service prefix: `wam`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/wam/latest/adminguide/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/wam/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/wam/latest/adminguide/access_permissions.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/wam/latest/adminguide/iam.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/wam/latest/adminguide/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/wam/latest/adminguide/iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon WorkSpaces Application Manager](#amazonworkspacesapplicationmanager-actions-as-permissions)
@@ -25,7 +25,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ AuthenticatePackager ](https://docs.aws.amazon.com/wam/latest/APIReference/API_AuthenticatePackager.html)  | Description for AuthenticatePackager | Write |  |  |  | 
+|   [ AuthenticatePackager ](https://docs.aws.amazon.com/wam/latest/adminguide/iam.html) \[permission only\] | Allows the Amazon WAM packaging instance to access your application package catalog\. | Write |  |  |  | 
 
 ## Resources Defined by Amazon WorkSpaces Application Manager<a name="amazonworkspacesapplicationmanager-resources-for-iam-policies"></a>
 
