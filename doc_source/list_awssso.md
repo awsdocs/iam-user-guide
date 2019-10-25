@@ -52,6 +52,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ EnableUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Activates user | Write |  |  |  | 
 |   [ GetApplicationInstance ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve details for an application instance | Read |  |  |  | 
 |   [ GetApplicationTemplate ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve application template details | Read |  |  |  | 
+|   [ GetMfaDeviceManagementForDirectory ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve Mfa Device Management settings for the directory | Read |  |  |  | 
 |   [ GetPermissionSet ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve details of a permission set | Read |  |  |  | 
 |   [ GetPermissionsPolicy ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve all permission policies associated with a permission set | Read |  |  |   sso:DescribePermissionsPolicies   | 
 |   [ GetProfile ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve a profile for an application instance | Read |  |  |  | 
@@ -70,6 +71,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ListPermissionSets ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve all permission sets | Read |  |  |  | 
 |   [ ListProfileAssociations ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve the directory user or group associated with the profile | Read |  |  |  | 
 |   [ ListProfiles ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve all profiles for an application instance | Read |  |  |   sso:GetProfile   | 
+|   [ PutMfaDeviceManagementForDirectory ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Put Mfa Device Management settings for the directory | Write |  |  |  | 
 |   [ PutPermissionsPolicy ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Add a policy to a permission set | Write |  |  |  | 
 |   [ RemoveMemberFromGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Removes member that are part of the group | Write |  |  |  | 
 |   [ SearchGroups ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Search for groups within the associated directory | Read |  |  |  | 

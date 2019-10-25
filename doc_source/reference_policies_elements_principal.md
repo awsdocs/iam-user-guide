@@ -105,6 +105,8 @@ If your `Principal` element in a role trust policy contains an ARN that points t
 "Principal": { "AWS": "arn:aws:sts::AWS-account-ID:assumed-role/role-name/role-session-name" }
 ```
 
+When you specify an assumed\-role session in a `Principal` element, you cannot use a wildcard \(\*\) to mean "all sessions"\. Principals must always name a specific session\.
+
 **AWS service**
 
 IAM roles that can be assumed by an AWS service are called *[service roles](id_roles_terms-and-concepts.md#iam-term-service-role)*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service roles have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:

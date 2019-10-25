@@ -5,7 +5,7 @@ This example shows how you might create a policy that allows IAM users that are 
 To learn how users can access the **My Security Credentials** page, see [How IAM Users Change Their Own Password \(Console\)](id_credentials_passwords_user-change-own.md#ManagingUserPwdSelf-Console)\.
 
 **Note**  
-This example policy does not allow users to reset a password while signing in\. New users and users with an expired password might try to do so\. You can allow this by adding `iam:ChangePassword` to the statement `DenyAllExceptListedIfNoMFA`\. However, IAM does not recommend this\. Allowing users to change their password without MFA can be a security risk\.
+This example policy does not allow users to reset a password while signing in\. New users and users with an expired password might try to do so\. You can allow this by adding `iam:ChangePassword` and `iam:GetAccountPasswordPolicy` to the statement `DenyAllExceptListedIfNoMFA`\. However, IAM does not recommend this\. Allowing users to change their password without MFA can be a security risk\.
 
 **What does this policy do?**
 + The `AllowViewAccountInfo` statement allows the user to view account\-level information\. These permissions must be in their own statement because they do not support or do not need to specify a resource ARN\. Instead the permissions specify `"Resource" : "*"`\. This statement includes the following actions that allow the user to view specific information: 

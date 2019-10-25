@@ -270,6 +270,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 | Alexa for Business  | Yes | Yes | No | No | Yes | No | 
+| [Amazon Chime](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/chime/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/iam_users_groups.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/workmail/latest/adminguide/using-service-linked-roles.html) | 
 
 ## Satellite Services<a name="satellite_svcs"></a>

@@ -11,14 +11,9 @@ To learn more about CloudTrail, see the [AWS CloudTrail User Guide](https://docs
 + [Logging Regional Sign\-in Events](#cloudtrail-integration_signin-regions)
 + [Logging User Sign\-in Events](#cloudtrail-integration_signin-users)
 + [Logging Sign\-in Events for Temporary Credentials](#cloudtrail-integration_signin-tempcreds)
-+ [Example IAM API Event in CloudTrail Log File](#cloudtrail-integration-iam-api-events)
-+ [Example Cross\-Account AWS STS API Events in CloudTrail Log Files](#stscloudtrailexample)
-+ [Example AWS Service AWS STS API Event in CloudTrail Log File](#stscloudtrailexample_service)
-+ [Example SAML AWS STS API Event in CloudTrail Log File](#stscloudtrailexample_saml)
-+ [Example Web Identity AWS STS API Event in CloudTrail Log File](#stscloudtrailexample_web-identity)
-+ [Example Sign\-in Failure Event in CloudTrail Log File](#cloudtrail-integration-signin-failure)
-+ [Example Sign\-in Failure Event Caused by Incorrect User Name](#hiddensecurity)
-+ [Example Sign\-in Success Event in CloudTrail Log File](#cloudtrail-integration-signin-success)
++ [Example IAM API Events in CloudTrail Log](#cloudtrail-integration_examples-iam-api)
++ [Example AWS STS API Events in CloudTrail Log](#cloudtrail-integration_examples-sts-api)
++ [Example Sign\-In Events in CloudTrail Log](#cloudtrail-integration_examples-signin)
 
 ## IAM and AWS STS Information in CloudTrail<a name="iam-info-in-cloudtrail"></a>
 
@@ -129,9 +124,11 @@ The following table shows how CloudTrail logs different information for each of 
 | Externally authenticated user | AssumeRoleWithSAML | n/a | SAML user identity | Role identity only \(no user\) | 
 | Externally authenticated user | AssumeRoleWithWebIdentity | n/a | OIDC/Web user identity | Role identity only \(no user\) | 
 
-CloudTrail log files contain events that are formatted using JSON\. An event represents a single API request or sign\-in event and includes information about the requested action, any parameters, and the date and time of the action\. 
+## Example IAM API Events in CloudTrail Log<a name="cloudtrail-integration_examples-iam-api"></a>
 
-## Example IAM API Event in CloudTrail Log File<a name="cloudtrail-integration-iam-api-events"></a>
+CloudTrail log files contain events that are formatted using JSON\. An API event represents a single API request and includes information about the principal, the requested action, any parameters, and the date and time of the action\. 
+
+### Example IAM API Event in CloudTrail Log File<a name="cloudtrail-integration-iam-api-events"></a>
 
 The following example shows a CloudTrail log entry for a request made for the IAM `GetUserPolicy` action\. 
 
@@ -171,7 +168,11 @@ The following example shows a CloudTrail log entry for a request made for the IA
 
 From this event information, you can determine that the request was made to get a user policy named `ReadOnlyAccess-JaneDoe-201407151307` for user `JaneDoe`, as specified in the `requestParameters` element\. You can also see that the request was made by an IAM user named `JaneDoe` on July 15, 2014 at 9:40 PM \(UTC\)\. In this case, the request originated in the AWS Management Console, as you can tell from the `userAgent` element\. 
 
-## Example Cross\-Account AWS STS API Events in CloudTrail Log Files<a name="stscloudtrailexample"></a>
+## Example AWS STS API Events in CloudTrail Log<a name="cloudtrail-integration_examples-sts-api"></a>
+
+CloudTrail log files contain events that are formatted using JSON\. An API event represents a single API request and includes information about the principal, the requested action, any parameters, and the date and time of the action\. 
+
+### Example Cross\-Account AWS STS API Events in CloudTrail Log Files<a name="stscloudtrailexample"></a>
 
 The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRole` action to assume the role `EC2-dev` in account 111122223333\.
 
@@ -261,7 +262,7 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
 }
 ```
 
-## Example AWS Service AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_service"></a>
+### Example AWS Service AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_service"></a>
 
 The following example shows a CloudTrail log entry for a request made by an AWS service calling another service API using permissions from a service role\. It shows the CloudTrail log entry for the request made in account 777788889999\.
 
@@ -305,7 +306,7 @@ The following example shows a CloudTrail log entry for a request made by an AWS 
 }
 ```
 
-## Example SAML AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_saml"></a>
+### Example SAML AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_saml"></a>
 
 The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithSAML` action\.
 
@@ -366,7 +367,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
 }
 ```
 
-## Example Web Identity AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_web-identity"></a>
+### Example Web Identity AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_web-identity"></a>
 
 The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithWebIdentity` action\.
 
@@ -418,7 +419,46 @@ The following example shows a CloudTrail log entry for a request made for the AW
 }
 ```
 
-## Example Sign\-in Failure Event in CloudTrail Log File<a name="cloudtrail-integration-signin-failure"></a>
+## Example Sign\-In Events in CloudTrail Log<a name="cloudtrail-integration_examples-signin"></a>
+
+CloudTrail log files contain events that are formatted using JSON\. A sign\-in event represents a single sign\-in request and includes information about the sign\-in principal, the Region, and the date and time of the action\. 
+
+### Example Sign\-in Success Event in CloudTrail Log File<a name="cloudtrail-integration-signin-success"></a>
+
+The following example shows a CloudTrail log entry for a successful sign\-in event\.
+
+```
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+    "arn":"arn:aws:iam::111122223333:user/JohnDoe",
+    "accountId": "111122223333",
+    "userName": "JohnDoe"
+  },
+  "eventTime": "2014-07-16T15:49:27Z",
+  "eventSource": "signin.amazonaws.com",
+  "eventName": "ConsoleLogin",
+  "awsRegion": "us-east-2",
+  "sourceIPAddress": "192.0.2.110",
+  "userAgent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0",
+  "requestParameters": null,
+  "responseElements": {
+    "ConsoleLogin": "Success"
+  },
+  "additionalEventData": {
+    "MobileVersion": "No",
+    "LoginTo": "[https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)",
+    "MFAUsed": "No"
+  },
+  "eventID": "3fcfb182-98f8-4744-bd45-10a395ab61cb"
+}
+```
+
+For more details about the information contained in CloudTrail log files, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
+
+### Example Sign\-in Failure Event in CloudTrail Log File<a name="cloudtrail-integration-signin-failure"></a>
 
 The following example shows a CloudTrail log entry for a failed sign\-in event\.
 
@@ -454,7 +494,7 @@ The following example shows a CloudTrail log entry for a failed sign\-in event\.
 
 From this information, you can determine that the sign\-in attempt was made by an IAM user named `JaneDoe`, as shown in the `userIdentity` element\. You can also see that the sign\-in attempt failed, as shown in the `responseElements` element\. You can see that `JaneDoe` tried to sign in to the Amazon SNS console at 5:35 PM \(UTC\) on July 8, 2014\.
 
-## Example Sign\-in Failure Event Caused by Incorrect User Name<a name="hiddensecurity"></a>
+### Example Sign\-in Failure Event Caused by Incorrect User Name<a name="hiddensecurity"></a>
 
 The following example shows a CloudTrail log entry for an unsuccessful sign\-in event caused by the user entering an incorrect user name\. AWS masks the `userName` text with `HIDDEN_DUE_TO_SECURITY_REASONS` to help prevent exposing potentially sensitive information\.
 
@@ -488,38 +528,3 @@ The following example shows a CloudTrail log entry for an unsuccessful sign\-in 
   "recipientAccountId": "123456789012"
 }
 ```
-
-## Example Sign\-in Success Event in CloudTrail Log File<a name="cloudtrail-integration-signin-success"></a>
-
-The following example shows a CloudTrail log entry for a successful sign\-in event\.
-
-```
-{
-  "eventVersion": "1.05",
-  "userIdentity": {
-    "type": "IAMUser",
-    "principalId": "AIDACKCEVSQ6C2EXAMPLE",
-    "arn":"arn:aws:iam::111122223333:user/JohnDoe",
-    "accountId": "111122223333",
-    "userName": "JohnDoe"
-  },
-  "eventTime": "2014-07-16T15:49:27Z",
-  "eventSource": "signin.amazonaws.com",
-  "eventName": "ConsoleLogin",
-  "awsRegion": "us-east-2",
-  "sourceIPAddress": "192.0.2.110",
-  "userAgent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0",
-  "requestParameters": null,
-  "responseElements": {
-    "ConsoleLogin": "Success"
-  },
-  "additionalEventData": {
-    "MobileVersion": "No",
-    "LoginTo": "[https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)",
-    "MFAUsed": "No"
-  },
-  "eventID": "3fcfb182-98f8-4744-bd45-10a395ab61cb"
-}
-```
-
-For more details about the information contained in CloudTrail log files, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.

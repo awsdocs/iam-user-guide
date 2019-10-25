@@ -10,7 +10,7 @@ Before you can create a role for SAML 2\.0 federation, you must first complete t
 
 1. <a name="idpsamlstep1"></a>Before you create a role for SAML\-based federation, you must create a SAML provider in IAM\. For more information, see [Creating IAM SAML Identity Providers](id_roles_providers_create_saml.md)\.
 
-1. Prepare the policies for the role that the SAML 2\.0–authenticated users will assume\. As with any role, a role for the SAML federation includes two policies\. One is the trust policy that specifies who can assume the role\. The other is the permissions policy that specifies the AWS actions and resources that the federated user is allowed or denied access to\.
+1. Prepare the policies for the role that the SAML 2\.0–authenticated users will assume\. As with any role, a role for the SAML federation includes two policies\. One is the role trust policy that specifies who can assume the role\. The other is the IAM permissions policy that specifies the AWS actions and resources that the federated user is allowed or denied access to\.
 
    When you create the trust policy for your role, you must use three values that ensure that the role can be assumed only by your application:
    + For the `Action` element, use the `sts:AssumeRoleWithSAML` action\.

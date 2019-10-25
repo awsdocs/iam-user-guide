@@ -64,3 +64,4 @@ This example works as intended when it is part of a policy statement in a resour
     }]
 }
 ```
+When you specify an assumed\-role session in a `NotPrincipal` element, you cannot use a wildcard \(\*\) to mean "all sessions"\. Principals must always name a specific session\.

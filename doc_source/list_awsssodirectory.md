@@ -4,7 +4,7 @@ AWS SSO Directory \(service prefix: `sso-directory`\) provides the following ser
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/singlesignon/latest/userguide/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/singlesignon/latest/userguide/)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html) permission policies\.
 
 **Topics**
@@ -25,26 +25,30 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   AddMemberToGroup  | Adds member to the group in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   CreateAlias  | Creates an alias for the directory that AWS SSO provides by default | Write |  |  |  | 
-|   CreateGroup  | Creates a group in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   CreateUser  | Creates a user in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   DeleteGroup  | Deletes a group from the directory that AWS SSO provides by default | Write |  |  |  | 
-|   DeleteUser  | Deletes a user from the directory that AWS SSO provides by default | Write |  |  |  | 
-|   DescribeDirectory  | Retrieve information about the directory that AWS SSO provides by default | Read |  |  |  | 
-|   DescribeGroups  | Retrieves information about group from the directory that AWS SSO provides by default | List |  |  |  | 
-|   DescribeUsers  | Retrieves information about user from the directory that AWS SSO provides by default | List |  |  |  | 
-|   DisableUser  | Deactivates user in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   EnableUser  | Activates user in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   ListGroupsForUser  | Lists groups for a user from the directory that AWS SSO provides by default  | List |  |  |  | 
-|   ListMembersInGroup  | Retrieves all members that are part of the group in the directory that AWS SSO provides by default | List |  |  |  | 
-|   RemoveMemberFromGroup  | Removes member that are part of the group in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   SearchGroups  | Search for groups within the associated directory | Read |  |  |  | 
-|   SearchUsers  | Search for users within the associated directory | Read |  |  |  | 
-|   UpdateGroup  | Updates information about group in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   UpdatePassword  | Updates password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   UpdateUser  | Updates user information in the directory that AWS SSO provides by default | Write |  |  |  | 
-|   VerifyEmail  | Verify email address of an User | Write |  |  |  | 
+|   [ AddMemberToGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Adds member to the group in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ CompleteVirtualMfaDeviceRegistration ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Completes the creation process of a virtual MFA device | Write |  |  |  | 
+|   [ CreateAlias ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Creates an alias for the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ CreateGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Creates a group in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ CreateUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Creates a user in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ DeleteGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Deletes a group from the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ DeleteMfaDeviceForUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Deletes a MFA device by device name for a given user | Write |  |  |  | 
+|   [ DeleteUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Deletes a user from the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ DescribeDirectory ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieve information about the directory that AWS SSO provides by default | Read |  |  |  | 
+|   [ DescribeGroups ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieves information about group from the directory that AWS SSO provides by default | List |  |  |  | 
+|   [ DescribeUsers ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieves information about user from the directory that AWS SSO provides by default | List |  |  |  | 
+|   [ DisableUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Deactivates user in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ EnableUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Activates user in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ ListGroupsForUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Lists groups for a user from the directory that AWS SSO provides by default  | List |  |  |  | 
+|   [ ListMembersInGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Retrieves all members that are part of the group in the directory that AWS SSO provides by default | List |  |  |  | 
+|   [ ListMfaDevicesForUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Lists all active MFA devices and their MFA device metadata for a user | List |  |  |  | 
+|   [ RemoveMemberFromGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Removes member that are part of the group in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ SearchGroups ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Search for groups within the associated directory | Read |  |  |  | 
+|   [ SearchUsers ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Search for users within the associated directory | Read |  |  |  | 
+|   [ StartVirtualMfaDeviceRegistration ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Begins the creation process of virtual mfa device | Write |  |  |  | 
+|   [ UpdateGroup ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates information about group in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ UpdatePassword ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates password by sending password reset link via email or generating one time password for a user in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ UpdateUser ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Updates user information in the directory that AWS SSO provides by default | Write |  |  |  | 
+|   [ VerifyEmail ](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access-using-id-policies.html#policyexample)  | Verify email address of an User | Write |  |  |  | 
 
 ## Resources Defined by AWS SSO Directory<a name="awsssodirectory-resources-for-iam-policies"></a>
 
