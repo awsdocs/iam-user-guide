@@ -212,7 +212,7 @@ The permissions policy attached to the roles allows the employees to create secr
 
 **To test creating a secret with and without the required tags**
 
-1. In your main browser window, remain signed in as the administrator user so that you can review users, roles, and policies in IAM\. Use a browser incognito window or separate browser for your testing\. There, sign in as the `access-Arnav-peg-eng` IAM user and open the Secrets Manager console at [https://console\.aws\.amazon\.com/secretsmanager/](https://console.aws.amazon.com/iam/)\.
+1. In your main browser window, remain signed in as the administrator user so that you can review users, roles, and policies in IAM\. Use a browser incognito window or separate browser for your testing\. There, sign in as the `access-Arnav-peg-eng` IAM user and open the Secrets Manager console at [https://console\.aws\.amazon\.com/secretsmanager/](https://console.aws.amazon.com/secretsmanager/)\.
 
 1. Attempt to switch to the `access-uni-engineering` role\. For more information about switching roles in the AWS Management Console, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\.
 
