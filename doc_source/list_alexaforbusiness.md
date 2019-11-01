@@ -40,6 +40,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ conferenceprovider ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_ConferenceProvider.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:conference\-provider/$\{Resource\_id\}  |  | 
 |   [ contact ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_Contact.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:contact/$\{Resource\_id\}  |  | 
 |   [ schedule ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_BusinessReportSchedule.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:schedule/$\{Resource\_id\}  |  | 
+|   [ networkprofile ](https://docs.aws.amazon.com/a4b/latest/APIReference/API_NetworkProfile.html)  |  arn:$\{Partition\}:a4b:$\{Region\}:$\{Account\}:network\-profile/$\{Resource\_id\}  |  | 
 
 ## Condition Keys for Alexa for Business<a name="alexaforbusiness-policy-keys"></a>
 

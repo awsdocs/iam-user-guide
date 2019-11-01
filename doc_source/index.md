@@ -418,6 +418,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon QuickSight](list_amazonquicksight.md)
          + [Actions, Resources, and Condition Keys for Amazon RDS](list_amazonrds.md)
          + [Actions, Resources, and Condition Keys for Amazon RDS Data API](list_amazonrdsdataapi.md)
+         + [Actions, Resources, and Condition Keys for Amazon RDS IAM Authentication](list_amazonrdsiamauthentication.md)
          + [Actions, Resources, and Condition Keys for Amazon Redshift](list_amazonredshift.md)
          + [Actions, Resources, and Condition Keys for Amazon Rekognition](list_amazonrekognition.md)
          + [Actions, Resources, and Condition Keys for AWS Resource Access Manager](list_awsresourceaccessmanager.md)

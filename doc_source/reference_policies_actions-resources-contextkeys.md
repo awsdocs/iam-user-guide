@@ -183,6 +183,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon QuickSight](list_amazonquicksight.md)
 + [Amazon RDS](list_amazonrds.md)
 + [Amazon RDS Data API](list_amazonrdsdataapi.md)
++ [Amazon RDS IAM Authentication](list_amazonrdsiamauthentication.md)
 + [Amazon Redshift](list_amazonredshift.md)
 + [Amazon Rekognition](list_amazonrekognition.md)
 + [AWS Resource Access Manager](list_awsresourceaccessmanager.md)

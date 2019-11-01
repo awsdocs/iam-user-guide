@@ -35,11 +35,13 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ document ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:document/$\{DocumentName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   [ maintenancewindow ](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-maintenance.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:maintenancewindow/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
+|   [ resourcedatasync ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:resource\-data\-sync/$\{SyncName\}  |  | 
 |   [ managed\-instance ](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:managed\-instance/$\{ManagedInstanceName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   [ instance ](https://docs.aws.amazon.com/systems-manager/latest/userguide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:instance/$\{InstanceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   parameter  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:parameter/$\{FullyQualifiedParameterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   patchbaseline  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:patchbaseline/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssystemsmanager-aws_ResourceTag___TagKey_)   [ ssm:resourceTag/tag\-key ](#awssystemsmanager-ssm_resourceTag_tag-key)   | 
 |   session  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:session/$\{ResourceId\}  |  | 
+|   [ servicesetting ](https://docs.aws.amazon.com/systems-manager/latest/userguide/API_ServiceSetting.html)  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:servicesetting/$\{ResourceId\}  |  | 
 |   opsitem  |  arn:$\{Partition\}:ssm:$\{Region\}:$\{Account\}:opsitem/$\{ResourceId\}  |  | 
 
 ## Condition Keys for AWS Systems Manager<a name="awssystemsmanager-policy-keys"></a>
@@ -54,7 +56,8 @@ To view the global condition keys that are available to all services, see [Avail
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
 |   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags | String | 
-|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value assoicated with the resource\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
 |   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request | String | 
-|   [ ssm:SessionDocumentAccessCheck ](https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#policy-conditions)  | Filters access by verifying that a user also has access to the default Session Manager configuration document\. | Boolean | 
+|   [ ssm:SessionDocumentAccessCheck ](https://docs.aws.amazon.com/systems-manager/latest/userguide/getting-started-sessiondocumentaccesscheck.html)  | Filters access by verifying that a user also has access to the default Session Manager configuration document\. | Boolean | 
+|   ssm:SyncType  | Filters access by verifying that a user also has access to the ResourceDataSync SyncType specified in the request | String | 
 |   [ ssm:resourceTag/tag\-key ](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-rc-setting-up-cmdsec.html)  | A tag key and value pair\. | String | 
