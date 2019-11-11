@@ -10,6 +10,29 @@ When you generate a programmatic data report for a policy, you must specify an O
 
 Before you view the report, make sure that you understand the master account requirements and data, reporting period, reported entities, and the evaluated policy types\. For more details, see [Things to Know](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
+## Understand the AWS Organizations Entity Path<a name="access_policies_access-advisor-viewing-orgs-entity-path"></a>
+
+When you use the AWS CLI or AWS API to generate an AWS Organizations access report, you must specify an entity path\. A path is a text representation of the structure of an Organizations entity\.
+
+You can build an entity path using the known structure of your organization\. For example, assume that you have the following organizational structure in AWS Organizations\.
+
+![\[Organization path structure\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/ou-path-diagram.png)
+
+The path for the **Dev Managers** OU is built using the IDs of the organization, root, and all OUs in the path down to and including the OU\. 
+
+```
+o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd
+```
+
+The path for the account in the **Production** OU is built using the IDs of the organization, root, the OU, and the account number\. 
+
+```
+o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-abc0-awsaaaaa/111111111111
+```
+
+**Note**  
+Organization IDs are globally unique but OU IDs and root IDs are unique only within an organization\. This means that no two organizations share the same organization ID\. However, another organization might have an OU or root with the same ID as yours\. We recommend that you always include the organization ID when you specify an OU or root\.
+
 ## Viewing Data for Organizations \(Console\)<a name="access_policies_access-advisor-viewing-orgs"></a>
 
 You can use the IAM console to view service last accessed data for your root, OU, account, or policy\.

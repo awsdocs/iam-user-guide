@@ -4,7 +4,7 @@ If you use Amazon Virtual Private Cloud \(Amazon VPC\) to host your AWS resource
 
 Amazon VPC is an AWS service that you can use to launch AWS resources in a virtual network that you define\. With a VPC, you have control over your network settings, such as the IP address range, subnets, route tables, and network gateways\. To connect your VPC to AWS STS, you define an *interface VPC endpoint* for AWS STS\. The endpoint provides reliable, scalable connectivity to AWS STS without requiring an internet gateway, network address translation \(NAT\) instance, or VPN connection\. For more information, see [What Is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html) in the *Amazon VPC User Guide*\.
 
-Interface VPC endpoints are powered by AWS PrivateLink, an AWS technology that enables private communication between AWS services using an elastic network interface with private IP addresses\. For more information, see [AWS PrivateLink for AWS Services](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html#what-is-privatelink)\.
+Interface VPC endpoints are powered by AWS PrivateLink, an AWS technology that enables private communication between AWS services using an elastic network interface with private IP addresses\. For more information, see [AWS PrivateLink for AWS Services](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html)\.
 
 The following steps are for users of Amazon VPC\. For more information, see [Getting Started with Amazon VPC](https://docs.aws.amazon.com/vpc/latest/userguide/GetStarted.html) in the *Amazon VPC User Guide*\.
 

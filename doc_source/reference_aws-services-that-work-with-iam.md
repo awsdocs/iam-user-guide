@@ -81,6 +81,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
+|  [AWS CodeStar Notifications](docs.aws.amazon.comcodestar-notifications/latest/userguide/security.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/using-service-linked-roles.html) | 
 | [AWS X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) | Yes | No | No | No | Yes | No | 
 
 ## Security, Identity, and Compliance Services<a name="admin_svcs"></a>
@@ -182,7 +183,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | Yes¹ | Yes | Yes | No | 
 |  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS Server Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/permissions-roles.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Server Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/permissions-roles.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/server-migration-service/latest/userguide/using-service-linked-roles.html) | 
 
 ¹ You can create and modify policies that are attached to AWS KMS encryption keys you create to encrypt data migrated to supported target endpoints\. The supported target endpoints include Amazon Redshift and Amazon S3\. For more information, see [Creating and Using AWS KMS Keys to Encrypt Amazon Redshift Target Data](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Redshift.html#CHAP_Target.Redshift.KMSKeys) and [Creating AWS KMS Keys to Encrypt Amazon S3 Target Objects](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys) in the *AWS Database Migration Service User Guide*\.
 
