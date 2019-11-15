@@ -3,7 +3,9 @@
 Amazon Data Lifecycle Manager \(service prefix: `dlm`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/dlm/latest/APIReference/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/dlm/latest/APIReference/Welcome.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/dlm/latest/APIReference/API_Operations.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazondatalifecyclemanager.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Data Lifecycle Manager](#amazondatalifecyclemanager-actions-as-permissions)
@@ -23,11 +25,14 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html)  | Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots\. You may have up to 100 policies\. | Write |  |  |  | 
-|   [ DeleteLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html)  | Delete an existing data lifecycle policy\. In addition, this action halts the creation and deletion of snapshots that the policy specified\. Existing snapshots are not affected\. | Write |  |  |  | 
+|   [ CreateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_CreateLifecyclePolicy.html)  | Create a data lifecycle policy to manage the scheduled creation and retention of Amazon EBS snapshots\. You may have up to 100 policies\. | Write |  |   [ aws:RequestTag/$\{TagKey\} ](#amazondatalifecyclemanager-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#amazondatalifecyclemanager-aws_TagKeys)   |  | 
+|   [ DeleteLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_DeleteLifecyclePolicy.html)  | Delete an existing data lifecycle policy\. In addition, this action halts the creation and deletion of snapshots that the policy specified\. Existing snapshots are not affected\. | Write |   [ policy\* ](#amazondatalifecyclemanager-policy)   |  |  | 
 |   [ GetLifecyclePolicies ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicies.html)  | Returns a list of summary descriptions of data lifecycle policies\. | List |  |  |  | 
-|   [ GetLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html)  | Returns a complete description of a single data lifecycle policy\. | Read |  |  |  | 
-|   [ UpdateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html)  | Updates an existing data lifecycle policy\. | Write |  |  |  | 
+|   [ GetLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html)  | Returns a complete description of a single data lifecycle policy\. | Read |   [ policy\* ](#amazondatalifecyclemanager-policy)   |  |  | 
+|   [ ListTagsForResource ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_ListTagsForResource.html)  | Grants permission to list the tags associated with a resource\. | Read |   [ policy\* ](#amazondatalifecyclemanager-policy)   |  |  | 
+|   [ TagResource ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_TagResource.html)  | Grants permission to add or update tags of a resource\. | Tagging |   [ policy\* ](#amazondatalifecyclemanager-policy)   |  |  | 
+|   [ UntagResource ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_UntagResource.html)  | Grants permission to remove associated with a resource\. | Tagging |   [ policy\* ](#amazondatalifecyclemanager-policy)   |  |  | 
+|   [ UpdateLifecyclePolicy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_UpdateLifecyclePolicy.html)  | Updates an existing data lifecycle policy\. | Write |   [ policy\* ](#amazondatalifecyclemanager-policy)   |  |  | 
 
 ## Resources Defined by Amazon Data Lifecycle Manager<a name="amazondatalifecyclemanager-resources-for-iam-policies"></a>
 
@@ -38,8 +43,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   policy  |  arn:$\{Partition\}:dlm:$\{Region\}:$\{Account\}:policy/$\{ResourceName\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/dlm/latest/APIReference/API_LifecyclePolicy.html)  |  arn:$\{Partition\}:dlm:$\{Region\}:$\{Account\}:policy/$\{ResourceName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazondatalifecyclemanager-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Data Lifecycle Manager<a name="amazondatalifecyclemanager-policy-keys"></a>
 
-Data Lifecycle Manager has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Data Lifecycle Manager defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

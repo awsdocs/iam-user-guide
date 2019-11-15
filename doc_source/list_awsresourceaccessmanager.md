@@ -54,6 +54,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   aws:TagKeys  | Specifies the tag keys that can be used when creating or tagging a resource share | String | 
 |   ram:AllowsExternalPrincipals  | Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals\. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals\. External principals are AWS accounts that are outside of its AWS organization  | Bool | 
 |   ram:Principal  | Principals with the specified format can be associated to or disassociated from a resource share | String | 
+|   ram:RequestedAllowsExternalPrincipals  | The request must have the specified value for 'allowExternalPrincipals'\. External principals are AWS accounts that are outside of its AWS Organization | Bool | 
 |   ram:RequestedResourceType  | Indicates that the action can only be performed on the specified resource type | String | 
 |   ram:ResourceArn  | Indicates that the action can only be performed on a resource with the specified ARN\. | Arn | 
 |   ram:ResourceShareName  | Indicates that the action can only be performed on a resource share with the specified name\. | String | 

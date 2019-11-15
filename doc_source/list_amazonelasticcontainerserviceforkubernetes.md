@@ -33,7 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ cluster ](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
+|   [ cluster ](https://docs.aws.amazon.com/eks/latest/userguide/clusters.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
+|   [ nodegroup ](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:nodegroup/$\{ClusterName\}/$\{NodegroupName\}/$\{UUID\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Elastic Container Service for Kubernetes<a name="amazonelasticcontainerserviceforkubernetes-policy-keys"></a>
 
@@ -46,6 +47,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/eks/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the EKS service\. | String | 
-|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/eks/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a tag key and value pair\. | String | 
-|   [ aws:TagKeys ](https://docs.aws.amazon.com/eks/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key names present in the request the user makes to the EKS service\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags)  | Filters access by a key that is present in the request the user makes to the EKS service\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags)  | Filters access by a tag key and value pair\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/eks/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-tags)  | Filters access by the list of all the tag key names present in the request the user makes to the EKS service\. | String | 

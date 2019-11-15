@@ -100,7 +100,7 @@ Imagine that you have account A \(the trusting account that owns the resource to
    }
    ```
 
-1. Anaya adds a permissions policy to the role that specifies what the role is allowed to do\. The permissions policy for a role with MFA protection is no different than any other role\-permission policy\. The following example shows the policy that Anaya adds to the role; it allows an assuming user to perform any Amazon DynamoDB action on the table `Books` in account B\. This policy also allows the `dynamodb:ListTables` action, which is required to perform actions in the console\. 
+1. Anaya adds a permissions policy to the role that specifies what the role is allowed to do\. The permissions policy for a role with MFA protection is no different than any other role\-permission policy\. The following example shows the policy that Anaya adds to the role; it allows an assuming user to perform any Amazon DynamoDB action on the table `Books` in account A\. This policy also allows the `dynamodb:ListTables` action, which is required to perform actions in the console\. 
 **Note**  
 The permissions policy does not include an MFA condition\. It is important to understand that the MFA authentication is used only to determine whether a user can assume the role\. Once the user has assumed the role, no further MFA checks are made\. 
 
@@ -112,7 +112,7 @@ The permissions policy does not include an MFA condition\. It is important to un
                "Sid": "TableActions",
                "Effect": "Allow",
                "Action": "dynamodb:*",
-               "Resource": "arn:aws:dynamodb:*:ACCOUNT-B-ID:table/Books"
+               "Resource": "arn:aws:dynamodb:*:ACCOUNT-A-ID:table/Books"
            },
            {
                "Sid": "ListTable",

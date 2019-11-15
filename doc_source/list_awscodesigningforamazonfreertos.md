@@ -5,6 +5,7 @@ AWS Code Signing for Amazon FreeRTOS \(service prefix: `signer`\) provides the f
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/signer/latest/api/API_Operations.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/signer/latest/developerguide/accessctrl-toplevel.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Code Signing for Amazon FreeRTOS](#awscodesigningforamazonfreertos-actions-as-permissions)
@@ -21,18 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CancelSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_CancelSigningProfile.html)  | Cancels a signing profile\. | Write |   [ signing\-profile\* ](#awscodesigningforamazonfreertos-signing-profile)   |  |  | 
-|   [ DescribeSigningJob ](https://docs.aws.amazon.com/signer/latest/api/API_DescribeSigningJob.html)  | Describe a signing job\. | Read |   [ signing\-job\* ](#awscodesigningforamazonfreertos-signing-job)   |  |  | 
-|   [ GetSigningPlatform ](https://docs.aws.amazon.com/signer/latest/api/API_GetSigningPlatform.html)  | Retrieves a signing platform\. | Read |  |  |  | 
-|   [ GetSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_GetSigningProfile.html)  | Retreives a signing profile\. | Read |   [ signing\-profile\* ](#awscodesigningforamazonfreertos-signing-profile)   |  |  | 
-|   [ ListSigningJobs ](https://docs.aws.amazon.com/signer/latest/api/API_ListSigningJobs.html)  | List signing jobs\. | List |  |  |  | 
-|   [ ListSigningPlatforms ](https://docs.aws.amazon.com/signer/latest/api/API_ListSigningPlatforms.html)  | List all signing platforms\. | List |  |  |  | 
-|   [ ListSigningProfiles ](https://docs.aws.amazon.com/signer/latest/api/API_ListSigningProfiles.html)  | List all signing profile associated with the account\. | List |  |  |  | 
-|   [ PutSigningProfile ](https://docs.aws.amazon.com/signer/latest/api/API_PutSigningProfile.html)  | Creates a new signing profile if not exists\. | Write |  |  |  | 
-|   [ StartSigningJob ](https://docs.aws.amazon.com/signer/latest/api/API_StartSigningJob.html)  | Starts a code signing request\. | Write |   [ signing\-profile\* ](#awscodesigningforamazonfreertos-signing-profile)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscodesigningforamazonfreertos.html)
 
 ## Resources Defined by AWS Code Signing for Amazon FreeRTOS<a name="awscodesigningforamazonfreertos-resources-for-iam-policies"></a>
 
@@ -43,9 +33,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ signing\-profile ](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html)  |  arn:$\{Partition\}:signer:$\{Region\}::/signing\-profiles/$\{profileName\}  |  | 
+|   [ signing\-profile ](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html)  |  arn:$\{Partition\}:signer:$\{Region\}::/signing\-profiles/$\{profileName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscodesigningforamazonfreertos-aws_ResourceTag___TagKey_)   | 
 |   [ signing\-job ](https://docs.aws.amazon.com/signer/latest/developerguide/Welcome.htmlpermissions.html)  |  arn:$\{Partition\}:signer:$\{Region\}::/signing\-jobs/$\{jobId\}  |  | 
 
 ## Condition Keys for AWS Code Signing for Amazon FreeRTOS<a name="awscodesigningforamazonfreertos-policy-keys"></a>
 
-Signer has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Code Signing for Amazon FreeRTOS defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters create requests based on the allowed set of values for each of the tags\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value associated with the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

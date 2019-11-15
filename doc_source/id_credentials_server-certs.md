@@ -10,7 +10,7 @@ For more information about uploading third party certificates to IAM, see the fo
 
 **Topics**
 + [Uploading a Server Certificate \(AWS API\)](#upload-server-certificate)
-+ [Retrieving a Server Certificate AWS API\)](#get-server-certificate)
++ [Retrieving a Server Certificate \(AWS API\)](#get-server-certificate)
 + [Listing Server Certificates \(AWS API\)](#list-server-certificates)
 + [Renaming a Server Certificate or Updating its Path \(AWS API\)](#rename-server-certificate)
 + [Deleting a Server Certificate \(AWS API\)](#delete-server-certificate)
@@ -44,7 +44,7 @@ If you are uploading a server certificate to use with Amazon CloudFront, you mus
 
 To use the AWS Tools for Windows PowerShell to upload a certificate, use [Publish\-IAMServerCertificate](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Publish-IAMServerCertificate.html&tocid=Publish-IAMServerCertificate)\.
 
-## Retrieving a Server Certificate AWS API\)<a name="get-server-certificate"></a>
+## Retrieving a Server Certificate \(AWS API\)<a name="get-server-certificate"></a>
 
 To use the IAM API to retrieve a certificate, send a [GetServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\. Replace *ExampleCertificate* with the name of the certificate to retrieve\.
 

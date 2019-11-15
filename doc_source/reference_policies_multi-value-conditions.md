@@ -14,7 +14,7 @@ A `Condition` element can contain multiple conditions, and each condition can co
 
 ## Evaluation Logic for Conditions with Multiple Keys or Values<a name="reference_policies_multiple-conditions-eval"></a>
 
-If your policy has multiple condition operators or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All condition operators must be met for an allow or an explicit deny decision\. If any one condition operator isn't met, the result is a deny\.
+If your policy has multiple condition operators or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All conditions must resolve to true to trigger the desired `Allow` or `Deny` effect\.
 
 ![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
 

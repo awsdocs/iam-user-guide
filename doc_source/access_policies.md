@@ -42,7 +42,7 @@ A permissions boundary is an advanced feature in which you set the maximum permi
 
 AWS Organizations is a service for grouping and centrally managing the AWS accounts that your business owns\. If you enable all features in an organization, then you can apply service control policies \(SCPs\) to any or all of your accounts\. SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP limits permissions for entities in member accounts, including each AWS account root user\. An explicit deny in any of these policies overrides the allow\.
 
-For more information about Organizations and SCPs, see [About Service Control Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
+For more information about Organizations and SCPs, see [How SCPs Work](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html) in the *AWS Organizations User Guide*\.
 
 ### Access Control Lists \(ACLs\)<a name="policies_acl"></a>
 
