@@ -33,7 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |  | 
+|   [ role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awssecuritytokenservice-aws_ResourceTag___TagKey_)   | 
 |   [ user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)  |  arn:$\{Partition\}:iam::$\{Account\}:user/$\{UserNameWithPath\}  |  | 
 
 ## Condition Keys for AWS Security Token Service<a name="awssecuritytokenservice-policy-keys"></a>
@@ -47,47 +47,52 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ accounts\.google\.com:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_aud)  | Filters actions based on the Google application ID | String | 
-|   [ accounts\.google\.com:oaud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_oaud)  | Filters actions based on the Google audience | String | 
-|   [ accounts\.google\.com:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_sub)  | Filters actions based on the subject of the claim \(the Google user ID\) | String | 
-|   [ aws:FederatedProvider ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_federatedprovider)  | Filters actions based on the IdP that was used to authenticate the user | String | 
-|   [ cognito\-identity\.amazonaws\.com:amr ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_amr)  | Filters actions based on the login information for Amazon Cognito | String | 
-|   [ cognito\-identity\.amazonaws\.com:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_aud)  | Filters actions based on the Amazon Cognito identity pool ID | String | 
-|   [ cognito\-identity\.amazonaws\.com:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_sub)  | Filters actions based on the subject of the claim \(the Amazon Cognito user ID\) | String | 
-|   [ graph\.facebook\.com:app\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_id)  | Filters actions based on the Facebook application ID | String | 
-|   [ graph\.facebook\.com:id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_id)  | Filters actions based on the Facebook user ID | String | 
-|   [ saml:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_aud)  | Filters actions based on the endpoint URL to which SAML assertions are presented | String | 
-|   [ saml:cn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_cn)  | Filters actions based on the eduOrg attribute | String | 
-|   [ saml:commonName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_commonname)  | Filters actions based on the commonName attribute | String | 
-|   [ saml:doc ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_doc)  | Filters actions based on the principal that was used to assume the role | String | 
-|   [ saml:eduorghomepageuri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_eduorghomepageuri)  | Filters actions based on the eduOrg attribute | String | 
-|   [ saml:eduorgidentityauthnpolicyuri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_aud)  | Filters actions based on the eduOrg attribute | String | 
-|   [ saml:eduorglegalname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_eduorglegalname)  | Filters actions based on the eduOrg attribute | String | 
-|   [ saml:eduorgsuperioruri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_eduorgsuperioruri)  | Filters actions based on the eduOrg attribute | String | 
-|   [ saml:eduorgwhitepagesuri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_eduorgwhitepagesuri)  | Filters actions based on the eduOrg attribute | String | 
-|   [ saml:edupersonaffiliation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonaffiliation)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonassurance ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonassurance)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonentitlement ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonentitlement)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonnickname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonnickname)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonorgdn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonorgdn)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonorgunitdn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonorgunitdn)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonprimaryaffiliation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonprimaryaffiliation)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonprimaryorgunitdn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonprimaryorgunitdn)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonprincipalname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonprincipalname)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersonscopedaffiliation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersonscopedaffiliation)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:edupersontargetedid ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_edupersontargetedid)  | Filters actions based on the eduPerson attribute | String | 
-|   [ saml:givenName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_givenname)  | Filters actions based on the givenName attribute | String | 
-|   [ saml:iss ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_iss)  | Filters actions based on the issuer, which is represented by a URN | String | 
-|   [ saml:mail ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_mail)  | Filters actions based on the mail attribute | String | 
-|   [ saml:name ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_name)  | Filters actions based on the name attribute | String | 
-|   [ saml:namequalifier ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_namequalifier)  | Filters actions based on the hash value of the issuer, account ID, and friendly name | String | 
-|   [ saml:organizationStatus ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_organizationstatus)  | Filters actions based on the organizationStatus attribute | String | 
-|   [ saml:primaryGroupSID ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_primarygroupsid)  | Filters actions based on the primaryGroupSID attribute | String | 
-|   [ saml:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_sub)  | Filters actions based on the subject of the claim \(the SAML user ID\) | String | 
-|   [ saml:sub\_type ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_subtype)  | Filters actions based on the value persistent, transient, or the full Format URI | String | 
-|   [ saml:surname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_surname)  | Filters actions based on the surname attribute | String | 
-|   [ saml:uid ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_uid)  | Filters actions based on the uid attribute | String | 
-|   [ saml:x500UniqueIdentifier ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_x500uniqueidentifier)  | Filters actions based on the uid attribute | String | 
-|   [ sts:ExternalId ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_externalid)  | Filters actions based on the unique identifier equired when you assume a role in another account | String | 
-|   [ www\.amazon\.com:app\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_id)  | Filters actions based on the Login with Amazon application ID | String | 
-|   [ www\.amazon\.com:user\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html/ck_id)  | Filters actions based on the Login with Amazon user ID | String | 
+|   [ accounts\.google\.com:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud)  | Filters actions based on the Google application ID | String | 
+|   [ accounts\.google\.com:oaud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_oaud)  | Filters actions based on the Google audience | String | 
+|   [ accounts\.google\.com:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub)  | Filters actions based on the subject of the claim \(the Google user ID\) | String | 
+|   [ aws:FederatedProvider ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_federatedprovider)  | Filters actions based on the IdP that was used to authenticate the user | String | 
+|   [ aws:PrincipalTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principaltag)  | Filters actions based on the tag associated with the principal that is making the request | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the tags that are passed in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the tag keys that are passed in the request | String | 
+|   [ cognito\-identity\.amazonaws\.com:amr ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_amr)  | Filters actions based on the login information for Amazon Cognito | String | 
+|   [ cognito\-identity\.amazonaws\.com:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud)  | Filters actions based on the Amazon Cognito identity pool ID | String | 
+|   [ cognito\-identity\.amazonaws\.com:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub)  | Filters actions based on the subject of the claim \(the Amazon Cognito user ID\) | String | 
+|   [ graph\.facebook\.com:app\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id)  | Filters actions based on the Facebook application ID | String | 
+|   [ graph\.facebook\.com:id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id)  | Filters actions based on the Facebook user ID | String | 
+|   [ saml:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud)  | Filters actions based on the endpoint URL to which SAML assertions are presented | String | 
+|   [ saml:cn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_cn)  | Filters actions based on the eduOrg attribute | String | 
+|   [ saml:commonName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_commonname)  | Filters actions based on the commonName attribute | String | 
+|   [ saml:doc ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_doc)  | Filters actions based on the principal that was used to assume the role | String | 
+|   [ saml:eduorghomepageuri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorghomepageuri)  | Filters actions based on the eduOrg attribute | String | 
+|   [ saml:eduorgidentityauthnpolicyuri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud)  | Filters actions based on the eduOrg attribute | String | 
+|   [ saml:eduorglegalname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorglegalname)  | Filters actions based on the eduOrg attribute | String | 
+|   [ saml:eduorgsuperioruri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgsuperioruri)  | Filters actions based on the eduOrg attribute | String | 
+|   [ saml:eduorgwhitepagesuri ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_eduorgwhitepagesuri)  | Filters actions based on the eduOrg attribute | String | 
+|   [ saml:edupersonaffiliation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonaffiliation)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonassurance ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonassurance)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonentitlement ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonentitlement)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonnickname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonnickname)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonorgdn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgdn)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonorgunitdn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonorgunitdn)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonprimaryaffiliation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryaffiliation)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonprimaryorgunitdn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprimaryorgunitdn)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonprincipalname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonprincipalname)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersonscopedaffiliation ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersonscopedaffiliation)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:edupersontargetedid ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_edupersontargetedid)  | Filters actions based on the eduPerson attribute | String | 
+|   [ saml:givenName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_givenname)  | Filters actions based on the givenName attribute | String | 
+|   [ saml:iss ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_iss)  | Filters actions based on the issuer, which is represented by a URN | String | 
+|   [ saml:mail ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_mail)  | Filters actions based on the mail attribute | String | 
+|   [ saml:name ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_name)  | Filters actions based on the name attribute | String | 
+|   [ saml:namequalifier ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_namequalifier)  | Filters actions based on the hash value of the issuer, account ID, and friendly name | String | 
+|   [ saml:organizationStatus ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_organizationstatus)  | Filters actions based on the organizationStatus attribute | String | 
+|   [ saml:primaryGroupSID ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_primarygroupsid)  | Filters actions based on the primaryGroupSID attribute | String | 
+|   [ saml:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub)  | Filters actions based on the subject of the claim \(the SAML user ID\) | String | 
+|   [ saml:sub\_type ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_subtype)  | Filters actions based on the value persistent, transient, or the full Format URI | String | 
+|   [ saml:surname ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_surname)  | Filters actions based on the surname attribute | String | 
+|   [ saml:uid ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_uid)  | Filters actions based on the uid attribute | String | 
+|   [ saml:x500UniqueIdentifier ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_x500uniqueidentifier)  | Filters actions based on the uid attribute | String | 
+|   [ sts:ExternalId ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_externalid)  | Filters actions based on the unique identifier equired when you assume a role in another account | String | 
+|   [ sts:TransitiveTagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_TransitiveTagKeys)  | Filters actions based on the transitive tag keys that are passed in the request | String | 
+|   [ www\.amazon\.com:app\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id)  | Filters actions based on the Login with Amazon application ID | String | 
+|   [ www\.amazon\.com:user\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id)  | Filters actions based on the Login with Amazon user ID | String | 

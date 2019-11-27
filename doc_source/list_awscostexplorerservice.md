@@ -25,7 +25,11 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ CreateCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html)  | Grants permission to create a new Cost Category with the requested name and rules\. | Write |  |  |  | 
+|   [ DeleteCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html)  | Grants permission to delete a Cost Category\. | Write |  |  |  | 
+|   [ DescribeCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html)  | Grants permission to retrieve descriptions such as the name, ARN, rules, definition, and effective dates of a Cost Category\. | Read |  |  |  | 
 |   [ GetCostAndUsage ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsage.html)  | Grants permission to retrieve the cost and usage metrics for your account\. | Read |  |  |  | 
+|   [ GetCostAndUsageWithResources ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html)  | Grants permission to retrieve the cost and usage metrics with resources for your account\. | Read |  |  |  | 
 |   [ GetCostForecast ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html)  | Grants permission to retrieve a cost forecast for a forecast time period\. | Read |  |  |  | 
 |   [ GetDimensionValues ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html)  | Grants permission to retrieve all available filter values for a filter for a period of time\. | Read |  |  |  | 
 |   [ GetReservationCoverage ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html)  | Grants permission to retrieve the reservation coverage for your account\. | Read |  |  |  | 
@@ -38,6 +42,8 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ GetSavingsPlansUtilizationDetails ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetSavingsPlansUtilizationDetails.html)  | Grants permission to retrieve the Savings Plans utilization details for your account\. | Read |  |  |  | 
 |   [ GetTags ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetTags.html)  | Grants permission to query tags for a specified time period\. | Read |  |  |  | 
 |   [ GetUsageForecast ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetUsageForecast.html)  | Grants permission to retrieve a usage forecast for a forecast time period\. | Read |  |  |  | 
+|   [ ListCostCategoryDefinitions ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ListCostCategoryDefinitions.html)  | Grants permission to retrieve names, ARN, and effective dates for all Cost Categories\. | List |  |  |  | 
+|   [ UpdateCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html)  | Grants permission to update an existing Cost Category\. | Write |  |  |  | 
 
 ## Resources Defined by AWS Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 

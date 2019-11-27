@@ -36,6 +36,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ client ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:client/$\{ClientId\}  |  | 
 |   [ index ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-indexing.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:index/$\{IndexName\}  |  | 
 |   [ job ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-jobs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:job/$\{JobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
+|   [ tunnel ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-tunnels.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:tunnel/$\{TunnelId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ thing ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\}  |  | 
 |   [ thinggroup ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thinggroup/$\{ThingGroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ billinggroup ](https://docs.aws.amazon.com/iot/latest/developerguide/billing-groups.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:billinggroup/$\{BillingGroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
@@ -66,6 +67,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  | A tag key that is present in the request that the user makes to IoT\. | String | 
-|   aws:ResourceTag/$\{TagKey\}  | The tag key component of a tag attached to an IoT resource\. | String | 
-|   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | A tag key that is present in the request that the user makes to IoT\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The tag key component of a tag attached to an IoT resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   [ iot:Delete ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The flag indicating whether or not to also delete an IoT Tunnel immediately | Bool | 
+|   [ iot:ThingGroupArn ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel | String | 
+|   [ iot:TunnelDestinationService ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The list of all destination services for an IoT Tunnel | String | 

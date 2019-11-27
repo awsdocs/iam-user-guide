@@ -146,12 +146,67 @@ This global condition also applies to the master account of an AWS organization\
 
 For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
 
+## aws:PrincipalOrgPaths<a name="condition-keys-principalorgpaths"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the AWS Organizations path for the principal who is making the request to the path in the policy\. That principal can be an IAM user, IAM role, federated user, or AWS account root user\. In a policy, this condition key ensures that the requester is an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations Entity Path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path)\.
++ **Availability** – This key is included in the request context only if the principal is a member of an organization\.
+
+**Note**  
+Organization IDs are globally unique but OU IDs and root IDs are unique only within an organization\. This means that no two organizations share the same organization ID\. However, another organization might have an OU or root with the same ID as yours\. We recommend that you always include the organization ID when you specify an OU or root\.
+
+For example, the following condition returns `true` for principals in accounts that are attached directly to the `ou-jkl0-awsddddd` OU, but not in its child OUs\.
+
+```
+"Condition" : { "ForAnyValues:StringEquals" : {
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/"]
+}}
+```
+
+The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\. When you include a wildcard, you must use the `StringLike` condition operator\.
+
+```
+"Condition" : { "ForAnyValues:StringLike" : {
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd*"]
+}}
+```
+
+The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\.
+
+```
+"Condition" : { "ForAnyValues:StringLike" : {
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/*"]
+}}
+```
+
+The following condition allows access for every principal in the `o-a1b2c3d4e5` organization, regardless of their parent OU\.
+
+```
+"Condition" : { "ForAnyValues:StringLike" : {
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/*"]
+}}
+```
+
+`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. When you use multiple values with the `ForAnyValues` condition operator, the principal's path must match one of the paths listed in the policy\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key":\["Value1", "Value2"\]\)\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.
+
+```
+    "Condition": {
+        "ForAnyValues:StringLike": {
+            "aws:PrincipalOrgPaths": [
+                "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-def0-awsbbbbb/*",
+                "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-jkl0-awsddddd/*"
+            ]
+        }
+    }
+```
+
 ## aws:PrincipalTag<a name="condition-keys-principaltag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag attached to the principal making the request with the tag that you specify in the policy\. If the principal has more than one tag attached, the request context includes one `aws:PrincipalTag` key for each attached tag key\.
-+ **Availability** – This key is included in the request context only if the principal is an IAM user or IAM role with attached tags\.
++ **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\.
 
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM Users and Roles](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.
 
@@ -194,13 +249,13 @@ This key should be used carefully\. It is dangerous to include a publicly known 
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the AWS Region that was called in the request with the region that you specify in the policy\. You can use this global condition key to control which Regions can be requested\. To view the AWS Regions for each service, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *Amazon Web Services General Reference*\.
+Use this key to compare the AWS Region that was called in the request with the Region that you specify in the policy\. You can use this global condition key to control which Regions can be requested\. To view the AWS Regions for each service, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *Amazon Web Services General Reference*\.
 + **Availability** – This key is always included in the request context\.
 
 Some global services, such as IAM, have a single endpoint\. Because this endpoint is physically located in the US East \(N\. Virginia\) Region, IAM calls are always made to the us\-east\-1 Region\. For example, if you create a policy that denies access to all services if the requested Region is not us\-west\-2, then IAM calls always fail\. To view an example of how to work around this, see [NotAction with Deny](reference_policies_elements_notaction.md)\. 
 
 **Note**  
-The `aws:RequestedRegion` condition key allows you to control which endpoint of a service is invoked but does not control the impact of the operation\. Some services have cross\-region impacts\. For example, Amazon S3 has API operations that control cross\-region replication\. You can invoke `s3:PutBucketReplication` in one Region \(which is affected by the `aws:RequestedRegion` condition key\), but other Regions are affected based on the replications configuration settings\. 
+The `aws:RequestedRegion` condition key allows you to control which endpoint of a service is invoked but does not control the impact of the operation\. Some services have cross\-Region impacts\. For example, Amazon S3 has API operations that control cross\-Region replication\. You can invoke `s3:PutBucketReplication` in one Region \(which is affected by the `aws:RequestedRegion` condition key\), but other Regions are affected based on the replications configuration settings\. 
 
 You can use this context key to limit access to AWS services within a given set of Regions\. For example, the following policy allows a user to view all of the Amazon EC2 instances in the AWS Management Console\. However it only allows them to make changes to instances in Ireland \(eu\-west\-1\), London \(eu\-west\-2\), or Paris \(eu\-west\-3\)\.
 
@@ -300,7 +355,7 @@ Use this key to compare the requester's IP address with the IP address that you 
 
 The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy would deny access to an AWS service that makes calls on your behalf\. For example, assume that AWS CloudFormation uses a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) to call Amazon EC2 to stop an instance\. In this case, the request is denied because the target service \(Amazon EC2\) sees the IP address of the calling service \(AWS CloudFormation\)\. The request context does not include the IP address of the originating user\. There is no way to pass the originating IP address through a calling service to the target service for evaluation in a JSON policy\.
 
-If the request comes from a host that uses an Amazon VPC endpoint, then the `aws:SourceIp` key is not available\. You should instead use a VPC\-specific key such as [aws:VpcSourceIp](#condition-keys-sourceip)\. For more information about using VPC enpdpoints, see [VPC Endpoints \- Controlling the Use of Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\.
+If the request comes from a host that uses an Amazon VPC endpoint, then the `aws:SourceIp` key is not available\. You should instead use a VPC\-specific key such as [aws:VpcSourceIp](#condition-keys-sourceip)\. For more information about using VPC endpoints, see [VPC Endpoints \- Controlling the Use of Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\.
 
 ## aws:SourceVpc<a name="condition-keys-sourcevpc"></a>
 

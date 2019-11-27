@@ -38,11 +38,11 @@ Federation is particularly useful in these cases:
 
   If your corporate directory is compatible with Security Assertion Markup Language 2\.0 \(SAML 2\.0\), you can configure your corporate directory to provide single\-sign on \(SSO\) access to the AWS Management Console for your users\. For more information, see [Common Scenarios for Temporary Credentials](id_credentials_temp.md#sts-introduction)\. 
 
-  If your corporate directory is not compatible with SAML 2\.0, you can create an identity broker application to provide single\-sign on \(SSO\) access to the AWS Management Console for your users\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\. 
+  If your corporate directory is not compatible with SAML 2\.0, you can create an identity broker application to provide single\-sign on \(SSO\) access to the AWS Management Console for your users\. For more information, see [Enabling Custom Identity Broker Access to the AWS Console](id_roles_providers_enable-console-custom-url.md)\. 
 
   If your corporate directory is Microsoft Active Directory, you can use [AWS Directory Service](https://aws.amazon.com/directoryservice/) to establish trust between your corporate directory and your AWS account\. 
 + **Your users already have Internet identities\.**
 
   If you are creating a mobile app or web\-based app that can let users identify themselves through an Internet identity provider like Login with Amazon, Facebook, Google, or any OpenID Connect \(OIDC\) compatible identity provider, the app can use federation to access AWS\. For more information, see [About Web Identity Federation](id_roles_providers_oidc.md)\. 
 **Tip**  
-To use identity federation with Internet identity providers, we recommend you use [Amazon Cognito](https://docs.aws.amazon.com/cognito/devguide/)\.
+To use identity federation with Internet identity providers, we recommend you use [Amazon Cognito](https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html)\.

@@ -35,6 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   document\-classifier  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:document\-classifier/$\{DocumentClassifierName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
 |   entity\-recognizer  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:entity\-recognizer/$\{EntityRecognizerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
+|   document\-classifier\-endpoint  |  arn:$\{Partition\}:comprehend:$\{Region\}:$\{Account\}:document\-classifier\-endpoint/$\{DocumentClassifierEndpointName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncomprehend-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Comprehend<a name="amazoncomprehend-policy-keys"></a>
 

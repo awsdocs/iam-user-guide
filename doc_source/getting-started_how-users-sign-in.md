@@ -1,9 +1,9 @@
 # How Users Sign In to Your Account<a name="getting-started_how-users-sign-in"></a>
 
-After you create IAM users \(with passwords\), those users can sign in to the AWS Management Console using your account ID or alias, or from a custom URL that includes your account ID\. 
+After you create IAM users \(with passwords\), those users can sign in to the AWS Management Console\. To sign in, they need your account ID or alias\. They can also sign in from a custom URL that includes your account ID\. 
 
 **Note**  
-If your company has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\. 
+If your company has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Enabling Custom Identity Broker Access to the AWS Console](id_roles_providers_enable-console-custom-url.md)\. 
 
 Before you create a sign\-in URL for your account, you create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS Account ID and Its Alias](console_account-alias.md)\. 
 
@@ -25,34 +25,10 @@ https://signin.aws.amazon.com/console
 
 ## Permissions Required for Console Activities<a name="console_signin-permissions-required"></a>
 
-IAM users in your account have access only to the AWS resources that you specify in the policy that is attached to the user or to an IAM group that the user belongs to\. To work in the console, users must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\.
+IAM users in your account have access only to the AWS resources that you specify in a policy\. That policy must be attached to the user or to an IAM group that the user belongs to\. To work in the console, users must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\.
+
+If users in your account need programmatic access, you can create an access key pair \(an access key ID and a secret access key\) for each user\. For more information, see [Managing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.
 
 ## Logging Sign\-In Details in CloudTrail<a name="console_signin-cloudtrail"></a>
 
-If you enable CloudTrail to log sign\-in events, you must understand how CloudTrail logs the events\.
-+ If your users sign in directly to a console, they are redirected to either a global or a Regional sign\-in endpoint\. This redirection is based on whether the selected service console supports Regions\. For example, the main console home page supports Regions, so if you sign in to the following URL, you are redirected to a ''default" Regional sign\-in endpoint `https://us-east-1.signin.aws.amazon.com`\.
-
-  ```
-  https://alias.signin.aws.amazon.com/console
-  ```
-
-  This results in a Regional CloudTrail log entry in that Region's log\.
-
-  The console for some services, such as Amazon S3, do not support Regions\. This means that if you sign in to that service using the following URL, AWS redirects you to the global sign\-in endpoint at `https://signin.aws.amazon.com`\.
-
-  ```
-  https://alias.signin.aws.amazon.com/console/s3
-  ```
-
-  This results in a global CloudTrail log entry\.
-+ You can manually request a specific Regional sign\-in endpoint by signing in to the Region\-enabled main console home page\. To do this, use a URL like the following example:
-
-  ```
-  https://alias.signin.aws.amazon.com/console?region=ap-southeast-1
-  ```
-
-  AWS then redirects you to the `ap-southeast-1` Regional sign\-in endpoint\. This results in a Regional CloudTrail log entry in that Region's log\.
-
-For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
-
-If users in your account need programmatic access, you can create an access key pair \(an access key ID and a secret access key\) for each user\. For more information, see [Managing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.
+If you enable CloudTrail to log sign\-in events, you must understand how CloudTrail logs the events\. CloudTrail includes global and Regions log entries\. Where a sign\-in event is logged in CloudTrail depends on how your users sign in\. For details, see [Logging IAM Events with CloudTrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.

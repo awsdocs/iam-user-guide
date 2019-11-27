@@ -33,6 +33,8 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ AssociatePhoneNumbersWithVoiceConnector ](https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumbersWithVoiceConnector.html)  | Grants permission to associate multiple phone numbers with an Amazon Chime Voice Connector | Write |  |  |  | 
 |   [ AssociatePhoneNumbersWithVoiceConnectorGroup ](https://docs.aws.amazon.com/chime/latest/APIReference/API_AssociatePhoneNumbersWithVoiceConnectorGroup.html)  | Grants permission to associate multiple phone numbers with an Amazon Chime Voice Connector Group | Write |  |  |  | 
 |   [ AuthorizeDirectory ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to authorize an Active Directory for your Amazon Chime Enterprise account | Write |  |  |  | 
+|   [ BatchCreateAttendee ](https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchCreateAttendee.html)  | Grants permission to create new attendees for an active Amazon Chime SDK meeting | Write |  |  |  | 
+|   [ BatchCreateRoomMembership ](API_BatchCreateRoomMembership.html)  | Grants permission to batch add room members | Write |  |  |  | 
 |   [ BatchDeletePhoneNumber ](https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchDeletePhoneNumber.html)  | Grants permission to move up to 50 phone numbers to the deletion queue | Write |  |  |  | 
 |   [ BatchSuspendUser ](https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchSuspendUser.html)  | Grants permission to suspend up to 50 users from a Team or EnterpriseLWA Amazon Chime account | Write |  |  |  | 
 |   [ BatchUnsuspendUser ](https://docs.aws.amazon.com/chime/latest/APIReference/API_BatchUnsuspendUser.html)  | Grants permission to remove the suspension from up to 50 previously suspended users for the specified Amazon Chime EnterpriseLWA account | Write |  |  |  | 
@@ -41,21 +43,29 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ConnectDirectory ](https://docs.aws.amazon.com/chime/latest/ag/active_directory.html)  | Grants permission to connect an Active Directory to your Amazon Chime Enterprise account | Write |  |  |   ds:ConnectDirectory   | 
 |   [ CreateAccount ](https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAccount.html)  | Grants permission to create an Amazon Chime account under the administrator's AWS account | Write |  |  |  | 
 |   [ CreateApiKey ](https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html)  | Grants permission to create a new SCIM access key for your Amazon Chime account and Okta configuration | Write |  |  |  | 
+|   [ CreateAttendee ](https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateAttendee.html)  | Grants permission to create a new attendee for an active Amazon Chime SDK meeting | Write |  |  |  | 
 |   [ CreateBot ](API_CreateBot.html)  | Grants permission to create a bot for an Amazon Chime Enterprise account | Write |  |  |  | 
 |   [ CreateBotMembership ](API_CreateBotMembership.html)  | Grants permission to add a bot to a chat room in your Amazon Chime Enterprise account | Write |  |  |  | 
 |   [ CreateCDRBucket ](https://docs.aws.amazon.com/chime/latest/ag/manage-access.html)  | Grants permission to create a new Call Detail Record S3 bucket | Write |  |  |   s3:CreateBucket   s3:ListAllMyBuckets   | 
+|   [ CreateMeeting ](https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateMeeting.html)  | Grants permission to create a new Amazon Chime SDK meeting in the specified media Region, with no initial attendees | Write |  |  |  | 
 |   [ CreatePhoneNumberOrder ](https://docs.aws.amazon.com/chime/latest/APIReference/API_CreatePhoneNumberOrder.html)  | Grants permission to create a phone number order with the Carriers | Write |  |  |  | 
+|   [ CreateRoom ](API_CreateRoom.html)  | Grants permission to create a room | Write |  |  |  | 
+|   [ CreateRoomMembership ](API_CreateRoomMembership.html)  | Grants permission to add a room member | Write |  |  |  | 
 |   [ CreateVoiceConnector ](https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnector.html)  | Grants permission to create a Amazon Chime Voice Connector under the administrator's AWS account | Write |  |  |  | 
 |   [ CreateVoiceConnectorGroup ](https://docs.aws.amazon.com/chime/latest/APIReference/API_CreateVoiceConnectorGroup.html)  | Grants permission to create a Amazon Chime Voice Connector Group under the administrator's AWS account | Write |  |  |  | 
 |   [ DeleteAccount ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAccount.html)  | Grants permission to delete the specified Amazon Chime account | Write |  |  |  | 
 |   [ DeleteAccountOpenIdConfig ](https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html)  | Grants permission to delete the OpenIdConfig attributes from your Amazon Chime account | Write |  |  |  | 
 |   [ DeleteApiKey ](https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html)  | Grants permission to delete the specified SCIM access key associated with your Amazon Chime account and Okta configuration | Write |  |  |  | 
+|   [ DeleteAttendee ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteAttendee.html)  | Grants permission to delete the specified attendee from an Amazon Chime SDK meeting | Write |  |  |  | 
 |   [ DeleteCDRBucket ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to delete a Call Detail Record S3 bucket from your Amazon Chime account | Write |  |  |   s3:DeleteBucket   | 
 |   [ DeleteDelegate ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to delete delegated AWS account management from your Amazon Chime account | Write |  |  |  | 
 |   [ DeleteDomain ](https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html)  | Grants permission to delete a domain from your Amazon Chime account | Write |  |  |  | 
 |   [ DeleteEventsConfiguration ](API_DeleteEventsConfiguration.html)  | Grants permission to delete an events configuration for a bot to receive outgoing events | Write |  |  |  | 
 |   [ DeleteGroups ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to delete Active Directory or Okta user groups from your Amazon Chime Enterprise account | Write |  |  |  | 
+|   [ DeleteMeeting ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteMeeting.html)  | Grants permission to delete the specified Amazon Chime SDK meeting | Write |  |  |  | 
 |   [ DeletePhoneNumber ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeletePhoneNumber.html)  | Grants permission to move a phone number to the deletion queue | Write |  |  |  | 
+|   [ DeleteRoom ](API_DeleteRoom.html)  | Grants permission to delete a room | Write |  |  |  | 
+|   [ DeleteRoomMembership ](API_DeleteRoomMembership.html)  | Grants permission to remove a room member | Write |  |  |  | 
 |   [ DeleteVoiceConnector ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnector.html)  | Grants permission to delete the specified Amazon Chime Voice Connector | Write |  |  |  | 
 |   [ DeleteVoiceConnectorGroup ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorGroup.html)  | Grants permission to delete the specified Amazon Chime Voice Connector Group | Write |  |  |  | 
 |   [ DeleteVoiceConnectorOrigination ](https://docs.aws.amazon.com/chime/latest/APIReference/API_DeleteVoiceConnectorOrigination.html)  | Grants permission to delete the origination settings for the specified Amazon Chime Voice Connector | Write |  |  |  | 
@@ -70,15 +80,18 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ GetAccountResource ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to get details for the account resource associated with your Amazon Chime account | Read |  |  |  | 
 |   [ GetAccountSettings ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAccountSettings.html)  | Grants permission to get account settings for the specified Amazon Chime account ID | Read |  |  |  | 
 |   [ GetAccountWithOpenIdConfig ](https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html)  | Grants permission to get the account details and OpenIdConfig attributes for your Amazon Chime account | Read |  |  |  | 
+|   [ GetAttendee ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetAttendee.html)  | Grants permission to get attendee details for a specified meeting ID and attendee ID | Read |  |  |  | 
 |   [ GetBot ](API_GetBot.html)  | Grants permission to retrieve details for the specified bot | Read |  |  |  | 
 |   [ GetCDRBucket ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to get details of a Call Detail Record S3 bucket associated with your Amazon Chime account | Read |  |  |   s3:GetBucketAcl   s3:GetBucketLocation   s3:GetBucketLogging   s3:GetBucketVersioning   s3:GetBucketWebsite   | 
 |   [ GetDomain ](https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html)  | Grants permission to get domain details for a domain associated with your Amazon Chime account | Read |  |  |  | 
 |   [ GetEventsConfiguration ](API_GetEventsConfiguration.html)  | Grants permission to retrieve details for an events configuration for a bot to receive outgoing events | Read |  |  |  | 
 |   [ GetGlobalSettings ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetGlobalSettings.html)  | Grants permission to get global settings related to Amazon Chime for the AWS account | Read |  |  |  | 
+|   [ GetMeeting ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetMeeting.html)  | Grants permission to get the meeting record for a specified meeting ID | Read |  |  |  | 
 |   [ GetMeetingDetail ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to get attendee, connection, and other details for a meeting | Read |  |  |  | 
 |   [ GetPhoneNumber ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumber.html)  | Grants permission to get details for the specified phone number | Read |  |  |  | 
 |   [ GetPhoneNumberOrder ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumberOrder.html)  | Grants permission to get details for the specified phone number order | Read |  |  |  | 
 |   [ GetPhoneNumberSettings ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetPhoneNumberSettings.html)  | Grants permission to get phone number settings related to Amazon Chime for the AWS account | Read |  |  |  | 
+|   [ GetRoom ](API_GetRoom.html)  | Grants permission to retrieve a room | Read |  |  |  | 
 |   [ GetTelephonyLimits ](https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html)  | Grants permission to get telephony limits for the AWS account | Read |  |  |  | 
 |   [ GetUser ](https://docs.aws.amazon.com/chime/latest/APIReference/API_GetUser.html)  | Grants permission to get details for the specified user ID | Read |  |  |  | 
 |   [ GetUserActivityReportData ](https://docs.aws.amazon.com/chime/latest/ag/user-details.html)  | Grants permission to get a summary of user activity on the user details page | Read |  |  |  | 
@@ -96,6 +109,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ListAccountUsageReportData ](https://docs.aws.amazon.com/chime/latest/ag/view-reports.html)  | Grants permission to list Amazon Chime account usage reporting data | List |  |  |  | 
 |   [ ListAccounts ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAccounts.html)  | Grants permission to list the Amazon Chime accounts under the administrator's AWS account | List |  |  |  | 
 |   [ ListApiKeys ](https://docs.aws.amazon.com/chime/latest/ag/okta_sso.html)  | Grants permission to list the SCIM access keys defined for your Amazon Chime account and Okta configuration | List |  |  |  | 
+|   [ ListAttendees ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListAttendees.html)  | Grants permission to list up to 100 attendees for a specified Amazon Chime SDK meeting | Read |  |  |  | 
 |   [ ListBots ](API_ListBots.html)  | Grants permission to list the bots associated with the administrator's Amazon Chime Enterprise account | List |  |  |  | 
 |   [ ListCDRBucket ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to list Call Detail Record S3 buckets | List |  |  |   s3:ListAllMyBuckets   s3:ListBucket   | 
 |   [ ListCallingRegions ](https://docs.aws.amazon.com/chime/latest/ag/phone-numbers.html)  | Grants permission to list the calling regions available for the administrator's AWS account | List |  |  |  | 
@@ -104,9 +118,12 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ListDomains ](https://docs.aws.amazon.com/chime/latest/ag/claim-domain.html)  | Grants permission to list domains associated with your Amazon Chime account | List |  |  |  | 
 |   [ ListGroups ](https://docs.aws.amazon.com/chime/latest/ag/control-access.html)  | Grants permission to list Active Directory or Okta user groups associated with your Amazon Chime Enterprise account | List |  |  |  | 
 |   [ ListMeetingEvents ](https://docs.aws.amazon.com/chime/latest/ag/view-reports.html)  | Grants permission to list all events that occurred for a specified meeting | List |  |  |  | 
+|   [ ListMeetings ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListMeetings.html)  | Grants permission to list up to 100 active Amazon Chime SDK meetings | Read |  |  |  | 
 |   [ ListMeetingsReportData ](https://docs.aws.amazon.com/chime/latest/ag/view-reports.html)  | Grants permission to list meetings ended during the specified date range | List |  |  |  | 
 |   [ ListPhoneNumberOrders ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListPhoneNumberOrders.html)  | Grants permission to list the phone number orders under the administrator's AWS account | List |  |  |  | 
 |   [ ListPhoneNumbers ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListPhoneNumbers.html)  | Grants permission to list the phone numbers under the administrator's AWS account | List |  |  |  | 
+|   [ ListRoomMemberships ](API_ListRoomMemberships.html)  | Grants permission to list all room members | Read |  |  |  | 
+|   [ ListRooms ](API_ListRooms.html)  | Grants permission to list rooms | Read |  |  |  | 
 |   [ ListUsers ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListUsers.html)  | Grants permission to list the users that belong to the specified Amazon Chime account | List |  |  |  | 
 |   [ ListVoiceConnectorGroups ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectorGroups.html)  | Grants permission to list the Amazon Chime Voice Connector Groups under the administrator's AWS account | List |  |  |  | 
 |   [ ListVoiceConnectorTerminationCredentials ](https://docs.aws.amazon.com/chime/latest/APIReference/API_ListVoiceConnectorTerminationCredentials.html)  | Grants permission to list the SIP termination credentials for the specified Amazon Chime Voice Connector | List |  |  |  | 
@@ -139,6 +156,8 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ UpdateGlobalSettings ](https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateGlobalSettings.html)  | Grants permission to update the global settings related to Amazon Chime for the AWS account | Write |  |  |  | 
 |   [ UpdatePhoneNumber ](https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdatePhoneNumber.html)  | Grants permission to update phone number details for the specified phone number | Write |  |  |  | 
 |   [ UpdatePhoneNumberSettings ](https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdatePhoneNumberSettings.html)  | Grants permission to update phone number settings related to Amazon Chime for the AWS account | Write |  |  |  | 
+|   [ UpdateRoom ](API_UpdateRoom.html)  | Grants permission to update a room | Write |  |  |  | 
+|   [ UpdateRoomMembership ](API_UpdateRoomMembership.html)  | Grants permission to update room membership role | Write |  |  |  | 
 |   [ UpdateSupportedLicenses ](https://docs.aws.amazon.com/chime/latest/ag/manage-access.html)  | Grants permission to update the supported license tiers available for users in your Amazon Chime account | Write |  |  |  | 
 |   [ UpdateUser ](https://docs.aws.amazon.com/chime/latest/APIReference/API_UpdateUser.html)  | Grants permission to update user details for a specified user ID | Write |  |  |  | 
 |   [ UpdateUserLicenses ](https://docs.aws.amazon.com/chime/latest/ag/manage-access.html)  | Grants permission to update the licenses for your Amazon Chime users | Write |  |  |  | 

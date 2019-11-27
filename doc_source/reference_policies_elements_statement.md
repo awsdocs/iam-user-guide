@@ -1,6 +1,6 @@
 # IAM JSON Policy Elements: Statement<a name="reference_policies_elements_statement"></a>
 
-The `Statement` element is the main element for a policy\. This element is required\. It can include multiple elements \(see the subsequent sections in this page\)\. The `Statement` element contains an array of individual statements\. Each individual statement is a JSON block enclosed in braces \{ \}\. 
+The `Statement` element is the main element for a policy\. This element is required\. The `Statement` element can contain a single statement or an array of individual statements\. Each individual statement block must be enclosed in curly braces \{ \}\. For multiple statements, the array must be enclosed in square brackets \[ \]\.
 
 ```
 "Statement": [{...},{...},{...}]

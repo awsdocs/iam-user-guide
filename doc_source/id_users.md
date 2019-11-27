@@ -47,7 +47,7 @@ You can also add a permissions boundary to your users\. A permissions boundary i
 
 Each IAM user is associated with one and only one AWS account\. Because users are defined within your AWS account, they don't need to have a payment method on file with AWS\. Any AWS activity performed by users in your account is billed to your account\.
 
-There's a limit to the number of IAM users you can have in an AWS account\. For more information, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
+There's a limit to the number of IAM users you can have in an AWS account\. For more information, see [IAM and STS Limits](reference_iam-limits.md)\.
 
 ## Users as service accounts<a name="id_users_service_accounts"></a>
 

@@ -16,7 +16,7 @@ You cannot enable or disable regions that are enabled by default\. You can only 
                 "account:EnableRegion",
                 "account:DisableRegion"
             ],
-            "Resource": "",
+            "Resource": "*",
             "Condition": {
                 "StringEquals": {"account:TargetRegion": "ap-east-1"}
             }
@@ -28,7 +28,7 @@ You cannot enable or disable regions that are enabled by default\. You can only 
                 "aws-portal:ViewAccount",
                 "account:ListRegions"
             ],
-            "Resource": ""
+            "Resource": "*"
         }
     ]
 }

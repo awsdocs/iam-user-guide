@@ -22,22 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AddTagsToCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_AddTagsToCertificate.html)  | Adds one or more tags to a certificate\. | Tagging |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ DeleteCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_DeleteCertificate.html)  | Deletes a certificate and its associated private key\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ DescribeCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_DescribeCertificate.html)  | Returns a list of the fields contained in the specified certificate\. | Read |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ ExportCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_ExportCertificate.html)  | Exports a private certificate issued by a private certificate authority \(CA\) for use anywhere\. | Read |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ GetCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_GetCertificate.html)  | Retrieves a certificate and certificate chain for the certificate specified by an ARN\. | Read |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ ImportCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_ImportCertificate.html)  | Imports a 3rd party SSL/TLS certificate into AWS Certificate Manager \(ACM\)\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ ListCertificates ](https://docs.aws.amazon.com/acm/latest/APIReference/API_ListCertificates.html)  | Retrieves a list of the certificate ARNs and the domain name for each ARN\. | List |  |  |  | 
-|   [ ListTagsForCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_ListTagsForCertificate.html)  | Lists the tags that have been applied to the certificate\. | Read |  |  |  | 
-|   [ RemoveTagsFromCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_RemoveTagsFromCertificate.html)  | Remove one or more tags from a certificate\. A tag consists of a key\-value pair | Tagging |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ RenewCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_RenewCertificate.html)  | Renews an eligable private certificate\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ RequestCertificate ](https://docs.aws.amazon.com/acm/latest/APIReference/API_RequestCertificate.html)  | Requests a public or private certificate\. | Write |  |  |  | 
-|   [ ResendValidationEmail ](https://docs.aws.amazon.com/acm/latest/APIReference/API_ResendValidationEmail.html)  | Resends an email to request domain ownership validation\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
-|   [ UpdateCertificateOptions ](https://docs.aws.amazon.com/acm/latest/APIReference/API_UpdateCertificateOptions.html)  | Updates a certificate\. Use to specify whether to opt in to or out of certificate transparency logging\. | Write |   [ certificate\* ](#awscertificatemanager-certificate)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscertificatemanager.html)
 
 ## Resources Defined by AWS Certificate Manager<a name="awscertificatemanager-resources-for-iam-policies"></a>
 
@@ -48,8 +33,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ certificate ](https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations)  |  arn:$\{Partition\}:acm:$\{Region\}:$\{Account\}:certificate/$\{CertificateId\}  |  | 
+|   [ certificate ](https://docs.aws.amazon.com/acm/latest/userguide/authen-overview.html#acm-resources-operations)  |  arn:$\{Partition\}:acm:$\{Region\}:$\{Account\}:certificate/$\{CertificateId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscertificatemanager-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Certificate Manager<a name="awscertificatemanager-policy-keys"></a>
 
-Certificate Manager has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Certificate Manager defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

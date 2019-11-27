@@ -4,7 +4,7 @@ Amazon GuardDuty \(service prefix: `guardduty`\) provides the following service\
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_api_ref.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/guardduty/latest/APIReference/Welcome.html)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html) permission policies\.
 
 **Topics**
@@ -37,6 +37,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ filter ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/filter/$\{FilterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonguardduty-aws_ResourceTag___TagKey_)   | 
 |   [ ipset ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonguardduty-aws_ResourceTag___TagKey_)   | 
 |   [ threatintelset ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonguardduty-aws_ResourceTag___TagKey_)   | 
+|   [ publishingdestination ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{PublishingDestinationId\}  |  | 
 
 ## Condition Keys for Amazon GuardDuty<a name="amazonguardduty-policy-keys"></a>
 

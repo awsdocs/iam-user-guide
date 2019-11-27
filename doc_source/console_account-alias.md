@@ -55,7 +55,7 @@ You can use the AWS Management Console, the IAM API, or the command line interfa
 
 **Important**  
 Your AWS account can have only one alias\. If you create a new alias for your AWS account, the new alias overwrites the previous alias, and the URL containing the previous alias stops working\.
-The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
+The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [IAM and STS Limits](reference_iam-limits.md)\.
 
 ### Creating and Deleting Aliases \(Console\)<a name="CreateAlias_Console"></a>
 

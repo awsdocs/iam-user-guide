@@ -35,6 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ cluster ](https://docs.aws.amazon.com/eks/latest/userguide/clusters.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:cluster/$\{ClusterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
 |   [ nodegroup ](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:nodegroup/$\{ClusterName\}/$\{NodegroupName\}/$\{UUID\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
+|   [ fargateprofile ](https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html)  |  arn:$\{Partition\}:eks:$\{Region\}:$\{Account\}:fargateprofile/$\{ClusterName\}/$\{FargateProfileName\}/$\{UUID\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticcontainerserviceforkubernetes-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Elastic Container Service for Kubernetes<a name="amazonelasticcontainerserviceforkubernetes-policy-keys"></a>
 

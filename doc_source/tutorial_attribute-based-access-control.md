@@ -1,6 +1,6 @@
 # Tutorial: Using Tags for Attribute\-Based Access Control in AWS<a name="tutorial_attribute-based-access-control"></a>
 
-Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called *tags*\. You can attach tags to IAM principals \(users or roles\) and to AWS resources\. You can then define policies that use tag condition keys to grant permissions to your principals based on their tags\. When you use tags to control access to your AWS resources, you allow your teams and resources to grow with fewer changes to AWS policies\. ABAC policies are more flexible than traditional AWS policies, in which you to list each individual resource\. For more information about ABAC and its advantage over traditional policies, see [What Is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
+Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called *tags*\. You can attach tags to IAM principals \(users or roles\) and to AWS resources\. You can then define policies that use tag condition keys to grant permissions to your principals based on their tags\. When you use tags to control access to your AWS resources, you allow your teams and resources to grow with fewer changes to AWS policies\. ABAC policies are more flexible than traditional AWS policies, which require you to list each individual resource\. For more information about ABAC and its advantage over traditional policies, see [What Is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
 
 **Topics**
 + [Tutorial Overview](#tutorial_attribute-based-access-control-overview)
@@ -14,6 +14,7 @@ Attribute\-based access control \(ABAC\) is an authorization strategy that defin
 + [Step 7: Test Updating and Deleting Secrets](#tutorial_abac_step7)
 + [Summary](#tutorial-abac-summary)
 + [Related Resources](#tutorial_abac_related)
++ [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)
 
 ## Tutorial Overview<a name="tutorial_attribute-based-access-control-overview"></a>
 
@@ -22,7 +23,7 @@ This tutorial shows how to create and test a policy that allows IAM roles with p
 **Scenario**  
 Assume that you're a lead developer at a large company named Example Corporation, and you're an experienced IAM administrator\. You're familiar with creating and managing IAM users, roles, and policies\. You want to ensure that your development engineers and quality assurance team members can access the resources they need\. You also need a strategy that scales as your company grows\.
 
-You choose to use AWS resource tags and IAM role principal tags to implement an ABAC strategy for services that support it, beginning with AWS Secrets Manager\. To learn which services support authorization based on tags, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which tagging condition keys you can use in a policy with each service's actions and resources, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
+You choose to use AWS resource tags and IAM role principal tags to implement an ABAC strategy for services that support it, beginning with AWS Secrets Manager\. To learn which services support authorization based on tags, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which tagging condition keys you can use in a policy with each service's actions and resources, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. You can configure your SAML\-based or web identity provider to pass [session tags](id_session-tags.md) to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. To learn how using session tags with a SAML federated identity differs from this tutorial, see [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)\.
 
 Your Engineering and Quality Assurance team members are on either the **Pegasus** or **Unicorn** project\. You choose the following 3\-character project and team tag values:
 + `access-project` = `peg` for the **Pegasus** project
@@ -33,7 +34,7 @@ Your Engineering and Quality Assurance team members are on either the **Pegasus*
 Additionally, you choose to require the `cost-center` cost allocation tag to enable custom AWS billing reports\. For more information, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing and Cost Management User Guide*\.
 
 **Summary of Key Decisions**
-+ Employees sign in with IAM user credentials and then assume the IAM role for their team and project\. If your company has its own identity system, you can set up federation to allow employees to assume a role without IAM users\. For more information, see [Identity Providers and Federation](id_roles_providers.md)\.
++ Employees sign in with IAM user credentials and then assume the IAM role for their team and project\. If your company has its own identity system, you can set up federation to allow employees to assume a role without IAM users\. For more information, see [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)\.
 + The same policy is attached to all of the roles\. Actions are allowed or denied based on tags\.
 + Employees can create new resources, but only if they attach the same tags to the resource that are applied to their role\. This ensures that employees can view the resource after they create it\. Administrators are no longer required to update policies with the ARN of new resources\.
 + Employees can read resources owned by their team, regardless of the project\.
@@ -194,7 +195,7 @@ This policy uses a strategy to allow all actions for a service, but explicitly d
 
 ## Step 3: Create Roles<a name="tutorial_abac_step3"></a>
 
-Create the following IAM roles and attach the **access\-same\-project\-team** policy that you created in the previous step\. For more information about creating an IAM roles, see [Creating a Role to Delegate Permissions to an IAM User](id_roles_create_for-user.md)\. If you choose to use federation instead of IAM users and roles, then create the following roles using the instructions for your federation type\. For more information, see [Identity Providers and Federation](id_roles_providers.md)\.
+Create the following IAM roles and attach the **access\-same\-project\-team** policy that you created in the previous step\. For more information about creating IAM roles, see [Creating a Role to Delegate Permissions to an IAM User](id_roles_create_for-user.md)\. If you choose to use federation instead of IAM users and roles, see [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)\.
 
 
 **ABAC Roles**  
@@ -296,7 +297,7 @@ An important reason for using attribute\-based access control \(ABAC\) over role
 1. Add the following inline policy named `access-assume-specific-roles`\. For more information about adding an inline policy to a user, see [To embed an inline policy for a user or role \(console\)](access_policies_manage-attach-detach.md#embed-inline-policy-console)\.
 
 **ABAC Policy: Assume Only Specific Roles**  
-This policy allows Saanvi to assume the engineering roles for the Pegasus or **Centaur** projects\. It is necessary to create this custom policy because IAM does not support multivalued tags\. You can't tag Saanvi's user with `access-project` = `peg` and `access-project` = `cen`\. Additionally, the AWS authorization model can’t match both values\. For more information, see [Rules for Tagging IAM Entities](id_tags.md#id_tags_rules)\. Instead, you must manually specify the two roles that she can assume\.
+This policy allows Saanvi to assume the engineering roles for the Pegasus or **Centaur** projects\. It is necessary to create this custom policy because IAM does not support multivalued tags\. You can't tag Saanvi's user with `access-project` = `peg` and `access-project` = `cen`\. Additionally, the AWS authorization model can’t match both values\. For more information, see [Rules for Tagging in IAM And AWS STS](id_tags.md#id_tags_rules)\. Instead, you must manually specify the two roles that she can assume\.
 
    ```
    {
@@ -358,5 +359,6 @@ For related information in the *IAM User Guide*, see the following resources:
 + [Tagging IAM Users and Roles](id_tags.md)
 + [Controlling Access to AWS Resources Using Resource Tags](access_tags.md)
 + [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)
++ [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)
 
 To learn how to monitor the tags in your account, see [Monitor tag changes on AWS resources with serverless workflows and Amazon CloudWatch Events](http://aws.amazon.com/blogs/mt/monitor-tag-changes-on-aws-resources-with-serverless-workflows-and-amazon-cloudwatch-events/)\.

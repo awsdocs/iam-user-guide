@@ -25,9 +25,12 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ DescribeReportCreation ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_DescribeReportCreation.html)  | Describe the status of the StartReportCreation operation\. | Read |  |  |  | 
+|   [ GetComplianceSummary ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetComplianceSummary.html)  | Get a table that shows counts of resources that are noncompliant with their effective tag policies\. | Read |  |  |  | 
 |   [ GetResources ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html)  | Get tagged AWS resources that match the given tag filters | Read |  |  |  | 
 |   [ GetTagKeys ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagKeys.html)  | Get all tagKeys for the account in the specific region | Read |  |  |  | 
 |   [ GetTagValues ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetTagValues.html)  | Get all tagValues for the account in the specific region | Read |  |  |  | 
+|   [ StartReportCreation ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_StartReportCreation.html)  | Generate a report that lists all tagged resources in accounts across your organization, and whether each resource is compliant with the effective tag policy\. | Write |  |  |  | 
 |   [ TagResources ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html)  | Add tags to AWS resources | Tagging |  |  |  | 
 |   [ UntagResources ](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_UntagResources.html)  | Remove tags from AWS resources | Tagging |  |  |  | 
 

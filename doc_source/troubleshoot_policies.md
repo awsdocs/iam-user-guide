@@ -75,7 +75,7 @@ Alternatively, to use JSON syntax \(such as wildcards\) for services, create, ed
 
 ### Reducing the Size of Your Policy in the Visual Editor<a name="troubleshoot_policy-size"></a>
 
-When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM Entity Character Limits](reference_iam-limits.md#reference_iam-limits-entity-length)\. 
+When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM and STS Character Limits](reference_iam-limits.md#reference_iam-limits-entity-length)\. 
 
 To reduce the size of your policy in the visual editor, edit your policy or move permission blocks to another policy\. The error message includes the number of characters that your policy document contains, and you can use this information to help you reduce the size of your policy\.
 

@@ -115,7 +115,7 @@ The following table shows how CloudTrail logs different information for each of 
 
 ****  
 
-| Principal Type | STS API | User Identity in CloudTrail Log for Caller's Account | User Identity in CloudTrail Log for the Assumed Role's Account | User Identity in CloudTrail Log for the Role's Subsequent API calls | 
+| Principal Type | STS API | User Identity in CloudTrail Log for Caller's Account | User Identity in CloudTrail Log for the Assumed Role's Account | User Identity in CloudTrail Log for the Role's Subsequent API Calls | 
 | --- | --- | --- | --- | --- | 
 | AWS account root user credentials | GetSessionToken | Root user identity | Role owner account is same as calling account | Root user identity | 
 | IAM user | GetSessionToken | IAM user identity | Role owner account is same as calling account | IAM user identity | 
@@ -262,6 +262,86 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
 }
 ```
 
+### Example AWS STS Role Chaining API Event in CloudTrail Log File<a name="stscloudtrailexample-assumerole"></a>
+
+The following example shows a CloudTrail log entry for a request made by John Doe in account 111111111111\. John previously used his `JohnDoe` user to assume the `JohnRole1` role\. For this request, he uses the credentials from that role to assume the `JonRole2` role\. This is known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. John passes two [session tags](id_session-tags.md) into the request\. He sets those two tags as transitive\. The request inherits the `Department` tag as transitive because John set it as transitive when he assumed `JohnRole1`\. For more information about transitive keys in role chains, see [Chaining Roles with Session Tags](id_session-tags.md#id_session-tags_role-chaining)\.
+
+```
+{
+    "eventVersion": "1.05",
+    "userIdentity": {
+        "type": "AssumedRole",
+        "principalId": "AROAIN5ATK5U7KEXAMPLE:JohnRole1",
+        "arn": "arn:aws:sts::111111111111:assumed-role/JohnDoe/JohnRole1",
+        "accountId": "111111111111",
+        "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
+        "sessionContext": {
+            "attributes": {
+                "mfaAuthenticated": "false",
+                "creationDate": "2019-10-02T21:50:54Z"
+            },
+            "sessionIssuer": {
+                "type": "Role",
+               "principalId": "AROAIN5ATK5U7KEXAMPLE",
+                "arn": "arn:aws:iam::111111111111:role/JohnRole1",
+                "accountId": "111111111111",
+                "userName": "JohnDoe"
+            }
+        }
+    },
+    "eventTime": "2019-10-02T22:12:29Z",
+    "eventSource": "sts.amazonaws.com",
+    "eventName": "AssumeRole",
+    "awsRegion": "us-east-2",
+    "sourceIPAddress": "123.145.67.89",
+    "userAgent": "aws-cli/1.16.248 Python/3.4.7 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 botocore/1.12.239",
+    "requestParameters": {
+        "incomingTransitiveTags": {
+            "Department": "Engineering"
+        },
+        "tags": [
+            {
+                "value": "johndoe@example.com",
+                "key": "Email"
+            },
+            {
+                "value": "12345",
+                "key": "CostCenter"
+            }
+        ],
+        "roleArn": "arn:aws:iam::111111111111:role/JohnRole2",
+        "roleSessionName": "Role2WithTags",
+        "transitiveTagKeys": [
+            "Email",
+            "CostCenter"
+        ],
+        "durationSeconds": 3600
+    },
+    "responseElements": {
+        "credentials": {
+            "accessKeyId": "ASIAWHOJDLGPOEXAMPLE",
+            "expiration": "Oct 2, 2019 11:12:29 PM",
+            "sessionToken": "AgoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMSJHMEXAMPLETOKEN+//rJb8Lo30mFc5MlhFCEbubZvEj0wHB/mDMwIgSEe9gk/Zjr09tZV7F1HDTMhmEXAMPLETOKEN/iEJ/rkqngII9///////////ARABGgw0MjgzMDc4NjM5NjYiDLZjZFKwP4qxQG5sFCryASO4UPz5qE97wPPH1eLMvs7CgSDBSWfonmRTCfokm2FN1+hWUdQQH6adjbbrVLFL8c3jSsBhQ383AvxpwK5YRuDE1AI/+C+WKFZb701eiv9J5La2EXAMPLETOKEN/c7S5Iro1WUJ0q3Cxuo/8HUoSxVhQHM7zF7mWWLhXLEQ52ivL+F6q5dpXu4aTFedpMfnJa8JtkWwG9x1Axj0Ypy2ok8v5unpQGWych1vwdvj6ez1Dm8Xg1+qIzXILiEXAMPLETOKEN/vQGqu8H+nxp3kabcrtOvTFTvxX6vsc8OGwUfHhzAfYGEXAMPLETOKEN/L6v1yMM3B1OwFOrQBno1HEjf1oNI8RnQiMNFdUOtwYj7HUZIOCZmjfN8PPHq77N7GJl9lzvIZKQA0Owcjg+mc78zHCj8y0siY8C96paEXAMPLETOKEN/E3cpksxWdgs91HRzJWScjN2+r2LTGjYhyPqcmFzzo2mCE7mBNEXAMPLETOKEN/oJy+2o83YNW5tOiDmczgDzJZ4UKR84yGYOMfSnF4XcEJrDgAJ3OJFwmTcTQICAlSwLEXAMPLETOKEN"
+        },
+        "assumedRoleUser": {
+            "assumedRoleId": "AROAIFR7WHDTSOYQYHFUE:Role2WithTags",
+            "arn": "arn:aws:sts::111111111111:assumed-role/test-role/Role2WithTags"
+        }
+    },
+    "requestID": "b96b0e4e-e561-11e9-8b3f-7b396EXAMPLE",
+    "eventID": "1917948f-3042-46ec-98e2-62865EXAMPLE",
+    "resources": [
+        {
+            "ARN": "arn:aws:iam::111122223333:role/JohnRole2",
+            "accountId": "111111111111",
+            "type": "AWS::IAM::Role"
+        }
+    ],
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "111111111111"
+}
+```
+
 ### Example AWS Service AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_service"></a>
 
 The following example shows a CloudTrail log entry for a request made by an AWS service calling another service API using permissions from a service role\. It shows the CloudTrail log entry for the request made in account 777788889999\.
@@ -308,68 +388,77 @@ The following example shows a CloudTrail log entry for a request made by an AWS 
 
 ### Example SAML AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_saml"></a>
 
-The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithSAML` action\.
+The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithSAML` action\. The request includes the SAML attributes `CostCenter` and `Project` that are passed through the SAML assertion as [session tags](id_session-tags.md)\. Those tags are set as transitive so that they [persist in role chaining scenarios](id_session-tags.md#id_session-tags_role-chaining)\.
 
 ```
 {
-  "eventVersion": "1.05",
-  "userIdentity": {
-    "type": "SAMLUser",
-    "principalId": "<id of identity provider>:<canonical id of user>",
-    "userName": "<canonical id of user>",
-    "identityProvider": "<id of identity provider>"
-  },
-  "eventTime": "2016-03-23T01:39:57Z",
-  "eventSource": "sts.amazonaws.com",
-  "eventName": "AssumeRoleWithSAML",
-  "awsRegion": "us-east-2",
-  "sourceIPAddress": "192.0.2.101",
-  "userAgent": "aws-cli/1.3.23 Python/2.7.6 Linux/2.6.18-164.el5",
-  "requestParameters": {
-    "sAMLAssertionID": "_c0046cEXAMPLEb9d4b8eEXAMPLE2619aEXAMPLE",
-    "roleSessionName": "MyAssignedRoleSessionName",
-    "durationSeconds": 3600,
-    "roleArn": "arn:aws:iam::444455556666:role/SAMLTestRoleShibboleth",
-    "principalArn": "arn:aws:iam::444455556666:saml-provider/Shibboleth"
-  },
-  "responseElements": {
-    "subjectType": "transient",
-    "issuer": "https://server.example.com/idp/shibboleth",
-    "credentials": {
-      "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-      "expiration": "Mar 23, 2016 2:39:57 AM",
-      "sessionToken": "<encoded session token blob>"
+    "eventVersion": "1.05",
+    "userIdentity": {
+        "type": "SAMLUser",
+        "principalId": "SampleUkh1i4+ExamplexL/jEvs=:SamlExample",
+        "userName": "SamlExample",
+        "identityProvider": "bdGOnTesti4+ExamplexL/jEvs="
     },
-    "nameQualifier": "<id of identity provider>",
-    "assumedRoleUser": {
-      "assumedRoleId": "AROAD35QRSTUVWEXAMPLE:MyAssignedRoleSessionName",
-      "arn": "arn:aws:sts::444455556666:assumed-role/SAMLTestRoleShibboleth/MyAssignedRoleSessionName"
+    "eventTime": "2019-11-01T19:14:36Z",
+    "eventSource": "sts.amazonaws.com",
+    "eventName": "AssumeRoleWithSAML",
+    "awsRegion": "us-east-2",
+    "sourceIPAddress": "192.0.2.101",
+    "userAgent": "aws-cli/1.16.263 Python/3.4.7 Linux/4.9.184-0.1.ac.235.83.329.metal1.x86_64 botocore/1.12.253",
+    "requestParameters": {
+        "sAMLAssertionID": "_c0046cEXAMPLEb9d4b8eEXAMPLE2619aEXAMPLE",
+        "roleSessionName": "MyAssignedRoleSessionName",
+        "principalTags": {
+            "CostCenter": "987654",
+            "Project": "Unicorn",
+            "Department": "Engineering"
+        },
+        "transitiveTagKeys": [
+            "CostCenter",
+            "Project"
+        ],
+        "durationSeconds": 3600,
+        "roleArn": "arn:aws:iam::444455556666:role/SAMLTestRoleShibboleth",
+        "principalArn": "arn:aws:iam::444455556666:saml-provider/Shibboleth"
     },
-    "subject": "<canonical id of user>",
-    "audience": "https://signin.aws.amazon.com/saml"
-  },
-  "resources": [  
-    { 
-      "ARN": "arn:aws:iam::444455556666:role/SAMLTestRoleShibboleth",   
-      "accountId": "444455556666",
-      "type": "AWS::IAM::Role" 
+    "responseElements": {
+        "subjectType": "transient",
+        "issuer": "https://server.example.com/idp/shibboleth",
+        "credentials": {
+            "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
+            "expiration": "Mar 23, 2016 2:39:57 AM",
+            "sessionToken": "<encoded session token blob>"
+        },
+        "nameQualifier": "bdGOnTesti4+ExamplexL/jEvs=",
+        "assumedRoleUser": {
+            "assumedRoleId": "AROAD35QRSTUVWEXAMPLE:MyAssignedRoleSessionName",
+            "arn": "arn:aws:sts::444455556666:assumed-role/SAMLTestRoleShibboleth/MyAssignedRoleSessionName"
+        },
+        "subject": "SamlExample",
+        "audience": "https://signin.aws.amazon.com/saml"
     },
-    {
-      "ARN": "arn:aws:iam::444455556666:saml-provider/test-saml-provider",   
-      "accountId": "444455556666",
-      "type": "AWS::IAM::SAMLProvider" 
-    }
-  ],
-  "requestID": "6EXAMPLE-e595-11e5-b2c7-c974fEXAMPLE",
-  "eventID": "dEXAMPLE-265a-41e0-9352-4401bEXAMPLE",
-  "eventType": "AwsApiCall",
-  "recipientAccountId": "444455556666"
+    "resources": [
+        {
+            "ARN": "arn:aws:iam::444455556666:role/SAMLTestRoleShibboleth",
+            "accountId": "444455556666",
+            "type": "AWS::IAM::Role"
+        },
+        {
+            "ARN": "arn:aws:iam::444455556666:saml-provider/test-saml-provider",
+            "accountId": "444455556666",
+            "type": "AWS::IAM::SAMLProvider"
+        }
+    ],
+    "requestID": "6EXAMPLE-e595-11e5-b2c7-c974fEXAMPLE",
+    "eventID": "dEXAMPLE-265a-41e0-9352-4401bEXAMPLE",
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "444455556666"
 }
 ```
 
 ### Example Web Identity AWS STS API Event in CloudTrail Log File<a name="stscloudtrailexample_web-identity"></a>
 
-The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithWebIdentity` action\.
+The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithWebIdentity` action\. The request includes the attributes `CostCenter` and `Project` that are passed through the identity provider token as [session tags](id_session-tags.md)\. Those tags are set as transitive so that they [persist in role chaining scenarios](id_session-tags.md#id_session-tags_role-chaining)\.
 
 ```
 {
@@ -390,6 +479,14 @@ The following example shows a CloudTrail log entry for a request made for the AW
     "durationSeconds": 3600,
     "roleArn": "arn:aws:iam::444455556666:role/FederatedWebIdentityRole",
     "roleSessionName": "MyAssignedRoleSessionName"
+        "principalTags": {
+            "CostCenter": "24680",
+            "Project": "Pegasus"
+        },
+        "transitiveTagKeys": [
+            "CostCenter",
+            "Project"
+        ],
   },
   "responseElements": {
     "provider": "accounts.google.com",

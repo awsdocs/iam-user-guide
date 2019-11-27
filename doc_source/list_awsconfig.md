@@ -36,6 +36,10 @@ The following resource types are defined by this service and can be used in the 
 |   [ AggregationAuthorization ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:aggregation\-authorization/$\{AggregatorAccount\}/$\{AggregatorRegion\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsconfig-aws_ResourceTag___TagKey_)   | 
 |   [ ConfigurationAggregator ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigurationAggregator.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:config\-aggregator/$\{AggregatorId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsconfig-aws_ResourceTag___TagKey_)   | 
 |   [ ConfigRule ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigRule.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:config\-rule/$\{ConfigRuleId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsconfig-aws_ResourceTag___TagKey_)   | 
+|   [ ConformancePack ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConformancePack.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:conformance\-pack/$\{ConformancePackName\}/$\{ConformancePackId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsconfig-aws_ResourceTag___TagKey_)   | 
+|   [ OrganizationConfigRule ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConfigRule.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:organization\-config\-rule/$\{OrganizationConfigRuleId\}  |  | 
+|   [ OrganizationConformancePack ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConformancePack.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:organization\-conformance\-pack/$\{OrganizationConformancePackId\}  |  | 
+|   [ RemediationConfiguration ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_RemediationConfiguration.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:remediation\-configuration/$\{RemediationConfigurationId\}  |  | 
 
 ## Condition Keys for AWS Config<a name="awsconfig-policy-keys"></a>
 
@@ -49,5 +53,5 @@ To view the global condition keys that are available to all services, see [Avail
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
-|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value associated with the resource | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 

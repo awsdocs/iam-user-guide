@@ -31,7 +31,7 @@ If `GetSessionToken` is called with the credentials of an IAM user, the temporar
 We recommend that you do not call `GetSessionToken` with root user credentials\. Instead, follow our [best practices](IAMBestPracticesAndUseCases.md) and create IAM users with the permissions they need\. Then use these IAM users for everyday interaction with AWS\.
 
 The temporary credentials that you get when you call `GetSessionToken` have the following capabilities and limitations:
-+ You can use the credentials to access the AWS Management Console by passing the credentials to the federation single sign\-on endpoint at `https://signin.aws.amazon.com/federation`\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\.
++ You can use the credentials to access the AWS Management Console by passing the credentials to the federation single sign\-on endpoint at `https://signin.aws.amazon.com/federation`\. For more information, see [Enabling Custom Identity Broker Access to the AWS Console](id_roles_providers_enable-console-custom-url.md)\.
 + You **cannot** use the credentials to call IAM or AWS STS API operations\. You **can** use them to call API operations for other AWS services\.
 
 Compare this API operation and its limitations and capability with the other API operations that create temporary security credentials at [Comparing the AWS STS API Operations](id_credentials_temp_request.md#stsapi_comparison)

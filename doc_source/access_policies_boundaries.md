@@ -38,7 +38,7 @@ When you use a policy to set the permissions boundary for a user, it limits the 
 }
 ```
 
-This policy allows creating a user in IAM\. If you attach this policy to the `ShirleyRodriguez` user, and Shirley tries to create a user, the operation fails\. It fails because the policy evaluation logic checks the policy used as the permissions boundary, which does not allow the `iam:CreateUser` operation\. To allow Shirley to perform any operations in AWS, you must add a permissions policy with actions in Amazon S3, Amazon CloudWatch, or Amazon EC2\. Alternatively, you could update the permissions boundary to allow her to create a user in IAM\.
+This policy allows creating a user in IAM\. If you attach this permissions policy to the `ShirleyRodriguez` user, and Shirley tries to create a user, the operation fails\. It fails because the permissions boundary does not allow the `iam:CreateUser` operation\. Given these two policies, Shirley does not have permission to perform any operations in AWS\. You must add a different permissions policy to allow actions in other services, such as Amazon S3\. Alternatively, you could update the permissions boundary to allow her to create a user in IAM\.
 
 ## Evaluating Effective Permissions with Boundaries<a name="access_policies_boundaries-eval-logic"></a>
 

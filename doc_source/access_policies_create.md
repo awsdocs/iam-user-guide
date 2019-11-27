@@ -9,7 +9,7 @@ You can create a new IAM policy in the AWS Management Console using one of the f
 
 You can create an inline policy in the AWS Management Console\. An inline policy is one that you create and embed directly to an IAM group, user, or role\. To learn more, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\. You cannot create AWS managed policies\.
 
-For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
+For information about policy size limitations and other quotas, see [IAM and STS Limits](reference_iam-limits.md)\.
 
 **Topics**
 + [Creating IAM Policies \(Console\)](#access_policies_create-start)

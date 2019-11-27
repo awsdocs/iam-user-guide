@@ -6,7 +6,7 @@ For more information about the difference between managed and inline policies, s
 
 For general information about IAM policies, see [Policies and Permissions](access_policies.md)\.
 
-For information about policy size limitations and other quotas, see [Limitations on IAM Entities and Objects](reference_iam-limits.md)\.
+For information about policy size limitations and other quotas, see [IAM and STS Limits](reference_iam-limits.md)\.
 
 **Topics**
 + [View Policy Access](#manage-delete_prerequisites)

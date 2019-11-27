@@ -28,6 +28,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ BatchExecuteStatement ](https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BatchExecuteStatement.html)  | Runs a batch SQL statement over an array of data\. | Write |  |  |  | 
 |   [ BeginTransaction ](https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_BeginTransaction.html)  | Starts a SQL transaction\. | Write |  |  |  | 
 |   [ CommitTransaction ](https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_CommitTransaction.html)  | Ends a SQL transaction started with the BeginTransaction operation and commits the changes\. | Write |  |  |   rds\-data:BeginTransaction   | 
+|   [ ExecuteSql ](https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteSql.html)  | Runs one or more SQL statements\. This operation is deprecated\. Use the BatchExecuteStatement or ExecuteStatement operation\. | Write |  |  |  | 
 |   [ ExecuteStatement ](https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_ExecuteStatement.html)  | Runs a SQL statement against a database\. | Write |  |  |  | 
 |   [ RollbackTransaction ](https://docs.aws.amazon.com/rdsdataservice/latest/APIReference/API_RollbackTransaction.html)  | Performs a rollback of a transaction\. Rolling back a transaction cancels its changes\. | Write |  |  |   rds\-data:BeginTransaction   | 
 

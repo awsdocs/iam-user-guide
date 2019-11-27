@@ -1,4 +1,4 @@
-# Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)<a name="id_roles_providers_enable-console-custom-url"></a>
+# Enabling Custom Identity Broker Access to the AWS Console<a name="id_roles_providers_enable-console-custom-url"></a>
 
 You can write and run code to create a URL that lets users who sign in to your organization's network securely access the AWS Management Console\. The URL includes a sign\-in token that you get from AWS and that authenticates the user to AWS\.
 
@@ -9,9 +9,9 @@ To enable your organization's users to access the AWS Management Console, you ca
 
 1. Verify that the user is authenticated by your local identity system\.
 
-1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API operations to obtain temporary security credentials for the user\. To learn about the different methods that you can use to assume a role, see [Using IAM Roles](id_roles_use.md)\.
+1. Call the AWS Security Token Service \(AWS STS\) [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) \(recommended\) or [GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API operations to obtain temporary security credentials for the user\. To learn about the different methods that you can use to assume a role, see [Using IAM Roles](id_roles_use.md)\. To learn how to pass optional session tags when you obtain your security credentials, see [Passing Session Tags in AWS STS](id_session-tags.md)\.
    + If you use one of the `AssumeRole*` API operations to get the temporary security credentials for a role, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session, from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view or change the maximum value for a role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. Additionally, if you use the `AssumeRole*` API operations, you must call them as an IAM user with long\-term credentials\. Otherwise, the call to the federation endpoint in step 3 fails\.
-   + If you use the `GetFederationToken` API operation to get the credentials, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. You can make this API call only by using the long\-term AWS security credentials of an IAM user\. You can also make these calls using AWS account root user credentials, but we do not recommended it\. If you make this call as the root user, the default session lasts for one hour\. Or you can specify a session from 900 seconds \(15 minutes\) up to 3,600 seconds \(one hour\)\. 
+   + If you use the `GetFederationToken` API operation to get the credentials, you can include the `DurationSeconds` parameter in your call\. This parameter specifies the duration of your role session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. You can make this API call only by using the long\-term AWS security credentials of an IAM user\. You can also make these calls using AWS account root user credentials, but we do not recommend it\. If you make this call as the root user, the default session lasts for one hour\. Or you can specify a session from 900 seconds \(15 minutes\) up to 3,600 seconds \(one hour\)\. 
 
 1. Call the AWS federation endpoint and supply the temporary security credentials to request a sign\-in token\.
 
@@ -81,7 +81,7 @@ When you use the [GetFederationToken](https://docs.aws.amazon.com/STS/latest/API
 **Note**  
 Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
 
-   When you enable console sessions with an extended duration, the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\. 
+   When you enable console sessions with an extended duration, you increase the risk of credential exposure\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\. 
 
     The following is an example of what your request might look like\. The lines are wrapped here for readability, but you should submit it as a one\-line string\.
 

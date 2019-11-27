@@ -10,7 +10,7 @@ We strongly recommend that you do not use the root user for your everyday tasks,
 This section provides information about the AWS Management Console sign\-in page\. It explains how to create a unique sign\-in URL for IAM users in your account, and how to sign in as the root user\. 
 
 **Note**  
-If your organization has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console for your account without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Creating a URL that Enables Federated Users to Access the AWS Management Console \(Custom Federation Broker\)](id_roles_providers_enable-console-custom-url.md)\. 
+If your organization has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console for your account without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Enabling Custom Identity Broker Access to the AWS Console](id_roles_providers_enable-console-custom-url.md)\. 
 
 ## The IAM User Sign\-in Page<a name="user-sign-in-page"></a>
 

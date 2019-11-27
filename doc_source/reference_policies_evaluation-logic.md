@@ -154,7 +154,7 @@ When Carlos makes his request to save a file to the `carlossalazar-logs` bucket,
 
 AWS first checks for a `Deny` statement that applies to the context of the request\. It finds one, because the identity\-based policy explicitly denies Carlos access to any S3 buckets used for logging\. Carlos is denied access\. 
 
-Assume that he then realizes his mistake and tries to save the file to the `carlossalazar` bucket\. AWS checks for a `Deny` statement and does not find one\. It then checks the permissions policies\. The identity\-based policy allows the request\. Therefore, AWS allows the request\. If either of them explicitly denied the statement, the request would have been denied\.
+Assume that he then realizes his mistake and tries to save the file to the `carlossalazar` bucket\. AWS checks for a `Deny` statement and does not find one\. It then checks the permissions policies\. Both the identity\-based policy and the resource\-based policy allow the request\. Therefore, AWS allows the request\. If either of them explicitly denied the statement, the request would have been denied\. If one of the policy types allows the request and the other doesn't, the request is still allowed\.
 
 ## The Difference Between Explicit and Implicit Denies<a name="AccessPolicyLanguage_Interplay"></a>
 
