@@ -32,7 +32,7 @@ When you use the ABAC tutorial for SAML, you must perform additional steps to cr
 
 Create a single role that trusts your SAML identity provider and the `test-session-tags` user that you created in step 1\. The ABAC tutorial uses separate roles with different role tags\. Because you are passing session tags from your SAML IdP, you need only one role\. To learn how to create a SAML\-based role, see [Creating a Role for SAML 2\.0 Federation \(Console\)](id_roles_create_for-idp_saml.md)\. 
 
-Name the role `access-session-tags`\. Attach the `access-same-project-team` permissions policy to the role\. Edit the role trust policy to use the following policy\. For detailed instructions on how to edit the trust relationship of a role, see [Modifying a Role \(Console\)](id_roles_manage_modify.md#roles-managingrole-editing-console)\.
+Name the role `access-session-tags`\. Attach the `access-same-project-team` permissions policy to the role\. Edit the role trust policy to use the following policy\. For detailed instructions on how to edit the trust relationship of a role, see [Modifying a Role \(Console\)](roles-managingrole-editing-console.md)\.
 
 The following role trust policy allows your SAML identity provider and the `test-session-tags` user to assume the role\. When they assume the role, they must pass the three specified session tags\. The `sts:TagSession` action is required to allow passing session tags\.
 

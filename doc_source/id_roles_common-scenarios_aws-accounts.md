@@ -12,7 +12,7 @@ Imagine that you have Amazon EC2 instances that are critical to your organizatio
 
 We recommend using this approach to enforce the *principle of least privilege*\. That means restricting the use of elevated permissions to only those times when they are needed for specific tasks\. With roles you can help prevent accidental changes to sensitive environments, especially if you combine them with [auditing](cloudtrail-integration.md) to help ensure that roles are only used when needed\.
 
-When you create a role for this purpose, you specify the accounts by ID whose users need access in the `Principal` element of the role's trust policy\. You can then grant specific users in those other accounts permissions to switch to the role\.
+When you create a role for this purpose, you specify the accounts by ID whose users need access in the `Principal` element of the role's trust policy\. You can then grant specific users in those other accounts permissions to switch to the role\. To learn whether principals in accounts outside of your zone of trust \(trusted organization, OU, or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 
 A user in one account can switch to a role in the same or a different account\. While using the role, the user can perform only the actions and access only the resources permitted by the role; their original user permissions are suspended\. When the user exits the role, the original user permissions are restored\.
 

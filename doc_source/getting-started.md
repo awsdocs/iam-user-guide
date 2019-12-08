@@ -1,6 +1,6 @@
 # Getting Started<a name="getting-started"></a>
 
-This topic shows you how to give access to your AWS resources by creating AWS Identity and Access Management \(IAM\) users under your AWS account\. First, you'll learn about IAM concepts you should understand before you create groups and users, and then you'll walk through how to perform the necessary tasks using the AWS Management Console\. The first task is to set up an administrators group for your AWS account\. Having an administrators group for your AWS account isn't required, but we strongly recommend it\.
+This topic shows you how to give access to your AWS resources by creating AWS Identity and Access Management \(IAM\) users in your AWS account\. First, you'll learn about IAM concepts you should understand before you create groups and users, and then you'll walk through how to perform the necessary tasks using the AWS Management Console\. The first task is to set up an administrators group for your AWS account\. Having an administrators group for your AWS account isn't required, but we strongly recommend it\.
 
 **Note**  
 This set of documentation deals primarily with the IAM service\. To learn about getting started with AWS and using multiple services to solve a problem such as building and launching your first project, see the [Getting Started Resource Center](https://aws.amazon.com/getting-started/)\.

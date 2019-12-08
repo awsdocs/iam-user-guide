@@ -12,7 +12,7 @@ You can specify any of the following principals in a policy:
 + Anonymous users \(not recommended\)
 
 Use the `Principal` element in these ways:
-+ In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. 
++ In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. To learn whether principals in accounts outside of your zone of trust \(trusted organization, OU, or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 **Note**  
 After you create the role, you can change the account to "\*" to allow everyone to assume the role\. If you do this, we strongly recommend that you limit who can access the role through other means, such as a `Condition` element that limits access to only certain IP addresses\. Do not leave your role accessible to everyone\!
 + In resource\-based policies, use the `Principal` element to specify the accounts or users who are allowed to access the resource\. 

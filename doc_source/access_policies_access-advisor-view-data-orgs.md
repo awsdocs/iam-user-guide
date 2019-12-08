@@ -41,7 +41,7 @@ You can use the IAM console to view service last accessed data for your root, OU
 
 1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, expand **AWS Organizations**, and then choose **Organization activity**\.
+1. In the navigation pane below the **Access reports** section, choose **Organization activity**\.
 
 1. On the **Organization activity** page, choose **Root**\.
 
@@ -57,7 +57,7 @@ You can use the IAM console to view service last accessed data for your root, OU
 
 1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, expand **AWS Organizations**, and then choose **Organization activity**\.
+1. In the navigation pane below the **Access reports** section, choose **Organization activity**\.
 
 1. On the **Organization activity** page, expand the structure of your organization\. Then choose the name of the OU or any account that you want to view except the master account\.
 
@@ -73,7 +73,7 @@ You can use the IAM console to view service last accessed data for your root, OU
 
 1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, expand **AWS Organizations**, and then choose **Organization activity**\.
+1. In the navigation pane below the **Access reports** section, choose **Organization activity**\.
 
 1. On the **Organization activity** page, expand the structure of your organization and choose the name your master account\.
 
@@ -85,7 +85,7 @@ You can use the IAM console to view service last accessed data for your root, OU
 
 1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, expand **AWS Organizations**, and then choose **Service control policies \(SCPs\)**\.
+1. In the navigation pane below the **Access reports** section, choose **Service control policies \(SCPs\)**\.
 
 1. On the **Service control policies \(SCPs\)** page, view a list of the policies in your organization\.  You can view the number of target entities to which each policy is attached\.
 

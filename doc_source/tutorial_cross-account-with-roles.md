@@ -46,7 +46,7 @@ Before you can create a role, you need the account ID of the Development AWS acc
 
 1. Sign in to the AWS Management Console as an administrator of the Development account, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In navigation bar, choose **Support**, and then **Support Center**\. The **Account Number** is in the upper right corner immediately below the **Support** menu\. The account ID is a 12\-digit number\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
+1.  In the navigation bar, choose **Support**, and then **Support Center**\. Your currently signed\-in 12\-digit account number \(ID\) appears in the **Support Center** title bar\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
 
 **To create a role in the Production account that can be used by the Development account**
 
@@ -337,6 +337,7 @@ For a code example \(using Python\), see [Switching to an IAM Role \(AWS API\)](
 ## Related Resources<a name="tutorial_cross-account-with-roles-related"></a>
 + For more information about IAM users and groups, see [Identities \(Users, Groups, and Roles\)](id.md) \.
 + For more information about Amazon S3 buckets, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
++  To learn whether principals in accounts outside of your zone of trust \(trusted organization, OU, or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 
 ## Summary<a name="tutorial_cross-account-with-roles-summary"></a>
 

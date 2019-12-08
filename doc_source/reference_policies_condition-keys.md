@@ -159,7 +159,7 @@ Organization IDs are globally unique but OU IDs and root IDs are unique only wit
 For example, the following condition returns `true` for principals in accounts that are attached directly to the `ou-jkl0-awsddddd` OU, but not in its child OUs\.
 
 ```
-"Condition" : { "ForAnyValues:StringEquals" : {
+"Condition" : { "ForAnyValue:StringEquals" : {
      "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/"]
 }}
 ```
@@ -167,7 +167,7 @@ For example, the following condition returns `true` for principals in accounts t
 The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\. When you include a wildcard, you must use the `StringLike` condition operator\.
 
 ```
-"Condition" : { "ForAnyValues:StringLike" : {
+"Condition" : { "ForAnyValue:StringLike" : {
      "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd*"]
 }}
 ```
@@ -175,7 +175,7 @@ The following condition returns `true` for principals in an account that is atta
 The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\.
 
 ```
-"Condition" : { "ForAnyValues:StringLike" : {
+"Condition" : { "ForAnyValue:StringLike" : {
      "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/*"]
 }}
 ```
@@ -183,16 +183,16 @@ The following condition returns `true` for principals in an account that is atta
 The following condition allows access for every principal in the `o-a1b2c3d4e5` organization, regardless of their parent OU\.
 
 ```
-"Condition" : { "ForAnyValues:StringLike" : {
+"Condition" : { "ForAnyValue:StringLike" : {
      "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/*"]
 }}
 ```
 
-`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. When you use multiple values with the `ForAnyValues` condition operator, the principal's path must match one of the paths listed in the policy\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key":\["Value1", "Value2"\]\)\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.
+`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. When you use multiple values with the `ForAnyValue` condition operator, the principal's path must match one of the paths listed in the policy\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key":\["Value1", "Value2"\]\)\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.
 
 ```
     "Condition": {
-        "ForAnyValues:StringLike": {
+        "ForAnyValue:StringLike": {
             "aws:PrincipalOrgPaths": [
                 "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-def0-awsbbbbb/*",
                 "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-jkl0-awsddddd/*"
@@ -319,7 +319,7 @@ Because you can include multiple tag key\-value pairs in a request, the request 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling Access to AWS Resources](access_tags.md#access_tags_control-resources)\.
-+ **Availability** – This key is included in the request context when the requested resource already has attached tags\. There is one context key for each tag key\-value pair\.
++ **Availability** – This key is included in the request context when the requested resource already has attached tags\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
 
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.
 

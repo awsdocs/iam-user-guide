@@ -35,6 +35,8 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ collection ](https://docs.aws.amazon.com/rekognition/latest/dg/howitworks-collection.html)  |  arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:collection/$\{CollectionId\}  |  | 
 |   streamprocessor  |  arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:streamprocessor/$\{StreamprocessorId\}  |  | 
+|   project  |  arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:project/$\{ProjectName\}/$\{CreationTimestamp\}  |  | 
+|   projectversion  |  arn:$\{Partition\}:rekognition:$\{Region\}:$\{Account\}:project/$\{ProjectName\}/version/$\{VersionName\}/$\{CreationTimestamp\}  |  | 
 
 ## Condition Keys for Amazon Rekognition<a name="amazonrekognition-policy-keys"></a>
 

@@ -146,11 +146,11 @@ AWS collects service last accessed data in most Regions\. Data is stored for a m
 | Asia Pacific \(Hong Kong\) | ap\-east\-1 | April 24, 2019 | 
 | Middle East \(Bahrain\) | me\-south\-1 | July 29, 2019 | 
 | Canada \(Central\) | ca\-central\-1 | October 28, 2017 | 
-| EU \(Frankfurt\) | eu\-central\-1 | October 1, 2015 | 
-| EU \(Stockholm\) | eu\-north\-1 | December 12, 2018 | 
-| EU \(Ireland\) | eu\-west\-1 | October 1, 2015 | 
-| EU \(London\) | eu\-west\-2 | October 28, 2017 | 
-| EU \(Paris\) | eu\-west\-3 | December 18, 2017 | 
+| Europe \(Frankfurt\) | eu\-central\-1 | October 1, 2015 | 
+| Europe \(Stockholm\) | eu\-north\-1 | December 12, 2018 | 
+| Europe \(Ireland\) | eu\-west\-1 | October 1, 2015 | 
+| Europe \(London\) | eu\-west\-2 | October 28, 2017 | 
+| Europe \(Paris\) | eu\-west\-3 | December 18, 2017 | 
 | South America \(São Paulo\) | sa\-east\-1 | December 11, 2015 | 
 
 If a Region is not listed in the previous table, then that Region does not yet provide service last accessed data\.

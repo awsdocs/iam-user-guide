@@ -50,7 +50,7 @@ Active Regions are available to everyone that uses temporary credentials in that
 
 ## Writing Code to Use AWS STS Regions<a name="id_credentials_temp_enable-regions_writing_code"></a>
 
-After you activate a Region, you can direct AWS STS API calls to that Region\. The following Java code snippet demonstrates how to configure an `AWSSecurityTokenServiceClient` object to make requests to the EU \(Ireland\) \(eu\-west\-1\) Region with the `setEndpoint` method\.
+After you activate a Region, you can direct AWS STS API calls to that Region\. The following Java code snippet demonstrates how to configure an `AWSSecurityTokenServiceClient` object to make requests to the Europe \(Ireland\) \(eu\-west\-1\) Region with the `setEndpoint` method\.
 
 ```
 AWSSecurityTokenServiceClient stsClient = new AWSSecurityTokenServiceClient();

@@ -35,6 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ asset ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Asset.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset/$\{AssetId\}  |  | 
 |   [ asset\-template ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetTemplate.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset\-template/$\{AssetTemplateId\}  |  | 
+|   [ asset\-model ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetModel.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset\-model/$\{AssetModelId\}  |  | 
 |   [ gateway ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Gateway.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |  | 
 |   [ group ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Group.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:group/$\{GroupId\}  |  | 
 |   [ measurement ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Measurement.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:measurement/$\{MeasurementId\}  |  | 
@@ -42,7 +43,26 @@ The following resource types are defined by this service and can be used in the 
 |   [ metric ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Metric.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:metric/$\{MetricId\}  |  | 
 |   [ metric\-type ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_MetricType.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:metric\-type/$\{MetricTypeId\}  |  | 
 |   [ view ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_View.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:view/$\{ViewId\}  |  | 
+|   [ portal ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Portal.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:portal/$\{PortalId\}  |  | 
+|   [ project ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Project.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:project/$\{ProjectId\}  |  | 
+|   [ dashboard ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Dashboard.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:dashboard/$\{DashboardId\}  |   [ iotsitewise:project ](#awsiotsitewise-iotsitewise_project)   | 
+|   [ accesspolicy ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AccessPolicy.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:accesspolicy/$\{AccessPolicyId\}  |   [ iotsitewise:portal ](#awsiotsitewise-iotsitewise_portal)   [ iotsitewise:project ](#awsiotsitewise-iotsitewise_project)   | 
 
 ## Condition Keys for AWS IoT SiteWise<a name="awsiotsitewise-policy-keys"></a>
 
-IoT SiteWise has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS IoT SiteWise defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ iotsitewise:assetHierarchyPath ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_assetHierarchyPath.html)  | String of asset IDs in the asset hierarchy separated by forward slash\. | String | 
+|   [ iotsitewise:childAssetId ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_childAssetId.html)  | ID of an asset being associated as a child to another asset\. | String | 
+|   [ iotsitewise:group ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GroupId.html)  | Group ID\. | String | 
+|   [ iotsitewise:portal ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PortalId.html)  | Portal ID\. | String | 
+|   [ iotsitewise:project ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ProjectId.html)  | Project ID\. | String | 
+|   [ iotsitewise:propertyId ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PropertyId.html)  | Property ID\. | String | 
+|   [ iotsitewise:user ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UserId.html)  | User ID\. | String | 

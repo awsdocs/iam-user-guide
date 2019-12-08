@@ -45,13 +45,15 @@ For more information about the permissions necessary to work with roles, see "Ho
 
 ## I Can't Access the Temporary Security Credentials on My EC2 Instance<a name="troubleshoot_iam-ec2_no-keys"></a>
 
-Check the following:
+To access temporary security credentials on your EC2 instance, you must first use the IAM console to create a role\. Then you launch an EC2 instance that uses that role and examine the running instance\. For more information, see **How Do I Get Started?** in [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)\.
+
+If you still can't access your temporary security credentials on your EC2 instance, check the following:
 + Can you access another part of the instance metadata service \(IMDS\)? If not, check that you have no firewall rules blocking access to requests to the IMDS\.
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/hostname; echo
   ```
-+ Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling `ec2:DescribeInstances`\.
++ Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling the EC2 `DescribeInstances` API operation or using the aws ec2 `describe-instances` CLI command\. 
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/iam; echo
@@ -64,7 +66,7 @@ Check the following:
 
 ## What Do the Errors from the `info` Document in the IAM Subtree Mean?<a name="troubleshoot_iam-ec2_errors-info-doc"></a>
 
-### The `iam/info` Document Iindicates `"Code":"InstanceProfileNotFound"`<a name="w4aac25c19c17b2"></a>
+### The `iam/info` Document Iindicates `"Code":"InstanceProfileNotFound"`<a name="troubleshoot_iam-ec2_errors-info-doc-profile-not-found"></a>
 
 Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You must attach a valid instance profile to your Amazon EC2 instance\.
 
@@ -78,11 +80,11 @@ If an instance profile with that name exists, check that the instance profile wa
 
 If the IDs are different, then the instance profile attached to your instances is no longer valid\. You must attach a valid instance profile to the instance\. 
 
-### The `iam/info` Document Indicates a Success but Indicates `"Message":"Instance Profile does not contain a role..."`<a name="w4aac25c19c17b4"></a>
+### The `iam/info` Document Indicates a Success but Indicates `"Message":"Instance Profile does not contain a role..."`<a name="troubleshoot_iam-ec2_errors-info-doc-no-role"></a>
 
 The role has been removed from the instance profile by the IAM `RemoveRoleFromInstanceProfile` action\. You can use the IAM `AddRoleToInstanceProfile` action to attach a role to the instance profile\. Your application will need to wait until the next scheduled refresh to access the credentials for the role\. 
 
-### The `iam/security-credentials/[role-name]` Document Indicates `"Code":"AssumeRoleUnauthorizedAccess"`<a name="w4aac25c19c17b6"></a>
+### The `iam/security-credentials/[role-name]` Document Indicates `"Code":"AssumeRoleUnauthorizedAccess"`<a name="troubleshoot_iam-ec2_errors-info-doc-unauthorized-access"></a>
 
 Amazon EC2 does not have permission to assume the role\. Permission to assume the role is controlled by the trust policy attached to the role, like the example that follows\. Use the IAM `UpdateAssumeRolePolicy` API to update the trust policy\. 
 

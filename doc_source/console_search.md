@@ -1,11 +1,13 @@
 # IAM Console Search<a name="console_search"></a>
 
-As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys or browse to the deeply nested IAM resources to find items you need to work with\. A faster option is to use the IAM console search page to locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
+As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys, Or you might need to browse to the deeply nested IAM resources to find what you need\. A faster option is to use the IAM console search page to locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
 
 The IAM console search feature can locate any of the following:
 + IAM entity names that match your search keywords \(for users, groups, roles, identity providers, and policies\)
 + AWS documentation topic names that match your search keywords 
 + Tasks that match your search keywords
+
+The IAM console search feature does not return information about IAM Access Analyzer\.
 
 Every line in the search result is an active link\. For example, you can choose the user name in the search result, which takes you to that user's detail page\. Or you can choose an action link, for example **Create user**, to go to the **Create User** page\.
 
@@ -22,7 +24,7 @@ Use the **Search** page in the IAM console to find items related to that account
 
 1. In the navigation pane, choose **Search**\. 
 
-1. In the **Search** box, type your search keyword\(s\)\.
+1. In the **Search** box, type your search keywords\.
 
 1. Choose a link in the search results list to navigate to the corresponding part of the console or documentation\. 
 

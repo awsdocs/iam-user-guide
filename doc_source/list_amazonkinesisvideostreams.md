@@ -3,8 +3,8 @@
 Amazon Kinesis Video Streams \(service prefix: `kinesisvideo`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_Reference.html)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-iam.html) permission policies\.
 
 **Topics**
@@ -33,7 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   stream  |  arn:$\{Partition\}:kinesisvideo:$\{Region\}:$\{Account\}:stream/$\{StreamName\}/$\{CreationTime\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkinesisvideostreams-aws_ResourceTag___TagKey_)   | 
+|   [ stream ](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-it-works.html)  |  arn:$\{Partition\}:kinesisvideo:$\{Region\}:$\{Account\}:stream/$\{StreamName\}/$\{CreationTime\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkinesisvideostreams-aws_ResourceTag___TagKey_)   | 
+|   [ channel ](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/kinesisvideostreams-webrtc-dg/latest/devguide/kvswebrtc-how-it-works.html)  |  arn:$\{Partition\}:kinesisvideo:$\{Region\}:$\{Account\}:channel/$\{ChannelName\}/$\{CreationTime\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkinesisvideostreams-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Kinesis Video Streams<a name="amazonkinesisvideostreams-policy-keys"></a>
 
@@ -46,6 +47,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  | Filters requests based on the allowed set of values for each of the tags | String | 
-|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value assoicated with the stream\. | String | 
-|   aws:TagKeys  | Filters requests based on the presence of mandatory tag keys in the request | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters requests based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the stream\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters requests based on the presence of mandatory tag keys in the request | String | 

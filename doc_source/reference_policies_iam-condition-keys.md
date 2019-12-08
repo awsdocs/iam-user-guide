@@ -135,7 +135,7 @@ If you are working with [SAML\-based federation](https://docs.aws.amazon.com/STS
 
 ### SAML Role Trust Policies<a name="condition-keys-saml_trust-policy"></a>
 
-In the trust policy of a role, you can include the following keys, which help you establish whether the caller is allowed to assume the role\. Except for `saml:doc`, all the values are derived from the SAML assertion\. Items in the list that are marked with an asterisk \(\*\) are available in the console UI to create conditions\. Items marked with **\[\]** *can* have a value that is a list of the specified type\.
+In the trust policy of a role, you can include the following keys, which help you establish whether the caller is allowed to assume the role\. Except for `saml:doc`, all the values are derived from the SAML assertion\. All items in the list are available in the IAM console visual editor when you create or edit a policy with conditions\. Items marked with **\[\]** *can* have a value that is a list of the specified type\.
 
 **saml:aud**   
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -149,7 +149,7 @@ This is a `commonName` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:doc**\*  
+**saml:doc**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This represents the principal that was used to assume the role\. The format is *account\-ID*/*provider\-friendly\-name*, such as `123456789012/SAMLProviderName`\. The *account\-ID* value refers to the account that owns the [SAML provider](id_roles_providers_create_saml.md)\. 
 
@@ -161,7 +161,7 @@ This is an `eduPerson` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonentitlement**\[\]\*  
+**saml:edupersonentitlement**\[\]  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
@@ -169,7 +169,7 @@ This is an `eduPerson` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonorgdn**\*  
+**saml:edupersonorgdn**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
@@ -221,7 +221,7 @@ This is an `eduOrg` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `givenName` attribute\.
 
-**saml:iss**\*  
+**saml:iss**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 The issuer, which is represented by a URN\. 
 
@@ -233,7 +233,7 @@ This is a `mail` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `name` attribute\.
 
-**saml:namequalifier**\*  
+**saml:namequalifier**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 A hash value based on the friendly name of the SAML provider\. The value is the concatenation of the following values, in order and separated by a '/' character:  
 
@@ -252,11 +252,11 @@ This is an `organizationStatus` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `primaryGroupSID` attribute\.
 
-**saml:sub**\*  
+**saml:sub**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is the subject of the claim, which includes a value that uniquely identifies an individual user within an organization \(for example, `_cbb88bf52c2510eabe00c1642d4643f41430fe25e3`\)\. 
 
-**saml:sub\_type**\*  
+**saml:sub\_type**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This key can have the value `persistent`, `transient`, or consist of the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. A value of `persistent` indicates that the value in `saml:sub` is the same for a user between sessions\. If the value is `transient`, the user has a different `saml:sub` value for each session\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\.
 
