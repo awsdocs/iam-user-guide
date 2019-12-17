@@ -80,13 +80,17 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/cloud9/latest/user-guide/using-service-linked-roles.html) | 
-|  [CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
+|  [CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html)  | Yes | Yes | Yes¹ | Yes² | Yes | No | 
 |  [CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
 |  [AWS CodeStar Notifications](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/using-service-linked-roles.html) | 
 | [AWS X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) | Yes | No | No | No | Yes | No | 
+
+¹ CodeBuild supports cross\-account resource sharing via AWS RAM\.
+
+² CodeBuild supports authorization based on tags for project\-based actions\.
 
 ## Security, Identity, and Compliance Services<a name="admin_svcs"></a>
 
@@ -203,7 +207,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
-|  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Yes | Yes | No | Yes | No | No | 
+|  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Device Farm](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Networking and Content Delivery Services<a name="networking_svcs"></a>
@@ -379,4 +383,5 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ControllingAccessWebsite.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Marketplace](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Private Marketplace](https://docs.aws.amazon.com/marketplace/latest/buyerguideprivate-marketplace.html)  | Yes | No | No | No | No | No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 

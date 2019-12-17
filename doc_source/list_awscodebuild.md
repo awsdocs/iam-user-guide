@@ -35,7 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ build ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:build/$\{BuildId\}  |  | 
 |   [ project ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:project/$\{ProjectName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscodebuild-aws_ResourceTag___TagKey_)   | 
-|   [ report group ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:report\-group/$\{ReportGroupName\}  |  | 
+|   [ report\-group ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:report\-group/$\{ReportGroupName\}  |  | 
 |   [ report ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:report/$\{ReportGroupName\}:$\{ReportId\}  |  | 
 
 ## Condition Keys for AWS CodeBuild<a name="awscodebuild-policy-keys"></a>
