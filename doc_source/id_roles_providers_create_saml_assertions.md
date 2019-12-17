@@ -102,7 +102,7 @@ To pass attributes as session tags, include the `AttributeValue` element that sp
 </Attribute>
 ```
 
-To set the tags above as transitive, include another `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/" />SAML/Attributes/TransitiveTagKeys`\. This is an optional multivalued attribute that sets your session tags as transitive\. Transitive tags persist when you use the SAML session to assume another role in AWS\. This is known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. For example, to set both the `Principal` and `CostCenter` tags as transitive, use the following attribute to specify the keys\.
+To set the tags above as transitive, include another `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/TransitiveTagKeys`\. This is an optional multivalued attribute that sets your session tags as transitive\. Transitive tags persist when you use the SAML session to assume another role in AWS\. This is known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. For example, to set both the `Principal` and `CostCenter` tags as transitive, use the following attribute to specify the keys\.
 
 ```
 <Attribute Name="https://aws.amazon.com/SAML/Attributes/TransitiveTagKeys">
