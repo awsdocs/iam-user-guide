@@ -295,7 +295,7 @@ aws sts assume-role \
 --role-session-name Session2
 ```
 
-You then use the second session credentials to assume `Role3`\. The principal tags for the third session come from any new session tags, the inherited transitive session tags, and the role tags\. The `Heart` = `3` and `Star` = `1` tags on the second session were inherited from the transitive session tag in the first session\. If you try to pass the `Heart` = `3` session tag, the operation will fail\. The inherited `Star` = `1` session tag overrides the role's `Star` = `3` tag\. The role's `Lightning` tag also applies to the third session, and is not set as transitive\.
+You then use the second session credentials to assume `Role3`\. The principal tags for the third session come from any new session tags, the inherited transitive session tags, and the role tags\. The `Heart` = `1` and `Star` = `1` tags on the second session were inherited from the transitive session tag in the first session\. If you try to pass the `Heart` = `3` session tag, the operation will fail\. The inherited `Star` = `1` session tag overrides the role's `Star` = `3` tag\. The role's `Lightning` tag also applies to the third session, and is not set as transitive\.
 
 ![\[Assuming the third role in a role chain\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
