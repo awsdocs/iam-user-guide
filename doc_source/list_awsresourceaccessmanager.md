@@ -35,8 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ resource\-share ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share/$\{ResourcePath\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsresourceaccessmanager-aws_ResourceTag___TagKey_)   | 
 |   [ resource\-share\-invitation ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShareInvitation.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share\-invitation/$\{ResourcePath\}  |  | 
-|   [ resource ](https://docs.aws.amazon.com/ram/latest/APIReference/API_Resource.html)  |  arn:$\{Partition\}:$\{Service\}:$\{Region\}:\#\{Account\}:$\{ResourceType\}/$\{ResourcePath\}  |  | 
-|   [ principal ](https://docs.aws.amazon.com/ram/latest/APIReference/API_Principal.html)  |  arn:$\{Partition\}:iam::$\{Account\}:root  |  | 
+|   [ permission ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html)  |  arn:$\{Partition\}:ram::$\{Account\}:permission/$\{ResourcePath\}  |  | 
 
 ## Condition Keys for AWS Resource Access Manager<a name="awsresourceaccessmanager-policy-keys"></a>
 
@@ -49,13 +48,14 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  | Specifies a tag key and value pair that must be used when creating or tagging a resource share\. If users don't pass these specific tags, or if they don't specify tags at all, the request fails\. | String | 
-|   aws:ResourceTag/$\{TagKey\}  | Indicates that the action can only be performed on resources that have the specified tag key and value pair\. | String | 
-|   aws:TagKeys  | Specifies the tag keys that can be used when creating or tagging a resource share | String | 
-|   ram:AllowsExternalPrincipals  | Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals\. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals\. External principals are AWS accounts that are outside of its AWS organization  | Bool | 
-|   ram:Principal  | Principals with the specified format can be associated to or disassociated from a resource share | String | 
-|   ram:RequestedAllowsExternalPrincipals  | The request must have the specified value for 'allowExternalPrincipals'\. External principals are AWS accounts that are outside of its AWS Organization | Bool | 
-|   ram:RequestedResourceType  | Indicates that the action can only be performed on the specified resource type | String | 
-|   ram:ResourceArn  | Indicates that the action can only be performed on a resource with the specified ARN\. | Arn | 
-|   ram:ResourceShareName  | Indicates that the action can only be performed on a resource share with the specified name\. | String | 
-|   ram:ShareOwnerAccountId  | Indicates that the action can only be performed on resource shares owned by a specific account\. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Specifies a tag key and value pair that must be used when creating or tagging a resource share\. If users don't pass these specific tags, or if they don't specify tags at all, the request fails\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Indicates that the action can only be performed on resources that have the specified tag key and value pair\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Specifies the tag keys that can be used when creating or tagging a resource share | String | 
+|   [ ram:AllowsExternalPrincipals ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Indicates that the action can only be performed on resource shares that allow or deny sharing with external principals\. For example, specify true if the action can only be performed on resource shares that allow sharing with external principals\. External principals are AWS accounts that are outside of its AWS organization  | Bool | 
+|   [ ram:PermissionArn ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Indicates that the action can only be performed on a resource using the specified Permission ARN\. | Arn | 
+|   [ ram:Principal ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Principals with the specified format can be associated to or disassociated from a resource share | String | 
+|   [ ram:RequestedAllowsExternalPrincipals ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | The request must have the specified value for 'allowExternalPrincipals'\. External principals are AWS accounts that are outside of its AWS Organization | Bool | 
+|   [ ram:RequestedResourceType ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Indicates that the action can only be performed on the specified resource type | String | 
+|   [ ram:ResourceArn ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Indicates that the action can only be performed on a resource with the specified ARN\. | Arn | 
+|   [ ram:ResourceShareName ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Indicates that the action can only be performed on a resource share with the specified name\. | String | 
+|   [ ram:ShareOwnerAccountId ](https://docs.aws.amazon.com/ram/latest/userguide/iam-policies.html#iam-policies-condition)  | Indicates that the action can only be performed on resource shares owned by a specific account\. For example, you can use this condition key to specify which resource share invitations can be accepted or rejected based on the resource share owner’s account ID\. | String | 

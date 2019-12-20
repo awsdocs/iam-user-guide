@@ -3,9 +3,9 @@
 AWS Marketplace Catalog \(service prefix: `aws-marketplace`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/marketplace/latest/userguide/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/marketplace/latest/userguide/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/marketplace-catalog/latest/api-reference/api-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Marketplace Catalog](#awsmarketplacecatalog-actions-as-permissions)
@@ -25,17 +25,34 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CancelChangeSet ](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Cancel an existing change set | Write |  |  |  | 
-|   [ DescribeChangeSet ](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Returns the details of an existing change set | Read |  |  |  | 
-|   [ DescribeEntity ](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Returns the details of an existing entity | Read |  |  |  | 
-|   [ ListChangeSets ](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | List existing change sets | Read |  |  |  | 
-|   [ ListEntities ](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | List existing entities | Read |  |  |  | 
-|   [ StartChangeSet ](https://docs.aws.amazon.com/marketplace/latest/userguide/marketplace-management-portal-user-access.html#detailed-management-portal-permissions)  | Request a new change set | Write |  |  |  | 
+|   [ CancelChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html)  | Cancels a running change set\. | Write |  |  |  | 
+|   [ DescribeChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html)  | Returns the details of an existing change set\. | Read |  |  |  | 
+|   [ DescribeEntity ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html)  | Returns the details of an existing entity\. | Read |  |  |  | 
+|   [ ListChangeSets ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html)  | Lists existing change sets\. | Read |  |  |  | 
+|   [ ListEntities ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html)  | Lists existing entities\. | Read |  |  |  | 
+|   [ StartChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html)  | Requests a new change set\. | Write |  |   [ catalog:ChangeType ](#awsmarketplacecatalog-catalog_ChangeType)   |  | 
 
 ## Resources Defined by AWS Marketplace Catalog<a name="awsmarketplacecatalog-resources-for-iam-policies"></a>
 
-AWS Marketplace Catalog does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Marketplace Catalog, specify `“Resource”: “*”` in your policy\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsmarketplacecatalog-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ Entity ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_DescribeEntity.html#API_DescribeEntity_ResponseSyntax)  |  arn:$\{Partition\}:aws\-marketplace:$\{Region\}:$\{Account\}:$\{Catalog\}/$\{EntityType\}/$\{ResourceId\}  |  | 
+|   [ ChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_ResponseSyntax)  |  arn:$\{Partition\}:aws\-marketplace:$\{Region\}:$\{Account\}:$\{Catalog\}/ChangeSet/$\{ResourceId\}  |  | 
 
 ## Condition Keys for AWS Marketplace Catalog<a name="awsmarketplacecatalog-policy-keys"></a>
 
-Marketplace Catalog has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Marketplace Catalog defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ catalog:ChangeType ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Enables you to verify change type in the StartChangeSet request\. | String | 
