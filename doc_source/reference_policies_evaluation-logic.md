@@ -23,7 +23,7 @@ AWS then uses this information to find policies that apply to the request contex
 
 ## Evaluating Policies Within a Single Account<a name="policy-eval-basics"></a>
 
-How AWS evaluates policies depends on the types of policies that apply to the request context\. The following policy types, listed in order of frequency, are available for use within a single AWS account\. For more information about these policy types, see [Policies and Permissions](access_policies.md)\. To learn about cross\-account authorization, see [How IAM Roles Differ from Resource\-based Policies](id_roles_compare-resource-policies.md)\.
+How AWS evaluates policies depends on the types of policies that apply to the request context\. The following policy types, listed in order of frequency, are available for use within a single AWS account\. For more information about these policy types, see [Policies and Permissions](access_policies.md)\. To learn how AWS evaluates policies for cross\-account access, see [Cross\-Account Policy Evaluation Logic](reference_policies_evaluation-logic-cross-account.md)\.
 
 1. **Identity\-based policies** – Identity\-based policies are attached to an IAM identity \(user, group of users, or role\) and grant permissions to IAM entities \(users and roles\)\. If only identity\-based policies apply to a request, then AWS checks all of those policies for at least one `Allow`\.
 

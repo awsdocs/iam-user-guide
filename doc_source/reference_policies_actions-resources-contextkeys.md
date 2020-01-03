@@ -2,11 +2,9 @@
 
 Each AWS service can define actions, resources, and condition context keys for use in IAM policies\. This topic describes how the elements provided for each service are documented\. 
 
-## How to Read the Tables<a name="how-to-read-arc-tables"></a>
-
 Each topic consists of tables that provide the list of available actions, resources, and condition keys\.
 
-### The Actions Table<a name="actions_table"></a>
+## The Actions Table<a name="actions_table"></a>
 
 The **Actions** table lists all the actions that you can use in an IAM policy statement's `Action` element\. Not all API operations that are defined by a service can be used as an action in an IAM policy\. In addition, a service might define some actions that don't directly correspond to an API operation\. Use this list to determine which actions you can use in an IAM policy\. For more information about the `Action`, `Resource`, or `Condition` elements, see [IAM Policy Element Reference](reference_policies_elements_action.md)\. The **Actions** and **Description** table columns are self\-descriptive\.
 + The **Access Level** column describes how the action is classified \(List, Read, Write, Permissions management, or Tagging\)\. This classification can help you understand the level of access that an action grants when you use it in a policy\. For more information about access levels, see [Understanding Access Level Summaries Within Policy Summaries](access_policies_understand-policy-summary-access-level-summaries.md)\.
@@ -16,13 +14,13 @@ The **Actions** table lists all the actions that you can use in an IAM policy st
 + The **Condition Keys** column includes keys that you can specify in a policy statement's `Condition` element\. Condition keys might be supported with an action, or with an action and a specific resource\. Pay close attention to whether the key is in the same row as a specific resource type\. This table does not include global condition keys that are available\. for any action or under unrelated circumstances\. For more information about global condition keys, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\.
 + The **Dependent Actions** column includes any additional permissions that you must have, in addition to the permission for the action itself, to successfully call the action\. This can be required if the action accesses more than one resource\.
 
-### The Resource Types Table<a name="resources_table"></a>
+## The Resource Types Table<a name="resources_table"></a>
 
 The **Resource Types** table lists all the resource types that you can specify as an ARN in the `Resource` policy element\. Not every resource type can be specified with every action\. Some resource types work with only certain actions\. If you specify a resource type in a statement with an action that does not support that resource type, then the statement doesn't allow access\. For more information about the `Resource` element, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
 + The **ARN** column specifies the Amazon Resource Name \(ARN\) format that you must use to reference resources of this type\. The portions that are preceded by a $ must be replaced by the actual values for your scenario\. For example, if you see `$user-name` in an ARN, you must replace that string with either the actual IAM user's name or a [policy variable](reference_policies_variables.md) that contains an IAM user's name\. For more information about ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](aws-arns-and-namespaces.html)\.
 + The **Condition Keys** column specifies condition context keys that you can include in an IAM policy statement only when both this resource and a supporting action from the table above are included in the statement\.
 
-### The Condition Keys Table<a name="context_keys_table"></a>
+## The Condition Keys Table<a name="context_keys_table"></a>
 
 The **Condition Keys** table lists all of the condition context keys that you can use in an IAM policy statement's `Condition` element\. Not every key can be specified with every action or resource\. Certain keys only work with certain types of actions and resources\. For more information about the `Condition` element, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
 + The **Type** column specifies the data type of the condition key\. This data type determines which [condition operators](reference_policies_elements_condition_operators.md) you can use to compare values in the request with the values in the policy statement\. You must use an operator that is appropriate for the data type\. If you use an incorrect operator, then the match always fails and the policy statement never applies\. 
@@ -30,7 +28,9 @@ The **Condition Keys** table lists all of the condition context keys that you ca
   If the **Type** column specifies a "List of …" one of the simple types, then you can use the [condition set](reference_policies_multi-value-conditions.md) prefixes with your operators\. These prefixes include: `ForAllValues` to specify that **all** values in the request must match a value in the policy statement, and `ForAnyValue` to specify that **at least one** value in the request matches one of the values in the policy statement\.
 
 **Topics**
-+ [How to Read the Tables](#how-to-read-arc-tables)
++ [Actions Table](#actions_table)
++ [Resource Types Table](#resources_table)
++ [Condition Keys Table](#context_keys_table)
 + [AWS Accounts](list_awsaccounts.md)
 + [Alexa for Business](list_alexaforbusiness.md)
 + [AWS Amplify](list_awsamplify.md)
@@ -102,6 +102,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon EC2 Image Builder](list_amazonec2imagebuilder.md)
 + [Amazon EC2 Instance Connect](list_amazonec2instanceconnect.md)
 + [AWS Elastic Beanstalk](list_awselasticbeanstalk.md)
++ [Amazon Elastic Block Store](list_amazonelasticblockstore.md)
 + [Amazon Elastic Container Registry](list_amazonelasticcontainerregistry.md)
 + [Amazon Elastic Container Service](list_amazonelasticcontainerservice.md)
 + [Amazon Elastic Container Service for Kubernetes](list_amazonelasticcontainerserviceforkubernetes.md)
@@ -185,6 +186,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [AWS OpsWorks](list_awsopsworks.md)
 + [AWS OpsWorks Configuration Management](list_awsopsworksconfigurationmanagement.md)
 + [AWS Organizations](list_awsorganizations.md)
++ [AWS Outposts](list_awsoutposts.md)
 + [AWS Performance Insights](list_awsperformanceinsights.md)
 + [Amazon Personalize](list_amazonpersonalize.md)
 + [Amazon Pinpoint](list_amazonpinpoint.md)
@@ -239,6 +241,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [AWS Trusted Advisor](list_awstrustedadvisor.md)
 + [AWS WAF](list_awswaf.md)
 + [AWS WAF Regional](list_awswafregional.md)
++ [AWS WAF V2](list_awswafv2.md)
 + [AWS Well\-Architected Tool](list_awswell-architectedtool.md)
 + [Amazon WorkDocs](list_amazonworkdocs.md)
 + [Amazon WorkLink](list_amazonworklink.md)

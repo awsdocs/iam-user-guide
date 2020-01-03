@@ -15,7 +15,7 @@ The following list includes some of the AWS services that support resource\-base
 
 ## About Delegating AWS Permissions in a Resource\-based Policy<a name="aboutdelegation-resourcepolicy"></a>
 
-If a resource grants permissions to principals in your account, you can then delegate those permissions to specific IAM identities\. Identities are users, groups of users, or roles in your account\. You delegeate permissions by attaching a policy to the identity\. You can grant up to the maximum permissions that are allowed by the resource\-owning account\. 
+If a resource grants permissions to principals in your account, you can then delegate those permissions to specific IAM identities\. Identities are users, groups of users, or roles in your account\. You delegate permissions by attaching a policy to the identity\. You can grant up to the maximum permissions that are allowed by the resource\-owning account\. 
 
 Assume that a resource\-based policy allows all principals in your account full administrative access to a resource\. Then you can delegate full access, read\-only access, or any other partial access to principals in your AWS account\. Alternatively, if the resource\-based policy allows only list permissions, then you can delegate only list access\. If you try to delegate more permissions than your account has, your principals will still have only list access\. For information about attaching a policy to an IAM identity, see [Managing IAM Policies](access_policies_manage.md)\.
 

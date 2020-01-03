@@ -7,14 +7,14 @@ References:
 
 **Topics**
 + [Actions Defined by AWS IQ Permissions](#awsiqpermissions-actions-as-permissions)
-+ [Resources Defined by AWS IQ Permissions](#awsiqpermissions-resources-for-iam-policies)
++ [Resource Types Defined by AWS IQ Permissions](#awsiqpermissions-resources-for-iam-policies)
 + [Condition Keys for AWS IQ Permissions](#awsiqpermissions-policy-keys)
 
 ## Actions Defined by AWS IQ Permissions<a name="awsiqpermissions-actions-as-permissions"></a>
 
 AWS IQ Permissions has no API operations that can be used in the `Actions` element of an IAM policy statement\. To allow access to AWS IQ Permissions, specify `“Action”: “iq-permission:*”` in your policy\.
 
-## Resources Defined by AWS IQ Permissions<a name="awsiqpermissions-resources-for-iam-policies"></a>
+## Resource Types Defined by AWS IQ Permissions<a name="awsiqpermissions-resources-for-iam-policies"></a>
 
 AWS IQ Permissions does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS IQ Permissions, specify `“Resource”: “*”` in your policy\.
 

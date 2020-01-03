@@ -24,7 +24,8 @@ Checks that the policy with the specified AWS Organizations ID matches the polic
 
 **iam:PassedToService**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Specifies the service principal of the service to which a role can be passed\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. This is the usual format: `SERVICE_NAME_URL.amazonaws.com`\. In the `iam:PassedToService` condition key, provide the service principal of the service that will assume the role\.   
+Specifies the service principal of the service to which a role can be passed\. This condition key applies to only the [PassRole](id_roles_use_passrole.md) action in a policy\. It can't be used to limit any other action\.   
+When you use this condition key in a policy, specify the service using a service principal\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. This is the usual format: `SERVICE_NAME_URL.amazonaws.com`\.   
 You can use `iam:PassedToService` to restrict your users so that they can pass roles only to specific services\. For example, a user might create a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) that trusts CloudWatch to write log data to an Amazon S3 bucket on their behalf\. Then the user must attach a permissions policy and a trust policy to the new service role\. In this case, the trust policy must specify `cloudwatch.amazonaws.com` in the `Principal` element\. To view a policy that allows the user to pass the role to CloudWatch, see [IAM: Pass an IAM Role to a Specific AWS Service](reference_policies_examples_iam-passrole-service.md)\.  
 By using this condition key, you can ensure that users create service roles only for the services that you specify\. For example, if a user with the preceding policy attempts to create a service role for Amazon EC2, the operation will fail\. The failure occurs because the user does not have permission to pass the role to Amazon EC2\.   
 Some services, such as AWS CodeBuild and AWS CodeCommit do not support this condition key\.
@@ -95,10 +96,12 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 
 **aud**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Use these keys to verify that the Google client ID or Amazon Cognito identity pool ID matches the one that you specify in the policy\.   
 **Examples**:   
-+ `accounts.google.com:aud`
-+ `cognito-identity.amazonaws.com:aud`
-Use these keys to verify that the Google application ID or Amazon Cognito identity pool ID matches the one that you specify in the policy\. You can use the `aud` key with the `sub` key for the same identity provider\.
++ `accounts.google.com:aud` for OAuth 2\.0 Google client IDs of your application
++ `accounts.google.com:azp` for hybrid apps where a web application and Android app have a different OAuth 2\.0 Google client ID but share the same Google APIs project
++ `cognito-identity.amazonaws.com:aud` for Amazon Cognito identity pool IDs
+You can use the `aud` key with the `sub` key for the same identity provider\.
 
 **id**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -112,7 +115,7 @@ Use these keys to verify that the application \(or site\) ID or user ID matches 
 **oaud**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 **Example**: `accounts.google.com:oaud`  
-If you use Google for web identity federation, this key specifies the Google audience for the account\. Use the key if the `app_id` value is scoped to a particular device or client, but you want to authorize against the service ID or project ID\. This key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
+If you use Google for web identity federation, this key specifies the Google audience \(`accounts.google.com:aud`\) for the account\. Use the key if the `app_id` value is scoped to a particular device or client, but you want to authorize against the service ID or project ID\. This key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
 + If the user is unauthenticated, the key contains only `unauthenticated`\.
 + If the user is authenticated, the key contains the value `authenticated` and the name of the web identity provider that was used in the call\. 
 

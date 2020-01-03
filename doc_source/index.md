@@ -1,7 +1,7 @@
 # AWS Identity and Access Management User Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -72,6 +72,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Finding Unused Credentials](id_credentials_finding-unused.md)
       + [Getting Credential Reports for Your AWS Account](id_credentials_getting-report.md)
       + [Using IAM with CodeCommit: Git Credentials, SSH Keys, and AWS Access Keys](id_credentials_ssh-keys.md)
+      + [Using IAM with Amazon Managed Apache Cassandra Service](id_credentials_mcs.md)
       + [Working with Server Certificates](id_credentials_server-certs.md)
    + [IAM Groups](id_groups.md)
       + [Creating IAM Groups](id_groups_create.md)
@@ -280,6 +281,7 @@ Amazon's trademarks and trade dress may not be used in
          + [IAM Policy Elements: Variables and Tags](reference_policies_variables.md)
          + [IAM JSON Policy Elements: Supported Data Types](reference_policies_elements_datatypes.md)
       + [Policy Evaluation Logic](reference_policies_evaluation-logic.md)
+         + [Cross-Account Policy Evaluation Logic](reference_policies_evaluation-logic-cross-account.md)
       + [Grammar of the IAM JSON Policy Language](reference_policies_grammar.md)
       + [AWS Managed Policies for Job Functions](access_policies_job-functions.md)
       + [AWS Global Condition Context Keys](reference_policies_condition-keys.md)
@@ -356,6 +358,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon EC2 Image Builder](list_amazonec2imagebuilder.md)
          + [Actions, Resources, and Condition Keys for Amazon EC2 Instance Connect](list_amazonec2instanceconnect.md)
          + [Actions, Resources, and Condition Keys for AWS Elastic Beanstalk](list_awselasticbeanstalk.md)
+         + [Actions, Resources, and Condition Keys for Amazon Elastic Block Store](list_amazonelasticblockstore.md)
          + [Actions, Resources, and Condition Keys for Amazon Elastic Container Registry](list_amazonelasticcontainerregistry.md)
          + [Actions, Resources, and Condition Keys for Amazon Elastic Container Service](list_amazonelasticcontainerservice.md)
          + [Actions, Resources, and Condition Keys for Amazon Elastic Container Service for Kubernetes](list_amazonelasticcontainerserviceforkubernetes.md)
@@ -439,6 +442,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS OpsWorks](list_awsopsworks.md)
          + [Actions, Resources, and Condition Keys for AWS OpsWorks Configuration Management](list_awsopsworksconfigurationmanagement.md)
          + [Actions, Resources, and Condition Keys for AWS Organizations](list_awsorganizations.md)
+         + [Actions, Resources, and Condition Keys for AWS Outposts](list_awsoutposts.md)
          + [Actions, Resources, and Condition Keys for AWS Performance Insights](list_awsperformanceinsights.md)
          + [Actions, Resources, and Condition Keys for Amazon Personalize](list_amazonpersonalize.md)
          + [Actions, Resources, and Condition Keys for Amazon Pinpoint](list_amazonpinpoint.md)
@@ -493,6 +497,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS Trusted Advisor](list_awstrustedadvisor.md)
          + [Actions, Resources, and Condition Keys for AWS WAF](list_awswaf.md)
          + [Actions, Resources, and Condition Keys for AWS WAF Regional](list_awswafregional.md)
+         + [Actions, Resources, and Condition Keys for AWS WAF V2](list_awswafv2.md)
          + [Actions, Resources, and Condition Keys for AWS Well-Architected Tool](list_awswell-architectedtool.md)
          + [Actions, Resources, and Condition Keys for Amazon WorkDocs](list_amazonworkdocs.md)
          + [Actions, Resources, and Condition Keys for Amazon WorkLink](list_amazonworklink.md)

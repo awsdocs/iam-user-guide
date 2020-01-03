@@ -4,6 +4,9 @@ Use condition operators in the `Condition` element to match the condition key an
 
 The condition operator that you can use in a policy depends on the condition key you choose\. You can choose a global condition key or a service\-specific condition key\. To learn which condition operator you can use for a global condition key, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\. To learn which condition operator you can use for a service\-specific condition key, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) and choose the service that you want to view\.
 
+**Important**  
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. This applies to all condition operators except [\.\.\.IfExists](#Conditions_IfExists) and [Null check](#Conditions_Null)\. These operators test whether the key is present \(exists\) in the request context\.
+
 The condition operators can be grouped into the following categories:
 + [String](#Conditions_String)
 + [Numeric](#Conditions_Numeric)
@@ -31,7 +34,7 @@ String condition operators let you construct `Condition` elements that restrict 
 |   `StringLike`   |  Case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.    | 
 |   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  | 
 
-For example, the following statement contains a `Condition` element that uses the `StringEquals` condition operator with the `aws:UserAgent` key to specify that the request must include a specific value in its user agent header\.
+For example, the following statement contains a `Condition` element that uses the `StringEquals` condition operator with the `aws:PrincipalTag` key to specify that the principal making the request must be tagged with the `iamuser-admin` job category\.
 
 ```
 {
@@ -40,10 +43,12 @@ For example, the following statement contains a `Condition` element that uses th
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
     "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/*",
-    "Condition": {"StringEquals": {"aws:UserAgent": "Example Corp Java Client"}}
+    "Condition": {"StringEquals": {"aws:PrincipalTag/job-category": "iamuser-admin"}}
   }
 }
 ```
+
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. In this example, the `aws:PrincipalTag/job-category` key is present in the request context if the principal is using an IAM user with attached tags\. It is also included for a principal using an IAM role with attached tags or session tags\. If a user without the tag attempts to view or edit an access key, the condition returns `false` and the request is implicitly denied by this statement\.
 
 The following example uses the `StringLike` condition operator to perform string matching with a [policy variable](reference_policies_variables.md) to create a policy that lets an IAM user use the Amazon S3 console to manage his or her own "home directory" in an Amazon S3 bucket\. The policy allows the specified actions on an S3 bucket as long as the `s3:prefix` matches any one of the specified patterns\.
 
@@ -113,6 +118,8 @@ For example, the following statement contains a `Condition` element that uses th
 }
 ```
 
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. In this example, the `s3:max-keys` key is always present in the request when you perform the `ListBucket` operation\. If this policy allowed all Amazon S3 operations, then only the operations that include the `max-keys` context key with a value of less than or equal to 10 would be allowed\. 
+
 ## Date Condition Operators<a name="Conditions_Date"></a>
 
 Date condition operators let you construct `Condition` elements that restrict access based on comparing a key to a date/time value\. You use these condition operators with the `aws:CurrentTime` key or `aws:EpochTime` keys\. You must specify date/time values with one of the [W3C implementations of the ISO 8601 date formats](http://www.w3.org/TR/NOTE-datetime) or in epoch \(UNIX\) time\.  
@@ -132,7 +139,7 @@ Wildcards are not permitted for date condition operators\.
 |   `DateGreaterThan`   |  Matching after a specific a date and time  | 
 |   `DateGreaterThanEquals`   |  Matching at or after a specific date and time  | 
 
-For example, the following statement contains a `Condition` element that uses the `DateLessThan` condition operator with the `aws:CurrentTime` key to specify that the request must be received before June 30, 2013\.
+For example, the following statement contains a `Condition` element that uses the `DateLessThan` condition operator with the `aws:TokenIssueTime` key\. This condition specifies that the temporary security credentials used to make the request were issued in 2020\. This policy can be updated programmatically every day to ensure that account members use fresh credentials\.
 
 ```
 {
@@ -141,10 +148,12 @@ For example, the following statement contains a `Condition` element that uses th
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
     "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/*",
-    "Condition": {"DateLessThan": {"aws:CurrentTime": "2013-06-30T00:00:00Z"}}
+    "Condition": {"DateGreaterThan": {"aws:TokenIssueTime": "2020-01-01T00:00:01Z"}}
   }
 }
 ```
+
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:TokenIssueTime` key is present in the request context only when the principal uses temporary credentials to make the request\. They key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using access keys\. In this example, if an IAM user attempts to view or edit an access key, the request is denied\.
 
 ## Boolean Condition Operators<a name="Conditions_Boolean"></a>
 
@@ -171,6 +180,8 @@ For example, the following statement uses the `Bool` condition operator with the
 }
 ```
 
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SecureTransport` key is always present in the request context\. 
+
 ## Binary Condition Operators<a name="Conditions_BinaryEquals"></a>
 
 The `BinaryEquals` condition operator let you construct `Condition` elements that test key values that are in binary format\. It compares the value of the specified key byte for byte against a [base\-64](https://en.wikipedia.org/wiki/Base64) encoded representation of the binary value in the policy\. 
@@ -182,6 +193,8 @@ The `BinaryEquals` condition operator let you construct `Condition` elements tha
   }
 }
 ```
+
+If the key that you specify in a policy condition is not present in the request context, the values do not match\.
 
 ## IP Address Condition Operators<a name="Conditions_IPAddress"></a>
 
@@ -212,6 +225,8 @@ For example, the following statement uses the `IpAddress` condition operator wit
 ```
 
 The `aws:SourceIp` condition key resolves to the IP address that the request originates from\. If the requests originates from an Amazon EC2 instance, `aws:SourceIp` evaluates to the instance's public IP address\. 
+
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SourceIp` key is always present in the request context, except when the requester uses a VPC endpoint to make the request\. In this case, the condition returns `false` and the request is implicitly denied by this statement\.
 
 The following example shows how to mix IPv4 and IPv6 addresses to cover all of your organization's valid IP addresses\. We recommend that you augment your organization's policies with your IPv6 address ranges in addition to IPv4 ranges you already have to ensure the policies continue to work as you make the transition to IPv6\.
 
@@ -248,7 +263,7 @@ Amazon Resource Name \(ARN\) condition operators let you construct `Condition` e
 |   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\)\. These behave identically\.  | 
 |   `ArnNotEquals`, `ArnNotLike`  |  Negated matching for ARN\. These behave identically\.  | 
 
-The following example shows a policy you need to attach to any Amazon SQS queue to which you want to send SNS messages\. It gives Amazon SNS permission to send messages to the queue \(or queues\) of your choice, but only if the service is sending the messages on behalf of a particular Amazon SNS topic \(or topics\)\. You specify the queue in the `Resource` field, and the Amazon SNS topic as the value for the `SourceArn` key\.
+The following resource\-based policy example shows a policy attached to an Amazon SQS queue to which you want to send SNS messages\. It gives Amazon SNS permission to send messages to the queue \(or queues\) of your choice, but only if the service is sending the messages on behalf of a particular Amazon SNS topic \(or topics\)\. You specify the queue in the `Resource` field, and the Amazon SNS topic as the value for the `SourceArn` key\.
 
 ```
 {
@@ -262,6 +277,8 @@ The following example shows a policy you need to attach to any Amazon SQS queue 
   }
 }
 ```
+
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SourceArn` key is present in the request context only if a resource triggers a service to call another service on behalf of the resource owner\. If an IAM user attempts to perform this operation directly, the condition returns `false` and the request is implicitly denied by this statement\.
 
 ## \.\.\.IfExists Condition Operators<a name="Conditions_IfExists"></a>
 

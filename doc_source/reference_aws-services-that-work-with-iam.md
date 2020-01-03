@@ -30,6 +30,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/lambda-auth-and-access-control.html)  | Yes | Yes | [Yes](https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html) | No | Yes | [Yes³](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
 |  [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/all) | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Outposts](https://docs.aws.amazon.com/outposts/latest/userguide/security.html) | Yes | Yes | No | Yes | Yes | No | 
+|  [AWS Serverless Application Repository](https://docs.aws.amazon.com/serverlessrepo/latest/devguide/serverlessrepo-auth-and-access-control.html) | Yes | Yes | Yes | No | Yes | No | 
 
 ¹ Amazon EC2 service\-linked roles cannot be created using the AWS Management Console, and can be used only for the following features: [Scheduled Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html#service-linked-roles-scheduled-instances), [Spot Instance Requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html#service-linked-roles-spot-instance-requests), [Spot Fleet Requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#service-linked-roles-spot-fleet-requests) 
 
@@ -85,7 +86,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 |  [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/access-permissions.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
+|  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/security-iam.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
 |  [AWS CodeStar Notifications](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/using-service-linked-roles.html) | 
 | [AWS X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) | Yes | No | No | No | Yes | No | 
 
@@ -102,7 +103,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Certificate Manager Private Certificate Authority \(ACM\)](https://docs.aws.amazon.com/acm-pca/latest/userguide/auth-toplevel.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Artifact](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/authen-toplevel.html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [AWS CloudHSM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | No | No | No | Yes | Yes | 
+|  [AWS CloudHSM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/cloudhsm/latest/userguide/service-linked-roles.html) | 
 |  [AWS CloudHSM Classic](https://docs.aws.amazon.com/cloudhsm/classic/userguide/iam-policy.html)  | Yes | No | No | No | No | No | 
 |  [Amazon Cognito](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Detective](https://docs.aws.amazon.com/detective/latest/adminguide/security-iam.html)  | Yes | Yes | No | No | Yes | No | 
@@ -112,7 +113,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-access.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-using-service-linked-roles.html) | 
 |  [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
 |  [AWS Key Management Service \(AWS KMS\)](https://docs.aws.amazon.com/kms/latest/developerguide/control-access.html)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/kms/latest/developerguide/using-service-linked-roles.html) | 
-|  [Amazon Macie ](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | Yes | 
+|  [Amazon Macie ](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/macie/latest/userguide/using-service-linked-roles.html) | 
 |  [AWS Resource Access Manager \(AWS RAM\)](https://docs.aws.amazon.com/ram/latest/userguide/control-access.html)  | Yes | Yes | No | Yes | Yes | No | 
 | [AWS Secrets Manager](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html) | Yes | Yes | [Yes](https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html) | Yes | Yes | No | 
 | [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-settingup.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/securityhub/latest/userguide/using-service-linked-roles.html) | 
@@ -121,6 +122,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes⁴ | No | Yes | Yes⁵ | No | 
 |  [AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
+|  [AWS WAFV2](https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ¹ IAM supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
 
@@ -169,7 +171,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon CloudWatch Synthetics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/recommended-iam-permissions-using-aws-config-console-cli.html)  | Yes | Yes² | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/config/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon Data Lifecycle Manager](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [AWS Health](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Health](https://docs.aws.amazon.com/health/latest/ug/controlling-access.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS OpsWorks](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS OpsWorks for Chef Automate](https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html)  | Yes | Yes | No | Yes | Yes | No | 
 | [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs) | 
@@ -267,6 +269,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Kinesis Data Analytics](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 | [Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html) | Yes | Yes | No | Yes | Yes | No | 
 | [Amazon Kinesis Data Streams](https://docs.aws.amazon.com/streams/latest/dev/controlling-access.html) | Yes | Yes | No | No | Yes | No | 
+| [AWS Lake Formation](https://docs.aws.amazon.com/lake-formation/latest/dg/security-data-access.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html) | 
 | [Amazon Managed Streaming for Apache Kafka \(MSK\)](https://docs.aws.amazon.com/msk/latest/developerguide/security_iam_service-with-iam.html) | Yes | Yes | No | Yes | Yes | No | 
 | [Amazon QuickSight](https://docs.aws.amazon.com/quicksight/latest/user/managing-access.html) | Yes | Yes | No | No | Yes | No | 
 
@@ -383,6 +386,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ControllingAccessWebsite.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS Marketplace](http://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS Private Marketplace](https://docs.aws.amazon.com/marketplace/latest/buyerguideprivate-marketplace.html)  | Yes | No | No | No | No | No | 
+|  [AWS Marketplace](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | No | No | No | Yes | No | 
+|   [AWS Private Marketplace](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Yes | No | No | No | No | No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 

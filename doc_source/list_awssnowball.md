@@ -8,14 +8,14 @@ References:
 
 **Topics**
 + [Actions Defined by AWS Snowball](#awssnowball-actions-as-permissions)
-+ [Resources Defined by AWS Snowball](#awssnowball-resources-for-iam-policies)
++ [Resource Types Defined by AWS Snowball](#awssnowball-resources-for-iam-policies)
 + [Condition Keys for AWS Snowball](#awssnowball-policy-keys)
 
 ## Actions Defined by AWS Snowball<a name="awssnowball-actions-as-permissions"></a>
 
 You can specify the following actions in the `Action` element of an IAM policy statement\. Use policies to grant permissions to perform an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\.
 
-The **Resource** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
+The **Resource Types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
 
 For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
@@ -42,7 +42,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ UpdateCluster ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateCluster.html)  | While a cluster's ClusterState value is in the AwaitingQuorum state, you can update some of the information associated with a cluster\. | Write |  |  |  | 
 |   [ UpdateJob ](https://docs.aws.amazon.com/snowball/latest/api-reference/API_UpdateJob.html)  | While a job's JobState value is New, you can update some of the information associated with a job\. | Write |  |  |  | 
 
-## Resources Defined by AWS Snowball<a name="awssnowball-resources-for-iam-policies"></a>
+## Resource Types Defined by AWS Snowball<a name="awssnowball-resources-for-iam-policies"></a>
 
 AWS Snowball does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to AWS Snowball, specify `“Resource”: “*”` in your policy\.
 
