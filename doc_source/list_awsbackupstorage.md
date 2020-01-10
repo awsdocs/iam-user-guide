@@ -25,7 +25,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ Mount ](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_Mount.html) \[permission only\] | Associates a KMS key to a backup vault | Write |  |  |  | 
+|   [ MountCapsule ](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_CreateBackupVault.html) \[permission only\] | Associates a KMS key to a backup vault | Write |  |  |  | 
 
 ## Resource Types Defined by AWS Backup storage<a name="awsbackupstorage-resources-for-iam-policies"></a>
 

@@ -2,7 +2,7 @@
 
 This example shows how you might create a policy that allows an Amazon S3 administrator to access any bucket, including updating, adding, and deleting objects\. However, it explicitly denies access to the `Production` bucket if the user has not signed in using MFA within the last thirty minutes\. This policy grants the permissions necessary to perform this action in the console or programmatically using the AWS CLI or AWS API\. To use this policy, replace the red italicized text in the example policy with your own information\.
 
-This policy never allows programmatic access to the `Production` bucket using long\-term user access keys\. To access the `Production` bucket programmatically, the S3 administrator must use MFA\-authenticated temporary credentials using the [GetSessionToken](id_credentials_temp_request.md#api_getsessiontoken) API operation\.
+This policy never allows programmatic access to the `Production` bucket using long\-term user access keys\. This is accomplished using the `aws:MultiFactorAuthAge` condition key with the `NumericGreaterThanIfExists` condition operator\. This policy condition returns `true` if MFA is not present or if the age of the MFA is greater than 30 minutes\. In those situations, access is denied\. To access the `Production` bucket programmatically, the S3 administrator must use temporary credentials that were generated in the last 30 minutes using the [GetSessionToken](id_credentials_temp_request.md#api_getsessiontoken) API operation\.
 
 ```
 {
@@ -44,7 +44,7 @@ This policy never allows programmatic access to the `Production` bucket using lo
                 "arn:aws:s3:::Production"
             ],
             "Condition": {
-                "NumericGreaterThan": {"aws:MultiFactorAuthAge": "1800"}
+                "NumericGreaterThanIfExists": {"aws:MultiFactorAuthAge": "1800"}
             }
         }
     ]

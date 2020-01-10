@@ -55,6 +55,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ scheduledaudit ](https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:scheduledaudit/$\{ScheduleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ securityprofile ](https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:securityprofile/$\{SecurityProfileName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ rule ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rule/$\{ruleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
+|   [ provisioningtemplate ](https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:provisioningtemplate/$\{provisioningTemplate\}  |  | 
 
 ## Condition Keys for AWS IoT<a name="awsiot-policy-keys"></a>
 

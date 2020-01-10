@@ -26,9 +26,13 @@ For details about the columns in the following table, see [The Actions Table](re
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ DeleteTerminology ](https://docs.aws.amazon.com/translate/latest/dg/API_DeleteTerminology.html)  | A synchronous action that deletes a custom terminology\. | Write |  |  |  | 
+|   [ DescribeTextTranslationJob ](https://docs.aws.amazon.com/translate/latest/dg/API_DescribeTextTranslationJob.html)  | Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on\. | Read |  |  |  | 
 |   [ GetTerminology ](https://docs.aws.amazon.com/translate/latest/dg/API_GetTerminology.html)  | Retrieves a custom terminology\. | Read |  |  |  | 
 |   [ ImportTerminology ](https://docs.aws.amazon.com/translate/latest/dg/API_ImportTerminology.html)  | Creates or updates a custom terminology, depending on whether or not one already exists for the given terminology name\. | Write |  |  |  | 
 |   [ ListTerminologies ](https://docs.aws.amazon.com/translate/latest/dg/API_ListTerminologies.html)  | Provides a list of custom terminologies associated with your account\. | Read |  |  |  | 
+|   [ ListTextTranslationJobs ](https://docs.aws.amazon.com/translate/latest/dg/API_ListTextTranslationJobs.html)  | Gets a list of the batch translation jobs that you have submitted\. | Read |  |  |  | 
+|   [ StartTextTranslationJob ](https://docs.aws.amazon.com/translate/latest/dg/API_StartTextTranslationJob.html)  | Starts an asynchronous batch translation job\. Batch translation jobs can be used to translate large volumes of text across multiple documents at once\. | Write |  |  |  | 
+|   [ StopTextTranslationJob ](https://docs.aws.amazon.com/translate/latest/dg/API_StopTextTranslationJob.html)  | Stops an asynchronous batch translation job that is in progress\. | Write |  |  |  | 
 |   [ TranslateText ](https://docs.aws.amazon.com/translate/latest/dg/API_TranslateText.html)  | Translate text from a source language to a target language\. | Read |  |  |  | 
 
 ## Resource Types Defined by Amazon Translate<a name="amazontranslate-resources-for-iam-policies"></a>

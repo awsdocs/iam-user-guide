@@ -108,6 +108,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Cognito](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Detective](https://docs.aws.amazon.com/detective/latest/adminguide/security-iam.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Directory Service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [AWS Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/fms-using-service-linked-roles.html) | 
 |  [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/guardduty/latest/ug/using-service-linked-roles.html) | 
 |  [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | Yes¹ | [Yes²](access_iam-tags.md) | Yes³ | No | 
 |  [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-access.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-using-service-linked-roles.html) | 
@@ -180,6 +181,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Service Catalog](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | Yes⁴ | Yes | No | 
 |  [AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
 | [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes⁵ | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-ta.html) | 
+| [AWS Well\-Architected Tool](https://docs.aws.amazon.com/wellarchitected/latest/userguide/security_iam_service-with-iam.html) | Yes | Yes | No | No | Yes | No | 
 
 ¹ Amazon CloudWatch service\-linked roles cannot be created using the AWS Management Console, and support only the [ Alarm Actions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/UsingAlarmActions.html) feature\.
 

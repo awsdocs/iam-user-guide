@@ -20,23 +20,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AssociateAdminAccount ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AssociateAdminAccount.html)  | Sets the AWS Firewall Manager administrator account and enables the service in all organization accounts | Write |  |  |  | 
-|   [ DeleteNotificationChannel ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeleteNotificationChannel.html)  | Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service \(SNS\) topic that is used to notify the FM administrator about major FM events and errors across the organization\. | Write |  |  |  | 
-|   [ DeletePolicy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DeletePolicy.html)  | Permanently deletes an AWS Firewall Manager policy\. | Write |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
-|   [ DisassociateAdminAccount ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_DisassociateAdminAccount.html)  | Disassociates the account that has been set as the AWS Firewall Manager administrator account and and disables the service in all organization accounts | Write |  |  |  | 
-|   [ GetAdminAccount ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetAdminAccount.html)  | Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the AWS Firewall Manager administrator\. | Read |  |  |  | 
-|   [ GetComplianceDetail ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetComplianceDetail.html)  | Returns detailed compliance information about the specified member account\. Details include resources that are in and out of compliance with the specified policy\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
-|   [ GetNotificationChannel ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetNotificationChannel.html)  | Returns information about the Amazon Simple Notification Service \(SNS\) topic that is used to record AWS Firewall Manager SNS logs\. | Read |  |  |  | 
-|   [ GetPolicy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetPolicy.html)  | Returns information about the specified AWS Firewall Manager policy\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
-|   [ GetProtectionStatus ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_GetProtectionStatus.html)  | Returns policy\-level attack summary information in the event of a potential DDoS attack\. | Read |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
-|   [ ListComplianceStatus ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListComplianceStatus.html)  | Returns an array of PolicyComplianceStatus objects in the response\. Use PolicyComplianceStatus to get a summary of which member accounts are protected by the specified policy\. | List |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
-|   [ ListMemberAccounts ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListMemberAccounts.html)  | Returns an array of member account ids if the caller is FMS admin account\. | List |  |  |  | 
-|   [ ListPolicies ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ListPolicies.html)  | Returns an array of PolicySummary objects in the response\. | List |  |  |  | 
-|   [ PutNotificationChannel ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutNotificationChannel.html)  | Designates the IAM role and Amazon Simple Notification Service \(SNS\) topic that AWS Firewall Manager \(FM\) could use to notify the FM administrator about major FM events and errors across the organization\. | Write |  |  |  | 
-|   [ PutPolicy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PutPolicy.html)  | Creates an AWS Firewall Manager policy\. | Write |   [ policy\* ](#awsfirewallmanager-policy)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsfirewallmanager.html)
 
 ## Resource Types Defined by AWS Firewall Manager<a name="awsfirewallmanager-resources-for-iam-policies"></a>
 
@@ -47,8 +31,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ policy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:policy/$\{Id\}  |  | 
+|   [ policy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:policy/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsfirewallmanager-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Firewall Manager<a name="awsfirewallmanager-policy-keys"></a>
 
-Firewall Manager has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Firewall Manager defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 

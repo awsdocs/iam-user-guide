@@ -6,7 +6,7 @@ This workflow has four basic steps\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
-**[Step 1: Enable Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
+**[Step 1: Activate Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
 If you create a single AWS account, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner activates IAM access and attaches policies that provide billing actions to the user or role\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.  
 If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
 
@@ -29,25 +29,12 @@ Create a test AWS account to use with this tutorial\. In this account create two
 | FinanceManager | BillingFullAccessGroup | FinanceManager | 
 | FinanceUser | BillingViewAccessGroup | FinanceUser | 
 
-## Step 1: Enable Access to Billing Data on Your AWS Test Account<a name="tutorial-billing-step1"></a>
+## Step 1: Activate Access to Billing Data on Your AWS Test Account<a name="tutorial-billing-step1"></a>
 
-Sign into your test account and turn on billing access\. For information about how to follow this process in a production environment, see [Activate Access to the AWS Website](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
+To learn how to activate billing access for your test users, see [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
 
 **Note**  
 If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
-
-**To enable access to billing data on your AWS test account**
-
-1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the *[AWS account root user](id_root-user.md)*\.
-
-1. On the navigation bar, choose your account name, and then choose **My Account**\.
-
-1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\.
-
-1. Then select the check box to **Activate IAM Access** and choose **Update**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
-
-1. Sign out of the console, and then proceed to [Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)\.
 
 ## Step 2: Create IAM Policies That Grant Permissions to Billing Data<a name="tutorial-billing-step2"></a>
 
@@ -113,9 +100,7 @@ Now that you have custom billing policies available, you can attach them to thei
 
 ## Step 4: Test Access to the Billing Console<a name="tutorial-billing-step4"></a>
 
-You can test user access in a couple of ways\. For this tutorial, we recommend that you test access by signing in as each of the test users to learn what your users might experience\. Another \(optional\) way to test user access permissions is to use the [IAM policy simulator](https://policysim.aws.amazon.com/)\. Use the following steps if you want to see another way to view the effective result of these actions\.
-
-Select either of the following procedures based on your preferred testing method\. In the first one, you sign in using both test accounts to see the difference between access rights\.
+We recommend that you test access by signing in as each of the test users to learn what your users might experience\. Use the following steps to sign in using both test accounts to see the difference between access rights\.
 
 **To test billing access by signing in with both test user accounts**
 
@@ -141,24 +126,10 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    1. Browse through the pages\. Notice that you can display costs, reports, and billing data with no problems\. However, if you choose an option to modify a value, you receive an **Access Denied **message\. For example, on the **Preferences** page, choose any of the check boxes on the page, and then choose **Save preferences**\. The console message informs you that you need **ModifyBilling** permissions to make changes to that page\.
 
-The following optional procedure demonstrates how you could alternatively use the IAM policy simulator to test your delegated user’s effective permissions to billing pages\. 
-
-**To test billing access by viewing effective permissions in the IAM policy simulator**
-
-1. Open the IAM policy simulator at [https://policysim\.aws\.amazon\.com/](https://policysim.aws.amazon.com/)\. \(If you are not already signed in to AWS, you are prompted to sign in\)\. 
-
-1. Under **Users, Groups, and Roles**, select one of the users that is a member of the group you recently attached the policy to\. 
-
-1. Under **Policy Simulator**, choose **Select service**, and then choose **Billing**\. 
-
-1. Next to **Select actions**, choose **Select All\.** 
-
-1. Choose **Run Simulation** and compare the user’s listed permissions with all possible billing\-related permission options to make sure that the correct rights have been applied\. 
-
 ## Related Resources<a name="tutorial-billing-addl-resources"></a>
 
 For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
-+ [Activate Access to the AWS Website](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
++ [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
 + [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
 + [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
 

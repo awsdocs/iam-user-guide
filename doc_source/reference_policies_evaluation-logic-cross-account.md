@@ -65,6 +65,9 @@ You cannot use a wildcard \(\*\) in the `Principal` element in a role's trust po
 ****Role for cross\-account access****  
 A role that grants access to resources in one account to a trusted principal in a different account\. Roles are the primary way to grant cross\-account access\. However, some AWS services allow you to attach a policy directly to a resource \(instead of using a role as a proxy\)\. These are called resource\-based policies, and you can use them to grant principals in another AWS account access to the resource\. Some of these resources include Amazon Simple Storage Service \(S3\) buckets, Glacier vaults, Amazon Simple Notification Service \(SNS\) topics, and Amazon Simple Queue Service \(SQS\) queues\. To learn which services support resource\-based policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. For more information about resource\-based policies, see [How IAM Roles Differ from Resource\-based Policies](id_roles_compare-resource-policies.md)\.  ](id_roles_terms-and-concepts.md#term_trust-policy)\. To learn how allowing cross\-account access using roles is different from allowing cross\-account access using other resource\-based policies, see [How IAM Roles Differ from Resource\-based Policies](id_roles_compare-resource-policies.md)\. 
 
+**Important**  
+Other services can affect the policy evaluation logic\. For example, AWS Organizations supports [service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html) that can be applied to one or more accounts\. AWS Resource Access Manager supports [policy fragments](https://docs.aws.amazon.com/ram/latest/userguide/permissions.html) that control which actions that principals are allowed to perform on resources that are shared with them\.
+
 ## Determining Whether a Cross\-Account Request Is Allowed<a name="policy-eval-cross-account"></a>
 
 For cross\-account requests, the requester in the trusted `AccountA` must have an identity\-based policy\. That policy must allow them to make a request to the resource in the trusting `AccountB`\. Additionally, the resource\-based policy in `AccountB` must allow the requester in `AccountA` to access the resource\.
@@ -96,20 +99,14 @@ Also assume that the following policy is attached to the `carlossalazar` IAM use
         {
             "Sid": "AllowS3ListRead",
             "Effect": "Allow",
-            "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
-            ],
+            "Action": "s3:ListAllMyBuckets",
             "Resource": "*"
         },
         {
-            "Sid": "AllowS3Self",
+            "Sid": "AllowS3ProductionObjectActions",
             "Effect": "Allow",
-            "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::Production/*",
-                "arn:aws:s3:::Production"
-            ]
+            "Action": "s3:*Object*",
+            "Resource": "arn:aws:s3:::Production/*"
         },
         {
             "Sid": "DenyS3Logs",
@@ -124,7 +121,7 @@ Also assume that the following policy is attached to the `carlossalazar` IAM use
 }
 ```
 
-The `AllowS3ListRead` statement in this policy allows Carlos to view a list of all of the buckets in Amazon S3\. The `AllowS3Self` statement allows Carlos full access to the `Production` bucket\. The `DenyS3Logs` statement denies Carlos access to any S3 bucket with `log` in its name\. 
+The `AllowS3ListRead` statement in this policy allows Carlos to view a list of all of the buckets in Amazon S3\. The `AllowS3ProductionObjectActions` statement allows Carlos full access to objects in the `Production` bucket\. The `DenyS3Logs` statement denies Carlos access to any S3 bucket with `log` in its name\. It also denies access to all objects in those buckets\.
 
 Additionally, the following resource\-based policy \(called a bucket policy\) is attached to the `Production` bucket in account 222222222222\. 
 
@@ -134,7 +131,12 @@ Additionally, the following resource\-based policy \(called a bucket policy\) is
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": "s3:*",
+            "Action": [
+                "s3:GetObject*",
+                "s3:PutObject*",
+                "s3:ReplicateObject",
+                "s3:RestoreObject"
+            ],
             "Principal": { "AWS": "arn:aws:iam::111111111111:user/carlossalazar" },
             "Resource": "arn:aws:s3:::Production/*"
         }
@@ -142,7 +144,7 @@ Additionally, the following resource\-based policy \(called a bucket policy\) is
 }
 ```
 
-This policy specifies that only the `carlossalazar` user can access the `Production` bucket\. He can create, edit, and delete the objects in the bucket, but can't edit or delete the bucket itself\.
+This policy allows the `carlossalazar` user to access objects in the `Production` bucket\. He can create and edit, but not delete the objects in the bucket\. He can't manage the bucket itself\.
 
 When Carlos makes his request to save a file to the `Production-logs` bucket, AWS determines what policies apply to the request\. In this case, the identity\-based policy attached to the `carlossalazar` user is the only policy that applies in account `111111111111`\. In account `222222222222`, there is no resource\-based policy attached to the `Production-logs` bucket\. When AWS evaluates account `111111111111`, it returns a decision of `Deny`\. This is because the `DenyS3Logs` statement in the identity\-based policy explicitly denies access to any log buckets\. For more information about how a request is evaluated within a single account, see [Determining Whether a Request Is Allowed or Denied Within an Account](reference_policies_evaluation-logic.md#policy-eval-denyallow)\.
 
