@@ -1,6 +1,6 @@
 # Amazon S3: Allows Read and Write Access to Objects in an S3 Bucket<a name="reference_policies_examples_s3_rw-bucket"></a>
 
-This example shows how you might create a policy that allows `Read` and `Write` access to objects in a specific S3 bucket\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the red italicized text in the example policy with your own information\.
+This example shows how you might create a policy that allows `Read` and `Write` access to objects in a specific S3 bucket\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
 
 The `s3:*Object` action uses a wildcard as part of the action name\. The `AllObjectActions` statement allows the `GetObject`, `DeleteObject`, `PutObject`, and any other Amazon S3 action that ends with the word "Object"\.
 

@@ -1,6 +1,6 @@
 # Amazon DynamoDB: Allows Access to a Specific Table<a name="reference_policies_examples_dynamodb_specific-table"></a>
 
-This example shows how you might create a policy that allows full access to the `MyTable` DynamoDB table\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the red italicized text in the example policy with your own information\.
+This example shows how you might create a policy that allows full access to the `MyTable` DynamoDB table\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
 
 **Important**  
 This policy allows all actions that can be performed on a DynamoDB table\. To review these actions, see [DynamoDB API Permissions: Actions, Resources, and Conditions Reference](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/api-permissions-reference.html) in the* Amazon DynamoDB Developer Guide*\. You could provide the same permissions by listing each individual action\. However, if you use the wildcard \(`*`\) in the `Action` element, such as `"dynamodb:List*"`, then you don't have to update your policy if DynamoDB adds a new List action\. 

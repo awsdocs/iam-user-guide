@@ -1,6 +1,6 @@
 # EC2: Start or Stop Instances Based on Tags<a name="reference_policies_examples_ec2-start-stop-tags"></a>
 
-This example shows how you might create a policy that allows starting or stopping instances with the tag key–value pair `Project = DataAnalytics`, but only by principals with the tag key–value pair `Department = Data`\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the red italicized text in the example policy with your own information\. 
+This example shows how you might create a policy that allows starting or stopping instances with the tag key–value pair `Project = DataAnalytics`, but only by principals with the tag key–value pair `Department = Data`\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. 
 
 The condition in the policy returns true if both parts of the condition are true\. The instance must have the `Project=DataAnalytics` tag\. In addition, the IAM principal entity \(user or role\) making the request must have the `Department=Data` tag\. 
 

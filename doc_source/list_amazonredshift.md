@@ -60,6 +60,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ redshift:DbName ](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions)  | Control access based on the database name\. | String | 
-|   [ redshift:DbUser ](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions)  | Control access based on the database user name\. | String | 
-|   [ redshift:DurationSeconds ](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions)  | Control access based on the number of seconds until a temporary credential set expires\. | String | 
+|   [ redshift:DbName ](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions)  | Filters access by the database name | String | 
+|   [ redshift:DbUser ](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions)  | Filters access by the database user name | String | 
+|   [ redshift:DurationSeconds ](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-overview.html#redshift-policy-resources.conditions)  | Filters access by the number of seconds until a temporary credential set expires | String | 

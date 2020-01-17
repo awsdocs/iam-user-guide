@@ -67,7 +67,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
 IAM does not support using the `[aws:ResourceTag](reference_policies_condition-keys.md#condition-keys-resourcetag)` global condition key\. AWS STS supports both the IAM key and the global key\.
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM Users and Roles](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
-This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the red italicized text in the example policy with your own information\.  
+This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.  
 
 ```
 {

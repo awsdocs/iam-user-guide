@@ -77,7 +77,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 1. María creates the `XCompanyBoundaries` managed policy to use as a permissions boundary for all new users in the account\.
 
-1. María creates the `DelegatedUserBoundary` managed policy and assigns it as the permissions boundary for Zhang\.
+1. María creates the `DelegatedUserBoundary` managed policy and assigns it as the permissions boundary for Zhang\. Maria makes a note of her admin IAM user's ARN and uses it in the policy to prevent Zhang from accessing it\.
 
 1. María creates the `DelegatedUserPermissions` managed policy and attaches it as a permissions policy for Zhang\.
 
@@ -85,7 +85,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 **Task 1:** María must first create a managed policy to define the boundary for the new users\. María will allow Zhang to give users the permissions policies they need, but she wants those users to be restricted\. To do this, she creates the following customer managed policy with the name `XCompanyBoundaries`\. This policy does the following:
 + Allows users full access to several services
-+ Allows limited self\-managing access in the IAM console\. This means they can change their password after signing into the console\. They cannot use access keys to programmatically change their password\. They also can't set their initial password\. To allow this, add the `"*LoginProfile"` action to the `AllowManageOwnPasswordAndAccessKeys` statement\.
++ Allows limited self\-managing access in the IAM console\. This means they can change their password after signing into the console\. They can't set their initial password\. To allow this, add the `"*LoginProfile"` action to the `AllowManageOwnPasswordAndAccessKeys` statement\.
 + Denies users access to the Amazon S3 logs bucket or the `i-1234567890abcdef0` Amazon EC2 instance
 
 ```
@@ -169,11 +169,12 @@ Each statement serves a different purpose:
                 "iam:DeleteUserPolicy",
                 "iam:AttachUserPolicy",
                 "iam:DetachUserPolicy",
-                "iam:PutUserPermissionsBoundary"
+                "iam:PutUserPermissionsBoundary",
+                "iam:PutUserPolicy"
             ],
             "Resource": "*",
             "Condition": {"StringEquals": 
-                {"iam:PermissionsBoundary": "arn:aws:iam::111122223333:policy/XCompanyBoundaries"}}
+                {"iam:PermissionsBoundary": "arn:aws:iam::123456789012:policy/XCompanyBoundaries"}}
         },
         {
             "Sid": "CloudWatchAndOtherIAMTasks",
@@ -188,7 +189,12 @@ Each statement serves a different purpose:
                 "iam:CreateLoginProfile",
                 "iam:GetAccountPasswordPolicy",
                 "iam:GetLoginProfile",
-                "iam:*Group*",
+                "iam:ListGroups",
+                "iam:ListGroupsForUser",
+                "iam:CreateGroup",
+                "iam:GetGroup",
+                "iam:DeleteGroup",
+                "iam:UpdateGroup"
                 "iam:CreatePolicy",
                 "iam:DeletePolicy",
                 "iam:DeletePolicyVersion",
@@ -203,12 +209,11 @@ Each statement serves a different purpose:
                 "iam:ListAttachedUserPolicies",
                 "iam:ListRolePolicies",
                 "iam:ListAttachedRolePolicies",
-                "iam:PutUserPolicy",
                 "iam:SetDefaultPolicyVersion",
                 "iam:SimulatePrincipalPolicy",
                 "iam:SimulateCustomPolicy" 
             ],
-            "Resource": "*"
+            "NotResource": "arn:aws:iam::123456789012:user/Maria"
         },
         {
             "Sid": "NoBoundaryPolicyEdit",
@@ -238,7 +243,7 @@ Each statement serves a different purpose:
 
 1. The `CreateOrChangeOnlyWithBoundary` statement allows Zhang to create IAM users but only if he uses the `XCompanyBoundaries` policy to set the permissions boundary\. This statement also allows him to set the permissions boundary for existing users but only using that same policy\. Finally, this statement allows Zhang to manage permissions policies for users with this permissions boundary set\.
 
-1. The `CloudWatchAndOtherIAMTasks` statement allows Zhang to complete other user, group, and policy management tasks\. Note that Zhang does not have the permission to delete the permissions boundary from himself or any other user\.
+1. The `CloudWatchAndOtherIAMTasks` statement allows Zhang to complete other user, group, and policy management tasks\. He has permissions to reset passwords and create access keys for any IAM user not listed in the condition key\. This allows him to help users with sign\-in issues\.
 
 1. The `NoBoundaryPolicyEdit` statement denies Zhang access to update the `XCompanyBoundaries` policy\. He is not allowed to change any policy that is used to set the permissions boundary for himself or other users\.
 
@@ -287,6 +292,8 @@ Each statement serves a different purpose:
 1. The `CloudWatchLimited` statement allows Zhang to perform five actions in CloudWatch\. His permissions boundary allows all actions in CloudWatch, so his effective CloudWatch permissions are limited only by his permissions policy\.
 
 1. The `S3BucketContents` statement allows Zhang to list the `ZhangBucket` Amazon S3 bucket\. However, his permissions boundary does not allow any Amazon S3 action, so he cannot perform any S3 operations, regardless of his permissions policy\.
+**Note**  
+Zhang's policies allow him to create a user that can then access Amazon S3 resources that he can't access\. By delegating these administrative actions, Maria effectively trusts Zhang with access to Amazon S3\. 
 
 María then attaches the `DelegatedUserPermissions` policy as the permissions policy for the `Zhang` user\. 
 
@@ -310,6 +317,6 @@ Zhang completes the following tasks:
 
    The user is created\. 
 
-When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. Nikhil has read\-only access to all the buckets that he owns in Amazon S3\. However, even if someone grants him ownership to the `logs` bucket, he cannot view it\. For more information about bucket ownership, see [Managing Access Permissions to your Amazon S3 Resources](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html) in the *Amazon Simple Storage Service Developer Guide*\. 
+When Nikhil signs in, he has access to IAM and Amazon S3, except those operations that are denied by the permissions boundary\. For example, he can change his own password in IAM but can't create another user or edit his policies\. Nikhil has read\-only access to Amazon S3\.
 
 If someone adds a resource\-based policy to the `logs` bucket that allows Nikhil to put an object in the bucket, he still cannot access the bucket\. The reason is that any actions on the `logs` bucket are explicitly denied by his permissions boundary\. An explicit deny in any policy type results in a request being denied\. However, if a resource\-based policy attached to a Secrets Manager secret allows Nikhil to perform the `secretsmanager:GetSecretValue` action, then Nikhil can retrieve and decrypt the secret\. The reason is that Secrets Manager operations are not explicitly denied by his permissions boundary, and implicit denies in permissions boundaries do not limit resource\-based policies\.

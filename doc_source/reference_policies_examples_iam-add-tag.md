@@ -1,6 +1,6 @@
 # IAM: Add a Specific Tag to a User With a Specific Tag<a name="reference_policies_examples_iam-add-tag"></a>
 
-This example shows how you might create a policy that allows adding the tag key `Department` with the tag values `Marketing`, `Development`, or `QualityAssurance` to an IAM user\. That user must already include the tag key–value pair `JobFunction = manager`\. You can use this policy to require that a manager belong to only one of three departments\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the red italicized text in the example policy with your own information\. 
+This example shows how you might create a policy that allows adding the tag key `Department` with the tag values `Marketing`, `Development`, or `QualityAssurance` to an IAM user\. That user must already include the tag key–value pair `JobFunction = manager`\. You can use this policy to require that a manager belong to only one of three departments\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. 
 
 The `ListTagsForAllUsers` statement allows the viewing of tags for all users in your account\. 
 

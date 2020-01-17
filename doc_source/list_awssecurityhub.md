@@ -40,6 +40,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ DescribeActionTargets ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html)  | Grants permission to retrieve a list of custom actions using the API\. | Read |  |  |  | 
 |   [ DescribeHub ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html)  | Grants permission to retrieve information about the hub resource in your account\. | Read |  |  |  | 
 |   [ DescribeProducts ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html)  | Grants permission to retrieve information about the available Security Hub product integrations\. | Read |  |  |  | 
+|   [ DescribeStandardsControls ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html)  | Grants permission to retrieve information about Security Hub standards controls\. | Read |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
 |   [ DisableImportFindingsForProduct ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html)  | Grants permission to disable the findings importing for a Security Hub integrated product\. | Write |   [ product\* ](#awssecurityhub-product)   |  |  | 
 |   [ DisableSecurityHub ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html)  | Grants permission to disable Security Hub\. | Write |  |  |  | 
 |   [ DisassociateFromMasterAccount ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html)  | Grants permission to a Security Hub member account to disassociate from the associated master account\. | Write |  |  |  | 
@@ -63,6 +64,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ UpdateActionTarget ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html)  | Grants permission to update custom actions in Security Hub\. | Write |   [ action\-target\* ](#awssecurityhub-action-target)   |  |  | 
 |   [ UpdateFindings ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html)  | Grants permission to update Security Hub findings\. | Write |  |  |  | 
 |   [ UpdateInsight ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html)  | Grants permission to update insights in Security Hub\. | Write |   [ insight\* ](#awssecurityhub-insight)   |  |  | 
+|   [ UpdateStandardsControl ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html)  | Grants permission to update Security Hub standards controls\. | Write |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
 
 ## Resource Types Defined by AWS Security Hub<a name="awssecurityhub-resources-for-iam-policies"></a>
 

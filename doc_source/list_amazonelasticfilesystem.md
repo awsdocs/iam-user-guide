@@ -34,6 +34,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ file\-system ](https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:elasticfilesystem:$\{Region\}:$\{Account\}:file\-system/$\{FileSystemId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticfilesystem-aws_ResourceTag___TagKey_)   | 
+|   [ access\-point ](https://docs.aws.amazon.com/efs/latest/ug/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:elasticfilesystem:$\{Region\}:$\{Account\}:access\-point/$\{AccessPointId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticfilesystem-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Elastic File System<a name="amazonelasticfilesystem-policy-keys"></a>
 
@@ -46,6 +47,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  |  | String | 
-|   aws:ResourceTag/$\{TagKey\}  |  | String | 
-|   aws:TagKeys  |  | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 
