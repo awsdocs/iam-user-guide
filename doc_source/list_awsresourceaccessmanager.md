@@ -33,9 +33,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ resource\-share ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share/$\{ResourcePath\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsresourceaccessmanager-aws_ResourceTag___TagKey_)   | 
+|   [ resource\-share ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShare.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share/$\{ResourcePath\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsresourceaccessmanager-aws_ResourceTag___TagKey_)   [ ram:AllowsExternalPrincipals ](#awsresourceaccessmanager-ram_AllowsExternalPrincipals)   [ ram:ResourceShareName ](#awsresourceaccessmanager-ram_ResourceShareName)   | 
 |   [ resource\-share\-invitation ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceShareInvitation.html)  |  arn:$\{Partition\}:ram:$\{Region\}:$\{Account\}:resource\-share\-invitation/$\{ResourcePath\}  |  | 
-|   [ permission ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html)  |  arn:$\{Partition\}:ram::$\{Account\}:permission/$\{ResourcePath\}  |  | 
+|   [ permission ](https://docs.aws.amazon.com/ram/latest/APIReference/API_ResourceSharePermissionDetail.html)  |  arn:$\{Partition\}:ram::$\{Account\}:permission/$\{ResourcePath\}  |   [ ram:PermissionArn ](#awsresourceaccessmanager-ram_PermissionArn)   | 
 
 ## Condition Keys for AWS Resource Access Manager<a name="awsresourceaccessmanager-policy-keys"></a>
 

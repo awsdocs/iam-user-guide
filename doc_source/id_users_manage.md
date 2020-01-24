@@ -40,7 +40,7 @@ To change a user's name or path, you must use the AWS CLI, Tools for Windows Pow
 When you change a user's name or path, the following happens: 
 + Any policies attached to the user stay with the user under the new name\.
 + The user stays in the same groups under the new name\.
-+ The unique ID for the user remains the same\. For more information about unique IDs, see [Unique IDs](reference_identifiers.md#identifiers-unique-ids)\.
++ The unique ID for the user remains the same\. For more information about unique IDs, see [Unique Identifiers](reference_identifiers.md#identifiers-unique-ids)\.
 + Any resource or role policies that refer to the user *as a principal* \(the user is being granted access\) are automatically updated to use the new name or path\. For example, any queue\-based policies in Amazon SQS or resource\-based policies in Amazon S3 are automatically updated to use the new name and path\. 
 
 IAM does not automatically update policies that refer to the user *as a resource* to use the new name or path; you must manually do that\. For example, imagine that user `Richard` has a policy attached to him that lets him manage his security credentials\. If an administrator renames `Richard` to `Rich`, the administrator also needs to update that policy to change the resource from this:

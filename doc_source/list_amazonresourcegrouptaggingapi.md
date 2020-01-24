@@ -3,7 +3,7 @@
 Amazon Resource Group Tagging API \(service prefix: `tag`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/tag-editor.html)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/ARG/latest/userguide/tag-editor.html)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html) permission policies\.
 

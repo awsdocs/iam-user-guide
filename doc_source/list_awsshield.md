@@ -42,6 +42,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ListAttacks ](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListAttacks.html)  | List all existing attacks | List |  |  |  | 
 |   [ ListProtections ](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_ListProtections.html)  | List all existing protections | List |  |  |  | 
 |   [ UpdateEmergencyContactSettings ](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateEmergencyContactSettings.html)  | Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack | Write |  |  |  | 
+|   [ UpdateSubscription ](https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_UpdateSubscription.html)  | Updates the details of an existing subscription | Write |  |  |  | 
 
 ## Resource Types Defined by AWS Shield<a name="awsshield-resources-for-iam-policies"></a>
 

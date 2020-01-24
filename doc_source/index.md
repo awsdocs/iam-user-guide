@@ -326,6 +326,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS CodeBuild](list_awscodebuild.md)
          + [Actions, Resources, and Condition Keys for AWS CodeCommit](list_awscodecommit.md)
          + [Actions, Resources, and Condition Keys for AWS CodeDeploy](list_awscodedeploy.md)
+         + [Actions, Resources, and Condition Keys for Amazon CodeGuru Profiler](list_amazoncodeguruprofiler.md)
          + [Actions, Resources, and Condition Keys for Amazon CodeGuru Reviewer](list_amazoncodegurureviewer.md)
          + [Actions, Resources, and Condition Keys for AWS CodePipeline](list_awscodepipeline.md)
          + [Actions, Resources, and Condition Keys for AWS CodeStar](list_awscodestar.md)

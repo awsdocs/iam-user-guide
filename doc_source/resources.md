@@ -28,12 +28,11 @@ Review the following guides to manage passwords for your AWS account and for IAM
 ## Permissions and Policies<a name="resources-permissions-and-policies"></a>
 
 Learn the inner workings of IAM policies and find tips on the best ways to confer permissions:
-+ **[Policies and Permissions](access_policies.md)** – Describes how permissions can be attached to users or groups or, for some AWS products, to resources themselves\.
-+ **[Policies and Permissions](access_policies.md)** – Introduces the policy language that is used to define permissions\.
++ **[Policies and Permissions](access_policies.md)** – Introduces the policy language that is used to define permissions\. Describes how permissions can be attached to users or groups or, for some AWS products, to resources themselves\.
 +  **[IAM JSON Policy Elements Reference](reference_policies_elements.md)** – Provides descriptions and examples of each policy language element\.
 +  **[Example IAM Identity\-Based Policies](access_policies_examples.md)** – Shows examples of policies for common tasks in various AWS products\.
 + **[AWS Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html)** – Create custom policies by choosing products and actions from a list\.
-+  **[IAM Policy Simulator](https://policysim.aws.amazon.com/)** – Test whether a policy would allow or deny a specific AWS action\. The following video \(6:28\) provides an overview and shows the policy simulator in action\.
++  **[IAM Policy Simulator](https://policysim.aws.amazon.com/)** – Test whether a policy would allow or deny a specific request to AWS\.
 
 ## Federation and Delegation<a name="resources-federation-and-delegation"></a>
 
