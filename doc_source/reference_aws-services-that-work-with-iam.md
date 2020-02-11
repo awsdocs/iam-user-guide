@@ -33,7 +33,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ Amazon EC2 service\-linked roles cannot be created using the AWS Management Console, and can be used only for the following features: [Scheduled Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-scheduled-instances.html#service-linked-roles-scheduled-instances), [Spot Instance Requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-requests.html#service-linked-roles-spot-instance-requests), [Spot Fleet Requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html#service-linked-roles-spot-fleet-requests) 
 
-² Only some Amazon EC2 actions [support resource\-level permissions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-supported-iam-actions-resources.html)\.
+² Only some Amazon ECS actions [support resource\-level permissions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-supported-iam-actions-resources.html)\.
 
 ³ AWS Lambda doesn't have service\-linked roles, but Lambda@Edge does\. For more information, see [Service\-Linked Roles for Lambda@Edge](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) in the Amazon CloudFront Developer Guide\.
 
