@@ -13,6 +13,8 @@ When you create a user, a role, a group, or a policy, or when you upload a serve
 
 If you are using the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM entities, you can also give the entity an optional path\. You can use a single path, or nest multiple paths as if they were a folder structure\. For example, you could use the nested path `/division_abc/subdivision_xyz/product_1234/engineering/` to match your company's organizational structure\. You could then create a policy to allow all users in that path to access the policy simulator API\. To view this policy, see [IAM: Access the Policy Simulator API Based on User Path](reference_policies_examples_iam_policy-sim-path.md)\. For additional examples of how you might use paths, see [IAM ARNs](#identifiers-arns)\.
 
+When you use AWS CloudFormation to create resources, you can specify a path for users, groups, and roles, but not policies\.
+
 Just because you give a user and group the same path doesn't automatically put that user in that group\. For example, you might create a Developers group and specify its path as /division\_abc/subdivision\_xyz/product\_1234/engineering/\. Just because you create a user named Bob and give him that same path doesn't automatically put Bob in the Developers group\. IAM doesn't enforce any boundaries between users or groups based on their paths\. Users with different paths can use the same resources \(assuming they've been granted permission to those resources\)\. For information about limitations on names, see [IAM and STS Limits](reference_iam-limits.md)\.
 
 ## IAM ARNs<a name="identifiers-arns"></a>
@@ -235,7 +237,7 @@ When IAM creates a user, group, role, policy, instance profile, or server certif
 
 `AIDAJQABLZS4A3QDU576Q`
 
-For the most part, you use friendly names and [ARNs](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) when you work with IAM entities\. That way you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
+For the most part, you use friendly names and [ARNs](#identifiers-arns) when you work with IAM entities\. That way you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
 
 One example pertains to reusing friendly names in your AWS account\. Within your account, a friendly name for a user, group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee\. The bucket has a resource\-based policy \(a bucket policy\) that lets users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the `David` IAM user, the policy allows the new David to access information that was left by the former David\. 
 
@@ -268,6 +270,7 @@ IAM uses the following prefixes to indicate what type of entity each unique ID a
 The unique ID for an IAM entity is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
 
 AWS CLI:
++  [get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/iam/get-caller-identity.html) 
 +  [get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
 +  [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
 +  [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
@@ -276,6 +279,7 @@ AWS CLI:
 +  [get\-server\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
 
 IAM API:
++  [GetCallerIdentity](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCallerIdentity.html) 
 +  [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
 +  [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 +  [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 

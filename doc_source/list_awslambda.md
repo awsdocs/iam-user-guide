@@ -34,6 +34,8 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ function ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:function:$\{FunctionName\}  |  | 
+|   [ function version ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:function:$\{FunctionName\}:$\{Version\}  |  | 
+|   [ function alias ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:function:$\{FunctionName\}:$\{Alias\}  |  | 
 |   [ layer ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:layer:$\{LayerName\}  |  | 
 |   [ layerVersion ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:layer:$\{LayerName\}:$\{LayerVersion\}  |  | 
 |   [ eventSourceMapping ](https://docs.aws.amazon.com/lambda/latest/dg/lambda-api-permissions-ref.html)  |  arn:$\{Partition\}:lambda:$\{Region\}:$\{Account\}:event\-source\-mapping:$\{UUID\}  |  | 

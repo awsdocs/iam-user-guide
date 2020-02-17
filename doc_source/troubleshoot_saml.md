@@ -32,6 +32,8 @@ For more information, see [Configuring SAML Assertions for the Authentication Re
 
 This error can occur if the IAM role specified in the SAML response is misspelled or does not exist\. Make sure to use the exact name of your role, because role names are case sensitive\. Correct the name of the role in the SAML service provider configuration\.
 
+You are allowed access only if your role trust policy includes the `sts:AssumeRoleWithSAML` action\. If your SAML assertion is configured to use the [`PrincipalTag` attribute](id_roles_providers_create_saml_assertions.md#saml_role-session-tags), your trust policy must also include the `sts:TagSession` action\. For more information about session tags, see [Passing Session Tags in AWS STS](id_session-tags.md)\.
+
 This error can also occur if the federated users do not have permissions to assume the role\. The role must have a trust policy that specifies the ARN of the IAM SAML identity provider as the `Principal`\. The role also contains conditions that control which users can assume the role\. Ensure that your users meet the requirements of the conditions\.
 
 This error can also occur if the SAML response does not include a `Subject` containing a `NameID`\.

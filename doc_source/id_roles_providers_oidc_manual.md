@@ -3,7 +3,7 @@
 For best results, use Amazon Cognito as your identity broker for almost all web identity federation scenarios\. Amazon Cognito is easy to use and provides additional capabilities like anonymous \(unauthenticated\) access, and synchronizing user data across devices and providers\. However, if you have already created an app that uses web identity federation by manually calling the `AssumeRoleWithWebIdentity` API, you can continue to use it and your apps will still work fine\. 
 
 **Note**  
-To help understand how web identity federation works, you can use the [Web Identity Federation Playground](https://web-identity-federation-playground.s3.amazonaws.com/index.html)\. This interactive website lets you walk through the process of authenticating via Login with Amazon, Facebook, or Google, getting temporary security credentials, and then using those credentials to make a request to AWS\.
+To help understand how web identity federation works, you can use the [Web Identity Federation Playground](http://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/)\. This interactive website lets you walk through the process of authenticating via Login with Amazon, Facebook, or Google, getting temporary security credentials, and then using those credentials to make a request to AWS\.
 
 The process for using web identity federation ***without*** Amazon Cognito follows this general outline: 
 

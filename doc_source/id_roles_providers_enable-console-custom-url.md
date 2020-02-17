@@ -40,7 +40,7 @@ To complete these tasks, you can use the [HTTPS Query API for AWS Identity and A
 
 ## Example Code Using IAM Query API Operations<a name="STSConsoleLink_manual"></a>
 
-You can construct a URL that gives your federated users direct access to the AWS Management Console\. This task uses the IAM and AWS STS HTTPS Query API\. For more information about making query requests, see [Making Query Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide//IAM_UsingQueryAPI.html)\.
+You can construct a URL that gives your federated users direct access to the AWS Management Console\. This task uses the IAM and AWS STS HTTPS Query API\. For more information about making query requests, see [Making Query Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html)\.
 
 **Note**  
 The following procedure contains examples of text strings\. To enhance readability, line breaks have been added to some of the longer examples\. When you create these strings for your own use, you should omit any line breaks\.

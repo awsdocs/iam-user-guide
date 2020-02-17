@@ -3,9 +3,9 @@
 Amazon Macie \(service prefix: `macie`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com//macie/latest/userguide/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com//macie/1.0/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com//macie/latest/userguide/macie-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/macie/latest/userguide/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/macie/1.0/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Macie](#amazonmacie-actions-as-permissions)
@@ -25,13 +25,13 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ AssociateMemberAccount ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_AssociateMemberAccount.html)  | Enables the user to associate a specified AWS account with Amazon Macie as a member account\. | Write |  |  |  | 
-|   [ AssociateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_AssociateS3Resources.html)  | Enables the user to associate specified S3 resources with Amazon Macie for monitoring and data classification\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
-|   [ DisassociateMemberAccount ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_DisassociateMemberAccount.html)  | Enables the user to remove the specified member account from Amazon Macie\. | Write |  |  |  | 
-|   [ DisassociateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_DisassociateS3Resources.html)  | Enables the user to remove specified S3 resources from being monitored by Amazon Macie\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
-|   [ ListMemberAccounts ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_ListMemberAccounts.html)  | Enables the user to list all Amazon Macie member accounts for the current Macie master account\. | List |  |  |  | 
-|   [ ListS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_ListS3Resources.html)  | Enables the user to list all the S3 resources associated with Amazon Macie\. | List |  |  |  | 
-|   [ UpdateS3Resources ](https://docs.aws.amazon.com//macie/1.0/APIReference/API_UpdateS3Resources.html)  | Enables the user to update the classification types for the specified S3 resources\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
+|   [ AssociateMemberAccount ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html)  | Enables the user to associate a specified AWS account with Amazon Macie as a member account\. | Write |  |  |  | 
+|   [ AssociateS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html)  | Enables the user to associate specified S3 resources with Amazon Macie for monitoring and data classification\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
+|   [ DisassociateMemberAccount ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html)  | Enables the user to remove the specified member account from Amazon Macie\. | Write |  |  |  | 
+|   [ DisassociateS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html)  | Enables the user to remove specified S3 resources from being monitored by Amazon Macie\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
+|   [ ListMemberAccounts ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html)  | Enables the user to list all Amazon Macie member accounts for the current Macie master account\. | List |  |  |  | 
+|   [ ListS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html)  | Enables the user to list all the S3 resources associated with Amazon Macie\. | List |  |  |  | 
+|   [ UpdateS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html)  | Enables the user to update the classification types for the specified S3 resources\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
 
 ## Resource Types Defined by Amazon Macie<a name="amazonmacie-resources-for-iam-policies"></a>
 

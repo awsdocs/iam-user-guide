@@ -11,6 +11,8 @@ When you create access keys, you create the access key ID and secret access key 
 
 A newly created access key has the status of *active*, which means that you can use the access key for CLI and API calls\. You are [limited to two access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) for each IAM user, which is useful when you want to [rotate the access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#iam-user-access-keys)\. You can also assign up to two access keys to the root user\. When you disable an access key, you can't use it for API calls, and inactive keys do count toward your limit\. You can create or delete an access key any time\. However, when you delete an access key, it's gone forever and can't be retrieved\.
 
+You can change the email address and password on the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page\. You can also choose **Forgot password?** on the AWS sign\-in page to reset your password\.
+
 **Topics**
 + [Enable MFA on the AWS Account Root User](#id_root-user_manage_mfa)
 + [Creating Access Keys for the Root User](#id_root-user_manage_add-key)

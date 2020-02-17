@@ -53,9 +53,11 @@ Active Regions are available to everyone that uses temporary credentials in that
 After you activate a Region, you can direct AWS STS API calls to that Region\. The following Java code snippet demonstrates how to configure an `AWSSecurityTokenServiceClient` object to make requests to the Europe \(Ireland\) \(eu\-west\-1\) Region with the `setEndpoint` method\.
 
 ```
-AWSSecurityTokenServiceClient stsClient = new AWSSecurityTokenServiceClient();
-stsClient.setRegion("eu-west-1");
-stsClient.setEndpoint("sts.eu-west-1.amazonaws.com");
+EndpointConfiguration regionEndpointConfig = new EndpointConfiguration("https://sts.eu-west-1.amazonaws.com", "eu-west-1");
+AWSSecurityTokenService stsRegionalClient = AWSSecurityTokenServiceClientBuilder.standard()
+.withCredentials(credentials)
+.withEndpointConfiguration(regionEndpointConfig)
+.build();
 ```
 
 AWS STS recommends that you use both the `setRegion` and `setEndpoint` methods to make calls to a Regional endpoint\. You can use the `setRegion` method alone for manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. In this case, the calls are directed to the STS Regional endpoint\. To learn how to manually enable a Region, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. If you use the `setRegion` method alone for Regions enabled by default, the calls are directed to the global endpoint of `[https://sts.amazonaws.com](https://sts.amazonaws.com)`\.

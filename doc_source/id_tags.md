@@ -46,7 +46,7 @@ You must configure permissions to allow an IAM entity \(user or role\) to tag ot
 
 **To allow an IAM entity to add, list, or remove a tag for a specific user**
 
-Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<username>* with the name of the user that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<username>* with the name of the user that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -62,7 +62,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 
 **To allow an IAM user to self\-manage tags**
 
-Add the following statement to the permissions policy for users to allow users to manage their own tags\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for users to allow users to manage their own tags\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -83,7 +83,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 **Note**  
 The `iam:AddRoleTags` and `iam:AddUserTags` actions require that you also include the `iam:ListRoleTags` and `iam:ListUserTags` actions\.
 
-To use this policy, replace *<username>* with the name of the user that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+To use this policy, replace *<username>* with the name of the user that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -98,7 +98,7 @@ To use this policy, replace *<username>* with the name of the user that needs to
 
 **To allow an IAM entity to add, list, or remove a tag for a specific role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Replace *<rolename>* with the name of the role that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Replace *<rolename>* with the name of the role that needs to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {

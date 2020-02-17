@@ -3,9 +3,9 @@
 Amazon EC2 Instance Connect \(service prefix: `ec2-instance-connect`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com//AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com//ec2-instance-connect/latest/APIReference/Welcome.html)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com//AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/Welcome.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-connect-set-up.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon EC2 Instance Connect](#amazonec2instanceconnect-actions-as-permissions)
@@ -46,4 +46,4 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ ec2:osuser ](https://docs.aws.amazon.com//ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html)  | Filters access by specifying the default user name for the AMI that you used to launch your instance | String | 
+|   [ ec2:osuser ](https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html)  | Filters access by specifying the default user name for the AMI that you used to launch your instance | String | 

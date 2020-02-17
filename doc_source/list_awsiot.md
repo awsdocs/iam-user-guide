@@ -68,9 +68,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | A tag key that is present in the request that the user makes to IoT\. | String | 
-|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The tag key component of a tag attached to an IoT resource\. | String | 
-|   [ aws:TagKeys ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The list of all the tag key names associated with the resource in the request\. | String | 
-|   [ iot:Delete ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The flag indicating whether or not to also delete an IoT Tunnel immediately | Bool | 
-|   [ iot:ThingGroupArn ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel | String | 
-|   [ iot:TunnelDestinationService ](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html/)  | The list of all destination services for an IoT Tunnel | String | 
+|   aws:RequestTag/$\{TagKey\}  | A tag key that is present in the request that the user makes to IoT\. | String | 
+|   aws:ResourceTag/$\{TagKey\}  | The tag key component of a tag attached to an IoT resource\. | String | 
+|   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   iot:Delete  | The flag indicating whether or not to also delete an IoT Tunnel immediately | Bool | 
+|   iot:ThingGroupArn  | The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel | String | 
+|   iot:TunnelDestinationService  | The list of all destination services for an IoT Tunnel | String | 

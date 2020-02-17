@@ -6,6 +6,8 @@ The `Sid` \(statement ID\) is an optional identifier that you provide for the po
 "Sid": "1"
 ```
 
+The `Sid` element supports uppercase letters, lowercase letters, and numbers\. 
+
 In IAM, the `Sid` is not exposed in the IAM API\. You can't retrieve a particular statement based on this ID\.
 
 **Note**  

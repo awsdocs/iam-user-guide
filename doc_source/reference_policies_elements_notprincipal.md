@@ -1,6 +1,6 @@
 # AWS JSON Policy Elements: NotPrincipal<a name="reference_policies_elements_notprincipal"></a>
 
-Use the `NotPrincipal` element to specify the IAM user, federated user, IAM role, AWS account, AWS service, or other principal entity that is ***not*** allowed or denied access to a resource\. The `NotPrincipal` element enables you to specify an exception to a list of principals\. Use this element to deny access to all principals *except* the one named in the `NotPrincipal` element\. The syntax for specifying `NotPrincipal` is the same as for specifying [AWS JSON Policy Elements: Principal](reference_policies_elements_principal.md)\.
+Use the `NotPrincipal` element to specify the IAM user, federated user, IAM role, AWS account, AWS service, or other principal that is ***not*** allowed or denied access to a resource\. The `NotPrincipal` element enables you to specify an exception to a list of principals\. Use this element to deny access to all principals *except* the one named in the `NotPrincipal` element\. The syntax for specifying `NotPrincipal` is the same as for specifying [AWS JSON Policy Elements: Principal](reference_policies_elements_principal.md)\.
 
 You cannot use the `NotPrincipal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in an IAM resource\. 
 

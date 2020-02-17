@@ -2,7 +2,7 @@
 
 Archive rules automatically archive new findings that meet the criteria you define when you create the rule\. For example, you can create an archive rule to automatically archive any findings for a specific S3 bucket that you regularly grant access to\. Or if you grant access to multiple resources to a specific principal, you can create a rule that automatically archives any new finding generated for access granted to that principal\. This lets you focus only on active findings that may indicate a security risk\.
 
-Use the information provided in the finding details to identify the specific resource and external entity to use when creating or editing a rule\. Wnen you create an archive rule, only new findings that match the rule criteria are automatically archived\. Existing findings are not automatically archived\.
+Use the information provided in the finding details to identify the specific resource and external entity to use when creating or editing a rule\. When you create an archive rule, only new findings that match the rule criteria are automatically archived\. Existing findings are not automatically archived\. When you create a rule, you can include up to 20 values per criterion in the rule\.
 
 **Note**  
 When you create or edit an archive rule, Access Analyzer does not validate the values you include in the filter for the rule\. For example, if you add a rule to match an AWS Account, Access Analyzer accepts any value in the field, even if it is not a valid AWS account number\.

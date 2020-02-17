@@ -3,7 +3,7 @@
 AWS Ground Station \(service prefix: `groundstation`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service]({ConceptsDocRoot}introduction.html)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/ground-station/latest/ug/introduction.html)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/ground-station/latest/APIReference/welcome.html)\.
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/ground-station/latest/ug/auth-and-access-control.html) permission policies\.
 
@@ -33,12 +33,12 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ Config ](https://docs.aws.amazon.com/ground-station/latest/ug/resources/API_Config.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:config/$\{configType\}/$\{configId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:configId ](#awsgroundstation-groundstation_configId)   [ groundstation:configType ](#awsgroundstation-groundstation_configType)   | 
-|   [ Contact ](https://docs.aws.amazon.com/ground-station/latest/ug/resources/API_Contact.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:contact/$\{contactId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:contactId ](#awsgroundstation-groundstation_contactId)   | 
-|   [ DataflowEndpointGroup ](https://docs.aws.amazon.com/ground-station/latest/ug/resources/API_DataflowEndpointGroup.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:dataflow\-endpoint\-group/$\{dataflowEndpointGroupId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:dataflowEndpointGroupId ](#awsgroundstation-groundstation_dataflowEndpointGroupId)   | 
-|   [ GroundStationResource ](https://docs.aws.amazon.com/ground-station/latest/ug/resources/API_GroundStationResource.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:groundstation:$\{groundStationId\}  |   [ groundstation:groundStationId ](#awsgroundstation-groundstation_groundStationId)   | 
-|   [ MissionProfile ](https://docs.aws.amazon.com/ground-station/latest/ug/resources/API_MissionProfile.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:mission\-profile/$\{missionProfileId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:missionProfileId ](#awsgroundstation-groundstation_missionProfileId)   | 
-|   [ Satellite ](https://docs.aws.amazon.com/ground-station/latest/ug/resources/API_Satellite.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:satellite/$\{satelliteId\}  |   [ groundstation:satelliteId ](#awsgroundstation-groundstation_satelliteId)   | 
+|   [ Config ](https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ConfigListItem.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:config/$\{configType\}/$\{configId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:configId ](#awsgroundstation-groundstation_configId)   [ groundstation:configType ](#awsgroundstation-groundstation_configType)   | 
+|   [ Contact ](https://docs.aws.amazon.com/ground-station/latest/APIReference/API_ContactData.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:contact/$\{contactId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:contactId ](#awsgroundstation-groundstation_contactId)   | 
+|   [ DataflowEndpointGroup ](https://docs.aws.amazon.com/ground-station/latest/APIReference/API_DataflowEndpoint.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:dataflow\-endpoint\-group/$\{dataflowEndpointGroupId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:dataflowEndpointGroupId ](#awsgroundstation-groundstation_dataflowEndpointGroupId)   | 
+|   [ GroundStationResource ](https://docs.aws.amazon.com/ground-station/latest/APIReference/API_GroundStationData.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:groundstation:$\{groundStationId\}  |   [ groundstation:groundStationId ](#awsgroundstation-groundstation_groundStationId)   | 
+|   [ MissionProfile ](https://docs.aws.amazon.com/ground-station/latest/APIReference/API_MissionProfileListItem.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:mission\-profile/$\{missionProfileId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsgroundstation-aws_ResourceTag___TagKey_)   [ groundstation:missionProfileId ](#awsgroundstation-groundstation_missionProfileId)   | 
+|   [ Satellite ](https://docs.aws.amazon.com/ground-station/latest/APIReference/API_SatelliteListItem.html)  |  arn:$\{Partition\}:groundstation:$\{Region\}:$\{Account\}:satellite/$\{satelliteId\}  |   [ groundstation:satelliteId ](#awsgroundstation-groundstation_satelliteId)   | 
 
 ## Condition Keys for AWS Ground Station<a name="awsgroundstation-policy-keys"></a>
 

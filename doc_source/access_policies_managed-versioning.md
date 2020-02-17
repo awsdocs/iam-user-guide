@@ -55,7 +55,7 @@ When you create a customer managed policy, the policy begins with a single versi
 
 ### <a name="set-default-version-managed-policy-console"></a>
 
-You can set the default version of a customer managed policy to apply that version to every principal entity \(user, group, and role\) that the policy is attached to\. You cannot set the default version for an AWS managed policy or an inline policy\.
+You can set the default version of a customer managed policy to apply that version to every IAM identity \(user, group, and role\) where the policy is attached\. You cannot set the default version for an AWS managed policy or an inline policy\.
 
 **To set the default version of a customer managed policy \(console\)**
 

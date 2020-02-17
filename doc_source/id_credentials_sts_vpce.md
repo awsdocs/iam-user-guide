@@ -16,6 +16,7 @@ AWS STS currently supports VPC endpoints in the following Regions:
 + US West \(N\. California\)
 + US West \(Oregon\)
 + Asia Pacific \(Hong Kong\)
++ Middle East \(Bahrain\)
 + Asia Pacific \(Mumbai\)
 + Asia Pacific \(Osaka\-Local\)
 + Asia Pacific \(Seoul\)

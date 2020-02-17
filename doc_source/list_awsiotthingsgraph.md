@@ -48,6 +48,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/thingsgraph/latest/ug//tagging-tg.html/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the thingsgraph service\. | String | 
-|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/thingsgraph/latest/ug//tagging-tg.html/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a tag key and value pair\. | String | 
-|   [ aws:TagKeys ](https://docs.aws.amazon.com/thingsgraph/latest/ug//tagging-tg.html/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key names present in the request the user makes to the thingsgraph service\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/thingsgraph/latest/ug/tagging-tg.html/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the thingsgraph service\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/thingsgraph/latest/ug/tagging-tg.html/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a tag key and value pair\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/thingsgraph/latest/ug/tagging-tg.html/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key names present in the request the user makes to the thingsgraph service\. | String | 

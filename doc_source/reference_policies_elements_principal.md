@@ -152,7 +152,7 @@ The following example shows a policy that can be attached to a service role\. Th
 
 ### Anonymous Users \(Public\)<a name="principal-anonymous"></a>
 
-The following are equivalent:
+For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*\) in the principal element specifies all users and public access\. The following elements are equivalent:
 
 ```
 "Principal": "*"
@@ -162,8 +162,9 @@ The following are equivalent:
 "Principal" : { "AWS" : "*" }
 ```
 
-**Important**  
-In these examples, the asterisk \(\*\) is used as a placeholder for Everyone/Anonymous\. You cannot use it as a wildcard to match part of a name or an ARN\. We also strongly recommend that you do not use a wildcard in the `Principal` element in a role's trust policy unless you otherwise restrict access through a `Condition` element in the policy\. Otherwise, any account in the partition can access the role\.
+You cannot use a wildcard to match part of a name or an ARN\. 
+
+We strongly recommend that you do not use a wildcard in the `Principal` element in a role's trust policy unless you otherwise restrict access through a `Condition` element in the policy\. Otherwise, any IAM user in any account in your [partition](reference_identifiers.md#identifiers-arns) can access the role\.
 
 ## More Information<a name="Principal_more-info"></a>
 

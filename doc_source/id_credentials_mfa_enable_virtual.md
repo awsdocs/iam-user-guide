@@ -57,10 +57,7 @@ The virtual MFA device is now ready for use with AWS\. For information about usi
 
 You can use the AWS Management Console to configure and enable a virtual MFA device for your root user\. To enable MFA devices for the AWS account, you must be signed in to AWS using your root user credentials\. 
 
-If your MFA device is lost, stolen, or not working, you can still sign in as the root user using alternative factors of authentication\. If you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. Before you enable MFA for your root user, review your account settings and contact information to make sure that you have access to the email and phone number\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.
-
-**Note**  
-You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
+Before you enable MFA for your root user, review your account settings and contact information to make sure that you have access to the email and phone number\. If your MFA device is lost, stolen, or not working, you can still sign in as the root user by verifying your identity using that email and phone number\. To learn about signing in using these alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. 
 
 **To configure and enable a virtual MFA device for use with your root user \(console\)**
 

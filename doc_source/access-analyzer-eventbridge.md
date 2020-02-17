@@ -14,26 +14,30 @@ Access Analyzer sends events for new findings and findings with status updates t
 
 The following is an example Access Analyzer event sent to EventBridge\. The `id` listed is the ID for the event in EventBridge\. To learn more, see [Events and Event Patterns in EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)\.
 
-In the `detail` blob, the values for the `accountId` and `region` attributes refer to the account and Region reported in the finding\. The `isDeleted` attribute indicates whether the event was from the finding being deleted\.
+In the `detail` object, the values for the `accountId` and `region` attributes refer to the account and Region reported in the finding\. The `isDeleted` attribute indicates whether the event was from the finding being deleted\.
 
 ```
 {
-    "version": "0",
-    "id": "22222222-dcba-4444-dcba-333333333333",
-    "detail-type": "Access Analyzer Finding",
-    "source": "aws.access-analyzer",
-    "account": "111122223333",
-    "time": "2019-11-21T01:22:33Z",
-    "region": "us-west-2",
-    "resources": ["arn:aws:access-analyzer:us-west-2:111122223333:analyzer/MyAnalyzer"],
-    "detail": {
-        "version": "1.0",
-        "accountId": "111122223333",
-        "region": "us-west-2",
-        "isDeleted": false
+  "id": "22222222-dcba-4444-dcba-333333333333",
+  "detail-type": "Access Analyzer Finding",
+  "source": "aws.access-analyzer",
+  "account": "111122223333",
+  "time": "2019-11-21T01:22:33Z",
+  "region": "us-west-2",
+  "resources": [
+    "arn:aws:access-analyzer:us-west-2:111122223333:analyzer/MyAnalyzer"
+  ],
+  "detail": {
+      "version": "1.0",
+      "accountId": "111122223333",
+      "region": "us-west-2",
+      "isDeleted": false,
+      COMPLETE_ACCESS_ANALYZER_GET_FINDING_RESPONSE
     }
 }
 ```
+
+The `"id"` is the finding ID\. The `"resources"` array is a singleton with the ARN of the analyzer that generated the finding\.
 
 The following example shows data for an event that is sent to EventBridge from the `GetFinding` operation of the Access Analyzer API\.
 

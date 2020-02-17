@@ -3,9 +3,9 @@
 AWS RoboMaker \(service prefix: `robomaker`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/robomaker/latest/what-is-robomaker.html/robomaker/how-it-works.html)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/robomaker/latest/API_Reference.html)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/robomaker/latest/what-is-robomaker.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/robomaker/how-it-works.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/robomaker/latest/dg/API_Reference.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/robomaker/latest/dg/what-is-robomaker.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS RoboMaker](#awsrobomaker-actions-as-permissions)
@@ -33,12 +33,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ robotApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-robot-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot\-application/$\{ApplicationName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
-|   [ simulationApplication ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-application/$\{ApplicationName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
-|   [ simulationJob ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlsimulation.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-job/$\{SimulationJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
-|   [ deploymentJob ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmldeployment.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-job/$\{DeploymentJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
-|   [ robot ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlfleets.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot/$\{RobotName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
-|   [ deploymentFleet ](https://docs.aws.amazon.com/robomaker/latest/API_Types.htmlmanaging-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-fleet/$\{FleetName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ robotApplication ](https://docs.aws.amazon.com/robomaker/latest/dg/managing-robot-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot\-application/$\{ApplicationName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ simulationApplication ](https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-application/$\{ApplicationName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ simulationJob ](https://docs.aws.amazon.com/robomaker/latest/dg/simulation.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-job/$\{SimulationJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ simulationJobBatch ](https://docs.aws.amazon.com/robomaker/latest/dg/simulation-job-batch.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:simulation\-job\-batch/$\{SimulationJobBatchId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ deploymentJob ](https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-job/$\{DeploymentJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ robot ](https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot/$\{RobotName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ deploymentFleet ](https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-fleet/$\{FleetName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS RoboMaker<a name="awsrobomaker-policy-keys"></a>
 

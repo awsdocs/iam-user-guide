@@ -111,7 +111,7 @@ Use this key to compare the account to which the requesting principal belongs wi
 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.
 
-Use this key to compare the [Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:PrincipalOrgID<a name="condition-keys-principalorgid"></a>
@@ -334,17 +334,21 @@ Use this key to check whether the request was sent using SSL\. The request conte
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the source of the request with the account ID that you specify in the policy\. For example, assume that you have an Amazon S3 bucket in your account that is configured to deliver object creation events to an Amazon SNS topic\. In that case, you could use this condition key to check that Amazon S3 is not being used as a [confused deputy](id_roles_create_for-user_externalid.md#confused-deputy)\. Amazon S3 tells Amazon SNS the account that the bucket belongs to\. 
-+ **Availability** – This key is included in the request context only if a resource triggers a service to call another service on behalf of the resource owner\.
+Use this key to compare the account ID of the resource making a service\-to\-service request with the account ID that you specify in the policy\. 
++ **Availability** – This key is included in the request context only if accessing a resource triggers an AWS service to call another service on behalf of the resource owner\. The calling service must pass the resource ARN of the source to the called service\. This ARN includes the source account ID\.
+
+You can use this condition key to check that Amazon S3 is not being used as a [confused deputy](id_roles_create_for-user_externalid.md#confused-deputy)\.For example, when an Amazon S3 bucket update triggers an Amazon SNS topic post, the Amazon S3 service invokes the `sns:Publish` API operation\. The bucket is considered the source of the SNS request and the value of the key is the account ID from the bucket's ARN\.
 
 ## aws:SourceArn<a name="condition-keys-sourcearn"></a>
 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.
 
-Use this key to compare the source of the request with the [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) that you specify in the policy\. For example, when an Amazon S3 bucket update triggers an Amazon SNS topic post, the Amazon S3 service invokes the `sns:Publish` API operation\. The bucket is considered the source of the SNS request and the value of the key is the bucket's ARN\. This key does not work with the ARN of the principal making the request\. Instead, use [aws:PrincipalArn](#condition-keys-principalarn)\.
-+ **Availability** – This key is included in the request context only if a resource triggers a service to call another service on behalf of the resource owner\.
+Use this key to compare the [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) of the resource making a service\-to\-service request with the ARN that you specify in the policy\. 
 
-The source's ARN includes the account ID, so it is not necessary to use `aws:SourceAccount` with `aws:SourceArn`\.
+This key does not work with the ARN of the principal making the request\. Instead, use [aws:PrincipalArn](#condition-keys-principalarn)\. The source's ARN includes the account ID, so it is not necessary to use `aws:SourceAccount` with `aws:SourceArn`\.
++ **Availability** – This key is included in the request context only if accessing a resource triggers an AWS service to call another service on behalf of the resource owner\. The calling service must pass the ARN of the original resource to the called service\.
+
+You can use this condition key to check that Amazon S3 is not being used as a [confused deputy](id_roles_create_for-user_externalid.md#confused-deputy)\. For example, when an Amazon S3 bucket update triggers an Amazon SNS topic post, the Amazon S3 service invokes the `sns:Publish` API operation\. The bucket is considered the source of the SNS request and the value of the key is the bucket's ARN\.
 
 ## aws:SourceIp<a name="condition-keys-sourceip"></a>
 

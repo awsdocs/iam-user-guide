@@ -25,12 +25,12 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ AssociateRepository ](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_AssociateRepository)  | Grants permission to associates a repository with Amazon CodeGuru Reviewer\. | Write |   [ repository ](#amazoncodegurureviewer-repository)   |  |   codecommit:ListRepositories   codecommit:TagResource   events:PutRule   events:PutTargets   iam:CreateServiceLinkedRole   | 
+|   AssociateRepository  | Grants permission to associates a repository with Amazon CodeGuru Reviewer\. | Write |   [ repository ](#amazoncodegurureviewer-repository)   |  |   codecommit:ListRepositories   codecommit:TagResource   events:PutRule   events:PutTargets   iam:CreateServiceLinkedRole   | 
 |   CreateConnectionToken \[permission only\] | Grants permission to perform webbased oauth handshake for 3rd party providers\. | Read |  |  |  | 
-|   [ DescribeRepositoryAssociation ](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation)  | Grants permission to describe a repository association\. | Read |  |  |  | 
-|   [ DisassociateRepository ](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DisassociateRepository)  | Grants permission to disassociate a repository with Amazon CodeGuru Reviewer\. | Write |   [ association\* ](#amazoncodegurureviewer-association)   |  |   codecommit:UntagResource   events:DeleteRule   events:RemoveTargets   | 
+|   DescribeRepositoryAssociation  | Grants permission to describe a repository association\. | Read |  |  |  | 
+|   DisassociateRepository  | Grants permission to disassociate a repository with Amazon CodeGuru Reviewer\. | Write |   [ association\* ](#amazoncodegurureviewer-association)   |  |   codecommit:UntagResource   events:DeleteRule   events:RemoveTargets   | 
 |   GetMetricsData \[permission only\] | Grants permission to view pull request metrics in console\. | Read |  |  |  | 
-|   [ ListRepositoryAssociations ](https://docs.aws.amazon.com/codeguru/latest/reviewer-api/https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations)  | Grants permission to list summary of repository associations\. | List |  |  |  | 
+|   ListRepositoryAssociations  | Grants permission to list summary of repository associations\. | List |  |  |  | 
 |   ListThirdPartyRepositories \[permission only\] | Grants permission to list 3rd party providers repositories in console\. | Read |  |  |  | 
 
 ## Resource Types Defined by Amazon CodeGuru Reviewer<a name="amazoncodegurureviewer-resources-for-iam-policies"></a>
@@ -42,7 +42,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ association ](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/API_RepositoryAssociation.html)  |  arn:$\{Partition\}:codeguru\-reviewer::$\{Account\}:association:$\{ResourceId\}  |  | 
+|   association  |  arn:$\{Partition\}:codeguru\-reviewer::$\{Account\}:association:$\{ResourceId\}  |  | 
 |   [ repository ](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codecommit:$\{Region\}:$\{Account\}:$\{RepositoryName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncodegurureviewer-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon CodeGuru Reviewer<a name="amazoncodegurureviewer-policy-keys"></a>

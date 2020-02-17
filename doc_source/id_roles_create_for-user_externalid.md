@@ -5,6 +5,8 @@ At times, you need to give a third party access to your AWS resources \(delegate
 **Important**  
 AWS does not treat the external ID as a secret\. After you create a secret like an access key pair or a password in AWS, you cannot view them again\. The external ID for a role can be seen by anyone with permission to view the role\. 
 
+To use an external ID, update a role trust policy with the external ID of your choice\. Then, when uses the AWS CLI or AWS API to assume that role, they must provide the external ID\.
+
 For example, let's say that you decide to hire a third\-party company called Example Corp to monitor your AWS account and help optimize costs\. In order to track your daily spending, Example Corp needs to access your AWS resources\. Example Corp also monitors many other AWS accounts for other customers\.
 
 Do not give Example Corp access to an IAM user and its long\-term credentials in your AWS account\. Instead, use an IAM role and its temporary security credentials\. An IAM role provides a mechanism to allow a third party to access your AWS resources without needing to share long\-term credentials \(for example, an IAM user's access key\)\.

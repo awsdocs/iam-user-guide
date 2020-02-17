@@ -4,7 +4,7 @@ Amazon Elasticsearch Service \(service prefix: `es`\) provides the following ser
 
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/)\.
 
 **Topics**
 + [Actions Defined by Amazon Elasticsearch Service](#amazonelasticsearchservice-actions-as-permissions)
@@ -34,11 +34,12 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ DescribeElasticsearchInstanceTypeLimits ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describeinstancetypelimits)  | Grants permission to view the instance count, storage, and master node limits for a given Elasticsearch version and instance type\. | List |  |  |  | 
 |   [ DescribeReservedElasticsearchInstanceOfferings ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstanceofferings)  | Grants permission to fetch reserved instance offerings for ES | List |  |  |  | 
 |   [ DescribeReservedElasticsearchInstances ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-describereservedelasticsearchinstances)  | Grants permission to fetch ES reserved instances already purchased by customer | List |  |  |  | 
-|   ESHttpDelete  | Grants permission to send HTTP DELETE requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
-|   ESHttpGet  | Grants permission to send HTTP GET requests to the Elasticsearch APIs\. | Read |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
-|   ESHttpHead  | Grants permission to send HTTP HEAD requests to the Elasticsearch APIs\. | Read |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
-|   ESHttpPost  | Grants permission to send HTTP POST requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
-|   ESHttpPut  | Grants permission to send HTTP PUT requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
+|   [ ESHttpDelete ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference)  | Grants permission to send HTTP DELETE requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
+|   [ ESHttpGet ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference)  | Grants permission to send HTTP GET requests to the Elasticsearch APIs\. | Read |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
+|   [ ESHttpHead ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference)  | Grants permission to send HTTP HEAD requests to the Elasticsearch APIs\. | Read |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
+|   [ ESHttpPatch ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference)  | Grants permission to send HTTP PATCH requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
+|   [ ESHttpPost ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference)  | Grants permission to send HTTP POST requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
+|   [ ESHttpPut ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-ac.html#es-ac-reference)  | Grants permission to send HTTP PUT requests to the Elasticsearch APIs\. | Write |   [ domain ](#amazonelasticsearchservice-domain)   |  |  | 
 |   [ GetCompatibleElasticsearchVersions ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getcompatibleelasticsearchversions)  | Grants permission to fetch list of compatible elastic search versions to which Amazon ES domain can be upgraded | List |   [ domain\* ](#amazonelasticsearchservice-domain)   |  |  | 
 |   [ GetUpgradeHistory ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradehistory)  | Grants permission to fetch upgrade history for given ES domain | Read |   [ domain\* ](#amazonelasticsearchservice-domain)   |  |  | 
 |   [ GetUpgradeStatus ](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-configuration-api.html#es-configuration-api-actions-getupgradestatus)  | Grants permission to fetch upgrade status for given ES domain | Read |   [ domain\* ](#amazonelasticsearchservice-domain)   |  |  | 

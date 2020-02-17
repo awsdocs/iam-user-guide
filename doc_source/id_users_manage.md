@@ -4,6 +4,8 @@ Amazon Web Services offers multiple tools for managing the IAM users in your AWS
 
 For more information about adding, changing, or removing managed policies for an IAM user, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md), [Editing IAM Policies](access_policies_manage-edit.md), and [Deleting IAM Policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
 
+ For information about managing IAM user passwords, see [Managing Passwords for IAM Users](id_credentials_passwords_admin-change-user.md),
+
 **Topics**
 + [View User Access](#users-manage_prerequisites)
 + [Listing IAM Users](#id_users_manage_list)

@@ -36,7 +36,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ index ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/index/$\{IndexName\}  |  | 
 |   [ stream ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.Streams)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/stream/$\{StreamLabel\}  |  | 
 |   [ table ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.htmlHowItWorks.CoreComponents.html#HowItWorks.CoreComponents.TablesItemsAttributes)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}  |  | 
-|   [ backup ](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/backup/$\{BackupName\}  |  | 
+|   [ backup ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/backuprestore_HowItWorks.html)  |  arn:$\{Partition\}:dynamodb:$\{Region\}:$\{Account\}:table/$\{TableName\}/backup/$\{BackupName\}  |  | 
 |   [ global\-table ](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_HowItWorks.html)  |  arn:$\{Partition\}:dynamodb::$\{Account\}:global\-table/$\{GlobalTableName\}  |  | 
 
 ## Condition Keys for Amazon DynamoDB<a name="amazondynamodb-policy-keys"></a>

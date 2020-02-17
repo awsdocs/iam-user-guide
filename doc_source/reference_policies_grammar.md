@@ -177,7 +177,7 @@ Provides a way to specify a principal using the [*Amazon Resource Name* \(ARN\)]
 Note that you can use \* only to specify "everyone/anonymous\." You cannot use it to specify part of a name or ARN\.
 
 **`resource_string`**  
-In most cases, consists of an [Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) \(ARN\)\.  
+In most cases, consists of an [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\)\.  
 
 ```
 "Resource":"arn:aws:iam::123456789012:user/Bob"

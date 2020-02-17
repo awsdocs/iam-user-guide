@@ -1,6 +1,6 @@
 # IAM JSON Policy Elements: Resource<a name="reference_policies_elements_resource"></a>
 
-The `Resource` element specifies the object or objects that the statement covers\. Statements must include either a `Resource` or a `NotResource` element\. You specify a resource using an ARN\. \(For more information about the format of ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.\) 
+The `Resource` element specifies the object or objects that the statement covers\. Statements must include either a `Resource` or a `NotResource` element\. You specify a resource using an ARN\. For more information about the format of ARNs, see [IAM ARNs](reference_identifiers.md#identifiers-arns)\.
 
 Each service has its own set of resources\. Although you always use an ARN to specify a resource, the details of the ARN for a resource depend on the service and the resource\. For information about how to specify a resource, refer to the documentation for the service whose resources you're writing a statement for\.
 

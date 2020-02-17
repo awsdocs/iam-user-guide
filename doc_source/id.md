@@ -34,9 +34,6 @@ Because an IAM user is just an identity with specific permissions in your accoun
 + **Other people in your group need to work in your AWS account, and your group is using no other identity mechanism\.**
 
   Create IAM users for the individuals who need access to your AWS resources, assign appropriate permissions to each user, and give each user his or her own credentials\. We strongly recommend that you never share credentials among multiple users\. 
-+ **You want to use the [command\-line interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) \(CLI\) to work with AWS\.**
-
-  The CLI needs credentials that it can use to make calls to AWS\. Create an IAM user and give that user permissions to run the CLI commands you need\. Then configure the CLI on your computer to use the access key credentials associated with that IAM user\. 
 
 ## When to Create an IAM Role \(Instead of a User\)<a name="id_which-to-choose_role"></a>
 

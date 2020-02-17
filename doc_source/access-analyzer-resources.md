@@ -54,7 +54,7 @@ Because this statement allows only the role named *Admin* from the AWS account 1
 }
 ```
 
-When you create a KMS CMK, the permissions granted to access the key depend on how you create the key\. If you receive an Access Denied error finding for a key resource, apply the following policy statement to the resource to grant Access Analyzer permission to access the key\.
+When you create a KMS CMK, the permissions granted to access the key depend on how you create the key\. If you receive an Access Denied error finding for a key resource, apply the following policy statement to the key resource to grant Access Analyzer permission to access the key\.
 
 ```
 {
@@ -68,18 +68,11 @@ When you create a KMS CMK, the permissions granted to access the key depend on h
         "kms:GetKeyPolicy",
         "kms:List*"
     ],
-    "Resource": "*",
-    "Condition": {
-        "StringEquals": {
-        "aws:InvokedBy": "access-analyzer.amazonaws.com"
-        }
-    }
+    "Resource": "*"
 },
 ```
 
-This allows Access Analyzer to read key metadata\. The condition statement, `aws:InvokedBy`, limits the key policy statement to the Access Analyzer service\. Use a similar statement when the Access Analyzer service assumes the role in your account to read key metadata\.
-
-After you receive an Access Denied finding for a KMS key resource, and then resolve the finding by updating the key policy, the finding is updated to a status of Resolved\. If there are policy statements or key grants that grant permission to the key to an external entity, you might see additional findings for the key resource\.
+After you receive an Access Denied finding for a KMS key resource, and then resolve the finding by updating the key policy, the finding is updated to a status of Resolved\. If there are policy statements or key grants that grant permission to the key to an external entity, you might see additional findings for the key resource\. 
 
 ## AWS Lambda Functions and Layers<a name="access-analyzer-lambda"></a>
 

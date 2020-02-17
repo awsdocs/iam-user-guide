@@ -6,7 +6,7 @@ Users who sign in to your AWS account through the sign\-in page can access your 
 There is no charge to use IAM\.
 
 **The AWS Management Console**  
-You create a password for each user who needs access to the AWS Management Console\. Users access the console via your IAM\-enabled AWS account sign\-in page\. For information about accessing the sign\-in page, see [The IAM Console and Sign\-in Page](console.md)\. For information about creating passwords, see [Managing Passwords](id_credentials_passwords.md)\.
+You create a password for each user who needs access to the AWS Management Console\. Users access the console via your IAM\-enabled AWS account sign\-in page\. For information about accessing the sign\-in page, see [The IAM Console and Sign\-In Page](console.md)\. For information about creating passwords, see [Managing Passwords](id_credentials_passwords.md)\.
 
 **Your AWS resources, such as Amazon EC2 instances, Amazon S3 buckets, and so on**  
 Even if your users have passwords, they still need permission to access your AWS resources\. When you create a user, that user has no permissions by default\. To give your users the permissions they need, you attach policies to them\. If you have many users who will be performing the same tasks with the same resources, you can assign those users to a group, then assign the permissions to that group\. For information about creating users and groups, see [Identities \(Users, Groups, and Roles\)](id.md)\. For information about using policies to set permissions, see [Access Management](access.md)\.

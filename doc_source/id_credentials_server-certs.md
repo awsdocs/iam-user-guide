@@ -37,7 +37,7 @@ $ aws iam upload-server-certificate --server-certificate-name ExampleCertificate
                                     --private-key file://PrivateKey.pem
 ```
 
-When the preceding command is successful, it returns metadata about the uploaded certificate, including its [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html), its friendly name, its identifier \(ID\), its expiration date, and more\.
+When the preceding command is successful, it returns metadata about the uploaded certificate, including its [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns), its friendly name, its identifier \(ID\), its expiration date, and more\.
 
 **Note**  
 If you are uploading a server certificate to use with Amazon CloudFront, you must specify a path using the `--path` option\. The path must begin with `/cloudfront` and must include a trailing slash \(for example, `/cloudfront/test/`\)\.

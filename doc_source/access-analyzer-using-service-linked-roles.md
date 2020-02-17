@@ -8,9 +8,9 @@ For information about other services that support service\-linked roles, see [AW
 
 ## Service\-Linked Role Permissions for AWS IAM Access Analyzer<a name="slr-permissions"></a>
 
-AWS IAM Access Analyzer uses the service\-linked role named **AccessAnalyzerServiceRolePolicy** – Allow Access Analyzer to analyze resource metadata\.
+AWS IAM Access Analyzer uses the service\-linked role named **AWSServiceRoleForAccessAnalyzer** – Allow Access Analyzer to analyze resource metadata\.
 
-The AccessAnalyzerServiceRolePolicy service\-linked role trusts the following services to assume the role:
+The AWSServiceRoleForAccessAnalyzer service\-linked role trusts the following services to assume the role:
 + `access-analyzer.amazonaws.com`
 
 The role permissions policy allows Access Analyzer to complete the following actions on the specified resources:
@@ -80,7 +80,7 @@ You can also use the IAM console to create a service\-linked role with the **Acc
 
 ## Editing a Service\-Linked Role for Access Analyzer<a name="edit-slr"></a>
 
-Access Analyzer does not allow you to edit the AWSAccessAnalyzerServiceRole service\-linked role\. After you create a service\-linked role, you cannot change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
+Access Analyzer does not allow you to edit the AWSServiceRoleForAccessAnalyzer service\-linked role\. After you create a service\-linked role, you cannot change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
 ## Deleting a Service\-Linked Role for Access Analyzer<a name="delete-slr"></a>
 
@@ -89,7 +89,7 @@ If you no longer need to use a feature or service that requires a service\-linke
 **Note**  
 If Access Analyzer is using the role when you try to delete the resources, then the deletion might fail\. If that happens, wait for a few minutes and try the operation again\.
 
-**To delete Access Analyzer resources used by the AWSAccessAnalyzerServiceRole**
+**To delete Access Analyzer resources used by the AWSServiceRoleForAccessAnalyzer**
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -101,7 +101,7 @@ If Access Analyzer is using the role when you try to delete the resources, then 
 
 **To manually delete the service\-linked role using IAM**
 
-Use the IAM console, the AWS CLI, or the AWS API to delete the AWSAccessAnalyzerServiceRole service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+Use the IAM console, the AWS CLI, or the AWS API to delete the AWSServiceRoleForAccessAnalyzer service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 
 ## Supported Regions for Access Analyzer Service\-Linked Roles<a name="slr-regions"></a>
 

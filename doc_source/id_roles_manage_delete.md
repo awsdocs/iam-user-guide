@@ -7,6 +7,8 @@ If the role was associated with an EC2 instance, you can also remove the role fr
 **Warning**  
 Make sure that you do not have any Amazon EC2 instances running with the role or instance profile you are about to delete\. Deleting a role or instance profile that is associated with a running instance will break any applications that are running on the instance\.
 
+If you prefer not to permanently delete a role, you can disable a role\. To do this, change the role's policies and then revoke all current sessions\. For example, you could add a policy to the role that denied access to all of AWS\. You could also edit the trust policy to deny access to anyone attempting to assume the role\. For more information about revoking sessions, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
+
 **Topics**
 + [View Role Access](#roles-delete_prerequisites)
 + [Deleting a Service\-Linked Role](#id_roles_manage_delete_slr)

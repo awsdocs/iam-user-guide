@@ -31,7 +31,7 @@ Learn the inner workings of IAM policies and find tips on the best ways to confe
 + **[Policies and Permissions](access_policies.md)** – Introduces the policy language that is used to define permissions\. Describes how permissions can be attached to users or groups or, for some AWS products, to resources themselves\.
 +  **[IAM JSON Policy Elements Reference](reference_policies_elements.md)** – Provides descriptions and examples of each policy language element\.
 +  **[Example IAM Identity\-Based Policies](access_policies_examples.md)** – Shows examples of policies for common tasks in various AWS products\.
-+ **[AWS Policy Generator](https://awspolicygen.s3.amazonaws.com/policygen.html)** – Create custom policies by choosing products and actions from a list\.
++ **[AWS Policy Generator](http://aws.amazon.com/blogs/aws/aws-policy-generator/)** – Create custom policies by choosing products and actions from a list\.
 +  **[IAM Policy Simulator](https://policysim.aws.amazon.com/)** – Test whether a policy would allow or deny a specific request to AWS\.
 
 ## Federation and Delegation<a name="resources-federation-and-delegation"></a>
@@ -39,7 +39,7 @@ Learn the inner workings of IAM policies and find tips on the best ways to confe
 You can grant access to resources in your AWS account for users who are authenticated \(signed in\) elsewhere\. These can be IAM users in another AWS account \(known as *delegation*\), users who are authenticated with your organization's sign\-in process, or users from an Internet identity provider like Login with Amazon, Facebook, Google, or any other OpenID Connect \(OIDC\) compatible identity provider\. In these cases, the users get temporary security credentials to access AWS resources\. 
 +  **[Tutorial: Delegate Access Across AWS Accounts Using IAM Roles](tutorial_cross-account-with-roles.md)** – Guides you through granting cross\-account access to an IAM user in another AWS account\. 
 + **[Common Scenarios for Temporary Credentials](id_credentials_temp.md#sts-introduction)** – Describes ways in which users can be federated into AWS after being authenticated outside of AWS\. 
-+ **[Web Identity Federation Playground](https://web-identity-federation-playground.s3.amazonaws.com/index.html)** – Lets you experiment with Login with Amazon, Google, or Facebook to authenticate and then make a call to Amazon S3\. 
++ **[Web Identity Federation Playground](http://aws.amazon.com/blogs/https:aws/the-aws-web-identity-federation-playground/)** – Lets you experiment with Login with Amazon, Google, or Facebook to authenticate and then make a call to Amazon S3\. 
 
 ## IAM and Other AWS Products<a name="resources-iam-and-other-services"></a>
 

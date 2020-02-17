@@ -8,7 +8,7 @@ After you have assigned a password to a user, the user can sign in to the AWS Ma
 https://12-digit-AWS-account-ID or alias.signin.aws.amazon.com/console
 ```
 
-For more information about how IAM users sign in to the AWS Management Console, see [The IAM Console and Sign\-in Page](console.md)\. 
+For more information about how IAM users sign in to the AWS Management Console, see [The IAM Console and Sign\-In Page](console.md)\. 
 
 In addition to manually creating individual passwords for your IAM users, you can create a password policy that applies to all IAM user passwords in your AWS account\.
 
@@ -26,7 +26,7 @@ For information about managing your account's password policy, see [Setting an A
 
 Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [Identities \(Users, Groups, and Roles\)](id.md)\. For information about using policies to set permissions, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. 
 
-You can grant users permission to change their own passwords\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\. For information about how users access your account sign\-in page, see [The IAM Console and Sign\-in Page](console.md)\. 
+You can grant users permission to change their own passwords\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\. For information about how users access your account sign\-in page, see [The IAM Console and Sign\-In Page](console.md)\. 
 
 **Topics**
 + [Creating, Changing, or Deleting an IAM User Password \(Console\)](#id_credentials_passwords_admin-change-user_console)

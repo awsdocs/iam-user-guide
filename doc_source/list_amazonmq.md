@@ -3,7 +3,7 @@
 Amazon MQ \(service prefix: `mq`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com//amazon-mq/latest/api-reference/)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/)\.
 
 **Topics**
 + [Actions Defined by Amazon MQ](#amazonmq-actions-as-permissions)

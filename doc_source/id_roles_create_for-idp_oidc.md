@@ -160,7 +160,7 @@ You need to manually create a role for use with Amazon Cognito only when you are
 
 1. Review your web identity information and then choose **Next: Permissions**\.
 
-1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
+1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\.
 

@@ -1,21 +1,23 @@
-# The IAM Console and Sign\-in Page<a name="console"></a>
+# The IAM Console and Sign\-In Page<a name="console"></a>
 
 The AWS Management Console provides a web\-based way to administer AWS services\. You can sign in to the console and create, list, and perform other tasks with AWS services for your account\. These tasks might include starting and stopping Amazon EC2 instances and Amazon RDS databases, creating Amazon DynamoDB tables, creating IAM users, and so on\.
 
-The AWS Management Console includes three separate sign\-in pages:
-+ **[Main Sign\-in Page](#main-sign-in-page)** – Enter your root user email address or your IAM user account ID\.
-+ **[The Root User Sign\-in Page](#root-user-sign-in-page)** – Enter your root user password\.
-+ **[IAM User Sign\-in Page](#user-sign-in-page)** – Enter your IAM user name and password on this page\.
+When you open the AWS Management Console you might see one of three separate sign\-in pages:
++ **[Main Sign\-In Page](#main-sign-in-page)** – From [https://console\.aws\.amazon\.com/](https://console.aws.amazon.com/), enter your root user email address or your IAM user account ID\.
++ **[AWS Account Root User Sign\-In Page](#root-user-sign-in-page)** – Enter your root user password\.
++ **[IAM User Sign\-In Page](#user-sign-in-page)** – Enter your IAM user name and password on this page\.
 
-**Sign\-in Pages**
+**Sign\-in Process**
 
 ![\[Sign-in Pages\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/sign-in-logic.png)
 
 If you previously signed in on a different page, your browser might remember this preference\. You can use links on the root user and IAM user sign\-in pages to return to the main page\. 
 
-## Main Sign\-in Page<a name="main-sign-in-page"></a>
+## Main Sign\-In Page<a name="main-sign-in-page"></a>
 
-The main AWS sign\-in page includes a single field where you can enter your AWS account root user email address to sign in as the account owner\. When you enter the root user email address, you are directed to the root user sign\-in page\. 
+You can access the main sign\-in page by going to [https://console.aws.amazon.com/](https://console.aws.amazon.com/)\. 
+
+The main AWS sign\-in page includes a single box where you can enter your AWS account root user email address to sign in as the account owner\. When you enter the root user email address, you are directed to the root user sign\-in page\. 
 
 Alternatively, you can sign in as an IAM user by entering your account ID or account alias\. When you enter account information, you are directed to the IAM user sign\-in page\.
 
@@ -23,7 +25,7 @@ Alternatively, you can sign in as an IAM user by entering your account ID or acc
 
 ![\[Main Sign-in Page\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/sign-in-main-capture.png)
 
-## The Root User Sign\-in Page<a name="root-user-sign-in-page"></a>
+## AWS Account Root User Sign\-In Page<a name="root-user-sign-in-page"></a>
 
 When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user* and is accessed by signing in with the email address and password that you used to create the account\.
 
@@ -40,9 +42,9 @@ To return to the main sign\-in page, choose **Sign in to a different account**\.
 
 If you forgot your root user password, choose **Forgot your password?** to reset it\. For more information about resetting passwords, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
 
-## IAM User Sign\-in Page<a name="user-sign-in-page"></a>
+## IAM User Sign\-In Page<a name="user-sign-in-page"></a>
 
-To access the IAM user sign\-in page, you must enter your account ID or alias on the main sign\-in page\. Then, you can enter your IAM user name and password on this page\.
+To access the IAM user sign\-in page, you must enter your account ID or alias on the main sign\-in page\. Then you can enter your IAM user name and password on this page\.
 
 **IAM Sign\-in Page**
 

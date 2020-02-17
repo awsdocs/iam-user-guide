@@ -1,12 +1,14 @@
 # What If an MFA Device Is Lost or Stops Working?<a name="id_credentials_mfa_lost-or-broken"></a>
 
-If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
-
 If your [virtual MFA device](id_credentials_mfa_enable_virtual.md) or [hardware MFA device](id_credentials_mfa_enable_physical.md) appears to be functioning properly, but you cannot use it to access your AWS resources, it might be out of synchronization with AWS\. For information about synchronizing a virtual MFA device or hardware MFA device, see [Resynchronizing Virtual and Hardware MFA Devices](id_credentials_mfa_sync.md)\. [U2F security keys](id_credentials_mfa_enable_u2f.md) do not go out of sync\.
 
-If the MFA device associated with an IAM user is lost or stops working, the user can't recover it\. IAM users must contact an administrator to deactivate the device\.
+If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can recover access to your account\. IAM users must contact an administrator to deactivate the device\.
 
-Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\.
+## Recovering a Root User MFA Device<a name="root-mfa-lost-or-broken"></a>
+
+If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
+
+Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\. If you no longer have access to the email or phone, you must contact [AWS Support](https://console.aws.amazon.com/support/home#/)\. They can disable your MFA device so that you can sign in and add a new one\.
 
 **To sign in using alternative factors of authentication as an AWS account root user**
 
@@ -14,7 +16,7 @@ Before you sign in as a root user using alternative factors of authentication, m
 
 1. On the **Amazon Web Services Sign In Using MFA** page, choose **Having problems with your authentication device? Click here**\.
 **Note**  
-You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA setting\.
+You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA device\.
 
 1. If required, type your password again and choose **Sign in**\.
 
@@ -42,6 +44,10 @@ You might see different text, such as **Sign in using MFA** and **Troubleshoot y
 You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your U2F security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new U2F security key\.
 
 1. If your MFA device is missing or stolen, also [change your AWS password](id_credentials_passwords_change-root.md) in case an attacker has stolen the authentication device and might also have your current password\.
+
+## Recovering an IAM User MFA Device<a name="iam-user-mfa-lost-or-broken"></a>
+
+If you are an IAM user and your device is lost or stops working, you can't recover it by yourself\. You must contact an administrator to deactivate the device\. Then you can enable a new device\.
 
 **To get help for an MFA device as an IAM user**
 

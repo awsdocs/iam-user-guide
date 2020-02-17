@@ -16,11 +16,11 @@ You use policies to define the permissions for an identity \(user, group, or rol
 
 When you associate permissions policies with identities \(users, groups, and roles\), terminology and procedures vary depending on whether you are working with a managed or inline policy:
 + **Attach** – Used with managed policies\. You attach a managed policy to an identity \(a user, group, or role\)\. Attaching a policy applies the permissions in the policy to the identity\.
-+ **Detach** – Used with managed policies\. You detach a managed policy from an entity \(a user, group, or role\)\. Detaching a policy removes its permissions from the principal entity\.
++ **Detach** – Used with managed policies\. You detach a managed policy from an IAM identity \(a user, group, or role\)\. Detaching a policy removes its permissions from the identity\.
 + **Embed** – Used with inline policies\. You embed an inline policy in an identity \(a user, group, or role\)\. Embedding a policy applies the permissions in the policy to the identity\. Because an inline policy is stored in the identity, it is embedded rather than attached, though the results are similar\.
 **Note**  
 You can embed an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](https://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
-+ **Delete** – Used with inline policies\. You delete an inline policy from an entity \(a user, group, or role\)\. Deleting a policy removes its permissions from the principal entity\.
++ **Delete** – Used with inline policies\. You delete an inline policy from an IAM identity \(a user, group, or role\)\. Deleting a policy removes its permissions from the identity\.
 **Note**  
 You can delete an inline policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* only in the service that depends on the role\. See the [AWS documentation](https://docs.aws.amazon.com/) for your service to see whether it supports this feature\.
 
@@ -79,9 +79,9 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. Because the linked service defines whether you can modify the permissions of the role, you might be able to add additional policies from the service console, API, or AWS CLI\. To view the service\-linked role documentation for a service, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and choose **Yes** in the **Service\-Linked Role** column for your service\.
 
 1. Choose from the following methods to view the steps required to create your policy:
-   + [Importing Existing Managed Policies](access_policies_create.md#access_policies_create-copy) – You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy or a customer managed policy that you created previously\.
-   + [Creating Policies with the Visual Editor](access_policies_create.md#access_policies_create-visual-editor) – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
-   + [Creating Policies on the JSON Tab](access_policies_create.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
+   + [Importing Existing Managed Policies](access_policies_create-console.md#access_policies_create-copy) – You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy or a customer managed policy that you created previously\.
+   + [Creating Policies with the Visual Editor](access_policies_create-console.md#access_policies_create-visual-editor) – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
+   + [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
 1. After you create an inline policy, it is automatically embedded in your user or role\.
 

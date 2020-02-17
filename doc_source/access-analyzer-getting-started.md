@@ -82,7 +82,7 @@ Access Analyzer defines the following resources:
 
 ### Required Access Analyzer Service Permissions<a name="access-analyzer-permissions-service"></a>
 
-Access Analyzer uses a service\-linked role named `AWSAccessAnalyzerServiceRole` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer to enable Access Analyzer, the service creates the role your account\. For more information, see [Using Service\-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer to enable Access Analyzer, the service creates the role your account\. For more information, see [Using Service\-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
 
 **Note**  
 Access Analyzer is Regional\. You must enable Access Analyzer in each Region independently\.
@@ -112,7 +112,7 @@ To enable Access Analyzer in a Region, you must create an analyzer in that Regio
 
 1. Choose **Create Analyzer**\.
 
-When you create an analyzer to enable Access Analyzer, a service\-linked role named `AWSAccessAnalyzerServiceRole` is created in your account\.
+When you create an analyzer to enable Access Analyzer, a service\-linked role named `AWSServiceRoleForAccessAnalyzer` is created in your account\.
 
 ## Access Analyzer Quotas<a name="access-analyzer-quotas"></a>
 
@@ -122,4 +122,4 @@ Access Analyzer has the following quotas:
 | Resource | Default quota | 
 | --- | --- | 
 |  Maximum analyzers with an account zone of trust  |  1  | 
-|  Maximum archive rules per analyzer  |  100  | 
+|  Maximum archive rules per analyzer  |  100 Each archive rule can have up to 20 values per criterion\.  | 

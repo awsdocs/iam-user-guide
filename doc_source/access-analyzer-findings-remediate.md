@@ -4,6 +4,9 @@ To resolve findings generated from access that you did not intend to allow, modi
 
 After you make a change to resolve a finding, such as modifying a policy applied to an IAM role, Access Analyzer scans the resource again\. If the resource is no longer shared outside of your zone of trust, the status of the finding is changed to Resolved\. The finding is no longer displayed in the **Active findings** table, and instead is displayed in the **Resolved findings** table\.
 
+**Note**  
+This does not apply to Error findings\. When Access Analyzer is not able to access a resource, it generates an error finding\. If you resolve the issue that prevented Access Analyzer from accessing the resource, the error finding is removed completely rather than changing to a resolved finding\.
+
 If the changes you made resulted in the resource being shared outside of your zone of trust, but in a different way, such as with a different principal or for a different permission, Access Analyzer generates a new Active finding\.
 
 **Note**  

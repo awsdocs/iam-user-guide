@@ -26,7 +26,7 @@ Use the following process to configure your app to use Amazon Cognito to authent
 
 1. Go to [Amazon Cognito in the AWS Management Console](https://console.aws.amazon.com/cognito/home)\. Use the Amazon Cognito wizard to create an identity pool, which is a container that Amazon Cognito uses to keep end user identities organized for your apps\. You can share identity pools between apps\. When you set up an identity pool, Amazon Cognito creates one or two IAM roles \(one for authenticated identities, and one for unauthenticated "guest" identities\) that define permissions for Amazon Cognito users\. 
 
-1. Download and integrate the [AWS SDK for iOS](https://aws.amazon.com//sdkforios/) or the [AWS SDK for Android](https://aws.amazon.com//sdkforandroid/) with your app, and import the files required to use Amazon Cognito\.
+1. Download and integrate the [AWS SDK for iOS](https://aws.amazon.com/sdkforios/) or the [AWS SDK for Android](https://aws.amazon.com/sdkforandroid/) with your app, and import the files required to use Amazon Cognito\.
 
 1. Create an instance of the Amazon Cognito credentials provider, passing the identity pool ID, your AWS account number, and the Amazon Resource Name \(ARN\) of the roles that you associated with the identity pool\. The Amazon Cognito wizard in the AWS Management Console provides sample code to help you get started\.
 
