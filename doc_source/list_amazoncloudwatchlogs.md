@@ -82,6 +82,64 @@ The following resource types are defined by this service and can be used in the 
 |   log\-group  |  arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}  |  | 
 |   log\-stream  |  arn:$\{Partition\}:logs:$\{Region\}:$\{Account\}:log\-group:$\{LogGroupName\}:log\-stream:$\{LogStreamName\}  |  | 
 
+### Restricting Permissions to Specific Log-Streams
+
+When restricting action permissions to a specific set of log-streams, you must **also** specify a similar log-group in your resource constraints. For example, assume you have the following log-group:
+
+```
+arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLogGroup
+```
+
+If portions of your application generated log-streams within that log group, their ARNs might look something like this:
+
+```
+arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLogGroup:log-stream:MyApplicationLogStream1
+arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLogGroup:log-stream:MyApplicationLogStream2
+arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLogGroup:log-stream:MyApplicationLogStream3
+```
+
+If you had a separate resource whose only job was to read log data, you would need to specify **both** the log-group and the log-stream resources within your policy statement when granting the GetLogEvents permission:
+
+```
+{
+  "Version" : "2012-10-17",
+  "Statement" : [
+    {
+      "Sid" : "GrantLimitedLogAccess",
+      "Effect" : "Allow",
+      "Action": [
+        "logs:GetLogEvents"
+      "Resource": [
+        "arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLog",
+        "arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLog:log-stream:*
+      ]
+    }
+  ]
+}
+```
+
+This same logic applies to all actions requiring a log-stream resource identifier. If the log-group resource identifier is already included for use by some other action such as logs:CreateLogStream in the same statement, then any log-stream permissions would receive log-group permissions from that resource identifier. Therefore, the following policy would allow the policy holder to create new log-groups and log-streams for your application, as well as write to them:
+
+```
+{
+  "Version" : "2012-10-17",
+  "Statement" : [
+    {
+      "Sid" : "GrantLimitedLogAccess",
+      "Effect" : "Allow",
+      "Action": [
+        "logs:CreateLogGroup"
+        "logs:CreateLogStream,
+        "logs:PutLogEvents"
+      "Resource": [
+        "arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLog",
+        "arn:aws:logs:us-east-1:1234567890:log-group:MyApplicationLog:log-stream:*
+      ]
+    }
+  ]
+}
+```
+
 ## Condition Keys for Amazon CloudWatch Logs<a name="amazoncloudwatchlogs-policy-keys"></a>
 
 CloudWatch Logs has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
