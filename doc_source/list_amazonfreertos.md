@@ -33,7 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ configuration ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw-ug.html)  |  arn:$\{Partition\}:freertos:$\{Region\}:$\{Account\}:configuration/$\{configurationName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfreertos-aws_ResourceTag___TagKey_)   | 
+|   [ configuration ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ocw.html)  |  arn:$\{Partition\}:freertos:$\{Region\}:$\{Account\}:configuration/$\{configurationName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfreertos-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon FreeRTOS<a name="amazonfreertos-policy-keys"></a>
 
@@ -46,6 +46,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  | A tag key that is present in the request that the user makes to Amazon FreeRTOS\. | String | 
-|   aws:ResourceTag/$\{TagKey\}  | The tag key component of a tag attached to an Amazon FreeRTOS resource\. | String | 
-|   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/)  | A tag key that is present in the request that the user makes to Amazon FreeRTOS\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/)  | The tag key component of a tag attached to an Amazon FreeRTOS resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/freertos/latest/userguide/console-tagging-iam.html/)  | The list of all the tag key names associated with the resource in the request\. | String | 

@@ -404,6 +404,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for AWS IoT](list_awsiot.md)
          + [Actions, Resources, and Condition Keys for AWS IoT 1-Click](list_awsiot1-click.md)
          + [Actions, Resources, and Condition Keys for AWS IoT Analytics](list_awsiotanalytics.md)
+         + [Actions, Resources, and Condition Keys for AWS IoT Device Tester](list_awsiotdevicetester.md)
          + [Actions, Resources, and Condition Keys for AWS IoT Events](list_awsiotevents.md)
          + [Actions, Resources, and Condition Keys for AWS IoT Greengrass](list_awsiotgreengrass.md)
          + [Actions, Resources, and Condition Keys for AWS IoT SiteWise](list_awsiotsitewise.md)

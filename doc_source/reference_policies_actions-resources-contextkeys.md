@@ -145,6 +145,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [AWS IoT](list_awsiot.md)
 + [AWS IoT 1\-Click](list_awsiot1-click.md)
 + [AWS IoT Analytics](list_awsiotanalytics.md)
++ [AWS IoT Device Tester](list_awsiotdevicetester.md)
 + [AWS IoT Events](list_awsiotevents.md)
 + [AWS IoT Greengrass](list_awsiotgreengrass.md)
 + [AWS IoT SiteWise](list_awsiotsitewise.md)

@@ -109,3 +109,10 @@ Follow the instructions in [Step 7: Test Updating and Deleting Secrets](tutorial
 
 **Important**  
 Delete all of the secrets that you created to avoid billing charges\. For details about pricing in Secrets Manager, see [AWS Secrets Manager Pricing](https://aws.amazon.com/secrets-manager/pricing/)\.
+
+## Summary<a name="tutorial-abac-saml-summary"></a>
+
+You've now successfully completed all of the steps necessary to use SAML session tags and resource tags for permissions management\.
+
+**Note**  
+You added policies that allow actions only under specific conditions\. If you apply a different policy to your users or roles that has broader permissions, then the actions might not be limited to require tagging\. For example, if you give a user full administrative permissions using the `AdministratorAccess` AWS managed policy, then these policies don't restrict that access\. For more information about how permissions are determined when multiple policies are involved, see [Determining Whether a Request Is Allowed or Denied Within an Account](reference_policies_evaluation-logic.md#policy-eval-denyallow)\.

@@ -348,6 +348,9 @@ The `access-same-project-team` policy that is attached to the roles allows the e
 
 You've now successfully completed all of the steps necessary to use tags for attribute\-based access control \(ABAC\)\. You've learned how to define a tagging strategy\. You applied that strategy to your principals and resources\. You created and applied a policy that enforces the strategy for Secrets Manager\. You also learned that ABAC scales easily when you add new projects and team members\. As a result, you are able to sign in to the IAM console with your test roles and experience how to use tags for ABAC in AWS\.
 
+**Note**  
+You added policies that allow actions only under specific conditions\. If you apply a different policy to your users or roles that has broader permissions, then the actions might not be limited to require tagging\. For example, if you give a user full administrative permissions using the `AdministratorAccess` AWS managed policy, then these policies don't restrict that access\. For more information about how permissions are determined when multiple policies are involved, see [Determining Whether a Request Is Allowed or Denied Within an Account](reference_policies_evaluation-logic.md#policy-eval-denyallow)\.
+
 ## Related Resources<a name="tutorial_abac_related"></a>
 
 For related information in the *IAM User Guide*, see the following resources:

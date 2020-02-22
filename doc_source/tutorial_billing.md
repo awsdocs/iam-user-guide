@@ -31,7 +31,7 @@ Create a test AWS account to use with this tutorial\. In this account create two
 
 ## Step 1: Activate Access to Billing Data on Your AWS Test Account<a name="tutorial-billing-step1"></a>
 
-To learn how to activate billing access for your test users, see [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) in the *AWS Billing and Cost Management User Guide*\.
+To learn how to activate billing access for your test users, see [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) in the *AWS Billing and Cost Management User Guide*\.
 
 **Note**  
 If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
