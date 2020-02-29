@@ -48,6 +48,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ device ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_Device.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}::device:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
 |   [ instanceprofile ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_InstanceProfile.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:instanceprofile:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
 |   [ vpceconfiguration ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_VPCEConfiguration.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:vpceconfiguration:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ testgrid\-project ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridProject.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:testgrid\-project:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
+|   [ testgrid\-session ](https://docs.aws.amazon.com/devicefarm/latest/APIReference/API_TestGridSession.html)  |  arn:$\{Partition\}:devicefarm:$\{Region\}:$\{Account\}:testgrid\-session:$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdevicefarm-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Device Farm<a name="awsdevicefarm-policy-keys"></a>
 

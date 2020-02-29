@@ -39,12 +39,15 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ GetObject ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_GetObject.html)  | Grants permission to retrieve objects\. | Read |  |  |  | 
 |   [ ListContainers ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListContainers.html)  | Grants permission to retrieve a list of containers in the current account\. | List |  |  |  | 
 |   [ ListItems ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_ListItems.html)  | Grants permission to retrieve a list of objects and folders in the current account\. | List |  |  |  | 
+|   [ ListTagsForResource ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_ListTagsForResource.html)  | Grants permission to list tags on any container in the current account\. | Read |  |  |  | 
 |   [ PutContainerPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutContainerPolicy.html)  | Grants permission to create or replace the access policy of any container in the current account\. | Permissions management |  |  |  | 
 |   [ PutCorsPolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutCorsPolicy.html)  | Grants permission to add or modify the CORS policy of any container in the current account\. | Write |  |  |  | 
 |   [ PutLifecyclePolicy ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_PutLifecyclePolicy.html)  | Grants permission to add or modify the lifecycle policy that is assigned to any container in the current account\. | Write |  |  |  | 
 |   [ PutObject ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_objstore_PutObject.html)  | Grants permission to upload objects\. | Write |  |  |  | 
 |   [ StartAccessLogging ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_StartAccessLogging.html)  | Grants permission to enable access logging on any container in the current account\. | Write |  |  |  | 
 |   [ StopAccessLogging ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_StopAccessLogging.html)  | Grants permission to disable access logging on any container in the current account\. | Write |  |  |  | 
+|   [ TagResource ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_TagResource.html)  | Grants permission to add tags to any container in the current account\. | Tagging |  |  |  | 
+|   [ UntagResource ](https://docs.aws.amazon.com/mediastore/latest/apireference/API_UntagResource.html)  | Grants permission to remove tags from any container in the current account\. | Tagging |  |  |  | 
 
 ## Resource Types Defined by AWS Elemental MediaStore<a name="awselementalmediastore-resources-for-iam-policies"></a>
 

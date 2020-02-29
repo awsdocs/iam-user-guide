@@ -296,6 +296,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon API Gateway](list_amazonapigateway.md)
          + [Actions, Resources, and Condition Keys for AWS App Mesh](list_awsappmesh.md)
          + [Actions, Resources, and Condition Keys for AWS App Mesh Preview](list_awsappmeshpreview.md)
+         + [Actions, Resources, and Condition Keys for AWS AppConfig](list_awsappconfig.md)
          + [Actions, Resources, and Condition Keys for Application Auto Scaling](list_applicationautoscaling.md)
          + [Actions, Resources, and Condition Keys for Application Discovery](list_applicationdiscovery.md)
          + [Actions, Resources, and Condition Keys for Application Discovery Arsenal](list_applicationdiscoveryarsenal.md)

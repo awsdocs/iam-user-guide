@@ -165,7 +165,9 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/auth-and-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) | 
+|  [AWS AppConfig](https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-getting-started-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Auto Scaling](https://docs.aws.amazon.com/autoscaling/plans/userguide/auth-and-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/plans/userguide/aws-auto-scaling-service-linked-roles.html) | 
+|  [AWS Chatbot ](https://docs.aws.amazon.com/chatbot/latest/adminguide/security-iam.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/chatbot/latest/adminguide/using-service-linked-roles.html) | 
 |  [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon CloudWatch](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/UsingIAM.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-service-linked-roles.html)¹ | 

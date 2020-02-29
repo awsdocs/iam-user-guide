@@ -34,7 +34,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ event\-source ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}::event\-source/$\{EventSourceName\}  |  | 
-|   [ event\-bus ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:event\-bus/$\{EventBusName\}  |  | 
+|   [ event\-bus ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:event\-bus/$\{EventBusName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoneventbridge-aws_ResourceTag___TagKey_)   | 
 |   [ rule ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:rule/\[$\{EventBusName\}/\]$\{RuleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoneventbridge-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon EventBridge<a name="amazoneventbridge-policy-keys"></a>
