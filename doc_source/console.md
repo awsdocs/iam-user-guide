@@ -17,9 +17,9 @@ If you previously signed in on a different page, your browser might remember thi
 
 You can access the main sign\-in page by going to [https://console.aws.amazon.com/](https://console.aws.amazon.com/)\. 
 
-The main AWS sign\-in page includes a single box where you can enter your AWS account root user email address to sign in as the account owner\. When you enter the root user email address, you are directed to the root user sign\-in page\. 
+On the main AWS sign\-in page, you can choose to sign in as the root user or an IAM user\. Enter your AWS account root user email address to sign in as the account owner\. When you enter the root user email address, you are directed to the root user sign\-in page\. 
 
-Alternatively, you can sign in as an IAM user by entering your account ID or account alias\. When you enter account information, you are directed to the IAM user sign\-in page\.
+To sign in as an IAM user, choose **IAM user** and enter your account ID or account alias\. When you enter account information, you are directed to the IAM user sign\-in page\.
 
 **Main Sign\-in Page**
 
@@ -32,7 +32,7 @@ When you first create an Amazon Web Services \(AWS\) account, you begin with a s
 **Important**  
 We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
 
-To access the root user sign\-in page, you must enter the root user email address on the main sign\-in page\. Then, you can enter your password on this page\.
+To access the root user sign\-in page, you must choose **Root user** and enter the root user email address on the main sign\-in page\. Then you can enter your password on this page\.
 
 **Root User Sign\-in Page**
 
@@ -44,13 +44,13 @@ If you forgot your root user password, choose **Forgot your password?** to reset
 
 ## IAM User Sign\-In Page<a name="user-sign-in-page"></a>
 
-To access the IAM user sign\-in page, you must enter your account ID or alias on the main sign\-in page\. Then you can enter your IAM user name and password on this page\.
+To access the IAM user sign\-in page, choose **IAM user** and enter your account ID or alias on the main sign\-in page\. Then choose **Next** and enter your IAM user name and password on this page\.
 
 **IAM Sign\-in Page**
 
 ![\[IAM User Sign-in Page\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/sign-in-iam-user-capture.png)
 
-To return to the main sign\-in page, choose **Sign\-in using root account credentials**\. 
+To return to the main sign\-in page, choose **Sign\-in using root user email**\. 
 
 If you forgot your IAM password, you can't reset it\. Only your IAM administrator can reset your password\. For more information about resetting passwords, see [Resetting a Lost or Forgotten Root User Password](id_credentials_access-keys_retrieve.md#reset-root-password)\.
 
@@ -81,7 +81,7 @@ IAM users can also sign in at the following general sign\-in endpoint and type a
 ```
 
 **Note**  
-To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper\-right, and then choose **Support Center**\. Your currently signed\-in account number \(ID\) appears in the **Support Center** title bar\.  
+To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper right, and then choose **Support Center**\. Your currently signed\-in account number \(ID\) appears in the **Support Center** title bar\.  
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
 

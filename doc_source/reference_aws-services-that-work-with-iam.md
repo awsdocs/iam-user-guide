@@ -88,7 +88,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/security-iam.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
 |  [AWS CodeStar Notifications](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/security.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/using-service-linked-roles.html) | 
-| [AWS X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) | Yes | No | No | No | Yes | No | 
+| [AWS X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-permissions.html) | Yes | Yes | No | No | Yes | No | 
 
 ¹ CodeBuild supports cross\-account resource sharing via AWS RAM\.
 
@@ -204,6 +204,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  |  |  |  |  |  |  | 
 | --- |--- |--- |--- |--- |--- |--- |
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [AWS Database Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/SMS_setup.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | Yes¹ | Yes | Yes | No | 
 |  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
@@ -231,7 +232,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/auth-and-access-control.html)   | Yes¹ | Yes | No | Yes | Yes | [Yes⁴](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
 |   [AWS Cloud Map](https://docs.aws.amazon.com/cloud-map/latest/dg/auth-and-access-control.html)   | Yes | Yes | No | No | Yes | No | 
 |  [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html)  | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_tags.html) | Yes | No | 
-|  [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-service-linked-roles.html) | 
+|  [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-service-linked-roles.html) | 
 |  [Network Manager](https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/vpc/latest/tgw/nm-service-linked-roles.html) | 
 |  [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Route 53 Resolver](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -396,5 +397,6 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [AWS Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ControllingAccessWebsite.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Marketplace](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Marketplace Catalog](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |   [AWS Private Marketplace](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Yes | No | No | No | No | No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 

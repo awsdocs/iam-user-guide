@@ -49,9 +49,10 @@ In this tutorial, you will tag each resource, tag your project roles, and add po
 
 To perform the steps in this tutorial, you must already have the following:
 + An AWS account that you can sign in to as an IAM user with administrative permissions\. If you have a new account and sign in as the AWS account root user, then [create an IAM admin user](getting-started_create-admin-group.md)\.
-+ Your 12\-digit account ID, which you use to create the roles in step 3\. 
++ Your 12\-digit account ID, which you use to create the roles in step 3\.
 
-  To find your account ID, open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\. At the top of the left navigation pane, view your 12\-digit account ID\.
+  To find your AWS account ID number on the AWS Management Console, choose **Support** on the navigation bar on the upper right, and then choose **Support Center**\. Your currently signed\-in account number \(ID\) appears in the **Support Center** title bar\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/account-id-support-center.console.png)
 + Experience creating and editing IAM users, roles, and policies in the AWS Management Console\. However, if you need help remembering an IAM management process, this tutorial provides links where you can view step\-by\-step instructions\.
 
 ## Step 1: Create Test Users<a name="tutorial_abac_step1"></a>

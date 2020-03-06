@@ -30,11 +30,11 @@ A company like Example Corp typically uses IAM to interact with services like Am
 To provide "perimeter" control, John attaches a policy to the AllUsers group\. This policy denies any AWS request from a user if the originating IP address is outside Example Corp's corporate network\.
 
 At Example Corp, different groups require different permissions:
-+ **System administrators** – Need permission to create and manage AMIs, instances, snapshots, volumes, security groups, and so on\. John attaches a policy to the SysAdmins group that gives members of the group permission to use all the Amazon EC2 actions\.
-+ **Developers** – Need the ability to work with instances only\. John therefore attaches a policy to the Developers group that allows developers to call `DescribeInstances`, `RunInstances`, `StopInstances`, `StartInstances`, and `TerminateInstances`\. 
++ **System administrators** – Need permission to create and manage AMIs, instances, snapshots, volumes, security groups, and so on\. John attaches the `AmazonEC2FullAccess` AWS managed policy to the SysAdmins group that gives members of the group permission to use all the Amazon EC2 actions\.
++ **Developers** – Need the ability to work with instances only\. John therefore creates and attaches a policy to the Developers group that allows developers to call `DescribeInstances`, `RunInstances`, `StopInstances`, `StartInstances`, and `TerminateInstances`\. 
 **Note**  
 Amazon EC2 uses SSH keys, Windows passwords, and security groups to control who has access to the operating system of specific Amazon EC2 instances\. There's no method in the IAM system to allow or deny access to the operating system of a specific instance\.
-+ **Managers** – Should not be able to perform any Amazon EC2 actions except listing the Amazon EC2 resources currently available\. Therefore, John attaches a policy to the Managers group that only lets them call Amazon EC2 "Describe" API operations\.
++ **Managers** – Should not be able to perform any Amazon EC2 actions except listing the Amazon EC2 resources currently available\. Therefore, John creates and attaches a policy to the Managers group that only lets them call Amazon EC2 "Describe" API operations\.
 
 For examples of what these policies might look like, see [Example IAM Identity\-Based Policies](access_policies_examples.md) and [Using AWS Identity and Access Management](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/index.html?UsingIAM.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 

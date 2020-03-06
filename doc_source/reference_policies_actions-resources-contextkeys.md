@@ -84,6 +84,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Compute Optimizer](list_computeoptimizer.md)
 + [AWS Config](list_awsconfig.md)
 + [Amazon Connect](list_amazonconnect.md)
++ [AWS Connector Service](list_awsconnectorservice.md)
 + [AWS Cost and Usage Report](list_awscostandusagereport.md)
 + [AWS Cost Explorer Service](list_awscostexplorerservice.md)
 + [AWS Data Exchange](list_awsdataexchange.md)

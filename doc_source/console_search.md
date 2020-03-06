@@ -1,6 +1,6 @@
 # IAM Console Search<a name="console_search"></a>
 
-As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys, Or you might need to browse to the deeply nested IAM resources to find what you need\. A faster option is to use the IAM console search page to locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
+As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys\. Or you might need to browse to the deeply nested IAM resources to find what you need\. A faster option is to use the IAM console search page\. You can locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
 
 The IAM console search feature can locate any of the following:
 + IAM entity names that match your search keywords \(for users, groups, roles, identity providers, and policies\)

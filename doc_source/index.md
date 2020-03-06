@@ -343,6 +343,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Compute Optimizer](list_computeoptimizer.md)
          + [Actions, Resources, and Condition Keys for AWS Config](list_awsconfig.md)
          + [Actions, Resources, and Condition Keys for Amazon Connect](list_amazonconnect.md)
+         + [Actions, Resources, and Condition Keys for AWS Connector Service](list_awsconnectorservice.md)
          + [Actions, Resources, and Condition Keys for AWS Cost and Usage Report](list_awscostandusagereport.md)
          + [Actions, Resources, and Condition Keys for AWS Cost Explorer Service](list_awscostexplorerservice.md)
          + [Actions, Resources, and Condition Keys for AWS Data Exchange](list_awsdataexchange.md)

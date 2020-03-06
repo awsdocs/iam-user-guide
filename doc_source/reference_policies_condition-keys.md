@@ -559,7 +559,13 @@ Works with [Boolean operators](reference_policies_elements_condition_operators.m
 Use this key to check whether an AWS service makes a request to another service on your behalf\.
 
 The request context key returns `true` when a service uses the credentials of an IAM principal to make a request on behalf of the principal\. The context key returns `false` if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\. The request context key also returns `false` when the principal makes the call directly\.
-+ **Availability** – This key is always included in the request context\.
++ **Availability** – This key is always included in the request context for most services\.
+
+The following services do not currently support `aws:ViaAWSService`:
++ Amazon EC2
++ AWS Glue
++ AWS Lake Formation
++ AWS OpsWorks
 
 You can use this condition key to allow or deny access based on whether a request was made by a service\. To view an example policy, see [AWS: Denies Access to AWS Based on the Source IP](reference_policies_examples_aws_deny-ip.md)\.
 
