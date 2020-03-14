@@ -26,11 +26,15 @@ For details about the columns in the following table, see [The Actions Table](re
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ CancelChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_CancelChangeSet.html)  | Cancels a running change set\. | Write |  |  |  | 
+|   CompleteTask  | Complete an existing task and submit the content to the associated change\. | Write |  |  |  | 
 |   [ DescribeChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeChangeSet.html)  | Returns the details of an existing change set\. | Read |  |  |  | 
 |   [ DescribeEntity ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_DescribeEntity.html)  | Returns the details of an existing entity\. | Read |  |  |  | 
+|   DescribeTask  | Returns the details of an existing task\. | Read |  |  |  | 
 |   [ ListChangeSets ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListChangeSets.html)  | Lists existing change sets\. | Read |  |  |  | 
 |   [ ListEntities ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_ListEntities.html)  | Lists existing entities\. | Read |  |  |  | 
+|   ListTasks  | Lists existing tasks\. | List |  |  |  | 
 |   [ StartChangeSet ](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_Operations.htmlAPI_StartChangeSet.html)  | Requests a new change set\. | Write |  |   [ catalog:ChangeType ](#awsmarketplacecatalog-catalog_ChangeType)   |  | 
+|   UpdateTask  | Update the content of an existing task\. | Write |  |  |  | 
 
 ## Resource Types Defined by AWS Marketplace Catalog<a name="awsmarketplacecatalog-resources-for-iam-policies"></a>
 

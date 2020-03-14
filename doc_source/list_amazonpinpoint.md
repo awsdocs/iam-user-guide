@@ -38,6 +38,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ journeys ](https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-journeys.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/journeys/$\{JourneyId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   | 
 |   [ segments ](https://docs.aws.amazon.com/pinpoint/latest/apireference/rest-api-segments.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:apps/$\{AppId\}/segments/$\{SegmentId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   | 
 |   [ templates ](https://docs.aws.amazon.com/pinpoint/latest/apireference/templates.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:templates/$\{TemplateName\}/$\{ChannelType\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonpinpoint-aws_ResourceTag___TagKey_)   | 
+|   [ recommenders ](https://docs.aws.amazon.com/pinpoint/latest/apireference/recommenders.html)  |  arn:$\{Partition\}:mobiletargeting:$\{Region\}:$\{Account\}:recommenders/$\{RecommenderId\}  |  | 
 
 ## Condition Keys for Amazon Pinpoint<a name="amazonpinpoint-policy-keys"></a>
 

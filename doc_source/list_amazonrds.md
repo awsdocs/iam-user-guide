@@ -5,7 +5,7 @@ Amazon RDS \(service prefix: `rds`\) provides the following service\-specific re
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon RDS](#amazonrds-actions-as-permissions)
@@ -64,24 +64,24 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 
-|   [ rds:DatabaseClass ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A type of DB instance class\. | String | 
-|   [ rds:DatabaseEngine ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A database engine, such as MySQL\. | String | 
-|   [ rds:DatabaseName ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | The user\-defined name of the database on the DB instance\. | String | 
-|   [ rds:EndpointType ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | The type of the endpoint\. One of: READER, WRITER, CUSTOM\. | String | 
-|   [ rds:MultiAz ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that specifies whether the DB instance runs in multiple Availability Zones\. To indicate that the DB instance is using Multi\-AZ, specify true\. | Boolean | 
-|   [ rds:Piops ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that contains the number of Provisioned IOPS \(PIOPS\) that the instance supports\. To indicate a DB instance that does not have PIOPS enabled, specify 0\. | Numeric | 
-|   [ rds:StorageEncrypted ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that specifies whether the DB instance storage should be encrypted\. To enforce storage encryption, specify true\. | Boolean | 
-|   [ rds:StorageSize ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | The storage volume size \(in GB\)\. | Numeric | 
-|   [ rds:Vpc ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud \(Amazon VPC\)\. To indicate that the DB instance runs in an Amazon VPC, specify true\. | Boolean | 
-|   [ rds:cluster\-pg\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB cluster parameter group\. | String | 
-|   [ rds:cluster\-snapshot\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB cluster snapshot\. | String | 
-|   [ rds:cluster\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB cluster\. | String | 
-|   [ rds:db\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB instance\. | String | 
-|   [ rds:es\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to an event subscription\. | String | 
-|   [ rds:og\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB option group\. | String | 
-|   [ rds:pg\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB parameter group\. | String | 
-|   [ rds:req\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | Limits the set of tag keys and values that can be used to tag a resource\. | String | 
-|   [ rds:ri\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a reserved DB instance\. | String | 
-|   [ rds:secgrp\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB security group\. | String | 
-|   [ rds:snapshot\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB snapshot\. | String | 
-|   [ rds:subgrp\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.Conditions.html)  | A tag attached to a DB subnet group\. | String | 
+|   [ rds:DatabaseClass ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A type of DB instance class\. | String | 
+|   [ rds:DatabaseEngine ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A database engine, such as MySQL\. | String | 
+|   [ rds:DatabaseName ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | The user\-defined name of the database on the DB instance\. | String | 
+|   [ rds:EndpointType ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | The type of the endpoint\. One of: READER, WRITER, CUSTOM\. | String | 
+|   [ rds:MultiAz ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A value that specifies whether the DB instance runs in multiple Availability Zones\. To indicate that the DB instance is using Multi\-AZ, specify true\. | Boolean | 
+|   [ rds:Piops ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A value that contains the number of Provisioned IOPS \(PIOPS\) that the instance supports\. To indicate a DB instance that does not have PIOPS enabled, specify 0\. | Numeric | 
+|   [ rds:StorageEncrypted ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A value that specifies whether the DB instance storage should be encrypted\. To enforce storage encryption, specify true\. | Boolean | 
+|   [ rds:StorageSize ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | The storage volume size \(in GB\)\. | Numeric | 
+|   [ rds:Vpc ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A value that specifies whether the DB instance runs in an Amazon Virtual Private Cloud \(Amazon VPC\)\. To indicate that the DB instance runs in an Amazon VPC, specify true\. | Boolean | 
+|   [ rds:cluster\-pg\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB cluster parameter group\. | String | 
+|   [ rds:cluster\-snapshot\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB cluster snapshot\. | String | 
+|   [ rds:cluster\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB cluster\. | String | 
+|   [ rds:db\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB instance\. | String | 
+|   [ rds:es\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to an event subscription\. | String | 
+|   [ rds:og\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB option group\. | String | 
+|   [ rds:pg\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB parameter group\. | String | 
+|   [ rds:req\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | Limits the set of tag keys and values that can be used to tag a resource\. | String | 
+|   [ rds:ri\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a reserved DB instance\. | String | 
+|   [ rds:secgrp\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB security group\. | String | 
+|   [ rds:snapshot\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB snapshot\. | String | 
+|   [ rds:subgrp\-tag/$\{TagKey\} ](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/security_iam_service-with-iam.html#UsingWithRDS.IAM.Conditions)  | A tag attached to a DB subnet group\. | String | 

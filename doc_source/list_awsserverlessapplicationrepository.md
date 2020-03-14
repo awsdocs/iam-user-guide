@@ -17,23 +17,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   CreateApplication  | Creates an application, optionally including an AWS SAM file to create the first application version in the same call\. | Write |  |  |  | 
-|   CreateApplicationVersion  | Creates an application version\. | Write |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   CreateCloudFormationChangeSet  | Creates an AWS CloudFormation ChangeSet for the given application\. | Write |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   CreateCloudFormationTemplate  | Creates an AWS CloudFormation template | Write |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   DeleteApplication  | Delete the specified Application | Write |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   GetApplication  | Gets the specified application\. | Read |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   GetApplicationPolicy  | Gets the policy for the specified application\. | Read |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   GetCloudFormationTemplate  | Gets the specified AWS CloudFormation template | Read |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   ListApplicationDependencies  | Retrieves the list of applications nested in the containing application | List |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   ListApplicationVersions  | Lists versions for the specified application owned by the requester\. | List |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   ListApplications  | Lists applications owned by the requester\. | List |  |  |  | 
-|   PutApplicationPolicy  | Puts the policy for the specified application\. | Write |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
-|   SearchApplications  | Gets all applications authorized for this user | Read |  |  |  | 
-|   UpdateApplication  | Updates meta\-data of the application | Write |   [ applications\* ](#awsserverlessapplicationrepository-applications)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsserverlessapplicationrepository.html)
 
 ## Resource Types Defined by AWS Serverless Application Repository<a name="awsserverlessapplicationrepository-resources-for-iam-policies"></a>
 
@@ -48,4 +32,13 @@ The following resource types are defined by this service and can be used in the 
 
 ## Condition Keys for AWS Serverless Application Repository<a name="awsserverlessapplicationrepository-policy-keys"></a>
 
-Serverless Application Repository has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Serverless Application Repository defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   serverlessrepo:applicationType  | Application type | String | 

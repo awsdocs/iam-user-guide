@@ -44,6 +44,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ trigger ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:trigger/$\{TriggerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 
 |   [ crawler ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:crawler/$\{CrawlerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 
 |   [ workflow ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:workflow/$\{WorkflowName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 
+|   [ mlTransform ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:mlTransform/$\{TransformId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Glue<a name="awsglue-policy-keys"></a>
 

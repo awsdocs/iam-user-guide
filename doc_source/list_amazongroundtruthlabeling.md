@@ -3,7 +3,9 @@
 Amazon GroundTruth Labeling \(service prefix: `groundtruthlabeling`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon GroundTruth Labeling](#amazongroundtruthlabeling-actions-as-permissions)
@@ -23,10 +25,10 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ DescribeConsoleJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_DescribeConsoleJob.html) \[permission only\] | Get status of GroundTruthLabeling Jobs | Read |  |  |  | 
-|   [ ListDatasetObjects ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_ListDatasetObjects.html) \[permission only\] | Paginated list api to list dataset objects in a manifest file | Read |  |  |  | 
-|   [ RunFilterOrSampleDatasetJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunFilterOrSampleDatasetJob.html) \[permission only\] | Filter records from a manifest file using S3 select\. Get Sample entries based on random sampling\. | Write |  |  |  | 
-|   [ RunGenerateManifestByCrawlingJob ](https://docs.aws.amazon.com/groundtruthlabeling/latest/APIReference/API_RunGenerateManifestByCrawlingJob.html) \[permission only\] | List a S3 prefix and create manifest files from objects in there\. | Write |  |  |  | 
+|   [ DescribeConsoleJob ](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file) \[permission only\] | Get status of GroundTruthLabeling Jobs\. | Read |  |  |  | 
+|   [ ListDatasetObjects ](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file) \[permission only\] | Paginated list API to list dataset objects in a manifest file\. | Read |  |  |  | 
+|   [ RunFilterOrSampleDatasetJob ](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-data-filtering) \[permission only\] | Filter records from a manifest file using S3 select\. Get sample entries based on random sampling\. | Write |  |  |  | 
+|   [ RunGenerateManifestByCrawlingJob ](https://docs.aws.amazon.com/sagemaker/latest/dg/sms-data-input.html#sms-console-create-manifest-file) \[permission only\] | List a S3 prefix and create manifest files from objects in that location\. | Write |  |  |  | 
 
 ## Resource Types Defined by Amazon GroundTruth Labeling<a name="amazongroundtruthlabeling-resources-for-iam-policies"></a>
 

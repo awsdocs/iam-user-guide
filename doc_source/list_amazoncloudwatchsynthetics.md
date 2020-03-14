@@ -25,14 +25,15 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateAlarmSettings ](${APIReferenceDocPage}API_CreateAlarmSettings.html)  | Creates alarm settings\. | Write |  |  |  | 
 |   [ CreateCanary ](${APIReferenceDocPage}API_CreateCanary.html)  | Create a canary\. | Write |  |  |  | 
 |   [ DeleteCanary ](${APIReferenceDocPage}API_DeleteCanary.html)  | Deletes a canary\. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 |   [ DescribeCanaries ](${APIReferenceDocPage}API_DescribeCanaries.html)  | Returns information of all canaries or a canary\. | Read |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 |   [ DescribeTestRuns ](${APIReferenceDocPage}API_DescribeTestRuns.html)  | Returns information about all the test runs associated with a canary\. | Read |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ GetAlarmSettings ](${APIReferenceDocPage}API_GetAlarmSettings.html)  | Returns information for an alarm setting\. | Read |  |  |  | 
+|   [ ListTagsForResource ](${APIReferenceDocPage}API_ListTagsForResource.html)  | Returns a list of all tags and values associated with a canary\. | Read |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 |   [ StartCanary ](${APIReferenceDocPage}API_StartCanary.html)  | Starts a canary, so that Amazon Synthetics starts monitoring a website\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 |   [ StopCanary ](${APIReferenceDocPage}API_StopCanary.html)  | Stops a canary\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ TagResource ](${APIReferenceDocPage}API_TagResource.html)  | Adds one or more tags to a canary\. | Write |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ UntagResource ](${APIReferenceDocPage}API_UntagResource.html)  | Removes one or more tags from a canary\. | Write |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 |   [ UpdateCanary ](${APIReferenceDocPage}API_UpdateCanary.html)  | Updates a canary\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 
 ## Resource Types Defined by Amazon CloudWatch Synthetics<a name="amazoncloudwatchsynthetics-resources-for-iam-policies"></a>

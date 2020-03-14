@@ -33,8 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ keyspace ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:keyspace/$\{KeyspaceName\}  |  | 
-|   [ table ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:keyspace/$\{KeyspaceName\}/table/$\{tableName\}  |  | 
+|   [ keyspace ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:/keyspace/$\{KeyspaceName\}/  |  | 
+|   [ table ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:/keyspace/$\{KeyspaceName\}/table/$\{tableName\}  |  | 
 
 ## Condition Keys for AWS Managed Apache Cassandra Service<a name="awsmanagedapachecassandraservice-policy-keys"></a>
 

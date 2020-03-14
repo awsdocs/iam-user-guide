@@ -143,10 +143,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 | [Amazon CodeGuru Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/security-iam.html) | Yes | Yes | No | No | Yes | No | 
 | [Amazon CodeGuru Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html) | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/using-service-linked-roles.html) | 
-| [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) | Yes | No | No | Yes | Yes | No | 
+| [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) | Yes | Yes | No | Yes | Yes | No | 
 | [AWS DeepRacer](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-security.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-understand-required-permissions-and-iam-roles.html) | 
 |  [Forecast](https://docs.aws.amazon.com/forecast/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Fraud Detector](https://docs.aws.amazon.com/frauddetector/latest/ug/set-up.html#set-up-iam-admin)  | Yes | No | No | No | Yes | No | 
+|  [Ground Truth Labeling](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/security-iam.html)  | Yes | Yes | No | No | Yes | No | 
 | [Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/auth-and-access-control.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/lex/latest/dg/howitworks-service-permissions.html) | 
 |  [Amazon Machine Learning](https://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam)  | Yes | Yes | No | Yes | Yes | No | 
