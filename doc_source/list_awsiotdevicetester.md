@@ -25,7 +25,11 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ CheckVersion ](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Grants permission for IoT Device Tester to check if a given set of product, test suite and device tester version are compatible | Read |  |  |  | 
+|   [ DownloadTestSuite ](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Grants permission for IoT Device Tester to download compatible test suite versions | Read |  |  |  | 
+|   [ LatestIdt ](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Grants permission for IoT Device Tester to get information on latest version of device tester available | Read |  |  |  | 
 |   [ SendMetrics ](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Grants permissions for IoT Device Tester to send usage metrics on your behalf | Write |  |  |  | 
+|   [ SupportedVersion ](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Grants permission for IoT Device Tester to get list of supported products and test suite versions | Read |  |  |  | 
 
 ## Resource Types Defined by AWS IoT Device Tester<a name="awsiotdevicetester-resources-for-iam-policies"></a>
 

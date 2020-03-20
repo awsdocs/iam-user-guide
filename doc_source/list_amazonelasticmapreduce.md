@@ -20,6 +20,9 @@ The **Resource Types** column indicates whether each action supports resource\-l
 
 For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
+**Note**  
+The DescribeJobFlows API is deprecated and will eventually be removed\. We recommend you use ListClusters, DescribeCluster, ListSteps, ListInstanceGroups and ListBootstrapActions instead\.
+
 
 ****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticmapreduce.html)

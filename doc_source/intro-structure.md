@@ -24,7 +24,7 @@ Identities
 The IAM resource objects that are used to identify and group\. You can attach a policy to an IAM identity\. These include users, groups, and roles\.
 
 Entities  
-The IAM resource objects that AWS uses for authentication\. These include users and roles\. Roles can be assumed by IAM users and roles in your or another account\. They can also be assumed by users federated through a web identity or SAML\. 
+The IAM resource objects that AWS uses for authentication\. These include IAM users, federated users, and assumed IAM roles\. 
 
 Principals  
 A person or application that uses the AWS account root user, an IAM user, or an IAM role to sign in and make requests to AWS\.

@@ -59,6 +59,7 @@ To view the global condition keys that are available to all services, see [Avail
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
 |   [ iam:AWSServiceName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AWSServiceName)  | Filters access by the AWS service to which this role is attached | String | 
+|   [ iam:AssociatedResourceArn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_AssociatedResourceArn)  | Filters by the resource that the role will be used on behalf of | ARN | 
 |   [ iam:OrganizationsPolicyId ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_OrganizationsPolicyId)  | Filters access by the ID of an AWS Organizations policy | String | 
 |   [ iam:PassedToService ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PassedToService)  | Filters access by the AWS service to which this role is passed | String | 
 |   [ iam:PermissionsBoundary ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_PermissionsBoundary)  | Filters access if the specified policy is set as the permissions boundary on the IAM entity \(user or role\) | String | 

@@ -5,7 +5,7 @@ AWS CodePipeline \(service prefix: `codepipeline`\) provides the following servi
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/codepipeline/latest/userguide/)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/codepipeline/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/codepipeline/latest/userguide/auth-and-access-control.html) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/codepipeline/latest/userguide/security-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS CodePipeline](#awscodepipeline-actions-as-permissions)

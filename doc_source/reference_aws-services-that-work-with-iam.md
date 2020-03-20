@@ -273,7 +273,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Data Exchange](https://docs.aws.amazon.com/data-exchange/latest/userguide/auth-access.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Data Pipeline](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-concepts-roles.html)  | Yes | No | No | Yes | Yes | No | 
 |  [Amazon Elasticsearch Service](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies)  | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/slr-es.html) | 
-|  [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)  | Yes | No | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/using-service-linked-roles.html) | 
+|  [Amazon EMR](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/emr/latest/ManagementGuide/using-service-linked-roles.html) | 
 |  [AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/authentication-and-access-control.html)  | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html) | Yes | No | 
 |  [Amazon Kinesis Data Analytics](https://docs.aws.amazon.com/kinesisanalytics/latest/dev/authentication-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 | [Amazon Kinesis Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/controlling-access.html) | Yes | Yes | No | Yes | Yes | No | 
@@ -304,7 +304,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 | Alexa for Business  | Yes | Yes | No | No | Yes | No | 
 | [Amazon Chime](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/chime/latest/ag/using-service-linked-roles.html) | 
-|  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/iam_users_groups.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/workmail/latest/adminguide/using-service-linked-roles.html) | 
+|  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/workmail/latest/adminguide/using-service-linked-roles.html) | 
 
 ## Satellite Services<a name="satellite_svcs"></a>
 
@@ -363,6 +363,16 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
 |  [Amazon Sumerian](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 
+## Customer Enablement Services<a name="enablement_svcs"></a>
+
+
+|  |  |  |  |  |  |  | 
+| --- |--- |--- |--- |--- |--- |--- |
+|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  [AWS IQ](https://docs.aws.amazon.com/aws-iq/latest/user-guide/security.html)  | No | No | No | No | Yes | No | 
+|  [AWS IQ Permissions](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/working-with-permissions-requests.html)  | No | No | No | No | Yes | No | 
+|  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 
+
 ## Customer Engagement Services<a name="engagement_svcs"></a>
 
 
@@ -400,4 +410,3 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Marketplace](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Marketplace Catalog](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |   [AWS Private Marketplace](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Yes | No | No | No | No | No | 
-|  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 
