@@ -194,7 +194,7 @@ Each statement serves a different purpose:
                 "iam:CreateGroup",
                 "iam:GetGroup",
                 "iam:DeleteGroup",
-                "iam:UpdateGroup"
+                "iam:UpdateGroup",
                 "iam:CreatePolicy",
                 "iam:DeletePolicy",
                 "iam:DeletePolicyVersion",

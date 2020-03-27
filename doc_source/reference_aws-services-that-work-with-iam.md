@@ -13,9 +13,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Compute Services<a name="compute_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Batch](https://docs.aws.amazon.com/batch/latest/userguide/IAM_policies.html)  | Yes | [Yes](https://docs.aws.amazon.com/batch/latest/userguide/batch-supported-iam-actions-resources.html) | No | No | Yes | No | 
 |  [Amazon Elastic Compute Cloud \(Amazon EC2\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html)  | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources) | Yes | Yes¹ | 
 |  [Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/latest/userguide/control-access-using-iam.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) | 
@@ -40,9 +39,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Storage Services<a name="storage_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Backup](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS Backup Storage](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Elastic Block Store \(Amazon EBS\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using                 .html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -61,9 +59,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Database Services<a name="database_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html)  | Yes | No¹ | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/using-service-linked-roles.html) | 
 |  [AWS Managed Apache Cassandra Service \(MCS\)](https://docs.aws.amazon.com/mcs/latest/devguide/identity-and-access-mgmt.html)  | Yes | Yes | No | No | Yes | No | 
@@ -78,9 +75,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Developer Tools Services<a name="deploy_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/cloud9/latest/user-guide/using-service-linked-roles.html) | 
 |  [CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html)  | Yes | Yes | Yes¹ | Yes² | Yes | No | 
 |  [CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -97,9 +93,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Security, Identity, and Compliance Services<a name="admin_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Certificate Manager Private Certificate Authority \(ACM\)](https://docs.aws.amazon.com/acm-pca/latest/userguide/auth-toplevel.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Artifact](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/authen-toplevel.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -138,9 +133,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Machine Learning Services<a name="machine_learning"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 | [Amazon CodeGuru Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/security-iam.html) | Yes | Yes | No | No | Yes | No | 
 | [Amazon CodeGuru Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html) | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/using-service-linked-roles.html) | 
 | [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) | Yes | Yes | No | Yes | Yes | No | 
@@ -162,9 +156,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Management and Governance Services<a name="management_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/auth-and-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) | 
 |  [AWS AppConfig](https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-getting-started-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Auto Scaling](https://docs.aws.amazon.com/autoscaling/plans/userguide/auth-and-access-control.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/autoscaling/plans/userguide/aws-auto-scaling-service-linked-roles.html) | 
@@ -202,9 +195,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Migration and Transfer Services<a name="migration_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/SMS_setup.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | Yes¹ | Yes | Yes | No | 
@@ -216,18 +208,16 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Mobile Services<a name="mobile_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Device Farm](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Networking and Content Delivery Services<a name="networking_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  | Yes | Yes | Yes | Yes | Yes | Yes | 
 |   [AWS App Mesh](https://docs.aws.amazon.com/app-mesh/latest/userguide/IAM_policies.html)   | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/app-mesh/latest/userguide/using-service-linked-roles.html) | 
 |   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/auth-and-access-control.html)   | Yes¹ | Yes | No | Yes | Yes | [Yes⁴](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
@@ -250,9 +240,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Media Services<a name="media_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Elastic Transcoder](https://docs.aws.amazon.com/elastictranscoder/latest/developerguide/security.html)  | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaConnect](https://docs.aws.amazon.com/mediaconnect/latest/ug/auth-and-access-control.html) | Yes | Yes | No | No | Yes | No | 
 | [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/auth-and-access-control.html) | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/mediaconvert/latest/ug/example-policies.html#example-policy-tag-based-access-control-using-resource-tags) | Yes | No | 
@@ -265,9 +254,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Analytics Services<a name="analytics_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/access.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon CloudSearch](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configureaccess.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Data Exchange](https://docs.aws.amazon.com/data-exchange/latest/userguide/auth-access.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -285,9 +273,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Application Integration Services<a name="app_integration_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon EventBridge Schemas](https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-security.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -299,9 +286,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Business Applications Services<a name="enterprise_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 | Alexa for Business  | Yes | Yes | No | No | Yes | No | 
 | [Amazon Chime](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/chime/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/workmail/latest/adminguide/using-service-linked-roles.html) | 
@@ -309,17 +295,15 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Satellite Services<a name="satellite_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Ground Station](https://docs.aws.amazon.com/ground-station/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Internet of Things Services<a name="iot_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS IoT Greengrass](https://docs.aws.amazon.com/greengrass/latest/userguide/gg-ug.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html)  | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/policy-actions.html) | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/action-resources.html) | Yes¹ | [Yes](https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot-iam.html) | Yes | No | 
 |  [AWS IoT Analytics](https://docs.aws.amazon.com/iotanalytics/latest/userguide/security.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -334,41 +318,36 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Robotics Services<a name="robotics_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [RoboMaker](https://docs.aws.amazon.com/robomaker/latest/dg/what-is-robomaker.html)  | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/robomaker/latest/dg/auth-and-access-control.html) | No | [Yes](https://docs.aws.amazon.com/robomaker/latest/dg/using-service-linked-roles.html) | 
 
 ## Blockchain Services<a name="blockchain_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Managed Blockchain](https://docs.aws.amazon.com/managed-blockchain/latest/managementguide/managed-blockchain-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 
 ## Game Development Services<a name="game_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon GameLift](https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-intro.html)  | Yes | Yes | No | No | Yes | No | 
 
 ## AR & VR Services<a name="arvr_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Sumerian](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | Yes | Yes | No | No | Yes | No | 
 
 ## Customer Enablement Services<a name="enablement_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS IQ](https://docs.aws.amazon.com/aws-iq/latest/user-guide/security.html)  | No | No | No | No | Yes | No | 
 |  [AWS IQ Permissions](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/working-with-permissions-requests.html)  | No | No | No | No | Yes | No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 
@@ -376,9 +355,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Customer Engagement Services<a name="engagement_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
 |  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/UsingWithIAM.html)  | Yes | Yes¹ | Yes | Yes | Yes² | No | 
@@ -390,9 +368,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## End User Computing Services<a name="end-user-computing_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon AppStream](https://docs.aws.amazon.com/appstream/latest/developerguide/appstream-security.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon AppStream 2\.0](https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-access.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon WAM](http://docs.aws.amazon.com/wam/latest/adminguide/iam.html)  | Yes | No | No | No | Yes | No | 
@@ -403,9 +380,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 ## Additional Resources<a name="resources_svcs"></a>
 
 
-|  |  |  |  |  |  |  | 
-| --- |--- |--- |--- |--- |--- |--- |
-|  Service  |  Actions  |  Resource\-level permissions  | Resource\-based policies |  Authorization based on tags  |  Temporary credentials  |  Service\-linked roles  | 
+|  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
+| --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ControllingAccessWebsite.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Marketplace](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Marketplace Catalog](https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/api-access-control.html)  | Yes | Yes | No | No | Yes | No | 

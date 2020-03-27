@@ -9,7 +9,7 @@ This workflow has three basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Create a Policy to Enforce MFA Sign\-In](#tutorial_mfa_step1)**  
-Create a customer managed policy that prohibits all actions ***except*** the few IAM actions that allow a user to change their own credentials and manage their MFA devices on the **My Security Credentials** page\. For more information about accessing that page
+Create a customer managed policy that prohibits all actions ***except*** the few IAM actions that allow a user to change their own credentials and manage their MFA devices on the **My Security Credentials** page\. For more information about accessing that page, see [How IAM Users Change Their Own Password \(Console\)](id_credentials_passwords_user-change-own.md#ManagingUserPwdSelf-Console)\.
 
 **[Step 2: Attach Policies to Your Test Group](#tutorial_mfa_step2)**  
 Create a group whose members have full access to all Amazon EC2 actions if they sign in with MFA\. To create such a group, you attach both the AWS managed policy called `AmazonEC2FullAccess` and the customer managed policy you created in the first step\.

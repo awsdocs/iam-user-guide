@@ -12,7 +12,7 @@ If you use condition keys that are available only in some circumstances, you can
 }
 ```
 
-Global condition keys are condition keys with an `aws:` prefix\. AWS services can provide service\-specific keys that include the service prefix\. For example, IAM condition keys include the `iam:` prefix\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) and choose the service whose keys you want to view\.
+Global condition keys are condition keys with an `aws:` prefix\. AWS services can support global condition keys or provide service\-specific keys that include their service prefix\. For example, IAM condition keys include the `iam:` prefix\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md) and choose the service whose keys you want to view\.
 
 ## aws:CalledVia<a name="condition-keys-calledvia"></a>
 

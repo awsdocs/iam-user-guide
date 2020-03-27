@@ -6,7 +6,7 @@ You can also use tags in AWS STS to add custom attributes when you assume a role
 
 ## Choose an AWS Tag Naming Convention<a name="id_tags_naming"></a>
 
-When you begin attaching tags to your IAM users and roles, choose your tag naming convention carefully\. Apply the same convention to all of your AWS tags\. This is especially important if you use tags in policies to control access to AWS resources\. If you already use tags in AWS, review your naming convention and adjust it accordingly\. To learn more about creating a naming strategy, see [AWS Tagging Best Practices](https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf)\.
+When you begin attaching tags to your IAM users and roles, choose your tag naming convention carefully\. Apply the same convention to all of your AWS tags\. This is especially important if you use tags in policies to control access to AWS resources\. If you already use tags in AWS, review your naming convention and adjust it accordingly\. To learn more about tagging categories and strategies, see [AWS Tagging AWS Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) in the *AWS General Reference Guide*\. To view tagging use cases and best practices, download the *[Tagging Best Practices](https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf)* whitepaper\.
 
 ## Rules for Tagging in IAM And AWS STS<a name="id_tags_rules"></a>
 
