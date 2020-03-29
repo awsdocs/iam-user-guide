@@ -211,7 +211,7 @@ Use this key to compare the account to which the requesting principal belongs wi
 
 ## aws:PrincipalArn<a name="condition-keys-principalarn"></a>
 
-Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
