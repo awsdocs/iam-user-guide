@@ -35,7 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ alarm ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html)  |  arn:$\{Partition\}:cloudwatch:$\{Region\}:$\{Account\}:alarm:$\{AlarmName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncloudwatch-aws_ResourceTag___TagKey_)   | 
 |   [ dashboard ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html)  |  arn:$\{Partition\}:cloudwatch::$\{Account\}:dashboard/$\{DashboardName\}  |  | 
-|   [ insight\-rule ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html)  |  arn:$\{Partition\}:cloudwatch:$\{Region\}:$\{Account\}:insight\-rule/$\{InsightRuleName\}  |  | 
+|   [ insight\-rule ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html)  |  arn:$\{Partition\}:cloudwatch:$\{Region\}:$\{Account\}:insight\-rule/$\{InsightRuleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncloudwatch-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon CloudWatch<a name="amazoncloudwatch-policy-keys"></a>
 

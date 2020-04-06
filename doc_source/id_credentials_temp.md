@@ -33,7 +33,7 @@ For mobile applications, we recommend that you use Amazon Cognito\. You can use 
 
 ### Roles for Cross\-account Access<a name="role_cross-account"></a>
 
-Many organizations maintain more than one AWS account\. Using roles and cross\-account access, you can define user identities in one account, and use those identities to access AWS resources in other accounts that belong to your organization\. This is known as the *delegation* approach to temporary access\. For more information about creating cross\-account roles, see [Creating a Role to Delegate Permissions to an IAM User](id_roles_create_for-user.md)\. To learn whether principals in accounts outside of your zone of trust \(trusted organization, OU, or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
+Many organizations maintain more than one AWS account\. Using roles and cross\-account access, you can define user identities in one account, and use those identities to access AWS resources in other accounts that belong to your organization\. This is known as the *delegation* approach to temporary access\. For more information about creating cross\-account roles, see [Creating a Role to Delegate Permissions to an IAM User](id_roles_create_for-user.md)\. To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 
 ### Roles for Amazon EC2<a name="role_ec2"></a>
 

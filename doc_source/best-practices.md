@@ -162,7 +162,7 @@ For more information, see [Using an IAM Role to Grant Permissions to Application
 
 ## Use Roles to Delegate Permissions<a name="delegate-using-roles"></a>
 
-Don't share security credentials between accounts to allow users from another AWS account to access resources in your AWS account\. Instead, use IAM roles\. You can define a role that specifies what permissions the IAM users in the other account are allowed\. You can also designate which AWS accounts have the IAM users that are allowed to assume the role\. To learn whether principals in accounts outside of your zone of trust \(trusted organization, OU, or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
+Don't share security credentials between accounts to allow users from another AWS account to access resources in your AWS account\. Instead, use IAM roles\. You can define a role that specifies what permissions the IAM users in the other account are allowed\. You can also designate which AWS accounts have the IAM users that are allowed to assume the role\. To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 
 For more information, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
 

@@ -12,7 +12,7 @@ You can specify any of the following principals in a policy:
 + Anonymous users \(not recommended\)
 
 Use the `Principal` element in these ways:
-+ In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. To learn whether principals in accounts outside of your zone of trust \(trusted organization, OU, or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
++ In IAM roles, use the `Principal` element in the role's trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 **Note**  
 After you create the role, you can change the account to "\*" to allow everyone to assume the role\. If you do this, we strongly recommend that you limit who can access the role through other means, such as a `Condition` element that limits access to only certain IP addresses\. Do not leave your role accessible to everyone\!
 + In resource\-based policies, use the `Principal` element to specify the accounts or users who are allowed to access the resource\. 
@@ -58,7 +58,7 @@ Some AWS services support additional options for specifying an account principal
 
 ### Individual IAM Users<a name="principal-users"></a>
 
-You can specify an individual IAM user \(or array of users\) as the principal, as in the following examples\. 
+You can specify an individual IAM user \(or array of users\) as the principal, as in the following examples\. When you specify more than one principal in the element, you grant permissions to eacn principal\. This is a logical `OR` and not a logical `AND`, because you are authenticated as one principal at a time\. 
 
 **Note**  
 In a `Principal` element, the user name is case sensitive\.
@@ -152,7 +152,7 @@ The following example shows a policy that can be attached to a service role\. Th
 
 ### Anonymous Users \(Public\)<a name="principal-anonymous"></a>
 
-For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*\) in the principal element specifies all users and public access\. The following elements are equivalent:
+For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*\) in the principal element specifies all users or public access\. The following elements are equivalent:
 
 ```
 "Principal": "*"
