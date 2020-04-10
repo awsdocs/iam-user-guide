@@ -25,7 +25,7 @@ Assume that a resource\-based policy allows all principals in your account full 
 **Note**  
 IAM roles and resource\-based policies delegate access across accounts only within a single partition\. For example, you can't add cross\-account access between an account in the standard `aws` partition and an account in the `aws-cn` partition\. 
 
-For example, assume that you manage `AccountA` and `AccountB`\. In `AccountA`, you have the Amazon S3 bucket named `BucketA`\. You attach a resource\-based policy to `BucketA` that allows all `AccountB` principals full access to objects in your bucket\. They can create, read, or delete any objects in that bucket\. In `AccountB`, you attach a policy to the IAM user named `User2`\. That policy allows the user read\-only access to the objects in `BucketA`\. That means that `User2` can view the objects, but not create, edit, or delete them\.
+For example, assume that you manage `AccountA` and `AccountB`\. In `AccountA`, you have the Amazon S3 bucket named `BucketA`\. You attach a resource\-based policy to `BucketA` that allows all principals in `AccountB` full access to objects in your bucket\. They can create, read, or delete any objects in that bucket\. In `AccountB`, you attach a policy to the IAM user named `User2`\. That policy allows the user read\-only access to the objects in `BucketA`\. That means that `User2` can view the objects, but not create, edit, or delete them\.
 
 ![\[Delegating access to an AWS account\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Delegation.png)
 

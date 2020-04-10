@@ -253,7 +253,7 @@ The `aws:SourceIp` condition key works only in a JSON policy if you are calling 
 
 ## Amazon Resource Name \(ARN\) Condition Operators<a name="Conditions_ARN"></a>
 
-Amazon Resource Name \(ARN\) condition operators let you construct `Condition` elements that restrict access based on comparing a key to an ARN\. The ARN is considered a string\. This value is available for only some services; not all services support request values that can be compared as ARNs\.
+Amazon Resource Name \(ARN\) condition operators let you construct `Condition` elements that restrict access based on comparing a key to an ARN\. The ARN is considered a string\. Not all services support comparing ARNs using this operator\. If the ARN condition operator doesn't work, then try using [string condition operators](#Conditions_String)\.
 
 
 ****  

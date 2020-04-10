@@ -33,9 +33,20 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ keyspace ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:/keyspace/$\{KeyspaceName\}/  |  | 
-|   [ table ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:/keyspace/$\{KeyspaceName\}/table/$\{tableName\}  |  | 
+|   [ keyspace ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:/keyspace/$\{KeyspaceName\}/  |   [ aws:ResourceTag/$\{TagKey\} ](#awsmanagedapachecassandraservice-aws_ResourceTag___TagKey_)   | 
+|   [ table ](https://docs.aws.amazon.com/mcs/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:cassandra:$\{Region\}:$\{Account\}:/keyspace/$\{KeyspaceName\}/table/$\{tableName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsmanagedapachecassandraservice-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Managed Apache Cassandra Service<a name="awsmanagedapachecassandraservice-policy-keys"></a>
 
-MCS has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Managed Apache Cassandra Service defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/mcs/latest/developerguide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/mcs/latest/developerguide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/mcs/latest/developerguide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

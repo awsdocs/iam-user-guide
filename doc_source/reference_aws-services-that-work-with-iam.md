@@ -63,7 +63,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html)  | Yes | No¹ | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/using-service-linked-roles.html) | 
-|  [AWS Managed Apache Cassandra Service \(MCS\)](https://docs.aws.amazon.com/mcs/latest/devguide/identity-and-access-mgmt.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS Managed Apache Cassandra Service \(MCS\)](https://docs.aws.amazon.com/mcs/latest/devguide/identity-and-access-mgmt.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Quantum Ledger Database \(Amazon QLDB\)](https://docs.aws.amazon.com/qldb/latest/developerguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/redshift/latest/mgmt/using-service-linked-roles.html) | 
 |  [Amazon Relational Database Service \(Amazon RDS\)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) | 
@@ -135,9 +135,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
+|  [Amazon CodeGuru](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/welcome.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/using-service-linked-roles.html) | 
 | [Amazon CodeGuru Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/security-iam.html) | Yes | Yes | No | No | Yes | No | 
 | [Amazon CodeGuru Reviewer](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html) | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/using-service-linked-roles.html) | 
 | [Amazon Comprehend](https://docs.aws.amazon.com/comprehend/latest/dg/auth-and-access-control.html) | Yes | Yes | No | Yes | Yes | No | 
+| [AWS DeepComposer](https://docs.aws.amazon.com/deepcomposer/latest/devguide/what-it-is.html) | Yes | Yes | No | No | Yes | No | 
 | [AWS DeepRacer](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-security.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/deepracer/latest/developerguide/deepracer-understand-required-permissions-and-iam-roles.html) | 
 |  [Forecast](https://docs.aws.amazon.com/forecast/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Fraud Detector](https://docs.aws.amazon.com/frauddetector/latest/ug/set-up.html#set-up-iam-admin)  | Yes | No | No | No | Yes | No | 
@@ -289,7 +291,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
 | Alexa for Business  | Yes | Yes | No | No | Yes | No | 
-| [Amazon Chime](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/chime/latest/ag/using-service-linked-roles.html) | 
+| [Amazon Chime](https://docs.aws.amazon.com/chime/latest/ag/control-access.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/chime/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/workmail/latest/adminguide/using-service-linked-roles.html) | 
 
 ## Satellite Services<a name="satellite_svcs"></a>
