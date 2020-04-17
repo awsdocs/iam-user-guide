@@ -312,7 +312,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS IoT Device Tester](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS IoT Events](https://docs.aws.amazon.com/iotevents/latest/developerguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS IoT Things Graph](https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-security.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS IoT SiteWise](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/set-up-aws-account.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS IoT SiteWise](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/set-up-aws-account.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [FreeRTOS](https://docs.aws.amazon.com/freertos/latest/userguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 

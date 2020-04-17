@@ -58,7 +58,7 @@ Some AWS services support additional options for specifying an account principal
 
 ### Individual IAM Users<a name="principal-users"></a>
 
-You can specify an individual IAM user \(or array of users\) as the principal, as in the following examples\. When you specify more than one principal in the element, you grant permissions to eacn principal\. This is a logical `OR` and not a logical `AND`, because you are authenticated as one principal at a time\. 
+You can specify an individual IAM user \(or array of users\) as the principal, as in the following examples\. When you specify more than one principal in the element, you grant permissions to each principal\. This is a logical `OR` and not a logical `AND`, because you are authenticated as one principal at a time\. 
 
 **Note**  
 In a `Principal` element, the user name is case sensitive\.

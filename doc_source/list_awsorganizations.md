@@ -52,4 +52,5 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ organizations:ServicePrincipal ](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions_overview.html#orgs_permissions_conditionkeys)  | Enables you to filter the request to only the specified service principal names\. | String | 
+|   [ organizations:PolicyType ](https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys)  | Enables you to filter the request to only the specified policy type names\. | String | 
+|   [ organizations:ServicePrincipal ](https://docs.aws.amazon.com/organizations/latest/APIReference/orgs_permissions_overview.html#orgs_permissions_conditionkeys)  | Enables you to filter the request to only the specified service principal names\. | String | 

@@ -443,7 +443,7 @@ You can use this condition key to check that Amazon S3 is not being used as a [c
 
 ## aws:SourceArn<a name="condition-keys-sourcearn"></a>
 
-Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.
+Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN) and [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) of the resource making a service\-to\-service request with the ARN that you specify in the policy\. 
 
