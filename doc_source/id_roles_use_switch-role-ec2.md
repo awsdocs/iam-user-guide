@@ -95,7 +95,7 @@ The following sample policy allows users to use the Amazon EC2 API to launch an 
 
 ### Allowing an Instance Profile Role to Switch to a Role in Another Account<a name="switch-role-ec2-another-account"></a>
 
-You can allow an application running on an Amazon EC2 instance to run commands in another account\. To do this, you must allow the EC2 instance role in in the first account to switch to a role in the second account\.
+You can allow an application running on an Amazon EC2 instance to run commands in another account\. To do this, you must allow the EC2 instance role in the first account to switch to a role in the second account\.
 
 Imagine that you are using two AWS accounts and you want to allow an application running on an Amazon EC2 instance to run [AWS CLI](http://aws.amazon.com/cli/) commands in both accounts\. Assume that the EC2 instance exists in account `111111111111`\. That instance includes the `abcd` instance profile role that allows the application to perform read\-only Amazon S3 tasks on the `my-bucket-1` bucket within the same `111111111111` account\. However, the application must also be allowed to assume the `efgh` cross\-account role to access the `my-bucket-2` Amazon S3 bucket in account `222222222222`\.
 
@@ -211,7 +211,7 @@ The `efgh` role must trust the `abcd` instance profile role to assume it\. To do
 
 ## How Do I Get Started?<a name="roles-usingrole-ec2instance-get-started"></a>
 
-To understand how roles work with EC2 instances, you need to use the IAM console to create a role, launch an EC2 instance that uses that role, and then examine the running instance\. You can examine the [instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) to see how the role's temporary credentials are made available to an instance\. You can also see how an application that runs on an instance can use the role\. Use the following resources to learn more\. 
+To understand how roles work with EC2 instances, you need to use the IAM console to create a role, launch an EC2 instance that uses that role, and then examine the running instance\. You can examine the [instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html) to see how the role's temporary credentials are made available to an instance\. You can also see how an application that runs on an instance can use the role\. Use the following resources to learn more\. f   
 + SDK walkthroughs\. The AWS SDK documentation includes walkthroughs that show an application running on an EC2 instance that uses temporary credentials for roles to read an Amazon S3 bucket\. Each of the following walkthroughs presents similar steps with a different programming language:
   + [Configure IAM Roles for Amazon EC2 with the SDK for Java](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/java-dg-roles.html) in the *AWS SDK for Java Developer Guide* 
   + [Launch an EC2 Instance using the SDK for \.NET](https://docs.aws.amazon.com/sdk-for-net/v2/developer-guide/run-instance.html) in the *AWS SDK for \.NET Developer Guide*
