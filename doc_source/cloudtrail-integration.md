@@ -108,7 +108,9 @@ As a security best practice, AWS does not log the entered IAM user name text whe
 
 ## Logging Sign\-in Events for Temporary Credentials<a name="cloudtrail-integration_signin-tempcreds"></a>
 
-When a principal requests temporary credentials, the principal type determines how CloudTrail logs the event\. This can be complicated when a principal assumes a role in another account\. There are multiple API calls to perform operations related to role cross\-account operations\. First, the principal calls an AWS STS API to retrieve the temporary credentials\. That operation is logged in the calling account and the account where the AWS STS operation is performed\. Then the principal then uses the role to perform other API calls in the assumed role's account,
+When a principal requests temporary credentials, the principal type determines how CloudTrail logs the event\. This can be complicated when a principal assumes a role in another account\. There are multiple API calls to perform operations related to role cross\-account operations\. First, the principal calls an AWS STS API to retrieve the temporary credentials\. That operation is logged in the calling account and the account where the AWS STS operation is performed\. Then the principal then uses the role to perform other API calls in the assumed role's account\.
+
+You can use the `aws:RoleSessionName` condition key to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. This makes it easier for administrators that are reviewing AWS CloudTrail logs to learn who performed an action\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
 
 The following table shows how CloudTrail logs different information for each of the API calls that generate temporary credentials\.
 

@@ -22,7 +22,7 @@ For example scenarios for using service last accessed data to make decisions abo
 Before you use service last accessed data from a report to change the permissions for an IAM entity or Organizations entity, review the following details about the data\.
 + **Reporting period** – Recent activity usually appears in the IAM console within four hours\. IAM reports activity for the last 365 days, or less if your Region began supporting this feature within the last year\. For more information, see [Regions Where Data Is Tracked](#access-advisor_tracking-period)\. 
 + **Report owner** – Only the principal that generates a report can view the report details\. This means that when you view the data in the AWS Management Console, you might have to wait for it to generate and load\. If you use the AWS CLI or AWS API to get report details, your credentials must match the credentials of the principal that generated the report\. If you use temporary credentials for a role or federated user, you must generate and retrieve the report during the same session\. For more information about assumed\-role session principals, see [AWS JSON Policy Elements: Principal](reference_policies_elements_principal.md)\.
-+ **PassRole** – The`iam:PassRole` action is not tracked\.
++ **PassRole** – The `iam:PassRole` action is not tracked\.
 + **Authenticated IAM entities** – The data for IAM includes only authenticated IAM entities \(users or roles\) in your account\. Data for Organizations includes only authenticated principals \(IAM users, IAM roles, or the AWS account root user\) in the specified Organizations entity\. The data does not include unauthenticated attempts\.
 + **IAM policy types** – The data for IAM includes services that are allowed by an IAM entity's policies\. These are policies attached to a role or attached to a user directly or through a group\. Access allowed by other policy types is not included in your report\. The excluded policy types include resource\-based policies, access control lists, AWS Organizations SCPs, IAM permissions boundaries, and session policies\. To learn how the different policy types are evaluated to allow or deny access, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
 + **Organizations policy types** – The data for AWS Organizations includes only services that are allowed by an Organizations entity's inherited service control policies \(SCPs\)\. SCPs are policies attached to a root, OU, or account\. Access allowed by other policy types is not included in your report\. The excluded policy types include identity\-based policies, resource\-based policies, access control lists, IAM permissions boundaries, and session policies\. To learn how the different policy types are evaluated to allow or deny access, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
@@ -140,19 +140,20 @@ AWS collects service last accessed data in most Regions\. Data is stored for a m
 | US East \(N\. Virginia\) | us\-east\-1 | October 1, 2015 | 
 | US West \(N\. California\) | us\-west\-1 | October 1, 2015 | 
 | US West \(Oregon\) | us\-west\-2 | October 1, 2015 | 
-| Asia Pacific \(Tokyo\) | ap\-northeast\-1 | October 1, 2015 | 
+| Asia Pacific \(Hong Kong\) | ap\-east\-1 | April 24, 2019 | 
+| Asia Pacific \(Mumbai\) | ap\-south\-1 | June 27, 2016 | 
 | Asia Pacific \(Seoul\) | ap\-northeast\-2 | January 6, 2016 | 
 | Asia Pacific \(Singapore\) | ap\-southeast\-1 | October 1, 2015 | 
 | Asia Pacific \(Sydney\) | ap\-southeast\-2 | October 1, 2015 | 
-| Asia Pacific \(Mumbai\) | ap\-south\-1 | June 27, 2016 | 
-| Asia Pacific \(Hong Kong\) | ap\-east\-1 | April 24, 2019 | 
-| Middle East \(Bahrain\) | me\-south\-1 | July 29, 2019 | 
+| Asia Pacific \(Tokyo\) | ap\-northeast\-1 | October 1, 2015 | 
 | Canada \(Central\) | ca\-central\-1 | October 28, 2017 | 
 | Europe \(Frankfurt\) | eu\-central\-1 | October 1, 2015 | 
 | Europe \(Stockholm\) | eu\-north\-1 | December 12, 2018 | 
 | Europe \(Ireland\) | eu\-west\-1 | October 1, 2015 | 
 | Europe \(London\) | eu\-west\-2 | October 28, 2017 | 
 | Europe \(Paris\) | eu\-west\-3 | December 18, 2017 | 
+| Middle East \(Bahrain\) | me\-south\-1 | July 29, 2019 | 
+| Africa \(Cape Town\) | af\-south\-1 | April 22, 2020 | 
 | South America \(São Paulo\) | sa\-east\-1 | December 11, 2015 | 
 
 If a Region is not listed in the previous table, then that Region does not yet provide service last accessed data\.

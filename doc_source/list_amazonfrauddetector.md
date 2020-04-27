@@ -31,8 +31,10 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ CreateModelVersion ](https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateModelVersion)  | Creates a version of the model using the specified model type\. | Write |  |  |  | 
 |   [ CreateRule ](https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateRule.html)  | Creates a rule for use with the specified detector\. | Write |  |  |  | 
 |   [ CreateVariable ](https://docs.aws.amazon.com/frauddetector/latest/api/API_CreateVariable.html)  | Creates a variable\. | Write |  |  |  | 
-|   [ DeleteDetectorVersion ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetectorVersion)  | Deletes the detector version\. | Write |  |  |  | 
+|   [ DeleteDetector ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetector)  | Deletes the detector\. Before deleting a detector, you must first delete all detector versions and rule versions associated with the detector\. | Write |  |  |  | 
+|   [ DeleteDetectorVersion ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteDetectorVersion)  | Deletes the detector version\. You cannot delete detector versions that are in ACTIVE status\. | Write |  |  |  | 
 |   [ DeleteEvent ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteEvent)  | Deletes the specified event\. | Write |  |  |  | 
+|   [ DeleteRuleVersion ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DeleteRuleVersion)  | Deletes the rule version\. You cannot delete a rule version if it is used by an ACTIVE or INACTIVE detector version\. | Write |  |  |  | 
 |   [ DescribeDetector ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeDetector)  | Gets all versions for a specified detector\. | Read |  |  |  | 
 |   [ DescribeModelVersions ](https://docs.aws.amazon.com/frauddetector/latest/api/API_DescribeModelVersions)  | Gets all of the model versions for the specified model type or for the specified model type and model ID\. You can also get details for a single, specified model version\. | Read |  |  |  | 
 |   [ GetDetectorVersion ](https://docs.aws.amazon.com/frauddetector/latest/api/API_GetDetectorVersion)  | Gets a particular detector version\. | List |  |  |  | 

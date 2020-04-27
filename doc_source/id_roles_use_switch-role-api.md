@@ -18,7 +18,7 @@ By default, your role session lasts for one hour\. When you assume this role usi
 If you use role chaining, your session is limited to a maximum of one hour\. If you then use the `DurationSeconds` parameter to provide a value greater than one hour, the operation fails\.
 
 **Note**  
-For security purposes, you can use AWS CloudTrail to audit the use of roles in the account\. The call to `AssumeRole` must include a role session name between 2 and 64 characters long that can include letters, numbers, and the `=,.@-` characters\. The role session name is used in CloudTrail logs to identify actions performed by the temporary security credentials\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
+For security purposes, administrators can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. Your administrator might require that you specify your IAM user name as the session name when you assume the role\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
 
 The following example in Python using the Boto3 interface to AWS \([AWS SDK for Python \(Boto\) V3](https://aws.amazon.com/tools/)\) shows how to call `AssumeRole`\. It also shows how to use the temporary security credentials returned by `AssumeRole` to list all Amazon S3 buckets in the account that owns the role\.
 

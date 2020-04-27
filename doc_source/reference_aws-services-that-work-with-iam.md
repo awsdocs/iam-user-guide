@@ -44,7 +44,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Backup](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS Backup Storage](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Elastic Block Store \(Amazon EBS\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using                 .html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [Amazon Elastic File System \(Amazon EFS\)](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/efs/latest/ug/using-service-linked-roles.html) | 
+|  [Amazon Elastic File System \(Amazon EFS\)](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/efs/latest/ug/using-service-linked-roles.html) | 
 |  [Amazon FSx](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-service-linked-roles.html) | 
 |  [Amazon S3 Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
 |  [AWS Import/Export](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html)  | Yes | No | No | No | Yes | No | 
@@ -63,7 +63,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/UsingIAMWithDDB.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/IAM.html)  | Yes | No¹ | No | No | Yes | [Yes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/using-service-linked-roles.html) | 
-|  [AWS Managed Apache Cassandra Service \(MCS\)](https://docs.aws.amazon.com/mcs/latest/devguide/identity-and-access-mgmt.html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [AWS Managed Apache Cassandra Service \(MCS\)](https://docs.aws.amazon.com/keyspaces/latest/devguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/keyspaces/latest/devguide/Ousing-service-linked-roles.html) | 
 |  [Amazon Quantum Ledger Database \(Amazon QLDB\)](https://docs.aws.amazon.com/qldb/latest/developerguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-authentication-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/redshift/latest/mgmt/using-service-linked-roles.html) | 
 |  [Amazon Relational Database Service \(Amazon RDS\)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) | 
@@ -145,7 +145,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Fraud Detector](https://docs.aws.amazon.com/frauddetector/latest/ug/set-up.html#set-up-iam-admin)  | Yes | No | No | No | Yes | No | 
 |  [Ground Truth Labeling](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Kendra](https://docs.aws.amazon.com/kendra/latest/dg/security-iam.html)  | Yes | Yes | No | No | Yes | No | 
-| [Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/auth-and-access-control.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/lex/latest/dg/howitworks-service-permissions.html) | 
+| [Amazon Lex](https://docs.aws.amazon.com/lex/latest/dg/auth-and-access-control.html) | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/lex/latest/dg/howitworks-service-permissions.html) | 
 |  [Amazon Machine Learning](https://docs.aws.amazon.com/machine-learning/latest/dg/reference.html#controlling-access-to-amazon-ml-resources-by-using-iam)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Personalize](https://docs.aws.amazon.com/personalize/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
@@ -199,8 +199,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|  [AWS Database Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/SMS_setup.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
+|  [AWS Connector Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/SMS_setup.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | Yes¹ | Yes | Yes | No | 
 |  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Server Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/permissions-roles.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/server-migration-service/latest/userguide/using-service-linked-roles.html) | 
@@ -277,6 +277,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
+|  [Amazon AppFlow](https://docs.aws.amazon.com/appflow/latest/userguide/identity-access-management.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon EventBridge Schemas](https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-security.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -336,7 +337,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|  [Amazon GameLift](https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-iam-policy-intro.html)  | Yes | Yes | No | No | Yes | No | 
+|  [Amazon GameLift](https://docs.aws.amazon.com/gamelift/latest/developerguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## AR & VR Services<a name="arvr_svcs"></a>
 
@@ -350,7 +351,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|  [AWS IQ](https://docs.aws.amazon.com/aws-iq/latest/user-guide/security.html)  | No | No | No | No | Yes | No | 
+|  [AWS IQ](https://docs.aws.amazon.com/aws-iq/latest/user-guide/security.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS IQ Permissions](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/working-with-permissions-requests.html)  | No | No | No | No | Yes | No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 
 

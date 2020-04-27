@@ -18,7 +18,7 @@ You can use the following condition keys in policies that control access to IAM 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Specifies the ARN of the resource to which this role will be associated at the destination service\. The resource usually belongs to the service to which the principal is passing the role\. Sometimes, the resource might belong to a third service\. For example, you might pass a role to Amazon EC2 Auto Scaling that they use on an Amazon EC2 instance\. In this case, the condition would match the ARN of the Amazon EC2 instance\.   
 This condition key applies to only the [PassRole](id_roles_use_passrole.md) action in a policy\. It can't be used to limit any other action\.   
-Use this condition key in a policy to allow an entity to pass a role, but only if that role is associated with the specified resource\. You can use wildcards \(\*\) to allow operations performed on a specific type of resource without restricting the region or resource ID\. For example, you can allow an IAM user or role to pass any role to the Amazon EC2 service to be used with instances in the region "us\-east\-1" or "us\-west\-1"\. The IAM user or role would not be allowed to pass roles to other services, and it doesn't allow Amazon EC2 to use the role with instances in other Regions\.   
+Use this condition key in a policy to allow an entity to pass a role, but only if that role is associated with the specified resource\. You can use wildcards \(\*\) to allow operations performed on a specific type of resource without restricting the Region or resource ID\. For example, you can allow an IAM user or role to pass any role to the Amazon EC2 service to be used with instances in the Region "us\-east\-1" or "us\-west\-1"\. The IAM user or role would not be allowed to pass roles to other services, and it doesn't allow Amazon EC2 to use the role with instances in other Regions\.   
 
 ```
 {
@@ -382,6 +382,38 @@ You can use the following condition keys in IAM role trust policies for roles th
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 A unique identifier that might be required when you assume a role in another account\. If the administrator of the account to which the role belongs provided you with an external ID, then provide that value in the `ExternalId` parameter\. This value can be any string, such as a passphrase or account number\. The primary function of the external ID is to address and prevent the confused deputy problem\. For more information about the external ID and the confused deputy problem, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md)\.  
 The `ExternalId` value must have a minimum of 2 characters and a maximum of 1,224 characters\. The value must be alphanumeric without white space\. It can also include the following symbols: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), colon \(:\), forward slash \(/\), and hyphen \(\-\)\.
+
+**sts:RoleSessionName**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Use this key to compare the session name that a principal specifies when assuming a role with the value that is specified in the policy\.  
+You can use this key in a role trust policy to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. After the IAM user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the session name that matches their user name\. This makes it easier for administrators to determine which user performed a specific action in AWS\.  
+The following role trust policy requires that IAM users in account `111122223333` provide their IAM user name as the session name when they assume the role\. This requirement is enforced using the `aws:username` [condition variable](reference_policies_variables.md) in the condition key\. This policy allows IAM users to assume the role to which the policy is attached\. This policy does not allow anyone using temporary credentials to assume the role because the `username` variable is present for only IAM users\.  
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "RoleTrustPolicyRequireUsernameForSessionName",
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Principal": {"AWS": "arn:aws:iam::111122223333:root"},
+            "Condition": {
+                "StringLike": {"sts:RoleSessionName": "${aws:username}"}
+            }
+        }
+    ]
+}
+```
+When an administrator views the AWS CloudTrail log for an action, they can compare the session name to the user names in their account\. In the following example, the user named `matjac` performed the operation using the role named `MateoRole`\. The administrator can then contact Mateo Jackson, who has the user named `matjac`\.  
+
+```
+    "assumedRoleUser": {
+        "assumedRoleId": "AROACQRSTUVWRAOEXAMPLE:matjac",
+        "arn": "arn:aws:sts::111122223333:assumed-role/MateoRole/matjac"
+    }
+```
+If you allow [cross\-account access using roles](id_roles_common-scenarios_aws-accounts.md), then users in one account can assume a role in another account\. The ARN of the assumed role user listed in CloudTrail includes the account *where the role exists*\. It does not include the account of the user that assumed the role\. Users are unique only within an account\. Therefore, we recommend that you use this method for checking CloudTrail logs only for roles that are assumed by users in accounts that you administer\. Your users might use the same user name in multiple accounts\.
 
 **sts:TransitiveTagKeys**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

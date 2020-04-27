@@ -16,7 +16,6 @@ AWS STS currently supports VPC endpoints in the following Regions:
 + US West \(N\. California\)
 + US West \(Oregon\)
 + Asia Pacific \(Hong Kong\)
-+ Middle East \(Bahrain\)
 + Asia Pacific \(Mumbai\)
 + Asia Pacific \(Osaka\-Local\)
 + Asia Pacific \(Seoul\)
@@ -29,6 +28,8 @@ AWS STS currently supports VPC endpoints in the following Regions:
 + Europe \(London\)
 + Europe \(Paris\)
 + Europe \(Stockholm\)
++ Middle East \(Bahrain\)
++ Africa \(Cape Town\)
 + South America \(São Paulo\)
 
 ## Create a VPC for AWS STS<a name="id_credentials_sts_vpce_create"></a>

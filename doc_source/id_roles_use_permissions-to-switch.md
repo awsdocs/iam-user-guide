@@ -65,4 +65,4 @@ You can also use the following format to manually construct the link\. Substitut
 We recommend that you direct your users to the topic [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
 
 **Note**  
-For security purposes, you can use AWS CloudTrail to audit role switching\. If CloudTrail is turned on for the account, IAM logs actions that are performed with the role's temporary security credentials\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_top_level.html) in the *AWS CloudTrail User Guide*\.
+For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. You can use the `aws:RoleSessionName` condition key in the role trust policy to require users to specify a session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.

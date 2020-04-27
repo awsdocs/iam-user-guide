@@ -51,6 +51,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   lambda:FunctionArn  | The ARN of a lambda function\. | ARN | 
-|   lambda:Layer  | The ARN of a lambda layer\. | String | 
-|   lambda:Principal  | The AWS principal\. | String | 
+|   lambda:FunctionArn  | Filters access by the ARN of an AWS Lambda function | ARN | 
+|   lambda:Layer  | Filters access by the ARN of an AWS Lambda layer | String | 
+|   lambda:Principal  | Filters access by restricting the AWS service or account that can invoke a function | String | 
