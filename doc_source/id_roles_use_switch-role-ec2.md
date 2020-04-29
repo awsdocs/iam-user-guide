@@ -95,7 +95,7 @@ The following sample policy allows users to use the Amazon EC2 API to launch an 
 
 ### Allowing an Instance Profile Role to Switch to a Role in Another Account<a name="switch-role-ec2-another-account"></a>
 
-You can allow an application running on an Amazon EC2 instance to run commands in another account\. To do this, you must allow the EC2 instance role in in the first account to switch to a role in the second account\.
+You can allow an application running on an Amazon EC2 instance to run commands in another account\. To do this, you must allow the EC2 instance role in the first account to switch to a role in the second account\.
 
 Imagine that you are using two AWS accounts and you want to allow an application running on an Amazon EC2 instance to run [AWS CLI](http://aws.amazon.com/cli/) commands in both accounts\. Assume that the EC2 instance exists in account `111111111111`\. That instance includes the `abcd` instance profile role that allows the application to perform read\-only Amazon S3 tasks on the `my-bucket-1` bucket within the same `111111111111` account\. However, the application must also be allowed to assume the `efgh` cross\-account role to access the `my-bucket-2` Amazon S3 bucket in account `222222222222`\.
 
