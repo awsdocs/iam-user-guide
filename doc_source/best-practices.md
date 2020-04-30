@@ -1,4 +1,4 @@
-# IAM Best Practices<a name="best-practices"></a>
+# Security Best Practices in IAM<a name="best-practices"></a>
 
 To help secure your AWS resources, follow these recommendations for the AWS Identity and Access Management \(IAM\) service\. 
 
@@ -28,7 +28,7 @@ You use an access key \(an access key ID and secret access key\) to make program
 Therefore, protect your root user access key like you would your credit card numbers or any other sensitive secret\. Here are some ways to do that: 
 + If you don't already have an access key for your AWS account root user, don't create one unless you absolutely need to\. Instead, use your account email address and password to sign in to the AWS Management Console and [create an IAM user for yourself](getting-started_create-admin-group.md) that has administrative permissions\.
 + If you do have an access key for your AWS account root user, delete it\. If you must keep it, rotate \(change\) the access key regularly\. To delete or rotate your root user access keys, go to the [My Security Credentials page](https://console.aws.amazon.com/iam/home?#security_credential) in the AWS Management Console and sign in with your account's email address and password\. You can manage your access keys in the **Access keys** section\. For more information about rotating access keys, see [Rotating Access Keys](id_credentials_access-keys.md#Using_RotateAccessKey)\.
-+ Never share your AWS account root user password or access keys with anyone\. The remaining sections of this document discuss various ways to avoid having to share your AWS account root user credentials with other users and to avoid having to embed them in an application\. 
++ Never share your AWS account root user password or access keys with anyone\. The remaining sections of this document discuss various ways to avoid having to share your AWS account root user credentials with other users\. They also explain how to avoid having to embed them in an application\. 
 + Use a strong password to help protect account\-level access to the AWS Management Console\. For information about managing your AWS account root user password, see [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)\.
 + Enable AWS multi\-factor authentication \(MFA\) on your AWS account root user account\. For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\. 
 
@@ -36,7 +36,7 @@ Therefore, protect your root user access key like you would your credit card num
 
 Don't use your AWS account root user credentials to access AWS, and don't give your credentials to anyone else\. Instead, create individual users for anyone who needs access to your AWS account\. Create an IAM user for yourself as well, give that user administrative permissions, and use that IAM user for all your work\. For information about how to do this, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\. 
 
-By creating individual IAM users for people accessing your account, you can give each IAM user a unique set of security credentials\. You can also grant different permissions to each IAM user\. If necessary, you can change or revoke an IAM user's permissions anytime\. \(If you give out your root user credentials, it can be difficult to revoke them, and it is impossible to restrict their permissions\.\)
+By creating individual IAM users for people who access your account, you can give each IAM user a unique set of security credentials\. You can also grant different permissions to each IAM user\. If necessary, you can change or revoke an IAM user's permissions anytime\. \(If you give out your root user credentials, it can be difficult to revoke them, and it is impossible to restrict their permissions\.\)
 
 **Note**  
 Before you set permissions for individual IAM users, though, see the next point about groups\.
@@ -82,7 +82,7 @@ AWS managed policies for job functions can span multiple services and align with
 
 For custom policies, we recommend that you use managed policies instead of inline policies\. A key advantage of using these policies is that you can view all of your managed policies in one place in the console\. You can also view this information with a single AWS CLI or AWS API operation\. Inline policies are policies that exist only on an IAM identity \(user, group, or role\)\. Managed policies are separate IAM resources that you can attach to multiple identities\. For more information, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
 
-If you have inline policies in your account, you can convert them to managed policies\. To do this, copy the policy to a new managed policy, attach the new policy to the identity that has the inline policy\. Then delete the inline policy\. You can do this using the instructions below\.
+If you have inline policies in your account, you can convert them to managed policies\. To do this, copy the policy to a new managed policy\. Next, attach the new policy to the identity that has the inline policy\. Then delete the inline policy\. You can do this using the instructions below\.
 
 **To convert an inline policy to a managed policy**
 
@@ -134,7 +134,7 @@ Within a policy summary, the **Access level** column shows that the policy provi
 
 ## Configure a Strong Password Policy for Your Users<a name="configure-strong-password-policy"></a>
 
-If you allow users to change their own passwords, require that they create strong passwords and that they rotate their passwords periodically\. On the [Account Settings](https://console.aws.amazon.com/iam/home?#account_settings) page of the IAM console, you can create a password policy for your account\. You can use the password policy to define password requirements, such as minimum length, whether it requires non\-alphabetic characters, how frequently it must be rotated, and so on\.
+If you allow users to change their own passwords, require that they create strong passwords and that they rotate their passwords periodically\. On the [Account Settings](https://console.aws.amazon.com/iam/home?#account_settings) page of the IAM console, you can create a password policy for your account\. You can use the password policy to define password requirements, such as minimum length, whether it requires nonalphabetic characters, how frequently it must be rotated, and so on\.
 
 For more information, see [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)\.
 

@@ -30,7 +30,7 @@ Temporary credentials are primarily used with IAM roles, but there are also othe
 Because an IAM user is just an identity with specific permissions in your account, you might not need to create an IAM user for every occasion on which you need credentials\. In many cases, you can take advantage of IAM *roles* and their temporary security credentials instead of using the long\-term credentials associated with an IAM user\. 
 + **You created an AWS account and you're the only person who works in your account\.**
 
-  It's possible to work with AWS using the root user credentials for your AWS account, but we don't recommend it\. Instead, we strongly recommend that you create an IAM user for yourself and use the credentials for that user when you work with AWS\. For more information, see [IAM Best Practices](best-practices.md)\.
+  It's possible to work with AWS using the root user credentials for your AWS account, but we don't recommend it\. Instead, we strongly recommend that you create an IAM user for yourself and use the credentials for that user when you work with AWS\. For more information, see [Security Best Practices in IAM](best-practices.md)\.
 + **Other people in your group need to work in your AWS account, and your group is using no other identity mechanism\.**
 
   Create IAM users for the individuals who need access to your AWS resources, assign appropriate permissions to each user, and give each user his or her own credentials\. We strongly recommend that you never share credentials among multiple users\. 

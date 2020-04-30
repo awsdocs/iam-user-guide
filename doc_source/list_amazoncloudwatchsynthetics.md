@@ -3,9 +3,9 @@
 Amazon CloudWatch Synthetics \(service prefix: `synthetics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon CloudWatch Synthetics](#amazoncloudwatchsynthetics-actions-as-permissions)
@@ -25,17 +25,17 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ CreateCanary ](${APIReferenceDocPage}/API_CreateCanary.html)  | Create a canary\. | Write |  |  |  | 
-|   [ DeleteCanary ](${APIReferenceDocPage}/API_DeleteCanary.html)  | Deletes a canary\. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ DescribeCanaries ](${APIReferenceDocPage}/API_DescribeCanaries.html)  | Returns information of all canaries\. | Read |  |  |  | 
-|   [ DescribeCanariesLastRun ](${APIReferenceDocPage}/API_DescribeCanariesLastRun.html)  | Returns information about the last test run associated with all canaries\. | Read |  |  |  | 
-|   [ GetCanaryRuns ](${APIReferenceDocPage}/API_GetCanaryRuns.html)  | Returns information about all the test runs associated with a canary\. | Read |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ ListTagsForResource ](${APIReferenceDocPage}/API_ListTagsForResource.html)  | Returns a list of all tags and values associated with a canary\. | Read |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ StartCanary ](${APIReferenceDocPage}/API_StartCanary.html)  | Starts a canary, so that Amazon Synthetics starts monitoring a website\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ StopCanary ](${APIReferenceDocPage}/API_StopCanary.html)  | Stops a canary\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ TagResource ](${APIReferenceDocPage}/API_TagResource.html)  | Adds one or more tags to a canary\. | Write |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ UntagResource ](${APIReferenceDocPage}/API_UntagResource.html)  | Removes one or more tags from a canary\. | Write |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
-|   [ UpdateCanary ](${APIReferenceDocPage}/API_UpdateCanary.html)  | Updates a canary\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ CreateCanary ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CreateCanary.html)  | Create a canary\. | Write |  |  |  | 
+|   [ DeleteCanary ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DeleteCanary.html)  | Deletes a canary\. Amazon Synthetics deletes all the resources except for the Lambda function and the CloudWatch Alarms if you created one\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ DescribeCanaries ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html)  | Returns information of all canaries\. | Read |  |  |  | 
+|   [ DescribeCanariesLastRun ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanariesLastRun.html)  | Returns information about the last test run associated with all canaries\. | Read |  |  |  | 
+|   [ GetCanaryRuns ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanaryRuns.html)  | Returns information about all the test runs associated with a canary\. | Read |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ ListTagsForResource ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_ListTagsForResource.html)  | Returns a list of all tags and values associated with a canary\. | Read |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ StartCanary ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StartCanary.html)  | Starts a canary, so that Amazon Synthetics starts monitoring a website\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ StopCanary ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_StopCanary.html)  | Stops a canary\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ TagResource ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html)  | Adds one or more tags to a canary\. | Write |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ UntagResource ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UntagResource.html)  | Removes one or more tags from a canary\. | Write |   [ canary ](#amazoncloudwatchsynthetics-canary)   |  |  | 
+|   [ UpdateCanary ](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html)  | Updates a canary\. | Write |   [ canary\* ](#amazoncloudwatchsynthetics-canary)   |  |  | 
 
 ## Resource Types Defined by Amazon CloudWatch Synthetics<a name="amazoncloudwatchsynthetics-resources-for-iam-policies"></a>
 
@@ -46,7 +46,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ canary ](${APIReferenceDocPage}/CloudWatch_Synthetics_Canaries.html#CloudWatch_Synthetics_Canaries_Create)  |  arn:$\{Partition\}:synthetics::$\{Account\}:canary:$\{CanaryName\}  |  | 
+|   [ canary ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries.html)  |  arn:$\{Partition\}:synthetics::$\{Account\}:canary:$\{CanaryName\}  |  | 
 
 ## Condition Keys for Amazon CloudWatch Synthetics<a name="amazoncloudwatchsynthetics-policy-keys"></a>
 

@@ -264,7 +264,7 @@ You can rotate access keys from the AWS Command Line Interface\.
 
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
-+ [IAM Best Practices](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
++ [Security Best Practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
 
 ### Rotating Access Keys \(AWS API\)<a name="rotating_access_keys_api"></a>
 
@@ -294,7 +294,7 @@ You can rotate access keys using the AWS API\.
 
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
-+ [IAM Best Practices](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
++ [Security Best Practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
 
 ## Auditing Access Keys<a name="Using_access-keys-audit"></a>
 

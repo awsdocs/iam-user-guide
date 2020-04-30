@@ -39,7 +39,7 @@ You can also view the JSON document for the policy\. For information about viewi
 
 ## Policies and Groups<a name="intro-access-groups"></a>
 
-You can organize IAM users into *IAM groups* and attach a policy to a group\. In that case, individual users still have their own credentials, but all the users in a group have the permissions that are attached to the group\. Use groups for easier permissions management, and to follow our [IAM Best Practices](best-practices.md)\. 
+You can organize IAM users into *IAM groups* and attach a policy to a group\. In that case, individual users still have their own credentials, but all the users in a group have the permissions that are attached to the group\. Use groups for easier permissions management, and to follow our [Security Best Practices in IAM](best-practices.md)\. 
 
 ![\[Users can be organized into groups to make it easier to manage permissions, because users have the permissions assigned to a group.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-users-and-groups.diagram.png)
 

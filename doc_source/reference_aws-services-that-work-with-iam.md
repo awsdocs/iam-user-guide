@@ -249,6 +249,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/auth-and-access-control.html) | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/mediaconvert/latest/ug/example-policies.html#example-policy-tag-based-access-control-using-resource-tags) | Yes | No | 
 | [AWS Elemental MediaLive](https://docs.aws.amazon.com/medialive/latest/ug/setting-up-for-production.html) | Yes | Yes | Yes | Yes | Yes | No | 
 | [AWS Elemental MediaPackage](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up.html) | Yes | Yes | No | Yes | Yes | No | 
+| [AWS Elemental MediaPackage VOD](https://docs.aws.amazon.com/mediapackage/latest/ug/setting-up.html) | Yes | Yes | No | Yes | Yes | No | 
 | [AWS Elemental MediaStore](https://docs.aws.amazon.com/mediastore/latest/ug/setting-up.html) | Yes | Yes | Yes | No | Yes | No | 
 | [AWS Elemental MediaTailor](https://docs.aws.amazon.com/mediatailor/latest/ug/setting-up.html) | Yes | Yes | No | Yes | Yes | No | 
 | [Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-iam.html) | Yes | Yes | No | Yes | Yes | No | 
@@ -312,8 +313,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS IoT Analytics](https://docs.aws.amazon.com/iotanalytics/latest/userguide/security.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS IoT Device Tester](https://docs.aws.amazon.com/freertos/latest/userguide/dev-tester-prereqs.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS IoT Events](https://docs.aws.amazon.com/iotevents/latest/developerguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [AWS IoT SiteWise](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/set-up-aws-account.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/using-service-linked-roles.html) | 
 |  [AWS IoT Things Graph](https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-security.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS IoT SiteWise](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/set-up-aws-account.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [FreeRTOS](https://docs.aws.amazon.com/freertos/latest/userguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 
@@ -377,7 +378,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon AppStream 2\.0](https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-access.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon WAM](http://docs.aws.amazon.com/wam/latest/adminguide/iam.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon WorkDocs](https://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)  | Yes | No | No | No | Yes | No | 
-|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | Yes | No | Yes | [Yes](https://docs.aws.amazon.com/worklink/latest/ag/using-service-linked-roles.html) | 
+|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/worklink/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Additional Resources<a name="resources_svcs"></a>

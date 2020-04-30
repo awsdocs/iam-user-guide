@@ -151,6 +151,7 @@ AWS collects service last accessed data in most Regions\. Data is stored for a m
 | Europe \(Stockholm\) | eu\-north\-1 | December 12, 2018 | 
 | Europe \(Ireland\) | eu\-west\-1 | October 1, 2015 | 
 | Europe \(London\) | eu\-west\-2 | October 28, 2017 | 
+| Europe \(Milan\) | eu\-south\-1 | April 28, 2020 | 
 | Europe \(Paris\) | eu\-west\-3 | December 18, 2017 | 
 | Middle East \(Bahrain\) | me\-south\-1 | July 29, 2019 | 
 | Africa \(Cape Town\) | af\-south\-1 | April 22, 2020 | 

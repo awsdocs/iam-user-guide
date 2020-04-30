@@ -39,5 +39,5 @@ If you need to use Signature Version 2, information about using Signature Versio
 
 For more information, see the following:
 +  [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)\. Provides general information about the types of credentials used for accessing AWS\. 
-+ [IAM Best Practices](best-practices.md)\. Presents a list of suggestions for using IAM service to help secure your AWS resources\. 
++ [Security Best Practices in IAM](best-practices.md)\. Presents a list of suggestions for using IAM service to help secure your AWS resources\. 
 + [Temporary Security Credentials](id_credentials_temp.md)\. Describes how to create and use temporary security credentials\. 

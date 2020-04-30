@@ -22,21 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateAsset ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetspost)  | Grants permission to create an asset in AWS Elemental MediaPackage | Write |  |  |  | 
-|   [ CreatePackagingConfiguration ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationspost)  | Grants permission to create a packaging configuration in AWS Elemental MediaPackage | Write |  |  |  | 
-|   [ CreatePackagingGroup ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupspost)  | Grants permission to create a packaging group in AWS Elemental MediaPackage | Write |  |  |  | 
-|   [ DeleteAsset ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-iddelete)  | Grants permission to delete an asset in AWS Elemental MediaPackage | Write |   [ assets\* ](#awselementalmediapackagevod-assets)   |  |  | 
-|   [ DeletePackagingConfiguration ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-iddelete)  | Grants permission to delete a packaging configuration in AWS Elemental MediaPackage | Write |   [ packaging\-configurations\* ](#awselementalmediapackagevod-packaging-configurations)   |  |  | 
-|   [ DeletePackagingGroup ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-iddelete)  | Grants permission to delete a packaging group in AWS Elemental MediaPackage | Write |   [ packaging\-groups\* ](#awselementalmediapackagevod-packaging-groups)   |  |  | 
-|   [ DescribeAsset ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets-id.html#assets-idget)  | Grants permission to view the details of an asset in AWS Elemental MediaPackage | Read |   [ assets\* ](#awselementalmediapackagevod-assets)   |  |  | 
-|   [ DescribePackagingConfiguration ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations-id.html#packaging_configurations-idget)  | Grants permission to view the details of a packaging configuration in AWS Elemental MediaPackage | Read |   [ packaging\-configurations\* ](#awselementalmediapackagevod-packaging-configurations)   |  |  | 
-|   [ DescribePackagingGroup ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups-id.html#packaging_groups-idget)  | Grants permission to view the details of a packaging group in AWS Elemental MediaPackage | Read |   [ packaging\-groups\* ](#awselementalmediapackagevod-packaging-groups)   |  |  | 
-|   [ ListAssets ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/assets.html#assetsget)  | Grants permission to view a list of assets in AWS Elemental MediaPackage | List |  |  |  | 
-|   [ ListPackagingConfigurations ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_configurations.html#packaging_configurationsget)  | Grants permission to view a list of packaging configurations in AWS Elemental MediaPackage | List |  |  |  | 
-|   [ ListPackagingGroups ](https://docs.aws.amazon.com/mediapackage-vod/latest/apireference/packaging_groups.html#packaging_groupsget)  | Grants permission to view a list of packaging groups in AWS Elemental MediaPackage | List |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awselementalmediapackagevod.html)
 
 ## Resource Types Defined by AWS Elemental MediaPackage VOD<a name="awselementalmediapackagevod-resources-for-iam-policies"></a>
 
@@ -47,10 +33,21 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ assets ](https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html)  |  arn:$\{Partition\}:mediapackage\-vod:$\{Region\}:$\{Account\}:assets/$\{AssetIdentifier\}  |  | 
-|   [ packaging\-configurations ](https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-cfig.html)  |  arn:$\{Partition\}:mediapackage\-vod:$\{Region\}:$\{Account\}:packaging\-configurations/$\{PackagingConfigurationIdentifier\}  |  | 
-|   [ packaging\-groups ](https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-group.html)  |  arn:$\{Partition\}:mediapackage\-vod:$\{Region\}:$\{Account\}:packaging\-groups/$\{PackagingGroupIdentifier\}  |  | 
+|   [ assets ](https://docs.aws.amazon.com/mediapackage/latest/ug/asset.html)  |  arn:$\{Partition\}:mediapackage\-vod:$\{Region\}:$\{Account\}:assets/$\{AssetIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackagevod-aws_ResourceTag___TagKey_)   | 
+|   [ packaging\-configurations ](https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-cfig.html)  |  arn:$\{Partition\}:mediapackage\-vod:$\{Region\}:$\{Account\}:packaging\-configurations/$\{PackagingConfigurationIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackagevod-aws_ResourceTag___TagKey_)   | 
+|   [ packaging\-groups ](https://docs.aws.amazon.com/mediapackage/latest/ug/pkg-group.html)  |  arn:$\{Partition\}:mediapackage\-vod:$\{Region\}:$\{Account\}:packaging\-groups/$\{PackagingGroupIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackagevod-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Elemental MediaPackage VOD<a name="awselementalmediapackagevod-policy-keys"></a>
 
-MediaPackage VOD has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Elemental MediaPackage VOD defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 
