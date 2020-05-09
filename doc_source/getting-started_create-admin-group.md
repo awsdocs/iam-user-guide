@@ -69,7 +69,10 @@ If you followed the steps in the previous section, you used the AWS Management C
 
 ### Creating a Group \(AWS CLI\)<a name="Using_CreateGroup"></a>
 
-This section shows how to create a group in the IAM system\. 
+This section shows how to create a group in the IAM system\.
+
+**Requirements**  
+Install the AWS Command Line Interface \(AWS CLI\)\. For more information, see [Installing the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) in the *AWS Command Line Interface User Guide*\.
 
 **To create an administrators group \(AWS CLI\)**
 

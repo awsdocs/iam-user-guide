@@ -23,7 +23,7 @@ IAM and AWS STS each have a single global endpoint:
 **Note**  
 AWS STS also supports sending requests to regional endpoints in addition to the global endpoint\. Before you can use AWS STS in a Region, you must first activate STS in that Region for your AWS account\. For more information about activating additional Regions for AWS STS, see [Managing AWS STS in an AWS Region](id_credentials_temp_enable-regions.md)\.
 
-For more information about AWS endpoints and Regions for all services, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/index.html?rande.html) in the *AWS General Reference*\. 
+For more information about AWS endpoints and Regions for all services, see [Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html) in the *AWS General Reference*\.
 
 ## HTTPS Required<a name="IAMHTTPSRequired"></a>
 

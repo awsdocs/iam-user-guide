@@ -41,6 +41,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ ListMembers ](https://docs.aws.amazon.com/detective/latest/APIReference/API_ListMembers.html)  | Grants permission to retrieve details on all members of a behavior graph | List |   [ Graph\* ](#amazondetective-Graph)   |  |  | 
 |   [ RejectInvitation ](https://docs.aws.amazon.com/detective/latest/APIReference/API_RejectInvitation.html)  | Grants permission to reject an invitation to become a member of a behavior graph | Write |   [ Graph\* ](#amazondetective-Graph)   |  |  | 
 |   SearchGraph \[permission only\] | Grants permission to search the data stored in a behavior graph | Read |   [ Graph\* ](#amazondetective-Graph)   |  |  | 
+|   [ StartMonitoringMember ](https://docs.aws.amazon.com/detective/latest/APIReference/API_StartMonitoringMember.html)  | Grants permission to start data ingest for a member account that has a status of ACCEPTED\_BUT\_DISABLED\. | Write |   [ Graph\* ](#amazondetective-Graph)   |  |  | 
 
 ## Resource Types Defined by Amazon Detective<a name="amazondetective-resources-for-iam-policies"></a>
 

@@ -44,14 +44,14 @@ At some point, one of the developers, Paulo, changes job functions and becomes a
 
 ## Use Case for IAM with Amazon S3<a name="UseCase_S3"></a>
 
-Companies like Example Corp would also typically use IAM with Amazon S3\. John has created an Amazon S3 bucket for the company called *example\_bucket*\.
+Companies like Example Corp would also typically use IAM with Amazon S3\. John has created an Amazon S3 bucket for the company called *aws\-s3\-bucket*\.
 
 ### Creation of Other Users and Groups<a name="S3_CreationOtherUsersGroups"></a>
 
-As employees, Zhang and Mary each need to be able to create their own data in the company's bucket\. They also need to read and write shared data that all developers work on\. To enable this, John logically arranges the data in example\_bucket using an Amazon S3 key prefix scheme as shown in the following figure\.
+As employees, Zhang and Mary each need to be able to create their own data in the company's bucket\. They also need to read and write shared data that all developers work on\. To enable this, John logically arranges the data in aws\-s3\-bucket using an Amazon S3 key prefix scheme as shown in the following figure\.
 
 ```
-/example_bucket
+/aws-s3-bucket
     /home
         /zhang
         /mary
@@ -60,13 +60,13 @@ As employees, Zhang and Mary each need to be able to create their own data in th
         /managers
 ```
 
-John divides the master `/example_bucket` into a set of home directories for each employee, and a shared area for groups of developers and managers\.
+John divides the master `/aws-s3-bucket` into a set of home directories for each employee, and a shared area for groups of developers and managers\.
 
 Now John creates a set of policies to assign permissions to the users and groups:
-+ **Home directory access for Zhang** – John attaches a policy to Zhang that lets him read, write, and list any objects with the Amazon S3 key prefix `/example_bucket/home/Zhang/` 
-+ **Home directory access for Mary** – John attaches a policy to Mary that lets her read, write, and list any objects with the Amazon S3 key prefix `/example_bucket/home/mary/`
-+ **Shared directory access for the Developers group** – John attaches a policy to the group that lets developers read, write, and list any objects in `/example_bucket/share/developers/`
-+ **Shared directory access for the Managers group** – John attaches a policy to the group that lets managers read, write, and list objects in `/example_bucket/share/managers/`
++ **Home directory access for Zhang** – John attaches a policy to Zhang that lets him read, write, and list any objects with the Amazon S3 key prefix `/aws-s3-bucket/home/Zhang/` 
++ **Home directory access for Mary** – John attaches a policy to Mary that lets her read, write, and list any objects with the Amazon S3 key prefix `/aws-s3-bucket/home/mary/`
++ **Shared directory access for the Developers group** – John attaches a policy to the group that lets developers read, write, and list any objects in `/aws-s3-bucket/share/developers/`
++ **Shared directory access for the Managers group** – John attaches a policy to the group that lets managers read, write, and list objects in `/aws-s3-bucket/share/managers/`
 
 **Note**  
 Amazon S3 doesn't automatically give a user who creates a bucket or object permission to perform other actions on that bucket or object\. Therefore, in your IAM policies, you must explicitly give users permission to use the Amazon S3 resources they create\.
@@ -79,6 +79,6 @@ At some point, one of the developers, Zhang, changes job functions and becomes a
 
 ### Integration with a Third\-Party Business<a name="S3_3rdPartyBusiness"></a>
 
-Organizations often work with partner companies, consultants, and contractors\. Example Corp has a partner called the Widget Company, and a Widget Company employee named Shirley needs to put data into a bucket for Example Corp's use\. John creates a group called *WidgetCo* and a user named `Shirley` and adds Shirley to the WidgetCo group\. John also creates a special bucket called *example\_partner\_bucket* for Shirley to use\.
+Organizations often work with partner companies, consultants, and contractors\. Example Corp has a partner called the Widget Company, and a Widget Company employee named Shirley needs to put data into a bucket for Example Corp's use\. John creates a group called *WidgetCo* and a user named `Shirley` and adds Shirley to the WidgetCo group\. John also creates a special bucket called *aws\-s3\-bucket1* for Shirley to use\.
 
 John updates existing policies or adds new ones to accommodate the partner Widget Company\. For example, John can create a new policy that denies members of the WidgetCo group the ability to use any actions other than write\. This policy would be necessary only if there's a broad policy that gives all users access to a wide set of Amazon S3 actions\.

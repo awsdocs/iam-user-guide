@@ -351,7 +351,7 @@ This key should be used carefully\. It is dangerous to include a publicly known 
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the AWS Region that was called in the request with the Region that you specify in the policy\. You can use this global condition key to control which Regions can be requested\. To view the AWS Regions for each service, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) in the *Amazon Web Services General Reference*\.
+Use this key to compare the AWS Region that was called in the request with the Region that you specify in the policy\. You can use this global condition key to control which Regions can be requested\. To view the AWS Regions for each service, see [Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html) in the *Amazon Web Services General Reference*\.
 + **Availability** – This key is always included in the request context\.
 
 Some global services, such as IAM, have a single endpoint\. Because this endpoint is physically located in the US East \(N\. Virginia\) Region, IAM calls are always made to the us\-east\-1 Region\. For example, if you create a policy that denies access to all services if the requested Region is not us\-west\-2, then IAM calls always fail\. To view an example of how to work around this, see [NotAction with Deny](reference_policies_elements_notaction.md)\. 

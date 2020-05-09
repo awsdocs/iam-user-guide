@@ -252,7 +252,6 @@ IAM uses the following prefixes to indicate what type of entity each unique ID a
 
 | Prefix | Entity Type | 
 | --- | --- | 
-| AAGA | Action group | 
 | ACCA | Context\-specific credential | 
 |  AGPA  | Group | 
 |  AIDA  |  IAM user   | 

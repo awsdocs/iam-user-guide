@@ -43,12 +43,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Backup](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | Yes | No | Yes | No | 
 |  [AWS Backup Storage](https://docs.aws.amazon.com/aws-backup/latest/devguide/security-considerations.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon Elastic Block Store \(Amazon EBS\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using                 .html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [Amazon Elastic Block Store \(Amazon EBS\)](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Elastic File System \(Amazon EFS\)](https://docs.aws.amazon.com/efs/latest/ug/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/efs/latest/ug/using-service-linked-roles.html) | 
 |  [Amazon FSx](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-service-linked-roles.html) | 
 |  [Amazon S3 Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | No | 
 |  [AWS Import/Export](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html)  | Yes | No | No | No | Yes | No | 
-|  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Simple Storage Service \(Amazon S3\)](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)  | Yes | Yes | Yes | [Yes¹](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html) | Yes | No | 
 | [AWS Snowball](https://docs.aws.amazon.com/snowball/latest/ug/auth-access-control.html) | Yes | No | No | No | Yes | No | 
 | [AWS Snowball Edge](https://docs.aws.amazon.com/snowball/latest/developer-guide/authentication-and-access-control.html) | Yes | No | No | No | No | No | 
@@ -150,7 +149,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Personalize](https://docs.aws.amazon.com/personalize/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
-|  [Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
+|  [Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | No | No | 
 | [Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
 | [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | Yes | No | No | No | Yes | No | 
@@ -202,8 +201,8 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | No | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [AWS Connector Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/SMS_setup.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | Yes¹ | Yes | Yes | No | 
-|  [AWS Migration Hub](https://docs.aws.amazon.com/server-migration-service/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS Server Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/permissions-roles.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/server-migration-service/latest/userguide/using-service-linked-roles.html) | 
+|  [AWS Migration Hub](https://docs.aws.amazon.com/migrationhub/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS Server Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/identity-access-management.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/server-migration-service/latest/userguide/using-service-linked-roles.html) | 
 
 ¹ You can create and modify policies that are attached to AWS KMS encryption keys you create to encrypt data migrated to supported target endpoints\. The supported target endpoints include Amazon Redshift and Amazon S3\. For more information, see [Creating and Using AWS KMS Keys to Encrypt Amazon Redshift Target Data](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Redshift.html#CHAP_Target.Redshift.KMSKeys) and [Creating AWS KMS Keys to Encrypt Amazon S3 Target Objects](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys) in the *AWS Database Migration Service User Guide*\.
 

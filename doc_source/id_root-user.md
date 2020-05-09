@@ -14,10 +14,17 @@ A newly created access key has the status of *active*, which means that you can 
 You can change the email address and password on the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page\. You can also choose **Forgot password?** on the AWS sign\-in page to reset your password\.
 
 **Topics**
++ [Create or Delete an AWS Account](#id_root-user_manage_account)
 + [Enable MFA on the AWS Account Root User](#id_root-user_manage_mfa)
 + [Creating Access Keys for the Root User](#id_root-user_manage_add-key)
 + [Deleting Access Keys from the Root User](#id_root-user_manage_delete-key)
 + [Changing the Root User's Password](#id_root-user_manage_password)
+
+## Create or Delete an AWS Account<a name="id_root-user_manage_account"></a>
+
+For more information, see the following articles in the AWS Knowledge Center:
++ [How do I create and activate an AWS account?](http://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
++ [How do I close my AWS account?](http://aws.amazon.com/premiumsupport/knowledge-center/close-aws-account/)
 
 ## Enable MFA on the AWS Account Root User<a name="id_root-user_manage_mfa"></a>
 
