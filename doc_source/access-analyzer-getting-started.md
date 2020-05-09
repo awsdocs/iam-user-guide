@@ -82,7 +82,7 @@ Access Analyzer defines the following resources:
 
 ### Required Access Analyzer Service Permissions<a name="access-analyzer-permissions-service"></a>
 
-Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer to enable Access Analyzer, the service creates the role your account\. For more information, see [Using Service\-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer to enable Access Analyzer, the service creates the role for your account\. For more information, see [Using Service\-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
 
 **Note**  
 Access Analyzer is Regional\. You must enable Access Analyzer in each Region independently\.
