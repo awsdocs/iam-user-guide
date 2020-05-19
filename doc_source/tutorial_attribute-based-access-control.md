@@ -218,7 +218,7 @@ The permissions policy attached to the roles allows the employees to create secr
 
 1. Attempt to switch to the `access-uni-engineering` role\. For more information about switching roles in the AWS Management Console, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\.
 
-   This operation fails because the `access-team` tag values do not match on the user and role\.
+   This operation fails because the `access-project` and `cost-center` tag values do not match for the `access-Arnav-peg-eng` user and `access-uni-engineering` role\.
 
 1. Switch to the `access-peg-engineering` role\. For more information about switching roles in the AWS Management Console, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\.
 
