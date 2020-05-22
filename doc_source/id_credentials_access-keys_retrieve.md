@@ -2,7 +2,7 @@
 
 **Having trouble signing in?** Make sure that you're on the correct [AWS sign\-in page](console.md) for your type of user\. The sign\-in page that you see is different, depending on the user type\. You can sign in as the AWS account root user \(account owner\) or an IAM user that was created by an account administrator\.
 
-On the main sign\-in page, you must enter your email address to sign in as the root user, or enter your account ID to sign in as an IAM user\. You can provide your password only on the sign\-in page that matches your user type\. For more information about the sign\-in pages, see [The IAM Console and Sign\-In Page](console.md)\.
+On the main sign\-in page, you must enter your email address to sign in as the root user, or enter your account ID to sign in as an IAM user\. You can provide your password only on the sign\-in page that matches your user type\. For more information about the sign\-in pages, see [Signing in to the AWS Management Console as an IAM User or Root User](console.md)\.
 
 If you are on the correct sign\-in page and lose or forget your passwords or access keys, you *cannot* retrieve them from IAM\. Instead, you can reset them using the following methods:
 + **AWS account root user password** – If you forget your root user password, you can reset the password from the AWS Management Console\. For details, see [Resetting a Lost or Forgotten Root User Password](#reset-root-password) later in this topic\.
@@ -26,4 +26,4 @@ When you first created your AWS account, you provided an email address and passw
 
 1. Provide the email address that is associated with the account\. Then provide the CAPTCHA text and choose **Continue**\.
 
-1. Check the email that is associated with your AWS account for a message from Amazon Web Services\. The email will come from an address ending in `@amazon.com` or `@aws.amazon.com`\. Follow the directions in the email\. If you don't see the email in your account, check your spam folder\. If you no longer have access to the email, see [I Need to Access an Old Account](troubleshoot_general.md#troubleshoot_general_lost-root-creds)\.
+1. Check the email that is associated with your AWS account for a message from Amazon Web Services\. The email will come from an address ending in `@amazon.com` or `@aws.amazon.com`\. Follow the directions in the email\. If you don't see the email in your account, check your spam folder\. If you no longer have access to the email, see [I Don't Have Access to the Email for My AWS Account](troubleshoot-aws-sign-in.md#troubleshoot_general_lost-root-creds)\.

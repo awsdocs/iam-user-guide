@@ -35,6 +35,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ channel ](https://docs.aws.amazon.com/medialive/latest/ug/channels.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:channel:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
 |   [ input ](https://docs.aws.amazon.com/medialive/latest/ug/inputs.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:input:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
+|   [ input\-device ](https://docs.aws.amazon.com/medialive/latest/ug/inputdevices.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:inputDevice:\*  |  | 
 |   [ input\-security\-group ](https://docs.aws.amazon.com/medialive/latest/ug/inputsecuritygroups.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:inputSecurityGroup:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
 |   [ multiplex ](https://docs.aws.amazon.com/medialive/latest/ug/multiplexes.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:multiplex:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 
 |   [ reservation ](https://docs.aws.amazon.com/medialive/latest/ug/reservations.html)  |  arn:$\{Partition\}:medialive:$\{Region\}:$\{Account\}:reservation:\*  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmedialive-aws_ResourceTag___TagKey_)   | 

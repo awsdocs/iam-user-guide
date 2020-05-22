@@ -5,7 +5,9 @@ At times, you need to give a third party access to your AWS resources \(delegate
 **Important**  
 AWS does not treat the external ID as a secret\. After you create a secret like an access key pair or a password in AWS, you cannot view them again\. The external ID for a role can be seen by anyone with permission to view the role\. 
 
-To use an external ID, update a role trust policy with the external ID of your choice\. Then, when someone uses the AWS CLI or AWS API to assume that role, they must provide the external ID\.
+To require that the third party provides an external ID when assuming a role, update the role's trust policy with the external ID of your choice\. 
+
+To provide an external ID when you assume a role, use the AWS CLI or AWS API to assume that role\. For more information, see the STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation, or the STS [assume\-role](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) CLI operation\.
 
 For example, let's say that you decide to hire a third\-party company called Example Corp to monitor your AWS account and help optimize costs\. In order to track your daily spending, Example Corp needs to access your AWS resources\. Example Corp also monitors many other AWS accounts for other customers\.
 

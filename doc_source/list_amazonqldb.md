@@ -34,6 +34,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ ledger ](https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:qldb:$\{Region\}:$\{Account\}:ledger/$\{LedgerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonqldb-aws_ResourceTag___TagKey_)   | 
+|   [ stream ](https://docs.aws.amazon.com/qldb/latest/developerguide/what-is.html)  |  arn:$\{Partition\}:qldb:$\{Region\}:$\{Account\}:stream/$\{LedgerName\}/$\{StreamId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonqldb-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon QLDB<a name="amazonqldb-policy-keys"></a>
 

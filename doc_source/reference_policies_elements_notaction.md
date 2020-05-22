@@ -45,4 +45,4 @@ The following conditional example denies access to non\-IAM actions if the user 
 }
 ```
 
-The following example policy denies access to any operations outside of the `eu-central-1` and `eu-west-1` regions, except for actions in the listed services\. The services listed in the `NotActions` element are some of the AWS global services with a single endpoint physically located in the `us-east-1` Region\. Operations in these services would fail otherwise\. This policy denies access and requires another policy to grant access\. To view the example policy, see [AWS: Denies Access to AWS Based on the Requested Region](reference_policies_examples_aws_deny-requested-region.md)\. 
+For an example policy that denies access to actions outside of specific Regions, except for actions from specific services, see [AWS: Denies Access to AWS Based on the Requested Region](reference_policies_examples_aws_deny-requested-region.md)\.

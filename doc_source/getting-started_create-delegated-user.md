@@ -56,7 +56,7 @@ You can use the AWS Management Console to create an IAM group with delegated per
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create users**\.
 
-1. Download or copy the passwords for your new users and deliver them to the users securely\. Separately, provide your users with a [link to your IAM user console page](console.md#user-sign-in-page) and the user names you just created\. 
+1. Download or copy the passwords for your new users and deliver them to the users securely\. Separately, provide your users with a link to your IAM user console page and their user names\.
 
 ## Reducing the Group Permissions<a name="getting-started_reduce-permissions"></a>
 

@@ -40,5 +40,8 @@ To learn about tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
 For details about how to manage tags in IAM, see [Managing Tags on IAM Entities \(Console\)](id_tags.md#id_tags_procs-console)\.  
 To learn about using IAM tags to control access to AWS, see [Controlling Access to and for IAM Users and Roles Using IAM Resource Tags](access_iam-tags.md)\. 
 
+**View the actions, resources, and condition keys for all services**  
+This set of reference documentation can help you write detailed IAM policies\. Each AWS service defines the actions, resources, and condition context keys that you use in IAM policies\. To learn more, see [Actions, Resources, and Condition Keys for AWS Services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html)\.
+
 **Get started with all of AWS**  
 This set of documentation deals primarily with the IAM service\. To learn about getting started with AWS and using multiple services to solve a problem such as building and launching your first project, see the [Getting Started Resource Center](https://aws.amazon.com/getting-started/)\. 

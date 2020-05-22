@@ -17,7 +17,7 @@ This procedure describes how to use the AWS Management Console to create an IAM 
 **Note**  
 We strongly recommend that you adhere to the best practice of using the **Administrator** IAM user below and securely lock away the root user credentials\. Sign in as the root user only to perform a few [account and service management tasks](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 
-1. Enable access to billing data for the IAM admin user that you will create\.
+1. Enable access to billing data for the IAM admin user that you will create as follows:
 
    1. On the navigation bar, choose your account name, and then choose **My Account**\. 
 
@@ -29,29 +29,37 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
 1. In the navigation pane, choose **Users** and then choose **Add user**\.
 
-1. For **User name**, type **Administrator**\.
+1. On the **Details** page, do the following:
 
-1. Select the check box next to **AWS Management Console access**, select **Custom password**, and then type your new password in the text box\. By default, AWS forces the new user to create a new password when first signing in\. You can optionally clear the check box next to **User must create a new password at next sign\-in** to allow the new user to reset their password after they sign in\.
+   1. For **User name**, type **Administrator**\.
 
-1. Choose **Next: Permissions**\.
+   1. Select the check box for **AWS Management Console access**, select **Custom password**, and then type your new password in the text box\.
 
-1. On the **Set permissions** page, choose **Add user to group**\.
+   1. By default, AWS forces the new user to create a new password when first signing in\. You can optionally clear the check box next to **User must create a new password at next sign\-in** to allow the new user to reset their password after they sign in\.
 
-1. Choose **Create group**\.
+   1. Choose **Next: Permissions**\.
 
-1. In the **Create group** dialog box, for **Group name** type **Administrators**\.
+1. On the **Permissions** page, do the following:
 
-1. Choose **Filter policies**, and then choose **AWS managed \- job function** to filter the table contents\.
+   1. Choose **Add user to group**\.
 
-1. In the policy list, select the check box for **AdministratorAccess**\. Then choose **Create group**\.
+   1. Choose **Create group**\.
 
-1. Back in the list of groups, select the check box for your new group\. Choose **Refresh** if necessary to see the group in the list\.
+   1. In the **Create group** dialog box, for **Group name** type **Administrators**\.
 
-1. Choose **Next: Tags**\.
+   1. Select the check box for the **AdministratorAccess** policy\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+   1. Choose **Create group**\.
 
-1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create user**\.
+   1. Back on the page with the list of groups, select the check box for your new group\. Choose **Refresh** if you don't see the new group in the list\.
+
+   1. Choose **Next: Tags**\.
+
+1. \(Optional\) On the **Tags** page, add metadata to the user by attaching tags as key\-value pairs\. For more information, see [Tagging IAM Users and Roles](id_tags.md)\.
+
+1. Choose **Next: Review**\. Verify the group memberships to be added to the new user\. When you are ready to proceed, choose **Create user**\.
+
+1. \(Optional\) On the **Complete** page, you can download a \.csv file with login information for the user, or send email with login instructions to the user\.
 
 You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\. To add additional users to the group after it's created, see [Adding and Removing Users in an IAM Group](id_groups_manage_add-remove-users.md)\.
 

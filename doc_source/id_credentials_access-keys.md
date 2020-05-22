@@ -86,11 +86,13 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
 ![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
-1. On the **AWS IAM Credentials** tab, in the **Access keys for CLI, SDK, and API access** section, do any of the following:
-   + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a `.csv` file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you have downloaded the `.csv` file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
-   + To disable an active access key, choose **Make inactive**\.
-   + To reenable an inactive access key, choose **Make active**\.
-   + To delete an access key, choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\. When you delete an access key, it's gone forever and cannot be retrieved\. However, you can always create new keys\.
+1. Expand the **Access keys \(access key ID and secret access key\)** section\.
+
+1. Do any of the following:
+   + To create an access key, choose **Create New Access Key**\. If this feature is disabled, then you must delete one of the existing keys before you can create a new one\. A warning explains that you have only this one opportunity to view or download the secret access key\. To copy the key to paste it somewhere else for safekeeping, choose **Show Access Key**\. To save the access key ID and secret access key to a `.csv` file to a secure location on your computer, choose **Download Key File**\.
+   + To disable an active access key, choose **Make Inactive**\.
+   + To reenable an inactive access key, choose **Make Active**\.
+   + Before you delete an access key, make sure that it's no longer in use\. You cannot recover an access key after you delete it\. To delete your access key, choose **Delete**\. When prompted for confirmation, choose **Yes**\.
 
 **To create, modify, or delete another IAM user's access keys \(console\)**
 
@@ -104,7 +106,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
    + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a CSV file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you download the CSV file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
    + To disable an active access key, choose **Make inactive**\.
    + To reenable an inactive access key, choose **Make active**\.
-   + To delete an access key, choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\. When you delete an access key, it's gone forever and cannot be retrieved\. However, you can always create new keys\.
+   + Before you delete an access key, make sure that it's no longer in use\. You cannot recover an access key after you delete it\. To delete an access key, choose its **X** button at the end of the row\. When prompted for confirmation, choose **Delete**\.
 
 **To list the access keys for an IAM user \(console\)**
 

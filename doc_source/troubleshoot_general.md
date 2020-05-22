@@ -3,14 +3,17 @@
 Use the information here to help you diagnose and fix access\-denied or other common issues when you work with AWS Identity and Access Management \(IAM\)\.
 
 **Topics**
++ [I Can't Sign in to My AWS Account](#troubleshoot_general_cant-sign-in)
 + [I Lost My Access Keys](#troubleshoot_general_access-keys)
-+ [I Need to Access an Old Account](#troubleshoot_general_lost-root-creds)
-+ [I Can't Sign in to My Account](#troubleshoot_general_cant-sign-in)
 + [I Get "Access Denied" When I Make a Request to an AWS Service](#troubleshoot_general_access-denied-service)
 + [I Get "Access Denied" When I Make a Request with Temporary Security Credentials](#troubleshoot_general_access-denied-temp-creds)
 + [Policy Variables Aren't Working](#troubleshoot_general_policy-variables-dont-work)
 + [Changes That I Make Are Not Always Immediately Visible](#troubleshoot_general_eventual-consistency)
 + [I Am Not Authorized to Perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
+
+## I Can't Sign in to My AWS Account<a name="troubleshoot_general_cant-sign-in"></a>
+
+Verify that you have the correct credentials and that you are using the correct method to sign in\. For more information, see [Troubleshooting AWS Sign\-in or Account Issues](troubleshoot-aws-sign-in.md)\.
 
 ## I Lost My Access Keys<a name="troubleshoot_general_access-keys"></a>
 
@@ -19,27 +22,6 @@ Access keys consist of two parts:
 + **The secret access key**\. This is provided when you initially create the access key pair\. Just like a password, it ***cannot be retrieved later***\. If you lost your secret access key, then you must create a new access key pair\. If you already have the [maximum number of access keys](reference_iam-limits.md#reference_iam-limits-entities), you must delete an existing pair before you can create another\.
 
 For more information, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
-
-## I Need to Access an Old Account<a name="troubleshoot_general_lost-root-creds"></a>
-
-When you first created your AWS account, you provided an email address and password\. These are your AWS account root user credentials\. If you have an old AWS account that you can no longer access because you have lost or forgotten the password, you can recover the password\. For more information, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
-
-If you no longer have access to the email, you should first try to recover access to the email\. If that doesn't work, you can contact AWS Customer Service\.
-
-You can try to recover access to your email using one of the following options:
-+ If you own the domain where the email address is hosted, you can add the email address back to your email server\. Alternatively, you can set up a catch\-all for your email account\. The catch\-all setting on your domain "catches all" messages that are sent to email addresses that do not exist in the mail server\. It redirects those messages to a specific email address\. For example, assume that your AWS account root user email address is `paulo@sample-domain.com`, but you changed your only domain email address to `paulo.santos@sample-domain.com`\. In that case, you could set your new email as the catch\-all\. That way, when someone like AWS sends a message to `paulo@sample-domain.com` or any other `text@sample-domain.com`, you receive that message at `paulo.santos@sample-domain.com`\.
-+ If the email address on the account is part of your corporate email system, we recommend that you contact your IT system administrators\. They might be able to help you regain access to the email address\.
-
-If you’re still not able to access your AWS account, you can find alternate support options at [Contact us](https://aws.amazon.com/contact-us/) by expanding the **I'm an AWS customer and I'm looking for billing or account support** menu\. When you contact AWS Support, you must provide the following information:
-+ All the details that are listed on the account, including your full name, phone number, address, email address, and last four digits of the credit card\. You might need to create a new AWS account for the purpose of contacting AWS Support\. This is necessary to assist in the investigation of your request\.
-+ The reason that you're unable to access the email account to receive password reset instructions\.
-+ After you recover your account, close any accounts that you are not using\. It’s a good idea not to have open accounts in your name that could result in charges to you\. For more information, see [Closing an Account](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/close-account.html) in the *Billing and Cost Management User Guide*\.
-
-## I Can't Sign in to My Account<a name="troubleshoot_general_cant-sign-in"></a>
-
-When you first created your AWS account, you provided an email address and password\. These are your AWS account root user credentials\. If you can no longer access your account because you have lost or forgotten your password, you can recover that password\. For more information, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
-
-If you provided your account email address and password, AWS sometimes requires you to provide a one\-time verification code\. To retrieve the verification code, check the email that is associated with your AWS account for a message from Amazon Web Services\. The email address ends in @amazon\.com or @aws\.amazon\.com\. Follow the directions in the message\. If you don't see the message in your account, check your spam folder\. If you no longer have access to the email, see [I Need to Access an Old Account](#troubleshoot_general_lost-root-creds)\.
 
 ## I Get "Access Denied" When I Make a Request to an AWS Service<a name="troubleshoot_general_access-denied-service"></a>
 + Verify that you have the identity\-based policy permission to call the action and resource that you have requested\. If any conditions are set, you must also meet those conditions when you send the request\. For information about viewing or modifying policies for an IAM user, group, or role, see [Managing IAM Policies](access_policies_manage.md)\.

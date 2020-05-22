@@ -33,10 +33,21 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ index ](https://docs.aws.amazon.com/kendra/latest/dg/index.html)  |  arn:$\{Partition\}:kendra:$\{Region\}:$\{Account\}:index/$\{IndexId\}  |  | 
-|   [ data\-source ](https://docs.aws.amazon.com/kendra/latest/dg/data-source.html)  |  arn:$\{Partition\}:kendra:$\{Region\}:$\{Account\}:index/$\{IndexId\}/data\-source/$\{DataSourceId\}  |  | 
-|   [ faq ](https://docs.aws.amazon.com/kendra/latest/dg/faq.html)  |  arn:$\{Partition\}:kendra:$\{Region\}:$\{Account\}:index/$\{IndexId\}/faq/$\{FaqId\}  |  | 
+|   [ index ](https://docs.aws.amazon.com/kendra/latest/dg/index.html)  |  arn:$\{Partition\}:kendra:$\{Region\}:$\{Account\}:index/$\{IndexId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkendra-aws_ResourceTag___TagKey_)   | 
+|   [ data\-source ](https://docs.aws.amazon.com/kendra/latest/dg/data-source.html)  |  arn:$\{Partition\}:kendra:$\{Region\}:$\{Account\}:index/$\{IndexId\}/data\-source/$\{DataSourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkendra-aws_ResourceTag___TagKey_)   | 
+|   [ faq ](https://docs.aws.amazon.com/kendra/latest/dg/faq.html)  |  arn:$\{Partition\}:kendra:$\{Region\}:$\{Account\}:index/$\{IndexId\}/faq/$\{FaqId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonkendra-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Kendra<a name="amazonkendra-policy-keys"></a>
 
-Kendra has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Kendra defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters create requests based on the allowed set of values for each of the mandatory tags\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters actions based on the tag value associated with the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-globally-available)  | Filters create requests based on the presence of mandatory tags in the request\. | String | 

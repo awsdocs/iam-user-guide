@@ -2,6 +2,9 @@
 
 This tutorial teaches you how to use a role to delegate access to resources that are in different AWS accounts that you own \(Production and Development\)\. You share resources in one account with users in a different account\. By setting up cross\-account access in this way, you don't need to create individual IAM users in each account\. In addition, users don't have to sign out of one account and sign into another in order to access resources in different AWS accounts\. After configuring the role, you see how to use the role from the AWS Management Console, the AWS CLI, and the API\.
 
+**Note**  
+IAM roles and resource\-based policies delegate access across accounts only within a single partition\. For example, assume that you have an account in US West \(N\. California\) in the standard `aws` partition\. You also have an account in China \(Beijing\) in the `aws-cn` partition\. You can't use an Amazon S3 resource\-based policy in your account in China \(Beijing\) to allow access for users in your standard `aws` account\.
+
 In this tutorial, imagine that the Production account is where live applications are managed\. The Development account is a sandbox where developers and testers can freely test applications\. In each account, application information is stored in Amazon S3 buckets\. You manage IAM users in the Development account, where you have two IAM groups: Developers and Testers\. Users in both groups have permissions to work in the Development account and access resources there\. From time to time, a developer must update the live applications in the Production account\. These applications are stored in an Amazon S3 bucket called `productionapp`\. 
 
 At the end of this tutorial, you have the following:
@@ -46,7 +49,7 @@ Before you can create a role, you need the account ID of the Development AWS acc
 
 1. Sign in to the AWS Management Console as an administrator of the Development account, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1.  In the navigation bar, choose **Support**, and then **Support Center**\. Your currently signed\-in 12\-digit account number \(ID\) appears in the **Support Center** title bar\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
+1.  In the navigation bar at the upper right, choose **Support**, and then **Support Center**\. The account number \(ID\) appears in the navigation pane on the left\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
 
 **To create a role in the Production account that can be used by the Development account**
 

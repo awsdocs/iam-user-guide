@@ -1,6 +1,6 @@
 # Your AWS Account ID and Its Alias<a name="console_account-alias"></a>
 
-An account alias substitutes for an account ID in the web address for your account\. You can create and manage an account alias from the AWS Management Console, AWS CLI, or AWS API\.
+To sign in to an AWS account as an IAM user, you must have an account alias or an account ID for the AWS account\. If you are signed in to the AWS Management Console or have configured the AWS CLI or an AWS SDK with your account credentials, you can find the account alias or account ID for the AWS account\. If you cannot sign in, ask your administrator for the information that you need to sign in\.
 
 **Topics**
 + [Finding Your AWS Account ID](#FindingYourAWSId)
@@ -9,21 +9,21 @@ An account alias substitutes for an account ID in the web address for your accou
 
 ## Finding Your AWS Account ID<a name="FindingYourAWSId"></a>
 
-You can find your account ID in the AWS Management Console, or using the AWS CLI or AWS API\.
+You can find the account ID for your AWS account using the following methods\.
 
-### Finding your account ID \(Console\)<a name="FindId_Console"></a>
+### Finding Your Account ID Using the Console<a name="FindId_Console"></a>
 
- In the navigation bar, choose **Support**, and then **Support Center**\. Your currently signed\-in 12\-digit account number \(ID\) appears in the **Support Center** title bar\.
+ In the navigation bar at the upper right, choose **Support**, and then **Support Center**\. The account number \(ID\) appears in the navigation pane on the left\.
 
-### Finding your account ID \(AWS CLI\)<a name="FindId_CLI"></a>
+### Finding Your Account ID Using the AWS CLI<a name="FindId_CLI"></a>
 
-To view your user ID, account ID, and your user ARN:
-+ `[aws sts get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html)`
+Use the following command to view your user ID, account ID, and your user ARN:
++ [aws sts get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html)
 
-### Finding your account ID \(AWS API\)<a name="FindId_API"></a>
+### Finding Your Account ID using the API<a name="FindId_API"></a>
 
-To view your user ID, account ID, and your user ARN:
-+ `[GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html)` 
+Use the following API to view your user ID, account ID, and your user ARN:
++ [GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html) 
 
 ## About Account Aliases<a name="AboutAccountAlias"></a>
 
@@ -32,28 +32,27 @@ If you want the URL for your sign\-in page to contain your company name \(or oth
 Your sign\-in page URL has the following format, by default\.
 
 ```
-https://Your_AWS_Account_ID.signin.aws.amazon.com/console/
+https://Your_Account_ID.signin.aws.amazon.com/console/
 ```
 
-If you create an AWS account alias for your AWS account ID, your sign\-in page URL looks like the following example\. 
+If you create an AWS account alias for your AWS account ID, your sign\-in page URL looks like the following example\.
 
 ```
-https://Your_Alias.signin.aws.amazon.com/console/
+https://Your_Account_Alias.signin.aws.amazon.com/console/
 ```
 
-**Note**  
 The original URL containing your AWS account ID remains active and can be used after you create your AWS account alias\.
 
 **Tip**  
-To create a bookmark for your account sign\-in page in your web browser, you should manually type the sign\-in URL in the bookmark entry\. Don't use your web browser's "bookmark this page" feature\. 
+To create a bookmark for your account sign\-in page in your web browser, you should manually type the sign\-in URL in the bookmark entry\. Don't use your web browser's "bookmark this page" feature\.
 
 ## Creating, Deleting, and Listing an AWS Account Alias<a name="CreateAccountAlias"></a>
 
 You can use the AWS Management Console, the IAM API, or the command line interface to create or delete your AWS account alias\.
 
-**Important**  
-Your AWS account can have only one alias\. If you create a new alias for your AWS account, the new alias overwrites the previous alias, and the URL containing the previous alias stops working\.
-The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [IAM and STS Limits](reference_iam-limits.md)\.
+**Considerations**
++ Your AWS account can have only one alias\. If you create a new alias for your AWS account, the new alias overwrites the previous alias, and the URL containing the previous alias stops working\.
++ The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [IAM and STS Limits](reference_iam-limits.md)\.
 
 ### Creating and Deleting Aliases \(Console\)<a name="CreateAlias_Console"></a>
 

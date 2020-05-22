@@ -54,6 +54,11 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 
 You can use the AWS CLI to create and manage SAML providers\.
 
+Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+
+**Important**  
+The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
+
 **To create an IAM identity provider and upload a metadata document \(AWS CLI\)**
 + Run this command: [https://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-saml-provider.html) 
 
@@ -74,6 +79,11 @@ You can use the AWS CLI to create and manage SAML providers\.
 ## Creating and Managing an IAM SAML Identity Provider \(AWS API\)<a name="idp-create-identityprovider-API"></a>
 
 You can use the AWS API to create and manage SAML providers\.
+
+Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+
+**Important**  
+The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
 
 **To create an IAM identity provider and upload a metadata document \(AWS API\)**
 + Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateSAMLProvider.html)

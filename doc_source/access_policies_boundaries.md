@@ -301,7 +301,7 @@ María then attaches the `DelegatedUserPermissions` policy as the permissions po
 
 Zhang completes the following tasks:
 
-1. Zhang [creates a user](id_users_create.md#id_users_create_console) with the AWS Management Console\. He types the user name `Nikhil` and enables console access for the user\. He clears the checkbox next to **Requires password reset**, because the policies above allow Zhang to change his password only after he is signed in to the IAM console\.
+1. Zhang [creates a user](id_users_create.md#id_users_create_console) with the AWS Management Console\. He types the user name `Nikhil` and enables console access for the user\. He clears the checkbox next to **Requires password reset**, because the policies above allow users to change their passwords only after they are signed in to the IAM console\.
 
 1. On the **Set permissions** page, Zhang chooses the **IAMFullAccess** and ** AmazonS3ReadOnlyAccess** permissions policies that allow Nikhil to do his work\. 
 

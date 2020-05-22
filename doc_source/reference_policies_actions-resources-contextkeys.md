@@ -11,7 +11,7 @@ The **Actions** table lists all the actions that you can use in an IAM policy st
 + The **Resource Types** column indicates whether the action supports resource\-level permissions\. If the column is empty, then the action does not support resource\-level permissions and you must specify all resources \("\*"\) in your policy\. If the column includes a resource type, then you can specify the resource ARN in the `Resource` element of your policy\. For more information about that resource, refer to that row in the **Resource Types** table\. All actions and resources that are included in one statement must be compatible with each other\. If you specify a resource that is not valid for the action, any request to use that action fails, and the statement's `Effect` does not apply\.
 
   Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
-+ The **Condition Keys** column includes keys that you can specify in a policy statement's `Condition` element\. Condition keys might be supported with an action, or with an action and a specific resource\. Pay close attention to whether the key is in the same row as a specific resource type\. This table does not include global condition keys that are available\. for any action or under unrelated circumstances\. For more information about global condition keys, see [AWS Global Condition Context Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html)\.
++ The **Condition Keys** column includes keys that you can specify in a policy statement's `Condition` element\. Condition keys might be supported with an action, or with an action and a specific resource\. Pay close attention to whether the key is in the same row as a specific resource type\. This table does not include global condition keys that are available for any action or under unrelated circumstances\. For more information about global condition keys, see [AWS Global Condition Context Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html)\.
 + The **Dependent Actions** column includes any additional permissions that you must have, in addition to the permission for the action itself, to successfully call the action\. This can be required if the action accesses more than one resource\.
 
 ## The Resource Types Table<a name="resources_table"></a>
@@ -77,6 +77,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon CodeGuru Reviewer](list_amazoncodegurureviewer.md)
 + [AWS CodePipeline](list_awscodepipeline.md)
 + [AWS CodeStar](list_awscodestar.md)
++ [AWS CodeStar Connections](list_awscodestarconnections.md)
 + [AWS CodeStar Notifications](list_awscodestarnotifications.md)
 + [Amazon Cognito Identity](list_amazoncognitoidentity.md)
 + [Amazon Cognito Sync](list_amazoncognitosync.md)
@@ -173,6 +174,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon Lightsail](list_amazonlightsail.md)
 + [Amazon Machine Learning](list_amazonmachinelearning.md)
 + [Amazon Macie](list_amazonmacie.md)
++ [Amazon Macie Classic](list_amazonmacieclassic.md)
 + [Manage Amazon API Gateway](list_manageamazonapigateway.md)
 + [Amazon Managed Blockchain](list_amazonmanagedblockchain.md)
 + [Amazon Managed Streaming for Kafka](list_amazonmanagedstreamingforkafka.md)

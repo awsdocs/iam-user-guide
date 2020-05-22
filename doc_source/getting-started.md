@@ -20,3 +20,4 @@ You will grant the Administrators group permission to access all your available 
 + [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)
 + [Creating Your First IAM Delegated User and Group](getting-started_create-delegated-user.md)
 + [How Users Sign In to Your Account](getting-started_how-users-sign-in.md)
++ [IAM Console Search](console_search.md)

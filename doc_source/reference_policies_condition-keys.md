@@ -120,7 +120,7 @@ Use this key to compare the services in the policy with the *last service* that 
 
 Works with [date operators](reference_policies_elements_condition_operators.md#Conditions_Date)\.
 
-Use this key to compare the date and time of the request with the date and time that you specify in the policy\.
+Use this key to compare the date and time of the request with the date and time that you specify in the policy\. To view an example policy that uses this condition key, see [AWS: Allows Access Within Specific Dates](reference_policies_examples_aws-dates.md)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:EpochTime<a name="condition-keys-epochtime"></a>

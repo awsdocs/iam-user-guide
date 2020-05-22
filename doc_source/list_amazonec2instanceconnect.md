@@ -33,7 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ instance ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:instance/$\{InstanceId\}  |  | 
+|   [ instance ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:instance/$\{InstanceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonec2instanceconnect-aws_ResourceTag___TagKey_)   [ ec2:ResourceTag/$\{TagKey\} ](#amazonec2instanceconnect-ec2_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon EC2 Instance Connect<a name="amazonec2instanceconnect-policy-keys"></a>
 
@@ -46,4 +46,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource | String | 
+|   [ ec2:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource | String | 
 |   [ ec2:osuser ](https://docs.aws.amazon.com/ec2-instance-connect/latest/APIReference/API_SendSSHPublicKey.html)  | Filters access by specifying the default user name for the AMI that you used to launch your instance | String | 

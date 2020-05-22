@@ -50,7 +50,7 @@ Active Regions are available to everyone that uses temporary credentials in that
 
 ## Writing Code to Use AWS STS Regions<a name="id_credentials_temp_enable-regions_writing_code"></a>
 
-After you activate a Region, you can direct AWS STS API calls to that Region\. The following Java code snippet demonstrates how to configure an `AWSSecurityTokenServiceClient` object to make requests to the Europe \(Ireland\) \(eu\-west\-1\) Region with the `setEndpoint` method\.
+After you activate a Region, you can direct AWS STS API calls to that Region\. The following Java code snippet demonstrates how to configure an `AWSSecurityTokenService` object to make requests to the Europe \(Ireland\) \(eu\-west\-1\) Region\.
 
 ```
 EndpointConfiguration regionEndpointConfig = new EndpointConfiguration("https://sts.eu-west-1.amazonaws.com", "eu-west-1");
@@ -60,11 +60,11 @@ AWSSecurityTokenService stsRegionalClient = AWSSecurityTokenServiceClientBuilder
 .build();
 ```
 
-AWS STS recommends that you use both the `setRegion` and `setEndpoint` methods to make calls to a Regional endpoint\. You can use the `setRegion` method alone for manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. In this case, the calls are directed to the STS Regional endpoint\. To learn how to manually enable a Region, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\. If you use the `setRegion` method alone for Regions enabled by default, the calls are directed to the global endpoint of `[https://sts.amazonaws.com](https://sts.amazonaws.com)`\.
+AWS STS recommends that you make calls to a Regional endpoint\. To learn how to manually enable a Region, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\.
 
-In the example, the first line instantiates an `AWSSecurityTokenServiceClient` object called `stsClient`\. The second line configures the `stsClient` object by calling its `setEndpoint` method and passing the URL of the endpoint as the only parameter\. All API calls that use this `stsClient` object are now directed to the specified endpoint\.
+In the example, the first line instantiates an `EndpointConfiguration` object called `regionEndpointConfig`, passing the URL of the endpoint and the Region as the parameters\.
 
-For all other language and programming environment combinations, refer to the [documentation for the relevant SDK](https://aws.amazon.com/tools/)\. 
+For all other language and programming environment combinations, refer to the [documentation for the relevant SDK](https://aws.amazon.com/tools/)\.
 
 ## Region Endpoints<a name="id_credentials_region-endpoints"></a>
 

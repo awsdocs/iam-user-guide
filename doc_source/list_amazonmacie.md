@@ -1,11 +1,11 @@
 # Actions, Resources, and Condition Keys for Amazon Macie<a name="list_amazonmacie"></a>
 
-Amazon Macie \(service prefix: `macie`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
+Amazon Macie \(service prefix: `macie2`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/macie/latest/userguide/)\.
-+ View a list of the [API operations available for this service](https://docs.aws.amazon.com/macie/1.0/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/macie/latest/userguide/macie-access-control.html) permission policies\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html)\.
++ View a list of the [API operations available for this service](https://docs.aws.amazon.com/macie/latest/APIReference/)\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/macie/latest/APIReference/operations.html) permission policies\.
 
 **Topics**
 + [Actions Defined by Amazon Macie](#amazonmacie-actions-as-permissions)
@@ -22,20 +22,21 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AssociateMemberAccount ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateMemberAccount.html)  | Enables the user to associate a specified AWS account with Amazon Macie as a member account\. | Write |  |  |  | 
-|   [ AssociateS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_AssociateS3Resources.html)  | Enables the user to associate specified S3 resources with Amazon Macie for monitoring and data classification\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
-|   [ DisassociateMemberAccount ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateMemberAccount.html)  | Enables the user to remove the specified member account from Amazon Macie\. | Write |  |  |  | 
-|   [ DisassociateS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_DisassociateS3Resources.html)  | Enables the user to remove specified S3 resources from being monitored by Amazon Macie\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
-|   [ ListMemberAccounts ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListMemberAccounts.html)  | Enables the user to list all Amazon Macie member accounts for the current Macie master account\. | List |  |  |  | 
-|   [ ListS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_ListS3Resources.html)  | Enables the user to list all the S3 resources associated with Amazon Macie\. | List |  |  |  | 
-|   [ UpdateS3Resources ](https://docs.aws.amazon.com/macie/1.0/APIReference/API_UpdateS3Resources.html)  | Enables the user to update the classification types for the specified S3 resources\. | Write |  |   [ aws:SourceArn ](#amazonmacie-aws_SourceArn)   |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonmacie.html)
 
 ## Resource Types Defined by Amazon Macie<a name="amazonmacie-resources-for-iam-policies"></a>
 
-Amazon Macie does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Macie, specify `“Resource”: “*”` in your policy\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonmacie-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ ClassificationJob ](https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html)  |  arn:$\{Partition\}:macie2::$\{Account\}:classification\-job/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmacie-aws_ResourceTag___TagKey_)   | 
+|   [ CustomDataIdentifier ](https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html.html)  |  arn:$\{Partition\}:macie2::$\{Account\}:custom\-data\-identifier/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmacie-aws_ResourceTag___TagKey_)   | 
+|   [ Member ](https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html)  |  arn:$\{Partition\}:macie2::$\{Account\}:member/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmacie-aws_ResourceTag___TagKey_)   | 
+|   [ FindingsFilter ](https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html)  |  arn:$\{Partition\}:macie2::$\{Account\}:findings\-filter/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonmacie-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Macie<a name="amazonmacie-policy-keys"></a>
 
@@ -48,4 +49,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:SourceArn  | Allow access to the specified actions only when the request operates on the specified aws resource | Arn | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters access based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters access based on tag key\-value pairs that are associated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters access based on the presence of tag keys in the request | String | 

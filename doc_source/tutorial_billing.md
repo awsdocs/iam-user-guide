@@ -1,13 +1,13 @@
 # Tutorial: Delegate Access to the Billing Console<a name="tutorial_billing"></a>
 
-AWS account owners can delegate access to specific IAM users who need to view or manage the AWS Billing and Cost Management data for an AWS account\. The instructions that follow will help you set up a pretested scenario\. This scenario will help you gain hands\-on experience configuring billing permissions without concern for affecting your main AWS production account\. 
+AWS account owners can delegate access to specific IAM users who need to view or manage the AWS Billing and Cost Management data for an AWS account\. The instructions that follow will help you set up a pretested scenario\. This scenario helps you gain hands\-on experience configuring billing permissions without concern for affecting your main AWS production account\. If you attach a managed policy to your IAM users instead of following this tutorial, you must first activate access to the AWS Billing and Cost Management console in [Step 1](#tutorial-billing-step1)\. 
 
 This workflow has four basic steps\. 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
 **[Step 1: Activate Access to Billing Data on Your AWS Test Account](#tutorial-billing-step1)**  
-If you create a single AWS account, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner activates IAM access and attaches policies that provide billing actions to the user or role\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.  
+If you create a single AWS account, only the AWS account owner \([AWS account root user](id_root-user.md)\) has access to view and manage billing information\. IAM users cannot access billing data until the account owner activates IAM access and also attaches policies that provide billing actions to the user or role\. To view additional tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.  
 If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
 
 **[Step 2: Create IAM Policies That Grant Permissions to Billing Data](#tutorial-billing-step2)**  
