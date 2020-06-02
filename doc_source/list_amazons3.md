@@ -70,7 +70,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ s3:object\-lock\-mode ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies)  | Enables enforcement of the specified object retention mode | String | 
 |   [ s3:object\-lock\-remaining\-retention\-days ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies)  | Enables enforcement of an object relative to the remaining retention days | String | 
 |   [ s3:object\-lock\-retain\-until\-date ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies)  | Enables enforcement of a specific retain\-until\-date | String | 
-|   [ s3:prefix ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to limit the response of the ListBucket API to key names with specific prefix\. | String | 
+|   [ s3:prefix ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#bucket-keys-in-amazon-s3-policies)  | Enables you to limit the ListBucket API to requests listing only keys with the specified prefix\. | String | 
 |   [ s3:signatureage ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2)  |  | Numeric | 
 |   [ s3:signatureversion ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2)  |  | String | 
 |   [ s3:versionid ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#object-keys-in-amazon-s3-policies)  |  | String | 
