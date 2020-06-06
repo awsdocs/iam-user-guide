@@ -33,6 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
+|   [ datacatalog ](https://docs.aws.amazon.com/athena/latest/ug/datacatalogs-example-policies.html)  |  arn:$\{Partition\}:athena:$\{Region\}:$\{Account\}:datacatalog/$\{DataCatalogName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonathena-aws_ResourceTag___TagKey_)   | 
 |   [ workgroup ](https://docs.aws.amazon.com/athena/latest/ug/example-policies-workgroup.html)  |  arn:$\{Partition\}:athena:$\{Region\}:$\{Account\}:workgroup/$\{WorkGroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonathena-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Athena<a name="amazonathena-policy-keys"></a>

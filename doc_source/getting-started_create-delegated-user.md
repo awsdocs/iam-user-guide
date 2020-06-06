@@ -62,11 +62,11 @@ You can use the AWS Management Console to create an IAM group with delegated per
 
 Members of the `PowerUser` group have full access to all services except a few that provide user management actions \(like IAM and Organizations\)\. After a predefined period of inactivity \(such as 90 days\) has passed, you can review the services that your group members have accessed\. Then you can reduce the permissions of the `PowerUserExampleCorp` policy to include only the services that your team needs\.
 
-For more information about the service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+For more information about the last accessed information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\.
 
-### Reviewing Service Last Accessed Data<a name="getting-started_reduce-permissions-review"></a>
+### Reviewing Last Accessed Information<a name="getting-started_reduce-permissions-review"></a>
 
-Wait for a predefined period of inactivity \(such as 90 days\) to pass\. Then you can review the service last accessed data for your users or groups to learn when your users last attempted to access the services that your `PowerUserExampleCorp` policy allows\.
+Wait for a predefined period of inactivity \(such as 90 days\) to pass\. Then you can review the last accessed information for your users or groups to learn when your users last attempted to access the services that your `PowerUserExampleCorp` policy allows\.
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -74,7 +74,7 @@ Wait for a predefined period of inactivity \(such as 90 days\) to pass\. Then yo
 
 1. On the group summary page, choose the **Access Advisor** tab\. 
 
-   The table of service last accessed data shows when the group members last attempted to access each service, in chronological order from the most recent attempt\. The table includes only the services that the policy allows\. In this case, the `PowerUserExampleCorp` policy allows access to all AWS services\. 
+   The table of last accessed information shows when the group members last attempted to access each service, in chronological order from the most recent attempt\. The table includes only the services that the policy allows\. In this case, the `PowerUserExampleCorp` policy allows access to all AWS services\. 
 
 1. Review the table and make a list of the services that your group members have recently accessed\.
 
@@ -82,7 +82,7 @@ Wait for a predefined period of inactivity \(such as 90 days\) to pass\. Then yo
 
 ### Editing a Policy to Reduce Permissions<a name="getting-started_reduce-permissions-edit-policy"></a>
 
-After you review your service last accessed data, you can edit your policy to allow access to only the services that your users need\.
+After you review your last accessed information, you can edit your policy to allow access to only the services that your users need\.
 
 **To use data to allow access to only necessary services**
 

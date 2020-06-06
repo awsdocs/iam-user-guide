@@ -50,7 +50,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Import/Export](https://docs.aws.amazon.com/AWSImportExport/latest/DG/using-iam.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon Simple Storage Service \(Amazon S3\)](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html)  | Yes | Yes | Yes | [Yes¹](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html) | Yes | No | 
 | [AWS Snowball](https://docs.aws.amazon.com/snowball/latest/ug/auth-access-control.html) | Yes | No | No | No | Yes | No | 
-| [AWS Snowball Edge](https://docs.aws.amazon.com/snowball/latest/developer-guide/authentication-and-access-control.html) | Yes | No | No | No | No | No | 
+| [AWS Snowball Edge](https://docs.aws.amazon.com/snowball/latest/developer-guide/authentication-and-access-control.html) | Yes | No | No | No | Yes | No | 
 |  [AWS Storage Gateway](https://docs.aws.amazon.com/storagegateway/latest/userguide/UsingIAMWithStorageGateway.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ¹ Amazon S3 supports tag\-based authorization for only object resources\. 
@@ -79,7 +79,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/cloud9/latest/user-guide/using-service-linked-roles.html) | 
 |  [CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html)  | Yes | Yes | Yes¹ | Yes² | Yes | No | 
 |  [CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | No | Yes | No | 
+|  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [CodePipeline](https://docs.aws.amazon.com/codepipeline/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeStar](https://docs.aws.amazon.com/codestar/latest/userguide/security-iam.html)  | Yes | Yes¹ | No | Yes | Yes | No | 
 |  [AWS CodeStar Connections](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -99,12 +99,11 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Artifact](https://docs.aws.amazon.com/artifact/latest/ug/getting-started.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/authen-toplevel.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CloudHSM](https://docs.aws.amazon.com/cloudhsm/latest/userguide/prerequisites.html#permissions-for-cloudhsm)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/cloudhsm/latest/userguide/service-linked-roles.html) | 
-|  [AWS CloudHSM Classic](https://docs.aws.amazon.com/cloudhsm/classic/userguide/iam-policy.html)  | Yes | No | No | No | No | No | 
 |  [Amazon Cognito](https://docs.aws.amazon.com/cognito/latest/developerguide/resource-permissions.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/cognito/latest/developerguide/using-service-linked-roles.html) | 
 |  [Amazon Detective](https://docs.aws.amazon.com/detective/latest/adminguide/security-iam.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Directory Service](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/iam_policy.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/fms-using-service-linked-roles.html) | 
-|  [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/guardduty/latest/ug/using-service-linked-roles.html) | 
+|  [Amazon GuardDuty](https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/guardduty/latest/ug/using-service-linked-roles.html) | 
 |  [AWS Identity and Access Management \(IAM\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_permissions-required.html)  | Yes | Yes | Yes¹ | [Yes²](access_iam-tags.md) | Yes³ | No | 
 |  [IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-access.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-using-service-linked-roles.html) | 
 |  [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_introduction.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/inspector/latest/userguide/inspector_slr.html) | 
@@ -118,7 +117,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS SSO Directory](https://docs.aws.amazon.com/singlesignon/latest/userguide/iam-auth-access.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Security Token Service \(AWS STS\)](https://docs.aws.amazon.com/STS/latest/UsingSTS/TokenPermissions.html)  | Yes | Yes⁴ | No | Yes | Yes⁵ | No | 
 |  [AWS Shield Advanced](https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html)  | Yes | Yes | No | No | Yes | No | 
-|  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
+|  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
 |  [AWS WAFV2](https://docs.aws.amazon.com/waf/latest/APIReference/Welcome.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ¹ IAM supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
@@ -152,7 +151,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon Polly](https://docs.aws.amazon.com/polly/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon Rekognition](https://docs.aws.amazon.com/rekognition/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [Amazon SageMaker](https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
-|  [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | No | No | 
+|  [Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/authentication-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 | [Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | Yes | No | No | No | Yes | No | 
 | [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | Yes | No | No | No | Yes | No | 
 
@@ -182,6 +181,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Resource Groups Tagging API](https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html)  | Yes | No | No | No | Yes | No | 
 |  [AWS Service Catalog](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions.html)  | Yes | No | No | Yes⁴ | Yes | No | 
 |  [AWS Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html) | 
+|  [AWS Tag Editor](https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-prereqs.html#rg-permissions)  | Yes | No | No | No | Yes | No | 
 | [AWS Trusted Advisor](https://aws.amazon.com/premiumsupport/ta-iam/) | Yes⁵ | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-ta.html) | 
 | [AWS Well\-Architected Tool](https://docs.aws.amazon.com/wellarchitected/latest/userguide/security_iam_service-with-iam.html) | Yes | Yes | No | No | Yes | No | 
 
@@ -379,7 +379,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon AppStream 2\.0](https://docs.aws.amazon.com/appstream2/latest/developerguide/controlling-access.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [Amazon WAM](http://docs.aws.amazon.com/wam/latest/adminguide/iam.html)  | Yes | No | No | No | Yes | No | 
 |  [Amazon WorkDocs](https://docs.aws.amazon.com/workdocs/latest/adminguide/setting_up.html#iam_policies)  | Yes | No | No | No | Yes | No | 
-|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | No | No | Yes | [Yes](https://docs.aws.amazon.com/worklink/latest/ag/using-service-linked-roles.html) | 
+|  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/worklink/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 
 ## Additional Resources<a name="resources_svcs"></a>

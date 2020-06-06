@@ -22,39 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AssociateDomain ](https://docs.aws.amazon.com/worklink/latest/api/API_AssociateDomain.html)  | Grants permission to associate a domain with an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ AssociateWebsiteAuthorizationProvider ](https://docs.aws.amazon.com/worklink/latest/api/API_AssociateWebsiteAuthorizationProvider.html)  | Grants permission to associate a website authorization provider with an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ AssociateWebsiteCertificateAuthority ](https://docs.aws.amazon.com/worklink/latest/api/API_AssociateWebsiteCertificateAuthority.html)  | Grants permission to associate a website certificate authority with an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ CreateFleet ](https://docs.aws.amazon.com/worklink/latest/api/API_CreateFleet.html)  | Grants permission to create an Amazon WorkLink fleet | Write |  |  |  | 
-|   [ DeleteFleet ](https://docs.aws.amazon.com/worklink/latest/api/API_DeleteFleet.html)  | Grants permission to delete an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeAuditStreamConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeAuditStreamConfiguration.html)  | Grants permission to describe the audit stream configuration for an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeCompanyNetworkConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeCompanyNetworkConfiguration.html)  | Grants permission to describe the company network configuration for an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeDevice ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDevice.html)  | Grants permission to describe details of a device associated with an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeDevicePolicyConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDevicePolicyConfiguration.html)  | Grants permission to describe the device policy configuration for an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeDomain ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeDomain.html)  | Grants permission to describe details about a domain associated with an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeFleetMetadata ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeFleetMetadata.html)  | Grants permission to describe metadata of an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeIdentityProviderConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeIdentityProviderConfiguration.html)  | Grants permission to describe the identity provider configuration for an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DescribeWebsiteCertificateAuthority ](https://docs.aws.amazon.com/worklink/latest/api/API_DescribeWebsiteCertificateAuthority.html)  | Grants permission to describe a website certificate authority associated with an Amazon WorkLink fleet | Read |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DisassociateDomain ](https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateDomain.html)  | Grants permission to disassociate a domain from an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DisassociateWebsiteAuthorizationProvider ](https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateWebsiteAuthorizationProvider.html)  | Grants permission to disassociate a website authorization provider from an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ DisassociateWebsiteCertificateAuthority ](https://docs.aws.amazon.com/worklink/latest/api/API_DisassociateWebsiteCertificateAuthority.html)  | Grants permission to disassociate a website certificate authority from an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ ListDevices ](https://docs.aws.amazon.com/worklink/latest/api/API_ListDevices.html)  | Grants permission to list the devices associated with an Amazon WorkLink fleet | List |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ ListDomains ](https://docs.aws.amazon.com/worklink/latest/api/API_ListDomains.html)  | Grants permission to list the associated domains for an Amazon WorkLink fleet | List |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ ListFleets ](https://docs.aws.amazon.com/worklink/latest/api/API_ListFleets.html)  | Grants permission to list the Amazon WorkLink fleets associated with the account | List |  |  |  | 
-|   [ ListWebsiteAuthorizationProviders ](https://docs.aws.amazon.com/worklink/latest/api/API_ListWebsiteAuthorizationProviders.html)  | Grants permission to list the website authorization providers for an Amazon WorkLink fleet | List |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ ListWebsiteCertificateAuthorities ](https://docs.aws.amazon.com/worklink/latest/api/API_ListWebsiteCertificateAuthorities.html)  | Grants permission to list the website certificate authorities associated with an Amazon WorkLink fleet | List |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ RestoreDomainAccess ](https://docs.aws.amazon.com/worklink/latest/api/API_RestoreDomainAccess.html)  | Grants permission to restore access to a domain associated with an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ RevokeDomainAccess ](https://docs.aws.amazon.com/worklink/latest/api/API_RevokeDomainAccess.html)  | Grants permission to revoke access to a domain associated with an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ SignOutUser ](https://docs.aws.amazon.com/worklink/latest/api/API_SignOutUser.html)  | Grants permission to sign out a user from an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ UpdateAuditStreamConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_UpdateAuditStreamConfiguration.html)  | Grants permission to update the audit stream configuration for an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ UpdateCompanyNetworkConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_UpdateCompanyNetworkConfiguration.html)  | Grants permission to update the company network configuration for an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ UpdateDevicePolicyConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_UpdateDevicePolicyConfiguration.html)  | Grants permission to update the device policy configuration for an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ UpdateDomainMetadata ](https://docs.aws.amazon.com/worklink/latest/api/API_UpdateDomainMetadata.html)  | Grants permission to update the metadata for a domain associated with an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ UpdateFleetMetadata ](https://docs.aws.amazon.com/worklink/latest/api/API_UpdateFleetMetadata.html)  | Grants permission to update the metadata of an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
-|   [ UpdateIdentityProviderConfiguration ](https://docs.aws.amazon.com/worklink/latest/api/API_UpdateIdentityProviderConfiguration.html)  | Grants permission to update the identity provider configuration for an Amazon WorkLink fleet | Write |   [ fleet\* ](#amazonworklink-fleet)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonworklink.html)
 
 ## Resource Types Defined by Amazon WorkLink<a name="amazonworklink-resources-for-iam-policies"></a>
 
@@ -65,8 +33,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ fleet ](https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet)  |  arn:$\{Partition\}:worklink::$\{Account\}:fleet/$\{fleetName\}  |  | 
+|   [ fleet ](https://docs.aws.amazon.com/worklink/latest/api/worklink-resources.html#Fleet)  |  arn:$\{Partition\}:worklink::$\{Account\}:fleet/$\{fleetName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonworklink-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon WorkLink<a name="amazonworklink-policy-keys"></a>
 
-WorkLink has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon WorkLink defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

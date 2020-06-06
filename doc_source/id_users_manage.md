@@ -14,7 +14,7 @@ For more information about adding, changing, or removing managed policies for an
 
 ## View User Access<a name="users-manage_prerequisites"></a>
 
-Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing service last accessed data, see [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)\.
+Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing last accessed information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\.
 
 ## Listing IAM Users<a name="id_users_manage_list"></a>
 
@@ -93,7 +93,7 @@ Any managed policies attached to the user are detached from the user when the us
 
 1. At the top of the page, choose **Delete user**\. 
 
-1. In the confirmation dialog box, wait for the service last accessed data to load before you review the data\. The dialog box shows when each of the selected users last accessed an AWS service\. If you attempt to delete a user that has been active within the last 30 days, you must select an additional check box to confirm that you want to delete the active user\. If you want to proceed, choose **Yes, Delete**\. 
+1. In the confirmation dialog box, wait for the last accessed information to load before you review the data\. The dialog box shows when each of the selected users last accessed an AWS service\. If you attempt to delete a user that has been active within the last 30 days, you must select an additional check box to confirm that you want to delete the active user\. If you want to proceed, choose **Yes, Delete**\. 
 
 ### Deleting an IAM User \(AWS CLI\)<a name="id_users_deleting_cli"></a>
 

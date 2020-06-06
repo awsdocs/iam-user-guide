@@ -27,11 +27,14 @@ For details about the columns in the following table, see [The Actions Table](re
 | --- | --- | --- | --- | --- | --- | 
 |   [ AcceptAgreementApprovalRequest ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to approve an incoming subscription request \(for providers who provide products that require subscription verification\)\. | Write |  |  |  | 
 |   [ CancelAgreementRequest ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to cancel pending subscription requests for products that require subscription verification\. | Write |  |  |  | 
+|   [ DescribeAgreement ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Returns metadata about the agreement\. | Read |  |  |  | 
 |   [ GetAgreementApprovalRequest ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to view the details of their incoming subscription requests \(for providers who provide products that require subscription verification\)\. | Read |  |  |  | 
 |   [ GetAgreementRequest ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to view the details of their subscription requests for data products that require subscription verification\. | Read |  |  |  | 
+|   [ GetAgreementTerms ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Returns a list of terms for an agreement\. | List |  |  |  | 
 |   [ ListAgreementApprovalRequests ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to list their incoming subscription requests \(for providers who provide products that require subscription verification\)\. | List |  |  |  | 
 |   [ ListAgreementRequests ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to list their subscription requests for products that require subscription verification\. | List |  |  |  | 
 |   [ RejectAgreementApprovalRequest ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to decline an incoming subscription requests \(for providers who provide products that require subscription verification\)\. | Write |  |  |  | 
+|   [ SearchAgreements ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to search their agreements\. | List |  |  |  | 
 |   [ Subscribe ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to subscribe to AWS Marketplace products\. Includes the ability to send a subscription request for products that require subscription verification\. Includes the ability to enable auto\-renewal for an existing subscription\. | Write |  |  |  | 
 |   [ Unsubscribe ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to remove subscriptions to AWS Marketplace products\. Includes the ability to disable auto\-renewal for an existing subscription\. | Write |  |  |  | 
 |   [ UpdateAgreementApprovalRequest ](https://docs.aws.amazon.com/marketplace/latest/controlling-access/ControllingAccessToAWSMarketplaceSubscriptions.html#SummaryOfAWSMarketplaceSubscriptionsPermissions)  | Allows users to make changes to an incoming subscription request, including the ability to delete the prospective subscriber's information \(for providers who provide products that require subscription verification\)\. | Write |  |  |  | 
@@ -43,4 +46,14 @@ AWS Marketplace does not support specifying a resource ARN in the `Resource` ele
 
 ## Condition Keys for AWS Marketplace<a name="awsmarketplace-policy-keys"></a>
 
-Marketplace has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS Marketplace defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   aws\-marketplace:AgreementType  | Enables you to control access based on the type of the agreement\. | String | 
+|   aws\-marketplace:PartyType  | Enables you to control access based on the party type of the agreement\. | String | 

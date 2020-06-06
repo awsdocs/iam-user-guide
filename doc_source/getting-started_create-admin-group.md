@@ -165,5 +165,5 @@ For related information found in the *Amazon Web Services General Reference*, se
 + [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
 
 For related information in the *IAM User Guide*, see the following resources:
-+ [Refining Permissions Using Service Last Accessed Data](access_policies_access-advisor.md)
++ [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)
 + [Tutorial: Delegate Access to the Billing Console](tutorial_billing.md)

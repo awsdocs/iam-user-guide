@@ -280,7 +280,7 @@ You can use the IAM console to delete a service\-linked role\.
 
 1. For **Role actions** at the top of the page, choose **Delete role**\.
 
-1. In the confirmation dialog box, review the service last accessed data, which shows when each of the selected roles last accessed an AWS service\. This helps you to confirm whether the role is currently active\. If you want to proceed, choose **Yes, Delete** to submit the service\-linked role for deletion\.
+1. In the confirmation dialog box, review the last accessed information, which shows when each of the selected roles last accessed an AWS service\. This helps you to confirm whether the role is currently active\. If you want to proceed, choose **Yes, Delete** to submit the service\-linked role for deletion\.
 
 1. Watch the IAM console notifications to monitor the progress of the service\-linked role deletion\. Because the IAM service\-linked role deletion is asynchronous, after you submit the role for deletion, the deletion task can succeed or fail\. 
    + If the task succeeds, then the role is removed from the list and a notification of success appears at the top of the page\.

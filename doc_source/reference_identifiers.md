@@ -269,7 +269,7 @@ IAM uses the following prefixes to indicate what type of entity each unique ID a
 The unique ID for an IAM entity is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
 
 AWS CLI:
-+  [get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/iam/get-caller-identity.html) 
++  [get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html) 
 +  [get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html) 
 +  [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) 
 +  [get\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user.html) 
@@ -278,7 +278,7 @@ AWS CLI:
 +  [get\-server\-certificate](https://docs.aws.amazon.com/cli/latest/reference/iam/get-server-certificate.html) 
 
 IAM API:
-+  [GetCallerIdentity](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetCallerIdentity.html) 
++  [GetCallerIdentity](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetCallerIdentity.html) 
 +  [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html) 
 +  [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 +  [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) 

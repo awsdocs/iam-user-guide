@@ -44,7 +44,7 @@ Specifies the AWS service to which this role is attached\.
 
 **iam:OrganizationsPolicyId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Checks that the policy with the specified AWS Organizations ID matches the policy used in the request\. To view an example IAM policy that uses this condition key, see [IAM: View Service Last Accessed Data for an Organizations Policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.
+Checks that the policy with the specified AWS Organizations ID matches the policy used in the request\. To view an example IAM policy that uses this condition key, see [IAM: View Service Last Accessed Information for an Organizations Policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.
 
 **iam:PassedToService**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

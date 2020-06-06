@@ -62,7 +62,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows using the policy simulator console for users with a specific path \([View this policy](reference_policies_examples_iam_policy-sim-path-console.md)\.\)
 + Allows IAM users to self\-manage an MFA device\. \([View this policy](reference_policies_examples_iam_mfa-selfmanage.md)\.\)
 + Allows IAM users to rotate their own credentials, programmatically and in the console\. \([View this policy](reference_policies_examples_iam_credentials_console.md)\.\)
-+ Allows viewing service last accessed data for an AWS Organizations policy in the IAM console\. \([View this policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.\)
++ Allows viewing service last accessed information for an AWS Organizations policy in the IAM console\. \([View this policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.\)
 + Limits managed policies that can be applied to an IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\.\)
 
 ## Example Policies: AWS Lambda<a name="policy_library_Lambda"></a>

@@ -19,7 +19,7 @@ You can create an IAM policy visually, using JSON, or by importing an existing m
 
 ## Controlling Access to AWS Resources<a name="access_tags_control-resources"></a>
 
-You can use conditions in your IAM policies to control access to AWS resources based on the tags on that resource\. You can do this using the global `aws:ResourceTag/tag-key` condition key, or a service\-specific key such as `iam:RequestTag/tag-key`\. Some services, such as IAM, support only the service\-specific version of this key and not the global version\. 
+You can use conditions in your IAM policies to control access to AWS resources based on the tags on that resource\. You can do this using the global `aws:ResourceTag/tag-key` condition key, or a service\-specific key such as `iam:ResourceTag/tag-key`\. Some services, such as IAM, support only the service\-specific version of this key and not the global version\. 
 
 **Note**  
 Do not use the `ResourceTag` condition key in a policy with the `iam:PassRole` action\. You cannot use the tag on an IAM role to control access to who can pass that role\. For more information about permissions required to pass a role to a service, see [Granting a User Permissions to Pass a Role to an AWS Service](id_roles_use_passrole.md)\.

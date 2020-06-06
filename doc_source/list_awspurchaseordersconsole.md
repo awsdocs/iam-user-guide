@@ -25,8 +25,8 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ ModifyPurchaseOrders ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Modify purchase orders and details | Write |  |  |  | 
-|   [ ViewPurchaseOrders ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | View purchase orders and details | Read |  |  |  | 
+|   [ ModifyPurchaseOrders ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) \[permission only\] | Modify purchase orders and details | Write |  |  |  | 
+|   [ ViewPurchaseOrders ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions) \[permission only\] | View purchase orders and details | Read |  |  |  | 
 
 ## Resource Types Defined by AWS Purchase Orders Console<a name="awspurchaseordersconsole-resources-for-iam-policies"></a>
 

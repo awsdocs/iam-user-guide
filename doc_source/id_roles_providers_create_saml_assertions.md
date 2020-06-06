@@ -12,7 +12,7 @@ The following excerpt shows an example\. Substitute your own values for the mark
 <Subject>
   <NameID Format="urn:oasis:names:tc:SAML:2.0:nameid-format:persistent">_cbb88bf52c2510eabe00c1642d4643f41430fe25e3</NameID>
   <SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
-    <SubjectConfirmationData NotOnOrAfter="2013-11-05T02:06:42.876Z" Recipient="https://signin.&home-domain;/saml"/>
+    <SubjectConfirmationData NotOnOrAfter="2013-11-05T02:06:42.876Z" Recipient="https://signin.aws.amazon.com/saml"/>
   </SubjectConfirmation>
 </Subject>
 ```
@@ -24,7 +24,7 @@ For security reasons, AWS should be included as an audience in the SAML assertio
 ```
 <Conditions>
   <AudienceRestriction>
-    <Audience>https://signin.&home-domain;/saml</Audience>
+    <Audience>https://signin.aws.amazon.com/saml</Audience>
   </AudienceRestriction>
 </Conditions>
 ```

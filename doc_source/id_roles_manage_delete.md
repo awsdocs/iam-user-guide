@@ -24,7 +24,7 @@ Before you delete a role, we recommend that you review when the role was last us
 The date of the role's last activity might not match the last date reported in the **Access Advisor** tab\. The [**Access Advisor**](access_policies_access-advisor-view-data.md) tab reports activity only for services that are allowed by the role's permissions policies\. The date of the role's last activity includes the last attempt to access any service in AWS\. 
 
 **Note**  
-The tracking period for a role's last activity and Access Advisor data is for the trailing 400 days\. This period can be shorter if your Region began supporting these features within the last year\. The role might have been used more than 400 days ago\. For more information about the tracking period, see [Regions Where Data Is Tracked](access_policies_access-advisor.md#access-advisor_tracking-period)\.
+The tracking period for a role's last activity and Access Advisor data is for the trailing 400 days\. This period can be shorter if your Region began supporting these features within the last year\. The role might have been used more than 400 days ago\. For more information about the tracking period, see [Where AWS Tracks Last Accessed Information](access_policies_access-advisor.md#access-advisor_tracking-period)\.
 
 **To view when a role was last used \(console\)**
 
@@ -63,7 +63,7 @@ In some cases, a role might be associated with an Amazon EC2 instance profile, a
 
 1. At the top of the page, choose **Delete role**\.
 
-1. In the confirmation dialog box, review the service last accessed data, which shows when each of the selected roles last accessed an AWS service\. This helps you to confirm whether the role is currently active\. If you want to proceed, choose **Yes, Delete**\. If you are sure, you can proceed with the deletion even if the service last accessed data is still loading\.
+1. In the confirmation dialog box, review the last accessed information, which shows when each of the selected roles last accessed an AWS service\. This helps you to confirm whether the role is currently active\. If you want to proceed, choose **Yes, Delete**\. If you are sure, you can proceed with the deletion even if the last accessed information is still loading\.
 
 **Note**  
 You cannot use the console to delete an instance profile unless it has the same name as the role\. In addition, you must delete the instance profile as part of the process of deleting a role as described in the preceding procedure\. To delete an instance profile without also deleting the role, you must use the AWS CLI or AWS API\. For more information, see the following sections\.
