@@ -38,7 +38,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ ratebasedrule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RateBasedRule.html)  |  arn:$\{Partition\}:waf::$\{Account\}:ratebasedrule/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswaf-aws_ResourceTag___TagKey_)   | 
 |   [ rule ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_Rule.html)  |  arn:$\{Partition\}:waf::$\{Account\}:rule/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswaf-aws_ResourceTag___TagKey_)   | 
 |   [ sizeconstraintset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_SizeConstraintSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:sizeconstraintset/$\{Id\}  |  | 
-|   [ sqlinjectionmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionmatchset/$\{Id\}  |  | 
+|   [ sqlinjectionmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_SqlInjectionMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:sqlinjectionset/$\{Id\}  |  | 
 |   [ webacl ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_WebACL.html)  |  arn:$\{Partition\}:waf::$\{Account\}:webacl/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswaf-aws_ResourceTag___TagKey_)   | 
 |   [ xssmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_XssMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:xssmatchset/$\{Id\}  |  | 
 |   [ regexmatchset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_waf_RegexMatchSet.html)  |  arn:$\{Partition\}:waf::$\{Account\}:regexmatch/$\{Id\}  |  | 

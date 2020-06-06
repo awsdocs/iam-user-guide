@@ -245,6 +245,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon Sumerian](list_amazonsumerian.md)
 + [AWS Support](list_awssupport.md)
 + [AWS Systems Manager](list_awssystemsmanager.md)
++ [AWS Tag Editor](list_awstageditor.md)
 + [Amazon Textract](list_amazontextract.md)
 + [Amazon Transcribe](list_amazontranscribe.md)
 + [AWS Transfer for SFTP](list_awstransferforsftp.md)

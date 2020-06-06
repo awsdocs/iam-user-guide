@@ -512,6 +512,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon Sumerian](list_amazonsumerian.md)
          + [Actions, Resources, and Condition Keys for AWS Support](list_awssupport.md)
          + [Actions, Resources, and Condition Keys for AWS Systems Manager](list_awssystemsmanager.md)
+         + [Actions, Resources, and Condition Keys for AWS Tag Editor](list_awstageditor.md)
          + [Actions, Resources, and Condition Keys for Amazon Textract](list_amazontextract.md)
          + [Actions, Resources, and Condition Keys for Amazon Transcribe](list_amazontranscribe.md)
          + [Actions, Resources, and Condition Keys for AWS Transfer for SFTP](list_awstransferforsftp.md)

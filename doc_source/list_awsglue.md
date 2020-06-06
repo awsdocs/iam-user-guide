@@ -33,7 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ catalog ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:catalog/$\{CatalogName\}  |  | 
+|   [ catalog ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:catalog  |  | 
 |   [ database ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:database/$\{DatabaseName\}  |  | 
 |   [ table ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:table/$\{TableName\}  |  | 
 |   [ tableversion ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:tableVersion/$\{TableVersionName\}  |  | 
