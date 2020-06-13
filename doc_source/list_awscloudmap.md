@@ -22,29 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CreateHttpNamespace ](https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateHttpNamespace.html)  | Creates an HTTP namespace\. | Write |  |  |  | 
-|   [ CreatePrivateDnsNamespace ](https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePrivateDnsNamespace.html)  | Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC\. | Write |  |  |  | 
-|   [ CreatePublicDnsNamespace ](https://docs.aws.amazon.com/cloud-map/latest/api/API_CreatePublicDnsNamespace.html)  | Creates a public namespace based on DNS, which will be visible on the internet\. | Write |  |  |  | 
-|   [ CreateService ](https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html)  | Creates a service\. | Write |  |   [ servicediscovery:NamespaceArn ](#awscloudmap-servicediscovery_NamespaceArn)   |  | 
-|   [ DeleteNamespace ](https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteNamespace.html)  | Deletes a specified namespace\. | Write |   [ namespace\* ](#awscloudmap-namespace)   |  |  | 
-|   [ DeleteService ](https://docs.aws.amazon.com/cloud-map/latest/api/API_DeleteService.html)  | Deletes a specified service\. | Write |   [ service\* ](#awscloudmap-service)   |  |  | 
-|   [ DeregisterInstance ](https://docs.aws.amazon.com/cloud-map/latest/api/API_DeregisterInstance.html)  | Deletes the records and the health check, if any, that Amazon Route 53 created for the specified instance\. | Write |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
-|   [ DiscoverInstances ](https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html)  | Discovers registered instances for a specified namespace and service\. | Read |  |   [ servicediscovery:NamespaceName ](#awscloudmap-servicediscovery_NamespaceName)   [ servicediscovery:ServiceName ](#awscloudmap-servicediscovery_ServiceName)   |  | 
-|   [ GetInstance ](https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstance.html)  | Gets information about a specified instance\. | Read |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
-|   [ GetInstancesHealthStatus ](https://docs.aws.amazon.com/cloud-map/latest/api/API_GetInstancesHealthStatus.html)  | Gets the current health status \(Healthy, Unhealthy, or Unknown\) of one or more instances\. | Read |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
-|   [ GetNamespace ](https://docs.aws.amazon.com/cloud-map/latest/api/API_GetNamespace.html)  | Gets information about a namespace\. | Read |   [ namespace\* ](#awscloudmap-namespace)   |  |  | 
-|   [ GetOperation ](https://docs.aws.amazon.com/cloud-map/latest/api/API_GetOperation.html)  | Gets information about a specific operation\. | Read |  |  |  | 
-|   [ GetService ](https://docs.aws.amazon.com/cloud-map/latest/api/API_GetService.html)  | Gets the settings for a specified service\. | Read |   [ service\* ](#awscloudmap-service)   |  |  | 
-|   [ ListInstances ](https://docs.aws.amazon.com/cloud-map/latest/api/API_ListInstances.html)  | Gets summary information about the instances that were registered with a specified service\. | List |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
-|   [ ListNamespaces ](https://docs.aws.amazon.com/cloud-map/latest/api/API_ListNamespaces.html)  | Gets information about the namespaces\. | List |  |  |  | 
-|   [ ListOperations ](https://docs.aws.amazon.com/cloud-map/latest/api/API_ListOperations.html)  | Lists operations that match the criteria that you specify\. | List |  |  |  | 
-|   [ ListServices ](https://docs.aws.amazon.com/cloud-map/latest/api/API_ListServices.html)  | Gets settings for all the services that match specified filters\. | List |  |  |  | 
-|   [ RegisterInstance ](https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html)  | Registers an instance based on the settings in a specified service\. | Write |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
-|   [ UpdateInstanceCustomHealthStatus ](https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html)  | Updates the current health status for an instance that has a custom health check\. | Write |  |   [ servicediscovery:ServiceArn ](#awscloudmap-servicediscovery_ServiceArn)   |  | 
-|   [ UpdateService ](https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateService.html)  | Updates the settings in a specified service\. | Write |   [ service\* ](#awscloudmap-service)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awscloudmap.html)
 
 ## Resource Types Defined by AWS Cloud Map<a name="awscloudmap-resources-for-iam-policies"></a>
 
@@ -55,8 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ namespace ](https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html)  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:namespace/$\{NamespaceId\}  |  | 
-|   [ service ](https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html)  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceId\}  |  | 
+|   [ namespace ](https://docs.aws.amazon.com/cloud-map/latest/dg/API_Namespace.html)  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:namespace/$\{NamespaceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscloudmap-aws_ResourceTag___TagKey_)   | 
+|   [ service ](https://docs.aws.amazon.com/cloud-map/latest/dg/API_Service.html)  |  arn:$\{Partition\}:servicediscovery:$\{Region\}:$\{Account\}:service/$\{ServiceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscloudmap-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Cloud Map<a name="awscloudmap-policy-keys"></a>
 
@@ -69,6 +47,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the tags that are passed in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the tag keys that are passed in the request | String | 
 |   [ servicediscovery:NamespaceArn ](https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the Amazon Resource Name \(ARN\) for the related namespace\. | String | 
 |   [ servicediscovery:NamespaceName ](https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the name of the related namespace\. | String | 
 |   [ servicediscovery:ServiceArn ](https://docs.aws.amazon.com/cloud-map/latest/dg/access-control-overview.html#specifying-conditions)  | A filter that lets you get objects by specifying the Amazon Resource Name \(ARN\) for the related service\. | String | 

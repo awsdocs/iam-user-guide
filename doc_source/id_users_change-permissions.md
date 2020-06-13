@@ -118,7 +118,7 @@ Setting a permissions boundary affects the user immediately\.
 
 ## Changing Permissions for a User \(Console\)<a name="users_change_permissions-change-console"></a>
 
-IAM offers three ways to change permissions that are associated with a user:
+IAM allows you to change the permissions that are associated with a user in the following ways:
 + **Edit a permissions policy** – Edit a user's inline policy, the inline policy of the user's group, or edit a managed policy that is attached to the user directly or from a group\. If the user has a permissions boundary, then you cannot provide more permissions than are allowed by the policy that was used as the user's permissions boundary\.
 + **Changing the permissions boundary** – Change the policy that is used as the permissions boundary for the user\. This can expand or restrict the maximum permissions that a user can have\. 
 

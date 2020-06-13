@@ -64,7 +64,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ listener ](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:listener/$\{LoadBalancerName\}/$\{LoadBalancerId\}/$\{ListenerId\}  |  | 
-|   [ loadbalancer ](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/$\{LoadBalancerName\}  |   [ aws:RequestTag/tag\-key ](#elasticloadbalancing-aws_RequestTag_tag-key)   [ aws:TagKeys ](#elasticloadbalancing-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/tag\-key ](#elasticloadbalancing-elasticloadbalancing_ResourceTag_tag-key)   | 
+|   [ loadbalancer ](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/$\{LoadBalancerName\}  |   [ aws:RequestTag/$\{TagKey\} ](#elasticloadbalancing-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#elasticloadbalancing-aws_TagKeys)   [ elasticloadbalancing:ResourceTag/$\{TagKey\} ](#elasticloadbalancing-elasticloadbalancing_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Elastic Load Balancing<a name="elasticloadbalancing-policy-keys"></a>
 
@@ -77,7 +77,7 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/tag\-key  | A key that is present in the request the user makes to the ELB service\. | String | 
+|   aws:RequestTag/$\{TagKey\}  | A key that is present in the request the user makes to the ELB service\. | String | 
 |   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
 |   elasticloadbalancing:ResourceTag/  | The preface string for a tag key and value pair attached to a resource\. | String | 
-|   elasticloadbalancing:ResourceTag/tag\-key  | A tag key and value pair\. | String | 
+|   elasticloadbalancing:ResourceTag/$\{TagKey\}  | A tag key and value pair\. | String | 

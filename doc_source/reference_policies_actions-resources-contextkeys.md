@@ -69,6 +69,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon CloudWatch Logs](list_amazoncloudwatchlogs.md)
 + [Amazon CloudWatch Synthetics](list_amazoncloudwatchsynthetics.md)
 + [AWS Code Signing for Amazon FreeRTOS](list_awscodesigningforamazonfreertos.md)
++ [AWS CodeArtifact](list_awscodeartifact.md)
 + [AWS CodeBuild](list_awscodebuild.md)
 + [AWS CodeCommit](list_awscodecommit.md)
 + [AWS CodeDeploy](list_awscodedeploy.md)

@@ -25,6 +25,9 @@ For details about the columns in the following table, see [The Actions Table](re
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
+|   [ DescribeRecommendationExportJobs ](https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_DescribeRecommendationExportJobs.html)  | Grants permission to view the status of recommendation export jobs\. | List |  |  |  | 
+|   [ ExportAutoScalingGroupRecommendations ](https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportAutoScalingGroupRecommendations.html)  | Grants permission to export autoscaling group recommendations to S3 for the provided accounts\. | Write |  |  |  | 
+|   [ ExportEC2InstanceRecommendations ](https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_ExportEC2InstanceRecommendations.html)  | Grants permission to export EC2 instance recommendations to S3 for the provided accounts\. | Write |  |  |  | 
 |   [ GetAutoScalingGroupRecommendations ](https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetAutoScalingGroupRecommendations.html)  | Grants permission to get recommendations for the provided autoscaling groups\. | List |  |  |  | 
 |   [ GetEC2InstanceRecommendations ](https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2InstanceRecommendations.html)  | Grants permission to get recommendations for the provided EC2 instances\. | List |  |  |  | 
 |   [ GetEC2RecommendationProjectedMetrics ](https://docs.aws.amazon.com/compute-optimizer/latest/APIReference/API_GetEC2RecommendationProjectedMetrics.html)  | Grants permission to get the recommendation projected metrics of the specified instance\. | List |  |  |  | 

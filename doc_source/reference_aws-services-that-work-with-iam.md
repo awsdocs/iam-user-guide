@@ -77,6 +77,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Cloud9](https://docs.aws.amazon.com/cloud9/latest/user-guide/auth-and-access-control.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/cloud9/latest/user-guide/using-service-linked-roles.html) | 
+|  [AWS Code Artifact](https://docs.aws.amazon.com/codeartifact/latest/ug/auth-and-access-control-iam-identity-based-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control.html)  | Yes | Yes | Yes¹ | Yes² | Yes | No | 
 |  [CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS CodeDeploy](https://docs.aws.amazon.com/codedeploy/latest/userguide/access-permissions.html)  | Yes | Yes | No | Yes | Yes | No | 
@@ -202,6 +203,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Application Discovery Service](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/application-discovery/latest/userguide/setting-up.html#using-service-linked-roles) | 
 |  [AWS Connector Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/SMS_setup.html)  | Yes | No | No | No | Yes | No | 
+|  [AWS Transfer for SFTP](https://docs.aws.amazon.com/transfer/latest/userguide/security-iam.html)  | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.IAMPermissions.html)  | Yes | Yes | Yes¹ | Yes | Yes | No | 
 |  [AWS Migration Hub](https://docs.aws.amazon.com/migrationhub/latest/ug/auth-and-access-control.html)  | Yes | Yes | No | No | Yes | No | 
 |  [AWS Server Migration Service](https://docs.aws.amazon.com/server-migration-service/latest/userguide/identity-access-management.html)  | Yes | No | No | No | Yes | [Yes](https://docs.aws.amazon.com/server-migration-service/latest/userguide/using-service-linked-roles.html) | 
@@ -224,7 +226,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon API Gateway](https://docs.aws.amazon.com/apigateway/latest/developerguide/permissions.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/apigateway/latest/developerguide/using-service-linked-roles.html) | 
 |   [AWS App Mesh](https://docs.aws.amazon.com/app-mesh/latest/userguide/IAM_policies.html)   | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/app-mesh/latest/userguide/using-service-linked-roles.html) | 
 |   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/auth-and-access-control.html)   | Yes¹ | Yes | No | Yes | Yes | [Yes⁴](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) | 
-|   [AWS Cloud Map](https://docs.aws.amazon.com/cloud-map/latest/dg/auth-and-access-control.html)   | Yes | Yes | No | No | Yes | No | 
+|   [AWS Cloud Map](https://docs.aws.amazon.com/cloud-map/latest/dg/auth-and-access-control.html)   | Yes | Yes | No | Yes | Yes | No | 
 |  [AWS Direct Connect](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_iam.html)  | Yes | Yes | No | [Yes](https://docs.aws.amazon.com/directconnect/latest/UserGuide/using_tags.html) | Yes | No | 
 |  [AWS Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/auth-and-access-control.html)  | Yes | Yes | No | Yes | Yes | [Yes](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-service-linked-roles.html) | 
 |  [Network Manager](https://docs.aws.amazon.com/vpc/latest/tgw/nm-security-iam.html)  | Yes | Yes | Yes | Yes | Yes | [Yes](https://docs.aws.amazon.com/vpc/latest/tgw/nm-service-linked-roles.html) | 

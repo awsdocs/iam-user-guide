@@ -28,14 +28,17 @@ For details about the columns in the following table, see [The Actions Table](re
 
 The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonfsx-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
+**Note**  
+Amazon FSx for Windows File Server and Amazon FSx for Lustre share some of the same resource types, with the same ARN format for each\.
+
 
 ****  
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ file\-system ](https://docs.aws.amazon.com/fsx/latest/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:fsx:$\{Region\}:$\{Account\}:file\-system/\*  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfsx-aws_ResourceTag___TagKey_)   | 
-|   [ backup ](https://docs.aws.amazon.com/fsx/latest/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:fsx:$\{Region\}:$\{Account\}:backup/\*  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfsx-aws_ResourceTag___TagKey_)   | 
-|   [ task ](https://docs.aws.amazon.com/fsx/latest/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:fsx:$\{Region\}:$\{Account\}:task/\*  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfsx-aws_ResourceTag___TagKey_)   | 
+|   [ file\-system ](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:fsx:$\{Region\}:$\{Account\}:file\-system/\*  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfsx-aws_ResourceTag___TagKey_)   | 
+|   [ backup ](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:fsx:$\{Region\}:$\{Account\}:backup/\*  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfsx-aws_ResourceTag___TagKey_)   | 
+|   [ task ](https://docs.aws.amazon.com/fsx/latest/LustreGuide/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:fsx:$\{Region\}:$\{Account\}:task/\*  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonfsx-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon FSx<a name="amazonfsx-policy-keys"></a>
 
