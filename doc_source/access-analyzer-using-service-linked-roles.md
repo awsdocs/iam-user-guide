@@ -29,6 +29,10 @@ The role permissions policy allows Access Analyzer to complete the following act
         "s3:GetBucketAcl",
         "s3:GetBucketLocation",
         "s3:GetBucketPolicy",
+        “s3:ListAccessPoints”,
+        “s3:GetAccessPoint”,
+        “s3:GetAccessPointPolicy”,
+        “s3:GetAccessPointPolicyStatus”,
         "iam:GetRole",
         "iam:ListRoles",
         "kms:DescribeKey",
@@ -93,11 +97,13 @@ If Access Analyzer is using the role when you try to delete the resources, then 
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the **Access reports** section, under **Access analyzer**, choose **Analyzer details**\.
+1. In the **Access reports** section, under **Access analyzer**, choose **Analyzers**\.
+
+1. Choose the check box on the top left above the list of analyzers in the **Analyzers** table to select all analyzers\.
 
 1. Choose **Delete**\.
 
-1. To confirm that you want to delete the analyzer, enter **delete**, and then choose **Delete**\.
+1. To confirm that you want to delete the analyzers, enter **delete**, and then choose **Delete**\.
 
 **To manually delete the service\-linked role using IAM**
 

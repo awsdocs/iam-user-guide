@@ -27,6 +27,9 @@ The unique ID assigned to the finding\. Choose the finding ID to display additio
 **Resource**  
 The type and partial name of the resource that has a policy applied to it that grants access to an external entity not within your zone of trust\.
 
+**Resource owner account**  
+This column is displayed only if you are using an organization as the zone of trust\. The account in the organization that owns the resource reported in the finding\.
+
 **External principal**  
 The principal, not within your zone of trust, that the analyzed policy grants access to\. Valid values include:  
 + **AWS account** –All principals in the listed AWS account with permissions from that account's administrator can access the resource\.
@@ -37,6 +40,12 @@ The principal, not within your zone of trust, that the analyzed policy grants ac
 
 **Condition**  
 The condition from the policy statement that grants the access\. For example, if the **Condition** field includes **Source VPC**, it means that the resource is shared with a principal that has access to the VPC listed\. Conditions can be global or service\-specific\. [Global condition keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) have the `aws:` prefix\.
+
+**Shared through**  
+The **Shared through** field indicates how the access that generated the finding is granted\. Valid values include:  
++ **Bucket policy** – The bucket policy that is attached to the Amazon S3 bucket\.
++ **Access control list** – The access control list \(ACL\) that is attached to the Amazon S3 bucket\.
++ **Access point** – An access point that is associated with the Amazon S3 bucket\. The ARN of the access point is displayed in the **Findings** details\.
 
 **Access level**  
 The level of access granted to the external entity by the actions in the resource\-based policy\. View the details of the finding for more information\. Access level values include the following:  

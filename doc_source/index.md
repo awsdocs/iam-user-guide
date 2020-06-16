@@ -252,6 +252,7 @@ Amazon's trademarks and trade dress may not be used in
    + [How Access Analyzer Works](access-analyzer-concepts.md)
    + [Getting Started with AWS IAM Access Analyzer](access-analyzer-getting-started.md)
       + [Using Service-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)
+   + [Settings](access-analyzer-settings.md)
    + [Access Analyzer Findings](access-analyzer-findings.md)
       + [Working with Findings](access-analyzer-work-with-findings.md)
       + [Review Findings](access-analyzer-findings-view.md)

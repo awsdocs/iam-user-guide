@@ -16,6 +16,8 @@ Use filters to display only the findings for a specific resource, account, princ
 
 You can add additional properties to further filter the findings displayed\. When you add additional properties, only findings that match all conditions in the filter are displayed\. Defining a filter to display findings that match one property OR another property is not supported\.
 
+Some fields are displayed only when you are viewing findings for an analyzer with an organization as its zone of trust\.
+
 The following properties are available for defining filters:
 + **Resource** – To filter by resource, type all or part of the name of the resource\.
 + **Resource Type** – To filter by resource type, choose the type from the list displayed\.
