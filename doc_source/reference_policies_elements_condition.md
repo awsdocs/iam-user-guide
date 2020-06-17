@@ -64,14 +64,14 @@ The request context can return the following values:
 The following example shows the basic format of a `Condition` element:
 
 ```
-"Condition": {
-  "DateGreaterThan" : {
-     "aws:CurrentTime" : "2013-12-15T12:00:00Z"
-   }
-}
+"Condition": {"StringLike": {"s3:prefix": ["$janedoe/*"]}}
 ```
 
-A value from the request is represented by a key, in this case `aws:CurrentTime`\. The key value is compared to a value that you specify either as a literal value \(`2013-08-16T12:00:00Z`\) or as a policy variable, as explained later\. The type of comparison to make is specified by the [condition operator](reference_policies_elements_condition_operators.md) \(here, `DateGreaterThan`\)\. You can create conditions that compare strings, dates, numbers, and so on, using typical Boolean comparisons like equals, greater than, and less than\. 
+A value from the request is represented by a condition key, in this case `s3:prefix`\. The context key value is compared to a value that you specify as a literal value, such as `janedoe/*`\. The type of comparison to make is specified by the [condition operator](reference_policies_elements_condition_operators.md) \(here, `StringLike`\)\. You can create conditions that compare strings, dates, numbers, and more using typical Boolean comparisons such as equals, greater than, and less than\. When you use [string operators](reference_policies_elements_condition_operators.md#Conditions_String) or [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN), you can also use a [policy variable](reference_policies_variables.md) in the condition value\. The following example includes the `aws:username` variable\. 
+
+```
+"Condition": {"StringLike": {"s3:prefix": ["${aws:username}/*"]}}
+```
 
 Under some circumstances, keys can contain multiple values\. For example, a request to Amazon DynamoDB might ask to return or update multiple attributes from a table\. A policy for access to DynamoDB tables can include the `dynamodb:Attributes` key, which contains all the attributes listed in the request\. You can test the multiple attributes in the request against a list of allowed attributes in a policy by using set operators in the `Condition` element\. For more information, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\. 
 
