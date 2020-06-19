@@ -54,7 +54,7 @@ If you are an IAM user, you can log in using either a sign\-in URL or the main s
 1. Open a browser and enter the following sign\-in URL, replacing *account\_alias\_or\_id* with the account alias or account ID provided by your administrator\.
 
    ```
-   https://account_alias_or_id.signin.amazonaws.com/console/
+   https://account_alias_or_id.signin.aws.amazon.com/console/
    ```
 
 1. Enter your IAM user name and password and choose **Sign in**\.  

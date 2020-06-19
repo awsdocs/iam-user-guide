@@ -1,9 +1,7 @@
 # Managing Access Keys for IAM Users<a name="id_credentials_access-keys"></a>
 
 **Note**  
-If you found this topic because you are trying to configure the Product Advertising API to sell Amazon products on your website, see these topics:  
-[Getting Started with the Product Advertising API](https://docs.aws.amazon.com/AWSECommerceService/latest/GSG/GettingStarted.html)
-[Getting Started as a Product Advertising API Developer](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/CHAP_GettingStarted.html)
+If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.
 
 Access keys are long\-term credentials for an IAM user or the AWS account root user\. You can use access keys to sign programmatic requests to the AWS CLI or AWS API \(directly or using the AWS SDK\)\. For more information, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\. 
 

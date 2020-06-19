@@ -86,7 +86,7 @@ This example shows how you might create a policy that allows a principal to star
         ],
         "Resource": "*",
         "Condition": {"StringEquals": 
-            {"ec2:ResourceTag/costcenter": "${aws:PrincipalTag/cost-center}"}}
+            {"ec2:ResourceTag/cost-center": "${aws:PrincipalTag/cost-center}"}}
     }
 }
 ```

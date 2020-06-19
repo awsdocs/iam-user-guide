@@ -22,51 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AcceptInvitation ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AcceptInvitation.html)  | Grants permission to accept Security Hub invitations to become a member account | Write |  |  |  | 
-|   [ BatchDisableStandards ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchDisableStandards.html)  | Grants permission to disable standards in Security Hub | Write |   [ standards\-subscription\* ](#awssecurityhub-standards-subscription)   |  |  | 
-|   [ BatchEnableStandards ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchEnableStandards.html)  | Grants permission to enable standards in Security Hub | Write |   [ standard\* ](#awssecurityhub-standard)   |  |  | 
-|   [ BatchImportFindings ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html)  | Grants permission to import findings into Security Hub from an integrated product | Write |  |   [ securityhub:TargetAccount ](#awssecurityhub-securityhub_TargetAccount)   |  | 
-|   [ BatchUpdateFindings ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html)  | Grants permission to update customer\-controlled fields for a selected set of Security Hub findings | Write |  |  |  | 
-|   [ CreateActionTarget ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateActionTarget.html)  | Grants permission to create custom actions in Security Hub | Write |  |  |  | 
-|   [ CreateInsight ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateInsight.html)  | Grants permission to create insights in Security Hub\. Insights are collections of related findings | Write |  |  |  | 
-|   [ CreateMembers ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_CreateMembers.html)  | Grants permission to create member accounts in Security Hub | Write |  |  |  | 
-|   [ DeclineInvitations ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeclineInvitations.html)  | Grants permission to decline Security Hub invitations to become a member account | Write |  |  |  | 
-|   [ DeleteActionTarget ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteActionTarget.html)  | Grants permission to delete custom actions in Security Hub | Write |   [ action\-target\* ](#awssecurityhub-action-target)   |  |  | 
-|   [ DeleteInsight ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInsight.html)  | Grants permission to delete insights from Security Hub | Write |   [ insight\* ](#awssecurityhub-insight)   |  |  | 
-|   [ DeleteInvitations ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteInvitations.html)  | Grants permission to delete Security Hub invitations to become a member account | Write |  |  |  | 
-|   [ DeleteMembers ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DeleteMembers.html)  | Grants permission to delete Security Hub member accounts | Write |  |  |  | 
-|   [ DescribeActionTargets ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeActionTargets.html)  | Grants permission to retrieve a list of custom actions using the API | Read |  |  |  | 
-|   [ DescribeHub ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeHub.html)  | Grants permission to retrieve information about the hub resource in your account | Read |  |  |  | 
-|   [ DescribeProducts ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeProducts.html)  | Grants permission to retrieve information about the available Security Hub product integrations | Read |  |  |  | 
-|   [ DescribeStandards ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html)  | Grants permission to retrieve information about Security Hub standards | Read |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
-|   [ DescribeStandardsControls ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandardsControls.html)  | Grants permission to retrieve information about Security Hub standards controls | Read |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
-|   [ DisableImportFindingsForProduct ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableImportFindingsForProduct.html)  | Grants permission to disable the findings importing for a Security Hub integrated product | Write |   [ product\* ](#awssecurityhub-product)   |  |  | 
-|   [ DisableSecurityHub ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisableSecurityHub.html)  | Grants permission to disable Security Hub | Write |  |  |  | 
-|   [ DisassociateFromMasterAccount ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateFromMasterAccount.html)  | Grants permission to a Security Hub member account to disassociate from the associated master account | Write |  |  |  | 
-|   [ DisassociateMembers ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DisassociateMembers.html)  | Grants permission to disassociate Security Hub member accounts from the associated master account | Write |  |  |  | 
-|   [ EnableImportFindingsForProduct ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableImportFindingsForProduct.html)  | Grants permission to enable the findings importing for a Security Hub integrated product | Write |   [ product\* ](#awssecurityhub-product)   |  |  | 
-|   [ EnableSecurityHub ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_EnableSecurityHub.html)  | Grants permission to enable Security Hub | Write |  |   [ aws:RequestTag/$\{TagKey\} ](#awssecurityhub-aws_RequestTag___TagKey_)   [ aws:TagKeys ](#awssecurityhub-aws_TagKeys)   |  | 
-|   [ GetEnabledStandards ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetEnabledStandards.html)  | Grants permission to retrieve a list of the standards that are enabled in Security Hub | List |  |  |  | 
-|   [ GetFindings ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindings.html)  | Grants permission to retrieve a list of findings from Security Hub | Read |  |  |  | 
-|   [ GetInsightResults ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsightResults.html)  | Grants permission to retrieve insight results from Security Hub | Read |   [ insight\* ](#awssecurityhub-insight)   |  |  | 
-|   [ GetInsights ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInsights.html)  | Grants permission to retrieve Security Hub insights | List |   [ insight\* ](#awssecurityhub-insight)   |  |  | 
-|   [ GetInvitationsCount ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetInvitationsCount.html)  | Grants permission to retrieve the count of Security Hub membership invitations sent to the account | Read |  |  |  | 
-|   [ GetMasterAccount ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMasterAccount.html)  | Grants permission to retrieve details about the Security Hub master account | Read |  |  |  | 
-|   [ GetMembers ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetMembers.html)  | Grants permission to retrieve the details of Security Hub member accounts | Read |  |  |  | 
-|   [ InviteMembers ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_InviteMembers.html)  | Grants permission to invite other AWS accounts to become Security Hub member accounts | Write |  |  |  | 
-|   [ ListEnabledProductsForImport ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListEnabledProductsForImport.html)  | Grants permission to retrieve the Security Hub integrated products that are currently enabled | List |  |  |  | 
-|   [ ListInvitations ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListInvitations.html)  | Grants permission to retrieve the Security Hub invitations sent to the account | List |  |  |  | 
-|   [ ListMembers ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListMembers.html)  | Grants permission to retrieve details about Security Hub member accounts associated with the master account | List |  |  |  | 
-|   [ ListTagsForResource ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_ListTagsForResource.html)  | Grants permission to list of tags associated with a resource | List |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
-|   [ TagResource ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_TagResource.html)  | Grants permission to add tags to a Security Hub resource | Write |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
-|   [ UntagResource ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UntagResource.html)  | Grants permission to remove tags from a Security Hub resource | Write |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
-|   [ UpdateActionTarget ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateActionTarget.html)  | Grants permission to update custom actions in Security Hub | Write |   [ action\-target\* ](#awssecurityhub-action-target)   |  |  | 
-|   [ UpdateFindings ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateFindings.html)  | Grants permission to update Security Hub findings | Write |  |  |  | 
-|   [ UpdateInsight ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateInsight.html)  | Grants permission to update insights in Security Hub | Write |   [ insight\* ](#awssecurityhub-insight)   |  |  | 
-|   [ UpdateStandardsControl ](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html)  | Grants permission to update Security Hub standards controls | Write |   [ hub\* ](#awssecurityhub-hub)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awssecurityhub.html)
 
 ## Resource Types Defined by AWS Security Hub<a name="awssecurityhub-resources-for-iam-policies"></a>
 
@@ -77,13 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ insight ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:$\{Region\}:$\{Account\}:insight/$\{CompanyId\}/$\{ProductId\}/$\{UniqueId\}  |  | 
-|   [ standard ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:::ruleset/$\{StandardsName\}/v/$\{StandardsVersion\}  |  | 
-|   [ standards\-subscription ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:$\{Region\}:$\{Account\}:subscription/$\{StandardsName\}/v/$\{StandardsVersion\}  |  | 
-|   [ product\-subscription ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:$\{Region\}:$\{Account\}:product\-subscription/$\{Company\}/$\{ProductId\}  |  | 
 |   [ product ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:$\{Region\}:$\{Account\}:product/$\{Company\}/$\{ProductId\}  |  | 
 |   [ hub ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:$\{Region\}:$\{Account\}:hub/default  |   [ aws:ResourceTag/$\{TagKey\} ](#awssecurityhub-aws_ResourceTag___TagKey_)   | 
-|   [ action\-target ](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-access.html#resources)  |  arn:$\{Partition\}:securityhub:$\{Region\}:$\{Account\}:action/custom/$\{Id\}  |  | 
 
 ## Condition Keys for AWS Security Hub<a name="awssecurityhub-policy-keys"></a>
 

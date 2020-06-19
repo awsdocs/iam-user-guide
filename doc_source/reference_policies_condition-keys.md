@@ -135,16 +135,20 @@ Use this key to compare the date and time of the request in epoch or Unix time w
 Works with [numeric operators](reference_policies_elements_condition_operators.md#Conditions_Numeric)\.
 
 Use this key to compare the number of seconds since the requesting principal was authorized using MFA with the number that you specify in the policy\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
-+ **Availability** – This key is included in the request context only if the principal was authenticated using MFA\. If MFA was not used, this key is not present\.
++ **Availability** – This key is included in the request context only if the principal making the call was authenticated using MFA\. If MFA was not used, this key is not present\.
 
 ## aws:MultiFactorAuthPresent<a name="condition-keys-multifactorauthpresent"></a>
 
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.
 
 Use this key to check whether multi\-factor authentication \(MFA\) was used to validate the temporary security credentials that made the request\.
-+ **Availability** – This key is included in the request context only when the principal uses temporary credentials to make the request\. The key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using long\-term credentials\.
++ **Availability** – This key is included in the request context only when the principal uses temporary credentials to make the request\. The key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using long\-term credentials\. 
 
-Temporary credentials are used to authenticate IAM roles, federated users, IAM users with temporary tokens from `sts:GetSessionToken`, and users of the AWS Management Console\. IAM users in the AWS Management Console unknowingly use temporary credentials\. Users sign into the console using their user name and password, which are long\-term credentials\. However, in the background, the console generates temporary credentials on behalf of the user\. To learn which services support using temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+Temporary credentials are used to authenticate IAM roles, federated users, IAM users with temporary tokens from `sts:GetSessionToken`, and users of the AWS Management Console\. IAM user access keys are long\-term credentials, but in some cases, AWS creates temporary credentials on behalf of IAM users to perform operations\. In these cases, the `aws:MultiFactorAuthPresent` key is present in the request and set to a value of `false`\. There are two common cases where this can happen:
++ IAM users in the AWS Management Console unknowingly use temporary credentials\. Users sign into the console using their user name and password, which are long\-term credentials\. However, in the background, the console generates temporary credentials on behalf of the user\. 
++ If an IAM user makes a call to an AWS service, the service re\-uses the user's credentials to make another request to a different service\. For example, when calling Athena to access an Amazon S3 bucket, or when using AWS CloudFormation to create an Amazon EC2 instance\. For the subsequent request, AWS uses temporary credentials\.
+
+To learn which services support using temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 The `aws:MultiFactorAuthPresent` key is not present when an API or CLI command is called with long\-term credentials, such as user access key pairs\. Therefore we recommend that when you check for this key that you use the `[\.\.\.IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists)` versions of the condition operators\.
 
