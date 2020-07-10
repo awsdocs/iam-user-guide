@@ -4,12 +4,12 @@
 *****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
+Amazon's trademarks and trade dress may not be used in
+     connection with any product or service that is not Amazon's,
+     in any manner that is likely to cause confusion among customers,
+     or in any manner that disparages or discredits Amazon. All other
      trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
+     owners, who may or may not be affiliated with, connected to, or
      sponsored by Amazon.
 
 -----
@@ -447,7 +447,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon Macie Classic](list_amazonmacieclassic.md)
          + [Actions, Resources, and Condition Keys for Manage Amazon API Gateway](list_manageamazonapigateway.md)
          + [Actions, Resources, and Condition Keys for Amazon Managed Blockchain](list_amazonmanagedblockchain.md)
-         + [Actions, Resources, and Condition Keys for Amazon Managed Streaming for Kafka](list_amazonmanagedstreamingforkafka.md)
+         + [Actions, Resources, and Condition Keys for Amazon Managed Streaming for Kafka](list_amazonmanagedstreamingforapachekafka.md)
          + [Actions, Resources, and Condition Keys for AWS Marketplace](list_awsmarketplace.md)
          + [Actions, Resources, and Condition Keys for AWS Marketplace Catalog](list_awsmarketplacecatalog.md)
          + [Actions, Resources, and Condition Keys for AWS Marketplace Entitlement Service](list_awsmarketplaceentitlementservice.md)

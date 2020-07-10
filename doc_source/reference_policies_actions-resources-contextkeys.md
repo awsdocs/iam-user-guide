@@ -1,6 +1,6 @@
 # Actions, Resources, and Condition Keys for AWS Services<a name="reference_policies_actions-resources-contextkeys"></a>
 
-Each AWS service can define actions, resources, and condition context keys for use in IAM policies\. This topic describes how the elements provided for each service are documented\. 
+Each AWS service can define actions, resources, and condition context keys for use in IAM policies\. This topic describes how the elements provided for each service are documented\.
 
 Each topic consists of tables that provide the list of available actions, resources, and condition keys\.
 
@@ -23,7 +23,7 @@ The **Resource Types** table lists all the resource types that you can specify a
 ## The Condition Keys Table<a name="context_keys_table"></a>
 
 The **Condition Keys** table lists all of the condition context keys that you can use in an IAM policy statement's `Condition` element\. Not every key can be specified with every action or resource\. Certain keys only work with certain types of actions and resources\. For more information about the `Condition` element, see [IAM JSON Policy Elements: Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html)\.
-+ The **Type** column specifies the data type of the condition key\. This data type determines which [condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) you can use to compare values in the request with the values in the policy statement\. You must use an operator that is appropriate for the data type\. If you use an incorrect operator, then the match always fails and the policy statement never applies\. 
++ The **Type** column specifies the data type of the condition key\. This data type determines which [condition operators](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html) you can use to compare values in the request with the values in the policy statement\. You must use an operator that is appropriate for the data type\. If you use an incorrect operator, then the match always fails and the policy statement never applies\.
 
   If the **Type** column specifies a "List of …" one of the simple types, then you can use [multiple keys and values](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_multi-value-conditions.html#reference_policies_multi-key-or-value-conditions) in your policies\. Do this using condition set prefixes with your operators\. Use the `ForAllValues` prefix to specify that **all** values in the request must match a value in the policy statement\. Use the `ForAnyValue` prefix to specify that **at least one** value in the request matches one of the values in the policy statement\.
 
@@ -178,7 +178,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon Macie Classic](list_amazonmacieclassic.md)
 + [Manage Amazon API Gateway](list_manageamazonapigateway.md)
 + [Amazon Managed Blockchain](list_amazonmanagedblockchain.md)
-+ [Amazon Managed Streaming for Kafka](list_amazonmanagedstreamingforkafka.md)
++ [Amazon Managed Streaming for Kafka](list_amazonmanagedstreamingforapachekafka.md)
 + [AWS Marketplace](list_awsmarketplace.md)
 + [AWS Marketplace Catalog](list_awsmarketplacecatalog.md)
 + [AWS Marketplace Entitlement Service](list_awsmarketplaceentitlementservice.md)
