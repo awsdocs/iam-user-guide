@@ -135,7 +135,7 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
 
 ## Example Code Using Python<a name="STSConsoleLink_programPython"></a>
 
-The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto 3\)](https://aws.amazon.com/tools/)\. 
+The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto3\)](https://aws.amazon.com/tools/)\. 
 
 The code uses the [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
 

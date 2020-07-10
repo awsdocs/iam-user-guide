@@ -1,9 +1,12 @@
 # PREVIEW – Enabling SMS Text Message MFA Devices<a name="id_credentials_mfa_enable_sms"></a>
 
+AWS will soon end support for SMS multi\-factor authentication \(MFA\)\. We are not allowing new customers to preview this feature\. We recommend that existing customers switch to one of the following alternative methods of MFA:
++ [A virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA device
++ [A U2F security key](id_credentials_mfa_enable_u2f.md)
++ [A hardware\-based](id_credentials_mfa_enable_physical.md) MFA device
 
-|  | 
-| --- |
-|   AWS will soon end support for SMS multi\-factor authentication \(MFA\)\. We are not allowing new customers to preview this feature\. We recommend that existing customers switch to one of the following alternative methods of MFA: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_sms.html)  Tip You can view users in your account with an assigned SMS MFA device\. In the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.   | 
+**Tip**  
+You can view users in your account with an assigned SMS MFA device\. In the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.
 
 An SMS \(short message service\) MFA device can be any mobile device with a phone number that can receive standard [SMS text messages](http://wikipedia.org/wiki/Short_Message_Service)\. When an MFA code is needed, AWS sends it to the phone number that is configured for the IAM user\. 
 

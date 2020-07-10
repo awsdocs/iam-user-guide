@@ -38,6 +38,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ virtualNode ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualNode/$\{VirtualNodeName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
 |   [ virtualRouter ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
 |   [ route ](https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}/route/$\{RouteName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
+|   [ virtualGateway ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualGateway/$\{VirtualGatewayName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
+|   [ gatewayRoute ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html)  |  arn:$\{Partition\}:appmesh:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualGateway/$\{VirtualGatewayName\}/gatewayRoute/$\{GatewayRouteName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsappmesh-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS App Mesh<a name="awsappmesh-policy-keys"></a>
 

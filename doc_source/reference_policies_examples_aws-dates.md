@@ -7,7 +7,7 @@ To learn about using multiple conditions within the `Condition` block of an IAM 
 ```
 {
     "Version": "2012-10-17",
-    "Statement": {
+    "Statement": [
         {
             "Effect": "Allow",
             "Action": "service-prefix:action-name",

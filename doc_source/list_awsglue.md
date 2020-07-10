@@ -35,10 +35,10 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ catalog ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:catalog  |  | 
 |   [ database ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:database/$\{DatabaseName\}  |  | 
-|   [ table ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:table/$\{TableName\}  |  | 
-|   [ tableversion ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:tableVersion/$\{TableVersionName\}  |  | 
+|   [ table ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:table/$\{DatabaseName\}/$\{TableName\}  |  | 
+|   [ tableversion ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:tableVersion/$\{DatabaseName\}/$\{TableName\}/$\{TableVersionName\}  |  | 
 |   [ connection ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:connection/$\{ConnectionName\}  |  | 
-|   [ userdefinedfunction ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:userDefinedFunction/$\{UserDefinedFunctionName\}  |  | 
+|   [ userdefinedfunction ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:userDefinedFunction/$\{DatabaseName\}/$\{UserDefinedFunctionName\}  |  | 
 |   [ devendpoint ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:devendpoint/$\{DevEndpointName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 
 |   [ job ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:job/$\{JobName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 
 |   [ trigger ](https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html)  |  arn:$\{Partition\}:glue:$\{Region\}:$\{Account\}:trigger/$\{TriggerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsglue-aws_ResourceTag___TagKey_)   | 

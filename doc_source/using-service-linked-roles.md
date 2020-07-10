@@ -126,7 +126,7 @@ In other cases, the service might support creating a service\-linked role manual
 If the service does not support creating the role, then you can use IAM to create the service\-linked role\.
 
 **Important**  
-Service\-linked roles count toward your [IAM roles in an AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entities) limit, but if you have reached your limit, you can still create service\-linked roles in your account\. Only service\-linked roles can exceed the limit\.
+Service\-linked roles count toward your [IAM roles in an AWS account](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entities) limit, but if you have reached your limit, you can still create service\-linked roles in your account\. Only service\-linked roles can exceed the limit\.
 
 ### Creating a Service\-Linked Role \(Console\)<a name="create-service-linked-role-iam-console"></a>
 

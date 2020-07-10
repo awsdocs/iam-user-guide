@@ -30,7 +30,7 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 + For more information about the difference between managed and inline policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\. 
 + For more information about permissions boundaries, see [Permissions Boundaries for IAM Entities](access_policies_boundaries.md)\.
 + For general information about IAM policies, see [Policies and Permissions](access_policies.md)\.
-+ For information about policy size limitations, see [IAM and STS Limits](reference_iam-limits.md)\.
++ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
 
 ## View Identity Activity<a name="attach-detach_prerequisites"></a>
 

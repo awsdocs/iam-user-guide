@@ -38,6 +38,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ virtualNode ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html)  |  arn:$\{Partition\}:appmesh\-preview:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualNode/$\{VirtualNodeName\}  |  | 
 |   [ virtualRouter ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_routers.html)  |  arn:$\{Partition\}:appmesh\-preview:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}  |  | 
 |   [ route ](https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html)  |  arn:$\{Partition\}:appmesh\-preview:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualRouter/$\{VirtualRouterName\}/route/$\{RouteName\}  |  | 
+|   [ virtualGateway ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html)  |  arn:$\{Partition\}:appmesh\-preview:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualGateway/$\{VirtualGatewayName\}  |  | 
+|   [ gatewayRoute ](https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html)  |  arn:$\{Partition\}:appmesh\-preview:$\{Region\}:$\{Account\}:mesh/$\{MeshName\}/virtualGateway/$\{VirtualGatewayName\}/gatewayRoute/$\{GatewayRouteName\}  |  | 
 
 ## Condition Keys for AWS App Mesh Preview<a name="awsappmeshpreview-policy-keys"></a>
 

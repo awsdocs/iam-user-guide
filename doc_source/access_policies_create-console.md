@@ -15,7 +15,7 @@ You can create a customer managed policy in the AWS Management Console using one
 + **[Visual editor](#access_policies_create-visual-editor)** — Construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 + **[Import](#access_policies_create-copy)** — Import and customize a managed policy from within your account\. You can import an AWS managed policy or a customer managed policy that you previously created\.
 
-For information about policy size limitations and other quotas, see [IAM and STS Limits](reference_iam-limits.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
 
 ## Creating Policies on the JSON Tab<a name="access_policies_create-json-editor"></a>
 

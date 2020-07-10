@@ -9,6 +9,7 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [I'm Not Authorized to Perform: iam:PassRole](#troubleshoot_roles_not-auth-passrole)
 + [Why Can't I Assume a Role with a 12\-Hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
 + [My Role Has a Policy That Allows Me to Perform an Action, But I Get "Access Denied"](#troubleshoot_roles_session-policy)
++ [The Service Did Not Create the Role's Default Policy Version](#troubleshoot_serviceroles_edited-policy)
 
 ## I Can't Assume a Role<a name="troubleshoot_roles_cant-assume-role"></a>
 
@@ -89,3 +90,47 @@ If you use [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaini
 ## My Role Has a Policy That Allows Me to Perform an Action, But I Get "Access Denied"<a name="troubleshoot_roles_session-policy"></a>
 
 Your role session might be limited by session policies\. When you [request temporary security credentials](id_credentials_temp_request.md) programmatically using AWS STS, you can optionally pass inline or managed [session policies](access_policies.md#policies_session)\. Session policies are advanced policies that you pass as a parameter when you programmatically create a temporary credential session for a role\. You can pass a single JSON inline session policy document using the `Policy` parameter\. You can use the `PolicyArns` parameter to specify up to 10 managed session policies\. The resulting session's permissions are the intersection of the role's identity\-based policies and the session policies\. Alternatively, if your administrator or a custom program provides you with temporary credentials, they might have included a session policy to limit your access\.
+
+## The Service Did Not Create the Role's Default Policy Version<a name="troubleshoot_serviceroles_edited-policy"></a>
+
+A service role is a role that a service assumes to perform actions in your account on your behalf\. When you set up some AWS service environments, you must define a role for the service to assume\. In some cases, the service creates the service role and its policy in IAM for you\. Although you can modify or delete the service role and its policy from within IAM, AWS does not recommend this\. The role and policy are intended for use only by that service\. If you edit the policy and set up another environment, when the service tries to use the same role and policy, the operation can fail\.
+
+For example, when you use AWS CodeBuild for the first time, the service creates a role named `codebuild-RWBCore-service-role`\. That service role uses the policy named `codebuild-RWBCore-managed-policy`\. If you edit the policy, it creates a new version and saves that version as the default version\. If you perform a subsequent operation in AWS CodeBuild, the service might try to update the policy\. If it does, you receive the following error:
+
+```
+codebuild.amazon.com did not create the default version (V2) of the codebuild-RWBCore-managed-policy policy that is attached to the codebuild-RWBCore-service-role role. To continue, detach the policy from any other identities and then delete the policy and the role.
+```
+
+If you receive this error, you must make changes in IAM before you can continue with your service operation\. First, set the default policy version to V1 and try the operation again\. If V1 was previously deleted, or if choosing V1 doesn't work, then clean up and delete the existing policy and role\.
+
+For more information on editing managed policies, see [Editing Customer Managed Policies \(Console\)](access_policies_manage-edit.md#edit-managed-policy-console)\. For more information about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\. 
+
+**To delete a service role and its policy**
+
+1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+
+1. In the navigation pane, choose **Policies**\.
+
+1. In the list of policies, choose the name of the policy that you want to delete\.
+
+1. Choose the **Policy usage** tab to view which IAM users, groups, or roles use this policy\. If any of these identities use the policy, complete the following tasks:
+
+   1. Create a new managed policy with the necessary permissions\. To ensure that the identities have the same permissions before and after your actions, copy the JSON policy document from the existing policy\. Then create the new managed policy and paste the JSON document as described in [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+
+   1. For each affected identity, attach the new policy and then detach the old one\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
+
+1. In the navigation pane, choose **Roles**\.
+
+1. In the list of roles, choose the name of the role that you want to delete\.
+
+1. Choose the **Trust relationships** tab to view which entities can assume the role\. If any entity other than the service is listed, complete the following tasks:
+
+   1. [Create a new role](id_roles_create_for-user.md#roles-creatingrole-user-console) that trusts those entities\.
+
+   1. The policy that you created in the previous step\. If you skipped that step, create the new managed policy now\.
+
+   1. Notify anyone who was assuming the role that they can no longer do so\. Provide them with information about how to assume the new role and have the same permissions\.
+
+1. [Delete the policy](access_policies_manage-delete.md#delete-managed-policy)\.
+
+1. [Delete the role](id_roles_manage_delete.md#roles-managingrole-deleting-console)\.

@@ -5,7 +5,7 @@ AWS IoT SiteWise \(service prefix: `iotsitewise`\) provides the following servic
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT SiteWise](#awsiotsitewise-actions-as-permissions)
@@ -33,13 +33,13 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ asset ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Asset.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset/$\{AssetId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
-|   [ asset\-model ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetModel.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset\-model/$\{AssetModelId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
-|   [ gateway ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Gateway.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
-|   [ portal ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Portal.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:portal/$\{PortalId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
-|   [ project ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Project.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:project/$\{ProjectId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
-|   [ dashboard ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_Dashboard.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:dashboard/$\{DashboardId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
-|   [ access\-policy ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AccessPolicy.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:access\-policy/$\{AccessPolicyId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ asset ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAsset.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset/$\{AssetId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ asset\-model ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:asset\-model/$\{AssetModelId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ gateway ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateGateway.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ portal ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreatePortal.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:portal/$\{PortalId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ project ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateProject.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:project/$\{ProjectId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ dashboard ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateDashboard.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:dashboard/$\{DashboardId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
+|   [ access\-policy ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAccessPolicy.html)  |  arn:$\{Partition\}:iotsitewise:$\{Region\}:$\{Account\}:access\-policy/$\{AccessPolicyId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotsitewise-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS IoT SiteWise<a name="awsiotsitewise-policy-keys"></a>
 
@@ -52,13 +52,13 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
-|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource | String | 
-|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the tag keys that are passed in the request | String | 
-|   [ iotsitewise:assetHierarchyPath ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_assetHierarchyPath.html)  | String of asset IDs in the asset hierarchy separated by forward slash\. | String | 
-|   [ iotsitewise:childAssetId ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_childAssetId.html)  | ID of an asset being associated as a child to another asset\. | String | 
-|   [ iotsitewise:group ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GroupId.html)  | Group ID\. | String | 
-|   [ iotsitewise:portal ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PortalId.html)  | Portal ID\. | String | 
-|   [ iotsitewise:project ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ProjectId.html)  | Project ID\. | String | 
-|   [ iotsitewise:propertyId ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_PropertyId.html)  | Property ID\. | String | 
-|   [ iotsitewise:user ](https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UserId.html)  | User ID\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters access by the tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters access by the tags attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions by the tag keys in the request | String | 
+|   [ iotsitewise:assetHierarchyPath ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by an asset hierarchy path, which is the string of asset IDs in the asset's hierarchy, each separated by a forward slash | String | 
+|   [ iotsitewise:childAssetId ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by the ID of a child asset being associated to a parent asset | String | 
+|   [ iotsitewise:group ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by the ID of an AWS Single Sign\-On group | String | 
+|   [ iotsitewise:portal ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by the ID of a portal | String | 
+|   [ iotsitewise:project ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by the ID of a project | String | 
+|   [ iotsitewise:propertyId ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by the ID of an asset property | String | 
+|   [ iotsitewise:user ](https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-conditionkeys)  | Filters access by the ID of an AWS Single Sign\-On user | String | 

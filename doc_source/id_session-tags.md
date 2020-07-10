@@ -58,7 +58,7 @@ Before you use session tags, review the following details about sessions and tag
 + You can use session tags to control access to resources or to control what tags can be passed into a subsequent session\. For more information, see [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)\.
 + You can view the principal tags for your session, including its session tags, in the AWS CloudTrail logs\. For more information, see [Viewing Session Tags in CloudTrail](#id_session-tags_ctlogs)\.
 + You must pass a single value for each session tag\. Multivalued session tags are not supported\.
-+ You can pass a maximum of 50 session tags\. For information about these and other limits, see [IAM and STS Limits](reference_iam-limits.md)\.
++ You can pass a maximum of 50 session tags\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
 + An AWS conversion compresses the passed session policies and session tags combined into a packed binary format that has a separate limit\. If you exceed this limit, the AWS CLI or AWS API error message indicates by percentage how close the policies and tags combined are to the upper size limit\.
 
 ## Permissions Required to Add Session Tags<a name="id_session-tags_permissions-required"></a>

@@ -37,6 +37,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ group ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Group.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:group/$\{ResourceId\}  |  | 
 |   [ dashboard ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Dashboard.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:dashboard/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonquicksight-aws_ResourceTag___TagKey_)   | 
 |   [ template ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:template/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonquicksight-aws_ResourceTag___TagKey_)   | 
+|   [ theme ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:theme/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonquicksight-aws_ResourceTag___TagKey_)   | 
 |   [ assignment ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IAMPolicyAssignment.html)  |  arn:$\{Partition\}:quicksight::$\{Account\}:assignment/$\{ResourceId\}  |  | 
 
 ## Condition Keys for Amazon QuickSight<a name="amazonquicksight-policy-keys"></a>

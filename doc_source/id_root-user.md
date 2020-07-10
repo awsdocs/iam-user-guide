@@ -9,7 +9,7 @@ You can create, rotate, disable, or delete access keys \(access key IDs and secr
 
 When you create access keys, you create the access key ID and secret access key as a set\. During access key creation, AWS gives you one opportunity to view and download the secret access key part of the access key\. If you don't download it or if you lose it, you can delete the access key and then create a new one\. You can create root user access keys with the [IAM console](https://console.aws.amazon.com/iam/home?#), AWS CLI, or AWS API\.
 
-A newly created access key has the status of *active*, which means that you can use the access key for CLI and API calls\. You are [limited to two access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html) for each IAM user, which is useful when you want to [rotate the access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#iam-user-access-keys)\. You can also assign up to two access keys to the root user\. When you disable an access key, you can't use it for API calls, and inactive keys do count toward your limit\. You can create or delete an access key any time\. However, when you delete an access key, it's gone forever and can't be retrieved\.
+A newly created access key has the status of *active*, which means that you can use the access key for CLI and API calls\. You are [limited to two access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html) for each IAM user, which is useful when you want to [rotate the access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#iam-user-access-keys)\. You can also assign up to two access keys to the root user\. When you disable an access key, you can't use it for API calls, and inactive keys do count toward your limit\. You can create or delete an access key any time\. However, when you delete an access key, it's gone forever and can't be retrieved\.
 
 You can change the email address and password on the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page\. You can also choose **Forgot password?** on the AWS sign\-in page to reset your password\.
 
@@ -48,7 +48,7 @@ If you see three text boxes, then you previously signed in to the console with *
 
 1. Expand the **Access keys \(access key ID and secret access key\)** section\.
 
-1. Choose **Create New Access Key**\. If this feature is disabled, then you must delete one of the existing access keys before you can create a new key\. For more information, see [IAM Entity Object Limits](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entities) in the *IAM User Guide*\. 
+1. Choose **Create New Access Key**\. If this feature is disabled, then you must delete one of the existing access keys before you can create a new key\. For more information, see [IAM Entity Object Limits](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html#reference_iam-quotas-entities) in the *IAM User Guide*\. 
 
    A warning explains that you have only this one opportunity to view or download the secret access key\. It cannot be retrieved later\. 
    + If you choose **Show Access Key**, you can copy the access key ID and secret key from your browser window and paste it somewhere else\.

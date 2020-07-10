@@ -32,14 +32,25 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   dataset  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:dataset/$\{ResourceId\}  |  | 
-|   datasetGroup  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:dataset\-group/$\{ResourceId\}  |  | 
-|   datasetImportJob  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:dataset\-import\-job/$\{ResourceId\}  |  | 
+|   dataset  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:dataset/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonforecast-aws_ResourceTag___TagKey_)   | 
+|   datasetGroup  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:dataset\-group/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonforecast-aws_ResourceTag___TagKey_)   | 
+|   datasetImportJob  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:dataset\-import\-job/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonforecast-aws_ResourceTag___TagKey_)   | 
 |   algorithm  |  arn:$\{Partition\}:forecast:::algorithm/$\{ResourceId\}  |  | 
-|   predictor  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:predictor/$\{ResourceId\}  |  | 
-|   forecast  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:forecast/$\{ResourceId\}  |  | 
-|   forecastExport  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:forecast\-export\-job/$\{ResourceId\}  |  | 
+|   predictor  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:predictor/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonforecast-aws_ResourceTag___TagKey_)   | 
+|   forecast  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:forecast/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonforecast-aws_ResourceTag___TagKey_)   | 
+|   forecastExport  |  arn:$\{Partition\}:forecast:$\{Region\}:$\{Account\}:forecast\-export\-job/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonforecast-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Forecast<a name="amazonforecast-policy-keys"></a>
 
-Forecast has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Forecast defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the tags that are passed in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the tag keys that are passed in the request | String | 

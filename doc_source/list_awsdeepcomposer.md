@@ -22,24 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   AssociateCoupon \[permission only\] | Associates a DeepComposer coupon \(or DSN\) with the account associated with the sender of the request\. | Write |  |  |  | 
-|   [ CreateAudio ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Creates an audio file by converting the midi composition into a wav or mp3 file\. | Write |   [ composition\* ](#awsdeepcomposer-composition)   |  |  | 
-|   [ CreateComposition ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Creates a multi\-track midi composition\. | Write |  |  |  | 
-|   [ CreateModel ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html) \[permission only\] | Starts creating/training a generative\-model that is able to perform inference against the user\-provided piano\-melody to create a multi\-track midi composition\. | Write |  |  |  | 
-|   [ DeleteComposition ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Deletes the composition\. | Write |   [ composition\* ](#awsdeepcomposer-composition)   |  |  | 
-|   [ DeleteModel ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html)  | Deletes the model\. | Write |   [ model\* ](#awsdeepcomposer-model)   |  |  | 
-|   [ GetComposition ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Returns information about the composition\. | Read |   [ composition\* ](#awsdeepcomposer-composition)   |  |  | 
-|   [ GetModel ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html) \[permission only\] | Returns information about the model\. | Read |   [ model\* ](#awsdeepcomposer-model)   |  |  | 
-|   [ GetSampleModel ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Returns information about the sample/pre\-trained DeepComposer model\. | Read |  |  |  | 
-|   [ ListCompositions ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Returns a list of all the compositions owned by the sender of the request\. | List |  |  |  | 
-|   [ ListModels ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html) \[permission only\] | Returns a list of all the models owned by the sender of the request\. | List |  |  |  | 
-|   [ ListSampleModels ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Returns a list of all the sample/pre\-trained models provided by the DeepComposer service\. | List |  |  |  | 
-|   ListTrainingTopics \[permission only\] | Returns a list of all the training options or topic for creating/training a model\. | List |  |  |  | 
-|   [ UpdateComposition ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html) \[permission only\] | Modifies the mutable properties associated with a composition\. | Write |   [ composition\* ](#awsdeepcomposer-composition)   |  |  | 
-|   [ UpdateModel ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html) \[permission only\] | Modifies the mutable properties associated with a model\. | Write |   [ model\* ](#awsdeepcomposer-model)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsdeepcomposer.html)
 
 ## Resource Types Defined by AWS DeepComposer<a name="awsdeepcomposer-resources-for-iam-policies"></a>
 
@@ -50,10 +33,21 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ model ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html)  |  arn:$\{Partition\}:deepcomposer:$\{Region\}:$\{Account\}:model/$\{ModelId\}  |  | 
-|   [ composition ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html)  |  arn:$\{Partition\}:deepcomposer:$\{Region\}:$\{Account\}:composition/$\{CompositionId\}  |  | 
+|   [ model ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-train-custom-model.html)  |  arn:$\{Partition\}:deepcomposer:$\{Region\}:$\{Account\}:model/$\{ModelId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdeepcomposer-aws_ResourceTag___TagKey_)   | 
+|   [ composition ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html)  |  arn:$\{Partition\}:deepcomposer:$\{Region\}:$\{Account\}:composition/$\{CompositionId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsdeepcomposer-aws_ResourceTag___TagKey_)   | 
 |   [ audio ](https://docs.aws.amazon.com/latest/devguide/get-started.htmlget-started-compose-with-trained-model.html)  |  arn:$\{Partition\}:deepcomposer:$\{Region\}:$\{Account\}:audio/$\{AudioId\}  |  | 
 
 ## Condition Keys for AWS DeepComposer<a name="awsdeepcomposer-policy-keys"></a>
 
-DeepComposer has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+AWS DeepComposer defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 
