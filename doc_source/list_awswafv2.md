@@ -38,7 +38,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ rulegroup ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleGroup.html)  |  arn:$\{Partition\}:wafv2:$\{Region\}:$\{Account\}:$\{Scope\}/rulegroup/$\{Name\}/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafv2-aws_ResourceTag___TagKey_)   | 
 |   [ regexpatternset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:wafv2:$\{Region\}:$\{Account\}:$\{Scope\}/regexpatternset/$\{Name\}/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafv2-aws_ResourceTag___TagKey_)   | 
 |   [ loadbalancer/app/ ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |  | 
-|   [ apigateway ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:apigateway:$\{Region\}::/restapis/$\{ApiId\}/stages/prod  |  | 
+|   [ apigateway ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:apigateway:$\{Region\}::/restapis/$\{ApiId\}/stages/$\{StageName\}  |  | 
 
 ## Condition Keys for AWS WAF V2<a name="awswafv2-policy-keys"></a>
 

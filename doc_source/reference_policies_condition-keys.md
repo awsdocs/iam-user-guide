@@ -35,7 +35,7 @@ To use the `aws:CalledVia` condition key in a policy, you must provide the servi
 | Amazon DynamoDB | dynamodb\.amazonaws\.com | 
 | AWS Key Management Service \(AWS KMS\) | kms\.amazonaws\.com | 
 
-To allow or deny access when *any* service makes a request using the principal's credentials, use the `[aws:ViaAWSService](#condition-keys-viaawsservice)` condition key\. That condition key supports all AWS services\.
+To allow or deny access when *any* service makes a request using the principal's credentials, use the `` condition key\. That condition key supports all AWS services\.
 
 The `aws:CalledVia` key is a [multivalued key](reference_policies_multi-value-conditions.md)\. However, you can't enforce order using this key in a condition\. Using the example above, **User 1** makes a request to AWS CloudFormation, which calls DynamoDB, which calls AWS KMS\. These are three separate requests\. The final call to AWS KMS is performed by User 1 *via* AWS CloudFormation and then DynamoDB\. 
 
@@ -43,7 +43,7 @@ The `aws:CalledVia` key is a [multivalued key](reference_policies_multi-value-co
 
 In this case, the `aws:CalledVia` key in the request context includes `cloudformation.amazonaws.com` and `dynamodb.amazonaws.com`, in that order\. If you care only that the call was made via DynamoDB somewhere in the chain of requests, you can use this condition key in your policy\. 
 
-For example, the following policy allows managing the AWS KMS key named `my-example-key`, but only if DynamoDB is one of the requesting services\. The `[ForAnyValue:StringEquals](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)` condition operator ensures that DynamoDB is one of the calling services\. If the principal makes the call to AWS KMS directly, the condition returns `false` and the request is not allowed by this policy\.
+For example, the following policy allows managing the AWS KMS key named `my-example-key`, but only if DynamoDB is one of the requesting services\. The `ForAnyValue:StringEquals` condition operator ensures that DynamoDB is one of the calling services\. If the principal makes the call to AWS KMS directly, the condition returns `false` and the request is not allowed by this policy\.
 
 ```
 {
@@ -70,7 +70,7 @@ For example, the following policy allows managing the AWS KMS key named `my-exam
 }
 ```
 
-If you want to enforce which service makes the first or last call in the chain, you can use the `[aws:CalledViaFirst](#condition-keys-calledviafirst)` and `[aws:CalledViaLast](#condition-keys-calledviafirst)` keys\. For example, the following policy allows managing the key named `my-example-key` in AWS KMS\. These AWS KMS operations are allowed only if multiple requests were included in the chain\. The first request must be made via AWS CloudFormation and the last via DynamoDB\. If other services make requests in the middle of the chain, the operation is still allowed\.
+If you want to enforce which service makes the first or last call in the chain, you can use the `aws:CalledViaFirst` and `aws:CalledViaLast` keys\. For example, the following policy allows managing the key named `my-example-key` in AWS KMS\. These AWS KMS operations are allowed only if multiple requests were included in the chain\. The first request must be made via AWS CloudFormation and the last via DynamoDB\. If other services make requests in the middle of the chain, the operation is still allowed\.
 
 ```
 {
@@ -98,7 +98,7 @@ If you want to enforce which service makes the first or last call in the chain, 
 }
 ```
 
-The `[aws:CalledViaFirst](#condition-keys-calledviafirst)` and `[aws:CalledViaLast](#condition-keys-calledviafirst)` keys are present in the request when a service uses an IAM principal's credentials to call another service\. They indicate the first and last services that made calls in the chain of requests\. For example, assume that AWS CloudFormation calls another service named `X Service`, which calls DynamoDB, which then calls AWS KMS\. The final call to AWS KMS is performed by `User 1` *via* AWS CloudFormation, then `X Service`, and then DynamoDB\. It was first called via AWS CloudFormation and last called via DynamoDB\. 
+The `aws:CalledViaFirst` and `aws:CalledViaLast` keys are present in the request when a service uses an IAM principal's credentials to call another service\. They indicate the first and last services that made calls in the chain of requests\. For example, assume that AWS CloudFormation calls another service named `X Service`, which calls DynamoDB, which then calls AWS KMS\. The final call to AWS KMS is performed by `User 1` *via* AWS CloudFormation, then `X Service`, and then DynamoDB\. It was first called via AWS CloudFormation and last called via DynamoDB\. 
 
 ![\[Example using aws:CalledViaFirst and aws:CalledViaLast\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
@@ -106,14 +106,14 @@ The `[aws:CalledViaFirst](#condition-keys-calledviafirst)` and `[aws:CalledViaLa
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the services in the policy with the ***first service*** that made a request on behalf of the IAM principal \(user or role\)\. For more information, see `[aws:CalledVia](#condition-keys-calledvia)`\.
+Use this key to compare the services in the policy with the ***first service*** that made a request on behalf of the IAM principal \(user or role\)\. For more information, see `aws:CalledVia`\.
 + **Availability** – This key is present in the request when a service uses the credentials of an IAM principal to make at least one other request to a different service\. This key is not present if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\. This key is also not present when the principal makes the call directly\.
 
 ## aws:CalledViaLast<a name="condition-keys-calledvialast"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the services in the policy with the *last service* that made a request on behalf of the IAM principal \(user or role\)\. For more information, see `[aws:CalledVia](#condition-keys-calledvia)`\.
+Use this key to compare the services in the policy with the *last service* that made a request on behalf of the IAM principal \(user or role\)\. For more information, see `aws:CalledVia`\.
 + **Availability** – This key is present in the request when a service uses the credentials of an IAM principal to make at least one other request to a different service\. This key is not present if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\. This key is also not present when the principal makes the call directly\.
 
 ## aws:CurrentTime<a name="condition-keys-currenttime"></a>
@@ -150,7 +150,7 @@ Temporary credentials are used to authenticate IAM roles, federated users, IAM u
 
 To learn which services support using temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
-The `aws:MultiFactorAuthPresent` key is not present when an API or CLI command is called with long\-term credentials, such as user access key pairs\. Therefore we recommend that when you check for this key that you use the `[\.\.\.IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists)` versions of the condition operators\.
+The `aws:MultiFactorAuthPresent` key is not present when an API or CLI command is called with long\-term credentials, such as user access key pairs\. Therefore we recommend that when you check for this key that you use the `...IfExists` versions of the condition operators\.
 
 It is important to understand that the following `Condition` element is ***not*** a reliable way to check whether a request is authenticated using MFA\.
 
@@ -336,7 +336,7 @@ This example shows how you might create a policy that allows users with the **ta
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. For details about how the information appears in the request context for different principals, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. To learn which values you can sFor details about how the information appears in the request context for different principals, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:Referer<a name="condition-keys-referer"></a>
@@ -463,7 +463,7 @@ Works with [IP address operators](reference_policies_elements_condition_operator
 Use this key to compare the requester's IP address with the IP address that you specify in the policy\.
 + **Availability** – This key is included in the request context, except when the requester uses a VPC endpoint to make the request\.
 
-The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `[aws:ViaAWSService](#condition-keys-viaawsservice)` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 
+The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 
 
 For example, you can attach the following policy to an IAM user\. This policy allows the user to put an object into the `my-service-bucket` Amazon S3 bucket directly if they make the call from the specified IP address\. However, if the user makes another request that causes a service to call Amazon S3, the IP address restriction does not apply\. The `PrincipalPutObjectIfIpAddress` statement restricts the IP address only if the request is not made by a service\. The `ServicePutObject` statement allows the operation without IP address restriction if the request is made by a service\.
 

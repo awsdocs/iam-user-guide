@@ -38,7 +38,7 @@ When you activate STS endpoints for a Region, AWS STS can issue temporary creden
 For example, imagine a user in account A wants to send an `sts:AssumeRole` API request to the STS Regional endpoint `https://sts.us-west-2.amazonaws.com`\. The request is for temporary credentials for the role named `Developer` in account B\. Because the request is to create credentials for an entity in account B, account B must activate the `us-west-2` Region\. Users from account A \(or any other account\) can call the `us-west-2` endpoint to request credentials for account B whether or not the Region is activated in their accounts\.
 
 **Note**  
-Active Regions are available to everyone that uses temporary credentials in that account\. To control which IAM users or roles can access the Region, use the `[aws:RequestedRegion](reference_policies_condition-keys.md#condition-keys-requestedregion)` condition key in your permissions policies\.
+Active Regions are available to everyone that uses temporary credentials in that account\. To control which IAM users or roles can access the Region, use the `aws:RequestedRegion` condition key in your permissions policies\.
 
 **To activate or deactivate AWS STS in a Region that is enabled by default \(console\)**
 

@@ -419,6 +419,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Identity And Access Management](list_identityandaccessmanagement.md)
          + [Actions, Resources, and Condition Keys for AWS Import Export Disk Service](list_awsimportexportdiskservice.md)
          + [Actions, Resources, and Condition Keys for Amazon Inspector](list_amazoninspector.md)
+         + [Actions, Resources, and Condition Keys for Amazon Interactive Video Service](list_amazoninteractivevideoservice.md)
          + [Actions, Resources, and Condition Keys for AWS IoT](list_awsiot.md)
          + [Actions, Resources, and Condition Keys for AWS IoT 1-Click](list_awsiot1-click.md)
          + [Actions, Resources, and Condition Keys for AWS IoT Analytics](list_awsiotanalytics.md)

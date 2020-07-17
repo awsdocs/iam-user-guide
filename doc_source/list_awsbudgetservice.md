@@ -28,8 +28,8 @@ The actions in this table are not APIs, but are instead permissions that grant a
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   [ ModifyBudget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Modify budgets and budget details | Write |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
-|   [ ViewBudget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | View budgets and budget details | Read |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
+|   [ ModifyBudget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Grants permissions to modify budgets and budget details | Write |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
+|   [ ViewBudget ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)  | Grants permissions to view budgets and budget details | Read |   [ budget\* ](#awsbudgetservice-budget)   |  |  | 
 
 ## Resource Types Defined by AWS Budget Service<a name="awsbudgetservice-resources-for-iam-policies"></a>
 

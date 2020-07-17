@@ -41,7 +41,7 @@ If you see three text boxes, then you previously signed in to the console with *
 
 1. In the row for the MFA device that you want to deactivate, choose **Deactivate**\.
 
-The MFA device is deactivated for the AWS account\.
+The MFA device is deactivated for the AWS account\. Check the email that is associated with your AWS account for a confirmation message from Amazon Web Services\. The email informs you that your Amazon Web Services multi\-factor authentication \(MFA\) has been deactivated\. The message will come from an address ending in `@amazon.com` or `@aws.amazon.com`\.
 
 ## Deactivating MFA Devices \(AWS CLI\)<a name="deactivate-mfa-cli"></a>
 

@@ -65,7 +65,7 @@ Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that inv
 **iam:ResourceTag/*key\-name***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
-IAM does not support using the `[aws:ResourceTag](reference_policies_condition-keys.md#condition-keys-resourcetag)` global condition key\. AWS STS supports both the IAM key and the global key\.
+IAM does not support using the `aws:ResourceTag` global condition key\. AWS STS supports both the IAM key and the global key\.
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM Users and Roles](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
 This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.  
 
@@ -378,14 +378,30 @@ For more information about using these keys, see [About SAML 2\.0\-based Federat
 
 You can use the following condition keys in IAM role trust policies for roles that are assumed using AWS Security Token Service \(AWS STS\) operations\. 
 
+**sts:AWSServiceName**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Use this key to specify the service where a bearer token can be used\. When you use this condition key in a policy, specify the service using a service principal\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. For example, `codeartifact.amazonaws.com` is the AWS CodeArtifact service principal\.  
+Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The aws codeartifact get\-authorization\-token operation returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using Bearer Tokens](id_credentials_bearer.md)\.   
+**Availability** – This key is present in requests that get a bearer token\. You cannot make a direct call to AWS STS to get a bearer token\. When you perform some operations in other services, the service requests the bearer token on your behalf\.  
+You can use this condition key to allow principals to get a bearer token for use with a specific service\.
+
+**sts:DurationSeconds**  
+Works with [numeric operators](reference_policies_elements_condition_operators.md#Conditions_Numeric)\.  
+Use this key to specify the duration \(in seconds\) that a principal can use when getting an AWS STS bearer token\.  
+Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The aws codeartifact get\-authorization\-token operation returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using Bearer Tokens](id_credentials_bearer.md)\.   
+**Availability** – This key is present in requests that get a bearer token\. You cannot make a direct call to AWS STS to get a bearer token\. When you perform some operations in other services, the service requests the bearer token on your behalf\. The key is not present for AWS STS assume\-role operations\.
+
 **sts:ExternalId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Use this key to require that a principal provides a specific identifier when assuming an IAM role\.   
+**Availability** – This key is present in the request when the principal provides an external ID while assuming a role using the AWS CLI or AWS API\.   
 A unique identifier that might be required when you assume a role in another account\. If the administrator of the account to which the role belongs provided you with an external ID, then provide that value in the `ExternalId` parameter\. This value can be any string, such as a passphrase or account number\. The primary function of the external ID is to address and prevent the confused deputy problem\. For more information about the external ID and the confused deputy problem, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md)\.  
 The `ExternalId` value must have a minimum of 2 characters and a maximum of 1,224 characters\. The value must be alphanumeric without white space\. It can also include the following symbols: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), colon \(:\), forward slash \(/\), and hyphen \(\-\)\.
 
 **sts:RoleSessionName**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Use this key to compare the session name that a principal specifies when assuming a role with the value that is specified in the policy\.  
+**Availability** – This key is present in the request when the principal assumes the role using the AWS Management Console, the assume\-role CLI command, or the AssumeRole API operation\.  
 You can use this key in a role trust policy to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. After the IAM user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the session name that matches their user name\. This makes it easier for administrators to determine which user performed a specific action in AWS\.  
 The following role trust policy requires that IAM users in account `111122223333` provide their IAM user name as the session name when they assume the role\. This requirement is enforced using the `aws:username` [condition variable](reference_policies_variables.md) in the condition key\. This policy allows IAM users to assume the role to which the policy is attached\. This policy does not allow anyone using temporary credentials to assume the role because the `username` variable is present for only IAM users\.  
 
@@ -417,5 +433,7 @@ If you allow [cross\-account access using roles](id_roles_common-scenarios_aws-a
 
 **sts:TransitiveTagKeys**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Use this key to compare the transitive session tag keys in the request with those specified in the policy\. When you make a request using temporary security credentials, the [request context](reference_policies_elements_condition.md#AccessPolicyLanguage_RequestContext) includes the `[aws:PrincipalTag](reference_policies_condition-keys.md#condition-keys-principaltag)` context key\. This key includes a list of [session tags](id_session-tags.md), [transitive session tags](id_session-tags.md#id_session-tags_role-chaining), and role tags\. Transitive session tags are tags that persist into all subsequent sessions when you use the session credentials to assume another role\. Assuming one role from another is called [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\.   
+Use this key to compare the transitive session tag keys in the request with those specified in the policy\.   
+**Availability** – This key is present in the request when you make a request using temporary security credentials\. These include credentials created using any assume\-role operation, or the `GetFederationToken` operation\.  
+When you make a request using temporary security credentials, the [request context](reference_policies_elements_condition.md#AccessPolicyLanguage_RequestContext) includes the `aws:PrincipalTag` context key\. This key includes a list of [session tags](id_session-tags.md), [transitive session tags](id_session-tags.md#id_session-tags_role-chaining), and role tags\. Transitive session tags are tags that persist into all subsequent sessions when you use the session credentials to assume another role\. Assuming one role from another is called [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\.   
 You can use this condition key in a policy to require setting specific session tags as transitive when assuming a role or federating a user\.

@@ -1,6 +1,6 @@
 # Passing Session Tags in AWS STS<a name="id_session-tags"></a>
 
-Session tags are key\-value pair attributes that you pass when you assume an IAM role or federate a user in AWS STS\. You do this by making an AWS CLI or AWS API request through STS or through your identity provider \(IdP\)\. When you use AWS STS to request temporary security credentials, you generate a session\. Sessions expire and have [credentials](https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html), such as an access key pair and a session token\. When you use the session credentials to make a subsequent request, the [request context](reference_policies_elements_condition.md#AccessPolicyLanguage_RequestContext) includes the `[aws:PrincipalTag](reference_policies_condition-keys.md#condition-keys-principaltag)` context key\. You can use the `aws:PrincipalTag` key in the `Condition` element of your policies to allow or deny access based on those tags\.
+Session tags are key\-value pair attributes that you pass when you assume an IAM role or federate a user in AWS STS\. You do this by making an AWS CLI or AWS API request through STS or through your identity provider \(IdP\)\. When you use AWS STS to request temporary security credentials, you generate a session\. Sessions expire and have [credentials](https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html), such as an access key pair and a session token\. When you use the session credentials to make a subsequent request, the [request context](reference_policies_elements_condition.md#AccessPolicyLanguage_RequestContext) includes the `aws:PrincipalTag` context key\. You can use the `aws:PrincipalTag` key in the `Condition` element of your policies to allow or deny access based on those tags\.
 
 When you use temporary credentials to make a request, your principal might include a set of tags\. These tags come from the following sources:
 
@@ -70,11 +70,11 @@ sts:TagSession
 ```
 
 You can use this action with the following condition keys\.
-+ `[aws:PrincipalTag](reference_policies_condition-keys.md#condition-keys-principaltag)` – Use this key to compare the tag that is attached to the principal making the request with the tag that you specify in the policy\. For example, you can allow a principal to pass session tags only if the principal making the request has the specified tags\.
-+ `[aws:RequestTag](reference_policies_condition-keys.md#condition-keys-requesttag)` – Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you can allow the principal to pass the specified session tags, but only with the specified values\.
-+ `[aws:ResourceTag](reference_policies_condition-keys.md#condition-keys-resourcetag)` – Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you can allow the principal to pass session tags only if the role they are assuming includes the specified tags\.
-+ `[aws:TagKeys](reference_policies_condition-keys.md#condition-keys-tagkeys)` – Use this key to compare the tag keys in a request with the keys that you specify in the policy\. For example, you can allow the principal to pass only session tags with the specified tag keys\. This condition key limits the maximum set of session tags that can be passed\.
-+ `[sts:TransitiveTagKeys](reference_policies_iam-condition-keys.md#ck_transitivetagkeys)` \- Use this key to compare the transitive session tag keys in the request with those specified in the policy\. For example, you can write a policy to allow a principal to set only specific tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
++ `aws:PrincipalTag` – Use this key to compare the tag that is attached to the principal making the request with the tag that you specify in the policy\. For example, you can allow a principal to pass session tags only if the principal making the request has the specified tags\.
++ `aws:RequestTag` – Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you can allow the principal to pass the specified session tags, but only with the specified values\.
++ `aws:ResourceTag` – Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you can allow the principal to pass session tags only if the role they are assuming includes the specified tags\.
++ `aws:TagKeys` – Use this key to compare the tag keys in a request with the keys that you specify in the policy\. For example, you can allow the principal to pass only session tags with the specified tag keys\. This condition key limits the maximum set of session tags that can be passed\.
++ `sts:TransitiveTagKeys` \- Use this key to compare the transitive session tag keys in the request with those specified in the policy\. For example, you can write a policy to allow a principal to set only specific tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
 
 For example, the following [role trust policy](id_roles_terms-and-concepts.md#term_trust-policy) allows the `test-session-tags` user to assume the role to which the policy is attached\. When that user assumes the role, they must use the AWS CLI or AWS API to pass the three required session tags and the required [external ID](id_roles_create_for-user_externalid.md)\. Additionally, the user can choose to set the `Project` and `Department` tags as transitive\.
 
@@ -149,7 +149,7 @@ The following example shows a sample request that uses `AssumeRole`\. In this ex
 aws sts assume-role \
 --role-arn arn:aws:iam::123456789012:role/my-role-example \
 --role-session-name my-session \
-–-tags Key=Project,Value=Automation Key=CostCenter,Value=12345 Key=Department,Value=Engineering \
+--tags Key=Project,Value=Automation Key=CostCenter,Value=12345 Key=Department,Value=Engineering \
 --transitive-tag-keys Project Department \
 --external-id Example987
 ```
@@ -250,7 +250,7 @@ The following example shows a sample request using `GetFederationToken`\. In thi
 ```
 aws sts get-federation-token \
 --name my-fed-user \
-–-tags key=Project,value=Automation key=Department,value=Engineering
+--tags key=Project,value=Automation key=Department,value=Engineering
 ```
 
 When you use the temporary credentials that are returned by the `GetFederationToken` operation, the session's principal tags include the user's tags and the passed session tags\.
@@ -277,7 +277,7 @@ You perform this request using the following AWS CLI command:
 aws sts assume-role \
 --role-arn arn:aws:iam::123456789012:role/Role1 \
 --role-session-name Session1 \
-–-tags Key=Star,Value=1 Key=Heart,Value=1 \
+--tags Key=Star,Value=1 Key=Heart,Value=1 \
 --transitive-tag-keys Star Heart
 ```
 
