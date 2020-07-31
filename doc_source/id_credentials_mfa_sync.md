@@ -128,16 +128,16 @@ Submit your request immediately after generating the codes\. If you generate the
 You can resynchronize virtual and hardware MFA devices from the AWS CLI\.
 
 **To resynchronize a virtual or hardware MFA device for an IAM user \(AWS CLI\)**  
-At a command prompt, issue the [https://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
+At a command prompt, issue the [aws iam resync\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/resync-mfa-device.html) command:
 + Virtual MFA device: Specify Amazon Resource Name \(ARN\) of device as the serial number\.
 
   ```
-  $ aws iam resync-mfa-device --user-name Richard --serial-number arn:aws:iam::123456789012:mfa/RichardsMFA --authentication-code-1 123456 --authentication-code-2 987654
+  aws iam resync-mfa-device --user-name Richard --serial-number arn:aws:iam::123456789012:mfa/RichardsMFA --authentication-code1 123456 --authentication-code2 987654
   ```
 + Hardware MFA device: Specify hardware device's serial number as serial number\. The format is vendor\-specific\. For example, you can purchase a gemalto token from Amazon\. Its serial number is typically four letters followed by four numbers\.
 
   ```
-  $ aws iam resync-mfa-device --user-name Richard --serial-number ABCD12345678 --authentication-code-1 123456 --authentication-code-2 987654
+  aws iam resync-mfa-device --user-name Richard --serial-number ABCD12345678 --authentication-code1 123456 --authentication-code2 987654
   ```
 
 **Important**  
@@ -148,4 +148,4 @@ Submit your request immediately after generating the codes\. If you generate the
 IAM has an API call that performs synchronization\. In this case, we recommend that you give your virtual and hardware MFA device users permission to access this API call\. Then build a tool based on that API call so your users can resynchronize their devices whenever they need to\.
 
 **To resynchronize a virtual or hardware MFA device for an IAM user \(AWS API\)**
-+ Send the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.
++ Send the [ResyncMFADevice](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ResyncMFADevice.html) request\.

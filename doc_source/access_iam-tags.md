@@ -16,7 +16,7 @@ You can create an IAM policy using the visual editor, using JSON, or by importin
 
 You can use tags in your IAM policies to control access to IAM user and role resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.
 
-This example shows how you might create a policy that allows deleting users with the `status=terminated` tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
+This example shows how you might create a policy that allows deleting users with the `status=terminated` tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -30,7 +30,7 @@ This example shows how you might create a policy that allows deleting users with
 }
 ```
 
-This example shows how you might create a policy that allows editing tags for all users with the `jobFunction = employee` tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
+This example shows how you might create a policy that allows editing tags for all users with the `jobFunction = employee` tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -52,7 +52,7 @@ This example shows how you might create a policy that allows editing tags for al
 
 You can use tags in your IAM policies to control what tags can be passed in the IAM request\. You can specify which tag key\-value pairs can be added, changed, or removed from an IAM user or role\. 
 
-This example shows how you might create a policy that allows tagging users only with a `department = HR` or `department = CS` tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. 
+This example shows how you might create a policy that allows tagging users only with a `department = HR` or `department = CS` tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\. 
 
 ```
 {
@@ -73,7 +73,7 @@ This example shows how you might create a policy that allows tagging users only 
 
 IAM tags enable you to control what the principal is allowed to do based on the tags attached to that person's identity\. 
 
-This example shows how you might create a policy that allows a principal to start or stop an Amazon EC2 instance\. This operation is allowed only when the instance's resource tag and the principal's tag have the same value for the tag key `cost-center`\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
+This example shows how you might create a policy that allows a principal to start or stop an Amazon EC2 instance\. This operation is allowed only when the instance's resource tag and the principal's tag have the same value for the tag key `cost-center`\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -95,7 +95,7 @@ This example shows how you might create a policy that allows a principal to star
 
 You can use tags in your IAM policies to control whether specific tag keys can be used on a resource, in a request, or by a principal\.
 
-This example shows how you might create a policy that allows removing only the tag with the `temporary` key from users\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
+This example shows how you might create a policy that allows removing only the tag with the `temporary` key from users\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {

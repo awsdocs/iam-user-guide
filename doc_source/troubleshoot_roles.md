@@ -8,6 +8,7 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [I Can't Edit or Delete a Role in My AWS Account](#troubleshoot_roles_cant-edit-delete-role)
 + [I'm Not Authorized to Perform: iam:PassRole](#troubleshoot_roles_not-auth-passrole)
 + [Why Can't I Assume a Role with a 12\-Hour Session? \(AWS CLI, AWS API\)](#troubleshoot_roles_cant-set-session)
++ [I Receive an Error When I Try to Switch Roles in the IAM Console](#troubleshoot_roles_cant-switch-role-console)
 + [My Role Has a Policy That Allows Me to Perform an Action, But I Get "Access Denied"](#troubleshoot_roles_session-policy)
 + [The Service Did Not Create the Role's Default Policy Version](#troubleshoot_serviceroles_edited-policy)
 
@@ -83,9 +84,21 @@ To learn which services support service\-linked roles, see [AWS Services That Wo
 
 ## Why Can't I Assume a Role with a 12\-Hour Session? \(AWS CLI, AWS API\)<a name="troubleshoot_roles_cant-set-session"></a>
 
-When you use the AWS STS `AssumeRole*` API or `assume-role*` CLI operations to assume a role, you can specify a value for the `DurationSeconds` parameter\. You can specify a value from 900 seconds \(15 minutes\) up to the **Maximum CLI/API session duration** setting for the role\. If you specify a value higher than this setting, the operation fails\. This setting can have a maximum value of 12 hours\. For example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
+When you use the AWS STS `AssumeRole*` API or `assume-role*` CLI operations to assume a role, you can specify a value for the `DurationSeconds` parameter\. You can specify a value from 900 seconds \(15 minutes\) up to the **Maximum session duration** setting for the role\. If you specify a value higher than this setting, the operation fails\. This setting can have a maximum value of 12 hours\. For example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
 
 If you use [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining) \(using a role to assume a second role\), your session is limited to a maximum of one hour\. If you then use the `DurationSeconds` parameter to provide a value greater than one hour, the operation fails\. 
+
+## I Receive an Error When I Try to Switch Roles in the IAM Console<a name="troubleshoot_roles_cant-switch-role-console"></a>
+
+The information you enter on the **Switch Role** page must match the information for the role\. Otherwise, the operation fails and you receive the following error:
+
+`Invalid information in one or more fields. Check your information or contact your administrator.`
+
+If you receive this error, confirm that the following information is correct:
++ **Account ID or alias** – The AWS account ID is a 12\-digit number\. Your account might have an alias, which is a friendly identifier such as your company name that can be used instead of your AWS account ID\. You can use either the account ID or the alias in this field\.
++ **Role name** – Role names are case sensitive\. The account ID and role name must match what is configured for the role\.
+
+If you continue to receive an error message, contact your administrator to verify the previous information\. The role trust policy or the IAM user policy might limit your access\. Your administrator can verify the permissions for these policies\.
 
 ## My Role Has a Policy That Allows Me to Perform an Action, But I Get "Access Denied"<a name="troubleshoot_roles_session-policy"></a>
 

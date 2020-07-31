@@ -77,7 +77,7 @@ When you use the AWS CLI to delete a role, you must first delete the policies th
 1. If you don't know the name of the role that you want to delete, enter the following command to list the roles in your account:
 
    ```
-   $ aws iam list-roles
+   aws iam list-roles
    ```
 
    The list includes the Amazon Resource Name \(ARN\) of each role\. Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
@@ -87,13 +87,13 @@ When you use the AWS CLI to delete a role, you must first delete the policies th
    1. To list all instance profiles that the role is associated with, enter the following command:
 
       ```
-      $ aws iam list-instance-profiles-for-role --role-name role-name
+      aws iam list-instance-profiles-for-role --role-name role-name
       ```
 
    1. To remove the role from an instance profile, enter the following command for each instance profile:
 
       ```
-      $ aws iam remove-role-from-instance-profile --instance-profile-name instance-profile-name --role-name role-name
+      aws iam remove-role-from-instance-profile --instance-profile-name instance-profile-name --role-name role-name
       ```
 
 1. Delete all policies that are associated with the role\.
@@ -101,25 +101,25 @@ When you use the AWS CLI to delete a role, you must first delete the policies th
    1. To list all policies that are in the role, enter the following command:
 
       ```
-      $ aws iam list-role-policies --role-name role-name
+      aws iam list-role-policies --role-name role-name
       ```
 
    1. To delete each policy from the role, enter the following command for each policy: 
 
       ```
-      $ aws iam delete-role-policy --role-name role-name --policy-name policy-name
+      aws iam delete-role-policy --role-name role-name --policy-name policy-name
       ```
 
 1. Enter the following command to delete the role:
 
    ```
-   $ aws iam delete-role --role-name role-name
+   aws iam delete-role --role-name role-name
    ```
 
 1. If you do not plan to reuse the instance profiles that were associated with the role, you can enter the following command to delete them:
 
    ```
-   $ aws iam delete-instance-profile --instance-profile-name instance-profile-name
+   aws iam delete-instance-profile --instance-profile-name instance-profile-name
    ```
 
 ## Deleting an IAM Role \(AWS API\)<a name="roles-managingrole-deleting-api"></a>

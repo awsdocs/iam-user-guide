@@ -3,9 +3,9 @@
 AWS Trusted Advisor \(service prefix: `trustedadvisor`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#trusted-advisor)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/awssupport/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#trusted-advisoraccess_permissions.html) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/awssupport/latest/user/security.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS Trusted Advisor](#awstrustedadvisor-actions-as-permissions)
@@ -20,23 +20,32 @@ The **Resource Types** column indicates whether each action supports resource\-l
 
 For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
+**Note**  
+Note: The IAM Trusted Advisor policy description details apply only to the Trusted Advisor console\. If you want to manage programmatic access to Trusted Advisor, use the Trusted Advisor operations in the AWS Support API\.
+
 
 ****  
 
 | Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
 | --- | --- | --- | --- | --- | --- | 
-|   DescribeAccount  | View support plan and various TA preferences\. | Read |  |  |  | 
-|   DescribeAccountAccess  | Resolve whether Account has disabled Trusted Advisor | Read |  |  |  | 
-|   DescribeCheckItems  | View details for the check items | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   DescribeCheckRefreshStatuses  | Describe check refresh statuses | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   DescribeCheckSummaries  | Describes the check's summaries | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   DescribeChecks  | List valid Trusted Advisor checks and details\. | Read |  |  |  | 
-|   DescribeNotificationPreferences  | Describes the notification preferences for the account | Read |  |  |  | 
-|   ExcludeCheckItems  | Exclude recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   IncludeCheckItems  | Include recommendations for checks for a given customer | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   RefreshCheck  | Enqueue a refresh for the specified check | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
-|   SetAccountAccess  | Toggle whether TrustedAdvisor is enabled/disabled for the account | Write |  |  |  | 
-|   UpdateNotificationPreferences  | Update notification preferences  | Write |  |  |  | 
+|   [ DescribeAccount ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view the AWS Support plan and various AWS Trusted Advisor preferences | Read |  |  |  | 
+|   [ DescribeAccountAccess ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view if the AWS account has enabled or disabled AWS Trusted Advisor | Read |  |  |  | 
+|   [ DescribeCheckItems ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations)  | Grants permission to view details for the check items | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   [ DescribeCheckRefreshStatuses ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations)  | Grants permission to view the refresh statuses for AWS Trusted Advisor checks | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   [ DescribeCheckSummaries ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations)  | Grants permission to view AWS Trusted Advisor check summaries | Read |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   [ DescribeChecks ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations)  | Grants permission to view details for AWS Trusted Advisor checks | Read |  |  |  | 
+|   [ DescribeNotificationPreferences ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view the notification preferences for the AWS account | Read |  |  |  | 
+|   [ DescribeOrganization ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view if the AWS account meets the requirements to enable the organizational view feature | Read |  |  |  | 
+|   [ DescribeOrganizationAccounts ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view the linked AWS accounts that are in the organization | Read |  |  |  | 
+|   [ DescribeReports ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view details for organizational view reports, such as the report name, runtime, date created, status, and format | Read |  |  |  | 
+|   [ DescribeServiceMetadata ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to view information about organizational view reports, such as the AWS Regions, check categories, check names, and resource statuses | Read |  |  |  | 
+|   [ ExcludeCheckItems ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to exclude recommendations for AWS Trusted Advisor checks | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   [ GenerateReport ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to create a report for AWS Trusted Advisor checks in your organization | Write |  |  |  | 
+|   [ IncludeCheckItems ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to include recommendations for AWS Trusted Advisor checks | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   [ RefreshCheck ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations)  | Grants permission to refresh an AWS Trusted Advisor check | Write |   [ checks\* ](#awstrustedadvisor-checks)   |  |  | 
+|   [ SetAccountAccess ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to enable or disable AWS Trusted Advisor for the account | Write |  |  |  | 
+|   [ SetOrganizationAccess ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to enable the organizational view feature for AWS Trusted Advisor | Write |  |  |  | 
+|   [ UpdateNotificationPreferences ](https://docs.aws.amazon.com/awssupport/latest/user/security-trusted-advisor.html#trusted-advisor-operations) \[permission only\] | Grants permission to update notification preferences for AWS Trusted Advisor | Write |  |  |  | 
 
 ## Resource Types Defined by AWS Trusted Advisor<a name="awstrustedadvisor-resources-for-iam-policies"></a>
 

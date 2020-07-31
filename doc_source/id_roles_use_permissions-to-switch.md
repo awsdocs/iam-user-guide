@@ -1,8 +1,8 @@
 # Granting a User Permissions to Switch Roles<a name="id_roles_use_permissions-to-switch"></a>
 
-When you [create a role for cross\-account access](id_roles_create_for-user.md), you establish trust from the account that owns the role and the resources \(trusting account\) to the account that contains the users \(trusted account\)\. To do this, you specify the trusted account number as the `Principal` in the role's trust policy\. That allows *potentially* any user in the trusted account to assume the role\. To complete the configuration, the administrator of the trusted account must give specific groups or users in that account permission to switch to the role\.
+When an administrator [creates a role for cross\-account access](id_roles_create_for-user.md) they establish trust between the account that owns the role and the resources \(trusting account\) and the account that contains the users \(trusted account\)\. To do this, the administrator of the trusting account specifies the trusted account number as the `Principal` in the role's trust policy\. That allows *potentially* any user in the trusted account to assume the role\. To complete the configuration, the administrator of the trusted account must give specific groups or users in that account permission to switch to the role\.
 
-To grant a user permission to switch to a role, you create a new policy for the user or edit an existing policy to add the required elements\. You can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, you can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\. 
+To grant a user permission to switch to a role, the administrator of the trusted account creates a new policy for the user\. Or the administrator might edit an existing policy to add the required elements\. The administrator can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, the administrator can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\. 
 
 Note that you can switch roles only when you sign in as an IAM user\. You cannot switch roles when you sign in as the AWS account root user\.
 
@@ -26,7 +26,7 @@ A policy that grants a user permission to assume a role must include a statement
 This is as shown in the following example\. Users that get the policy \(either through group membership or directly attached\) are allowed to switch to the specified role\.
 
 **Note**  
-Note that if `Resource` is set to `*`, the user can assume any role in any account that trusts the user's account \(the role's trust policy specifies the user's account as `Principal`\)\. As a best practice, we recommend that you follow the [principle of least privilege](http://en.wikipedia.org/wiki/Principle_of_least_privilege) and specify the complete ARN for only the roles that the user needs\.
+If `Resource` is set to `*`, the user can assume any role in any account that trusts the user's account\. \(In other words, the role's trust policy specifies the user's account as `Principal`\)\. As a best practice, we recommend that you follow the [principle of least privilege](http://en.wikipedia.org/wiki/Principle_of_least_privilege) and specify the complete ARN for only the roles that the user needs\.
 
 The following example shows a policy that lets the user assume roles in only one account\. In addition, the policy uses a wildcard \(\*\) to specify that the user can switch to a role only if the role name begins with the letters `Test`\.
 
@@ -53,14 +53,14 @@ After you create a role and grant your user permissions to switch to it, you mus
 You can make things easier for your users by sending them a link that is preconfigured with the account ID and role name\. You can see the role link on the final page of the **Create Role** wizard or in the **Role Summary** page for any cross\-account enabled role\.
 
 **Note**  
-If you create the role with the AWS CLI , Tools for Windows PowerShell,or the AWS API, then you can create the role with a *path* in addition to a name\. If you do so, then you must provide the complete path and role name to your users to type on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.
+You can create the role with the AWS CLI, Tools for Windows PowerShell, or the AWS API\. Afterward, you can create the role with a *path* in addition to a name\. If you do so, then you must provide the complete path and role name to your users to type on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.
 
 **Important**  
-If you create the role programmatically instead of in the IAM console, then you can add a `Path` of up to 512 characters in addition to the `RoleName`\. The `RoleName` can be up to 64 characters long\. However, to use a role with the Switch Role feature in the AWS console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
+If you create the role programmatically instead of in the IAM console, then you can add a `Path` of up to 512 characters in addition to the `RoleName`\. The `RoleName` can be up to 64 characters long\. However, to use a role with the **Switch Role** feature in the AWS Management Console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
 
-You can also use the following format to manually construct the link\. Substitute your account ID or alias and the role name for the two parameters in the request:
+You can also use the following format to manually construct the link\. Substitute your account ID or alias and the role name for the two parameters in the following example\.
 
-`https://signin.aws.amazon.com/switchrole?account=YourAccountIDorAliasHere&roleName=pathIfAny/YourRoleNameHere`
+`https://signin.aws.amazon.com/switchrole?account=YourAccountIDorAliasHereroleName=pathIfAny/YourRoleNameHere`
 
 We recommend that you direct your users to the topic [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
 

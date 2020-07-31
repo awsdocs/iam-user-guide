@@ -22,29 +22,7 @@ For details about the columns in the following table, see [The Actions Table](re
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AddNotificationChannels ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AddNotificationChannels.html)  | Grants permission to add up to 2 topic ARNs of existing AWS SNS topics to publish notifications | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ BatchGetFrameMetricData ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_BatchGetFrameMetricData.html)  | Grants permission to get the frame metric data for a Profiling Group | List |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ ConfigureAgent ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html) \[permission only\] | Grants permission for an agent to register with the orchestration service and retrieve profiling configuration information | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ CreateProfilingGroup ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_CreateProfilingGroup.html)  | Grants permission to create a profiling group | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ DeleteProfilingGroup ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DeleteProfilingGroup.html)  | Grants permission to delete a profiling group | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ DescribeProfilingGroup ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_DescribeProfilingGroup.html)  | Grants permission to describe a profiling group | Read |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ GetFindingsReportAccountSummary ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetFindingsReportAccountSummary.html)  | Grants permission to get a summary of recent recommendations for each profiling group in the account | Read |  |  |  | 
-|   [ GetNotificationConfiguration ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetNotificationConfiguration.html)  | Grants permission to get the notification configuration | Read |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ GetPolicy ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetPolicy.html)  | Grants permission to get the resource policy associated with the specified Profiling Group\. | Read |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ GetProfile ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html)  | Grants permission to get aggregated profiles for a specific profiling group | Read |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ GetRecommendations ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetRecommendations.html)  | Grants permission to get recommendations | Read |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ ListFindingsReports ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListFindingsReports.html)  | Grants permission to list the available recommendations reports for a specific profiling group | List |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ ListProfileTimes ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html)  | Grants permission to list the start times of the available aggregated profiles for a specific profiling group | List |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ ListProfilingGroups ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfilingGroups.html)  | Grants permission to list profiling groups in the account | List |  |  |  | 
-|   [ PostAgentProfile ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html) \[permission only\] | Grants permission to submit a profile collected by an agent belonging to a specific profiling group for aggregation | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ PutPermission ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PutPermission.html)  | Grants permission to update the list of principals allowed for an action group in the resource policy associated with the specified Profiling Group\. | Permissions management |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ RemoveNotificationChannel ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemoveNotificationChannel.html)  | Grants permission to delete an already configured SNStopic arn from the notification configuration | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ RemovePermission ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_RemovePermission.html)  | Grants permission to remove the permission of specified Action Group from the resource policy associated with the specified Profiling Group\. | Permissions management |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ SubmitFeedback ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_SubmitFeedback.html)  | Grants permission to submit user feedback for useful or non useful anomaly | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
-|   [ UpdateProfilingGroup ](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_UpdateProfilingGroup.html)  | Grants permission to update a specific profiling group | Write |   [ ProfilingGroup\* ](#amazoncodeguruprofiler-ProfilingGroup)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncodeguruprofiler.html)
 
 ## Resource Types Defined by Amazon CodeGuru Profiler<a name="amazoncodeguruprofiler-resources-for-iam-policies"></a>
 
@@ -55,8 +33,19 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ ProfilingGroup ](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html)  |  arn:$\{Partition\}:codeguru\-profiler:$\{Region\}:$\{Account\}:profilingGroup/$\{profilingGroupName\}  |  | 
+|   [ ProfilingGroup ](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/working-with-profiling-groups.html)  |  arn:$\{Partition\}:codeguru\-profiler:$\{Region\}:$\{Account\}:profilingGroup/$\{profilingGroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoncodeguruprofiler-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon CodeGuru Profiler<a name="amazoncodeguruprofiler-policy-keys"></a>
 
-CodeGuru Profiler has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon CodeGuru Profiler defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

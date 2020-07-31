@@ -120,12 +120,9 @@ To change the description of the role, modify the description text\.
 
 ## Modifying a Role Maximum Session Duration \(Console\)<a name="roles-modify_max-session-duration"></a>
 
-To specify the maximum session duration setting for roles that are assumed using the AWS CLI or API, modify the maximum session duration setting's value\. This setting can have a value from 1 hour to 12 hours\. If you do not specify a value, the default maximum of 1 hour is applied\. This setting does not limit sessions assumed by AWS services\.
+To specify the maximum session duration setting for roles that are assumed using the console, the AWS CLI, or AWS API, modify the maximum session duration setting value\. This setting can have a value from 1 hour to 12 hours\. If you do not specify a value, the default maximum of 1 hour is applied\. This setting does not limit sessions assumed by AWS services\.<a name="id_roles_modify_max-session"></a>
 
-**Note**  
-Anyone who assumes the role from the AWS CLI or API can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer session\. The `MaxSessionDuration` setting determines the maximum duration of the role session that can be requested using the `DurationSeconds` parameter\. If users don't specify a value for the `DurationSeconds` parameter, their security credentials are valid for one hour\.<a name="id_roles_modify_max-session"></a>
-
-**To change the maximum session duration setting for roles that are assumed using the AWS CLI or API \(console\)**
+**To change the maximum session duration setting for roles that are assumed using the console, AWS CLI, or AWS API \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -133,11 +130,17 @@ Anyone who assumes the role from the AWS CLI or API can use the `duration-second
 
 1. Choose the name of the role to modify\.
 
-1. Next to **Maximum CLI/API session duration** choose a value\. Or choose **Custom duration** and type a value \(in seconds\)\.
+1. Next to **Maximum session duration**, choose a value\. Or choose **Custom duration** and type a value \(in seconds\)\.
 
 1. Choose **Save**\.
 
    Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
+
+In the AWS Management Console, IAM user sessions are 12 hours by default\. IAM users who switch roles in the console are granted the role maximum session duration, or the remaining time in the IAM user's session, whichever is less\.
+
+Anyone who assumes the role from the AWS CLI or AWS API can request a longer session, up to this maximum\. The `MaxSessionDuration` setting determines the maximum duration of the role session that can be requested\.
++ To specify a session duration using the AWS CLI use the `duration-seconds` parameter\. To learn more, see [Switching to an IAM Role \(AWS CLI\)](id_roles_use_switch-role-cli.md)\.
++ To specify a session duration using the AWS API, use the `DurationSeconds` parameter\. To learn more, see [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)\. 
 
 ## Modifying a Role Permissions Boundary \(Console\)<a name="roles-modify_permissions-boundary"></a>
 

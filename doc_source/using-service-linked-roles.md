@@ -171,7 +171,7 @@ Before creating a service\-linked role in IAM, find out whether the linked servi
 Run the following command:
 
 ```
-$ aws iam [create\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME.amazonaws.com
+aws iam [create\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) --aws-service-name SERVICE-NAME.amazonaws.com
 ```
 
 ### Creating a Service\-Linked Role \(AWS API\)<a name="create-service-linked-role-iam-api"></a>
@@ -213,7 +213,7 @@ You can use IAM commands from the AWS CLI to edit the description of a service\-
 1. \(Optional\) To view the current description for a role, run the following commands:
 
    ```
-   $ aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name ROLE-NAME
+   aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name ROLE-NAME
    ```
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
@@ -221,7 +221,7 @@ You can use IAM commands from the AWS CLI to edit the description of a service\-
 1. To update a service\-linked role's description, run the following command:
 
    ```
-   $ aws iam [update\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
+   aws iam [update\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html) --role-name ROLE-NAME --description OPTIONAL-DESCRIPTION
    ```
 
 ### Editing a Service\-Linked Role Description \(AWS API\)<a name="edit-service-linked-role-iam-api"></a>
@@ -298,7 +298,7 @@ You can use IAM commands from the AWS CLI to delete a service\-linked role\.
 1. If you don't know the name of the service\-linked role that you want to delete, type the following command to list the roles and their Amazon Resource Names \(ARNs\) in your account:
 
    ```
-   $ aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
+   aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
    ```
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
@@ -306,13 +306,13 @@ You can use IAM commands from the AWS CLI to delete a service\-linked role\.
 1. Because a service\-linked role cannot be deleted if it is being used or has associated resources, you must submit a deletion request\. That request can be denied if these conditions are not met\. You must capture the `deletion-task-id` from the response to check the status of the deletion task\. Type the following command to submit a service\-linked role deletion request:
 
    ```
-   $ aws iam [delete\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-service-linked-role.html) --role-name role-name
+   aws iam [delete\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-service-linked-role.html) --role-name role-name
    ```
 
 1. Type the following command to check the status of the deletion task:
 
    ```
-   $ aws iam [get\-service\-linked\-role\-deletion\-status](https://docs.aws.amazon.com/cli/latest/reference/iam/get-service-linked-role-deletion-status.html) --deletion-task-id deletion-task-id
+   aws iam [get\-service\-linked\-role\-deletion\-status](https://docs.aws.amazon.com/cli/latest/reference/iam/get-service-linked-role-deletion-status.html) --deletion-task-id deletion-task-id
    ```
 
    The status of the deletion task can be `NOT_STARTED`, `IN_PROGRESS`, `SUCCEEDED`, or `FAILED`\. If the deletion fails, the call returns the reason that it failed so that you can troubleshoot\. If the deletion fails because the role is using the service's resources, then the notification includes a list of resources, if the service returns that information\. You can then [clean up the resources](#service-linked-role-review-before-delete) and submit the deletion again\.

@@ -256,7 +256,7 @@ The policy that you attached to each role allows the employees to view any secre
    + `access-peg-engineering`
    + `access-peg-quality-assurance`
    + `access-uni-engineering`
-   + `access-peg-quality-assurance`
+   + `access-uni-quality-assurance`
 
    For more information about switching roles in the AWS Management Console, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\.
 

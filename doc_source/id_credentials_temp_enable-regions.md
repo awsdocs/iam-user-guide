@@ -66,13 +66,14 @@ In the example, the first line instantiates an `EndpointConfiguration` object ca
 
 For all other language and programming environment combinations, refer to the [documentation for the relevant SDK](https://aws.amazon.com/tools/)\.
 
-## Region Endpoints<a name="id_credentials_region-endpoints"></a>
+## Regions and Endpoints<a name="id_credentials_region-endpoints"></a>
 
 The following table lists the Regions and their endpoints\. It indicates which ones are activated by default and which ones you can activate or deactivate\.
 
-
-****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html)
 
-**Note**  
+¹You must [enable the Region](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html)\.
+
+## AWS CloudTrail and Regional Endpoints<a name="sts-regions-cloudtrail"></a>
+
 Calls to Regional endpoints, such as `us-east-2.amazonaws.com`, are logged in AWS CloudTrail the same as any call to a Regional service\. Calls to the global endpoint, `sts.amazonaws.com`, are logged as calls to a global service\. For more information, see [Logging IAM and AWS STS API Calls with AWS CloudTrail](cloudtrail-integration.md)\.

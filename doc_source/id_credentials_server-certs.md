@@ -31,7 +31,7 @@ To use the [IAM API](https://docs.aws.amazon.com/IAM/latest/APIReference/) to up
 To use the following example command, replace these file names with your own and replace *ExampleCertificate* with a name for your uploaded certificate\. Type the command on one continuous line\. The following example includes line breaks and extra spaces to make it easier to read\.
 
 ```
-$ aws iam upload-server-certificate --server-certificate-name ExampleCertificate
+aws iam upload-server-certificate --server-certificate-name ExampleCertificate
                                     --certificate-body file://Certificate.pem
                                     --certificate-chain file://CertificateChain.pem
                                     --private-key file://PrivateKey.pem
@@ -49,7 +49,7 @@ To use the AWS Tools for Windows PowerShell to upload a certificate, use [Publis
 To use the IAM API to retrieve a certificate, send a [GetServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\. Replace *ExampleCertificate* with the name of the certificate to retrieve\.
 
 ```
-$ aws iam get-server-certificate --server-certificate-name ExampleCertificate
+aws iam get-server-certificate --server-certificate-name ExampleCertificate
 ```
 
 When the preceding command is successful, it returns the certificate, the certificate chain \(if one was uploaded\), and metadata about the certificate\.
@@ -64,7 +64,7 @@ To use the AWS Tools for Windows PowerShell to retrieve a certificate, use [Get\
 To use the IAM API to list your uploaded server certificates, send a [ListServerCertificates](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListServerCertificates.html) request\. The following example shows how to do this with the AWS CLI\.
 
 ```
-$ aws iam list-server-certificates
+aws iam list-server-certificates
 ```
 
 When the preceding command is successful, it returns a list that contains metadata about each certificate\.
@@ -78,7 +78,7 @@ To use the IAM API to rename a server certificate or update its path, send an [U
 To use the following example command, replace the old and new certificate names and the certificate path, and type the command on one continuous line\. The following example includes line breaks and extra spaces to make it easier to read\.
 
 ```
-$ aws iam update-server-certificate --server-certificate-name ExampleCertificate
+aws iam update-server-certificate --server-certificate-name ExampleCertificate
                                     --new-server-certificate-name CloudFrontCertificate
                                     --new-path /cloudfront/
 ```
@@ -94,7 +94,7 @@ To use the IAM API to delete a server certificate, send a [DeleteServerCertifica
 To use the following example command, replace *ExampleCertificate* with the name of the certificate to delete\.
 
 ```
-$ aws iam delete-server-certificate --server-certificate-name ExampleCertificate
+aws iam delete-server-certificate --server-certificate-name ExampleCertificate
 ```
 
 When the preceding command is successful, it does not return any output\.
@@ -143,7 +143,7 @@ If these items are not in the right format for uploading to IAM, you can use [Op
 Use the [OpenSSL **x509** command](https://openssl.org/docs/manmaster/man1/x509.html), as in the following example\. In the following example command, replace `Certificate.der` with the name of the file that contains your DER\-encoded certificate\. Replace `Certificate.pem` with the preferred name of the output file to contain the PEM\-encoded certificate\.  
 
 ```
-$ openssl x509 -inform DER -in Certificate.der -outform PEM -out Certificate.pem
+openssl x509 -inform DER -in Certificate.der -outform PEM -out Certificate.pem
 ```
  
 
@@ -151,7 +151,7 @@ $ openssl x509 -inform DER -in Certificate.der -outform PEM -out Certificate.pem
 Use the [OpenSSL **rsa** command](https://openssl.org/docs/manmaster/man1/rsa.html), as in the following example\. In the following example command, replace `PrivateKey.der` with the name of the file that contains your DER\-encoded private key\. Replace `PrivateKey.pem` with the preferred name of the output file to contain the PEM\-encoded private key\.  
 
 ```
-$ openssl rsa -inform DER -in PrivateKey.der -outform PEM -out PrivateKey.pem
+openssl rsa -inform DER -in PrivateKey.der -outform PEM -out PrivateKey.pem
 ```
  
 
@@ -159,7 +159,7 @@ $ openssl rsa -inform DER -in PrivateKey.der -outform PEM -out PrivateKey.pem
 Use the [OpenSSL **rsa** command](https://openssl.org/docs/manmaster/man1/rsa.html), as in the following example\. To use the following example command, replace `EncryptedPrivateKey.pem` with the name of the file that contains your encrypted private key\. Replace `PrivateKey.pem` with the preferred name of the output file to contain the PEM\-encoded unencrypted private key\.  
 
 ```
-$ openssl rsa -in EncryptedPrivateKey.pem -out PrivateKey.pem
+openssl rsa -in EncryptedPrivateKey.pem -out PrivateKey.pem
 ```
  
 
@@ -167,7 +167,7 @@ $ openssl rsa -in EncryptedPrivateKey.pem -out PrivateKey.pem
 Use the [OpenSSL **pkcs12** command](https://openssl.org/docs/manmaster/man1/pkcs12.html), as in the following example\. In the following example command, replace `CertificateBundle.p12` with the name of the file that contains your PKCS\#12\-encoded certificate bundle\. Replace `CertificateBundle.pem` with the preferred name of the output file to contain the PEM\-encoded certificate bundle\.  
 
 ```
-$ openssl pkcs12 -in CertificateBundle.p12 -out CertificateBundle.pem -nodes
+openssl pkcs12 -in CertificateBundle.p12 -out CertificateBundle.pem -nodes
 ```
  
 
@@ -175,5 +175,5 @@ $ openssl pkcs12 -in CertificateBundle.p12 -out CertificateBundle.pem -nodes
 Use the [OpenSSL **pkcs7** command](https://openssl.org/docs/manmaster/man1/pkcs7.html), as in the following example\. In the following example command, replace `CertificateBundle.p7b` with the name of the file that contains your PKCS\#7\-encoded certificate bundle\. Replace `CertificateBundle.pem` with the preferred name of the output file to contain the PEM\-encoded certificate bundle\.  
 
 ```
-$ openssl pkcs7 -in CertificateBundle.p7b -print_certs -out CertificateBundle.pem
+openssl pkcs7 -in CertificateBundle.p7b -print_certs -out CertificateBundle.pem
 ```

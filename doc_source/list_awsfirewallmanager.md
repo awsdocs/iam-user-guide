@@ -32,6 +32,8 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ policy ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_Policy.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:policy/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsfirewallmanager-aws_ResourceTag___TagKey_)   | 
+|   [ applications\-list ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_AppsListData.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:applications\-list/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsfirewallmanager-aws_ResourceTag___TagKey_)   | 
+|   [ protocols\-list ](https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_ProtocolsListData.html)  |  arn:$\{Partition\}:fms:$\{Region\}:$\{Account\}:protocols\-list/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsfirewallmanager-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for AWS Firewall Manager<a name="awsfirewallmanager-policy-keys"></a>
 

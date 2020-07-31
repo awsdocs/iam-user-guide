@@ -4,7 +4,7 @@ Occasionally you need to modify or delete the roles that you have created\. To c
 + Modify the policies that are associated with the role 
 + Change who can access the role
 + Edit the permissions that the role grants to users
-+ Change the maximum session duration setting for roles that are assumed using the AWS CLI or API
++ Change the maximum session duration setting for roles that are assumed using the AWS Management Console, AWS CLI or API
 
 You can also delete roles that are no longer needed\. You can manage your roles from the AWS Management Console, the AWS CLI, and the API\.
 

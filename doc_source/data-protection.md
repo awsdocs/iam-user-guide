@@ -25,7 +25,7 @@ Data that is collected and stored by IAM is encrypted at rest\.
 
 ### Encryption in Transit<a name="encryption-in-transit"></a>
 
-Customer identifying data, including passwords, is encrypted in transit using TLS 1\.1 and 1\.2\. All AWS STS endpoints support HTTPS for encrypting data in transit\. For a list of AWS STS endpoints, see [Region Endpoints](id_credentials_temp_enable-regions.md#id_credentials_region-endpoints)\. 
+Customer identifying data, including passwords, is encrypted in transit using TLS 1\.1 and 1\.2\. All AWS STS endpoints support HTTPS for encrypting data in transit\. For a list of AWS STS endpoints, see [Regions and Endpoints](id_credentials_temp_enable-regions.md#id_credentials_region-endpoints)\. 
 
 ## Key Management in IAM and AWS STS<a name="key-management"></a>
 

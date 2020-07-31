@@ -16,13 +16,13 @@ The following policy types, listed in order of frequency, are available for use 
 
 ### Identity\-Based Policies<a name="policies_id-based"></a>
 
-Identity\-based policies are JSON permissions policy documents that you can attach to an identity \(user, group of users, or role\)\. These policies control what actions an entity \(user or role\) can perform, on which resources, and under what conditions\. Identity\-based policies can be further categorized:
-+ **Managed policies** – Standalone identity\-based policies that you can attach to multiple users, groups, and roles in your AWS account\. You can use two types of managed policies: 
-  + **AWS managed policies** – Managed policies that are created and managed by AWS\. If you are new to using policies, we recommend that you start by using AWS managed policies\.
-  + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\. You can create and edit an IAM policy in the visual editor or by creating the JSON policy document directly\. For more information, see [Creating IAM Policies](access_policies_create.md) and [Editing IAM Policies](access_policies_manage-edit.md)\.
-+ **Inline policies** – Policies that you create and manage and that are embedded directly into a single user, group, or role\. In most cases, we don't recommend using inline policies\.
+Identity\-based policies are JSON permissions policy documents that control what actions an identity \(users, groups of users, and roles\) can perform, on which resources, and under what conditions\. Identity\-based policies can be further categorized:
++ **Managed policies** – Standalone identity\-based policies that you can attach to multiple users, groups, and roles in your AWS account\. There are two types of managed policies:
+  + **AWS managed policies** – Managed policies that are created and managed by AWS\.
+  + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\.
++ **Inline policies** – Policies that you add directly to a single user, group, or role\. Inline policies maintain a strict one\-to\-one relationship between a policy and an identity\. They are deleted when you delete the identity\.
 
-To learn how to choose between a managed policy or an inline policy, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
+To learn how to choose between managed and inline policies, see [Choosing Between Managed Policies and Inline Policies](access_policies_managed-vs-inline.md#choosing-managed-or-inline)\.
 
 ### Resource\-Based Policies<a name="policies_resource-based"></a>
 

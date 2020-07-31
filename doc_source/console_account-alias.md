@@ -13,7 +13,7 @@ You can find the account ID for your AWS account using the following methods\.
 
 ### Finding Your Account ID Using the Console<a name="FindId_Console"></a>
 
- In the navigation bar at the upper right, choose **Support**, and then **Support Center**\. The account number \(ID\) appears in the navigation pane on the left\.
+ In the navigation bar at the upper right, choose your user name and then choose **My Security Credentials**\. The account number appears either under **Account identifiers** \(if you are the root user\) or under **Account details** \(if you are an IAM user\)\.
 
 ### Finding Your Account ID Using the AWS CLI<a name="FindId_CLI"></a>
 

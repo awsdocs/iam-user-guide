@@ -55,26 +55,24 @@ The visual editor in the IAM console guides you through creating a policy withou
 
 1. Choose **Create policy**\.
 
-1. On the **Visual editor** tab, choose **Choose a service**\. Then choose an AWS service to add to the policy\. You can use the search box at the top to limit the results in the list of services\. You can choose only one service within a visual editor permission block\. To grant access to more than one service, add multiple permission blocks by choosing **Add additional permissions**\.
+1. On the **Visual editor** tab, choose **Choose a service** and then choose an AWS service\. You can use the search box at the top to limit the results in the list of services\. You can choose only one service within a visual editor permission block\. To grant access to more than one service, add multiple permission blocks by choosing **Add additional permissions**\.
 
-1. Choose **Select actions** and then choose the actions to add to the policy\. The visual editor shows the actions available in the service that you selected in the previous step\.
-
-   You can choose actions in the following ways:
-   + Use check boxes to select all actions for the service or all actions in one of the predefined **Access level** groups\.
+1. For **Actions**, choose the actions to add to the policy\. You can choose actions in the following ways:
+   + Select the check box for all actions\.
+   + Choose **add actions** to type the name of a specific action\. You can use wildcards \(`*`\) to specify multiple actions\.
+   + Select one of the **Access level** groups to choose all actions for the access level \(for example, **Read**, **Write**, or **List**\)\.
    + Expand each of the **Access level** groups to choose individual actions\.
-   + Choose **add actions** to type a specific action or use wildcards \(`*`\) to specify multiple actions\.
 
-   By default, the policy that you are creating allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because [IAM denies by default](reference_policies_evaluation-logic.md), we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. This is sometimes called "whitelisting\." You should create a JSON statement to deny permissions \("blacklisting"\) only if you want to override a permission separately allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\.
+   By default, the policy that you are creating allows the actions that you choose\. To deny the chosen actions instead, choose **Switch to deny permissions**\. Because [IAM denies by default](reference_policies_evaluation-logic.md), we recommend as a security best practice that you allow permissions to only those actions and resources that a user needs\. You should create a JSON statement to deny permissions only if you want to override a permission separately allowed by another statement or policy\. We recommend that you limit the number of deny permissions to a minimum because they can increase the difficulty of troubleshooting permissions\.
 
-1. If the selected service and the actions that you selected in the previous steps do not support choosing [specific resources](access_controlling.md#access_controlling-resources), then **All resources** is selected for you\. In that case, you cannot edit this section\. 
+1. For **Resources**, if the service and actions that you selected in the previous steps do not support choosing [specific resources](access_controlling.md#access_controlling-resources), all resources are allowed and you cannot edit this section\. 
 
-   If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources\. You can then choose **Resources** to specify resources for your policy\. 
+   If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources\. You can then expand **Resources** to specify resources for your policy\. 
 
-   You can choose resources in the following ways:
-   + Choose **Add ARN** to provide the details about your resource\. Instead of typing a value, you can also choose **Any** to provide permissions for any value for the specified setting\. For example, if you selected the Amazon EC2 **Read** access level group, then the actions in your policy support the `instance` resource type\. You must provide the **Region**, **Account**, and **InstanceId** values for your resource\. If you provide your account ID but choose **Any** for the Region and instance ID, then the policy grants permissions to any instance in your account\.
-   + Choose **Add ARN** to specify resources by their Amazon Resource Name \(ARN\)\. You can include a wildcard \(**\***\) in any field of the ARN \(between each pair of colons\)\. For details about ARN formats, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For information about using ARNs in the `Resource` element of a policy, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
-   + Choose **Any** from the far right of the resource section to grant permissions to any resources of a particular type\.
-   + Choose **All resources** to choose all resources for that service\. 
+   You can specify resources in the following ways:
+   + Choose **Add ARN** to specify resources by their Amazon Resource Names \(ARN\)\. You can use the visual ARN editor or list ARNs manually\. For more information about ARN syntax, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For information about using ARNs in the `Resource` element of a policy, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
+   + Choose **Any** next to a resource to grant permissions to any resources of that type\.
+   + Choose **All resources** to choose all resources for the service\. 
 
 1. \(Optional\) Choose **Specify request conditions \(optional\)** to add conditions to the policy that you are creating\. Conditions limit a JSON policy statement's effect\. For example, you can specify that a user is allowed to perform the actions on the resources only when that user's request happens within a certain time range\. You can also use commonly used conditions to limit whether a user must be authenticated using a multi\-factor authentication \(MFA\) device\. Or you can require that the request originate from within a certain range of IP addresses\. For lists of all of the context keys that you can use in a policy condition, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
 

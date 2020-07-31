@@ -81,12 +81,14 @@ In this example, include the following trust policy in the first command when yo
 ```
 {
   "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Principal": { "AWS": "arn:aws:iam::123456789012:root" },
-    "Action": "sts:AssumeRole",
-    "Condition": { "Bool": { "aws:MultiFactorAuthPresent": "true" } }
-  }
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Principal": { "AWS": "arn:aws:iam::123456789012:root" },
+          "Action": "sts:AssumeRole",
+          "Condition": { "Bool": { "aws:MultiFactorAuthPresent": "true" } }
+      }
+  ]
 }
 ```
 
@@ -98,11 +100,13 @@ When you use the second command, you must attach an existing managed policy to t
 ```
 {
   "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": "s3:ListBucket",
-    "Resource": "arn:aws:s3:::example_bucket"
-  }
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": "s3:ListBucket",
+          "Resource": "arn:aws:s3:::example_bucket"
+      }
+  ]
 }
 ```
 

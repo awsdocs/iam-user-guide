@@ -48,7 +48,7 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ StartMedicalTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartMedicalTranscriptionJob.html)  | Grants permission to start an asynchronous job to transcribe medical speech to text\. | Write |  |  |   s3:GetObject   | 
 |   [ StartStreamTranscription ](https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartStreamTranscription.html)  | Grants permission to start a bidirectional HTTP2 stream to transcribe speech to text in real time\. | Write |  |  |  | 
 |   [ StartStreamTranscriptionWebSocket ](https://docs.aws.amazon.com/transcribe/latest/dg/API_streaming_StartStreamTranscriptionWebSocket.html)  | Grants permission to start a websocket stream to transcribe speech to text in real time\. | Write |  |  |  | 
-|   [ StartTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html)  | Grants permission to start an asynchronous job to transcribe speech to text\. | Write |  |  |   s3:GetObject   | 
+|   [ StartTranscriptionJob ](https://docs.aws.amazon.com/transcribe/latest/dg/API_StartTranscriptionJob.html)  | Grants permission to start an asynchronous job to transcribe speech to text\. | Write |  |   [ transcribe:OutputBucketName ](#amazontranscribe-transcribe_OutputBucketName)   [ transcribe:OutputEncryptionKMSKeyId ](#amazontranscribe-transcribe_OutputEncryptionKMSKeyId)   |   s3:GetObject   | 
 |   [ UpdateMedicalVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateMedicalVocabulary.html)  | Grants permission to update an existing medical vocabulary with new values\. The UpdateMedicalVocabulary operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
 |   [ UpdateVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html)  | Grants permission to update an existing vocabulary with new values\. The UpdateVocabulary operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
 |   [ UpdateVocabularyFilter ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabularyFilter.html)  | Grants permission to update an existing vocabulary filter with new values\. The UpdateVocabularyFilter operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
@@ -59,4 +59,14 @@ Amazon Transcribe does not support specifying a resource ARN in the `Resource` e
 
 ## Condition Keys for Amazon Transcribe<a name="amazontranscribe-policy-keys"></a>
 
-Transcribe has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+Amazon Transcribe defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+
+
+****  
+
+| Condition Keys | Description | Type | 
+| --- | --- | --- | 
+|   transcribe:OutputBucketName  | Enables you to control access based on the output bucket name included in the request | String | 
+|   transcribe:OutputEncryptionKMSKeyId  | Enables you to control access based on the KMS key id included in the request | String | 

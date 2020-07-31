@@ -120,7 +120,7 @@ Use this key to compare the services in the policy with the *last service* that 
 
 Works with [date operators](reference_policies_elements_condition_operators.md#Conditions_Date)\.
 
-Use this key to compare the date and time of the request with the date and time that you specify in the policy\. To view an example policy that uses this condition key, see [AWS: Allows Access Within Specific Dates](reference_policies_examples_aws-dates.md)\.
+Use this key to compare the date and time of the request with the date and time that you specify in the policy\. To view an example policy that uses this condition key, see [AWS: Allows Access Based on Date and Time](reference_policies_examples_aws-dates.md)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:EpochTime<a name="condition-keys-epochtime"></a>
@@ -316,7 +316,7 @@ Use this key to compare the tag attached to the principal making the request wit
 
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM Users and Roles](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.
 
-This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\.
+This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {

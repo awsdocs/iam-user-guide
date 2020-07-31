@@ -33,8 +33,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   job\-queue  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-queue/$\{JobQueueName\}  |  | 
-|   job\-definition  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-definition/$\{JobDefinitionName\}:$\{Revision\}  |  | 
+|   [ compute\-environment ](${AuthZDocPage}compute_environments.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:compute\-environment/$\{ComputeEnvironmentName\}  |  | 
+|   [ job\-queue ](${AuthZDocPage}job_queues.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-queue/$\{JobQueueName\}  |  | 
+|   [ job\-definition ](${AuthZDocPage}job_definitions.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-definition/$\{JobDefinitionName\}:$\{Revision\}  |  | 
 
 ## Condition Keys for AWS Batch<a name="awsbatch-policy-keys"></a>
 
@@ -47,6 +48,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   batch:Image  | The image used to start a container\. | String | 
-|   batch:Privileged  | When this parameter is true, the container is given elevated privileges on the host container instance \(similar to the root user\)\. | Boolean | 
-|   batch:User  | The user name or numeric uid to use inside the container\. | String | 
+|   [ batch:Image ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The image used to start a container\. | String | 
+|   [ batch:Privileged ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | When this parameter is true, the container is given elevated privileges on the host container instance \(similar to the root user\)\. | Boolean | 
+|   [ batch:User ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The user name or numeric uid to use inside the container\. | String | 

@@ -123,6 +123,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon Elastic Transcoder](list_amazonelastictranscoder.md)
 + [Amazon ElastiCache](list_amazonelasticache.md)
 + [Amazon Elasticsearch Service](list_amazonelasticsearchservice.md)
++ [AWS Elemental Appliances and Software](list_awselementalappliancesandsoftware.md)
 + [AWS Elemental MediaConnect](list_awselementalmediaconnect.md)
 + [AWS Elemental MediaConvert](list_awselementalmediaconvert.md)
 + [AWS Elemental MediaLive](list_awselementalmedialive.md)

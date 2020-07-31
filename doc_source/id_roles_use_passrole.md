@@ -54,7 +54,7 @@ Imagine that you want to grant a user the ability to pass any of an approved set
   }
   ```
 
-Now the user can start an Amazon EC2 instance with an assigned role\. Applications running on the instance can access temporary credentials for the role through the instance profile metadata\. The permission policies attached to the role determine what the instance can do\. 
+Now the user can start an Amazon EC2 instance with an assigned role\. Applications running on the instance can access temporary credentials for the role through the instance profile metadata\. The permissions policies attached to the role determine what the instance can do\. 
 
 **Example 2**  
 Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enhanced Monitoring\. This feature enables Amazon RDS to monitor a database instance using an agent\. It also allows Amazon RDS to log metrics to Amazon CloudWatch Logs\. To enable this feature, you must create a service role to give Amazon RDS permissions to monitor and write metrics to your logs\. 

@@ -54,7 +54,7 @@ You can use temporary security credentials with the AWS CLI\. This can be useful
 Using the [AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/), you can call an [ AWS STS API](https://docs.aws.amazon.com/STS/latest/APIReference/) like `AssumeRole` or `GetFederationToken` and then capture the resulting output\. The following example shows a call to `AssumeRole` that sends the output to a file\. In the example, the `profile` parameter is assumed to be a profile in the AWS CLI configuration file\. It is also assumed to reference credentials for an IAM user who has permissions to assume the role\.
 
 ```
-$ aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-session-name "RoleSession1" --profile IAM-user-name > assume-role-output.txt
+aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-session-name "RoleSession1" --profile IAM-user-name > assume-role-output.txt
 ```
 
 When the command is finished, you can extract the access key ID, secret access key, and session token from wherever you've routed it\. You can do this either manually or by using a script\. You can then assign these values to environment variables\. 

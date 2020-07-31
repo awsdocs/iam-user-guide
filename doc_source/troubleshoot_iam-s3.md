@@ -8,4 +8,8 @@ You use an Amazon S3 bucket policy that specifies a wildcard \(\*\) in the `prin
 
 ## I'm Signed in as an AWS Account Root User; Why Can't I Access an Amazon S3 Bucket Under My Account?<a name="troubleshoot_iam-s3_root-bucket-access"></a>
 
-In some cases, you might have an IAM user with full access to IAM and Amazon S3\. If the IAM user assigns a bucket policy to an Amazon S3 bucket and doesn't specify the AWS account root user as a principal, the root user is denied access to that bucket\. However, as the root user, you can still access the bucket\. To do that, modify the bucket policy to allow root user access from the Amazon S3 console or the AWS CLI\.
+In some cases, you might have an IAM user with full access to IAM and Amazon S3\. If the IAM user assigns a bucket policy to an Amazon S3 bucket and doesn't specify the AWS account root user as a principal, the root user is denied access to that bucket\. However, as the root user, you can still access the bucket\. To do that, modify the bucket policy to allow root user access from the Amazon S3 console or the AWS CLI\. Use the following principal, replacing *123456789012* with the ID of the AWS account\.
+
+```
+"Principal": { "AWS": "arn:aws:iam::123456789012:root" }
+```

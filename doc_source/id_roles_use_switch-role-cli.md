@@ -22,12 +22,19 @@ For security purposes, administrators can [review AWS CloudTrail logs](cloudtrai
 
 1. <a name="step-configure-default"></a>If you have never used the AWS CLI, then you must first configure your default CLI profile\. Open a command prompt and set up your AWS CLI installation to use the access key from your IAM user or from your federated role\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-quick-configuration) in the *AWS Command Line Interface User Guide*\.
 
+   Run the [aws configure](https://docs.aws.amazon.com/cli/latest/reference/configure/) command as follows:
+
    ```
-   $ aws configure
-       AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-       AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-       Default region name [None]: us-east-2
-       Default output format [None]: json
+   aws configure
+   ```
+
+   When prompted, provide the following information:
+
+   ```
+   AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+   AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+   Default region name [None]: us-east-2
+   Default output format [None]: json
    ```
 
 1. Create a new profile for the role in the `.aws/config` file in Unix or Linux, or the `C:\Users\USERNAME\.aws\config` file in Windows\. The following example creates a profile called `prodaccess` that switches to the role `ProductionAccessRole` in the `123456789012` account\. You get the role ARN from the account administrator who created the role\. When this profile is invoked, the AWS CLI uses the credentials of the `source_profile` to request credentials for the role\. Because of that, the identity referenced as the `source_profile` must have `sts:AssumeRole` permissions to the role that is specified in the `role_arn`\.
@@ -41,7 +48,7 @@ For security purposes, administrators can [review AWS CloudTrail logs](cloudtrai
 1. After you create the new profile, any AWS CLI command that specifies the parameter `--profile prodaccess` runs under the permissions that are attached to the IAM role `ProductionAccessRole` instead of the default user\.
 
    ```
-   $ aws iam list-users --profile prodaccess
+   aws iam list-users --profile prodaccess
    ```
 
    This command works if the permissions assigned to the `ProductionAccessRole` enable listing the users in the current AWS account\.
@@ -160,7 +167,7 @@ For security purposes, you can use AWS CloudTrail to audit the use of roles in t
 1. After you create the new profile, any AWS CLI command that specifies the parameter `--profile instancecrossaccount` runs under the permissions that are attached to the `efgh` role in account `222222222222`\.
 
    ```
-   $ aws s3 ls my-bucket-2 --profile instancecrossaccount
+   aws s3 ls my-bucket-2 --profile instancecrossaccount
    ```
 
    This command works if the permissions that are assigned to the `efgh` role allow listing the users in the current AWS account\.

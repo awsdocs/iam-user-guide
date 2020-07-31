@@ -34,6 +34,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
 |   [ build ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:build/$\{BuildId\}  |  | 
+|   [ build\-batch ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:build\-batch/$\{BuildBatchId\}  |  | 
 |   [ project ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:project/$\{ProjectName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscodebuild-aws_ResourceTag___TagKey_)   | 
 |   [ report\-group ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:report\-group/$\{ReportGroupName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscodebuild-aws_ResourceTag___TagKey_)   | 
 |   [ report ](https://docs.aws.amazon.com/codebuild/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats)  |  arn:$\{Partition\}:codebuild:$\{Region\}:$\{Account\}:report/$\{ReportGroupName\}:$\{ReportId\}  |  | 
