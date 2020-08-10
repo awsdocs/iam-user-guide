@@ -19,7 +19,7 @@ If you perform an action in an AWS service that generates a bearer token for you
             "Sid": "AllowServiceBearerToken",
             "Effect": "Allow",
             "Action": "sts:GetServiceBearerToken",
-            "Resource": " arn:aws:iam::111122223333:user/TestUser1"
+            "Resource": "arn:aws:iam::111122223333:user/TestUser1"
         }
     ]
 }
