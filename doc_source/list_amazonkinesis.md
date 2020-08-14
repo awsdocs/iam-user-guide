@@ -33,8 +33,9 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   stream  |  arn:$\{Partition\}:kinesis:$\{Region\}:$\{Account\}:stream/$\{StreamName\}  |  | 
-|   consumer  |  arn:$\{Partition\}:kinesis:$\{Region\}:$\{Account\}:$\{StreamType\}/$\{StreamName\}/consumer/$\{ConsumerName\}:$\{ConsumerCreationTimpstamp\}  |  | 
+|   [ stream ](https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-streams.html)  |  arn:$\{Partition\}:kinesis:$\{Region\}:$\{Account\}:stream/$\{StreamName\}  |  | 
+|   [ consumer ](https://docs.aws.amazon.com/kinesis/latest/dev/amazon-kinesis-consumers.html)  |  arn:$\{Partition\}:kinesis:$\{Region\}:$\{Account\}:$\{StreamType\}/$\{StreamName\}/consumer/$\{ConsumerName\}:$\{ConsumerCreationTimpstamp\}  |  | 
+|   [ kmsKey ](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys)  |  arn:$\{Partition\}:kms:$\{Region\}:$\{Account\}:key/$\{KeyId\}  |  | 
 
 ## Condition Keys for Amazon Kinesis<a name="amazonkinesis-policy-keys"></a>
 

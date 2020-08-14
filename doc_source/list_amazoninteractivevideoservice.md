@@ -33,8 +33,8 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
-|   [ Channel ](https://docs.aws.amazon.com/ivs/latest/APIReference/API_Channel.html)  |  arn:$\{Partition\}:ivs::$\{Account\}:channel/$\{ResourceId\}  |  | 
-|   [ Stream\-Key ](https://docs.aws.amazon.com/ivs/latest/APIReference/API_StreamKey.html)  |  arn:$\{Partition\}:ivs::$\{Account\}:stream\-key/$\{ResourceId\}  |  | 
+|   [ Channel ](https://docs.aws.amazon.com/ivs/latest/APIReference/API_Channel.html)  |  arn:$\{Partition\}:ivs::$\{Account\}:channel/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoninteractivevideoservice-aws_ResourceTag___TagKey_)   | 
+|   [ Stream\-Key ](https://docs.aws.amazon.com/ivs/latest/APIReference/API_StreamKey.html)  |  arn:$\{Partition\}:ivs::$\{Account\}:stream\-key/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoninteractivevideoservice-aws_ResourceTag___TagKey_)   | 
 
 ## Condition Keys for Amazon Interactive Video Service<a name="amazoninteractivevideoservice-policy-keys"></a>
 

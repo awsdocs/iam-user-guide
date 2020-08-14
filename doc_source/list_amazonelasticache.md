@@ -25,55 +25,25 @@ When you create an ElastiCache policy in IAM you must use the "\*" wildcard char
 
 
 ****  
-
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ AddTagsToResource ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AddTagsToResource.html)  | The AddTagsToResource action adds up to 10 cost allocation tags to the named resource\. | Tagging |  |  |  | 
-|   [ AuthorizeCacheSecurityGroupIngress ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_AuthorizeCacheSecurityGroupIngress.html)  | The AuthorizeCacheSecurityGroupIngress action allows network ingress to a cache security group\. | Write |  |  |   ec2:AuthorizeSecurityGroupIngress   | 
-|   [ CopySnapshot ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CopySnapshot.html)  | The CopySnapshot action makes a copy of an existing snapshot\. | Write |  |  |   s3:DeleteObject   s3:GetBucketAcl   s3:PutObject   | 
-|   [ CreateCacheCluster ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheCluster.html)  | The CreateCacheCluster action creates a cache cluster\. | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   s3:GetObject   | 
-|   [ CreateCacheParameterGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheParameterGroup.html)  | The CreateCacheParameterGroup action creates a new cache parameter group\. | Write |  |  |  | 
-|   [ CreateCacheSecurityGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSecurityGroup.html)  | The CreateCacheSecurityGroup action creates a new cache security group\.  | Write |  |  |  | 
-|   [ CreateCacheSubnetGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateCacheSubnetGroup.html)  | The CreateCacheSubnetGroup action creates a new cache subnet group\. | Write |  |  |  | 
-|   [ CreateReplicationGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateReplicationGroup.html)  | The CreateReplicationGroup action creates a replication group\. | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   s3:GetObject   | 
-|   [ CreateSnapshot ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_CreateSnapshot.html)  | The CreateSnapshot action creates a copy of an entire cache cluster at a specific moment in time\. | Write |  |  |  | 
-|   [ DecreaseReplicaCount ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DecreaseReplicaCount.html)  | The DecreaseReplicaCount action decreases the number of replicas in a Redis replication group\. | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   | 
-|   [ DeleteCacheCluster ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheCluster.html)  | The DeleteCacheCluster action deletes a previously provisioned cache cluster\. | Write |  |  |  | 
-|   [ DeleteCacheParameterGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheParameterGroup.html)  | The DeleteCacheParameterGroup action deletes the specified cache parameter group\. | Write |  |  |  | 
-|   [ DeleteCacheSecurityGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSecurityGroup.html)  | The DeleteCacheSecurityGroup action deletes a cache security group\. | Write |  |  |  | 
-|   [ DeleteCacheSubnetGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteCacheSubnetGroup.html)  | The DeleteCacheSubnetGroup action deletes a cache subnet group\. | Write |  |  |  | 
-|   [ DeleteReplicationGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteReplicationGroup.html)  | The DeleteReplicationGroup action deletes an existing replication group\. | Write |  |  |  | 
-|   [ DeleteSnapshot ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DeleteSnapshot.html)  | The DeleteSnapshot action deletes an existing snapshot\. | Write |  |  |  | 
-|   [ DescribeCacheClusters ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheClusters.html)  | The DescribeCacheClusters action returns information about all provisioned cache clusters if no cache cluster identifier is specified, or about a specific cache cluster if a cache cluster identifier is supplied\. | List |  |  |  | 
-|   [ DescribeCacheEngineVersions ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheEngineVersions.html)  | The DescribeCacheEngineVersions action returns a list of the available cache engines and their versions\. | List |  |  |  | 
-|   [ DescribeCacheParameterGroups ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameterGroups.html)  | The DescribeCacheParameterGroups action returns a list of cache parameter group descriptions\. | List |  |  |  | 
-|   [ DescribeCacheParameters ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheParameters.html)  | The DescribeCacheParameters action returns the detailed parameter list for a particular cache parameter group\. | List |  |  |  | 
-|   [ DescribeCacheSecurityGroups ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSecurityGroups.html)  | The DescribeCacheSecurityGroups action returns a list of cache security group descriptions\. | List |  |  |  | 
-|   [ DescribeCacheSubnetGroups ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeCacheSubnetGroups.html)  | The DescribeCacheSubnetGroups action returns a list of cache subnet group descriptions\. | List |  |  |  | 
-|   [ DescribeEngineDefaultParameters ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEngineDefaultParameters.html)  | The DescribeEngineDefaultParameters action returns the default engine and system parameter information for the specified cache engine\. | List |  |  |  | 
-|   [ DescribeEvents ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeEvents.html)  | The DescribeEvents action returns events related to cache clusters, cache security groups, and cache parameter groups\. | List |  |  |  | 
-|   [ DescribeReplicationGroups ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReplicationGroups.html)  | The DescribeReplicationGroups action returns information about a particular replication group\. | List |  |  |  | 
-|   [ DescribeReservedCacheNodes ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodes.html)  | The DescribeReservedCacheNodes action returns information about reserved cache nodes for this account, or about a specified reserved cache node\. | List |  |  |  | 
-|   [ DescribeReservedCacheNodesOfferings ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeReservedCacheNodesOfferings.html)  | The DescribeReservedCacheNodesOfferings action lists available reserved cache node offerings\. | List |  |  |  | 
-|   [ DescribeSnapshots ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_DescribeSnapshots.html)  | The DescribeSnapshots action returns information about cache cluster snapshots\. | List |  |  |  | 
-|   [ IncreaseReplicaCount ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_IncreaseReplicaCount.html)  | The IncreaseReplicaCount action increases the number of replicas in a Redis replication group\. | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   | 
-|   [ ListAllowedNodeTypeModifications ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListAllowedNodeTypeModifications.html)  | List Allowed Node Type Modifications | List |  |  |  | 
-|   [ ListTagsForResource ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ListTagsForResource.html)  | The ListTagsForResource action lists all cost allocation tags currently on the named resource\. | Read |  |  |  | 
-|   [ ModifyCacheCluster ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheCluster.html)  | The ModifyCacheCluster action modifies the settings for a cache cluster\. | Write |  |  |  | 
-|   [ ModifyCacheParameterGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheParameterGroup.html)  | The ModifyCacheParameterGroup action modifies the parameters of a cache parameter group\. | Write |  |  |  | 
-|   [ ModifyCacheSubnetGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyCacheSubnetGroup.html)  | The ModifyCacheSubnetGroup action modifies an existing cache subnet group\. | Write |  |  |  | 
-|   [ ModifyReplicationGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroup.html)  | The ModifyReplicationGroup action modifies the settings for a replication group\. | Write |  |  |  | 
-|   [ ModifyReplicationGroupShardConfiguration ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ModifyReplicationGroupShardConfiguration.html)  | The ModifyReplicationGroupShardConfiguration action allows you to add shards, remove shards, or rebalance the keyspaces among exisiting shards\. | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   | 
-|   [ PurchaseReservedCacheNodesOffering ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_PurchaseReservedCacheNodesOffering.html)  | The PurchaseReservedCacheNodesOffering action allows you to purchase a reserved cache node offering\. | Write |  |  |  | 
-|   [ RebootCacheCluster ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RebootCacheCluster.html)  | The RebootCacheCluster action reboots some, or all, of the cache nodes within a provisioned cache cluster\. | Write |  |  |  | 
-|   [ RemoveTagsFromResource ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RemoveTagsFromResource.html)  | The RemoveTagsFromResource action removes the tags identified by the TagKeys list from the named resource\. | Tagging |  |  |  | 
-|   [ ResetCacheParameterGroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_ResetCacheParameterGroup.html)  | The ResetCacheParameterGroup action modifies the parameters of a cache parameter group to the engine or system default value\. | Write |  |  |  | 
-|   [ RevokeCacheSecurityGroupIngress ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_RevokeCacheSecurityGroupIngress.html)  | The RevokeCacheSecurityGroupIngress action revokes ingress from a cache security group\. | Write |  |  |  | 
-|   [ TestFailover ](https://docs.aws.amazon.com/AmazonElastiCache/latest/APIReference/API_TestFailover.html)  | The TestFailover action allows you to test automatic failover on a specified node group in a replication group | Write |  |  |   ec2:CreateNetworkInterface   ec2:DeleteNetworkInterface   ec2:DescribeNetworkInterfaces   ec2:DescribeSubnets   ec2:DescribeVpcs   | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticache.html)
 
 ## Resource Types Defined by Amazon ElastiCache<a name="amazonelasticache-resources-for-iam-policies"></a>
 
-Amazon ElastiCache does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon ElastiCache, specify `“Resource”: “*”` in your policy\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonelasticache-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource Types | ARN | Condition Keys | 
+| --- | --- | --- | 
+|   [ parametergroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:parametergroup:$\{CacheParameterGroupName\}  |  | 
+|   [ securitygroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:securitygroup:$\{CacheSecurityGroupName\}  |  | 
+|   [ subnetgroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:subnetgroup:$\{CacheSubnetGroupName\}  |  | 
+|   [ replicationgroup ](AmazonElastiCache/latest/red-ug/Replication.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:replicationgroup:$\{ReplicationGroupId\}  |  | 
+|   [ cluster ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:cluster:$\{CacheClusterId\}  |  | 
+|   [ reserved\-instance ](AmazonElastiCache/latest/red-ug/reserved-nodes.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:reserved\-instance:$\{ReservedCacheNodeId\}  |  | 
+|   [ snapshot ](AmazonElastiCache/latest/red-ug/backups.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:snapshot:$\{SnapshotName\}  |  | 
+|   [ globalreplicationgroup ](AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html)  |  arn:$\{Partition\}:elasticache::$\{Account\}:globalreplicationgroup:$\{GlobalReplicationGroupId\}  |  | 
 
 ## Condition Keys for Amazon ElastiCache<a name="amazonelasticache-policy-keys"></a>
 

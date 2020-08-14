@@ -2,7 +2,7 @@
 
 You can use the `Condition` element in a JSON policy to test the value of keys that are included in the request context of all AWS requests\. These keys provide information about the request itself or the resources that the request references\. You can check that keys have specified values before allowing the action requested by the user\. This gives you granular control over when your JSON policy statements match or don't match an incoming request\. For information about how to use the `Condition` element in a JSON policy, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
 
-This topic describes the keys defined and provided by the IAM service \(with an `iam:` prefix\) and the AWS Security Token Service \(AWS STS\) service \(with an `sts:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
+This topic describes the keys defined and provided by the IAM service \(with an `iam:` prefix\) and the AWS Security Token Service \(AWS STS\) service \(with an `sts:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
 
 **Topics**
 + [Available Keys for IAM](#available-keys-for-iam)
@@ -129,7 +129,7 @@ The `accounts.google.com:aud` condition key matches the following Google ID Toke
 + `azp` when the `azp` field is set\. This can happen for hybrid apps where a web application and Android app have a different OAuth 2\.0 Google client ID but share the same Google APIs project\. 
 For more information about Google `aud` and `azp` fields, see the [Google Identity Platform OpenID Connect](https://developers.google.com/identity/protocols/OpenIDConnect) Guide\.  
 When you write a policy using the `accounts.google.com:aud` condition key, you must know whether the app is a hybrid app that sets the `azp` field\.   
-**`azp` Field Not Set**  
+`azp` Field Not Set  
 The following example policy works for non\-hybrid apps that do not set the `azp` field\. In this case the Google ID Token `aud` field value matches both the `accounts.google.com:aud` and the `accounts.google.com:oaud` condition key values\.  
 
 ```
@@ -151,7 +151,7 @@ The following example policy works for non\-hybrid apps that do not set the `azp
     ]
 }
 ```
-**`azp` Field Set**  
+`azp` Field Set  
 The following example policy works for hybrid apps that do set the `azp` field\. In this case the Google ID Token `aud` field value matches only the `accounts.google.com:oaud` condition key value\. The `azp` field value matches the `accounts.google.com:aud` condition key value\.  
 
 ```
@@ -207,17 +207,17 @@ If you are working with [SAML\-based federation](https://docs.aws.amazon.com/STS
 
 ### SAML Role Trust Policies<a name="condition-keys-saml_trust-policy"></a>
 
-In the trust policy of a role, you can include the following keys, which help you establish whether the caller is allowed to assume the role\. Except for `saml:doc`, all the values are derived from the SAML assertion\. All items in the list are available in the IAM console visual editor when you create or edit a policy with conditions\. Items marked with **\[\]** *can* have a value that is a list of the specified type\.
+In the trust policy of a role, you can include the following keys, which help you establish whether the caller is allowed to assume the role\. Except for `saml:doc`, all the values are derived from the SAML assertion\. All items in the list are available in the IAM console visual editor when you create or edit a policy with conditions\. Items marked with `[]` *can* have a value that is a list of the specified type\.
 
-**saml:aud**   
+**saml:aud **  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-An endpoint URL to which SAML assertions are presented\. The value for this key comes from the `SAML Recipient` field in the assertion, ***not ***the `Audience` field\.
+An endpoint URL to which SAML assertions are presented\. The value for this key comes from the `SAML Recipient` field in the assertion, *not *the `Audience` field\.
 
-**saml:commonName**\[\]  
+**saml:commonName\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `commonName` attribute\.
 
-**saml:cn**\[\]  
+**saml:cn\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
@@ -225,19 +225,19 @@ This is an `eduOrg` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This represents the principal that was used to assume the role\. The format is *account\-ID*/*provider\-friendly\-name*, such as `123456789012/SAMLProviderName`\. The *account\-ID* value refers to the account that owns the [SAML provider](id_roles_providers_create_saml.md)\. 
 
-**saml:edupersonaffiliation**\[\]  
+**saml:edupersonaffiliation\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonassurance**\[\]  
+**saml:edupersonassurance\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonentitlement**\[\]  
+**saml:edupersonentitlement\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonnickname**\[\]  
+**saml:edupersonnickname\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
@@ -245,7 +245,7 @@ This is an `eduPerson` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonorgunitdn**\[\]  
+**saml:edupersonorgunitdn\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
@@ -261,35 +261,35 @@ This is an `eduPerson` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersonscopedaffiliation**\[\]  
+**saml:edupersonscopedaffiliation\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:edupersontargetedid**\[\]  
+**saml:edupersontargetedid\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduPerson` attribute\.
 
-**saml:eduorghomepageuri**\[\]  
+**saml:eduorghomepageuri\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:eduorgidentityauthnpolicyuri**\[\]  
+**saml:eduorgidentityauthnpolicyuri\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:eduorglegalname**\[\]  
+**saml:eduorglegalname\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:eduorgsuperioruri**\[\]  
+**saml:eduorgsuperioruri\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:eduorgwhitepagesuri**\[\]  
+**saml:eduorgwhitepagesuri\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `eduOrg` attribute\.
 
-**saml:givenName**\[\]  
+**saml:givenName\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `givenName` attribute\.
 
@@ -297,11 +297,11 @@ This is a `givenName` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 The issuer, which is represented by a URN\. 
 
-**saml:mail**\[\]  
+**saml:mail\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `mail` attribute\.
 
-**saml:name**\[\]  
+**saml:name\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `name` attribute\.
 
@@ -316,11 +316,11 @@ A hash value based on the friendly name of the SAML provider\. The value is the 
 1.  The friendly name \(the last part of the ARN\) of the SAML provider in IAM 
 The concatenation of the account ID and friendly name of the SAML provider is available to IAM policies as the key `saml:doc`\. For more information, see [Uniquely Identifying Users in SAML\-Based Federation](id_roles_providers_saml.md#CreatingSAML-userid)\.
 
-**saml:organizationStatus**\[\]  
+**saml:organizationStatus\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `organizationStatus` attribute\.
 
-**saml:primaryGroupSID**\[\]  
+**saml:primaryGroupSID\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `primaryGroupSID` attribute\.
 
@@ -332,15 +332,15 @@ This is the subject of the claim, which includes a value that uniquely identifie
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This key can have the value `persistent`, `transient`, or consist of the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. A value of `persistent` indicates that the value in `saml:sub` is the same for a user between sessions\. If the value is `transient`, the user has a different `saml:sub` value for each session\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)\.
 
-**saml:surname**\[\]  
+**saml:surname\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `surnameuid` attribute\.
 
-**saml:uid**\[\]  
+**saml:uid\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is a `uid` attribute\.
 
-**saml:x500UniqueIdentifier**\[\]  
+**saml:x500UniqueIdentifier\[\]**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `x500UniqueIdentifier` attribute\.
 
@@ -380,20 +380,20 @@ You can use the following condition keys in IAM role trust policies for roles th
 
 **sts:AWSServiceName**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Use this key to specify the service where a bearer token can be used\. When you use this condition key in a policy, specify the service using a service principal\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. For example, `codeartifact.amazonaws.com` is the AWS CodeArtifact service principal\.  
-Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The aws codeartifact get\-authorization\-token operation returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using Bearer Tokens](id_credentials_bearer.md)\.   
+Use this key to specify a service where a bearer token can be used\. When you use this condition key in a policy, specify the service using a service principal\. A service principal is the name of a service that can be specified in the `Principal` element of a policy\. For example, `codeartifact.amazonaws.com` is the AWS CodeArtifact service principal\.  
+Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The `aws codeartifact get-authorization-token` command returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using Bearer Tokens](id_credentials_bearer.md)\.   
 **Availability** – This key is present in requests that get a bearer token\. You cannot make a direct call to AWS STS to get a bearer token\. When you perform some operations in other services, the service requests the bearer token on your behalf\.  
 You can use this condition key to allow principals to get a bearer token for use with a specific service\.
 
 **sts:DurationSeconds**  
 Works with [numeric operators](reference_policies_elements_condition_operators.md#Conditions_Numeric)\.  
 Use this key to specify the duration \(in seconds\) that a principal can use when getting an AWS STS bearer token\.  
-Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The aws codeartifact get\-authorization\-token operation returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using Bearer Tokens](id_credentials_bearer.md)\.   
+Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The aws codeartifact get\-authorization\-token command returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using Bearer Tokens](id_credentials_bearer.md)\.   
 **Availability** – This key is present in requests that get a bearer token\. You cannot make a direct call to AWS STS to get a bearer token\. When you perform some operations in other services, the service requests the bearer token on your behalf\. The key is not present for AWS STS assume\-role operations\.
 
 **sts:ExternalId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Use this key to require that a principal provides a specific identifier when assuming an IAM role\.   
+Use this key to require that a principal provide a specific identifier when assuming an IAM role\.  
 **Availability** – This key is present in the request when the principal provides an external ID while assuming a role using the AWS CLI or AWS API\.   
 A unique identifier that might be required when you assume a role in another account\. If the administrator of the account to which the role belongs provided you with an external ID, then provide that value in the `ExternalId` parameter\. This value can be any string, such as a passphrase or account number\. The primary function of the external ID is to address and prevent the confused deputy problem\. For more information about the external ID and the confused deputy problem, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md)\.  
 The `ExternalId` value must have a minimum of 2 characters and a maximum of 1,224 characters\. The value must be alphanumeric without white space\. It can also include the following symbols: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at \(@\), colon \(:\), forward slash \(/\), and hyphen \(\-\)\.

@@ -48,6 +48,7 @@ To view the global condition keys that are available to all services, see [Avail
 | --- | --- | --- | 
 |   [ aws:RequestTag/tag\-key ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by a key that is present in the request the user makes to the Secrets Manager service\. | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the list of all the tag key namespresent in the request the user makes to the Secrets Manager service\. | String | 
+|   [ secretsmanager:BlockPublicPolicy ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by whether the resource policy blocks broad AWS account access\. | Boolean | 
 |   [ secretsmanager:Description ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the description text in the request\. | String | 
 |   [ secretsmanager:ForceDeleteWithoutRecovery ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by whether the secret is to be deleted immediately without any recovery window\. | Boolean | 
 |   [ secretsmanager:KmsKeyId ](https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-contextkeys)  | Filters access by the ARN of the KMS key in the request\. | String | 

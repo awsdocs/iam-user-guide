@@ -11,7 +11,7 @@ IAM uses a few different identifiers for users, groups, roles, policies, and ser
 
 When you create a user, a role, a group, or a policy, or when you upload a server certificate, you give it a friendly name\. Examples include Bob, TestApp1, Developers, ManageCredentialsPermissions, or ProdServerCert\. 
 
-If you are using the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM entities, you can also give the entity an optional path\. You can use a single path, or nest multiple paths as if they were a folder structure\. For example, you could use the nested path `/division_abc/subdivision_xyz/product_1234/engineering/` to match your company's organizational structure\. You could then create a policy to allow all users in that path to access the policy simulator API\. To view this policy, see [IAM: Access the Policy Simulator API Based on User Path](reference_policies_examples_iam_policy-sim-path.md)\. For additional examples of how you might use paths, see [IAM ARNs](#identifiers-arns)\.
+If you are using the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM resources, you can also give some resources an optional path\. You can use a single path, or nest multiple paths as if they were a folder structure\. For example, you could use the nested path `/division_abc/subdivision_xyz/product_1234/engineering/` to match your company's organizational structure\. You could then create a policy to allow all users in that path to access the policy simulator API\. To view this policy, see [IAM: Access the Policy Simulator API Based on User Path](reference_policies_examples_iam_policy-sim-path.md)\. For additional examples of how you might use paths, see [IAM ARNs](#identifiers-arns)\.
 
 When you use AWS CloudFormation to create resources, you can specify a path for users, groups, and roles, but not policies\.
 
@@ -233,11 +233,11 @@ Jules then assigns the users who are working on this launch to the group\. This 
 
 ## Unique Identifiers<a name="identifiers-unique-ids"></a>
 
-When IAM creates a user, group, role, policy, instance profile, or server certificate, it assigns to each entity a unique ID that looks like this:
+When IAM creates a user, group, role, policy, instance profile, or server certificate, it assigns to each resource a unique ID that looks like this:
 
 `AIDAJQABLZS4A3QDU576Q`
 
-For the most part, you use friendly names and [ARNs](#identifiers-arns) when you work with IAM entities\. That way you don't need to know the unique ID for a specific entity\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
+For the most part, you use friendly names and [ARNs](#identifiers-arns) when you work with IAM resources\. That way you don't need to know the unique ID for a specific resource\. However, the unique ID can sometimes be useful when it isn't practical to use friendly names\. 
 
 One example pertains to reusing friendly names in your AWS account\. Within your account, a friendly name for a user, group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee\. The bucket has a resource\-based policy \(a bucket policy\) that lets users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the `David` IAM user, the policy allows the new David to access information that was left by the former David\. 
 
@@ -247,10 +247,10 @@ Another example where user IDs can be useful is if you maintain your own databas
 
 ### Understanding Unique ID Prefixes<a name="identifiers-prefixes"></a>
 
-IAM uses the following prefixes to indicate what type of entity each unique ID applies to\.
+IAM uses the following prefixes to indicate what type of resource each unique ID applies to\.
 
 
-| Prefix | Entity Type | 
+| Prefix | Resource Type | 
 | --- | --- | 
 | ABIA | [AWS STS service bearer token](id_credentials_bearer.md) | 
 | ACCA | Context\-specific credential | 
@@ -267,7 +267,7 @@ IAM uses the following prefixes to indicate what type of entity each unique ID a
 
 ### Getting the Unique Identifier<a name="identifiers-get-unique-id"></a>
 
-The unique ID for an IAM entity is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
+The unique ID for an IAM resource is not available in the IAM console\. To get the unique ID, you can use the following AWS CLI commands or IAM API calls\.
 
 AWS CLI:
 +  [get\-caller\-identity](https://docs.aws.amazon.com/cli/latest/reference/sts/get-caller-identity.html) 

@@ -6,7 +6,7 @@ For information about how roles help you to delegate permissions, see [Roles Ter
 
 ## Service Role Permissions<a name="id_roles_create_service-permissions"></a>
 
-You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create or edit a service role\.
+You must configure permissions to allow an IAM entity \(user or role\) to create or edit a service role\.
 
 **Note**  
 The ARN for a service\-linked role includes a service principal, which is indicated in the policies below as `SERVICE-NAME.amazonaws.com`\. Do not try to guess the service principal, because it is case sensitive and the format can vary across AWS services\. To view the service principal for a service, see its service\-linked role documentation\.

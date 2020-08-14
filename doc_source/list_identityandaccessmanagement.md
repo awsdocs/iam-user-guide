@@ -38,7 +38,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ federated\-user ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html)  |  arn:$\{Partition\}:iam::$\{Account\}:federated\-user/$\{UserName\}  |  | 
 |   [ group ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html)  |  arn:$\{Partition\}:iam::$\{Account\}:group/$\{GroupNameWithPath\}  |  | 
 |   [ instance\-profile ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:instance\-profile/$\{InstanceProfileNameWithPath\}  |  | 
-|   [ mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html)  |  arn:$\{Partition\}:iam::$\{Account\}:mfa/$\{Path\}/$\{MfaTokenId\}  |  | 
+|   [ mfa ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html)  |  arn:$\{Partition\}:iam::$\{Account\}:mfa/$\{MfaTokenIdWithPath\}  |  | 
 |   [ oidc\-provider ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html)  |  arn:$\{Partition\}:iam::$\{Account\}:oidc\-provider/$\{OidcProviderName\}  |  | 
 |   [ policy ](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html)  |  arn:$\{Partition\}:iam::$\{Account\}:policy/$\{PolicyNameWithPath\}  |  | 
 |   [ role ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)  |  arn:$\{Partition\}:iam::$\{Account\}:role/$\{RoleNameWithPath\}  |   [ iam:ResourceTag/$\{TagKey\} ](#identityandaccessmanagement-iam_ResourceTag___TagKey_)   | 

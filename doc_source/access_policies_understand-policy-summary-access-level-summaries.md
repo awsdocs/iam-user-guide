@@ -2,7 +2,7 @@
 
 ## AWS Access Level Summary<a name="access_policies_access-level-summaries"></a>
 
-Policy summaries include an access level summary that describes the action permissions defined for each service that is mentioned in the policy\. To learn about policy summaries, see [Understanding Permissions Granted by a Policy](access_policies_understand.md)\. Access level summaries indicate whether the actions in each access level \(`List`, `Read`, `Write`, and `Permissions management`\) have `Full` or `Limited` permissions defined in the policy\. To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
+Policy summaries include an access level summary that describes the action permissions defined for each service that is mentioned in the policy\. To learn about policy summaries, see [Understanding Permissions Granted by a Policy](access_policies_understand.md)\. Access level summaries indicate whether the actions in each access level \(`List`, `Read`, `Write`, and `Permissions management`\) have `Full` or `Limited` permissions defined in the policy\. To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
 
 The following example describes the access provided by a policy for the given services\. For examples of full JSON policy documents and their related summaries, see [Examples of Policy Summaries](access_policies_policy-summary-examples.md)\.
 
@@ -39,4 +39,4 @@ AWS defines the following access level classifications for the actions in a serv
 To improve the security of your AWS account, restrict or regularly monitor policies that include the **Permissions management** access level classification\.
 + **Tagging**: Permission to perform actions that only change the state of resource tags\. For example, the IAM actions `TagRole` and `UntagRole` have the **Tagging** access level because they allow only tagging or untagging a role\. However, the `CreateRole` action allows tagging a role resource when you create that role\. Because the action does not only add a tag, it has the `Write` access level\.
 
-To view the access level classification for all of the actions in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.md)\.
+To view the access level classification for all of the actions in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.

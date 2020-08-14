@@ -11,7 +11,7 @@ For information about which services support using service\-linked roles, see [A
 
 ## Service\-Linked Role Permissions<a name="service-linked-role-permissions"></a>
 
-You must configure permissions for an IAM entity \(user, group, or role\) to allow the user or role to create or edit the service\-linked role\.
+You must configure permissions for an IAM entity \(user or role\) to allow the user or role to create or edit the service\-linked role\.
 
 **Note**  
 The ARN for a service\-linked role includes a service principal, which is indicated in the policies below as `SERVICE-NAME.amazonaws.com`\. Do not try to guess the service principal, because it is case sensitive and the format can vary across AWS services\. To view the service principal for a service, see its service\-linked role documentation\.

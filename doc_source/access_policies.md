@@ -102,7 +102,7 @@ To learn about these and other more advanced policy elements, see [IAM JSON Poli
 
 ### Multiple Statements and Multiple Policies<a name="policies-syntax-multiples"></a>
 
-If you want to define more than one permission for an entity \(user, group, or role\), you can use multiple statements in a single policy\. You can also attach multiple policies\. If you try to define multiple permissions in a single statement, your policy might not grant the access that you expect\. As a best practice, break up policies by resource type\. 
+If you want to define more than one permission for an entity \(user or role\), you can use multiple statements in a single policy\. You can also attach multiple policies\. If you try to define multiple permissions in a single statement, your policy might not grant the access that you expect\. As a best practice, break up policies by resource type\. 
 
 Because of the [limited size of policies](reference_iam-quotas.md), it might be necessary to use multiple policies for more complex permissions\. It's also a good idea to create functional groupings of permissions in a separate customer managed policy\. For example, Create one policy for IAM user management, one for self\-management, and another policy for S3 bucket management\. Regardless of the combination of multiple statements and multiple policies, AWS [evaluates](reference_policies_evaluation-logic.md) your policies the same way\.
 

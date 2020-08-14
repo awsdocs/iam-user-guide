@@ -54,3 +54,6 @@ To view the global condition keys that are available to all services, see [Avail
 |   lambda:FunctionArn  | Filters access by the ARN of an AWS Lambda function | ARN | 
 |   lambda:Layer  | Filters access by the ARN of an AWS Lambda layer | String | 
 |   lambda:Principal  | Filters access by restricting the AWS service or account that can invoke a function | String | 
+|   lambda:SecurityGroupIds  | Filters access by the ID of security groups configured for the AWS Lambda function | String | 
+|   lambda:SubnetIds  | Filters access by the ID of subnets configured for the AWS Lambda function | String | 
+|   lambda:VpcIds  | Filters access by the ID of the VPC configured for the AWS Lambda function | String | 

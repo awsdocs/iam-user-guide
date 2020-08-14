@@ -47,22 +47,18 @@ The permissions that the role grants to the user do not add to the permissions a
 ## Providing Information to the User<a name="roles-usingrole-giveuser"></a>
 
 After you create a role and grant your user permissions to switch to it, you must provide the user with the following:
-+ The role name
-+ The account ID number or account alias that contains the role
++ The name of the role
++ The ID or alias of the account that contains the role
 
 You can make things easier for your users by sending them a link that is preconfigured with the account ID and role name\. You can see the role link on the final page of the **Create Role** wizard or in the **Role Summary** page for any cross\-account enabled role\.
 
-**Note**  
-You can create the role with the AWS CLI, Tools for Windows PowerShell, or the AWS API\. Afterward, you can create the role with a *path* in addition to a name\. If you do so, then you must provide the complete path and role name to your users to type on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.
-
-**Important**  
-If you create the role programmatically instead of in the IAM console, then you can add a `Path` of up to 512 characters in addition to the `RoleName`\. The `RoleName` can be up to 64 characters long\. However, to use a role with the **Switch Role** feature in the AWS Management Console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
-
 You can also use the following format to manually construct the link\. Substitute your account ID or alias and the role name for the two parameters in the following example\.
 
-`https://signin.aws.amazon.com/switchrole?account=YourAccountIDorAliasHereroleName=pathIfAny/YourRoleNameHere`
+`https://signin.aws.amazon.com/switchrole?account=your_account_ID_or_alias&roleName=optional_path/role_name`
 
-We recommend that you direct your users to the topic [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
+We recommend that you direct your users to [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
 
-**Note**  
-For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. You can use the `aws:RoleSessionName` condition key in the role trust policy to require users to specify a session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
+**Considerations**
++ If you create the role programmatically, you can create the role with a path in addition to a name\. If you do so, you must provide the complete path and role name to your users so they can enter it on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.
++ If you create the role programmatically, you can add a `Path` of up to 512 characters in addition to a `RoleName`\. The role name can be up to 64 characters long\. However, to use a role with the **Switch Role** feature in the AWS Management Console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
++ For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. You can use the `aws:RoleSessionName` condition key in the role trust policy to require users to specify a session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
