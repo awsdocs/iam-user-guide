@@ -81,9 +81,9 @@ This job function policy supports the ability to pass roles to AWS services\. Th
 
 **Use case:** This user runs Hadoop jobs and queries\. The user also accesses and analyzes information for data analytics and business intelligence\.
 
-**Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to additional data scientist services, such as AWS Data Pipeline, Amazon EC2, Amazon Kinesis, Amazon Machine Learning, and Amazon SageMaker\. View the policy for the full list of data scientist services that this policy supports\.
+**Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to additional data scientist services, such as AWS Data Pipeline, Amazon EC2, Amazon Kinesis, Amazon Machine Learning, and SageMaker\. View the policy for the full list of data scientist services that this policy supports\.
 
-This job function policy supports the ability to pass roles to AWS services\. One statement allows passing any role to Amazon SageMaker\. Another statement allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function policy supports the ability to pass roles to AWS services\. One statement allows passing any role to SageMaker\. Another statement allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
 **Optional IAM service roles for the Data Scientist job function**  

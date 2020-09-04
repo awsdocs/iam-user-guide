@@ -60,6 +60,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ cognito\-identity\.amazonaws\.com:sub ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_sub)  | Filters actions based on the subject of the claim \(the Amazon Cognito user ID\) | String | 
 |   [ graph\.facebook\.com:app\_id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id)  | Filters actions based on the Facebook application ID | String | 
 |   [ graph\.facebook\.com:id ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_id)  | Filters actions based on the Facebook user ID | String | 
+|   [ iam:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_ResourceTag)  | Filters actions based on the tags that are attached to the role that is being assumed | String | 
 |   [ saml:aud ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_aud)  | Filters actions based on the endpoint URL to which SAML assertions are presented | String | 
 |   [ saml:cn ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_cn)  | Filters actions based on the eduOrg attribute | String | 
 |   [ saml:commonName ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#ck_commonname)  | Filters actions based on the commonName attribute | String | 

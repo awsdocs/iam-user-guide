@@ -33,6 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource Types | ARN | Condition Keys | 
 | --- | --- | --- | 
+|   [ resolver\-query\-log\-config ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:route53resolver:$\{Region\}:$\{Account\}:resolver\-query\-log\-config/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonroute53resolver-aws_ResourceTag___TagKey_)   | 
 |   [ resolver\-rule ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:route53resolver:$\{Region\}:$\{Account\}:resolver\-rule/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonroute53resolver-aws_ResourceTag___TagKey_)   | 
 |   [ resolver\-endpoint ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/access-control-overview.html#access-control-resources)  |  arn:$\{Partition\}:route53resolver:$\{Region\}:$\{Account\}:resolver\-endpoint/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonroute53resolver-aws_ResourceTag___TagKey_)   | 
 

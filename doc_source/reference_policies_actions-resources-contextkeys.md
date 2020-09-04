@@ -151,6 +151,7 @@ The **Condition Keys** table lists all of the condition context keys that you ca
 + [Amazon Honeycode](list_amazonhoneycode.md)
 + [IAM Access Analyzer](list_iamaccessanalyzer.md)
 + [Identity And Access Management](list_identityandaccessmanagement.md)
++ [AWS Identity Store](list_awsidentitystore.md)
 + [AWS Import Export Disk Service](list_awsimportexportdiskservice.md)
 + [Amazon Inspector](list_amazoninspector.md)
 + [Amazon Interactive Video Service](list_amazoninteractivevideoservice.md)

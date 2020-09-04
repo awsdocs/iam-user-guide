@@ -420,6 +420,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Actions, Resources, and Condition Keys for Amazon Honeycode](list_amazonhoneycode.md)
          + [Actions, Resources, and Condition Keys for IAM Access Analyzer](list_iamaccessanalyzer.md)
          + [Actions, Resources, and Condition Keys for Identity And Access Management](list_identityandaccessmanagement.md)
+         + [Actions, Resources, and Condition Keys for AWS Identity Store](list_awsidentitystore.md)
          + [Actions, Resources, and Condition Keys for AWS Import Export Disk Service](list_awsimportexportdiskservice.md)
          + [Actions, Resources, and Condition Keys for Amazon Inspector](list_amazoninspector.md)
          + [Actions, Resources, and Condition Keys for Amazon Interactive Video Service](list_amazoninteractivevideoservice.md)

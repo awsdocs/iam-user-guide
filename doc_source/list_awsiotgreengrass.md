@@ -5,7 +5,7 @@ AWS IoT Greengrass \(service prefix: `greengrass`\) provides the following servi
 References:
 + Learn how to [configure this service](https://docs.aws.amazon.com/greengrass/latest/developerguide/)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/greengrass/latest/apireference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-sec.html#gg-config-sec-min-iot-policy) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/greengrass/latest/developerguide/security_iam_service-with-iam.html) permission policies\.
 
 **Topics**
 + [Actions Defined by AWS IoT Greengrass](#awsiotgreengrass-actions-as-permissions)
@@ -54,6 +54,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ resourceDefinitionVersion ](https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-resourcedefinitionversion.html)  |  arn:$\{Partition\}:greengrass:$\{Region\}:$\{Account\}:/greengrass/definition/resources/$\{ResourceDefinitionId\}/versions/$\{VersionId\}  |  | 
 |   [ connectorDefinition ](https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connector.html)  |  arn:$\{Partition\}:greengrass:$\{Region\}:$\{Account\}:/greengrass/definition/connectors/$\{ConnectorDefinitionId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiotgreengrass-aws_ResourceTag___TagKey_)   | 
 |   [ connectorDefinitionVersion ](https://docs.aws.amazon.com/greengrass/latest/apireference/definitions-connectordefinitionversion.html)  |  arn:$\{Partition\}:greengrass:$\{Region\}:$\{Account\}:/greengrass/definition/connectors/$\{ConnectorDefinitionId\}/versions/$\{VersionId\}  |  | 
+|   [ thing ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thing/$\{ThingName\}  |  | 
 
 ## Condition Keys for AWS IoT Greengrass<a name="awsiotgreengrass-policy-keys"></a>
 

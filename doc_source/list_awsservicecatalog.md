@@ -50,9 +50,9 @@ For example policies that show how these condition keys can be used in an IAM po
 
 | Condition Keys | Description | Type | 
 | --- | --- | --- | 
-|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
-|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
-|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 
-|   [ servicecatalog:accountLevel ](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html)  | Allows users to see and perform actions on resources created by anyone in the account\. | String | 
-|   [ servicecatalog:roleLevel ](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html)  | Allows users to see and perform actions on resources created either by them or by anyone federating into the same role as them\. | String | 
-|   [ servicecatalog:userLevel ](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html)  | Allows users to see and perform actions on only resources that they created\. | String | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters access based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters access based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters access based on the presence of tag keys in the request | String | 
+|   [ servicecatalog:accountLevel ](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html)  | Filters users to see and perform actions on resources created by anyone in the account | String | 
+|   [ servicecatalog:roleLevel ](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html)  | Filters users to see and perform actions on resources created either by them or by anyone federating into the same role as them | String | 
+|   [ servicecatalog:userLevel ](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/permissions-examples.html)  | Filters users to see and perform actions on only resources that they created | String | 
