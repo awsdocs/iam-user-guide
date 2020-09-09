@@ -1,8 +1,8 @@
-# Attaching a Policy to an IAM Group<a name="id_groups_manage_attach-policy"></a>
+# Attaching a policy to an IAM group<a name="id_groups_manage_attach-policy"></a>
 
-You can attach an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies)—that is, a prewritten policy provided by AWS—to a group, as explained in the following steps\. To attach a customer managed policy—that is, a policy with custom permissions that you create—you must first create the policy\. For information about creating customer managed policies, see [Creating IAM Policies](access_policies_create.md)\. 
+You can attach an [AWS managed policy](access_policies_managed-vs-inline.md#aws-managed-policies)—that is, a prewritten policy provided by AWS—to a group, as explained in the following steps\. To attach a customer managed policy—that is, a policy with custom permissions that you create—you must first create the policy\. For information about creating customer managed policies, see [Creating IAM policies](access_policies_create.md)\. 
 
-For more information about permissions and policies, see [Access Management](access.md)\. 
+For more information about permissions and policies, see [Access management for AWS resources](access.md)\. 
 
 **To attach a policy to a group \(console\)**
 

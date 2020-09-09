@@ -1,4 +1,4 @@
-# Infrastructure Security in AWS Identity and Access Management<a name="infrastructure-security"></a>
+# Infrastructure security in AWS Identity and Access Management<a name="infrastructure-security"></a>
 
 As managed services, AWS Identity and Access Management \(IAM\) and AWS Security Token Service \(AWS STS\) are protected by the AWS global network security procedures that are described in the [Amazon Web Services: Overview of Security Processes](https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Whitepaper.pdf) whitepaper\.
 

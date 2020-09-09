@@ -1,14 +1,14 @@
-# Creating a Role for SAML 2\.0 Federation \(Console\)<a name="id_roles_create_for-idp_saml"></a>
+# Creating a role for SAML 2\.0 federation \(console\)<a name="id_roles_create_for-idp_saml"></a>
 
- You can use SAML 2\.0 federation instead of creating IAM users in your AWS account\. With an identity provider \(IdP\), you can manage your user identities outside of AWS and give these external user identities permissions to access AWS resources in your account\. For more information about federation and identity providers, see [Identity Providers and Federation](id_roles_providers.md)\.
+ You can use SAML 2\.0 federation instead of creating IAM users in your AWS account\. With an identity provider \(IdP\), you can manage your user identities outside of AWS and give these external user identities permissions to access AWS resources in your account\. For more information about federation and identity providers, see [Identity providers and federation](id_roles_providers.md)\.
 
-## Prerequisites for Creating a Role for SAML<a name="idp_saml_Prerequisites"></a>
+## Prerequisites for creating a role for SAML<a name="idp_saml_Prerequisites"></a>
 
 Before you can create a role for SAML 2\.0 federation, you must first complete the following prerequisite steps:<a name="saml-prereqs"></a>
 
 **To prepare to create a role for SAML 2\.0 federation**
 
-1. <a name="idpsamlstep1"></a>Before you create a role for SAML\-based federation, you must create a SAML provider in IAM\. For more information, see [Creating IAM SAML Identity Providers](id_roles_providers_create_saml.md)\.
+1. <a name="idpsamlstep1"></a>Before you create a role for SAML\-based federation, you must create a SAML provider in IAM\. For more information, see [Creating IAM SAML identity providers](id_roles_providers_create_saml.md)\.
 
 1. Prepare the policies for the role that the SAML 2\.0–authenticated users will assume\. As with any role, a role for the SAML federation includes two policies\. One is the role trust policy that specifies who can assume the role\. The other is the IAM permissions policy that specifies the AWS actions and resources that the federated user is allowed or denied access to\.
 
@@ -33,7 +33,7 @@ Before you can create a role for SAML 2\.0 federation, you must first complete t
 
    Replace the principal ARN with the actual ARN for the SAML provider that you created in IAM\. It will have your own account ID and provider name\. 
 
-## Creating a Role for SAML<a name="idp_saml_Create"></a>
+## Creating a role for SAML<a name="idp_saml_Create"></a>
 
 After you complete the prerequisite steps, you can create the role for SAML\-based federation\. 
 
@@ -59,11 +59,11 @@ After you complete the prerequisite steps, you can create the role for SAML\-bas
 
 1. To add more attribute\-related conditions to the trust policy, choose **Add condition \(optional\)**, select the additional condition, and specify a value\. 
 **Note**  
-The list includes the most commonly used SAML attributes\. IAM supports additional attributes that you can use to create conditions\. \(For a list of the supported attributes, see [Available Keys for SAML Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#condition-keys-saml) in the topic [IAM JSON Policy Elements Reference](reference_policies_elements.md)\.\) If you need a condition for a supported SAML attribute that's not in the list, you can manually add that condition\. To do that, edit the trust policy after you create the role\.
+The list includes the most commonly used SAML attributes\. IAM supports additional attributes that you can use to create conditions\. \(For a list of the supported attributes, see [Available Keys for SAML Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#condition-keys-saml) in the topic [IAM JSON policy elements reference](reference_policies_elements.md)\.\) If you need a condition for a supported SAML attribute that's not in the list, you can manually add that condition\. To do that, edit the trust policy after you create the role\.
 
 1.  Review your SAML 2\.0 trust information and then choose **Next: Permissions**\. 
 
-1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
+1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\.
 
@@ -71,7 +71,7 @@ The list includes the most commonly used SAML attributes\. IAM supports addition
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
 
 1. Choose **Next: Review**\.
 
@@ -81,4 +81,4 @@ The list includes the most commonly used SAML attributes\. IAM supports addition
 
 1. Review the role and then choose **Create role**\.
 
-After you create the role, you complete the SAML trust by configuring your identity provider software with information about AWS\. This information includes the roles that you want your federated users to use\. This is referred to as configuring the relying party trust between your IdP and AWS\. For more information, see [Configuring your SAML 2\.0 IdP with Relying Party Trust and Adding Claims](id_roles_providers_create_saml_relying-party.md)\. 
+After you create the role, you complete the SAML trust by configuring your identity provider software with information about AWS\. This information includes the roles that you want your federated users to use\. This is referred to as configuring the relying party trust between your IdP and AWS\. For more information, see [Configuring your SAML 2\.0 IdP with relying party trust and adding claims](id_roles_providers_create_saml_relying-party.md)\. 

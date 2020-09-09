@@ -1,4 +1,4 @@
-# Configuring MFA\-Protected API Access<a name="id_credentials_mfa_configure-api-require"></a>
+# Configuring MFA\-protected API access<a name="id_credentials_mfa_configure-api-require"></a>
 
 With IAM policies, you can specify which API operations a user is allowed to call\. In some cases, you might want the additional security of requiring users to be authenticated with AWS multi\-factor authentication \(MFA\) before you allow them to perform particularly sensitive actions\.
 
@@ -6,15 +6,15 @@ For example, you might have a policy that allows a user to perform the Amazon EC
 
 **Topics**
 + [Overview](#MFAProtectedAPI-overview)
-+ [Scenario: MFA Protection for Cross\-Account Delegation](#MFAProtectedAPI-cross-account-delegation)
-+ [Scenario: MFA Protection for Access to API Operations in the Current Account](#MFAProtectedAPI-user-mfa)
-+ [Scenario: MFA Protection for Resources That Have Resource\-based Policies](#MFAProtectedAPI-resource-policies)
++ [Scenario: MFA protection for cross\-account delegation](#MFAProtectedAPI-cross-account-delegation)
++ [Scenario: MFA protection for access to API operations in the current account](#MFAProtectedAPI-user-mfa)
++ [Scenario: MFA protection for resources that have resource\-based policies](#MFAProtectedAPI-resource-policies)
 
 ## Overview<a name="MFAProtectedAPI-overview"></a>
 
 Adding MFA protection to API operations involves these tasks:
 
-1. The administrator configures an AWS MFA device for each user who needs to make API requests that require MFA authentication\. This process is described at [Enabling MFA Devices](id_credentials_mfa_enable.md)\. 
+1. The administrator configures an AWS MFA device for each user who needs to make API requests that require MFA authentication\. This process is described at [Enabling MFA devices for users in AWS](id_credentials_mfa_enable.md)\. 
 
 1. The administrator creates policies for the users that include a `Condition` element that checks whether the user authenticated with an AWS MFA device\.
 
@@ -24,7 +24,7 @@ MFA protection for a service's API operations is available only if the service s
 
 If authorization fails, AWS returns an access denied error message \(as it does for any unauthorized access\)\. With MFA\-protected API policies in place, AWS denies access to the API operations specified in the policies if the user attempts to call an API operation without valid MFA authentication\. The operation is also denied if the time stamp of the request for the API operation is outside of the allowed range specified in the policy\. The user must be reauthenticated with MFA by requesting new temporary security credentials with an MFA code and device serial number\.
 
-### IAM Policies with MFA Conditions<a name="MFAProtectedAPI-policies"></a>
+### IAM policies with MFA conditions<a name="MFAProtectedAPI-policies"></a>
 
 Policies with MFA conditions can be attached to the following:
 + An IAM user or group
@@ -49,9 +49,9 @@ The following example shows the trust policy of an IAM role that includes an MFA
 }
 ```
 
-For more information on the condition types for MFA, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md), [Numeric Condition Operators](reference_policies_elements_condition_operators.md#Conditions_Numeric), and [Condition Operator to Check Existence of Condition Keys ](reference_policies_elements_condition_operators.md#Conditions_Null)\. 
+For more information on the condition types for MFA, see [AWS global condition context keys](reference_policies_condition-keys.md), [Numeric condition operators](reference_policies_elements_condition_operators.md#Conditions_Numeric), and [Condition operator to check existence of condition keys ](reference_policies_elements_condition_operators.md#Conditions_Null)\. 
 
-### Choosing Between GetSessionToken and AssumeRole<a name="scenarios"></a>
+### Choosing between GetSessionToken and AssumeRole<a name="scenarios"></a>
 
 AWS STS provides two API operations that let users pass MFA information: `GetSessionToken` and `AssumeRole`\. The API operation that the user calls to get temporary security credentials depends on which of the following scenarios applies\. 
 
@@ -66,7 +66,7 @@ The purpose of the `GetSessionToken` operation is to authenticate the user using
 
 Details about how to implement these scenarios are provided later in this document\.
 
-### Important Points About MFA\-Protected API Access<a name="MFAProtectedAPI-important-points"></a>
+### Important points about MFA\-protected API access<a name="MFAProtectedAPI-important-points"></a>
 
 It's important to understand the following aspects of MFA protection for API operations:
 + MFA protection is available only with temporary security credentials, which must be obtained with `AssumeRole` or `GetSessionToken`\. 
@@ -80,9 +80,9 @@ It's important to understand the following aspects of MFA protection for API ope
 + When you allow another AWS account to access resources in your account, the security of your resources depends on the configuration of the trusted account \(the other account, not yours\)\. This is true even when you require multi\-factor authentication\. Any identity in the trusted account that has permission to create virtual MFA devices can construct an MFA claim to satisfy that part of your role's trust policy\. Before you allow members of another account access to your AWS resources that require multi\-factor authentication, you should ensure that the trusted account's owner follows security best practices\. For example, the trusted account should restrict access to sensitive API operations, such as MFA device\-management API operations, to specific, trusted identities\.
 + If a policy includes an MFA condition, a request is denied if users have not been MFA authenticated, or if they provide an invalid MFA device identifier or invalid TOTP\.
 
-## Scenario: MFA Protection for Cross\-Account Delegation<a name="MFAProtectedAPI-cross-account-delegation"></a>
+## Scenario: MFA protection for cross\-account delegation<a name="MFAProtectedAPI-cross-account-delegation"></a>
 
-In this scenario, you want to delegate access to IAM users in another account, but only if the users are authenticated with an AWS MFA device\. \(For more information about cross\-account delegation, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\. 
+In this scenario, you want to delegate access to IAM users in another account, but only if the users are authenticated with an AWS MFA device\. \(For more information about cross\-account delegation, see [Roles terms and concepts](id_roles_terms-and-concepts.md)\. 
 
 Imagine that you have account A \(the trusting account that owns the resource to be accessed\), with the IAM user Anaya, who has administrator permission\. She wants to grant access to user Richard in account B \(the trusted account\), but wants to make sure that Richard is authenticated with MFA before he assumes the role\. 
 
@@ -143,9 +143,9 @@ The permissions policy does not include an MFA condition\. It is important to un
 
    When Richard calls `AssumeRole`, AWS determines whether he has valid credentials, including the requirement for MFA\. If so, Richard successfully assumes the role and can perform any DynamoDB action on the table named `Books` in account A while using the role's temporary credentials\. 
 
-   For an example of a program that calls `AssumeRole`, see [Calling AssumeRole with MFA Authentication \(Python\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-assumerole)\.
+   For an example of a program that calls `AssumeRole`, see [Calling AssumeRole with MFA authentication \(Python\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-assumerole)\.
 
-## Scenario: MFA Protection for Access to API Operations in the Current Account<a name="MFAProtectedAPI-user-mfa"></a>
+## Scenario: MFA protection for access to API operations in the current account<a name="MFAProtectedAPI-user-mfa"></a>
 
 In this scenario, you should ensure that a user in your AWS account can access sensitive API operations only when the user is authenticated using an AWS MFA device\.
 
@@ -182,9 +182,9 @@ For this policy to take effect, users must first sign out and then sign in again
 
 1. User Sofía \(or an application that Sofía is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `TerminateInstances` action\. 
 
-   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA Authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
+   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 
-## Scenario: MFA Protection for Resources That Have Resource\-based Policies<a name="MFAProtectedAPI-resource-policies"></a>
+## Scenario: MFA protection for resources that have resource\-based policies<a name="MFAProtectedAPI-resource-policies"></a>
 
 In this scenario, you are the owner of an S3 bucket, an SQS queue, or an SNS topic\. You want to make sure that any user from any AWS account who accesses the resource is authenticated by an AWS MFA device\. 
 
@@ -226,6 +226,6 @@ Amazon S3 offers an MFA Delete feature for *root* account access \(only\)\. You 
 
 1. Nikhil \(or an application that he is using\) uses the temporary credentials returned by `GetSessionToken` to call the Amazon S3 `PutObject` action to upload a file to `Account-A-bucket`\. 
 
-   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA Authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
+   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 **Note**  
 The temporary credentials that `AssumeRole` returns won't work in this case\. Although the user can provide MFA information to assume a role, the temporary credentials returned by `AssumeRole` don't include the MFA information\. That information is required in order to meet the MFA condition in the policy\. 

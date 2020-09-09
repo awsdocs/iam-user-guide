@@ -1,4 +1,4 @@
-# Using IAM Roles<a name="id_roles_use"></a>
+# Using IAM roles<a name="id_roles_use"></a>
 
 Before an IAM user, application, or service can use a role that you created, you must grant permissions to switch to the role\. You can use any policy attached to one of an IAM user's groups or to the user itself to grant the necessary permissions\. This section describes how to grant users permission to use a role\. It also explains how the user can switch to a role from the AWS Management Console, the Tools for Windows PowerShell, the AWS Command Line Interface \(AWS CLI\) and the [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API\.
 
@@ -22,23 +22,23 @@ You can switch roles from the AWS Management Console\. You can assume a role by 
 
 ¹ Using the credentials for one role to assume a different role is called [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. When you use role chaining, your new credentials are limited to a maximum duration of one hour\. When you use roles to [grant permissions to applications that run on EC2 instances](id_roles_use_switch-role-ec2.md), those applications are not subject to this limitation\.
 
-² This setting can have a value from 1 hour to 12 hours\. For details about modifying the maximum session duration setting, see [Modifying a Role](id_roles_manage_modify.md)\. This setting determines the maximum session duration that you can request when you get the role credentials\. For example, when you use the [AssumeRole\*](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operations to assume a role, you can specify a session length using the `DurationSeconds` parameter\. Use this parameter to specify the length of the role session from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the IAM user's session, whichever is less\. Assume that you set a maximum duration of 5 hours on a role\. An IAM user that has been signed into the console for 10 hours \(out of the default maximum of 12\) switches to the role\. The available role session duration is 2 hours\. To learn how to view the maximum value for your role, see [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session) later in this page\.
+² This setting can have a value from 1 hour to 12 hours\. For details about modifying the maximum session duration setting, see [Modifying a role](id_roles_manage_modify.md)\. This setting determines the maximum session duration that you can request when you get the role credentials\. For example, when you use the [AssumeRole\*](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operations to assume a role, you can specify a session length using the `DurationSeconds` parameter\. Use this parameter to specify the length of the role session from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the IAM user's session, whichever is less\. Assume that you set a maximum duration of 5 hours on a role\. An IAM user that has been signed into the console for 10 hours \(out of the default maximum of 12\) switches to the role\. The available role session duration is 2 hours\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](#id_roles_use_view-role-max-session) later in this page\.
 
 **Note**  
 The maximum session duration setting does not limit sessions that are assumed by AWS services\.
 
 **Topics**
-+ [View the Maximum Session Duration Setting for a Role](#id_roles_use_view-role-max-session)
-+ [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)
-+ [Granting a User Permissions to Pass a Role to an AWS Service](id_roles_use_passrole.md)
-+ [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)
-+ [Switching to an IAM Role \(AWS CLI\)](id_roles_use_switch-role-cli.md)
-+ [Switching to an IAM Role \(Tools for Windows PowerShell\)](id_roles_use_switch-role-twp.md)
-+ [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)
-+ [Using an IAM Role to Grant Permissions to Applications Running on Amazon EC2 Instances](id_roles_use_switch-role-ec2.md)
-+ [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)
++ [View the maximum session duration setting for a role](#id_roles_use_view-role-max-session)
++ [Granting a user permissions to switch roles](id_roles_use_permissions-to-switch.md)
++ [Granting a user permissions to pass a role to an AWS service](id_roles_use_passrole.md)
++ [Switching to a role \(console\)](id_roles_use_switch-role-console.md)
++ [Switching to an IAM role \(AWS CLI\)](id_roles_use_switch-role-cli.md)
++ [Switching to an IAM role \(Tools for Windows PowerShell\)](id_roles_use_switch-role-twp.md)
++ [Switching to an IAM role \(AWS API\)](id_roles_use_switch-role-api.md)
++ [Using an IAM role to grant permissions to applications running on Amazon EC2 instances](id_roles_use_switch-role-ec2.md)
++ [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)
 
-## View the Maximum Session Duration Setting for a Role<a name="id_roles_use_view-role-max-session"></a>
+## View the maximum session duration setting for a role<a name="id_roles_use_view-role-max-session"></a>
 
 You can specify the maximum session duration for a role using the AWS Management Console or by using the AWS CLI or AWS API\. When you use an AWS CLI or API operation to assume a role, you can specify a value for the `DurationSeconds` parameter\. You can use this parameter to specify the duration of the role session, from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. Before you specify the parameter, you should view this setting for your role\. If you specify a value for the `DurationSeconds` parameter that is higher than the maximum setting, the operation fails\.
 

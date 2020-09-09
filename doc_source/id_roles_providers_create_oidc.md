@@ -1,16 +1,16 @@
-# Creating OpenID Connect \(OIDC\) Identity Providers<a name="id_roles_providers_create_oidc"></a>
+# Creating OpenID Connect \(OIDC\) identity providers<a name="id_roles_providers_create_oidc"></a>
 
-*IAM OIDC identity providers* are entities in IAM that describe an external identity provider \(IdP\) service that supports the [OpenID Connect](http://openid.net/connect/) \(OIDC\) standard, such as Google or Salesforce\. You use an IAM OIDC identity provider when you want to establish trust between an OIDC\-compatible IdP and your AWS account\. This is useful when creating a mobile app or web application that requires access to AWS resources, but you don't want to create custom sign\-in code or manage your own user identities\. For more information about this scenario, see [About Web Identity Federation](id_roles_providers_oidc.md)\.
+*IAM OIDC identity providers* are entities in IAM that describe an external identity provider \(IdP\) service that supports the [OpenID Connect](http://openid.net/connect/) \(OIDC\) standard, such as Google or Salesforce\. You use an IAM OIDC identity provider when you want to establish trust between an OIDC\-compatible IdP and your AWS account\. This is useful when creating a mobile app or web application that requires access to AWS resources, but you don't want to create custom sign\-in code or manage your own user identities\. For more information about this scenario, see [About web identity federation](id_roles_providers_oidc.md)\.
 
 You can create and manage an IAM OIDC identity provider using the AWS Management Console, the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API\. 
 
 **Topics**
-+ [Creating and Managing an OIDC Provider \(Console\)](#manage-oidc-provider-console)
-+ [Creating and Managing an IAM OIDC Identity Provider \(AWS CLI\)](#manage-oidc-provider-cli)
-+ [Creating and Managing an OIDC Identity Provider \(AWS API\)](#manage-oidc-provider-api)
-+ [Obtaining the Root CA Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
++ [Creating and managing an OIDC provider \(console\)](#manage-oidc-provider-console)
++ [Creating and managing an IAM OIDC identity provider \(AWS CLI\)](#manage-oidc-provider-cli)
++ [Creating and managing an OIDC Identity Provider \(AWS API\)](#manage-oidc-provider-api)
++ [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
 
-## Creating and Managing an OIDC Provider \(Console\)<a name="manage-oidc-provider-console"></a>
+## Creating and managing an OIDC provider \(console\)<a name="manage-oidc-provider-console"></a>
 
 Follow these instructions to create and manage an IAM OIDC identity provider in the AWS Management Console\.
 
@@ -32,9 +32,9 @@ Follow these instructions to create and manage an IAM OIDC identity provider in 
 
 1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\. Choose **Next Step**\. 
 
-1. Use the **Thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the Root CA Thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\. Choose **Create**\.
+1. Use the **Thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\. Choose **Create**\.
 
-1. In the confirmation message at the top of the screen, choose **Do this now** to go to the **Roles** tab to create a role for this identity provider\. For more information about creating a role for an OIDC identity provider, see [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\. OIDC identity providers must have a role in order to access your AWS account\. To skip this step and create the role later, choose **Close**\. 
+1. In the confirmation message at the top of the screen, choose **Do this now** to go to the **Roles** tab to create a role for this identity provider\. For more information about creating a role for an OIDC identity provider, see [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\. OIDC identity providers must have a role in order to access your AWS account\. To skip this step and create the role later, choose **Close**\. 
 
 **To add or remove a thumbprint or client ID \(also known as audience\) for an IAM OIDC identity provider \(console\)**
 
@@ -58,7 +58,7 @@ An IAM OIDC identity provider must have at least one and can have a maximum of f
 
 1. Choose **Delete Providers**\.
 
-## Creating and Managing an IAM OIDC Identity Provider \(AWS CLI\)<a name="manage-oidc-provider-cli"></a>
+## Creating and managing an IAM OIDC identity provider \(AWS CLI\)<a name="manage-oidc-provider-cli"></a>
 
 You can use the following AWS CLI commands to create and manage IAM OIDC identity providers\.
 
@@ -99,7 +99,7 @@ You can use the following AWS CLI commands to create and manage IAM OIDC identit
 1. To delete an IAM OIDC identity provider, run the following command:
    + [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-open-id-connect-provider.html)
 
-## Creating and Managing an OIDC Identity Provider \(AWS API\)<a name="manage-oidc-provider-api"></a>
+## Creating and managing an OIDC Identity Provider \(AWS API\)<a name="manage-oidc-provider-api"></a>
 
 You can use the following IAM API commands to create and manage OIDC providers\.
 

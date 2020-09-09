@@ -1,4 +1,4 @@
-# Understanding How IAM Works<a name="intro-structure"></a>
+# Understanding how IAM works<a name="intro-structure"></a>
 
 Before you create users, you should understand how IAM works\. IAM provides the infrastructure necessary to control authentication and authorization for your account\. The IAM infrastructure includes the following elements:
 
@@ -8,7 +8,7 @@ Before you create users, you should understand how IAM works\. IAM provides the 
 + [Request](#intro-structure-request)
 + [Authentication](#intro-structure-authentication)
 + [Authorization](#intro-structure-authorization)
-+ [Actions or Operations](#intro-structure-actions)
++ [Actions or operations](#intro-structure-actions)
 + [Resources](#intro-structure-resources)
 
 ![\[IntroToIAM_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/intro-diagram _policies_800.png)
@@ -48,7 +48,7 @@ AWS gathers the request information into a *request context*, which is used to e
 
 A principal must be authenticated \(signed in to AWS\) using their credentials to send a request to AWS\. Some services, such as Amazon S3 and AWS STS, allow a few requests from anonymous users\. However, they are the exception to the rule\.
 
-To authenticate from the console as a root user, you must sign in with your email address and password\. As an IAM user, provide your account ID or alias, and then your user name and password\. To authenticate from the API or AWS CLI, you must provide your access key and secret key\. You might also be required to provide additional security information\. For example, AWS recommends that you use multi\-factor authentication \(MFA\) to increase the security of your account\. To learn more about the IAM entities that AWS can authenticate, see [IAM Users](id_users.md) and [IAM Roles](id_roles.md)\.
+To authenticate from the console as a root user, you must sign in with your email address and password\. As an IAM user, provide your account ID or alias, and then your user name and password\. To authenticate from the API or AWS CLI, you must provide your access key and secret key\. You might also be required to provide additional security information\. For example, AWS recommends that you use multi\-factor authentication \(MFA\) to increase the security of your account\. To learn more about the IAM entities that AWS can authenticate, see [IAM users](id_users.md) and [IAM roles](id_roles.md)\.
 
 ## Authorization<a name="intro-structure-authorization"></a>
 
@@ -60,9 +60,9 @@ AWS checks each policy that applies to the context of your request\. If a single
 + The existence of an Organizations SCP, IAM permissions boundary, or a session policy overrides the allow\. If one or more of these policy types exists, they must all allow the request\. Otherwise, it is implicitly denied\.
 + An explicit deny in any policy overrides any allows\.
 
-To learn more about how all types of policies are evaluated, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\. If you need to make a request in a different account, a policy in the other account must allow you to access the resource *and* the IAM entity that you use to make the request must have an identity\-based policy that allows the request\.
+To learn more about how all types of policies are evaluated, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\. If you need to make a request in a different account, a policy in the other account must allow you to access the resource *and* the IAM entity that you use to make the request must have an identity\-based policy that allows the request\.
 
-## Actions or Operations<a name="intro-structure-actions"></a>
+## Actions or operations<a name="intro-structure-actions"></a>
 
 After your request has been authenticated and authorized, AWS approves the actions or operations in your request\. Operations are defined by a service, and include things that you can do to a resource, such as viewing, creating, editing, and deleting that resource\. For example, IAM supports approximately 40 actions for a user resource, including the following actions:
 + `CreateUser`

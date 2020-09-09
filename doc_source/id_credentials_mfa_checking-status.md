@@ -1,4 +1,4 @@
-# Checking MFA Status<a name="id_credentials_mfa_checking-status"></a>
+# Checking MFA status<a name="id_credentials_mfa_checking-status"></a>
 
 Use the IAM console to check whether an AWS account root user or IAM user has a valid MFA device enabled\.
 
@@ -9,9 +9,9 @@ Use the IAM console to check whether an AWS account root user or IAM user has a 
 1. Check under **Security Status** to see whether MFA is enabled or disabled\. If MFA has not been activated, an alert symbol \(![\[Alert icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\) is displayed next to **Activate MFA on your root user**\. 
 
 If you want to enable MFA for the account, see one of the following:
-+ [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
-+ [Enable a U2F Security Key for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-root)
-+ [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
++ [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
++ [Enable a U2F security key for the AWS account root user \(console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-root)
++ [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 **To check the MFA status of IAM users**
 
@@ -41,7 +41,7 @@ If you want to enable MFA for the account, see one of the following:
 If you want to change the current setting, choose **Manage** next to **Assigned MFA Device**\.
 
 For more information on enabling MFA, see the following: 
-+ [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)
-+ [Enabling a U2F Security Key \(Console\)](id_credentials_mfa_enable_u2f.md)
-+ [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)
-+ [PREVIEW – Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)
++ [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
++ [Enabling a U2F security key \(console\)](id_credentials_mfa_enable_u2f.md)
++ [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
++ [PREVIEW – Enabling SMS text message MFA devices](id_credentials_mfa_enable_sms.md)

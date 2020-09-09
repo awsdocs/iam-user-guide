@@ -1,16 +1,16 @@
-# Enabling MFA Devices<a name="id_credentials_mfa_enable"></a>
+# Enabling MFA devices for users in AWS<a name="id_credentials_mfa_enable"></a>
 
 The steps for configuring MFA depend on the type of MFA device you are using\.
 
 **Topics**
-+ [General Steps for Enabling MFA Devices](#id_credentials_mfa_enable-overview)
-+ [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)
-+ [Enabling a U2F Security Key \(Console\)](id_credentials_mfa_enable_u2f.md)
-+ [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)
-+ [PREVIEW – Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)
-+ [Enabling and Managing Virtual MFA Devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)
++ [General steps for enabling MFA devices](#id_credentials_mfa_enable-overview)
++ [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
++ [Enabling a U2F security key \(console\)](id_credentials_mfa_enable_u2f.md)
++ [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
++ [PREVIEW – Enabling SMS text message MFA devices](id_credentials_mfa_enable_sms.md)
++ [Enabling and managing virtual MFA devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)
 
-## General Steps for Enabling MFA Devices<a name="id_credentials_mfa_enable-overview"></a>
+## General steps for enabling MFA devices<a name="id_credentials_mfa_enable-overview"></a>
 
 The following overview procedure describes how to set up and use MFA and provides links to related information\.
 
@@ -29,10 +29,10 @@ SMS\-based MFA is only available for IAM users and cannot be used for the root u
    + AWS account root users with any type of MFA device \(except SMS MFA, which is not supported for root users\): Enable from the AWS Management Console only\.
 
    For information about enabling each type of MFA device, see the following pages:
-   + Virtual MFA device: [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md)
-   + U2F security key: [Enabling a U2F Security Key \(Console\)](id_credentials_mfa_enable_u2f.md) 
-   + Hardware MFA device: [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md)
-   + SMS MFA device: [PREVIEW – Enabling SMS Text Message MFA Devices](id_credentials_mfa_enable_sms.md)
+   + Virtual MFA device: [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
+   + U2F security key: [Enabling a U2F security key \(console\)](id_credentials_mfa_enable_u2f.md) 
+   + Hardware MFA device: [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
+   + SMS MFA device: [PREVIEW – Enabling SMS text message MFA devices](id_credentials_mfa_enable_sms.md)
 
 1. *Use the MFA device when you log in to or access AWS resources\.* Note the following:
    + U2F security keys: To access an AWS website, enter your credentials and then tap the U2F security key when prompted\.
@@ -46,4 +46,4 @@ SMS\-based MFA is only available for IAM users and cannot be used for the root u
 You cannot pass the MFA information for a U2F security key or SMS MFA device to AWS STS API operations to request temporary credentials\.
 You cannot use AWS CLI commands or AWS API operations to enable [U2F security keys](id_credentials_mfa_enable_u2f.md)\.
 
-For more information, see [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md)\. 
+For more information, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\. 

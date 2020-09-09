@@ -1,10 +1,10 @@
-# Creating Your First IAM Delegated User and Group<a name="getting-started_create-delegated-user"></a>
+# Creating your first IAM delegated user and group<a name="getting-started_create-delegated-user"></a>
 
 To support multiple users in your AWS account, you must delegate permission to allow other people to perform only the actions you want to allow\. To do this, create an IAM group with the permissions those people need and then add IAM users to the necessary groups as you create them\. You can use this process to set up the groups, users, and permissions for your entire AWS account\. 
 
 This solution is best used by small and medium organizations where an AWS administrator can manually manage the users and groups\. For large organizations, you can use [custom IAM roles](id_roles_providers_enable-console-custom-url.md), [federation](id_roles_providers.md), or [single sign\-on](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 
-## Creating a Delegated IAM User and Group \(Console\)<a name="getting-started_create-admin-group-console"></a>
+## Creating a delegated IAM user and group \(console\)<a name="getting-started_create-admin-group-console"></a>
 
 You can use the AWS Management Console to create an IAM group with delegated permissions, and then create an IAM user for someone else and add it to the group\. 
 
@@ -52,19 +52,19 @@ You can use the AWS Management Console to create an IAM group with delegated per
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create users**\.
 
 1. Download or copy the passwords for your new users and deliver them to the users securely\. Separately, provide your users with a link to your IAM user console page and their user names\.
 
-## Reducing the Group Permissions<a name="getting-started_reduce-permissions"></a>
+## Reducing the group permissions<a name="getting-started_reduce-permissions"></a>
 
 Members of the `PowerUser` group have full access to all services except a few that provide user management actions \(like IAM and Organizations\)\. After a predefined period of inactivity \(such as 90 days\) has passed, you can review the services that your group members have accessed\. Then you can reduce the permissions of the `PowerUserExampleCorp` policy to include only the services that your team needs\.
 
-For more information about the last accessed information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\.
+For more information about the last accessed information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
 
-### Reviewing Last Accessed Information<a name="getting-started_reduce-permissions-review"></a>
+### Reviewing last accessed information<a name="getting-started_reduce-permissions-review"></a>
 
 Wait for a predefined period of inactivity \(such as 90 days\) to pass\. Then you can review the last accessed information for your users or groups to learn when your users last attempted to access the services that your `PowerUserExampleCorp` policy allows\.
 
@@ -80,7 +80,7 @@ Wait for a predefined period of inactivity \(such as 90 days\) to pass\. Then yo
 
    For example, assume that within the last month, your team has accessed only the Amazon EC2 and Amazon S3 services\. But six months ago, they accessed Amazon EC2 Auto Scaling and IAM\. You know that they were investigating EC2 Auto Scaling, but decided that it wasn't necessary\. You also know that they used IAM to create a role to allow Amazon EC2 to access data in an S3 bucket\. So you decide to scale back the user's permissions to allow access to only the Amazon EC2 and Amazon S3 services\.
 
-### Editing a Policy to Reduce Permissions<a name="getting-started_reduce-permissions-edit-policy"></a>
+### Editing a policy to reduce permissions<a name="getting-started_reduce-permissions-edit-policy"></a>
 
 After you review your last accessed information, you can edit your policy to allow access to only the services that your users need\.
 

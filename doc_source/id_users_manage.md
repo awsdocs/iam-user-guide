@@ -1,24 +1,24 @@
-# Managing IAM Users<a name="id_users_manage"></a>
+# Managing IAM users<a name="id_users_manage"></a>
 
 Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a group, or list all groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
 
-For more information about adding, changing, or removing managed policies for an IAM user, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md), [Editing IAM Policies](access_policies_manage-edit.md), and [Deleting IAM Policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
+For more information about adding, changing, or removing managed policies for an IAM user, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md), [Editing IAM policies](access_policies_manage-edit.md), and [Deleting IAM policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
 
- For information about managing IAM user passwords, see [Managing Passwords for IAM Users](id_credentials_passwords_admin-change-user.md),
+ For information about managing IAM user passwords, see [Managing passwords for IAM users](id_credentials_passwords_admin-change-user.md),
 
 **Topics**
-+ [View User Access](#users-manage_prerequisites)
-+ [Listing IAM Users](#id_users_manage_list)
-+ [Renaming an IAM User](#id_users_renaming)
-+ [Deleting an IAM User](#id_users_deleting)
++ [View user access](#users-manage_prerequisites)
++ [Listing IAM users](#id_users_manage_list)
++ [Renaming an IAM user](#id_users_renaming)
++ [Deleting an IAM user](#id_users_deleting)
 
-## View User Access<a name="users-manage_prerequisites"></a>
+## View user access<a name="users-manage_prerequisites"></a>
 
-Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing last accessed information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\.
+Before you delete a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing last accessed information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
 
-## Listing IAM Users<a name="id_users_manage_list"></a>
+## Listing IAM users<a name="id_users_manage_list"></a>
 
-You can list the IAM users in your AWS account or in a specific IAM group, and list all the groups that a user is in\. For information about the permissions that you need in order to list users, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\. 
+You can list the IAM users in your AWS account or in a specific IAM group, and list all the groups that a user is in\. For information about the permissions that you need in order to list users, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
 
 ### To list all the users in the account<a name="id_users_manage_list-users"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**\. The console displays the users in your AWS account\. 
@@ -35,14 +35,14 @@ You can list the IAM users in your AWS account or in a specific IAM group, and l
 + AWS CLI: [aws iam list\-groups\-for\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)
 + AWS API: [ListGroupsForUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html)
 
-## Renaming an IAM User<a name="id_users_renaming"></a>
+## Renaming an IAM user<a name="id_users_renaming"></a>
 
-To change a user's name or path, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API\. There is no option in the console to rename a user\. For information about the permissions that you need in order to rename a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\. 
+To change a user's name or path, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API\. There is no option in the console to rename a user\. For information about the permissions that you need in order to rename a user, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
 
 When you change a user's name or path, the following happens: 
 + Any policies attached to the user stay with the user under the new name\.
 + The user stays in the same groups under the new name\.
-+ The unique ID for the user remains the same\. For more information about unique IDs, see [Unique Identifiers](reference_identifiers.md#identifiers-unique-ids)\.
++ The unique ID for the user remains the same\. For more information about unique IDs, see [Unique identifiers](reference_identifiers.md#identifiers-unique-ids)\.
 + Any resource or role policies that refer to the user *as a principal* \(the user is being granted access\) are automatically updated to use the new name or path\. For example, any queue\-based policies in Amazon SQS or resource\-based policies in Amazon S3 are automatically updated to use the new name and path\. 
 
 IAM does not automatically update policies that refer to the user *as a resource* to use the new name or path; you must manually do that\. For example, imagine that user `Richard` has a policy attached to him that lets him manage his security credentials\. If an administrator renames `Richard` to `Rich`, the administrator also needs to update that policy to change the resource from this:
@@ -63,17 +63,17 @@ This is true also if an administrator changes the path; the administrator needs 
 + AWS CLI: [aws iam update\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/update-user.html)
 + AWS API: [UpdateUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateUser.html) 
 
-## Deleting an IAM User<a name="id_users_deleting"></a>
+## Deleting an IAM user<a name="id_users_deleting"></a>
 
 You might delete an IAM user from your account if someone quits your company\. If the user is only temporarily away from your company, you can disable the user's credentials instead of deleting the user entirely from the AWS account\. That way, you can prevent the user from accessing the AWS account's resources during the absence but you can re\-enable the user later\.
 
-For more information about disabling credentials, see [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\. For information about the permissions that you need in order to delete a user, see [Permissions Required to Access IAM Resources](access_permissions-required.md)\. 
+For more information about disabling credentials, see [Managing access keys for IAM users](id_credentials_access-keys.md)\. For information about the permissions that you need in order to delete a user, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
 
 **Topics**
-+ [Deleting an IAM User \(Console\)](#id_users_deleting_console)
-+ [Deleting an IAM User \(AWS CLI\)](#id_users_deleting_cli)
++ [Deleting an IAM user \(console\)](#id_users_deleting_console)
++ [Deleting an IAM user \(AWS CLI\)](#id_users_deleting_cli)
 
-### Deleting an IAM User \(Console\)<a name="id_users_deleting_console"></a>
+### Deleting an IAM user \(console\)<a name="id_users_deleting_console"></a>
 
 When you use the AWS Management Console to delete an IAM user, IAM automatically deletes the following information for you: 
 + The user
@@ -95,7 +95,7 @@ Any managed policies attached to the user are detached from the user when the us
 
 1. In the confirmation dialog box, wait for the last accessed information to load before you review the data\. The dialog box shows when each of the selected users last accessed an AWS service\. If you attempt to delete a user that has been active within the last 30 days, you must select an additional check box to confirm that you want to delete the active user\. If you want to proceed, choose **Yes, Delete**\. 
 
-### Deleting an IAM User \(AWS CLI\)<a name="id_users_deleting_cli"></a>
+### Deleting an IAM user \(AWS CLI\)<a name="id_users_deleting_cli"></a>
 
 Unlike the AWS Management Console, when you delete a user with the AWS CLI, you must delete the items attached to the user manually\. This procedure illustrates the process\. 
 

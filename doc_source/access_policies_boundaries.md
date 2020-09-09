@@ -1,8 +1,8 @@
-# Permissions Boundaries for IAM Entities<a name="access_policies_boundaries"></a>
+# Permissions boundaries for IAM entities<a name="access_policies_boundaries"></a>
 
 AWS supports *permissions boundaries* for IAM entities \(users or roles\)\. A permissions boundary is an advanced feature for using a managed policy to set the maximum permissions that an identity\-based policy can grant to an IAM entity\. An entity's permissions boundary allows it to perform only the actions that are allowed by both its identity\-based policies and its permissions boundaries\.
 
-For more information about policy types, see [Policy Types](access_policies.md#access_policy-types)\.
+For more information about policy types, see [Policy types](access_policies.md#access_policy-types)\.
 
 You can use an AWS managed policy or a customer managed policy to set the boundary for an IAM entity \(user or role\)\. That policy limits the maximum permissions for the user or role\.
 
@@ -40,11 +40,11 @@ When you use a policy to set the permissions boundary for a user, it limits the 
 
 This policy allows creating a user in IAM\. If you attach this permissions policy to the `ShirleyRodriguez` user, and Shirley tries to create a user, the operation fails\. It fails because the permissions boundary does not allow the `iam:CreateUser` operation\. Given these two policies, Shirley does not have permission to perform any operations in AWS\. You must add a different permissions policy to allow actions in other services, such as Amazon S3\. Alternatively, you could update the permissions boundary to allow her to create a user in IAM\.
 
-## Evaluating Effective Permissions with Boundaries<a name="access_policies_boundaries-eval-logic"></a>
+## Evaluating effective permissions with boundaries<a name="access_policies_boundaries-eval-logic"></a>
 
-The permissions boundary for an IAM entity \(user or role\) sets the maximum permissions that the entity can have\. This can change the effective permissions for that user or role\. The effective permissions for an entity are the permissions that are granted by all the policies that affect the user or role\. Within an account, the permissions for an entity can be affected by identity\-based policies, resource\-based policies, permissions boundaries, Organizations SCPs, or session policies\. For more information about the different types of policies, see [Policies and Permissions](access_policies.md)\.
+The permissions boundary for an IAM entity \(user or role\) sets the maximum permissions that the entity can have\. This can change the effective permissions for that user or role\. The effective permissions for an entity are the permissions that are granted by all the policies that affect the user or role\. Within an account, the permissions for an entity can be affected by identity\-based policies, resource\-based policies, permissions boundaries, Organizations SCPs, or session policies\. For more information about the different types of policies, see [Policies and permissions in IAM](access_policies.md)\.
 
-If any one of these policy types explicitly denies access for an operation, then the request is denied\. The permissions granted to an entity by multiple permissions types are more complex\. For more details about how AWS evaluates policies, see [Policy Evaluation Logic](reference_policies_evaluation-logic.md)\.
+If any one of these policy types explicitly denies access for an operation, then the request is denied\. The permissions granted to an entity by multiple permissions types are more complex\. For more details about how AWS evaluates policies, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\.
 
 **Identity\-based policies with boundaries** – Identity\-based policies are inline or managed policies that are attached to a user, group of users, or role\. Identity\-based policies grant permission to the entity, and permissions boundaries limit those permissions\. The effective permissions are the intersection of both policy types\. An explicit deny in either of these policies overrides the allow\.
 
@@ -64,7 +64,7 @@ You can learn [whether your account is a member of an organization](https://docs
 
 ![\[Evaluation of a session policy, permissions boundary, and identity-based policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-boundary-id.png)
 
-## Delegating Responsibility to Others Using Permissions Boundaries<a name="access_policies_boundaries-delegate"></a>
+## Delegating responsibility to others using permissions boundaries<a name="access_policies_boundaries-delegate"></a>
 
 You can use permissions boundaries to delegate permissions management tasks, such as user creation, to IAM users in your account\. This permits others to perform tasks on your behalf within a specific boundary of permissions\.
 

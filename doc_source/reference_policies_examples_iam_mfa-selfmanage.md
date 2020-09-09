@@ -1,4 +1,4 @@
-# IAM: Allows IAM Users to Self\-Manage an MFA Device<a name="reference_policies_examples_iam_mfa-selfmanage"></a>
+# IAM: Allows IAM users to self\-manage an MFA device<a name="reference_policies_examples_iam_mfa-selfmanage"></a>
 
 This example shows how you might create a policy that allows IAM users to self\-manage their [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) device\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\.
 

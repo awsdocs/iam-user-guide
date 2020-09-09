@@ -1,30 +1,30 @@
-# Creating IAM SAML Identity Providers<a name="id_roles_providers_create_saml"></a>
+# Creating IAM SAML identity providers<a name="id_roles_providers_create_saml"></a>
 
 An IAM SAML 2\.0 identity provider is an entity in IAM that describes an external identity provider \(IdP\) service that supports the [SAML 2\.0 \(Security Assertion Markup Language 2\.0\)](https://wiki.oasis-open.org/security) standard\. You use an IAM identity provider when you want to establish trust between a SAML\-compatible IdP such as Shibboleth or Active Directory Federation Services and AWS, so that users in your organization can access AWS resources\. IAM SAML identity providers are used as principals in an IAM trust policy\. 
 
-For more information about this scenario, see [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\.
+For more information about this scenario, see [About SAML 2\.0\-based federation](id_roles_providers_saml.md)\.
 
 You can create and manage an IAM identity provider in the AWS Management Console or with AWS CLI, Tools for Windows PowerShell, or AWS API calls\. 
 
-After you create a SAML provider, you must create one or more IAM roles\. A role is an identity in AWS that doesn't have its own credentials \(as a user does\)\. But in this context, a role is dynamically assigned to a federated user that is authenticated by your organization's IdP\. The role permits your organization's IdP to request temporary security credentials for access to AWS\. The policies assigned to the role determine what the federated users are allowed to do in AWS\. To create a role for SAML federation, see [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\. 
+After you create a SAML provider, you must create one or more IAM roles\. A role is an identity in AWS that doesn't have its own credentials \(as a user does\)\. But in this context, a role is dynamically assigned to a federated user that is authenticated by your organization's IdP\. The role permits your organization's IdP to request temporary security credentials for access to AWS\. The policies assigned to the role determine what the federated users are allowed to do in AWS\. To create a role for SAML federation, see [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\. 
 
-Finally, after you create the role, you complete the SAML trust by configuring your IdP with information about AWS and the roles that you want your federated users to use\. This is referred to as configuring relying party trust between your IdP and AWS\. To configure relying party trust, see [Configuring your SAML 2\.0 IdP with Relying Party Trust and Adding Claims](id_roles_providers_create_saml_relying-party.md)\. 
+Finally, after you create the role, you complete the SAML trust by configuring your IdP with information about AWS and the roles that you want your federated users to use\. This is referred to as configuring relying party trust between your IdP and AWS\. To configure relying party trust, see [Configuring your SAML 2\.0 IdP with relying party trust and adding claims](id_roles_providers_create_saml_relying-party.md)\. 
 
 **Topics**
-+ [Creating and Managing an IAM Identity Provider \(Console\)](#idp-manage-identityprovider-console)
-+ [Creating and Managing an IAM SAML Identity Provider \(AWS CLI\)](#idp-create-identityprovider-CLIAPI)
-+ [Creating and Managing an IAM SAML Identity Provider \(AWS API\)](#idp-create-identityprovider-API)
-+ [Configuring your SAML 2\.0 IdP with Relying Party Trust and Adding Claims](id_roles_providers_create_saml_relying-party.md)
-+ [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)
-+ [Configuring SAML Assertions for the Authentication Response](id_roles_providers_create_saml_assertions.md)
++ [Creating and managing an IAM identity provider \(console\)](#idp-manage-identityprovider-console)
++ [Creating and managing an IAM SAML Identity Provider \(AWS CLI\)](#idp-create-identityprovider-CLIAPI)
++ [Creating and managing an IAM SAML identity provider \(AWS API\)](#idp-create-identityprovider-API)
++ [Configuring your SAML 2\.0 IdP with relying party trust and adding claims](id_roles_providers_create_saml_relying-party.md)
++ [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md)
++ [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)
 
-## Creating and Managing an IAM Identity Provider \(Console\)<a name="idp-manage-identityprovider-console"></a>
+## Creating and managing an IAM identity provider \(console\)<a name="idp-manage-identityprovider-console"></a>
 
 You can use the AWS Management Console to create and delete IAM SAML identity providers\.
 
 **To create an IAM identity provider \(console\)**
 
-1. <a name="samlstep1"></a>Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+1. <a name="samlstep1"></a>Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md)\.
 **Important**  
 The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
 
@@ -50,11 +50,11 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 
 1. Click **Delete Providers**\.
 
-## Creating and Managing an IAM SAML Identity Provider \(AWS CLI\)<a name="idp-create-identityprovider-CLIAPI"></a>
+## Creating and managing an IAM SAML Identity Provider \(AWS CLI\)<a name="idp-create-identityprovider-CLIAPI"></a>
 
 You can use the AWS CLI to create and manage SAML providers\.
 
-Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md)\.
 
 **Important**  
 The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
@@ -76,11 +76,11 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 1. To delete an IAM identity provider, run the following command:
    + [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-saml-provider.html)
 
-## Creating and Managing an IAM SAML Identity Provider \(AWS API\)<a name="idp-create-identityprovider-API"></a>
+## Creating and managing an IAM SAML identity provider \(AWS API\)<a name="idp-create-identityprovider-API"></a>
 
 You can use the AWS API to create and manage SAML providers\.
 
-Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+Before you can create an IAM identity provider, you need the SAML metadata document that you get from the IdP, This document includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. To generate the metadata document, use the identity management software your organization uses as its IdP\. For instructions on how to configure many of the available IdPs to work with AWS, including how to generate the required SAML metadata document, see [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md)\.
 
 **Important**  
 The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.

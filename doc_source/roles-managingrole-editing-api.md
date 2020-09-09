@@ -1,15 +1,15 @@
-# Modifying a Role \(AWS API\)<a name="roles-managingrole-editing-api"></a>
+# Modifying a role \(AWS API\)<a name="roles-managingrole-editing-api"></a>
 
-You can use the AWS API to modify a role\. To change the set of tags on a role, see [Managing Tags on IAM Entities \(Console\)](id_tags.md#id_tags_procs-console)\.
+You can use the AWS API to modify a role\. To change the set of tags on a role, see [Managing tags on IAM entities \(console\)](id_tags.md#id_tags_procs-console)\.
 
 **Topics**
-+ [Modifying a Role Trust Policy \(AWS API\)](#roles-managingrole_edit-trust-policy-api)
-+ [Modifying a Role Permissions Policy \(AWS API\)](#roles-modify_permissions-policy-api)
-+ [Modifying a Role Description \(AWS API\)](#roles-modify_description-api)
-+ [Modifying a Role Maximum Session Duration \(AWS API\)](#roles-modify_max-session-duration-api)
-+ [Modifying a Role Permissions Boundary \(AWS API\)](#roles-modify_permissions-boundary-api)
++ [Modifying a role trust policy \(AWS API\)](#roles-managingrole_edit-trust-policy-api)
++ [Modifying a role permissions policy \(AWS API\)](#roles-modify_permissions-policy-api)
++ [Modifying a role description \(AWS API\)](#roles-modify_description-api)
++ [Modifying a role maximum session duration \(AWS API\)](#roles-modify_max-session-duration-api)
++ [Modifying a role permissions boundary \(AWS API\)](#roles-modify_permissions-boundary-api)
 
-## Modifying a Role Trust Policy \(AWS API\)<a name="roles-managingrole_edit-trust-policy-api"></a>
+## Modifying a role trust policy \(AWS API\)<a name="roles-managingrole_edit-trust-policy-api"></a>
 
 To change who can assume a role, you must modify the role's trust policy\. You cannot modify the trust policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
 
@@ -42,14 +42,14 @@ If a user is listed as the principal in a role's trust policy but cannot assume 
    }
    ```
 
-   If you specify a principal in another account, adding an account to the trust policy of a role is only half of establishing the cross\-account trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+   If you specify a principal in another account, adding an account to the trust policy of a role is only half of establishing the cross\-account trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a user permissions to switch roles](id_roles_use_permissions-to-switch.md)\.
 
 1. To use the file that you just created to update the trust policy, call the following operation:
    + [UpdateAssumeRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html)
 
 **To allow users in a trusted external account to use the role \(AWS API\)**
 
-For more information and detail about this procedure, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+For more information and detail about this procedure, see [Granting a user permissions to switch roles](id_roles_use_permissions-to-switch.md)\.
 
 1. Create a JSON file that contains a permissions policy that grants permissions to assume the role\. For example, the following policy contains the minimum necessary permissions:
 
@@ -79,9 +79,9 @@ For more information and detail about this procedure, see [Granting a User Permi
    +  API: [AttachUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
    + [AttachGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html)
 
-## Modifying a Role Permissions Policy \(AWS API\)<a name="roles-modify_permissions-policy-api"></a>
+## Modifying a role permissions policy \(AWS API\)<a name="roles-modify_permissions-policy-api"></a>
 
-To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\. You cannot modify the permissions policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. You might be able to modify the permissions policy within the service that depends on the role\. To check whether a service supports this feature, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-linked roles** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
+To change the permissions allowed by the role, modify the role's permissions policy \(or policies\)\. You cannot modify the permissions policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. You might be able to modify the permissions policy within the service that depends on the role\. To check whether a service supports this feature, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-linked roles** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
 
 **To change the permissions allowed by a role \(AWS API\)**
 
@@ -99,7 +99,7 @@ To change the permissions allowed by the role, modify the role's permissions pol
    To update an inline policy, call the following operation:
    + [PutRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html)
 
-## Modifying a Role Description \(AWS API\)<a name="roles-modify_description-api"></a>
+## Modifying a role description \(AWS API\)<a name="roles-modify_description-api"></a>
 
 To change the description of the role, modify the description text\.
 
@@ -111,7 +111,7 @@ To change the description of the role, modify the description text\.
 1. To update a role's description, call the following operation with the description parameter:
    + [UpdateRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
 
-## Modifying a Role Maximum Session Duration \(AWS API\)<a name="roles-modify_max-session-duration-api"></a>
+## Modifying a role maximum session duration \(AWS API\)<a name="roles-modify_max-session-duration-api"></a>
 
 To specify the maximum session duration setting for roles that are assumed using the AWS CLI or API, modify the maximum session duration setting's value\. This setting can have a value from 1 hour to 12 hours\. If you do not specify a value, the default maximum of 1 hour is applied\. This setting does not limit sessions assumed by AWS services\.
 
@@ -126,9 +126,9 @@ Anyone who assumes the role from the AWS CLI or API can use the `duration-second
 1. To update a role's maximum session duration setting, call the following operation with the `max-sessionduration` CLI parameter or the `MaxSessionDuration` API parameter:
    + [UpdateRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRole.html)
 
-   Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\.
+   Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)\.
 
-## Modifying a Role Permissions Boundary \(AWS API\)<a name="roles-modify_permissions-boundary-api"></a>
+## Modifying a role permissions boundary \(AWS API\)<a name="roles-modify_permissions-boundary-api"></a>
 
 To change the maximum permissions allowed for a role, modify the role's [permissions boundary](access_policies_boundaries.md)\.
 

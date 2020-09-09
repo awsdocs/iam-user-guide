@@ -12,11 +12,11 @@ The following figures show a visual representation of how the policies interact 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
-## Example: Assigning Permissions Using GetFederationToken<a name="permissions-get-federation-token-example"></a>
+## Example: Assigning permissions using GetFederationToken<a name="permissions-get-federation-token-example"></a>
 
 You can use the `GetFederationToken` API action with different kinds of policies\. Here are a few examples\.
 
-### Policy Attached to the IAM User<a name="permissions-get-federation-token-example-iam-user"></a>
+### Policy attached to the IAM user<a name="permissions-get-federation-token-example-iam-user"></a>
 
 In this example, you have a browser\-based client application that relies on two backend web services\. One backend service is your own authentication server that uses your own identity system to authenticate the client application\. The other backend service is an AWS service that provides some of the client application's functionality\. The client application is authenticated by your server, and your server creates or retrieves the appropriate permissions policy\. Your server then calls the `GetFederationToken` API to obtain temporary security credentials, and returns those credentials to the client application\. The client application can then make requests directly to the AWS service with the temporary security credentials\. This architecture allows the client application to make AWS requests without embedding long\-term AWS credentials\.
 
@@ -25,7 +25,7 @@ Your authentication server calls the `GetFederationToken` API with the long\-ter
 **Note**  
 AWS provides a sample Java application to serve this purpose, which you can download here: [Token Vending Machine for Identity Registration \- Sample Java Web Application](https://aws.amazon.com/code/7351543942956566)\.
 
-**Example Policy Attached to IAM User `token-app` that Calls `GetFederationToken`**  
+**Example policy attached to IAM user `token-app` that calls `GetFederationToken`**  
 
 ```
 {
@@ -62,7 +62,7 @@ AWS provides a sample Java application to serve this purpose, which you can down
 
 The preceding policy grants several permissions to the IAM user\. However, this policy alone doesn't grant any permissions to the federated user\. If this IAM user calls `GetFederationToken` and does not pass a policy as a parameter of the API call, the resulting federated user has no effective permissions\. 
 
-### Session Policy Passed as Parameter<a name="permissions-get-federation-token-example-passed-policy"></a>
+### Session policy passed as parameter<a name="permissions-get-federation-token-example-passed-policy"></a>
 
 The most common way to ensure that the federated user is assigned appropriate permission is to pass session policies in the `GetFederationToken` API call\. Expanding on the previous example, imagine that `GetFederationToken` is called with the credentials of the IAM user `token-app`\. Then imagine that the following session policy is passed as a parameter of the API call\. The resulting federated user has permission to list the contents of the Amazon S3 bucket named `productionapp`\. The user can't perform the Amazon S3 `GetObject`, `PutObject`, and `DeleteObject` actions on items in the `productionapp` bucket\.
 
@@ -70,7 +70,7 @@ The federated user is assigned these permissions because the permissions are the
 
 The federated user could not perform actions in Amazon SNS, Amazon SQS, Amazon DynamoDB, or in any S3 bucket except `productionapp`\. These actions are denied even though those permissions are granted to the IAM user that is associated with the `GetFederationToken` call\.
 
-**Example Session Policy Passed as Parameter of `GetFederationToken` API call**  
+**Example session policy passed as parameter of `GetFederationToken` API call**  
 
 ```
 {
@@ -94,15 +94,15 @@ The federated user could not perform actions in Amazon SNS, Amazon SQS, Amazon D
 }
 ```
 
-### Resource\-Based Policies<a name="permissions-get-federation-token-resource-based-policy"></a>
+### Resource\-based policies<a name="permissions-get-federation-token-resource-based-policy"></a>
 
-Some AWS resources support resource\-based policies, and these policies provide another mechanism to grant permissions directly to a federated user\. Only some AWS services support resource\-based policies\. For example, Amazon S3 has buckets, Amazon SNS has topics, and Amazon SQS has queues that you can attach policies to\. For a list of all services that support resource\-based policies, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md) and review the "Resource\-based policies" column of the tables\. You can use resource\-based policies to assign permissions directly to a federated user\. Do this by specifying the Amazon Resource Name \(ARN\) of the federated user in the `Principal` element of the resource\-based policy\. The following example illustrates this and expands on the previous examples, using an S3 bucket named `productionapp`\. 
+Some AWS resources support resource\-based policies, and these policies provide another mechanism to grant permissions directly to a federated user\. Only some AWS services support resource\-based policies\. For example, Amazon S3 has buckets, Amazon SNS has topics, and Amazon SQS has queues that you can attach policies to\. For a list of all services that support resource\-based policies, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and review the "Resource\-based policies" column of the tables\. You can use resource\-based policies to assign permissions directly to a federated user\. Do this by specifying the Amazon Resource Name \(ARN\) of the federated user in the `Principal` element of the resource\-based policy\. The following example illustrates this and expands on the previous examples, using an S3 bucket named `productionapp`\. 
 
 The following resource\-based policy is attached to the bucket\. This bucket policy allows a federated user named Carol to access the bucket\. When the example policy described earlier is attached to the `token-app` IAM user, the federated user named Carol has permission to perform the `s3:GetObject`, `s3:PutObject`, and `s3:DeleteObject` actions on the bucket named `productionapp`\. This is true even when no session policy is passed as a parameter of the `GetFederationToken` API call\. That's because in this case the federated user named Carol has been explicitly granted permissions by the following resource\-based policy\. 
 
 Remember, a federated user is granted permissions only when those permissions are explicitly granted to both the IAM user ***and*** the federated user\. Permissions can be granted to the federated user by the session policy passed as a parameter of the `GetFederationToken` API call\. They can also be granted by a resource\-based policy that explicitly names the federated user in the `Principal` element of the policy, as in the following example\.
 
-**Example Bucket Policy that Allows Access to Federated User**  
+**Example bucket policy that allows access to federated user**  
 
 ```
 {

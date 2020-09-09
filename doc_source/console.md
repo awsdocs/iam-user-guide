@@ -1,16 +1,16 @@
-# Signing in to the AWS Management Console as an IAM User or Root User<a name="console"></a>
+# Signing in to the AWS Management Console as an IAM user or root user<a name="console"></a>
 
 The AWS Management Console provides a web\-based user interface that you can use to create and manage your AWS resources\. For example, you can start and stop Amazon EC2 instances, create Amazon DynamoDB tables, create Amazon S3 buckets, and so on\.
 
 Before you can use the AWS Management Console, you must sign in to your AWS account\. The process that you will use to sign in to your AWS account depends on what type of AWS user you are\. There are two different types of users in AWS\. You are either the account owner \(root user\) or you are an IAM user\. The root user is created when the AWS account is created using the email address and password that were used to create the account\. IAM users are created by the root user or an IAM administrator within the AWS account\.
 
-If you do not remember your credentials or have trouble signing in using your credentials, see [Troubleshoot Sign\-in Issues](troubleshoot-aws-sign-in.md)\.
+If you do not remember your credentials or have trouble signing in using your credentials, see [AWS sign\-in issues](troubleshoot-aws-sign-in.md)\.
 
 **Topics**
 + [Sign in as the root user](#root-user-sign-in-page)
 + [Sign in as an IAM user](#user-sign-in-page)
-+ [Your AWS Account ID and Its Alias](console_account-alias.md)
-+ [Troubleshooting AWS Sign\-in or Account Issues](troubleshoot-aws-sign-in.md)
++ [Your AWS account ID and its alias](console_account-alias.md)
++ [Troubleshooting AWS sign\-in or account issues](troubleshoot-aws-sign-in.md)
 
 ## Sign in as the root user<a name="root-user-sign-in-page"></a>
 
@@ -45,7 +45,7 @@ Before you sign into an AWS account as an IAM user, be sure that you have the fo
 + The user name for your IAM user\.
 + The password for your IAM user\.
 
-If you are a root user or IAM administrator and need to provide the AWS account ID or AWS account alias to an IAM user, see [Your AWS Account ID and Its Alias](console_account-alias.md)\.
+If you are a root user or IAM administrator and need to provide the AWS account ID or AWS account alias to an IAM user, see [Your AWS account ID and its alias](console_account-alias.md)\.
 
 If you are an IAM user, you can log in using either a sign\-in URL or the main sign\-in page\.
 

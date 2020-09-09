@@ -1,8 +1,8 @@
-# IAM Users<a name="id_users"></a>
+# IAM users<a name="id_users"></a>
 
 An AWS Identity and Access Management \(IAM\) *user* is an entity that you create in AWS to represent the person or application that uses it to interact with AWS\. A user in AWS consists of a name and credentials\.
 
-An IAM user with administrator permissions is not the same thing as the AWS account root user\. For more information about the root user, see [The AWS Account Root User](id_root-user.md)\.
+An IAM user with administrator permissions is not the same thing as the AWS account root user\. For more information about the root user, see [AWS account root user](id_root-user.md)\.
 
 **Important**  
 If you arrived at this page while trying to enable Amazon Advertising for your application or web site, see [Sign up for the Product Advertising API](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
@@ -16,7 +16,7 @@ When you create a user, IAM creates these ways to identify that user:
   `arn:aws:iam::account-ID-without-hyphens:user/Richard`
 + A unique identifier for the user\. This ID is returned only when you use the API, Tools for Windows PowerShell, or AWS CLI to create the user; you do not see this ID in the console\.
 
-For more information about these identifiers, see [IAM Identifiers](reference_identifiers.md)\.
+For more information about these identifiers, see [IAM identifiers](reference_identifiers.md)\.
 
 ## Users and credentials<a name="id_users_creds"></a>
 
@@ -39,15 +39,15 @@ Take advantage of the following options to administer passwords, access keys, an
 
 By default, a brand new IAM user has no [permissions](access.md) to do anything\. The user is not authorized to perform any AWS operations or to access any AWS resources\. An advantage of having individual IAM users is that you can assign permissions individually to each user\. You might assign administrative permissions to a few users, who then can administer your AWS resources and can even create and manage other IAM users\. In most cases, however, you want to limit a user's permissions to just the tasks \(AWS actions or operations\) and resources that are needed for the job\. 
 
-Imagine a user named Diego\. When you create the IAM user `Diego`, you can create a password for that user\. You also attach permissions to the IAM user that let him launch a specific Amazon EC2 instance and read \(`GET`\) information from a table in an Amazon RDS database\. For procedures on how to create users and grant them initial credentials and permissions, see [Creating an IAM User in Your AWS Account](id_users_create.md)\. For procedures on how to change the permissions for existing users, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. For procedures on how to change the user's password or access keys, see [Managing Passwords](id_credentials_passwords.md) and [Managing Access Keys for IAM Users](id_credentials_access-keys.md)\.
+Imagine a user named Diego\. When you create the IAM user `Diego`, you can create a password for that user\. You also attach permissions to the IAM user that let him launch a specific Amazon EC2 instance and read \(`GET`\) information from a table in an Amazon RDS database\. For procedures on how to create users and grant them initial credentials and permissions, see [Creating an IAM user in your AWS account](id_users_create.md)\. For procedures on how to change the permissions for existing users, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. For procedures on how to change the user's password or access keys, see [Managing user passwords in AWS](id_credentials_passwords.md) and [Managing access keys for IAM users](id_credentials_access-keys.md)\.
 
-You can also add a permissions boundary to your users\. A permissions boundary is an advanced feature that allows you to use AWS managed policies to limit the maximum permissions that an identity\-based policy can grant to a user or role\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
+You can also add a permissions boundary to your users\. A permissions boundary is an advanced feature that allows you to use AWS managed policies to limit the maximum permissions that an identity\-based policy can grant to a user or role\. For more information about policy types and uses, see [Policies and permissions in IAM](access_policies.md)\.
 
 ## Users and accounts<a name="id_users_accounts"></a>
 
 Each IAM user is associated with one and only one AWS account\. Because users are defined within your AWS account, they don't need to have a payment method on file with AWS\. Any AWS activity performed by users in your account is billed to your account\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 
 ## Users as service accounts<a name="id_users_service_accounts"></a>
 

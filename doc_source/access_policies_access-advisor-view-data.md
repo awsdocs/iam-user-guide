@@ -1,6 +1,6 @@
-# Viewing Last Accessed Information for IAM<a name="access_policies_access-advisor-view-data"></a>
+# Viewing last accessed information for IAM<a name="access_policies_access-advisor-view-data"></a>
 
-You can view last accessed information for IAM using the AWS Management Console, AWS CLI, or AWS API\. Last accessed information includes information about some actions that were last accessed for Amazon S3\. For more information about last accessed information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\. 
+You can view last accessed information for IAM using the AWS Management Console, AWS CLI, or AWS API\. Last accessed information includes information about some actions that were last accessed for Amazon S3\. For more information about last accessed information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\. 
 
 You can view information for each type of resource in IAM\. In each case, the information includes allowed services for the given reporting period:
 + **User** – View the last time that the user tried to access each allowed service\.
@@ -9,9 +9,9 @@ You can view information for each type of resource in IAM\. In each case, the in
 + **Policy** – View information about the last time that a user or role attempted to access each allowed service\. This report also includes the total number of entities that attempted access\.
 
 **Note**  
-Before you view the access information for a resource in IAM, make sure you understand the reporting period, reported entities, and the evaluated policy types for your information\. For more details, see [Things to Know About Last Accessed Information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
+Before you view the access information for a resource in IAM, make sure you understand the reporting period, reported entities, and the evaluated policy types for your information\. For more details, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
-## Viewing Information for IAM \(Console\)<a name="access_policies_access-advisor-viewing"></a>
+## Viewing information for IAM \(console\)<a name="access_policies_access-advisor-viewing"></a>
 
 You can view last accessed information for IAM on the **Access Advisor** tab in the IAM console\.
 
@@ -31,13 +31,13 @@ You can view last accessed information for IAM on the **Access Advisor** tab in 
 
 1. The **Last accessed** column is displayed for services and Amazon S3 management actions\. Review the following possible results that are returned in this column\. These results vary depending on whether a service or action is allowed, was accessed, and whether it is tracked by AWS for last accessed information\.   
 **<number of> days ago**  
-The number of days since the service or action was used in the tracking period\. The tracking period for services is for the last 400 days\. The tracking period for actions started on April 12, 2020\. To learn more about the tracking start dates for each AWS Region, see [Where AWS Tracks Last Accessed Information](access_policies_access-advisor.md#access-advisor_tracking-period)\.  
+The number of days since the service or action was used in the tracking period\. The tracking period for services is for the last 400 days\. The tracking period for actions started on April 12, 2020\. To learn more about the tracking start dates for each AWS Region, see [Where AWS tracks last accessed information](access_policies_access-advisor.md#access-advisor_tracking-period)\.  
 **Not accessed in the tracking period**  
 The tracked service or action has not been used by an entity in the tracking period\.
 
    It is possible for you to have permissions for an action that doesn't appear in the list\. This can happen if the tracking information for the action is not currently supported by AWS\. You should not make permissions decisions based solely on the absence of tracking information\. Instead, we recommend that you use this information to inform and support your overall strategy of granting least privilege\. Check your policies to confirm that the level of access is appropriate\.
 
-## Viewing Information for IAM \(AWS CLI\)<a name="access_policies_access-advisor-viewing-cli"></a>
+## Viewing information for IAM \(AWS CLI\)<a name="access_policies_access-advisor-viewing-cli"></a>
 
 You can use the AWS CLI to retrieve information about the last time that an IAM resource was used to attempt to access AWS services and Amazon S3 actions\. An IAM resource can be a user, group, role, or policy\.
 
@@ -58,10 +58,10 @@ You can use the AWS CLI to retrieve information about the last time that an IAM 
 1. Learn more about the entities that used group or policy permissions in an attempt to access a specific service\. This operation returns a list of entities with each entity's ARN, ID, name, path, type \(user or role\), and when they last attempted to access the service\. You can also use this operation for users and roles, but it only returns information about that entity\.
    + [aws iam get\-service\-last\-accessed\-details\-with\-entities](https://docs.aws.amazon.com/cli/latest/reference/iam/get-service-last-accessed-details-with-entities.html)
 
-1. Learn more about the identity\-based policies that an identity \(user, group, or role\) used in an attempt to access a specific service\. When you specify an identity and service, this operation returns a list of permissions policies that the identity can use to access the specified service\. This operation gives the current state of policies and does not depend on the generated report\. It also does not return other policy types, such as resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or session policies\. For more information, see [Policy Types](access_policies.md#access_policy-types) or [Evaluating Policies Within a Single Account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
+1. Learn more about the identity\-based policies that an identity \(user, group, or role\) used in an attempt to access a specific service\. When you specify an identity and service, this operation returns a list of permissions policies that the identity can use to access the specified service\. This operation gives the current state of policies and does not depend on the generated report\. It also does not return other policy types, such as resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or session policies\. For more information, see [Policy types](access_policies.md#access_policy-types) or [Evaluating policies within a single account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
    + [aws iam list\-policies\-granting\-service\-access](https://docs.aws.amazon.com/cli/latest/reference/iam/list-policies-granting-service-access.html)
 
-## Viewing Information for IAM \(AWS API\)<a name="access_policies_access-advisor-viewing-api"></a>
+## Viewing information for IAM \(AWS API\)<a name="access_policies_access-advisor-viewing-api"></a>
 
 You can use the AWS API to retrieve information about the last time that an IAM resource was used to attempt to access AWS services and Amazon S3 actions\. An IAM resource can be a user, group, role, or policy\. You can specify the level of granularity to generate in the report to view details for either services or both services and actions\. 
 
@@ -82,5 +82,5 @@ You can use the AWS API to retrieve information about the last time that an IAM 
 1. Learn more about the entities that used group or policy permissions in an attempt to access a specific service\. This operation returns a list of entities with each entity's ARN, ID, name, path, type \(user or role\), and when they last attempted to access the service\. You can also use this operation for users and roles, but it only returns information about that entity\.
    + [GetServiceLastAccessedDetailsWithEntities](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetServiceLastAccessedDetailsWithEntities.html)
 
-1. Learn more about the identity\-based policies that an identity \(user, group, or role\) used in an attempt to access a specific service\. When you specify an identity and service, this operation returns a list of permissions policies that the identity can use to access the specified service\. This operation gives the current state of policies and does not depend on the generated report\. It also does not return other policy types, such as resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or session policies\. For more information, see [Policy Types](access_policies.md#access_policy-types) or [Evaluating Policies Within a Single Account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
+1. Learn more about the identity\-based policies that an identity \(user, group, or role\) used in an attempt to access a specific service\. When you specify an identity and service, this operation returns a list of permissions policies that the identity can use to access the specified service\. This operation gives the current state of policies and does not depend on the generated report\. It also does not return other policy types, such as resource\-based policies, access control lists, AWS Organizations policies, IAM permissions boundaries, or session policies\. For more information, see [Policy types](access_policies.md#access_policy-types) or [Evaluating policies within a single account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
    + [ListPoliciesGrantingServiceAccess](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListPoliciesGrantingServiceAccess.html)

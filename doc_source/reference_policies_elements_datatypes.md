@@ -1,4 +1,4 @@
-# IAM JSON Policy Elements: Supported Data Types<a name="reference_policies_elements_datatypes"></a>
+# IAM JSON policy elements: Supported data types<a name="reference_policies_elements_datatypes"></a>
 
 This section lists the data types that are supported when you specify values in JSON policies\. The policy language doesn't support all types for each policy element; for information about each element, see the preceding sections\.
 + Strings

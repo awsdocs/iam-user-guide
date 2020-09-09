@@ -1,16 +1,16 @@
-# AWS Services That Work with IAM<a name="reference_aws-services-that-work-with-iam"></a>
+# AWS services that work with IAM<a name="reference_aws-services-that-work-with-iam"></a>
 
 The AWS services listed below are grouped by their [AWS product categories](https://aws.amazon.com/products/) and include information about what IAM features they support:
 + **Service** – You can choose the name of a service to view the AWS documentation about IAM authorization and access for that service\.
 + **Actions** – You can specify individual actions in a policy\. If the service does not support this feature, then **All actions** is selected in the [visual editor](access_policies_create-console.md#access_policies_create-visual-editor)\. In a JSON policy document, you must use `*` in the `Action` element\. For a list of actions in each service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
 + **Resource\-level permissions** – You can use [ARNs](reference_identifiers.md#identifiers-arns) to specify individual resources in the policy\. If the service does not support this feature, then **All resources** is chosen in the [policy visual editor](access_policies_create-console.md#access_policies_create-visual-editor)\. In a JSON policy document, you must use `*` in the `Resource` element\. Some actions, such as `List*` actions, do not support specifying an ARN because they are designed to return multiple resources\. If a service supports this feature for some resources but not others, it is indicated by yellow cells in the table\. See the documentation for that service for more information\.
-+ **Resource\-based policies** – You can attach resource\-based policies to a resource within the service\. Resource\-based policies include a `Principal` element to specify which IAM identities can access that resource\. For more information, see [Identity\-Based Policies and Resource\-Based Policies](access_policies_identity-vs-resource.md)\.
-+ **Authorization based on tags** – You can use [resource tags](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the condition of a policy to control access to a resource in the service\. You do this using the [`aws:ResourceTag`](reference_policies_condition-keys.md#condition-keys-resourcetag) global condition key or service\-specific tags, such as [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-example-taggingresources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-example-taggingresources)\. For more information about defining permissions based on attributes such as tags, see [What Is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
-+ **Temporary credentials** – Users signed in with federation, a cross\-account role, or a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) can access the service\. Temporary security credentials are obtained by calling AWS STS API operations like [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) or [GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)\. For more information, see [Temporary Security Credentials](id_credentials_temp.md)\. 
-+ **Service\-linked roles** – A [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) gives the service permission to access resources in other services to complete an action on your behalf\. Choose the `Yes` link to see the documentation for services that support these roles\. For more information, see [Using Service\-Linked Roles](using-service-linked-roles.md)\.
++ **Resource\-based policies** – You can attach resource\-based policies to a resource within the service\. Resource\-based policies include a `Principal` element to specify which IAM identities can access that resource\. For more information, see [Identity\-based policies and resource\-based policies](access_policies_identity-vs-resource.md)\.
++ **Authorization based on tags** – You can use [resource tags](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the condition of a policy to control access to a resource in the service\. You do this using the [`aws:ResourceTag`](reference_policies_condition-keys.md#condition-keys-resourcetag) global condition key or service\-specific tags, such as [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-example-taggingresources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-example-taggingresources)\. For more information about defining permissions based on attributes such as tags, see [What is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
++ **Temporary credentials** – Users signed in with federation, a cross\-account role, or a [service role](id_roles_terms-and-concepts.md#iam-term-service-role) can access the service\. Temporary security credentials are obtained by calling AWS STS API operations like [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) or [GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)\. For more information, see [Temporary security credentials in IAM](id_credentials_temp.md)\. 
++ **Service\-linked roles** – A [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) gives the service permission to access resources in other services to complete an action on your behalf\. Choose the `Yes` link to see the documentation for services that support these roles\. For more information, see [Using service\-linked roles](using-service-linked-roles.md)\.
 + **More information** – If a service doesn't fully support a feature, you can review the footnotes for an entry to view the limitations and links to related information\.
 
-## Compute Services<a name="compute_svcs"></a>
+## Compute services<a name="compute_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -36,7 +36,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ³ AWS Lambda doesn't have service\-linked roles, but Lambda@Edge does\. For more information, see [Service\-Linked Roles for Lambda@Edge](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) in the Amazon CloudFront Developer Guide\.
 
-## Storage Services<a name="storage_svcs"></a>
+## Storage services<a name="storage_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -55,7 +55,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ Amazon S3 supports tag\-based authorization for only object resources\. 
 
-## Database Services<a name="database_svcs"></a>
+## Database services<a name="database_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -69,7 +69,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon RDS Data API](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 |  [Amazon SimpleDB](https://docs.aws.amazon.com/AmazonSimpleDB/latest/DeveloperGuide/UsingIAMWithSDB.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Developer Tools Services<a name="deploy_svcs"></a>
+## Developer tools services<a name="deploy_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -89,7 +89,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ² CodeBuild supports authorization based on tags for project\-based actions\.
 
-## Security, Identity, and Compliance Services<a name="admin_svcs"></a>
+## Security, identity, and compliance services<a name="admin_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -120,7 +120,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/waf-auth-and-access-control.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/using-service-linked-roles.html) | 
 |  [AWS WAF Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-auth-and-access-control.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/waf/latest/developerguide/classic-using-service-linked-roles.html) | 
 
-¹ IAM supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. For more information, see [Granting a User Permissions to Switch Roles](id_roles_use_permissions-to-switch.md)\.
+¹ IAM supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. For more information, see [Granting a user permissions to switch roles](id_roles_use_permissions-to-switch.md)\.
 
 ² IAM supports tag\-based access control for only user and role resources\.
 
@@ -130,7 +130,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ⁵ Only some of the API operations for AWS STS support calling with temporary credentials\. For more information, see [Comparing your API options](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html)\.
 
-## Machine Learning Services<a name="machine_learning"></a>
+## Machine learning services<a name="machine_learning"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -155,7 +155,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | [Amazon Transcribe](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 | [Amazon Translate](https://docs.aws.amazon.com/translate/latest/dg/auth-and-access-control.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Management and Governance Services<a name="management_svcs"></a>
+## Management and governance services<a name="management_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -196,7 +196,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ⁵ API access to Trusted Advisor is through the AWS Support API and is controlled by AWS Support IAM policies\.
 
-## Migration and Transfer Services<a name="migration_svcs"></a>
+## Migration and transfer services<a name="migration_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -211,7 +211,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ You can create and modify policies that are attached to AWS KMS encryption keys you create to encrypt data migrated to supported target endpoints\. The supported target endpoints include Amazon Redshift and Amazon S3\. For more information, see [Creating and Using AWS KMS Keys to Encrypt Amazon Redshift Target Data](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Redshift.html#CHAP_Target.Redshift.KMSKeys) and [Creating AWS KMS Keys to Encrypt Amazon S3 Target Objects](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys) in the *AWS Database Migration Service User Guide*\.
 
-## Mobile Services<a name="mobile_svcs"></a>
+## Mobile services<a name="mobile_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -219,7 +219,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 |  [AWS Device Farm](https://docs.aws.amazon.com/devicefarm/latest/developerguide/permissions.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Networking and Content Delivery Services<a name="networking_svcs"></a>
+## Networking and content delivery services<a name="networking_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -243,7 +243,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ⁴ Amazon CloudFront doesn't have service\-linked roles, but Lambda@Edge does\. For more information, see [Service\-Linked Roles for Lambda@Edge](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-edge-permissions.html#using-service-linked-roles) in the Amazon CloudFront Developer Guide\.
 
-## Media Services<a name="media_svcs"></a>
+## Media services<a name="media_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -261,7 +261,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | [Amazon Interactive Video Service](https://docs.aws.amazon.com/ivs/latest/userguide/security.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 | [Kinesis Video Streams](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/how-iam.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Analytics Services<a name="analytics_svcs"></a>
+## Analytics services<a name="analytics_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -280,7 +280,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | [Amazon Managed Streaming for Apache Kafka \(MSK\)](https://docs.aws.amazon.com/msk/latest/developerguide/security_iam_service-with-iam.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 | [Amazon QuickSight](https://docs.aws.amazon.com/quicksight/latest/user/managing-access.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Application Integration Services<a name="app_integration_svcs"></a>
+## Application integration services<a name="app_integration_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -294,7 +294,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS Step Functions](https://docs.aws.amazon.com/step-functions/latest/dg/security.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/step-functions/latest/dg/tag-based-policies.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 |  [Amazon Simple Workflow Service \(Amazon SWF\)](https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Business Applications Services<a name="enterprise_svcs"></a>
+## Business applications services<a name="enterprise_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -304,14 +304,14 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | [Amazon Honeycode](https://docs.aws.amazon.com/honeycode/latest/UserGuide/getting-started-authorization.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 |  [Amazon WorkMail](https://docs.aws.amazon.com/workmail/latest/adminguide/security-iam.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/workmail/latest/adminguide/using-service-linked-roles.html) | 
 
-## Satellite Services<a name="satellite_svcs"></a>
+## Satellite services<a name="satellite_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [AWS Ground Station](https://docs.aws.amazon.com/ground-station/latest/ug/auth-and-access-control.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Internet of Things Services<a name="iot_svcs"></a>
+## Internet of Things services<a name="iot_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -327,7 +327,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ¹ Devices connected to AWS IoT are authenticated by using X\.509 certificates or using Amazon Cognito Identities\. You can attach AWS IoT policies to an X\.509 certificate or Amazon Cognito Identity to control what the device is authorized to do\. For more information, see [Security and Identity for AWS IoT](https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html) in the *AWS IoT Developer Guide*\. 
 
-## Robotics Services<a name="robotics_svcs"></a>
+## Robotics services<a name="robotics_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -341,28 +341,28 @@ The AWS services listed below are grouped by their [AWS product categories](http
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Bracket](https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Blockchain Services<a name="blockchain_svcs"></a>
+## Blockchain services<a name="blockchain_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Managed Blockchain](https://docs.aws.amazon.com/managed-blockchain/latest/managementguide/managed-blockchain-auth-and-access-control.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Game Development Services<a name="game_svcs"></a>
+## Game development services<a name="game_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon GameLift](https://docs.aws.amazon.com/gamelift/latest/developerguide/security-iam.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## AR & VR Services<a name="arvr_svcs"></a>
+## AR & VR services<a name="arvr_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
 |  [Amazon Sumerian](https://docs.aws.amazon.com/sumerian/latest/userguide/sumerian-permissions.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Customer Enablement Services<a name="enablement_svcs"></a>
+## Customer enablement services<a name="enablement_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -371,12 +371,12 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [AWS IQ Permissions](https://docs.aws.amazon.com/aws-iq/latest/experts-user-guide/working-with-permissions-requests.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 |  [AWS Support](https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#accessing-support)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/awssupport/latest/user/using-service-linked-roles-sup.html) | 
 
-## Customer Engagement Services<a name="engagement_svcs"></a>
+## Customer engagement services<a name="engagement_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
+|  [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/connect/latest/adminguide/connect-slr.html) | 
 |  [Amazon Pinpoint](https://docs.aws.amazon.com/pinpoint/latest/developerguide/permissions-actions.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 |  [Amazon Simple Email Service \(Amazon SES\)](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/UsingWithIAM.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Partial¹ | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-maybe.png) Partial² | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
@@ -384,7 +384,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 
 ² Only the Amazon SES API supports temporary security credentials\. The Amazon SES SMTP interface does not support SMTP credentials that are derived from temporary security credentials\. 
 
-## End User Computing Services<a name="end-user-computing_svcs"></a>
+## End user computing services<a name="end-user-computing_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 
@@ -396,7 +396,7 @@ The AWS services listed below are grouped by their [AWS product categories](http
 |  [Amazon WorkLink](https://docs.aws.amazon.com/worklink/latest/ag/what-is.html) | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) [Yes](https://docs.aws.amazon.com/worklink/latest/ag/using-service-linked-roles.html) | 
 |  [Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp_iam.html)  | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-yes.png) Yes | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/icon-no.png) No | 
 
-## Additional Resources<a name="resources_svcs"></a>
+## Additional resources<a name="resources_svcs"></a>
 
 
 |  **Service**  |  **Actions**  |  **Resource\-level permissions**  | **Resource\-based policies** |  **Authorization based on tags**  |  **Temporary credentials**  |  **Service\-linked roles**  | 

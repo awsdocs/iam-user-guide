@@ -1,6 +1,6 @@
-# Viewing Last Accessed Information for Organizations<a name="access_policies_access-advisor-view-data-orgs"></a>
+# Viewing last accessed information for Organizations<a name="access_policies_access-advisor-view-data-orgs"></a>
 
-You can view service last accessed information for AWS Organizations using the IAM console, AWS CLI, or AWS API\. For important information about the data, permissions required, troubleshooting, and supported Regions, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\.
+You can view service last accessed information for AWS Organizations using the IAM console, AWS CLI, or AWS API\. For important information about the data, permissions required, troubleshooting, and supported Regions, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
 
 When you sign in to the IAM console using AWS Organizations master account credentials, you can view information for any entity in your organization\. Organizations entities include the organization root, organizational units \(OUs\), and accounts\. You can also use the IAM console to view information for any service control policies \(SCPs\) in your organization\. IAM shows a list of services that are allowed by any SCPs that apply to the entity\. For each service, you can view the most recent account activity information for the chosen Organizations entity or the entity's children\.
 
@@ -8,9 +8,9 @@ When you use the AWS CLI or AWS API with master account credentials, you can gen
 
 When you generate a programmatic report for a policy, you must specify an Organizations entity\. This report includes a list of services that are allowed by the specified SCP\. For each service, it includes the most recent account activity in the entity or entity's children that are granted permission by that policy\. For more information, see [aws iam generate\-organizations\-access\-report](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-organizations-access-report.html) or [GenerateOrganizationsAccessReport](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html)\.
 
-Before you view the report, make sure that you understand the master account requirements and information, reporting period, reported entities, and the evaluated policy types\. For more details, see [Things to Know About Last Accessed Information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
+Before you view the report, make sure that you understand the master account requirements and information, reporting period, reported entities, and the evaluated policy types\. For more details, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
-## Understand the AWS Organizations Entity Path<a name="access_policies_access-advisor-viewing-orgs-entity-path"></a>
+## Understand the AWS Organizations entity path<a name="access_policies_access-advisor-viewing-orgs-entity-path"></a>
 
 When you use the AWS CLI or AWS API to generate an AWS Organizations access report, you must specify an entity path\. A path is a text representation of the structure of an Organizations entity\.
 
@@ -33,7 +33,7 @@ o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-abc0-awsaaaaa/111111111111
 **Note**  
 Organization IDs are globally unique but OU IDs and root IDs are unique only within an organization\. This means that no two organizations share the same organization ID\. However, another organization might have an OU or root with the same ID as yours\. We recommend that you always include the organization ID when you specify an OU or root\.
 
-## Viewing Information for Organizations \(Console\)<a name="access_policies_access-advisor-viewing-orgs"></a>
+## Viewing information for Organizations \(console\)<a name="access_policies_access-advisor-viewing-orgs"></a>
 
 You can use the IAM console to view service last accessed information for your root, OU, account, or policy\.
 
@@ -93,13 +93,13 @@ You can use the IAM console to view service last accessed information for your r
 
 1. Choose **Edit in AWS Organizations** to view additional details and edit the SCP in the Organizations console\. For more information, see [Updating an SCP](https://docs.aws.amazon.com/organizations/latest/userguide/create-policy.html#update_policy) in the *AWS Organizations User Guide*\.
 
-## Viewing Information for Organizations \(AWS CLI\)<a name="access_policies_access-advisor-viewing-orgs-cli"></a>
+## Viewing information for Organizations \(AWS CLI\)<a name="access_policies_access-advisor-viewing-orgs-cli"></a>
 
 You can use the AWS CLI to retrieve service last accessed information for your Organizations root, OU, account, or policy\.
 
 **To view Organizations service last accessed information \(AWS CLI\)**
 
-1. Use your Organizations master account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to Know About Last Accessed Information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
+1. Use your Organizations master account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
 
 1. Generate a report\. The request must include the path of the Organizations entity \(root, OU, or account\) for which you want a report\. You can optionally include an `organization-policy-id` parameter to view a report for a specific policy\. The command returns a `job-id` that you can then use in the `get-organizations-access-report` command to monitor the `job-status` until the job is complete\.
    + [aws iam generate\-organizations\-access\-report](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-organizations-access-report.html)
@@ -109,13 +109,13 @@ You can use the AWS CLI to retrieve service last accessed information for your O
 
    This command returns a list of services that entity members can access\. For each service, the command returns the date and time of an account member's last attempt and the entity path of the account\. It also returns the total number of services that are available to access and the number of services that were not accessed\. If you specified the optional `organizations-policy-id` parameter, then the services that are available to access are those that are allowed by the specified policy\.
 
-## Viewing Information for Organizations \(AWS API\)<a name="access_policies_access-advisor-viewing-orgs-api"></a>
+## Viewing information for Organizations \(AWS API\)<a name="access_policies_access-advisor-viewing-orgs-api"></a>
 
 You can use the AWS API to retrieve service last accessed information for your Organizations root, OU, account, or policy\.
 
 **To view Organizations service last accessed information \(AWS API\)**
 
-1. Use your Organizations master account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to Know About Last Accessed Information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
+1. Use your Organizations master account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
 
 1. Generate a report\. The request must include the path of the Organizations entity \(root, OU, or account\) for which you want a report\. You can optionally include an `OrganizationsPolicyId` parameter to view a report for a specific policy\. The operation returns a `JobId` that you can then use in the `GetOrganizationsAccessReport` operation to monitor the `JobStatus` until the job is complete\.
    + [GenerateOrganizationsAccessReport](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html)

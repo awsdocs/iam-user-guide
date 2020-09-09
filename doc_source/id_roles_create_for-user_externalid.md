@@ -1,4 +1,4 @@
-# How to Use an External ID When Granting Access to Your AWS Resources to a Third Party<a name="id_roles_create_for-user_externalid"></a>
+# How to use an external ID when granting access to your AWS resources to a third party<a name="id_roles_create_for-user_externalid"></a>
 
 At times, you need to give a third party access to your AWS resources \(delegate access\)\. One important aspect of this scenario is the *External ID*, optional information that you can use in an IAM role trust policy to designate who can assume the role\.
 
@@ -16,7 +16,7 @@ Do not give Example Corp access to an IAM user and its long\-term credentials in
 You can use an IAM role to establish a trusted relationship between your AWS account and the Example Corp account\. After this relationship is established, a member of the Example Corp account can call the AWS STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\. The Example Corp members can then use the credentials to access AWS resources in your account\. 
 
 **Note**  
-For more information about the AssumeRole and other AWS API operations that you can call to obtain temporary security credentials, see [Requesting Temporary Security Credentials](id_credentials_temp_request.md)\.
+For more information about the AssumeRole and other AWS API operations that you can call to obtain temporary security credentials, see [Requesting temporary security credentials](id_credentials_temp_request.md)\.
 
 Here's a more detailed breakdown of this scenario:
 
@@ -41,11 +41,11 @@ If the request comes from someone using Example Corp's AWS account, and if the r
 
 In other words, when a role policy includes an external ID, anyone who wants to assume the role must be a principal in the role and must include the correct external ID\.
 
-## Why Do You Need to Use an External ID?<a name="external-id-purpose"></a>
+## Why use an external ID?<a name="external-id-purpose"></a>
 
 In abstract terms, the external ID allows the user that is assuming the role to assert the circumstances in which they are operating\. It also provides a way for the account owner to permit the role to be assumed only under specific circumstances\. The primary function of the external ID is to address and prevent the "confused deputy" problem\.
 
-### The Confused Deputy Problem<a name="confused-deputy"></a>
+### The confused deputy problem<a name="confused-deputy"></a>
 
 To continue the previous example, Example Corp requires access to certain resources in your AWS account\. But in addition to you, Example Corp has other customers and needs a way to access each customer's AWS resources\. Instead of asking its customers for their AWS account access keys, which are secrets that should never be shared, Example Corp requests a role ARN from each customer\. But another Example Corp customer might be able to guess or obtain your role ARN\. That customer could then use your role ARN to gain access to your AWS resources by way of Example Corp\. This form of permission escalation is known as the confused deputy problem\.
 
@@ -69,7 +69,7 @@ Here's what happens:
 
 This is how the other customer could gain unauthorized access to your resources\. Because this other customer was able to trick Example Corp into unwittingly acting on your resources, Example Corp is now a "confused deputy\."
 
-### How Does the External ID Prevent the Confused Deputy Problem?<a name="mitigate-confused-deputy"></a>
+### How does an external ID prevent the confused deputy problem?<a name="mitigate-confused-deputy"></a>
 
 You address the confused deputy problem by including the `ExternalId` condition check in the role's trust policy\. The "deputy" company inserts a unique external ID value for each customer into the request for AWS credentials\. The external ID is a customer ID value that must be unique among Example Corp's customers and is out of the control of Example Corp's customers\. This is why you get it from Example Corp and you don't come up with it on your own\. This helps prevent one customer from successfully impersonating another customer\. Example Corp always inserts the customer's assigned external ID, so you should never see a request coming from Example Corp with any external ID except your own\. 
 
@@ -101,9 +101,9 @@ The Condition element in this policy allows Example Corp to assume the role only
 
 1. But this time, when Example Corp attempts to assume the role **AWS1:ExampleRole**, it provides the external ID associated with the other customer \("67890"\)\. The other customer has no way to change this\. Example Corp does this because the request to use the role came from the other customer, so "67890" indicates the circumstance in which Example Corp is acting\. Because you added a condition with your own external ID \("12345"\) to the trust policy of **AWS1:ExampleRole**, the AssumeRole API call fails\. The other customer is prevented from gaining unauthorized access to resources in your account \(indicated by the red "X" in the diagram\)\.
 
-The external ID helps prevent any other customer from tricking Example Corp into unwittingly accessing your resources—it mitigates the confused deputy problem\.
+The external ID helps prevent any other customer from tricking Example Corp into unwittingly accessing your resources–it mitigates the confused deputy problem\.
 
-## When Should I Use the External ID?<a name="external-id-use"></a>
+## When should I use an external ID?<a name="external-id-use"></a>
 
 Use an external ID in the following situations:
 + You are an AWS account owner and you have configured a role for a third party that accesses other AWS accounts in addition to yours\. You should ask the third party for an external ID that it includes when it assumes your role\. Then you check for that external ID in your role's trust policy\. Doing so ensures that the external party can assume your role only when it is acting on your behalf\.

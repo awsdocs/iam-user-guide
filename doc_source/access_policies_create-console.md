@@ -1,27 +1,27 @@
-# Creating IAM Policies \(Console\)<a name="access_policies_create-console"></a>
+# Creating IAM policies \(console\)<a name="access_policies_create-console"></a>
 
 A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. You can use the AWS Management Console to create *customer managed policies* in IAM\. Customer managed policies are standalone policies that you administer in your own AWS account\. You can then attach the policies to identities \(users, groups, and roles\) in your AWS account\.
 
 **Topics**
-+ [Creating IAM Policies \(Console\)](#access_policies_create-start)
-+ [Creating Policies on the JSON Tab](#access_policies_create-json-editor)
-+ [Creating Policies with the Visual Editor](#access_policies_create-visual-editor)
-+ [Importing Existing Managed Policies](#access_policies_create-copy)
++ [Creating IAM policies \(console\)](#access_policies_create-start)
++ [Creating policies on the JSON tab](#access_policies_create-json-editor)
++ [Creating policies with the visual editor](#access_policies_create-visual-editor)
++ [Importing existing managed policies](#access_policies_create-copy)
 
-## Creating IAM Policies \(Console\)<a name="access_policies_create-start"></a>
+## Creating IAM policies \(console\)<a name="access_policies_create-start"></a>
 
 You can create a customer managed policy in the AWS Management Console using one of the following methods:
 + **[JSON](#access_policies_create-json-editor)** — Paste and customize a published [example identity\-based policy](access_policies_examples.md)\.
 + **[Visual editor](#access_policies_create-visual-editor)** — Construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 + **[Import](#access_policies_create-copy)** — Import and customize a managed policy from within your account\. You can import an AWS managed policy or a customer managed policy that you previously created\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 
-## Creating Policies on the JSON Tab<a name="access_policies_create-json-editor"></a>
+## Creating policies on the JSON tab<a name="access_policies_create-json-editor"></a>
 
 You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
 
-A JSON [policy](access_policies.md) document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the Amazon Resource Name \(ARN\) of a specific resource, they must be in two separate JSON statements\. For details about ARN formats, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For general information about IAM policies, see [Policies and Permissions](access_policies.md)\. For information about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
+A JSON [policy](access_policies.md) document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the Amazon Resource Name \(ARN\) of a specific resource, they must be in two separate JSON statements\. For details about ARN formats, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\. For information about the IAM policy language, see [IAM JSON policy reference](reference_policies.md)\.
 
 **To use the JSON policy editor to create a policy**
 
@@ -33,19 +33,19 @@ A JSON [policy](access_policies.md) document consists of one or more statements\
 
 1. Choose the **JSON** tab\.
 
-1. Type or paste a JSON policy document\. For details about the IAM policy language, see [IAM JSON Policy Reference](reference_policies.md)\.
+1. Type or paste a JSON policy document\. For details about the IAM policy language, see [IAM JSON policy reference](reference_policies.md)\.
 
 1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 
-## Creating Policies with the Visual Editor<a name="access_policies_create-visual-editor"></a>
+## Creating policies with the visual editor<a name="access_policies_create-visual-editor"></a>
 
-The visual editor in the IAM console guides you through creating a policy without having to write JSON syntax\. To view an example of using the visual editor to create a policy, see [Controlling Access to Identities](access_controlling.md#access_controlling-identities)\.
+The visual editor in the IAM console guides you through creating a policy without having to write JSON syntax\. To view an example of using the visual editor to create a policy, see [Controlling access to identities](access_controlling.md#access_controlling-identities)\.
 
 **To use the visual editor to create a policy**
 
@@ -70,7 +70,7 @@ The visual editor in the IAM console guides you through creating a policy withou
    If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources\. You can then expand **Resources** to specify resources for your policy\. 
 
    You can specify resources in the following ways:
-   + Choose **Add ARN** to specify resources by their Amazon Resource Names \(ARN\)\. You can use the visual ARN editor or list ARNs manually\. For more information about ARN syntax, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For information about using ARNs in the `Resource` element of a policy, see [IAM JSON Policy Elements: Resource](reference_policies_elements_resource.md)\.
+   + Choose **Add ARN** to specify resources by their Amazon Resource Names \(ARN\)\. You can use the visual ARN editor or list ARNs manually\. For more information about ARN syntax, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For information about using ARNs in the `Resource` element of a policy, see [IAM JSON policy elements: Resource](reference_policies_elements_resource.md)\.
    + Choose **Any** next to a resource to grant permissions to any resources of that type\.
    + Choose **All resources** to choose all resources for the service\. 
 
@@ -82,23 +82,23 @@ The visual editor in the IAM console guides you through creating a policy withou
 
    To add more than one condition, choose **Add condition** again\. Repeat as needed\. Each condition applies only to this one visual editor permission block\. All the conditions must be true for the permission block to be considered a match\. In other words, consider the conditions to be connected by a logical "AND" operator\.
 
-   For more information about the **Condition** element, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md) in the [IAM JSON Policy Reference](reference_policies.md)\.
+   For more information about the **Condition** element, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md) in the [IAM JSON policy reference](reference_policies.md)\.
 
 1. To add more permission blocks, choose **Add additional permissions**\. For each block, repeat steps 2 through 5\.
 
 1. When you are finished, choose **Review policy**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy summary to make sure that you have granted the intended permissions, and then choose **Create policy** to save your new policy\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 
-## Importing Existing Managed Policies<a name="access_policies_create-copy"></a>
+## Importing existing managed policies<a name="access_policies_create-copy"></a>
 
 An easy way to create a new policy is to import an existing managed policy within your account that has at least some of the permissions that you need\. You can then customize the policy to match it to your new requirements\.
 
-You cannot import an inline policy\. To learn about the difference between managed and inline policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\.
+You cannot import an inline policy\. To learn about the difference between managed and inline policies, see [Managed policies and inline policies](access_policies_managed-vs-inline.md)\.
 
 **To import an existing managed policy in the visual editor**
 
@@ -118,7 +118,7 @@ You cannot import an inline policy\. To learn about the difference between manag
 
 1. Use the **Visual editor** or choose **JSON** to customize your policy\. Then choose **Review policy**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these settings later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
 
@@ -140,8 +140,8 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 
 1. Customize your policy in JSON, or choose the **Visual editor**\. Then choose **Review policy**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
 
-After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and Removing IAM Identity Permissions](access_policies_manage-attach-detach.md)\.
+After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.

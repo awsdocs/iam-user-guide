@@ -1,6 +1,6 @@
-# AWS Global Condition Context Keys<a name="reference_policies_condition-keys"></a>
+# AWS global condition context keys<a name="reference_policies_condition-keys"></a>
 
-When a [principal](intro-structure.md#intro-structure-principal) makes a [request](intro-structure.md#intro-structure-request) to AWS, AWS gathers the request information into a [request context](intro-structure.md#intro-structure-request)\. You can use the `Condition` element of a JSON policy to compare keys in the request context with key values that you specify in your policy\. To learn more about the circumstances under which a global key is included in the request context, see the **Availability** information for each global condition key\. For information about how to use the `Condition` element in a JSON policy, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
+When a [principal](intro-structure.md#intro-structure-principal) makes a [request](intro-structure.md#intro-structure-request) to AWS, AWS gathers the request information into a [request context](intro-structure.md#intro-structure-request)\. You can use the `Condition` element of a JSON policy to compare keys in the request context with key values that you specify in your policy\. To learn more about the circumstances under which a global key is included in the request context, see the **Availability** information for each global condition key\. For information about how to use the `Condition` element in a JSON policy, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\.
 
 **Note**  
 If you use condition keys that are available only in some circumstances, you can use the [IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) versions of the condition operators\. If the condition keys are missing from a request context, the policy can fail the evaluation\. For example, use the following condition block with `...IfExists` operators to match when a request comes from a specific IP range or from a specific VPC\. If either or both keys are not included in the request context, the condition still returns `true`\. The values are only checked if the specified key is included in the request context\.   
@@ -18,7 +18,7 @@ Global condition keys are condition keys with an `aws:` prefix\. AWS services ca
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the services in the policy with the services that made requests on behalf of the IAM principal \(user or role\)\. When a principal makes a request to an AWS service, that service might use the principal's credentials to make subsequent requests to other services\. The `aws:CalledVia` key contains an ordered list of each service in the chain that made requests on the principal’s behalf\.
+Use this key to compare the services in the policy with the services that made requests on behalf of the IAM principal \(user or role\)\. When a principal makes a request to an AWS service, that service might use the principal's credentials to make subsequent requests to other services\. The `aws:CalledVia` key contains an ordered list of each service in the chain that made requests on the principal's behalf\.
 
 For example, you can use AWS CloudFormation to read and write from an Amazon DynamoDB table\. DynamoDB then uses encryption supplied by AWS Key Management Service \(AWS KMS\)\.
 + **Availability** – This key is present in the request when a service that supports `aws:CalledVia` uses the credentials of an IAM principal to make a request to another service\. This key is not present if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\. This key is also not present when the principal makes the call directly\.<a name="calledvia-services"></a>
@@ -26,9 +26,9 @@ For example, you can use AWS CloudFormation to read and write from an Amazon Dyn
 To use the `aws:CalledVia` condition key in a policy, you must provide the service principals to allow or deny AWS service requests\. AWS supports using the following services with `aws:CalledVia`\.
 
 
-**CalledVia Services**  
+**CalledVia services**  
 
-| AWS Service | Service Principal | 
+| AWS service | Service principal | 
 | --- | --- | 
 | Amazon Athena | athena\.amazonaws\.com | 
 | AWS CloudFormation | cloudformation\.amazonaws\.com | 
@@ -120,7 +120,7 @@ Use this key to compare the services in the policy with the *last service* that 
 
 Works with [date operators](reference_policies_elements_condition_operators.md#Conditions_Date)\.
 
-Use this key to compare the date and time of the request with the date and time that you specify in the policy\. To view an example policy that uses this condition key, see [AWS: Allows Access Based on Date and Time](reference_policies_examples_aws-dates.md)\.
+Use this key to compare the date and time of the request with the date and time that you specify in the policy\. To view an example policy that uses this condition key, see [AWS: Allows access based on date and time](reference_policies_examples_aws-dates.md)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:EpochTime<a name="condition-keys-epochtime"></a>
@@ -134,7 +134,7 @@ Use this key to compare the date and time of the request in epoch or Unix time w
 
 Works with [numeric operators](reference_policies_elements_condition_operators.md#Conditions_Numeric)\.
 
-Use this key to compare the number of seconds since the requesting principal was authorized using MFA with the number that you specify in the policy\. For more information about MFA, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
+Use this key to compare the number of seconds since the requesting principal was authorized using MFA with the number that you specify in the policy\. For more information about MFA, see [Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
 + **Availability** – This key is included in the request context only if the principal making the call was authenticated using MFA\. If MFA was not used, this key is not present\.
 
 ## aws:MultiFactorAuthPresent<a name="condition-keys-multifactorauthpresent"></a>
@@ -148,7 +148,7 @@ Temporary credentials are used to authenticate IAM roles, federated users, IAM u
 + IAM users in the AWS Management Console unknowingly use temporary credentials\. Users sign into the console using their user name and password, which are long\-term credentials\. However, in the background, the console generates temporary credentials on behalf of the user\. 
 + If an IAM user makes a call to an AWS service, the service re\-uses the user's credentials to make another request to a different service\. For example, when calling Athena to access an Amazon S3 bucket, or when using AWS CloudFormation to create an Amazon EC2 instance\. For the subsequent request, AWS uses temporary credentials\.
 
-To learn which services support using temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+To learn which services support using temporary credentials, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 The `aws:MultiFactorAuthPresent` key is not present when an API or CLI command is called with long\-term credentials, such as user access key pairs\. Therefore we recommend that when you check for this key that you use the `...IfExists` versions of the condition operators\.
 
@@ -217,7 +217,7 @@ Use this key to compare the account to which the requesting principal belongs wi
 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN) and [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:PrincipalOrgID<a name="condition-keys-principalorgid"></a>
@@ -256,7 +256,7 @@ For more information about AWS Organizations, see [What Is AWS Organizations?](h
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the AWS Organizations path for the principal who is making the request to the path in the policy\. That principal can be an IAM user, IAM role, federated user, or AWS account root user\. In a policy, this condition key ensures that the requester is an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations Entity Path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path)\.
+Use this key to compare the AWS Organizations path for the principal who is making the request to the path in the policy\. That principal can be an IAM user, IAM role, federated user, or AWS account root user\. In a policy, this condition key ensures that the requester is an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path)\.
 + **Availability** – This key is included in the request context only if the principal is a member of an organization\.
 
 **Note**  
@@ -294,7 +294,7 @@ The following condition allows access for every principal in the `o-a1b2c3d4e5` 
 }}
 ```
 
-`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. When you use multiple values with the `ForAnyValue` condition operator, the principal's path must match one of the paths listed in the policy\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key":\["Value1", "Value2"\]\)\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.
+`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. When you use multiple values with the `ForAnyValue` condition operator, the principal's path must match one of the paths listed in the policy\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key":\["Value1", "Value2"\]\)\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.
 
 ```
     "Condition": {
@@ -314,7 +314,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Use this key to compare the tag attached to the principal making the request with the tag that you specify in the policy\. If the principal has more than one tag attached, the request context includes one `aws:PrincipalTag` key for each attached tag key\.
 + **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\.
 
-You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM Users and Roles](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.
+You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM users and roles](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.
 
 This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
@@ -336,10 +336,10 @@ This example shows how you might create a policy that allows users with the **ta
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. To learn which values you can sFor details about how the information appears in the request context for different principals, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. To learn which values you can sFor details about how the information appears in the request context for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
 
-## aws:Referer<a name="condition-keys-referer"></a>
+## aws:referer<a name="condition-keys-referer"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
@@ -413,18 +413,18 @@ You can use this context key to limit access to AWS services within a given set 
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you could check whether the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\. For more information, see [Controlling Access During AWS Requests](access_tags.md#access_tags_control-requests)\.
+Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you could check whether the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\. For more information, see [Controlling access during AWS requests](access_tags.md#access_tags_control-requests)\.
 + **Availability** – This key is included in the request context when tags are passed in the request\. When multiple tags are passed in the request, there is one context key for each tag key\-value pair\.
 
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.
 
-Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using Multiple Keys and Values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling Access to AWS Resources](access_tags.md#access_tags_control-resources)\.
+Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
 + **Availability** – This key is included in the request context when the requested resource already has attached tags\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
 
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.
@@ -514,12 +514,12 @@ Use this key to compare the VPC endpoint identifier of the request with the endp
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the tag keys in a request with the keys that you specify in the policy\. As a best practice when you use policies to control access using tags, use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling Access Based on Tag Keys](access_tags.md#access_tags_control-tag-keys)\.
+Use this key to compare the tag keys in a request with the keys that you specify in the policy\. As a best practice when you use policies to control access using tags, use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling access based on tag keys](access_tags.md#access_tags_control-tag-keys)\.
 + **Availability** – This key is included in the request context only if the operation supports attaching tags to resources\.
 
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.
 
-Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using Multiple Keys and Values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
 Some services support tagging with resource operations, such as creating, modifying, or deleting a resource\. To allow tagging and operations as a single call, you must create a policy that includes both the tagging action and the resource\-modifying action\. You can then use the `aws:TagKeys` condition key to enforce using specific tag keys in the request\. For example, to limit tags when someone creates an Amazon EC2 snapshot, you must include the `ec2:CreateSnapshot` creation action ***and*** the `ec2:CreateTags` tagging action in the policy\. To view a policy for this scenario that uses `aws:TagKeys`, see [Creating a Snapshot with Tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-creating-snapshot-with-tags) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
@@ -530,7 +530,7 @@ Works with [date operators](reference_policies_elements_condition_operators.md#C
 Use this key to compare the date and time that temporary security credentials were issued with the date and time that you specify in the policy\. 
 + **Availability** – This key is included in the request context only when the principal uses temporary credentials to make the request\. They key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using access keys\.
 
-To learn which services support using temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\.
+To learn which services support using temporary credentials, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 ## aws:UserAgent<a name="condition-keys-useragent"></a>
 
@@ -546,14 +546,14 @@ This key should be used carefully\. Since the `aws:UserAgent` value is provided 
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the requester's principal identifier with the ID that you specify in the policy\. For IAM users, the request context value is the user ID\. For IAM roles, this value format can vary\. For details about how the information appears for different principals, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the requester's principal identifier with the ID that you specify in the policy\. For IAM users, the request context value is the user ID\. For IAM roles, this value format can vary\. For details about how the information appears for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
 
 ## aws:username<a name="condition-keys-username"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the requester's user name with the user name that you specify in the policy\. For details about how the information appears for different principals, see [Specifying a Principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the requester's user name with the user name that you specify in the policy\. For details about how the information appears for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context for IAM users\. Anonymous requests and requests that are made using the AWS account root user or IAM roles do not include this key\.
 
 ## aws:ViaAWSService<a name="condition-keys-viaawsservice"></a>
@@ -571,7 +571,7 @@ The following services do not currently support `aws:ViaAWSService`:
 + AWS Lake Formation
 + AWS OpsWorks
 
-You can use this condition key to allow or deny access based on whether a request was made by a service\. To view an example policy, see [AWS: Denies Access to AWS Based on the Source IP](reference_policies_examples_aws_deny-ip.md)\.
+You can use this condition key to allow or deny access based on whether a request was made by a service\. To view an example policy, see [AWS: Denies access to AWS based on the source IP](reference_policies_examples_aws_deny-ip.md)\.
 
 ## aws:VpcSourceIp<a name="condition-keys-vpcsourceip"></a>
 

@@ -1,13 +1,13 @@
-# Granting a User Permissions to Pass a Role to an AWS Service<a name="id_roles_use_passrole"></a>
+# Granting a user permissions to pass a role to an AWS service<a name="id_roles_use_passrole"></a>
 
 To configure many AWS services, you must *pass* an IAM role to the service\. This allows the service to later assume the role and perform actions on your behalf\. You only have to pass the role to the service once during set\-up, and not every time that the service assumes the role\. For example, assume that you have an application running on an Amazon EC2 instance\. That application requires temporary credentials for authentication, and permissions to authorize the application to perform actions in AWS\. When you set up the application, you must pass a role to EC2 to use with the instance that provides those credentials\. You define the permissions for the applications running on the instance by attaching an IAM policy to the role\. The application assumes the role every time it needs to perform the actions that are allowed by the role\.
 
 To pass a role \(and its permissions\) to an AWS service, a user must have permissions to *pass the role* to the service\. This helps administrators ensure that only approved users can configure a service with a role that grants permissions\. To allow a user to pass a role to an AWS service, you must grant the `PassRole` permission to the user's IAM user, role, or group\.
 
 **Note**  
-You cannot limit permissions to pass a role based on tags attached to that role using the `ResourceTag/key-name` condition key\. For more information, see [Controlling Access to AWS Resources](access_tags.md#access_tags_control-resources)\.
+You cannot limit permissions to pass a role based on tags attached to that role using the `ResourceTag/key-name` condition key\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
 
-When you create a service\-linked role, you must also have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you the first time that you create an Auto Scaling group\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive an error\. To learn which services support service\-linked roles, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which services automatically create a service\-linked role when you perform an action in that service, choose the **Yes** link and view the service\-linked role documentation for the service\.
+When you create a service\-linked role, you must also have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you the first time that you create an Auto Scaling group\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive an error\. To learn which services support service\-linked roles, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which services automatically create a service\-linked role when you perform an action in that service, choose the **Yes** link and view the service\-linked role documentation for the service\.
 
 A user can pass a role ARN as a parameter in any API operation that uses the role to assign permissions to the service\. The service then checks whether that user has the `iam:PassRole` permission\. To limit the user to passing only approved roles, you can filter the `iam:PassRole` permission with the `Resources` element of the IAM policy statement\. 
 
@@ -59,7 +59,7 @@ Now the user can start an Amazon EC2 instance with an assigned role\. Applicatio
 **Example 2**  
 Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enhanced Monitoring\. This feature enables Amazon RDS to monitor a database instance using an agent\. It also allows Amazon RDS to log metrics to Amazon CloudWatch Logs\. To enable this feature, you must create a service role to give Amazon RDS permissions to monitor and write metrics to your logs\. 
 
-**To create a role for Amazon RDS Enhanced Monitoring**
+**To create a role for Amazon RDS enhanced monitoring**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -71,7 +71,7 @@ Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enha
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
 
 1. Choose **Next: Review**\.
 

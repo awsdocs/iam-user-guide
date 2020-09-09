@@ -1,4 +1,4 @@
-# IAM: Access the Policy Simulator Console<a name="reference_policies_examples_iam_policy-sim-console"></a>
+# IAM: Access the policy simulator console<a name="reference_policies_examples_iam_policy-sim-console"></a>
 
 This example shows how you might create a policy that allows using the policy simulator console for policies attached to a user, group, or role in the current AWS account\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\.
 

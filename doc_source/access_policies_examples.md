@@ -1,6 +1,6 @@
-# Example IAM Identity\-Based Policies<a name="access_policies_examples"></a>
+# Example IAM identity\-based policies<a name="access_policies_examples"></a>
 
-A [policy](access_policies.md) is an object in AWS that, when associated with an identity or resource, defines their permissions\. AWS evaluates these policies when an IAM principal \(user or role\) makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Most policies are stored in AWS as JSON documents that are attached to an IAM identity \(user, group of users, or role\)\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. To learn how to create an IAM policy using these example JSON policy documents, see [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+A [policy](access_policies.md) is an object in AWS that, when associated with an identity or resource, defines their permissions\. AWS evaluates these policies when an IAM principal \(user or role\) makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Most policies are stored in AWS as JSON documents that are attached to an IAM identity \(user, group of users, or role\)\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. To learn how to create an IAM policy using these example JSON policy documents, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 By default all requests are denied, so you must provide access to the services, actions, and resources that you intend for the identity to access\. If you also want to allow access to complete the specified actions in the IAM console, you need to provide additional permissions\.
 
@@ -9,7 +9,7 @@ The following library of policies can help you define permissions for your IAM i
 **Note**  
 If you would like to submit a policy to be included in this reference guide, use the **Feedback** button at the bottom of this page\.
 
-## Example Policies: AWS<a name="policy_library_AWS"></a>
+## Example policies: AWS<a name="policy_library_AWS"></a>
 + Allows access during a specific range of dates\. \([View this policy](reference_policies_examples_aws-dates.md)\.\)
 + Allows enabling and disabling AWS Regions\. \([View this policy](reference_policies_examples_aws-enable-disable-regions.md)\.\)
 + Allows MFA\-authenticated users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.\)
@@ -21,15 +21,15 @@ If you would like to submit a policy to be included in this reference guide, use
 + Denies access to AWS based on the requested Region\. \([View this policy](reference_policies_examples_aws_deny-requested-region.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
 
-## Example Policies: AWS Data Pipeline<a name="policy_library_DataPipeline"></a>
+## Example policies: AWS Data Pipeline<a name="policy_library_DataPipeline"></a>
 + Denies access to pipelines that a user did not create \([View this policy](reference_policies_examples_datapipeline_not-owned.md)\.\)
 
-## Example Policies: Amazon DynamoDB<a name="policy_library_DynamoDB"></a>
+## Example policies: Amazon DynamoDB<a name="policy_library_DynamoDB"></a>
 + Allows access to a specific Amazon DynamoDB table \([View this policy](reference_policies_examples_dynamodb_specific-table.md)\.\)
 + Allows access to specific Amazon DynamoDB columns \([View this policy](reference_policies_examples_dynamodb_columns.md)\.\)
 + Allows row\-level access to Amazon DynamoDB based on an Amazon Cognito ID \([View this policy](reference_policies_examples_dynamodb_rows.md)\.\)
 
-## Example Policies: Amazon EC2<a name="policy_library_ec2"></a>
+## Example policies: Amazon EC2<a name="policy_library_ec2"></a>
 + Allows an Amazon EC2 instance to attach or detach volumes \([View this policy](reference_policies_examples_ec2_volumes-instance.md)\.\)
 + Allows attaching or detaching Amazon EBS volumes to Amazon EC2 instances based on tags \([View this policy](reference_policies_examples_ec2_ebs-owner.md)\.\)
 + Allows launching Amazon EC2 instances in a specific subnet, programmatically and in the console \([View this policy](reference_policies_examples_ec2_instances-subnet.md)\.\)
@@ -42,7 +42,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Denies access to specific Amazon EC2 operations without MFA \([View this policy](reference_policies_examples_ec2_require-mfa.md)\.\)
 + Limits terminating Amazon EC2 instances to a specific IP address range \([View this policy](reference_policies_examples_ec2_terminate-ip.md)\.\)
 
-## Example Policies: AWS Identity and Access Management \(IAM\)<a name="policy_library_IAM"></a>
+## Example policies: AWS Identity and Access Management \(IAM\)<a name="policy_library_IAM"></a>
 + Allows access to the policy simulator API \([View this policy](reference_policies_examples_iam_policy-sim.md)\.\)
 + Allows access to the policy simulator console \([View this policy](reference_policies_examples_iam_policy-sim-console.md)\.\)
 + Allows assuming any roles that have a specific tag, programmatically and in the console \([View this policy](reference_policies_examples_iam-assume-tagged-role.md)\.\)
@@ -65,15 +65,15 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows viewing service last accessed information for an AWS Organizations policy in the IAM console\. \([View this policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.\)
 + Limits managed policies that can be applied to an IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\.\)
 
-## Example Policies: AWS Lambda<a name="policy_library_Lambda"></a>
+## Example policies: AWS Lambda<a name="policy_library_Lambda"></a>
 + Allows an AWS Lambda function to access an Amazon DynamoDB table \([View this policy](reference_policies_examples_lambda-access-dynamodb.md)\.\)
 
-## Example Policies: Amazon RDS<a name="policy_library_RDS"></a>
+## Example policies: Amazon RDS<a name="policy_library_RDS"></a>
 + Allows full Amazon RDS database access within a specific Region\. \([View this policy](reference_policies_examples_rds_region.md)\.\)
 + Allows restoring Amazon RDS databases, programmatically and in the console \([View this policy](reference_policies_examples_rds_db-console.md)\.\)
 + Allows tag owners full access to Amazon RDS resources that they have tagged \([View this policy](reference_policies_examples_rds_tag-owner.md)\.\)
 
-## Example Policies: Amazon S3<a name="policy_library_S3"></a>
+## Example policies: Amazon S3<a name="policy_library_S3"></a>
 + Allows an Amazon Cognito user to access objects in their own Amazon S3 bucket \([View this policy](reference_policies_examples_s3_cognito-bucket.md)\.\)
 + Allows federated users to access their own home directory in Amazon S3, programmatically and in the console \([View this policy](reference_policies_examples_s3_federated-home-directory-console.md)\.\)
 + Allows full S3 access, but explicitly denies access to the Production bucket if the administrator has not signed in using MFA within the last thirty minutes \([View this policy](reference_policies_examples_s3_full-access-except-production.md)\.\)

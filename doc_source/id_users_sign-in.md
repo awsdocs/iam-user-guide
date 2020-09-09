@@ -1,4 +1,4 @@
-# How IAM Users Sign In to AWS<a name="id_users_sign-in"></a>
+# How IAM users sign in to AWS<a name="id_users_sign-in"></a>
 
 To sign in to the AWS Management Console as an IAM user, you must provide your account ID or account alias in addition to your user name and password\. When your administrator [created your IAM user in the console](id_users_create.md#id_users_create_console), they should have sent you your sign\-in credentials, including your user name and the URL to your account sign\-in page that includes your account ID or account alias\. 
 
@@ -17,10 +17,10 @@ You can also sign in at the following general sign\-in endpoint and type your ac
 
 For convenience, the AWS sign\-in page uses a browser cookie to remember the IAM user name and account information\. The next time the user goes to any page in the AWS Management Console, the console uses the cookie to redirect the user to the account sign\-in page\.
 
-You have access only to the AWS resources that your administrator specifies in the policy that is attached to your IAM user identity\. To work in the console, you must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access Management](access.md) and [Example IAM Identity\-Based Policies](access_policies_examples.md)\.
+You have access only to the AWS resources that your administrator specifies in the policy that is attached to your IAM user identity\. To work in the console, you must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access management for AWS resources](access.md) and [Example IAM identity\-based policies](access_policies_examples.md)\.
 
 **Note**  
-If your organization has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console for your account without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Enabling Custom Identity Broker Access to the AWS Console](id_roles_providers_enable-console-custom-url.md)\. 
+If your organization has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console for your account without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Enabling custom identity broker access to the AWS console](id_roles_providers_enable-console-custom-url.md)\. 
 
 **Logging sign\-in details in CloudTrail**  
 If you enable CloudTrail to log sign\-in events to your logs, you need to be aware of how CloudTrail chooses where to log the events\.
@@ -49,4 +49,4 @@ If you enable CloudTrail to log sign\-in events to your logs, you need to be awa
 
 For more information about CloudTrail and IAM, see [Logging IAM Events with AWS CloudTrail ](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
 
-If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Managing Access Keys \(Console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.
+If users need programmatic access to work with your account, you can create an access key pair \(an access key ID and a secret access key\) for each user, as described in [Managing access keys \(console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.

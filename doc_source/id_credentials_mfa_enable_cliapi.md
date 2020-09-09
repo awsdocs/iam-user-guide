@@ -1,4 +1,4 @@
-# Enabling and Managing Virtual MFA Devices \(AWS CLI or AWS API\)<a name="id_credentials_mfa_enable_cliapi"></a>
+# Enabling and managing virtual MFA devices \(AWS CLI or AWS API\)<a name="id_credentials_mfa_enable_cliapi"></a>
 
 You can use AWS CLI commands or AWS API operations to enable a virtual MFA device for an IAM user\. You cannot enable an MFA device for the AWS account root user with the AWS CLI, AWS API, Tools for Windows PowerShell, or any other command line tool\. However, you can use the AWS Management Console to enable an MFA device for the root user\. 
 
@@ -38,4 +38,4 @@ After the device is disassociated from the user, you can delete the device entit
 + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html) 
 
 **To recover a virtual MFA device that is lost or not working**  
-Sometimes, an IAM user's device that hosts the virtual MFA app is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. IAM users must contact an administrator to deactivate the device\. For more information, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\.
+Sometimes, an IAM user's device that hosts the virtual MFA app is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. IAM users must contact an administrator to deactivate the device\. For more information, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\.

@@ -1,24 +1,24 @@
-# Deleting IAM Policies<a name="access_policies_manage-delete"></a>
+# Deleting IAM policies<a name="access_policies_manage-delete"></a>
 
 You can delete IAM policies using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or the IAM API\.
 
-For more information about the difference between managed and inline policies, see [Managed Policies and Inline Policies](access_policies_managed-vs-inline.md)\. 
+For more information about the difference between managed and inline policies, see [Managed policies and inline policies](access_policies_managed-vs-inline.md)\. 
 
-For general information about IAM policies, see [Policies and Permissions](access_policies.md)\.
+For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 
 **Topics**
-+ [View Policy Access](#manage-delete_prerequisites)
-+ [Deleting IAM Policies \(Console\)](#delete-managed-policy)
-+ [Deleting IAM Policies \(AWS CLI\)](#delete-policies-cli-api)
-+ [Deleting IAM Policies \(AWS API\)](#delete-policies-api)
++ [View policy access](#manage-delete_prerequisites)
++ [Deleting IAM policies \(console\)](#delete-managed-policy)
++ [Deleting IAM policies \(AWS CLI\)](#delete-policies-cli-api)
++ [Deleting IAM policies \(AWS API\)](#delete-policies-api)
 
-## View Policy Access<a name="manage-delete_prerequisites"></a>
+## View policy access<a name="manage-delete_prerequisites"></a>
 
-Before you delete a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing last accessed information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\.
+Before you delete a policy, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing last accessed information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
 
-## Deleting IAM Policies \(Console\)<a name="delete-managed-policy"></a>
+## Deleting IAM policies \(console\)<a name="delete-managed-policy"></a>
 
 You can delete a customer managed policy to remove it from your AWS account\. You cannot delete AWS managed policies\.
 
@@ -42,7 +42,7 @@ You can delete a customer managed policy to remove it from your AWS account\. Yo
 
 1. To delete an inline policy in **Groups**, choose **Remove Policy**\. To delete an inline policy in **Users** or **Roles**, choose **X**\. 
 
-## Deleting IAM Policies \(AWS CLI\)<a name="delete-policies-cli-api"></a>
+## Deleting IAM policies \(AWS CLI\)<a name="delete-policies-cli-api"></a>
 
 You can delete a customer managed policy from the AWS Command Line Interface\.
 
@@ -80,7 +80,7 @@ You can delete a customer managed policy from the AWS Command Line Interface\.
    + [aws iam delete\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html)
    + [aws iam delete\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-role-policy.html)
 
-## Deleting IAM Policies \(AWS API\)<a name="delete-policies-api"></a>
+## Deleting IAM policies \(AWS API\)<a name="delete-policies-api"></a>
 
 You can delete a customer managed policy using the AWS API\.
 

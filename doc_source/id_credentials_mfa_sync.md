@@ -1,4 +1,4 @@
-# Resynchronizing Virtual and Hardware MFA Devices<a name="id_credentials_mfa_sync"></a>
+# Resynchronizing virtual and hardware MFA devices<a name="id_credentials_mfa_sync"></a>
 
 You can use AWS to resynchronize your virtual and hardware multi\-factor authentication \(MFA\) devices\. If your device is not synchronized when you try to use it, the sign\-in attempt fails and IAM prompts you to resynchronize the device\.
 
@@ -10,12 +10,12 @@ As an AWS administrator, you can resynchronize your IAM users' virtual and hardw
 If your AWS account root user MFA device is not working, you can resynchronize your device using the IAM console with or without completing the sign\-in process\. 
 
 **Topics**
-+ [Permissions Required](#id_credentials_mfa_sync_console-permissions-required)
-+ [Resynchronizing Virtual and Hardware MFA Devices \(IAM Console\)](#id_credentials_mfa_sync_console)
-+ [Resynchronizing Virtual and Hardware MFA Devices \(AWS CLI\)](#id_credentials_mfa_sync_cli)
-+ [Resynchronizing Virtual and Hardware MFA Devices \(AWS API\)](#id_credentials_mfa_sync_api)
++ [Permissions required](#id_credentials_mfa_sync_console-permissions-required)
++ [Resynchronizing virtual and hardware MFA devices \(IAM console\)](#id_credentials_mfa_sync_console)
++ [Resynchronizing virtual and hardware MFA devices \(AWS CLI\)](#id_credentials_mfa_sync_cli)
++ [Resynchronizing virtual and hardware MFA devices \(AWS API\)](#id_credentials_mfa_sync_api)
 
-## Permissions Required<a name="id_credentials_mfa_sync_console-permissions-required"></a>
+## Permissions required<a name="id_credentials_mfa_sync_console-permissions-required"></a>
 
 To resynchronize virtual or hardware MFA devices for your own IAM user, you must have the permissions from the following policy: This policy does not allow you to create or deactivate a device\.
 
@@ -59,7 +59,7 @@ To resynchronize virtual or hardware MFA devices for your own IAM user, you must
 }
 ```
 
-## Resynchronizing Virtual and Hardware MFA Devices \(IAM Console\)<a name="id_credentials_mfa_sync_console"></a>
+## Resynchronizing virtual and hardware MFA devices \(IAM console\)<a name="id_credentials_mfa_sync_console"></a>
 
 You can use the IAM console to resynchronize virtual and hardware MFA devices\.
 
@@ -123,7 +123,7 @@ If you see three text boxes, then you previously signed in to the console with *
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device is successfully associated with the user, but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\.
 
-## Resynchronizing Virtual and Hardware MFA Devices \(AWS CLI\)<a name="id_credentials_mfa_sync_cli"></a>
+## Resynchronizing virtual and hardware MFA devices \(AWS CLI\)<a name="id_credentials_mfa_sync_cli"></a>
 
 You can resynchronize virtual and hardware MFA devices from the AWS CLI\.
 
@@ -143,7 +143,7 @@ At a command prompt, issue the [aws iam resync\-mfa\-device](https://docs.aws.am
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the request fails because the codes expire after a short time\.
 
-## Resynchronizing Virtual and Hardware MFA Devices \(AWS API\)<a name="id_credentials_mfa_sync_api"></a>
+## Resynchronizing virtual and hardware MFA devices \(AWS API\)<a name="id_credentials_mfa_sync_api"></a>
 
 IAM has an API call that performs synchronization\. In this case, we recommend that you give your virtual and hardware MFA device users permission to access this API call\. Then build a tool based on that API call so your users can resynchronize their devices whenever they need to\.
 

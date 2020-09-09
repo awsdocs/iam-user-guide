@@ -1,4 +1,4 @@
-# Enabling a U2F Security Key \(Console\)<a name="id_credentials_mfa_enable_u2f"></a>
+# Enabling a U2F security key \(console\)<a name="id_credentials_mfa_enable_u2f"></a>
 
 Universal 2nd Factor \(U2F\) security keys are a type of [MFA device](id_credentials_mfa.md) that you can use to protect your AWS resources\. You plug your U2F security key into a USB port on your computer and enable it using the instructions that follow\. After you enable it, you tap it when prompted to securely complete the sign\-in process\. If you already use a U2F security key with other services, and it has an [AWS supported configuration](id_credentials_mfa_u2f_supported_configurations.md) \(for example, the Yubikey 4 or 5 from Yubico\), you can also use it with AWS\. Otherwise, you need to purchase a U2F security key if you want to use U2F for MFA in AWS\. For specifications and purchase information, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
 
@@ -7,14 +7,14 @@ U2F is an open authentication standard hosted by the [FIDO Alliance](https://fid
 You can enable **one** MFA device \(of any kind\) per root user or IAM user\. 
 
 **Topics**
-+ [Permissions Required](#enable-u2f-mfa-for-iam-user-permissions-required)
-+ [Enable a U2F Security Key for Your Own IAM User \(Console\)](#enable-u2f-mfa-for-own-iam-user)
-+ [Enable a U2F Security Key for Another IAM User \(Console\)](#enable-u2f-mfa-for-iam-user)
-+ [Enable a U2F Security Key for the AWS Account Root User \(Console\)](#enable-u2f-mfa-for-root)
-+ [Replace a U2F Security Key](#replace-u2f-mfa)
-+ [Supported Configurations for Using U2F Security Keys](id_credentials_mfa_u2f_supported_configurations.md)
++ [Permissions required](#enable-u2f-mfa-for-iam-user-permissions-required)
++ [Enable a U2F security key for your own IAM user \(console\)](#enable-u2f-mfa-for-own-iam-user)
++ [Enable a U2F security key for another IAM user \(console\)](#enable-u2f-mfa-for-iam-user)
++ [Enable a U2F security key for the AWS account root user \(console\)](#enable-u2f-mfa-for-root)
++ [Replace a U2F security key](#replace-u2f-mfa)
++ [Supported configurations for using U2F security keys](id_credentials_mfa_u2f_supported_configurations.md)
 
-## Permissions Required<a name="enable-u2f-mfa-for-iam-user-permissions-required"></a>
+## Permissions required<a name="enable-u2f-mfa-for-iam-user-permissions-required"></a>
 
 To manage a U2F security key for your own IAM user while protecting sensitive MFA\-related actions, you must have the permissions from the following policy:
 
@@ -54,7 +54,7 @@ To manage a U2F security key for your own IAM user while protecting sensitive MF
 }
 ```
 
-## Enable a U2F Security Key for Your Own IAM User \(Console\)<a name="enable-u2f-mfa-for-own-iam-user"></a>
+## Enable a U2F security key for your own IAM user \(console\)<a name="enable-u2f-mfa-for-own-iam-user"></a>
 
 You can enable a U2F security key for your own IAM user from the AWS Management Console only, not from the AWS CLI or AWS API\.
 
@@ -81,9 +81,9 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 1. Tap the U2F security key, and then choose **Close** when U2F setup is complete\. 
 
-The U2F security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md)\.
+The U2F security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
 
-## Enable a U2F Security Key for Another IAM User \(Console\)<a name="enable-u2f-mfa-for-iam-user"></a>
+## Enable a U2F security key for another IAM user \(console\)<a name="enable-u2f-mfa-for-iam-user"></a>
 
 You can enable a U2F security key for another IAM user from the AWS Management Console only, not from the AWS CLI or AWS API\.
 
@@ -104,13 +104,13 @@ You can enable a U2F security key for another IAM user from the AWS Management C
 
 1. Tap the U2F security key, and then choose **Close** when U2F setup is complete\. 
 
-The U2F security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA Devices With Your IAM Sign\-in Page](console_sign-in-mfa.md)\.
+The U2F security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
 
-## Enable a U2F Security Key for the AWS Account Root User \(Console\)<a name="enable-u2f-mfa-for-root"></a>
+## Enable a U2F security key for the AWS account root user \(console\)<a name="enable-u2f-mfa-for-root"></a>
 
 You can configure and enable a virtual MFA device for your root user from the AWS Management Console only, not from the AWS CLI or AWS API\. 
 
-If your U2F security key is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. To learn about signing in using alternative factors of authentication, see [What If an MFA Device Is Lost or Stops Working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.<a name="enable_u2f_root"></a>
+If your U2F security key is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. To learn about signing in using alternative factors of authentication, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.<a name="enable_u2f_root"></a>
 
 **To enable the U2F key for your root user \(console\)**
 
@@ -134,12 +134,12 @@ If you see three text boxes, then you previously signed in to the console with *
 
 The U2F security key is ready for use with AWS\. The next time you use your root user credentials to sign in, you must tap your U2F security key to complete the sign\-in process\.
 
-## Replace a U2F Security Key<a name="replace-u2f-mfa"></a>
+## Replace a U2F security key<a name="replace-u2f-mfa"></a>
 
 You can have only one MFA device \(virtual, U2F security key, or hardware\) assigned to a user at a time\. If the user loses a U2F key or needs to replace it for any reason, you must first deactivate the old U2F key\. Then you can add a new MFA device for the user\.
-+ To deactivate the device currently associated with a user, see [Deactivating MFA Devices](id_credentials_mfa_disable.md)\.
-+ To add a new U2F security for an IAM user, see [Enabling a U2F Security Key \(Console\)](#id_credentials_mfa_enable_u2f)\.
++ To deactivate the device currently associated with a user, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\.
++ To add a new U2F security for an IAM user, see [Enabling a U2F security key \(console\)](#id_credentials_mfa_enable_u2f)\.
 
 If you don't have access to a new U2F security key, you can enable a new virtual MFA device or hardware MFA device\. See one of the following for instructions:
-+ [Enabling a Virtual Multi\-factor Authentication \(MFA\) Device \(Console\)](id_credentials_mfa_enable_virtual.md) 
-+ [Enabling a Hardware MFA Device \(Console\)](id_credentials_mfa_enable_physical.md) 
++ [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md) 
++ [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md) 

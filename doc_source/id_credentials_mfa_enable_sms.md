@@ -1,4 +1,4 @@
-# PREVIEW – Enabling SMS Text Message MFA Devices<a name="id_credentials_mfa_enable_sms"></a>
+# PREVIEW – Enabling SMS text message MFA devices<a name="id_credentials_mfa_enable_sms"></a>
 
 AWS will soon end support for SMS multi\-factor authentication \(MFA\)\. We are not allowing new customers to preview this feature\. We recommend that existing customers switch to one of the following alternative methods of MFA:
 + [A virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA device
@@ -13,7 +13,7 @@ An SMS \(short message service\) MFA device can be any mobile device with a phon
 **Note**  
 SMS MFA can be used only with IAM users\. It cannot be used with the AWS account root user\. To protect the root user with MFA, you must use a virtual MFA device, U2F security key, or hardware MFA device\.
 
-## Enable an SMS MFA Device for an IAM User \(Console\)<a name="enable-sms-mfa-console"></a>
+## Enable an SMS MFA device for an IAM user \(console\)<a name="enable-sms-mfa-console"></a>
 
 You can use IAM in the AWS Management Console to configure an IAM user with a phone number to enable SMS MFA\.
 
@@ -40,6 +40,6 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 1. If AWS successfully verifies the code, the wizard ends\. Otherwise, choose **Finish** to close the wizard\.
 
-## Change the Phone Number for SMS MFA for an IAM User<a name="change-sms-mfa-phone-number"></a>
+## Change the phone number for SMS MFA for an IAM user<a name="change-sms-mfa-phone-number"></a>
 
-To change the phone number of the SMS MFA device assigned to an IAM user, you must delete the current MFA device\. Then create a new device with the new phone number\. To learn how to delete a device, see [Deactivating MFA Devices](id_credentials_mfa_disable.md)\. 
+To change the phone number of the SMS MFA device assigned to an IAM user, you must delete the current MFA device\. Then create a new device with the new phone number\. To learn how to delete a device, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\. 

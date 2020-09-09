@@ -1,4 +1,4 @@
-# Getting Credential Reports for Your AWS Account<a name="id_credentials_getting-report"></a>
+# Getting credential reports for your AWS account<a name="id_credentials_getting-report"></a>
 
 You can generate and download a *credential report* that lists all users in your account and the status of their various credentials, including passwords, access keys, and MFA devices\. You can get a credential report from the AWS Management Console, the [AWS SDKs](https://aws.amazon.com/tools) and [Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or the IAM API\. 
 
@@ -7,19 +7,19 @@ You can use credential reports to assist in your auditing and compliance efforts
 You can generate a credential report as often as once every four hours\. When you request a report, IAM first checks whether a report for the AWS account has been generated within the past four hours\. If so, the most recent report is downloaded\. If the most recent report for the account is older than four hours, or if there are no previous reports for the account, IAM generates and downloads a new report\. 
 
 **Topics**
-+ [Required Permissions](#id_credentials_required_permissions)
-+ [Understanding the Report Format](#id_credentials_understanding_the_report_format)
-+ [Getting Credential Reports \(Console\)](#getting-credential-reports-console)
-+ [Getting Credential Reports \(AWS CLI\)](#getting-credential-reports-cliapi)
-+ [Getting Credential Reports \(AWS API\)](#getting-credential-reports-api)
++ [Required permissions](#id_credentials_required_permissions)
++ [Understanding the report format](#id_credentials_understanding_the_report_format)
++ [Getting credential reports \(console\)](#getting-credential-reports-console)
++ [Getting credential reports \(AWS CLI\)](#getting-credential-reports-cliapi)
++ [Getting credential reports \(AWS API\)](#getting-credential-reports-api)
 
-## Required Permissions<a name="id_credentials_required_permissions"></a>
+## Required permissions<a name="id_credentials_required_permissions"></a>
 
 The following permissions are needed to create and download reports:
 + To create a credential report: `GenerateCredentialReport` 
 + To download the report: `GetCredentialReport`
 
-## Understanding the Report Format<a name="id_credentials_understanding_the_report_format"></a>
+## Understanding the report format<a name="id_credentials_understanding_the_report_format"></a>
 
 Credential reports are formatted as comma\-separated values \(CSV\) files\. You can open CSV files with common spreadsheet software to perform analysis, or you can build an application that consumes the CSV files programmatically and performs custom analysis\. 
 
@@ -87,7 +87,7 @@ The value in this field is `N/A` \(not applicable\) in these cases:
 
 **access\_key\_2\_active**  
 When the user has a second access key and the second key's status is `Active`, this value is `TRUE`\. Otherwise it is `FALSE`\.  
-Users can have up to two access keys, to make rotation easier\. For more information about rotating access keys, see [Rotating Access Keys](id_credentials_access-keys.md#Using_RotateAccessKey)\.
+Users can have up to two access keys, to make rotation easier\. For more information about rotating access keys, see [Rotating access keys](id_credentials_access-keys.md#Using_RotateAccessKey)\.
 
 **access\_key\_2\_last\_rotated**  
 The date and time, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601), when the user's second access key was created or last changed\. If the user does not have a second active access key, the value in this field is `N/A` \(not applicable\)\.
@@ -125,7 +125,7 @@ Users can have up to two X\.509 signing certificates, to make certificate rotati
 **cert\_2\_last\_rotated**  
 The date and time, in [ISO 8601 date\-time format](https://en.wikipedia.org/wiki/ISO_8601), when the user's second signing certificate was created or last changed\. If the user does not have a second active signing certificate, the value in this field is `N/A` \(not applicable\)\.
 
-## Getting Credential Reports \(Console\)<a name="getting-credential-reports-console"></a>
+## Getting credential reports \(console\)<a name="getting-credential-reports-console"></a>
 
 You can use the AWS Management Console to download a credential report as a comma\-separated values \(CSV\) file\.
 
@@ -137,13 +137,13 @@ You can use the AWS Management Console to download a credential report as a comm
 
 1. Choose **Download Report**\.
 
-## Getting Credential Reports \(AWS CLI\)<a name="getting-credential-reports-cliapi"></a>
+## Getting credential reports \(AWS CLI\)<a name="getting-credential-reports-cliapi"></a>
 
 Run the following commands:
 + To generate a credential report: [https://docs.aws.amazon.com/cli/latest/reference/iam/generate-credential-report.html](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-credential-report.html)
 + To retrieve a credential report: [https://docs.aws.amazon.com/cli/latest/reference/iam/get-credential-report.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-credential-report.html)
 
-## Getting Credential Reports \(AWS API\)<a name="getting-credential-reports-api"></a>
+## Getting credential reports \(AWS API\)<a name="getting-credential-reports-api"></a>
 
 Call the following operations:
 + To generate a credential report: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateCredentialReport.html)

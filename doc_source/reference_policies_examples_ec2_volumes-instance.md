@@ -1,4 +1,4 @@
-# Amazon EC2: Attach or Detach Volumes to an EC2 Instance<a name="reference_policies_examples_ec2_volumes-instance"></a>
+# Amazon EC2: Attach or detach volumes to an EC2 instance<a name="reference_policies_examples_ec2_volumes-instance"></a>
 
 This example shows how you might create a policy that allows EBS volume owners to attach or detach volumes to the specified EC2 instance\. The instance is specified with an ARN in the `Condition` element\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 

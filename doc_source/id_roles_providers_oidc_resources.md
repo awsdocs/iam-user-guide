@@ -1,4 +1,4 @@
-# Additional Resources for Web Identity Federation<a name="id_roles_providers_oidc_resources"></a>
+# Additional resources for web identity federation<a name="id_roles_providers_oidc_resources"></a>
 
 The following resources can help you learn more about web identity federation:
 + [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide* and [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*\.

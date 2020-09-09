@@ -1,4 +1,4 @@
-# Amazon S3: Allows Read and Write Access to Objects in an S3 Bucket, Programmatically and in the Console<a name="reference_policies_examples_s3_rw-bucket-console"></a>
+# Amazon S3: Allows read and write access to objects in an S3 Bucket, programmatically and in the console<a name="reference_policies_examples_s3_rw-bucket-console"></a>
 
 This example shows how you might create a policy that allows `Read` and `Write` access to objects in a specific S3 bucket\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 

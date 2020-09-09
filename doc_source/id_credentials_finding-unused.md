@@ -1,10 +1,10 @@
-# Finding Unused Credentials<a name="id_credentials_finding-unused"></a>
+# Finding unused credentials<a name="id_credentials_finding-unused"></a>
 
 To increase the security of your AWS account, remove IAM user credentials \(that is, passwords and access keys\) that are not needed\. For example, when users leave your organization or no longer need AWS access, find the credentials that they were using and ensure that they are no longer operational\. Ideally, you delete credentials if they are no longer needed\. You can always recreate them at a later date if the need arises\. At the very least, you should change the password or deactivate the access keys so that the former users no longer have access\.
 
 Of course, the definition of *unused* can vary and usually means a credential that has not been used within a specified period of time\.
 
-## Finding Unused Passwords<a name="finding-unused-passwords"></a>
+## Finding unused passwords<a name="finding-unused-passwords"></a>
 
 You can use the AWS Management Console to view password usage information for your users\. If you have a large number of users, you can use the console to download a credential report with information about when each user last used their console password\. You can also access the information from the AWS CLI or the IAM API\.
 
@@ -45,9 +45,9 @@ Run the following command to find unused passwords:
 Call the following operation to find unused passwords:
 +  ` [ListUsers](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html)` returns a collection of users, each of which has a `<PasswordLastUsed>` value\. If the value is missing, then the user either has no password or the password has not been used since IAM began tracking password age on October 20, 2014\.
 
-For information about the commands to download the credentials report, see [Getting Credential Reports \(AWS CLI\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.
+For information about the commands to download the credentials report, see [Getting credential reports \(AWS CLI\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.
 
-## Finding Unused Access Keys<a name="finding-unused-access-keys"></a>
+## Finding unused access keys<a name="finding-unused-access-keys"></a>
 
 You can use the AWS Management Console to view access key usage information for your users\. If you have a large number of users, you can use the console to download a credentials report to find when each user last used their access keys\. You can also access the information from the AWS CLI or the IAM API\.
 
@@ -85,4 +85,4 @@ Call the following operations to find unused access keys:
 + `[ListAccessKeys](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAccessKeys.html)` returns a list of `AccessKeyID` values for access keys that are associated with the specified user\. 
 + `[GetAccessKeyLastUsed](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)` takes an access key ID and returns a collection of values\. Included are the `LastUsedDate`, the `Region` in which the access key was last used, and the `ServiceName` of the last service requested\. If the value is missing, then either the user has no access key or the access key has not been used since IAM began tracking access key age on April 22, 2015\.
 
-For information about the commands to download the credentials report, see [Getting Credential Reports \(AWS CLI\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.
+For information about the commands to download the credentials report, see [Getting credential reports \(AWS CLI\)](id_credentials_getting-report.md#getting-credential-reports-cliapi)\.

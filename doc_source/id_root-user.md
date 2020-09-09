@@ -1,9 +1,9 @@
-# The AWS Account Root User<a name="id_root-user"></a>
+# AWS account root user<a name="id_root-user"></a>
 
 When you first create an Amazon Web Services \(AWS\) account, you begin with a single sign\-in identity that has complete access to all AWS services and resources in the account\. This identity is called the AWS account *root user*\. You can sign in as the root user using the email address and password that you used to create the account\.
 
 **Important**  
-We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating Your First IAM Admin User and Group](getting-started_create-admin-group.md)\.
+We strongly recommend that you do not use the root user for your everyday tasks, even the administrative ones\. Instead, adhere to the [best practice of using the root user only to create your first IAM user](best-practices.md#create-iam-users)\. Then securely lock away the root user credentials and use them to perform only a few account and service management tasks\. To view the tasks that require you to sign in as the root user, see [AWS Tasks That Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\. For a tutorial on how to set up an administrator for daily use, see [Creating your first IAM admin user and group](getting-started_create-admin-group.md)\.
 
 You can create, rotate, disable, or delete access keys \(access key IDs and secret access keys\) for your AWS account root user\. You can also change your root user password\. Anyone who has root user credentials for your AWS account has unrestricted access to all the resources in your account, including billing information\.
 
@@ -14,26 +14,26 @@ A newly created access key has the status of *active*, which means that you can 
 You can change the email address and password on the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page\. You can also choose **Forgot password?** on the AWS sign\-in page to reset your password\.
 
 **Topics**
-+ [Create or Delete an AWS Account](#id_root-user_manage_account)
-+ [Enable MFA on the AWS Account Root User](#id_root-user_manage_mfa)
-+ [Creating Access Keys for the Root User](#id_root-user_manage_add-key)
-+ [Deleting Access Keys for the Root User](#id_root-user_manage_delete-key)
-+ [Changing the Password for the Root User](#id_root-user_manage_password)
-+ [Securing the Credentials for the Root User](#id_root-user_secure_credentials)
++ [Create or delete an AWS account](#id_root-user_manage_account)
++ [Enable MFA on the AWS account root user](#id_root-user_manage_mfa)
++ [Creating access keys for the root user](#id_root-user_manage_add-key)
++ [Deleting access keys for the root user](#id_root-user_manage_delete-key)
++ [Changing the password for the root user](#id_root-user_manage_password)
++ [Securing the credentials for the root user](#id_root-user_secure_credentials)
 
-## Create or Delete an AWS Account<a name="id_root-user_manage_account"></a>
+## Create or delete an AWS account<a name="id_root-user_manage_account"></a>
 
 For more information, see the following articles in the AWS Knowledge Center:
 + [How do I create and activate an AWS account?](http://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/)
 + [How do I close my AWS account?](http://aws.amazon.com/premiumsupport/knowledge-center/close-aws-account/)
 
-## Enable MFA on the AWS Account Root User<a name="id_root-user_manage_mfa"></a>
+## Enable MFA on the AWS account root user<a name="id_root-user_manage_mfa"></a>
 
 If you continue to use the root user credentials, we recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
-+ [Enable a Virtual MFA Device for Your AWS Account Root User \(Console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
-+ [Enable a Hardware MFA Device for the AWS Account Root User \(Console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
++ [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
++ [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
-## Creating Access Keys for the Root User<a name="id_root-user_manage_add-key"></a>
+## Creating access keys for the root user<a name="id_root-user_manage_add-key"></a>
 
 You can use the AWS Management Console or AWS programming tools to create access keys for the root user\.
 
@@ -63,7 +63,7 @@ Use one of the following:
 + AWS CLI: [aws iam create\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
 + AWS API: [CreateAccessKey](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
-## Deleting Access Keys for the Root User<a name="id_root-user_manage_delete-key"></a>
+## Deleting access keys for the root user<a name="id_root-user_manage_delete-key"></a>
 
 You can use the AWS Management Console or various programming tools to delete access keys for the root user\.
 
@@ -89,10 +89,10 @@ Use one of the following:
 + AWS CLI: [aws iam delete\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 + AWS API: [DeleteAccessKey](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
-## Changing the Password for the Root User<a name="id_root-user_manage_password"></a>
+## Changing the password for the root user<a name="id_root-user_manage_password"></a>
 
-For information about changing the root user's password, see [Changing the AWS Account Root User Password](id_credentials_passwords_change-root.md)\. To change the root user, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
+For information about changing the root user's password, see [Changing the AWS account root user password](id_credentials_passwords_change-root.md)\. To change the root user, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
 
-## Securing the Credentials for the Root User<a name="id_root-user_secure_credentials"></a>
+## Securing the credentials for the root user<a name="id_root-user_secure_credentials"></a>
 
-For more information about securing the credentials for the AWS account root user, see [Lock Away Your AWS Account Root User Access Keys](best-practices.md#lock-away-credentials)\.
+For more information about securing the credentials for the AWS account root user, see [Lock away your AWS Account Root User access keys](best-practices.md#lock-away-credentials)\.

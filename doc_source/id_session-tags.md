@@ -1,37 +1,37 @@
-# Passing Session Tags in AWS STS<a name="id_session-tags"></a>
+# Passing session tags in AWS STS<a name="id_session-tags"></a>
 
 Session tags are key\-value pair attributes that you pass when you assume an IAM role or federate a user in AWS STS\. You do this by making an AWS CLI or AWS API request through STS or through your identity provider \(IdP\)\. When you use AWS STS to request temporary security credentials, you generate a session\. Sessions expire and have [credentials](https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html), such as an access key pair and a session token\. When you use the session credentials to make a subsequent request, the [request context](reference_policies_elements_condition.md#AccessPolicyLanguage_RequestContext) includes the `aws:PrincipalTag` context key\. You can use the `aws:PrincipalTag` key in the `Condition` element of your policies to allow or deny access based on those tags\.
 
 When you use temporary credentials to make a request, your principal might include a set of tags\. These tags come from the following sources:
 
-1. **Session tags** – These tags were passed when you assumed the role or federated the user using the AWS CLI or AWS API\. For more information about these operations, see [Session Tagging Operations](#id_session-tags_operations) below\.
+1. **Session tags** – These tags were passed when you assumed the role or federated the user using the AWS CLI or AWS API\. For more information about these operations, see [Session tagging operations](#id_session-tags_operations) below\.
 
-1. **Incoming transitive session tags** – These tags were inherited from a previous session in a role chain\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining) later in this topic\.
+1. **Incoming transitive session tags** – These tags were inherited from a previous session in a role chain\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining) later in this topic\.
 
 1. **IAM tags** – These tags were attached to the IAM role that you assumed\.
 
 **Topics**
-+ [Session Tagging Operations](#id_session-tags_operations)
-+ [Things to Know About Session Tags](#id_session-tags_know)
-+ [Permissions Required to Add Session Tags](#id_session-tags_permissions-required)
-+ [Passing Session Tags Using AssumeRole](#id_session-tags_adding-assume-role)
-+ [Passing Session Tags using AssumeRoleWithSAML](#id_session-tags_adding-assume-role-saml)
-+ [Passing Session Tags using AssumeRoleWithWebIdentity](#id_session-tags_adding-assume-role-idp)
-+ [Passing Session Tags using GetFederationToken](#id_session-tags_adding-getfederationtoken)
-+ [Chaining Roles with Session Tags](#id_session-tags_role-chaining)
-+ [Using Session Tags for ABAC](#id_session-tags_using-abac)
-+ [Viewing Session Tags in CloudTrail](#id_session-tags_ctlogs)
++ [Session tagging operations](#id_session-tags_operations)
++ [Things to know about session tags](#id_session-tags_know)
++ [Permissions required to add session tags](#id_session-tags_permissions-required)
++ [Passing session tags using AssumeRole](#id_session-tags_adding-assume-role)
++ [Passing session tags using AssumeRoleWithSAML](#id_session-tags_adding-assume-role-saml)
++ [Passing session tags using AssumeRoleWithWebIdentity](#id_session-tags_adding-assume-role-idp)
++ [Passing session tags using GetFederationToken](#id_session-tags_adding-getfederationtoken)
++ [Chaining roles with session tags](#id_session-tags_role-chaining)
++ [Using session tags for ABAC](#id_session-tags_using-abac)
++ [Viewing session tags in CloudTrail](#id_session-tags_ctlogs)
 
-## Session Tagging Operations<a name="id_session-tags_operations"></a>
+## Session tagging operations<a name="id_session-tags_operations"></a>
 
 You can pass session tags using the following AWS CLI or AWS API operations in AWS STS\. *The AWS Management Console **[Switch Role](id_roles_use_switch-role-console.md)** feature does not allow you to pass session tags\.*
 
-You can also set the session tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
+You can also set the session tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
 
 
-**Comparing Methods for Passing Session Tags**  
+**Comparing methods for passing session tags**  
 
-|  Method |  **Who Can Assume the Role**  | **Method to Pass Tags** |  **Method to Set Transitive Tags**  | 
+|  Method |  **Who can assume the role**  | **Method to pass tags** |  **Method to set transitive tags**  | 
 | --- | --- | --- | --- | 
 | [https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html) CLI or [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation | IAM user or a session | Tags API parameter or \-\-tags CLI option | TransitiveTagKeys API parameter or \-\-transitive\-tag\-keys CLI option | 
 | [https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html) CLI or [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API operation | Any user authenticated using SAML identity provider | PrincipalTag SAML attribute | TransitiveTagKeys SAML Attribute | 
@@ -45,7 +45,7 @@ Operations that support session tagging can fail if any of the following conditi
 + The total size of the plain text of session policies exceeds 2048 characters\.
 + The total packed size of the session policies and session tags combined is too large\. If the operation fails, the error message indicates by percentage how close the policies and tags combined are to the upper size limit\.
 
-## Things to Know About Session Tags<a name="id_session-tags_know"></a>
+## Things to know about session tags<a name="id_session-tags_know"></a>
 
 Before you use session tags, review the following details about sessions and tags\.
 + Session tags are principal tags that you specify while requesting a session\. The tags apply to requests that you make using the session's credentials\.
@@ -54,14 +54,14 @@ Before you use session tags, review the following details about sessions and tag
 + New session tags override existing assumed role or federated user tags with the same tag key, regardless of case\.
 + You cannot pass session tags using the AWS Management Console\.
 + Session tags are valid only for the current session\. 
-+ Session tags support [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. By default, tags are not passed to subsequent role sessions\. However, you can set session tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
-+ You can use session tags to control access to resources or to control what tags can be passed into a subsequent session\. For more information, see [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)\.
-+ You can view the principal tags for your session, including its session tags, in the AWS CloudTrail logs\. For more information, see [Viewing Session Tags in CloudTrail](#id_session-tags_ctlogs)\.
++ Session tags support [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. By default, tags are not passed to subsequent role sessions\. However, you can set session tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
++ You can use session tags to control access to resources or to control what tags can be passed into a subsequent session\. For more information, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
++ You can view the principal tags for your session, including its session tags, in the AWS CloudTrail logs\. For more information, see [Viewing session tags in CloudTrail](#id_session-tags_ctlogs)\.
 + You must pass a single value for each session tag\. Multivalued session tags are not supported\.
-+ You can pass a maximum of 50 session tags\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS Quotas](reference_iam-quotas.md)\.
++ You can pass a maximum of 50 session tags\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 + An AWS conversion compresses the passed session policies and session tags combined into a packed binary format that has a separate limit\. If you exceed this limit, the AWS CLI or AWS API error message indicates by percentage how close the policies and tags combined are to the upper size limit\.
 
-## Permissions Required to Add Session Tags<a name="id_session-tags_permissions-required"></a>
+## Permissions required to add session tags<a name="id_session-tags_permissions-required"></a>
 
 In addition to the action that matches the API operation, you must have the following permissions\-only action in your policy:
 
@@ -74,11 +74,11 @@ You can use this action with the following condition keys\.
 + `aws:RequestTag` – Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you can allow the principal to pass the specified session tags, but only with the specified values\.
 + `aws:ResourceTag` – Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you can allow the principal to pass session tags only if the role they are assuming includes the specified tags\.
 + `aws:TagKeys` – Use this key to compare the tag keys in a request with the keys that you specify in the policy\. For example, you can allow the principal to pass only session tags with the specified tag keys\. This condition key limits the maximum set of session tags that can be passed\.
-+ `sts:TransitiveTagKeys` \- Use this key to compare the transitive session tag keys in the request with those specified in the policy\. For example, you can write a policy to allow a principal to set only specific tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
++ `sts:TransitiveTagKeys` \- Use this key to compare the transitive session tag keys in the request with those specified in the policy\. For example, you can write a policy to allow a principal to set only specific tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
 
 For example, the following [role trust policy](id_roles_terms-and-concepts.md#term_trust-policy) allows the `test-session-tags` user to assume the role to which the policy is attached\. When that user assumes the role, they must use the AWS CLI or AWS API to pass the three required session tags and the required [external ID](id_roles_create_for-user_externalid.md)\. Additionally, the user can choose to set the `Project` and `Department` tags as transitive\.
 
-**Example Role Trust Policy for Session Tags**  
+**Example role trust policy for session tags**  
 
 ```
 {
@@ -135,15 +135,15 @@ For example, the following [role trust policy](id_roles_terms-and-concepts.md#te
   + The second condition block allows the user to pass only the `Engineering` or `Marketing` value for the `Department` session tag\.
   + The third condition block lists the maximum set of tags that can be set as transitive\. The user can choose to set a subset or no tags as transitive\. But they cannot set additional tags as transitive\. You can require that they set at least one of the tags as transitive by adding another condition block that includes `"Null":{"sts:TransitiveTagKeys":"false"}`\. 
 
-## Passing Session Tags Using AssumeRole<a name="id_session-tags_adding-assume-role"></a>
+## Passing session tags using AssumeRole<a name="id_session-tags_adding-assume-role"></a>
 
 The `AssumeRole` operation returns a set of temporary credentials that you can use to access AWS resources\. You can use IAM user or role credentials to call `AssumeRole`\. To pass session tags while assuming a role, use the `--tags` AWS CLI option or the `Tags` AWS API parameter\. 
 
-To set tags as transitive, use the `--transitive-tag-keys` AWS CLI option or the `TransitiveTagKeys` AWS API parameter\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
+To set tags as transitive, use the `--transitive-tag-keys` AWS CLI option or the `TransitiveTagKeys` AWS API parameter\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
 
 The following example shows a sample request that uses `AssumeRole`\. In this example, when you assume the `my-role-example` role, you create a session named `my-session`\. You add the session tag key\-value pairs `Project` = `Automation`, `CostCenter` = `12345`, and `Department` = `Engineering`\. You also set the `Project` and `Department` tags as transitive by specifying their keys\. 
 
-**Example AssumeRole CLI Request**  
+**Example AssumeRole CLI request**  
 
 ```
 aws sts assume-role \
@@ -154,9 +154,9 @@ aws sts assume-role \
 --external-id Example987
 ```
 
-## Passing Session Tags using AssumeRoleWithSAML<a name="id_session-tags_adding-assume-role-saml"></a>
+## Passing session tags using AssumeRoleWithSAML<a name="id_session-tags_adding-assume-role-saml"></a>
 
-The `AssumeRoleWithSAML` operation is authenticated using SAML\-based federation\. This operation returns a set of temporary credentials that you can use to access AWS resources\. For more information about using SAML\-based federation for AWS Management Console access, see [Enabling SAML 2\.0 Federated Users to Access the AWS Management Console](id_roles_providers_enable-console-saml.md)\. For details about AWS CLI or AWS API access, see [About SAML 2\.0\-based Federation](id_roles_providers_saml.md)\. For a tutorial of setting up SAML federation for your Active Directory users, see [AWS Federated Authentication with Active Directory Federation Services \(ADFS\)](http://aws.amazon.com/blogs/security/aws-federated-authentication-with-active-directory-federation-services-ad-fs/) in the *AWS Security Blog*\. 
+The `AssumeRoleWithSAML` operation is authenticated using SAML\-based federation\. This operation returns a set of temporary credentials that you can use to access AWS resources\. For more information about using SAML\-based federation for AWS Management Console access, see [Enabling SAML 2\.0 federated users to access the AWS Management Console](id_roles_providers_enable-console-saml.md)\. For details about AWS CLI or AWS API access, see [About SAML 2\.0\-based federation](id_roles_providers_saml.md)\. For a tutorial of setting up SAML federation for your Active Directory users, see [AWS Federated Authentication with Active Directory Federation Services \(ADFS\)](http://aws.amazon.com/blogs/security/aws-federated-authentication-with-active-directory-federation-services-ad-fs/) in the *AWS Security Blog*\. 
 
 As an administrator, you can allow members of your company directory to federate into AWS using the AWS STS `AssumeRoleWithSAML` operation\. To do this, you must complete the following tasks:
 
@@ -168,7 +168,7 @@ As an administrator, you can allow members of your company directory to federate
 
 1. [Finish configuring the SAML IdP and create assertions for the SAML authentication response](id_roles_providers_create_saml_assertions.md)
 
-AWS includes partners that have certified the end\-to\-end experience for session tags with their identity solutions\. To learn how to use these identity providers to configure session tags, see [Integrating Third\-Party SAML Solution Providers with AWS](id_roles_providers_saml_3rd-party.md)\.
+AWS includes partners that have certified the end\-to\-end experience for session tags with their identity solutions\. To learn how to use these identity providers to configure session tags, see [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md)\.
 
 To pass SAML attributes as session tags, include the `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/PrincipalTag:{TagKey}`\. Use the `AttributeValue` element to specify the value of the tag\. Include a separate `Attribute` element for each session tag\.
 
@@ -179,7 +179,7 @@ For example, assume that you want to pass the following identity attributes as s
 
 To pass these attributes, include the following elements in your SAML assertion\.
 
-**Example Snippet of a SAML Assertion**  
+**Example snippet of a SAML assertion**  
 
 ```
 <Attribute Name="https://aws.amazon.com/SAML/Attributes/PrincipalTag:Project">
@@ -193,11 +193,11 @@ To pass these attributes, include the following elements in your SAML assertion\
 </Attribute>
 ```
 
-To set the tags above as transitive, include another `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/TransitiveTagKeys`\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
+To set the tags above as transitive, include another `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/TransitiveTagKeys`\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
 
 To set the `Project` and `Department` tags as transitive, use the following multivalued attribute\.
 
-**Example Snippet of a SAML Assertion**  
+**Example snippet of a SAML assertion**  
 
 ```
 <Attribute Name="https://aws.amazon.com/SAML/Attributes/TransitiveTagKeys">
@@ -206,15 +206,15 @@ To set the `Project` and `Department` tags as transitive, use the following mult
 </Attribute>
 ```
 
-## Passing Session Tags using AssumeRoleWithWebIdentity<a name="id_session-tags_adding-assume-role-idp"></a>
+## Passing session tags using AssumeRoleWithWebIdentity<a name="id_session-tags_adding-assume-role-idp"></a>
 
-The `AssumeRoleWithWebIdentity` operation is authenticated using OpenID Connect \(OIDC\)\-compliant web identity federation\. This operation returns a set of temporary credentials that you can use to access AWS resources\. For more information about using web identity federation for AWS Management Console access, see [About Web Identity Federation](id_roles_providers_oidc.md)\.
+The `AssumeRoleWithWebIdentity` operation is authenticated using OpenID Connect \(OIDC\)\-compliant web identity federation\. This operation returns a set of temporary credentials that you can use to access AWS resources\. For more information about using web identity federation for AWS Management Console access, see [About web identity federation](id_roles_providers_oidc.md)\.
 
 To pass session tags from OpenID Connect \(OIDC\), you must include the session tags in the JSON Web Token \(JWT\)\. Include session tags in the `[https://aws.amazon.com/](https://aws.amazon.com/)tags` namespace in the token when you submit the `AssumeRoleWithWebIdentity` request\. To learn more about OIDC tokens and claims, see [Using Tokens with User Pools](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html) in the *Amazon Cognito Developer Guide*\.
 
-For example, the following decoded JWT is a token that is used to call `AssumeRoleWithWebIdentity` with the `Project`, `CostCenter`, and `Department` session tags\. The token also sets the `Project` and `CostCenter` tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining Roles with Session Tags](#id_session-tags_role-chaining)\.
+For example, the following decoded JWT is a token that is used to call `AssumeRoleWithWebIdentity` with the `Project`, `CostCenter`, and `Department` session tags\. The token also sets the `Project` and `CostCenter` tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
 
-**Example Decoded JSON Web Token**  
+**Example decoded JSON web token**  
 
 ```
 {
@@ -239,13 +239,13 @@ For example, the following decoded JWT is a token that is used to call `AssumeRo
 }
 ```
 
-## Passing Session Tags using GetFederationToken<a name="id_session-tags_adding-getfederationtoken"></a>
+## Passing session tags using GetFederationToken<a name="id_session-tags_adding-getfederationtoken"></a>
 
 The `GetFederationToken` lets you federate your user\. This operation returns a set of temporary credentials that you can use to access AWS resources\. To add tags to your federated user session, use the `--tags` AWS CLI option or the `Tags` AWS API parameter\. You can't set session tags as transitive when you use `GetFederationToken`\. This is because you can't use the temporary credentials to assume a role, which means that role chaining is not possible\. 
 
 The following example shows a sample request using `GetFederationToken`\. In this example, when you request the token, you create a session named `my-fed-user`\. You add the session tag key\-value pairs `Project` = `Automation` and `Department` = `Engineering`\.
 
-**Example GetFederationToken CLI Request**  
+**Example GetFederationToken CLI request**  
 
 ```
 aws sts get-federation-token \
@@ -255,7 +255,7 @@ aws sts get-federation-token \
 
 When you use the temporary credentials that are returned by the `GetFederationToken` operation, the session's principal tags include the user's tags and the passed session tags\.
 
-## Chaining Roles with Session Tags<a name="id_session-tags_role-chaining"></a>
+## Chaining roles with session tags<a name="id_session-tags_role-chaining"></a>
 
 You can assume one role and then use the temporary credentials to assume another role\. You can continue from session to session\. This is called [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. When you pass session tags while assuming a role, you can set the keys as transitive\. This ensures that those session tags pass to subsequent sessions in a role chain\. You cannot set role tags as transitive\. To pass these tags to subsequent sessions, specify them as session tags\.
 
@@ -271,7 +271,7 @@ When you chain roles, you can ensure that tags from an earlier session persist t
 
 You perform this request using the following AWS CLI command:
 
-**Example AssumeRole CLI Request**  
+**Example AssumeRole CLI request**  
 
 ```
 aws sts assume-role \
@@ -287,7 +287,7 @@ You then use the credentials for that session to assume `Role2`\. The tag `Sun` 
 
 You perform this second request using the following AWS CLI command:
 
-**Example AssumeRole CLI Request**  
+**Example AssumeRole CLI request**  
 
 ```
 aws sts assume-role \
@@ -301,7 +301,7 @@ You then use the second session credentials to assume `Role3`\. The principal ta
 
 You perform the third request using the following AWS CLI command:
 
-**Example AssumeRole CLI Request**  
+**Example AssumeRole CLI request**  
 
 ```
 aws sts assume-role \
@@ -309,19 +309,19 @@ aws sts assume-role \
 --role-session-name Session3
 ```
 
-## Using Session Tags for ABAC<a name="id_session-tags_using-abac"></a>
+## Using session tags for ABAC<a name="id_session-tags_using-abac"></a>
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on tag attributes\. 
 
-If your company uses a SAML\-based identity provider \(IdP\) for corporate user identities, you can configure your SAML assertion to pass session tags to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [Using SAML Session Tags for ABAC](tutorial_abac-saml.md)\.
+If your company uses a SAML\-based identity provider \(IdP\) for corporate user identities, you can configure your SAML assertion to pass session tags to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
-## Viewing Session Tags in CloudTrail<a name="id_session-tags_ctlogs"></a>
+## Viewing session tags in CloudTrail<a name="id_session-tags_ctlogs"></a>
 
-You can use AWS CloudTrail to view the requests made to assume roles or federate users\. The CloudTrail log file includes information about the principal tags for the assumed\-role or federated user session\. For more information, see [Logging IAM and AWS STS API Calls with AWS CloudTrail](cloudtrail-integration.md)\.
+You can use AWS CloudTrail to view the requests made to assume roles or federate users\. The CloudTrail log file includes information about the principal tags for the assumed\-role or federated user session\. For more information, see [Logging IAM and AWS STS API calls with AWS CloudTrail](cloudtrail-integration.md)\.
 
 For example, assume that you make an AWS STS `AssumeRoleWithSAML` request, pass session tags, and set those tags as transitive\. You can find the following information in your CloudTrail log\.
 
-**Example AssumeRoleWithSAML CloudTrail Log**  
+**Example AssumeRoleWithSAML CloudTrail log**  
 
 ```
     "requestParameters": {
@@ -342,6 +342,6 @@ For example, assume that you make an AWS STS `AssumeRoleWithSAML` request, pass 
 ```
 
 You can view the following example CloudTrail logs to view events that use session tags\.
-+ [Example AWS STS Role Chaining API Event in CloudTrail Log File](cloudtrail-integration.md#stscloudtrailexample-assumerole)
-+ [Example SAML AWS STS API Event in CloudTrail Log File](cloudtrail-integration.md#stscloudtrailexample_saml)
-+ [Example Web Identity AWS STS API Event in CloudTrail Log File](cloudtrail-integration.md#stscloudtrailexample_web-identity)
++ [Example AWS STS role chaining API event in CloudTrail log file](cloudtrail-integration.md#stscloudtrailexample-assumerole)
++ [Example SAML AWS STS API event in CloudTrail log file](cloudtrail-integration.md#stscloudtrailexample_saml)
++ [Example web identity AWS STS API event in CloudTrail log file](cloudtrail-integration.md#stscloudtrailexample_web-identity)

@@ -1,4 +1,4 @@
-# IAM: Allows Read\-Only Access to the IAM Console Without Reporting<a name="reference_policies_examples_iam_read-only-console-no-reporting"></a>
+# IAM: Allows read\-only access to the IAM console without reporting<a name="reference_policies_examples_iam_read-only-console-no-reporting"></a>
 
 This example shows how you might create a policy that allows IAM users to perform any IAM action that begins with the string `Get`, `List`, or `Generate`\. As users work with the console, the console makes requests to IAM to list groups, users, roles, and policies, and to generate reports about those resources\.
 

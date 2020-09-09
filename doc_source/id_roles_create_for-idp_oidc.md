@@ -1,8 +1,8 @@
-# Creating a Role for Web Identity or OpenID Connect Federation \(Console\)<a name="id_roles_create_for-idp_oidc"></a>
+# Creating a role for web identity or OpenID connect federation \(console\)<a name="id_roles_create_for-idp_oidc"></a>
 
-You can use Web Identity or OpenID Connect Federation \(OIDC\) identity providers instead of creating IAM users in your AWS account\. With an identity provider \(IdP\), you can manage your user identities outside of AWS and give these external user identities permissions to access AWS resources in your account\. For more information about federation and identity providers, see [Identity Providers and Federation](id_roles_providers.md)\.
+You can use Web Identity or OpenID Connect Federation \(OIDC\) identity providers instead of creating IAM users in your AWS account\. With an identity provider \(IdP\), you can manage your user identities outside of AWS and give these external user identities permissions to access AWS resources in your account\. For more information about federation and identity providers, see [Identity providers and federation](id_roles_providers.md)\.
 
-## Prerequisites for Creating a Role for Web Identity or OIDC<a name="idp_oidc_Prerequisites"></a>
+## Prerequisites for creating a role for web identity or OIDC<a name="idp_oidc_Prerequisites"></a>
 
 Before you can create a role for web identity federation, you must first complete the following prerequisite steps\.<a name="oidc-prereqs"></a>
 
@@ -13,7 +13,7 @@ Before you can create a role for web identity federation, you must first complet
    + [Add Facebook Login to Your App or Website](https://developers.facebook.com/docs/facebook-login/v2.1) on the Facebook developers site\.
    + [Using OAuth 2\.0 for Login \(OpenID Connect\)](https://developers.google.com/accounts/docs/OAuth2Login) on the Google developers site\.
 
-1. <a name="idpoidcstep2"></a>After getting the required information from the identity provider, create an identity provider in IAM\. For more information, see [Creating OpenID Connect \(OIDC\) Identity Providers](id_roles_providers_create_oidc.md)\.
+1. <a name="idpoidcstep2"></a>After getting the required information from the identity provider, create an identity provider in IAM\. For more information, see [Creating OpenID Connect \(OIDC\) identity providers](id_roles_providers_create_oidc.md)\.
 
 1. Prepare the policies for the role that the IdP\-authenticated users will assume\. As with any role, a role for a mobile app includes two policies\. One is the trust policy that specifies who can assume the role\. The other is the permissions policy that specifies the AWS actions and resources that the mobile app is allowed or denied access to\.
 
@@ -127,9 +127,9 @@ Before you can create a role for web identity federation, you must first complet
      }
    ```
 
-## Creating a Role for Web Identity or OIDC<a name="idp_oidc_Create"></a>
+## Creating a role for web identity or OIDC<a name="idp_oidc_Create"></a>
 
-After you complete the prerequisites, you can create the role in IAM\. The following procedure describes how to create the role for web identity/OIDC federation in the AWS Management Console\. To create a role from the AWS CLI or AWS API, see the procedures at [Creating a Role for a Third\-Party Identity Provider \(Federation\)](id_roles_create_for-idp.md)\.
+After you complete the prerequisites, you can create the role in IAM\. The following procedure describes how to create the role for web identity/OIDC federation in the AWS Management Console\. To create a role from the AWS CLI or AWS API, see the procedures at [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\.
 
 **Important**  
 If you are using Amazon Cognito, you should use the Amazon Cognito console to set up the roles\. Otherwise, use the IAM console to create a role for web identity federation\.
@@ -160,7 +160,7 @@ You need to manually create a role for use with Amazon Cognito only when you are
 
 1. Review your web identity information and then choose **Next: Permissions**\.
 
-1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
+1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\.
 
@@ -168,7 +168,7 @@ You need to manually create a role for use with Amazon Cognito only when you are
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
 
 1. Choose **Next: Review**\. 
 

@@ -1,8 +1,8 @@
-# Access Management<a name="access"></a>
+# Access management for AWS resources<a name="access"></a>
 
-AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a [principal](intro-structure.md#intro-structure-principal) makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources\. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions\. For more information about policy types and uses, see [Policies and Permissions](access_policies.md)\.
+AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a [principal](intro-structure.md#intro-structure-principal) makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources\. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions\. For more information about policy types and uses, see [Policies and permissions in IAM](access_policies.md)\.
 
-For details about the rest of the authentication and authorization process, see [Understanding How IAM Works](intro-structure.md)\.
+For details about the rest of the authentication and authorization process, see [Understanding how IAM works](intro-structure.md)\.
 
 ![\[AccessManagement_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/access-diagram_800.png)
 
@@ -16,7 +16,7 @@ AWS checks each policy that applies to the context of the request\. If a single 
 
 After your request has been authenticated and authorized, AWS approves the request\. If you need to make a request in a different account, a policy in the other account must allow you to access the resource\. In addition, the IAM entity that you use to make the request must have an identity\-based policy that allows the request\.
 
-## Access Management Resources<a name="access_resources"></a>
+## Access management resources<a name="access_resources"></a>
 
 For more information about permissions and about creating policies, see the following resources:
 

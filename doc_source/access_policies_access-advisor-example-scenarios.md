@@ -1,13 +1,13 @@
-# Example Scenarios for Using Last Accessed Information<a name="access_policies_access-advisor-example-scenarios"></a>
+# Example scenarios for using last accessed information<a name="access_policies_access-advisor-example-scenarios"></a>
 
-You can use last accessed information to make decisions about the permissions that you grant to your IAM entities or AWS Organizations entities\. For more information, see [Refining Permissions Using Last Accessed Information](access_policies_access-advisor.md)\. 
+You can use last accessed information to make decisions about the permissions that you grant to your IAM entities or AWS Organizations entities\. For more information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\. 
 
 **Note**  
-Before you view the access information for an entity or policy in IAM or AWS Organizations, make sure that you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to Know About Last Accessed Information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
+Before you view the access information for an entity or policy in IAM or AWS Organizations, make sure that you understand the reporting period, reported entities, and the evaluated policy types for your data\. For more details, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
-It’s up to you as an administrator to balance the accessibility and least privilege that’s appropriate for your company\. 
+It's up to you as an administrator to balance the accessibility and least privilege that's appropriate for your company\. 
 
-## Using Information to Reduce Permissions for an IAM Group<a name="access-advisor-sample-reduce-permissions-group"></a>
+## Using information to reduce permissions for an IAM group<a name="access-advisor-sample-reduce-permissions-group"></a>
 
 You can use last accessed information to reduce IAM group permissions to include only those services that your users need\. This method is an important step in [granting least privilege](best-practices.md#grant-least-privilege) at a service level\.
 
@@ -81,7 +81,7 @@ Paulo decides to reduce the policy permissions to include only those five servic
 
 To further reduce permissions, Paulo can view the account's events in AWS CloudTrail **Event history**\. There he can view detailed event information that he can use to reduce the policy's permissions to include only the actions and resources that the developers need\. For more information, see [Viewing CloudTrail Events in the CloudTrail Console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) in the *AWS CloudTrail User Guide*\.
 
-## Using Information to Reduce Permissions for an IAM User<a name="access_policies_access-advisor-reduce-permissions-users"></a>
+## Using information to reduce permissions for an IAM user<a name="access_policies_access-advisor-reduce-permissions-users"></a>
 
 You can use last accessed information to reduce the permissions for an individual IAM user\.
 
@@ -99,13 +99,13 @@ Martha chooses the **Permissions** tab, where she views which policies are attac
 + Route 53 – The `App-Dev-Route53` customer managed policy is attached to the `app-dev` group\.
 + Elastic Transcoder – The `App-Dev-ElasticTranscoder` customer managed policy is attached to the `app-dev` group\.
 
-Martha decides to remove the `IAMFullAccess` AWS managed policy that is attached directly to `nikhilj`\. She also removes Nikhil’s membership to the `security-team` group\. These two actions remove the unnecessary access to IAM and CloudTrail\. 
+Martha decides to remove the `IAMFullAccess` AWS managed policy that is attached directly to `nikhilj`\. She also removes Nikhil's membership to the `security-team` group\. These two actions remove the unnecessary access to IAM and CloudTrail\. 
 
 Nikhil's permissions to access to Route 53 and Elastic Transcoder are granted by the `app-dev` group\. Although Nikhil isn't using those services, other members of the group might be\. Martha reviews the last accessed information for the `app-dev` group and learns that several members recently accessed Route 53 and Amazon S3\. But no group members have accessed Elastic Transcoder in the last year\. She removes the `App-Dev-ElasticTranscoder` customer managed policy from the group\.
 
 Martha then reviews the last accessed information for the `App-Dev-ElasticTranscoder` customer managed policy\. She learns that the policy is not attached to any other IAM identities\. She investigates within her company to make sure that the policy will not be needed in the future, and then she deletes it\.
 
-## Using Information Before Deleting IAM Resources<a name="access-advisor-sample-delete-resources"></a>
+## Using information before deleting IAM resources<a name="access-advisor-sample-delete-resources"></a>
 
 You can use last accessed information before you delete an IAM resource to make sure that a certain amount of time has passed since someone last used the resource\. This applies to users, groups, roles, and policies\. To learn more about these actions, see the following topics:
 + **Users** – [Deleting a user](id_users_manage.md#id_users_deleting)
@@ -113,7 +113,7 @@ You can use last accessed information before you delete an IAM resource to make 
 + **Roles** – [Deleting a role](id_roles_manage_delete.md)
 + **Policies** – [Deleting a managed policy \(this also detaches the policy from identities\)](access_policies_manage-delete.md)
 
-## Using Information Before Editing IAM Policies<a name="access-advisor-sample-edit-policies"></a>
+## Using information before editing IAM policies<a name="access-advisor-sample-edit-policies"></a>
 
 You can review last accessed information for an IAM identity \(user, group, or role\), or for an IAM policy before editing a policy that affects that resource\. This is important because you don't want to remove access for someone that is using it\.
 
@@ -187,7 +187,7 @@ aws iam create-policy-version --policy-arn arn:aws:iam::123456789012:policy/Exam
 
 The `ExamplePolicy1` policy is now updated to remove access to the unnecessary Amazon EC2 service\.
 
-## Other IAM Scenarios<a name="access-advisor-scenarios-other"></a>
+## Other IAM scenarios<a name="access-advisor-scenarios-other"></a>
 
 Information about when an IAM resource \(user, group, role, or policy\) last attempted to access a service can help you when you complete any of the following tasks:
 + **Policies** – [Editing an existing customer\-managed or inline policy to remove permissions](access_policies_manage-edit.md)
@@ -197,7 +197,7 @@ Information about when an IAM resource \(user, group, role, or policy\) last att
 + **Entities** – [Set a permissions boundary to control the maximum permissions that an entity \(user or role\) can have](access_policies_manage-attach-detach.md)
 + **Groups** – [Removing users from a group](id_groups_manage_add-remove-users.md)
 
-## Using Information to Refine Permissions for an Organizational Unit<a name="access_policies_access-advisor-reduce-permissions-orgs"></a>
+## Using information to refine permissions for an organizational unit<a name="access_policies_access-advisor-reduce-permissions-orgs"></a>
 
 You can use last accessed information to refine the permissions for an organizational unit \(OU\) in AWS Organizations\.
 

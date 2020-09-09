@@ -1,4 +1,4 @@
-# Managing Passwords for IAM Users<a name="id_credentials_passwords_admin-change-user"></a>
+# Managing passwords for IAM users<a name="id_credentials_passwords_admin-change-user"></a>
 
 IAM users who use the AWS Management Console to work with AWS resources must have a password in order to sign in\. You can create, change, or delete a password for an IAM user in your AWS account\. 
 
@@ -8,7 +8,7 @@ After you have assigned a password to a user, the user can sign in to the AWS Ma
 https://12-digit-AWS-account-ID or alias.signin.aws.amazon.com/console
 ```
 
-For more information about how IAM users sign in to the AWS Management Console, see [Signing in to the AWS Management Console as an IAM User or Root User](console.md)\. 
+For more information about how IAM users sign in to the AWS Management Console, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. 
 
 In addition to manually creating individual passwords for your IAM users, you can create a password policy that applies to all IAM user passwords in your AWS account\.
 
@@ -22,18 +22,18 @@ When you allow your IAM users to change their own passwords, IAM automatically a
 + Prevent IAM users from reusing previous passwords\.
 + Force IAM users to contact an account administrator when the user has allowed his or her password to expire\.
 
-For information about managing your account's password policy, see [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)\.
+For information about managing your account's password policy, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\.
 
-Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [Identities \(Users, Groups, and Roles\)](id.md)\. For information about using policies to set permissions, see [Changing Permissions for an IAM User](id_users_change-permissions.md)\. 
+Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [IAM Identities \(users, groups, and roles\)](id.md)\. For information about using policies to set permissions, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. 
 
-You can grant users permission to change their own passwords\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\. For information about how users access your account sign\-in page, see [Signing in to the AWS Management Console as an IAM User or Root User](console.md)\. 
+You can grant users permission to change their own passwords\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\. For information about how users access your account sign\-in page, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. 
 
 **Topics**
-+ [Creating, Changing, or Deleting an IAM User Password \(Console\)](#id_credentials_passwords_admin-change-user_console)
-+ [Creating, Changing, or Deleting an IAM User Password \(AWS CLI\)](#Using_ManagingPasswordsCLIAPI)
-+ [Creating, Changing, or Deleting an IAM User Password \(AWS API\)](#Using_ManagingPasswordsAPI)
++ [Creating, changing, or deleting an IAM user password \(console\)](#id_credentials_passwords_admin-change-user_console)
++ [Creating, changing, or deleting an IAM user password \(AWS CLI\)](#Using_ManagingPasswordsCLIAPI)
++ [Creating, changing, or deleting an IAM user password \(AWS API\)](#Using_ManagingPasswordsAPI)
 
-## Creating, Changing, or Deleting an IAM User Password \(Console\)<a name="id_credentials_passwords_admin-change-user_console"></a>
+## Creating, changing, or deleting an IAM user password \(console\)<a name="id_credentials_passwords_admin-change-user_console"></a>
 
 You can use the AWS Management Console to manage passwords for your IAM users\.
 
@@ -59,7 +59,7 @@ The password that you create must meet the account's [password policy](id_creden
 
 1. To require the user to create a new password when signing in, choose **Require password reset**\. Then choose **Apply**\.
 **Important**  
-If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\.
+If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
 
 1. If you choose the option to generate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
 **Important**  
@@ -85,7 +85,7 @@ The password that you create must meet the account's [password policy](id_creden
 
 1. To require the user to create a new password when signing in, choose **Require password reset**\. Then choose **Apply**\.
 **Important**  
-If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM Users to Change Their Own Passwords](id_credentials_passwords_enable-user-change.md)\.
+If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
 
 1. If you choose the option to generate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
 **Important**  
@@ -106,7 +106,7 @@ For security reasons, you cannot access the password after completing this step,
 **Important**  
 When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\.
 
-## Creating, Changing, or Deleting an IAM User Password \(AWS CLI\)<a name="Using_ManagingPasswordsCLIAPI"></a>
+## Creating, changing, or deleting an IAM user password \(AWS CLI\)<a name="Using_ManagingPasswordsCLIAPI"></a>
 
 You can use the AWS CLI API to manage passwords for your IAM users\.
 
@@ -131,9 +131,9 @@ You can use the AWS CLI API to manage passwords for your IAM users\.
 1. To delete a password, run this command: [aws iam delete\-login\-profile](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-login-profile.html)
 
 **Important**  
-When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM User \(AWS CLI\)](id_users_manage.md#id_users_deleting_cli)\. 
+When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM user \(AWS CLI\)](id_users_manage.md#id_users_deleting_cli)\. 
 
-## Creating, Changing, or Deleting an IAM User Password \(AWS API\)<a name="Using_ManagingPasswordsAPI"></a>
+## Creating, changing, or deleting an IAM user password \(AWS API\)<a name="Using_ManagingPasswordsAPI"></a>
 
 You can use the AWS API to manage passwords for your IAM users\.
 
@@ -158,4 +158,4 @@ You can use the AWS API to manage passwords for your IAM users\.
 1. To delete a password, run this command: [DeleteLoginProfile](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteLoginProfile.html)
 
 **Important**  
-When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM User \(AWS CLI\)](id_users_manage.md#id_users_deleting_cli)\. 
+When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\. When you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user from your AWS account, you must first delete the password using this operation\. For more information, see [Deleting an IAM user \(AWS CLI\)](id_users_manage.md#id_users_deleting_cli)\. 

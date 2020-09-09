@@ -1,4 +1,4 @@
-# Amazon DynamoDB: Allows Access to a Specific Table<a name="reference_policies_examples_dynamodb_specific-table"></a>
+# Amazon DynamoDB: Allows access to a specific table<a name="reference_policies_examples_dynamodb_specific-table"></a>
 
 This example shows how you might create a policy that allows full access to the `MyTable` DynamoDB table\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 

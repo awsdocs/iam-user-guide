@@ -1,4 +1,4 @@
-# IAM Console Search<a name="console_search"></a>
+# IAM console search<a name="console_search"></a>
 
 As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys\. Or you might need to browse to the deeply nested IAM resources to find what you need\. A faster option is to use the IAM console search page\. You can locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
 
@@ -14,7 +14,7 @@ Every line in the search result is an active link\. For example, you can choose 
 **Note**  
 Access key search requires you to type the full access key ID in the search box\. The search result shows the user associated with that key\. From there you can navigate directly to that user's page, where you can manage their access key\.
 
-## Using IAM Console Search<a name="using_search"></a>
+## Using IAM console search<a name="using_search"></a>
 
 Use the **Search** page in the IAM console to find items related to that account\. 
 
@@ -28,7 +28,7 @@ Use the **Search** page in the IAM console to find items related to that account
 
 1. Choose a link in the search results list to navigate to the corresponding part of the console or documentation\. 
 
-## Icons in the IAM Console Search Results<a name="search_icons"></a>
+## Icons in the IAM console search results<a name="search_icons"></a>
 
 The following icons identify the types of items that are found by a search:
 
@@ -45,7 +45,7 @@ The following icons identify the types of items that are found by a search:
 |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_delete.png)  | Results from the keyword delete | 
 |  ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/search_help.png)  | IAM documentation | 
 
-## Sample Search Phrases<a name="search_phrases"></a>
+## Sample search phrases<a name="search_phrases"></a>
 
 You can use the following phrases in the IAM search\. Replace terms in italics with the names of actual IAM users, groups, roles, access keys, policies, or identity providers respectively that you want to locate\.
 + ***user\_name*** or ***group\_name* ** or ***role\_name*** or ***policy\_name*** or ***identity\_provider\_name***

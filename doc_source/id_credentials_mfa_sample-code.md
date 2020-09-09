@@ -1,8 +1,8 @@
-# Sample Code: Requesting Credentials with Multi\-factor Authentication<a name="id_credentials_mfa_sample-code"></a>
+# Sample code: Requesting credentials with multi\-factor authentication<a name="id_credentials_mfa_sample-code"></a>
 
 The following examples show how to call `GetSessionToken` and `AssumeRole` operations and pass MFA authentication parameters\. No permissions are required to call `GetSessionToken`, but you must have a policy that allows you to call `AssumeRole`\. The credentials returned are then used to list all S3 buckets in the account\.
 
-## Calling GetSessionToken with MFA Authentication \(Python and C\#\)<a name="MFAProtectedAPI-example-getsessiontoken"></a>
+## Calling GetSessionToken with MFA authentication \(Python and C\#\)<a name="MFAProtectedAPI-example-getsessiontoken"></a>
 
 The following examples, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/) and [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/), show how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by the `GetSessionToken` operation are then used to list all S3 buckets in the account\.
 
@@ -95,11 +95,11 @@ foreach (S3Object s3Object in S3ListObjectsResponse.S3Objects)
 }
 ```
 
-## Calling AssumeRole with MFA Authentication \(Python\)<a name="MFAProtectedAPI-example-assumerole"></a>
+## Calling AssumeRole with MFA authentication \(Python\)<a name="MFAProtectedAPI-example-assumerole"></a>
 
 The following example, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/), shows how to call `AssumeRole` and pass MFA authentication information\. The temporary security credentials returned by `AssumeRole` are then used to list all Amazon S3 buckets in the account\. 
 
- For more information about this scenario, see [Scenario: MFA Protection for Cross\-Account Delegation](id_credentials_mfa_configure-api-require.md#MFAProtectedAPI-cross-account-delegation)\. 
+ For more information about this scenario, see [Scenario: MFA protection for cross\-account delegation](id_credentials_mfa_configure-api-require.md#MFAProtectedAPI-cross-account-delegation)\. 
 
 ```
 import boto

@@ -1,4 +1,4 @@
-# IAM JSON Policy Elements: Id<a name="reference_policies_elements_id"></a>
+# IAM JSON policy elements: Id<a name="reference_policies_elements_id"></a>
 
 The `Id` element specifies an optional identifier for the policy\. The ID is used differently in different services\.
 

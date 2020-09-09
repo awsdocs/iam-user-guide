@@ -1,4 +1,4 @@
-# Examples of Policy Summaries<a name="access_policies_policy-summary-examples"></a>
+# Examples of policy summaries<a name="access_policies_policy-summary-examples"></a>
 
 The following examples include JSON policies with their associated [policy summaries](access_policies_understand-policy-summary.md), the [service summaries](access_policies_understand-service-summary.md), and the [action summaries](access_policies_understand-action-summary.md) to help you understand the permissions given through a policy\.
 
@@ -126,7 +126,7 @@ This policy includes multiple resources and conditions\.
 
 ![\[Action summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-example3-dialog.png)
 
-## Policy 4: EC2\_Troubleshoot<a name="policy_example4"></a>
+## Policy 4: EC2\_troubleshoot<a name="policy_example4"></a>
 
 The following policy allows users to get a screenshot of a running Amazon EC2 instance, which can help with EC2 troubleshooting\. This policy also permits viewing information about the items in the Amazon S3 developer bucket\. 
 
@@ -170,7 +170,7 @@ The following policy allows users to get a screenshot of a running Amazon EC2 in
 
 ## Policy 5: Unrecognized\_Service\_Action<a name="example5"></a>
 
-The following policy was intended to provide full access to DynamoDB, but that access fails because `dynamodb` is misspelled as `dynamobd`\. This policy was intended to allow access to some Amazon EC2 actions in the `us-east-2` Region, but deny that access to the `ap-northeast-2` Region\. However, access to reboot instances in the `ap-northeast-2` Region is not explicitly denied because of the unrecognized `o` in the middle of the `RebootInstances` action\. This example shows how you can use policy summaries to locate errors in your policies\. To learn how to edit policies based on information in a policy summary, see [Editing Policies to Fix Warnings](access_policies_understand-policy-summary.md#edit-policy-summary)\.
+The following policy was intended to provide full access to DynamoDB, but that access fails because `dynamodb` is misspelled as `dynamobd`\. This policy was intended to allow access to some Amazon EC2 actions in the `us-east-2` Region, but deny that access to the `ap-northeast-2` Region\. However, access to reboot instances in the `ap-northeast-2` Region is not explicitly denied because of the unrecognized `o` in the middle of the `RebootInstances` action\. This example shows how you can use policy summaries to locate errors in your policies\. To learn how to edit policies based on information in a policy summary, see [Editing policies to fix warnings](access_policies_understand-policy-summary.md#edit-policy-summary)\.
 
 ```
 {

@@ -1,4 +1,4 @@
-# Managing Access Keys for IAM Users<a name="id_credentials_access-keys"></a>
+# Managing access keys for IAM users<a name="id_credentials_access-keys"></a>
 
 **Note**  
 If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.
@@ -14,17 +14,17 @@ As a best practice, use temporary security credentials \(IAM roles\) instead of 
 
 If you still need to use long\-term access keys, you can create, modify, view, or rotate your access keys \(access key IDs and secret access keys\)\. You can have a maximum of two access keys\. This allows you to rotate the active keys according to best practices\.
 
-When you create an access key pair, save the access key ID and secret access key in a secure location\. The secret access key is available only at the time you create it\. If you lose your secret access key, you must delete the access key and create a new one\. For more details, see [Resetting Your Lost or Forgotten Passwords or Access Keys](id_credentials_access-keys_retrieve.md)\.
+When you create an access key pair, save the access key ID and secret access key in a secure location\. The secret access key is available only at the time you create it\. If you lose your secret access key, you must delete the access key and create a new one\. For more details, see [Resetting lost or forgotten passwords or access keys for AWS](id_credentials_access-keys_retrieve.md)\.
 
 **Topics**
-+ [Permissions Required](#access-keys_required-permissions)
-+ [Managing Access Keys \(Console\)](#Using_CreateAccessKey)
-+ [Managing Access Keys \(AWS CLI\)](#Using_CreateAccessKey_CLIAPI)
-+ [Managing Access Keys \(AWS API\)](#Using_CreateAccessKey_API)
-+ [Rotating Access Keys](#Using_RotateAccessKey)
-+ [Auditing Access Keys](#Using_access-keys-audit)
++ [Permissions required](#access-keys_required-permissions)
++ [Managing access keys \(console\)](#Using_CreateAccessKey)
++ [Managing access keys \(AWS CLI\)](#Using_CreateAccessKey_CLIAPI)
++ [Managing access keys \(AWS API\)](#Using_CreateAccessKey_API)
++ [Rotating access keys](#Using_RotateAccessKey)
++ [Auditing access keys](#Using_access-keys-audit)
 
-## Permissions Required<a name="access-keys_required-permissions"></a>
+## Permissions required<a name="access-keys_required-permissions"></a>
 
 To create access keys for your own IAM user, you must have the permissions from the following policy:
 
@@ -69,7 +69,7 @@ To rotate access keys for your own IAM user, you must have the permissions from 
 }
 ```
 
-## Managing Access Keys \(Console\)<a name="Using_CreateAccessKey"></a>
+## Managing access keys \(console\)<a name="Using_CreateAccessKey"></a>
 
 You can use the AWS Management Console to manage an IAM user's access keys\.
 
@@ -152,7 +152,7 @@ Only the user's access key ID and status is visible\. The secret access key can 
 
    1. Choose **Close** to return to the list of users and confirm that the filtered user owns the specified access key\.
 
-## Managing Access Keys \(AWS CLI\)<a name="Using_CreateAccessKey_CLIAPI"></a>
+## Managing access keys \(AWS CLI\)<a name="Using_CreateAccessKey_CLIAPI"></a>
 
 To manage an IAM user's access keys from the AWS CLI, run the following commands\.
 + To create an access key: [https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-access-key.html)
@@ -161,7 +161,7 @@ To manage an IAM user's access keys from the AWS CLI, run the following commands
 + To determine when an access key was most recently used: [https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-access-key-last-used.html)
 + To delete an access key: [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 
-## Managing Access Keys \(AWS API\)<a name="Using_CreateAccessKey_API"></a>
+## Managing access keys \(AWS API\)<a name="Using_CreateAccessKey_API"></a>
 
 To manage an IAM user's access keys from the AWS API, call the following operations\.
 + To create an access key: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html)
@@ -170,21 +170,21 @@ To manage an IAM user's access keys from the AWS API, call the following operati
 + To determine when an access key was most recently used: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccessKeyLastUsed.html)
 + To delete an access key: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
 
-## Rotating Access Keys<a name="Using_RotateAccessKey"></a>
+## Rotating access keys<a name="Using_RotateAccessKey"></a>
 
 As a security best practice, we recommend that you regularly rotate \(change\) IAM user access keys\. If your administrator granted you the necessary permissions, you can rotate your own access keys\.
 
-Administrators, for details about granting your users permissions to rotate their own access keys, see [AWS: Allows IAM Users to Manage Their Own Password, Access Keys, and SSH Public Keys on the My Security Credentials Page](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\. You can also apply a password policy to your account to require that all of your IAM users periodically rotate their passwords\. You can choose how often they must do so\. For more information, see [Setting an Account Password Policy for IAM Users](id_credentials_passwords_account-policy.md)\. 
+Administrators, for details about granting your users permissions to rotate their own access keys, see [AWS: Allows IAM users to manage their own password, access keys, and SSH public keys on the my security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\. You can also apply a password policy to your account to require that all of your IAM users periodically rotate their passwords\. You can choose how often they must do so\. For more information, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\. 
 
 **Important**  
 As a best practice, do not use your AWS account root user\. If you use the AWS account root user credentials, we recommend that you also regularly rotate them\. The account password policy does not apply to the root user credentials\. IAM users cannot manage credentials for the AWS account root user, so you must use the root user credentials \(not a user's\) to change the root user credentials\. Note that we recommend against using the root user for everyday work in AWS\. 
 
 **Topics**
-+ [Rotating IAM User Access Keys \(Console\)](#rotating_access_keys_console)
-+ [Rotating Access Keys \(AWS CLI\)](#rotating_access_keys_cli)
-+ [Rotating Access Keys \(AWS API\)](#rotating_access_keys_api)
++ [Rotating IAM user access keys \(console\)](#rotating_access_keys_console)
++ [Rotating access keys \(AWS CLI\)](#rotating_access_keys_cli)
++ [Rotating access keys \(AWS API\)](#rotating_access_keys_api)
 
-### Rotating IAM User Access Keys \(Console\)<a name="rotating_access_keys_console"></a>
+### Rotating IAM user access keys \(console\)<a name="rotating_access_keys_console"></a>
 
 You can rotate access keys from the AWS Management Console\.
 
@@ -236,7 +236,7 @@ You can rotate access keys from the AWS Management Console\.
 
 1. The **Access key age** column shows the number of days since the oldest active access key was created\. You can use this information to find users with access keys that need rotating\. The column displays **None** for users with no access key\.
 
-### Rotating Access Keys \(AWS CLI\)<a name="rotating_access_keys_cli"></a>
+### Rotating access keys \(AWS CLI\)<a name="rotating_access_keys_cli"></a>
 
 You can rotate access keys from the AWS Command Line Interface\.
 
@@ -264,9 +264,9 @@ You can rotate access keys from the AWS Command Line Interface\.
 
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
-+ [Security Best Practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
++ [Security best practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
 
-### Rotating Access Keys \(AWS API\)<a name="rotating_access_keys_api"></a>
+### Rotating access keys \(AWS API\)<a name="rotating_access_keys_api"></a>
 
 You can rotate access keys using the AWS API\.
 
@@ -294,9 +294,9 @@ You can rotate access keys using the AWS API\.
 
 For more information, see the following:
 +  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
-+ [Security Best Practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
++ [Security best practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
 
-## Auditing Access Keys<a name="Using_access-keys-audit"></a>
+## Auditing access keys<a name="Using_access-keys-audit"></a>
 
 You can review the AWS access keys in your code to determine whether the keys are from an account that you own\. You can pass an access key ID using the [https://docs.aws.amazon.com/cli/latest/reference/sts/get-access-key-info.html](https://docs.aws.amazon.com/cli/latest/reference/sts/get-access-key-info.html) AWS CLI command or the [https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetAccessKeyInfo.html) AWS API operation\.
 

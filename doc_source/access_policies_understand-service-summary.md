@@ -1,4 +1,4 @@
-# Service Summary \(List of Actions\)<a name="access_policies_understand-service-summary"></a>
+# Service summary \(list of actions\)<a name="access_policies_understand-service-summary"></a>
 
 Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the service summary, and the [action summary](access_policies_understand-action-summary.md)\. The *service summary* table includes a list of the actions and summaries of the permissions that are defined by the policy for the chosen service\.
 
@@ -6,7 +6,7 @@ Policies are summarized in three tables: the [policy summary](access_policies_un
 
 You can view a service summary for each service listed in the policy summary that grants permissions\. The table is grouped into **Uncategorized actions**, **Uncategorized resource types**, and access level sections\. If the policy includes an action that IAM does not recognize, then the action is included in the **Uncategorized actions** section of the table\. If IAM recognizes the action, then it is included under one of the access level \(**List**, **Read**, **Write** and **Permissions management**\) sections of the table\. To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
 
-## Viewing Service Summaries<a name="viewing-service-summaries"></a>
+## Viewing service summaries<a name="viewing-service-summaries"></a>
 
 You can view the service summary for managed policies on the **Policies** page, or view service summaries for inline and managed policies attached to a user or role through the **Users** page and **Roles** page\. However, if you choose a service name on the **Users** page or **Roles** page from a managed policy, you are redirected to the **Policies** page\. Service summaries for managed policies must be viewed on the **Policies** page\.
 
@@ -52,15 +52,15 @@ If the policy that you select is an inline policy that is attached directly to t
 
 1. In the policy summary list of services, choose the name of the service that you want to view\.
 
-## Understanding the Elements of a Service Summary<a name="understanding-elements-service-summary"></a>
+## Understanding the elements of a service summary<a name="understanding-elements-service-summary"></a>
 
-The example below is the service summary for Amazon S3 actions that are allowed from the **SummaryAllElements** policy summary \(see [**SummaryAllElements** JSON Policy Document](access_policies_understand-policy-summary.md#policy-summary-example-json)\)\. The actions for this service are grouped by **Uncategorized actions**, **Uncategorized resource types**, and access level\. For example, two **Write** actions are defined out of the total 29 **Write** actions available for the service\.
+The example below is the service summary for Amazon S3 actions that are allowed from the **SummaryAllElements** policy summary \(see [**SummaryAllElements** JSON policy document](access_policies_understand-policy-summary.md#policy-summary-example-json)\)\. The actions for this service are grouped by **Uncategorized actions**, **Uncategorized resource types**, and access level\. For example, two **Write** actions are defined out of the total 29 **Write** actions available for the service\.
 
 ![\[Service summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-action-dialog.png)
 
 The service summary page for a managed policy includes the following information:
 
-1. If the policy does not grant permissions to all the actions, resources, and conditions defined for the service in the policy, then a warning banner appears at the top of the page\. The service summary then includes details about the problem\. To learn how policy summaries help you to understand and troubleshoot the permissions that your policy grants, see [My Policy Does Not Grant the Expected Permissions](troubleshoot_policies.md#policy-summary-not-grant-permissions)\.
+1. If the policy does not grant permissions to all the actions, resources, and conditions defined for the service in the policy, then a warning banner appears at the top of the page\. The service summary then includes details about the problem\. To learn how policy summaries help you to understand and troubleshoot the permissions that your policy grants, see [My policy does not grant the expected permissions](troubleshoot_policies.md#policy-summary-not-grant-permissions)\.
 
 1. Next to the **Back** link appears the name of the service \(in this case S3\)\. The service summary for this service includes the list of allowed actions that are defined in the policy\. If instead, the text **\(Explicitly denied\)** appears next to the name of a service, then the actions listed in the service summary table are explicitly denied\.
 
@@ -72,9 +72,9 @@ The service summary page for a managed policy includes the following information
 
 1. **Show/Hide remaining 67** – Choose this link to expand or hide the table to include actions that are known but do not provide permissions for this service\. Expanding the link also displays warnings for any elements that do not provide permissions\.
 
-1. **Unrecognized resource types** – This policy includes at least one unrecognized resource type within the policy for this service\. You can use this warning to check whether a resource type might include a typo\. If the resource type is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific resource type in a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `autoscling` service name is missing an `a`\.
+1. **Unrecognized resource types** – This policy includes at least one unrecognized resource type within the policy for this service\. You can use this warning to check whether a resource type might include a typo\. If the resource type is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific resource type in a generally available \(GA\) service, see [Service does not support IAM policy summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `autoscling` service name is missing an `a`\.
 
-1. **Unrecognized actions** – This policy includes at least one unrecognized action within the policy for this service\. You can use this warning to check whether an action might include a typo\. If the action name is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific action in a generally available \(GA\) service, see [Service Does Not Support IAM Policy Summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `DeletObject` ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) action is missing an `e`\. 
+1. **Unrecognized actions** – This policy includes at least one unrecognized action within the policy for this service\. You can use this warning to check whether an action might include a typo\. If the action name is correct, then the service might not fully support policy summaries, might be in preview, or might be a custom service\. To request policy summary support for a specific action in a generally available \(GA\) service, see [Service does not support IAM policy summaries](troubleshoot_policies.md#unsupported-services-actions)\. In this example, the `DeletObject` ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png) action is missing an `e`\. 
 **Note**  
 IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the [policy simulator](access_policies_testing-policies.md)\.
 

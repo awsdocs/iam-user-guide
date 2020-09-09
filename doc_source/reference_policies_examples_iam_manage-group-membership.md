@@ -1,4 +1,4 @@
-# IAM: Allows Managing a Group's Membership Programmatically and in the Console<a name="reference_policies_examples_iam_manage-group-membership"></a>
+# IAM: Allows managing a group's membership programmatically and in the console<a name="reference_policies_examples_iam_manage-group-membership"></a>
 
 This example shows how you might create a policy that allows updating the membership of the group called `MarketingTeam`\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 

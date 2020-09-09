@@ -1,4 +1,4 @@
-# IAM JSON Policy Elements: NotResource<a name="reference_policies_elements_notresource"></a>
+# IAM JSON policy elements: NotResource<a name="reference_policies_elements_notresource"></a>
 
 `NotResource` is an advanced policy element that explicitly matches every resource except those specified\. Using `NotResource` can result in a shorter policy by listing only a few resources that should not match, rather than including a long list of resources that will match\. This is particularly useful for policies that apply within a single AWS service\. 
 
@@ -22,7 +22,7 @@ Normally, to explicitly deny access to a resource you would write a policy that 
 
 When using `NotResource`, you should keep in mind that resources specified in this element are the *only* resources that are not limited\. This, in turn, limits all of the resources that would apply to the action\. In the example above, the policy affects only Amazon S3 actions, and therefore only Amazon S3 resources\. If the action also included Amazon EC2 actions, then the policy would not deny access to any EC2 resources\. Additionally, this policy does not deny access to S3 actions that can't be performed on a specific resource, such as `s3:ListAllMyBuckets`\. To learn which actions in a service allow specifying the ARN of a resource, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
 
-## NotResource with Other Elements<a name="notresource-element-combinations"></a>
+## NotResource with other elements<a name="notresource-element-combinations"></a>
 
 You should **never** use the `"Effect": "Allow"`, `"Action": "*"`, and `"NotResource": "arn:aws:s3:::HRBucket"` elements together\. This statement is very dangerous, because it allows all actions in AWS on all resources except the `HRBucket` S3 bucket\. This would even allow the user to add a policy to themselves that allows them to access `HRBucket`\. Do not do this\. 
 

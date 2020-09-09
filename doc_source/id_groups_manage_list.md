@@ -1,4 +1,4 @@
-# Listing IAM Groups<a name="id_groups_manage_list"></a>
+# Listing IAM groups<a name="id_groups_manage_list"></a>
 
 You can list all the groups in your account, list the users in a group, and list the groups a user belongs to\. If you use the AWS CLI or AWS API, you can list all the groups with a particular path prefix\. 
 

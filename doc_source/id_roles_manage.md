@@ -1,4 +1,4 @@
-# Managing IAM Roles<a name="id_roles_manage"></a>
+# Managing IAM roles<a name="id_roles_manage"></a>
 
 Occasionally you need to modify or delete the roles that you have created\. To change a role, you can do any of the following:
 + Modify the policies that are associated with the role 
@@ -9,5 +9,5 @@ Occasionally you need to modify or delete the roles that you have created\. To c
 You can also delete roles that are no longer needed\. You can manage your roles from the AWS Management Console, the AWS CLI, and the API\.
 
 **Topics**
-+ [Modifying a Role](id_roles_manage_modify.md)
-+ [Deleting Roles or Instance Profiles](id_roles_manage_delete.md)
++ [Modifying a role](id_roles_manage_modify.md)
++ [Deleting roles or instance profiles](id_roles_manage_delete.md)

@@ -1,8 +1,8 @@
-# Granting a User Permissions to Switch Roles<a name="id_roles_use_permissions-to-switch"></a>
+# Granting a user permissions to switch roles<a name="id_roles_use_permissions-to-switch"></a>
 
 When an administrator [creates a role for cross\-account access](id_roles_create_for-user.md) they establish trust between the account that owns the role and the resources \(trusting account\) and the account that contains the users \(trusted account\)\. To do this, the administrator of the trusting account specifies the trusted account number as the `Principal` in the role's trust policy\. That allows *potentially* any user in the trusted account to assume the role\. To complete the configuration, the administrator of the trusted account must give specific groups or users in that account permission to switch to the role\.
 
-To grant a user permission to switch to a role, the administrator of the trusted account creates a new policy for the user\. Or the administrator might edit an existing policy to add the required elements\. The administrator can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, the administrator can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md)\. 
+To grant a user permission to switch to a role, the administrator of the trusted account creates a new policy for the user\. Or the administrator might edit an existing policy to add the required elements\. The administrator can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, the administrator can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a role \(console\)](id_roles_use_switch-role-console.md)\. 
 
 Note that you can switch roles only when you sign in as an IAM user\. You cannot switch roles when you sign in as the AWS account root user\.
 
@@ -14,10 +14,10 @@ This topic discusses policies for a *user*, because we are ultimately granting p
 When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, it uses your original user or federated role credentials to determine if you are allowed to assume RoleA\. If you then try to switch to RoleB *while you are using RoleA*, your **original** user or federated role credentials are used to authorize your attempt, not the credentials for RoleA\.
 
 **Topics**
-+ [Creating or Editing the Policy](#roles-usingrole-createpolicy)
-+ [Providing Information to the User](#roles-usingrole-giveuser)
++ [Creating or editing the policy](#roles-usingrole-createpolicy)
++ [Providing information to the user](#roles-usingrole-giveuser)
 
-## Creating or Editing the Policy<a name="roles-usingrole-createpolicy"></a>
+## Creating or editing the policy<a name="roles-usingrole-createpolicy"></a>
 
 A policy that grants a user permission to assume a role must include a statement with the `Allow` effect on the following: 
 + The `sts:AssumeRole` action
@@ -44,7 +44,7 @@ The following example shows a policy that lets the user assume roles in only one
 **Note**  
 The permissions that the role grants to the user do not add to the permissions already granted to the user\. When a user switches to a role, the user temporarily gives up his or her original permissions in exchange for those granted by the role\. When the user exits the role, then the original user permissions are automatically restored\. For example, let's say the user's permissions allow working with Amazon EC2 instances, but the role's permissions policy does not grant those permissions\. In that case, while using the role, the user cannot work with Amazon EC2 instances in the console\. In addition, temporary credentials obtained via `AssumeRole` do not work with Amazon EC2 instances programmatically\.
 
-## Providing Information to the User<a name="roles-usingrole-giveuser"></a>
+## Providing information to the user<a name="roles-usingrole-giveuser"></a>
 
 After you create a role and grant your user permissions to switch to it, you must provide the user with the following:
 + The name of the role
@@ -56,7 +56,7 @@ You can also use the following format to manually construct the link\. Substitut
 
 `https://signin.aws.amazon.com/switchrole?account=your_account_ID_or_alias&roleName=optional_path/role_name`
 
-We recommend that you direct your users to [Switching to a Role \(Console\)](id_roles_use_switch-role-console.md) to step them through the process\.
+We recommend that you direct your users to [Switching to a role \(console\)](id_roles_use_switch-role-console.md) to step them through the process\.
 
 **Considerations**
 + If you create the role programmatically, you can create the role with a path in addition to a name\. If you do so, you must provide the complete path and role name to your users so they can enter it on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.

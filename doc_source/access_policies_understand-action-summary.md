@@ -1,4 +1,4 @@
-# Action Summary \(List of Resources\)<a name="access_policies_understand-action-summary"></a>
+# Action summary \(list of resources\)<a name="access_policies_understand-action-summary"></a>
 
 Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the [service summary](access_policies_understand-service-summary.md), and the action summary\. The *action summary* table includes a list of resources and the associated conditions that apply to the chosen action\. 
 
@@ -6,7 +6,7 @@ Policies are summarized in three tables: the [policy summary](access_policies_un
 
 To view an action summary for each action that grants permissions, choose the link in the service summary\. The action summary table includes details about the resource, including its **Region** and **Account**\. You can also view the conditions that apply to each resource\. This shows you conditions that apply to some resources but not others\.
 
-## Viewing Action Summaries<a name="viewing-action-summaries"></a>
+## Viewing action summaries<a name="viewing-action-summaries"></a>
 
 You can view the action summary for any policy that is attached to a user on the **Users** page\. You can view the action summary for any policy that is attached to a role on the **Roles** page\. You can view the action summary for managed policies on the **Policies** page\. However, if you try to view the action summary for a managed policy from the **Users** page or the **Roles** page, you are redirected to the **Policies** page\.
 
@@ -58,9 +58,9 @@ If the policy that you select is an inline policy that is attached directly to t
 
 1. In the service summary list of actions, choose the name of the action that you want to view\.
 
-## Understanding the Elements of an Action Summary<a name="understanding-elements-action-summary"></a>
+## Understanding the elements of an action summary<a name="understanding-elements-action-summary"></a>
 
-The example below is the action summary for the `PutObject` \(Write\) action from the Amazon S3 service summary \(see [Service Summary \(List of Actions\)](access_policies_understand-service-summary.md)\)\. For this action, the policy defines multiple conditions on a single resource\.
+The example below is the action summary for the `PutObject` \(Write\) action from the Amazon S3 service summary \(see [Service summary \(list of actions\)](access_policies_understand-service-summary.md)\)\. For this action, the policy defines multiple conditions on a single resource\.
 
 ![\[Action summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-dialog.png)
 

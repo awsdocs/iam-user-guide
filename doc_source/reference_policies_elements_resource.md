@@ -1,4 +1,4 @@
-# IAM JSON Policy Elements: Resource<a name="reference_policies_elements_resource"></a>
+# IAM JSON policy elements: Resource<a name="reference_policies_elements_resource"></a>
 
 The `Resource` element specifies the object or objects that the statement covers\. Statements must include either a `Resource` or a `NotResource` element\. You specify a resource using an ARN\. For more information about the format of ARNs, see [IAM ARNs](reference_identifiers.md#identifiers-arns)\.
 
@@ -53,4 +53,4 @@ In the `Resource` element, you can use JSON [policy variables](reference_policie
 }
 ```
 
-For more information about JSON policy variables, see [IAM Policy Elements: Variables and Tags](reference_policies_variables.md)\.
+For more information about JSON policy variables, see [IAM policy elements: Variables and tags](reference_policies_variables.md)\.

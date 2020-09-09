@@ -1,13 +1,13 @@
-# Switching to a Role \(Console\)<a name="id_roles_use_switch-role-console"></a>
+# Switching to a role \(console\)<a name="id_roles_use_switch-role-console"></a>
 
-A *role* specifies a set of permissions that you can use to access AWS resources that you need\. In that sense, it is similar to a [user in AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) \(IAM\)\. When you sign in as a user, you get a specific set of permissions\. However, you don't sign in to a role, but once signed in you can switch to a role\. This temporarily sets aside your original user permissions and instead gives you the permissions assigned to the role\. The role can be in your own account or any other AWS account\. For more information about roles, their benefits, and how to create them, see [IAM Roles](id_roles.md), and [Creating IAM Roles](id_roles_create.md)\.
+A *role* specifies a set of permissions that you can use to access AWS resources that you need\. In that sense, it is similar to a [user in AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) \(IAM\)\. When you sign in as a user, you get a specific set of permissions\. However, you don't sign in to a role, but once signed in you can switch to a role\. This temporarily sets aside your original user permissions and instead gives you the permissions assigned to the role\. The role can be in your own account or any other AWS account\. For more information about roles, their benefits, and how to create them, see [IAM roles](id_roles.md), and [Creating IAM roles](id_roles_create.md)\.
 
 **Important**  
 The permissions of your IAM user and any roles that you switch to are not cumulative\. Only one set of permissions is active at a time\. When you switch to a role, you temporarily give up your user permissions and work with the permissions that are assigned to the role\. When you exit the role, your user permissions are automatically restored\.
 
 When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, IAM uses your original user or federated role credentials to determine whether you are allowed to assume RoleA\. If you then switch to RoleB *while you are using RoleA*, AWS still uses your **original** user or federated role credentials to authorize the switch, not the credentials for RoleA\.
 
-## Things to Know about Switching Roles in the Console<a name="id_roles_iam_user-switch-role-console-things-to-know"></a>
+## Things to know about switching roles in the console<a name="id_roles_iam_user-switch-role-console-things-to-know"></a>
 
 This section provides additional information about using the IAM console to switch to a role\.
 
@@ -19,7 +19,7 @@ You cannot switch roles if you sign in as the AWS account root user\. You can sw
   `https://signin.aws.amazon.com/switchrole?account=account_id_number&roleName=role_name&displayName=text_to_display`
 
   Where you replace the following text:
-  + *account\_id\_number* – The 12\-digit account identifier provided to you by your administrator\. Alternatively, your administrator might create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS Account ID and Its Alias](console_account-alias.md)\.
+  + *account\_id\_number* – The 12\-digit account identifier provided to you by your administrator\. Alternatively, your administrator might create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS account ID and its alias](console_account-alias.md)\.
   + *role\_name* – The name of the role that you want to assume\. You can get this from the end of the role's ARN\. For example, provide the `TestRole` role name from the following role ARN: `namearn:aws:iam::403299380220:role/TestRole`\.
   + \(Optional\) *text\_to\_display* – The text that you want to appear on the navigation bar in place of your user name when this role is active\.
 + You can manually switch roles using the information your administrator provides by using the procedures that follow\. 
@@ -38,7 +38,7 @@ By default, when you switch roles, your AWS Management Console session lasts for
 **Note**  
 Some AWS service consoles can autorenew your role session when it expires without you taking any action\. Some might prompt you to reload your browser page to reauthenticate your session\.
 
-To troubleshoot common issues that you might encounter when you assume a role, see [I Can't Assume a Role](troubleshoot_roles.md#troubleshoot_roles_cant-assume-role)\.
+To troubleshoot common issues that you might encounter when you assume a role, see [I can't assume a role](troubleshoot_roles.md#troubleshoot_roles_cant-assume-role)\.
 
 **To switch to a role \(console\)**
 

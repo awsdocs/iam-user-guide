@@ -1,4 +1,4 @@
-# Creating a Condition with Multiple Keys or Values<a name="reference_policies_multi-value-conditions"></a>
+# Creating a condition with multiple keys or values<a name="reference_policies_multi-value-conditions"></a>
 
 You can use the `Condition` element of a policy to test multiple keys or multiple values for a single key in a request\. When you make a request to AWS, either programmatically or through the AWS Management Console, your request includes information about your principal, operation, tags, and more\. To learn about information and data included in a request, see [Request](intro-structure.md#intro-structure-request)\. You can use condition keys to test the values of the matching keys in the request\. For example, you can use a condition key to control access to specific attributes of a DynamoDB table or to an Amazon EC2 instance based on tags\.
 
@@ -7,18 +7,18 @@ A `Condition` element can contain multiple conditions, and each condition can co
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block.diagram.png)
 
 **Topics**
-+ [Evaluation Logic for Conditions with Multiple Keys or Values](#reference_policies_multiple-conditions-eval)
-+ [Using Multiple Keys and Values](#reference_policies_multi-key-or-value-conditions)
-+ [Examples of Using Multiple Values with Condition Set Operators](#reference_policies_multi-value-conditions-examples)
-+ [Evaluation Logic for Multiple Values with Condition Set Operators](#reference_policies_multi-value-conditions-eval)
++ [Evaluation logic for conditions with multiple keys or values](#reference_policies_multiple-conditions-eval)
++ [Using multiple keys and values](#reference_policies_multi-key-or-value-conditions)
++ [Examples of using multiple values with condition set operators](#reference_policies_multi-value-conditions-examples)
++ [Evaluation logic for multiple values with condition set operators](#reference_policies_multi-value-conditions-eval)
 
-## Evaluation Logic for Conditions with Multiple Keys or Values<a name="reference_policies_multiple-conditions-eval"></a>
+## Evaluation logic for conditions with multiple keys or values<a name="reference_policies_multiple-conditions-eval"></a>
 
 If your policy has multiple condition operators or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All conditions must resolve to true to trigger the desired `Allow` or `Deny` effect\.
 
 ![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
 
-## Using Multiple Keys and Values<a name="reference_policies_multi-key-or-value-conditions"></a>
+## Using multiple keys and values<a name="reference_policies_multi-key-or-value-conditions"></a>
 
 For requests that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key2":\["Value2A", "Value2B"\]\)\. You must also use the `ForAllValues` or `ForAnyValue` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String)\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\.
 + `ForAllValues` – Tests whether the value of every member of the request set is a subset of the condition key set\. The condition returns true if every key value in the request matches at least one value in the policy\. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\.
@@ -57,7 +57,7 @@ The following shows what the condition block looks like in your policy\. The two
 11. }
 ```
 
-## Examples of Using Multiple Values with Condition Set Operators<a name="reference_policies_multi-value-conditions-examples"></a>
+## Examples of using multiple values with condition set operators<a name="reference_policies_multi-value-conditions-examples"></a>
 
 You can create a policy to test multiple values in a request against one or more values that you specify in the policy\. Assume that you have an Amazon DynamoDB table named `Thread` that is used to store information about threads in a technical support forum\. The table has attributes named `ID`, `UserName`, `PostDateTime`, `Message`, and `Tags`\. 
 
@@ -132,16 +132,16 @@ Assume that the user makes a request to update the `PostDateTime` and `Message` 
 Imagine the user instead makes a request to perform `PutItem` with just the `UserName` attribute\. None of the attributes in the request \(just `UserName`\) match any of attributes listed in the policy \(`ID`, `PostDateTime`\)\. The condition returns false, so the effect of the policy \(`Deny`\) is also false, and the request is not denied by this policy\. \(For the request to succeed, it must be explicitly allowed by a different policy\. It is not explicitly denied by this policy, but all requests are implicitly denied\.\)
 
 **Warning**  
-When you use the `ForAllValues` condition operator, it returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. To require that the request includes at least one value, you must use another condition in the policy\. For an example, see [Controlling Access During AWS Requests](access_tags.md#access_tags_control-requests)\.
+When you use the `ForAllValues` condition operator, it returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. To require that the request includes at least one value, you must use another condition in the policy\. For an example, see [Controlling access during AWS requests](access_tags.md#access_tags_control-requests)\.
 
-## Evaluation Logic for Multiple Values with Condition Set Operators<a name="reference_policies_multi-value-conditions-eval"></a>
+## Evaluation logic for multiple values with condition set operators<a name="reference_policies_multi-value-conditions-eval"></a>
 
 This section discusses the specifics of the evaluation logic used with the `ForAllValues` and `ForAnyValue` operators\. The following table illustrates possible keys that might be included in a request \(`PostDateTime` and `UserName`\) and a policy condition that includes the values `PostDateTime`, `Message`, and `Tags`\. 
 
 
 ****  
 
-|  Key \(in the Request\)  |  Condition Value \(in the Policy\)  | 
+|  Key \(in the request\)  |  Condition value \(in the policy\)  | 
 | --- | --- | 
 |  `PostDateTime`  |  `PostDateTime`  | 
 |  `UserName`  |  `Message`  | 

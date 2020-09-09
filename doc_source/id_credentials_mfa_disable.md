@@ -1,18 +1,18 @@
-# Deactivating MFA Devices<a name="id_credentials_mfa_disable"></a>
+# Deactivating MFA devices<a name="id_credentials_mfa_disable"></a>
 
 If you have having trouble signing in with a multi\-factor authentication \(MFA\) device as an IAM user, contact your administrator for help\. 
 
-As an administrator, you can deactivate the device for another IAM user\. This allows the user to sign in without using MFA\. You might do this as a temporary solution while the MFA device is replaced, or if the device is temporarily unavailable\. However, we recommend that you enable a new device for the user as soon as possible\. To learn how to enable a new MFA device, see [Enabling MFA Devices](id_credentials_mfa_enable.md)\.
+As an administrator, you can deactivate the device for another IAM user\. This allows the user to sign in without using MFA\. You might do this as a temporary solution while the MFA device is replaced, or if the device is temporarily unavailable\. However, we recommend that you enable a new device for the user as soon as possible\. To learn how to enable a new MFA device, see [Enabling MFA devices for users in AWS](id_credentials_mfa_enable.md)\.
 
 **Note**  
-If you use the API or AWS CLI to delete a user from your AWS account, you must deactivate or delete the user's MFA device\. You make this change as part of the process of removing the user\. For more information about deleting users, see [Managing IAM Users](id_users_manage.md)\.
+If you use the API or AWS CLI to delete a user from your AWS account, you must deactivate or delete the user's MFA device\. You make this change as part of the process of removing the user\. For more information about deleting users, see [Managing IAM users](id_users_manage.md)\.
 
 **Topics**
-+ [Deactivating MFA Devices \(Console\)](#deactive-mfa-console)
-+ [Deactivating MFA Devices \(AWS CLI\)](#deactivate-mfa-cli)
-+ [Deactivating MFA Devices \(AWS API\)](#deactivate-mfa-api)
++ [Deactivating MFA devices \(console\)](#deactive-mfa-console)
++ [Deactivating MFA devices \(AWS CLI\)](#deactivate-mfa-cli)
++ [Deactivating MFA devices \(AWS API\)](#deactivate-mfa-api)
 
-## Deactivating MFA Devices \(Console\)<a name="deactive-mfa-console"></a><a name="deactivate-mfa-for-user"></a>
+## Deactivating MFA devices \(console\)<a name="deactive-mfa-console"></a><a name="deactivate-mfa-for-user"></a>
 
 **To deactivate an MFA device for another IAM user \(console\)**
 
@@ -43,12 +43,12 @@ If you see three text boxes, then you previously signed in to the console with *
 
 The MFA device is deactivated for the AWS account\. Check the email that is associated with your AWS account for a confirmation message from Amazon Web Services\. The email informs you that your Amazon Web Services multi\-factor authentication \(MFA\) has been deactivated\. The message will come from an address ending in `@amazon.com` or `@aws.amazon.com`\.
 
-## Deactivating MFA Devices \(AWS CLI\)<a name="deactivate-mfa-cli"></a>
+## Deactivating MFA devices \(AWS CLI\)<a name="deactivate-mfa-cli"></a>
 
 **To deactivate an MFA device for an IAM user \(AWS CLI\)**
 + Run this command: [https://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/deactivate-mfa-device.html)
 
-## Deactivating MFA Devices \(AWS API\)<a name="deactivate-mfa-api"></a>
+## Deactivating MFA devices \(AWS API\)<a name="deactivate-mfa-api"></a>
 
 **To deactivate an MFA device for an IAM user \(AWS API\)**
 + Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)

@@ -1,10 +1,10 @@
-# Creating a Role to Delegate Permissions to an AWS Service<a name="id_roles_create_for-service"></a>
+# Creating a role to delegate permissions to an AWS service<a name="id_roles_create_for-service"></a>
 
-Many AWS services require that you use roles to allow the service to access resources in other services on your behalf\. A role that a service assumes to perform actions on your behalf is called a [service role](id_roles_terms-and-concepts.md#iam-term-service-role)\. When a role serves a specialized purpose for a service, it is categorized as a [service role for EC2 instances](id_roles_terms-and-concepts.md#iam-term-service-role-ec2) \(for example\), or a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)\. To see what services support using service\-linked roles, or whether a service supports any form of temporary credentials, see [AWS Services That Work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn how an individual service uses roles, choose the service name in the table to view the documentation for that service\.
+Many AWS services require that you use roles to allow the service to access resources in other services on your behalf\. A role that a service assumes to perform actions on your behalf is called a [service role](id_roles_terms-and-concepts.md#iam-term-service-role)\. When a role serves a specialized purpose for a service, it is categorized as a [service role for EC2 instances](id_roles_terms-and-concepts.md#iam-term-service-role-ec2) \(for example\), or a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)\. To see what services support using service\-linked roles, or whether a service supports any form of temporary credentials, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn how an individual service uses roles, choose the service name in the table to view the documentation for that service\.
 
-For information about how roles help you to delegate permissions, see [Roles Terms and Concepts](id_roles_terms-and-concepts.md)\.
+For information about how roles help you to delegate permissions, see [Roles terms and concepts](id_roles_terms-and-concepts.md)\.
 
-## Service Role Permissions<a name="id_roles_create_service-permissions"></a>
+## Service role permissions<a name="id_roles_create_service-permissions"></a>
 
 You must configure permissions to allow an IAM entity \(user or role\) to create or edit a service role\.
 
@@ -110,7 +110,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 }
 ```
 
-## Creating a Role for an AWS Service \(Console\)<a name="roles-creatingrole-service-console"></a>
+## Creating a role for an AWS service \(console\)<a name="roles-creatingrole-service-console"></a>
 
 You can use the AWS Management Console to create a role for a service\. Because some services support more than one service role, see the [AWS documentation](https://docs.aws.amazon.com/) for your service to see which use case to choose\. You can learn how to assign the necessary trust and permissions policies to the role so that the service can assume the role on your behalf\. The steps that you can use to control the permissions for your role can vary, depending on how the service defines the use cases, and whether or not you create a service\-linked role\.
 
@@ -126,7 +126,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy that the service requires\. Then choose **Next: Permissions**\.
 
-1. If possible, select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want the service to have\.
+1. If possible, select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want the service to have\.
 
    Depending on the use case that you selected, the service might allow you to do any of the following:
    + Nothing, because the service defines the permissions for the role
@@ -136,11 +136,11 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature that is available for service roles, but not service\-linked roles\. 
 
-   Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM Policies \(Console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
+   Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
 
 1. Choose **Next: Review**\. 
 
@@ -152,7 +152,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. Review the role and then choose **Create role**\.
 
-## Creating a Role for a Service \(AWS CLI\)<a name="roles-creatingrole-service-cli"></a>
+## Creating a role for a service \(AWS CLI\)<a name="roles-creatingrole-service-cli"></a>
 
 Creating a role from the AWS CLI involves multiple steps\. When you use the console to create a role, many of the steps are done for you, but with the AWS CLI you must explicitly perform each step yourself\. You must create the role and then assign a permissions policy to the role\. If the service you are working with is Amazon EC2, then you must also create an instance profile and add the role to it\. Optionally, you can also set the [permissions boundary](access_policies_boundaries.md) for your role\.
 
@@ -168,13 +168,13 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
 
-   For more information, see [Managing Tags on IAM Entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.
 
-If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the role in an instance profile\. An instance profile is a container for a role that can be attached to an Amazon EC2 instance when launched\. An instance profile can contain only one role, and that limit cannot be increased\. If you create the role using the AWS Management Console, the instance profile is created for you with the same name as the role\. For more information about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\. For information about how to launch an EC2 instance with a role, see [Controlling Access to Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances) in the *Amazon EC2 User Guide for Linux Instances*\.
+If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the role in an instance profile\. An instance profile is a container for a role that can be attached to an Amazon EC2 instance when launched\. An instance profile can contain only one role, and that limit cannot be increased\. If you create the role using the AWS Management Console, the instance profile is created for you with the same name as the role\. For more information about instance profiles, see [Using instance profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\. For information about how to launch an EC2 instance with a role, see [Controlling Access to Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 **To create an instance profile and store the role in it \(AWS CLI\)**
 
@@ -228,7 +228,7 @@ $ aws iam add-role-to-instance-profile --instance-profile-name EC2-ListBucket-S3
 
 When you launch the EC2 instance, specify the instance profile name in the **Configure Instance Details** page if you use the AWS console\. If you use the `aws ec2 run-instances` CLI command, specify the `--iam-instance-profile` parameter\.
 
-## Creating a Role for a Service \(AWS API\)<a name="roles-creatingrole-service-api"></a>
+## Creating a role for a service \(AWS API\)<a name="roles-creatingrole-service-api"></a>
 
 ### <a name="roles-creatingrole-servicerole-api"></a>
 
@@ -248,13 +248,13 @@ Creating a role from the AWS API involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
 
-   For more information, see [Managing Tags on IAM Entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.
 
-If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the role in an instance profile\. An instance profile is a container for a role\. Each instance profile can contain only one role, and that limit cannot be increased\. If you create the role in the AWS Management Console, the instance profile is created for you with the same name as the role\. For more information about instance profiles, see [Using Instance Profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\. For information about how to launch an Amazon EC2 instance with a role, see [Controlling Access to Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances) in the *Amazon EC2 User Guide for Linux Instances*\. 
+If you are going to use the role with Amazon EC2 or another AWS service that uses Amazon EC2, you must store the role in an instance profile\. An instance profile is a container for a role\. Each instance profile can contain only one role, and that limit cannot be increased\. If you create the role in the AWS Management Console, the instance profile is created for you with the same name as the role\. For more information about instance profiles, see [Using instance profiles](id_roles_use_switch-role-ec2_instance-profiles.md)\. For information about how to launch an Amazon EC2 instance with a role, see [Controlling Access to Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UsingIAM.html#UsingIAMrolesWithAmazonEC2Instances) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
 **To create an instance profile and store the role in it \(AWS API\)**
 

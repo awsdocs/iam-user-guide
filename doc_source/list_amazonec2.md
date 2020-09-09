@@ -158,7 +158,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ ec2:Tenancy ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Filters access by the tenancy of the VPC or instance \(default, dedicated, or host\) | String | 
 |   [ ec2:VolumeIops ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Filters access by the the number of input/output operations per second \(IOPS\) provisioned for the volume | Numeric | 
 |   [ ec2:VolumeSize ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Filters access by the size of the volume, in GiB\. | Numeric | 
-|   [ ec2:VolumeType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Filters access by the type of volume \(gp2, io1, st1, sc1, or standard\) | String | 
+|   [ ec2:VolumeType ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Filters access by the type of volume \(gp2, io1, io2, st1, sc1, or standard\) | String | 
 |   [ ec2:Vpc ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)  | Filters access by the ARN of the VPC | ARN | 
 |   ec2:VpceServiceName  | Filters access by the name of the VPC endpoint service | String | 
 |   ec2:VpceServiceOwner  | Filters access by the service owner of the VPC endpoint service \(amazon, aws\-marketplace, or an AWS account ID\) | String | 

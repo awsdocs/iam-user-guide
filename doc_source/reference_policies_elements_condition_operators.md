@@ -1,8 +1,8 @@
-# IAM JSON Policy Elements: Condition Operators<a name="reference_policies_elements_condition_operators"></a>
+# IAM JSON policy elements: Condition operators<a name="reference_policies_elements_condition_operators"></a>
 
-Use condition operators in the `Condition` element to match the condition key and value in the policy against values in the request context\. For more information about the `Condition` element, see [IAM JSON Policy Elements: Condition](reference_policies_elements_condition.md)\.
+Use condition operators in the `Condition` element to match the condition key and value in the policy against values in the request context\. For more information about the `Condition` element, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\.
 
-The condition operator that you can use in a policy depends on the condition key you choose\. You can choose a global condition key or a service\-specific condition key\. To learn which condition operator you can use for a global condition key, see [AWS Global Condition Context Keys](reference_policies_condition-keys.md)\. To learn which condition operator you can use for a service\-specific condition key, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html) and choose the service that you want to view\.
+The condition operator that you can use in a policy depends on the condition key you choose\. You can choose a global condition key or a service\-specific condition key\. To learn which condition operator you can use for a global condition key, see [AWS global condition context keys](reference_policies_condition-keys.md)\. To learn which condition operator you can use for a service\-specific condition key, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html) and choose the service that you want to view\.
 
 **Important**  
 If the key that you specify in a policy condition is not present in the request context, the values do not match\. This applies to all condition operators except [\.\.\.IfExists](#Conditions_IfExists) and [Null check](#Conditions_Null)\. These operators test whether the key is present \(exists\) in the request context\.
@@ -18,20 +18,20 @@ The condition operators can be grouped into the following categories:
 + [\.\.\.IfExists](#Conditions_IfExists) \(checks if the key value exists as part of another check\)
 + [Null check](#Conditions_Null) \(checks if the key value exists as a standalone check\)
 
-## String Condition Operators<a name="Conditions_String"></a>
+## String condition operators<a name="Conditions_String"></a>
 
 String condition operators let you construct `Condition` elements that restrict access based on comparing a key to a string value\.
 
 
 ****  
 
-| Condition Operator | Description | 
+| Condition operator | Description | 
 | --- | --- | 
 |   `StringEquals`   |  Exact matching, case sensitive  | 
 |   `StringNotEquals`   |  Negated matching  | 
 |   `StringEqualsIgnoreCase`   |  Exact matching, ignoring case  | 
 |   `StringNotEqualsIgnoreCase`   |  Negated matching, ignoring case  | 
-|   `StringLike`   |  Case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a Condition with Multiple Keys or Values](reference_policies_multi-value-conditions.md)\.    | 
+|   `StringLike`   |  Case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.    | 
 |   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  | 
 
 For example, the following statement contains a `Condition` element that uses the `StringEquals` condition operator with the `aws:PrincipalTag` key to specify that the principal making the request must be tagged with the `iamuser-admin` job category\.
@@ -88,16 +88,16 @@ The following example uses the `StringLike` condition operator to perform string
 }
 ```
 
-For an example of a policy that shows how to use the `Condition` element to restrict access to resources based on an application ID and a user ID for web identity federation, see [Amazon S3: Allows Amazon Cognito Users to Access Objects in Their Bucket](reference_policies_examples_s3_cognito-bucket.md)\. 
+For an example of a policy that shows how to use the `Condition` element to restrict access to resources based on an application ID and a user ID for web identity federation, see [Amazon S3: Allows Amazon Cognito users to access objects in their bucket](reference_policies_examples_s3_cognito-bucket.md)\. 
 
-## Numeric Condition Operators<a name="Conditions_Numeric"></a>
+## Numeric condition operators<a name="Conditions_Numeric"></a>
 
 Numeric condition operators let you construct `Condition` elements that restrict access based on comparing a key to an integer or decimal value\.
 
 
 ****  
 
-| Condition Operator | Description | 
+| Condition operator | Description | 
 | --- | --- | 
 |   `NumericEquals`   |  Matching  | 
 |   `NumericNotEquals`   |  Negated matching  | 
@@ -124,7 +124,7 @@ If the key that you specify in a policy condition is not present in the request 
 
 You can not use a [policy variable](reference_policies_variables.md) with the `Numeric` condition operator\.
 
-## Date Condition Operators<a name="Conditions_Date"></a>
+## Date condition operators<a name="Conditions_Date"></a>
 
 Date condition operators let you construct `Condition` elements that restrict access based on comparing a key to a date/time value\. You use these condition operators with the `aws:CurrentTime` key or `aws:EpochTime` keys\. You must specify date/time values with one of the [W3C implementations of the ISO 8601 date formats](http://www.w3.org/TR/NOTE-datetime) or in epoch \(UNIX\) time\.  
 
@@ -134,7 +134,7 @@ Wildcards are not permitted for date condition operators\.
 
 ****  
 
-| Condition Operator | Description | 
+| Condition operator | Description | 
 | --- | --- | 
 |   `DateEquals`   |  Matching a specific date  | 
 |   `DateNotEquals`   |  Negated matching  | 
@@ -161,14 +161,14 @@ If the key that you specify in a policy condition is not present in the request 
 
 You can not use a [policy variable](reference_policies_variables.md) with the `Date` condition operator\.
 
-## Boolean Condition Operators<a name="Conditions_Boolean"></a>
+## Boolean condition operators<a name="Conditions_Boolean"></a>
 
 Boolean conditions let you construct `Condition` elements that restrict access based on comparing a key to "true" or "false\." 
 
 
 ****  
 
-| Condition Operator | Description | 
+| Condition operator | Description | 
 | --- | --- | 
 |   `Bool`   |  Boolean matching  | 
 
@@ -190,7 +190,7 @@ If the key that you specify in a policy condition is not present in the request 
 
 You can not use a [policy variable](reference_policies_variables.md) with the `Boolean` condition operator\.
 
-## Binary Condition Operators<a name="Conditions_BinaryEquals"></a>
+## Binary condition operators<a name="Conditions_BinaryEquals"></a>
 
 The `BinaryEquals` condition operator let you construct `Condition` elements that test key values that are in binary format\. It compares the value of the specified key byte for byte against a [base\-64](https://en.wikipedia.org/wiki/Base64) encoded representation of the binary value in the policy\. 
 
@@ -206,7 +206,7 @@ If the key that you specify in a policy condition is not present in the request 
 
 You can not use a [policy variable](reference_policies_variables.md) with the `Binary` condition operator\.
 
-## IP Address Condition Operators<a name="Conditions_IPAddress"></a>
+## IP address condition operators<a name="Conditions_IPAddress"></a>
 
 IP address condition operators let you construct `Condition` elements that restrict access based on comparing a key to an IPv4 or IPv6 address or range of IP addresses\. You use these with the `aws:SourceIp` key\. The value must be in the standard CIDR format \(for example, 203\.0\.113\.0/24 or 2001:DB8:1234:5678::/64\)\. If you specify an IP address without the associated routing prefix, IAM uses the default prefix value of `/32`\.
 
@@ -215,7 +215,7 @@ Some AWS services support IPv6, using :: to represent a range of 0s\. To learn w
 
 ****  
 
-| Condition Operator | Description | 
+| Condition operator | Description | 
 | --- | --- | 
 |   `IpAddress`   |  The specified IP address or range  | 
 |   `NotIpAddress`   |  All IP addresses except the specified IP address or range  | 
@@ -263,14 +263,14 @@ The following example shows how to mix IPv4 and IPv6 addresses to cover all of y
 
 The `aws:SourceIp` condition key works only in a JSON policy if you are calling the tested API directly as a user\. If you instead use a service to call the target service on your behalf, the target service sees the IP address of the calling service rather than the IP address of the originating user\. This can happen, for example, if you use AWS CloudFormation to call Amazon EC2 to construct instances for you\. There is currently no way to pass the originating IP address through a calling service to the target service for evaluation in a JSON policy\. For these types of service API calls, do not use the `aws:SourceIp` condition key\.
 
-## Amazon Resource Name \(ARN\) Condition Operators<a name="Conditions_ARN"></a>
+## Amazon Resource Name \(ARN\) condition operators<a name="Conditions_ARN"></a>
 
 Amazon Resource Name \(ARN\) condition operators let you construct `Condition` elements that restrict access based on comparing a key to an ARN\. The ARN is considered a string\. Not all services support comparing ARNs using this operator\. If the ARN condition operator doesn't work, then try using [string condition operators](#Conditions_String)\.
 
 
 ****  
 
-| Condition Operator | Description | 
+| Condition operator | Description | 
 | --- | --- | 
 |   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\)\. These behave identically\.  | 
 |   `ArnNotEquals`, `ArnNotLike`  |  Negated matching for ARN\. These behave identically\.  | 
@@ -294,7 +294,7 @@ The following resource\-based policy example shows a policy attached to an Amazo
 
 If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SourceArn` key is present in the request context only if a resource triggers a service to call another service on behalf of the resource owner\. If an IAM user attempts to perform this operation directly, the condition returns `false` and the request is implicitly denied by this statement\.
 
-## \.\.\.IfExists Condition Operators<a name="Conditions_IfExists"></a>
+## \.\.\.IfExists condition operators<a name="Conditions_IfExists"></a>
 
 You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\.
 
@@ -356,7 +356,7 @@ The *intent* of the preceding policy is to enable the user to launch any instanc
 }
 ```
 
-## Condition Operator to Check Existence of Condition Keys<a name="Conditions_Null"></a>
+## Condition operator to check existence of condition keys<a name="Conditions_Null"></a>
 
 Use a `Null` condition operator to check if a condition key is present at the time of authorization\. In the policy statement, use either `true` \(the key doesn't exist — it is null\) or `false` \(the key exists and its value is not null\)\.
 

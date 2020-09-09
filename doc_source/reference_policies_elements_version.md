@@ -1,7 +1,7 @@
-# IAM JSON Policy Elements: Version<a name="reference_policies_elements_version"></a>
+# IAM JSON policy elements: Version<a name="reference_policies_elements_version"></a>
 
-**Disambiguation Note**  
-This `Version` JSON policy element is different from a *policy version*\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. If you were searching for information about the multiple version support available for managed policies, see [Versioning IAM Policies](access_policies_managed-versioning.md)\.
+**Disambiguation note**  
+This `Version` JSON policy element is different from a *policy version*\. The `Version` policy element is used within a policy and defines the version of the policy language\. A policy version, on the other hand, is created when you make changes to a customer managed policy in IAM\. The changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. If you were searching for information about the multiple version support available for managed policies, see [Versioning IAM policies](access_policies_managed-versioning.md)\.
 
 The `Version` policy element specifies the language syntax rules that are to be used to process a policy\. To use all of the available policy features, include the following `Version` element before the `Statement` element in all of your policies\.
 

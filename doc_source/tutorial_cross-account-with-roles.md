@@ -1,4 +1,4 @@
-# Tutorial: Delegate Access Across AWS Accounts Using IAM Roles<a name="tutorial_cross-account-with-roles"></a>
+# IAM Tutorial: Delegate access across AWS accounts using IAM roles<a name="tutorial_cross-account-with-roles"></a>
 
 This tutorial teaches you how to use a role to delegate access to resources that are in different AWS accounts that you own \(Production and Development\)\. You share resources in one account with users in a different account\. By setting up cross\-account access in this way, you don't need to create individual IAM users in each account\. In addition, users don't have to sign out of one account and sign into another in order to access resources in different AWS accounts\. After configuring the role, you see how to use the role from the AWS Management Console, the AWS CLI, and the API\.
 
@@ -18,13 +18,13 @@ This workflow has three basic steps\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/tutorial-cross-accounts.png)
 
-**[Step 1: Create a Role](#tutorial_cross-account-with-roles-1)**  
+**[Step 1: Create a role](#tutorial_cross-account-with-roles-1)**  
 First, you use the AWS Management Console to establish trust between the Production account \(ID number 999999999999\) and the Development account \(ID number 111111111111\)\. You start by creating an IAM role named *UpdateApp*\. When you create the role, you define the Development account as a trusted entity and specify a permissions policy that allows trusted users to update the `productionapp` bucket\.
 
-**[Step 2: Grant Access to the Role](#tutorial_cross-account-with-roles-2)**  
+**[Step 2: Grant access to the role](#tutorial_cross-account-with-roles-2)**  
 In this step of the tutorial, you modify the IAM group policy so that Testers are denied access to the `UpdateApp` role\. Because Testers have PowerUser access in this scenario, we must explicitly deny the ability to use the role\.
 
-**[Step 3: Test Access by Switching Roles](#tutorial_cross-account-with-roles-3)**  
+**[Step 3: Test access by switching roles](#tutorial_cross-account-with-roles-3)**  
 Finally, as a Developer, you use the `UpdateApp` role to update the `productionapp` bucket in the Production account\. You see how to access the role through the AWS console, the AWS CLI, and the API\.
 
 ## Prerequisites<a name="tutorial_cross-account-with-roles-prereqs"></a>
@@ -37,7 +37,7 @@ This tutorial assumes that you have the following already in place:
 + You do not need to have any users or groups created in the Production account\.
 + An Amazon S3 bucket created in the Production account\. We call it `ProductionApp` in this tutorial, but because S3 bucket names must be globally unique, you must use a bucket with a different name\.
 
-## Step 1: Create a Role<a name="tutorial_cross-account-with-roles-1"></a>
+## Step 1: Create a role<a name="tutorial_cross-account-with-roles-1"></a>
 
 You can allow users from one AWS account to access resources in another AWS account\. To do this, create a role that defines who can access it and what permissions it grants to users that switch to it\.
 
@@ -45,13 +45,13 @@ In this step of the tutorial, you create the role in the Production account and 
 
 Before you can create a role, you need the account ID of the Development AWS account\. The account ID is a unique identifier assigned to each AWS account\.
 
-**To obtain the Development AWS account ID**
+**To obtain the development AWS account ID**
 
 1. Sign in to the AWS Management Console as an administrator of the Development account, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1.  In the navigation bar at the upper right, choose your user name and then choose **My Security Credentials**\. The account number appears either under **Account identifiers** \(if you are the root user\) or under **Account details** \(if you are an IAM user\)\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
 
-**To create a role in the Production account that can be used by the Development account**
+**To create a role in the production account that can be used by the development account**
 
 1. Sign in to the AWS Management Console as an administrator of the Production account, and open the IAM console\.
 
@@ -97,7 +97,7 @@ Before you can create a role, you need the account ID of the Development AWS acc
 
 1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review** page, type **read\-write\-app\-bucket** for the policy name\. Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
 
@@ -111,7 +111,7 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 
    This tutorial uses the example account ID **111111111111** for the Development account\. You should use a valid account ID\. If you use an invalid account ID, such as **111111111111**, IAM does not let you create the new role\.
 
-   For now you do not need to require an external ID, or require users to have multi\-factor authentication \(MFA\) in order to assume the role\. So leave these options unselected\. For more information, see [Using Multi\-Factor Authentication \(MFA\) in AWS](id_credentials_mfa.md)
+   For now you do not need to require an external ID, or require users to have multi\-factor authentication \(MFA\) in order to assume the role\. So leave these options unselected\. For more information, see [Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)
 
 1. Choose **Next: Permissions** to set the permissions that will be associated with the role\.
 
@@ -121,7 +121,7 @@ For **Filter**, choose **Customer managed** to filter the list to include only t
 
    Then choose **Next: Tags**\. 
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Users and Roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
 
 1. Choose **Next: Review** and type **UpdateApp** for the role name\.
 
@@ -147,11 +147,11 @@ At this point, you have established trust between the Production and Development
 
 Next, modify the permissions for the groups\.
 
-## Step 2: Grant Access to the Role<a name="tutorial_cross-account-with-roles-2"></a>
+## Step 2: Grant access to the role<a name="tutorial_cross-account-with-roles-2"></a>
 
 At this point, both Testers and Developers group members have permissions that allow them to freely test applications in the Development account\. Here are the steps required to add permissions to allow switching to the role\. 
 
-**To modify the Developers group to allow them to switch to the UpdateApp role**
+**To modify the developers group to allow them to switch to the UpdateApp role**
 
 1. Sign in as an administrator in the Development account, and open the IAM console\.
 
@@ -182,7 +182,7 @@ At this point, both Testers and Developers group members have permissions that a
 
 In most environments, the following procedure is likely not needed\. If, however, you use Power User permissions, then some groups might already be able to switch roles\. The following procedure shows how to add a "Deny" permission to the Testers group to ensure that they cannot assume the role\. If this procedure is not needed in your environment, then we recommend that you do not add it\. "Deny" permissions make the overall permissions picture more complicated to manage and understand\. Use "Deny" permissions only when there is not a better option\.
 
-**To modify the Testers group to deny permission to assume the UpdateApp role**
+**To modify the testers group to deny permission to assume the UpdateApp role**
 
 1. Choose **Groups**, and then choose **Testers**\.
 
@@ -213,19 +213,19 @@ The Developers group now has permissions to use the `UpdateApp` role in the Prod
 
 Next, you'll learn how David, a developer, can access the `productionapp` bucket in the Production account\. David can access the bucket from the AWS Management Console, the AWS CLI, or the AWS API\.
 
-## Step 3: Test Access by Switching Roles<a name="tutorial_cross-account-with-roles-3"></a>
+## Step 3: Test access by switching roles<a name="tutorial_cross-account-with-roles-3"></a>
 
 After completing the first two steps of this tutorial, you have a role that grants access to a resource in the Production account\. You also have one group in the Development account whose users are allowed to use that role\. The role is now ready to use\. This step discusses how to test switching to that role from the AWS Management Console, the AWS CLI, and the AWS API\.
 
 **Important**  
 You can switch to a role only when you are signed in as an IAM user or a federated user\. Additionally, if you launch an Amazon EC2 instance to run an application, the application can assume a role through its instance profile\. You cannot switch to a role when you are signed in as the AWS account root user\.
 
-### Switch Roles \(Console\)<a name="switch-tutorial_cross-account-with-roles"></a>
+### Switch roles \(console\)<a name="switch-tutorial_cross-account-with-roles"></a>
 
 If David needs to work with in the Production environment in the AWS Management Console, he can do so by using **Switch Role**\. He specifies the account ID or alias and the role name, and his permissions immediately switch to those permitted by the role\. He can then use the console to work with the `productionapp` bucket, but cannot work with any other resources in Production\. While David is using the role, he also cannot make use of his power\-user privileges in the Development account\. That's because only one set of permissions can be in effect at a time\.
 
 **Important**  
-Switching roles using the AWS Management Console works only with accounts that do not require an `ExternalId`\. For example, assume that you grant access to your account to a third party and require an `ExternalId` in a `Condition` element in your permissions policy\. In that case, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalId`\. For more information about this scenario, see [How to Use an External ID When Granting Access to Your AWS Resources to a Third Party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the *AWS Security Blog*\.
+Switching roles using the AWS Management Console works only with accounts that do not require an `ExternalId`\. For example, assume that you grant access to your account to a third party and require an `ExternalId` in a `Condition` element in your permissions policy\. In that case, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalId`\. For more information about this scenario, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the *AWS Security Blog*\.
 
 There are two ways that David can use to enter the **Switch Role** page:
 + David receives a link from his administrator that points to a pre\-defined Switch Role configuration\. The link is provided to the administrator on the final page of the **Create role** wizard or on the **Role Summary** page for a cross\-account role\. Choosing this link takes David to the **Switch Role** page with the **Account ID** and **Role name** fields already filled in\. All David needs to do is choose **Switch Role** and he's done\.
@@ -253,7 +253,7 @@ There are two ways that David can use to enter the **Switch Role** page:
 
 1. The next time that David wants to switch roles and chooses the Identity menu in the navigation bar, he sees the PRODUCTION entry still there from last time\. He can simply choose that entry to switch roles immediately without having to reenter the account ID and role name\.
 
-### Switch Roles \(AWS CLI\)<a name="switch-cli-tutorial_cross-account-with-roles"></a>
+### Switch roles \(AWS CLI\)<a name="switch-cli-tutorial_cross-account-with-roles"></a>
 
  If David needs to work in the Production environment at the command line, he can do so by using the [AWS CLI](http://aws.amazon.com/cli/)\. He runs the `aws sts assume-role` command and passes the role ARN to get temporary security credentials for that role\. He then configures those credentials in environment variables so subsequent AWS CLI commands work using the role's permissions\. While David is using the role, he cannot use his power\-user privileges in the Development account\. The reason is that only one set of permissions can be in effect at a time\.
 
@@ -335,10 +335,10 @@ When David needs to make an update to the Production account from code, he makes
 
 1. With the temporary credentials, David makes an `s3:PutObject` call to update the `productionapp` bucket\. He would pass the credentials to the API call as the `AuthParams` parameter\. Because the temporary role credentials have only read and write access to the `productionapp` bucket, any other actions in the Production account are denied\.
 
-For a code example \(using Python\), see [Switching to an IAM Role \(AWS API\)](id_roles_use_switch-role-api.md)\.
+For a code example \(using Python\), see [Switching to an IAM role \(AWS API\)](id_roles_use_switch-role-api.md)\.
 
-## Related Resources<a name="tutorial_cross-account-with-roles-related"></a>
-+ For more information about IAM users and groups, see [Identities \(Users, Groups, and Roles\)](id.md) \.
+## Related resources<a name="tutorial_cross-account-with-roles-related"></a>
++ For more information about IAM users and groups, see [IAM Identities \(users, groups, and roles\)](id.md) \.
 + For more information about Amazon S3 buckets, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
 +  To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 

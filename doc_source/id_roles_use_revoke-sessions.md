@@ -1,4 +1,4 @@
-# Revoking IAM Role Temporary Security Credentials<a name="id_roles_use_revoke-sessions"></a>
+# Revoking IAM role temporary security credentials<a name="id_roles_use_revoke-sessions"></a>
 
 **Warning**  
 If you follow the steps on this page, all users with current sessions created by assuming the role are denied access to all AWS actions and resources\. This can result in users losing unsaved work\. 
@@ -13,11 +13,11 @@ When you revoke permissions for a role using the procedure in this topic, AWS at
 **Important**  
 This deny policy applies to all users of the specified role, not just those with longer duration console sessions\.
 
-## Minimum Permissions to Revoke Session Permissions from a Role<a name="revoke-session-permissions"></a>
+## Minimum permissions to revoke session permissions from a role<a name="revoke-session-permissions"></a>
 
 To successfully revoke session permissions from a role, you must have the `PutRolePolicy` permission for the role\. This allows you to attach the `AWSRevokeOlderSessions` inline policy to the role\.
 
-## Revoking Session Permissions<a name="revoke-session"></a>
+## Revoking session permissions<a name="revoke-session"></a>
 
 You can revoke the session permissions from a role\.
 
@@ -54,4 +54,4 @@ $ rm -r ~/.aws/cli/cache
 C:\> del /s /q %UserProfile%\.aws\cli\cache
 ```
 
-For more information, see [Disabling Permissions for Temporary Security Credentials](id_credentials_temp_control-access_disable-perms.md)\.
+For more information, see [Disabling permissions for temporary security credentials](id_credentials_temp_control-access_disable-perms.md)\.

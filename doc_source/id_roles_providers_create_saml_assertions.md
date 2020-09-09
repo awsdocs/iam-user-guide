@@ -1,10 +1,10 @@
-# Configuring SAML Assertions for the Authentication Response<a name="id_roles_providers_create_saml_assertions"></a>
+# Configuring SAML assertions for the authentication response<a name="id_roles_providers_create_saml_assertions"></a>
 
 In your organization, after a user's identity has been verified, the external identity provider \(IdP\) sends an authentication response to the AWS SAML endpoint at `https://signin.aws.amazon.com/saml`\. This response is a POST request that includes a SAML token that adheres to the [HTTP POST Binding for SAML 2\.0](http://docs.oasis-open.org/security/saml/v2.0/saml-bindings-2.0-os.pdf) standard and that contains the following elements, or *claims*\. You configure these claims in your SAML\-compatible IdP\. Refer to the documentation for your IdP for instructions on how to enter these claims\.
 
-When the IdP sends the response containing the claims to AWS, many of the incoming claims map to AWS context keys\. These context keys can be checked in IAM policies using the `Condition` element\. A listing of the available mappings follows in the section [Mapping SAML Attributes to AWS Trust Policy Context Keys](#saml-attribute-mapping)\.
+When the IdP sends the response containing the claims to AWS, many of the incoming claims map to AWS context keys\. These context keys can be checked in IAM policies using the `Condition` element\. A listing of the available mappings follows in the section [Mapping SAML attributes to AWS trust policy context keys](#saml-attribute-mapping)\.
 
-## `Subject` and `NameID`<a name="saml_subject-name-id"></a>
+## `Subject` And `NameID`<a name="saml_subject-name-id"></a>
 
 The following excerpt shows an example\. Substitute your own values for the marked ones\. There must be exactly one `SubjectConfirmation` element with a `SubjectConfirmationData` element that includes both the `NotOnOrAfter` attribute and a `Recipient` attribute\. These attributes include a value that must match the AWS endpoint \(`https://signin.aws.amazon.com/saml`\), as shown in the following example\. For information about the name identifier formats supported for single sign\-on interactions, see [Oracle Sun OpenSSO Enterprise Administration Reference](https://docs.oracle.com/cd/E19316-01/820-3886/ggwbz/index.html)\. 
 
@@ -17,7 +17,7 @@ The following excerpt shows an example\. Substitute your own values for the mark
 </Subject>
 ```
 
-## `AudienceRestriction` and `Audience`<a name="saml_audience-restriction"></a>
+## `AudienceRestriction` And `Audience`<a name="saml_audience-restriction"></a>
 
 For security reasons, AWS should be included as an audience in the SAML assertion your IdP sends to AWS\. For the value of the `Audience` element, specify either `https://signin.aws.amazon.com/saml` or `urn:amazon:webservices`\. The following sample XML snippets from SAML assertions show how this key can be specified by the IdP\. Include whichever sample applies to your use case\.
 
@@ -40,7 +40,7 @@ For security reasons, AWS should be included as an audience in the SAML assertio
 **Important**  
 The SAML `AudienceRestriction` value in the SAML assertion from the IdP does *not* map to the `saml:aud` context key that you can test in an IAM policy\. Instead, the `saml:aud` context key comes from the SAML *recipient* attribute because it is the SAML equivalent to the OIDC audience field, for example, by `accounts.google.com:aud`\.
 
-## SAML Role `Attribute`<a name="saml_role-attribute"></a>
+## SAML role `Attribute`<a name="saml_role-attribute"></a>
 
 You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/Role`\. This element contains one or more `AttributeValue` elements that list the IAM identity provider and role to which the user is mapped by your IdP\. The IAM role and IAM identity provider are specified as a comma\-delimited pair of ARNs in the same format as the `RoleArn` and `PrincipalArn` parameters that are passed to [AssumeRoleWithSAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)\. This element must contain at least one role\-provider pair \(`AttributeValue` element\), and can contain multiple pairs\. If the element contains multiple pairs, then the user is asked to select which role to assume when they use WebSSO to sign into the AWS Management Console\.
 
@@ -76,7 +76,7 @@ To use this attribute, you must configure the SAML provider to provide single si
 
 Note, too, that if a `SessionNotOnOrAfter` attribute is also defined, then the ***lesser*** value of the two attributes, `SessionDuration` or `SessionNotOnOrAfter`, establishes the maximum duration of the console session\.
 
-When you enable console sessions with an extended duration the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** page in the IAM console\. For more information, see [Revoking IAM Role Temporary Security Credentials](id_roles_use_revoke-sessions.md)\. 
+When you enable console sessions with an extended duration the risk of compromise of the credentials rises\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** page in the IAM console\. For more information, see [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)\. 
 
 **Important**  
 The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It must be set to `https://aws.amazon.com/SAML/Attributes/SessionDuration` exactly\.
@@ -89,7 +89,7 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 
 ## SAML `PrincipalTag` `Attribute`<a name="saml_role-session-tags"></a>
 
-\(Optional\) You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/PrincipalTag:{TagKey}`\. This element allows you to pass attributes as session tags in the SAML assertion\. For more information about session tags, see [Passing Session Tags in AWS STS](id_session-tags.md)\.
+\(Optional\) You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/PrincipalTag:{TagKey}`\. This element allows you to pass attributes as session tags in the SAML assertion\. For more information about session tags, see [Passing session tags in AWS STS](id_session-tags.md)\.
 
 To pass attributes as session tags, include the `AttributeValue` element that specifies the value of the tag\. For example, to pass the tag key\-value pairs `Project` = `Marketing` and `CostCenter` = `12345`, use the following attribute\. Include a separate `Attribute` element for each tag\.
 
@@ -111,7 +111,7 @@ To set the tags above as transitive, include another `Attribute` element with th
 </Attribute>
 ```
 
-## Mapping SAML Attributes to AWS Trust Policy Context Keys<a name="saml-attribute-mapping"></a>
+## Mapping SAML attributes to AWS trust policy context keys<a name="saml-attribute-mapping"></a>
 
 The tables in this section list commonly used SAML attributes and how they map to trust policy condition context keys in AWS\. You can use these keys to control access to a role\. To do that, compare the keys to the values that are included in the assertions that accompany a SAML access request\.
 
@@ -124,9 +124,9 @@ In the eduPerson and eduOrg attributes table, values are typed either as strings
 You should include only one claim per AWS context key\. If you include more than one, only one claim will be mapped\. 
 
 
-**eduPerson and eduOrg Attributes**  
+**eduPerson and eduOrg attributes**  
 
-| eduPerson or eduOrg attribute \(`Name` key\) | Maps to this AWS Context Key \(`FriendlyName` key\) | Type | 
+| eduPerson or eduOrg attribute \(`Name` key\) | Maps to this AWS context key \(`FriendlyName` key\) | Type | 
 | --- | --- | --- | 
 |   `urn:oid:1.3.6.1.4.1.5923.1.1.1.1`   |   `eduPersonAffiliation`   |  List of strings  | 
 |   `urn:oid:1.3.6.1.4.1.5923.1.1.1.2`   |   `eduPersonNickname`   |  List of strings  | 
@@ -147,9 +147,9 @@ You should include only one claim per AWS context key\. If you include more than
 |   `urn:oid:2.5.4.3`   |   `cn`   |  List of strings  | 
 
 
-**Active Directory Attributes**  
+**Active Directory attributes**  
 
-| AD Attribute | Maps to this AWS Context Key | Type | 
+| AD attribute | Maps to this AWS context key | Type | 
 | --- | --- | --- | 
 |  `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`  |  `name`  |  String  | 
 |  `http://schemas.xmlsoap.org/claims/CommonName`  |  `commonName`  |  String  | 
@@ -159,9 +159,9 @@ You should include only one claim per AWS context key\. If you include more than
 |  `http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid`  |  `uid`  |  String  | 
 
 
-**X\.500 Attributes**  
+**X\.500 attributes**  
 
-| X\.500 Attribute | Maps to this AWS Context Key | Type | 
+| X\.500 attribute | Maps to this AWS context key | Type | 
 | --- | --- | --- | 
 |  `2.5.4.3`  |  `commonName`  |  String  | 
 |  `2.5.4.4`  |  `surname`  |  String  | 

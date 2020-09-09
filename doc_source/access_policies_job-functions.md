@@ -1,4 +1,4 @@
-# AWS Managed Policies for Job Functions<a name="access_policies_job-functions"></a>
+# AWS managed policies for job functions<a name="access_policies_job-functions"></a>
 
 AWS managed policies for job functions are designed to closely align to common job functions in the IT industry\. You can use these policies to easily grant the permissions needed to carry out the tasks expected of someone in a specific job function\. These policies consolidate permissions for many services into a single policy that's easier to work with than having permissions scattered across many policies\.
 
@@ -14,19 +14,19 @@ To follow security best practices, the policies for job functions include filter
 **Keep Up to Date**  
 These policies are all maintained by AWS and are kept up to date to include support for new services and new capabilities as they are added by AWS\. These policies cannot be modified by customers\. You can make a copy of the policy and then modify the copy, but that copy is not automatically updated as AWS introduces new services and API operations\.
 
-## Job Functions<a name="jf_names"></a>
+## Job functions<a name="jf_names"></a>
 
 **Topics**
 + [Administrator](#jf_administrator)
 + [Billing](#jf_accounts-payable)
-+ [Database Administrator](#jf_database-administrator)
-+ [Data Scientist](#jf_data-scientist)
-+ [Developer Power User](#jf_developer-power-user)
-+ [Network Administrator](#jf_network-administrator)
-+ [Security Auditor](#jf_security-auditor)
-+ [Support User](#jf_support-user)
-+ [System Administrator](#jf_system-administrator)
-+ [View\-Only User](#jf_view-only-user)
++ [Database administrator](#jf_database-administrator)
++ [Data scientist](#jf_data-scientist)
++ [Developer power user](#jf_developer-power-user)
++ [Network administrator](#jf_network-administrator)
++ [Security auditor](#jf_security-auditor)
++ [Support user](#jf_support-user)
++ [System administrator](#jf_system-administrator)
++ [View\-only user](#jf_view-only-user)
 
 In the following sections, each policy's name is a link to the policy details page in the AWS Management Console\. There you can see the policy document and review the permissions it grants\.
 
@@ -52,7 +52,7 @@ Before an IAM user or role can access the AWS Billing and Cost Management consol
 **Note**  
 Before an IAM user or role can access the AWS Billing and Cost Management console with the permissions in this policy, you must first activate IAM user and role access\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.
 
-### Database Administrator<a name="jf_database-administrator"></a>
+### Database administrator<a name="jf_database-administrator"></a>
 
 **AWS managed policy name:** [DatabaseAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/DatabaseAdministrator)
 
@@ -60,10 +60,10 @@ Before an IAM user or role can access the AWS Billing and Cost Management consol
 
 **Policy description:** This policy grants permissions to create, configure, and maintain databases\. It includes access to AWS database services, such as Amazon DynamoDB, Amazon Relational Database Service \(RDS\), and Amazon Redshift\. View the policy for the full list of database services that this policy supports\.
 
-This job function policy supports the ability to pass roles to AWS services\. The policy allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function policy supports the ability to pass roles to AWS services\. The policy allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
-**Optional IAM service roles for the Database Administrator job function**  
+**Optional IAM service roles for the database administrator job function**  
 
 | Use case | Role name \(\* is a wildcard\) | Service role type to select | Select this AWS managed policy | 
 | --- | --- | --- | --- | 
@@ -75,7 +75,7 @@ This job function policy supports the ability to pass roles to AWS services\. Th
 | Allow AWS Data Pipeline to access your AWS resources | [DataPipelineDefaultRole](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | Create a role with a trust policy as defined in the [AWS Data Pipeline Developer Guide](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | [AWSDataPipelineRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AWSDataPipelineRole) | 
 | Allow your applications running on Amazon EC2 instances to access your AWS resources | [DataPipelineDefaultResourceRole](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | Create a role with a trust policy as defined in the [AWS Data Pipeline Developer Guide](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | [AmazonEC2RoleforDataPipelineRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforDataPipelineRole) | 
 
-### Data Scientist<a name="jf_data-scientist"></a>
+### Data scientist<a name="jf_data-scientist"></a>
 
 **AWS managed policy name:** [DataScientist](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/DataScientist)
 
@@ -83,10 +83,10 @@ This job function policy supports the ability to pass roles to AWS services\. Th
 
 **Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to additional data scientist services, such as AWS Data Pipeline, Amazon EC2, Amazon Kinesis, Amazon Machine Learning, and SageMaker\. View the policy for the full list of data scientist services that this policy supports\.
 
-This job function policy supports the ability to pass roles to AWS services\. One statement allows passing any role to SageMaker\. Another statement allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function policy supports the ability to pass roles to AWS services\. One statement allows passing any role to SageMaker\. Another statement allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
-**Optional IAM service roles for the Data Scientist job function**  
+**Optional IAM service roles for the data scientist job function**  
 
 | Use case | Role name \(\* is a wildcard\) | Service role type to select | AWS managed policy to select | 
 | --- | --- | --- | --- | 
@@ -96,7 +96,7 @@ This job function policy supports the ability to pass roles to AWS services\. On
 | Allow AWS Data Pipeline to access your AWS resources | [DataPipelineDefaultRole](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | Create a role with a trust policy as defined in the [AWS Data Pipeline Developer Guide](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | [AWSDataPipelineRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AWSDataPipelineRole) | 
 | Allow your applications running on Amazon EC2 instances to access your AWS resources | [DataPipelineDefaultResourceRole](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | Create a role with a trust policy as defined in the [AWS Data Pipeline Developer Guide](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) | [AmazonEC2RoleforDataPipelineRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforDataPipelineRole) | 
 
-### Developer Power User<a name="jf_developer-power-user"></a>
+### Developer power user<a name="jf_developer-power-user"></a>
 
 **AWS managed policy name:** [PowerUserAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/PowerUserAccess)
 
@@ -104,7 +104,7 @@ This job function policy supports the ability to pass roles to AWS services\. On
 
 **Policy description:** The first statement of this policy uses the [`NotAction`](reference_policies_elements_notaction.md) element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations\. The second statement grants IAM permissions to create a service\-linked role\. This is required by some services that must access resources in another service, such as an Amazon S3 bucket\. It also grants Organizations permissions to view information about the user's organization, including the master account email and organization limitations\.
 
-### Network Administrator<a name="jf_network-administrator"></a>
+### Network administrator<a name="jf_network-administrator"></a>
 
 **AWS managed policy name:** [NetworkAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/NetworkAdministrator)
 
@@ -112,16 +112,16 @@ This job function policy supports the ability to pass roles to AWS services\. On
 
 **Policy description:** This policy grants permissions to create and maintain network resources in Auto Scaling, Amazon EC2, AWS Direct Connect, Route 53, Amazon CloudFront, Elastic Load Balancing, AWS Elastic Beanstalk, Amazon SNS, CloudWatch, CloudWatch Logs, Amazon S3, IAM, and Amazon Virtual Private Cloud\.
 
-This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
-**Optional IAM service roles for the Network Administrator job function**  
+**Optional IAM service roles for the network administrator job function**  
 
 | Use case | Role name \(\* is a wildcard\) | Service role type to select | AWS managed policy to select | 
 | --- | --- | --- | --- | 
 | Allows Amazon VPC to create and manage logs in CloudWatch Logs on the user's behalf to monitor IP traffic going in and out of your VPC | [flow\-logs\-\*](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-iam) | Create a role with a trust policy as defined in the [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-iam) | This use case does not have an existing AWS managed policy, but the documentation lists the required permissions\. See [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-iam)\. | 
 
-### Security Auditor<a name="jf_security-auditor"></a>
+### Security auditor<a name="jf_security-auditor"></a>
 
 **AWS managed policy name:** [SecurityAudit](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit)
 
@@ -129,7 +129,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants permissions to view configuration data for many AWS services and to review their logs\. 
 
-### Support User<a name="jf_support-user"></a>
+### Support user<a name="jf_support-user"></a>
 
 **AWS managed policy name:** [SupportUser](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/SupportUser)
 
@@ -137,7 +137,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants permissions to create and update AWS Support cases\.
 
-### System Administrator<a name="jf_system-administrator"></a>
+### System administrator<a name="jf_system-administrator"></a>
 
 **AWS managed policy name:** [SystemAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/SystemAdministrator)
 
@@ -145,10 +145,10 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
 
-This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating Roles and Attaching Policies \(Console\)](#access_policies_job-functions_create-policies) later in this topic\.
+This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](#access_policies_job-functions_create-policies) later in this topic\.
 
 
-**Optional IAM service roles for the System Administrator job function**  
+**Optional IAM service roles for the system administrator job function**  
 
 | Use case | Role name \(\* is a wildcard\) | Service role type to select | AWS managed policy to select | 
 | --- | --- | --- | --- | 
@@ -157,7 +157,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 | Allow apps running in EC2 instances to access AWS resources\. | [ec2\-sysadmin\-\*](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) | Amazon EC2 | Sample policy for role that grants access to an S3 bucket as shown in the [Amazon EC2 User Guide for Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html); customize as needed | 
 | Allow Lambda to read DynamoDB streams and write to CloudWatch Logs | [lambda\-sysadmin\-\*](https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html) | AWS Lambda | [AWSLambdaDynamoDBExecutionRole](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/service-role/AWSLambdaDynamoDBExecutionRole) | 
 
-### View\-Only User<a name="jf_view-only-user"></a>
+### View\-only user<a name="jf_view-only-user"></a>
 
 **AWS managed policy name:** [ViewOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/ViewOnlyAccess)
 
@@ -165,7 +165,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy description:** This policy grants `List*`, `Describe*`, `Get*`, `View*`, and `Lookup*` access to resources for most AWS services\. To see what actions this policy includes for each service, see [ViewOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/ViewOnlyAccess)\.
 
-## Creating Roles and Attaching Policies \(Console\)<a name="access_policies_job-functions_create-policies"></a>
+## Creating roles and attaching policies \(console\)<a name="access_policies_job-functions_create-policies"></a>
 
 Several of the previously listed policies grant the ability to configure AWS services with roles that enable those services to perform operations on your behalf\. The job function policies either specify exact role names that you must use or at least include a prefix that specifies the first part of the name that can be used\. To create one of these roles, perform the steps in the following procedure\.
 
@@ -205,7 +205,7 @@ Several of the previously listed policies grant the ability to configure AWS ser
 
 1. Review the role and then choose **Create role**\.
 
-## Example 1: Configuring a User as a Database Administrator \(Console\)<a name="jf_example_1"></a>
+## Example 1: Configuring a user as a database administrator \(console\)<a name="jf_example_1"></a>
 
 This example shows the steps required to configure Alice, an IAM user, as a [Database Administrator](#jf_database-administrator)\. You use the information in first row of the table in that section and allow the user to enable Amazon RDS monitoring\. You attach the [DatabaseAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/DatabaseAdministrator) policy to Alice's IAM user so that she can manage the Amazon database services\. That policy also enables Alice to pass a role called `rds-monitoring-role` to the Amazon RDS service that allows the service to monitor the RDS databases on her behalf\.
 
@@ -233,7 +233,7 @@ This example shows the steps required to configure Alice, an IAM user, as a [Dat
 
 1. Alice can now enable **RDS Enhanced Monitoring** in the **Monitoring** section of the Amazon RDS console\. For example, she might do this when she creates a DB instance, creates a read replica, or modifies a DB instance\. She must type the role name she created \(rds\-monitoring\-role\) in the **Monitoring Role** box when she sets **Enable Enhanced Monitoring** to **Yes**\. 
 
-## Example 2: Configuring a User as a Network Administrator \(Console\)<a name="jf_example_2"></a>
+## Example 2: Configuring a user as a network administrator \(console\)<a name="jf_example_2"></a>
 
 This example shows the steps required to configure Juan, an IAM user, as a [Network Administrator](#jf_network-administrator)\. It uses the information in the table in that section to allow Juan to monitor IP traffic going to and from a VPC\. It also allows Juan to capture that information in the logs in CloudWatch Logs\. You attach the [NetworkAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/NetworkAdministrator) policy to Juan's IAM user so that he can configure AWS network resources\. That policy also enables Juan to pass a role whose name begins with `flow-logs*` to Amazon EC2 when you create a flow log\. In this scenario, unlike Example 1, there isn't a predefined service role type, so you must perform a few steps differently\.
 
@@ -270,7 +270,7 @@ This example shows the steps required to configure Juan, an IAM user, as a [Netw
 
 1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy Restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review** page, type **vpc\-flow\-logs\-policy\-for\-service\-role** for the policy name\. Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
 

@@ -1,4 +1,4 @@
-# Deleting an IAM Group<a name="id_groups_manage_delete"></a>
+# Deleting an IAM group<a name="id_groups_manage_delete"></a>
 
 When you delete a group in the AWS Management Console, the console automatically removes all group members, detaches all attached managed policies, and deletes all inline policies\. However, because IAM does not automatically delete policies that refer to the group as a resource, you must be careful when you delete a group\. Before you delete your group, you must manually check all of your policies to find any policies where that group is mentioned by name\. For example, let's say John is the manager of the testing part of the organization\. John has a policy attached to his IAM user entity that lets him add and remove users from the Test group\. If an administrator deletes the group, the administrator must also delete the policy attached to John\. 
 
@@ -18,7 +18,7 @@ When you delete a group in the AWS Management Console, the console automatically
 
 In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a group, you must first remove the users in the group\. Then delete any inline policies embedded in the group\. Next, detach any managed policies that are attached to the group\. Only then can you delete the group itself\.
 
-## Deleting an IAM Group \(Console\)<a name="id_groups_manage_delete_console"></a>
+## Deleting an IAM group \(console\)<a name="id_groups_manage_delete_console"></a>
 
 You can delete an IAM group from the AWS Management Console\.
 
@@ -34,7 +34,7 @@ You can delete an IAM group from the AWS Management Console\.
 
 1. In the confirmation box, click **Yes, Delete**\.
 
-## Deleting an IAM Group \(AWS CLI\)<a name="id_groups_manage_delete_cli"></a>
+## Deleting an IAM group \(AWS CLI\)<a name="id_groups_manage_delete_cli"></a>
 
 You can delete an IAM group from the AWS CLI\.
 
@@ -52,7 +52,7 @@ You can delete an IAM group from the AWS CLI\.
 1. Delete the group\.
    + [aws iam delete\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group.html)
 
-## Deleting an IAM Group \(AWS API\)<a name="id_groups_manage_delete_api"></a>
+## Deleting an IAM group \(AWS API\)<a name="id_groups_manage_delete_api"></a>
 
 You can use the AWS API to delete an IAM group\.
 
