@@ -174,7 +174,7 @@ json_string_with_temp_credentials = json.dumps(url_credentials)
 # the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials 
 # as parameters.
 request_parameters = "?Action=getSigninToken"
-request_parameters += "&SessionDuration=43200"
+request_parameters += "&DurationSeconds=43200"
 if sys.version_info[0] < 3:
     def quote_plus_function(s):
         return urllib.quote_plus(s)
