@@ -19,9 +19,9 @@ One particularly useful category of AWS managed policies are those designed for 
 
 You cannot change the permissions defined in AWS managed policies\. AWS occasionally updates the permissions defined in an AWS managed policy\. When AWS does this, the update affects all principal entities \(users, groups, and roles\) that the policy is attached to\. AWS is most likely to update an AWS managed policy when a new AWS service is launched or new API calls become available for existing services\. For example, the AWS managed policy called **ReadOnlyAccess** provides read\-only access to all AWS services and resources\. When AWS launches a new service, AWS updates the **ReadOnlyAccess** policy to add read\-only permissions for the new service\. The updated permissions are applied to all principal entities that the policy is attached to\. 
 
-The following diagram illustrates AWS managed policies\. The diagram shows three AWS managed policies: **AdministratorAccess**, ** PowerUserAccess**, and **AWSCloudTrailReadOnlyAccess**\. Notice that a single AWS managed policy can be attached to principal entities in different AWS accounts, and to different principal entities in a single AWS account\. 
+The following diagram illustrates AWS managed policies\. The diagram shows three AWS managed policies: **AdministratorAccess**, **PowerUserAccess**, and **AWSCloudTrailReadOnlyAccess**\. Notice that a single AWS managed policy can be attached to principal entities in different AWS accounts, and to different principal entities in a single AWS account\. 
 
-![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
+![\[Diagram of AWS managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-aws-managed-policies.diagram.png)
 
 ## Customer Managed Policies<a name="customer-managed-policies"></a>
 
@@ -39,7 +39,7 @@ An inline policy is a policy that's embedded in an IAM identity \(a user, group,
 
 The following diagram illustrates inline policies\. Each policy is an inherent part of the user, group, or role\. Notice that two roles include the same policy \(the **DynamoDB\-books\-app** policy\), but they are not sharing a single policy; each role has its own copy of the policy\.
 
-![\[Diagram of inline policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Diagram of inline policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
+![\[Diagram of inline policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-inline-policies.diagram.png)
 
 ## Choosing Between Managed Policies and Inline Policies<a name="choosing-managed-or-inline"></a>
 
@@ -54,7 +54,7 @@ A single managed policy can be attached to multiple principal entities \(users, 
 When you change a managed policy, the change is applied to all principal entities that the policy is attached to\. For example, if you want to add permission for a new AWS API, you can update the managed policy to add the permission\. \(If you're using an AWS managed policy, AWS updates to the policy\.\) When the policy is updated, the changes are applied to all principal entities that the policy is attached to\. In contrast, to change an inline policy you must individually edit each identity that contains the policy\. For example, if a group and a role both contain the same inline policy, you must individually edit both principal entities in order to change that policy\. 
 
 **Versioning and rolling back**  
- When you change a customer managed policy, the changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. IAM stores up to five versions of your customer managed policies\. You can use policy versions to revert a policy to an earlier version if you need to\.   
+When you change a customer managed policy, the changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new version of the managed policy\. IAM stores up to five versions of your customer managed policies\. You can use policy versions to revert a policy to an earlier version if you need to\.   
 A policy version is different from a `Version` policy element\. The `Version` policy element is used within a policy and defines the version of the policy language\. To learn more about policy versions, see [Versioning IAM Policies](access_policies_managed-versioning.md)\. To learn more about the `Version` policy element see [IAM JSON Policy Elements: Version](reference_policies_elements_version.md)\.
 
 **Delegating permissions management**  
@@ -62,7 +62,7 @@ You can allow users in your AWS account to attach and detach policies while main
 For more information about delegating permissions management, see [Controlling Access to Policies](access_controlling.md#access_controlling-policies)\. 
 
 **Automatic updates for AWS managed policies**  
- AWS maintains AWS managed policies and updates them when necessary \(for example, to add permissions for new AWS services\), without you having to make changes\. The updates are automatically applied to the principal entities that you have attached the AWS managed policy to\. 
+AWS maintains AWS managed policies and updates them when necessary \(for example, to add permissions for new AWS services\), without you having to make changes\. The updates are automatically applied to the principal entities that you have attached the AWS managed policy to\. 
 
 ### Using Inline Policies<a name="policies-using-inline-policies"></a>
 
