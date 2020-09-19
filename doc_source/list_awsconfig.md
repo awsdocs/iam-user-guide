@@ -1,4 +1,4 @@
-# Actions, Resources, and Condition Keys for AWS Config<a name="list_awsconfig"></a>
+# Actions, resources, and condition keys for AWS Config<a name="list_awsconfig"></a>
 
 AWS Config \(service prefix: `config`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
@@ -8,30 +8,30 @@ References:
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/config/latest/developerguide/example-policies.html) permission policies\.
 
 **Topics**
-+ [Actions Defined by AWS Config](#awsconfig-actions-as-permissions)
-+ [Resource Types Defined by AWS Config](#awsconfig-resources-for-iam-policies)
-+ [Condition Keys for AWS Config](#awsconfig-policy-keys)
++ [Actions defined by AWS Config](#awsconfig-actions-as-permissions)
++ [Resource types defined by AWS Config](#awsconfig-resources-for-iam-policies)
++ [Condition keys for AWS Config](#awsconfig-policy-keys)
 
-## Actions Defined by AWS Config<a name="awsconfig-actions-as-permissions"></a>
+## Actions defined by AWS Config<a name="awsconfig-actions-as-permissions"></a>
 
 You can specify the following actions in the `Action` element of an IAM policy statement\. Use policies to grant permissions to perform an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\.
 
-The **Resource Types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
+The **Resource types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
 
-For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
+For details about the columns in the following table, see [The actions table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
 
 ****  
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsconfig.html)
 
-## Resource Types Defined by AWS Config<a name="awsconfig-resources-for-iam-policies"></a>
+## Resource types defined by AWS Config<a name="awsconfig-resources-for-iam-policies"></a>
 
-The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsconfig-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The Resource Types Table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#awsconfig-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The resource types table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
 
 
 ****  
 
-| Resource Types | ARN | Condition Keys | 
+| Resource types | ARN | Condition keys | 
 | --- | --- | --- | 
 |   [ AggregationAuthorization ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_AggregationAuthorization.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:aggregation\-authorization/$\{AggregatorAccount\}/$\{AggregatorRegion\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsconfig-aws_ResourceTag___TagKey_)   | 
 |   [ ConfigurationAggregator ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_ConfigurationAggregator.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:config\-aggregator/$\{AggregatorId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsconfig-aws_ResourceTag___TagKey_)   | 
@@ -41,16 +41,16 @@ The following resource types are defined by this service and can be used in the 
 |   [ OrganizationConformancePack ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_OrganizationConformancePack.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:organization\-conformance\-pack/$\{OrganizationConformancePackId\}  |  | 
 |   [ RemediationConfiguration ](https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.htmlAPI_RemediationConfiguration.html)  |  arn:$\{Partition\}:config:$\{Region\}:$\{Account\}:remediation\-configuration/$\{RemediationConfigurationId\}  |  | 
 
-## Condition Keys for AWS Config<a name="awsconfig-policy-keys"></a>
+## Condition keys for AWS Config<a name="awsconfig-policy-keys"></a>
 
-AWS Config defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+AWS Config defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The condition keys table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available global condition keys](reference_policies_condition-keys.html#AvailableKeys)\.
 
 
 ****  
 
-| Condition Keys | Description | Type | 
+| Condition keys | Description | Type | 
 | --- | --- | --- | 
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value assoicated with the resource | String | 

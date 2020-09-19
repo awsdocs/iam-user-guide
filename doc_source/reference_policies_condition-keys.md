@@ -336,7 +336,7 @@ This example shows how you might create a policy that allows users with the **ta
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. To learn which values you can sFor details about how the information appears in the request context for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
+Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
 
 ## aws:referer<a name="condition-keys-referer"></a>

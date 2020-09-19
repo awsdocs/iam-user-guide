@@ -7,7 +7,7 @@ AWS STS service bearer tokens include information from your original principal a
 **Important**  
 The bearer token can be used only for calls to the service that generates it and in the Region where it was generated\. You can't use the bearer token to perform operations in other services or Regions\.
 
-An example of a service that supports bearer tokens is AWS CodeArtifact\. Before you can interact with AWS CodeArtifact using a package manager such as NPM, Maven, or PIP, you must call the `aws codeartifact get-authorization-token` operation\. This operation returns a bearer token that you can use to perform AWS CodeArtifact operations\. Alternateively, you can use the `aws codeartifact login` command that completes the same operation and then configures your client automatically\. 
+An example of a service that supports bearer tokens is AWS CodeArtifact\. Before you can interact with AWS CodeArtifact using a package manager such as NPM, Maven, or PIP, you must call the `aws codeartifact get-authorization-token` operation\. This operation returns a bearer token that you can use to perform AWS CodeArtifact operations\. Alternatively, you can use the `aws codeartifact login` command that completes the same operation and then configures your client automatically\. 
 
 If you perform an action in an AWS service that generates a bearer token for you, you must have the following permissions in your IAM policy:
 

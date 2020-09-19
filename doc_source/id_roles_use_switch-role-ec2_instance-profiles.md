@@ -1,6 +1,6 @@
 # Using instance profiles<a name="id_roles_use_switch-role-ec2_instance-profiles"></a>
 
-An instance profile is a container for an IAM role that you can use to pass role information to an EC2 instance when the instance starts\.
+Use an instance profile to pass an IAM role to an EC2 instance\. For more information, see [IAM roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ## Managing instance profiles \(console\)<a name="instance-profiles-manage-console"></a>
 

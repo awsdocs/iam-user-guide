@@ -60,7 +60,7 @@ As employees, Zhang and Mary each need to be able to create their own data in th
         /managers
 ```
 
-John divides the master `/aws-s3-bucket` into a set of home directories for each employee, and a shared area for groups of developers and managers\.
+John divides the `/aws-s3-bucket` into a set of home directories for each employee, and a shared area for groups of developers and managers\.
 
 Now John creates a set of policies to assign permissions to the users and groups:
 + **Home directory access for Zhang** – John attaches a policy to Zhang that lets him read, write, and list any objects with the Amazon S3 key prefix `/aws-s3-bucket/home/Zhang/` 

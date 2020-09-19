@@ -1,4 +1,4 @@
-# Actions, Resources, and Condition Keys for Amazon WorkDocs<a name="list_amazonworkdocs"></a>
+# Actions, resources, and condition keys for Amazon WorkDocs<a name="list_amazonworkdocs"></a>
 
 Amazon WorkDocs \(service prefix: `workdocs`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
@@ -8,22 +8,22 @@ References:
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/workdocs/latest/adminguide/prereqs.html) permission policies\.
 
 **Topics**
-+ [Actions Defined by Amazon WorkDocs](#amazonworkdocs-actions-as-permissions)
-+ [Resource Types Defined by Amazon WorkDocs](#amazonworkdocs-resources-for-iam-policies)
-+ [Condition Keys for Amazon WorkDocs](#amazonworkdocs-policy-keys)
++ [Actions defined by Amazon WorkDocs](#amazonworkdocs-actions-as-permissions)
++ [Resource types defined by Amazon WorkDocs](#amazonworkdocs-resources-for-iam-policies)
++ [Condition keys for Amazon WorkDocs](#amazonworkdocs-policy-keys)
 
-## Actions Defined by Amazon WorkDocs<a name="amazonworkdocs-actions-as-permissions"></a>
+## Actions defined by Amazon WorkDocs<a name="amazonworkdocs-actions-as-permissions"></a>
 
 You can specify the following actions in the `Action` element of an IAM policy statement\. Use policies to grant permissions to perform an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\.
 
-The **Resource Types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
+The **Resource types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
 
-For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
+For details about the columns in the following table, see [The actions table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
 
 ****  
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
+| Actions | Description | Access level | Resource types \(\*required\) | Condition keys | Dependent actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ AbortDocumentVersionUpload ](https://docs.aws.amazon.com/workdocs/latest/APIReference/API_AbortDocumentVersionUpload.html)  | Grants permission to abort the upload of the specified document version that was previously initiated by InitiateDocumentVersionUpload\. | Write |  |  |  | 
 |   [ ActivateUser ](https://docs.aws.amazon.com/workdocs/latest/APIReference/API_ActivateUser.html)  | Grants permission to activate the specified user\. Only active users can access Amazon WorkDocs\. | Write |  |  |  | 
@@ -77,10 +77,10 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ UpdateInstanceAlias ](https://docs.aws.amazon.com/workdocs/latest/adminguide/getting_started.html) \[permission only\] | Grants permission to update an instance alias\. | Write |  |  |  | 
 |   [ UpdateUser ](https://docs.aws.amazon.com/workdocs/latest/APIReference/API_UpdateUser.html)  | Grants permission to update the specified attributes of the specified user, and grants or revokes administrative privileges to the Amazon WorkDocs site\. | Write |  |  |  | 
 
-## Resource Types Defined by Amazon WorkDocs<a name="amazonworkdocs-resources-for-iam-policies"></a>
+## Resource types defined by Amazon WorkDocs<a name="amazonworkdocs-resources-for-iam-policies"></a>
 
 Amazon WorkDocs does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon WorkDocs, specify `“Resource”: “*”` in your policy\.
 
-## Condition Keys for Amazon WorkDocs<a name="amazonworkdocs-policy-keys"></a>
+## Condition keys for Amazon WorkDocs<a name="amazonworkdocs-policy-keys"></a>
 
-WorkDocs has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available Keys for Conditions](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+WorkDocs has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available keys for conditions](reference_policies_condition-keys.html#AvailableKeys)\.

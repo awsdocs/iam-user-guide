@@ -1,4 +1,4 @@
-# Actions, Resources, and Condition Keys for Amazon Transcribe<a name="list_amazontranscribe"></a>
+# Actions, resources, and condition keys for Amazon Transcribe<a name="list_amazontranscribe"></a>
 
 Amazon Transcribe \(service prefix: `transcribe`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
@@ -8,22 +8,22 @@ References:
 + Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/transcribe/latest/dg/auth-and-access-control.html) permission policies\.
 
 **Topics**
-+ [Actions Defined by Amazon Transcribe](#amazontranscribe-actions-as-permissions)
-+ [Resource Types Defined by Amazon Transcribe](#amazontranscribe-resources-for-iam-policies)
-+ [Condition Keys for Amazon Transcribe](#amazontranscribe-policy-keys)
++ [Actions defined by Amazon Transcribe](#amazontranscribe-actions-as-permissions)
++ [Resource types defined by Amazon Transcribe](#amazontranscribe-resources-for-iam-policies)
++ [Condition keys for Amazon Transcribe](#amazontranscribe-policy-keys)
 
-## Actions Defined by Amazon Transcribe<a name="amazontranscribe-actions-as-permissions"></a>
+## Actions defined by Amazon Transcribe<a name="amazontranscribe-actions-as-permissions"></a>
 
 You can specify the following actions in the `Action` element of an IAM policy statement\. Use policies to grant permissions to perform an operation in AWS\. When you use an action in a policy, you usually allow or deny access to the API operation or CLI command with the same name\. However, in some cases, a single action controls access to more than one operation\. Alternatively, some operations require several different actions\.
 
-The **Resource Types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
+The **Resource types** column indicates whether each action supports resource\-level permissions\. If there is no value for this column, you must specify all resources \("\*"\) in the `Resource` element of your policy statement\. If the column includes a resource type, then you can specify an ARN of that type in a statement with that action\. Required resources are indicated in the table with an asterisk \(\*\)\. If you specify a resource\-level permission ARN in a statement using this action, then it must be of this type\. Some actions support multiple resource types\. If the resource type is optional \(not indicated as required\), then you can choose to use one but not the other\.
 
-For details about the columns in the following table, see [The Actions Table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
+For details about the columns in the following table, see [The actions table](reference_policies_actions-resources-contextkeys.md#actions_table)\.
 
 
 ****  
 
-| Actions | Description | Access Level | Resource Types \(\*required\) | Condition Keys | Dependent Actions | 
+| Actions | Description | Access level | Resource types \(\*required\) | Condition keys | Dependent actions | 
 | --- | --- | --- | --- | --- | --- | 
 |   [ CreateLanguageModel ](https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateLanguageModel.html)  | Grants permission to create a new custom language model\. | Write |  |  |   s3:GetObject   s3:ListBucket   | 
 |   [ CreateMedicalVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_CreateMedicalVocabulary.html)  | Grants permission to create a new custom vocabulary that you can use to change the way Amazon Transcribe Medical handles transcription of an audio file\. | Write |  |  |   s3:GetObject   | 
@@ -57,20 +57,20 @@ For details about the columns in the following table, see [The Actions Table](re
 |   [ UpdateVocabulary ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabulary.html)  | Grants permission to update an existing vocabulary with new values\. The UpdateVocabulary operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
 |   [ UpdateVocabularyFilter ](https://docs.aws.amazon.com/transcribe/latest/dg/API_UpdateVocabularyFilter.html)  | Grants permission to update an existing vocabulary filter with new values\. The UpdateVocabularyFilter operation overwrites all of the existing information with the values that you provide in the request\. | Write |  |  |   s3:GetObject   | 
 
-## Resource Types Defined by Amazon Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
+## Resource types defined by Amazon Transcribe<a name="amazontranscribe-resources-for-iam-policies"></a>
 
 Amazon Transcribe does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Transcribe, specify `“Resource”: “*”` in your policy\.
 
-## Condition Keys for Amazon Transcribe<a name="amazontranscribe-policy-keys"></a>
+## Condition keys for Amazon Transcribe<a name="amazontranscribe-policy-keys"></a>
 
-Amazon Transcribe defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The Condition Keys Table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+Amazon Transcribe defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The condition keys table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
 
-To view the global condition keys that are available to all services, see [Available Global Condition Keys](reference_policies_condition-keys.html#AvailableKeys) in the *IAM Policy Reference*\.
+To view the global condition keys that are available to all services, see [Available global condition keys](reference_policies_condition-keys.html#AvailableKeys)\.
 
 
 ****  
 
-| Condition Keys | Description | Type | 
+| Condition keys | Description | Type | 
 | --- | --- | --- | 
 |   transcribe:OutputBucketName  | Enables you to control access based on the output bucket name included in the request | String | 
 |   transcribe:OutputEncryptionKMSKeyId  | Enables you to control access based on the KMS key id included in the request | String | 
