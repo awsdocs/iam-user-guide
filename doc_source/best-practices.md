@@ -3,7 +3,7 @@
 To help secure your AWS resources, follow these recommendations for the AWS Identity and Access Management \(IAM\) service\. 
 
 **Topics**
-+ [Lock away your AWS Account Root User access keys](#lock-away-credentials)
++ [Lock away your AWS account root user access keys](#lock-away-credentials)
 + [Create individual IAM users](#create-iam-users)
 + [Use groups to assign permissions to IAM users](#use-groups-for-permissions)
 + [Grant least privilege](#grant-least-privilege)
@@ -21,7 +21,7 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Monitor activity in your AWS account](#keep-a-log)
 + [Video presentation about IAM best practices](#top-practices-video)
 
-## Lock away your AWS Account Root User access keys<a name="lock-away-credentials"></a>
+## Lock away your AWS account root user access keys<a name="lock-away-credentials"></a>
 
 You use an access key \(an access key ID and secret access key\) to make programmatic requests to AWS\. However, do not use your AWS account root user access key\. The access key for your AWS account root user gives full access to all your resources for all AWS services, including your billing information\. You cannot reduce the permissions associated with your AWS account root user access key\. 
 

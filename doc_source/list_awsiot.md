@@ -57,6 +57,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ dimension ](https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:dimension/$\{DimensionName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ rule ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rule/$\{ruleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ provisioningtemplate ](https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:provisioningtemplate/$\{provisioningTemplate\}  |  | 
+|   [ domainconfiguration ](https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:domainconfiguration/$\{domainConfigurationName\}  |  | 
 
 ## Condition keys for AWS IoT<a name="awsiot-policy-keys"></a>
 

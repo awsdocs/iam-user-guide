@@ -5,7 +5,7 @@ An AWS Identity and Access Management \(IAM\) *user* is an entity that you creat
 An IAM user with administrator permissions is not the same thing as the AWS account root user\. For more information about the root user, see [AWS account root user](id_root-user.md)\.
 
 **Important**  
-If you arrived at this page while trying to enable Amazon Advertising for your application or web site, see [Sign up for the Product Advertising API](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
+If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.
 
 ## How AWS identifies an IAM user<a name="id_users_create_aws-identifiers"></a>
 

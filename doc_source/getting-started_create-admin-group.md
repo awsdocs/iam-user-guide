@@ -1,7 +1,7 @@
 # Creating your first IAM admin user and group<a name="getting-started_create-admin-group"></a>
 
 **Important**  
-If you arrived at this page trying to enable Amazon Advertising for your application or web site, see [Becoming a Product Advertising API Developer](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.
+If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.
 
 As a [best practice](best-practices.md#lock-away-credentials), do not use the AWS account root user for any task where it's not required\. Instead, create a new IAM user for each person that requires administrator access\. Then make those users administrators by placing the users into an "Administrators" group to which you attach the AdministratorAccess managed policy\. 
 

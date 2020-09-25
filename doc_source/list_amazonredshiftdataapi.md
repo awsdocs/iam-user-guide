@@ -29,7 +29,7 @@ For details about the columns in the following table, see [The actions table](re
 |   [ DescribeStatement ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeStatement.html)  | Grants permission to retrieve detailed information about a statement execution | Read |  |  |  | 
 |   [ DescribeTable ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_DescribeTable.html)  | Grants permission to retrieve metadata about a particular table | Read |  |  |  | 
 |   [ ExecuteStatement ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ExecuteStatement.html)  | Grants permission to execute a query | Write |  |  |  | 
-|   [ GetStatementResult ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_FetchResult.html)  | Grants permission to fetch the result of a query | Read |  |  |  | 
+|   [ GetStatementResult ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_GetStatementResult.html)  | Grants permission to fetch the result of a query | Read |  |  |  | 
 |   [ ListDatabases ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListDatabases.html)  | Grants permission to list databases for a given cluster | List |  |  |  | 
 |   [ ListSchemas ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListSchemas.html)  | Grants permission to list schemas for a given cluster | List |  |  |  | 
 |   [ ListStatements ](https://docs.aws.amazon.com/redshift-data/latest/APIReference/API_ListStatements.html)  | Grants permission to list queries for a given principal | List |  |  |  | 

@@ -3,7 +3,7 @@
 You can create one or more IAM users in your AWS account\. You might create an IAM user when someone joins your team, or when you create a new application that needs to make API calls to AWS\. 
 
 **Important**  
-If you arrived at this page while trying to enable Amazon Advertising for your application or website, see [Becoming a Product Advertising API Developer](https://docs.aws.amazon.com/AWSECommerceService/latest/DG/becomingDev.html)\.  
+If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.  
 If you arrived at this page from the IAM console, it is possible that your account does not include IAM users, even though you are signed in\. You could be signed in as the AWS account root user, using a role, or signed in with temporary credentials\. To learn more about these IAM identities, see [IAM Identities \(users, groups, and roles\)](id.md)\.
 
 **Topics**
