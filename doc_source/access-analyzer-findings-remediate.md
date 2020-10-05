@@ -1,4 +1,4 @@
-# Resolving Findings<a name="access-analyzer-findings-remediate"></a>
+# Resolving findings<a name="access-analyzer-findings-remediate"></a>
 
 To resolve findings generated from access that you did not intend to allow, modify the policy statement to remove the permissions that allow access to the identified resource\. For example, for findings on S3 buckets, use the Amazon S3 console to configure the permissions on the bucket\. For IAM roles, use the IAM console to [modify the trust policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_modify.html#roles-managingrole_edit-trust-policy) for the listed IAM role\. Use the console for the other supported resources to modify the policy statements that resulted in a generated finding\.
 

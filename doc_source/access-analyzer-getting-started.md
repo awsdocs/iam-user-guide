@@ -1,8 +1,8 @@
-# Getting Started with AWS IAM Access Analyzer<a name="access-analyzer-getting-started"></a>
+# Getting started with AWS IAM Access Analyzer<a name="access-analyzer-getting-started"></a>
 
-Use the information in this topic to learn about the requirements necessary to use and manage AWS IAM Access Analyzer, and then how to enable Access Analyzer\. To learn more about the service\-linked role for Access Analyzer, see [Using Service\-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+Use the information in this topic to learn about the requirements necessary to use and manage AWS IAM Access Analyzer, and then how to enable Access Analyzer\. To learn more about the service\-linked role for Access Analyzer, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
 
-## Permissions Required to Use Access Analyzer<a name="access-analyzer-permissions"></a>
+## Permissions required to use Access Analyzer<a name="access-analyzer-permissions"></a>
 
 To successfully configure and use Access Analyzer, the account you use must be granted the required permissions\. To access and use all Access Analyzer features, you can apply the IAMAccessAnalyzerFullAccess managed policy to the account\. The full access policy grants the following permissions:
 
@@ -83,7 +83,7 @@ If you plan to use Access Analyzer for an organization in AWS Organizations, you
 + organizations:ListParents
 + organizations:ListRoots
 
-### Resources Defined by AWS IAM Access Analyzer<a name="permission-resources"></a>
+### Resources defined by AWS IAM Access Analyzer<a name="permission-resources"></a>
 
 Access Analyzer defines the following resources:
 
@@ -93,9 +93,9 @@ Access Analyzer defines the following resources:
 | analyzer | arn:$\{Partition\}:access\-analyzer:$\{Region\}:$\{Account\}:analyzer/$\{analyzerName\} | 
 | archive\-rule | arn:$\{Partition\}:access\-analyzer:$\{Region\}:$\{Account\}:analyzer/$\{analyzerName\}/archive\-rule/$\{ruleName\} | 
 
-### Required Access Analyzer Service Permissions<a name="access-analyzer-permissions-service"></a>
+### Required Access Analyzer service permissions<a name="access-analyzer-permissions-service"></a>
 
-Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer with your account as the zone of trust, the service creates the role your account\. When you create an analyzer with your organization as the zone of trust, the service creates a roll in each account that belongs to your organization\. For more information, see [Using Service\-Linked Roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer with your account as the zone of trust, the service creates the role your account\. When you create an analyzer with your organization as the zone of trust, the service creates a roll in each account that belongs to your organization\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
 
 **Note**  
 Access Analyzer is Regional\. You must enable Access Analyzer in each Region independently\.
@@ -151,7 +151,7 @@ When you create an analyzer to enable Access Analyzer, a service\-linked role na
 
 When you create an analyzer with the organization as the zone of trust, a service\-linked role named `AWSServiceRoleForAccessAnalyzer` is created in each account of your organization\.
 
-## Access Analyzer Status<a name="access-analyzer-status"></a>
+## Access Analyzer status<a name="access-analyzer-status"></a>
 
 To view the status of your analyzers, choose **Analyzers**\. Analyzers created for an organization or account can have the following status:
 
@@ -163,7 +163,7 @@ To view the status of your analyzers, choose **Analyzers**\. Analyzers created f
 |  Disabled  |  The analyzer is disabled due to an action taken by the AWS Organizations administrator\. For example, removing the analyzer’s account as the delegated administrator for IAM Access Analyzer\. When the analyzer is in a disabled state it does not generate new findings or update existing findings\.  | 
 |  Failed  |  The creation of the analyzer failed due to a configuration issue\. The analyzer won't generate any findings\. Delete the analyzer and create a new analyzer\.  | 
 
-## Access Analyzer Quotas<a name="access-analyzer-quotas"></a>
+## Access Analyzer quotas<a name="access-analyzer-quotas"></a>
 
 Access Analyzer has the following quotas:
 

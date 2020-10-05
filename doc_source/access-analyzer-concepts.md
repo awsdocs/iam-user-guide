@@ -1,4 +1,4 @@
-# How Access Analyzer Works<a name="access-analyzer-concepts"></a>
+# How Access Analyzer works<a name="access-analyzer-concepts"></a>
 
 This topic describes the concepts and terms that are used in Access Analyzer to help you become familiar with how Access Analyzer monitors access to your AWS resources\.
 

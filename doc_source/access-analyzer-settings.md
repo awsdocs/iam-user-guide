@@ -1,8 +1,8 @@
-# Settings<a name="access-analyzer-settings"></a>
+# Settings for Access Analyzer<a name="access-analyzer-settings"></a>
 
 If you're configuring AWS IAM Access Analyzer in your AWS Organizations master account, you can add a member account in the organization as the delegated administrator to manage Access Analyzer for your organization\. The delegated administrator has permissions to create and manage analyzers with the organization as the zone of trust\. Only the master account can add a delegated administrator\.
 
-## Delegated Administrator for Access Analyzer<a name="access-analyzer-delegated-administrator"></a>
+## Delegated administrator for Access Analyzer<a name="access-analyzer-delegated-administrator"></a>
 
 The delegated administrator for Access Analyzer is a member account within the organization that has permissions to create and manage analyzers with the organization as the zone of trust\. Only the master account can add, remove, or change a delegated administrator\.
 
@@ -12,7 +12,7 @@ If the delegated administrator leaves the AWS organization, the delegated admini
 
 The first time that you configure analyzers in the master account, you can choose the option to **Add delegated administrator** that is displayed on the Access Analyzer homepage in the IAM console\.
 
-**To add a delegated administrator \(console\)**
+**To add a delegated administrator using the console**
 
 1. Log in to the AWS console using the master account for your organization\.
 
@@ -28,7 +28,7 @@ The first time that you configure analyzers in the master account, you can choos
 
 1. Choose **Save changes**\.
 
-**To add a delegated administrator \(AWS CLI, AWS API\)**
+**To add a delegated administrator using the AWS CLI or the AWS SDKs**
 
 When you create an analyzer with organization as the zone of trust in a delegated administrator account using the AWS CLI, AWS API \(using the AWS SDKs\) or AWS CloudFormation, you must use AWS Organizations APIs to enable service access for Access Analyzer and register the member account as a delegated administrator\.
 

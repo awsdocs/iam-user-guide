@@ -1,4 +1,4 @@
-# Working with Findings<a name="access-analyzer-work-with-findings"></a>
+# Working with findings<a name="access-analyzer-work-with-findings"></a>
 
 Findings are generated only once for each instance of a resource that is shared outside of your zone of trust\. Each time a resource\-based policy is modified, Access Analyzer analyzes the policy\. If the updated policy shares a resource that is already identified in a finding, but with different permissions or conditions, a new finding is generated for that instance of the resource sharing\. If the access in the first finding is removed, that finding is updated to a status of Resolved\.
 

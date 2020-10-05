@@ -22,12 +22,7 @@ For details about the columns in the following table, see [The actions table](re
 
 
 ****  
-
-| Actions | Description | Access level | Resource types \(\*required\) | Condition keys | Dependent actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ GetSnapshotBlock ](https://docs.aws.amazon.com/ebs/latest/APIReference/API_GetSnapshotBlock.html)  | Grants permission to return the data of a block in an Amazon Elastic Block Store \(EBS\) snapshot | Read |   [ snapshot\* ](#amazonelasticblockstore-snapshot)   |  |  | 
-|   [ ListChangedBlocks ](https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListChangedBlocks.html)  | Grants permission to list the block indexes and block tokens for blocks that are different between two Amazon Elastic Block Store \(EBS\) snapshots of the same volume/snapshot lineage | Read |   [ snapshot\* ](#amazonelasticblockstore-snapshot)   |  |  | 
-|   [ ListSnapshotBlocks ](https://docs.aws.amazon.com/ebs/latest/APIReference/API_ListSnapshotBlocks.html)  | Grants permission to list the block indexes and block tokens for blocks in an Amazon Elastic Block Store \(EBS\) snapshot\. | Read |   [ snapshot\* ](#amazonelasticblockstore-snapshot)   |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonelasticblockstore.html)
 
 ## Resource types defined by Amazon Elastic Block Store<a name="amazonelasticblockstore-resources-for-iam-policies"></a>
 
@@ -38,7 +33,7 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource types | ARN | Condition keys | 
 | --- | --- | --- | 
-|   [ snapshot ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}::snapshot/$\{SnapshotId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticblockstore-aws_ResourceTag___TagKey_)   | 
+|   [ snapshot ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#EC2_ARN_Format)  |  arn:$\{Partition\}:ec2:$\{Region\}::snapshot/$\{SnapshotId\}  |   [ aws:RequestTag/$\{TagKey\} ](#amazonelasticblockstore-aws_RequestTag___TagKey_)   [ aws:ResourceTag/$\{TagKey\} ](#amazonelasticblockstore-aws_ResourceTag___TagKey_)   [ aws:TagKeys ](#amazonelasticblockstore-aws_TagKeys)   [ ebs:Description ](#amazonelasticblockstore-ebs_Description)   [ ebs:ParentSnapshot ](#amazonelasticblockstore-ebs_ParentSnapshot)   [ ebs:VolumeSize ](#amazonelasticblockstore-ebs_VolumeSize)   | 
 
 ## Condition keys for Amazon Elastic Block Store<a name="amazonelasticblockstore-policy-keys"></a>
 
@@ -51,4 +46,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition keys | Description | Type | 
 | --- | --- | --- | 
+|   aws:RequestTag/$\{TagKey\}  | Filters access by a tag key and value pair that is allowed in the request | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters access based on tag key\-value pairs assigned to the AWS resource | String | 
+|   aws:TagKeys  | Filters access by a list of tag keys that are allowed in the request | String | 
+|   ebs:Description  | Filters access by the description of the snapshot being created\. | String | 
+|   ebs:ParentSnapshot  | Filters access by the ID of the parent snapshot\. | String | 
+|   ebs:VolumeSize  | Filters access by the size of the volume for the snapshot being created, in GiB\. | Numeric | 

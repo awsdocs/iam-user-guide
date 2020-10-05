@@ -57,36 +57,36 @@ To view the global condition keys that are available to all services, see [Avail
 |   s3:DataAccessPointArn  | Filters access by an access point Amazon Resource Name \(ARN\) | String | 
 |   [ s3:ExistingJobOperation ](https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html)  | Filters access to updating the job priority by operation | String | 
 |   [ s3:ExistingJobPriority ](https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html)  | Filters access to cancelling existing jobs by priority range | Numeric | 
-|   [ s3:ExistingObjectTag/<key> ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Requires that an existing object tag has a specific tag key and value\. | String | 
+|   [ s3:ExistingObjectTag/<key> ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Filters access by existing object tag key and value | String | 
 |   [ s3:JobSuspendedCause ](https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html)  | Filters access to cancelling suspended jobs by a specific job suspended cause \(for example, AWAITING\_CONFIRMATION\) | String | 
 |   [ s3:LocationConstraint ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-1)  | Filters access by a specific Region | String | 
 |   [ s3:RequestJobOperation ](https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html)  | Filters access to creating jobs by operation | String | 
 |   [ s3:RequestJobPriority ](https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-job-tags-examples.html)  | Filters access to creating new jobs by priority range | Numeric | 
-|   [ s3:RequestObjectTag/<key> ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Restricts the tag keys and values allowed on objects | String | 
-|   [ s3:RequestObjectTagKeys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Restricts the tag keys allowed on objects | String | 
+|   [ s3:RequestObjectTag/<key> ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Filters access by the tag keys and values to be added to objects | String | 
+|   [ s3:RequestObjectTagKeys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html#tagging-and-policies)  | Filters access by the tag keys to be added to objects | String | 
 |   [ s3:VersionId ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3)  | Filters access by a specific object version | String | 
-|   [ s3:authType ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Restricts incoming requests to a specific authentication method | String | 
-|   [ s3:delimiter ](https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html)  | Requires the delimiter parameter | String | 
+|   [ s3:authType ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Filters access by authentication method | String | 
+|   [ s3:delimiter ](https://docs.aws.amazon.com/AmazonS3/latest/dev/walkthrough1.html)  | Filters access by delimiter parameter | String | 
 |   [ s3:locationconstraint ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-1)  | Filters access by a specific Region | String | 
-|   [ s3:max\-keys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-numeric-condition-operators)  | Limits the maximum number of keys returned in a ListBucket request | Numeric | 
-|   [ s3:object\-lock\-legal\-hold ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds)  | Enables enforcement of the specified object legal hold status | String | 
-|   s3:object\-lock\-mode  | Enables enforcement of the specified object retention mode \(COMPLIANCE or GOVERNANCE\) | String | 
-|   [ s3:object\-lock\-remaining\-retention\-days ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-retention-limits)  | Enables enforcement of an object relative to the remaining retention days | String | 
-|   [ s3:object\-lock\-retain\-until\-date ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods)  | Enables enforcement of a specific retain\-until\-date | String | 
+|   [ s3:max\-keys ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#example-numeric-condition-operators)  | Filters access by maximum number of keys returned in a ListBucket request | Numeric | 
+|   [ s3:object\-lock\-legal\-hold ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-legal-holds)  | Filters access by object legal hold status | String | 
+|   s3:object\-lock\-mode  | Filters access by object retention mode \(COMPLIANCE or GOVERNANCE\) | String | 
+|   [ s3:object\-lock\-remaining\-retention\-days ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-managing.html#object-lock-managing-retention-limits)  | Filters access by remaining object retention days | String | 
+|   [ s3:object\-lock\-retain\-until\-date ](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-periods)  | Filters access by object retain\-until date | String | 
 |   [ s3:prefix ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#condition-key-bucket-ops-2)  | Filters access by key name prefix | String | 
-|   [ s3:signatureAge ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Identifies the length of time, in milliseconds, that a signature is valid in an authenticated request | Numeric | 
-|   [ s3:signatureversion ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Identifies the version of AWS Signature that is supported for authenticated requests | String | 
+|   [ s3:signatureAge ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Filters access by the age in milliseconds of the request signature | Numeric | 
+|   [ s3:signatureversion ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Filters access by the version of AWS Signature used on the request | String | 
 |   [ s3:versionid ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#getobjectversion-limit-access-to-specific-version-3)  | Filters access by a specific object version | String | 
-|   [ s3:x\-amz\-acl ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Requires the x\-amz\-acl header with a specific canned ACL in a request | String | 
-|   [ s3:x\-amz\-content\-sha256 ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Disallows unsigned content in your bucket | String | 
-|   [ s3:x\-amz\-copy\-source ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3)  | Restricts the copy source to a specific bucket, prefix, or object | String | 
-|   [ s3:x\-amz\-grant\-full\-control ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Requires the x\-amz\-grant\-full\-control \(full control\) header in a request | String | 
-|   [ s3:x\-amz\-grant\-read ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Requires the x\-amz\-grant\-read \(read access\) header in a request | String | 
-|   [ s3:x\-amz\-grant\-read\-acp ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Requires the x\-amz\-grant\-read\-acp \(read permissions for the ACL\) header in a request | String | 
-|   [ s3:x\-amz\-grant\-write ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Requires the x\-amz\-grant\-write \(write access\) header in a request | String | 
-|   [ s3:x\-amz\-grant\-write\-acp ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Requires the x\-amz\-grant\-write\-acp \(write permissions for the ACL\) header in a request | String | 
-|   [ s3:x\-amz\-metadata\-directive ](https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html)  | Enables enforcement of object metadata behavior \(COPY or REPLACE\) when objects are copied | String | 
-|   [ s3:x\-amz\-server\-side\-encryption ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html)  | Requires server\-side encryption | String | 
-|   [ s3:x\-amz\-server\-side\-encryption\-aws\-kms\-key\-id ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html#require-sse-kms)  | Requires a specific AWS KMS customer managed CMK for server\-side encryption | String | 
+|   [ s3:x\-amz\-acl ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Filters access by canned ACL in the request's x\-amz\-acl header | String | 
+|   [ s3:x\-amz\-content\-sha256 ](https://docs.aws.amazon.com/AmazonS3/latest/API/bucket-policy-s3-sigv4-conditions.html)  | Filters access to unsigned content in your bucket | String | 
+|   [ s3:x\-amz\-copy\-source ](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#putobject-limit-copy-source-3)  | Filters access to requests with a specific bucket, prefix, or object as the copy source | String | 
+|   [ s3:x\-amz\-grant\-full\-control ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Filters access to requests with the x\-amz\-grant\-full\-control \(full control\) header | String | 
+|   [ s3:x\-amz\-grant\-read ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Filters access to requests with the x\-amz\-grant\-read \(read access\) header | String | 
+|   [ s3:x\-amz\-grant\-read\-acp ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Filters access to requests with the x\-amz\-grant\-read\-acp \(read permissions for the ACL\) header | String | 
+|   [ s3:x\-amz\-grant\-write ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Filters access to requests with the x\-amz\-grant\-write \(write access\) header | String | 
+|   [ s3:x\-amz\-grant\-write\-acp ](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions)  | Filters access to requests with the x\-amz\-grant\-write\-acp \(write permissions for the ACL\) header | String | 
+|   [ s3:x\-amz\-metadata\-directive ](https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html)  | Filters access by object metadata behavior \(COPY or REPLACE\) when objects are copied | String | 
+|   [ s3:x\-amz\-server\-side\-encryption ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html)  | Filters access by server\-side encryption | String | 
+|   [ s3:x\-amz\-server\-side\-encryption\-aws\-kms\-key\-id ](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html#require-sse-kms)  | Filters access by AWS KMS customer managed CMK for server\-side encryption | String | 
 |   [ s3:x\-amz\-storage\-class ](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-howtoset)  | Filters access by storage class | String | 
 |   [ s3:x\-amz\-website\-redirect\-location ](https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html#page-redirect-using-rest-api)  | Filters access by a specific website redirect location for buckets that are configured as static websites | String | 

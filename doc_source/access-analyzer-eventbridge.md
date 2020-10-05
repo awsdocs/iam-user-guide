@@ -2,15 +2,15 @@
 
 Use the information in this topic to learn how to monitor Access Analyzer findings with Amazon EventBridge\. EventBridge is the new version of Amazon CloudWatch Events\.
 
-## Findings Events<a name="access-analyzer-events-findings"></a>
+## Findings events<a name="access-analyzer-events-findings"></a>
 
 Access Analyzer sends an event to EventBridge for each generated finding, for a change to the status of an existing finding, and when a finding is deleted\. To receive findings and notifications about findings, you must create an event rule in Amazon EventBridge\. When you create an event rule, you can also specify a target action to trigger based on the rule\. For example, you could create an event rule that triggers an Amazon SNS topic when an event for a new finding is received from Access Analyzer\.
 
-## Event Notification Frequency<a name="access-analyzer-event-frequency"></a>
+## Event notification frequency<a name="access-analyzer-event-frequency"></a>
 
 Access Analyzer sends events for new findings and findings with status updates to EventBridge within about an hour from when the event occurs in your account\. Access Analyzer also sends events to EventBridge when a resolved finding is deleted because the retention period has expired\. For findings that are deleted because the analyzer that generated them is deleted, the event is sent to EventBridge approximately 24 hours after the analyzer was deleted\. When a finding is deleted, the finding status is not changed\. Instead, the `isDeleted` attribute is set to `true`\.
 
-## Example Event<a name="access-analyzer-event-example"></a>
+## Example event<a name="access-analyzer-event-example"></a>
 
 The following is an example Access Analyzer event sent to EventBridge\. The `id` listed is the ID for the event in EventBridge\. To learn more, see [Events and Event Patterns in EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)\.
 
@@ -69,7 +69,7 @@ Access Analyzer also sends events to EventBridge for error findings\. An error f
 "updatedAt": "2019-10-16T19:21:44.244Z"
 ```
 
-## Creating an Event Rule with a Target<a name="access-analyzer-create-rule"></a>
+## Creating an event rule using the console<a name="access-analyzer-create-rule"></a>
 
 The following procedure describes how to create an event rule using the console\.
 
@@ -106,7 +106,7 @@ Open the Amazon EventBridge console at [https://console\.aws\.amazon\.com/events
 
 To learn more about creating rules, see [Creating an EventBridge Rule That Triggers on an Event from an AWS Resource](https://docs.aws.amazon.com/eventbridge/latest/userguide/create-eventbridge-rule.html)\.
 
-### Create a Rule Using the CLI<a name="access-analyzer-create-rule-cli"></a>
+### Creating an event rule using the CLI<a name="access-analyzer-create-rule-cli"></a>
 
 1. Use the following to create a rule for Amazon EventBridge using the AWS CLI\. Replace the rule name *TestRule* with the name for your rule\.
 

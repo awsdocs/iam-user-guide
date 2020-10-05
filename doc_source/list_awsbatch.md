@@ -48,6 +48,11 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition keys | Description | Type | 
 | --- | --- | --- | 
+|   [ batch:AWSLogsCreateGroup ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | When this parameter is true, the awslogs\-group will be created for the logs\. | Boolean | 
+|   [ batch:AWSLogsGroup ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The awslogs group where the logs are located\. | String | 
+|   [ batch:AWSLogsRegion ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The region where the logs are sent to\. | String | 
+|   [ batch:AWSLogsStreamPrefix ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The awslogs log stream prefix\. | String | 
 |   [ batch:Image ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The image used to start a container\. | String | 
+|   [ batch:LogDriver ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The log driver used for the container\. | String | 
 |   [ batch:Privileged ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | When this parameter is true, the container is given elevated privileges on the host container instance \(similar to the root user\)\. | Boolean | 
 |   [ batch:User ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The user name or numeric uid to use inside the container\. | String | 

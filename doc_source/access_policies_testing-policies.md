@@ -6,7 +6,7 @@ For more information about how and why to use IAM policies, see [Policies and pe
 
  
 
-With the IAM policy simulator, you can test and troubleshoot identity\-based policies, IAM permissions boundaries, Organizations service control policies, and resource\-based policies\. Here are some common things you can do with the policy simulator:
+With the IAM policy simulator, you can test and troubleshoot identity\-based policies, IAM permissions boundaries, Organizations service control policies \(SCPs\), and resource\-based policies\. Here are some common things you can do with the policy simulator:
 + Test policies that are attached to IAM users, groups, or roles in your AWS account\. If more than one policy is attached to the user, group, or role, you can test all the policies, or select individual policies to test\. You can test which actions are allowed or denied by the selected policies for specific resources\.
 + Test and troubleshoot the effect of [permissions boundaries](access_policies_boundaries.md) on IAM entities\. Note: you can only simulate one permissions boundary at a time\.
 + Test policies that are attached to AWS resources, such as Amazon S3 buckets, Amazon SQS queues, Amazon SNS topics, or Amazon S3 Glacier vaults\.
@@ -28,6 +28,7 @@ The simulator evaluates the policies that you choose and determines the effectiv
 + The simulator does not make an actual AWS service request, so you can safely test requests that might make unwanted changes to your live AWS environment\. 
 + Because the simulator does not simulate running the selected actions, it cannot report any response to the simulated request\. The only result returned is whether the requested action would be allowed or denied\. 
 + If you edit a policy inside the simulator, these changes affect only the simulator\. The corresponding policy in your AWS account remains unchanged\.
++ You can't test AWS Organizations service control policies \(SCPs\) with [global condition keys](reference_policies_condition-keys.md)\.
 
 ## Permissions required for using the IAM policy simulator<a name="permissions-required_policy-simulator"></a>
 
@@ -99,13 +100,6 @@ For example, the following policy uses this action to allow console users to sim
       }
 ```
 
-**To allow console users to test policies for [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/)**  
-Include the following actions in your policy:
-+ `organizations:DescribePolicy`
-+ `organizations:ListPolicies`
-+ `organizations:ListPoliciesForTarget`
-+ `organizations:ListTargetsForPolicy`
-
 ### Permissions required for using the policy simulator API<a name="permissions-required_policy-simulator-api"></a>
 
 The policy simulator API operations [GetContextKeyForCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeyForCustomPolicy.html) and [SimulateCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html) allow you to test policies that are not yet attached to a user, group, or role\. To test such policies, you pass the policies as strings to the API\. These policies are used only in the simulation and do not disclose sensitive information\. You can also use the API to test policies that are attached to IAM users, groups, or roles in your AWS account\. To do that, you must provide users with permissions to call [GetContextKeyForPrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeyForPrincipalPolicy.html) and [SimulatePrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\.
@@ -159,9 +153,9 @@ To sign in to the policy simulator as an IAM user, use your unique sign\-in URL 
 To test a policy that is attached to group, you can launch the IAM policy simulator directly from the [IAM console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups**\. Choose the name of the group that you want to test a policy on, and then choose the **Permissions** tab\. In the **Inline Policies** or **Managed Policies** section, locate the policy that you want to test\. In the **Actions** column for that policy, choose **Simulate Policy**\.  
 To test a customer managed policy that is attached to a user: In the navigation pane, choose **Users**\. Choose the name of the user that you want to test a policy on\. Then choose the **Permissions** tab and expand the policy that you want to test\. On the far right, choose **Simulate policy**\. The **IAM Policy Simulator** opens in a new window and displays the selected policy in the **Policies** pane\.
 
-1. \(Optional\) If your account is a member of an organization in [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/), then any service control policies \(SCPs\) that affect the simulated user's account appear in the **Policies** pane\. The **Policies** pane also shows **IAM policies**, **Resource policies** and **Permissions Boundary policies**\. SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP limits permissions for entities in member accounts\. If an SCP blocks a service or action, then no entity in that account can access that service nor perform that action\. This is true even if an administrator explicitly grants permissions to that service or action through an IAM or resource policy\. To remove an SCP from the simulation, clear the check box next to the SCP name\. To view the SCP contents, choose the name of the SCP\.
+1. \(Optional\) If your account is a member of an organization in [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/), then select the check box next to **AWS Organizations SCPs** to include SCPs in your simulated evaluation\. SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP limits permissions for entities in member accounts\. If an SCP blocks a service or action, then no entity in that account can access that service nor perform that action\. This is true even if an administrator explicitly grants permissions to that service or action through an IAM or resource policy\. 
 
-   If your account is not a member of an organization, then there are no SCPs to simulate\.
+   If your account is not a member of an organization, then the check box does not appear\.
 
 1. \(Optional\) You can test a policy that is set as a [permissions boundary](access_policies_boundaries.md) for an IAM entity \(user or role\), but not for groups\. If a permissions boundary policy is currently set for the entity, it appears in the **Policies** pane\. You can set only one permissions boundary for an entity\. To test a different permissions boundary, you can create a custom permissions boundary\. To do this, choose **Create New Policy**\. A new **Policies** pane opens\. In the menu, choose **Custom IAM Permissions Boundary Policy**\. Enter a name for the new policy and type or copy a policy into the space below\. Choose **Apply** to save the policy\. Next, choose **Back** to return to the original **Policies** pane\. Then select the check box next to the permissions boundary you want to use for the simulation\.  
 

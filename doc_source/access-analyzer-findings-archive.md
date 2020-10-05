@@ -1,4 +1,4 @@
-# Archiving Findings<a name="access-analyzer-findings-archive"></a>
+# Archiving findings<a name="access-analyzer-findings-archive"></a>
 
 When you get a finding for access to a resource that is intentional, such as an IAM role that is used by multiple users for approved workflows, you can archive the finding\. When you archive a finding it is cleared from Active findings list, letting you focus on the findings you need to resolve\. Archived findings aren't deleted\. You can filter the Findings page to display your archived findings, and unarchive them at any time\.
 

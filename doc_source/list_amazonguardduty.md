@@ -37,7 +37,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ filter ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/filter/$\{FilterName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonguardduty-aws_ResourceTag___TagKey_)   | 
 |   [ ipset ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/ipset/$\{IPSetId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonguardduty-aws_ResourceTag___TagKey_)   | 
 |   [ threatintelset ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{ThreatIntelSetId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonguardduty-aws_ResourceTag___TagKey_)   | 
-|   [ publishingdestination ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/threatintelset/$\{PublishingDestinationId\}  |  | 
+|   [ publishingDestination ](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_managing_access.html#guardduty-resources)  |  arn:$\{Partition\}:guardduty:$\{Region\}:$\{Account\}:detector/$\{DetectorId\}/publishingDestination/$\{PublishingDestinationId\}  |  | 
 
 ## Condition keys for Amazon GuardDuty<a name="amazonguardduty-policy-keys"></a>
 
