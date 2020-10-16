@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Cloud9<a name="list_awscloud9"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awscloud9\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscloud9.html)\. 
+
 AWS Cloud9 \(service prefix: `cloud9`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS CodeCommit<a name="list_awscodecommit"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awscodecommit\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodecommit.html)\. 
+
 AWS CodeCommit \(service prefix: `codecommit`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS RoboMaker<a name="list_awsrobomaker"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsrobomaker\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsrobomaker.html)\. 
+
 AWS RoboMaker \(service prefix: `robomaker`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -40,6 +43,10 @@ The following resource types are defined by this service and can be used in the 
 |   [ deploymentJob ](https://docs.aws.amazon.com/robomaker/latest/dg/deployment.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-job/$\{DeploymentJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
 |   [ robot ](https://docs.aws.amazon.com/robomaker/latest/dg/fleets.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:robot/$\{RobotName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
 |   [ deploymentFleet ](https://docs.aws.amazon.com/robomaker/latest/dg/managing-simulation-applications.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:deployment\-fleet/$\{FleetName\}/$\{CreatedOnEpoch\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ worldGenerationJob ](https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generation-jobs.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:world\-generation\-job/$\{WorldGenerationJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ worldExportJob ](https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-export-jobs.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:world\-export\-job/$\{WorldExportJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ worldTemplate ](https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-simworld-templates.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:world\-template/$\{WorldTemplateJobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
+|   [ world ](https://docs.aws.amazon.com/robomaker/latest/dg/worlds-managing-generated-worlds.html)  |  arn:$\{Partition\}:robomaker:$\{Region\}:$\{Account\}:world/$\{WorldId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsrobomaker-aws_ResourceTag___TagKey_)   | 
 
 ## Condition keys for AWS RoboMaker<a name="awsrobomaker-policy-keys"></a>
 

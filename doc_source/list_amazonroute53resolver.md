@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon Route 53 Resolver<a name="list_amazonroute53resolver"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonroute53resolver\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonroute53resolver.html)\. 
+
 Amazon Route 53 Resolver \(service prefix: `route53resolver`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

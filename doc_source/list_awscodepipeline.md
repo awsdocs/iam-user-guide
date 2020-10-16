@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS CodePipeline<a name="list_awscodepipeline"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awscodepipeline\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodepipeline.html)\. 
+
 AWS CodePipeline \(service prefix: `codepipeline`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

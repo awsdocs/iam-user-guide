@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Elastic Beanstalk<a name="list_awselasticbeanstalk"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awselasticbeanstalk\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselasticbeanstalk.html)\. 
+
 AWS Elastic Beanstalk \(service prefix: `elasticbeanstalk`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS IoT Things Graph<a name="list_awsiotthingsgraph"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsiotthingsgraph\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotthingsgraph.html)\. 
+
 AWS IoT Things Graph \(service prefix: `iotthingsgraph`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

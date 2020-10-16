@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS services<a name="reference_policies_actions-resources-contextkeys"></a>
 
+**Tip**  
+The actions, resources, and conditions keys pages are moving to a new location on November 16, 2020\. Please update your bookmark to use the new location at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/reference\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/reference.html)\. 
+
 Each AWS service can define actions, resources, and condition context keys for use in IAM policies\. This topic describes how the elements provided for each service are documented\. 
 
 Each topic consists of tables that provide the list of available actions, resources, and condition keys\.

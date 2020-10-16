@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Migration Hub<a name="list_awsmigrationhub"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsmigrationhub\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmigrationhub.html)\. 
+
 AWS Migration Hub \(service prefix: `mgh`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

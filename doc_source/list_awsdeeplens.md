@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS DeepLens<a name="list_awsdeeplens"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsdeeplens\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdeeplens.html)\. 
+
 AWS DeepLens \(service prefix: `deeplens`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 **Topics**

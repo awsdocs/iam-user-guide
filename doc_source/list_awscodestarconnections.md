@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS CodeStar Connections<a name="list_awscodestarconnections"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awscodestarconnections\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscodestarconnections.html)\. 
+
 AWS CodeStar Connections \(service prefix: `codestar-connections`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -34,6 +37,7 @@ The following resource types are defined by this service and can be used in the 
 | Resource types | ARN | Condition keys | 
 | --- | --- | --- | 
 |   [ Connection ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Connection.html)  |  arn:$\{Partition\}:codestar\-connections:$\{Region\}:$\{Account\}:connection/$\{ConnectionId\}  |  | 
+|   [ Host ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections.html/API_Host.html)  |  arn:$\{Partition\}:codestar\-connections:$\{Region\}:$\{Account\}:host/$\{HostId\}  |  | 
 
 ## Condition keys for AWS CodeStar Connections<a name="awscodestarconnections-policy-keys"></a>
 
@@ -51,6 +55,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the tag keys that are passed in the request | String | 
 |   [ codestar\-connections:BranchName ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use)  | Filters access by the branch name that is passed in the request\. Applies only to UseConnection requests for access to a specific repository branch | String | 
 |   [ codestar\-connections:FullRepositoryId ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use)  | Filters access by the repository that is passed in the request\. Applies only to UseConnection requests for access to a specific repository | String | 
+|   [ codestar\-connections:HostArn ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-hosts)  | Filters access by the host resource associated with the connection used in the request | String | 
 |   [ codestar\-connections:InstallationId ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-permissions-actions-handshake)  | Filters access by the third\-party ID \(such as the Bitbucket App installation ID for CodeStar Connections\) that is used to update a Connection\. Allows you to restrict which third\-party App installations can be used to make a Connection | String | 
 |   [ codestar\-connections:OwnerId ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-use)  | Filters access by the owner of the third\-party repository\. Applies only to UseConnection requests for access to repositories owned by a specific user | String | 
 |   [ codestar\-connections:PassedToService ](https://docs.aws.amazon.com/codepipeline/latest/userguide/connections-permissions.html#connections-passconnection)  | Filters access by the service to which the principal is allowed to pass a Connection | String | 

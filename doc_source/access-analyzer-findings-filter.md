@@ -2,7 +2,9 @@
 
 The default filtering for the page is to display all active findings\. To view archived findings, choose the **Archived** tab\. When you first start using Access Analyzer, there are no archived findings\.
 
-Use filters to display only the findings for a specific resource, account, principal, or other value\. To create a filter, select the property to filter on, then choose a property value to filter on\. For example, to create a filter that displays only findings for a specific AWS account, choose **AWS Account** for the property, then enter the account number for the AWS account that you want to view findings for\. For a list of filter keys that you can use to create or update an archive rule, see [Access Analyzer filter keys](access-analyzer-reference-filter-keys.md)\.
+Use filters to display only the findings for a specific resource, account, principal, or other value\. To create a filter, select the property to filter on, then choose a property value to filter on\. For example, to create a filter that displays only findings for a specific AWS account, choose **AWS Account** for the property, then enter the account number for the AWS account that you want to view findings for\. To create a filter that displays only findings for resources that allow public access, you can choose the **Public access** property, then choose **Public access: true**\.
+
+For a list of filter keys that you can use to create or update an archive rule, see [Access Analyzer filter keys](access-analyzer-reference-filter-keys.md)\.
 
 **To filter the findings displayed**
 
@@ -19,6 +21,7 @@ You can add additional properties to further filter the findings displayed\. Whe
 Some fields are displayed only when you are viewing findings for an analyzer with an organization as its zone of trust\.
 
 The following properties are available for defining filters:
++ **Public access** – To filter by findings for resources that allow public access, filter by **Public access** then choose **Public access: true**\.
 + **Resource** – To filter by resource, type all or part of the name of the resource\.
 + **Resource Type** – To filter by resource type, choose the type from the list displayed\.
 + **AWS Account** – Use this property to filter by AWS account that is granted access in the **Principal** section of a policy statement\. To filter by AWS account, type all or part of the 12\-digit AWS account ID, or all or part of the full account ARN of the external AWS user or role that has access to resources in the current account\.

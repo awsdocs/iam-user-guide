@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon Translate<a name="list_amazontranslate"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazontranslate\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazontranslate.html)\. 
+
 Amazon Translate \(service prefix: `translate`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

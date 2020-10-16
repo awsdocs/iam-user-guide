@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Elastic Load Balancing<a name="list_elasticloadbalancing"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_elasticloadbalancing\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_elasticloadbalancing.html)\. 
+
 Elastic Load Balancing \(service prefix: `elasticloadbalancing`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

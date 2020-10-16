@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Marketplace Catalog<a name="list_awsmarketplacecatalog"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsmarketplacecatalog\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplacecatalog.html)\. 
+
 AWS Marketplace Catalog \(service prefix: `aws-marketplace`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

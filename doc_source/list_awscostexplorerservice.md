@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Cost Explorer Service<a name="list_awscostexplorerservice"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awscostexplorerservice\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostexplorerservice.html)\. 
+
 AWS Cost Explorer Service \(service prefix: `ce`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -28,10 +31,16 @@ For details about the columns in the following table, see [The actions table](re
 |   [ CreateAnomalyMonitor ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalyMonitor.html)  | Grants permission to create a new Anomaly Monitor | Write |  |  |  | 
 |   [ CreateAnomalySubscription ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateAnomalySubscription.html)  | Grants permission to create a new Anomaly Subscription | Write |  |  |  | 
 |   [ CreateCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CreateCostCategoryDefinition.html)  | Grants permission to create a new Cost Category with the requested name and rules | Write |  |  |  | 
+|   [ CreateNotificationSubscription ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to create Reservation expiration alerts | Write |  |  |  | 
+|   [ CreateReport ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to create Cost Explorer Reports | Write |  |  |  | 
 |   [ DeleteAnomalyMonitor ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalyMonitor.html)  | Grants permission to delete an Anomaly Monitor | Write |  |  |  | 
 |   [ DeleteAnomalySubscription ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteAnomalySubscription.html)  | Grants permission to delete an Anomaly Subscription | Write |  |  |  | 
 |   [ DeleteCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DeleteCostCategoryDefinition.html)  | Grants permission to delete a Cost Category | Write |  |  |  | 
+|   [ DeleteNotificationSubscription ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to delete Reservation expiration alerts | Write |  |  |  | 
+|   [ DeleteReport ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to delete Cost Explorer Reports | Write |  |  |  | 
 |   [ DescribeCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DescribeCostCategoryDefinition.html)  | Grants permission to retrieve descriptions such as the name, ARN, rules, definition, and effective dates of a Cost Category | Read |  |  |  | 
+|   [ DescribeNotificationSubscription ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to view Reservation expiration alerts | Read |  |  |  | 
+|   [ DescribeReport ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to view Cost Explorer Reports page | Read |  |  |  | 
 |   [ GetAnomalies ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html)  | Grants permission to retrieve anomalies | Read |  |  |  | 
 |   [ GetAnomalyMonitors ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalyMonitors.html)  | Grants permission to query Anomaly Monitors | Read |  |  |  | 
 |   [ GetAnomalySubscriptions ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalySubscriptions.html)  | Grants permission to query Anomaly Subscriptions | Read |  |  |  | 
@@ -39,6 +48,7 @@ For details about the columns in the following table, see [The actions table](re
 |   [ GetCostAndUsageWithResources ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostAndUsageWithResources.html)  | Grants permission to retrieve the cost and usage metrics with resources for your account | Read |  |  |  | 
 |   [ GetCostForecast ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetCostForecast.html)  | Grants permission to retrieve a cost forecast for a forecast time period | Read |  |  |  | 
 |   [ GetDimensionValues ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html)  | Grants permission to retrieve all available filter values for a filter for a period of time | Read |  |  |  | 
+|   [ GetPreferences ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to view Cost Explorer Preferences page | Read |  |  |  | 
 |   [ GetReservationCoverage ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationCoverage.html)  | Grants permission to retrieve the reservation coverage for your account | Read |  |  |  | 
 |   [ GetReservationPurchaseRecommendation ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationPurchaseRecommendation.html)  | Grants permission to retrieve the reservation recommendations for your account | Read |  |  |  | 
 |   [ GetReservationUtilization ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetReservationUtilization.html)  | Grants permission to retrieve the reservation utilization for your account | Read |  |  |  | 
@@ -54,6 +64,9 @@ For details about the columns in the following table, see [The actions table](re
 |   [ UpdateAnomalyMonitor ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalyMonitor.html)  | Grants permission to update an existing Anomaly Monitor | Write |  |  |  | 
 |   [ UpdateAnomalySubscription ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html)  | Grants permission to update an existing Anomaly Subscription | Write |  |  |  | 
 |   [ UpdateCostCategoryDefinition ](https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateCostCategoryDefinition.html)  | Grants permission to update an existing Cost Category | Write |  |  |  | 
+|   [ UpdateNotificationSubscription ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to update Reservation expiration alerts | Write |  |  |  | 
+|   [ UpdatePreferences ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to edit Cost Explorer Preferences page | Write |  |  |  | 
+|   [ UpdateReport ](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) \[permission only\] | Grants permission to update Cost Explorer Reports | Write |  |  |  | 
 
 ## Resource types defined by AWS Cost Explorer Service<a name="awscostexplorerservice-resources-for-iam-policies"></a>
 

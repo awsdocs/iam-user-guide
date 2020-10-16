@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon CloudWatch Synthetics<a name="list_amazoncloudwatchsynthetics"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazoncloudwatchsynthetics\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatchsynthetics.html)\. 
+
 Amazon CloudWatch Synthetics \(service prefix: `synthetics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

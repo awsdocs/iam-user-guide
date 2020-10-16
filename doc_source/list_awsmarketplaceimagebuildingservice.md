@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Marketplace Image Building Service<a name="list_awsmarketplaceimagebuildingservice"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsmarketplaceimagebuildingservice\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsmarketplaceimagebuildingservice.html)\. 
+
 AWS Marketplace Image Building Service \(service prefix: `aws-marketplace`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

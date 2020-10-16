@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS IoT 1\-Click<a name="list_awsiot1-click"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsiot1\-click\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot1-click.html)\. 
+
 AWS IoT 1\-Click \(service prefix: `iot1click`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

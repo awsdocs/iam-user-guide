@@ -1,6 +1,6 @@
 # Archive rules<a name="access-analyzer-archive-rules"></a>
 
-Archive rules automatically archive new findings that meet the criteria you define when you create the rule\. For example, you can create an archive rule to automatically archive any findings for a specific S3 bucket that you regularly grant access to\. Or if you grant access to multiple resources to a specific principal, you can create a rule that automatically archives any new finding generated for access granted to that principal\. This lets you focus only on active findings that may indicate a security risk\.
+Archive rules automatically archive new findings that meet the criteria you define when you create the rule\. You can also apply archive rules retroactively to archive existing findings that meet the archive rule criteria\. For example, you can create an archive rule to automatically archive any findings for a specific S3 bucket that you regularly grant access to\. Or if you grant access to multiple resources to a specific principal, you can create a rule that automatically archives any new finding generated for access granted to that principal\. This lets you focus only on active findings that may indicate a security risk\.
 
 Use the information provided in the finding details to identify the specific resource and external entity to use when creating or editing a rule\. When you create an archive rule, only new findings that match the rule criteria are automatically archived\. Existing findings are not automatically archived\. When you create a rule, you can include up to 20 values per criterion in the rule\. For a list of filter keys that you can use to create or update an archive rule, see [Access Analyzer filter keys](access-analyzer-reference-filter-keys.md)\.
 
@@ -23,11 +23,11 @@ When you create or edit an archive rule, Access Analyzer does not validate the v
 
    The operators available depend on the property you choose\.
 
-1. Optionally, add additional values for the property, or add additional criteria for the rule\.
+1. Optionally, add additional values for the property, or add additional criteria for the rule\. To ensure your rule won’t archive new findings for public access, you can also include the criterion **Public access** and set it to **false**\.
 
    To add another value for a criterion, choose **Add another value**\. To add another criterion for the rule, choose the **Add** button\.
 
-1. When finished added criteria and values, choose **Create archive rule**\.
+1. When you finish adding criteria and values, choose **Create rule** to apply the rule to new findings only\. Choose **Create and archive active findings** to archive new and existing findings based on the rule criteria\. In the **Results** section, you can review the list of active findings the archive rule applies to\.
 
 For example, to create a rule that automatically archives any findings for S3 buckets: choose **Resource type**, and then choose **is** for the operator\. Next choose **S3 bucket** from the **Select resource type** list, and then choose **Add**\.
 
@@ -41,9 +41,9 @@ If you are create a new rule and add multiple criteria, you can remove a single 
 
    You can edit only one archive rule at a time\.
 
-1. Add new or remove the existing criteria and values for each criterion\.
+1. Add new or remove the existing criteria and values for each criterion\. To ensure your rule won’t archive new findings for public access, you can also include the criterion **Public access** and set it to **false**\.
 
-1. Choose **Save changes**\.
+1. Choose **Save changes** to apply the rule to new findings only\. Choose **Save and archive active findings** to archive new and existing findings based on the rule criteria\. 
 
 **To delete an archive rule**
 

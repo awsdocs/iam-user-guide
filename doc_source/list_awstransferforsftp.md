@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Transfer for SFTP<a name="list_awstransferforsftp"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awstransferforsftp\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awstransferforsftp.html)\. 
+
 AWS Transfer for SFTP \(service prefix: `transfer`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

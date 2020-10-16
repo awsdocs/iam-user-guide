@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon QuickSight<a name="list_amazonquicksight"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonquicksight\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonquicksight.html)\. 
+
 Amazon QuickSight \(service prefix: `quicksight`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -39,6 +42,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ template ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Template.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:template/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonquicksight-aws_ResourceTag___TagKey_)   | 
 |   [ theme ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Theme.html)  |  arn:$\{Partition\}:quicksight:$\{Region\}:$\{Account\}:theme/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonquicksight-aws_ResourceTag___TagKey_)   | 
 |   [ assignment ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_IAMPolicyAssignment.html)  |  arn:$\{Partition\}:quicksight::$\{Account\}:assignment/$\{ResourceId\}  |  | 
+|   [ customization ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_AccountCustomization.html)  |  arn:$\{Partition\}:quicksight::$\{Account\}:customization/$\{ResourceId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonquicksight-aws_ResourceTag___TagKey_)   | 
+|   [ namespace ](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_Namespace.html)  |  arn:$\{Partition\}:quicksight::$\{Account\}:namespace/$\{ResourceId\}  |  | 
 
 ## Condition keys for Amazon QuickSight<a name="amazonquicksight-policy-keys"></a>
 

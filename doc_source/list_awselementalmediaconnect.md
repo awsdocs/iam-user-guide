@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Elemental MediaConnect<a name="list_awselementalmediaconnect"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awselementalmediaconnect\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awselementalmediaconnect.html)\. 
+
 AWS Elemental MediaConnect \(service prefix: `mediaconnect`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

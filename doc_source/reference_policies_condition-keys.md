@@ -35,7 +35,7 @@ To use the `aws:CalledVia` condition key in a policy, you must provide the servi
 | Amazon DynamoDB | dynamodb\.amazonaws\.com | 
 | AWS Key Management Service \(AWS KMS\) | kms\.amazonaws\.com | 
 
-To allow or deny access when *any* service makes a request using the principal's credentials, use the `` condition key\. That condition key supports all AWS services\.
+To allow or deny access when *any* service makes a request using the principal's credentials, use the `aws:ViaAWSService` condition key\. That condition key supports all AWS services\.
 
 The `aws:CalledVia` key is a [multivalued key](reference_policies_multi-value-conditions.md)\. However, you can't enforce order using this key in a condition\. Using the example above, **User 1** makes a request to AWS CloudFormation, which calls DynamoDB, which calls AWS KMS\. These are three separate requests\. The final call to AWS KMS is performed by User 1 *via* AWS CloudFormation and then DynamoDB\. 
 
@@ -150,7 +150,7 @@ Temporary credentials are used to authenticate IAM roles, federated users, IAM u
 
 To learn which services support using temporary credentials, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
-The `aws:MultiFactorAuthPresent` key is not present when an API or CLI command is called with long\-term credentials, such as user access key pairs\. Therefore we recommend that when you check for this key that you use the `...IfExists` versions of the condition operators\.
+The `aws:MultiFactorAuthPresent` key is not present when an API or CLI command is called with long\-term credentials, such as user access key pairs\. Therefore we recommend that when you check for this key that you use the `\.\.\.IfExists` versions of the condition operators\.
 
 It is important to understand that the following `Condition` element is ***not*** a reliable way to check whether a request is authenticated using MFA\.
 
@@ -463,7 +463,7 @@ Works with [IP address operators](reference_policies_elements_condition_operator
 Use this key to compare the requester's IP address with the IP address that you specify in the policy\.
 + **Availability** – This key is included in the request context, except when the requester uses a VPC endpoint to make the request\.
 
-The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 
+The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `aws:ViaAWSService` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 
 
 For example, you can attach the following policy to an IAM user\. This policy allows the user to put an object into the `my-service-bucket` Amazon S3 bucket directly if they make the call from the specified IP address\. However, if the user makes another request that causes a service to call Amazon S3, the IP address restriction does not apply\. The `PrincipalPutObjectIfIpAddress` statement restricts the IP address only if the request is not made by a service\. The `ServicePutObject` statement allows the operation without IP address restriction if the request is made by a service\.
 

@@ -46,7 +46,7 @@ Active Regions are available to everyone that uses temporary credentials in that
 
 1. Open the [IAM console](https://console.aws.amazon.com/iam/home?#home) and in the navigation pane choose [https://console.aws.amazon.com/iam/home?#account_settings](https://console.aws.amazon.com/iam/home?#account_settings)\. 
 
-1. If necessary, expand the **Security Token Service \(STS\)** list, find the Region that you want to activate, and then choose **Activate** or **Deactivate**\. Some Regions are not enabled by default, such as the Asia Pacific Hong Kong Region\. In that case, when you manually enable the Region, STS is activated automatically\. From that point forward, AWS STS is always active for these Regions and it cannot be deactivated\. To learn how to manually enable a Region, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\.
+1. If necessary, expand **Security Token Service \(STS\)**, find the Region that you want to activate, and then choose **Activate** or **Deactivate**\. For Regions that must be enabled, we activate STS automatically when you enable the Region\. After you enable a Region, AWS STS is always active for the Region and you cannot deactivate it\. To learn how to enable a Region, see [Managing AWS Regions](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) in the *AWS General Reference*\.
 
 ## Writing code to use AWS STS regions<a name="id_credentials_temp_enable-regions_writing_code"></a>
 
@@ -72,8 +72,8 @@ The following table lists the Regions and their endpoints\. It indicates which o
 
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html)
 
-¹You must [enable the Region](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html)\.
+¹You must [enable the Region](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) to use it\. This automatically activates STS\. You cannot manually activate or deactivate STS in these Regions\.
 
-## AWS CloudTrail and regional endpoints<a name="sts-regions-cloudtrail"></a>
+## AWS CloudTrail and Regional endpoints<a name="sts-regions-cloudtrail"></a>
 
 Calls to Regional endpoints, such as `us-east-2.amazonaws.com`, are logged in AWS CloudTrail the same as any call to a Regional service\. Calls to the global endpoint, `sts.amazonaws.com`, are logged as calls to a global service\. For more information, see [Logging IAM and AWS STS API calls with AWS CloudTrail](cloudtrail-integration.md)\.

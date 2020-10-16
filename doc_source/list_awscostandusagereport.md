@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Cost and Usage Report<a name="list_awscostandusagereport"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awscostandusagereport\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awscostandusagereport.html)\. 
+
 AWS Cost and Usage Report \(service prefix: `cur`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

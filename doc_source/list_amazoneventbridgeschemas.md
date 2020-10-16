@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon EventBridge Schemas<a name="list_amazoneventbridgeschemas"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazoneventbridgeschemas\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoneventbridgeschemas.html)\. 
+
 Amazon EventBridge Schemas \(service prefix: `schemas`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

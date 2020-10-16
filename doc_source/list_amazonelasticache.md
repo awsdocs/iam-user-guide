@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon ElastiCache<a name="list_amazonelasticache"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonelasticache\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonelasticache.html)\. 
+
 Amazon ElastiCache \(service prefix: `elasticache`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -44,6 +47,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ reserved\-instance ](AmazonElastiCache/latest/red-ug/reserved-nodes.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:reserved\-instance:$\{ReservedCacheNodeId\}  |  | 
 |   [ snapshot ](AmazonElastiCache/latest/red-ug/backups.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:snapshot:$\{SnapshotName\}  |  | 
 |   [ globalreplicationgroup ](AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html)  |  arn:$\{Partition\}:elasticache::$\{Account\}:globalreplicationgroup:$\{GlobalReplicationGroupId\}  |  | 
+|   [ user ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:user:$\{UserId\}  |  | 
+|   [ usergroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:usergroup:$\{UserGroupId\}  |  | 
 
 ## Condition keys for Amazon ElastiCache<a name="amazonelasticache-policy-keys"></a>
 

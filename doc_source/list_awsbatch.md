@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Batch<a name="list_awsbatch"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsbatch\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsbatch.html)\. 
+
 AWS Batch \(service prefix: `batch`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -33,9 +36,10 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource types | ARN | Condition keys | 
 | --- | --- | --- | 
-|   [ compute\-environment ](${AuthZDocPage}compute_environments.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:compute\-environment/$\{ComputeEnvironmentName\}  |  | 
-|   [ job\-queue ](${AuthZDocPage}job_queues.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-queue/$\{JobQueueName\}  |  | 
-|   [ job\-definition ](${AuthZDocPage}job_definitions.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-definition/$\{JobDefinitionName\}:$\{Revision\}  |  | 
+|   [ compute\-environment ](https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:compute\-environment/$\{ComputeEnvironmentName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsbatch-aws_ResourceTag___TagKey_)   | 
+|   [ job\-queue ](https://docs.aws.amazon.com/batch/latest/userguide/job_queues.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-queue/$\{JobQueueName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsbatch-aws_ResourceTag___TagKey_)   | 
+|   [ job\-definition ](https://docs.aws.amazon.com/batch/latest/userguide/job_definitions.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job\-definition/$\{JobDefinitionName\}:$\{Revision\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsbatch-aws_ResourceTag___TagKey_)   | 
+|   [ job ](https://docs.aws.amazon.com/batch/latest/userguide/jobs.html)  |  arn:$\{Partition\}:batch:$\{Region\}:$\{Account\}:job/$\{jobId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsbatch-aws_ResourceTag___TagKey_)   | 
 
 ## Condition keys for AWS Batch<a name="awsbatch-policy-keys"></a>
 
@@ -48,6 +52,9 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition keys | Description | Type | 
 | --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the tags that are passed in the request\. | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on the tags associated with the resource\. | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the tag keys that are passed in the request\. | String | 
 |   [ batch:AWSLogsCreateGroup ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | When this parameter is true, the awslogs\-group will be created for the logs\. | Boolean | 
 |   [ batch:AWSLogsGroup ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The awslogs group where the logs are located\. | String | 
 |   [ batch:AWSLogsRegion ](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awsbatch.html#awsbatch-policy-keys)  | The region where the logs are sent to\. | String | 

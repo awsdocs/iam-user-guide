@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon GuardDuty<a name="list_amazonguardduty"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonguardduty\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonguardduty.html)\. 
+
 Amazon GuardDuty \(service prefix: `guardduty`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

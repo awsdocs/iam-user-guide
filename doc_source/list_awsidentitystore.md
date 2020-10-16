@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Identity Store<a name="list_awsidentitystore"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsidentitystore\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsidentitystore.html)\. 
+
 AWS Identity Store \(service prefix: `identitystore`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

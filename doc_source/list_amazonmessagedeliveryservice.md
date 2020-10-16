@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon Message Delivery Service<a name="list_amazonmessagedeliveryservice"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonmessagedeliveryservice\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmessagedeliveryservice.html)\. 
+
 Amazon Message Delivery Service \(service prefix: `ec2messages`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 **Topics**

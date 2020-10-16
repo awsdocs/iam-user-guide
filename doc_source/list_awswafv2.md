@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS WAF V2<a name="list_awswafv2"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awswafv2\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awswafv2.html)\. 
+
 AWS WAF V2 \(service prefix: `wafv2`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -39,6 +42,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ regexpatternset ](https://docs.aws.amazon.com/waf/latest/APIReference/API_RegexPatternSet.html)  |  arn:$\{Partition\}:wafv2:$\{Region\}:$\{Account\}:$\{Scope\}/regexpatternset/$\{Name\}/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awswafv2-aws_ResourceTag___TagKey_)   | 
 |   [ loadbalancer/app/ ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:elasticloadbalancing:$\{Region\}:$\{Account\}:loadbalancer/app/$\{LoadBalancerName\}/$\{LoadBalancerId\}  |  | 
 |   [ apigateway ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:apigateway:$\{Region\}::/restapis/$\{ApiId\}/stages/$\{StageName\}  |  | 
+|   [ appsync ](https://docs.aws.amazon.com/waf/latest/APIReference/API_WebACL.html)  |  arn:$\{Partition\}:appsync:$\{Region\}:$\{Account\}:apis/$\{GraphQLAPIId\}  |  | 
 
 ## Condition keys for AWS WAF V2<a name="awswafv2-policy-keys"></a>
 

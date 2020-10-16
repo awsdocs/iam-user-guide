@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS IoT<a name="list_awsiot"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsiot\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html)\. 
+
 AWS IoT \(service prefix: `iot`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
@@ -44,11 +47,11 @@ The following resource types are defined by this service and can be used in the 
 |   [ thingtype ](https://docs.aws.amazon.com/iot/latest/developerguide/thing-types.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:thingtype/$\{ThingTypeName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ topic ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-message-broker.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topic/$\{TopicName\}  |  | 
 |   [ topicfilter ](https://docs.aws.amazon.com/iot/latest/developerguide/topics.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:topicfilter/$\{TopicFilter\}  |  | 
-|   [ rolealias ](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rolealias/$\{RoleAlias\}  |  | 
-|   [ authorizer ](https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:authorizer/$\{AuthorizerName\}  |  | 
-|   [ policy ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\}  |  | 
+|   [ rolealias ](https://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rolealias/$\{RoleAlias\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
+|   [ authorizer ](https://docs.aws.amazon.com/iot/latest/developerguide/custom-authorizer.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:authorizer/$\{AuthorizerName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
+|   [ policy ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-policies.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:policy/$\{PolicyName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ cert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cert/$\{Certificate\}  |  | 
-|   [ cacert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\}  |  | 
+|   [ cacert ](https://docs.aws.amazon.com/iot/latest/developerguide/x509-certs.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:cacert/$\{CACertificate\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ stream ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:stream/$\{streamId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ otaupdate ](https://docs.aws.amazon.com/freertos/latest/userguide/freertos-ota-dev.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:otaupdate/$\{otaUpdateId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ scheduledaudit ](https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-audit.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:scheduledaudit/$\{ScheduleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
@@ -56,8 +59,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ securityprofile ](https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:securityprofile/$\{SecurityProfileName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ dimension ](https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-detect.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:dimension/$\{DimensionName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 |   [ rule ](https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:rule/$\{ruleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
-|   [ provisioningtemplate ](https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:provisioningtemplate/$\{provisioningTemplate\}  |  | 
-|   [ domainconfiguration ](https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:domainconfiguration/$\{domainConfigurationName\}  |  | 
+|   [ provisioningtemplate ](https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:provisioningtemplate/$\{provisioningTemplate\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
+|   [ domainconfiguration ](https://docs.aws.amazon.com/iot/latest/developerguide/domain-configuration.html)  |  arn:$\{Partition\}:iot:$\{Region\}:$\{Account\}:domainconfiguration/$\{domainConfigurationName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awsiot-aws_ResourceTag___TagKey_)   | 
 
 ## Condition keys for AWS IoT<a name="awsiot-policy-keys"></a>
 
@@ -74,5 +77,6 @@ To view the global condition keys that are available to all services, see [Avail
 |   aws:ResourceTag/$\{TagKey\}  | The tag key component of a tag attached to an IoT resource\. | String | 
 |   aws:TagKeys  | The list of all the tag key names associated with the resource in the request\. | String | 
 |   iot:Delete  | The flag indicating whether or not to also delete an IoT Tunnel immediately | Bool | 
+|   iot:DomainName  | Filters actions based on the domain name of an IoT DomainConfiguration | String | 
 |   iot:ThingGroupArn  | The list of all IoT Thing Group ARNs that the destination IoT Thing belongs to for an IoT Tunnel | String | 
 |   iot:TunnelDestinationService  | The list of all destination services for an IoT Tunnel | String | 

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Glue<a name="list_awsglue"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsglue\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsglue.html)\. 
+
 AWS Glue \(service prefix: `glue`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

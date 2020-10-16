@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon Storage Gateway<a name="list_amazonstoragegateway"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonstoragegateway\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonstoragegateway.html)\. 
+
 Amazon Storage Gateway \(service prefix: `storagegateway`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

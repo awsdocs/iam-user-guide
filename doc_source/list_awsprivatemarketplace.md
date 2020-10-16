@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Private Marketplace<a name="list_awsprivatemarketplace"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsprivatemarketplace\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsprivatemarketplace.html)\. 
+
 AWS Private Marketplace \(service prefix: `aws-marketplace`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon Mobile Analytics<a name="list_amazonmobileanalytics"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonmobileanalytics\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmobileanalytics.html)\. 
+
 Amazon Mobile Analytics \(service prefix: `mobileanalytics`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS SSO Directory<a name="list_awsssodirectory"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsssodirectory\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsssodirectory.html)\. 
+
 AWS SSO Directory \(service prefix: `sso-directory`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

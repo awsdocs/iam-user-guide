@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Import Export Disk Service<a name="list_awsimportexportdiskservice"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsimportexportdiskservice\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsimportexportdiskservice.html)\. 
+
 AWS Import Export Disk Service \(service prefix: `importexport`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

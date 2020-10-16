@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon Inspector<a name="list_amazoninspector"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazoninspector\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoninspector.html)\. 
+
 Amazon Inspector \(service prefix: `inspector`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

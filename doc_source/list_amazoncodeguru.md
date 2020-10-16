@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon CodeGuru<a name="list_amazoncodeguru"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazoncodeguru\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncodeguru.html)\. 
+
 Amazon CodeGuru \(service prefix: `codeguru`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

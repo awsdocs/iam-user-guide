@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon S3<a name="list_amazons3"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazons3\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html)\. 
+
 Amazon S3 \(service prefix: `s3`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

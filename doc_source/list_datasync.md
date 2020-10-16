@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for DataSync<a name="list_datasync"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_datasync\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_datasync.html)\. 
+
 DataSync \(service prefix: `datasync`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

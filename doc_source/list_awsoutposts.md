@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Outposts<a name="list_awsoutposts"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsoutposts\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsoutposts.html)\. 
+
 AWS Outposts \(service prefix: `outposts`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

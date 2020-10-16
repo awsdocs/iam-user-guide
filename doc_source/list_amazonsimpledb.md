@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon SimpleDB<a name="list_amazonsimpledb"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonsimpledb\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsimpledb.html)\. 
+
 Amazon SimpleDB \(service prefix: `sdb`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

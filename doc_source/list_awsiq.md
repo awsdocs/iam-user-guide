@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS IQ<a name="list_awsiq"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awsiq\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiq.html)\. 
+
 AWS IQ \(service prefix: `iq`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

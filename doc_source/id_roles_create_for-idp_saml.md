@@ -59,7 +59,7 @@ After you complete the prerequisite steps, you can create the role for SAML\-bas
 
 1. To add more attribute\-related conditions to the trust policy, choose **Add condition \(optional\)**, select the additional condition, and specify a value\. 
 **Note**  
-The list includes the most commonly used SAML attributes\. IAM supports additional attributes that you can use to create conditions\. \(For a list of the supported attributes, see [Available Keys for SAML Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#condition-keys-saml) in the topic [IAM JSON policy elements reference](reference_policies_elements.md)\.\) If you need a condition for a supported SAML attribute that's not in the list, you can manually add that condition\. To do that, edit the trust policy after you create the role\.
+The list includes the most commonly used SAML attributes\. IAM supports additional attributes that you can use to create conditions\. For a list of the supported attributes, see [Available Keys for SAML Federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#condition-keys-saml)\. If you need a condition for a supported SAML attribute that's not in the list, you can manually add that condition\. To do that, edit the trust policy after you create the role\.
 
 1.  Review your SAML 2\.0 trust information and then choose **Next: Permissions**\. 
 

@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for AWS Support<a name="list_awssupport"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_awssupport\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awssupport.html)\. 
+
 AWS Support \(service prefix: `support`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

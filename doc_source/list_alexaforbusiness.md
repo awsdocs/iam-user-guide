@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Alexa for Business<a name="list_alexaforbusiness"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_alexaforbusiness\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_alexaforbusiness.html)\. 
+
 Alexa for Business \(service prefix: `a4b`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:

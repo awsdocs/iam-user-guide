@@ -1,5 +1,8 @@
 # Actions, resources, and condition keys for Amazon MQ<a name="list_amazonmq"></a>
 
+**Tip**  
+This page is moving to a new location on November 16, 2020\. Please update your bookmark to use the new page at [https://docs\.aws\.amazon\.com/service\-authorization/latest/reference/list\_amazonmq\.html](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonmq.html)\. 
+
 Amazon MQ \(service prefix: `mq`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
