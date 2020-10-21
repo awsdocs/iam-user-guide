@@ -120,6 +120,7 @@ This policy does not allow users to view the **Users** page in the IAM console o
             "Sid": "DenyAllExceptListedIfNoMFA",
             "Effect": "Deny",
             "NotAction": [
+                "iam:ChangePassword",
                 "iam:CreateVirtualMFADevice",
                 "iam:EnableMFADevice",
                 "iam:GetUser",
