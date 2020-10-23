@@ -217,7 +217,7 @@ To create this `Test-Role-for-EC2` role, you must first save the previous trust 
 $ aws iam create-role --role-name Test-Role-for-EC2 --assume-role-policy-document file://C:\policies\trustpolicyforec2.json
 
 # Embed the permissions policy (in this example an inline policy) to the role to specify what it is allowed to do.
-$ aws iam put-role-policy --role-name Test-Role-for-EC2 --policy-name Permissions-Policy-For-Ec2 --policy-document file://permissionspolicyforec2.json
+$ aws iam put-role-policy --role-name Test-Role-for-EC2 --policy-name Permissions-Policy-For-Ec2 --policy-document file://C:\policies\permissionspolicyforec2.json
 
 # Create the instance profile required by EC2 to contain the role
 $ aws iam create-instance-profile --instance-profile-name EC2-ListBucket-S3
