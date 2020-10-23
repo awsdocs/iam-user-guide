@@ -121,6 +121,7 @@ This policy does not allow users to view the **Users** page in the IAM console o
             "Effect": "Deny",
             "NotAction": [
                 "iam:CreateVirtualMFADevice",
+                "iam:DeleteVirtualMFADevice",
                 "iam:EnableMFADevice",
                 "iam:GetUser",
                 "iam:ListMFADevices",
