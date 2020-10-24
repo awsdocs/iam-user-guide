@@ -102,7 +102,7 @@ This job function policy supports the ability to pass roles to AWS services\. On
 
 **Use case:** This user performs application development tasks and can create and configure resources and services that support AWS aware application development\.
 
-**Policy description:** The first statement of this policy uses the [`NotAction`](reference_policies_elements_notaction.md) element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations\. The second statement grants IAM permissions to create a service\-linked role\. This is required by some services that must access resources in another service, such as an Amazon S3 bucket\. It also grants Organizations permissions to view information about the user's organization, including the master account email and organization limitations\.
+**Policy description:** The first statement of this policy uses the [`NotAction`](reference_policies_elements_notaction.md) element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations\. The second statement grants IAM permissions to create a service\-linked role\. This is required by some services that must access resources in another service, such as an Amazon S3 bucket\. It also grants Organizations permissions to view information about the user's organization, including the management account email and organization limitations\.
 
 ### Network administrator<a name="jf_network-administrator"></a>
 

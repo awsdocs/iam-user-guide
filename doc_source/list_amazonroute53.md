@@ -43,6 +43,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ trafficpolicy ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html)  |  arn:$\{Partition\}:route53:::trafficpolicy/$\{Id\}  |  | 
 |   [ trafficpolicyinstance ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policy-records.html)  |  arn:$\{Partition\}:route53:::trafficpolicyinstance/$\{Id\}  |  | 
 |   [ queryloggingconfig ](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html)  |  arn:$\{Partition\}:route53:::queryloggingconfig/$\{Id\}  |  | 
+|   [ vpc ](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html)  |  arn:$\{Partition\}:ec2:$\{Region\}:$\{Account\}:vpc/$\{VpcId\}  |  | 
 
 ## Condition keys for Amazon Route 53<a name="amazonroute53-policy-keys"></a>
 

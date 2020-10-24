@@ -248,7 +248,7 @@ For example, the following Amazon S3 bucket policy allows members of any account
 ```
 
 **Note**  
-This global condition also applies to the master account of an AWS organization\.
+This global condition also applies to the management account of an AWS organization\.
 
 For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
 

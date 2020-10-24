@@ -263,7 +263,7 @@ IAM uses the following prefixes to indicate what type of resource each unique ID
 | APKA | Public key | 
 | AROA | Role | 
 | ASCA | Certificate | 
-|  ASIA  |  Temporary \(AWS STS\) keys  | 
+|  ASIA  |  [Temporary \(AWS STS\) access key IDs](https://docs.aws.amazon.com/STS/latest/APIReference/API_Credentials.html) use this prefix, but are unique only in combination with the secret access key and the session token\.  | 
 
 ### Getting the unique identifier<a name="identifiers-get-unique-id"></a>
 

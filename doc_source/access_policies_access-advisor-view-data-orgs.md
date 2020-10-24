@@ -2,13 +2,13 @@
 
 You can view service last accessed information for AWS Organizations using the IAM console, AWS CLI, or AWS API\. For important information about the data, permissions required, troubleshooting, and supported Regions, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
 
-When you sign in to the IAM console using AWS Organizations master account credentials, you can view information for any entity in your organization\. Organizations entities include the organization root, organizational units \(OUs\), and accounts\. You can also use the IAM console to view information for any service control policies \(SCPs\) in your organization\. IAM shows a list of services that are allowed by any SCPs that apply to the entity\. For each service, you can view the most recent account activity information for the chosen Organizations entity or the entity's children\.
+When you sign in to the IAM console using AWS Organizations management account credentials, you can view information for any entity in your organization\. Organizations entities include the organization root, organizational units \(OUs\), and accounts\. You can also use the IAM console to view information for any service control policies \(SCPs\) in your organization\. IAM shows a list of services that are allowed by any SCPs that apply to the entity\. For each service, you can view the most recent account activity information for the chosen Organizations entity or the entity's children\.
 
-When you use the AWS CLI or AWS API with master account credentials, you can generate a report for any entities or policies in your organization\. A programmatic report for an entity includes a list of services that are allowed by any SCPs that apply to the entity\. For each service, the report includes the most recent activity for accounts in the specified Organizations entity or the entity's subtree\.
+When you use the AWS CLI or AWS API with management account credentials, you can generate a report for any entities or policies in your organization\. A programmatic report for an entity includes a list of services that are allowed by any SCPs that apply to the entity\. For each service, the report includes the most recent activity for accounts in the specified Organizations entity or the entity's subtree\.
 
 When you generate a programmatic report for a policy, you must specify an Organizations entity\. This report includes a list of services that are allowed by the specified SCP\. For each service, it includes the most recent account activity in the entity or entity's children that are granted permission by that policy\. For more information, see [aws iam generate\-organizations\-access\-report](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-organizations-access-report.html) or [GenerateOrganizationsAccessReport](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html)\.
 
-Before you view the report, make sure that you understand the master account requirements and information, reporting period, reported entities, and the evaluated policy types\. For more details, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
+Before you view the report, make sure that you understand the management account requirements and information, reporting period, reported entities, and the evaluated policy types\. For more details, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\.
 
 ## Understand the AWS Organizations entity path<a name="access_policies_access-advisor-viewing-orgs-entity-path"></a>
 
@@ -39,7 +39,7 @@ You can use the IAM console to view service last accessed information for your r
 
 **To view information for the root \(console\)**
 
-1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Sign in to the AWS Management Console using Organizations management account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane below the **Access reports** section, choose **Organization activity**\.
 
@@ -55,11 +55,11 @@ You can use the IAM console to view service last accessed information for your r
 
 **To view information for an OU or account \(console\)**
 
-1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Sign in to the AWS Management Console using Organizations management account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane below the **Access reports** section, choose **Organization activity**\.
 
-1. On the **Organization activity** page, expand the structure of your organization\. Then choose the name of the OU or any account that you want to view except the master account\.
+1. On the **Organization activity** page, expand the structure of your organization\. Then choose the name of the OU or any account that you want to view except the management account\.
 
 1. On the **Details and activity** tab, view the **Service access report** section\. The information includes a list of services that are allowed by the SCPs attached to the OU or account *and* all of its parents\. The information shows you from which account the service was last accessed and when\. For more details about which principal accessed the service, sign in as an administrator in that account and [view the IAM service last accessed information](access_policies_access-advisor-view-data.md)\.
 
@@ -69,21 +69,21 @@ You can use the IAM console to view service last accessed information for your r
 
 1. Choose **Edit in AWS Organizations** to view additional details and edit the SCP in the Organizations console\. For more information, see [Updating an SCP](https://docs.aws.amazon.com/organizations/latest/userguide/create-policy.html#update_policy) in the *AWS Organizations User Guide*\.
 
-**To view information for the master account \(console\)**
+**To view information for the management account \(console\)**
 
-1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Sign in to the AWS Management Console using Organizations management account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane below the **Access reports** section, choose **Organization activity**\.
 
-1. On the **Organization activity** page, expand the structure of your organization and choose the name your master account\.
+1. On the **Organization activity** page, expand the structure of your organization and choose the name your management account\.
 
-1. On the **Details and activity** tab, view the **Service access report** section\. The information includes a list of all AWS services\. The master account is not limited by SCPs\. The information shows you whether the account last accessed the service and when\. For more details about which principal accessed the service, sign in as an administrator in that account and [view the IAM service last accessed information](access_policies_access-advisor-view-data.md)\.
+1. On the **Details and activity** tab, view the **Service access report** section\. The information includes a list of all AWS services\. The management account is not limited by SCPs\. The information shows you whether the account last accessed the service and when\. For more details about which principal accessed the service, sign in as an administrator in that account and [view the IAM service last accessed information](access_policies_access-advisor-view-data.md)\.
 
-1. Choose the **Attached SCPs** tab to confirm that there are no attached SCPs because the account is the master account\.
+1. Choose the **Attached SCPs** tab to confirm that there are no attached SCPs because the account is the management account\.
 
 **To view information for a policy \(console\)**
 
-1. Sign in to the AWS Management Console using Organizations master account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Sign in to the AWS Management Console using Organizations management account credentials, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
 1. In the navigation pane below the **Access reports** section, choose **Service control policies \(SCPs\)**\.
 
@@ -99,7 +99,7 @@ You can use the AWS CLI to retrieve service last accessed information for your O
 
 **To view Organizations service last accessed information \(AWS CLI\)**
 
-1. Use your Organizations master account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
+1. Use your Organizations management account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
 
 1. Generate a report\. The request must include the path of the Organizations entity \(root, OU, or account\) for which you want a report\. You can optionally include an `organization-policy-id` parameter to view a report for a specific policy\. The command returns a `job-id` that you can then use in the `get-organizations-access-report` command to monitor the `job-status` until the job is complete\.
    + [aws iam generate\-organizations\-access\-report](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-organizations-access-report.html)
@@ -115,7 +115,7 @@ You can use the AWS API to retrieve service last accessed information for your O
 
 **To view Organizations service last accessed information \(AWS API\)**
 
-1. Use your Organizations master account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
+1. Use your Organizations management account credentials with the required IAM and Organizations permissions, and confirm that SCPs are enabled for your root\. For more information, see [Things to know about last accessed information](access_policies_access-advisor.md#access_policies_access-advisor-know)\. 
 
 1. Generate a report\. The request must include the path of the Organizations entity \(root, OU, or account\) for which you want a report\. You can optionally include an `OrganizationsPolicyId` parameter to view a report for a specific policy\. The operation returns a `JobId` that you can then use in the `GetOrganizationsAccessReport` operation to monitor the `JobStatus` until the job is complete\.
    + [GenerateOrganizationsAccessReport](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GenerateOrganizationsAccessReport.html)

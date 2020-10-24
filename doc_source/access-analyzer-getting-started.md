@@ -123,7 +123,7 @@ To enable Access Analyzer in a Region, you must create an analyzer in that Regio
 
 1. Choose the account as the zone of trust for the analyzer\.
 **Note**  
-If your account is not the AWS Organizations master account or [delegated administrator](access-analyzer-settings.md#access-analyzer-delegated-administrator) account, you can create only one analzyer with your account as the zone of trust\.
+If your account is not the AWS Organizations management account or [delegated administrator](access-analyzer-settings.md#access-analyzer-delegated-administrator) account, you can create only one analzyer with your account as the zone of trust\.
 
 1. Optional\. Add any tags that you want to apply to the analyzer\.
 

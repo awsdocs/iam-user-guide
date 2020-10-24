@@ -39,8 +39,11 @@ For details about the columns in the following table, see [The actions table](re
 |   [ DescribeNodeAssociationStatus ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeNodeAssociationStatus.html)  | Describe the association status for the specified node token and the specified server\. | List |  |  |  | 
 |   [ DescribeServers ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DescribeServers.html)  | Describes the specified server or all servers of the user's account\. | List |  |  |  | 
 |   [ DisassociateNode ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_DisassociateNode.html)  | Disassociates a specified node from a server\. | Write |  |  |  | 
+|   [ ListTagsForResource ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_ListTagsForResource.html)  | List the tags that are applied to the specified server or backup\. | List |  |  |  | 
 |   [ RestoreServer ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_RestoreServer.html)  | Applies a backup to specified server\. Possibly swaps out the ec2\-instance if specified\. | Write |  |  |  | 
 |   [ StartMaintenance ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_StartMaintenance.html)  | Start the server maintenance immediately\. | Write |  |  |  | 
+|   [ TagResource ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_TagResource.html)  | Applies tags to the specified server or backup\. | Tagging |  |  |  | 
+|   [ UntagResource ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UntagResource.html)  | Removes tags from the specified server or backup\. | Tagging |  |  |  | 
 |   [ UpdateServer ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServer.html)  | Update general server settings\. | Write |  |  |  | 
 |   [ UpdateServerEngineAttributes ](https://docs.aws.amazon.com/opsworks-cm/latest/APIReference/API_UpdateServerEngineAttributes.html)  | Update server settings specific to the configuration management type\. | Write |  |  |  | 
 

@@ -38,7 +38,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ stack ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15b9)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stack/$\{StackName\}/$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscloudformation-aws_ResourceTag___TagKey_)   | 
 |   [ stackset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stacksets-concepts-stackset)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:stackset/$\{StackSetName\}:$\{Id\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awscloudformation-aws_ResourceTag___TagKey_)   | 
-|   [ changeset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:changeSet/$\{ChangeSetName\}:$\{Id\}  |  | 
+|   [ changeset ](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-whatis-concepts.html#w2ab1b5c15c11)  |  arn:$\{Partition\}:cloudformation:$\{Region\}:$\{Account\}:changeSet/$\{ChangeSetName\}/$\{Id\}  |  | 
 
 ## Condition keys for AWS CloudFormation<a name="awscloudformation-policy-keys"></a>
 
