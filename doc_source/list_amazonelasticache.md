@@ -39,16 +39,16 @@ The following resource types are defined by this service and can be used in the 
 
 | Resource types | ARN | Condition keys | 
 | --- | --- | --- | 
-|   [ parametergroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:parametergroup:$\{CacheParameterGroupName\}  |  | 
-|   [ securitygroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:securitygroup:$\{CacheSecurityGroupName\}  |  | 
-|   [ subnetgroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:subnetgroup:$\{CacheSubnetGroupName\}  |  | 
-|   [ replicationgroup ](AmazonElastiCache/latest/red-ug/Replication.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:replicationgroup:$\{ReplicationGroupId\}  |  | 
-|   [ cluster ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:cluster:$\{CacheClusterId\}  |  | 
-|   [ reserved\-instance ](AmazonElastiCache/latest/red-ug/reserved-nodes.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:reserved\-instance:$\{ReservedCacheNodeId\}  |  | 
-|   [ snapshot ](AmazonElastiCache/latest/red-ug/backups.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:snapshot:$\{SnapshotName\}  |  | 
-|   [ globalreplicationgroup ](AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html)  |  arn:$\{Partition\}:elasticache::$\{Account\}:globalreplicationgroup:$\{GlobalReplicationGroupId\}  |  | 
-|   [ user ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:user:$\{UserId\}  |  | 
-|   [ usergroup ](AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:usergroup:$\{UserGroupId\}  |  | 
+|   [ parametergroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:parametergroup:$\{CacheParameterGroupName\}  |  | 
+|   [ securitygroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:securitygroup:$\{CacheSecurityGroupName\}  |  | 
+|   [ subnetgroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:subnetgroup:$\{CacheSubnetGroupName\}  |  | 
+|   [ replicationgroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Replication.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:replicationgroup:$\{ReplicationGroupId\}  |  | 
+|   [ cluster ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:cluster:$\{CacheClusterId\}  |  | 
+|   [ reserved\-instance ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/reserved-nodes.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:reserved\-instance:$\{ReservedCacheNodeId\}  |  | 
+|   [ snapshot ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:snapshot:$\{SnapshotName\}  |  | 
+|   [ globalreplicationgroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html)  |  arn:$\{Partition\}:elasticache::$\{Account\}:globalreplicationgroup:$\{GlobalReplicationGroupId\}  |  | 
+|   [ user ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:user:$\{UserId\}  |  | 
+|   [ usergroup ](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/WhatIs.Components.html)  |  arn:$\{Partition\}:elasticache:$\{Region\}:$\{Account\}:usergroup:$\{UserGroupId\}  |  | 
 
 ## Condition keys for Amazon ElastiCache<a name="amazonelasticache-policy-keys"></a>
 

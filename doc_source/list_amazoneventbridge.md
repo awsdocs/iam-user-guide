@@ -39,6 +39,8 @@ The following resource types are defined by this service and can be used in the 
 |   [ event\-source ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}::event\-source/$\{EventSourceName\}  |  | 
 |   [ event\-bus ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:event\-bus/$\{EventBusName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoneventbridge-aws_ResourceTag___TagKey_)   | 
 |   [ rule ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:rule/\[$\{EventBusName\}/\]$\{RuleName\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazoneventbridge-aws_ResourceTag___TagKey_)   | 
+|   [ archive ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:archive/$\{ArchiveName\}  |  | 
+|   [ replay ](https://docs.aws.amazon.com/eventbridge/latest/userguide/iam-access-control-identity-based-eventbridge.html#eventbridge-arn-format)  |  arn:$\{Partition\}:events:$\{Region\}:$\{Account\}:replay/$\{ReplayName\}  |  | 
 
 ## Condition keys for Amazon EventBridge<a name="amazoneventbridge-policy-keys"></a>
 
@@ -54,6 +56,7 @@ To view the global condition keys that are available to all services, see [Avail
 |   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the allowed set of values for each of the tags | String | 
 |   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag\-value associated with the resource | String | 
 |   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of mandatory tags in the request | String | 
+|   [ events:ManagedBy ](https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html)  | Used internally by AWS services\. If a rule is created by an AWS service on your behalf, the value is the principal name of the service that created the rule\. | String | 
 |   [ events:TargetArn ](https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limiting-access-to-targets)  | The ARN of a target that can be put to a rule\. | ARN | 
 |   [ events:detail\-type ](https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#events-pattern-detail-type)  | Matches the literal string of the detail\-type filed of the event\. | String | 
 |   [ events:detail\.eventTypeCode ](https://docs.aws.amazon.com/eventbridge/latest/userguide/policy-keys-eventbridge.html#limit-rule-by-type-code)  | Matches the literal string for the detail\.eventTypeCode field of the event\. | String | 

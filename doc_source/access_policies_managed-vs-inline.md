@@ -35,7 +35,7 @@ The following diagram illustrates customer managed policies\. Each policy is an 
 
 ## Inline policies<a name="inline-policies"></a>
 
-An inline policy is a policy that's embedded in an IAM identity \(a user, group, or role\)\. That is, the policy is an inherent part of the identity\. You can create a policy and embed it in a identity, either when you create the identity or later\. 
+An inline policy is a policy that's embedded in an IAM identity \(a user, group, or role\)\. That is, the policy is an inherent part of the identity\. You can create a policy and embed it in an identity, either when you create the identity or later\. 
 
 The following diagram illustrates inline policies\. Each policy is an inherent part of the user, group, or role\. Notice that two roles include the same policy \(the **DynamoDB\-books\-app** policy\), but they are not sharing a single policy; each role has its own copy of the policy\.
 

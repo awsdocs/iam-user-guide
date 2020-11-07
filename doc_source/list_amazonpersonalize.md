@@ -57,7 +57,7 @@ For details about the columns in the following table, see [The actions table](re
 |   [ DescribeSchema ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSchema.html)  | Describes a schema | Read |   [ schema\* ](#amazonpersonalize-schema)   |  |  | 
 |   [ DescribeSolution ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSolution.html)  | Describes a solution | Read |   [ solution\* ](#amazonpersonalize-solution)   |  |  | 
 |   [ DescribeSolutionVersion ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_DescribeSolutionVersion.html)  | Describes a version of a solution | Read |   [ solution\* ](#amazonpersonalize-solution)   |  |  | 
-|   [ GetPersonalizedRanking ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetPersonalizedRanking.html)  | Gets a re\-ranked list of recommendations | Write |   [ campaign\* ](#amazonpersonalize-campaign)   |  |  | 
+|   [ GetPersonalizedRanking ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetPersonalizedRanking.html)  | Gets a re\-ranked list of recommendations | Read |   [ campaign\* ](#amazonpersonalize-campaign)   |  |  | 
 |   [ GetRecommendations ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_RS_GetRecommendations.html)  | Gets a list of recommendations from a campaign | Read |   [ campaign\* ](#amazonpersonalize-campaign)   |  |  | 
 |   [ GetSolutionMetrics ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_GetSolutionMetrics.html)  | Gets metrics for a solution version | Read |   [ solution\* ](#amazonpersonalize-solution)   |  |  | 
 |   [ ListBatchInferenceJobs ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListBatchInferenceJobs.html)  | Lists batch inference jobs | List |  |  |  | 
@@ -72,6 +72,8 @@ For details about the columns in the following table, see [The actions table](re
 |   [ ListSolutionVersions ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutionVersions.html)  | Lists versions of a solution | List |  |  |  | 
 |   [ ListSolutions ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_ListSolutions.html)  | Lists solutions | List |  |  |  | 
 |   [ PutEvents ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutEvents.html)  | Records real time event data | Write |   [ eventTracker\* ](#amazonpersonalize-eventTracker)   |  |  | 
+|   [ PutItems ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutItems.html)  | Ingest Items data | Write |   [ dataset\* ](#amazonpersonalize-dataset)   |  |  | 
+|   [ PutUsers ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UBS_PutUsers.html)  | Ingest Users data | Write |   [ dataset\* ](#amazonpersonalize-dataset)   |  |  | 
 |   [ UpdateCampaign ](https://docs.aws.amazon.com/personalize/latest/dg/API_Operations.htmlAPI_UpdateCampaign.html)  | Updates a campaign | Write |   [ campaign\* ](#amazonpersonalize-campaign)   |  |  | 
 
 ## Resource types defined by Amazon Personalize<a name="amazonpersonalize-resources-for-iam-policies"></a>

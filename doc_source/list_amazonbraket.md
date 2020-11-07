@@ -6,9 +6,9 @@ This page is moving to a new location on November 16, 2020\. Please update your 
 Amazon Braket \(service prefix: `braket`\) provides the following service\-specific resources, actions, and condition context keys for use in IAM permission policies\.
 
 References:
-+ Learn how to [configure this service](https://docs.aws.amazon.com/braket/latest/UserGuide/what-is-amazon-braket.html)\.
++ Learn how to [configure this service](https://docs.aws.amazon.com/braket/latest/developerguide/what-is-amazon-braket.html)\.
 + View a list of the [API operations available for this service](https://docs.aws.amazon.com/braket/latest/APIReference/)\.
-+ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/braket/latest/UserGuide/braket-manage-access.html) permission policies\.
++ Learn how to secure this service and its resources by [using IAM](https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html) permission policies\.
 
 **Topics**
 + [Actions defined by Amazon Braket](#amazonbraket-actions-as-permissions)
@@ -25,20 +25,30 @@ For details about the columns in the following table, see [The actions table](re
 
 
 ****  
-
-| Actions | Description | Access level | Resource types \(\*required\) | Condition keys | Dependent actions | 
-| --- | --- | --- | --- | --- | --- | 
-|   [ CancelQuantumTask ](https://docs.aws.amazon.com/braket/latest/APIReference/API_CancelQuantumTask.html)  | Grants permission to cancel a quantum task\. | Write |  |  |  | 
-|   [ CreateQuantumTask ](https://docs.aws.amazon.com/braket/latest/APIReference/API_CreateQuantumTask.html)  | Grants permission to create a quantum task\. | Write |  |  |  | 
-|   [ GetDevice ](https://docs.aws.amazon.com/braket/latest/APIReference/API_GetDevice.html)  | Grants permission to retrieve information about the devices available in Amazon Braket\. | Read |  |  |  | 
-|   [ GetQuantumTask ](https://docs.aws.amazon.com/braket/latest/APIReference/API_GetQuantumTask.html)  | Grants permission to retrieve quantum tasks\. | Read |  |  |  | 
-|   [ SearchDevices ](https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchDevices.html)  | Grants permission to search for devices available in Amazon Braket\. | Read |  |  |  | 
-|   [ SearchQuantumTasks ](https://docs.aws.amazon.com/braket/latest/APIReference/API_SearchQuantumTasks.html)  | Grants permission to search for quantum tasks\. | Read |  |  |  | 
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazonbraket.html)
 
 ## Resource types defined by Amazon Braket<a name="amazonbraket-resources-for-iam-policies"></a>
 
-Amazon Braket does not support specifying a resource ARN in the `Resource` element of an IAM policy statement\. To allow access to Amazon Braket, specify `“Resource”: “*”` in your policy\.
+The following resource types are defined by this service and can be used in the `Resource` element of IAM permission policy statements\. Each action in the [Actions table](#amazonbraket-actions-as-permissions) identifies the resource types that can be specified with that action\. A resource type can also define which condition keys you can include in a policy\. These keys are displayed in the last column of the table\. For details about the columns in the following table, see [The resource types table](reference_policies_actions-resources-contextkeys.md#resources_table)\.
+
+
+****  
+
+| Resource types | ARN | Condition keys | 
+| --- | --- | --- | 
+|   [ quantum\-task ](https://docs.aws.amazon.com/braket/latest/developerguide/braket-manage-access.html#resources)  |  arn:$\{Partition\}:braket:$\{Region\}:$\{Account\}:quantum\-task/$\{RandomId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonbraket-aws_ResourceTag___TagKey_)   | 
 
 ## Condition keys for Amazon Braket<a name="amazonbraket-policy-keys"></a>
 
-Braket has no service\-specific context keys that can be used in the `Condition` element of policy statements\. For the list of the global context keys that are available to all services, see [Available keys for conditions](reference_policies_condition-keys.html#AvailableKeys)\.
+Amazon Braket defines the following condition keys that can be used in the `Condition` element of an IAM policy\. You can use these keys to further refine the conditions under which the policy statement applies\. For details about the columns in the following table, see [The condition keys table](reference_policies_actions-resources-contextkeys.md#context_keys_table)\.
+
+To view the global condition keys that are available to all services, see [Available global condition keys](reference_policies_condition-keys.html#AvailableKeys)\.
+
+
+****  
+
+| Condition keys | Description | Type | 
+| --- | --- | --- | 
+|   [ aws:RequestTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-requesttag)  | Filters actions based on the presence of tag key\-value pairs in the request | String | 
+|   [ aws:ResourceTag/$\{TagKey\} ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag)  | Filters actions based on tag key\-value pairs attached to the resource | String | 
+|   [ aws:TagKeys ](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys)  | Filters actions based on the presence of tag keys in the request | String | 

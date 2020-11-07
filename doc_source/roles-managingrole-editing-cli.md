@@ -123,7 +123,7 @@ Anyone who assumes the role from the AWS CLI or API can use the `duration-second
 1. \(Optional\) To view the current maximum session duration setting for a role, run the following command:
    + [aws iam get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)
 
-1. To update a role's maximum session duration setting, run the following command with the `max-sessionduration` CLI parameter or the `MaxSessionDuration` API parameter:
+1. To update a role's maximum session duration setting, run the following command with the `max-session-duration` CLI parameter or the `MaxSessionDuration` API parameter:
    + [aws iam update\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/update-role.html)
 
    Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)\.

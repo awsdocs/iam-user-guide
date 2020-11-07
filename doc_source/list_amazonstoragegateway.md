@@ -40,6 +40,7 @@ The following resource types are defined by this service and can be used in the 
 |   [ gateway ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
 |   [ share ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateFileShare.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:share/$\{ShareId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
 |   [ tape ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#storage-gateway-vtl-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:tape/$\{TapeBarcode\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
+|   [ tapepool ](https://docs.aws.amazon.com/storagegateway/latest/userguide/CreatingCustomTapePool.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:tapepool/$\{PoolId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
 |   [ target ](https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateVolumes.html)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/target/$\{IscsiTarget\}  |  | 
 |   [ volume ](https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html#volume-gateway-concepts)  |  arn:$\{Partition\}:storagegateway:$\{Region\}:$\{Account\}:gateway/$\{GatewayId\}/volume/$\{VolumeId\}  |   [ aws:ResourceTag/$\{TagKey\} ](#amazonstoragegateway-aws_ResourceTag___TagKey_)   | 
 
@@ -54,6 +55,6 @@ To view the global condition keys that are available to all services, see [Avail
 
 | Condition keys | Description | Type | 
 | --- | --- | --- | 
-|   aws:RequestTag/$\{TagKey\}  | Filters create requests based on the allowed set of values for each of the tags\. | String | 
-|   aws:ResourceTag/$\{TagKey\}  | Filters actions based on tag\-value associated with the resource\. | String | 
-|   aws:TagKeys  | Filters create requests based on the presence of mandatory tags in the request\. | String | 
+|   aws:RequestTag/$\{TagKey\}  | Filters acess based on the allowed set of values for each of the tags | String | 
+|   aws:ResourceTag/$\{TagKey\}  | Filters acess based on tag\-value associated with the resource | String | 
+|   aws:TagKeys  | Filters acess based on the presence of mandatory tags in the request | String | 

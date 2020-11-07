@@ -1,6 +1,6 @@
 # AWS JSON policy elements: Principal<a name="reference_policies_elements_principal"></a>
 
-Use the `Principal` element in a policy to specify the principal that is allowed or denied access to a resource\. You cannot use the `Principal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in an IAM resource\. For example, you can embed policies in an Amazon S3 bucket or an AWS KMS customer master key \(CMK\)\.
+Use the `Principal` element in a policy to specify the principal that is allowed or denied access to a resource\. You cannot use the `Principal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in a resource\. For example, you can embed policies in an Amazon S3 bucket or an AWS KMS customer master key \(CMK\)\.
 
 You can specify any of the following principals in a policy:
 + AWS account and root user
@@ -124,13 +124,15 @@ When you specify an assumed\-role session in a `Principal` element, you cannot u
 
 ### AWS services<a name="principal-services"></a>
 
-IAM roles that can be assumed by an AWS service are called *[service roles](id_roles_terms-and-concepts.md#iam-term-service-role)*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service roles have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\. The identifier includes the long version of a service name, and is usually in the following format:
+IAM roles that can be assumed by an AWS service are called *[service roles](id_roles_terms-and-concepts.md#iam-term-service-role)*\. Service roles must include a trust policy\. *Trust policies* are resource\-based policies that are attached to a role that define which principals can assume the role\. Some service roles have predefined trust policies\. However, in some cases, you must specify the service principal in the trust policy\. A *service principal* is an identifier that is used to grant permissions to a service\.
 
-`long_service-name.amazonaws.com`
+The identifier for a service principal includes the service name, and is usually in the following format:
 
-The service principal is defined by the service\. To learn the service principal for a service, see the documentation for that service\. For some services, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\. View the **Service\-Linked Role Permissions** section for that service to view the service principal\.
+`service-name.amazonaws.com`
 
-The following example shows a policy that can be attached to a service role\. The policy enables two services, Amazon EMR and AWS Data Pipeline, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. To specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
+The service principal is defined by the service\. You can find the service principal for some services by opening [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md), checking whether the service has **Yes **in the **Service\-linked role** column, and opening the **Yes** link to view the service\-linked role documentation for that service\. Find the **Service\-Linked Role Permissions** section for that service to view the service principal\.
+
+The following example shows a policy that can be attached to a service role\. The policy enables two services, Amazon ECS and Elastic Load Balancing, to assume the role\. The services can then perform any tasks granted by the permissions policy assigned to the role \(not shown\)\. To specify multiple service principals, you do not specify two `Service` elements; you can have only one\. Instead, you use an array of multiple service principals as the value of a single `Service` element\.
 
 ```
 {
@@ -140,8 +142,8 @@ The following example shows a policy that can be attached to a service role\. Th
       "Effect": "Allow",
       "Principal": {
         "Service": [
-          "elasticmapreduce.amazonaws.com",
-          "datapipeline.amazonaws.com"
+          "ecs.amazonaws.com",
+          "elasticloadbalancing.amazonaws.com"
         ]
       },
       "Action": "sts:AssumeRole"

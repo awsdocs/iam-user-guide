@@ -66,9 +66,9 @@ You can create and delete an account alias from the AWS Management Console\.
 
 1. Find the **IAM users sign\-in link**, and choose **Customize** to the right of the link\.
 
-1. Type the name you want to use for your alias, then choose **Yes, Create**\.
+1. Type the name you want to use for your alias, then choose **Create alias**\.
 
-1. To remove the alias, choose **Customize**, and then choose **Yes, Delete**\. The sign\-in URL reverts to using your AWS account ID\.
+1. To remove the alias, choose **Delete alias**, and then choose **Delete**\. The sign\-in URL reverts to using your AWS account ID\.
 
 ### Creating, deleting, and listing aliases \(AWS CLI\)<a name="CreateAlias_APICLI"></a>
 

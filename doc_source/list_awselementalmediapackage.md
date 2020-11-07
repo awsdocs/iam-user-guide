@@ -38,6 +38,7 @@ The following resource types are defined by this service and can be used in the 
 | --- | --- | --- | 
 |   [ channels ](https://docs.aws.amazon.com/mediapackage/latest/ug/channels.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:channels/$\{ChannelIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackage-aws_ResourceTag___TagKey_)   | 
 |   [ origin\_endpoints ](https://docs.aws.amazon.com/mediapackage/latest/ug/endpoints.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:origin\_endpoints/$\{OriginEndpointIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackage-aws_ResourceTag___TagKey_)   | 
+|   [ harvest\_jobs ](https://docs.aws.amazon.com/mediapackage/latest/ug/harvest-jobs.html)  |  arn:$\{Partition\}:mediapackage:$\{Region\}:$\{Account\}:harvest\_jobs/$\{HarvestJobIdentifier\}  |   [ aws:ResourceTag/$\{TagKey\} ](#awselementalmediapackage-aws_ResourceTag___TagKey_)   | 
 
 ## Condition keys for AWS Elemental MediaPackage<a name="awselementalmediapackage-policy-keys"></a>
 
