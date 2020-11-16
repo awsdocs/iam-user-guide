@@ -66,7 +66,7 @@ If you still can't access your temporary security credentials on your EC2 instan
 
 ## What do the errors from the `info` document in the IAM subtree mean?<a name="troubleshoot_iam-ec2_errors-info-doc"></a>
 
-### The `iam/info` document iindicates `"Code":"InstanceProfileNotFound"`<a name="troubleshoot_iam-ec2_errors-info-doc-profile-not-found"></a>
+### The `iam/info` document indicates `"Code":"InstanceProfileNotFound"`<a name="troubleshoot_iam-ec2_errors-info-doc-profile-not-found"></a>
 
 Your IAM instance profile has been deleted and Amazon EC2 can no longer provide credentials to your instance\. You must attach a valid instance profile to your Amazon EC2 instance\.
 

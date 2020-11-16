@@ -11,6 +11,8 @@ When you create a service\-linked role, you must also have permission to pass th
 
 A user can pass a role ARN as a parameter in any API operation that uses the role to assign permissions to the service\. The service then checks whether that user has the `iam:PassRole` permission\. To limit the user to passing only approved roles, you can filter the `iam:PassRole` permission with the `Resources` element of the IAM policy statement\. 
 
+You can use the `Condition` element in a JSON policy to test the value of keys that are included in the request context of all AWS requests\. To learn more about using condition keys in a policy, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\. The `iam:PassedToService` condition key can be used to specify the service principal of the service to which a role can be passed\. To learn more about using the `iam:PassedToService` condition key in a policy, see [iam:PassedToService](reference_policies_iam-condition-keys.md#ck_PassedToService)\.
+
 **Example 1**  
 Imagine that you want to grant a user the ability to pass any of an approved set of roles to the Amazon EC2 service upon launching an instance\. You need three elements:
 + An IAM *permissions policy* attached to the role that determines what the role can do\. Scope permissions to only the actions that the role must perform, and to only the resources that the role needs for those actions\. You can use AWS managed or customer\-created IAM permissions policy\.
