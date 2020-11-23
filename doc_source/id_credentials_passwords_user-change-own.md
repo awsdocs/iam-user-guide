@@ -30,7 +30,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 1. For **Current password**, enter your current password\. Enter a new password for **New password** and **Confirm new password**\. Then choose **Change password**\.
 **Note**  
-If the account has a password policy, the new password must meet the requirements of that policy\. For more information, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\. 
+The new password must meet the requirements of the account password policy\. For more information, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\. 
 
 ## How IAM users change their own password \(AWS CLI or AWS API\)<a name="ManagingUserPwdSelf-CLIAPI"></a>
 
