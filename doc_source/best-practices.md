@@ -57,7 +57,7 @@ Start with a minimum set of permissions and grant additional permissions as nece
 
 You can use access level groupings to understand the level of access that a policy grants\. [Policy actions](reference_policies_elements_action.md) are classified as `List`, `Read`, `Write`, `Permissions management`, or `Tagging`\. For example, you can choose actions from the `List` and `Read` access levels to grant read\-only access to your users\. To learn how to use policy summaries to understand access level permissions, see [Use access levels to review IAM permissions](#use-access-levels-to-review-permissions)\.
 
-One feature that can help with this is *last accessed information *\. View this information  on the **Access Advisor** tab on the IAM console details page for an IAM user, group, role, or policy\. Last accessed information  also includes information about the actions last accessed for some services, such as Amazon S3\. If you sign in using AWS Organizations management account credentials, you can view service last accessed information  in the **AWS Organizations** section of the IAM console\. You can also use the AWS CLI or AWS API to retrieve a report for last accessed information  for entities or policies in IAM or Organizations\. You can use this information to identify unnecessary permissions so that you can refine your IAM or Organizations policies to better adhere to the principle of least privilege\. For more information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
+One feature that can help with this is *last accessed information *\. View this information on the **Access Advisor** tab on the IAM console details page for an IAM user, group, role, or policy\. Last accessed information also includes information about the actions last accessed for some services, such as Amazon S3\. If you sign in using AWS Organizations management account credentials, you can view service last accessed information in the **AWS Organizations** section of the IAM console\. You can also use the AWS CLI or AWS API to retrieve a report for last accessed information for entities or policies in IAM or Organizations\. You can use this information to identify unnecessary permissions so that you can refine your IAM or Organizations policies to better adhere to the principle of least privilege\. For more information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
 
 To further reduce permissions, you can view your account's events in AWS CloudTrail **Event history**\. CloudTrail event logs include detailed event information that you can use to reduce the policy's permissions\. The logs include only the actions and resources that your IAM entities need\. For more information, see [Viewing CloudTrail Events in the CloudTrail Console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) in the *AWS CloudTrail User Guide*\.
 
@@ -134,9 +134,7 @@ Within a policy summary, the **Access level** column shows that the policy provi
 
 ## Configure a strong password policy for your users<a name="configure-strong-password-policy"></a>
 
-If you allow users to change their own passwords, require that they create strong passwords and that they rotate their passwords periodically\. On the [Account Settings](https://console.aws.amazon.com/iam/home?#account_settings) page of the IAM console, you can create a password policy for your account\. You can use the password policy to define password requirements, such as minimum length, whether it requires nonalphabetic characters, how frequently it must be rotated, and so on\.
-
-For more information, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\.
+If you allow users to change their own passwords, create a custom password policy that requires them to create strong passwords and rotate their passwords periodically\. On the [Account Settings](https://console.aws.amazon.com/iam/home?#account_settings) page of the IAM console, you can create a custom password policy for your account\. You upgrade from the AWS default password policy to define password requirements, such as minimum length, whether it requires nonalphabetic characters, and how frequently it must be rotated\. For more information, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\.
 
 ## Enable MFA<a name="enable-mfa-for-privileged-users"></a>
 
@@ -174,9 +172,9 @@ For more information, see [Switching to an IAM role \(AWS API\)](id_roles_use_sw
 
 ## Rotate credentials regularly<a name="rotate-credentials"></a>
 
-Change your own passwords and access keys regularly, and make sure that all IAM users in your account do as well\. That way, if a password or access key is compromised without your knowledge, you limit how long the credentials can be used to access your resources\. You can apply a password policy to your account to require all your IAM users to rotate their passwords\. You can also choose how often they must do so\. 
+Change your own passwords and access keys regularly, and make sure that all IAM users in your account do as well\. That way, if a password or access key is compromised without your knowledge, you limit how long the credentials can be used to access your resources\. You can apply a custom password policy to your account to require all your IAM users to rotate their AWS Management Console passwords\. You can also choose how often they must do so\. 
 
-For more information about setting a password policy in your account, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\. 
+For more information about setting a custom password policy in your account, see [Setting an account password policy for IAM users](id_credentials_passwords_account-policy.md)\. 
 
 For more information about rotating access keys for IAM users, see [Rotating access keys](id_credentials_access-keys.md#Using_RotateAccessKey)\.
 

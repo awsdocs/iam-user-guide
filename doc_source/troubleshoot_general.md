@@ -9,7 +9,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [I get "access denied" when I make a request with temporary security credentials](#troubleshoot_general_access-denied-temp-creds)
 + [Policy variables aren't working](#troubleshoot_general_policy-variables-dont-work)
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
-+ [I Am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
++ [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 
@@ -72,7 +72,7 @@ For more information about how some other AWS services are affected by this, con
 + **Amazon Redshift**: [Managing Data Consistency](https://docs.aws.amazon.com/redshift/latest/dg/managing-data-consistency.html) in the *Amazon Redshift Database Developer Guide*
 + **Amazon S3**: [Amazon S3 Data Consistency Model](https://docs.aws.amazon.com/AmazonS3/latest/dev/Introduction.html#ConsistencyModel) in the *Amazon Simple Storage Service Developer Guide*
 
-## I Am not authorized to perform: iam:DeleteVirtualMFADevice<a name="troubleshoot_general_access-denied-delete-mfa"></a>
+## I am not authorized to perform: iam:DeleteVirtualMFADevice<a name="troubleshoot_general_access-denied-delete-mfa"></a>
 
 You might receive the following error when you attempt to assign or remove a virtual MFA device for yourself or others:
 
@@ -82,7 +82,7 @@ User: arn:aws:iam::123456789012:user/Diego is not authorized to perform: iam:Del
 
 This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and then cancelled the process\. This creates an MFA device for the user in IAM but never activates it\. You must delete the existing MFA device before you can associate a new device with the user\.
 
-AWS recommends a policy that allows a user to delete their own virtual MFA device only if they are authenticated using MFA\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the my security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
+AWS recommends a policy that allows a user to delete their own virtual MFA device only if they are authenticated using MFA\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
 
 To fix this issue, an administrator should **not** edit policy permissions\. Instead, the administrator must use the AWS CLI or AWS API to remove the existing but deactivated device\.
 

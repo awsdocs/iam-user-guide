@@ -48,6 +48,7 @@ Operations that support session tagging can fail if any of the following conditi
 ## Things to know about session tags<a name="id_session-tags_know"></a>
 
 Before you use session tags, review the following details about sessions and tags\.
++ When using session tags, trust policies for all roles connected to the identity provider \(IdP\) that is passing tags must have the [`sts:TagSession`](#id_session-tags_permissions-required) permission\. For roles that don't have this permission in the trust policy, the `AssumeRole` operation will fail\.
 + Session tags are principal tags that you specify while requesting a session\. The tags apply to requests that you make using the session's credentials\.
 + Session tags are key\-value pairs\. For example, to add contact information to a session, you can add the session tag key `email` and the tag value `johndoe@example.com`\.
 + Session tags must follow the [rules for naming tags in IAM and AWS STS](id_tags.md#id_tags_rules_creating)\. This topic includes information about case sensitivity and restricted prefixes that apply to your session tags\.
@@ -69,7 +70,10 @@ In addition to the action that matches the API operation, you must have the foll
 sts:TagSession
 ```
 
-You can use this action with the following condition keys\.
+**Important**  
+When using session tags, the role trust policies for all roles connected to an identity provider \(IdP\) must have the `sts:TagSession` permission\. The `AssumeRole` operation will fail for any role connected to an IdP that is passing session tags without the this permission\. If you don't want to update the role trust policy for each role, you can use a separate IdP instance for passing session tags\. Then add the `sts:TagSession` permission to only the roles that are connected to the separate IdP\.
+
+You can use the `sts:TagSession` action with the following condition keys\.
 + `aws:PrincipalTag` – Use this key to compare the tag that is attached to the principal making the request with the tag that you specify in the policy\. For example, you can allow a principal to pass session tags only if the principal making the request has the specified tags\.
 + `aws:RequestTag` – Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you can allow the principal to pass the specified session tags, but only with the specified values\.
 + `aws:ResourceTag` – Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you can allow the principal to pass session tags only if the role they are assuming includes the specified tags\.
