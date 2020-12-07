@@ -143,7 +143,7 @@ The following example shows a CloudTrail log entry for a request made for the IA
     "arn": "arn:aws:iam::444455556666:user/JaneDoe",
     "accountId": "444455556666",
     "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
-    "userName": "JameDoe",
+    "userName": "JaneDoe",
     "sessionContext": {
       "attributes": {
         "mfaAuthenticated": "false",
