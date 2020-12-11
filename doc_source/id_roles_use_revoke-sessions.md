@@ -5,6 +5,8 @@ If you follow the steps on this page, all users with current sessions created by
 
 When you enable users to access the AWS Management Console with a long session duration time \(such as 12 hours\), their temporary credentials do not expire as quickly\. If users inadvertently expose their credentials to an unauthorized third party, that party has access for the duration of the session\. However, you can immediately revoke all permissions to the role's credentials issued before a certain point in time if you need to\. All temporary credentials for that role issued before the specified time become invalid\. This forces all users to reauthenticate and request new credentials\.
 
+ 
+
 **Note**  
 You cannot revoke the session for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
 

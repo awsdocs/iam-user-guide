@@ -10,6 +10,8 @@ The following figure shows a simplified flow for how this might work, using Logi
 
 ![\[Sample workflow using Amazon Cognito to federate users for a mobile application\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/mobile-app-web-identity-federation.diagram.png)
 
+ 
+
 1. A customer starts your app on a mobile device\. The app asks the user to sign in\.
 
 1. The app uses Login with Amazon resources to accept the user's credentials\.

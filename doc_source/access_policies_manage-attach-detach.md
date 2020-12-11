@@ -75,6 +75,8 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 1. Choose the **Permissions** tab\. 
 
 1. Scroll to the bottom of the page and choose **Add inline policy**\.
+
+    
 **Note**  
 You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)* in IAM\. Because the linked service defines whether you can modify the permissions of the role, you might be able to add additional policies from the service console, API, or AWS CLI\. To view the service\-linked role documentation for a service, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and choose **Yes** in the **Service\-Linked Role** column for your service\.
 

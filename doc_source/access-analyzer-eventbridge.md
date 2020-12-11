@@ -10,6 +10,8 @@ Access Analyzer sends an event to EventBridge for each generated finding, for a 
 
 Access Analyzer sends events for new findings and findings with status updates to EventBridge within about an hour from when the event occurs in your account\. Access Analyzer also sends events to EventBridge when a resolved finding is deleted because the retention period has expired\. For findings that are deleted because the analyzer that generated them is deleted, the event is sent to EventBridge approximately 24 hours after the analyzer was deleted\. When a finding is deleted, the finding status is not changed\. Instead, the `isDeleted` attribute is set to `true`\.
 
+
+
 ## Example event<a name="access-analyzer-event-example"></a>
 
 The following is an example Access Analyzer event sent to EventBridge\. The `id` listed is the ID for the event in EventBridge\. To learn more, see [Events and Event Patterns in EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)\.

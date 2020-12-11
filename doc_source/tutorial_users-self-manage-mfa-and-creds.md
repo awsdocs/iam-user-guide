@@ -42,6 +42,8 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
+   
+
 1. In the navigation pane, choose **Policies**, and then choose **Create policy**\.
 
 1. Choose the **JSON** tab and copy the text from the following JSON policy document: [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.

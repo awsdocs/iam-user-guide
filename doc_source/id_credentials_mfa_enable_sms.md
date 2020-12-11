@@ -1,5 +1,7 @@
 # PREVIEW – Enabling SMS text message MFA devices<a name="id_credentials_mfa_enable_sms"></a>
 
+
+
 AWS will soon end support for SMS multi\-factor authentication \(MFA\)\. We are not allowing new customers to preview this feature\. We recommend that existing customers switch to one of the following alternative methods of MFA:
 + [A virtual \(software\-based\)](id_credentials_mfa_enable_virtual.md) MFA device
 + [A U2F security key](id_credentials_mfa_enable_u2f.md)

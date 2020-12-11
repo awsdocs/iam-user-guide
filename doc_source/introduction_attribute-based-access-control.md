@@ -6,6 +6,8 @@ For example, you can create three roles with the `access-project` tag key\. Set 
 
 ![\[ABAC Model\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
+
+
 ## Comparing ABAC to the traditional RBAC model<a name="introduction_attribute-based-access-control_compare-rbac"></a>
 
 The traditional authorization model used in IAM is called role\-based access control \(RBAC\)\. RBAC defines permissions based on a person's job function, known outside of AWS as a *role*\. Within AWS a role usually refers to an IAM role, which is an identity in IAM that you can assume\. IAM does include [managed policies for job functions](access_policies_job-functions.md) that align permissions to a job function in an RBAC model\.

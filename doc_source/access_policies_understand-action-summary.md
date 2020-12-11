@@ -62,6 +62,8 @@ If the policy that you select is an inline policy that is attached directly to t
 
 The example below is the action summary for the `PutObject` \(Write\) action from the Amazon S3 service summary \(see [Service summary \(list of actions\)](access_policies_understand-service-summary.md)\)\. For this action, the policy defines multiple conditions on a single resource\.
 
+
+
 ![\[Action summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-dialog.png)
 
 The action summary page includes the following information:

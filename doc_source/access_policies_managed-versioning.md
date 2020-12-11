@@ -51,6 +51,8 @@ When you create a customer managed policy, the policy begins with a single versi
 
 ![\[Managed policy with a single version, which is the default version\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-managed-policies-versions-default-one.diagram.png)
 
+
+
 ![\[Customer managed policy with three versions, where version v2 is the default version.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-managed-policies-versions-default-multiple.diagram.png)
 
 ### <a name="set-default-version-managed-policy-console"></a>

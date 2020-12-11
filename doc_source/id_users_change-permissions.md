@@ -197,6 +197,8 @@ Removing a permissions boundary affects the user immediately\.
 
 1. Choose **Remove** to confirm that you want to remove the permissions boundary\.
 
+
+
 ## Adding and removing a user's permissions \(AWS CLI or AWS API\)<a name="users_change_permissions-add-programmatic"></a>
 
 To add or remove permissions programmatically, you must add or remove the group memberships, attach or detach the managed policies, or add or delete the inline policies\. For more information, see the following topics:

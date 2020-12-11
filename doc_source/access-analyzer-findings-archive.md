@@ -14,6 +14,8 @@ To archive findings from the **Findings Details** page\.
 
 1. Choose the **Finding ID** for the finding to archive\.
 
+   
+
 1. Choose **Archive**\.
 
    A confirmation is displayed at the top of the screen\.

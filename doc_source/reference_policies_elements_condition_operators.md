@@ -1,5 +1,7 @@
 # IAM JSON policy elements: Condition operators<a name="reference_policies_elements_condition_operators"></a>
 
+<a name="topiclist"></a>
+
 Use condition operators in the `Condition` element to match the condition key and value in the policy against values in the request context\. For more information about the `Condition` element, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\.
 
 The condition operator that you can use in a policy depends on the condition key you choose\. You can choose a global condition key or a service\-specific condition key\. To learn which condition operator you can use for a global condition key, see [AWS global condition context keys](reference_policies_condition-keys.md)\. To learn which condition operator you can use for a service\-specific condition key, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html) and choose the service that you want to view\.
@@ -17,6 +19,8 @@ The condition operators can be grouped into the following categories:
 + [Amazon Resource Name \(ARN\)](#Conditions_ARN) \(available for only some services\.\)
 + [\.\.\.IfExists](#Conditions_IfExists) \(checks if the key value exists as part of another check\)
 + [Null check](#Conditions_Null) \(checks if the key value exists as a standalone check\)
+
+
 
 ## String condition operators<a name="Conditions_String"></a>
 

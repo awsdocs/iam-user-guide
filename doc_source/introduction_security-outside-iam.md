@@ -5,6 +5,7 @@ You use IAM to control access to tasks that are performed using the AWS Manageme
 **Amazon EC2**  
 In Amazon Elastic Compute Cloud you log into an instance with a key pair \(for Linux instances\) or using a user name and password \(for Microsoft Windows instances\)\.   
 For more information, see the following documentation:   
+   
 + [Getting Started with Amazon EC2 Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) in the *Amazon EC2 User Guide for Linux Instances*
 + [Getting Started with Amazon EC2 Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2Win_GetStarted.html) in the *Amazon EC2 User Guide for Windows Instances*
 
@@ -15,6 +16,7 @@ For more information, see [Getting Started with Amazon RDS](https://docs.aws.ama
 **Amazon EC2 and Amazon RDS**  
 In Amazon EC2 and Amazon RDS you use security groups to control traffic to an instance or database\.   
 For more information, see the following documentation:   
+   
 + [Amazon EC2 Security Groups for Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon EC2 User Guide for Linux Instances*
 + [Amazon EC2 Security Groups for Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*
 + [Amazon RDS Security Groups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html) in the *Amazon RDS User Guide*

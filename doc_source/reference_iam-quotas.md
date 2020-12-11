@@ -2,6 +2,8 @@
 
 AWS Identity and Access Management \(IAM\) and AWS Security Token Service \(STS\) have quotas that limit the size of objects\. This affects how you name an object, the number of objects you can create, and the number of characters you can use when you pass an object\. 
 
+
+
 **Note**  
 To get account\-level information about IAM usage and quotas, use the [GetAccountSummary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountSummary.html) API operation or the [get\-account\-summary](https://docs.aws.amazon.com/cli/latest/reference/iam/get-account-summary.html) AWS CLI command\. 
 
