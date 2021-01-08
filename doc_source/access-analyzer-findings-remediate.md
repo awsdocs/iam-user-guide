@@ -10,4 +10,4 @@ This does not apply to Error findings\. When Access Analyzer is not able to acce
 If the changes you made resulted in the resource being shared outside of your zone of trust, but in a different way, such as with a different principal or for a different permission, Access Analyzer generates a new Active finding\.
 
 **Note**  
-It may take up to 30 minutes after a policy is modified for Access Analyzer to again analyze the resource and then update the finding\. Resolved findings are deleted 90 after the last update to the finding status\.
+It may take up to 30 minutes after a policy is modified for Access Analyzer to again analyze the resource and then update the finding\. Resolved findings are deleted 90 days after the last update to the finding status\.

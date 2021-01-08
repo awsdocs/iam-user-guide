@@ -65,9 +65,7 @@ Use one of the following:
 
 ## Deleting access keys for the root user<a name="id_root-user_manage_delete-key"></a>
 
-You can use the AWS Management Console or various programming tools to delete access keys for the root user\.
-
-**To delete an access key from the AWS account root user \(console\)**
+You can use the AWS Management Console to delete access keys for the root user\. You cannot use the AWS CLI or the AWS API to delete the root user access keys\.
 
 1. Use your AWS account email address and password to sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the AWS account root user\.
 **Note**  
@@ -82,12 +80,6 @@ If you see three text boxes, then you previously signed in to the console with *
 1. Find the access key that you want to delete, and then, under the **Actions** column, choose **Delete**\.
 **Note**  
 You can mark an access key as inactive instead of deleting it\. This enables you to resume use of it in the future without having to change either the key ID or secret key\. While it is inactive, any attempts to use it in requests to the AWS API fail with the status of access denied\.
-
-**To delete an access key for the root user \(AWS CLI or AWS API\)**
-
-Use one of the following:
-+ AWS CLI: [aws iam delete\-access\-key](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
-+ AWS API: [DeleteAccessKey](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) 
 
 ## Changing the password for the root user<a name="id_root-user_manage_password"></a>
 

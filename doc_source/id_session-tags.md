@@ -319,6 +319,8 @@ Attribute\-based access control \(ABAC\) is an authorization strategy that defin
 
 If your company uses a SAML\-based identity provider \(IdP\) for corporate user identities, you can configure your SAML assertion to pass session tags to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
+For more information about using AWS SSO with ABAC, see [Attributes for access control](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributesforaccesscontrol.html) in the *AWS Single Sign\-On User Guide*\.
+
 ## Viewing session tags in CloudTrail<a name="id_session-tags_ctlogs"></a>
 
 You can use AWS CloudTrail to view the requests made to assume roles or federate users\. The CloudTrail log file includes information about the principal tags for the assumed\-role or federated user session\. For more information, see [Logging IAM and AWS STS API calls with AWS CloudTrail](cloudtrail-integration.md)\.

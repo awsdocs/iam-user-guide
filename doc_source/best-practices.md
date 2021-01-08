@@ -38,8 +38,10 @@ Don't use your AWS account root user credentials to access AWS, and don't give y
 
 By creating individual IAM users for people who access your account, you can give each IAM user a unique set of security credentials\. You can also grant different permissions to each IAM user\. If necessary, you can change or revoke an IAM user's permissions anytime\. \(If you give out your root user credentials, it can be difficult to revoke them, and it is impossible to restrict their permissions\.\)
 
+AWS recommends that you create new users without permissions and require them to change their password immediately\. After they sign in for the first time, you can add policies to the user\. For more information, see [How do I securely create IAM users?](troubleshoot_general.md#troubleshoot_general_securely-create-iam-users)\.
+
 **Note**  
-Before you set permissions for individual IAM users, though, see the next point about groups\.
+Before you set permissions for individual IAM users, see the next point about groups\.
 
 ## Use groups to assign permissions to IAM users<a name="use-groups-for-permissions"></a>
 

@@ -9,7 +9,7 @@ If a role with this tag exists in the same account as the user, then the user ca
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "",
+            "Sid": "AssumeTaggedRole",
             "Effect": "Allow",
             "Action": "sts:AssumeRole",
             "Resource": "*",

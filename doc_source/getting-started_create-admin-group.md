@@ -21,7 +21,7 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
    1. On the navigation bar, choose your account name, and then choose **My Account**\. 
 
-   1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\. 
+   1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\. You must be signed in as the root user for this section to be displayed on the account page\.
 
    1. Select the check box to **Activate IAM Access** and choose **Update**\.
 

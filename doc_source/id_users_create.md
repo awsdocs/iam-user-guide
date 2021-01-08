@@ -43,7 +43,7 @@ You can use the AWS Management Console to create IAM users\.
 
 1. In the navigation pane, choose **Users** and then choose **Add user**\.
 
-1. Type the user name for the new user\. This is the sign\-in name for AWS\. If you want to add more than one user at the same time, choose **Add another user** for each additional user and type their user names\. You can add up to 10 users at one time\.
+1. Type the user name for the new user\. This is the sign\-in name for AWS\. If you want to add multiple users, choose **Add another user** for each additional user and type their user names\. You can add up to 10 users at one time\.
 **Note**  
 The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
 

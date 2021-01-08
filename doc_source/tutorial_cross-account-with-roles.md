@@ -49,7 +49,7 @@ Before you can create a role, you need the account ID of the Development AWS acc
 
 1. Sign in to the AWS Management Console as an administrator of the Development account, and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1.  In the navigation bar at the upper right, choose your user name and then choose **My Security Credentials**\. The account number appears either under **Account identifiers** \(if you are the root user\) or under **Account details** \(if you are an IAM user\)\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
+1.  In the navigation bar, choose **Support**, and then **Support Center**\. Your currently signed\-in 12\-digit account number \(ID\) appears in the **Support Center** navigation pane\. For this scenario, we pretend the Development account ID is 111111111111\. However, you should use a valid account ID if you are reconstructing the scenario in your test environment\.
 
 **To create a role in the production account that can be used by the development account**
 

@@ -90,7 +90,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
    + To create an access key, choose **Create New Access Key**\. If this feature is disabled, then you must delete one of the existing keys before you can create a new one\. A warning explains that you have only this one opportunity to view or download the secret access key\. To copy the key to paste it somewhere else for safekeeping, choose **Show Access Key**\. To save the access key ID and secret access key to a `.csv` file to a secure location on your computer, choose **Download Key File**\.
    + To disable an active access key, choose **Make Inactive**\.
    + To reenable an inactive access key, choose **Make Active**\.
-   + Before you delete an access key, make sure that it's no longer in use\. You cannot recover an access key after you delete it\. To delete your access key, choose **Delete**\. When prompted for confirmation, choose **Yes**\.
+   + To delete your access key, choose **Delete**\. AWS recommends that before you do this, you first deactivate the key and test that it’s no longer in use\. When you use the AWS Management Console, you must deactivate your key before deleting it\.
 
 **To create, modify, or delete another IAM user's access keys \(console\)**
 
@@ -104,7 +104,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
    + To create an access key, choose **Create access key**\. Then choose **Download \.csv file** to save the access key ID and secret access key to a CSV file on your computer\. Store the file in a secure location\. You will not have access to the secret access key again after this dialog box closes\. After you download the CSV file, choose **Close**\. When you create an access key, the key pair is active by default, and you can use the pair right away\.
    + To disable an active access key, choose **Make inactive**\.
    + To reenable an inactive access key, choose **Make active**\.
-   + Before you delete an access key, make sure that it's no longer in use\. You cannot recover an access key after you delete it\. To delete an access key, choose its **X** button at the end of the row\. When prompted for confirmation, choose **Delete**\.
+   + To delete your access key, choose **Delete**\. AWS recommends that before you do this, you first deactivate the key and test that it’s no longer in use\. When you use the AWS Management Console, you must deactivate your key before deleting it\.
 
 **To list the access keys for an IAM user \(console\)**
 
@@ -218,7 +218,7 @@ You can rotate access keys from the AWS Management Console\.
 
    1. Choose the name of the intended user, and then choose the **Security credentials** tab\.
 
-   1. Locate the access key to delete and choose its **X** button at the far right of the row\. Then choose **Delete** to confirm\.
+   1. Locate the access key to delete and choose its **X** button at the far right of the row\. Enter the access key ID to confirm the deletion and then choose **Delete**\.
 
 **To determine when access keys need rotating \(console\)**
 

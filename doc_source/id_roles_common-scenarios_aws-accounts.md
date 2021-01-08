@@ -22,7 +22,7 @@ Imagine that your organization has multiple AWS accounts to isolate a developmen
 
 ![\[Use a role to delegate permissions to a user in a different account\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/roles-usingroletodelegate.png)
 
-1. In the production account, an administrator uses IAM to create the `UpdateApp` role in that account\. In the role, the administrator defines a trust policy that specifies the development account as a `Principal`, meaning that authorized users from the development account can use the `UpdateApp` role\. The administrator also defines a permissions policy for the role that specifies which role users have read and write permissions to the Amazon S3 bucket named `productionapp`\.
+1. In the production account, an administrator uses IAM to create the `UpdateApp` role in that account\. In the role, the administrator defines a trust policy that specifies the development account as a `Principal`, meaning that authorized users from the development account can use the `UpdateApp` role\. The administrator also defines a permissions policy for the role that specifies the read and write permissions to the Amazon S3 bucket named `productionapp`\.
 
    The administrator then shares the appropriate information with anyone who needs to assume the role\. That information is the account number and name of the role \(for AWS console users\) or the Amazon Resource Name \(ARN\) \(for AWS CLI or AWS API access\)\. The role ARN might look like `arn:aws:iam::123456789012:role/UpdateApp`, where the role is named `UpdateApp` and the role was created in account number 123456789012\.
 **Note**  

@@ -16,12 +16,9 @@ After you create an IAM OIDC identity provider, you must create one or more IAM 
 
 Follow these instructions to create and manage an IAM OIDC identity provider in the AWS Management Console\.
 
-------
-#### [ New console ]
-
 **To create an IAM OIDC identity provider \(console\)**
 
-1. <a name="idpoidcnewstep1"></a>Before you create an IAM OIDC identity provider, you must register your application with the IdP to receive a *client ID*\. The client ID \(also known as *audience*\) is a unique identifier for your app that is issued to you when you register your app with the IdP\. For more information about obtaining a client ID, see the documentation for your IdP\. 
+1. <a name="idpoidcstep1"></a>Before you create an IAM OIDC identity provider, you must register your application with the IdP to receive a *client ID*\. The client ID \(also known as *audience*\) is a unique identifier for your app that is issued to you when you register your app with the IdP\. For more information about obtaining a client ID, see the documentation for your IdP\. 
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -60,7 +57,7 @@ An IAM OIDC identity provider must have at least one and can have a maximum of f
 
 1. In the **Audiences** section, choose **Actions** and select **Add audience**\. 
 
-1. Type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcnewstep1), and that will make requests to AWS\. Then choose **Add audiences**\.
+1. Type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. Then choose **Add audiences**\.
 **Note**  
 An IAM OIDC identity provider must have at least one and can have a maximum of 100 audiences\.
 
@@ -85,54 +82,6 @@ An IAM OIDC identity provider must have at least one and can have a maximum of 1
 1. Select the check box next to the IAM identity provider that you want to delete\. A new window opens\.
 
 1. Confirm that you want to delete the provider by typing the word `delete` in the field\. Then, choose **Delete**\.
-
-------
-#### [ Old console ]
-
-**To create an IAM OIDC identity provider \(console\)**
-
-1. <a name="idpoidcstep1"></a>Before you create an IAM OIDC identity provider, you must register your application with the IdP to receive a *client ID*\. The client ID \(also known as *audience*\) is a unique identifier for your app that is issued to you when you register your app with the IdP\. For more information about obtaining a client ID, see the documentation for your IdP\. 
-
-1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-
-1. In the navigation pane, choose **Identity Providers**, and then choose **Create Provider**\.
-
-1. For **Provider Type**, choose **Choose a provider type**, and then choose **OpenID Connect**\. 
-
-1. For **Provider URL**, type the URL of the IdP\. The URL must comply with these restrictions:
-   + The URL is case\-sensitive\.
-   + The URL must begin with **https://**\.
-   + Within your AWS account, each IAM OIDC identity provider must use a unique URL\.
-
-1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\. Choose **Next Step**\. 
-
-1. Use the **Thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\. Choose **Create**\.
-
-1. In the confirmation message at the top of the screen, choose **Do this now** to go to the **Roles** tab to create a role for this identity provider\. For more information about creating a role for an OIDC identity provider, see [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\. OIDC identity providers must have a role in order to access your AWS account\. To skip this step and create the role later, choose **Close**\. 
-
-**To add or remove a thumbprint or client ID \(also known as audience\) for an IAM OIDC identity provider \(console\)**
-
-1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-
-1. In the navigation pane, choose **Identity Providers**, then choose the name of the IAM identity provider that you want to update\.
-
-1. To add a thumbprint or audience, choose **Add a Thumbprint** or **Add an Audience**\. To remove a thumbprint or audience, choose **Remove** next to the item that you want to remove\. 
-**Note**  
-An IAM OIDC identity provider must have at least one and can have a maximum of five thumbprints\. An OIDC identity provider must have at least one and can have a maximum of 100 audiences\.
-
-    When you are done, choose **Save Changes**\.
-
-**To delete an IAM OIDC identity provider \(console\)**
-
-1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-
-1. In the navigation pane, choose **Identity Providers**\. 
-
-1. Select the check box next to the IAM identity provider that you want to delete\.
-
-1. Choose **Delete Providers**\.
-
-------
 
 ## Creating and managing an IAM OIDC identity provider \(AWS CLI\)<a name="manage-oidc-provider-cli"></a>
 

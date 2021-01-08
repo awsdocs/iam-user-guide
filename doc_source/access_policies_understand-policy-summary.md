@@ -46,7 +46,7 @@ You can view the summaries for any policies that are attached to a user on the *
 
 ## Editing policies to fix warnings<a name="edit-policy-summary"></a>
 
-While viewing a policy summary, you might find a typo or notice that the policy does not provide the permissions that you expected\. You cannot edit a policy summary directly\. However, you can edit a managed policy using the visual policy editor, which catches many of the same errors and warnings that the policy summary reports\. You can then view the changes in the policy summary to confirm that you fixed all of the issues\. To learn how to edit an inline policy, see [Editing IAM policies](access_policies_manage-edit.md)\. You cannot edit AWS managed policies\.
+While viewing a policy summary, you might find a typo or notice that the policy does not provide the permissions that you expected\. You cannot edit a policy summary directly\. However, you can edit a customer managed policy using the visual policy editor, which catches many of the same errors and warnings that the policy summary reports\. You can then view the changes in the policy summary to confirm that you fixed all of the issues\. To learn how to edit an inline policy, see [Editing IAM policies](access_policies_manage-edit.md)\. You cannot edit AWS managed policies\.
 
 **To edit a policy for your policy summary using the **Visual editor** tab**
 

@@ -7,24 +7,26 @@ For important information about last accessed information, including permissions
 ```
 {
     "Version": "2012-10-17",
-    "Statement": {
-        "Sid": "AllowOrgsReadOnlyAndIamGetReport",
-        "Effect": "Allow",
-        "Action": [
-            "iam:GetOrganizationsAccessReport",
-            "organizations:Describe*",
-            "organizations:List*"
-        ],
-        "Resource": "*"
-    },
-    {
-        "Sid": "AllowGenerateReportOnlyForThePolicy",
-        "Effect": "Allow",
-        "Action": "iam:GenerateOrganizationsAccessReport",
-        "Resource": "*",
-        "Condition": {
-            "StringEquals": {"iam:OrganizationsPolicyId": "p-policy123"}
+    "Statement": [
+        {
+            "Sid": "AllowOrgsReadOnlyAndIamGetReport",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetOrganizationsAccessReport",
+                "organizations:Describe*",
+                "organizations:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowGenerateReportOnlyForThePolicy",
+            "Effect": "Allow",
+            "Action": "iam:GenerateOrganizationsAccessReport",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {"iam:OrganizationsPolicyId": "p-policy123"}
+            }
         }
-    }
+    ]
 }
 ```

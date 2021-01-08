@@ -2,7 +2,7 @@
 
 An IAM [*group*](#id_groups) is a collection of IAM users\. Groups let you specify permissions for multiple users, which can make it easier to manage the permissions for those users\. For example, you could have a group called *Admins* and give that group the types of permissions that administrators typically need\. Any user in that group automatically has the permissions that are assigned to the group\. If a new user joins your organization and needs administrator privileges, you can assign the appropriate permissions by adding the user to that group\. Similarly, if a person changes jobs in your organization, instead of editing that user's permissions, you can remove him or her from the old groups and add him or her to the appropriate new groups\.
 
-Note that a group is not truly an "identity" in IAM because it cannot be identified as a `Principal` in a permission policy\. It is simply a way to attach policies to multiple users at one time\.
+A group cannot be identified as a `Principal` in a resource\-based policy\. A group is a way to attach policies to multiple users at one time\. When you attach an identity\-based policy to a group, all of the users in the group receive the permissions from the group\. For more information about these policy types, see [Identity\-based policies and resource\-based policies](access_policies_identity-vs-resource.md)\.
 
 Following are some important characteristics of groups:
 + A group can contain many users, and a user can belong to multiple groups\.

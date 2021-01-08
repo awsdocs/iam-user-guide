@@ -19,7 +19,7 @@ Data encryption typically falls into two categories: encryption at rest and encr
 ### Encryption at rest<a name="encryption-at-rest"></a>
 
 Data that is collected and stored by IAM is encrypted at rest\.
-+ **IAM** – Data collected and stored within IAM includes IP addresses, customer account metadata, and customer identifying data, including passwords\. Customer account metadata and customer identifying data are encrypted at rest using AES 256 and SHA 256 for hashes\.
++ **IAM** – Data collected and stored within IAM includes IP addresses, customer account metadata, and customer identifying data that includes passwords\. Customer account metadata and customer identifying data are encrypted at rest using AES 256 or is hashed using SHA 256\.
 +  **AWS STS** – AWS STS does not collect customer content except for service logs that log successful, erroneous, and faulty requests to the service\. 
 
 ### Encryption in transit<a name="encryption-in-transit"></a>

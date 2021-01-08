@@ -13,7 +13,7 @@ When you create a user, a role, a group, or a policy, or when you upload a serve
 
 If you are using the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM resources, you can also give some resources an optional path\. You can use a single path, or nest multiple paths as if they were a folder structure\. For example, you could use the nested path `/division_abc/subdivision_xyz/product_1234/engineering/` to match your company's organizational structure\. You could then create a policy to allow all users in that path to access the policy simulator API\. To view this policy, see [IAM: Access the policy simulator API based on user path](reference_policies_examples_iam_policy-sim-path.md)\. For additional examples of how you might use paths, see [IAM ARNs](#identifiers-arns)\.
 
-When you use AWS CloudFormation to create resources, you can specify a path for users, groups, roles, and managed policies\.
+When you use AWS CloudFormation to create resources, you can specify a path for users, groups, and roles, and customer managed policies\.
 
 Just because you give a user and group the same path doesn't automatically put that user in that group\. For example, you might create a Developers group and specify its path as /division\_abc/subdivision\_xyz/product\_1234/engineering/\. Just because you create a user named Bob and give him that same path doesn't automatically put Bob in the Developers group\. IAM doesn't enforce any boundaries between users or groups based on their paths\. Users with different paths can use the same resources \(assuming they've been granted permission to those resources\)\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 
@@ -64,6 +64,8 @@ arn:aws:iam::123456789012:group/Developers
 arn:aws:iam::123456789012:group/division_abc/subdivision_xyz/product_A/Developers
 arn:aws:iam::123456789012:role/S3Access
 arn:aws:iam::123456789012:role/application_abc/component_xyz/S3Access
+arn:aws:iam::123456789012:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer
+arn:aws:iam::123456789012:role/service-role/QuickSightAction
 arn:aws:iam::123456789012:policy/UsersManageOwnCredentials
 arn:aws:iam::123456789012:policy/division_abc/subdivision_xyz/UsersManageOwnCredentials
 arn:aws:iam::123456789012:instance-profile/Webserver
@@ -102,6 +104,16 @@ The following examples provide more detail to help you understand the ARN format
 
   ```
   arn:aws:iam::123456789012:role/S3Access
+  ```
++ A [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role):
+
+  ```
+  arn:aws:iam::123456789012:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer
+  ```
++ A [service role](id_roles_terms-and-concepts.md#iam-term-service-role):
+
+  ```
+  arn:aws:iam::123456789012:role/service-role/QuickSightAction
   ```
 + A managed policy:
 

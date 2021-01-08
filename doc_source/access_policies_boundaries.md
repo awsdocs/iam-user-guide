@@ -50,9 +50,15 @@ If any one of these policy types explicitly denies access for an operation, then
 
 ![\[Evaluation of identity-based policies and permissions boundaries\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/permissions_boundary.png)
 
-**Resource\-based policies** – Resource\-based policies control how the specified principal can access the resource to which the policy is attached\. Within an account, an implicit deny in a permissions boundary does not limit the permissions granted by a resource\-based policy\. Permissions boundaries reduce permissions that are granted to an entity by identity\-based policies, and then resource\-based policies provide additional permissions to the entity\. In this case, the effective permissions are everything that is allowed by the resource\-based policy *and* the intersection of the permissions boundary and the identity\-based policy\. An explicit deny in any of these policies overrides the allow\.
+**Resource\-based policies** – Resource\-based policies control how the specified principal can access the resource to which the policy is attached\.
+
+*Resource\-based policies for IAM users*  
+Within an account, an implicit deny in a permissions boundary *does not* limit the permissions granted to an IAM user by a resource\-based policy\. Permissions boundaries reduce permissions that are granted to a user by identity\-based policies\. Resource\-based policies can provide additional permissions to the user\.  
 
 ![\[Evaluation of a resource-based policy, permissions boundary, and identity-based policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-rbp-boundary-id.png)
+
+*Resource\-based policies for IAM roles and federated users*  
+Within an account, an implicit deny in a permissions boundary *does* limit the permissions granted to the ARN of the underlying IAM role or IAM user by the resource\-based policy\. However, if the resource\-based policy grants permissions directly to the session principal \(the assumed\-role ARN or federated user ARN\), an implicit deny in the permissions boundary *does not* limit those permissions\. For more information about effective permissions for assumed\-role sessions or federated user sessions, see [Session policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session)\.
 
 **Organizations SCPs** – SCPs are applied to an entire AWS account\. They limit permissions for every request made by a principal within the account\. An IAM entity \(user or role\) can make a request that is affected by an SCP, a permissions boundary, and an identity\-based policy\. In this case, the request is allowed only if all three policy types allow it\. The effective permissions are the intersection of all three policy types\. An explicit deny in any of these policies overrides the allow\.
 

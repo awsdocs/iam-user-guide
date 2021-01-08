@@ -120,7 +120,7 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
    https://signin.aws.amazon.com/federation
    ?Action=login
    &Issuer=https%3A%2F%2Fexample.com
-   &Destination=https%3A%2F%2Fconsole.aws.amazon.com%2Fs
+   &Destination=https%3A%2F%2Fconsole.aws.amazon.com%2F
    &SigninToken=VCQgs5qZZt3Q6fn8Tr5EXAMPLEmLnwB7JjUc-SHwnUUWabcRdnWsi4DBn-dvC
    CZ85wrD0nmldUcZEXAMPLE-vXYH4Q__mleuF_W2BE5HYexbe9y4Of-kje53SsjNNecATfjIzpW1
    WibbnH6YcYRiBoffZBGExbEXAMPLE5aiKX4THWjQKC6gg6alHu6JFrnOJoK3dtP6I9a6hi6yPgm

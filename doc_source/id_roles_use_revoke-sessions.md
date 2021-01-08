@@ -37,7 +37,7 @@ You can revoke the session permissions from a role\.
 
    IAM immediately attaches a policy named `AWSRevokeOlderSessions` to the role\. The policy denies all access to users who assumed the role before the moment you chose **Revoke active sessions**\. Any user who assumes the role ***after ***you chose **Revoke active sessions** is **not** affected\.
 
-   When you apply a new policy to a user or a resource, it may take a few minutes for policy updates to take effect\.
+   When you apply a new policy to a user or a resource, it may take a few minutes for policy updates to take effect\. To learn why changes are not always immediately visible, see [Changes that I make are not always immediately visible](troubleshoot_general.md#troubleshoot_general_eventual-consistency)\.
 
 **Note**  
 Don't worry about remembering to delete the policy\. Any user who assumes the role *after* you revoked sessions is not affected by the policy\. If you choose to **Revoke Sessions** again later, then the date/time stamp in the policy is refreshed and it again denies all permissions to any user who assumed the role before the new specified time\.

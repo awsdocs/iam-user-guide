@@ -26,8 +26,8 @@ If you would like to submit a policy to be included in this reference guide, use
 
 ## Example policies: Amazon DynamoDB<a name="policy_library_DynamoDB"></a>
 + Allows access to a specific Amazon DynamoDB table \([View this policy](reference_policies_examples_dynamodb_specific-table.md)\.\)
-+ Allows access to specific Amazon DynamoDB columns \([View this policy](reference_policies_examples_dynamodb_columns.md)\.\)
-+ Allows row\-level access to Amazon DynamoDB based on an Amazon Cognito ID \([View this policy](reference_policies_examples_dynamodb_rows.md)\.\)
++ Allows access to specific Amazon DynamoDB attributes \([View this policy](reference_policies_examples_dynamodb_attributes.md)\.\)
++ Allows item\-level access to Amazon DynamoDB based on an Amazon Cognito ID \([View this policy](reference_policies_examples_dynamodb_items.md)\.\)
 
 ## Example policies: Amazon EC2<a name="policy_library_ec2"></a>
 + Allows an Amazon EC2 instance to attach or detach volumes \([View this policy](reference_policies_examples_ec2_volumes-instance.md)\.\)

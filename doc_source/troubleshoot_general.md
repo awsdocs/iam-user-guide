@@ -10,6 +10,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [Policy variables aren't working](#troubleshoot_general_policy-variables-dont-work)
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
 + [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
++ [How do I securely create IAM users?](#troubleshoot_general_securely-create-iam-users)
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 
@@ -97,3 +98,17 @@ To fix this issue, an administrator should **not** edit policy permissions\. Ins
 1. Delete the device\.
    + AWS CLI: [aws iam delete\-virtual\-mfa\-device](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html)
    + AWS API: [DeleteVirtualMFADevice](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html)
+
+## How do I securely create IAM users?<a name="troubleshoot_general_securely-create-iam-users"></a>
+
+If you have employees that require access to AWS, you might choose to create IAM users or [use AWS SSO for authentication](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\. If you use IAM, AWS recommends that you create an IAM user and securely communicate the credentials to the employee\. If you are not physically located next to your employee, use a secure workflow to communicate credentials to employees\.
+
+Use the following workflow to securely create a new user in IAM:
+
+1. [Create a new user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html) using the AWS Management Console\. Choose to grant AWS Management Console access with an auto\-generated password\. If necessary, select the **Users must create a new password at next sign\-in** check box\. Do not add a permissions policy to the user until after they have changed their password\.
+
+1. After the user is added, copy the sign\-in URL, user name, and password for the new user\. To view the password, choose **Show**\.
+
+1. Send the password to your employee using a secure communications method in your company, such as email, chat, or a ticketing system\. Separately, provide your users with the IAM user console link and their user name\. Tell the employee to confirm that they can sign in successfully before you will grant them permissions\.
+
+1. After the employee confirms, add the permissions that they need\. As a security best practice, add a policy that requires the user to authenticate using MFA to manage their credentials\. For an example policy, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.

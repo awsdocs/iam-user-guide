@@ -35,7 +35,7 @@ To use the `aws:CalledVia` condition key in a policy, you must provide the servi
 | Amazon DynamoDB | dynamodb\.amazonaws\.com | 
 | AWS Key Management Service \(AWS KMS\) | kms\.amazonaws\.com | 
 
-To allow or deny access when *any* service makes a request using the principal's credentials, use the `aws:ViaAWSService` condition key\. That condition key supports all AWS services\.
+To allow or deny access when *any* service makes a request using the principal's credentials, use the `aws:ViaAWSService` condition key\. That condition key supports AWS services\.
 
 The `aws:CalledVia` key is a [multivalued key](reference_policies_multi-value-conditions.md)\. However, you can't enforce order using this key in a condition\. Using the example above, **User 1** makes a request to AWS CloudFormation, which calls DynamoDB, which calls AWS KMS\. These are three separate requests\. The final call to AWS KMS is performed by User 1 *via* AWS CloudFormation and then DynamoDB\. 
 
@@ -278,7 +278,7 @@ The following condition returns `true` for principals in an account that is atta
 }}
 ```
 
-The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\.
+The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\. The previous condition is for the OU or any children\. The following condition is for only the children\.
 
 ```
 "Condition" : { "ForAnyValue:StringLike" : {
@@ -429,6 +429,12 @@ Use this key to compare the tag key\-value pair that you specify in the policy w
 
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.
 
+For examples of using the `aws:ResourceTag` key to control access to IAM resources, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
+
+For examples of using the `aws:ResourceTag` key to control access to other AWS resources, see [Controlling access to AWS resources using resource tags](access_tags.md)\.
+
+For a tutorial on using the `aws:ResourceTag` condition key for attribute based access control \(ABAC\), see [IAM Tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
+
 ## aws:SecureTransport<a name="condition-keys-securetransport"></a>
 
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.
@@ -554,7 +560,7 @@ Use this key to compare the requester's principal identifier with the ID that yo
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the requester's user name with the user name that you specify in the policy\. For details about how the information appears for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
-+ **Availability** – This key is always included in the request context for IAM users\. Anonymous requests and requests that are made using the AWS account root user or IAM roles do not include this key\.
++ **Availability** – This key is always included in the request context for IAM users\. Anonymous requests and requests that are made using the AWS account root user or IAM roles do not include this key\. Requests made using AWS SSO credentials do not include this key in the context\. To learn how to control access to AWS SSO users, see `identitystore:UserId` in [Using predefined attributes from the AWS SSO identity store for access control in AWS](https://docs.aws.amazon.com/singlesignon/latest/userguide/using-predefined-attributes.html)\.
 
 ## aws:ViaAWSService<a name="condition-keys-viaawsservice"></a>
 
@@ -581,3 +587,11 @@ Use this key to compare the IP address from which a request was made with the IP
 + **Availability** – This key is included in the request context only if the request is made using a VPC endpoint\.
 
 For more information, see [Controlling Access to Services with VPC Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html) in the *Amazon VPC User Guide*\.
+
+## Other cross\-service condition keys<a name="condition-keys-other"></a>
+
+Global condition keys are condition keys with an `aws:` prefix\. Individual services can create their own condition keys\. These service\-specific condition keys include a prefix that matches the name of the service, such as `iam:` or `sts:`\.
+
+Services can create service\-specific keys that are available in the request context for other services\. These keys are available across multiple services, but are not global condition keys\. For example, AWS STS supports [SAML\-based federation condition keys](reference_policies_iam-condition-keys.md#condition-keys-saml)\. These keys are available when a user who was federated using SAML performs AWS operations in other services\. Other examples include `[identitystore:UserId](https://docs.aws.amazon.com/singlesignon/latest/userguide/using-predefined-attributes.html)` and `[ec2:SourceInstanceArn](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policy-structure.html#amazon-ec2-keys)`\.
+
+To view the service\-specific condition keys for a service, see [Actions, Resources, and Condition Keys for AWS Services](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) and choose the service whose keys you want to view\.

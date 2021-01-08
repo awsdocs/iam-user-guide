@@ -6,7 +6,9 @@ Use the IAM console to check whether an AWS account root user or IAM user has a 
 
 1. Sign in to the AWS Management Console with your root user credentials and then open the IAM console at [https://console.aws.amazon.com/iam/](https://console.aws.amazon.com/iam/)\. 
 
-1. Check under **Security Status** to see whether MFA is enabled or disabled\. If MFA has not been activated, an alert symbol \(![\[Alert icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\) is displayed next to **Activate MFA on your root user**\. 
+1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.
+
+1. Check under **Multi\-factor Authentication \(MFA\)** to see whether MFA is enabled or disabled\. If MFA has not been activated, an alert symbol \(![\[Alert icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-alert-icon.console.png)\) is displayed\. 
 
 If you want to enable MFA for the account, see one of the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)

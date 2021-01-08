@@ -15,6 +15,9 @@ For example, Paulo Santos is the administrator in charge of defining AWS user pe
 
 Paulo creates a managed policy named `ExampleDevelopment` using the following JSON text\. He then attaches it to a group named `Development` and adds all of the developers to the group\.
 
+**Note**  
+Paulo's power users might need `iam:CreateServiceLinkedRole` permissions to use some services and features\. He understands that adding this permission allows the users to create any service\-linked role\. He accepts this risk for his power users\.
+
 ```
 {
 
@@ -34,7 +37,6 @@ Paulo creates a managed policy named `ExampleDevelopment` using the following JS
             "Effect": "Allow",
             "Action": [
                 "iam:CreateServiceLinkedRole",
-                "iam:DeleteServiceLinkedRole",
                 "iam:ListRoles",
                 "organizations:DescribeOrganization"
             ],
@@ -47,6 +49,9 @@ Paulo creates a managed policy named `ExampleDevelopment` using the following JS
 Paulo decides to wait for 90 days before he [views the last accessed information](access_policies_access-advisor-view-data.md#access_policies_access-advisor-viewing) for the `Development` group using the AWS Management Console\. He views the list of services that the group members accessed\. He learns that the users accessed five services within the last week: AWS CloudTrail, Amazon CloudWatch Logs, Amazon EC2, AWS KMS, and Amazon S3\. They accessed a few other services when they were first evaluating AWS, but not since then\.
 
 Paulo decides to reduce the policy permissions to include only those five services and the required IAM and Organizations actions\. He edits `ExampleDevelopment` policy using the following JSON text\.
+
+**Note**  
+Paulo's power users might need `iam:CreateServiceLinkedRole` permissions to use some services and features\. He understands that adding this permission allows the users to create any service\-linked role\. He accepts this risk for his power users\.
 
 ```
 {
@@ -69,7 +74,6 @@ Paulo decides to reduce the policy permissions to include only those five servic
             "Effect": "Allow",
             "Action": [
                 "iam:CreateServiceLinkedRole",
-                "iam:DeleteServiceLinkedRole",
                 "iam:ListRoles",
                 "organizations:DescribeOrganization"
             ],
