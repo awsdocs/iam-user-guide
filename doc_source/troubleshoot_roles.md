@@ -11,6 +11,7 @@ Use the information here to help you diagnose and fix common issues that you mig
 + [I receive an error when I try to switch roles in the IAM console](#troubleshoot_roles_cant-switch-role-console)
 + [My role has a policy that allows me to perform an action, but I get "access denied"](#troubleshoot_roles_session-policy)
 + [The service did not create the role's default policy version](#troubleshoot_serviceroles_edited-policy)
++ [There is no use case for a service role in the console](#troubleshoot_serviceroles_console-use-case)
 
 ## I can't assume a role<a name="troubleshoot_roles_cant-assume-role"></a>
 
@@ -147,3 +148,39 @@ For more information on editing managed policies, see [Editing customer managed 
 1. [Delete the policy](access_policies_manage-delete.md#delete-managed-policy)\.
 
 1. [Delete the role](id_roles_manage_delete.md#roles-managingrole-deleting-console)\.
+
+## There is no use case for a service role in the console<a name="troubleshoot_serviceroles_console-use-case"></a>
+
+Some services require that you manually create a service role to grant the service permissions to perform actions on your behalf\. If the service is not listed in the IAM console, you must manually list the service as the trusted principal\. If the documentation for the service or feature that you are using does not include instructions for listing the service as the trusted principal, provide feedback for the page\.
+
+To manually create a service role, you must know the [service principal](reference_policies_elements_principal.md#principal-services) for the service that will assume the role\. A service principal is an identifier that is used to grant permissions to a service\. The service principal is defined by the service\. 
+
+You can find the service principal for some services by checking the following:
+
+1. Open [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
+
+1. Check whether the service has **Yes** in the **Service\-linked roles** column\.
+
+1. Choose the **Yes** link to view the service\-linked role documentation for that service\.
+
+1. Find the Service\-linked role permissions section for that service to view the [service principal](reference_policies_elements_principal.md#principal-services)\.
+
+You can manually create a service role using [AWS CLI commands](id_roles_create_for-service.md#roles-creatingrole-service-cli) or [AWS API operations](id_roles_create_for-service.md#roles-creatingrole-service-api)\. To manually create a service role using the IAM console, complete the following tasks:
+
+1. Create an IAM role using your account ID\. Do not attach a policy or grant any permissions\. For details, see [Creating a role to delegate permissions to an IAM user](id_roles_create_for-user.md)\.
+
+1. Open the role and edit the trust relationship\. Instead of trusting the account, the role must trust the service\. For example, update the following `Principal` element:
+
+   ```
+   "Principal": { "AWS": "arn:aws:iam::123456789012:root" }
+   ```
+
+   Change the principal to the value for your service, such as IAM\.
+
+   ```
+   "Principal": { "Service": "iam.amazonaws.com" }
+   ```
+
+1. Add the permissions that the service requires by attaching permissions policies to the role\.
+
+1. Return to the service that requires the permissions and use the documented method to notify the service about the new service role\.
