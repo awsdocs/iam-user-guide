@@ -23,7 +23,7 @@ For a list of Basic Latin \(ASCII\) characters, go to the [Library of Congress B
 
 ## IAM object quotas<a name="reference_iam-quotas-entities"></a>
 
-AWS allows you to request an increase to default quotas for IAM entities\. You can use Service Quotas to manage your IAM quotas\. For adjustable IAM quotas, you can request a quota increase\. Smaller increases are automatically approved in Service Quotas and are completed within a few minutes\. Larger requests above the [maximum autoapproved increase](#autoapproved) are submitted to AWS Support\. Some adjustable quotas can't be increased above the maximum autoapproved increase amount\. You can track your request case in the AWS Support console\.
+Quotas, also referred to as limits in AWS, are the maximum values for the resources, actions, and items in your AWS account\. Use Service Quotas to manage your IAM quotas\. You can request an increase to default quotas for adjustable IAM quotas\. Requests up to the [maximum allowed increase](#autoapproved) are automatically approved and are completed within a few minutes\.
 
 To request a quota increase, sign in to the AWS Management Console and open the Service Quotas console at [https://console\.aws\.amazon\.com/servicequotas/](https://console.aws.amazon.com/servicequotas/)\. In the navigation pane, choose **AWS services**\. On the navigation bar, choose the **US East \(N\. Virginia\)** Region\. Then search for **IAM**\. Choose **AWS Identity and Access Management \(IAM\)**, choose a quota, and follow the directions to request a quota increase\. For more information, see [Requesting a Quota Increase](https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html) in the *Service Quotas User Guide*\.
 
@@ -32,9 +32,9 @@ The following quotas are adjustable\.
 
 **Default quotas for IAM entities**  
 
-| Resource | Default quota | Maximum autoapproval | 
+| Resource | Default quota | Maximum allowed increase | 
 | --- | --- | --- | 
-| ACL \(Assume role policy\) size per role | 2048 characters | 4096 characters | 
+| Role trust policy length | 2048 characters | 4096 characters | 
 | Customer managed policies in an AWS account | 1500 | 5000 | 
 | Groups in an AWS account | 300 | 500 | 
 | Roles in an AWS account | 1000 | 5000 | 
@@ -70,8 +70,14 @@ You cannot request an increase for the following quotas\.
 | SAML providers in an AWS account | 100 | 
 | Signing certificates assigned to an IAM user | 2 | 
 | SSH public keys assigned to an IAM user | 5 | 
+| Tags that can be attached to a customer managed policy | 50 | 
+| Tags that can be attached to an instance profile | 50 | 
+| Tags that can be attached to an Open ID Connect \(OIDC\) identity provider  | 50 | 
 | Tags that can be attached to an IAM role | 50 | 
+| Tags that can be attached to a SAML identity provider | 50 | 
+| Tags that can be attached to a server certificate | 50 | 
 | Tags that can be attached to an IAM user | 50 | 
+| Tags that can be attached to a virtual MFA device | 50 | 
 | Users in an AWS account | 5000 \(If you need to add a large number of users, consider using [temporary security credentials](id_credentials_temp.md)\.\) | 
 | Versions of a managed policy that can be stored | 5 | 
 
@@ -86,14 +92,13 @@ The following are the maximum character counts and size quotas for IAM and AWS S
 | User name | 64 characters | 
 | Group name | 128 characters | 
 | Role name | 64 characters If you intend to use a role with the **Switch Role** feature in the AWS console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
-| Tag key | 128 charactersThis character quota applies to user tags, role tags, and [session tags](id_session-tags.md)\. | 
-| Tag value | 256 charactersThis character quota applies to user tags, role tags, and [session tags](id_session-tags.md)\.Tag values can be empty\. That is, tag values can have a length of 0 characters\. | 
+| Tag key | 128 charactersThis character quota applies to tags on IAM resources and [session tags](id_session-tags.md)\. | 
+| Tag value | 256 charactersThis character quota applies to tags on IAM resources and [session tags](id_session-tags.md)\.Tag values can be empty\. That is, tag values can have a length of 0 characters\. | 
 | Instance profile name | 128 characters | 
-|  Unique IDs created by IAM, for example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 128 characters | 
+|  Unique IDs created by IAM  | 128 characters\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.  | 
 | Policy name | 128 characters | 
 | Password for a login profile | 1–128 characters | 
 | Alias for an AWS account ID | 3–63 characters | 
-| Role trust policy JSON text \(the policy that determines who is allowed to assume the role\) | 2,048 characters | 
 | Role session name | 64 characters | 
 | Role session duration |  12 hours When you assume a role from the AWS CLI or API, you can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer role session\. You can specify a value from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role, which can range 1–12 hours\. If you don't specify a value for the `DurationSeconds` parameter, your security credentials are valid for one hour\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the IAM user's session, whichever is less\. The maximum session duration setting does not limit sessions assumed by AWS services\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\.   | 
 | Role [session policies](access_policies.md#policies_session) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  | 

@@ -1,6 +1,6 @@
 # IAM: Allows and denies access to multiple services programmatically and in the console<a name="reference_policies_examples_iam_multiple-services-console"></a>
 
-This example shows how you might create a policy that allows full access to several services and limited self\-managing access in IAM\. It also denies access to the Amazon S3 `logs` bucket or the Amazon EC2 `i-1234567890abcdef0` instance\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an IAM policy that allows full access to several services and limited self\-managing access in IAM\. It also denies access to the Amazon S3 `logs` bucket or the Amazon EC2 `i-1234567890abcdef0` instance\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 **Warning**  
 This policy allows full access to every action and resource in multiple services\. This policy should be applied only to trusted administrators\.

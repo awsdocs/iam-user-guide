@@ -34,11 +34,16 @@ You can view and download your secret access key *only* when you create the acce
 For your AWS account, see [Managing Access Keys for your AWS Account](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)\.   
 For an IAM user, see [Managing access keys for IAM users](id_credentials_access-keys.md)\. 
 
-**Tag a user or role**  
-You can tag an IAM user or role using the IAM console, the AWS CLI, or the API through one of the AWS SDKs\.   
-To learn about tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.  
-For details about how to manage tags in IAM, see [Managing tags on IAM entities \(console\)](id_tags.md#id_tags_procs-console)\.  
-To learn about using IAM tags to control access to AWS, see [Controlling access to and for IAM users and roles using IAM resource tags](access_iam-tags.md)\. 
+**Tag IAM resources**  
+You can tag the following IAM resources:  
++ IAM users
++ IAM roles
++ Customer managed policies
++ Identity providers
++ Server certificates
++ Virtual MFA devices
+To learn about tags in IAM, see [Tagging IAM resources](id_tags.md)\.  
+To learn about using tags to control access to AWS resources, see [Controlling access to AWS resources using tags](access_tags.md)\.
 
 **View the actions, resources, and condition keys for all services**  
 This set of reference documentation can help you write detailed IAM policies\. Each AWS service defines the actions, resources, and condition context keys that you use in IAM policies\. To learn more, see [Actions, Resources, and Condition Keys for AWS Services](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html)\.

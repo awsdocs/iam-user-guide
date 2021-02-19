@@ -1,6 +1,6 @@
 # Modifying a role \(console\)<a name="roles-managingrole-editing-console"></a>
 
-You can use the AWS Management Console to modify a role\. To change the set of tags on a role, see [Managing tags on IAM entities \(console\)](id_tags.md#id_tags_procs-console)\.
+You can use the AWS Management Console to modify a role\. To change the set of tags on a role, see [Managing tags on IAM roles \(console\)](id_tags_roles.md#id_tags_roles_procs-console)\.
 
 **Topics**
 + [Modifying a role trust policy \(console\)](#roles-managingrole_edit-trust-policy)

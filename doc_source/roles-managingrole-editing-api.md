@@ -1,6 +1,6 @@
 # Modifying a role \(AWS API\)<a name="roles-managingrole-editing-api"></a>
 
-You can use the AWS API to modify a role\. To change the set of tags on a role, see [Managing tags on IAM entities \(console\)](id_tags.md#id_tags_procs-console)\.
+You can use the AWS API to modify a role\. To change the set of tags on a role, see [Managing tags on IAM roles \(AWS CLI or AWS API\)](id_tags_roles.md#id_tags_roles_procs-cli-api)\.
 
 **Topics**
 + [Modifying a role trust policy \(AWS API\)](#roles-managingrole_edit-trust-policy-api)

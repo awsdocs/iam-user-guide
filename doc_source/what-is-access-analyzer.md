@@ -20,3 +20,4 @@ Access Analyzer analyzes the following resource types:
 + [AWS Key Management Service keys](access-analyzer-resources.md#access-analyzer-kms-key)
 + [AWS Lambda functions and layers](access-analyzer-resources.md#access-analyzer-lambda)
 + [Amazon Simple Queue Service queues](access-analyzer-resources.md#access-analyzer-sqs)
++ [AWS Secrets Manager secrets](access-analyzer-resources.md#access-analyzer-secrets-manager)

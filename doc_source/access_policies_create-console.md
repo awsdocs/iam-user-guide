@@ -35,9 +35,13 @@ A JSON [policy](access_policies.md) document consists of one or more statements\
 
 1. Type or paste a JSON policy document\. For details about the IAM policy language, see [IAM JSON policy reference](reference_policies.md)\.
 
+1. When you are finished, choose **Next: Tags**\.
+
+   \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+
 1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Next: Tags** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
 
@@ -85,10 +89,14 @@ The visual editor in the IAM console guides you through creating a policy withou
    For more information about the **Condition** element, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md) in the [IAM JSON policy reference](reference_policies.md)\.
 
 1. To add more permission blocks, choose **Add additional permissions**\. For each block, repeat steps 2 through 5\.
-
-1. When you are finished, choose **Review policy**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Next: Tags** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+
+1. When you are finished, choose **Next: Tags**\.
+
+   \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+
+1. When you are finished, choose **Next: Review**\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy summary to make sure that you have granted the intended permissions, and then choose **Create policy** to save your new policy\.
 

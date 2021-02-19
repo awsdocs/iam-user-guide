@@ -40,7 +40,7 @@ Choosing this option restricts access to the role only through the AWS CLI, Tool
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Choose **Next: Review**\. 
 
@@ -68,7 +68,7 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
 
-   For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing tags on IAM roles \(AWS CLI or AWS API\)](id_tags_roles.md#id_tags_roles_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
@@ -145,10 +145,16 @@ Remember that this is only the first half of the configuration required\. You mu
 
 1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
 
-   For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing tags on IAM users \(AWS CLI or AWS API\)](id_tags_users.md#id_tags_users_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.
 
 After you create the role and grant it permissions to perform AWS tasks or access AWS resources, you must grant permissions to users in the account to allow them to assume the role\. For more information about assuming a role, see [Switching to an IAM role \(AWS API\)](id_roles_use_switch-role-api.md)\.
+
+## Creating an IAM role \(AWS CloudFormation\)<a name="roles_creatingrole-user-cloudformation"></a>
+
+For information about creating an IAM role in AWS CloudFormation, see the [resource and property reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html) and [examples](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#aws-resource-iam-role--examples) in the *AWS CloudFormation User Guide*\.
+
+For more information about IAM templates in AWS CloudFormation, see [AWS Identity and Access Management template snippets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/quickref-iam.html) in the *AWS CloudFormation User Guide*\.

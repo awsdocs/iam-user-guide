@@ -8,6 +8,7 @@ Access Analyzer analyzes the resource\-based policies that are applied to AWS re
 + [AWS Key Management Service keys](#access-analyzer-kms-key)
 + [AWS Lambda functions and layers](#access-analyzer-lambda)
 + [Amazon Simple Queue Service queues](#access-analyzer-sqs)
++ [AWS Secrets Manager secrets](#access-analyzer-secrets-manager)
 
 ## Amazon Simple Storage Service buckets<a name="access-analyzer-s3"></a>
 
@@ -81,3 +82,7 @@ For AWS Lambda functions, Access Analyzer analyzes policies, including condition
 ## Amazon Simple Queue Service queues<a name="access-analyzer-sqs"></a>
 
 For Amazon SQS queues, Access Analyzer analyzes policies, including condition statements in a policy, that allow an external entity access to a queue\.
+
+## AWS Secrets Manager secrets<a name="access-analyzer-secrets-manager"></a>
+
+For AWS Secrets Manager secrets, Access Analyzer analyzes policies, including condition statements in a policy, that allow an external entity to access a secret\.

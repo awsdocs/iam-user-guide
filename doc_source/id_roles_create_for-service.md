@@ -140,7 +140,7 @@ You can use the AWS Management Console to create a role for a service\. Because 
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Choose **Next: Review**\. 
 
@@ -168,7 +168,7 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the role by attaching tags: [aws iam tag\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-role.html)
 
-   For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing tags on IAM roles \(AWS CLI or AWS API\)](id_tags_roles.md#id_tags_roles_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [aws iam put\-role\-permissions\-boundary](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-permissions-boundary.html)
 
@@ -248,7 +248,7 @@ Creating a role from the AWS API involves multiple steps\. When you use the cons
 
 1. \(Optional\) Add custom attributes to the user by attaching tags: [TagRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagRole.html)
 
-   For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+   For more information, see [Managing tags on IAM users \(AWS CLI or AWS API\)](id_tags_users.md#id_tags_users_procs-cli-api)\.
 
 1. \(Optional\) Set the [permissions boundary](access_policies_boundaries.md) for the role: [PutRolePermissionsBoundary](https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePermissionsBoundary.html)
 

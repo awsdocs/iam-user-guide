@@ -55,7 +55,7 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
    1. Choose **Next: Tags**\.
 
-1. \(Optional\) On the **Tags** page, add metadata to the user by attaching tags as key\-value pairs\. For more information, see [Tagging IAM users and roles](id_tags.md)\.
+1. \(Optional\) On the **Tags** page, add metadata to the user by attaching tags as key\-value pairs\. For more information, see [Tagging IAM resources](id_tags.md)\.
 
 1. Choose **Next: Review**\. Verify the group memberships to be added to the new user\. When you are ready to proceed, choose **Create user**\.
 

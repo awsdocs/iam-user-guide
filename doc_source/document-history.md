@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Tagging IAM resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) | You can now tag additional IAM resources using a tag key\-value pair\. | February 11, 2021 | 
 | [Default password policy for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html#default-policy-details) | If you do not set a custom password policy for your AWS account, IAM user passwords must now meet the default AWS password policy\. | November 18, 2020 | 
 | [The actions, resources, and condition keys pages for AWS services have moved](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) | Each AWS service can define actions, resources, and condition context keys for use in IAM policies\. You can now find the list of AWS services and their actions, resources, and condition context keys in the *Service Authorization Reference\.* | November 16, 2020 | 
 | [IAM users longer role session duration](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html) | IAM users can now have a longer role session duration when switching roles in the AWS Management Console, reducing interruptions due to session expiration\. Users are granted the maximum session duration set for the role, or the remaining time in the IAM user's session, whichever is less\. | July 24, 2020 | 

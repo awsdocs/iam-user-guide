@@ -314,9 +314,9 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Use this key to compare the tag attached to the principal making the request with the tag that you specify in the policy\. If the principal has more than one tag attached, the request context includes one `aws:PrincipalTag` key for each attached tag key\.
 + **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\.
 
-You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM users and roles](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) for AWS principals\.
+You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM resources](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-principals) for AWS principals\.
 
-This example shows how you might create a policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an IAM policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -431,7 +431,7 @@ This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag
 
 For examples of using the `aws:ResourceTag` key to control access to IAM resources, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
 
-For examples of using the `aws:ResourceTag` key to control access to other AWS resources, see [Controlling access to AWS resources using resource tags](access_tags.md)\.
+For examples of using the `aws:ResourceTag` key to control access to other AWS resources, see [Controlling access to AWS resources using tags](access_tags.md)\.
 
 For a tutorial on using the `aws:ResourceTag` condition key for attribute based access control \(ABAC\), see [IAM Tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
 
@@ -449,7 +449,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Use this key to compare the account ID of the resource making a service\-to\-service request with the account ID that you specify in the policy\. 
 + **Availability** – This key is included in the request context only if accessing a resource triggers an AWS service to call another service on behalf of the resource owner\. The calling service must pass the resource ARN of the source to the called service\. This ARN includes the source account ID\.
 
-You can use this condition key to check that Amazon S3 is not being used as a [confused deputy](id_roles_create_for-user_externalid.md#confused-deputy)\.For example, when an Amazon S3 bucket update triggers an Amazon SNS topic post, the Amazon S3 service invokes the `sns:Publish` API operation\. The bucket is considered the source of the SNS request and the value of the key is the account ID from the bucket's ARN\.
+You can use this condition key to check that Amazon S3 is not being used as a [confused deputy](id_roles_create_for-user_externalid.md#confused-deputy)\. For example, when an Amazon S3 bucket update triggers an Amazon SNS topic post, the Amazon S3 service invokes the `sns:Publish` API operation\. The bucket is considered the source of the SNS request and the value of the key is the account ID associated with the bucket\.
 
 ## aws:SourceArn<a name="condition-keys-sourcearn"></a>
 

@@ -71,7 +71,7 @@ sts:TagSession
 ```
 
 **Important**  
-When using session tags, the role trust policies for all roles connected to an identity provider \(IdP\) must have the `sts:TagSession` permission\. The `AssumeRole` operation will fail for any role connected to an IdP that is passing session tags without the this permission\. If you don't want to update the role trust policy for each role, you can use a separate IdP instance for passing session tags\. Then add the `sts:TagSession` permission to only the roles that are connected to the separate IdP\.
+When using session tags, the role trust policies for all roles connected to an identity provider \(IdP\) must have the `sts:TagSession` permission\. The `AssumeRole` operation will fail for any role connected to an IdP that is passing session tags without this permission\. If you don't want to update the role trust policy for each role, you can use a separate IdP instance for passing session tags\. Then add the `sts:TagSession` permission to only the roles that are connected to the separate IdP\.
 
 You can use the `sts:TagSession` action with the following condition keys\.
 + `aws:PrincipalTag` – Use this key to compare the tag that is attached to the principal making the request with the tag that you specify in the policy\. For example, you can allow a principal to pass session tags only if the principal making the request has the specified tags\.

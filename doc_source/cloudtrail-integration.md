@@ -334,7 +334,7 @@ The following example shows a CloudTrail log entry for a request made by John Do
     "eventID": "1917948f-3042-46ec-98e2-62865EXAMPLE",
     "resources": [
         {
-            "ARN": "arn:aws:iam::111122223333:role/JohnRole2",
+            "ARN": "arn:aws:iam::111111111111:role/JohnRole2",
             "accountId": "111111111111",
             "type": "AWS::IAM::Role"
         }

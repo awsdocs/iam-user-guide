@@ -73,7 +73,7 @@ Amazon Relational Database Service \(Amazon RDS\) supports a feature called Enha
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Choose **Next: Review**\.
 

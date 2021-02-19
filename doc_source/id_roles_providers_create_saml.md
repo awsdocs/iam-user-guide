@@ -38,6 +38,10 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 
 1. For **Metadata document**, choose **Choose file**, specify the SAML metadata document that you downloaded in [Step 1](#samlstep1)\.
 
+1. \(Optional\) For **Add tags** you can add key–value pairs to help you identify and organize your IdPs\. You can also use tags to control access to AWS resources\. To learn more about tagging SAML identity providers, see [Tagging IAM SAML identity providers](id_tags_idps_saml.md)\.
+
+   Choose **Add tag**\. Enter values for each tag key\-value pair\. 
+
 1. Verify the information that you have provided\. When you are done, choose **Add provider**\. 
 
 1. Assign an IAM role to your identity provider to give external user identities managed by your identity provider permissions to access AWS resources in your account\. To learn more about creating roles for identity federation, see [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\.
@@ -69,6 +73,24 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 **To upload a new metadata document for an IAM identity provider \(AWS CLI\)**
 + Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/update-saml-provider.html) 
 
+**To tag an existing IAM identity provider \(AWS CLI\)**
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/tag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-saml-provider.html) 
+
+**To list tags for existing IAM identity provider \(AWS CLI\)**
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-provider-tags.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-provider-tags.html) 
+
+**To remove tags on an existing IAM identity provider \(AWS CLI\)**
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html) 
+
+**To tag an existing IAM identity provider \(AWS CLI\)**
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/tag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-saml-provider.html) 
+
+**To list tags for existing IAM identity provider \(AWS CLI\)**
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-provider-tags.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-provider-tags.html) 
+
+**To remove tags on an existing IAM identity provider \(AWS CLI\)**
++ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html) 
+
 **To delete an IAM SAML identity provider \(AWS CLI\)**
 
 1. \(Optional\) To list information for all providers, such as the ARN, creation date, and expiration, run the following command:
@@ -94,6 +116,24 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 
 **To upload a new metadata document for an IAM identity provider \(AWS API\)**
 + Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)
+
+**To tag an existing IAM identity provider \(AWS API\)**
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html)
+
+**To list tags for an existing IAM identity provider \(AWS API\)**
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html)
+
+**To remove tags on an existing IAM identity provider \(AWS API\)**
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html)
+
+**To tag an existing IAM identity provider \(AWS API\)**
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html)
+
+**To list tags for an existing IAM identity provider \(AWS API\)**
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html)
+
+**To remove tags on an existing IAM identity provider \(AWS API\)**
++ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html)
 
 **To delete an IAM identity provider \(AWS API\)**
 

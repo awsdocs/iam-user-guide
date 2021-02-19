@@ -66,7 +66,7 @@ The following example shows a policy for an Amazon S3 bucket that uses a policy 
 }
 ```
 
-When this policy is evaluated, IAM replaces the variable `${aws:username}`with the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the actual current user\. This means that a single policy applied to a group of users can control access to a bucket by using the user name as part of the resource's name\. 
+When this policy is evaluated, IAM replaces the variable `${aws:username}`with the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the actual current user\. This means that a single policy applied to a group of users can control access to a bucket\. It does this by using the user name as part of the resource's name\. 
 
 The variable is marked using a `$` prefix followed by a pair of curly braces \(`{ }`\)\. Inside the `${ }` characters, you can include the name of the value from the request that you want to use in the policy\. The values you can use are discussed later on this page\.
 
@@ -106,9 +106,9 @@ When you use a policy variable for the user name like this, you don't have to ha
 
 ## Tags as policy variables<a name="policy-vars-tags"></a>
 
-In some AWS services you can attach your own custom attributes to resources that are created by those services\. For example, you can apply tags to Amazon S3 buckets or to IAM users and roles\. These tags are key–value pairs\. You define the tag key name and the value associated with that key name\. For example, you might create a tag with a **department** key and a **Human Resources** value\. For more information about tagging IAM entities, see [Tagging IAM users and roles](id_tags.md)\. For information about tagging resources created by other AWS services, see the documentation for that service\. For information about using Tag Editor, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Management Console User Guide*\.
+In some AWS services you can attach your own custom attributes to resources that are created by those services\. For example, you can apply tags to Amazon S3 buckets or to IAM users\. These tags are key\-value pairs\. You define the tag key name and the value that is associated with that key name\. For example, you might create a tag with a **department** key and a **Human Resources** value\. For more information about tagging IAM entities, see [Tagging IAM resources](id_tags.md)\. For information about tagging resources created by other AWS services, see the documentation for that service\. For information about using Tag Editor, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Management Console User Guide*\.
 
-You can tag IAM identities to simplify discovering, organizing, and tracking your IAM resources\. You can also tag IAM identities to control access to resources or to tagging itself\. To learn more about using tags to control access, see [Controlling access to and for IAM users and roles using IAM resource tags](access_iam-tags.md)\. 
+You can tag IAM resources to simplify discovering, organizing, and tracking your IAM resources\. You can also tag IAM identities to control access to resources or to tagging itself\. To learn more about using tags to control access, see [Controlling access to and for IAM users and roles using tags](access_iam-tags.md)\. 
 
 ## Where you can use policy variables<a name="policy-vars-wheretouse"></a>
 
@@ -116,7 +116,7 @@ You can use policy variables in the `Resource` element and in string comparisons
 
 ### Resource element<a name="policy-vars-resourceelement"></a>
 
-You can use a policy variable in the `Resource` element, but only in the resource portion of the ARN\. This portion of the ARN appears after the 5th colon \(:\)\. You can't use a variable to replace parts of the ARN before the 5th colon, such as the service or account\. For more information about the ARN format, see [IAM ARNs](reference_identifiers.md#identifiers-arns)\.
+You can use a policy variable in the `Resource` element, but only in the resource portion of the ARN\. This portion of the ARN appears after the fifth colon \(:\)\. You can't use a variable to replace parts of the ARN before the fifth colon, such as the service or account\. For more information about the ARN format, see [IAM ARNs](reference_identifiers.md#identifiers-arns)\.
 
 The following policy might be attached to a group\. It gives each of the users in the group full programmatic access to a user\-specific object \(their own "home directory"\) in Amazon S3\. 
 
@@ -175,9 +175,9 @@ To replace part of an ARN with a tag value, surround the prefix and key name wit
 
 ### Condition element<a name="policy-vars-conditionelement"></a>
 
-You can use a policy variable for `Condition` values in any condition that involves the string operators or the ARN operators\. String operators include `StringEquals`, `StringLike`, and `StringNotLike`\.\. ARN operators include `ArnEquals` and `ArnLike`\. You can't use a policy variable with other operators, such as `Numeric`, `Date`, `Boolean`, `Binary`, `IP Address`, or `Null` operators\. For more information about condition operators, see [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)\.
+You can use a policy variable for `Condition` values in any condition that involves the string operators or the ARN operators\. String operators include `StringEquals`, `StringLike`, and `StringNotLike`\. ARN operators include `ArnEquals` and `ArnLike`\. You can't use a policy variable with other operators, such as `Numeric`, `Date`, `Boolean`, `Binary`, `IP Address`, or `Null` operators\. For more information about condition operators, see [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)\.
 
-The following Amazon SNS topic policy gives users in AWS account `999999999999` the ability to manage \(perform all actions for\) the topic only if the URL matches their AWS user name\. 
+The following Amazon SNS topic policy gives users in AWS account `999999999999` the ability to manage \(perform all actions for\) the topic\. However this permission is granted only if the URL matches their AWS user name\. 
 
 ```
 {
@@ -269,9 +269,9 @@ For information about service\-specific keys that you can use to get values for 
 ### Special characters<a name="policy-vars-specialchars"></a>
 
 There are a few special predefined policy variables that have fixed values that enable you to represent characters that otherwise have special meaning\. If these special characters are part of the string, you are trying to match and you inserted them literally they would be misinterpreted\. For example, inserting an \* asterisk in the string would be interpreted as a wildcard, matching any characters, instead of as a literal \*\. In these cases, you can use the following predefined policy variables:
-+ **$\{\*\}** \- use where you need an \* asterisk character\.
-+ **$\{?\}** \- use where you need a ? question mark character\.
-+ **$\{$\}** \- use where you need a $ dollar sign character\.
++ **$\{\*\}** \- use where you need an \* \(asterisk\) character\.
++ **$\{?\}** \- use where you need a ? \(question mark\) character\.
++ **$\{$\}** \- use where you need a $ \(dollar sign\) character\.
 
 These predefined policy variables can be used in any string where you can use regular policy variables\.
 

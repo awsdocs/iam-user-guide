@@ -65,9 +65,9 @@ Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that inv
 **iam:ResourceTag/*key\-name***  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
-IAM does not support using the `aws:ResourceTag` global condition key\. AWS STS supports both the IAM key and the global key\.
-You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM users and roles](id_tags.md)\. You can use `iam:ResourceTag` to [control access](access_iam-tags.md#access_iam-tags_control-resources) to IAM users and roles\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
-This example shows how you might create a policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
+IAM and AWS STS support both the `iam:ResourceTag` IAM condition key and the `aws:ResourceTag` global condition key\.
+You can add custom attributes to IAM resouces in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+This example shows how you might create an IAM policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
 
 ```
 {
@@ -344,7 +344,7 @@ This is a `uid` attribute\.
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 This is an `x500UniqueIdentifier` attribute\.
 
-For general information about `eduPerson` and `eduOrg` attributes, see the [Internet2 website](https://www.internet2.edu/products-services/trust-identity-middleware/eduperson-eduorg/eduperson-eduorg-documentation/)\. For a list of `eduPerson` attributes, see [eduPerson Object Class Specification \(201203\)](https://www.internet2.edu/media/medialibrary/2013/09/04/internet2-mace-dir-eduperson-201203.html)\. 
+For general information about `eduPerson` and `eduOrg` attributes, see the [REFEDS Wiki website](https://wiki.refeds.org/display/STAN/eduPerson)\. For a list of `eduPerson` attributes, see [eduPerson Object Class Specification \(201602\)](https://software.internet2.edu/eduperson/internet2-mace-dir-eduperson-201602.html)\. 
 
 Condition keys whose type is a list can include multiple values\. To create conditions in the policy for list values, you can use [set operators](reference_policies_multi-value-conditions.md) \(`ForAllValues`, `ForAnyValue`\)\. For example, to allow any user whose affiliation is "faculty" or "staff" \(but not "student"\), you might use a condition like the following: 
 

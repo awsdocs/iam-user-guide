@@ -23,7 +23,7 @@ The process of creating a user and enabling that user to perform work tasks cons
 
 1. Give the user permissions to perform the required tasks by adding the user to one or more groups\. You can also grant permissions by attaching permissions policies directly to the user\. However, we recommend instead that you put your users in groups and manage permissions through policies that are attached to those groups\. You can also use a [permissions boundary](access_policies_boundaries.md) to limit the permissions that a user can have, though this is not common\. 
 
-1. \(Optional\) Add metadata to the user by attaching tags\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Provide the user with the necessary sign\-in information\. This includes the password and the console URL for the account sign\-in page where the user provides those credentials\. For more information, see [How IAM users sign in to AWS](id_users_sign-in.md)\.
 
@@ -64,7 +64,7 @@ If an administrator has enabled [the **Allow users to change their own password*
 1. On the **Set permissions** page, specify how you want to assign permissions to this set of new users\. Choose one of the following three options:
    + **Add user to group**\. Choose this option if you want to assign the users to one or more groups that already have permissions policies\. IAM displays a list of the groups in your account, along with their attached policies\. You can select one or more existing groups, or choose **Create group** to create a new group\. For more information, see [Changing permissions for an IAM user](id_users_change-permissions.md)\.
    + **Copy permissions from existing user**\. Choose this option to copy all of the group memberships, attached managed policies, embedded inline policies, and any existing [permissions boundaries](access_policies_boundaries.md) from an existing user to the new users\. IAM displays a list of the users in your account\. Select the one whose permissions most closely match the needs of your new users\.
-   + **Attach existing policies to user directly**\. Choose this option to see a list of the AWS managed and customer managed policies in your account\. Select the policies that you want to attach to the new users or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to add the policy to the new user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
+   + **Attach existing policies directly**\. Choose this option to see a list of the AWS managed and customer managed policies in your account\. Select the policies that you want to attach to the new users or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to add the policy to the new user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\. 
 
@@ -72,7 +72,7 @@ If an administrator has enabled [the **Allow users to change their own password*
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Choose **Next: Review** to see all of the choices you made up to this point\. When you are ready to proceed, choose **Create user**\.
 
@@ -117,7 +117,7 @@ This is your only opportunity to view or download the secret access keys, and yo
 1. \(Optional\) Attach a policy to the user that defines the user's permissions\. **Note:** We recommend that you manage user permissions by adding the user to a group and attaching a policy to the group instead of attaching directly to a user\.
    + [aws iam attach\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/attach-user-policy.html)
 
-1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing tags on IAM users \(AWS CLI or AWS API\)](id_tags_users.md#id_tags_users_procs-cli-api)\.
 
 1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
 
@@ -144,6 +144,6 @@ This is your only opportunity to view or download the secret access keys, and yo
 1. \(Optional\) Attach a policy to the user that defines the user's permissions\. **Note:** We recommend that you manage user permissions by adding the user to a group and attaching a policy to the group instead of attaching directly to a user\.
    + [AttachUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html)
 
-1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing tags on IAM entities \(AWS CLI or AWS API\)](id_tags.md#id_tags_procs-cli-api)\.
+1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing tags on IAM users \(AWS CLI or AWS API\)](id_tags_users.md#id_tags_users_procs-cli-api)\.
 
 1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.

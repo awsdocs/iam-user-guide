@@ -28,7 +28,7 @@ You can delete an IAM group from the AWS Management Console\.
 
 1. In the navigation pane, choose **Groups**\. 
 
-1. In the list of groups, select the check box next to the name of the group to delete\. You can use the **Filter** menu and the search box to filter the list of policies\. 
+1. In the list of groups, select the check box next to the name of the group to delete\. You can use the search box to filter the list of groups\. 
 
 1. Click **Group Actions**, then click **Delete Group**\.
 

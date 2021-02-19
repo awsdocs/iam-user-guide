@@ -113,7 +113,7 @@ Some AWS services allow you to pass an existing role to the service, instead of 
 
 ### Transferring service\-linked role permissions<a name="create-service-linked-role-permissions-transfer"></a>
 
-The permissions granted by a service\-linked role are indirectly transferable to other users and roles\. When you allow a service to perform operations in other services, the service can use those permissions in the future\. If another user or role has permission to perform actions in the service, the service can then assume the role and access resources in other services\. This means that the other user or role can indirectly access the other services\.
+The permissions granted by a service\-linked role are indirectly transferable to other users and roles\. When you allow a service to perform operations in other services, the originating service can use those permissions in the future\. If another user or role has permission to perform actions in the originating service, the originating service can then assume the role and access resources in other services\. This means that the other user or role can indirectly access the other services\.
 
 For example, when you create an Amazon RDS DB instance, [RDS creates the service\-linked role](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) for you\. This role allows RDS to call Amazon EC2, Amazon SNS, Amazon CloudWatch Logs, and Amazon Kinesis on your behalf whenever you edit the DB instance\. If you create a policy to allow users and roles in your account or another account to access that Amazon RDS instance, then RDS can still use that role make changes to EC2, SNS, CloudWatch Logs, and Kinesis on their behalf\. The new user or role can indirectly edit resources in those other services\.
 
@@ -152,7 +152,7 @@ Before you create a service\-linked role in IAM, find out whether the linked ser
 **Note**  
 The permissions that you specify are available to any entity that uses the role\. By default, a role has no permissions\.
 
-1. Choose **Next: Review**\. You cannot attach tags to service\-linked roles during creation\. For more information about using tags in IAM, see [Tagging IAM users and roles](id_tags.md)\.
+1. Choose **Next: Review**\. You cannot attach tags to service\-linked roles during creation\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, then this option is not editable\. In other cases, the service might define a prefix for the role and allow you to type an optional suffix\.
 

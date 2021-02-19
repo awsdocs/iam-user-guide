@@ -12,6 +12,7 @@ For more information about uploading third party certificates to IAM, see the fo
 + [Uploading a server certificate \(AWS API\)](#upload-server-certificate)
 + [Retrieving a server certificate \(AWS API\)](#get-server-certificate)
 + [Listing server certificates \(AWS API\)](#list-server-certificates)
++ [Tagging and Untagging Server Certificates \(AWS API\)](#tag-server-certificates)
 + [Renaming a server certificate or updating its path \(AWS API\)](#rename-server-certificate)
 + [Deleting a server certificate \(AWS API\)](#delete-server-certificate)
 + [Troubleshooting](#server-certificate-troubleshooting)
@@ -27,17 +28,19 @@ To use the [IAM API](https://docs.aws.amazon.com/IAM/latest/APIReference/) to up
 + The PEM\-encoded certificate is stored in a file named `Certificate.pem`\.
 + The PEM\-encoded certificate chain is stored in a file named `CertificateChain.pem`\.
 + The PEM\-encoded, unencrypted private key is stored in a file named `PrivateKey.pem`\.
++ \(Optional\) You want to tag the server certificate with a key–value pair\. For example, you might add the tag key `Department` and the tag value `Engineering` to help you identify and organize your certificates\.
 
-To use the following example command, replace these file names with your own and replace *ExampleCertificate* with a name for your uploaded certificate\. Type the command on one continuous line\. The following example includes line breaks and extra spaces to make it easier to read\.
+To use the following example command, replace these file names with your own\. Replace *ExampleCertificate* with a name for your uploaded certificate\. If you want to tag the certificate, replace the *ExampleKey* and *ExampleValue* tag key\-value pair with your own values\. Type the command on one continuous line\. The following example includes line breaks and extra spaces to make it easier to read\.
 
 ```
 aws iam upload-server-certificate --server-certificate-name ExampleCertificate
                                     --certificate-body file://Certificate.pem
                                     --certificate-chain file://CertificateChain.pem
                                     --private-key file://PrivateKey.pem
+                                    --tags '{"Key": "ExampleKey", "Value": "ExampleValue"}'
 ```
 
-When the preceding command is successful, it returns metadata about the uploaded certificate, including its [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns), its friendly name, its identifier \(ID\), its expiration date, and more\.
+When the preceding command is successful, it returns metadata about the uploaded certificate, including its [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns), its friendly name, its identifier \(ID\), its expiration date, tags, and more\.
 
 **Note**  
 If you are uploading a server certificate to use with Amazon CloudFront, you must specify a path using the `--path` option\. The path must begin with `/cloudfront` and must include a trailing slash \(for example, `/cloudfront/test/`\)\.
@@ -70,6 +73,26 @@ aws iam list-server-certificates
 When the preceding command is successful, it returns a list that contains metadata about each certificate\.
 
 To use the AWS Tools for Windows PowerShell to list your uploaded server certificates, use [Get\-IAMServerCertificates](https://docs.aws.amazon.com/powershell/latest/reference/Index.html?page=Get-IAMServerCertificates.html&tocid=Get-IAMServerCertificates)\.
+
+## Tagging and Untagging Server Certificates \(AWS API\)<a name="tag-server-certificates"></a>
+
+You can attach tags to your IAM resources to organize and control access to them\. To use the IAM API to tag an existing server certificate, send a [TagServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
+
+```
+aws iam tag-server-certificate --server-certificate-name ExampleCertificate
+                                 --tags '{"Key": "ExampleKey", "Value": "ExampleValue}'
+```
+
+When the preceding command is successful, no output is returned\. 
+
+To use the IAM API to untag a server certificate, send a [UntagServerCertificate](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagServerCertificate.html) request\. The following example shows how to do this with the AWS CLI\.
+
+```
+aws iam untag-server-certificate --server-certificate-name ExampleCertificate
+                                 --tag-keys ExampleKeyName
+```
+
+When the preceding command is successful, no output is returned\.
 
 ## Renaming a server certificate or updating its path \(AWS API\)<a name="rename-server-certificate"></a>
 

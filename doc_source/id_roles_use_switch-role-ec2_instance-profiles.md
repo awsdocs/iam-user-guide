@@ -10,6 +10,8 @@ If you use the AWS Management Console to create a role for Amazon EC2, the conso
 
 If you manage your roles from the AWS CLI or the AWS API, you create roles and instance profiles as separate actions\. Because roles and instance profiles can have different names, you must know the names of your instance profiles as well as the names of roles they contain\. That way you can choose the correct instance profile when you launch an EC2 instance\. 
 
+You can attach tags to your IAM resources, including instance profiles, to identify, organize, and control access to them\. You can tag instance profiles only when you use the AWS CLI or AWS API\. 
+
 **Note**  
 An instance profile can contain only one IAM role, although a role can be included in multiple instance profiles\. This limit of one role per instance profile cannot be increased\. You can remove the existing role and then add a different role to an instance profile\. You must then wait for the change to appear across all of AWS because of [eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency)\. To force the change, you must [disassociate the instance profile](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html) and then [associate the instance profile](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html), or you can stop your instance and then restart it\. 
 
@@ -17,6 +19,9 @@ An instance profile can contain only one IAM role, although a role can be includ
 
 You can use the following AWS CLI commands to work with instance profiles in an AWS account\. 
 + Create an instance profile: [https://docs.aws.amazon.com/cli/latest/reference/iam/create-instance-profile.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-instance-profile.html)
++ Tag an instance profile: [https://docs.aws.amazon.com/cli/latest/reference/iam/tag-instance-profile.html](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-instance-profile.html)
++ List tags for an instance profile: [https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profile-tags.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profile-tags.html)
++ Untag an instance profile: [https://docs.aws.amazon.com/cli/latest/reference/iam/untag-instance-profile.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-instance-profile.html)
 + Add a role to an instance profile: [https://docs.aws.amazon.com/cli/latest/reference/iam/add-role-to-instance-profile.html](https://docs.aws.amazon.com/cli/latest/reference/iam/add-role-to-instance-profile.html) 
 + List instance profiles: [https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profiles.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profiles.html), [https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profiles-for-role.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-instance-profiles-for-role.html) 
 + Get information about an instance profile: [https://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html](https://docs.aws.amazon.com/cli/latest/reference/iam/get-instance-profile.html) 
@@ -32,6 +37,9 @@ You can also attach a role to an already running EC2 instance by using the follo
 
 You can call the following AWS API operations to work with instance profiles in an AWS account\.
 + Create an instance profile: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateInstanceProfile.html) 
++ Tag an instance profile: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html) 
++ List tags on an instance profile: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html) 
++ Untag an instance profile: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagInstanceProfile.html) 
 + Add a role to an instance profile: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_AddRoleToInstanceProfile.html) 
 + List instance profiles: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfiles.html), [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListInstanceProfilesForRole.html) 
 + Get information about an instance profile: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetInstanceProfile.html) 

@@ -11,7 +11,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
 **To obtain the thumbprint for an OIDC IdP**
 
-1. Before you can obtain the thumbprint for an OIDC IdP, you need to obtain the OpenSSL command\-line tool\. You use this tool to download the OIDC IdP's certificate chain and produce a thumbprint of the final certificate in the certificate chain\. If you need to install and configure OpenSSL, follow the instructions at [Install OpenSSL](#oidc-install-openssl) and [Configure OpenSSL](#oidc-configure-openssl)\. 
+1. Before you can obtain the thumbprint for an OIDC IdP, you need to obtain the OpenSSL command line tool\. You use this tool to download the OIDC IdP's certificate chain and produce a thumbprint of the final certificate in the certificate chain\. If you need to install and configure OpenSSL, follow the instructions at [Install OpenSSL](#oidc-install-openssl) and [Configure OpenSSL](#oidc-configure-openssl)\. 
 
 1. Start with the OIDC IdP's URL \(for example, `https://server.example.com`\), and then add `/.well-known/openid-configuration` to form the URL for the IdP's configuration document, such as the following: 
 
@@ -21,7 +21,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
 1. <a name="thumbstep2"></a>In the document displayed in your web browser, find `"jwks_uri"`\. \(Use your web browser's **Find** feature to locate this text on the page\.\) Immediately following the text `"jwks_uri"` you will see a colon \(:\) followed by a URL\. Copy the fully qualified domain name of the URL\. Do not include the `https://` or any path that comes after the top\-level domain\. 
 
-1. Use the OpenSSL command line tool to execute the following command\. Replace *keys\.example\.com* with the domain name you obtained in [Step 3](#thumbstep2)\.
+1. Use the OpenSSL command line tool to run the following command\. Replace *keys\.example\.com* with the domain name you obtained in [Step 3](#thumbstep2)\.
 
    ```
    openssl s_client -servername keys.example.com -showcerts -connect keys.example.com:443
@@ -50,7 +50,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
    Copy the certificate \(including the `-----BEGIN CERTIFICATE-----` and `-----END CERTIFICATE-----` lines\) and paste it into a text file\. Then save the file with the file name **certificate\.crt**\. 
 
-1. Use the OpenSSL command\-line tool to execute the following command\. 
+1. Use the OpenSSL command line tool to run the following command\. 
 
    ```
    openssl x509 -in certificate.crt -fingerprint -noout

@@ -24,7 +24,7 @@ If you use the API or AWS CLI to delete a user from your AWS account, you must d
 
 1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
 
-1. In the **Manage MFA device** wizard, choose **Deactivate MFA device**, and then choose **Continue**\.
+1. In the **Manage MFA device** wizard, choose **Remove**, and then choose **Remove**\.
 
    The device is removed from AWS\. It cannot be used to sign in or authenticate requests until it is reactivated and associated with an AWS user or AWS account root user\.<a name="deactivate-mfa-for-root"></a>
 

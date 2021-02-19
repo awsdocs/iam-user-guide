@@ -1,6 +1,6 @@
 # Amazon DynamoDB: Allows item\-level access to DynamoDB based on an Amazon Cognito ID<a name="reference_policies_examples_dynamodb_items"></a>
 
-This example shows how you might create a policy that allows item\-level access to the `MyTable` DynamoDB table based on an Amazon Cognito ID\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an IAM policy that allows item\-level access to the `MyTable` DynamoDB table based on an Amazon Cognito ID\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 To use this policy, you must structure your DynamoDB table so the Amazon Cognito user ID is the partition key\. For more information, see [Creating a Table](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.Basics.html#WorkingWithTables.Basics.CreateTable) in the *Amazon DynamoDB Developer Guide*\.
 
