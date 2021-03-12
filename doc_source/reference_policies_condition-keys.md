@@ -262,11 +262,11 @@ Use this key to compare the AWS Organizations path for the principal who is maki
 **Note**  
 Organization IDs are globally unique but OU IDs and root IDs are unique only within an organization\. This means that no two organizations share the same organization ID\. However, another organization might have an OU or root with the same ID as yours\. We recommend that you always include the organization ID when you specify an OU or root\.
 
-For example, the following condition returns `true` for principals in accounts that are attached directly to the `ou-jkl0-awsddddd` OU, but not in its child OUs\.
+For example, the following condition returns `true` for principals in accounts that are attached directly to the `ou-ab12-22222222` OU, but not in its child OUs\.
 
 ```
 "Condition" : { "ForAnyValue:StringEquals" : {
-     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/"]
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/ou-ab12-22222222/"]
 }}
 ```
 
@@ -274,15 +274,15 @@ The following condition returns `true` for principals in an account that is atta
 
 ```
 "Condition" : { "ForAnyValue:StringLike" : {
-     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd*"]
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/ou-ab12-22222222/*"]
 }}
 ```
 
-The following condition returns `true` for principals in an account that is attached directly to the OU or any of its child OUs\. The previous condition is for the OU or any children\. The following condition is for only the children\.
+The following  condition returns `true` for principals in an account that is attached directly to any of the child OUs, but not directly to the parent OU\. The previous condition is for the OU or any children\. The following condition is for only the children \(and any children of those children\)\.
 
 ```
 "Condition" : { "ForAnyValue:StringLike" : {
-     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/*"]
+     "aws:PrincipalOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/ou-ab12-22222222/ou-*"]
 }}
 ```
 
@@ -300,8 +300,8 @@ The following condition allows access for every principal in the `o-a1b2c3d4e5` 
     "Condition": {
         "ForAnyValue:StringLike": {
             "aws:PrincipalOrgPaths": [
-                "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-def0-awsbbbbb/*",
-                "o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-jkl0-awsddddd/*"
+                "o-a1b2c3d4e5/r-ab12/ou-ab12-33333333/*",
+                "o-a1b2c3d4e5/r-ab12/ou-ab12-22222222/*"
             ]
         }
     }
@@ -346,7 +346,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Use this key to compare who referred the request in the client browser with the referer that you specify in the policy\. The `aws:referer` request context value is provided by the caller in an HTTP header\. The `Referer` header is included in a web browser request when you select a link on a web page\. The `Referer` header contains the URL of the web page where the link was selected\.
 + **Availability** – This key is included in the request context only if the request to the AWS resource was invoked by linking from a web page URL in the browser\. This key is not included for programmatic requests because it doesn't use a browser link to access the AWS resource\.
 
-For example, you can access an Amazon S3 object directly using a URL or using direct API invocation\. For more information, see [Amazon S3 API operations directly using a web browser](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. When you access an Amazon S3 object from a URL that exists in a webpage, the URL of the source web page is in used in `aws:referer`\. When you access an Amazon S3 object by typing the URL into your browser, `aws:referer` is not present\. When you invoke the API directly, `aws:referer` is also not present\. You can use the `aws:referer` condition key in a policy to allow requests made from a specific referer, such as a link on a web pate in your company’s domain\. 
+For example, you can access an Amazon S3 object directly using a URL or using direct API invocation\. For more information, see [Amazon S3 API operations directly using a web browser](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. When you access an Amazon S3 object from a URL that exists in a webpage, the URL of the source web page is in used in `aws:referer`\. When you access an Amazon S3 object by typing the URL into your browser, `aws:referer` is not present\. When you invoke the API directly, `aws:referer` is also not present\. You can use the `aws:referer` condition key in a policy to allow requests made from a specific referer, such as a link on a web page in your company’s domain\. 
 
 **Warning**  
 This key should be used carefully\. It is dangerous to include a publicly known referer header value\. Unauthorized parties can use modified or custom browsers to provide any `aws:referer` value that they choose\. As a result, `aws:referer` should not be used to prevent unauthorized parties from making direct AWS requests\. It is offered only to allow customers to protect their digital content, such as content stored in Amazon S3, from being referenced on unauthorized third\-party sites\.

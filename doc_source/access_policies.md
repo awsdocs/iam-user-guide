@@ -28,7 +28,7 @@ To learn how to choose between managed and inline policies, see [Choosing betwee
 
 Resource\-based policies are JSON policy documents that you attach to a resource such as an Amazon S3 bucket\. These policies grant the specified principal permission to perform specific actions on that resource and defines under what conditions this applies\. Resource\-based policies are inline policies\. There are no managed resource\-based policies\. 
 
-To enable cross\-account access, you can specify an entire account or IAM entities in another account as the principal in a resource\-based policy\. Adding a cross\-account principal to a resource\-based policy is only half of establishing the trust relationship\. When the principal and the resource are in separate AWS accounts, you must also use an identity\-based policy to grant the principal access to the resource\. However, if a resource\-based policy grants access to a principal in the same account, no additional identity\-based policy is required\.
+To enable cross\-account access, you can specify an entire account or IAM entities in another account as the principal in a resource\-based policy\. Adding a cross\-account principal to a resource\-based policy is only half of establishing the trust relationship\. When the principal and the resource are in separate AWS accounts, you must also use an identity\-based policy to grant the principal access to the resource\. However, if a resource\-based policy grants access to a principal in the same account, no additional identity\-based policy is required\. For step\-by step instructions for granting cross\-service access, see [IAM Tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)\.
 
 The IAM service supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. An IAM role is both an identity and a resource that supports resource\-based policies\. For that reason, you must attach both a trust policy and an identity\-based policy to an IAM role\. Trust policies define which principal entities \(accounts, users, roles, and federated users\) can assume the role\. To learn how IAM roles are different from other resource\-based policies, see [How IAM roles differ from resource\-based policies](id_roles_compare-resource-policies.md)\.
 
@@ -56,7 +56,7 @@ You can create role session and pass session policies programmatically using the
 
 When you create a federated user session, you use an IAM user's access keys to programmatically call the `GetFederationToken` API operation\. You must also pass session policies\. The resulting session's permissions are the intersection of the IAM user's identity\-based policy and the session policy\. For more information about creating a federated user session, see [[GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)—federation through a custom identity broker](id_credentials_temp_request.md#api_getfederationtoken)\.
 
-A resource\-based policy can specify the ARN of the user or role as a principal\. In that case, the permissions from the resource\-based policy are added to the role or user's identity\-based policy before the session is created\. The session policy limits the total permissions granted by the resource\-based policy and the identity\-based policy\. The resulting session's permissions are the intersection of the session policies and either the resource\-based policy or the identity\-based policy\.
+A resource\-based policy can specify the ARN of the user or role as a principal\. In that case, the permissions from the resource\-based policy are added to the role or user's identity\-based policy before the session is created\. The session policy limits the total permissions granted by the resource\-based policy and the identity\-based policy\. The resulting session's permissions are the intersection of the session policies and the resource\-based policies plus the intersection of the session policies and identity\-based policies\.
 
 ![\[Evaluation of the session policy with a resource-based policy specifying the entity ARN\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-session-rbp-id.png)
 
@@ -70,7 +70,7 @@ A permissions boundary can set the maximum permissions for a user or role that i
 
 ## Policies and the root user<a name="access_policies-root"></a>
 
-The AWS account root user is affected by some policy types but not others\. You cannot attach identity\-based policies to the root user, and you cannot set the permissions boundary for the root user\. However, you can specify the root user as the principal in a resource\-based policy or an ACL\. As a member of an account, the root user is affected by any SCPs for the account\.
+The AWS account root user is affected by some policy types but not others\. You cannot attach identity\-based policies to the root user, and you cannot set the permissions boundary for the root user\. However, you can specify the root user as the principal in a resource\-based policy or an ACL\. A root user is still the member of an account\. If that account is a member of an organization in AWS Organizations, the root user is affected by any SCPs for the account\.
 
 ## Overview of JSON policies<a name="access_policies-json"></a>
 

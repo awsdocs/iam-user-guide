@@ -1,9 +1,12 @@
 # Using IAM with CodeCommit: Git credentials, SSH keys, and AWS access keys<a name="id_credentials_ssh-keys"></a>
 
 CodeCommit is a managed version control service that hosts private Git repositories in the AWS cloud\. To use CodeCommit, you configure your Git client to communicate with CodeCommit repositories\. As part of this configuration, you provide IAM credentials that CodeCommit can use to authenticate you\. IAM supports CodeCommit with three types of credentials:
-+ Git credentials, an IAM \-generated user name and password pair you can use to communicate with CodeCommit repositories over HTTPS\.
++ Git credentials, an IAM\-generated user name and password pair you can use to communicate with CodeCommit repositories over HTTPS\.
 + SSH keys, a locally generated public\-private key pair that you can associate with your IAM user to communicate with CodeCommit repositories over SSH\.
 +  [AWS access keys](id_credentials_access-keys.md), which you can use with the credential helper included with the AWS CLI to communicate with CodeCommit repositories over HTTPS\.
+
+**Note**  
+You cannot use SSH keys or Git credentials to access repositories in another AWS account\. To learn how to configure access to CodeCommit repositories for IAM users and groups in another AWS account, see [Configure cross\-account access to an AWS CodeCommit repository using roles](https://docs.aws.amazon.com/codecommit/latest/userguide/cross-account.html) in the *AWS CodeCommit User Guide*\.
 
 See the following sections for more information about each option\. 
 

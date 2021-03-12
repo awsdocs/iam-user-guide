@@ -173,5 +173,6 @@ Access Analyzer has the following quotas:
 |  Maximum analyzers with an account zone of trust  |  1  |  1  | 
 |  Maximum analyzers with an organization zone of trust  |  5  |  20\*  | 
 |  Maximum archive rules per analyzer  |  100 Each archive rule can have up to 20 values per criterion\.  |  1000\*  | 
+| Maximum number of access previews per analyzer per hour | 1000 | 1000 | 
 
 \* Some quotas are customer\-configurable using [Service Quotas](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html)\.

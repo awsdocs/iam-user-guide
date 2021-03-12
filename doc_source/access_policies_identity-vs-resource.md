@@ -11,6 +11,10 @@ With resource\-based policies, you can specify who has access to the resource an
 **Note**  
 *Resource\-based* policies differ from *resource\-level* permissions\. You can attach resource\-based policies directly to a resource, as described in this topic\. Resource\-level permissions refer to the ability to use [ARNs](reference_identifiers.md#identifiers-arns) to specify individual resources in a policy\. Resource\-based policies are supported only by some AWS services\. For a list of which services support resource\-based policies and resource\-level permissions, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
+To learn how identity\-based policies and resource\-based policies interact within the same account, see [Evaluating policies within a single account](reference_policies_evaluation-logic.md#policy-eval-basics)\.
+
+To learn how the policies interact across accounts, see [Cross\-account policy evaluation logic](reference_policies_evaluation-logic-cross-account.md)\.
+
 To better understand these concepts, view the following figure\. The administrator of the `123456789012` account attached *identity\-based policies* to the `JohnSmith`, `CarlosSalazar`, and `MaryMajor` users\. Some of the actions in these policies can be performed on specific resources\. For example, the user `JohnSmith` can perform some actions on `Resource X`\. This is a *resource\-level permission* in an identity\-based policy\. The administrator also added *resource\-based policies* to `Resource X`, `Resource Y`, and `Resource Z`\. Resource\-based policies allow you to specify who can access that resource\. For example, the resource\-based policy on `Resource X` allows the `JohnSmith` and `MaryMajor` users list and read access to the resource\.
 
 ![\[Identity-based vs resource-based policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Types_of_Permissions.diagram.png)

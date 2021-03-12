@@ -13,7 +13,8 @@ This policy can't be used for reporting purposes\.
         "Effect": "Allow",
         "Action": [
             "iam:Get*",
-            "iam:List*"
+            "iam:List*",
+            "iam:Generate*"
         ],
         "Resource": "*"
     }

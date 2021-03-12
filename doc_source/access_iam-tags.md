@@ -30,8 +30,7 @@ This example shows how you might create an IAM policy that allows any user in th
             "Condition": {
                 "StringEquals": {"aws:ResourceTag/project": "${aws:PrincipalTag/project}"}
             }
-        }
-
+        }]
 }
 ```
 

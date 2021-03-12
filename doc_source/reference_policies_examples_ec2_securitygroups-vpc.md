@@ -1,6 +1,6 @@
 # Amazon EC2: Allows managing EC2 security groups associated with a specific VPC, programmatically and in the console<a name="reference_policies_examples_ec2_securitygroups-vpc"></a>
 
-This example shows how you might create an IAM policy that allows managing Amazon EC2 security groups associated with a specific virtual private cloud \(VPC\)\. This policy also grants the necessary permissions to complete this action on the console\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an IAM policy that allows managing Amazon EC2 security groups associated with a specific virtual private cloud \(VPC\)\. This policy defines permissions for programmatic and console access\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {

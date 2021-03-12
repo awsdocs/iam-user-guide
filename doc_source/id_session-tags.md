@@ -317,7 +317,7 @@ aws sts assume-role \
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on tag attributes\. 
 
-If your company uses a SAML\-based identity provider \(IdP\) for corporate user identities, you can configure your SAML assertion to pass session tags to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
+If your company uses an OIDC or SAML\-based identity provider \(IdP\) to manage user identities, you can configure your assertion to pass session tags to AWS\. For example, with corporate user identities, when your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
 For more information about using AWS SSO with ABAC, see [Attributes for access control](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributesforaccesscontrol.html) in the *AWS Single Sign\-On User Guide*\.
 
