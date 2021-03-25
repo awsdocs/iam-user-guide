@@ -123,4 +123,6 @@ After you review your last accessed information, you can edit your policy to all
    }
    ```
 
+1. To support the best practice of [granting least privilege](best-practices.md#grant-least-privilege), review and correct any errors, warnings, or suggestions returned during [policy validation](access_policies_policy-validator.md)\.
+
 1. To further reduce your policies' permissions to specific actions and resources, view your events in CloudTrail **Event history**\. There you can view detailed information about the specific actions and resources that your user has accessed\. For more information, see [Viewing CloudTrail Events in the CloudTrail Console](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events-console.html) in the *AWS CloudTrail User Guide*\.

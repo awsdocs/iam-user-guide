@@ -30,6 +30,7 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 + For more information about the difference between managed and inline policies, see [Managed policies and inline policies](access_policies_managed-vs-inline.md)\. 
 + For more information about permissions boundaries, see [Permissions boundaries for IAM entities](access_policies_boundaries.md)\.
 + For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.
++ For information about validating IAM policies, see [Validating IAM policies](access_policies_policy-validator.md)\.
 + The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 
 ## View identity activity<a name="attach-detach_prerequisites"></a>
@@ -102,7 +103,7 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 1. Choose **Policy Generator** or **Custom Policy**, and then choose **Select**\. 
 
 1. Do one of the following:
-   + If you chose **Custom Policy**, specify a name for the policy and create your policy document\.[ Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
+   + If you chose **Custom Policy**, specify a name for the policy and create your policy document\.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
    + If you are using the policy generator to create your policy, choose the appropriate **Effect**, **AWS Service**, and **Actions** options\. Type the Amazon Resource Name \(ARN\) \(if applicable\), and add any conditions that you want to include\. Then choose **Add Statement**\. You can add as many statements as you want to the policy\. When you are finished adding statements, choose **Next Step**\. 
 
 1. When you are satisfied with the policy, choose **Apply Policy**\.<a name="replace-managed-policy-boundary-console"></a>

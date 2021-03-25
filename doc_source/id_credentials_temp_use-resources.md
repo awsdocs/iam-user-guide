@@ -66,7 +66,7 @@ The following example shows how you might set the environment variables for temp
 **Linux**
 
 ```
-$ export AWS_ACCESS_KEY_ID=AKIAI44QH8DHBEXAMPLE
+$ export AWS_ACCESS_KEY_ID=ASIAIOSFODNN7EXAMPLE
 $ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 $ export AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of security token>
 $ aws ec2 describe-instances --region us-west-1
@@ -75,7 +75,7 @@ $ aws ec2 describe-instances --region us-west-1
 **Windows**
 
 ```
-C:\> SET AWS_ACCESS_KEY_ID=AKIAI44QH8DHBEXAMPLE
+C:\> SET AWS_ACCESS_KEY_ID=ASIAIOSFODNN7EXAMPLE
 C:\> SET AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 C:\> SET AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of token> 
 C:\> aws ec2 describe-instances --region us-west-1

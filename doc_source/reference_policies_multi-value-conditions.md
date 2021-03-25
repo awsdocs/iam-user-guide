@@ -241,4 +241,4 @@ Notice that the policy includes `"Effect":"Deny"` and the action is `PutItem`\. 
 With the modifier `ForAnyValue`, if any one of these tests returns true, the condition returns true\. The last test returns true, so the condition is true; because the `Effect` element is set to `Deny`, the request is denied\. 
 
 **Note**  
-If the key values in the request resolve to an empty data set \(for example, an empty string\), a condition operator modified by `ForAllValues` returns true\. In addition, a condition operator modified by `ForAnyValue` returns false\. 
+If the key values in the request resolve to an empty data set, such as an empty list, a condition operator modified by `ForAllValues` returns true\. A condition operator modified by `ForAnyValue` returns false\. 

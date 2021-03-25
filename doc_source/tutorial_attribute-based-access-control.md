@@ -59,7 +59,7 @@ To perform the steps in this tutorial, you must already have the following:
 
 For testing, create four IAM users with permissions to assume roles with the same tags\. This makes it easier to add more users to your teams\. When you tag the users, they automatically get access to assume the correct role\. You don't have to add the users to the trust policy of the role if they work on only one project and team\.
 
-1. Create the following customer managed policy named `access-assume-role`\. For more information about creating a JSON policy, see [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\.
+1. Create the following customer managed policy named `access-assume-role`\. For more information about creating a JSON policy, see [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\.
 
 **ABAC policy: Assume any ABAC role, but only when the user and role tags match**  
 The following policy allows a user to assume any role in your account with the `access-` name prefix\. The role must also be tagged with the same project, team, and cost center tags as the user\.
@@ -93,7 +93,7 @@ The following policy allows a user to assume any role in your account with the `
 
 ## Step 2: Create the ABAC policy<a name="tutorial_abac_step2"></a>
 
-Create the following policy named **access\-same\-project\-team**\. You will add this policy to the roles in a later step\. For more information about creating a JSON policy, see [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\.
+Create the following policy named **access\-same\-project\-team**\. You will add this policy to the roles in a later step\. For more information about creating a JSON policy, see [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\.
 
 For additional policies that you can adapt for this tutorial, see the following pages:
 + [Controlling access for IAM principals](access_iam-tags.md#access_iam-tags_control-principals)

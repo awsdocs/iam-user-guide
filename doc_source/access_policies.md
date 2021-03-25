@@ -78,6 +78,8 @@ Most policies are stored in AWS as JSON documents\. Identity\-based policies and
 
 It is not necessary for you to understand the JSON syntax\. You can use the visual editor in the AWS Management Console to create and edit customer managed policies without ever using JSON\. However, if you use inline policies for groups or complex policies, you must still create and edit those policies in the JSON editor using the console\. For more information about using the visual editor, see [Creating IAM policies](access_policies_create.md) and [Editing IAM policies](access_policies_manage-edit.md)\.
 
+ When you create or edit a JSON policy, IAM can perform policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with recommendations to help you further refine your policies\. To learn more about policy validation, see [Validating IAM policies](access_policies_policy-validator.md)\. To learn more about IAM Access Analyzer policy checks and actionable recommendations, see [ IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)\. 
+
 ### JSON policy document structure<a name="policies-introduction"></a>
 
 As illustrated in the following figure, a JSON policy document includes these elements:

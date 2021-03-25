@@ -140,7 +140,7 @@ Changing permissions affects the user immediately\.
 
 1. Choose the **Permissions tab** and review the permissions granted by the policy\. Then choose **Edit policy**\. 
 
-1. Edit the policy using the **Visual editor** tab or the **JSON** tab\. For more information, see [Editing IAM policies](access_policies_manage-edit.md)\.
+1. Edit the policy using the **Visual editor** tab or the **JSON** tab and resolve any [policy validation](access_policies_policy-validator.md) recommendations\. For more information, see [Editing IAM policies](access_policies_manage-edit.md)\.
 
 1. Choose **Review policy**, review the policy summary, and then choose **Save changes**\.
 

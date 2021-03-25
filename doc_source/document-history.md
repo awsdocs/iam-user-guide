@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Expanded policy validation options](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html) | Expanded policy validation available in the IAM console, AWS API, and AWS CLI using policy checks in IAM Access Analyzer to help you author secure and functional JSON policies\. | March 15, 2021 | 
 | [Tagging IAM resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) | You can now tag additional IAM resources using a tag key\-value pair\. | February 11, 2021 | 
 | [Default password policy for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html#default-policy-details) | If you do not set a custom password policy for your AWS account, IAM user passwords must now meet the default AWS password policy\. | November 18, 2020 | 
 | [The actions, resources, and condition keys pages for AWS services have moved](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) | Each AWS service can define actions, resources, and condition context keys for use in IAM policies\. You can now find the list of AWS services and their actions, resources, and condition context keys in the *Service Authorization Reference\.* | November 16, 2020 | 

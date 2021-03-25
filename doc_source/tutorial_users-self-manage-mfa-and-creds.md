@@ -48,7 +48,7 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
 1. Choose the **JSON** tab and copy the text from the following JSON policy document: [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
-1. Paste the policy text into the **JSON** text box, then choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
+1. Paste the policy text into the **JSON** text box\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs anytime\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.
 

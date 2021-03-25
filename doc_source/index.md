@@ -1,7 +1,7 @@
 # AWS Identity and Access Management User Guide
 
 -----
-*****Copyright &copy; 2021 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -228,7 +228,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Creating IAM policies (console)](access_policies_create-console.md)
          + [Creating IAM policies (AWS CLI)](access_policies_create-cli.md)
          + [Creating IAM policies (AWS API)](access_policies_create-api.md)
-      + [Validating IAM policy grammar](access_policies_policy-validator.md)
+      + [Validating IAM policies](access_policies_policy-validator.md)
       + [Testing IAM policies with the IAM policy simulator](access_policies_testing-policies.md)
       + [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)
       + [Versioning IAM policies](access_policies_managed-versioning.md)
@@ -256,6 +256,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Security best practices and use cases in AWS Identity and Access Management](IAMBestPracticesAndUseCases.md)
       + [Security best practices in IAM](best-practices.md)
       + [Business use cases for IAM](IAM_UseCases.md)
+   + [AWS managed policies for AWS Identity and Access Management Access Analyzer](security-iam-awsmanpol.md)
 + [Using AWS IAM Access Analyzer](what-is-access-analyzer.md)
    + [Access Analyzer resource types](access-analyzer-resources.md)
    + [How Access Analyzer works](access-analyzer-concepts.md)
@@ -268,6 +269,8 @@ Amazon's trademarks and trade dress may not be used in
       + [Filtering findings](access-analyzer-findings-filter.md)
       + [Archiving findings](access-analyzer-findings-archive.md)
       + [Resolving findings](access-analyzer-findings-remediate.md)
+   + [Access Analyzer policy validation](access-analyzer-policy-validation.md)
+      + [Access Analyzer policy check reference](access-analyzer-reference-policy-checks.md)
    + [Archive rules](access-analyzer-archive-rules.md)
    + [Preview access](access-analyzer-access-preview.md)
       + [Previewing access in Amazon S3 console](access-analyzer-preview-access-s3-console.md)
@@ -312,6 +315,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Cross-account policy evaluation logic](reference_policies_evaluation-logic-cross-account.md)
       + [Grammar of the IAM JSON policy language](reference_policies_grammar.md)
       + [AWS managed policies for job functions](access_policies_job-functions.md)
+         + [Creating roles and attaching policies (console)](access_policies_job-functions_create-policies.md)
       + [AWS global condition context keys](reference_policies_condition-keys.md)
       + [IAM and AWS STS condition context keys](reference_policies_iam-condition-keys.md)
       + [Actions, resources, and condition keys for AWS services](reference_policies_actions-resources-contextkeys.md)

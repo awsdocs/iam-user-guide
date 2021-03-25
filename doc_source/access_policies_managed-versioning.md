@@ -2,7 +2,7 @@
 
 When you make changes to an IAM customer managed policy, and when AWS makes changes to an AWS managed policy, the changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new *version* of the managed policy\. IAM stores up to five versions of your customer managed policies\. IAM does not support versioning for inline policies\. 
 
-The following diagram illustrates versioning for a customer managed policy\. In this example, the versions are 1\-4 are saved\. You can have up to five managed policy versions saved to IAM\. When you edit a policy that would create a sixth saved version, you can choose which older version should no longer be saved\. You can revert to any of the other four saved versions at any time\.
+The following diagram illustrates versioning for a customer managed policy\. In this example, the versions 1\-4 are saved\. You can have up to five managed policy versions saved to IAM\. When you edit a policy that would create a sixth saved version, you can choose which older version should no longer be saved\. You can revert to any of the other four saved versions at any time\.
 
 ![\[Changes to managed policies become new versions of the policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Changes to managed policies become new versions of the policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 

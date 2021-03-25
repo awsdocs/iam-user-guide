@@ -74,7 +74,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
    If you are on the **Users** page and choose to edit a customer managed policy that is attached to that user, you are redirected to the **Policies** page\. You can edit customer managed policies only on the **Policies** page\.
 
-1. Edit your policy and choose **Review policy** to see your changes reflected in the policy summary\. If you still see a problem, choose **Previous** to return to the editing screen\.
+1. Edit your policy\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. If you still see a problem, choose **Previous** to return to the editing screen\.
 
 1. Choose **Save** to save your changes\.
 

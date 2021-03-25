@@ -29,7 +29,7 @@ You can edit customer managed policies to change the permissions that are define
 
 1. Do one of the following:
    + Choose the **Visual editor** tab to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\.
-   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\. [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
+   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
@@ -77,7 +77,7 @@ You can edit an inline policy from the AWS Management Console\.
 
 1. Do one of the following:
    + Choose the **Visual editor** tab to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\.
-   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\. [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\. To save your changes without affecting the currently attached entities, clear the check box for **Save as default version**\.
+   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. To save your changes without affecting the currently attached entities, clear the check box for **Save as default version**\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
@@ -116,6 +116,9 @@ A managed policy can have up to five versions\. If you need to make changes to a
 
 1. To edit a customer managed policy, run the following command:
    + [create\-policy\-version](https://docs.aws.amazon.com/cli/latest/reference/iam/create-policy-version.html)
+
+1. \(Optional\) To validate a customer managed policy, run the following IAM Access Analyzer command:
+   + [validate\-policy](https://docs.aws.amazon.com/cli/latest/reference/accessanalyzer/validate-policy.html)
 
 **To set the default version of a customer managed policy \(AWS CLI\)**
 
@@ -156,6 +159,9 @@ A managed policy can have up to five versions\. If you need to make changes to a
 
 1. To edit a customer managed policy, call the following operation:
    + [CreatePolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicyVersion.html)
+
+1. \(Optional\) To validate a customer managed policy, call the following IAM Access Analyzer operation:
+   + [ValidatePolicy](https://docs.aws.amazon.com/access-analyzer/latest/APIReference/API_ValidatePolicy.html)
 
 **To set the default version of a customer managed policy \(AWS API\)**
 

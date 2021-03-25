@@ -18,15 +18,15 @@ For examples of policies used in other AWS services, go to the documentation for
 
 ## The policy language and JSON<a name="policies-grammar-json"></a>
 
-Policies are expressed in JSON\. When a policy is submitted to IAM, it is first validated to make sure that the JSON syntax is correct\. In this document, we do not provide a complete description of what constitutes valid JSON\. However, here are some basic JSON rules:
+Policies are expressed in JSON\. When you create or edit a JSON policy, IAM can perform policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with recommendations to help you further refine your policies\. To learn more about policy validation, see [Validating IAM policies](access_policies_policy-validator.md)\. To learn more about IAM Access Analyzer policy checks and actionable recommendations, see [ IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)\. 
+
+In this document, we do not provide a complete description of what constitutes valid JSON\. However, here are some basic JSON rules:
 + White space between individual entities is allowed\.
 + Values are enclosed in quotation marks\. Quotation marks are optional for numeric and Boolean values\.
 + Many elements \(for example, `action_string_list` and `resource_string_list`\) can take a JSON array as a value\. Arrays can take one or more values\. If more than one value is included, the array is in square brackets \(`[` and `]`\) and comma\-delimited, as in the following example: 
 
   `"Action" : ["ec2:Describe*","ec2:List*"]`
 + Basic JSON data types \(Boolean, number, and string\) are defined in [RFC 7159](http://tools.ietf.org/html/rfc7159)\.
-
-You can use a JSON validator to check the syntax of a policy\. You can find a validator online, and many code editors and XML\-editing tools include JSON validation features\.
 
 ## Conventions used in this grammar<a name="policies-grammar-conventions"></a>
 

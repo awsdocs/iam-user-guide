@@ -222,6 +222,9 @@ Use this key to compare the [Amazon Resource Name](reference_identifiers.md#iden
 
 ## aws:PrincipalOrgID<a name="condition-keys-principalorgid"></a>
 
+**Note**  
+The condition key `aws:PrincipalOrgID` is not currently available in the AWS Regions in China\.
+
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the identifier of the organization in AWS Organizations to which the requesting principal belongs with the identifier specified in the policy\.
@@ -534,7 +537,7 @@ Some services support tagging with resource operations, such as creating, modify
 Works with [date operators](reference_policies_elements_condition_operators.md#Conditions_Date)\.
 
 Use this key to compare the date and time that temporary security credentials were issued with the date and time that you specify in the policy\. 
-+ **Availability** – This key is included in the request context only when the principal uses temporary credentials to make the request\. They key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using access keys\.
++ **Availability** – This key is included in the request context only when the principal uses temporary credentials to make the request\. The key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using access keys\.
 
 To learn which services support using temporary credentials, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 

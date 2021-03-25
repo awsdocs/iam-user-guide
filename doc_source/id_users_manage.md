@@ -2,7 +2,7 @@
 
 Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a group, or list all groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
 
-For more information about adding, changing, or removing managed policies for an IAM user, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md), [Editing IAM policies](access_policies_manage-edit.md), and [Deleting IAM policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\.
+For more information about adding, changing, or removing managed policies for an IAM user, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md), [Editing IAM policies](access_policies_manage-edit.md), and [Deleting IAM policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\. To learn more about validating IAM policies, see [Validating IAM policies](access_policies_policy-validator.md)\.
 
  For information about managing IAM user passwords, see [Managing passwords for IAM users](id_credentials_passwords_admin-change-user.md),
 
