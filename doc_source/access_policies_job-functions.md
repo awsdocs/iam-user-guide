@@ -4,7 +4,7 @@ To get started adding permissions to your IAM identities \(users, groups of user
 
 AWS managed policies for job functions are designed to closely align to common job functions in the IT industry\. You can use these policies to easily grant the permissions needed to carry out the tasks expected of someone in a specific job function\. These policies consolidate permissions for many services into a single policy that's easier to work with than having permissions scattered across many policies\.
 
-You can attach AWS managed policies, includingjob functions, to any IAM identity \(users, group of users, or roles\)\. 
+You can attach AWS managed policies, including job functions, to any IAM identity \(users, group of users, or roles\)\. 
 
 **Use Roles to Combine Services**  
 Some of the policies use IAM service roles to help you take advantage of features found in other AWS services\. These policies grant access to `iam:passrole`, which allows a user with the policy to pass a role to an AWS service\. This role delegates IAM permissions to the AWS service to carry out actions on your behalf\.
