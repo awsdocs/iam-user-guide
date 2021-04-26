@@ -103,7 +103,7 @@ If you have inline policies in your account, you can convert them to managed pol
 
 1. Choose the **Permissions** tab\. If you chose **Groups**, expand the **Inline Policies** section if necessary\.
 
-1. For groups, choose **Show Policy** next to the inline policy that you want to remove\. For users and roles, choose **Show *n* more**, if necessary, and then choose the arrow next to the inline policy that you want to remove\.
+1. For groups, choose **Show Policy** next to the inline policy that you want to remove\. For users and roles, choose **Show more**, if necessary, and then choose the arrow next to the inline policy that you want to remove\.
 
 1. Copy the JSON policy document for the policy\.
 
