@@ -8,7 +8,7 @@ To learn more about CloudTrail, see the [AWS CloudTrail User Guide](https://docs
 + [IAM and AWS STS information in CloudTrail](#iam-info-in-cloudtrail)
 + [Logging IAM and AWS STS API requests](#cloudtrail-integration_apis)
 + [Logging API requests to other AWS services](#cloudtrail-integration_api-other-services)
-+ [Logging regional sign\-in events](#cloudtrail-integration_signin-regions)
++ [Logging Regional sign\-in events](#cloudtrail-integration_signin-regions)
 + [Logging user sign\-in events](#cloudtrail-integration_signin-users)
 + [Logging sign\-in events for temporary credentials](#cloudtrail-integration_signin-tempcreds)
 + [Example IAM API events in CloudTrail log](#cloudtrail-integration_examples-iam-api)
@@ -36,17 +36,17 @@ For example, calls to the IAM `CreateUser`, `DeleteRole`, `ListGroups`, and othe
 Examples for this type of log entry are presented later in this topic\. 
 
 **Important**  
-If you activate AWS STS endpoints in Regions other than the default global endpoint, then you must also turn on CloudTrail logging in those Regions\. This is necessary to record any AWS STS API calls that are made in those Regions\. For more information, see [Turning On CloudTrail in Additional Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html) in the AWS CloudTrail User Guide\.
+If you activate AWS STS endpoints in Regions other than the default global endpoint, then you must also turn on CloudTrail logging in those Regions\. This is necessary to record any AWS STS API calls that are made in those Regions\. For more information, see [Turning On CloudTrail in Additional Regions](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html) in the *AWS CloudTrail User Guide*\.
 
 ## Logging API requests to other AWS services<a name="cloudtrail-integration_api-other-services"></a>
 
 Authenticated requests to other AWS service API operations are logged by CloudTrail, and these log entries contain information about who generated the request\. 
 
-For example, assume that you made a request to list Amazon EC2 instances or create an CodeDeploy deployment group\. Details about the person or service that made the request are contained in the log entry for that request\. This information helps you determine whether the request was made by the AWS account root user, an IAM user, a role, or another AWS service\. 
+For example, assume that you made a request to list Amazon EC2 instances or create an AWS CodeDeploy deployment group\. Details about the person or service that made the request are contained in the log entry for that request\. This information helps you determine whether the request was made by the AWS account root user, an IAM user, a role, or another AWS service\. 
 
 For more details about the user identity information in CloudTrail log entries, see [userIdentity Element](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/event_reference_user_identity.html) in the *AWS CloudTrail User Guide*\. 
 
-## Logging regional sign\-in events<a name="cloudtrail-integration_signin-regions"></a>
+## Logging Regional sign\-in events<a name="cloudtrail-integration_signin-regions"></a>
 
 If you enable CloudTrail to log sign\-in events to your logs, you need to be aware of how CloudTrail chooses where to log the events\.
 + If your users sign in directly to a console, they are redirected to either a global or a Regional sign\-in endpoint\. The endpoint depends on whether the selected service console supports Regions\. For example, the main console home page supports Regions\. If you sign in to https://alias\.signin\.aws\.amazon\.com/console, you are redirected to a Regional sign\-in endpoint such as https://us\-east\-2\.signin\.aws\.amazon\.com\. This redirection creates a Regional CloudTrail log entry in the user's Region's log\.
@@ -60,7 +60,7 @@ Whether the sign\-in event is considered Regional or global depends on the conso
   However, some services are not Regionalized yet\. For example, the Amazon S3 service is *not* currently Regionalized\. If you sign in to https://*alias*\.signin\.aws\.amazon\.com/console/s3, you are redirected to the global sign\-in endpoint at https://signin\.aws\.amazon\.com\. This redirection creates an event in your global log\.
 + You can also manually request a specific Regional sign\-in endpoint by using a URL such as https://*alias*\.signin\.aws\.amazon\.com/console?region=ap\-southeast\-1\. This URL redirects to the `ap-southeast-1` Regional sign\-in endpoint\. This redirection results in an event in the Regional log\.
 
-### Preventing duplicate regional log entries<a name="cloudtrail-integration-global-service"></a>
+### Preventing duplicate Regional log entries<a name="cloudtrail-integration-global-service"></a>
 
 CloudTrail creates separate trails in each Region\. These trails include information for events that occur in those Regions, plus global events and events that are not region\-specific\. Examples include IAM API calls, AWS STS calls to the global endpoint, and AWS sign\-in events\. For example, assume that you have two trails, each in a different Region\. If you then create a new IAM user, the `CreateUser` event is added to the log files in both Regions, creating a duplicate log entry\. 
 
@@ -110,7 +110,7 @@ As a security best practice, AWS does not log the entered IAM user name text whe
 
 When a principal requests temporary credentials, the principal type determines how CloudTrail logs the event\. This can be complicated when a principal assumes a role in another account\. There are multiple API calls to perform operations related to role cross\-account operations\. First, the principal calls an AWS STS API to retrieve the temporary credentials\. That operation is logged in the calling account and the account where the AWS STS operation is performed\. Then the principal then uses the role to perform other API calls in the assumed role's account\.
 
-You can use the `aws:RoleSessionName` condition key to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. This makes it easier for administrators that are reviewing AWS CloudTrail logs to learn who performed an action\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
+You can use the `sts:SourceIdentity` condition key in the role trust policy to require users to specify an identity when they assume a role\. For example, you can require that IAM users specify their own user name as their source identity\. This can help you determine which user performed a specific action in AWS\. For more information, see [`sts:SourceIdentity`](reference_policies_iam-condition-keys.md#ck_sourceidentity)\. You can also use [`sts:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname) to require users to specify a session name when they assume a role\. This can help you differentiate between role sessions for a role that is used by different principals when you review AWS CloudTrail logs\.
 
 The following table shows how CloudTrail logs different information for each of the API calls that generate temporary credentials\.
 
@@ -176,7 +176,7 @@ CloudTrail log files contain events that are formatted using JSON\. An API event
 
 ### Example cross\-account AWS STS API events in CloudTrail log files<a name="stscloudtrailexample"></a>
 
-The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRole` action to assume the role `EC2-dev` in account 111122223333\.
+The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRole` action to assume the role `EC2-dev` in account 111122223333\. The account administrator requires users to set a source identity equal to their user name when assuming the role\. The user passes in the source identity value of `JohnDoe`\.
 
 ```
 {
@@ -197,7 +197,8 @@ The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRo
   "userAgent": "aws-cli/1.11.10 Python/2.7.8 Linux/3.2.45-0.6.wd.865.49.315.metal1.x86_64 botocore/1.4.67",
   "requestParameters": {
     "roleArn": "arn:aws:iam::111122223333:role/EC2-dev",
-    "roleSessionName": "JohnDoe-EC2-dev"
+    "roleSessionName": "JohnDoe-EC2-dev",
+    "sourceIdentity": "JohnDoe",
     "serialNumber": "arn:aws:iam::777788889999:mfa"
   },
   "responseElements": {
@@ -209,7 +210,8 @@ The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRo
     "assumedRoleUser": {
       "assumedRoleId": "AIDAQRSTUVWXYZEXAMPLE:JohnDoe-EC2-dev",
       "arn": "arn:aws:sts::111122223333:assumed-role/EC2-dev/JohnDoe-EC2-dev"
-    }
+    },
+  "sourceIdentity": "JohnDoe"
   },
   "resources": [
     {
@@ -220,7 +222,7 @@ The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRo
   ],
   "requestID": "4EXAMPLE-0e8d-11e4-96e4-e55c0EXAMPLE",
   "sharedEventID": "bEXAMPLE-efea-4a70-b951-19a88EXAMPLE",
-  "eventID": "dEXAMPLE-ac7f-466c-a608-4ac8dEXAMPLE"
+  "eventID": "dEXAMPLE-ac7f-466c-a608-4ac8dEXAMPLE",
   "eventType": "AwsApiCall",   
   "recipientAccountId": "111122223333"
 }
@@ -245,6 +247,7 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
   "requestParameters": {   
     "roleArn": "arn:aws:iam:: 111122223333:role/EC2-dev",
     "roleSessionName": "JohnDoe-EC2-dev",
+    "sourceIdentity": "JohnDoe",  
     "serialNumber": "arn:aws:iam::777788889999:mfa"
   }, 
   "responseElements": {
@@ -256,8 +259,9 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
     "assumedRoleUser": {     
       "assumedRoleId": "AIDAQRSTUVWXYZEXAMPLE:JohnDoe-EC2-dev",     
       "arn": "arn:aws:sts::111122223333:assumed-role/EC2-dev/JohnDoe-EC2-dev"   
-    } 
-  }, 
+      },
+  "sourceIdentity": "JohnDoe"
+  },
   "requestID": "4EXAMPLE-0e8d-11e4-96e4-e55c0EXAMPLE",
   "sharedEventID": "bEXAMPLE-efea-4a70-b951-19a88EXAMPLE",
   "eventID": "dEXAMPLE-ac7f-466c-a608-4ac8dEXAMPLE"
@@ -266,7 +270,7 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
 
 ### Example AWS STS role chaining API event in CloudTrail log file<a name="stscloudtrailexample-assumerole"></a>
 
-The following example shows a CloudTrail log entry for a request made by John Doe in account 111111111111\. John previously used his `JohnDoe` user to assume the `JohnRole1` role\. For this request, he uses the credentials from that role to assume the `JonRole2` role\. This is known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. John passes two [session tags](id_session-tags.md) into the request\. He sets those two tags as transitive\. The request inherits the `Department` tag as transitive because John set it as transitive when he assumed `JohnRole1`\. For more information about transitive keys in role chains, see [Chaining roles with session tags](id_session-tags.md#id_session-tags_role-chaining)\.
+The following example shows a CloudTrail log entry for a request made by John Doe in account 111111111111\. John previously used his `JohnDoe` user to assume the `JohnRole1` role\. For this request, he uses the credentials from that role to assume the `JonRole2` role\. This is known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. The source identity that he set when he assumed the `JohnDoe1` role persists in the request to assume `JohnRole2`\. If John tries to set a different source identity when assuming the role, the request is denied\. John passes two [session tags](id_session-tags.md) into the request\. He sets those two tags as transitive\. The request inherits the `Department` tag as transitive because John set it as transitive when he assumed `JohnRole1`\. For more information about source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\. For more information about transitive keys in role chains, see [Chaining roles with session tags](id_session-tags.md#id_session-tags_role-chaining)\.
 
 ```
 {
@@ -282,13 +286,14 @@ The following example shows a CloudTrail log entry for a request made by John Do
                 "mfaAuthenticated": "false",
                 "creationDate": "2019-10-02T21:50:54Z"
             },
-            "sessionIssuer": {
+                "sessionIssuer": {
                 "type": "Role",
                "principalId": "AROAIN5ATK5U7KEXAMPLE",
                 "arn": "arn:aws:iam::111111111111:role/JohnRole1",
                 "accountId": "111111111111",
                 "userName": "JohnDoe"
-            }
+            },
+            "sourceIdentity": "JohnDoe"
         }
     },
     "eventTime": "2019-10-02T22:12:29Z",
@@ -313,6 +318,7 @@ The following example shows a CloudTrail log entry for a request made by John Do
         ],
         "roleArn": "arn:aws:iam::111111111111:role/JohnRole2",
         "roleSessionName": "Role2WithTags",
+        "sourceIdentity": "JohnDoe",
         "transitiveTagKeys": [
             "Email",
             "CostCenter"
@@ -328,7 +334,8 @@ The following example shows a CloudTrail log entry for a request made by John Do
         "assumedRoleUser": {
             "assumedRoleId": "AROAIFR7WHDTSOYQYHFUE:Role2WithTags",
             "arn": "arn:aws:sts::111111111111:assumed-role/test-role/Role2WithTags"
-        }
+        },
+    "sourceIdentity": "JohnDoe"
     },
     "requestID": "b96b0e4e-e561-11e9-8b3f-7b396EXAMPLE",
     "eventID": "1917948f-3042-46ec-98e2-62865EXAMPLE",
@@ -390,7 +397,7 @@ The following example shows a CloudTrail log entry for a request made by an AWS 
 
 ### Example SAML AWS STS API event in CloudTrail log file<a name="stscloudtrailexample_saml"></a>
 
-The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithSAML` action\. The request includes the SAML attributes `CostCenter` and `Project` that are passed through the SAML assertion as [session tags](id_session-tags.md)\. Those tags are set as transitive so that they [persist in role chaining scenarios](id_session-tags.md#id_session-tags_role-chaining)\.
+The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithSAML` action\. The request includes the SAML attributes `CostCenter` and `Project` that are passed through the SAML assertion as [session tags](id_session-tags.md)\. Those tags are set as transitive so that they [persist in role chaining scenarios](id_session-tags.md#id_session-tags_role-chaining)\. The request includes the SAML attribute `sourceIdentity`, which is passed in the SAML assertion\. If someone uses the resulting role session credentials to assume another role, this source identity persists\.
 
 ```
 {
@@ -410,6 +417,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
     "requestParameters": {
         "sAMLAssertionID": "_c0046cEXAMPLEb9d4b8eEXAMPLE2619aEXAMPLE",
         "roleSessionName": "MyAssignedRoleSessionName",
+        "sourceIdentity": "MySAMLUser",
         "principalTags": {
             "CostCenter": "987654",
             "Project": "Unicorn",
@@ -426,6 +434,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
     "responseElements": {
         "subjectType": "transient",
         "issuer": "https://server.example.com/idp/shibboleth",
+        "sourceIdentity": "MySAMLUser"
         "credentials": {
             "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
             "expiration": "Mar 23, 2016 2:39:57 AM",
@@ -460,7 +469,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
 
 ### Example web identity AWS STS API event in CloudTrail log file<a name="stscloudtrailexample_web-identity"></a>
 
-The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithWebIdentity` action\. The request includes the attributes `CostCenter` and `Project` that are passed through the identity provider token as [session tags](id_session-tags.md)\. Those tags are set as transitive so that they [persist in role chaining scenarios](id_session-tags.md#id_session-tags_role-chaining)\.
+The following example shows a CloudTrail log entry for a request made for the AWS STS `AssumeRoleWithWebIdentity` action\. The request includes the attributes `CostCenter` and `Project` that are passed through the identity provider token as [session tags](id_session-tags.md)\. Those tags are set as transitive so that they [persist in role chaining](id_session-tags.md#id_session-tags_role-chaining)\. The request includes the `sourceIdentity` attribute from the identity provider token\. If someone uses the resulting role session credentials to assume another role, this source identity persists\.
 
 ```
 {
@@ -478,6 +487,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
   "sourceIPAddress": "192.0.2.101",
   "userAgent": "aws-cli/1.3.23 Python/2.7.6 Linux/2.6.18-164.el5",
   "requestParameters": {
+    "sourceIdentity": "MyWebIdentityUser", 
     "durationSeconds": 3600,
     "roleArn": "arn:aws:iam::444455556666:role/FederatedWebIdentityRole",
     "roleSessionName": "MyAssignedRoleSessionName"
@@ -493,6 +503,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
   "responseElements": {
     "provider": "accounts.google.com",
     "subjectFromWebIdentityToken": "<id of user>",
+    "sourceIdentity": "MyWebIdentityUser",    
     "audience": "<id of application>.apps.googleusercontent.com",
     "credentials": {
       "accessKeyId": "ASIACQRSTUVWRAOEXAMPLE",

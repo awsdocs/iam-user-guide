@@ -6,6 +6,7 @@ For information about the permissions that you need in order to modify the permi
 
 **Topics**
 + [View user access](#users-modify_prerequisites)
++ [Generate a policy based on a user's access activity](#users_change_permissions-gen-policy)
 + [Adding permissions to a user \(console\)](#users_change_permissions-add-console)
 + [Changing permissions for a user \(console\)](#users_change_permissions-change-console)
 + [Removing a permissions policy from a user \(console\)](#users_change_permissions-remove-policy-console)
@@ -15,6 +16,10 @@ For information about the permissions that you need in order to modify the permi
 ## View user access<a name="users-modify_prerequisites"></a>
 
 Before you change the permissions for a user, you should review its recent service\-level activity\. This is important because you don't want to remove access from a principal \(person or application\) who is using it\. For more information about viewing last accessed information, see [Refining permissions in AWS using last accessed information](access_policies_access-advisor.md)\.
+
+## Generate a policy based on a user's access activity<a name="users_change_permissions-gen-policy"></a>
+
+You might sometimes grant permissions to an IAM entity \(user or role\) beyond what they require\. To help you refine the permissions that you grant, you can generate an IAM policy that is based on the access activity for an entity\. IAM Access Analyzer reviews your AWS CloudTrail logs and generates a policy template that contains the permissions that have been used by the entity in your specified date range\. You can use the template to create a managed policy with fine\-grained permissions and then attach it to the IAM entity\. That way, you grant only the permissions that the user or role needs to interact with AWS resources for your specific use case\. To learn more, see [Generate policies based on access activity](access_policies_generate-policy.md)\.
 
 ## Adding permissions to a user \(console\)<a name="users_change_permissions-add-console"></a>
 
@@ -76,7 +81,7 @@ Copying permissions affects the user immediately\.<a name="by-copying-user"></a>
 
 1. Choose **Users** in the navigation pane, choose the name of the user whose permissions you want to modify, and then choose the **Permissions** tab\.
 
-1. Choose **Add permissions**, and then choose **Copy permissions from existing user**\. The list displays available users along with their group memberships and attached policies\. If the full list of groups or policies don't fit on one line, you can choose the link for **and *n* more**\. Doing that opens a new browser tab and see the full list of policies \(**Permissions** tab\) and groups \(**Groups** tab\)\.
+1. Choose **Add permissions**, and then choose **Copy permissions from existing user**\. The list displays available users along with their group memberships and attached policies\. If the full list of groups or policies doesn't fit on one line, you can choose the link for **and *n* more**\. Doing that opens a new browser tab and see the full list of policies \(**Permissions** tab\) and groups \(**Groups** tab\)\.
 
 1. Select the radio button next to the user whose permissions you want to copy\. 
 
@@ -202,5 +207,5 @@ Removing a permissions boundary affects the user immediately\.
 ## Adding and removing a user's permissions \(AWS CLI or AWS API\)<a name="users_change_permissions-add-programmatic"></a>
 
 To add or remove permissions programmatically, you must add or remove the group memberships, attach or detach the managed policies, or add or delete the inline policies\. For more information, see the following topics:
-+ [Adding and removing users in an IAM group](id_groups_manage_add-remove-users.md)
++ [Adding and removing users in an IAM user group](id_groups_manage_add-remove-users.md)
 + [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)

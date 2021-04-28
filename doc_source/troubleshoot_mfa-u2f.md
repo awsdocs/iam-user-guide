@@ -38,7 +38,7 @@ If you can't enable your U2F security key, check the following:
 
 ### System administrators<a name="troubleshoot_mfa-u2f-cant-enable-sys-admin"></a>
 
-If you're an administrator and your IAM users can't enable their U2F security keys despite using a supported configuration, make sure they have the appropriate permissions\. For a detailed example, see [IAM Tutorial: Enable users to manage their credentials and MFA settings](tutorial_users-self-manage-mfa-and-creds.md)\.
+If you're an administrator and your IAM users can't enable their U2F security keys despite using a supported configuration, make sure they have the appropriate permissions\. For a detailed example, see [IAM tutorial: Permit users to manage their credentials and MFA settings](tutorial_users-self-manage-mfa-and-creds.md)\.
 
 ## I can't sign in using my U2F security key<a name="troubleshoot_mfa-u2f-signin"></a>
 

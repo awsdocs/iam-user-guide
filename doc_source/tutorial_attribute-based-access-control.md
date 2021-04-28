@@ -1,4 +1,4 @@
-# IAM Tutorial: Define permissions to access AWS resources based on tags<a name="tutorial_attribute-based-access-control"></a>
+# IAM tutorial: Define permissions to access AWS resources based on tags<a name="tutorial_attribute-based-access-control"></a>
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called *tags*\. You can attach tags to IAM resources, including IAM entities \(users or roles\) and to AWS resources\. You can define policies that use tag condition keys to grant permissions to your principals based on their tags\. When you use tags to control access to your AWS resources, you allow your teams and resources to grow with fewer changes to AWS policies\. ABAC policies are more flexible than traditional AWS policies, which require you to list each individual resource\. For more information about ABAC and its advantage over traditional policies, see [What is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
 
@@ -14,7 +14,7 @@ Attribute\-based access control \(ABAC\) is an authorization strategy that defin
 + [Step 7: Test updating and deleting secrets](#tutorial_abac_step7)
 + [Summary](#tutorial-abac-summary)
 + [Related resources](#tutorial_abac_related)
-+ [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)
++ [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)
 
 ## Tutorial overview<a name="tutorial_attribute-based-access-control-overview"></a>
 
@@ -23,7 +23,7 @@ This tutorial shows how to create and test a policy that allows IAM roles with p
 **Scenario**  
 Assume that you're a lead developer at a large company named Example Corporation, and you're an experienced IAM administrator\. You're familiar with creating and managing IAM users, roles, and policies\. You want to ensure that your development engineers and quality assurance team members can access the resources they need\. You also need a strategy that scales as your company grows\.
 
-You choose to use AWS resource tags and IAM role principal tags to implement an ABAC strategy for services that support it, beginning with AWS Secrets Manager\. To learn which services support authorization based on tags, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which tagging condition keys you can use in a policy with each service's actions and resources, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\. You can configure your SAML\-based or web identity provider to pass [session tags](id_session-tags.md) to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. To learn how using session tags with a SAML federated identity differs from this tutorial, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
+You choose to use AWS resource tags and IAM role principal tags to implement an ABAC strategy for services that support it, beginning with AWS Secrets Manager\. To learn which services support authorization based on tags, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which tagging condition keys you can use in a policy with each service's actions and resources, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\. You can configure your SAML\-based or web identity provider to pass [session tags](id_session-tags.md) to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. To learn how using session tags with a SAML federated identity differs from this tutorial, see [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
 Your Engineering and Quality Assurance team members are on either the **Pegasus** or **Unicorn** project\. You choose the following 3\-character project and team tag values:
 + `access-project` = `peg` for the **Pegasus** project
@@ -34,7 +34,7 @@ Your Engineering and Quality Assurance team members are on either the **Pegasus*
 Additionally, you choose to require the `cost-center` cost allocation tag to enable custom AWS billing reports\. For more information, see [Using Cost Allocation Tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html) in the *AWS Billing and Cost Management User Guide*\.
 
 **Summary of key decisions**
-+ Employees sign in with IAM user credentials and then assume the IAM role for their team and project\. If your company has its own identity system, you can set up federation to allow employees to assume a role without IAM users\. For more information, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
++ Employees sign in with IAM user credentials and then assume the IAM role for their team and project\. If your company has its own identity system, you can set up federation to allow employees to assume a role without IAM users\. For more information, see [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 + The same policy is attached to all of the roles\. Actions are allowed or denied based on tags\.
 + Employees can create new resources, but only if they attach the same tags to the resource that are applied to their role\. This ensures that employees can view the resource after they create it\. Administrators are no longer required to update policies with the ARN of new resources\.
 + Employees can read resources owned by their team, regardless of the project\.
@@ -85,7 +85,7 @@ The following policy allows a user to assume any role in your account with the `
    }
    ```
 
-   To scale this tutorial to a large number of users, you can attach the policy to a group and add each user to the group\. For more information, see [Creating IAM groups](id_groups_create.md) and [Adding and removing users in an IAM group](id_groups_manage_add-remove-users.md)\.
+   To scale this tutorial to a large number of users, you can attach the policy to a group and add each user to the group\. For more information, see [Creating IAM user groups](id_groups_create.md) and [Adding and removing users in an IAM user group](id_groups_manage_add-remove-users.md)\.
 
 1. Create the following IAM users, attach the `access-assume-role` permissions policy, and add the following tags\. For more information about creating and tagging a new user, see [Creating IAM users \(console\)](id_users_create.md#id_users_create_console)\.  
 **ABAC users**    
@@ -196,7 +196,7 @@ This policy uses a strategy to allow all actions for a service, but explicitly d
 
 ## Step 3: Create roles<a name="tutorial_abac_step3"></a>
 
-Create the following IAM roles and attach the **access\-same\-project\-team** policy that you created in the previous step\. For more information about creating IAM roles, see [Creating a role to delegate permissions to an IAM user](id_roles_create_for-user.md)\. If you choose to use federation instead of IAM users and roles, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
+Create the following IAM roles and attach the **access\-same\-project\-team** policy that you created in the previous step\. For more information about creating IAM roles, see [Creating a role to delegate permissions to an IAM user](id_roles_create_for-user.md)\. If you choose to use federation instead of IAM users and roles, see [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
 
 **ABAC roles**  
@@ -357,12 +357,12 @@ You added policies that allow actions only under specific conditions\. If you ap
 For related information in the *IAM User Guide*, see the following resources:
 + [What is ABAC for AWS?](introduction_attribute-based-access-control.md)
 + [AWS global condition context keys](reference_policies_condition-keys.md)
-+ [Creating your first IAM admin user and group](getting-started_create-admin-group.md)
++ [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)
 + [Creating IAM users \(console\)](id_users_create.md#id_users_create_console)
 + [Creating a role to delegate permissions to an IAM user](id_roles_create_for-user.md)
 + [Tagging IAM resources](id_tags.md)
 + [Controlling access to AWS resources using tags](access_tags.md)
 + [Switching to a role \(console\)](id_roles_use_switch-role-console.md)
-+ [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)
++ [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)
 
 To learn how to monitor the tags in your account, see [Monitor tag changes on AWS resources with serverless workflows and Amazon CloudWatch Events](http://aws.amazon.com/blogs/mt/monitor-tag-changes-on-aws-resources-with-serverless-workflows-and-amazon-cloudwatch-events/)\.

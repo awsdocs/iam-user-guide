@@ -1,4 +1,4 @@
-# IAM Tutorial: Create and attach your first customer managed policy<a name="tutorial_managed-policies"></a>
+# IAM tutorial: Create and attach your first customer managed policy<a name="tutorial_managed-policies"></a>
 
 In this tutorial, you use the AWS Management Console to create a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) and then attach that policy to an IAM user in your AWS account\. The policy you create allows an IAM test user to sign in directly to the AWS Management Console with read\-only permissions\. 
 

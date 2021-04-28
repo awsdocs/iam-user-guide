@@ -6,6 +6,7 @@ The following topics assume you have a working knowledge of AWS permissions and 
 
 **Topics**
 + [Permissions for AssumeRole, AssumeRoleWithSAML, and AssumeRoleWithWebIdentity](id_credentials_temp_control-access_assumerole.md)
++ [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)
 + [Permissions for GetFederationToken](id_credentials_temp_control-access_getfederationtoken.md)
 + [Permissions for GetSessionToken](id_credentials_temp_control-access_getsessiontoken.md)
 + [Disabling permissions for temporary security credentials](id_credentials_temp_control-access_disable-perms.md)

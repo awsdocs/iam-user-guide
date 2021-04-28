@@ -1,6 +1,6 @@
 # Managing IAM users<a name="id_users_manage"></a>
 
-Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a group, or list all groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
+Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a user group, or list all user groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
 
 For more information about adding, changing, or removing managed policies for an IAM user, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md), [Editing IAM policies](access_policies_manage-edit.md), and [Deleting IAM policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\. To learn more about validating IAM policies, see [Validating IAM policies](access_policies_policy-validator.md)\.
 
@@ -18,19 +18,19 @@ Before you delete a user, you should review its recent service\-level activity\.
 
 ## Listing IAM users<a name="id_users_manage_list"></a>
 
-You can list the IAM users in your AWS account or in a specific IAM group, and list all the groups that a user is in\. For information about the permissions that you need in order to list users, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
+You can list the IAM users in your AWS account or in a specific IAM user group, and list all the user groups that a user is in\. For information about the permissions that you need in order to list users, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
 
 ### To list all the users in the account<a name="id_users_manage_list-users"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**\. The console displays the users in your AWS account\. 
 + AWS CLI: [aws iam list\-users](https://docs.aws.amazon.com/cli/latest/reference/iam/list-users.html)
 + AWS API: [ListUsers](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUsers.html) 
 
-### To list the users in a specific group<a name="id_users_manage_list-users-group"></a>
-+ [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups**, choose the name of the group, and then choose the **Users** tab\. 
+### To list the users in a specific user group<a name="id_users_manage_list-users-group"></a>
++ [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **User groups**, choose the name of the user group, and then choose the **Users** tab\. 
 + AWS CLI: [aws iam get\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group.html)
 + AWS API: [GetGroup](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroup.html)
 
-### To list all the groups that a user is in<a name="id_users_manage_list-groups-users"></a>
+### To list all the user groups that a user is in<a name="id_users_manage_list-groups-users"></a>
 + [AWS Management Console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Users**, choose the user name, and then choose the **Groups** tab\. 
 + AWS CLI: [aws iam list\-groups\-for\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)
 + AWS API: [ListGroupsForUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupsForUser.html)
@@ -41,7 +41,7 @@ To change a user's name or path, you must use the AWS CLI, Tools for Windows Pow
 
 When you change a user's name or path, the following happens: 
 + Any policies attached to the user stay with the user under the new name\.
-+ The user stays in the same groups under the new name\.
++ The user stays in the same user groups under the new name\.
 + The unique ID for the user remains the same\. For more information about unique IDs, see [Unique identifiers](reference_identifiers.md#identifiers-unique-ids)\.
 + Any resource or role policies that refer to the user *as a principal* \(the user is being granted access\) are automatically updated to use the new name or path\. For example, any queue\-based policies in Amazon SQS or resource\-based policies in Amazon S3 are automatically updated to use the new name and path\. 
 
@@ -77,10 +77,10 @@ For more information about disabling credentials, see [Managing access keys for 
 
 When you use the AWS Management Console to delete an IAM user, IAM automatically deletes the following information for you: 
 + The user
-+ Any group memberships—that is, the user is removed from any IAM groups that the user was a member of 
++ Any user group memberships—that is, the user is removed from any IAM user groups that the user was a member of
 + Any password associated with the user
 + Any access keys belonging to the user
-+ All inline policies embedded in the user \(policies that are applied to a user via group permissions are not affected\) 
++ All inline policies embedded in the user \(policies that are applied to a user via user group permissions are not affected\) 
 **Note**  
 Any managed policies attached to the user are detached from the user when the user is deleted\. Managed policies are not deleted when you delete a user\. 
 + Any associated MFA device
@@ -133,9 +133,9 @@ Unlike the AWS Management Console, when you delete a user with the AWS CLI, you 
 
    `[aws iam list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)` \(to list the managed policies attached to the user\) and [https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html](https://docs.aws.amazon.com/cli/latest/reference/iam/detach-user-policy.html) \(to detach the policy\) 
 
-1. Remove the user from any groups\. 
+1. Remove the user from any user groups\. 
 
-   `[aws iam list\-groups\-for\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)` \(to list the groups to which the user belongs\) and `[aws iam remove\-user\-from\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html)` 
+   `[aws iam list\-groups\-for\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/list-groups-for-user.html)` \(to list the user groups to which the user belongs\) and `[aws iam remove\-user\-from\-group](https://docs.aws.amazon.com/cli/latest/reference/iam/remove-user-from-group.html)` 
 
 1. Delete the user\.
 

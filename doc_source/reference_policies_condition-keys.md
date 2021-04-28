@@ -222,9 +222,6 @@ Use this key to compare the [Amazon Resource Name](reference_identifiers.md#iden
 
 ## aws:PrincipalOrgID<a name="condition-keys-principalorgid"></a>
 
-**Note**  
-The condition key `aws:PrincipalOrgID` is not currently available in the AWS Regions in China\.
-
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the identifier of the organization in AWS Organizations to which the requesting principal belongs with the identifier specified in the policy\.
@@ -436,7 +433,7 @@ For examples of using the `aws:ResourceTag` key to control access to IAM resourc
 
 For examples of using the `aws:ResourceTag` key to control access to other AWS resources, see [Controlling access to AWS resources using tags](access_tags.md)\.
 
-For a tutorial on using the `aws:ResourceTag` condition key for attribute based access control \(ABAC\), see [IAM Tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
+For a tutorial on using the `aws:ResourceTag` condition key for attribute based access control \(ABAC\), see [IAM tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
 
 ## aws:SecureTransport<a name="condition-keys-securetransport"></a>
 
@@ -464,6 +461,45 @@ This key does not work with the ARN of the principal making the request\. Instea
 + **Availability** – This key is included in the request context only if accessing a resource triggers an AWS service to call another service on behalf of the resource owner\. The calling service must pass the ARN of the original resource to the called service\.
 
 You can use this condition key to check that Amazon S3 is not being used as a [confused deputy](id_roles_create_for-user_externalid.md#confused-deputy)\. For example, when an Amazon S3 bucket update triggers an Amazon SNS topic post, the Amazon S3 service invokes the `sns:Publish` API operation\. The bucket is considered the source of the SNS request and the value of the key is the bucket's ARN\.
+
+## aws:SourceIdentity<a name="condition-keys-sourceidentity"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the source identity that was set by the principal with the source identity that you specify in the policy\. 
++ **Availability** – This key is included in the request context after a source identity has been set when a role is assumed using any AWS STS assume\-role CLI command, or AWS STS`AssumeRole` API operation\.
+
+You can use this key in a policy to allow actions in AWS by principals that have set a source identity when assuming a role\. Activity for the role's specified source identity appears in [AWS CloudTrail](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds)\. This makes it easier for administrators to determine who or what performed actions with a role in AWS\.
+
+Unlike [`sts:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname), after the source identity is set, the value cannot be changed\. It is present in the request context for all actions taken by the role\. The value persists into subsequent role sessions when you use the session credentials to assume another role\. Assuming one role from another is called [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. 
+
+The [`sts:SourceIdentity`](reference_policies_iam-condition-keys.md#ck_sourceidentity) key is present in the request when the principal initially sets a source identity while assuming a role using any AWS STS assume\-role CLI command, or AWS STS `AssumeRole` API operation\. The `aws:SourceIdentity` key is present in the request for any actions that are taken with a role session that has a source identity set\.
+
+The following role trust policy for `CriticalRole` in account `111122223333` contains a condition for `aws:SourceIdentity` that prevents a principal without a source identity that is set to Saanvi or Diego from assuming the role\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AssumeRoleIfSourceIdentity",
+            "Effect": "Allow",
+            "Principal": {"AWS": " arn:aws:iam::111122223333:role/CriticalRole"},
+            "Action": [
+                "sts:AssumeRole",
+                "sts:SetSourceIdentity"
+            ],
+            "Condition": {
+                "StringLike": {
+                    "aws:SourceIdentity": ["Saanvi","Diego"]
+                }
+            }
+        }
+    ]
+}
+```
+
+To learn more about using source identity information, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
 
 ## aws:SourceIp<a name="condition-keys-sourceip"></a>
 
@@ -528,7 +564,7 @@ Use this key to compare the tag keys in a request with the keys that you specify
 
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.
 
-Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you must use the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
 Some services support tagging with resource operations, such as creating, modifying, or deleting a resource\. To allow tagging and operations as a single call, you must create a policy that includes both the tagging action and the resource\-modifying action\. You can then use the `aws:TagKeys` condition key to enforce using specific tag keys in the request\. For example, to limit tags when someone creates an Amazon EC2 snapshot, you must include the `ec2:CreateSnapshot` creation action ***and*** the `ec2:CreateTags` tagging action in the policy\. To view a policy for this scenario that uses `aws:TagKeys`, see [Creating a Snapshot with Tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html#iam-creating-snapshot-with-tags) in the *Amazon EC2 User Guide for Linux Instances*\. 
 

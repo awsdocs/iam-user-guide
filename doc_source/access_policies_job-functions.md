@@ -13,9 +13,6 @@ You must create the roles according to your needs\. For example, the Network Adm
 
 To follow security best practices, the policies for job functions include filters that limit the names of valid roles that can be passed\. This helps avoid granting unnecessary permissions\. If your users do require the optional service roles, you must create a role that follows the naming convention specified in the policy\. You then grant permissions to the role\. Once that is done, the user can configure the service to use the role, granting it whatever permissions the role provides\.
 
-**Updates**  
-These policies are all maintained by AWS and are kept up to date to include support for new services and new capabilities as they are added by AWS services\. These policies cannot be modified by customers\. You can make a copy of the policy and then modify the copy, but that copy is not automatically updated as AWS introduces new services and API operations\.
-
 In the following sections, each policy's name is a link to the policy details page in the AWS Management Console\. There you can see the policy document and review the permissions it grants\.
 
 ## Administrator job function<a name="jf_administrator"></a>
@@ -23,6 +20,8 @@ In the following sections, each policy's name is a link to the policy details pa
 **AWS managed policy name:** [AdministratorAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AdministratorAccess)
 
 **Use case:** This user has full access and can delegate permissions to every service and resource in AWS\.
+
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
 **Policy description:** This policy grants all actions for all AWS services and for all resources in the account\. 
 
@@ -35,6 +34,8 @@ Before an IAM user or role can access the AWS Billing and Cost Management consol
 
 **Use case:** This user needs to view billing information, set up payments, and authorize payments\. The user can monitor the costs accumulated for the entire AWS service\.
 
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
+
 **Policy description:** This policy grants full permissions for managing billing, costs, payment methods, budgets, and reports\.
 
 **Note**  
@@ -45,6 +46,8 @@ Before an IAM user or role can access the AWS Billing and Cost Management consol
 **AWS managed policy name:** [DatabaseAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/DatabaseAdministrator)
 
 **Use case:** This user sets up, configures, and maintains databases in the AWS Cloud\.
+
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
 **Policy description:** This policy grants permissions to create, configure, and maintain databases\. It includes access to AWS database services, such as Amazon DynamoDB, Amazon Relational Database Service \(RDS\), and Amazon Redshift\. View the policy for the full list of database services that this policy supports\.
 
@@ -69,6 +72,8 @@ This job function policy supports the ability to pass roles to AWS services\. Th
 
 **Use case:** This user runs Hadoop jobs and queries\. The user also accesses and analyzes information for data analytics and business intelligence\.
 
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
+
 **Policy description:** This policy grants permissions to create, manage, and run queries on an Amazon EMR cluster and perform data analytics with tools such as Amazon QuickSight\. The policy includes access to additional data scientist services, such as AWS Data Pipeline, Amazon EC2, Amazon Kinesis, Amazon Machine Learning, and SageMaker\. View the policy for the full list of data scientist services that this policy supports\.
 
 This job function policy supports the ability to pass roles to AWS services\. One statement allows passing any role to SageMaker\. Another statement allows the `iam:PassRole` action for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](access_policies_job-functions_create-policies.md) later in this topic\.
@@ -90,6 +95,8 @@ This job function policy supports the ability to pass roles to AWS services\. On
 
 **Use case:** This user performs application development tasks and can create and configure resources and services that support AWS aware application development\.
 
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
+
 **Policy description:** The first statement of this policy uses the [`NotAction`](reference_policies_elements_notaction.md) element to allow all actions for all AWS services and for all resources except AWS Identity and Access Management and AWS Organizations\. The second statement grants IAM permissions to create a service\-linked role\. This is required by some services that must access resources in another service, such as an Amazon S3 bucket\. It also grants Organizations permissions to view information about the user's organization, including the management account email and organization limitations\. Although this policy limits IAM and Organizations access, it allows the user to perform all AWS SSO actions if AWS SSO is enabled\.
 
 ## Network administrator job function<a name="jf_network-administrator"></a>
@@ -97,6 +104,8 @@ This job function policy supports the ability to pass roles to AWS services\. On
 **AWS managed policy name:** [NetworkAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/NetworkAdministrator)
 
 **Use case:** This user is tasked with setting up and maintaining AWS network resources\.
+
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
 **Policy description:** This policy grants permissions to create and maintain network resources in Auto Scaling, Amazon EC2, AWS Direct Connect, Route 53, Amazon CloudFront, Elastic Load Balancing, AWS Elastic Beanstalk, Amazon SNS, CloudWatch, CloudWatch Logs, Amazon S3, IAM, and Amazon Virtual Private Cloud\.
 
@@ -115,6 +124,8 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user requires read\-only access to every resource in an AWS account\.
 
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
+
 **Policy description:** This policy grants permissions to list, get, describe, and otherwise view resources and their attributes\. It does not include mutating functions like create or delete\. This policy does include read\-only access to security\-related AWS services, such as AWS Identity and Access Management and AWS Billing and Cost Management\. View the policy for the full list of services and actions that this policy supports\.
 
 ## Security auditor job function<a name="jf_security-auditor"></a>
@@ -122,6 +133,8 @@ This job function requires the ability to pass roles to AWS services\. The polic
 **AWS managed policy name:** [SecurityAudit](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/SecurityAudit)
 
 **Use case:** This user monitors accounts for compliance with security requirements\. This user can access logs and events to investigate potential security breaches or potential malicious activity\.
+
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
 **Policy description:** This policy grants permissions to view configuration data for many AWS services and to review their logs\. 
 
@@ -131,6 +144,8 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user contacts AWS Support, creates support cases, and views the status of existing cases\.
 
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
+
 **Policy description:** This policy grants permissions to create and update AWS Support cases\.
 
 ## System administrator job function<a name="jf_system-administrator"></a>
@@ -138,6 +153,8 @@ This job function requires the ability to pass roles to AWS services\. The polic
 **AWS managed policy name:** [SystemAdministrator](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/SystemAdministrator)
 
 **Use case:** This user sets up and maintains resources for development operations\.
+
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
 **Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
 
@@ -159,4 +176,10 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Use case:** This user can view a list of AWS resources and basic metadata in the account across all services\. The user cannot read resource content or metadata that goes beyond the quota and list information for resources\.
 
+**Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
+
 **Policy description:** This policy grants `List*`, `Describe*`, `Get*`, `View*`, and `Lookup*` access to resources for most AWS services\. To see what actions this policy includes for each service, see [ViewOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/ViewOnlyAccess)\.
+
+## Updates to AWS managed policies for job functions<a name="security-iam-awsmanpol-jobfunction-updates"></a>
+
+These policies are all maintained by AWS and are kept up to date to include support for new services and new capabilities as they are added by AWS services\. These policies cannot be modified by customers\. You can make a copy of the policy and then modify the copy, but that copy is not automatically updated as AWS introduces new services and API operations\.

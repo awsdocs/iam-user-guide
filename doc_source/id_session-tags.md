@@ -56,7 +56,7 @@ Before you use session tags, review the following details about sessions and tag
 + You cannot pass session tags using the AWS Management Console\.
 + Session tags are valid only for the current session\. 
 + Session tags support [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. By default, tags are not passed to subsequent role sessions\. However, you can set session tags as transitive\. Transitive tags persist during role chaining\. For more information, see [Chaining roles with session tags](#id_session-tags_role-chaining)\.
-+ You can use session tags to control access to resources or to control what tags can be passed into a subsequent session\. For more information, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
++ You can use session tags to control access to resources or to control what tags can be passed into a subsequent session\. For more information, see [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 + You can view the principal tags for your session, including its session tags, in the AWS CloudTrail logs\. For more information, see [Viewing session tags in CloudTrail](#id_session-tags_ctlogs)\.
 + You must pass a single value for each session tag\. Multivalued session tags are not supported\.
 + You can pass a maximum of 50 session tags\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
@@ -160,7 +160,7 @@ aws sts assume-role \
 
 ## Passing session tags using AssumeRoleWithSAML<a name="id_session-tags_adding-assume-role-saml"></a>
 
-The `AssumeRoleWithSAML` operation is authenticated using SAML\-based federation\. This operation returns a set of temporary credentials that you can use to access AWS resources\. For more information about using SAML\-based federation for AWS Management Console access, see [Enabling SAML 2\.0 federated users to access the AWS Management Console](id_roles_providers_enable-console-saml.md)\. For details about AWS CLI or AWS API access, see [About SAML 2\.0\-based federation](id_roles_providers_saml.md)\. For a tutorial of setting up SAML federation for your Active Directory users, see [AWS Federated Authentication with Active Directory Federation Services \(ADFS\)](http://aws.amazon.com/blogs/security/aws-federated-authentication-with-active-directory-federation-services-ad-fs/) in the *AWS Security Blog*\. 
+The `AssumeRoleWithSAML` operation is authenticated using SAML\-based federation\. This operation returns a set of temporary credentials that you can use to access AWS resources\. For more information about using SAML\-based federation for AWS Management Console access, see [Enabling SAML 2\.0 federated users to access the AWS Management Console](id_roles_providers_enable-console-saml.md)\. For details about AWS CLI or AWS API access, see [About SAML 2\.0\-based federation](id_roles_providers_saml.md)\. For a tutorial of setting up SAML federation for your Active Directory users, see [AWS Federated Authentication with Active Directory Federation Services \(ADFS\)](http://aws.amazon.com/blogs/security/aws-federated-authentication-with-active-directory-federation-services-ad-fs/) in the AWS Security Blog\. 
 
 As an administrator, you can allow members of your company directory to federate into AWS using the AWS STS `AssumeRoleWithSAML` operation\. To do this, you must complete the following tasks:
 
@@ -317,7 +317,7 @@ aws sts assume-role \
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on tag attributes\. 
 
-If your company uses an OIDC or SAML\-based identity provider \(IdP\) to manage user identities, you can configure your assertion to pass session tags to AWS\. For example, with corporate user identities, when your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM Tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
+If your company uses an OIDC or SAML\-based identity provider \(IdP\) to manage user identities, you can configure your assertion to pass session tags to AWS\. For example, with corporate user identities, when your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
 For more information about using AWS SSO with ABAC, see [Attributes for access control](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributesforaccesscontrol.html) in the *AWS Single Sign\-On User Guide*\.
 

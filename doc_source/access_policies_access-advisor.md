@@ -15,7 +15,7 @@ As an administrator, you might grant permissions to entities \(users or roles\) 
 
 ## Last accessed information types for IAM<a name="access_policies_access-advisor-data-types"></a>
 
-You can view two types of last accessed information for IAM entities: allowed AWS service information and allowed action information\. The information includes the date and time when the attempt was made\. Action last accessed information is available for Amazon S3 management actions\. Management actions include creation, deletion, and modification actions\. To learn more about how to view last accessed information for IAM, see [Viewing last accessed information for IAM](access_policies_access-advisor-view-data.md)\.
+You can view two types of last accessed information for IAM entities: allowed AWS service information and allowed action information\. The information includes the date and time when the attempt was made\. Action last accessed information is available for Amazon EC2, IAM, Lambda, and Amazon S3 management actions\. Management actions include creation, deletion, and modification actions\. To learn more about how to view last accessed information for IAM, see [Viewing last accessed information for IAM](access_policies_access-advisor-view-data.md)\.
 
 For example scenarios for using last accessed information to make decisions about the permissions that you grant to your IAM entities, see [Example scenarios for using last accessed information](access_policies_access-advisor-example-scenarios.md)\.
 
@@ -30,10 +30,10 @@ For example scenarios for using last accessed information to make decisions abou
 ## Things to know about last accessed information<a name="access_policies_access-advisor-know"></a>
 
 Before you use last accessed information from a report to change the permissions for an IAM entity or Organizations entity, review the following details about the information\.
-+ **Tracking period** – Recent activity usually appears in the IAM console within four hours\. The tracking period for service information is the last 400 days\. The tracking period for actions information began on April, 12, 2020\. For more information, see [Where AWS tracks last accessed information](#access-advisor_tracking-period)\.
++ **Tracking period** – Recent activity usually appears in the IAM console within four hours\. The tracking period for service information is the last 400 days\. The tracking period for Amazon S3 actions information began on April, 12, 2020\. The tracking period for Amazon EC2, IAM, and Lambda actions began on April 7, 2021\. For more information, see [Where AWS tracks last accessed information](#access-advisor_tracking-period)\.
 + **Attempts reported** – The service last accessed data includes all attempts to access an AWS API, not just the successful attempts\. This includes all attempts that were made using the AWS Management Console, the AWS API through any of the SDKs, or any of the command line tools\. An unexpected entry in the service last accessed data does not mean that your account has been compromised, because the request might have been denied\. Refer to your CloudTrail logs as the authoritative source for information about all API calls and whether they were successful or denied access\.
-+ **PassRole** – The `iam:PassRole` action is not tracked and is not included in IAM service last accessed information\.
-+ **Action last accessed information** – Action last accessed information is available for Amazon S3 management actions accessed by IAM entities\. IAM provides action information for Amazon S3 management events that are logged by CloudTrail\. Sometimes, CloudTrail management events are also called control plane operations or control plane events\. Management events provide visibility into administrative operations that are performed on resources in your AWS account\. To learn more about management events in CloudTrail, see [Logging Management Events with Cloudtrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html)\.
++ **PassRole** – The `iam:PassRole` action is not tracked and is not included in IAM action last accessed information\.
++ **Action last accessed information** – Action last accessed information is available for Amazon EC2, IAM, Lambda, and Amazon S3 management actions accessed by IAM entities\. IAM provides action information for Amazon EC2, IAM, Lambda, and Amazon S3 management events that are logged by CloudTrail\. Sometimes, CloudTrail management events are also called control plane operations or control plane events\. Management events provide visibility into administrative operations that are performed on resources in your AWS account\. To learn more about management events in CloudTrail, see [Logging Management Events with Cloudtrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html)\.
 + **Report owner** – Only the principal that generates a report can view the report details\. This means that when you view the information in the AWS Management Console, you might have to wait for it to generate and load\. If you use the AWS CLI or AWS API to get report details, your credentials must match the credentials of the principal that generated the report\. If you use temporary credentials for a role or federated user, you must generate and retrieve the report during the same session\. For more information about assumed\-role session principals, see [AWS JSON policy elements: Principal](reference_policies_elements_principal.md)\.
 + **IAM entities** – The information for IAM includes IAM entities \(users or roles\) in your account\. Information for Organizations includes principals \(IAM users, IAM roles, or the AWS account root user\) in the specified Organizations entity\. The information does not include unauthenticated attempts\.
 + **IAM policy types** – The information for IAM includes services that are allowed by an IAM entity's policies\. These are policies attached to a role or attached to a user directly or through a group\. Access allowed by other policy types is not included in your report\. The excluded policy types include resource\-based policies, access control lists, AWS Organizations SCPs, IAM permissions boundaries, and session policies\. Permissions that are provided by service\-linked roles are defined by the service that they are linked to and can't be modified in IAM\. To learn more about service\-linked roles, see [Using service\-linked roles](using-service-linked-roles.md) To learn how the different policy types are evaluated to allow or deny access, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\.
@@ -57,7 +57,7 @@ These permissions allow a user to see the following:
 + Which users, groups, or roles are attached to a [managed policy](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html#managed_policy)
 + Which services a user or role can access
 + The last time they accessed the service
-+ The last time they attempted to use a specific S3 action
++ The last time they attempted to use a specific Amazon EC2, IAM, Lambda, or Amazon S3 action
 
 To use the AWS CLI or AWS API to view last accessed information for IAM, you must have permissions that match the operation you want to use:
 + `iam:GenerateServiceLastAccessedDetails`
@@ -138,7 +138,7 @@ In some cases, your AWS Management Console last accessed information table might
 + For an IAM policy, make sure that the specified managed policy is attached to at least one user, group with members, or role\.
 + For an Organizations entity \(root, OU, or account\), make sure that you are signed using Organizations management account credentials\.
 + Verify that [SCPs are enabled in your organization root](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root)\.
-+ Action last accessed information is only available for some Amazon S3 actions\.
++ Action last accessed information is only available for some Amazon EC2, IAM, Lambda, and Amazon S3 actions\.
 
 When you make changes, wait at least four hours for activity to appear in your IAM console report\. If you use the AWS CLI or AWS API, you must generate a new report to view the updated information\.
 
@@ -146,7 +146,7 @@ When you make changes, wait at least four hours for activity to appear in your I
 
 AWS collects last accessed information for the standard AWS Regions\. When AWS adds additional Regions, those Regions are added to the following table, including the date that AWS started tracking information in each Region\.
 + **Service information** – The tracking period for services is the last 400 days, or less if your Region began supporting this feature within the last year\.
-+ **Actions information** – The tracking period for Amazon S3 management actions began on April, 12, 2020\. If the Region tracking start date is after April 12, 2020, then that date is also the actions tracking start date for the Region\.
++ **Actions information** – The tracking period for Amazon S3 management actions began on April, 12, 2020\. The tracking period for Amazon EC2, IAM, and Lambda management actions began on April 7, 2021\. If the Region started supporting an action at a later date, then that date is also the action's tracking start date for the Region\.
 
 
 ****  

@@ -81,6 +81,25 @@ You cannot request an increase for the following quotas\.
 | Users in an AWS account | 5000 \(If you need to add a large number of users, consider using [temporary security credentials](id_credentials_temp.md)\.\) | 
 | Versions of a managed policy that can be stored | 5 | 
 
+## IAM Access Analyzer quotas<a name="reference_access-analyzer-quotas"></a>
+
+The following table contains the quotas for IAM Access Analyzer objects\.
+
+
+**Quotas for IAM Access Analyzer objects**  
+
+| Resource | Default quota | 
+| --- | --- | 
+| Access previews per analyzer per hour | 1,000 | 
+| Analyzers with an account zone of trust | 1 | 
+| Analyzers with an organization zone of trust | 5 | 
+| Archive rules per analyzer | 100 | 
+| AWS CloudTrail log files processed per policy generations | 100,000 | 
+| Concurrent policy generations | 1 | 
+| Policy generation AWS CloudTrail data size | 25 GB | 
+| Policy generation AWS CloudTrail time range | 90 days | 
+| Policy generations per day | 5 Canceled policy generation requests apply to the daily quota\.  | 
+
 ## IAM and STS character quotas<a name="reference_iam-quotas-entity-length"></a>
 
 The following are the maximum character counts and size quotas for IAM and AWS STS\. You cannot request an increase for the following quotas\.
@@ -91,11 +110,11 @@ The following are the maximum character counts and size quotas for IAM and AWS S
 | Path | 512 characters | 
 | User name | 64 characters | 
 | Group name | 128 characters | 
-| Role name | 64 characters If you intend to use a role with the **Switch Role** feature in the AWS console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
+| Role name | 64 characters If you intend to use a role with the **Switch Role** feature in the AWS Management Console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
 | Tag key | 128 charactersThis character quota applies to tags on IAM resources and [session tags](id_session-tags.md)\. | 
 | Tag value | 256 charactersThis character quota applies to tags on IAM resources and [session tags](id_session-tags.md)\.Tag values can be empty\. That is, tag values can have a length of 0 characters\. | 
 | Instance profile name | 128 characters | 
-|  Unique IDs created by IAM  | 128 characters\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.  | 
+|  Unique IDs created by IAM  |  128 characters\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 
 | Policy name | 128 characters | 
 | Password for a login profile | 1–128 characters | 
 | Alias for an AWS account ID | 3–63 characters | 

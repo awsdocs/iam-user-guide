@@ -7,6 +7,7 @@ Use the information here to help you diagnose and fix issues that you might enco
 + [Error: RoleSessionName is required in AuthnResponse \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_missing-rolesessionname)
 + [Error: Not authorized to perform sts:AssumeRoleWithSAML \(service: AWSSecurityTokenService; status code: 403; error code: AccessDenied\)](#troubleshoot_saml_missing-role)
 + [Error: RoleSessionName in AuthnResponse must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-rolesessionname)
++ [Error: Source Identity must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} and not begin with "aws:" \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-sourceidentity)
 + [Error: Response signature invalid \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-metadata)
 + [Error: Failed to assume role: Issuer not present in specified provider \(service: AWSOpenIdDiscoveryService; status code: 400; error code: AuthSamlInvalidSamlResponseException\)](#troubleshoot_saml_issuer-mismatch)
 + [Error: Could not parse metadata\.](#troubleshoot_saml_issuer-metadata)
@@ -34,6 +35,8 @@ This error can occur if the IAM role specified in the SAML response is misspelle
 
 You are allowed access only if your role trust policy includes the `sts:AssumeRoleWithSAML` action\. If your SAML assertion is configured to use the [`PrincipalTag` attribute](id_roles_providers_create_saml_assertions.md#saml_role-session-tags), your trust policy must also include the `sts:TagSession` action\. For more information about session tags, see [Passing session tags in AWS STS](id_session-tags.md)\.
 
+This error can occur if you do not have `sts:SetSourceIdentity` permissions in your role trust policy\. If your SAML assertion is configured to use the [`SourceIdentity`](id_roles_providers_create_saml_assertions.md#saml_sourceidentity) attribute, then your trust policy must also include the `sts:SetSourceIdentity` action\. For more information about source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
+
 This error can also occur if the federated users do not have permissions to assume the role\. The role must have a trust policy that specifies the ARN of the IAM SAML identity provider as the `Principal`\. The role also contains conditions that control which users can assume the role\. Ensure that your users meet the requirements of the conditions\.
 
 This error can also occur if the SAML response does not include a `Subject` containing a `NameID`\.
@@ -45,6 +48,12 @@ For more information, see [Establish Permissions in AWS for Federated Users](htt
 This error can occur if the `RoleSessionName` attribute value is too long or contains invalid characters\. The maximum valid length is 64 characters\.
 
 For more information, see [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)\. To view the SAML response in your browser, follow the steps listed in [How to view a SAML response in your browser for troubleshooting](troubleshoot_saml_view-saml-response.md)\.
+
+## Error: Source Identity must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} and not begin with "aws:" \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)<a name="troubleshoot_saml_invalid-sourceidentity"></a>
+
+This error can occur if the `sourceIdentity` attribute value is too long or contains invalid characters\. The maximum valid length is 64 characters\. For more information about source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
+
+For more information about creating SAML assertions, see [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)\. To view the SAML response in your browser, follow the steps listed in [How to view a SAML response in your browser for troubleshooting](troubleshoot_saml_view-saml-response.md)\.
 
 ## Error: Response signature invalid \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)<a name="troubleshoot_saml_invalid-metadata"></a>
 

@@ -4,6 +4,8 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Monitor and control actions taken with assumed roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html) | Administrators can configure IAM roles to require that identities pass a source identity, which is logged in AWS CloudTrail\. Reviewing source identity information helps administrators determine who or what performed actions with assumed role sessions\. | April 13, 2021 | 
+| [Generate IAM policies based on access activity](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_generate-policy.html) | You can now use IAM Access Analyzer to generate fine\-grained policies based on your access activity found in your AWS CloudTrail\. | April 7, 2021 | 
 | [Expanded policy validation options](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html) | Expanded policy validation available in the IAM console, AWS API, and AWS CLI using policy checks in IAM Access Analyzer to help you author secure and functional JSON policies\. | March 15, 2021 | 
 | [Tagging IAM resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) | You can now tag additional IAM resources using a tag key\-value pair\. | February 11, 2021 | 
 | [Default password policy for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html#default-policy-details) | If you do not set a custom password policy for your AWS account, IAM user passwords must now meet the default AWS password policy\. | November 18, 2020 | 

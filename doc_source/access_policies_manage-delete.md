@@ -34,13 +34,15 @@ You can delete a customer managed policy to remove it from your AWS account\. Yo
 
 1. Confirm that you want to delete the policy, and then choose **Delete**\.
 
-**To delete an inline policy for a group, user, or role \(console\)**
+**To delete an inline policy for a user group, user, or role \(console\)**
 
-1. In the navigation pane, choose **Groups**, **Users**, or **Roles**\.
+1. In the navigation pane, choose **User groups**, **Users**, or **Roles**\.
 
-1. Choose the name of the group, user, or role with the policy that you want to delete\. Then choose the **Permissions** tab\. If you chose **Users** or **Roles**, expand the policy\.
+1. Choose the name of the user group, user, or role with the policy that you want to delete\. Then choose the **Permissions** tab\. If you chose **Users** or **Roles**, expand the policy\.
 
-1. To delete an inline policy in **Groups**, choose **Remove Policy**\. To delete an inline policy in **Users** or **Roles**, choose **X**\. 
+1. To delete an inline policy in **User groups**, choose **Delete**\. To delete an inline policy in **Users** or **Roles**, choose **X**\. 
+
+1. If you are deleting a single inline policy in **User groups**, type the name of the policy and choose **Delete**\. If you are deleting multiple inline policies in **User groups**, type the number of policies you are deleting followed by **inline policies** and choose **Delete**\. For example, if you are deleting three inline policies, type **3 inline policies**\.
 
 ## Deleting IAM policies \(AWS CLI\)<a name="delete-policies-cli-api"></a>
 
@@ -53,9 +55,9 @@ You can delete a customer managed policy from the AWS Command Line Interface\.
    + To retrieve detailed information about a managed policy: [get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, run the following commands:
-   + To list the identities \(users, groups, and roles\) to which a managed policy is attached, run the following command: 
+   + To list the identities \(users, user groups, and roles\) to which a managed policy is attached, run the following command: 
      + [list\-entities\-for\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
-   + To list the managed policies attached to an identity \(a user, group, or role\), run one of the following commands:
+   + To list the managed policies attached to an identity \(a user, user group, or role\), run one of the following commands:
      + [list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
      + [list\-attached\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
      + [list\-attached\-role\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
@@ -65,17 +67,17 @@ You can delete a customer managed policy from the AWS Command Line Interface\.
 
 **To delete an inline policy \(AWS CLI\)**
 
-1. \(Optional\) To list all inline policies that are attached to an identity \(user, group, role\), use one of the following commands:
+1. \(Optional\) To list all inline policies that are attached to an identity \(user, user group, role\), use one of the following commands:
    + [aws iam list\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-user-policies.html)
    + [aws iam list\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-group-policies.html)
    + [aws iam list\-role\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-role-policies.html)
 
-1. \(Optional\) To retrieve an inline policy document that is embedded in an identity \(user, group, or role\), use one of the following commands:
+1. \(Optional\) To retrieve an inline policy document that is embedded in an identity \(user, user group, or role\), use one of the following commands:
    + [aws iam get\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-user-policy.html)
    + [aws iam get\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-group-policy.html)
    + [aws iam get\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role-policy.html)
 
-1. To delete an inline policy from an identity \(user, group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), use one of the following commands:
+1. To delete an inline policy from an identity \(user, user group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), use one of the following commands:
    + [aws iam delete\-user\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user-policy.html)
    + [aws iam delete\-group\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-group-policy.html)
    + [aws iam delete\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-role-policy.html)
@@ -91,9 +93,9 @@ You can delete a customer managed policy using the AWS API\.
    + To retrieve detailed information about a managed policy: [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, call the following operations:
-   + To list the identities \(users, groups, and roles\) to which a managed policy is attached, call the following operation: 
+   + To list the identities \(users, user groups, and roles\) to which a managed policy is attached, call the following operation: 
      + [ListEntitiesForPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
-   + To list the managed policies attached to an identity \(a user, group, or role\), call one of the following operations:
+   + To list the managed policies attached to an identity \(a user, user group, or role\), call one of the following operations:
      + [ListAttachedUserPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
      + [ListAttachedGroupPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
      + [ListAttachedRolePolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
@@ -103,17 +105,17 @@ You can delete a customer managed policy using the AWS API\.
 
 **To delete an inline policy \(AWS API\)**
 
-1. \(Optional\) To list all inline policies that are attached to an identity \(user, group, role\), call one of the following operations:
+1. \(Optional\) To list all inline policies that are attached to an identity \(user, user group, role\), call one of the following operations:
    + [ListUserPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListUserPolicies.html)
    + [ListGroupPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListGroupPolicies.html)
    + [ListRolePolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListRolePolicies.html)
 
-1. \(Optional\) To retrieve an inline policy document that is embedded in an identity \(user, group, or role\), call one of the following operations:
+1. \(Optional\) To retrieve an inline policy document that is embedded in an identity \(user, user group, or role\), call one of the following operations:
    + [GetUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUserPolicy.html)
    + [GetGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetGroupPolicy.html)
    + [GetRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRolePolicy.html)
 
-1. To delete an inline policy from an identity \(user, group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), call one of the following operations:
+1. To delete an inline policy from an identity \(user, user group, or role that is not a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\), call one of the following operations:
    + [DeleteUserPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteUserPolicy.html)
    + [DeleteGroupPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteGroupPolicy.html)
    + [DeleteRolePolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteRolePolicy.html)

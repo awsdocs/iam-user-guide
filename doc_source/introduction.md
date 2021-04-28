@@ -60,7 +60,7 @@ AWS Identity and Access Management \(IAM\) and AWS Security Token Service \(AWS 
 You can work with AWS Identity and Access Management in any of the following ways\.
 
 **AWS Management Console**  
-The console is a browser\-based interface to manage IAM and AWS resources\. For more information about accessing IAM through the console, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. For a tutorial that guides you through using the console, see [Creating your first IAM admin user and group](getting-started_create-admin-group.md)\.
+The console is a browser\-based interface to manage IAM and AWS resources\. For more information about accessing IAM through the console, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. For a tutorial that guides you through using the console, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)\.
 
 **AWS Command Line Tools**  
 You can use the AWS command line tools to issue commands at your system's command line to perform IAM and AWS tasks\. Using the command line can be faster and more convenient than the console\. The command line tools are also useful if you want to build scripts that perform AWS tasks\.  

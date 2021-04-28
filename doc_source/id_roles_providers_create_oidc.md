@@ -4,7 +4,7 @@
 
 You can create and manage an IAM OIDC identity provider using the AWS Management Console, the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API\. 
 
-After you create an IAM OIDC identity provider, you must create one or more IAM roles\. A role is an identity in AWS that doesn't have its own credentials \(as a user does\)\. But in this context, a role is dynamically assigned to a federated user that is authenticated by your organization's IdP\. The role permits your organization's IdP to request temporary security credentials for access to AWS\. The policies assigned to the role determine what the federated users are allowed to do in AWS\. To create a role for a third\-party identity provicer, see [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\.
+After you create an IAM OIDC identity provider, you must create one or more IAM roles\. A role is an identity in AWS that doesn't have its own credentials \(as a user does\)\. But in this context, a role is dynamically assigned to a federated user that is authenticated by your organization's IdP\. The role permits your organization's IdP to request temporary security credentials for access to AWS\. The policies assigned to the role determine what the federated users are allowed to do in AWS\. To create a role for a third\-party identity provider, see [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\.
 
 **Topics**
 + [Creating and managing an OIDC provider \(console\)](#manage-oidc-provider-console)

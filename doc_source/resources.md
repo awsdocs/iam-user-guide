@@ -14,8 +14,8 @@ IAM is a rich product, and you'll find many resources to help you learn more abo
 ## Users and groups<a name="resources-users-and-groups"></a>
 
 Consult these resources for creating, managing, and using users and groups\.
-+ **[Creating your first IAM admin user and group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
-+ **[IAM Identities \(users, groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
++ **[Creating your first IAM admin user and user group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
++ **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
 +  [http://aws.amazon.com/blogs/security/guidelines-for-when-to-use-accounts-users-and-groups](http://aws.amazon.com/blogs/security/guidelines-for-when-to-use-accounts-users-and-groups) – An AWS Security Blog post that discusses how to organize user access with separate AWS accounts or with IAM users and groups in a single account\.
 
 ## Credentials \(passwords, access keys, and MFA devices\)<a name="resources-credentials"></a>
@@ -38,9 +38,9 @@ Learn the inner workings of IAM policies and find tips on the best ways to confe
 ## Federation and delegation<a name="resources-federation-and-delegation"></a>
 
 You can grant access to resources in your AWS account for users who are authenticated \(signed in\) elsewhere\. These can be IAM users in another AWS account \(known as *delegation*\), users who are authenticated with your organization's sign\-in process, or users from an Internet identity provider like Login with Amazon, Facebook, Google, or any other OpenID Connect \(OIDC\) compatible identity provider\. In these cases, the users get temporary security credentials to access AWS resources\. 
-+  **[IAM Tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)** – Guides you through granting cross\-account access to an IAM user in another AWS account\. 
++  **[IAM tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)** – Guides you through granting cross\-account access to an IAM user in another AWS account\. 
 + **[Common scenarios for temporary credentials](id_credentials_temp.md#sts-introduction)** – Describes ways in which users can be federated into AWS after being authenticated outside of AWS\. 
-+ **[Web Identity Federation Playground](http://aws.amazon.com/blogs/https:aws/the-aws-web-identity-federation-playground/)** – Lets you experiment with Login with Amazon, Google, or Facebook to authenticate and then make a call to Amazon S3\. 
++ **[Web Identity Federation Playground](http://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/)** – Lets you experiment with Login with Amazon, Google, or Facebook to authenticate and then make a call to Amazon S3\. 
 
 ## IAM and other AWS products<a name="resources-iam-and-other-services"></a>
 

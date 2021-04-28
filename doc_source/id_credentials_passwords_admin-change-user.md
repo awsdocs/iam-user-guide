@@ -10,7 +10,7 @@ https://12-digit-AWS-account-ID or alias.signin.aws.amazon.com/console
 
 For more information about how IAM users sign in to the AWS Management Console, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. 
 
-Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [IAM Identities \(users, groups, and roles\)](id.md)\. For information about using policies to set permissions, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. 
+Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [IAM Identities \(users, user groups, and roles\)](id.md)\. For information about using policies to set permissions, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. 
 
 You can grant users permission to change their own passwords\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\. For information about how users access your account sign\-in page, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. 
 

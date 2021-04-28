@@ -11,6 +11,7 @@ Consult these resources for details:
 **Topics**
 + [Creating IAM policies](access_policies_create.md)
 + [Validating IAM policies](access_policies_policy-validator.md)
++ [Generate policies based on access activity](access_policies_generate-policy.md)
 + [Testing IAM policies with the IAM policy simulator](access_policies_testing-policies.md)
 + [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)
 + [Versioning IAM policies](access_policies_managed-versioning.md)

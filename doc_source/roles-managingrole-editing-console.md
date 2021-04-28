@@ -39,7 +39,7 @@ If a user is listed as the principal in a role's trust policy but cannot assume 
 
    If you specify a principal in another account, adding an account to the trust policy of a role is only half of establishing the cross\-account trust relationship\. By default, no users in the trusted accounts can assume the role\. The administrator for the newly trusted account must grant the users the permission to assume the role\. To do that, the administrator must create or edit a policy that is attached to the user to allow the user access to the `sts:AssumeRole` action\. For more information, see the following procedure or [Granting a user permissions to switch roles](id_roles_use_permissions-to-switch.md)\.
 
-   The following policy snippet shows how to reference two AWSservices in the `Principal` element:
+   The following policy snippet shows how to reference two AWS services in the `Principal` element:
 
    ```
    "Principal": {

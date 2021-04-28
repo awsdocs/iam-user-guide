@@ -17,7 +17,7 @@ In the procedure that follows, you will perform the following tasks:
 You will grant the Administrators group permission to access all your available AWS account resources\. Available resources are any AWS products you use, or that you are signed up for\. Users in the Administrators group can also access your AWS account information, *except* for your AWS account's security credentials\.
 
 **Topics**
-+ [Creating your first IAM admin user and group](getting-started_create-admin-group.md)
-+ [Creating your first IAM delegated user and group](getting-started_create-delegated-user.md)
++ [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)
++ [Creating your first IAM delegated user and user group](getting-started_create-delegated-user.md)
 + [How IAM users sign in to your AWS account](getting-started_how-users-sign-in.md)
 + [IAM console search](console_search.md)

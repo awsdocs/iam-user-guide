@@ -31,7 +31,7 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
 
 1. Create the users who should be allowed to change their own password, if they do not already exist\. For details, see [Creating an IAM user in your AWS account](id_users_create.md)\. 
 
-1. Create an IAM group for the users who should be allowed to change their passwords, and then add the users from the previous step to the group\. For details, see [Creating your first IAM admin user and group](getting-started_create-admin-group.md) and [Managing IAM groups](id_groups_manage.md)\. 
+1. Create an IAM group for the users who should be allowed to change their passwords, and then add the users from the previous step to the group\. For details, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md) and [Managing IAM user groups](id_groups_manage.md)\. 
 
    This step is optional, but it's a best practice to use groups to manage permissions\. That way, you can add and remove users and change the permissions for the group as a whole\. 
 

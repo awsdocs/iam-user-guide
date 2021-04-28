@@ -11,7 +11,7 @@ The following examples show how you can allow or grant an AWS account access to 
 
 ## Using roles to delegate access to another AWS account's resources<a name="example-delegate-xaccount-rolesapi"></a>
 
- For a tutorial that shows how to use IAM roles to grant users in one account access to AWS resources that are in another account, see [IAM Tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)\. 
+ For a tutorial that shows how to use IAM roles to grant users in one account access to AWS resources that are in another account, see [IAM tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)\. 
 
 **Important**  
 You can include the ARN for a specific role or user in the `Principal` element of a role trust policy\. When you save the policy, AWS transforms the ARN to a unique principal ID\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the role or user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the ARN when the trust policy is displayed\. However, if you delete the role or user, then the relationship is broken\. The policy no longer applies, even if you recreate the user or role because it does not match the principal ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to an ARN\. The result is that if you delete and recreate a user or role referenced in a trust policy's `Principal` element, you must edit the role to replace the ARN\. It is transformed into the new principal ID when you save the policy\.

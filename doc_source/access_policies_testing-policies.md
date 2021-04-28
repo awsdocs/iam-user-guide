@@ -7,11 +7,11 @@ For more information about how and why to use IAM policies, see [Policies and pe
  
 
 With the IAM policy simulator, you can test and troubleshoot identity\-based policies, IAM permissions boundaries, Organizations service control policies \(SCPs\), and resource\-based policies\. Here are some common things you can do with the policy simulator:
-+ Test policies that are attached to IAM users, groups, or roles in your AWS account\. If more than one policy is attached to the user, group, or role, you can test all the policies, or select individual policies to test\. You can test which actions are allowed or denied by the selected policies for specific resources\.
++ Test policies that are attached to IAM users, user groups, or roles in your AWS account\. If more than one policy is attached to the user, user group, or role, you can test all the policies, or select individual policies to test\. You can test which actions are allowed or denied by the selected policies for specific resources\.
 + Test and troubleshoot the effect of [permissions boundaries](access_policies_boundaries.md) on IAM entities\. Note: you can only simulate one permissions boundary at a time\.
 + Test policies that are attached to AWS resources, such as Amazon S3 buckets, Amazon SQS queues, Amazon SNS topics, or Amazon S3 Glacier vaults\.
 + If your AWS account is a member of an organization in [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/), then you can test the impact of service control policies \(SCPs\) on your IAM policies and resource policies\.
-+ Test new policies that are not yet attached to a user, group, or role by typing or copying them into the simulator\. These are used only in the simulation and are not saved\. Note: you cannot type or copy a resource\-based policy into the simulator\. To use a resource\-based policy in the simulator, you must include the resource in the simulation\. You must also select the check box to include that resource's policy in the simulation\. 
++ Test new policies that are not yet attached to a user, user group, or role by typing or copying them into the simulator\. These are used only in the simulation and are not saved\. Note: you cannot type or copy a resource\-based policy into the simulator\. To use a resource\-based policy in the simulator, you must include the resource in the simulation\. You must also select the check box to include that resource's policy in the simulation\. 
 + Test the policies with selected services, actions, and resources\. For example, you can test to ensure that your policy allows an entity to perform the `ListAllMyBuckets`, `CreateBucket`, and `DeleteBucket` actions in the Amazon S3 service on a specific bucket\.
 + Simulate real\-world scenarios by providing context keys, such as an IP address or date, that are included in `Condition` elements in the policies being tested\. 
 + Identify which specific statement in a policy results in allowing or denying access to a particular resource or action\. 
@@ -32,15 +32,15 @@ The simulator evaluates the policies that you choose and determines the effectiv
 
 ## Permissions required for using the IAM policy simulator<a name="permissions-required_policy-simulator"></a>
 
-You can use the policy simulator console or the policy simulator API to test policies\. By default, console users can test policies that are not yet attached to a user, group, or role by typing or copying those policies into the simulator\. These policies are used only in the simulation and do not disclose sensitive information\. API users must have permissions to test unattached policies\. You can allow console or API users to test policies that are attached to IAM users, groups, or roles in your AWS account\. To do so, you must provide permission to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
+You can use the policy simulator console or the policy simulator API to test policies\. By default, console users can test policies that are not yet attached to a user, user group, or role by typing or copying those policies into the simulator\. These policies are used only in the simulation and do not disclose sensitive information\. API users must have permissions to test unattached policies\. You can allow console or API users to test policies that are attached to IAM users, user groups, or roles in your AWS account\. To do so, you must provide permission to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
 
 For examples of console and API policies that allow a user to simulate policies, see [Example policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
 
 ### Permissions required for using the policy simulator console<a name="permissions-required_policy-simulator-console"></a>
 
-You can allow users to test policies that are attached to IAM users, groups, or roles in your AWS account\. To do so, you must provide your users with permissions to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
+You can allow users to test policies that are attached to IAM users, user groups, or roles in your AWS account\. To do so, you must provide your users with permissions to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
 
-To view an example policy that allows using the policy simulator console for policies that are attached to a user, group, or role, see [IAM: Access the policy simulator console](reference_policies_examples_iam_policy-sim-console.md)\. 
+To view an example policy that allows using the policy simulator console for policies that are attached to a user, user group, or role, see [IAM: Access the policy simulator console](reference_policies_examples_iam_policy-sim-console.md)\. 
 
 To view an example policy that allows using the policy simulator console only for those users with a specific path, see [IAM: Access the policy simulator console based on user path](reference_policies_examples_iam_policy-sim-path-console.md)\.
 
@@ -59,7 +59,7 @@ Include the following actions in your policy:
 + `iam:ListUserPolicies`
 + `iam:ListUsers`
 
-**To allow console users to simulate policies for groups**  
+**To allow console users to simulate policies for user groups**  
 Include the following actions in your policy:
 + `iam:GetGroup`
 + `iam:GetGroupPolicy`
@@ -102,7 +102,7 @@ For example, the following policy uses this action to allow console users to sim
 
 ### Permissions required for using the policy simulator API<a name="permissions-required_policy-simulator-api"></a>
 
-The policy simulator API operations [GetContextKeyForCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeyForCustomPolicy.html) and [SimulateCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html) allow you to test policies that are not yet attached to a user, group, or role\. To test such policies, you pass the policies as strings to the API\. These policies are used only in the simulation and do not disclose sensitive information\. You can also use the API to test policies that are attached to IAM users, groups, or roles in your AWS account\. To do that, you must provide users with permissions to call [GetContextKeyForPrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeyForPrincipalPolicy.html) and [SimulatePrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\.
+The policy simulator API operations [GetContextKeyForCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeyForCustomPolicy.html) and [SimulateCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html) allow you to test policies that are not yet attached to a user, user group, or role\. To test such policies, you pass the policies as strings to the API\. These policies are used only in the simulation and do not disclose sensitive information\. You can also use the API to test policies that are attached to IAM users, user groups, or roles in your AWS account\. To do that, you must provide users with permissions to call [GetContextKeyForPrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeyForPrincipalPolicy.html) and [SimulatePrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\.
 
 To view an example policy that allows using the policy simulator API for attached and unattached policies in the current AWS account, see [IAM: Access the policy simulator API](reference_policies_examples_iam_policy-sim.md)\. 
 
@@ -113,7 +113,7 @@ Include the following actions in your policy:
 + `iam:GetContextKeysForCustomPolicy`
 + `iam:SimulateCustomPolicy`
 
-**To allow API users to simulate policies attached to IAM users, groups, roles, or resources**  
+**To allow API users to simulate policies attached to IAM users, user groups, roles, or resources**  
 Include the following actions in your policy:
 + `iam:GetContextKeysForPrincipalPolicy`
 + `iam:SimulatePrincipalPolicy`
@@ -124,9 +124,9 @@ To view an example policy that allows using the policy simulator API only for th
 
 ## Using the IAM policy simulator \(console\)<a name="policies_policy-simulator-using"></a>
 
-By default, users can test policies that are not yet attached to a user, group, or role by typing or copying those policies into the policy simulator console\. These policies are used only in the simulation and do not disclose sensitive information\. 
+By default, users can test policies that are not yet attached to a user, user group, or role by typing or copying those policies into the policy simulator console\. These policies are used only in the simulation and do not disclose sensitive information\. 
 
-**To test a policy that is not attached to a user, group, or role \(console\)**
+**To test a policy that is not attached to a user, user group, or role \(console\)**
 
 1. Open the IAM policy simulator console at: [https://policysim\.aws\.amazon\.com/](https://policysim.aws.amazon.com/)\.
 
@@ -136,9 +136,9 @@ By default, users can test policies that are not yet attached to a user, group, 
 
 1. Type or copy a policy into the simulator, and use the simulator as described in the following steps\.
 
-After you have permission to use the IAM Policy Simulator Console, you can use the simulator to test an IAM user, group, role, or resource policy\.
+After you have permission to use the IAM Policy Simulator Console, you can use the simulator to test an IAM user, user group, role, or resource policy\.
 
-**To test a policy that is attached to a user, group, or role \(console\)**
+**To test a policy that is attached to a user, user group, or role \(console\)**
 
 1. Open the IAM policy simulator console at [ https://policysim\.aws\.amazon\.com/](https://policysim.aws.amazon.com/)\. 
 **Note**  
@@ -150,16 +150,16 @@ To sign in to the policy simulator as an IAM user, use your unique sign\-in URL 
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html)
 **Tip**  
-To test a policy that is attached to group, you can launch the IAM policy simulator directly from the [IAM console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **Groups**\. Choose the name of the group that you want to test a policy on, and then choose the **Permissions** tab\. In the **Inline Policies** or **Managed Policies** section, locate the policy that you want to test\. In the **Actions** column for that policy, choose **Simulate Policy**\.  
+To test a policy that is attached to user group, you can launch the IAM policy simulator directly from the [IAM console](https://console.aws.amazon.com/iam/): In the navigation pane, choose **User groups**\. Choose the name of the group that you want to test a policy on, and then choose the **Permissions** tab\. Choose **Simulate**\.  
 To test a customer managed policy that is attached to a user: In the navigation pane, choose **Users**\. Choose the name of the user that you want to test a policy on\. Then choose the **Permissions** tab and expand the policy that you want to test\. On the far right, choose **Simulate policy**\. The **IAM Policy Simulator** opens in a new window and displays the selected policy in the **Policies** pane\.
 
 1. \(Optional\) If your account is a member of an organization in [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/), then select the check box next to **AWS Organizations SCPs** to include SCPs in your simulated evaluation\. SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP limits permissions for entities in member accounts\. If an SCP blocks a service or action, then no entity in that account can access that service nor perform that action\. This is true even if an administrator explicitly grants permissions to that service or action through an IAM or resource policy\. 
 
    If your account is not a member of an organization, then the check box does not appear\.
 
-1. \(Optional\) You can test a policy that is set as a [permissions boundary](access_policies_boundaries.md) for an IAM entity \(user or role\), but not for groups\. If a permissions boundary policy is currently set for the entity, it appears in the **Policies** pane\. You can set only one permissions boundary for an entity\. To test a different permissions boundary, you can create a custom permissions boundary\. To do this, choose **Create New Policy**\. A new **Policies** pane opens\. In the menu, choose **Custom IAM Permissions Boundary Policy**\. Enter a name for the new policy and type or copy a policy into the space below\. Choose **Apply** to save the policy\. Next, choose **Back** to return to the original **Policies** pane\. Then select the check box next to the permissions boundary you want to use for the simulation\.  
+1. \(Optional\) You can test a policy that is set as a [permissions boundary](access_policies_boundaries.md) for an IAM entity \(user or role\), but not for user groups\. If a permissions boundary policy is currently set for the entity, it appears in the **Policies** pane\. You can set only one permissions boundary for an entity\. To test a different permissions boundary, you can create a custom permissions boundary\. To do this, choose **Create New Policy**\. A new **Policies** pane opens\. In the menu, choose **Custom IAM Permissions Boundary Policy**\. Enter a name for the new policy and type or copy a policy into the space below\. Choose **Apply** to save the policy\. Next, choose **Back** to return to the original **Policies** pane\. Then select the check box next to the permissions boundary you want to use for the simulation\.  
 
-1. <a name="polsimstep-polsubset"></a>\(Optional\) You can test only a subset of policies attached to a user, group, or role\. To do so, in the **Policies** pane clear the check box next to each policy that you want to exclude\.
+1. <a name="polsimstep-polsubset"></a>\(Optional\) You can test only a subset of policies attached to a user, user group, or role\. To do so, in the **Policies** pane clear the check box next to each policy that you want to exclude\.
 
 1. <a name="polsimstep-service"></a>Under **Policy Simulator**, choose **Select service** and then choose the service to test\. Then choose **Select actions** and select one or more actions to test\. Although the menus show the available selections for only one service at a time, all the services and actions that you have selected appear in **Action Settings and Results**\. 
 
@@ -226,7 +226,7 @@ The following table lists the informational and warning messages you might encou
 | One or more policies require values in the simulation settings\. The simulation might fail without these values\.  |  This message appears if the policy you are testing contains condition keys or variables but you have not provided any values for these keys or variables in **Simulation Settings**\. To dismiss this message, choose **Simulation Settings**, Then enter a value for each condition key or variable\.  | 
 | You have changed policies\. These results are no longer valid\.  |  This message appears if you have changed the selected policy while results are displayed in the **Results** pane\. Results shown in the **Results** pane are not updated dynamically\. To dismiss this message, choose **Run Simulation** again to display new simulation results based on the changes made in the **Policies** pane\.  | 
 | The resource you typed for this simulation does not match this service\.  |  This message appears if you have typed an Amazon Resource Name \(ARN\) in the **Simulation Settings** pane that does not match the service that you chose for the current simulation\. For example, this message appears if you specify an ARN for an Amazon DynamoDB resource but you chose Amazon Redshift as the service to simulate\. To dismiss this message, do one of the following:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html)  | 
-| This action belongs to a service that supports special access control mechanisms in addition to resource\-based policies, such as Amazon S3 ACLs or S3 Glacier vault lock policies\. The policy simulator does not support these mechanisms, so the results can differ from your production environment\.  |   **No action required\.**  This message is informational\. In the current version, the simulator evaluates policies attached to users and groups, and can evaluate resource\-based policies for Amazon S3, Amazon SQS, Amazon SNS, and S3 Glacier\. The policy simulator does not support all access control mechanisms supported by other AWS services\.  | 
+| This action belongs to a service that supports special access control mechanisms in addition to resource\-based policies, such as Amazon S3 ACLs or S3 Glacier vault lock policies\. The policy simulator does not support these mechanisms, so the results can differ from your production environment\.  |   **No action required\.**  This message is informational\. In the current version, the simulator evaluates policies attached to users and user groups, and can evaluate resource\-based policies for Amazon S3, Amazon SQS, Amazon SNS, and S3 Glacier\. The policy simulator does not support all access control mechanisms supported by other AWS services\.  | 
 | DynamoDB FGAC is currently not supported\.  |   **No action required\.**  This informational message refers to *fine\-grained access control*\. Fine\-grained access control is the ability to use IAM policy conditions to determine who can access individual data items and attributes in DynamoDB tables and indexes\. It also refers to the actions that can be performed on these tables and indexes\. The current version of the IAM policy simulator does not support this type of policy condition\. For more information on DynamoDB fine\-grained access control, see [Fine\-Grained Access Control for DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html)\.  | 
 | You have policies that do not comply with the policy syntax\. You can use policy validation to review recommended updates to your policies\.  |  This message appears at the top of the policy list if you have policies that do not comply with the IAM policy grammar\. In order to simulate these policies, review the policy validation options at [Validating IAM policies](access_policies_policy-validator.md) to identify and fix these policies\.  | 
 |  This policy must be updated to comply with the latest policy syntax rules\.  |  This message is displayed if you have policies that do not comply with the IAM policy grammar\. In order to simulate these policies, review the policy validation options at [Validating IAM policies](access_policies_policy-validator.md) to identify and fix these policies\.  | 
@@ -241,7 +241,7 @@ Policy simulator commands typically require calling API operations to do two thi
 
 For security reasons, the API operations have been broken into two groups:
 + API operations that simulate only policies that are passed directly to the API as strings\. This set includes [GetContextKeysForCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) and [SimulateCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html)\.
-+ API operations that simulate the policies that are attached to a specified IAM user, group, role, or resource\. Because these API operations can reveal details of permissions assigned to other IAM entities, you should consider restricting access to these API operations\. This set includes [GetContextKeysForPrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html) and [SimulatePrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\. For more information about restricting access to API operations, see [Example policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
++ API operations that simulate the policies that are attached to a specified IAM user, user group, role, or resource\. Because these API operations can reveal details of permissions assigned to other IAM entities, you should consider restricting access to these API operations\. This set includes [GetContextKeysForPrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html) and [SimulatePrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\. For more information about restricting access to API operations, see [Example policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
 
 In both cases, the API operations simulate the effect of one or more policies on a list of actions and resources\. Each action is paired with each resource and the simulation determines whether the policies allow or deny that action for that resource\. You can also provide values for any context keys that your policies reference\. You can get the list of context keys that the policies reference by first calling [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) or [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html)\. If you don't provide a value for a context key, the simulation still runs\. But the results might not be reliable because the simulator cannot include that context key in the evaluation\.
 

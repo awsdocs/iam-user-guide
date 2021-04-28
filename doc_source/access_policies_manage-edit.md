@@ -1,6 +1,6 @@
 # Editing IAM policies<a name="access_policies_manage-edit"></a>
 
-A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\. You can edit customer managed policies and inline policies in IAM\. AWS managed policies cannot be edited\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
+A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM user group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\. You can edit customer managed policies and inline policies in IAM\. AWS managed policies cannot be edited\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
 
 **Topics**
 + [View policy access](#manage-edit_prerequisites)
@@ -67,11 +67,11 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 You can edit an inline policy from the AWS Management Console\.
 
-**To edit an inline policy for a user or role \(console\)**
+**To edit an inline policy for a user, user group, or role \(console\)**
 
-1. In the navigation pane, choose **Users** or **Roles**\.
+1. In the navigation pane, choose **Users**, **User groups**, or **Roles**\.
 
-1. Choose the name of the user or role with the policy that you want to modify\. Then choose the **Permissions** tab and expand the policy\.
+1. Choose the name of the user, user group, or role with the policy that you want to modify\. Then choose the **Permissions** tab and expand the policy\.
 
 1. To edit an inline policy, choose **Edit Policy**\. 
 
@@ -82,16 +82,6 @@ You can edit an inline policy from the AWS Management Console\.
 You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review** page, review the policy **Summary** and then choose **Save changes** to save your work\.
-
-**To edit an inline policy for a group \(console\)**
-
-1. In the navigation pane, choose **Groups**\.
-
-1. Choose the name of the group with the policy that you want to modify\. Then choose the **Permissions** tab\.
-
-1. To edit an inline policy, choose **Edit Policy**\. 
-
-1. After you have modified your JSON policy, choose **Save** to save your changes\.
 
 ## Editing customer managed policies \(AWS CLI\)<a name="edit-policies-cli-api"></a>
 
@@ -107,9 +97,9 @@ A managed policy can have up to five versions\. If you need to make changes to a
    + To retrieve detailed information about a managed policy: [get\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, run the following commands:
-   + To list the identities \(users, groups, and roles\) to which a managed policy is attached: 
+   + To list the identities \(users, user groups, and roles\) to which a managed policy is attached: 
      + [list\-entities\-for\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/list-entities-for-policy.html)
-   + To list the managed policies attached to an identity \(a user, group, or role\):
+   + To list the managed policies attached to an identity \(a user, user group, or role\):
      + [list\-attached\-user\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-user-policies.html)
      + [list\-attached\-group\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-group-policies.html)
      + [list\-attached\-role\-policies](https://docs.aws.amazon.com/cli/latest/reference/iam/list-attached-role-policies.html)
@@ -150,9 +140,9 @@ A managed policy can have up to five versions\. If you need to make changes to a
    + To retrieve detailed information about a managed policy: [GetPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicy.html)
 
 1. \(Optional\) To find out about the relationships between the policies and identities, call the following operations:
-   + To list the identities \(users, groups, and roles\) to which a managed policy is attached: 
+   + To list the identities \(users, user groups, and roles\) to which a managed policy is attached: 
      + [ListEntitiesForPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListEntitiesForPolicy.html)
-   + To list the managed policies attached to an identity \(a user, group, or role\):
+   + To list the managed policies attached to an identity \(a user, user group, or role\):
      + [ListAttachedUserPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedUserPolicies.html)
      + [ListAttachedGroupPolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedGroupPolicies.html)
      + [ListAttachedRolePolicies](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListAttachedRolePolicies.html)
