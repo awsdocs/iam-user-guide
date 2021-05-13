@@ -8,7 +8,7 @@ If your AWS account root user [multi\-factor authentication \(MFA\) device](id_c
 
 If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
 
-Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\. If you no longer have access to the email or phone, you must contact [AWS Support](https://console.aws.amazon.com/support/home#/)\. They can disable your MFA device so that you can sign in and add a new one\.
+Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\. If you no longer have access to the email or phone, you must contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support)\. They can disable your MFA device so that you can sign in and add a new one\.
 
 **To sign in using alternative factors of authentication as an AWS account root user**
 

@@ -47,7 +47,6 @@ The way that you set up to use source identity depends on the method used when y
 
 Keep the following in mind when working with source identity\.
 + Trust policies for all roles connected to an identity provider \(IdP\) must have the `sts:SetSourceIdentity` permission\. For roles that don't have this permission in the role trust policy, the `AssumeRole*` operation will fail\. If you don't want to update the role trust policy for each role, you can use a separate IdP instance for passing source identity\. Then add the `sts:SetSourceIdentity` permission to only the roles that are connected to the separate IdP\.
-+ You must grant permission to the principal for the `sts:SetSourceIdentity` action, even if the source identity is automatically populated from a parent role session with [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. The `sts:SetSourceIdentity` permission must be allowed in any target role’s permissions policy\. Otherwise, the assume role operation will fail\.
 + When an identity sets a source identity, the `sts:SourceIdentity` key is present in the request\. For subsequent actions taken during the role session, the `aws:SourceIdentity` key is present in the request\. AWS doesn’t control the value of the source identity in either the `sts:SourceIdentity` or `aws:SourceIdentity` keys\. If you choose to require a source identity, you must choose an attribute that you want your users or IdP to provide\. For security purposes, you must ensure that you can control how those values are provided\.
 + The value of source identity must be between 2 and 64 characters long, can contain only alphanumeric characters, underscores, and the following characters: **\. , \+ = @ \-** \(hyphen\)\. You cannot use a value that begins with the text **aws:**\. This prefix is reserved for AWS internal use\.
 + The source identity information is not captured by CloudTrail when an AWS service or service\-linked role carries out an action on behalf of a federated or workforce identity\. 
@@ -57,12 +56,13 @@ You cannot switch to a role in the AWS Management Console that requires a source
 
 ## Permissions required to set source identity<a name="id_credentials_temp_control-access_monitor-perms"></a>
 
-To set a source identity when assuming a role, you must have the following permissions\-only action in your policy: 
+In addition to the action that matches the API operation, you must have the following permissions\-only action in your policy: 
 
 ```
 sts:SetSourceIdentity
 ```
 + To specify a source identity, principals \(IAM users and roles\) must have permissions to `sts:SetSourceIdentity`\. As the administrator, you can configure this in the role trust policy and in the principal’s permissions policy\.
++ When you assume a role with another role, called [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining), permissions for `sts:SetSourceIdentity` are required in both the permissions policy of the principal who is assuming the role and in the role trust policy of the target role\. Otherwise, the assume role operation will fail\.
 + When using source identity, the role trust policies for all roles connected to an IdP must have the `sts:SetSourceIdentity` permission\. The `AssumeRole*` operation will fail for any role connected to an IdP without this permission\. If you don't want to update the role trust policy for each role, you can use a separate IdP instance for passing source identity and add the `sts:SetSourceIdentity` permission to only the roles that are connected to the separate IdP\.
 + To set a source identity across account boundaries, you must include the `sts:SetSourceIdentity` permission in two places\. It must be in the permissions policy of the principal in the originating account and in the role trust policy of the role in the target account\. You might need to do this, for example, when a role is used to assume a role in another account with [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\.
 

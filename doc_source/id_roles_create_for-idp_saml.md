@@ -49,7 +49,7 @@ After you complete the prerequisite steps, you can create the role for SAML\-bas
 
 1. Choose the SAML 2\.0 access level method\. 
    + Choose **Allow programmatic access only** to create a role that can be assumed programmatically from the AWS API or AWS CLI\.
-   + Choose **Allow programmatic and AWS Management Console access** to create a role that can be assumed programmatically and from the console\.
+   + Choose **Allow programmatic and AWS Management Console access** to create a role that can be assumed programmatically and from the AWS Management Console\.
 
    The roles created by both are similar, but the role that can also be assumed from the console includes a trust policy with a particular condition\. That condition explicitly ensures that the SAML audience \(`SAML:aud` attribute\) is set to the AWS sign\-in endpoint for SAML \(https://signin\.aws\.amazon\.com/saml\)\.
 

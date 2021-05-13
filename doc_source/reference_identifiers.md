@@ -29,7 +29,7 @@ Where:
 + `partition` identifies the partition that the resource is in\. For standard AWS Regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\. You cannot [delegate access](id_roles_compare-resource-policies.md#aboutdelegation-resourcepolicy) between accounts in different partitions\.
 + `service` identifies the AWS product\. For IAM resources, this is always `iam`\.
 + `region` is the Region the resource resides in\. For IAM resources, this is always kept blank\.
-+ `account` is the AWS account ID with no hyphens \(for example, 123456789012\)\.
++ `account` is the AWS account ID with no hyphens or the alias for the AWS account\.
 + `resource` is the portion that identifies the specific resource by name\.
 
 You can specify IAM and AWS STS ARNs using the following syntax\. The Region portion of the ARN is blank because IAM resources are global\. 
@@ -37,19 +37,19 @@ You can specify IAM and AWS STS ARNs using the following syntax\. The Region por
 Syntax:
 
 ```
-arn:aws:iam::account-id:root  
-arn:aws:iam::account-id:user/user-name-with-path
-arn:aws:iam::account-id:group/group-name-with-path
-arn:aws:iam::account-id:role/role-name-with-path
-arn:aws:iam::account-id:policy/policy-name-with-path
-arn:aws:iam::account-id:instance-profile/instance-profile-name-with-path
-arn:aws:sts::account-id:federated-user/user-name
-arn:aws:sts::account-id:assumed-role/role-name/role-session-name
-arn:aws:iam::account-id:mfa/virtual-device-name-with-path
-arn:aws:iam::account-id:u2f/u2f-token-id
-arn:aws:iam::account-id:server-certificate/certificate-name-with-path
-arn:aws:iam::account-id:saml-provider/provider-name
-arn:aws:iam::account-id:oidc-provider/provider-name
+arn:aws:iam::account:root  
+arn:aws:iam::account:user/user-name-with-path
+arn:aws:iam::account:group/group-name-with-path
+arn:aws:iam::account:role/role-name-with-path
+arn:aws:iam::account:policy/policy-name-with-path
+arn:aws:iam::account:instance-profile/instance-profile-name-with-path
+arn:aws:sts::account:federated-user/user-name
+arn:aws:sts::account:assumed-role/role-name/role-session-name
+arn:aws:iam::account:mfa/virtual-device-name-with-path
+arn:aws:iam::account:u2f/u2f-token-id
+arn:aws:iam::account:server-certificate/certificate-name-with-path
+arn:aws:iam::account:saml-provider/provider-name
+arn:aws:iam::account:oidc-provider/provider-name
 ```
 
 Many of the following examples include paths in the resource part of the ARN\. Paths cannot be created or manipulated in the AWS Management Console\. To use paths you must work with the resource by using the AWS API, the AWS CLI, or the Tools for Windows PowerShell\.
@@ -192,6 +192,8 @@ The following example shows a policy that you could assign to Richard to allow h
 **Note**  
 When you use ARNs to identify resources in an IAM policy, you can include *policy variables*\. Policy variables can include placeholders for runtime information \(such as the user's name\) as part of the ARN\. For more information, see [IAM policy elements: Variables and tags](reference_policies_variables.md) 
 
+### Using wildcards and paths in ARNs<a name="reference_identifiers_arn-wildcards-paths"></a>
+
 You can use wildcards in the *resource* portion of the ARN to specify multiple users or user groups or policies\. For example, to specify all users working on product\_1234, you would use:
 
 ```
@@ -204,7 +206,7 @@ Let's say you have users whose names start with the string `app_`\. You could re
 arn:aws:iam::123456789012:user/division_abc/subdivision_xyz/product_1234/app_*
 ```
 
-To specify all users, user groups, or policies in your AWS account, use a wildcard after the `user/`, `group/`, or `policy` part of the ARN, respectively\.
+To specify all users, user groups, or policies in your AWS account, use a wildcard after the `user/`, `group/`, or `policy/` part of the ARN, respectively\.
 
 ```
 arn:aws:iam::123456789012:user/*
@@ -212,7 +214,21 @@ arn:aws:iam::123456789012:group/*
 arn:aws:iam::123456789012:policy/*
 ```
 
-Don't use a wildcard in the `user/`, `group/`, or `policy` part of the ARN\. For example, the following is not allowed:
+If you specify the following ARN for a user `arn:aws:iam::111122223333:user/*` it matches both of the following examples\.
+
+```
+arn:aws:iam::111122223333:user/JohnDoe
+arn:aws:iam::111122223333:user/division_abc/subdivision_xyz/JaneDoe
+```
+
+But, if you specify the following ARN for a user `arn:aws:iam::111122223333:user/division_abc*` it matches the second example, but not the first\.
+
+```
+arn:aws:iam::111122223333:user/JohnDoe
+arn:aws:iam::111122223333:user/division_abc/subdivision_xyz/JaneDoe
+```
+
+Don't use a wildcard in the `user/`, `group/`, or `policy/` part of the ARN\. For example, the following is not allowed:
 
 ```
 arn:aws:iam::123456789012:u*

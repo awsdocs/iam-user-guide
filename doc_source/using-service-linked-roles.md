@@ -115,7 +115,7 @@ Some AWS services allow you to pass an existing role to the service, instead of 
 
 The permissions granted by a service\-linked role are indirectly transferable to other users and roles\. When you allow a service to perform operations in other services, the originating service can use those permissions in the future\. If another user or role has permission to perform actions in the originating service, the originating service can then assume the role and access resources in other services\. This means that the other user or role can indirectly access the other services\.
 
-For example, when you create an Amazon RDS DB instance, [RDS creates the service\-linked role](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) for you\. This role allows RDS to call Amazon EC2, Amazon SNS, Amazon CloudWatch Logs, and Amazon Kinesis on your behalf whenever you edit the DB instance\. If you create a policy to allow users and roles in your account or another account to access that Amazon RDS instance, then RDS can still use that role make changes to EC2, SNS, CloudWatch Logs, and Kinesis on their behalf\. The new user or role can indirectly edit resources in those other services\.
+For example, when you create an Amazon RDS DB instance, [RDS creates the service\-linked role](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) for you\. This role allows RDS to call Amazon EC2, Amazon SNS, Amazon CloudWatch Logs, and Amazon Kinesis on your behalf whenever you edit the DB instance\. If you create a policy to allow users and roles in your account or another account to have the same permissions to that Amazon RDS instance, then RDS can still use that role make changes to EC2, SNS, CloudWatch Logs, and Kinesis on their behalf\. The new user or role can indirectly edit resources in those other services\.
 
 ## Creating a service\-linked role<a name="create-service-linked-role"></a>
 
@@ -242,11 +242,11 @@ You can use the AWS API to edit the description of a service\-linked role\.
 
 The method that you use to create a service\-linked role depends on the service\. In some cases, you don't need to manually delete a service\-linked role\. For example, when you complete a specific action \(such as removing a resource\) in the service, the service might delete the service\-linked role for you\. 
 
-In other cases, the service might support deleting a service\-linked role manually from the service console, API, or CLI\. 
+In other cases, the service might support deleting a service\-linked role manually from the service console, API, or AWS CLI\. 
 
 For information about which services support using service\-linked roles, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. To learn whether the service supports deleting the service\-linked role, choose the **Yes** link to view the service\-linked role documentation for that service\.
 
-If the service does not support deleting the role, then you can delete the service\-linked role from the IAM console, API, or CLI\. If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don't have an unused entity that is not actively monitored or maintained\. However, you must clean up your service\-linked role before you can delete it\.
+If the service does not support deleting the role, then you can delete the service\-linked role from the IAM console, API, or AWS CLI\. If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don't have an unused entity that is not actively monitored or maintained\. However, you must clean up your service\-linked role before you can delete it\.
 
 ### Cleaning up a service\-linked role<a name="service-linked-role-review-before-delete"></a>
 
@@ -295,7 +295,7 @@ You can use IAM commands from the AWS CLI to delete a service\-linked role\.
 
 **To delete a service\-linked role \(AWS CLI\)**
 
-1. If you don't know the name of the service\-linked role that you want to delete, type the following command to list the roles and their Amazon Resource Names \(ARNs\) in your account:
+1. If you know the name of the service\-linked role that you want to delete, type the following command to list the role in your account:
 
    ```
    aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name

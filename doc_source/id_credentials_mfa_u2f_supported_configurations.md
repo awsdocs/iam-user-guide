@@ -7,7 +7,7 @@ You can use U2F as a multi\-factor authentication \(MFA\) method in AWS using cu
 AWS currently supports U2F\-compliant security devices that plug into USB ports on your computer\.
 
 **Note**  
-AWS requires access to the physical USB port on your computer to verify your U2F device\. U2F MFA will not work with a virtual machine or remote connection\.
+AWS requires access to the physical USB port on your computer to verify your U2F device\. U2F MFA will not work with a virtual machine, a remote connection, or a browser's incognito mode\.
 
 For information on purchasing a supported device, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
 

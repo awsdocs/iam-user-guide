@@ -10,6 +10,7 @@ If AWS cannot resolve a variable, this might cause the entire statement to be in
 + [Tags as policy variables](#policy-vars-tags)
 + [Where you can use policy variables](#policy-vars-wheretouse)
 + [Request information that you can use for policy variables](#policy-vars-infotouse)
++ [Specifying default values](#policy-vars-default-values)
 + [For more information](#policy-vars-formoreinfo)
 
 ## Introduction<a name="policy-vars-intro"></a>
@@ -275,9 +276,17 @@ There are a few special predefined policy variables that have fixed values that 
 
 These predefined policy variables can be used in any string where you can use regular policy variables\.
 
+## Specifying default values<a name="policy-vars-default-values"></a>
+
+When you add a variable to your policy, you can specify a default value for the variable\. For example, anonymous users will not populate the `${aws:userid}` variable\. You can set the default value to `anonymous` for those users\. To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+
+```
+Condition: StringEquals: "aws:Resource": "arn:aws:s3:::/bucket/${aws:userid, 'anonymous'}"
+```
+
 ## For more information<a name="policy-vars-formoreinfo"></a>
 
- For more information about policies, see the following: 
+For more information about policies, see the following: 
 +  [Policies and permissions in IAM](access_policies.md) 
 +  [Example IAM identity\-based policies](access_policies_examples.md) 
 +  [IAM JSON policy elements reference](reference_policies_elements.md) 

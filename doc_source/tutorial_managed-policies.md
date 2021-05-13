@@ -29,7 +29,7 @@ In this step, you create a customer managed policy that allows any attached user
 
 **To create the policy for your test user**
 
-1. Sign in to the IAM console at https://console\.aws\.amazon\.com/iam/ with your user that has administrator permissions\.
+1. Sign in to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/) with your user that has administrator permissions\.
 
 1. In the navigation pane, choose **Policies**\. 
 

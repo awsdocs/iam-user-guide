@@ -4,7 +4,7 @@ This example shows how you might create an IAM policy that allows IAM users to p
 
 The asterisk acts as a wildcard\. When you use `iam:Get*` in a policy, the resulting permissions include all IAM actions that begin with `Get`, such as `GetUser` and `GetRole`\. Wildcards are useful if new types of entities are added to IAM in the future\. In that case, the permissions granted by the policy automatically allow the user to list and get the details about those new entities\. 
 
-This policy can't be used for reporting purposes\.
+This policy cannot be used to generate reports or service last accessed details\. For a different policy that allows this, see [IAM: Allows read\-only access to the IAM console](reference_policies_examples_iam_read-only-console.md)\.
 
 ```
 {
@@ -14,7 +14,6 @@ This policy can't be used for reporting purposes\.
         "Action": [
             "iam:Get*",
             "iam:List*",
-            "iam:Generate*"
         ],
         "Resource": "*"
     }

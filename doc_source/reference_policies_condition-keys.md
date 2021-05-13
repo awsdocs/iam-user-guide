@@ -220,6 +220,40 @@ Works with [ARN operators](reference_policies_elements_condition_operators.md#Co
 Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
 + **Availability** – This key is always included in the request context\.
 
+## aws:PrincipalIsAWSService<a name="condition-keys-principalisawsservice"></a>
+
+Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.
+
+Use this key to check whether the call to your resource is being made directly by an AWS [service principal](reference_policies_elements_principal.md#principal-services)\. For example, AWS CloudTrail uses the service principal `cloudtrail.amazonaws.com` to write logs to your Amazon S3 bucket\. The request context key is set to true when a service uses a service principal to perform a direct action on your resources\. The context key is set to false if the service uses the credentials of an IAM principal to make a request on the principal's behalf\. It is also set to false if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
++ **Availability** – This key is present in the request context for all signed API requests that use AWS credentials\.
+
+You can use this condition key to limit access to your trusted identities and expected network locations while safely granting access to AWS services\.
+
+In the following Amazon S3 bucket policy example, access to the bucket is restricted unless the request originates from `vpc-111bbb22` or is from a service principal, such as CloudTrail\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Expected-network+service-principal",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::my-logs-bucket/AWSLogs/AccountNumber/*",
+      "Condition": {
+        "StringNotEqualsIfExists": {
+          "aws:SourceVpc": "vpc-111bbb22"
+        },
+        "BoolIfExists": {
+          "aws:PrincipalIsAWSService": "false"
+        }
+      }
+    }
+  ]
+}
+```
+
 ## aws:PrincipalOrgID<a name="condition-keys-principalorgid"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
@@ -307,6 +341,55 @@ The following condition allows access for every principal in the `o-a1b2c3d4e5` 
     }
 ```
 
+## aws:PrincipalServiceName<a name="condition-keys-principalservicename"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the [service principal](reference_policies_elements_principal.md#principal-services) name in the policy with the service principal that is making requests to your resources\. You can use this key to check whether this call is made by a specific service principal\. When a service principal makes a direct request to your resource, the `aws:PrincipalServiceName` key contains the name of the service principal\. For example, the AWS CloudTrail service principal name is `cloudtrail.amazonaws.com`\.
++ **Availability** – This key is present in the request when the call is made by an AWS service principal\. This key is not present in any other situation, including the following:
+  + If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
+  + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
+  + If the call is made directly by an IAM principal\.
+
+   
+
+You can use this condition key to limit access to your trusted identities and expected network locations, while safely granting access to an AWS service\.
+
+In the following Amazon S3 bucket policy example, access to the bucket is restricted unless the request originates from `vpc-111bbb22` or is from a service principal, such as CloudTrail\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "expected-network+service-principal",
+      "Effect": "Deny",
+      "Principal": "*",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::my-logs-bucket/AWSLogs/AccountNumber/*",
+      "Condition": {
+        "StringNotEqualsIfExists": {
+          "aws:SourceVpc": "vpc-111bbb22",
+          "aws:PrincipalServiceName": "cloudtrail.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
+```
+
+## aws:PrincipalServiceNamesList<a name="condition-keys-principalservicenameslist"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+This key provides a list of all [service principal](reference_policies_elements_principal.md#principal-services) names that belong to the service\. This is an advanced condition key\. You can use it to restrict the service from accessing your resource from a specific Region only\. Some services may create Regional service principals to indicate a particular instance of the service within a specific Region\. You can limit access to a resource to a particular instance of the service\. When a service principal makes a direct request to your resource, the `aws:PrincipalServiceNamesList` contains an unordered list of all service principal names associated with the Regional instance of the service\.
++ **Availability** – This key is present in the request when the call is made by an AWS service principal\. This key is not present in any other situation, including the following:
+  + If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
+  + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
+  + If the call is made directly by an IAM principal\.
+
+`aws:PrincipalServiceNamesList` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+
 ## aws:PrincipalTag<a name="condition-keys-principaltag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
@@ -346,7 +429,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 Use this key to compare who referred the request in the client browser with the referer that you specify in the policy\. The `aws:referer` request context value is provided by the caller in an HTTP header\. The `Referer` header is included in a web browser request when you select a link on a web page\. The `Referer` header contains the URL of the web page where the link was selected\.
 + **Availability** – This key is included in the request context only if the request to the AWS resource was invoked by linking from a web page URL in the browser\. This key is not included for programmatic requests because it doesn't use a browser link to access the AWS resource\.
 
-For example, you can access an Amazon S3 object directly using a URL or using direct API invocation\. For more information, see [Amazon S3 API operations directly using a web browser](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. When you access an Amazon S3 object from a URL that exists in a webpage, the URL of the source web page is in used in `aws:referer`\. When you access an Amazon S3 object by typing the URL into your browser, `aws:referer` is not present\. When you invoke the API directly, `aws:referer` is also not present\. You can use the `aws:referer` condition key in a policy to allow requests made from a specific referer, such as a link on a web page in your company’s domain\. 
+For example, you can access an Amazon S3 object directly using a URL or using direct API invocation\. For more information, see [Amazon S3 API operations directly using a web browser](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-4)\. When you access an Amazon S3 object from a URL that exists in a webpage, the URL of the source web page is in used in `aws:referer`\. When you access an Amazon S3 object by typing the URL into your browser, `aws:referer` is not present\. When you invoke the API directly, `aws:referer` is also not present\. You can use the `aws:referer` condition key in a policy to allow requests made from a specific referer, such as a link on a web page in your company's domain\. 
 
 **Warning**  
 This key should be used carefully\. It is dangerous to include a publicly known referer header value\. Unauthorized parties can use modified or custom browsers to provide any `aws:referer` value that they choose\. As a result, `aws:referer` should not be used to prevent unauthorized parties from making direct AWS requests\. It is offered only to allow customers to protect their digital content, such as content stored in Amazon S3, from being referenced on unauthorized third\-party sites\.
@@ -505,7 +588,7 @@ To learn more about using source identity information, see [Monitor and control 
 
 Works with [IP address operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress)\.
 
-Use this key to compare the requester's IP address with the IP address that you specify in the policy\.
+Use this key to compare the requester's IP address with the IP address that you specify in the policy\. The `aws:SourceIp` condition key can only be used for public IP address ranges\.
 + **Availability** – This key is included in the request context, except when the requester uses a VPC endpoint to make the request\.
 
 The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `aws:ViaAWSService` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 

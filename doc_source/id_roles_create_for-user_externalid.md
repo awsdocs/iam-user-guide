@@ -15,7 +15,7 @@ For example, let's say that you decide to hire a third\-party company called Exa
 
 Do not give Example Corp access to an IAM user and its long\-term credentials in your AWS account\. Instead, use an IAM role and its temporary security credentials\. An IAM role provides a mechanism to allow a third party to access your AWS resources without needing to share long\-term credentials \(for example, an IAM user's access key\)\.
 
-You can use an IAM role to establish a trusted relationship between your AWS account and the Example Corp account\. After this relationship is established, a member of the Example Corp account can call the AWS STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\. The Example Corp members can then use the credentials to access AWS resources in your account\. 
+You can use an IAM role to establish a trusted relationship between your AWS account and the Example Corp account\. After this relationship is established, a member of the Example Corp account can call the AWS Security Token Service [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\. The Example Corp members can then use the credentials to access AWS resources in your account\. 
 
 **Note**  
 For more information about the AssumeRole and other AWS API operations that you can call to obtain temporary security credentials, see [Requesting temporary security credentials](id_credentials_temp_request.md)\.

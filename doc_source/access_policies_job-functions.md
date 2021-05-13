@@ -183,3 +183,8 @@ This job function requires the ability to pass roles to AWS services\. The polic
 ## Updates to AWS managed policies for job functions<a name="security-iam-awsmanpol-jobfunction-updates"></a>
 
 These policies are all maintained by AWS and are kept up to date to include support for new services and new capabilities as they are added by AWS services\. These policies cannot be modified by customers\. You can make a copy of the policy and then modify the copy, but that copy is not automatically updated as AWS introduces new services and API operations\.
+
+For a job function policy, you can view the version history and the time and date of each update in the IAM console\. To do this, use the links on this page to view the policy details\. Then choose the **Policy versions** tab to view the versions\. This page shows the last 25 versions of a policy\. To view all of the versions for a policy, call the [get\-policy\-version](https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy-version.html) AWS CLI command or the [GetPolicyVersion](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetPolicyVersion.html) API operation\.
+
+**Note**  
+You can have up to five versions of a customer managed policy, but AWS retains the full version history of AWS managed policies\.

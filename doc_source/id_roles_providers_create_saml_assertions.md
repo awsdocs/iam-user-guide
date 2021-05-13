@@ -117,6 +117,9 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 
 The value in the `AttributeValue` element must be between 2 and 64 characters long, can contain only alphanumeric characters, underscores, and the following characters: **\. , \+ = @ \-** \(hyphen\)\. It cannot contain spaces\. The value is typically an attribute that is associated with the user such as a user id \(`johndoe`\) or an email address \(`johndoe@example.com`\)\. It should not be a value that includes a space, like a user's display name \(`John Doe`\)\. For more information about using source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
 
+**Important**  
+If your SAML assertion is configured to use the [`SourceIdentity`](#saml_sourceidentity) attribute, then your role trust policy must also include the `sts:SetSourceIdentity` action, otherwise the assume role operation will fail\. For more information about using source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
+
 To pass a source identity attribute, include the `AttributeValue` element that specifies the value of the source identity\. For example, to pass the source identity `DiegoRamirez` use the following attribute\.
 
 ```

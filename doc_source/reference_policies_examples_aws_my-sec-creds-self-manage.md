@@ -9,7 +9,6 @@ This example policy does not allow users to reset a password while signing in fo
 
 **What does this policy do?**
 + The `AllowViewAccountInfo` statement allows the user to view account\-level information\. These permissions must be in their own statement because they do not support or do not need to specify a resource ARN\. Instead the permissions specify `"Resource" : "*"`\. This statement includes the following actions that allow the user to view specific information: 
-  + `GetAccountSummary` – View the account ID and the account [canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId)\.
   + `GetAccountPasswordPolicy` – View the account password requirements while changing their own IAM user password\.
   + `ListVirtualMFADevices` – View details about a virtual MFA device that is enabled for the user\.
 + The `AllowManageOwnPasswords` statement allows the user to change their own password\. This statement also includes the `GetUser` action, which is required to view most of the information on the **My Security Credentials** page\.
@@ -36,7 +35,7 @@ This policy does not allow users to view the **Users** page in the IAM console o
             "Effect": "Allow",
             "Action": [
                 "iam:GetAccountPasswordPolicy",
-                "iam:GetAccountSummary",       
+                
                 "iam:ListVirtualMFADevices"
             ],
             "Resource": "*"

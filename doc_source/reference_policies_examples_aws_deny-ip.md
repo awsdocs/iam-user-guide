@@ -11,7 +11,7 @@ This policy does not allow any actions\. Use this policy in combination with oth
 
 When other policies allow actions, principals can make requests from within the IP address range\. An AWS service can also make requests using the principal's credentials\. When a principal makes a request from outside the IP range, the request is denied\. It is also denied if the principal performs an action that triggers the service to use a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
 
-For more information about using the `aws:SourceIp` and `aws:ViaAWSService` condition keys, see [AWS global condition context keys](reference_policies_condition-keys.md)\.
+For more information about using the `aws:SourceIp` and `aws:ViaAWSService` condition keys, including information about when these keys may not work in your policy, see [AWS global condition context keys](reference_policies_condition-keys.md)\.
 
 ```
 {

@@ -58,6 +58,7 @@ Check the following:
         "DateLessThan": {"aws:CurrentTime": "2017-12-31T23:59:59Z"}
       }
   ```
++ **Source Identity** – Administrators can configure roles to require identities to pass a custom string that identifies the person or application that is performing actions in AWS, called *source identity*\. Verify whether the role being assumed requires that a source identity is set\. For more information about source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
 
 ## A new role appeared in my AWS account<a name="troubleshoot_roles_new-role-appeared"></a>
 
