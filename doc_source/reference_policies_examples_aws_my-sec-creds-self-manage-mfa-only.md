@@ -57,6 +57,7 @@ Do not add permission to delete an MFA device without MFA authentication\. Users
             "Sid": "DenyAllExceptListedIfNoMFA",
             "Effect": "Deny",
             "NotAction": [
+                "iam:ChangePassword",
                 "iam:CreateVirtualMFADevice",
                 "iam:EnableMFADevice",
                 "iam:GetUser",
