@@ -13,7 +13,7 @@ This policy cannot be used to generate reports or service last accessed details\
         "Effect": "Allow",
         "Action": [
             "iam:Get*",
-            "iam:List*",
+            "iam:List*"
         ],
         "Resource": "*"
     }
