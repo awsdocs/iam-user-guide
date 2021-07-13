@@ -13,7 +13,8 @@ This example shows how you might create an IAM policy that allows managing Amazo
                 "ec2:AuthorizeSecurityGroupIngress",
                 "ec2:DeleteSecurityGroup",
                 "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress"
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:ModifySecurityGroupRules"
             ],
             "Resource": "arn:aws:ec2:*:*:security-group/*",
             "Condition": {
@@ -27,7 +28,8 @@ This example shows how you might create an IAM policy that allows managing Amazo
                 "ec2:DescribeSecurityGroups",
                 "ec2:DescribeSecurityGroupReferences",
                 "ec2:DescribeStaleSecurityGroups",
-                "ec2:DescribeVpcs"
+                "ec2:DescribeVpcs",
+                "ec2:DescribeSecurityGroupRules"
             ],
             "Effect": "Allow",
             "Resource": "*"
