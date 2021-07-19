@@ -24,7 +24,7 @@ The following example allows users to access every action in every AWS service e
 "Resource": "*"
 ```
 
-Be careful using the `NotAction` element and `"Effect": "Allow"` in the same statement or in a different statement within a policy\. `NotAction` matches all services and actions that are not explicitly listed or applicable to the specified resource, and could result in granting users more permissions than you intended\.
+Be careful using the `NotAction` element and `"Effect": "Allow"` in the same statement or in a different statement within a policy\. `NotAction` matches all services and actions that are not explicitly listed and applicable to the specified resource, and could result in granting users more permissions than you intended\.
 
 **NotAction with Deny**
 
