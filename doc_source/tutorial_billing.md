@@ -31,10 +31,26 @@ Create a test AWS account to use with this tutorial\. In this account create two
 
 ## Step 1: Activate access to billing data on your AWS test account<a name="tutorial-billing-step1"></a>
 
-First, activate billing access for your test users\. To do this, see [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-access-billing.html) in the *AWS Billing and Cost Management User Guide*\.
+First, activate billing access for your test users in the AWS Billing and Cost Management console\.
 
 **Note**  
 If you [create a member account](https://docs.aws.amazon.com/cli/latest/reference/organizations/create-account.html) using AWS Organizations, this feature is enabled by default\.
+
+**To activate IAM user and role access to the Billing and Cost Management console**
+
+1. Sign in to the AWS Management Console with your root account credentials \(specifically, the email address and password that you used to create your AWS account\)\.
+
+1. On the navigation bar, choose your account name, and then choose [My Account](https://console.aws.amazon.com/billing/home#/account)\.
+
+1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\.
+
+1. Select the **Activate IAM Access** check box to activate access to the Billing and Cost Management console pages\.
+
+1. Choose **Update**\.
+
+ You can now use IAM policies to control which pages a user can access\.
+
+After you have activated IAM user access, you can attach IAM policies to grant or deny access to specific billing features\. For more information about using policies to grant IAM users access to AWS Billing and Cost Management Management features, see [Using identity\-based policies \(IAM policies\) for Billing and Cost Management Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing and Cost Management User Guide*\.
 
 ## Step 2: Create IAM policies that grant permissions to billing data<a name="tutorial-billing-step2"></a>
 
@@ -84,7 +100,7 @@ Now that you have custom billing policies available, you can attach them to thei
 
    1. In the policy search box, type **BillingFullAccess**, and then select the check box next to the policy name\. 
 
-   1. Choose **Policy actions**, and then choose **Attach**\.
+   1. Choose **Actions**, and then choose **Attach**\.
 
    1. In the identity \(user, user group, and role\) search box, type **BillingFullAccessGroup**, select the check box next to the name of the user group, and then choose **Attach policy**\.
 
@@ -92,7 +108,7 @@ Now that you have custom billing policies available, you can attach them to thei
 
    1. In the policy search box, type **BillingViewAccess**, and then select the check box next to the policy name\.
 
-   1. Choose **Policy actions**, and then choose **Attach**\.
+   1. Choose **Actions**, and then choose **Attach**\.
 
    1. In the identity \(user, user group, and role\) search box, type **BillingViewAccessGroup**, select the check box next to the name of the user group, and then choose **Attach policy**\.
 

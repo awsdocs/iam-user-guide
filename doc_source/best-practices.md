@@ -20,7 +20,6 @@ To help secure your AWS resources, follow these recommendations for the AWS Iden
 + [Remove unnecessary credentials](#remove-credentials)
 + [Use policy conditions for extra security](#use-policy-conditions)
 + [Monitor activity in your AWS account](#keep-a-log)
-+ [Video presentation about IAM best practices](#top-practices-video)
 
 ## Lock away your AWS account root user access keys<a name="lock-away-credentials"></a>
 
@@ -216,7 +215,3 @@ Logging features are available in the following AWS services:
 + [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) – Monitors your AWS Cloud resources and the applications you run on AWS\. You can set alarms in CloudWatch based on metrics that you define\. For more information, see the [https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/)\.
 + [AWS Config](https://aws.amazon.com/config/) – Provides detailed historical information about the configuration of your AWS resources, including your IAM users, user groups, roles, and policies\. For example, you can use AWS Config to determine the permissions that belonged to a user or user group at a specific time\. For more information, see the [https://docs.aws.amazon.com/config/latest/developerguide/](https://docs.aws.amazon.com/config/latest/developerguide/)\.
 + [Amazon Simple Storage Service \(Amazon S3\)](https://aws.amazon.com/s3/) – Logs access requests to your Amazon S3 buckets\. For more information, see [Server Access Logging](https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerLogs.html) in the *Amazon Simple Storage Service Developer Guide*\.
-
-## Video presentation about IAM best practices<a name="top-practices-video"></a>
-
-[![AWS Videos](http://img.youtube.com/vi/_wiGpBQGCjU/0.jpg)](http://www.youtube.com/watch?v=_wiGpBQGCjU)

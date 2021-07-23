@@ -1,4 +1,4 @@
-# IAM and STS quotas<a name="reference_iam-quotas"></a>
+# IAM and AWS STS quotas<a name="reference_iam-quotas"></a>
 
 AWS Identity and Access Management \(IAM\) and AWS Security Token Service \(STS\) have quotas that limit the size of objects\. This affects how you name an object, the number of objects you can create, and the number of characters you can use when you pass an object\. 
 
@@ -23,7 +23,7 @@ For a list of Basic Latin \(ASCII\) characters, go to the [Library of Congress B
 
 ## IAM object quotas<a name="reference_iam-quotas-entities"></a>
 
-Quotas, also referred to as limits in AWS, are the maximum values for the resources, actions, and items in your AWS account\. Use Service Quotas to manage your IAM quotas\. You can request an increase to default quotas for adjustable IAM quotas\. Requests up to the [maximum allowed increase](#autoapproved) are automatically approved and are completed within a few minutes\.
+Quotas, also referred to as limits in AWS, are the maximum values for the resources, actions, and items in your AWS account\. Use Service Quotas to manage your IAM quotas\. You can request an increase to default quotas for adjustable IAM quotas\. Requests up to the [maximum quota](#autoapproved) are automatically approved and are completed within a few minutes\.
 
 To request a quota increase, sign in to the AWS Management Console and open the Service Quotas console at [https://console\.aws\.amazon\.com/servicequotas/](https://console.aws.amazon.com/servicequotas/)\. In the navigation pane, choose **AWS services**\. On the navigation bar, choose the **US East \(N\. Virginia\)** Region\. Then search for **IAM**\. Choose **AWS Identity and Access Management \(IAM\)**, choose a quota, and follow the directions to request a quota increase\. For more information, see [Requesting a Quota Increase](https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html) in the *Service Quotas User Guide*\.
 
@@ -32,7 +32,7 @@ The following quotas are adjustable\.
 
 **Default quotas for IAM entities**  
 
-| Resource | Default quota | Maximum allowed increase | 
+| Resource | Default quota | Maximum quota | 
 | --- | --- | --- | 
 | Role trust policy length | 2048 characters | 4096 characters | 
 | Customer managed policies in an AWS account | 1500 | 5000 | 
@@ -54,7 +54,6 @@ You cannot request an increase for the following quotas\.
 | Access keys assigned to an IAM user | 2 | 
 | Access keys assigned to the AWS account root user | 2 | 
 | Aliases for an AWS account | 1 | 
-| Domains for an AWS account | 2 | 
 | Groups an IAM user can be a member of | 10 | 
 | IAM users in a group | Equal to the user quota for the account | 
 | Identity providers \(IdPs\) associated with an IAM SAML provider object | 10 | 
@@ -83,22 +82,7 @@ You cannot request an increase for the following quotas\.
 
 ## IAM Access Analyzer quotas<a name="reference_access-analyzer-quotas"></a>
 
-The following table contains the quotas for IAM Access Analyzer objects\.
-
-
-**Quotas for IAM Access Analyzer objects**  
-
-| Resource | Default quota | 
-| --- | --- | 
-| Access previews per analyzer per hour | 1,000 | 
-| Analyzers with an account zone of trust | 1 | 
-| Analyzers with an organization zone of trust | 5 | 
-| Archive rules per analyzer | 100 | 
-| AWS CloudTrail log files processed per policy generations | 100,000 | 
-| Concurrent policy generations | 1 | 
-| Policy generation AWS CloudTrail data size | 25 GB | 
-| Policy generation AWS CloudTrail time range | 90 days | 
-| Policy generations per day | 5 Canceled policy generation requests apply to the daily quota\.  | 
+For IAM Access Analyzer quotas, see [IAM Access Analyzer Quotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#access-analyzer-quotas)\.
 
 ## IAM and STS character quotas<a name="reference_iam-quotas-entity-length"></a>
 

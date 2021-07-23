@@ -1,6 +1,6 @@
 # Editing IAM policies<a name="access_policies_manage-edit"></a>
 
-A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM user group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\. You can edit customer managed policies and inline policies in IAM\. AWS managed policies cannot be edited\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
+A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. Policies are stored in AWS as JSON documents and are attached to principals as *identity\-based policies* in IAM\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM user group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and [inline policies](access_policies_managed-vs-inline.md)\. You can edit customer managed policies and inline policies in IAM\. AWS managed policies cannot be edited\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
 
 **Topics**
 + [View policy access](#manage-edit_prerequisites)
@@ -23,7 +23,7 @@ You can edit customer managed policies to change the permissions that are define
 
 1. In the navigation pane, choose **Policies**\.
 
-1. In the list of policies, choose the policy name of the policy to edit\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the policy name of the policy to edit\. You can use the search box to filter the list of policies\.
 
 1. Choose the **Permissions** tab, and then choose **Edit policy**\. 
 
@@ -47,7 +47,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. In the navigation pane, choose **Policies**\.
 
-1. In the list of policies, choose the policy name of the policy to set the default version of\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the policy name of the policy to set the default version of\. You can use the search box to filter the list of policies\.
 
 1. Choose the **Policy versions** tab\. Select the check box next to the version that you want to set as the default version, and then choose **Set as default**\.
 
@@ -57,7 +57,7 @@ You can switch between the **Visual editor** and **JSON** tabs any time\. Howeve
 
 1. In the navigation pane, choose **Policies**\.
 
-1. Choose the name of the customer managed policy that has a version you want to delete\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. Choose the name of the customer managed policy that has a version you want to delete\. You can use the search box to filter the list of policies\.
 
 1. Choose the **Policy versions** tab\. Select the check box next to the version that you want to delete\. Then choose **Delete**\.
 

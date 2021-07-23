@@ -62,7 +62,7 @@ IAM Access Analyzer sends the findings to Security Hub using the AWS Security Fi
 | ASFF finding type | Security Hub finding title | Description | 
 | --- | --- | --- | 
 | Effects/Data Exposure/External Access Granted | <resource ARN> allows public access | A resource\-based policy attached to the resource allows public access on the resource to all external principals\. | 
-| Software and Configuration Checks/AWS Security Best Practices/ External Access Granted | <resource ARN> allows cross\-account access | A resource\-based policy attached to the resource allows cross\-account access to external principals outside the zone of trust for the analyzer\. | 
+| Software and Configuration Checks/AWS Security Best Practices/External Access Granted | <resource ARN> allows cross\-account access | A resource\-based policy attached to the resource allows cross\-account access to external principals outside the zone of trust for the analyzer\. | 
 
 ## Typical finding from Access Analyzer<a name="access-analyzer-securityhub-integration-finding-example"></a>
 

@@ -14,6 +14,8 @@ Before you can create a role for web identity federation, you must first complet
    + [Using OAuth 2\.0 for Login \(OpenID Connect\)](https://developers.google.com/accounts/docs/OAuth2Login) on the Google developers site\.
 
 1. <a name="idpoidcstep2"></a>After getting the required information from the identity provider, create an identity provider in IAM\. For more information, see [Creating OpenID Connect \(OIDC\) identity providers](id_roles_providers_create_oidc.md)\.
+**Important**  
+If you are using an OIDC identity provider from Google, Facebook, or Amazon Cognito, don't create a separate IAM identity provider in the AWS Management Console\. These OIDC identity providers are already built\-in to AWS and are available for your use\. Skip this step and move directly to creating new roles using your identity provider in the following step\.
 
 1. Prepare the policies for the role that the IdP\-authenticated users will assume\. As with any role, a role for a mobile app includes two policies\. One is the trust policy that specifies who can assume the role\. The other is the permissions policy that specifies the AWS actions and resources that the mobile app is allowed or denied access to\.
 

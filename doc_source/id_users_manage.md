@@ -82,18 +82,18 @@ When you use the AWS Management Console to delete an IAM user, IAM automatically
 + Any access keys belonging to the user
 + All inline policies embedded in the user \(policies that are applied to a user via user group permissions are not affected\) 
 **Note**  
-Any managed policies attached to the user are detached from the user when the user is deleted\. Managed policies are not deleted when you delete a user\. 
+IAM removes any managed policies attached to the user when you delete the user, but does not delete managed policies\. 
 + Any associated MFA device
 
 **To delete an IAM user \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Users**, and then select the check box next to the user name that you want to delete, not the name or row itself\. 
+1. In the navigation pane, choose **Users**, and then select the check box next to the user name that you want to delete\. 
 
-1. At the top of the page, choose **Delete user**\. 
+1. At the top of the page, choose **Delete**\.
 
-1. In the confirmation dialog box, wait for the last accessed information to load before you review the data\. The dialog box shows when each of the selected users last accessed an AWS service\. If you attempt to delete a user that has been active within the last 30 days, you must select an additional check box to confirm that you want to delete the active user\. If you want to proceed, choose **Yes, Delete**\. 
+1. In the confirmation dialog box, enter the username in the text input field to confirm the deletion of the user\. Choose ** Delete**\. 
 
 ### Deleting an IAM user \(AWS CLI\)<a name="id_users_deleting_cli"></a>
 

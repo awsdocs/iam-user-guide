@@ -46,7 +46,7 @@ This example shows the steps required to configure Alice, an IAM user, as a [Dat
 
 1. Choose **Policies** and then type **database** in the search box\.
 
-1. Select the check box for the **DatabaseAdministrator** policy, choose **Policy actions**, and then choose **Attach**\.
+1. Select the check box for the **DatabaseAdministrator** policy, choose **Actions**, and then choose **Attach**\.
 
 1. In the list of users, select **Alice** and then choose **Attach policy**\. Alice now can administer AWS databases\. However, to allow Alice to monitor those databases, you must configure the service role\.
 
@@ -74,7 +74,7 @@ This example shows the steps required to configure Juan, an IAM user, as a [Netw
 
 1. In the navigation pane, choose **Policies** and then type **network** in the search box\.
 
-1. Select the check box next to **NetworkAdministrator** policy, choose **Policy actions**, and then choose **Attach**\.
+1. Select the check box next to **NetworkAdministrator** policy, choose **Actions**, and then choose **Attach**\.
 
 1. In the list of users, select the check box next to **Juan** and then choose **Attach policy**\. Juan now can administer AWS network resources\. However, to enable monitoring of IP traffic in your VPC, you must configure the service role\.
 

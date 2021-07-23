@@ -7,7 +7,7 @@ Use the information here to help you diagnose and fix issues that you might enco
 + [Error: RoleSessionName is required in AuthnResponse \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_missing-rolesessionname)
 + [Error: Not authorized to perform sts:AssumeRoleWithSAML \(service: AWSSecurityTokenService; status code: 403; error code: AccessDenied\)](#troubleshoot_saml_missing-role)
 + [Error: RoleSessionName in AuthnResponse must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-rolesessionname)
-+ [Error: Source Identity must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} and not begin with "aws:" \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-sourceidentity)
++ [Error: Source Identity must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} and not begin with `"aws:"` \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-sourceidentity)
 + [Error: Response signature invalid \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-metadata)
 + [Error: Failed to assume role: Issuer not present in specified provider \(service: AWSOpenIdDiscoveryService; status code: 400; error code: AuthSamlInvalidSamlResponseException\)](#troubleshoot_saml_issuer-mismatch)
 + [Error: Could not parse metadata\.](#troubleshoot_saml_issuer-metadata)
@@ -49,7 +49,7 @@ This error can occur if the `RoleSessionName` attribute value is too long or con
 
 For more information, see [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)\. To view the SAML response in your browser, follow the steps listed in [How to view a SAML response in your browser for troubleshooting](troubleshoot_saml_view-saml-response.md)\.
 
-## Error: Source Identity must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} and not begin with "aws:" \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)<a name="troubleshoot_saml_invalid-sourceidentity"></a>
+## Error: Source Identity must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} and not begin with `"aws:"` \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)<a name="troubleshoot_saml_invalid-sourceidentity"></a>
 
 This error can occur if the `sourceIdentity` attribute value is too long or contains invalid characters\. The maximum valid length is 64 characters\. For more information about source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
 

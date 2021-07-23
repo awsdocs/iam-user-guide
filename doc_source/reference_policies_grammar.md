@@ -119,7 +119,7 @@ policy  = {
 
 ## Policy grammar notes<a name="policies-grammar-notes"></a>
 + A single policy can contain an array of statements\.
-+ Policies have a maximum size between 2048 characters and 10,240 characters, depending on what entity the policy is attached to\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\. Policy size calculations do not include white space characters\.
++ Policies have a maximum size between 2048 characters and 10,240 characters, depending on what entity the policy is attached to\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\. Policy size calculations do not include white space characters\.
 + Individual elements must not contain multiple instances of the same key\. For example, you cannot include the `Effect` block twice in the same statement\. 
 + Blocks can appear in any order\. For example, `version_block` can follow `id_block` in a policy\. Similarly, `effect_block`, `principal_block`, `action_block` can appear in any order within a statement\.
 + The `id_block` is optional in resource\-based policies\. It must *not* be included in identity\-based policies\.

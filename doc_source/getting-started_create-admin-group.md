@@ -27,7 +27,7 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
    1. On the navigation bar, choose **Services** and then **IAM** to return to the IAM dashboard\.
 
-1. In the navigation pane, choose **Users** and then choose **Add user**\.
+1. In the navigation pane, choose **Users** and then choose **Add users**\.
 
 1. On the **Details** page, do the following:
 

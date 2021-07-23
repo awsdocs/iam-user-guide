@@ -11,9 +11,11 @@ IAM does not automatically update policies that refer to the user group as a res
 
 1. From the navigation pane of the IAM console, choose **Policies**\.
 
-1. From the **Filter policies** menu, select the **Customer managed** check box to filter the policies to show only your custom policies\.
+1. Sort by the **Type** column to find your **Customer managed** custom policies\.
 
-1. Choose the arrow next to each policy name to expand the policy summary\.
+1. Choose the policy name of the policy to edit\.
+
+1. Choose the **Permissions** tab, and then choose **Policy summary**\.
 
 1. Choose **IAM** from the list of services, if it exists\.
 

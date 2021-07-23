@@ -6,7 +6,7 @@ If your AWS account root user [multi\-factor authentication \(MFA\) device](id_c
 
 ## Recovering a root user MFA device<a name="root-mfa-lost-or-broken"></a>
 
-If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone that are registered with your account\. 
+If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can sign in using alternative methods of authentication\. This means that if you can't sign in with your MFA device, you can sign in by verifying your identity using the email and phone registered with your account\. 
 
 Before you sign in as a root user using alternative factors of authentication, make sure that you have access to the email and phone number that are associated with your account\. If you no longer have access to the email or phone, you must contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support)\. They can disable your MFA device so that you can sign in and add a new one\.
 
@@ -14,7 +14,7 @@ Before you sign in as a root user using alternative factors of authentication, m
 
 1.  Sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the account owner by choosing **Root user** and entering your AWS account email address\. On the next page, enter your password\.
 
-1. On the **Amazon Web Services Sign In Using MFA** page, choose **Having problems with your authentication device? Click here**\.
+1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
 **Note**  
 You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA device\.
 

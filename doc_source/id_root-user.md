@@ -20,6 +20,7 @@ You can change the email address and password on the [Security Credentials](http
 + [Deleting access keys for the root user](#id_root-user_manage_delete-key)
 + [Changing the password for the root user](#id_root-user_manage_password)
 + [Securing the credentials for the root user](#id_root-user_secure_credentials)
++ [Transferring the root user owner](#id_root-user_transfer_account)
 
 ## Create or delete an AWS account<a name="id_root-user_manage_account"></a>
 
@@ -88,3 +89,7 @@ For information about changing the root user's password, see [Changing the AWS a
 ## Securing the credentials for the root user<a name="id_root-user_secure_credentials"></a>
 
 For more information about securing the credentials for the AWS account root user, see [Lock away your AWS account root user access keys](best-practices.md#lock-away-credentials)\.
+
+## Transferring the root user owner<a name="id_root-user_transfer_account"></a>
+
+To transfer ownership of the root user, see [How do I transfer my AWS account to another person or business?](https://aws.amazon.com/premiumsupport/knowledge-center/transfer-aws-account/)\. 

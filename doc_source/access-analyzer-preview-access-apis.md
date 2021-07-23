@@ -58,4 +58,4 @@ To create an access preview for a new Secrets Manager secret or an existing Secr
 
 **Secret policy** – If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret\. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy\. To propose deletion of an existing policy, you can specify an empty string\.
 
-**AWS KMS encryption key** – If the proposed configuration is for a new secret and you do not specify the AWS KMS key ID, the access preview uses the default CMK of the AWS account\. If you specify an empty string for the AWS KMS key ID, the access preview uses the default CMK of the AWS account\.
+**AWS KMS encryption key** – If the proposed configuration is for a new secret and you do not specify the AWS KMS key ID, the access preview uses the default KMS key of the AWS account\. If you specify an empty string for the AWS KMS key ID, the access preview uses the default KMS key of the AWS account\.

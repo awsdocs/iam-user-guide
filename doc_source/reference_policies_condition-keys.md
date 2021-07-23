@@ -351,9 +351,7 @@ Use this key to compare the [service principal](reference_policies_elements_prin
   + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
   + If the call is made directly by an IAM principal\.
 
-   
-
-You can use this condition key to limit access to your trusted identities and expected network locations, while safely granting access to an AWS service\.
+You can use this condition key to limit access to your trusted identities and expected network locations while safely granting access to an AWS service\.
 
 In the following Amazon S3 bucket policy example, access to the bucket is restricted unless the request originates from `vpc-111bbb22` or is from a service principal, such as CloudTrail\.
 
@@ -691,13 +689,7 @@ Works with [Boolean operators](reference_policies_elements_condition_operators.m
 Use this key to check whether an AWS service makes a request to another service on your behalf\.
 
 The request context key returns `true` when a service uses the credentials of an IAM principal to make a request on behalf of the principal\. The context key returns `false` if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\. The request context key also returns `false` when the principal makes the call directly\.
-+ **Availability** – This key is always included in the request context for most services\.
-
-The following services do not currently support `aws:ViaAWSService`:
-+ Amazon EC2
-+ AWS Glue
-+ AWS Lake Formation
-+ AWS OpsWorks
++ **Availability** – This key is always included in the request context\.
 
 You can use this condition key to allow or deny access based on whether a request was made by a service\. To view an example policy, see [AWS: Denies access to AWS based on the source IP](reference_policies_examples_aws_deny-ip.md)\.
 

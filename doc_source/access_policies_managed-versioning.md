@@ -65,7 +65,7 @@ You can set the default version of a customer managed policy to apply that versi
 
 1. In the navigation pane, choose **Policies**\.
 
-1. In the list of policies, choose the policy name of the policy to set the default version of\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the policy name of the policy to set the default version of\. You can use the search box to filter the list of policies\.
 
 1. Choose the **Policy versions** tab\. Select the check box next to the version that you want to set as the default version, and then choose **Set as default**\.
 

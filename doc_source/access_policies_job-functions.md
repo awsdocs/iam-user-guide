@@ -107,7 +107,7 @@ This job function policy supports the ability to pass roles to AWS services\. On
 
 **Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
-**Policy description:** This policy grants permissions to create and maintain network resources in Auto Scaling, Amazon EC2, AWS Direct Connect, Route 53, Amazon CloudFront, Elastic Load Balancing, AWS Elastic Beanstalk, Amazon SNS, CloudWatch, CloudWatch Logs, Amazon S3, IAM, and Amazon Virtual Private Cloud\.
+**Policy description:** This policy grants permissions to create and maintain network resources in Auto Scaling, Amazon EC2, AWS Direct Connect, Route 53, Amazon CloudFront, Elastic Load Balancing, AWS Elastic Beanstalk, Amazon SNS, CloudWatch, CloudWatch Logs, Amazon S3, IAM, and Amazon Virtual Private Cloud\.
 
 This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](access_policies_job-functions_create-policies.md) later in this topic\.
 
@@ -156,7 +156,7 @@ This job function requires the ability to pass roles to AWS services\. The polic
 
 **Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
-**Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
+**Policy description:** This policy grants permissions to create and maintain resources across a large variety of AWS services, including AWS CloudTrail, Amazon CloudWatch, AWS CodeCommit, AWS CodeDeploy, AWS Config, AWS Directory Service, Amazon EC2, AWS Identity and Access Management, AWS Key Management Service, AWS Lambda, Amazon RDS, Route 53, Amazon S3, Amazon SES, Amazon SQS, AWS Trusted Advisor, and Amazon VPC\.
 
 This job function requires the ability to pass roles to AWS services\. The policy grants `iam:GetRole` and `iam:PassRole` for only those roles named in the following table\. For more information, see [Creating roles and attaching policies \(console\)](access_policies_job-functions_create-policies.md) later in this topic\.
 

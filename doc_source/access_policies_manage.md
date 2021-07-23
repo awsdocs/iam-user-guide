@@ -6,7 +6,7 @@ Consult these resources for details:
 + For more information about the different types of IAM policies, see [Policies and permissions in IAM](access_policies.md)\. 
 + For general information about using policies within IAM, see [Access management for AWS resources](access.md)\.
 + For information about how permissions are evaluated when multiple policies are in effect for a given IAM identity, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\.
-+ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
++ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
 
 **Topics**
 + [Creating IAM policies](access_policies_create.md)

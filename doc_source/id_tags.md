@@ -4,7 +4,7 @@ A *tag* is a custom attribute label that you can assign to an AWS resource\. Eac
 + A *tag key* \(for example, `CostCenter`, `Environment`, `Project`, or `Purpose`\)\. Tag keys are case sensitive\.
 + An optional field known as a *tag value* \(for example, `111122223333`, `Production`, or a team name\)\. Omitting the tag value is the same as using an empty string\. Like tag keys, tag values are case sensitive\.
 
-Together these are known as key\-value pairs\. For limits on the number of tags you can have on IAM resources, see [IAM and STS quotas](reference_iam-quotas.md)\.
+Together these are known as key\-value pairs\. For limits on the number of tags you can have on IAM resources, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
 
 Tags help you identify and organize your AWS resources\. Many AWS services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related\. For example, you can assign the same tag to an IAM role that you assign to an Amazon S3 bucket\. For more information about tagging strategies, see [Tagging AWS Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) in the *AWS General Reference Guide*\.
 
@@ -59,8 +59,8 @@ Observe the following conventions when attaching tags to IAM resources:
 + You can tag most IAM resources, but not groups, assumed roles, access reports, hardware\-based, or SMS MFA devices\.
 + You cannot use Tag Editor to tag IAM resources\. Tag Editor does not support IAM tags\. For information about using Tag Editor with other services, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Resource Groups User Guide*\.
 + To tag an IAM resource, you must have specific permissions\. To tag or untag resources, you must also have permission to list tags\. For more information, see the list of topics for each IAM resource at the end of this page\. 
-+ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
-+ You can apply the same tag to multiple IAM resources\. For example, suppose you have a department named AWS\_Development with 12 members\. You can have 12 users and a role with the tag key of **department** and a value of **awsDevelopment** \(**department = awsDevelopment**\)\. You can also use the same tag on resources in other [services that support tagging](reference_aws-services-that-work-with-iam.md)\.
++ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
++ You can apply the same tag to multiple IAM resources\. For example, suppose you have a department named `AWS_Development` with 12 members\. You can have 12 users and a role with the tag key of **department** and a value of **awsDevelopment** \(**department = awsDevelopment**\)\. You can also use the same tag on resources in other [services that support tagging](reference_aws-services-that-work-with-iam.md)\.
 + IAM entities \(users or roles\) cannot have multiple instances of the same tag key\. For example, if you have a user with the tag key\-value pair **costCenter = 1234**, you can then attach the tag key\-value pair **costCenter = 5678**\. IAM updates the value of the **costCenter** tag to **5678**\.
 + To edit a tag that is attached to an IAM entity \(user or role\), attach a tag with a new value to overwrite the existing tag\. For example, assume that you have a user with the tag key\-value pair **department = Engineering**\. If you need to move the user to the QA department, then you can attach the **department = QA** tag key\-value pair to the user\. This results in the **Engineering** value of the **department** tag key being replaced with the **QA** value\.
 

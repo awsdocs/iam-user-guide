@@ -11,15 +11,29 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
 **To obtain the thumbprint for an OIDC IdP**
 
-1. Before you can obtain the thumbprint for an OIDC IdP, you need to obtain the OpenSSL command line tool\. You use this tool to download the OIDC IdP's certificate chain and produce a thumbprint of the final certificate in the certificate chain\. If you need to install and configure OpenSSL, follow the instructions at [Install OpenSSL](#oidc-install-openssl) and [Configure OpenSSL](#oidc-configure-openssl)\. 
+1. Before you can obtain the thumbprint for an OIDC IdP, you need to obtain the OpenSSL command line tool\. You use this tool to download the OIDC IdP certificate chain and produce a thumbprint of the final certificate in the certificate chain\. If you need to install and configure OpenSSL, follow the instructions at [Install OpenSSL](#oidc-install-openssl) and [Configure OpenSSL](#oidc-configure-openssl)\. 
+**Note**  
+AWS secures communication with some OIDC identity providers \(IdPs\) through our library of trusted certificate authorities \(CAs\) instead of using a certificate thumbprint to verify your IdP server certificate\. These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a JSON Web Key Set \(JWKS\) endpoint\. In these cases, your legacy thumbprint remains in your configuration, but is no longer used for validation\.
 
-1. Start with the OIDC IdP's URL \(for example, `https://server.example.com`\), and then add `/.well-known/openid-configuration` to form the URL for the IdP's configuration document, such as the following: 
+1. Start with the OIDC IdP URL \(for example, `https://server.example.com`\), and then add `/.well-known/openid-configuration` to form the URL for the IdP's configuration document, such as the following: 
 
    **https://*server\.example\.com*/\.well\-known/openid\-configuration**
 
-   Open this URL in a web browser, replacing *server\.example\.com* with your IdP's server name\. 
+   Open this URL in a web browser, replacing *server\.example\.com* with your IdP server name\. 
 
-1. <a name="thumbstep2"></a>In the document displayed in your web browser, find `"jwks_uri"`\. \(Use your web browser's **Find** feature to locate this text on the page\.\) Immediately following the text `"jwks_uri"` you will see a colon \(:\) followed by a URL\. Copy the fully qualified domain name of the URL\. Do not include the `https://` or any path that comes after the top\-level domain\. 
+1. <a name="thumbstep2"></a>In the displayed document, use your web browser **Find** feature to locate the text `"jwks_uri"`\. Immediately following the text `"jwks_uri"`, there is a colon \(:\) followed by a URL\. Copy the fully qualified domain name of the URL\. Do not include `https://` or any path that comes after the top\-level domain\. 
+
+   ```
+   {
+    "issuer": "https://accounts.example.com",
+    "authorization_endpoint": "https://accounts.example.com/o/oauth2/v2/auth",
+    "device_authorization_endpoint": "https://oauth2.exampleapis.com/device/code",
+    "token_endpoint": "https://oauth2.exampleapis.com/token",
+    "userinfo_endpoint": "https://openidconnect.exampleapis.com/v1/userinfo",
+    "revocation_endpoint": "https://oauth2.exampleapis.com/revoke",
+    "jwks_uri": "https://www.exampleapis.com/oauth2/v3/certs",
+   ...
+   ```
 
 1. Use the OpenSSL command line tool to run the following command\. Replace *keys\.example\.com* with the domain name you obtained in [Step 3](#thumbstep2)\.
 
@@ -27,7 +41,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
    openssl s_client -servername keys.example.com -showcerts -connect keys.example.com:443
    ```
 
-1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate that is displayed \(at the bottom of the command output\)\. This will be the certificate of the root CA in the certificate authority chain\.
+1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate displayed \(at the end of the command output\)\. This contains the certificate of the root CA in the certificate authority chain\.
 
    ```
    -----BEGIN CERTIFICATE-----

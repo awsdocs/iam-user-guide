@@ -16,9 +16,14 @@ After you create an IAM OIDC identity provider, you must create one or more IAM 
 
 Follow these instructions to create and manage an IAM OIDC identity provider in the AWS Management Console\.
 
+**Important**  
+If you are using an OIDC identity provider from either Google, Facebook, or Amazon Cognito, do not create a separate IAM identity provider using this procedure\. These OIDC identity providers are already built\-in to AWS and are available for your use\. Instead, follow the steps to create new roles for your identity provider, see [Creating a role for web identity or OpenID connect federation \(console\)](id_roles_create_for-idp_oidc.md)\.
+
 **To create an IAM OIDC identity provider \(console\)**
 
 1. <a name="idpoidcstep1"></a>Before you create an IAM OIDC identity provider, you must register your application with the IdP to receive a *client ID*\. The client ID \(also known as *audience*\) is a unique identifier for your app that is issued to you when you register your app with the IdP\. For more information about obtaining a client ID, see the documentation for your IdP\. 
+**Note**  
+AWS secures communication with some OIDC identity providers \(IdPs\) through our library of trusted certificate authorities \(CAs\) instead of using a certificate thumbprint to verify your IdP server certificate\. These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a JSON Web Key Set \(JWKS\) endpoint\. In these cases, your legacy thumbprint remains in your configuration, but is no longer used for validation\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -33,7 +38,7 @@ Follow these instructions to create and manage an IAM OIDC identity provider in 
 
 1. Choose **Get thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\.
 
-1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\.
+1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\.
 
 1. \(Optional\) For **Add tags**, you can add key–value pairs to help you identify and organize your IdPs\. You can also use tags to control access to AWS resources\. To learn more about tagging IAM OIDC identity providers, see [Tagging OpenID Connect \(OIDC\) identity providers](id_tags_idps_oidc.md)\. Choose **Add tag**\. Enter values for each tag key\-value pair\. 
 

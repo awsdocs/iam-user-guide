@@ -41,11 +41,11 @@ You can use the AWS Management Console to create IAM users\.
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Users** and then choose **Add user**\.
+1. In the navigation pane, choose **Users** and then choose **Add users**\.
 
 1. Type the user name for the new user\. This is the sign\-in name for AWS\. If you want to add multiple users, choose **Add another user** for each additional user and type their user names\. You can add up to 10 users at one time\.
 **Note**  
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
 
 1. Select the type of access this set of users will have\. You can select programmatic access, access to the AWS Management Console, or both\.
    + Select **Programmatic access** if the users require access to the API, AWS CLI, or Tools for Windows PowerShell\. This creates an access key for each new user\. You can view or download the access keys when you get to the **Final** page\.

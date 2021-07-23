@@ -32,7 +32,7 @@ This column is displayed only if you are using an organization as the zone of tr
 
 **External principal**  
 The principal, not within your zone of trust, that the analyzed policy grants access to\. Valid values include:  
-+ **AWS account** –All principals in the listed AWS account with permissions from that account's administrator can access the resource\.
++ **AWS account** – All principals in the listed AWS account with permissions from that account's administrator can access the resource\.
 + **Any principal** – All principals in any AWS account that meet the conditions included in the **Conditions** column have permission to access the resource\. For example, if a VPC is listed, it means that any principal in any account that has permission to access the listed VPC can access the resource\.
 + **Canonical user** – All principals in the AWS account with the listed canonical user ID have permission to access the resource\.
 + **IAM role** – The listed IAM role has permission to access the resource\.

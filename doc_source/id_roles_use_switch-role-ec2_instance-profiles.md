@@ -6,6 +6,8 @@ Use an instance profile to pass an IAM role to an EC2 instance\. For more inform
 
 If you use the AWS Management Console to create a role for Amazon EC2, the console automatically creates an instance profile and gives it the same name as the role\. When you then use the Amazon EC2 console to launch an instance with an IAM role, you can select a role to associate with the instance\. In the console, the list that's displayed is actually a list of instance profile names\. The console does not create an instance profile for a role that is not associated with Amazon EC2\.
 
+You can use the AWS Management Console to delete IAM roles and instance profiles for Amazon EC2 if the role and the instance profile have the same name\. To learn more about deleting instance profiles, see [Deleting roles or instance profiles](id_roles_manage_delete.md)\.
+
 ## Managing instance profiles \(AWS CLI or AWS API\)<a name="instance-profiles-manage-cli-api"></a>
 
 If you manage your roles from the AWS CLI or the AWS API, you create roles and instance profiles as separate actions\. Because roles and instance profiles can have different names, you must know the names of your instance profiles as well as the names of roles they contain\. That way you can choose the correct instance profile when you launch an EC2 instance\. 

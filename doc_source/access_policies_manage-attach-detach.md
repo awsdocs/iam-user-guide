@@ -31,7 +31,7 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 + For more information about permissions boundaries, see [Permissions boundaries for IAM entities](access_policies_boundaries.md)\.
 + For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.
 + For information about validating IAM policies, see [Validating IAM policies](access_policies_policy-validator.md)\.
-+ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
++ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
 
 ## View identity activity<a name="attach-detach_prerequisites"></a>
 
@@ -47,11 +47,11 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, select the check box next to the name of the policy to attach\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, select the check box next to the name of the policy to attach\. You can use the search box to filter the list of policies\.
 
-1. Choose **Policy actions**, and then choose **Attach**\.
+1. Choose **Actions**, and then choose **Attach**\.
 
-1. Select one or more identities to attach the policy to\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the identities, choose **Attach policy**\.<a name="set-managed-policy-boundary-console"></a>
+1. Select one or more identities to attach the policy to\. You can use the search box to filter the list of principal entities\. After selecting the identities, choose **Attach policy**\.<a name="set-managed-policy-boundary-console"></a>
 
 **To use a managed policy to set a permissions boundary \(console\)**
 
@@ -59,11 +59,11 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, choose the name of the policy to set\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the name of the policy to set\. You can use the search box to filter the list of policies\.
 
 1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section and choose **Set boundary**\.
 
-1. Select one or more users or roles on which to use the policy for a permissions boundary\. You can use the **Filter** menu and the search box to filter the list of principal entities\. After selecting the principals, choose **Set boundaries**\.<a name="embed-inline-policy-console"></a>
+1. Select one or more users or roles on which to use the policy for a permissions boundary\. You can use the search box to filter the list of principal entities\. After selecting the principals, choose **Set boundaries**\.<a name="embed-inline-policy-console"></a>
 
 **To embed an inline policy for a user or role \(console\)**
 
@@ -110,11 +110,11 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, choose the name of the policy to set\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the name of the policy to set\. You can use the search box to filter the list of policies\.
 
 1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section\. Select the check box next to the users or roles whose boundaries you want to change and then choose **Change boundary**\.
 
-1. Select a new policy to use for a permissions boundary\. You can use the **Filter** menu and the search box to filter the list of policies\. After selecting the policy, choose **Change boundary**\.
+1. Select a new policy to use for a permissions boundary\. You can use the search box to filter the list of policies\. After selecting the policy, choose **Change boundary**\.
 
 ## Removing IAM identity permissions \(console\)<a name="remove-policies-console"></a>
 
@@ -126,11 +126,11 @@ You can use the AWS Management Console to remove permissions from an identity \(
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, select the check box next to the name of the policy to detach\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, select the check box next to the name of the policy to detach\. You can use the search box to filter the list of policies\.
 
-1. Choose **Policy actions**, and then choose **Detach**\.
+1. Choose **Actions**, and then choose **Detach**\.
 
-1. Select the identities to detach the policy from\. You can use the **Filter** menu and the search box to filter the list of identities\. After selecting the identities, choose **Detach policy**\.<a name="remove-managed-policy-boundary-console"></a>
+1. Select the identities to detach the policy from\. You can use the search box to filter the list of identities\. After selecting the identities, choose **Detach policy**\.<a name="remove-managed-policy-boundary-console"></a>
 
 **To remove a permissions boundary \(console\)**
 
@@ -138,7 +138,7 @@ You can use the AWS Management Console to remove permissions from an identity \(
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, choose the name of the policy to set\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the name of the policy to set\. You can use the search box to filter the list of policies\.
 
 1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section and choose **Remove boundary**\.
 

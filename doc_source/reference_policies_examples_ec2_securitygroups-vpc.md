@@ -4,34 +4,45 @@ This example shows how you might create an IAM policy that allows managing Amazo
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:DeleteSecurityGroup",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress"
-            ],
-            "Resource": "arn:aws:ec2:*:*:security-group/*",
-            "Condition": {
-                "ArnEquals": {
-                    "ec2:Vpc": "arn:aws:ec2:*:*:vpc/vpc-vpc-id"
-                }
-            }
-        },
-        {
-            "Action": [
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeSecurityGroupReferences",
-                "ec2:DescribeStaleSecurityGroups",
-                "ec2:DescribeVpcs"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        }
-    ]
+   "Version": "2012-10-17",
+   "Statement": [{
+      "Effect": "Allow",
+      "Action": [
+         "ec2:DescribeSecurityGroups",
+         "ec2:DescribeSecurityGroupRules",
+         "ec2:DescribeTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+         "ec2:AuthorizeSecurityGroupIngress", 
+         "ec2:RevokeSecurityGroupIngress", 
+         "ec2:AuthorizeSecurityGroupEgress", 
+         "ec2:RevokeSecurityGroupEgress", 
+         "ec2:ModifySecurityGroupRules",
+         "ec2:UpdateSecurityGroupRuleDescriptionsIngress", 
+         "ec2:UpdateSecurityGroupRuleDescriptionsEgress"
+      ],
+      "Resource": [
+         "arn:aws:ec2:region:111122223333:security-group/*"
+      ],
+      "Condition": {
+         "StringEquals": {
+            "ec2:ResourceTag/Department": "Test"
+         }
+      }
+     },     
+     {
+      "Effect": "Allow",
+      "Action": [
+         "ec2:ModifySecurityGroupRules"
+      ],
+      "Resource": [
+         "arn:aws:ec2:region:111122223333:security-group-rule/*"
+      ]
+     }
+   ]
 }
 ```

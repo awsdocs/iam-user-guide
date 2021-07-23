@@ -36,7 +36,7 @@ You can use the AWS Management Console to create an IAM user group with delegate
 
 1. Choose **Create group**\.
 
-1. In the navigation pane, choose **Users** and then choose **Add user**\.
+1. In the navigation pane, choose **Users** and then choose **Add users**\.
 
 1. For **User name**, type **mary\.major@examplecorp\.com**\.
 

@@ -1,18 +1,20 @@
 # Deleting an IAM user group<a name="id_groups_manage_delete"></a>
 
-When you delete a user group in the AWS Management Console, the console automatically removes all group members, detaches all attached managed policies, and deletes all inline policies\. However, because IAM does not automatically delete policies that refer to the user group as a resource, you must be careful when you delete a user group\. Before you delete your user group, you must manually check all of your policies to find any policies where that group is mentioned by name\. For example, let's say John is the manager of the testing part of the organization\. John has a policy attached to his IAM user entity that lets him add and remove users from the Test user group\. If an administrator deletes the group, the administrator must also delete the policy attached to John\. 
+When you delete a user group in the AWS Management Console, the console automatically removes all group members, detaches all attached managed policies, and deletes all inline policies\. However, because IAM does not automatically delete policies that refer to the user group as a resource, you must be careful when you delete a user group\. Before you delete your user group, you must manually check all of your policies to find any policies that mention the group by name\. For example, if John is the manager of the testing part of the organization\. John has a policy attached to his IAM user entity that lets him add and remove users from the Test user group\. If an administrator deletes the group, the administrator must also delete the policy attached to John\. 
 
 **To find policies that refer to a user group as a resource**
 
 1. From the navigation pane of the IAM console, choose **Policies**\.
 
-1. From the **Policy type** drop\-down list, choose **Customer managed** to filter the policies to show only your custom policies\.
+1. Sort by the **Type** column to find your **Customer managed** custom policies\.
 
-1. Choose the arrow next to each policy name to expand the policy summary\.
+1. Choose the policy name of the policy to delete\.
+
+1. Choose the **Permissions** tab, and then choose **Policy summary**\.
 
 1. Choose **IAM** from the list of services, if it exists\.
 
-1. Look for the name of your group in the **Resource** column\.
+1. Look for the name of your user group in the **Resource** column\.
 
 1. Choose **Delete policy** to delete the policy\.
 
@@ -32,7 +34,7 @@ You can delete an IAM user group from the AWS Management Console\.
 
 1. Choose **Delete**\.
 
-1. In the confirmation box, if you are deleting a single user group, type the user group name and choose **Delete**\. If you are deleting multiple user groups, type the number of user groups you are deleting followed by **user groups** and choose **Delete**\. For example, if you are deleting three user groups, type **3 user groups**\.
+1. In the confirmation box, if you want to delete a single user group, type the user group name and choose **Delete**\. If you want to delete multiple user groups, type the number of user groups to delete followed by **user groups** and choose **Delete**\. For example, if you delete three user groups, type **3 user groups**\.
 
 ## Deleting an IAM user group \(AWS CLI\)<a name="id_groups_manage_delete_cli"></a>
 

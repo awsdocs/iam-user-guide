@@ -17,7 +17,7 @@ The `s3:*Object` action uses a wildcard as part of the action name\. The `AllObj
         {
             "Sid": "AllObjectActions",
             "Effect": "Allow",
-            "Action": "s3:*Object",
+            "Action": "s3:*Object*",
             "Resource": ["arn:aws:s3:::bucket-name/*"]
         }
     ]

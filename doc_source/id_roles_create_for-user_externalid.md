@@ -55,7 +55,7 @@ The following diagram illustrates the confused deputy problem\.
 
 ![\[The description of a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[The description of a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[The description of a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
-This diagram assumes the following:
+This scenario assumes the following:
 + **AWS1** is your AWS account\.
 + **AWS1:ExampleRole** is a role in your account\. This role's trust policy trusts Example Corp by specifying Example Corp's AWS account as the one that can assume the role\.
 
@@ -91,7 +91,9 @@ Example Corp gives the external ID value of "12345" to you\. You must then add a
 }
 ```
 
-The Condition element in this policy allows Example Corp to assume the role only when the AssumeRole API call includes the external ID value of "12345"\. Example Corp makes sure that whenever it assumes a role on behalf of a customer, it always includes that customer's external ID value in the AssumeRole call\. Even if another customer supplies Example Corp with your ARN, it cannot control the external ID that Example Corp includes in its request to AWS\. This helps prevent an unauthorized customer from gaining access to your resources, as shown in the following diagram\.
+The Condition element in this policy allows Example Corp to assume the role only when the AssumeRole API call includes the external ID value of "12345"\. Example Corp makes sure that whenever it assumes a role on behalf of a customer, it always includes that customer's external ID value in the AssumeRole call\. Even if another customer supplies Example Corp with your ARN, it cannot control the external ID that Example Corp includes in its request to AWS\. This helps prevent an unauthorized customer from gaining access to your resources\.
+
+The following diagram illustrates this\.
 
 ![\[How to mitigate a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[How to mitigate a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[How to mitigate a confused deputy problem.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 

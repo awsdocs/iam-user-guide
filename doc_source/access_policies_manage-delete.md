@@ -6,7 +6,7 @@ For more information about the difference between managed and inline policies, s
 
 For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
 
 **Topics**
 + [View policy access](#manage-delete_prerequisites)
@@ -28,9 +28,9 @@ You can delete a customer managed policy to remove it from your AWS account\. Yo
 
 1. In the navigation pane, choose **Policies**\.
 
-1. Select the check box next to the customer managed policy to delete\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. Select the check box next to the customer managed policy to delete\. You can use the search box to filter the list of policies\.
 
-1. Choose **Policy actions**, and then choose **Delete**\.
+1. Choose **Actions**, and then choose **Delete**\.
 
 1. Confirm that you want to delete the policy, and then choose **Delete**\.
 

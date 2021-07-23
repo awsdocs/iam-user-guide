@@ -293,7 +293,7 @@ Amazon's trademarks and trade dress may not be used in
       + [How to view a SAML response in your browser for troubleshooting](troubleshoot_saml_view-saml-response.md)
 + [Reference information for AWS Identity and Access Management](reference.md)
    + [IAM identifiers](reference_identifiers.md)
-   + [IAM and STS quotas](reference_iam-quotas.md)
+   + [IAM and AWS STS quotas](reference_iam-quotas.md)
    + [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)
    + [IAM JSON policy reference](reference_policies.md)
       + [IAM JSON policy elements reference](reference_policies_elements.md)

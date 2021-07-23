@@ -99,7 +99,7 @@ For more information, see [Aggregating Logs](https://docs.aws.amazon.com/awsclou
 
 CloudTrail logs sign\-in events to the AWS Management Console, the AWS discussion forums, and AWS Marketplace\. CloudTrail logs successful and failed sign\-in attempts for IAM users and federated users\. 
 
-For AWS account root users, only successful sign\-in events are logged\. Unsuccessful sign\-in events by the root user are *not *logged by CloudTrail\.
+ To view sample CloudTrail events for successful and unsuccessful root user sign\-ins, see [Example event records for root users](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-aws-console-sign-in-events.html#cloudtrail-event-reference-aws-console-sign-in-events-root) in the *AWS CloudTrail User Guide*\.
 
 As a security best practice, AWS does not log the entered IAM user name text when the sign\-in failure is caused by *an incorrect user name*\. The user name text is masked by the value `HIDDEN_DUE_TO_SECURITY_REASONS`\. For an example of this, see [Example sign\-in failure event caused by incorrect user name](#hiddensecurity), later in this topic\. The user name text is obscured because such failures might be caused by user errors\. Logging these errors could expose potentially sensitive information\. For example:
 + You accidentally type your password in the user name box\.
