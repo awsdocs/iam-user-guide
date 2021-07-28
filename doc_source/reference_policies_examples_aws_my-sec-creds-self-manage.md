@@ -125,7 +125,9 @@ This policy does not allow users to view the **Users** page in the IAM console o
                 "iam:ListMFADevices",
                 "iam:ListVirtualMFADevices",
                 "iam:ResyncMFADevice",
-                "sts:GetSessionToken"
+                "sts:GetSessionToken",
+                "iam:ChangePassword",
+                "iam:GetAccountSummary"
             ],
             "Resource": "*",
             "Condition": {
