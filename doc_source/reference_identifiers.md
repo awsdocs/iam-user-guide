@@ -29,7 +29,7 @@ Where:
 + `partition` identifies the partition that the resource is in\. For standard AWS Regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\. You cannot [delegate access](id_roles_compare-resource-policies.md#aboutdelegation-resourcepolicy) between accounts in different partitions\.
 + `service` identifies the AWS product\. For IAM resources, this is always `iam`\.
 + `region` is the Region the resource resides in\. For IAM resources, this is always kept blank\.
-+ `account` is the AWS account ID with no hyphens or the alias for the AWS account\.
++ `account` is the AWS account ID with no hyphens\.
 + `resource` is the portion that identifies the specific resource by name\.
 
 You can specify IAM and AWS STS ARNs using the following syntax\. The Region portion of the ARN is blank because IAM resources are global\. 
