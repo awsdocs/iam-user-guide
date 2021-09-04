@@ -70,7 +70,7 @@ Next, create custom policies that grant both view and full access permissions to
 
    **Full access**
 
-   1. Choose **Select actions** and then select the check box next to **All Billing actions \(\aws-portal:*\)**\. You do not need to select a resource or condition for this policy\.
+   1. Choose **Select actions** and then select the check box next to **All Billing actions \(aws\-portal:\*\)**\. You do not need to select a resource or condition for this policy\.
 
    1. Choose **Review policy**\.
 
