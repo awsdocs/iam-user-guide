@@ -34,6 +34,7 @@ AWS secures communication with some OIDC identity providers \(IdPs\) through our
 1. For **Provider URL**, type the URL of the IdP\. The URL must comply with these restrictions:
    + The URL is case\-sensitive\.
    + The URL must begin with **https://**\.
+   + The URL should not contain a port number\. 
    + Within your AWS account, each IAM OIDC identity provider must use a unique URL\.
 
 1. Choose **Get thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\.

@@ -3,7 +3,7 @@
 **Important**  
 If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.
 
-As a [best practice](best-practices.md#lock-away-credentials), do not use the AWS account root user for any task where it's not required\. Instead, create a new IAM user for each person that requires administrator access\. Then make those users administrators by placing the users into an "Administrators" user group to which you attach the AdministratorAccess managed policy\. 
+As a [best practice](best-practices.md#lock-away-credentials), do not use the AWS account root user for any task where it's not required\. Instead, create a new IAM user for each person that requires administrator access\. Then make those users administrators by placing the users into an "Administrators" user group to which you attach the `AdministratorAccess` managed policy\. 
 
 Thereafter, the users in the administrators user group should set up the user groups, users, and so on, for the AWS account\. All future interaction should be through the AWS account's users and their own keys instead of the root user\. However, to perform some account and service management tasks, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Account Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
 

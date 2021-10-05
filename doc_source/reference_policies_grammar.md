@@ -6,7 +6,7 @@ For examples of policies, see the following topics:
 + [Policies and permissions in IAM](access_policies.md)
 + [Example IAM identity\-based policies](access_policies_examples.md)
 + [Example Policies for Working in the Amazon EC2 Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-ec2-console.html) and [Example Policies for Working With the AWS CLI, the Amazon EC2 CLI, or an AWS SDK](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
-+  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service Developer Guide*\. 
++  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service User Guide*\. 
 
 For examples of policies used in other AWS services, go to the documentation for those services\.
 
@@ -124,7 +124,7 @@ policy  = {
 + Blocks can appear in any order\. For example, `version_block` can follow `id_block` in a policy\. Similarly, `effect_block`, `principal_block`, `action_block` can appear in any order within a statement\.
 + The `id_block` is optional in resource\-based policies\. It must *not* be included in identity\-based policies\.
 + The `principal_block` element is required in resource\-based policies \(for example, in Amazon S3 bucket policies\) and in trust policies for IAM roles\. It must *not* be included in identity\-based policies\.
-+ The `principal_map` element in Amazon S3 bucket policies can include the `CanonicalUser` ID\. Most resource\-based policies do not support this mapping\. To learn more about using the canonical user ID in a bucket policy, see [Specifying a Principal in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html) in the *Amazon Simple Storage Service Developer Guide*\.
++ The `principal_map` element in Amazon S3 bucket policies can include the `CanonicalUser` ID\. Most resource\-based policies do not support this mapping\. To learn more about using the canonical user ID in a bucket policy, see [Specifying a Principal in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html) in the *Amazon Simple Storage Service User Guide*\.
 + Each string value \(`policy_id_string`, `sid_string`, `principal_id_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
 
 ### Notes about string values<a name="policies-grammar-notes-strings"></a>
@@ -211,7 +211,7 @@ Identifies the type of condition being tested, such as `StringEquals`, `StringLi
 **`condition_key_string`**  
 Identifies the condition key whose value will be tested to determine whether the condition is met\. AWS defines a set of condition keys that are available in all AWS services, including `aws:PrincipalType`, `aws:SecureTransport`, and `aws:userid`\.  
 For a list of AWS condition keys, see [AWS global condition context keys](reference_policies_condition-keys.md)\. For condition keys that are specific to a service, see the documentation for that service such as the following:  
-+ [Specifying Conditions in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service Developer Guide*
++ [Specifying Conditions in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service User Guide*
 + [IAM Policies for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ```

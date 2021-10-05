@@ -16,11 +16,11 @@ The following figure shows a simplified flow for how this might work, using Logi
 
 1. The app uses Login with Amazon resources to accept the user's credentials\.
 
-1. The app uses Cognito API operations to exchange the Login with Amazon ID token for a Cognito token\.
+1. The app uses Amazon Cognito API operations to exchange the Login with Amazon ID token for a Amazon Cognito token\.
 
-1. The app requests temporary security credentials from AWS STS, passing the Cognito token\.
+1. The app requests temporary security credentials from AWS STS, passing the Amazon Cognito token\.
 
-1. The temporary security credentials can be used by the app to access any AWS resources required by the app to operate\. The role associated with the temporary security credentials and its assigned policies determines what can be accessed\.
+1. The temporary security credentials can be used by the app to access any AWS resources required by the app to operate\. The role associated with the temporary security credentials and the assigned policies determines what can be accessed\.
 
 Use the following process to configure your app to use Amazon Cognito to authenticate users and give your app access to AWS resources\. For specific steps to accomplish this scenario, consult the documentation for Amazon Cognito\.
 

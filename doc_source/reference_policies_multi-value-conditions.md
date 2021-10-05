@@ -18,6 +18,9 @@ If your policy has multiple condition operators or multiple keys attached to a s
 
 ![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
 
+**Note**  
+When multiple values are listed in a policy for negated matching condition operators such as `StringNotEquals` and `DateNotEquals`, the effective permissions work like a logical `AND`\. For example, if there are multiple `aws:PrincipalAccount` values in a `StringNotEquals` condition operator, the string cannot match any of the `aws:PrincipalAccount` values listed to resolve the condition to true\.
+
 ## Using multiple keys and values<a name="reference_policies_multi-key-or-value-conditions"></a>
 
 To compare your condition against a request context with multiple key values, you must use the `ForAllValues` or `ForAnyValue` set operators\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. Additionally, if you include a multivalued key in your policy with a wildcard or a variable, you must also use the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String)\. For requests that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key2":\["Value2A", "Value2B"\]\)\.

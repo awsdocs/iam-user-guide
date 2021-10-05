@@ -95,7 +95,6 @@ For this tutorial, we recommend that you test access by signing in as the test u
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed policies and inline policies](access_policies_managed-vs-inline.md)
 + [Controlling user access to the AWS Management Console](console_controlling-access.md)
-+ [Create individual IAM users](best-practices.md#create-iam-users)
 
 ## Summary<a name="tutorial-managed-policies-summary"></a>
 

@@ -266,7 +266,7 @@ Requests can also include service\-specific keys and values in its request conte
 + `sns:Protocol`
 
 For information about service\-specific keys that you can use to get values for policy variables, refer to the documentation for the individual services\. For example, see the following topics: 
-+  [Bucket Keys in Amazon S3 Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
++  [Bucket Keys in Amazon S3 Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service User Guide*\. 
 +  [Amazon SNS Keys](https://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
 
 ### Special characters<a name="policy-vars-specialchars"></a>

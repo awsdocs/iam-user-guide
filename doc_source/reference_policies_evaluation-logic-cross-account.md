@@ -17,7 +17,7 @@ For cross\-account requests, the requester in the trusted `AccountA` must have a
 
 When you make a cross\-account request, AWS performs two evaluations\. AWS evaluates the request in the trusting account and the trusted account\. For more information about how a request is evaluated within a single account, see [Determining whether a request is allowed or denied within an account](reference_policies_evaluation-logic.md#policy-eval-denyallow)\. The request is allowed only if both evaluations return a decision of `Allow`\.
 
-![\[Cross-account evalusation\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_cross-account-eval-simple.png)
+![\[Cross-account evaluation\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_cross-account-eval-simple.png)
 
 1. When a principal in one account makes a request to access a resource in another account, this is a cross\-account request\.
 

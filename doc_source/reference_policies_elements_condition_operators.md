@@ -20,8 +20,6 @@ The condition operators can be grouped into the following categories:
 + [\.\.\.IfExists](#Conditions_IfExists) \(checks if the key value exists as part of another check\)
 + [Null check](#Conditions_Null) \(checks if the key value exists as a standalone check\)
 
-
-
 ## String condition operators<a name="Conditions_String"></a>
 
 String condition operators let you construct `Condition` elements that restrict access based on comparing a key to a string value\.
@@ -276,8 +274,8 @@ Amazon Resource Name \(ARN\) condition operators let you construct `Condition` e
 
 | Condition operator | Description | 
 | --- | --- | 
-|   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\)\. These behave identically\.  | 
-|   `ArnNotEquals`, `ArnNotLike`  |  Negated matching for ARN\. These behave identically\.  | 
+|   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\)\. The `ArnEquals` and `ArnLike` condition operators behave identically\.  | 
+|   `ArnNotEquals`, `ArnNotLike`  |  Negated matching for ARN\. The `ArnNotEquals` and `ArnNotLike` condition operators behave identically\.  | 
 
 There are certain cases when a string operator would match when an ARN operator would not match\. For example, if the following pattern is used for matching:
 

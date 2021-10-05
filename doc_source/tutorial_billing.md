@@ -58,7 +58,7 @@ Next, create custom policies that grant both view and full access permissions to
 
 **To create IAM policies that grant permissions to billing data**
 
-1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don't sign in with your root user credentials\. For more information, see [Create individual IAM users](best-practices.md#create-iam-users)\.
+1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don't sign in with your root user credentials\. For more information, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -90,7 +90,7 @@ Next, create custom policies that grant both view and full access permissions to
 
 ## Step 3: Attach billing policies to your user groups<a name="tutorial-billing-step3"></a>
 
-Now that you have custom billing policies available, you can attach them to their corresponding user groups that you created earlier\. Although you can attach a policy directly to a user or role, we recommend \(in accordance with IAM best practices\) that you use user groups instead\. For more information, see [Use user groups to assign permissions to IAM users](best-practices.md#use-groups-for-permissions)\. 
+Now that you have custom billing policies available, you can attach them to their corresponding user groups that you created earlier\. Although you can attach a policy directly to a user or role, we recommend \(in accordance with IAM best practices\) that you use user groups instead\.
 
 **To attach billing policies to your user groups**
 
@@ -146,7 +146,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
 + [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
-+ [Example 4: Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#ExampleAllowAllDenyBilling)\.
++ [Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-example-policies.html#ExampleAllowAllDenyBilling)\.
 + [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)
 
 For related information in the *IAM User Guide*, see the following resources:

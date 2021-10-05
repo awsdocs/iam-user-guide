@@ -10,7 +10,7 @@ Note that you can switch roles only when you sign in as an IAM user\. You cannot
 You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalId` parameter\.
 
 **Notes**  
-This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is [best practice not to grant permissions directly to an individual user](best-practices.md#use-groups-for-permissions)\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\. 
+This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is best practice not to grant permissions directly to an individual user\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\. 
 When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, it uses your original user or federated role credentials to determine if you are allowed to assume RoleA\. If you then try to switch to RoleB *while you are using RoleA*, your **original** user or federated role credentials are used to authorize your attempt\. The credentials for RoleA are not used for this action\.
 
 **Topics**

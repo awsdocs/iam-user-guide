@@ -27,9 +27,9 @@ How AWS evaluates policies depends on the types of policies that apply to the re
 
 1. **Identity\-based policies** – Identity\-based policies are attached to an IAM identity \(user, group of users, or role\) and grant permissions to IAM entities \(users and roles\)\. If only identity\-based policies apply to a request, then AWS checks all of those policies for at least one `Allow`\.
 
-1. **Resource\-based policies** – Resource\-based policies grant permissions to the principal \(account, user, role, or federated user\) specified as the principal\. The permissions define what the principal can do with the resource to which the policy is attached\. If resource\-based policies and identity\-based policies both apply to a request, then AWS checks all the policies for at least one `Allow`\.
+1. **Resource\-based policies** – Resource\-based policies grant permissions to the principal \(account, user, role, and session principals such as role sessions and IAM federated users \) specified as the principal\. The permissions define what the principal can do with the resource to which the policy is attached\. If resource\-based policies and identity\-based policies both apply to a request, then AWS checks all the policies for at least one `Allow`\. When resource\-based policies are evaluated, the principal ARN that is specified in the policy determines whether implicit denies in other policy types are applicable to the final decision\.
 
-1. **IAM permissions boundaries** – Permissions boundaries are an advanced feature that sets the maximum permissions that an identity\-based policy can grant to an IAM entity \(user or role\)\. When you set a permissions boundary for an entity, the entity can perform only the actions that are allowed by both its identity\-based policies and its permissions boundaries\. An implicit deny in a permissions boundary does not limit the permissions granted by a resource\-based policy\.
+1. **IAM permissions boundaries** – Permissions boundaries are an advanced feature that sets the maximum permissions that an identity\-based policy can grant to an IAM entity \(user or role\)\. When you set a permissions boundary for an entity, the entity can perform only the actions that are allowed by both its identity\-based policies and its permissions boundaries\. In some cases, an implicit deny in a permissions boundary can limit the permissions granted by a resource\-based policy\. To learn more, see [Determining whether a request is allowed or denied within an account](#policy-eval-denyallow) later in this topic\.
 
 1. **AWS Organizations service control policies \(SCPs\)** – Organizations SCPs specify the maximum permissions for an organization or organizational unit \(OU\)\. The SCP maximum applies to principals in member accounts, including each AWS account root user\. If an SCP is present, identity\-based and resource\-based policies grant permissions to principals in member accounts only if those policies and the SCP allow the action\. If both a permissions boundary and an SCP are present, then the boundary, the SCP, and the identity\-based policy must all allow the action\.
 
@@ -59,13 +59,13 @@ You can learn [whether your account is a member of an organization](https://docs
 
 ## Determining whether a request is allowed or denied within an account<a name="policy-eval-denyallow"></a>
 
-Assume that a principal sends a request to AWS to access a resource in the same account as the principal's entity\. The AWS enforcement code decides whether the request should be allowed or denied\. AWS gathers all of the policies that apply to the request context\. The following is a high\-level summary of the AWS evaluation logic on those policies within a single account\.
-+ By default, all requests are implicitly denied\. \(Alternatively, by default, the AWS account root user has full access\.\) 
+Assume that a principal sends a request to AWS to access a resource in the same account as the principal's entity\. The AWS enforcement code decides whether the request should be allowed or denied\. AWS evaluates all policies that are applicable to the request context\. The following is a summary of the AWS evaluation logic for policies within a single account\.
++ By default, all requests are implicitly denied with the exception of the AWS account root user, which has full access\.
 + An explicit allow in an identity\-based or resource\-based policy overrides this default\.
 + If a permissions boundary, Organizations SCP, or session policy is present, it might override the allow with an implicit deny\.
 + An explicit deny in any policy overrides any allows\.
 
-The following flow chart provides details about how the decision is made\.
+The following flow chart provides details about how the decision is made\. This flow chart does not cover the impact of resource\-based policies and implicit denies in other types of policies\. 
 
 ![\[Evaluation flow chart\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/PolicyEvaluationHorizontal.png)
 
@@ -73,9 +73,43 @@ The following flow chart provides details about how the decision is made\.
 
 1. **Organizations SCPs** – Then the code evaluates AWS Organizations service control policies \(SCPs\) that apply to the request\. SCPs apply to principals of the account where the SCPs are attached\. If the enforcement code does not find any applicable `Allow` statements in the SCPs, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no SCP, or if the SCP allows the requested action, the code continues\.
 
-1. **Resource\-based policies** – If the requested resource has a resource\-based policy that allows the principal to perform the requested action, then the code returns a final decision of **Allow**\. If there is no resource\-based policy, or if the policy does not include an `Allow` statement, then the code continues\.
-**Note**  
-This logic can behave differently if you specify the ARN of an IAM user or role as the principal of the resource\-based policy\. When you assume the role or federate the user, it generates a session\. In that case, the effective permissions granted by the resource\-based policy are limited by a permissions boundary or session policy for that principal\. For more information about effective permissions for assumed\-role sessions or federated user sessions, see [Session Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session) and [Evaluating effective permissions with boundaries](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html#access_policies_boundaries-eval-logic)\.
+1. **Resource\-based policies** – Within the same account, resource\-based policies impact policy evaluation differently depending on the type of principal accessing the resource, and the principal that is allowed in the resource\-based policy\. Depending on the type of principal, an `Allow` in a resource\-based policy can result in a final decision of `Allow` , even if an implicit deny in an identity\-based policy, permissions boundary, or session policy is present\. This is different than the way that other policies impact policy evaluation\.
+
+   For example, policy evaluation differs when the principal specified in the resource\-based policy is that of an IAM user, an IAM role, or a session principal\. Session principals include an IAM role session or an IAM federated user session\. If a resource\-based policy grants permission directly to the IAM user or the session principal that is making the request, then an implicit deny in an identity\-based policy, a permissions boundary, or a session policy does not impact the final decision\.
+
+   The following table helps you understand the impact of resource\-based policies for different principal types when implicit denies are present in identity\-based policies, permissions boundaries, and session policies\.  
+**Resource\-based policies and implicit denies in other policy types \(same account\)**    
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)
+   + **IAM role** – Resource\-based policies that grant permissions to an IAM role ARN are limited by an implicit deny in a permissions boundary or session policy\.
+
+     **Example role ARN**
+
+     ```
+     arn:aws:iam::111122223333:role/examplerole
+     ```
+   + **IAM role session** – Within the same account, resource\-based policies that grant permissions to an IAM role session ARN grant permissions directly to the assumed role session\. Permissions granted directly to a session are not limited by an implicit deny in an identity\-based policy, a permissions boundary, or session policy\. When you assume a role and make a request, the principal making the request is the IAM role session ARN and not the ARN of the role itself\.
+
+     **Example role session ARN**
+
+     ```
+     arn:aws:sts::111122223333:assumed-role/examplerole/examplerolesessionname
+     ```
+   + **IAM user** – Within the same account, resource\-based policies that grant permissions to an IAM user ARN \(that is not a federated user session\) are not limited by an implicit deny in an identity\-based policy or permissions boundary\.
+
+     **Example IAM user ARN**
+
+     ```
+     arn:aws:iam::111122223333:user/exampleuser
+     ```
+   + **IAM federated user sessions** – An IAM federated user session is a session created by calling [`GetFederationToken`](id_credentials_temp_request.md#api_getfederationtoken)\. When a federated user makes a request, the principal making the request is the federated user ARN and not the ARN of the IAM user who federated\. Within the same account, resource\-based policies that grant permissions to a federated user ARN grant permissions directly to the session\. Permissions granted directly to a session are not limited by an implicit deny in an identity\-based policy, a permissions boundary, or session policy\.
+
+     However, if a resource\-based policy grants permission to the ARN of the IAM user who federated, then requests made by the federated user during the session are limited by an implicit deny in a permission boundary or session policy\.
+
+     **Example IAM federated user session ARN**
+
+     ```
+     arn:aws:sts::111122223333:federated-user/exampleuser
+     ```
 
 1. **IAM permissions boundaries** – The enforcement code then checks whether the IAM entity that is used by the principal has a permissions boundary\. If the policy that is used to set the permissions boundary does not allow the requested action, then the request is implicitly denied\. The code returns a final decision of **Deny**\. If there is no permissions boundary, or if the permissions boundary allows the requested action, the code continues\.
 

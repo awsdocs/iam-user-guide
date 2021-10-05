@@ -53,12 +53,17 @@ If any one of these policy types explicitly denies access for an operation, then
 **Resource\-based policies** – Resource\-based policies control how the specified principal can access the resource to which the policy is attached\.
 
 *Resource\-based policies for IAM users*  
-Within an account, an implicit deny in a permissions boundary *does not* limit the permissions granted to an IAM user by a resource\-based policy\. Permissions boundaries reduce permissions that are granted to a user by identity\-based policies\. Resource\-based policies can provide additional permissions to the user\.  
+Within the same account, resource\-based policies that grant permissions to an IAM user ARN \(that is not a federated user session\) are not limited by an implicit deny in an identity\-based policy or permissions boundary\.  
 
 ![\[Evaluation of a resource-based policy, permissions boundary, and identity-based policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/EffectivePermissions-rbp-boundary-id.png)
 
-*Resource\-based policies for IAM roles and federated users*  
-Within an account, an implicit deny in a permissions boundary *does* limit the permissions granted to the ARN of the underlying IAM role or IAM user by the resource\-based policy\. However, if the resource\-based policy grants permissions directly to the session principal \(the assumed\-role ARN or federated user ARN\), an implicit deny in the permissions boundary *does not* limit those permissions\. For more information about effective permissions for assumed\-role sessions or federated user sessions, see [Session policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session)\.
+*Resource\-based policies for IAM roles *  
+**IAM role** – Resource\-based policies that grant permissions to an IAM role ARN are limited by an implicit deny in a permissions boundary or session policy\.  
+**IAM role session** – Within the same account, resource\-based policies that grant permissions to an IAM role session ARN grant permissions directly to the assumed role session\. Permissions granted directly to a session are not limited by an implicit deny in an identity\-based policy, a permissions boundary, or session policy\. When you assume a role and make a request, the principal making the request is the IAM role session ARN and not the ARN of the role itself\.
+
+*Resource\-based policies for IAM federated user sessions*  
+**IAM federated user sessions** – An IAM federated user session is a session created by calling [`GetFederationToken`](id_credentials_temp_request.md#api_getfederationtoken)\. When a federated user makes a request, the principal making the request is the federated user ARN and not the ARN of the IAM user who federated\. Within the same account, resource\-based policies that grant permissions to a federated user ARN grant permissions directly to the session\. Permissions granted directly to a session are not limited by an implicit deny in an identity\-based policy, a permissions boundary, or session policy\.  
+However, if a resource\-based policy grants permission to the ARN of the IAM user who federated, then requests made by the federated user during the session are limited by an implicit deny in a permission boundary or session policy\.
 
 **Organizations SCPs** – SCPs are applied to an entire AWS account\. They limit permissions for every request made by a principal within the account\. An IAM entity \(user or role\) can make a request that is affected by an SCP, a permissions boundary, and an identity\-based policy\. In this case, the request is allowed only if all three policy types allow it\. The effective permissions are the intersection of all three policy types\. An explicit deny in any of these policies overrides the allow\.
 

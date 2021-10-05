@@ -345,7 +345,7 @@ For a code example \(using Python\), see [Switching to an IAM role \(AWS API\)](
 
 ## Related resources<a name="tutorial_cross-account-with-roles-related"></a>
 + For more information about IAM users and user groups, see [IAM Identities \(users, user groups, and roles\)](id.md)\.
-+ For more information about Amazon S3 buckets, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service Getting Started Guide*\.
++ For more information about Amazon S3 buckets, see [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in the *Amazon Simple Storage Service User Guide*\.
 +  To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 
 ## Summary<a name="tutorial_cross-account-with-roles-summary"></a>

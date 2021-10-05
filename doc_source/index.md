@@ -312,6 +312,7 @@ Amazon's trademarks and trade dress may not be used in
          + [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)
             + [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
             + [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)
+            + [Single-valued vs. multivalued condition keys](reference_policies_single-vs-multi-valued-condition-keys.md)
          + [IAM policy elements: Variables and tags](reference_policies_variables.md)
          + [IAM JSON policy elements: Supported data types](reference_policies_elements_datatypes.md)
       + [Policy evaluation logic](reference_policies_evaluation-logic.md)
