@@ -36,7 +36,7 @@ The following example shows a policy that lets the user assume roles in only one
   "Statement": {
     "Effect": "Allow",
     "Action": "sts:AssumeRole",
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/Test*"
+    "Resource": "arn:aws:iam::account-id:role/Test*"
   }
 }
 ```

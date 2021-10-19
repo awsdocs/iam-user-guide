@@ -73,10 +73,12 @@ Imagine that you are using two AWS accounts, and you want to allow an applicatio
             "Sid": "AllowAccountLevelS3Actions",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowListAndReadS3ActionOnMyBucket",
@@ -112,10 +114,12 @@ Assume that the `efgh` cross\-account role allows read\-only Amazon S3 tasks on 
             "Sid": "AllowAccountLevelS3Actions",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowListAndReadS3ActionOnMyBucket",

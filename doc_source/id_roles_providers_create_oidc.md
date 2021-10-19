@@ -10,7 +10,7 @@ After you create an IAM OIDC identity provider, you must create one or more IAM 
 + [Creating and managing an OIDC provider \(console\)](#manage-oidc-provider-console)
 + [Creating and managing an IAM OIDC identity provider \(AWS CLI\)](#manage-oidc-provider-cli)
 + [Creating and managing an OIDC Identity Provider \(AWS API\)](#manage-oidc-provider-api)
-+ [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
++ [Obtaining the thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)
 
 ## Creating and managing an OIDC provider \(console\)<a name="manage-oidc-provider-console"></a>
 
@@ -37,7 +37,7 @@ AWS secures communication with some OIDC identity providers \(IdPs\) through our
    + The URL should not contain a port number\. 
    + Within your AWS account, each IAM OIDC identity provider must use a unique URL\.
 
-1. Choose **Get thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the root CA thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\.
+1. Choose **Get thumbprint** to verify the server certificate of your IdP\. To learn how, see [Obtaining the thumbprint for an OpenID Connect Identity Provider](id_roles_providers_create_oidc_verify-thumbprint.md)\.
 
 1. For **Audience**, type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that make requests to AWS\. If you have additional client IDs \(also known as *audiences*\) for this IdP, you can add them later on the provider detail page\.
 

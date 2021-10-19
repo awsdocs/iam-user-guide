@@ -84,7 +84,7 @@ To pass these attributes as session tags, include the following elements in your
 </Attribute>
 ```
 
-### Step 3B: Enable console access<a name="tutorial_abac-saml-step3b"></a>
+### Step 3C: Enable console access<a name="tutorial_abac-saml-step3b"></a>
 
 Enable console access for your federated SAML users\. For more information, see [Enabling SAML 2\.0 federated users to access the AWS Management Console](id_roles_providers_enable-console-saml.md)\.
 

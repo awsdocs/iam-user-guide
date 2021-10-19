@@ -1,6 +1,6 @@
 # IAM: Access the policy simulator API based on user path<a name="reference_policies_examples_iam_policy-sim-path"></a>
 
-This example shows how you might create an IAM policy that allows using the policy simulator API only for those users that have the path `Department/Development`\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an IAM policy that allows using the policy simulator API only for those users that have the path `Department/Development`\. This policy grants the permissions necessary to complete this action programatically from the AWS API or AWS CLI\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {

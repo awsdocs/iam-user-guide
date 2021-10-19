@@ -1,6 +1,6 @@
-# Obtaining the root CA thumbprint for an OpenID Connect Identity Provider<a name="id_roles_providers_create_oidc_verify-thumbprint"></a>
+# Obtaining the thumbprint for an OpenID Connect Identity Provider<a name="id_roles_providers_create_oidc_verify-thumbprint"></a>
 
-When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint\. IAM requires the thumbprint for the root or intermediate certificate authority \(CA\) that signed the certificate used by the external identity provider \(IdP\)\. The thumbprint is a signature for the CA's certificate that was used to issue the certificate for the OIDC\-compatible IdP\. When you create an IAM OIDC identity provider, you are trusting identities authenticated by that IdP to have access to your AWS account\. By supplying the CA's certificate thumbprint, you trust any certificate issued by that CA with the same DNS name as the one registered\. This eliminates the need to update trusts in each account when you renew the IdP's signing certificate\.
+When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint\. IAM requires the thumbprint for the top intermediate certificate authority \(CA\) that signed the certificate used by the external identity provider \(IdP\)\. The thumbprint is a signature for the CA's certificate that was used to issue the certificate for the OIDC\-compatible IdP\. When you create an IAM OIDC identity provider, you are trusting identities authenticated by that IdP to have access to your AWS account\. By supplying the CA's certificate thumbprint, you trust any certificate issued by that CA with the same DNS name as the one registered\. This eliminates the need to update trusts in each account when you renew the IdP's signing certificate\.
 
 **Important**  
 In most cases, the federation server uses two different certificates\. The first establishes an HTTPS connection between the clients and the federation endpoint\. This can be safely issued by a public root CA, such as AWS Certificate Manager\. The second is used to sign tokens\. We recommend that you issue this using a private CA\.
@@ -41,7 +41,7 @@ AWS secures communication with some OIDC identity providers \(IdPs\) through our
    openssl s_client -servername keys.example.com -showcerts -connect keys.example.com:443
    ```
 
-1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate displayed \(at the end of the command output\)\. This contains the certificate of the root CA in the certificate authority chain\.
+1. In your command window, scroll up until you see a certificate similar to the following example\. If you see more than one certificate, find the last certificate displayed \(at the end of the command output\)\. This contains the certificate of the top intermediate CA in the certificate authority chain\.
 
    ```
    -----BEGIN CERTIFICATE-----

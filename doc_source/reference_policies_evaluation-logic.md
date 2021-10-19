@@ -135,10 +135,12 @@ Also assume that the following policy is attached to the `carlossalazar` IAM use
             "Sid": "AllowS3ListRead",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowS3Self",
@@ -153,10 +155,7 @@ Also assume that the following policy is attached to the `carlossalazar` IAM use
             "Sid": "DenyS3Logs",
             "Effect": "Deny",
             "Action": "s3:*",
-            "Resource": [
-                "arn:aws:s3:::*log*",
-                "arn:aws:s3:::*log*/*"
-            ]
+            "Resource": "arn:aws:s3:::*log*"
         }
     ]
 }
@@ -172,9 +171,14 @@ Additionally, the following resource\-based policy \(called a bucket policy\) is
     "Statement": [
         {
             "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::123456789012:user/carlossalazar"
+            },
             "Action": "s3:*",
-            "Principal": { "AWS": "arn:aws:iam::111122223333:user/carlossalazar" },
-            "Resource": "*"
+            "Resource": [
+                "arn:aws:s3:::carlossalazar/*",
+                "arn:aws:s3:::carlossalazar"
+            ]
         }
     ]
 }
@@ -194,50 +198,31 @@ Assume that he then realizes his mistake and tries to save the file to the `carl
 
 A request results in an explicit deny if an applicable policy includes a `Deny` statement\. If policies that apply to a request include an `Allow` statement and a `Deny` statement, the `Deny` statement trumps the `Allow` statement\. The request is explicitly denied\.
 
-An implicit denial occurs when there is no applicable `Deny` statement but also no applicable `Allow` statement\. Because an IAM user, role, or federated user is denied access by default, they must be explicitly allowed to perform an action\. Otherwise, they are implicitly denied access\.
+An implicit denial occurs when there is no applicable `Deny` statement but also no applicable `Allow` statement\. Because an IAM principal is denied access by default, they must be explicitly allowed to perform an action\. Otherwise, they are implicitly denied access\.
 
-When you design your authorization strategy, you must create policies with `Allow` statements to allow your principals to successfully make requests\. However, you can choose any combination of explicit and implicit denies\. For example, you can create the following policy to allow an administrator full access to all resources in AWS, but explicitly deny access to billing\. If someone adds another policy to this administrator granting them access to billing, it is still denied because of this explicit deny\.
+When you design your authorization strategy, you must create policies with `Allow` statements to allow your principals to successfully make requests\. However, you can choose any combination of explicit and implicit denies\. 
+
+For example, you can create the following policy that includes allowed actions, implicitly denied actions, and explicitly denied actions\. The `AllowGetList` statement **allows** read\-only access to IAM actions that begin with the prefixes `Get` and `List`\. All other actions in IAM, such as `iam:CreatePolicy` are **implicitly denied**\. The `DenyReports` statement **explicitly denies** access to IAM reports by denying access to actions that include the `Report` suffix, such as `iam:GetOrganizationsAccessReport`\. If someone adds another policy to this principal to grant them access to IAM reports, such as `iam:GenerateCredentialReport`, report\-related requests are still denied because of this explicit deny\.
 
 ```
 {
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "AllowGetList",
             "Effect": "Allow",
-            "Action": "*",
+            "Action": [
+                "iam:Get*",
+                "iam:List*"
+            ],
             "Resource": "*"
         },
         {
+            "Sid": "DenyReports",
             "Effect": "Deny",
-            "Action": "aws-portal:*",
+            "Action": "iam:*Report",
             "Resource": "*"
         }
     ]
-}
-```
-
-Alternatively, you can create the following policy to allow a user to manage users, but not groups or any other resources in IAM\. Those actions are implicitly denied, as are actions in other services\. However, if someone adds a policy to the user that allows them to perform these other actions, then they are allowed\.
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": {
-        "Effect": "Allow",
-        "Action": [
-            "iam:AttachUserPolicy",
-            "iam:CreateUser",
-            "iam:DeleteUser",
-            "iam:DeleteUserPolicy",
-            "iam:DetachUserPolicy",
-            "iam:GetUser",
-            "iam:GetUserPolicy",
-            "iam:ListAttachedUserPolicies",
-            "iam:ListUserPolicies",
-            "iam:ListUsers",
-            "iam:PutUserPolicy",
-            "iam:UpdateUser"
-        ],
-        "Resource": "*"
-    }
 }
 ```

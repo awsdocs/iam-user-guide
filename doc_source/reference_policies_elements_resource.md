@@ -84,7 +84,7 @@ In the `Resource` element, you can use JSON [policy variables](reference_policie
   "Statement": {
     "Effect": "Allow",
     "Action": "dynamodb:*",
-    "Resource": "arn:aws:dynamodb:us-east-2:ACCOUNT-ID-WITHOUT-HYPHENS:table/${aws:username}"
+    "Resource": "arn:aws:dynamodb:us-east-2:account-id:table/${aws:username}"
   }
 }
 ```

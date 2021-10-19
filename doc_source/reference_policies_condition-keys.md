@@ -139,8 +139,13 @@ Use this key to compare the date and time of the request in epoch or Unix time w
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-The `FederatedProvider` key identifies which of the IdPs was used to authenticate the user\. The key is only available for federated sessions\. For example, if the user was authenticated through Amazon Cognito, the key would contain `cognito-identity.amazonaws.com`\. Similarly, if the user was authenticated through Login with Amazon, the key would contain the value `www.amazon.com`\. You might use the key in a resource policy like the following, which uses the `aws:FederatedProvider` key as a policy variable in the ARN of a resource\. The policy allows any user who has been authenticated using an IdP to get objects out of a folder in an Amazon S3 bucket\. However, the bucket must be specific to the provider that the user authenticates with\.
+Use this key to compare the principal's issuing identity provider \(IdP\) with the IdP that you specify in the policy\. This means that an IAM role was assumed using the `AssumeRoleWithWebIdentity` or `AssumeRoleWithSAML` AWS STS operations\. When the resulting role session's temporary credentials are used to make a request, the request context identifies the IdP that authenticated the original federated identity\.
++ **Availability** – This key is present when the principal is a role session principal and that session was issued using a third\-party identity provider\. 
 + **Value type** – Single\-valued
+
+For example, if the user was authenticated through Amazon Cognito, the request context includes the value `cognito-identity.amazonaws.com`\. Similarly, if the user was authenticated through Login with Amazon, the request context includes the value `www.amazon.com`\.
+
+You can use any single\-valued condition key as a [variable](reference_policies_variables.md)\. The following example resource\-based policy uses the `aws:FederatedProvider` key as a policy variable in the ARN of a resource\. This policy allows any principal who authenticated using an IdP to get objects out of an Amazon S3 bucket with a path that's specific to the issuing identity provider\.
 
 ```
 {
@@ -312,7 +317,7 @@ For example, the following Amazon S3 bucket policy allows members of any account
 ```
 
 **Note**  
-This global condition also applies to the management account of an AWS organization\.
+This global condition also applies to the management account of an AWS organization\. This policy prevents all principals outside of the specified organization from accessing the Amazon S3 bucket\. This includes any AWS services that interact with your internal resources, such as AWS CloudTrail sending log data to your Amazon S3 buckets\. To learn how you can safely grant access for AWS services, see [aws:PrincipalIsAWSService](#condition-keys-principalisawsservice)\.
 
 For more information about AWS Organizations, see [What Is AWS Organizations?](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html) in the *AWS Organizations User Guide*\.
 
@@ -535,7 +540,7 @@ Use this key to compare the tag key\-value pair that was passed in the request w
 + **Availability** – This key is included in the request context when tags are passed in the request\. When multiple tags are passed in the request, there is one context key for each tag key\-value pair\.
 + **Value type** – Single\-valued
 
-This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.
+This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:RequestTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a request tag key named either `TagKey1` or `tagkey1`, but not both\.
 
 Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
@@ -543,11 +548,11 @@ Because you can include multiple tag key\-value pairs in a request, the request 
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair that is attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
+Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
 + **Availability** – This key is included in the request context when the requested resource already has attached tags\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
 + **Value type** – Single\-valued
 
-This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\.
+This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\.
 
 For examples of using the `aws:ResourceTag` key to control access to IAM resources, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
 

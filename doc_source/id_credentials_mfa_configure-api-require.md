@@ -115,7 +115,7 @@ The permissions policy does not include an MFA condition\. It is important to un
                "Resource": "arn:aws:dynamodb:*:ACCOUNT-A-ID:table/Books"
            },
            {
-               "Sid": "ListTable",
+               "Sid": "ListTables",
                "Effect": "Allow",
                "Action": "dynamodb:ListTable",
                "Resource": "*"

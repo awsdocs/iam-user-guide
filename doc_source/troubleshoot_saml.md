@@ -65,9 +65,11 @@ This error can occur if the issuer in the SAML response does not match the issue
 
 ## Error: Could not parse metadata\.<a name="troubleshoot_saml_issuer-metadata"></a>
 
-This error can occur if your metadata file is not formatted properly\. 
+This error can occur if you do not format your metadata file properly\. 
 
-When you [create or manage a SAML identity provider](id_roles_providers_create_saml.md#idp-manage-identityprovider-console) in the AWS Management Console, you must retrieve the SAML metadata document from your identity provider\. This metadata file includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) that are received from the IdP\. The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. Also, the x\.509 certificate that is included as part of the SAML metadata document must use a key size of at least 1024 bits\. If the key size is smaller, the IdP creation fails with an "Unable to parse metadata" error\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
+When you [create or manage a SAML identity provider](id_roles_providers_create_saml.md#idp-manage-identityprovider-console) in the AWS Management Console, you must retrieve the SAML metadata document from your identity provider\. This metadata file includes the issuer's name, expiration information, and keys that can be used to validate the SAML authentication response \(assertions\) received from the IdP\. The metadata file must be encoded in UTF\-8 format without a byte order mark \(BOM\)\. To remove the BOM, you can encode the file as UTF\-8 using a text editing tool, such as Notepad\+\+\.
+
+The x\.509 certificate included as part of the SAML metadata document must use a key size of at least 1024 bits\. Also, the x\.509 certificate must also be free of any repeated extensions\. You can use extensions, but the extensions can only appear once in the certificate\. If the x\.509 certificate does not meet either condition, IdP creation fails and returns an "Unable to parse metadata" error\.
 
 ## Error: Specified provider doesn't exist\.<a name="troubleshoot_saml_provider-doesnotexist"></a>
 

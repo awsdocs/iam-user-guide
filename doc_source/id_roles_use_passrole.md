@@ -51,7 +51,7 @@ Imagine that you want to grant a user the ability to pass any of an approved set
               "iam:GetRole",
               "iam:PassRole"
           ],
-          "Resource": "arn:aws:iam::<account-id>:role/EC2-roles-for-XYZ-*"
+          "Resource": "arn:aws:iam::account-id:role/EC2-roles-for-XYZ-*"
       }]
   }
   ```
@@ -92,12 +92,12 @@ The user that you want to enable Enhanced Monitoring needs a policy that include
         "Sid": "PolicyStatementToAllowUserToPassOneSpecificRole",
         "Effect": "Allow",
         "Action": [ "iam:PassRole" ],
-        "Resource": "arn:aws:iam::<account-id>:role/RDS-Monitoring-Role"
+        "Resource": "arn:aws:iam::account-id:role/RDS-Monitoring-Role"
     }
 ```
 
 You can combine this statement with statements in another policy or put it in its own policy\. To instead specify that the user can pass any role that begins with `RDS-`, you can replace the role name in the resource ARN with a wildcard, for example:
 
 ```
-        "Resource": "arn:aws:iam::<account-id>:role/RDS-*"
+        "Resource": "arn:aws:iam::account-id:role/RDS-*"
 ```

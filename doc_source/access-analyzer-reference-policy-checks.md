@@ -916,7 +916,7 @@ For example, to [control access to AWS resources](https://docs.aws.amazon.com/IA
 
 ```
 "Condition": {
-    "StringEquals": {"ec2:ResourceTag/owner": "JaneDoe"}
+    "StringEquals": {"aws:ResourceTag/owner": "JaneDoe"}
 }
 ```
 
@@ -1185,7 +1185,7 @@ In programmatic calls to the AWS CLI or AWS API, the finding for this check incl
 
 **Resolving the error**
 
-The `Principal` element specifies the principal that is allowed or denied access to a resource\. You cannot use the `Principal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in a resource\. For example, you can embed policies in an Amazon S3 bucket or an AWS KMS customer master key \(CMK\)\.
+The `Principal` element specifies the principal that is allowed or denied access to a resource\. You cannot use the `Principal` element in an IAM identity\-based policy\. You can use it in the trust policies for IAM roles and in resource\-based policies\. Resource\-based policies are policies that you embed directly in a resource\. For example, you can embed policies in an Amazon S3 bucket or an AWS KMS key\.
 
 **Related terms**
 + [AWS JSON policy elements: Principal](reference_policies_elements_principal.md)
@@ -2082,6 +2082,8 @@ In programmatic calls to the AWS CLI or AWS API, the finding for this check incl
 **Resolving the security warning**
 
 AWS recommends that you use the `ForAllValues` only with multivalued conditions\. The `ForAllValues` set operator tests whether the value of every member of the request set is a subset of the condition key set\. The condition returns true if every key value in the request matches at least one value in the policy\. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\.
+
+To learn whether a condition supports a single value or multiple values, review the [Actions, resources, and condition keys](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) page for the service\. Condition keys with the `ArrayOf` data type prefix are multivalued condition keys\. For example, Amazon SES supports keys with single values \(`String`\) and the `ArrayOfString` multivalued data type\.
 + [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)
 
 ## Security Warning – Missing paired condition keys<a name="access-analyzer-reference-policy-checks-security-warning-missing-paired-condition-keys"></a>

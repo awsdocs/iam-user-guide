@@ -166,7 +166,7 @@ The following policy allows principals to create, read, edit, and delete resourc
          "Action": "secretsmanager:UntagResource",
          "Resource": "*",
          "Condition": {
-             "StringLike": {
+             "ForAnyValue:StringLike": {
                  "aws:TagKeys": "access-*"
              }
          }

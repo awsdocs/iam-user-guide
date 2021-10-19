@@ -43,9 +43,9 @@ The condition from the policy statement that grants the access\. For example, if
 
 **Shared through**  
 The **Shared through** field indicates how the access that generated the finding is granted\. Valid values include:  
-+ **Bucket policy** – The bucket policy that is attached to the Amazon S3 bucket\.
-+ **Access control list** – The access control list \(ACL\) that is attached to the Amazon S3 bucket\.
-+ **Access point** – An access point that is associated with the Amazon S3 bucket\. The ARN of the access point is displayed in the **Findings** details\.
++ **Bucket policy** – The bucket policy attached to the Amazon S3 bucket\.
++ **Access control list** – The access control list \(ACL\) attached to the Amazon S3 bucket\.
++ **Access point** – An access point or multi\-region access point associated with the Amazon S3 bucket\. The ARN of the access point is displayed in the **Findings** details\.
 
 **Access level**  
 The level of access granted to the external entity by the actions in the resource\-based policy\. View the details of the finding for more information\. Access level values include the following:  
@@ -56,7 +56,7 @@ The level of access granted to the external entity by the actions in the resourc
 + **Tagging** – Permission to perform actions that only change the state of resource tags\.
 
 **Updated**  
-A timestamp for the most recent update to the finding status, or the time and date at which the finding was generated if no updates have been made\.  
+A timestamp for the most recent update to the finding status, or the time and date the finding was generated if no updates have been made\.  
 It may take up to 30 minutes after a policy is modified for Access Analyzer to again analyze the resource and then update the finding\.
 
 **Status**  

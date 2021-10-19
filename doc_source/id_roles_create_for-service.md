@@ -34,19 +34,9 @@ Add the following policy to the IAM entity that needs to create the service role
 
 **To allow an IAM entity to create any service role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to create a service role\. This statement allows you to create any service role for any service, and then attach managed or inline policies to that role\.
+AWS recommends that you allow only IAM administrators to create any service role\. A person with permissions to create a role and attach any policy can escalate their own permissions\. Instead, create a policy that allows them to create only the roles that they need or have an administrator create the service role on their behalf\.
 
-```
-{
-    "Effect": "Allow",
-    "Action": [
-        "iam:AttachRolePolicy",
-        "iam:CreateRole",
-        "iam:PutRolePolicy"
-    ],
-    "Resource": "*"
-}
-```
+To attach a policy that allows an administrator to access your entire AWS account, use the [AdministratorAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AdministratorAccess) AWS managed policy\.
 
 **To allow an IAM entity to edit a service role**
 
@@ -100,15 +90,9 @@ Add the following statement to the permissions policy for the IAM entity that ne
 
 **To allow an IAM entity to delete any service role**
 
-Add the following statement to the permissions policy for the IAM entity that needs to delete a service role\.
+AWS recommends that you allow only IAM administrators to delete any service role\. Instead, create a policy that allows them to delete only the roles that they need or have an administrator delete the service role on their behalf\.
 
-```
-{
-    "Effect": "Allow",
-    "Action": "iam:DeleteRole",
-    "Resource": "*"
-}
-```
+To attach a policy that allows an administrator to access your entire AWS account, use the [AdministratorAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AdministratorAccess) AWS managed policy\.
 
 ## Creating a role for an AWS service \(console\)<a name="roles-creatingrole-service-console"></a>
 

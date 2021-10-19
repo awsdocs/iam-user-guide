@@ -199,7 +199,7 @@ For more information about using paths in the names of customer managed policies
       "iam:DeletePolicyVersion",
       "iam:SetDefaultPolicyVersion"
     ],
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:policy/TEAM-A/*"
+    "Resource": "arn:aws:iam::account-id:policy/TEAM-A/*"
   }
 }
 ```
@@ -232,8 +232,8 @@ The following example policy allows a user to attach managed policies to only th
       "iam:AttachRolePolicy"
     ],
     "Resource": [
-      "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:group/TEAM-A/*",
-      "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/TEAM-A/*"
+      "arn:aws:iam::account-id:group/TEAM-A/*",
+      "arn:aws:iam::account-id:role/TEAM-A/*"
     ]
   }
 }
@@ -253,11 +253,11 @@ In the following example, the condition ensures that the `AttachGroupPolicy` and
       "iam:AttachRolePolicy"
     ],
     "Resource": [
-      "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:group/TEAM-A/*",
-      "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/TEAM-A/*"
+      "arn:aws:iam::account-id:group/TEAM-A/*",
+      "arn:aws:iam::account-id:role/TEAM-A/*"
     ],
     "Condition": {"ArnLike": 
-      {"iam:PolicyARN": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:policy/TEAM-A/*"}
+      {"iam:PolicyARN": "arn:aws:iam::account-id:policy/TEAM-A/*"}
     }
   }
 }

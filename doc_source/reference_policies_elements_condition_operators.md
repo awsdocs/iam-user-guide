@@ -44,7 +44,7 @@ For example, the following statement contains a `Condition` element that uses th
   "Statement": {
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/*",
+    "Resource": "arn:aws:iam::account-id:user/*",
     "Condition": {"StringEquals": {"aws:PrincipalTag/job-category": "iamuser-admin"}}
   }
 }
@@ -153,7 +153,7 @@ For example, the following statement contains a `Condition` element that uses th
   "Statement": {
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/*",
+    "Resource": "arn:aws:iam::account-id:user/*",
     "Condition": {"DateGreaterThan": {"aws:TokenIssueTime": "2020-01-01T00:00:01Z"}}
   }
 }
@@ -182,7 +182,7 @@ For example, the following statement uses the `Bool` condition operator with the
   "Statement": {
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/*",
+    "Resource": "arn:aws:iam::account-id:user/*",
     "Condition": {"Bool": {"aws:SecureTransport": "true"}}
   }
 }
@@ -230,7 +230,7 @@ For example, the following statement uses the `IpAddress` condition operator wit
   "Statement": {
     "Effect": "Allow",
     "Action": "iam:*AccessKey*",
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/*",
+    "Resource": "arn:aws:iam::account-id:user/*",
     "Condition": {"IpAddress": {"aws:SourceIp": "203.0.113.0/24"}}
   }
 }

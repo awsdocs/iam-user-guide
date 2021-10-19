@@ -51,7 +51,7 @@ The next step is to create an IAM role that establishes a trust relationship bet
   "Version": "2012-10-17",
   "Statement": [{
     "Effect": "Allow",
-    "Principal": {"Federated": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:saml-provider/ExampleOrgSSOProvider"},
+    "Principal": {"Federated": "arn:aws:iam::account-id:saml-provider/ExampleOrgSSOProvider"},
     "Action": "sts:AssumeRoleWithSAML",
     "Condition": {"StringEquals": {
       "saml:edupersonorgdn": "ExampleOrg",

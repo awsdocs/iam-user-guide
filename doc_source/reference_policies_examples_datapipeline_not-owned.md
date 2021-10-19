@@ -1,6 +1,6 @@
 # AWS Data Pipeline: Denies access to DataPipeline pipelines that a user did not create<a name="reference_policies_examples_datapipeline_not-owned"></a>
 
-This example shows how you might create an IAM policy that denies access to pipelines that a user did not create\. If the value of the `PipelineCreator` field matches the IAM user name, then the specified actions are not denied\. This policy grants the permissions necessary to complete this action from the AWS API or AWS CLI only\.
+This example shows how you might create an IAM policy that denies access to pipelines that a user did not create\. If the value of the `PipelineCreator` field matches the IAM user name, then the specified actions are not denied\. This policy grants the permissions necessary to complete this action programatically from the AWS API or AWS CLI\.
 
 **Important**  
 This policy does not allow any actions\. Use this policy in combination with other policies that allow specific actions\. 

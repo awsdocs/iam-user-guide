@@ -61,7 +61,7 @@ The role or roles that you create in IAM define what federated users from your o
   "Version": "2012-10-17",
   "Statement": [{
     "Effect": "Allow",
-    "Principal": {"Federated": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:saml-provider/ExampleOrgSSOProvider"},
+    "Principal": {"Federated": "arn:aws:iam::account-id:saml-provider/ExampleOrgSSOProvider"},
     "Action": "sts:AssumeRoleWithSAML",
     "Condition": {
       "StringEquals": {

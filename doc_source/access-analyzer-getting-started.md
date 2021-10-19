@@ -14,11 +14,11 @@ AWS IAM Access Analyzer provides AWS managed policies to help you get started qu
 
 ### Resources defined by AWS IAM Access Analyzer<a name="permission-resources"></a>
 
-To view the resources defined by Access Analyzer, see [https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html#awsiamaccessanalyzer-resources-for-iam-policies](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html#awsiamaccessanalyzer-resources-for-iam-policies)Resource types defined by AWS IAM Access Analyzer in the *Service Authorization Reference*\.
+To view the resources defined by Access Analyzer, see [Resource types defined by AWS IAM Access Analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html#awsiamaccessanalyzer-resources-for-iam-policies) in the *Service Authorization Reference*\.
 
 ### Required Access Analyzer service permissions<a name="access-analyzer-permissions-service"></a>
 
-Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer with your account as the zone of trust, the service creates the role your account\. When you create an analyzer with your organization as the zone of trust, the service creates a role in each account that belongs to your organization\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer with your account as the zone of trust, the service creates the role in your account\. When you create an analyzer with your organization as the zone of trust, the service creates a role in each account that belongs to your organization\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
 
 **Note**  
 Access Analyzer is Regional\. You must enable Access Analyzer in each Region independently\.

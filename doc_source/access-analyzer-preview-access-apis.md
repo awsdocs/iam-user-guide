@@ -19,7 +19,7 @@ In general, if the access preview is for an existing resource and you leave a co
 
 ## Preview access to your Amazon S3 bucket<a name="access-analyzer-preview-access-s3-bucket"></a>
 
-To create an access preview for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own, you can propose a bucket configuration by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, and Amazon S3 access points attached to the bucket\.
+To create an access preview for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own, you can propose a bucket configuration by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, and Amazon S3 access points, including multi\-region access points, attached to the bucket\.
 
 **Note**  
 Before attempting to create an access preview for a new bucket, we recommend you call the Amazon S3 [HeadBucket](https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html) operation to check whether the named bucket already exists\. This operation is useful to determine if a bucket exists and you have permission to access it\.
@@ -28,9 +28,9 @@ Before attempting to create an access preview for a new bucket, we recommend you
 
 **Bucket ACL grants** – You can propose up to 100 ACL grants per bucket\. If the proposed grant configuration is for an existing bucket, the access preview uses the proposed list of grant configurations in place of the existing grants\. Otherwise, the access preview uses the existing grants for the bucket\.
 
-**Bucket access points** – The analysis supports up to 100 access points per bucket, including up to ten new access points you can propose per bucket\. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points\. To propose an access point without a policy, you can provide an empty string as the access point policy\. For more information about access point policy limits, see [Access points restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html)\.
+**Bucket access points** – The analysis supports up to 100 access points,including multi\-region access points, per bucket, including up to ten new access points you can propose per bucket\. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points\. To propose an access point without a policy, you can provide an empty string as the access point policy\. For more information about access point policy limits, see [Access points restrictions and limitations](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html)\.
 
-**Block public access configuration** – If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting\. If the proposed configuration is for a new bucket and the bucket BPA configuration is not specified, the access preview uses `false`\. If the proposed configuration is for a new access point and the access point BPA configuration is not specified, the access preview uses `true`\.
+**Block public access configuration** – If the proposed configuration is for an existing Amazon S3 bucket and you do not specify the configuration, the access preview uses the existing setting\. If the proposed configuration is for a new bucket and you do not specify the bucket BPA configuration, the access preview uses `false`\. If the proposed configuration is for a new access point or multi\-region access point, and you do not specify the access point BPA configuration, the access preview uses `true`\.
 
 ## Preview access to your AWS KMS key<a name="access-analyzer-preview-access-kms-key"></a>
 

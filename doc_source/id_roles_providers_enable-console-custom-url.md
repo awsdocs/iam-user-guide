@@ -162,7 +162,7 @@ import boto3 # AWS SDK for Python (Boto3) 'pip install boto3'
 sts_connection = boto3.client('sts')
 
 assumed_role_object = sts_connection.assume_role(
-    RoleArn="arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/ROLE-NAME",
+    RoleArn="arn:aws:iam::account-id:role/ROLE-NAME",
     RoleSessionName="AssumeRoleSession",
 )
 

@@ -81,7 +81,7 @@ As the account administrator, imagine that you want to allow the IAM user `DevUs
             "Resource": "arn:aws:iam::123456789012:role/Developer_Role"
         },
         {
-            "Sid": "Set_AWSUserName_as_SourceIdentity",
+            "Sid": "SetAwsUserNameAsSourceIdentity",
             "Effect": "Allow",
             "Action": "sts:SetSourceIdentity",
             "Resource": "arn:aws:iam::123456789012:role/Developer_Role",
@@ -204,7 +204,7 @@ When a source identity is initially set, the [sts:SourceIdentity](reference_poli
 
 Imagine that you want to require your developers to set a source identity to assume a critical role that has permission to write to a production critical AWS resource\. Also imagine that you grant AWS access to your workforce identities using `AssumeRoleWithSAML`\. You only want senior developers Saanvi and Diego to have access to the role, so you create the following trust policy for the role\.
 
-**Example role trust policy for source identity**  
+**Example role trust policy for source identity \(SAML\)**  
 
 ```
 {
@@ -214,15 +214,21 @@ Imagine that you want to require your developers to set a source identity to ass
       "Sid": "AssumeRoleAndSetSourceIdentity",
       "Effect": "Allow",
       "Principal": {
-        "AWS": " arn:aws:iam::111111111111:role/CriticalRole"
+        "Federated": "arn:aws:iam::111111111111:saml-provider/name-of-identity-provider"
       },
       "Action": [
         "sts:AssumeRoleWithSAML",
         "sts:SetSourceIdentity"
       ],
       "Condition": {
+        "StringEquals": {
+          "SAML:aud": "https://signin.aws.amazon.com/saml"
+        },
         "StringLike": {
-          "sts:SourceIdentity": ["Saanvi", "Diego"]
+          "sts:SourceIdentity": [
+            "Saanvi",
+            "Diego"
+          ]
         }
       }
     }
@@ -230,7 +236,40 @@ Imagine that you want to require your developers to set a source identity to ass
 }
 ```
 
-The trust policy contains a condition for `sts:SourceIdentity` that requires a source identity that is set to Saanvi or Diego to assume the critical role\.
+The trust policy contains a condition for `sts:SourceIdentity` that requires a source identity of Saanvi or Diego to assume the critical role\.
+
+Alternatively, if you use an OIDC provider for web identity federation and users are authenticated with `AssumeRoleWithWebIdentity`, your role trust policy might look as follows\.
+
+**Example role trust policy for source identity \(OIDC provider\)**  
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::111111111111:oidc-provider/oidc-provider-uri"
+      },
+      "Action": [
+        "sts:AssumeRoleWithWebIdentity",
+        "sts:SetSourceIdentity"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "oidc-provider-uri:aud": "oidc-audience-id"
+        },
+        "StringLike": {
+          "sts:SourceIdentity": [
+            "Saanvi",
+            "Diego"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
 
 ### Role chaining and cross\-account requirements<a name="id_credentials_temp_control-access_monitor-chain"></a>
 
@@ -266,7 +305,7 @@ To secure setting source identity across the account boundary, the following rol
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": " arn:aws:iam::111111111111:role/CriticalRole"
+        "AWS": "arn:aws:iam::111111111111:role/CriticalRole"
       },
       "Action": [
         "sts:AssumeRole",

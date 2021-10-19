@@ -171,7 +171,7 @@ The following resource\-based policy can be attached to an Amazon S3 bucket\. Th
   "Statement": [{
     "Sid": "1",
     "Effect": "Allow",
-    "Principal": {"AWS": ["arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:root"]},
+    "Principal": {"AWS": ["arn:aws:iam::account-id:root"]},
     "Action": "s3:*",
     "Resource": [
       "arn:aws:s3:::mybucket",

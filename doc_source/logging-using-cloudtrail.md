@@ -31,41 +31,45 @@ For more information, see the [CloudTrail userIdentity Element](https://docs.aws
 
 A trail is a configuration that enables delivery of events as log files to an Amazon S3 bucket that you specify\. CloudTrail log files contain one or more log entries\. An event represents a single request from any source and includes information about the requested action, the date and time of the action, request parameters, and so on\. CloudTrail log files aren't an ordered stack trace of the public API calls, so they don't appear in any specific order\. 
 
-The following example shows a CloudTrail log entry that demonstrates the `CreateAnalyzer` operation made by a user named "Alice" on "June 14, 2018"\.
+The following example shows a CloudTrail log entry that demonstrates the `CreateAnalyzer` operation made by an assumed\-role session named `Alice-tempcreds` on "June 14, 2021"\. The role session was issued by the role named `admin-tempcreds`\.
 
 ```
 {
   "eventVersion": "1.05",
   "userIdentity":   {
     "type": "AssumedRole",
-    "principalId": "AIDACKCEVSQ6C2EXAMPLE",
-    "arn": "arn:aws:iam::111122223333:user/Alice",
+    "principalId": "AROAIBKEVSQ6C2:Alice-tempcreds",
+    "arn": "arn:aws:sts::111122223333:assumed-role/admin-tempcreds/Alice-tempcreds",
     "accountId": "111122223333",
-    "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
+    "accessKeyId": "ASIAI44QH8DHB",
     "sessionContext": {
       "attributes": {
-        "mfaAuthenticated": "false",
-        "creationDate": "2018-06-14T22:54:20Z"
+        "mfaAuthenticated": "true",
+        "creationDate": "2021-06-14T22:54:20Z"
       },
       "sessionIssuer": {
         "type": "Role",
-        "principalId": "AIDACKCEVSQ6C2EXAMPLE",
-        "arn": "arn:aws:iam::111122223333:user/Alice",
+        "principalId": "AROAIBKEVSQ6C2",
+        "arn": "arn:aws:iam::111122223333:role/admin-tempcreds",
         "accountId": "111122223333",
-        "userName": "Alice"
-      }
+        "userName": "admin-tempcreds"
+      },
+     "webIdFederationData": {},
     }
   },
-  "eventTime": "2018-06-14T22:57:36Z",
+  "eventTime": "2021-06-14T22:57:36Z",
   "eventSource": "access-analyzer.amazonaws.com",
   "eventName": "CreateAnalyzer",
   "awsRegion": "us-west-2",
   "sourceIPAddress": "198.51.100.179",
-  "userAgent": "aws-cli/1.16.205 Python/2.7.16 Darwin/17.7.0 botocore/1.12.195",
+  "userAgent": "aws-sdk-java/1.12.79 Linux/5.4.141-78.230 OpenJDK_64-Bit_Server_VM/25.302-b08 java/1.8.0_302 vendor/Oracle_Corporation cfg/retry-mode/standard",
   "requestParameters": {
     "analyzerName": "test",
     "type": "ACCOUNT",
-    "clientToken": "11111111-abcd-2222-abcd-222222222222"
+    "clientToken": "11111111-abcd-2222-abcd-222222222222",
+        "tags": {
+            "tagkey1": "tagvalue1"
+        }
   },
   "responseElements": {
     "arn": "arn:aws:access-analyzer:us-west-2:111122223333:analyzer/test"
@@ -73,7 +77,9 @@ The following example shows a CloudTrail log entry that demonstrates the `Create
   "requestID": "22222222-dcba-4444-dcba-333333333333",
   "eventID": "33333333-bcde-5555-bcde-444444444444",
   "readOnly": false,
-  "eventType": "AwsApiCall",
-  "recipientAccountId": "111122223333"
+  "eventType": "AwsApiCall",,
+  "managementEvent": true,
+  "recipientAccountId": "111122223333",
+    "eventCategory": "Management"
 }
 ```

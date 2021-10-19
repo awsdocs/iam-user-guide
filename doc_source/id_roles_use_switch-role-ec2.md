@@ -1,15 +1,15 @@
 # Using an IAM role to grant permissions to applications running on Amazon EC2 instances<a name="id_roles_use_switch-role-ec2"></a>
 
-Applications that run on an EC2 instance must include AWS credentials in their AWS API requests\. You could have your developers store AWS credentials directly within the EC2 instance and allow applications in that instance to use those credentials\. But developers would then have to manage the credentials and ensure that they securely pass the credentials to each instance and update each EC2 instance when it's time to rotate the credentials\. That's a lot of additional work\.
+Applications that run on an EC2 instance must include AWS credentials in the AWS API requests\. You could have your developers store AWS credentials directly within the EC2 instance and allow applications in that instance to use those credentials\. But developers would then have to manage the credentials and ensure that they securely pass the credentials to each instance and update each EC2 instance when it's time to rotate the credentials\. That's a lot of additional work\.
 
 Instead, you can and should use an IAM role to manage *temporary* credentials for applications that run on an EC2 instance\. When you use a role, you don't have to distribute long\-term credentials \(such as a user name and password or access keys\) to an EC2 instance\. Instead, the role supplies temporary permissions that applications can use when they make calls to other AWS resources\. When you launch an EC2 instance, you specify an IAM role to associate with the instance\. Applications that run on the instance can then use the role\-supplied temporary credentials to sign API requests\.
 
-Using roles to grant permissions to applications that run on EC2 instances requires a bit of extra configuration\. An application running on an EC2 instance is abstracted from AWS by the virtualized operating system\. Because of this extra separation, an additional step is needed to assign an AWS role and its associated permissions to an EC2 instance and make them available to its applications\. This extra step is the creation of an *[instance profile](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)* that is attached to the instance\. The instance profile contains the role and can provide the role's temporary credentials to an application that runs on the instance\. Those temporary credentials can then be used in the application's API calls to access resources and to limit access to only those resources that the role specifies\. Note that only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions\.
+Using roles to grant permissions to applications that run on EC2 instances requires a bit of extra configuration\. An application running on an EC2 instance is abstracted from AWS by the virtualized operating system\. Because of this extra separation, you need an additional step to assign an AWS role and its associated permissions to an EC2 instance and make them available to its applications\. This extra step is the creation of an *[instance profile](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)* attached to the instance\. The instance profile contains the role and can provide the role's temporary credentials to an application that runs on the instance\. Those temporary credentials can then be used in the application's API calls to access resources and to limit access to only those resources that the role specifies\. Note that only one role can be assigned to an EC2 instance at a time, and all applications on the instance share the same role and permissions\.
 
-Using roles in this way has several benefits\. Because role credentials are temporary and rotated automatically, you don't have to manage credentials, and you don't have to worry about long\-term security risks\. In addition, if you use a single role for multiple instances, you can make a change to that one role and the change is propagated automatically to all the instances\. 
+Using roles in this way has several benefits\. Because role credentials are temporary and rotated automatically, you don't have to manage credentials, and you don't have to worry about long\-term security risks\. In addition, if you use a single role for multiple instances, you can make a change to that one role and the change propagates automatically to all the instances\. 
 
 **Note**  
-Although a role is usually assigned to an EC2 instance when you launch it, a role can also be attached to an EC2 instance that is already running\. To learn how to attach a role to a running instance, see [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
+Although a role is usually assigned to an EC2 instance when you launch it, a role can also be attached to an EC2 instance currently running\. To learn how to attach a role to a running instance, see [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#attach-iam-role)\.
 
 **Topics**
 + [How do roles for EC2 instances work?](#roles-usingrole-ec2instance-roles)
@@ -38,28 +38,43 @@ If you use the IAM console, the instance profile is managed for you and is mostl
 
 1. Using the retrieved temporary credentials, the application accesses the photo bucket\. Because of the policy attached to the **Get\-pics** role, the application has read\-only permissions\. 
 
-   The temporary security credentials that are available on the instance are automatically rotated before they expire so that a valid set is always available\. The application just needs to make sure that it gets a new set of credentials from the instance metadata before the current ones expire\. It is possible to use the AWS SDK to manage credentials so the application does not need to include additional logic to refresh the credentials\. For example, instantiating clients with Instance Profile Credential Providers\. However, if the application gets temporary security credentials from the instance metadata and has cached them, it should get a refreshed set of credentials every hour, or at least 15 minutes before the current set expires\. The expiration time is included in the information that is returned in the `iam/security-credentials/role-name` category\. 
+   The temporary security credentials available on the instance automatically rotate before they expire so that a valid set is always available\. The application just needs to make sure that it gets a new set of credentials from the instance metadata before the current ones expire\. It is possible to use the AWS SDK to manage credentials so the application does not need to include additional logic to refresh the credentials\. For example, instantiating clients with Instance Profile Credential Providers\. However, if the application gets temporary security credentials from the instance metadata and has cached them, it should get a refreshed set of credentials every hour, or at least 15 minutes before the current set expires\. The expiration time is included in the information returned in the `iam/security-credentials/role-name` category\. 
 
 ## Permissions required for using roles with Amazon EC2<a name="roles-usingrole-ec2instance-permissions"></a>
 
 To launch an instance with a role, the developer must have permission to launch EC2 instances and permission to pass IAM roles\.
 
-The following sample policy allows users to use the AWS Management Console to launch an instance with a role\. The policy includes wildcards \(`*`\) to allow a user to pass any role and to perform all Amazon EC2 actions\. The `ListInstanceProfiles` action allows users to view all of the roles that are available in the AWS account\.
+The following sample policy allows users to use the AWS Management Console to launch an instance with a role\. The policy includes wildcards \(`*`\) to allow a user to pass any role and to perform the listed Amazon EC2 actions\. The `ListInstanceProfiles` action allows users to view all of the roles available in the AWS account\.
 
 **Example policy that grants a user permission to use the Amazon EC2 console to launch an instance with any role**  
 
 ```
 {
-  "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": [
-      "iam:PassRole",
-      "iam:ListInstanceProfiles",
-      "ec2:*"
-    ],
-    "Resource": "*"
-  }]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "IamPassRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": "ec2.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Sid": "ListEc2AndListInstanceProfiles",
+            "Effect": "Allow",
+            "Action": [
+                "iam:ListInstanceProfiles",
+                "ec2:Describe*",
+                "ec2:Search*",
+                "ec2:Get*"
+            ],
+            "Resource": "*"
+        }
+    ]
 }
 ```
 
@@ -87,7 +102,7 @@ The following sample policy allows users to use the Amazon EC2 API to launch an 
     {
       "Effect": "Allow",
       "Action": "iam:PassRole",
-      "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/Get-pics"
+      "Resource": "arn:aws:iam::account-id:role/Get-pics"
     }
   ]
 }
@@ -113,10 +128,12 @@ The `abcd` EC2 instance profile role must have the following permissions policy 
             "Sid": "AllowAccountLevelS3Actions",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowListAndReadS3ActionOnMyBucket",
@@ -170,10 +187,12 @@ Assume that the `efgh` cross\-account role allows read\-only Amazon S3 tasks on 
             "Sid": "AllowAccountLevelS3Actions",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowListAndReadS3ActionOnMyBucket",

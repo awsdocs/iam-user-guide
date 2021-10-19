@@ -25,7 +25,7 @@ Before you can create a role for SAML 2\.0 federation, you must first complete t
        "Statement": {
          "Effect": "Allow",
          "Action": "sts:AssumeRoleWithSAML",
-         "Principal": {"Federated": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:saml-provider/PROVIDER-NAME"},
+         "Principal": {"Federated": "arn:aws:iam::account-id:saml-provider/PROVIDER-NAME"},
          "Condition": {"StringEquals": {"SAML:aud": "https://signin.aws.amazon.com/saml"}}
        }
      }

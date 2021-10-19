@@ -83,7 +83,7 @@ You can use policy variables in a similar way to allow each user to manage his o
   "Statement": [{
     "Action": ["iam:*AccessKey*"],
     "Effect": "Allow",
-    "Resource": ["arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/David"]
+    "Resource": ["arn:aws:iam::account-id:user/David"]
   }]
 }
 ```
@@ -98,7 +98,7 @@ By using a policy variable, you can create a policy like this:
   "Statement": [{
     "Action": ["iam:*AccessKey*"],
     "Effect": "Allow",
-    "Resource": ["arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/${aws:username}"]
+    "Resource": ["arn:aws:iam::account-id:user/${aws:username}"]
   }]
 }
 ```
@@ -183,12 +183,23 @@ The following Amazon SNS topic policy gives users in AWS account `999999999999` 
 ```
 {
   "Version": "2012-10-17",
-  "Statement": [{
-    "Principal": {"AWS": "999999999999"},
-    "Effect": "Allow",
-    "Action": "sns:*",
-    "Condition": {"StringLike": {"sns:endpoint": "https://example.com/${aws:username}/*"}}
-  }]
+  "Statement": [
+    {
+      "Principal": {
+        "AWS": "999999999999"
+      },
+      "Effect": "Allow",
+      "Action": "sns:*",
+      "Condition": {
+        "StringLike": {
+          "sns:endpoint": "https://example.com/${aws:username}/"
+        },
+        "StringEquals": {
+          "sns:Protocol": "https"
+        }
+      }
+    }
+  ]
 }
 ```
 

@@ -108,7 +108,7 @@ Remember, a federated user is granted permissions only when those permissions ar
 {
   "Version": "2012-10-17",
   "Statement": {
-    "Principal": {"AWS": "arn:aws:sts::ACCOUNT-ID-WITHOUT-HYPHENS:federated-user/Carol"},
+    "Principal": {"AWS": "arn:aws:sts::account-id:federated-user/Carol"},
     "Effect": "Allow",
     "Action": [
       "s3:GetObject",
