@@ -1,6 +1,6 @@
 # Using service\-linked roles for AWS IAM Access Analyzer<a name="access-analyzer-using-service-linked-roles"></a>
 
-AWS IAM Access Analyzer uses an IAM [ service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role that is linked directly to Access Analyzer\. Service\-linked roles are predefined by Access Analyzer and include all the permissions that the feature requires to call other AWS services on your behalf\.
+AWS IAM Access Analyzer uses an IAM [ service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role linked directly to Access Analyzer\. Service\-linked roles are predefined by Access Analyzer and include all the permissions that the feature requires to call other AWS services on your behalf\.
 
 A service\-linked role makes setting up Access Analyzer easier because you don’t have to manually add the necessary permissions\. Access Analyzer defines the permissions of its service\-linked roles, and unless defined otherwise, only Access Analyzer can assume its roles\. The defined permissions include the trust policy and the permissions policy, and that permissions policy cannot be attached to any other IAM entity\.
 
@@ -13,61 +13,7 @@ AWS IAM Access Analyzer uses the service\-linked role named **AWSServiceRoleForA
 The AWSServiceRoleForAccessAnalyzer service\-linked role trusts the following services to assume the role:
 + `access-analyzer.amazonaws.com`
 
-The role permissions policy allows Access Analyzer to complete the following actions on the specified resources:
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "s3:GetBucketPublicAccessBlock",
-        "s3:GetBucketPolicyStatus",
-        "s3:GetAccountPublicAccessBlock",
-        "s3:ListAllMyBuckets",
-        "s3:GetBucketAcl",
-        "s3:GetBucketLocation",
-        "s3:GetBucketPolicy",
-        "s3:ListAccessPoints",
-        "s3:GetAccessPoint",
-        "s3:GetAccessPointPolicy",
-        "s3:GetAccessPointPolicyStatus",
-        "iam:GetRole",
-        "iam:ListRoles",
-        "kms:DescribeKey",
-        "kms:GetKeyPolicy",
-        "kms:ListGrants",
-        "kms:ListKeyPolicies",
-        "kms:ListKeys",
-        "ec2:DescribeVpcs",
-        "ec2:DescribeVpcEndpoints",
-        "ec2:DescribeByoipCidrs",
-        "ec2:DescribeAddresses",
-        "lambda:ListFunctions",
-        "lambda:GetPolicy",
-        "lambda:ListLayers",
-        "lambda:ListLayerVersions",
-        "lambda:GetLayerVersionPolicy",
-        "sqs:GetQueueAttributes",
-        "sqs:ListQueues",
-        "organizations:ListAWSServiceAccessForOrganization",
-        "organizations:ListDelegatedAdministrators",
-        "organizations:ListRoots",
-        "organizations:ListParents",
-        "organizations:ListChildren",
-        "organizations:ListOrganizationalUnitsForParent",
-        "organizations:ListAccountsForParent",
-        "organizations:ListAccounts",
-        "organizations:DescribeAccount",
-        "organizations:DescribeOrganization",
-        "organizations:DescribeOrganizationalUnit"
-      ],
-      "Resource": "*"
-    }
-  ]
-}
-```
+The role permissions policy named [`AccessAnalyzerServiceRolePolicy`](security-iam-awsmanpol.md#security-iam-aa-service-role-policy) allows Access Analyzer to complete actions on specific resources\.
 
 You must configure permissions to allow an IAM entity \(such as a user, group, or role\) to create, edit, or delete a service\-linked role\. For more information, see [Service\-Linked Role Permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
 
