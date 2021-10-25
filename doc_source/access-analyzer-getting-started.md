@@ -4,21 +4,98 @@ Use the information in this topic to learn about the requirements necessary to u
 
 ## Permissions required to use Access Analyzer<a name="access-analyzer-permissions"></a>
 
-To successfully configure and use Access Analyzer, the account you use must be granted the required permissions\. 
+To successfully configure and use Access Analyzer, the account you use must be granted the required permissions\. To access and use all Access Analyzer features, you can apply the IAMAccessAnalyzerFullAccess managed policy to the account\. The full access policy grants the following permissions:
 
-### AWS managed policies for Access Analyzer<a name="access-analyzer-permissions-awsmanpol"></a>
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:*"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "iam:CreateServiceLinkedRole",
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "access-analyzer.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListRoots"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
 
-AWS IAM Access Analyzer provides AWS managed policies to help you get started quickly\.
-+ IAMAccessAnalyzerFullAccess \- Allows full access to Access Analyzer for administrators\. This policy also allows creating the service\-linked roles that are required to allow Access Analyzer to analyze resources in your account or AWS organization\.
-+ IAMAccessAnalyzerReadOnlyAccess \- Allows read\-only access to Access Analyzer\. You must add additional policies to your IAM identities \(users, groups of users, or roles\) to allow them to view
+A custom policy for managing Access Analyzer must include the following permissions:
++ access\-analyzer: \*
++ iam:CreateServiceLinkedRole
+
+To allow read\-only access to Access Analyzer, use the IAMAccessAnalyzerReadOnlyAccess managed policy\. This policy grants the following permissions:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "access-analyzer:Get*",
+        "access-analyzer:List*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+```
+
+If you plan to use Access Analyzer for an organization in AWS Organizations, you need to [enable trusted access](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html) for Access Analyzer in AWS Organizations\. You also need the following permissions:
++ organizations:DescribeAccount
++ organizations:DescribeOrganization
++ organizations:DescribeOrganizationalUnit
++ organizations:ListAccounts
++ organizations:ListAccountsForParent
++ organizations:ListAWSServiceAccessForOrganization
++ organizations:ListChildren
++ organizations:ListDelegatedAdministrators
++ organizations:ListOrganizationalUnitsForParent
++ organizations:ListParents
++ organizations:ListRoots
 
 ### Resources defined by AWS IAM Access Analyzer<a name="permission-resources"></a>
 
-To view the resources defined by Access Analyzer, see [Resource types defined by AWS IAM Access Analyzer](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiamaccessanalyzer.html#awsiamaccessanalyzer-resources-for-iam-policies) in the *Service Authorization Reference*\.
+Access Analyzer defines the following resources:
+
+
+| **Resource** | **ARN** | 
+| --- | --- | 
+| analyzer | arn:$\{Partition\}:access\-analyzer:$\{Region\}:$\{Account\}:analyzer/$\{analyzerName\} | 
+| archive\-rule | arn:$\{Partition\}:access\-analyzer:$\{Region\}:$\{Account\}:analyzer/$\{analyzerName\}/archive\-rule/$\{ruleName\} | 
 
 ### Required Access Analyzer service permissions<a name="access-analyzer-permissions-service"></a>
 
-Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer with your account as the zone of trust, the service creates the role in your account\. When you create an analyzer with your organization as the zone of trust, the service creates a role in each account that belongs to your organization\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+Access Analyzer uses a service\-linked role named `AWSServiceRoleForAccessAnalyzer` to grant the service read\-only access to analyze AWS resources with resource\-based policies on your behalf\. When you create an analyzer with your account as the zone of trust, the service creates the role your account\. When you create an analyzer with your organization as the zone of trust, the service creates a role in each account that belongs to your organization\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
 
 **Note**  
 Access Analyzer is Regional\. You must enable Access Analyzer in each Region independently\.
@@ -95,12 +172,6 @@ Access Analyzer has the following quotas:
 | --- | --- | --- | 
 |  Maximum analyzers with an account zone of trust  |  1  |  1  | 
 |  Maximum analyzers with an organization zone of trust  |  5  |  20\*  | 
-|  Maximum archive rules per analyzer  |  100 Each archive rule can have up to 20 values per criterion\.  |  1,000\*  | 
-| Maximum number of access previews per analyzer per hour | 1,000 | 1,000 | 
-| AWS CloudTrail log files processed per policy generations | 100,000 | 100,000 | 
-| Concurrent policy generations | 1 | 1 | 
-| Policy generation AWS CloudTrail data size | 25 GB | 25 GB | 
-| Policy generation AWS CloudTrail time range | 90 days | 90 days | 
-| Policy generations per day | 5 Canceled policy generation requests apply to the daily quota\. | 5 | 
+|  Maximum archive rules per analyzer  |  100 Each archive rule can have up to 20 values per criterion\.  |  1000\*  | 
 
 \* Some quotas are customer\-configurable using [Service Quotas](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html)\.

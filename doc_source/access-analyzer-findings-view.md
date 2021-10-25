@@ -32,7 +32,7 @@ This column is displayed only if you are using an organization as the zone of tr
 
 **External principal**  
 The principal, not within your zone of trust, that the analyzed policy grants access to\. Valid values include:  
-+ **AWS account** – All principals in the listed AWS account with permissions from that account's administrator can access the resource\.
++ **AWS account** –All principals in the listed AWS account with permissions from that account's administrator can access the resource\.
 + **Any principal** – All principals in any AWS account that meet the conditions included in the **Conditions** column have permission to access the resource\. For example, if a VPC is listed, it means that any principal in any account that has permission to access the listed VPC can access the resource\.
 + **Canonical user** – All principals in the AWS account with the listed canonical user ID have permission to access the resource\.
 + **IAM role** – The listed IAM role has permission to access the resource\.
@@ -43,9 +43,9 @@ The condition from the policy statement that grants the access\. For example, if
 
 **Shared through**  
 The **Shared through** field indicates how the access that generated the finding is granted\. Valid values include:  
-+ **Bucket policy** – The bucket policy attached to the Amazon S3 bucket\.
-+ **Access control list** – The access control list \(ACL\) attached to the Amazon S3 bucket\.
-+ **Access point** – An access point or multi\-region access point associated with the Amazon S3 bucket\. The ARN of the access point is displayed in the **Findings** details\.
++ **Bucket policy** – The bucket policy that is attached to the Amazon S3 bucket\.
++ **Access control list** – The access control list \(ACL\) that is attached to the Amazon S3 bucket\.
++ **Access point** – An access point that is associated with the Amazon S3 bucket\. The ARN of the access point is displayed in the **Findings** details\.
 
 **Access level**  
 The level of access granted to the external entity by the actions in the resource\-based policy\. View the details of the finding for more information\. Access level values include the following:  
@@ -56,7 +56,7 @@ The level of access granted to the external entity by the actions in the resourc
 + **Tagging** – Permission to perform actions that only change the state of resource tags\.
 
 **Updated**  
-A timestamp for the most recent update to the finding status, or the time and date the finding was generated if no updates have been made\.  
+A timestamp for the most recent update to the finding status, or the time and date at which the finding was generated if no updates have been made\.  
 It may take up to 30 minutes after a policy is modified for Access Analyzer to again analyze the resource and then update the finding\.
 
 **Status**  
