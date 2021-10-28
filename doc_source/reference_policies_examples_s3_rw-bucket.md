@@ -2,7 +2,7 @@
 
 This example shows how you might create an IAM policy that allows `Read` and `Write` access to objects in a specific S3 bucket\. This policy grants the permissions necessary to complete this action programatically from the AWS API or AWS CLI\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
-The `s3:*Object` action uses a wildcard as part of the action name\. The `AllObjectActions` statement allows the `GetObject`, `DeleteObject`, `PutObject`, and any other Amazon S3 action that ends with the word "Object"\.
+The `s3:*Object*` action uses a wildcard as part of the action name\. The `AllObjectActions` statement allows the `GetObject`, `DeleteObject`, `PutObject`, and any other Amazon S3 action that ends with the word "Object"\.
 
 ```
 {
