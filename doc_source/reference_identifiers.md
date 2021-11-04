@@ -19,7 +19,7 @@ If you have a user and user group in the same path, IAM doesn't automatically pu
 
 ## IAM ARNs<a name="identifiers-arns"></a>
 
-Most resources have a friendly name for example, a user named `Bob` or a user group named `Developers`\)\. However, the permissions policy language requires you to specify the resource or resources using the following *Amazon Resource Name \(ARN\)* format\. 
+Most resources have a friendly name for example, a user named `Bob` or a user group named `Developers`\. However, the permissions policy language requires you to specify the resource or resources using the following *Amazon Resource Name \(ARN\)* format\. 
 
 ```
 arn:partition:service:region:account:resource
@@ -29,7 +29,7 @@ Where:
 + `partition` identifies the partition for the resource \. For standard AWS Regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\. You cannot [delegate access](id_roles_compare-resource-policies.md#aboutdelegation-resourcepolicy) between accounts in different partitions\.
 + `service` identifies the AWS product\. IAM resources always uses `iam`\.
 + `region` identifies the Region of the resource\. For IAM resources, this is always kept blank\.
-+ `account` specifies the AWS account ID with no hyphens or the alias for the AWS account\.
++ `account` specifies the AWS account ID with no hyphens\.
 + `resource` identifies the specific resource by name\.
 
 You can specify IAM and AWS STS ARNs using the following syntax\. The Region portion of the ARN is blank because IAM resources are global\. 

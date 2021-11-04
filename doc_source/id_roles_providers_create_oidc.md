@@ -69,52 +69,6 @@ An IAM OIDC identity provider must have at least one and can have a maximum of f
 **Note**  
 An IAM OIDC identity provider must have at least one and can have a maximum of 100 audiences\.
 
-    When you are done, choose **Add audiences**\.
-
-**To remove an audience for an IAM OIDC identity provider \(console\)**
-
-1. In the navigation pane, choose **Identity providers**, then choose the name of the IAM identity provider that you want to update\.
-
-1. In the **Audiences** section, select the radio button next to the audience that you want to remove, then select **Actions**\.
-
-1.  Choose **Remove audience**\. A new window opens\.
-
-1. If you remove an audience, identities federating with the audience cannot assume roles associated with the audience\. In the window, read the warning and confirm that you want to remove the audience by typing the word `remove` in the field\.
-
-1. Choose **Remove** to remove the audience\.
-
-**To delete an IAM OIDC identity provider \(console\)**
-
-1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-
-1. In the navigation pane, choose **Identity providers**\. 
-
-1. Select the check box next to the IAM identity provider that you want to delete\. Choose **Delete**\. A new window opens\.
-
-1. Confirm that you want to delete the provider by typing the word `delete` in the field\. Then, choose **Delete**\.
-
-**To add or remove a thumbprint for an IAM OIDC identity provider \(console\)**
-
-1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
-
-1. In the navigation pane, choose **Identity providers**\. Then choose the name of the IAM identity provider that you want to update\.
-
-1. In the **Thumbprints** section, choose **Manage**\. To enter a new thumbprint value, choose **Add thumbprint**\. To remove a thumbprint, choose **Remove** next to the thumbprint that you want to remove\.
-**Note**  
-An IAM OIDC identity provider must have at least one and can have a maximum of five thumbprints\.
-
-    When you are done, choose **Save changes**\.
-
-**To add an audience for an IAM OIDC identity provider \(console\)**
-
-1. In the navigation pane, choose **Identity providers**, then choose the name of the IAM identity provider that you want to update\.
-
-1. In the **Audiences** section, choose **Actions** and select **Add audience**\. 
-
-1. Type the client ID of the application that you registered with the IdP and received in [Step 1](#idpoidcstep1), and that will make requests to AWS\. Then choose **Add audiences**\.
-**Note**  
-An IAM OIDC identity provider must have at least one and can have a maximum of 100 audiences\.
-
 **To remove an audience for an IAM OIDC identity provider \(console\)**
 
 1. In the navigation pane, choose **Identity providers**, then choose the name of the IAM identity provider that you want to update\.
