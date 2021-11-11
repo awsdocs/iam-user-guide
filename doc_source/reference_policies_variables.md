@@ -291,10 +291,14 @@ These predefined policy variables can be used in any string where you can use re
 
 ## Specifying default values<a name="policy-vars-default-values"></a>
 
-When you add a variable to your policy, you can specify a default value for the variable\. For example, anonymous users will not populate the `${aws:userid}` variable\. You can set the default value to `anonymous` for those users\. To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+When you add a variable to your policy, you can specify a default value for the variable\. If a variable is not present, AWS uses the default text that you provide\.
+
+To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+
+For example, if a principal is tagged with `team=yellow`, they can access `ExampleCorp's` Amazon S3 bucket named `EXAMPLECORP-yellow`\. A policy with this resource allows team members to access their team bucket, but not those of other teams\. For users without team tags, it sets a default value of `company-wide` for the bucket name\. These users can access only the `EXAMPLECORP-company-wide` bucket where they can view broad information, such as instructions for joining a team\.
 
 ```
-Condition: StringEquals: "aws:Resource": "arn:aws:s3:::/bucket/${aws:userid, 'anonymous'}"
+"Resource":"arn:aws:s3:::EXAMPLECORP-${aws:PrincipalTag/team, 'company-wide'}"
 ```
 
 ## For more information<a name="policy-vars-formoreinfo"></a>
