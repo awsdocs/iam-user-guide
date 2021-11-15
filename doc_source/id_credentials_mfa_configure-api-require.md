@@ -117,7 +117,7 @@ The permissions policy does not include an MFA condition\. It is important to un
            {
                "Sid": "ListTables",
                "Effect": "Allow",
-               "Action": "dynamodb:ListTable",
+               "Action": "dynamodb:ListTables",
                "Resource": "*"
            }
        ]

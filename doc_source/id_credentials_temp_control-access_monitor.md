@@ -249,7 +249,7 @@ Alternatively, if you use an OIDC provider for web identity federation and users
     {
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::111111111111:oidc-provider/oidc-provider-uri"
+        "Federated": "arn:aws:iam::111111111111:oidc-provider/server.example.com"
       },
       "Action": [
         "sts:AssumeRoleWithWebIdentity",
@@ -257,7 +257,7 @@ Alternatively, if you use an OIDC provider for web identity federation and users
       ],
       "Condition": {
         "StringEquals": {
-          "oidc-provider-uri:aud": "oidc-audience-id"
+          "server.example.com:aud": "oidc-audience-id"
         },
         "StringLike": {
           "sts:SourceIdentity": [
