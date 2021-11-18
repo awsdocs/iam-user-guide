@@ -4,33 +4,46 @@ This example shows how you might create an IAM policy that allows starting or st
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "ec2:DescribeInstances",
-                "ec2:DescribeSecurityGroups",
-                "ec2:DescribeSecurityGroupReferences",
-                "ec2:DescribeStaleSecurityGroups"
-            ],
-            "Resource": "*",
-            "Effect": "Allow"
-        },
-        {
-            "Action": [
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:StartInstances",
-                "ec2:StopInstances"
-            ],
-            "Resource": [
-                "arn:aws:ec2:*:*:instance/i-instance-id",
-                "arn:aws:ec2:*:*:security-group/sg-security-group-id"
-            ],
-            "Effect": "Allow"
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:DescribeSecurityGroups",
+        "ec2:DescribeSecurityGroupRules",
+        "ec2:DescribeTags"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:ModifySecurityGroupRules",
+        "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
+        "ec2:UpdateSecurityGroupRuleDescriptionsEgress"
+      ],
+      "Resource": [
+        "arn:aws:ec2:region:111122223333:security-group/*"
+      ],
+      "Condition": {
+        "ArnEquals": {
+          "ec2:Vpc": "arn:aws:ec2:region:111122223333:vpc/vpc-11223344556677889"
         }
-    ]
+      }
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "ec2:ModifySecurityGroupRules"
+      ],
+      "Resource": [
+        "arn:aws:ec2:region:111122223333:security-group-rule/*"
+      ]
+    }
+  ]
 }
 ```

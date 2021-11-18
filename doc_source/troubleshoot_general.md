@@ -11,6 +11,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
 + [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
 + [How do I securely create IAM users?](#troubleshoot_general_securely-create-iam-users)
++ [Troubleshooting access denied error messages](troubleshoot_access-denied.md)
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 
@@ -25,7 +26,7 @@ Access keys consist of two parts:
 For more information, see [Resetting lost or forgotten passwords or access keys for AWS](id_credentials_access-keys_retrieve.md)\.
 
 ## I get "access denied" when I make a request to an AWS service<a name="troubleshoot_general_access-denied-service"></a>
-+ Check if the error message includes the type of policy responsible for denying access\. For example, if the error mentions that access is denied due to a Service Control Policy \(SCP\), then you can focus on troubleshooting SCP issues\. When you know the policy type, you can also check for a deny statement or a missing allow on the specific action in policies of that policy type\. If the error message doesn't mention the policy type responsible for denying access, use the rest of the guidelines in this section to troubleshoot further\.
++ Check if the error message includes the type of policy responsible for denying access\. For example, if the error mentions that access is denied due to a Service Control Policy \(SCP\), then you can focus on troubleshooting SCP issues\. When you know the policy type, you can also check for a deny statement or a missing allow on the specific action in policies of that policy type\. For more information, see [Troubleshooting access denied error messages](troubleshoot_access-denied.md)\. If the error message doesn't mention the policy type responsible for denying access, use the rest of the guidelines in this section to troubleshoot further\.
 + Verify that you have the identity\-based policy permission to call the action and resource that you have requested\. If any conditions are set, you must also meet those conditions when you send the request\. For information about viewing or modifying policies for an IAM user, group, or role, see [Managing IAM policies](access_policies_manage.md)\.
 + If the AWS Management Console returns a message stating that you're not authorized to perform an action, then you must contact your administrator for assistance\. Your administrator provided you with your sign\-in credentials or sign\-in link\.
 
