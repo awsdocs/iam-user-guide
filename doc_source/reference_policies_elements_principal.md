@@ -40,7 +40,7 @@ You cannot use a wildcard to match part of a principal name or ARN\.
 
 ## AWS account principals<a name="principal-accounts"></a>
 
-You can specify AWS account identifiers in the `Principal` element of a resource\-based policy or in condition keys that support principals\. This delegate authority to the account\. When you allow access to a different account, an administrator in that account must then grant access to an identity \(IAM user or role\) in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*account\-ID*:root\), or a shortened form that consists of the `"AWS":` prefix followed by the account ID\.
+You can specify AWS account identifiers in the `Principal` element of a resource\-based policy or in condition keys that support principals\. This delegates authority to the account\. When you allow access to a different account, an administrator in that account must then grant access to an identity \(IAM user or role\) in that account\. When you specify an AWS account, you can use the account ARN \(arn:aws:iam::*account\-ID*:root\), or a shortened form that consists of the `"AWS":` prefix followed by the account ID\.
 
 For example, given an account ID of `123456789012`, you can use either of the following methods to specify that account in the `Principal` element:
 

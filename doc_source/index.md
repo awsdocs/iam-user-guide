@@ -170,7 +170,6 @@ Amazon's trademarks and trade dress may not be used in
       + [Example IAM identity-based policies](access_policies_examples.md)
          + [AWS: Allows access based on date and time](reference_policies_examples_aws-dates.md)
          + [AWS: Allows enabling and disabling AWS regions](reference_policies_examples_aws-enable-disable-regions.md)
-         + [AWS: Access only resources in your account](reference_policies_examples_aws_access-resource-policy.md)
          + [AWS: Allows MFA-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)
          + [AWS: Allows specific access using MFA within specific dates](reference_policies_examples_aws_mfa-dates.md)
          + [AWS: Allows IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.md)
