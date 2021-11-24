@@ -41,7 +41,7 @@ The following example shows a CloudTrail log entry that demonstrates the `Create
     "principalId": "AROAIBKEVSQ6C2EXAMPLE:Alice-tempcreds",
     "arn": "arn:aws:sts::111122223333:assumed-role/admin-tempcreds/Alice-tempcreds",
     "accountId": "111122223333",
-    "accessKeyId": "ASIAJKHVVXGFHEXAMPLE",
+    "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
     "sessionContext": {
       "attributes": {
         "mfaAuthenticated": "true",
@@ -49,7 +49,7 @@ The following example shows a CloudTrail log entry that demonstrates the `Create
       },
       "sessionIssuer": {
         "type": "Role",
-        "principalId": "AROAIBKEVSQ6C2EXAMPLE",
+        "principalId": "AKIAI44QH8DHBEXAMPLE",
         "arn": "arn:aws:iam::111122223333:role/admin-tempcreds",
         "accountId": "111122223333",
         "userName": "admin-tempcreds"
