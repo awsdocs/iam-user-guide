@@ -669,7 +669,7 @@ For example, you can attach the following policy to an IAM user\. This policy al
 }
 ```
 
-If the request comes from a host that uses an Amazon VPC endpoint, then the `aws:SourceIp` key is not available\. You should instead use a VPC\-specific key such as [aws:VpcSourceIp](#condition-keys-sourceip)\. For more information about using VPC endpoints, see [VPC Endpoints \- Controlling the Use of Endpoints](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html#vpc-endpoints-iam-access) in the *Amazon VPC User Guide*\.
+If the request comes from a host that uses an Amazon VPC endpoint, then the `aws:SourceIp` key is not available\. You should instead use a VPC\-specific key such as [aws:VpcSourceIp](#condition-keys-sourceip)\. For more information about using VPC endpoints, see [Identity and access management for VPC endpoints and VPC endpoint services](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-iam.html) in the *AWS PrivateLink Guide*\.
 
 ## aws:SourceVpc<a name="condition-keys-sourcevpc"></a>
 

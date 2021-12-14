@@ -20,6 +20,40 @@ Additionally, AWS supports managed policies for job functions that span multiple
 
 
 
+## IAMReadOnlyAccess<a name="security-iam-awsmanpol-IAMReadOnlyAccess"></a>
+
+Use the `IAMReadOnlyAccess` managed policy to allow read only access to IAM resources\. This policy grants permission to get and list all IAM resources\. It allows viewing details and activity reports for users, groups, roles, policies, identity providers, and MFA devices\. It does not include the ability to create or delete resources or access to IAM Access Analyzer resources\. View the [policy](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMReadOnlyAccess) for the full list of services and actions supported by this policy\. 
+
+## IAMUserChangePassword<a name="security-iam-awsmanpol-IAMUserChangePassword"></a>
+
+Use the `IAMUserChangePassword` managed policy to allow IAM users to change their password\.
+
+You configure your IAM **Account settings** and the **Password policy** to allow IAM users to change their IAM account password\. When you allow this action, IAM attaches the following policy to each user:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:ChangePassword"
+            ],
+            "Resource": [
+                "arn:aws:iam::*:user/${aws:username}"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetAccountPasswordPolicy"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
+
 ## IAMAccessAnalyzerFullAccess<a name="security-iam-awsmanpol-IAMAccessAnalyzerFullAccess"></a>
 
 Use the `IAMAccessAnalyzerFullAccess` AWS managed policy to allow your administrators to access IAM Access Analyzer\.
@@ -170,23 +204,25 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
   }
 ```
 
-## <a name="w260aac27c55c45"></a>
+## <a name="w267aac27c55c49"></a>
 
 
 
 
 
-## IAM Access Analyzer updates to AWS managed policies<a name="security-iam-awsmanpol-updates"></a>
+## IAM and IAM Access Analyzer updates to AWS managed policies<a name="security-iam-awsmanpol-updates"></a>
 
 
 
-View details about updates to AWS managed policies for IAM Access Analyzer since this service began tracking these changes\. For automatic alerts about changes to this page, subscribe to the RSS feed on the IAM Access Analyzer Document history page\.
+View details about updates to IAM and AWS managed policies since these service began tracking these changes\. For automatic alerts about changes to this page, subscribe to the RSS feed on the IAM and IAM Access Analyzer Document history pages\.
 
 
 
 
 | Change | Description | Date | 
 | --- | --- | --- | 
+| [IAMReadOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMReadOnlyAccess) – IAM started tracking changes to this policy\. |  IAMReadOnlyAccess policy allows read\-only access to resources\.  | December 1, 2021 | 
+| [IAMUserChangePassword](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMUserChangePassword) – IAM started tracking changes to this policy\. | IAMUserChangePassword policy allows a user to change their password\.  | November 22, 2021 | 
 | [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Add permission for Amazon S3 multi\-region access points | IAM Access Analyzer added new Amazon S3 actions to analyze metadata associated with multi\-region access points\. | September 2, 2021 | 
 |  [IAMAccessAnalyzerReadOnlyAccess](#security-iam-awsmanpol-IAMAccessAnalyzerReadOnlyAccess) – Add permission to support policy validation  |  IAM Access Analyzer added a new action to grant `ValidatePolicy` permissions to allow you to use the policy checks for validation\. This permission is required by IAM Access Analyzer to perform policy checks on your policies\. This action is associated to the `ValidatePolicy` API operation\.  | March 16, 2021 | 
 |  IAM Access Analyzer started tracking changes  |  IAM Access Analyzer started tracking changes for its AWS managed policies\.  | March 1, 2021 | 

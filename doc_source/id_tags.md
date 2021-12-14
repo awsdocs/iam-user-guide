@@ -56,7 +56,7 @@ To control access to engineers in this example using the **team** tag, you must 
 ### Applying and editing tags<a name="id_tags_rules_applying"></a>
 
 Observe the following conventions when attaching tags to IAM resources:
-+ You can tag most IAM resources, but not groups, assumed roles, access reports, hardware\-based, or SMS MFA devices\.
++ You can tag most IAM resources, but not groups, assumed roles, access reports, or hardware\-based MFA devices\.
 + You cannot use Tag Editor to tag IAM resources\. Tag Editor does not support IAM tags\. For information about using Tag Editor with other services, see [Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html) in the *AWS Resource Groups User Guide*\.
 + To tag an IAM resource, you must have specific permissions\. To tag or untag resources, you must also have permission to list tags\. For more information, see the list of topics for each IAM resource at the end of this page\. 
 + The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.

@@ -59,7 +59,6 @@ Amazon's trademarks and trade dress may not be used in
             + [Enabling a U2F security key (console)](id_credentials_mfa_enable_u2f.md)
                + [Supported configurations for using U2F security keys](id_credentials_mfa_u2f_supported_configurations.md)
             + [Enabling a hardware MFA device (console)](id_credentials_mfa_enable_physical.md)
-            + [PREVIEW – Enabling SMS text message MFA devices](id_credentials_mfa_enable_sms.md)
             + [Enabling and managing virtual MFA devices (AWS CLI or AWS API)](id_credentials_mfa_enable_cliapi.md)
          + [Checking MFA status](id_credentials_mfa_checking-status.md)
          + [Resynchronizing virtual and hardware MFA devices](id_credentials_mfa_sync.md)

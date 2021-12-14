@@ -158,6 +158,7 @@ AWS collects last accessed information for the standard AWS Regions\. When AWS a
 | US West \(N\. California\) | us\-west\-1 | October 1, 2015 | 
 | US West \(Oregon\) | us\-west\-2 | October 1, 2015 | 
 | Asia Pacific \(Hong Kong\) | ap\-east\-1 | April 24, 2019 | 
+| Asia Pacific \(Jakarta\) | ap\-southeast\-3 | December 13, 2021 | 
 | Asia Pacific \(Mumbai\) | ap\-south\-1 | June 27, 2016 | 
 | Asia Pacific \(Seoul\) | ap\-northeast\-2 | January 6, 2016 | 
 | Asia Pacific \(Singapore\) | ap\-southeast\-1 | October 1, 2015 | 

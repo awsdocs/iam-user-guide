@@ -77,7 +77,7 @@ This example shows how you might create an IAM policy that allows deleting users
         "Effect": "Allow",
         "Action": "iam:DeleteUser",
         "Resource": "*",
-        "Condition": {"StringLike": {"iam:ResourceTag/status": "terminated"}}
+        "Condition": {"StringEquals": {"iam:ResourceTag/status": "terminated"}}
     }]
 }
 ```

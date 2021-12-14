@@ -65,7 +65,7 @@ Most AWS products are integrated with IAM so that you can use IAM features to he
 ## General security practices<a name="resources-general-security"></a>
 
 Find expert tips and guidance on the best ways to secure your AWS account and resources:
-+ **[AWS Security Best Practices](https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)** \(PDF\) – Provides an in\-depth look at how to manage security across AWS accounts and products, including suggestions for security architecture, use of IAM, encryption and data security, and more\. 
++ **[Best Practices for Security, Identity, &, Compliance](http://aws.amazon.com/architecture/security-identity-compliance)** – Find resources for how to manage security across AWS accounts and products, including suggestions for security architecture, use of IAM, encryption and data security, and more\. 
 + **[Security best practices in IAM](best-practices.md)** – Offers recommendations for ways to use IAM to help secure your AWS account and resources\. 
 + **[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\. 
 

@@ -1320,10 +1320,14 @@ In programmatic calls to the AWS CLI or AWS API, the finding for this check incl
 
 **Resolving the error**
 
-When you add a variable to your policy, you can specify a default value for the variable\. For example, anonymous users won't populate the `${aws:userid}` variable\. You can set the default to "anonymous" for those users\. To add a default to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+When you add a variable to your policy, you can specify a default value for the variable\. If a variable is not present, AWS uses the default text that you provide\.
+
+To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+
+For example, if a principal is tagged with `team=yellow`, they can access the `DOC-EXAMPLE-BUCKET` Amazon S3 bucket with the name `DOC-EXAMPLE-BUCKET-yellow`\. A policy with this resource might allow team members to access their own resources, but not those of other teams\. For users without team tags, you might set a default value of `company-wide`\. These users can access only the `DOC-EXAMPLE-BUCKET-company-wide` bucket where they can view broad information, such as instructions for joining a team\.
 
 ```
-Condition: StringEquals: "aws:Resource": "arn:aws:s3:::/bucket/${aws:userid, 'anonymous'}"
+"Resource":"arn:aws:s3:::DOC-EXAMPLE-BUCKET-${aws:PrincipalTag/team, 'company-wide'}"
 ```
 
 **Related terms**
