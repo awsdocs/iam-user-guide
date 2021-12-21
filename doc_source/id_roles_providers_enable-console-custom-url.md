@@ -66,7 +66,11 @@ When you use the [GetFederationToken](https://docs.aws.amazon.com/STS/latest/API
 
 1. [URL encode](https://en.wikipedia.org/wiki/Percent-encoding) the session string from the previous step\. Because the information that you are encoding is sensitive, we recommend that you avoid using a web service for this encoding\. Instead, use a locally installed function or feature in your development toolkit to securely encode this information\. You can use the `urllib.quote_plus` function in Python, the `URLEncoder.encode` function in Java, or the `CGI.escape` function in Ruby\. See the examples later in this topic\.
 
-1. <a name="STSConsoleLink_manual_step5"></a>Send your request to the AWS federation endpoint at the following address:
+1. <a name="STSConsoleLink_manual_step5"></a>
+**Note**  
+AWS supports POST requests here\.
+
+   Send your request to the AWS federation endpoint at the following address:
 
    `https://signin.aws.amazon.com/federation` 
 **Note**  
@@ -79,6 +83,8 @@ You can optionally use a regional AWS Sign\-In federation endpoint\. For a list 
    SessionDuration = time in seconds
    Session = *** the URL encoded JSON string created in steps 3 & 4 ***
    ```
+**Note**  
+The following instructions in this step only work using GET requests\.
 
    The `SessionDuration` HTTP parameter specifies the duration of the console session\. This is separate from the duration of the temporary credentials that you specify using the `DurationSeconds` parameter\. You can specify a `SessionDuration` maximum value of 43,200 \(12 hours\)\. If the `SessionDuration` parameter is missing, then the session defaults to the duration of the credentials that you retrieved from AWS STS in step 2 \(which defaults to one hour\)\. See the [documentation for the `AssumeRole` API](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) for details about how to specify a duration using the `DurationSeconds` parameter\. The ability to create a console session that is longer than one hour is intrinsic to the `getSigninToken` operation of the federation endpoint\.
 **Note**  
@@ -107,7 +113,11 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
    {"SigninToken":"*** the SigninToken string ***"}
    ```
 
-1. Finally, create the URL that your federated users can use to access the AWS Management Console\. The URL is the same federation URL endpoint that you used in [Step 5](#STSConsoleLink_manual_step5), plus the following parameters:
+1. 
+**Note**  
+AWS supports POST requests here\.
+
+   Finally, create the URL that your federated users can use to access the AWS Management Console\. The URL is the same federation URL endpoint that you used in [Step 5](#STSConsoleLink_manual_step5), plus the following parameters:
 
    ```
    ?Action = login
@@ -115,6 +125,8 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
    &Destination = *** the form-urlencoded URL to the desired AWS console page ***
    &SigninToken = *** the value of SigninToken received in the previous step ***
    ```
+**Note**  
+The following instructions in this step only work using GET API\.
 
    The following example shows what the final URL might look like\. The URL is valid for 15 minutes from the time it is created\. The temporary security credentials and console session embedded within the URL are valid for the duration you specify in the `SessionDuration` HTTP parameter when you initially request them\. 
 
@@ -138,9 +150,13 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
 
 ## Example code using Python<a name="STSConsoleLink_programPython"></a>
 
-The following example shows how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. The example uses the [AWS SDK for Python \(Boto3\)](https://aws.amazon.com/tools/)\. 
+The following examples show how to use Python to programmatically construct a URL that gives federated users direct access to the AWS Management Console\. There are two examples:
++ Federate via GET requests to AWS
++ Federate via POST requests to AWS
 
-The code uses the [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
+Both examples use the the [AWS SDK for Python \(Boto3\)](https://aws.amazon.com/tools/) and [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\.
+
+### Use GET Requests<a name="post-api-py-example"></a>
 
 ```
 import urllib, json, sys
@@ -201,6 +217,93 @@ request_url = "https://signin.aws.amazon.com/federation" + request_parameters
 
 # Send final URL to stdout
 print (request_url)
+```
+
+### Use POST Requests<a name="get-api-py-example-1"></a>
+
+```
+import urllib, json, sys
+import requests # 'pip install requests'
+import boto3 # AWS SDK for Python (Boto3) 'pip install boto3'
+import os
+from selenium import webdriver # 'pip install selenium', 'brew install chromedriver'
+
+# Step 1: Authenticate user in your own identity system.
+
+# Step 2: Using the access keys for an IAM user in your AWS account,
+# call "AssumeRole" to get temporary access keys for the federated user
+
+# Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
+# and secret access key of an IAM user or using existing temporary credentials.
+# The credentials can be in EC2 instance metadata, in environment variables, 
+# or in a configuration file, and will be discovered automatically by the 
+# client('sts') function. For more information, see the Python SDK docs:
+# http://boto3.readthedocs.io/en/latest/reference/services/sts.html
+# http://boto3.readthedocs.io/en/latest/reference/services/sts.html#STS.Client.assume_role
+if sys.version_info[0] < 3:
+    def quote_plus_function(s):
+        return urllib.quote_plus(s)
+else:
+    def quote_plus_function(s):
+        return urllib.parse.quote_plus(s)
+
+sts_connection = boto3.client('sts')
+
+assumed_role_object = sts_connection.assume_role(
+    RoleArn="arn:aws:iam::account-id:role/ROLE-NAME",
+    RoleSessionName="AssumeRoleDemoSession",
+)
+
+# Step 3: Format resulting temporary credentials into JSON
+url_credentials = {}
+url_credentials['sessionId'] = assumed_role_object.get('Credentials').get('AccessKeyId')
+url_credentials['sessionKey'] = assumed_role_object.get('Credentials').get('SecretAccessKey')
+url_credentials['sessionToken'] = assumed_role_object.get('Credentials').get('SessionToken')
+json_string_with_temp_credentials = json.dumps(url_credentials)
+
+# Step 4. Make request to AWS federation endpoint to get sign-in token. Construct the parameter string with
+# the sign-in action request, a 12-hour session duration, and the JSON document with temporary credentials 
+# as parameters.
+request_parameters = {}
+request_parameters['Action'] = 'getSigninToken'
+request_parameters['SessionDuration'] = '43200'
+request_parameters['Session'] = json_string_with_temp_credentials
+
+request_url = "https://signin.aws.amazon.com/federation"
+r = requests.post( request_url, data=request_parameters)
+
+# Returns a JSON document with a single element named SigninToken.
+signin_token = json.loads(r.text)
+
+# Step 5: Create a POST request where users can use the sign-in token to sign in to 
+# the console. The POST request must be made within 15 minutes after the
+# sign-in token was issued.
+request_parameters = {}
+request_parameters['Action'] = 'login'
+request_parameters['Issuer']='Example.org'
+request_parameters['Destination'] = 'https://console.aws.amazon.com/'
+request_parameters['SigninToken'] =signin_token['SigninToken']
+
+jsrequest = '''
+var form = document.createElement('form');
+form.method = 'POST';
+form.action = '{request_url}';
+request_parameters = {request_parameters}
+for (var param in request_parameters) {{
+    if (request_parameters.hasOwnProperty(param)) {{
+        const hiddenField = document.createElement('input');
+        hiddenField.type = 'hidden';
+        hiddenField.name = param;
+        hiddenField.value = request_parameters[param];
+        form.appendChild(hiddenField);
+    }}
+}}
+document.body.appendChild(form);
+form.submit();
+'''.format(request_url=request_url, request_parameters=request_parameters)
+
+driver = webdriver.Chrome()
+driver.execute_script(jsrequest);
 ```
 
 ## Example code using Java<a name="STSConsoleLink_programJava"></a>
