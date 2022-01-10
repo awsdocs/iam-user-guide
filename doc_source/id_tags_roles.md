@@ -25,7 +25,7 @@ Add the following statement to the permissions policy for the IAM role that need
         "iam:TagUser",
         "iam:UntagUser"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:user/<username>"
+    "Resource": "arn:aws:iam::<account-number>:user/<username>"
 }
 ```
 
@@ -44,7 +44,7 @@ To use this policy, replace *<username>* with the name of the user whose tags ne
         "iam:ListUserTags",
         "iam:TagUser"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:user/<username>"
+    "Resource": "arn:aws:iam::<account-number>:user/<username>"
 }
 ```
 
@@ -59,7 +59,7 @@ Add the following statement to the permissions policy for the IAM role that need
         "iam:TagRole",
         "iam:UntagRole"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:role/<rolename>"
+    "Resource": "arn:aws:iam::<account-number>:role/<rolename>"
 }
 ```
 

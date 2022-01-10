@@ -22,7 +22,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:TagMFADevice",
         "iam:UntagMFADevice"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:mfa/<MFATokenID>"
+    "Resource": "arn:aws:iam::<account-number>:mfa/<MFATokenID>"
 }
 ```
 
@@ -41,7 +41,7 @@ To use this policy, replace *<MFATokenID>* with the name of the virtual MFA devi
         "iam:ListMFADeviceTags",
         "iam:TagMFADevice"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:mfa/<MFATokenID>"
+    "Resource": "arn:aws:iam::<account-number>:mfa/<MFATokenID>"
 }
 ```
 

@@ -40,7 +40,7 @@ For security reasons, AWS should be included as an audience in the SAML assertio
 **Important**  
 The SAML `AudienceRestriction` value in the SAML assertion from the IdP does *not* map to the `saml:aud` context key that you can test in an IAM policy\. Instead, the `saml:aud` context key comes from the SAML *recipient* attribute because it is the SAML equivalent to the OIDC audience field, for example, by `accounts.google.com:aud`\.
 
-## SAML `PrincipalTag` `Attribute`<a name="saml_role-session-tags"></a>
+## SAML `PrincipalTag``Attribute`<a name="saml_role-session-tags"></a>
 
 \(Optional\) You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/PrincipalTag:{TagKey}`\. This element allows you to pass attributes as session tags in the SAML assertion\. For more information about session tags, see [Passing session tags in AWS STS](id_session-tags.md)\.
 
@@ -64,7 +64,7 @@ To set the tags above as transitive, include another `Attribute` element with th
 </Attribute>
 ```
 
-## SAML `Role` `Attribute`<a name="saml_role-attribute"></a>
+## SAML `Role``Attribute`<a name="saml_role-attribute"></a>
 
 You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/Role`\. This element contains one or more `AttributeValue` elements that list the IAM identity provider and role to which the user is mapped by your IdP\. The IAM role and IAM identity provider are specified as a comma\-delimited pair of ARNs in the same format as the `RoleArn` and `PrincipalArn` parameters that are passed to [AssumeRoleWithSAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html)\. This element must contain at least one role\-provider pair \(`AttributeValue` element\), and can contain multiple pairs\. If the element contains multiple pairs, then the user is asked to choose which role to assume when they use WebSSO to sign into the AWS Management Console\.
 
@@ -79,7 +79,7 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 </Attribute>
 ```
 
-## SAML `RoleSessionName` `Attribute`<a name="saml_role-session-attribute"></a>
+## SAML `RoleSessionName``Attribute`<a name="saml_role-session-attribute"></a>
 
 You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/RoleSessionName`\. This element contains one `AttributeValue` element that provides an identifier for the temporary credentials that are issued when the role is assumed\. You can use this to associate the temporary credentials with the user who is using your application\. This element is used to display user information in the AWS Management Console\. The value in the `AttributeValue` element must be between 2 and 64 characters long, can contain only alphanumeric characters, underscores, and the following characters: **\. , \+ = @ \-** \(hyphen\)\. It cannot contain spaces\. The value is typically a user ID \(`johndoe`\) or an email address \(`johndoe@example.com`\)\. It should not be a value that includes a space, like a user's display name \(`John Doe`\)\.
 
@@ -92,7 +92,7 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 </Attribute>
 ```
 
-## SAML `SessionDuration` `Attribute`<a name="saml_role-session-duration"></a>
+## SAML `SessionDuration``Attribute`<a name="saml_role-session-duration"></a>
 
 \(Optional\) You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/SessionDuration"`\. This element contains one `AttributeValue` element that specifies how long the user can access the AWS Management Console before having to request new temporary credentials\. The value is an integer representing the number of seconds for the session\. The value can range from 900 seconds \(15 minutes\) to 43200 seconds \(12 hours\)\. If this attribute is not present, then the credential last for one hour \(the default value of the `DurationSeconds` parameter of the `AssumeRoleWithSAML` API\)\.
 
@@ -111,7 +111,7 @@ The value of the `Name` attribute in the `Attribute` tag is case\-sensitive\. It
 </Attribute>
 ```
 
-## SAML `SourceIdentity` `Attribute`<a name="saml_sourceidentity"></a>
+## SAML `SourceIdentity``Attribute`<a name="saml_sourceidentity"></a>
 
 \(Optional\) You can use an `Attribute` element with the `Name` attribute set to `https://aws.amazon.com/SAML/Attributes/SourceIdentity`\. This element contains one `AttributeValue` element that provides an identifier for the person or application that is using an IAM role\. The value for source identity persists when you use the SAML session to assume another role in AWS known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. The value for source identity is present in the request for every action taken during the role session\. The value that is set cannot be changed during the role session\. Administrators can then use AWS CloudTrail logs to monitor and audit the source identity information to determine who performed actions with shared roles\.
 

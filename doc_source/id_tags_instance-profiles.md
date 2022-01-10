@@ -24,7 +24,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:TagInstanceProfile",
         "iam:UntagInstanceProfile"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:instance-profile/<InstanceProfileName>"
+    "Resource": "arn:aws:iam::<account-number>:instance-profile/<InstanceProfileName>"
 }
 ```
 
@@ -43,7 +43,7 @@ To use this policy, replace *<InstanceProfileName>* with the name of the instanc
         "iam:ListInstanceProfileTags",
         "iam:TagInstanceProfile"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:instance-profile/<InstanceProfileName>"
+    "Resource": "arn:aws:iam::<account-number>:instance-profile/<InstanceProfileName>"
 }
 ```
 

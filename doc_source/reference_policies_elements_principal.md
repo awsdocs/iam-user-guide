@@ -69,9 +69,9 @@ You can also specify more than one AWS account, \(or canonical user ID\) as a pr
 "Principal": { 
   "AWS": [
     "arn:aws:iam::123456789012:root",
-    "999999999999",
-    "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be"
-  ]
+    "999999999999"
+  ],
+  "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be"
 }
 ```
 

@@ -104,7 +104,7 @@ To write policies that reference user\-specific details as part of a resource na
 The following example shows a permission policy that uses the preceding keys to grant permissions to a user\-specific folder in Amazon S3\. The policy assumes that the Amazon S3 objects are identified using a prefix that includes both `saml:namequalifier` and `saml:sub`\. Notice that the `Condition` element includes a test to be sure that `saml:sub_type` is set to `persistent`\. If it is set to `transient`, the `saml:sub` value for the user can be different for each session, and the combination of values should not be used to identify user\-specific folders\. 
 
 ```
->{
+{
   "Version": "2012-10-17",
   "Statement": {
     "Effect": "Allow",
