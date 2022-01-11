@@ -18,7 +18,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows users to manage their own MFA device on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.\)
 + Allows users to manage their own password on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-password-only.md)\.\)
 + Allows users to manage their own password, access keys, and SSH public keys on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\.\)
-+ Denies access to AWS based on the requested Region\. [View this policy](reference_policies_examples_aws_deny-requested-region.md)\.
++ Denies access to AWS based on the requested Region\. \([View this policy](reference_policies_examples_aws_deny-requested-region.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
 
 ## Example policies: AWS Data Pipeline<a name="policy_library_DataPipeline"></a>
