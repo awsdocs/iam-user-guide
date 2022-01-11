@@ -44,7 +44,7 @@ You can use the AWS Management Console or AWS programming tools to create access
 **Note**  
 If you see three text boxes, then you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials\. Your browser might remember this preference and open this account\-specific sign\-in page every time that you try to sign in\. You cannot use the IAM user sign\-in page to sign in as the account owner\. If you see the [IAM user sign\-in page](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#user-sign-in-page), choose **Sign in using root user email** near the bottom of the page\. This returns you to the main sign\-in page\. From there, you can sign in as the root user using your AWS account email address and password\.
 
-1. Choose your account name in the navigation bar, and then choose **My Security Credentials**\. 
+1. Choose your account name in the navigation bar, and then choose **Security credentials**\. 
 
 1. If you see a warning about accessing the security credentials for your AWS account, choose **Continue to Security Credentials**\.
 
