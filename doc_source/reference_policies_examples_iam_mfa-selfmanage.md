@@ -3,7 +3,7 @@
 This example shows how you might create an IAM policy that allows IAM users to self\-manage their [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) device\. This policy grants the permissions necessary to complete this action programmatically from the AWS API or AWS CLI\.
 
 **Note**  
-If you add these permissions for a user that is signed in to AWS, they might need to sign out and back in to see these changes\.
+If an IAM user with this policy is not MFA\-authenticated, this policy denies access to all AWS actions except those necessary to authenticate using MFA\. If you add these permissions for a user that is signed in to AWS, they might need to sign out and back in to see these changes\.
 
 ```
 {

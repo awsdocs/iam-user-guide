@@ -19,6 +19,9 @@ A virtual MFA device can go out of sync\. If a user cannot sign in to the AWS Ma
 
 If MFA is required for the user, a second sign\-in page appears\. The user needs to tap the U2F security key\.
 
+**Note**  
+Google Chrome users should not choose any of the available options on the pop\-up that asks to **Verify your identity with amazon\.com**\. You only need to tap on the security key\.
+
 Unlike other MFA devices, U2F security keys do not go out of sync\. Administrators can deactivate a U2F security key if it's lost or broken\. For more information, see [Deactivating MFA devices \(console\)](id_credentials_mfa_disable.md#deactive-mfa-console)\.
 
 For information on browsers that support U2F and U2F devices that AWS supports, see [Supported configurations for using U2F security keys](id_credentials_mfa_u2f_supported_configurations.md)\.

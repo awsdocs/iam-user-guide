@@ -542,8 +542,6 @@ Use this key to compare the tag key\-value pair that was passed in the request w
 
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:RequestTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a request tag key named either `TagKey1` or `tagkey1`, but not both\.
 
-Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
-
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.

@@ -110,7 +110,7 @@ Use the `aud` condition key to verify that the Google client ID or Amazon Cognit
 + `accounts.google.com:aud`
 + `cognito-identity.amazonaws.com:aud`
 The `accounts.google.com:aud` condition key matches the following Google ID Token fields\.   
-+ `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [ `accounts.google.com:oaud`](#ck_oaud) condition key\.
++ `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [`accounts.google.com:oaud`](#ck_oaud) condition key\.
 + `azp` when the `azp` field is set\. This can happen for hybrid apps where a web application and Android app have a different OAuth 2\.0 Google client ID but share the same Google APIs project\. 
 For more information about Google `aud` and `azp` fields, see the [Google Identity Platform OpenID Connect](https://developers.google.com/identity/protocols/OpenIDConnect) Guide\.  
 When you write a policy using the `accounts.google.com:aud` condition key, you must know whether the app is a hybrid app that sets the `azp` field\.   

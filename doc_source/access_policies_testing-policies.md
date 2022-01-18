@@ -163,7 +163,7 @@ To test a customer managed policy that is attached to a user: In the navigation 
 
 1. <a name="polsimstep-service"></a>Under **Policy Simulator**, choose **Select service** and then choose the service to test\. Then choose **Select actions** and select one or more actions to test\. Although the menus show the available selections for only one service at a time, all the services and actions that you have selected appear in **Action Settings and Results**\. 
 
-1. \(Optional\) If any of the policies that you choose in [Step 2](#polsimstep-selectid) and [Step 5](#polsimstep-polsubset) include conditions with [AWS *global condition keys*](reference_policies_condition-keys.md), then supply values for those keys\. You can do this by expanding the **Global Settings** section and typing values for the key names displayed there\.
+1. \(Optional\) If any of the policies that you choose in [Step 2](#polsimstep-selectid) and [Step 5](#polsimstep-polsubset) include conditions with [AWS*global condition keys*](reference_policies_condition-keys.md), then supply values for those keys\. You can do this by expanding the **Global Settings** section and typing values for the key names displayed there\.
 **Warning**  
 If you leave the value for a condition key empty, then that key is ignored during the simulation\. In some cases, this results in an error, and the simulation fails to run\. In other cases, the simulation runs, but the results might not be reliable\. In those cases, the simulation does not match the real\-world conditions that include a value for the condition key or variable\.
 

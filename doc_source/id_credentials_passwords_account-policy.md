@@ -123,4 +123,4 @@ You can use AWS API operations to set a password policy\.
 Call the following operations:
 + To create or change the custom password policy: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAccountPasswordPolicy.html)
 + To view the password policy: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountPasswordPolicy.html) 
-+ To delete the custom password policy: [`DeleteAccountPasswordPolicy` ](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 
++ To delete the custom password policy: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccountPasswordPolicy.html) 

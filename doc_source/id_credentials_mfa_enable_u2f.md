@@ -61,6 +61,9 @@ You can enable a U2F security key for your own IAM user from the AWS Management 
 **Note**  
 Before you can enable a U2F security key, you must have physical access to the device\.
 
+**Note**  
+You should not choose any of the available options on the Google Chrome pop\-up that asks to **Verify your identity with amazon\.com**\. You only need to tap on the security key\.
+
 **To enable a U2F security key for your own IAM user \(console\)**
 
 1. Use your AWS account ID or account alias, your IAM user name, and your password to sign in to the [IAM console](https://console.aws.amazon.com/iam)\.
