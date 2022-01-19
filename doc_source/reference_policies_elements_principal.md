@@ -152,7 +152,7 @@ Use this principal type in your policy to allow or deny access based on the trus
 
 ## IAM user principals<a name="principal-users"></a>
 
-You can specify IAM user sin the `Principal` element of a resource\-based policy or in condition keys that support principals\.
+You can specify IAM users in the `Principal` element of a resource\-based policy or in condition keys that support principals\.
 
 **Note**  
 In a `Principal` element, the user name part of the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) is case sensitive\.
