@@ -129,6 +129,8 @@ For **Filter**, choose **Customer managed** to filter the list to include only t
 
 1. After reviewing the role, choose **Create role**\.
 
+    
+
    The `UpdateApp` role appears in the list of roles\.
 
 Now you must obtain the Amazon Resource Name \(ARN\) of the role, a unique identifier for the role\. When you modify the Developers and Testers user group policy, you specify the role ARN to grant or deny permissions\.
@@ -143,7 +145,7 @@ Now you must obtain the Amazon Resource Name \(ARN\) of the role, a unique ident
 
    The Production account has an account ID of 999999999999, so the role ARN is `arn:aws:iam::999999999999:role/UpdateApp`\. Ensure that you provide the real AWS account ID for the Production account\.
 
-At this point, you have established trust between the **Production** and **Development** accounts\. You did this by creating a role in the **Production** account that identifies the **Development** account as a trusted principal\. You also defined the users that can switch to the `UpdateApp` role can do\.
+At this point, you have established trust between the **Production** and **Development** accounts\. You did this by creating a role in the **Production** account that identifies the **Development** account as a trusted principal\. You also defined what the users who switch to the `UpdateApp` role can do\.
 
 Next, modify the permissions for the user groups\.
 

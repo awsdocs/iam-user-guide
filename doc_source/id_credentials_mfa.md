@@ -21,4 +21,4 @@ MFA adds extra security because it requires users to provide unique authenticati
 **Note**  
 **SMS text message\-based MFA**\. AWS ended support for enabling SMS multi\-factor authentication \(MFA\)\. We recommend that customers who have IAM users that use SMS text message\-based MFA switch to one of the following alternative methods: [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [U2F security key](id_credentials_mfa_enable_u2f.md), or [hardware MFA device](id_credentials_mfa_enable_physical.md)\. You can identify the users in your account with an assigned SMS MFA device\. To do so, go to the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.
 
-For answers to commonly asked questions about AWS MFA, go to the [AWS Multi\-Factor Authentication FAQs](http://aws.amazon.com/iam/faqs/#MFA_FAQs)\. 
+For answers to commonly asked questions about AWS MFA, go to the [AWS Multi\-factor authentication FAQs](http://aws.amazon.com/iam/faqs/#Multi-factor_authentication)\. 
