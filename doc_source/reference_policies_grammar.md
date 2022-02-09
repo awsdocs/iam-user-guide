@@ -26,7 +26,7 @@ In this document, we do not provide a complete description of what constitutes v
 + Many elements \(for example, `action_string_list` and `resource_string_list`\) can take a JSON array as a value\. Arrays can take one or more values\. If more than one value is included, the array is in square brackets \(`[` and `]`\) and comma\-delimited, as in the following example: 
 
   `"Action" : ["ec2:Describe*","ec2:List*"]`
-+ Basic JSON data types \(Boolean, number, and string\) are defined in [RFC 7159](http://tools.ietf.org/html/rfc7159)\.
++ Basic JSON data types \(Boolean, number, and string\) are defined in [RFC 7159](https://datatracker.ietf.org/doc/html/rfc7159)\.
 
 ## Conventions used in this grammar<a name="policies-grammar-conventions"></a>
 
