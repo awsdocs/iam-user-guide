@@ -245,7 +245,7 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
   "sourceIPAddress": "192.0.2.101",
   "userAgent": "aws-cli/1.11.10 Python/2.7.8 Linux/3.2.45-0.6.wd.865.49.315.metal1.x86_64 botocore/1.4.67",
   "requestParameters": {   
-    "roleArn": "arn:aws:iam:: 111122223333:role/EC2-dev",
+    "roleArn": "arn:aws:iam::111122223333:role/EC2-dev",
     "roleSessionName": "JohnDoe-EC2-dev",
     "sourceIdentity": "JohnDoe",  
     "serialNumber": "arn:aws:iam::777788889999:mfa"

@@ -170,7 +170,7 @@ import boto3 # AWS SDK for Python (Boto3) 'pip install boto3'
 
 # Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
 # and secret access key of an IAM user or using existing temporary credentials.
-# The credentials can be in EC2 instance metadata, in environment variables, 
+# The credentials can be in Amazon EC2 instance metadata, in environment variables, 
 # or in a configuration file, and will be discovered automatically by the 
 # client('sts') function. For more information, see the Python SDK docs:
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html
@@ -230,12 +230,12 @@ from selenium import webdriver # 'pip install selenium', 'brew install chromedri
 
 # Step 1: Authenticate user in your own identity system.
 
-# Step 2: Using the access keys for an IAM user in your AWS account,
+# Step 2: Using the access keys for an IAM user in your AAWS account,
 # call "AssumeRole" to get temporary access keys for the federated user
 
 # Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
 # and secret access key of an IAM user or using existing temporary credentials.
-# The credentials can be in EC2 instance metadata, in environment variables, 
+# The credentials can be in Amazon EC2 instance metadata, in environment variables, 
 # or in a configuration file, and will be discovered automatically by the 
 # client('sts') function. For more information, see the Python SDK docs:
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html

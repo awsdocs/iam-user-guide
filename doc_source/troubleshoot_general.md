@@ -11,7 +11,6 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
 + [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
 + [How do I securely create IAM users?](#troubleshoot_general_securely-create-iam-users)
-+ [Troubleshooting access denied error messages](troubleshoot_access-denied.md)
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 

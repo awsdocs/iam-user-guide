@@ -250,7 +250,7 @@ The policy that you attached to each role allows the employees to view any secre
    + `access-Arnav-peg-eng`
    + `access-Mary-peg-qas`
    + `access-Saanvi-uni-eng`
-   + `access-Carlos-peg-qas`
+   + `access-Carlos-uni-qas`
 
 1. Switch to the matching role:
    + `access-peg-engineering`
@@ -329,7 +329,7 @@ The `access-same-project-team` policy that is attached to the roles allows the e
    + `access-Arnav-peg-eng`
    + `access-Mary-peg-qas`
    + `access-Saanvi-uni-eng`
-   + `access-Carlos-peg-qas`
+   + `access-Carlos-uni-qas`
    + `access-Nikhil-cen-eng`
 
 1. Switch to the matching role:

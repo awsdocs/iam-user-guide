@@ -242,7 +242,7 @@ This combination of the `Allow` effect, `Null` element, and `false` value allows
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the account to which the requesting principal belongs with the account identifier that you specify in the policy\.
-+ **Availability** – This key is always included in the request context\.
++ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 ## aws:PrincipalArn<a name="condition-keys-principalarn"></a>
@@ -250,7 +250,7 @@ Use this key to compare the account to which the requesting principal belongs wi
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN) and [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
-+ **Availability** – This key is always included in the request context\.
++ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 ## aws:PrincipalIsAWSService<a name="condition-keys-principalisawsservice"></a>
@@ -436,7 +436,7 @@ Use this key to compare the tag attached to the principal making the request wit
 
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM resources](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-principals) for AWS principals\.
 
-This example shows how you might create an IAM policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an identity\-based policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -457,7 +457,7 @@ This example shows how you might create an IAM policy that allows users with the
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is always included in the request context\.
++ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 ## aws:referer<a name="condition-keys-referer"></a>
@@ -541,6 +541,30 @@ Use this key to compare the tag key\-value pair that was passed in the request w
 + **Value type** – Single\-valued
 
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:RequestTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a request tag key named either `TagKey1` or `tagkey1`, but not both\.
+
+This example shows that while the key is single\-valued, you can still use multiple key\-value pairs in a request if the keys are different\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "ec2:CreateTags",
+    "Resource": "arn:aws:ec2:::instance/*",
+    "Condition": {
+      "StringEquals": {
+        "aws:RequestTag/environment": [
+          "preprod",
+          "production"
+        ],
+        "aws:RequestTag/team": [
+          "engineering"
+        ]
+      }
+    }
+  }
+}
+```
 
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 

@@ -32,7 +32,7 @@ You might see different text, such as **Sign in using MFA** and **Troubleshoot y
 
 1. Answer the call from AWS and, when prompted, enter the 6\-digit number from the AWS website on your phone keypad\. 
 
-   If you don't receive a call from AWS, choose **Sign in **to sign in to the console again and start over\. Or choose **AWS Support** to contact support for help\.
+   If you don't receive a call from AWS, choose **Sign in **to sign in to the console again and start over\. Or see [Lost or unusable Multi\-Factor Authentication \(MFA\) device](https://support.aws.amazon.com/#/contacts/aws-mfa-support) to contact support for help\.
 
 1. After you verify your phone number, you can sign in to your account by choosing **Sign in to the console**\.
 

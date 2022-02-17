@@ -8,4 +8,5 @@ If you use the AWS Management Console, a wizard guides you through the steps for
 + [Creating a role to delegate permissions to an IAM user](id_roles_create_for-user.md)
 + [Creating a role to delegate permissions to an AWS service](id_roles_create_for-service.md)
 + [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)
++ [Creating a role using custom trust policies \(console\)](id_roles_create_for-custom.md)
 + [Examples of policies for delegating access](id_roles_create_policy-examples.md)

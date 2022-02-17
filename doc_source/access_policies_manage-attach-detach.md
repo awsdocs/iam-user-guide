@@ -1,6 +1,6 @@
 # Adding and removing IAM identity permissions<a name="access_policies_manage-attach-detach"></a>
 
-You use policies to define the permissions for an identity \(user, user group, or role\)\. You can add and remove permissions by attaching and detaching IAM policies for an identity using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or the AWS API\. You can also use policies to set [permissions boundaries](access_policies_boundaries.md) for only entities \(users or roles\) using the same methods\. Permissions boundaries are an advanced AWS feature that control the maximum permissions that an entity can have\.
+You use policies to define the permissions for an identity \(user, user group, or role\)\. You can add and remove permissions by attaching and detaching IAM policies for an identity using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or the AWS API\. You can also use policies to set [permissions boundaries](access_policies_boundaries.md) for only entities \(users or roles\) that are using the same methods\. Permissions boundaries are an advanced AWS feature that control the maximum permissions that an entity can have\.
 
 **Topics**
 + [Terminology](#attach-detach-etc-terminology)
@@ -75,7 +75,7 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 
 1. Choose the **Permissions** tab\. 
 
-1. Choose **Add inline policy**\.
+1. Choose **Add permissions** and then choose **Add inline policy**\.
 
     
 **Note**  
@@ -84,7 +84,7 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 1. Choose from the following methods to view the steps required to create your policy:
    + [Importing existing managed policies](access_policies_create-console.md#access_policies_create-copy) – You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy or a customer managed policy that you created previously\.
    + [Creating policies with the visual editor](access_policies_create-console.md#access_policies_create-visual-editor) – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
-   + [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
+   + [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can enter a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
 1. After you create an inline policy, it is automatically embedded in your user or role\.
 
@@ -154,7 +154,13 @@ You can use the AWS Management Console to remove permissions from an identity \(
 
 1. Choose the **Permissions** tab\.
 
-1. If in **User groups**, select the check box next to the policy and choose **Remove**\. If in **Users** or **Roles**, choose **X**\.
+1. Do one of the following:
+   + In **User groups** or **Roles**, select the check box next to the policy and choose **Remove**\.
+   + In **Users**, choose **X**\.
+
+1. Do one of the following:
+   + In **User groups** or **Roles**, choose **Delete** in the confirmation box\.
+   + In **Users**, choose **Detach** in the confirmation box for a policy that is attached directly, or choose **Remove from group** for a policy that is attached from a group\.
 
 ## Adding IAM policies \(AWS CLI\)<a name="add-policy-cli"></a>
 

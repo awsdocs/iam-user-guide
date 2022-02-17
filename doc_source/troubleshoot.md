@@ -4,6 +4,7 @@ If you encounter access\-denied issues or similar difficulties when working with
 
 **Topics**
 + [Troubleshooting general IAM issues](troubleshoot_general.md)
++ [Troubleshooting access denied error messages](troubleshoot_access-denied.md)
 + [Troubleshooting IAM policies](troubleshoot_policies.md)
 + [Troubleshooting U2F security keys](troubleshoot_mfa-u2f.md)
 + [Troubleshooting IAM roles](troubleshoot_roles.md)

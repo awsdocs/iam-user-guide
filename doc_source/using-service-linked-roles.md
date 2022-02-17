@@ -1,10 +1,10 @@
 # Using service\-linked roles<a name="using-service-linked-roles"></a>
 
-A service\-linked role is a unique type of IAM role that is linked directly to an AWS service\. Service\-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf\. The linked service also defines how you create, modify, and delete a service\-linked role\. A service might automatically create or delete the role\. It might allow you to create, modify, or delete the role as part of a wizard or process in the service\. Or it might require that you use IAM to create or delete the role\. Regardless of the method, service\-linked roles make setting up a service easier because you don't have to manually add the necessary permissions for the service to complete actions on your behalf\.
+A service\-linked role is a unique type of IAM role that is linked directly to an AWS service\. Service\-linked roles are predefined by the service and include all the permissions that the service requires to call other AWS services on your behalf\. The linked service also defines how you create, modify, and delete a service\-linked role\. A service might automatically create or delete the role\. It might allow you to create, modify, or delete the role as part of a wizard or process in the service\. Or it might require that you use IAM to create or delete the role\. Regardless of the method, service\-linked roles simplify the process of setting up a service  because you don't have to manually add permissions for the service to complete actions on your behalf\.
 
 The linked service defines the permissions of its service\-linked roles, and unless defined otherwise, only that service can assume the roles\. The defined permissions include the trust policy and the permissions policy, and that permissions policy cannot be attached to any other IAM entity\.
 
-You can delete the roles only after first deleting their related resources\. This protects your resources because you can't inadvertently remove permission to access the resources\. 
+Before you can delete the roles, you must first delete their related resources\. This protects your resources because you can't inadvertently remove permission to access the resources\. 
 
 **Tip**  
 For information about which services support using service\-linked roles, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
@@ -136,29 +136,29 @@ Before you create a service\-linked role in IAM, find out whether the linked ser
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane of the IAM console, choose **Roles**\. Then choose **Create role**\.
+1. In the navigation pane of the IAM console, choose **Roles**\. Then, choose **Create role**\.
 
-1. Choose the **AWS Service** role type, and then choose the service that you want to allow to assume this role\.
+1. Choose the **AWS Service** role type\.
 
-1. Choose the use case for your service\. If the specified service has only one use case, it is selected for you\. Use cases are defined by the service to include the trust policy required by the service\. Then choose **Next: Permissions**\.
+1. Choose the use case for your service\. Use cases are defined by the service to include the trust policy required by the service\. Then, choose **Next**\.
 
 1. Choose one or more permissions policies to attach to the role\. Depending on the use case that you selected, the service might do any of the following:
-   + Define the permissions used by the role
-   + Allow you to choose from a limited set of permissions
-   + Allow you to choose from any permissions
+   + Define the permissions used by the role\.
+   + Allow you to choose from a limited set of permissions\.
+   + Allow you to choose from any permissions\.
    + Allow you to select no policies at this time, create the policies later, and then attach them to the role\.
 
-   Select the box next to the policy that assigns the permissions that you want the role to have, and then choose **Next: Tags**\. 
+   Select the check box next to the policy that assigns the permissions that you want the role to have, and then choose **Next**\. 
 **Note**  
 The permissions that you specify are available to any entity that uses the role\. By default, a role has no permissions\.
 
-1. Choose **Next: Review**\. You cannot attach tags to service\-linked roles during creation\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, then this option is not editable\. In other cases, the service might define a prefix for the role and let you enter an optional suffix\.
 
-1. For **Role name**, the degree of role name customization is defined by the service\. If the service defines the role's name, then this option is not editable\. In other cases, the service might define a prefix for the role and allow you to type an optional suffix\.
+   If possible, enter a role name suffix to add to the default name\. This suffix helps you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **<service\-linked\-role\-name>\_SAMPLE** and **<service\-linked\-role\-name>\_sample**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\.
 
-   If possible, type a role name suffix to add to the default name\. This suffix helps you identify the purpose of this role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **<service\-linked\-role\-name>\_SAMPLE** and **<service\-linked\-role\-name>\_sample**\. Because various entities might reference the role, you cannot edit the name of the role after it has been created\.
+1. \(Optional\) For **Description**, edit the description for the new service\-linked role\.
 
-1. \(Optional\) For **Role description**, edit the description for the new service\-linked role\.
+1. You cannot attach tags to service\-linked roles during creation\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Review the role and then choose **Create role**\.
 
@@ -202,7 +202,7 @@ You can use the IAM console to edit the description of a service\-linked role\.
 
 1. To the far right of **Role description**, choose **Edit**\. 
 
-1. Type a new description in the box and choose **Save**\.
+1. Enter a new description in the box and choose **Save**\.
 
 ### Editing a service\-linked role description \(AWS CLI\)<a name="edit-service-linked-role-iam-cli"></a>
 
@@ -295,7 +295,7 @@ You can use IAM commands from the AWS CLI to delete a service\-linked role\.
 
 **To delete a service\-linked role \(AWS CLI\)**
 
-1. If you know the name of the service\-linked role that you want to delete, type the following command to list the role in your account:
+1. If you know the name of the service\-linked role that you want to delete, enter the following command to list the role in your account:
 
    ```
    aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
@@ -303,13 +303,13 @@ You can use IAM commands from the AWS CLI to delete a service\-linked role\.
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
 
-1. Because a service\-linked role cannot be deleted if it is being used or has associated resources, you must submit a deletion request\. That request can be denied if these conditions are not met\. You must capture the `deletion-task-id` from the response to check the status of the deletion task\. Type the following command to submit a service\-linked role deletion request:
+1. Because a service\-linked role cannot be deleted if it is being used or has associated resources, you must submit a deletion request\. That request can be denied if these conditions are not met\. You must capture the `deletion-task-id` from the response to check the status of the deletion task\. Enter the following command to submit a service\-linked role deletion request:
 
    ```
    aws iam [delete\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-service-linked-role.html) --role-name role-name
    ```
 
-1. Type the following command to check the status of the deletion task:
+1. Enter the following command to check the status of the deletion task:
 
    ```
    aws iam [get\-service\-linked\-role\-deletion\-status](https://docs.aws.amazon.com/cli/latest/reference/iam/get-service-linked-role-deletion-status.html) --deletion-task-id deletion-task-id

@@ -76,10 +76,10 @@ You can manage tags for IAM roles from the AWS Management Console\.
 1. In the navigation pane of the console, choose **Roles** and then choose the name of the role that you want to edit\.
 
 1. Choose the **Tags** tab and then complete one of the following actions:
-   + Choose **Add tags** if the role does not yet have tags\.
-   + Choose **Edit tags** to manage the existing set of tags\.
+   + Choose **Add new tag** if the role does not yet have tags\.
+   + Choose **Manage tags** to manage the existing set of tags\.
 
-1. Add or remove tags to complete the set of tags\. Then choose **Save changes**\.
+1. Add or remove tags to complete the set of tags\. Then, choose **Save changes**\.
 
 ## Managing tags on IAM roles \(AWS CLI or AWS API\)<a name="id_tags_roles_procs-cli-api"></a>
 

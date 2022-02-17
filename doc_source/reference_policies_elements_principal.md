@@ -152,7 +152,7 @@ Use this principal type in your policy to allow or deny access based on the trus
 
 ## IAM user principals<a name="principal-users"></a>
 
-You can specify IAM user sin the `Principal` element of a resource\-based policy or in condition keys that support principals\.
+You can specify IAM users in the `Principal` element of a resource\-based policy or in condition keys that support principals\.
 
 **Note**  
 In a `Principal` element, the user name part of the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) is case sensitive\.
@@ -245,9 +245,9 @@ You cannot use a wildcard to match part of a principal name or ARN\.
 ## More information<a name="Principal_more-info"></a>
 
 For more information, see the following:
-+ [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service User Guide*
-+ [Example Policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
-+ [Amazon SQS Policy Examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
-+ [Key Policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
-+ [Account Identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
-+ [About web identity federation](id_roles_providers_oidc.md)Web identity federation
++ [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service User Guide*
++ [Example policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
++ [Amazon SQS policy examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
++ [Key policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
++ [Account identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
++ [About web identity federation](id_roles_providers_oidc.md)

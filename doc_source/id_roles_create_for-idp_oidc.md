@@ -1,4 +1,4 @@
-# Creating a role for web identity or OpenID connect federation \(console\)<a name="id_roles_create_for-idp_oidc"></a>
+# Creating a role for web identity or OpenID Connect Federation \(console\)<a name="id_roles_create_for-idp_oidc"></a>
 
 You can use Web Identity or OpenID Connect Federation \(OIDC\) identity providers instead of creating IAM users in your AWS account\. With an identity provider \(IdP\), you can manage your user identities outside of AWS and give these external user identities permissions to access AWS resources in your account\. For more information about federation and identity providers, see [Identity providers and federation](id_roles_providers.md)\.
 
@@ -15,7 +15,7 @@ Before you can create a role for web identity federation, you must first complet
 
 1. <a name="idpoidcstep2"></a>After getting the required information from the identity provider, create an identity provider in IAM\. For more information, see [Creating OpenID Connect \(OIDC\) identity providers](id_roles_providers_create_oidc.md)\.
 **Important**  
-If you are using an OIDC identity provider from Google, Facebook, or Amazon Cognito, don't create a separate IAM identity provider in the AWS Management Console\. These OIDC identity providers are already built\-in to AWS and are available for your use\. Skip this step and move directly to creating new roles using your identity provider in the following step\.
+If you are using an OIDC identity provider from Google, Facebook, or Amazon Cognito, don't create a separate IAM identity provider in the AWS Management Console\. These OIDC identity providers are already built in to AWS and are available for your use\. Skip this step and move directly to creating new roles using your identity provider in the following step\.
 
 1. Prepare the policies for the role that the IdP\-authenticated users will assume\. As with any role, a role for a mobile app includes two policies\. One is the trust policy that specifies who can assume the role\. The other is the permissions policy that specifies the AWS actions and resources that the mobile app is allowed or denied access to\.
 
@@ -131,7 +131,7 @@ If you are using an OIDC identity provider from Google, Facebook, or Amazon Cogn
 
 ## Creating a role for web identity or OIDC<a name="idp_oidc_Create"></a>
 
-After you complete the prerequisites, you can create the role in IAM\. The following procedure describes how to create the role for web identity/OIDC federation in the AWS Management Console\. To create a role from the AWS CLI or AWS API, see the procedures at [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\.
+After you complete the prerequisites, you can create the role in IAM\. The following procedure describes how to create the role for web identity or OIDC federation in the AWS Management Console\. To create a role from the AWS CLI or AWS API, see the procedures at [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\.
 
 **Important**  
 If you are using Amazon Cognito, you should use the Amazon Cognito console to set up the roles\. Otherwise, use the IAM console to create a role for web identity federation\.
@@ -142,7 +142,7 @@ If you are using Amazon Cognito, you should use the Amazon Cognito console to se
 
 1. In the navigation pane, choose **Roles** and then choose **Create role**\.
 
-1. Choose the **Web identity** role type\.
+1. Choose the **Web Identity** role type\.
 
 1. For **Identity provider**, choose the identity provider for your role: 
    + If you're creating a role for an individual web identity provider, choose **Login with Amazon**, **Facebook**, or **Google**\. 
@@ -152,30 +152,30 @@ You must create a separate role for each identity provider that you want to supp
 **Note**  
 You need to manually create a role for use with Amazon Cognito only when you are working on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you\. For more information about Amazon Cognito, see [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
 
-1. Type the identifier for your application\. The label of the identifier changes depending on which provider you choose:
-   + If you're creating a role for Login with Amazon, type the app ID into the **Application ID** box\.
-   + If you're creating a role for Facebook, type the app ID into the **Application ID** box\.
-   + If you're creating a role for Google, type the audience name into the **Audience** box\.
-   + If you're creating a role for Amazon Cognito, type the ID of the identity pool that you have created for your Amazon Cognito applications into the **Identity Pool ID** box\.
+1. Enter the identifier for your application\. The label of the identifier changes depending on which provider you choose:
+   + If you're creating a role for Login with Amazon, enter the app ID into the **Application ID** box\.
+   + If you're creating a role for Facebook, enter the app ID into the **Application ID** box\.
+   + If you're creating a role for Google, enter the audience name into the **Audience** box\.
+   + If you're creating a role for Amazon Cognito, enter the ID of the identity pool that you have created for your Amazon Cognito applications into the **Identity Pool ID** box\.
 
-1. \(Optional\) Click **Add condition \(optional\)** to create additional conditions that must be met before users of your application can use the permissions that the role grants\. For example, you can add a condition that grants access to AWS resources only for a specific IAM user ID\.
+1. \(Optional\) Choose **Condition \(optional\)** to create additional conditions that must be met before users of your application can use the permissions that the role grants\. For example, you can add a condition that grants access to AWS resources only for a specific IAM user ID\.
 
-1. Review your web identity information and then choose **Next: Permissions**\.
+1. Review your web identity information and then choose **Next**\.
 
-1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
+1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want web identity users to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\.
 
-   Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. Select the policy to use for the permissions boundary\.
+   Open the **Permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. Select the policy to use for the permissions boundary\.
 
-1. Choose **Next: Tags**\.
+1. Choose **Next**\.
+
+1. For **Role name**, enter a role name\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because other AWS resources might reference the role, you cannot edit the name of the role after it has been created\.
+
+1. \(Optional\) For **Description**, enter a description for the new role\.
+
+1. Choose **Edit** in the **Step 1: Select trusted entities** or **Step 2: Add permissions** sections to edit the use cases and permissions for the role\. 
 
 1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
-
-1. Choose **Next: Review**\. 
-
-1. For **Role name**, type a role name\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because other AWS resources might reference the role, you cannot edit the name of the role after it has been created\.
-
-1. \(Optional\) For **Role description**, type a description for the new role\.
 
 1. Review the role and then choose **Create role**\.

@@ -17,7 +17,7 @@ After you create an IAM OIDC identity provider, you must create one or more IAM 
 Follow these instructions to create and manage an IAM OIDC identity provider in the AWS Management Console\.
 
 **Important**  
-If you are using an OIDC identity provider from either Google, Facebook, or Amazon Cognito, do not create a separate IAM identity provider using this procedure\. These OIDC identity providers are already built\-in to AWS and are available for your use\. Instead, follow the steps to create new roles for your identity provider, see [Creating a role for web identity or OpenID connect federation \(console\)](id_roles_create_for-idp_oidc.md)\.
+If you are using an OIDC identity provider from either Google, Facebook, or Amazon Cognito, do not create a separate IAM identity provider using this procedure\. These OIDC identity providers are already built\-in to AWS and are available for your use\. Instead, follow the steps to create new roles for your identity provider, see [Creating a role for web identity or OpenID Connect Federation \(console\)](id_roles_create_for-idp_oidc.md)\.
 
 **To create an IAM OIDC identity provider \(console\)**
 

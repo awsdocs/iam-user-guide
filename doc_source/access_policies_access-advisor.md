@@ -65,7 +65,7 @@ To use the AWS CLI or AWS API to view last accessed information for IAM, you mus
 + `iam:GetServiceLastAccessedDetailsWithEntities`
 + `iam:ListPoliciesGrantingServiceAccess`
 
-This example shows how you might create an IAM policy that allows viewing IAM last accessed information\. Additionally, it allows read\-only access to all of IAM\. This policy defines permissions for programmatic and console access\. 
+This example shows how you might create an identity\-based policy that allows viewing IAM last accessed information\. Additionally, it allows read\-only access to all of IAM\. This policy defines permissions for programmatic and console access\. 
 
 ```
 {
@@ -106,7 +106,7 @@ To use the AWS CLI or AWS API to view service last accessed information for Orga
 + `organizations:ListRoots`
 + `organizations:ListTargetsForPolicy`
 
-This example shows how you might create an IAM policy that allows viewing service last accessed information for Organizations\. Additionally, it allows read\-only access to all of Organizations\. This policy defines permissions for programmatic and console access\. 
+This example shows how you might create an identity\-based policy that allows viewing service last accessed information for Organizations\. Additionally, it allows read\-only access to all of Organizations\. This policy defines permissions for programmatic and console access\. 
 
 ```
 {

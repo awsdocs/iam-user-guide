@@ -312,7 +312,7 @@ If the key that you specify in a policy condition is not present in the request 
 
 ## \.\.\.IfExists condition operators<a name="Conditions_IfExists"></a>
 
-You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\.
+You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\. If you are using an `"Effect": "Deny"` element with a negated condition operator like `StringNotEqualsIfExists`, the request is still denied even if the tag is missing\.
 
 **Example using `IfExists`**
 

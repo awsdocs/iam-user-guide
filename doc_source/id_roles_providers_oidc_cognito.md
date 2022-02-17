@@ -35,5 +35,5 @@ Use the following process to configure your app to use Amazon Cognito to authent
 1. When your app accesses an AWS resource, pass the credentials provider instance to the client object, which passes temporary security credentials to the client\. The permissions for the credentials are based on the role or roles that you defined earlier\.
 
 For more information, see the following:
-+ [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
-+ [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*\.
++ [Amazon Cognito Identity](https://docs.amplify.aws/lib/auth/getting-started/q/platform/android/) in the *AWS Mobile SDK for Android Developer Guide*\. 
++ [Amazon Cognito Identity](https://docs.amplify.aws/lib/auth/getting-started/q/platform/ios/) in the *AWS Mobile SDK for iOS Developer Guide*\.
