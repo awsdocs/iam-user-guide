@@ -436,7 +436,7 @@ Use this key to compare the tag attached to the principal making the request wit
 
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM resources](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-principals) for AWS principals\.
 
-This example shows how you might create an identity\-based policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an identity\-based policy that allows users with the **department=hr** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -446,7 +446,11 @@ This example shows how you might create an identity\-based policy that allows us
       "Effect": "Allow",
       "Action": "iam:*",
       "Resource": "*",
-      "Condition": {"StringEquals": {"aws:PrincipalTag/tagManager": "true"}}
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/department": "hr"
+        }
+      }
     }
   ]
 }
@@ -457,7 +461,7 @@ This example shows how you might create an identity\-based policy that allows us
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
++ **Availability** – This key is included in the request context for all signed requests\.
 + **Value type** – Single\-valued
 
 ## aws:referer<a name="condition-keys-referer"></a>

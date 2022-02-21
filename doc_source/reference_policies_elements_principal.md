@@ -13,7 +13,7 @@ You cannot use the `Principal` element in an identity\-based policy\. Identity\-
 
 ## Specifying a principal<a name="Principal_specifying"></a>
 
-You specify a principal in the `Principal` element of a resource\-based policy or in condition keys that support principals\. For example, you can specify a principal [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) in the `aws:PrincipalArn` condition key\. 
+You specify a principal in the `Principal` element of a resource\-based policy or in condition keys that support principals\.
 
 You can specify any of the following principals in a policy:
 + AWS account and root user
