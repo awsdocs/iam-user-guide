@@ -33,8 +33,8 @@ String condition operators let you construct `Condition` elements that restrict 
 |   `StringNotEquals`   |  Negated matching  | 
 |   `StringEqualsIgnoreCase`   |  Exact matching, ignoring case  | 
 |   `StringNotEqualsIgnoreCase`   |  Negated matching, ignoring case  | 
-|   `StringLike`   |  Case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) and a single\-character match wildcard \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.    | 
-|   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  | 
+|   `StringLike`   |  Case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) and single\-character match wildcards \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.    | 
+|   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) or single\-character match wildcards \(?\) anywhere in the string\.  | 
 
 For example, the following statement contains a `Condition` element that uses the `StringEquals` condition operator with the `aws:PrincipalTag` key to specify that the principal making the request must be tagged with the `iamuser-admin` job category\.
 
