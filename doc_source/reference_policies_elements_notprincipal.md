@@ -15,6 +15,9 @@ You cannot use the `NotPrincipal` element in an IAM identity\-based policy or in
 
 ## `NotPrincipal` With `Deny`<a name="specifying-notprincipal"></a>
 
+**Note**  
+When you use `NotPrincipal` in the same policy statement as `"Effect": "Deny"`, it can be difficult to troubleshoot the effects of multiple policy types\. We recommend using the `aws:PrincipalArn` condition key instead\. For more information, see [All principals](reference_policies_elements_principal.md#principal-anonymous)\.
+
 When you use `NotPrincipal` in the same policy statement as `"Effect": "Deny"`, the actions specified in the policy statement are explicitly denied to all principals *except* for the ones specified\. When you use `NotPrincipal` with `Deny`, you must also specify the account ARN of the not\-denied principal\. Otherwise, the policy might deny access to the entire account containing the principal\. Depending on the service that you include in your policy, AWS might validate the account first and then the user\. If an assumed\-role user \(someone who is using a role\) is being evaluated, AWS might validate the account first, then the role, and then the assumed\-role user\. The assumed\-role user is identified by the role session name that is specified when they assumed the role\. Therefore, we strongly recommend that you explicitly include the ARN for a user's account, or include both the ARN for a role and the ARN for the account containing that role\.
 
 **Note**  

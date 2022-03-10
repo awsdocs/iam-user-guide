@@ -70,11 +70,13 @@ When you use the [GetFederationToken](https://docs.aws.amazon.com/STS/latest/API
 **Note**  
 AWS supports POST requests here\.
 
-   Send your request to the AWS federation endpoint at the following address:
+   Send your request to the AWS federation endpoint:
+
+   `https://region-code.signin.aws.amazon.com/federation` 
+
+   For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\. You can optionally use the default AWS Sign\-In federation endpoint:
 
    `https://signin.aws.amazon.com/federation` 
-**Note**  
-You can optionally use a regional AWS Sign\-In federation endpoint\. For a list of endpoints, see [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html) in the *AWS General Reference*\.
 
    The request must include the `Action` and `Session` parameters, and \(optionally\) if you used an [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation, a `SessionDuration` HTTP parameter as shown in the following example\.
 

@@ -2,6 +2,9 @@
 
 To sign in to an AWS account as an IAM user, you must have an account alias or an account ID for the AWS account\. If you are signed in to the AWS Management Console or have configured the AWS CLI or an AWS SDK with your account credentials, you can find the account alias or account ID for the AWS account\. If you cannot sign in, ask your administrator for the information that you need to sign in\.
 
+**Note**  
+Account aliases are not secrets, and they will appear in your public\-facing sign\-in page URL\. Do not include any sensitive information in your account alias\.
+
 **Topics**
 + [Finding your AWS account ID](#FindingYourAWSId)
 + [About account aliases](#AboutAccountAlias)

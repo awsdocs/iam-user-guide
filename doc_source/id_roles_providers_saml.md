@@ -30,9 +30,11 @@ Before you can use SAML 2\.0\-based federation as described in the preceding sce
 
 **To configure your organization's IdP and AWS to trust each other**
 
-1. You begin by registering AWS with your IdP\. In your organization's IdP you register AWS as a service provider \(SP\) by using the SAML metadata document that you get from the following URL:
+1. Register AWS as a service provider \(SP\) with the IdP of your organization\. Use the SAML metadata document from `https://region-code.signin.aws.amazon.com/static/saml-metadata.xml` 
 
-   `https://signin.aws.amazon.com/static/saml-metadata.xml`
+   For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\.
+
+   You can optionally use the SAML metadata document from `https://signin.aws.amazon.com/static/saml-metadata.xml` \.
 
 1. <a name="createxml"></a>Using your organization's IdP, you generate an equivalent metadata XML file that can describe your IdP as an IAM identity provider in AWS\. It must include the issuer name, a creation date, an expiration date, and keys that AWS can use to validate authentication responses \(assertions\) from your organization\. 
 
@@ -75,6 +77,8 @@ The role or roles that you create in IAM define what federated users from your o
 ```
 
 For more information about the SAML keys that you can check in a policy, see [Available keys for SAML\-based AWS STS federation](reference_policies_iam-condition-keys.md#condition-keys-saml)\.
+
+You can include regional endpoints for the `saml:aud` attribute at `https://region-code.signin.aws.amazon.com/static/saml-metadata.xml`\. For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\.
 
 For the permission policy in the role, you specify permissions as you would for any role\. For example, if users from your organization are allowed to administer Amazon Elastic Compute Cloud instances, you must explicitly allow Amazon EC2 actions in the permissions policy, such as those in the **AmazonEC2FullAccess** managed policy\. 
 

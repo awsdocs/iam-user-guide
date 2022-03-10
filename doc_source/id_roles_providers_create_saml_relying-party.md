@@ -2,7 +2,7 @@
 
 When you create an IAM identity provider and role for SAML access, you are telling AWS about the external identity provider \(IdP\) and what its users are allowed to do\. Your next step is to then tell the IdP about AWS as a service provider\. This is called adding *relying party trust* between your IdP and AWS\. The exact process for adding relying party trust depends on what IdP you're using\. For details, see the documentation for your identity management software\. 
 
-Many IdPs allow you to specify a URL from which the IdP can read an XML document that contains relying party information and certificates\. For AWS, you can use `https://signin.aws.amazon.com/static/saml-metadata.xml`
+Many IdPs allow you to specify a URL from which the IdP can read an XML document that contains relying party information and certificates\. For AWS, use `https://region-code.signin.aws.amazon.com/static/saml-metadata.xml` or `https://signin.aws.amazon.com/static/saml-metadata.xml`\. For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\.
 
 If you can't specify a URL directly, then download the XML document from the preceding URL and import it into your IdP software\. 
 

@@ -40,7 +40,24 @@ AWS services that support [iam:PassedToService](#ck_PassedToService) also suppor
 
 **iam:AWSServiceName**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Specifies the AWS service to which this role is attached\.
+Specifies the AWS service to which this role is attached\.  
+In this example, you allow an entity to create a service\-linked role if the service name is *access\-analyzer\.amazonaws\.com\.*  
+
+```
+{
+   "Version": "2012-10-17",
+   "Statement": [{
+       "Effect": "Allow",
+       "Action": "iam:CreateServiceLinkedRole",
+       "Resource": "*",
+       "Condition": {
+         "StringLike": {
+           "iam:AWSServiceName": "access-analyzer.amazonaws.com"
+         }
+       }
+     }]
+ }
+```
 
 **iam:OrganizationsPolicyId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -67,7 +84,7 @@ Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that inv
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
 IAM and AWS STS support both the `iam:ResourceTag` IAM condition key and the `aws:ResourceTag` global condition key\.
-You can add custom attributes to IAM resouces in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+You can add custom attributes to IAM resources in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
 This example shows how you might create an identity\-based policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
 
 ```

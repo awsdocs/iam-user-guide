@@ -100,7 +100,7 @@ Some AWS resources support resource\-based policies, and these policies provide 
 
 The following resource\-based policy is attached to the bucket\. This bucket policy allows a federated user named Carol to access the bucket\. When the example policy described earlier is attached to the `token-app` IAM user, the federated user named Carol has permission to perform the `s3:GetObject`, `s3:PutObject`, and `s3:DeleteObject` actions on the bucket named `productionapp`\. This is true even when no session policy is passed as a parameter of the `GetFederationToken` API call\. That's because in this case the federated user named Carol has been explicitly granted permissions by the following resource\-based policy\. 
 
-Remember, a federated user is granted permissions only when those permissions are explicitly granted to both the IAM user ***and*** the federated user\. Permissions can be granted to the federated user by the session policy passed as a parameter of the `GetFederationToken` API call\. They can also be granted by a resource\-based policy that explicitly names the federated user in the `Principal` element of the policy, as in the following example\.
+Remember, a federated user is granted permissions only when those permissions are explicitly granted to both the IAM user ***and*** the federated user\. They can also be granted by a resource\-based policy that explicitly names the federated user in the `Principal` element of the policy, as in the following example\.
 
 **Example bucket policy that allows access to federated user**  
 

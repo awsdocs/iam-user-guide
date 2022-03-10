@@ -72,24 +72,26 @@ As the account administrator, imagine that you want to allow the IAM user `DevUs
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AssumeRole",
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::123456789012:role/Developer_Role"
-        },
-        {
-            "Sid": "SetAwsUserNameAsSourceIdentity",
-            "Effect": "Allow",
-            "Action": "sts:SetSourceIdentity",
-            "Resource": "arn:aws:iam::123456789012:role/Developer_Role",
-            "Condition": {
-                "StringLike": {"sts:SourceIdentity": "${aws:username}"}
-            }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AssumeRole",
+      "Effect": "Allow",
+      "Action": "sts:AssumeRole",
+      "Resource": "arn:aws:iam::123456789012:role/Developer_Role"
+    },
+    {
+      "Sid": "SetAwsUserNameAsSourceIdentity",
+      "Effect": "Allow",
+      "Action": "sts:SetSourceIdentity",
+      "Resource": "arn:aws:iam::123456789012:role/Developer_Role",
+      "Condition": {
+        "StringLike": {
+          "sts:SourceIdentity": "${aws:username}"
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 
@@ -99,21 +101,25 @@ To enforce the acceptable source identity values, you can configure the followin
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowDevUserAssumeRole",
-            "Effect": "Allow",
-            "Principal": {"AWS": " arn:aws:iam::123456789012:user/DevUser"},
-            "Action": [
-                "sts:AssumeRole",
-                "sts:SetSourceIdentity"
-            ],
-            "Condition": {
-                "StringEquals": {"sts:SourceIdentity": "DevUser"}
-            }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDevUserAssumeRole",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:user/DevUser"
+      },
+      "Action": [
+        "sts:AssumeRole",
+        "sts:SetSourceIdentity"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "sts:SourceIdentity": "DevUser"
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 

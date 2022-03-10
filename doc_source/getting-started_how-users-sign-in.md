@@ -25,7 +25,9 @@ https://signin.aws.amazon.com/console
 
 ## Permissions required for console activities<a name="console_signin-permissions-required"></a>
 
-IAM users in your account have access only to the AWS resources that you specify in a policy\. That policy must be attached to the user or to an IAM group that the user belongs to\. To work in the console, users must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access management for AWS resources](access.md) and [Example IAM identity\-based policies](access_policies_examples.md)\.
+IAM users in your account have access only to the AWS resources that you specifically allow in a policy that applies to them\. For example, the policy could be attached to the user, to a group they belong to, to a role they assume, or to a resource that allows them access\.
+
+To work in the console, users must have permissions to perform the actions that the console performs, such as listing and creating AWS resources\. For more information, see [Access management for AWS resources](access.md) and [Example IAM identity\-based policies](access_policies_examples.md)\.
 
 If users in your account need programmatic access, you can create an access key pair \(an access key ID and a secret access key\) for each user\. For more information, see [Managing access keys \(console\)](id_credentials_access-keys.md#Using_CreateAccessKey)\.
 

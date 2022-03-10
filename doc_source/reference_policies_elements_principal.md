@@ -221,9 +221,14 @@ The following example shows a policy that can be attached to a service role\. Th
 
 ## All principals<a name="principal-anonymous"></a>
 
-You can use a wildcard \(\*\) to specify all principals in the `Principal` element of a resource\-based policy or in condition keys that support principals\. As a best practice, do this only with the `Condition` element and a condition key such as `aws:PrincipalArn` to limit those broad permissions\.
+You can use a wildcard \(\*\) to specify all principals in the `Principal` element of a resource\-based policy or in condition keys that support principals\. [Resource\-based policies](access_policies.md#policies_resource-based) *grant* permissions and [condition keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) are used to limit the conditions of a policy statement\.
 
-For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*\) in the principal element specifies all users or public access\. For example, you can use either of the following methods to specify all principals in the `Principal` element:
+**Important**  
+We strongly recommend that you do not use a wildcard \(\*\) in the `Principal` element of a resource\-based policy with an `Allow` effect unless you intend to grant public or anonymous access\. Otherwise, specify intended principals, services, or AWS accounts in the `Principal` element and then further restrict access in the `Condition` element\. This is especially true for IAM role trust policies, because they allow other principals to become a principal in your account\.
+
+For resource\-based policies, using a wildcard \(\*\) with an `Allow` effect grants access to all users, including anonymous users \(public access\)\. For IAM users and role principals within your account, no other permissions are required\. For principals in other accounts, they must also have identity\-based permissions in their account that allow them to access your resource\. This is called [cross\-account access](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic-cross-account.html)\.
+
+For anonymous users, the following elements are equivalent:
 
 ```
 "Principal": "*"
@@ -233,14 +238,32 @@ For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*
 "Principal" : { "AWS" : "*" }
 ```
 
-Using `"Principal": "*"` with an `Allow` effect in a resource\-based policy allows anyone, even if they’re not signed in to AWS, to access your resource\. 
-
-Using `"Principal" : { "AWS" : "*" }` with an `Allow` effect in a resource\-based policy allows any root user, IAM user, assumed\-role session, or federated user in any account in the same [partition](reference_identifiers.md#identifiers-arns) to access your resource\. For IAM user and role principals within your account, no other permissions are required\. For principals in other accounts, they must also have identity\-based permissions in their account that allow them to access your resource\. This is called [cross\-account access](reference_policies_evaluation-logic-cross-account.md)\. This method does not allow web identity session principals, SAML session principals, or service principals to access your resource\. 
-
-**Important**  
-Because anyone can create an AWS account, the **security level** of these two methods is equivalent, even though they function differently\.
-
 You cannot use a wildcard to match part of a principal name or ARN\.
+
+The following example shows a resource\-based policy that can be used instead of [`NotPrincipal` With `Deny`](reference_policies_elements_notprincipal.md#specifying-notprincipal) to explicitly deny all principals *except* for the ones specified in the `Condition` element\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UsePrincipalArnInsteadOfNotPrincipalWithDeny",
+      "Effect": "Deny",
+      "Action": "s3:*",
+      "Principal": "*",
+      "Resource": [
+        "arn:aws:s3:::BUCKETNAME/*",
+        "arn:aws:s3:::BUCKETNAME"
+      ],
+      "Condition": {
+        "ArnNotEquals": {
+          "aws:PrincipalArn": "arn:aws:iam::444455556666:user/user-name"
+        }
+      }
+    }
+  ]
+}
+```
 
 ## More information<a name="Principal_more-info"></a>
 

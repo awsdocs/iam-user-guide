@@ -241,8 +241,8 @@ This combination of the `Allow` effect, `Null` element, and `false` value allows
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the account to which the requesting principal belongs with the account identifier that you specify in the policy\.
-+ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
+Use this key to compare the account to which the requesting principal belongs with the account identifier that you specify in the policy\. For anonymous requests, the request context returns `anonymous`\.
++ **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
 ## aws:PrincipalArn<a name="condition-keys-principalarn"></a>
@@ -258,7 +258,7 @@ Use this key to compare the [Amazon Resource Name](reference_identifiers.md#iden
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.
 
 Use this key to check whether the call to your resource is being made directly by an AWS [service principal](reference_policies_elements_principal.md#principal-services)\. For example, AWS CloudTrail uses the service principal `cloudtrail.amazonaws.com` to write logs to your Amazon S3 bucket\. The request context key is set to true when a service uses a service principal to perform a direct action on your resources\. The context key is set to false if the service uses the credentials of an IAM principal to make a request on the principal's behalf\. It is also set to false if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
-+ **Availability** – This key is present in the request context for all signed API requests that use AWS credentials\.
++ **Availability** – This key is present in the request context for all signed API requests that use AWS credentials\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 You can use this condition key to limit access to your trusted identities and expected network locations while safely granting access to AWS services\.
@@ -293,7 +293,7 @@ In the following Amazon S3 bucket policy example, access to the bucket is restri
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the identifier of the organization in AWS Organizations to which the requesting principal belongs with the identifier specified in the policy\.
-+ **Availability** – This key is included in the request context only if the principal is a member of an organization\.
++ **Availability** – This key is included in the request context only if the principal is a member of an organization\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:PrincipalOrgID` key automatically include the correct accounts and don't require manual updating\.
@@ -326,7 +326,7 @@ For more information about AWS Organizations, see [What Is AWS Organizations?](h
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the AWS Organizations path for the principal who is making the request to the path in the policy\. That principal can be an IAM user, IAM role, federated user, or AWS account root user\. In a policy, this condition key ensures that the requester is an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path)\.
-+ **Availability** – This key is included in the request context only if the principal is a member of an organization\.
++ **Availability** – This key is included in the request context only if the principal is a member of an organization\. Anonymous requests do not include this key\.
 + **Value type** – Multivalued
 
 **Note**  
@@ -386,6 +386,7 @@ Use this key to compare the [service principal](reference_policies_elements_prin
   + If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
   + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
   + If the call is made directly by an IAM principal\.
+  + If the call is made by an anonymous requester\.
 + **Value type** – Single\-valued
 
 You can use this condition key to limit access to your trusted identities and expected network locations while safely granting access to an AWS service\.
@@ -422,6 +423,7 @@ This key provides a list of all [service principal](reference_policies_elements_
   + If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
   + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
   + If the call is made directly by an IAM principal\.
+  + If the call is made by an anonymous requester\.
 + **Value type** – Multivalued
 
 `aws:PrincipalServiceNamesList` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
@@ -431,7 +433,7 @@ This key provides a list of all [service principal](reference_policies_elements_
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag attached to the principal making the request with the tag that you specify in the policy\. If the principal has more than one tag attached, the request context includes one `aws:PrincipalTag` key for each attached tag key\.
-+ **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\.
++ **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM resources](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-principals) for AWS principals\.
@@ -461,7 +463,7 @@ This example shows how you might create an identity\-based policy that allows us
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is included in the request context for all signed requests\.
++ **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
 ## aws:referer<a name="condition-keys-referer"></a>
@@ -753,7 +755,7 @@ This key should be used carefully\. Since the `aws:UserAgent` value is provided 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the requester's principal identifier with the ID that you specify in the policy\. For IAM users, the request context value is the user ID\. For IAM roles, this value format can vary\. For details about how the information appears for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
++ **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
 ## aws:username<a name="condition-keys-username"></a>
