@@ -14,6 +14,9 @@ If you use condition keys that are available only in some circumstances, you can
 
 Global condition keys are condition keys with an `aws:` prefix\. AWS services can support global condition keys or provide service\-specific keys that include their service prefix\. For example, IAM condition keys include the `iam:` prefix\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html) and choose the service whose keys you want to view\.
 
+**Important**  
+To compare your condition against a request context with multiple key values, you must use the `ForAllValues` or `ForAnyValue` set operators\. Use set operators only with multivalued condition keys\. Do not use set operators with single\-valued condition keys\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.
+
 ## aws:CalledVia<a name="condition-keys-calledvia"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.

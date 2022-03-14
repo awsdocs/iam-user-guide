@@ -17,7 +17,7 @@ The process of creating a user and enabling that user to perform work tasks cons
 
 1. Create credentials for the user, depending on the type of access the user requires:
    + **Programmatic access:** The IAM user might need to make API calls, use the AWS CLI, or use the Tools for Windows PowerShell\. In that case, create an access key \(access key ID and a secret access key\) for that user\.
-   + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\. Disabling console access for a user prevents them from signing in the to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
+   + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\. Disabling console access for a user prevents them from signing in to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
 
    As a best practice, create only the credentials that the user needs\. For example, for a user who requires access only through the AWS Management Console, do not create access keys\.
 

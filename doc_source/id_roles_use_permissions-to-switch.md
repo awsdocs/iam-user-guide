@@ -4,7 +4,7 @@ When an administrator [creates a role for cross\-account access](id_roles_create
 
 To grant a user permission to switch to a role, the administrator of the trusted account creates a new policy for the user\. Or the administrator might edit an existing policy to add the required elements\. The administrator can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, the administrator can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a role \(console\)](id_roles_use_switch-role-console.md)\. 
 
-Note that you can switch roles only when you sign in as an IAM user\. You cannot switch roles when you sign in as the AWS account root user\.
+Note that you can switch roles only when you sign in as an IAM user, a SAML\-federated role, or a web\-identity federated role\. You cannot switch roles when you sign in as the AWS account root user\.
 
 **Important**  
 You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalId` parameter\.
