@@ -24,6 +24,8 @@ You can specify any of the following principals in a policy:
 + AWS services
 + All principals
 
+You cannot identify a user group as a principal in a policy \(such as a resource\-based policy\) because groups relate to permissions, not authentication, and principals are authenticated IAM entities\.
+
 You can specify more than one principal for each of the principal types in following sections using an array\. Arrays can take one or more values\. When you specify more than one principal in an element, you grant permissions to each principal\. This is a logical `OR` and not a logical `AND`, because you authenticate as one principal at a time\. If you include more than one value, use square brackets \(`[` and `]`\) and comma\-delimit each entry for the array\. The following example policy defines permissions for the 123456789012 account or the 555555555555 account\.
 
 ```

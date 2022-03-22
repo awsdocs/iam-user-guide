@@ -313,7 +313,7 @@ For example, the following Amazon S3 bucket policy allows members of any account
     "Action": "s3:PutObject",
     "Resource": "arn:aws:s3:::policy-ninja-dev/*",
     "Condition": {"StringEquals":
-      {"aws:PrincipalOrgID":["o-xxxxxxxxxxx"]}
+      {"aws:PrincipalOrgID":"o-xxxxxxxxxxx"}
     }
   }
 }
@@ -580,7 +580,7 @@ This example shows that while the key is single\-valued, you can still use multi
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
-+ **Availability** – This key is included in the request context when the requested resource already has attached tags\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
++ **Availability** – This key is included in the request context when the requested resource already has attached tags or in requests that create a resource with an attached tag\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
 + **Value type** – Single\-valued
 
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\.

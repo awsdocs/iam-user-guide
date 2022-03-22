@@ -125,8 +125,6 @@ For **Filter**, choose **Customer managed** to filter the list to include only t
 
 1. \(Optional\) For **Description**, enter a description for the new role\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
-
 1. After reviewing the role, choose **Create role**\.
 
     
