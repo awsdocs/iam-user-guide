@@ -44,7 +44,7 @@ You can use the AWS CLI to retrieve information about the last time that an IAM 
 **To view information for IAM \(AWS CLI\)**
 
 1. Generate a report\. The request must include the ARN of the IAM resource \(user, user group, role, or policy\) for which you want a report\. You can specify the level of granularity that you want to generate in the report to view access details for either services or both services and actions\. The request returns a `job-id` that you can then use in the `get-service-last-accessed-details` and `get-service-last-accessed-details-with-entities` operations to monitor the `job-status` until the job is complete\.
-   + [aws iam generate\-service\-last\-accessed\-details](https://docs.aws.amazon.com/cli/latest/reference/iam/generate-service-last-accessed-details.html)
+   + [aws iam generate\-service\-last\-accessed\-details](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/iam/generate-service-last-accessed-details.html)
 
 1. Retrieve details about the report using the `job-id` parameter from the previous step\.
    + [aws iam get\-service\-last\-accessed\-details](https://docs.aws.amazon.com/cli/latest/reference/iam/get-service-last-accessed-details.html)
