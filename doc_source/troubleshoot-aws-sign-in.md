@@ -39,7 +39,7 @@ If you're still not able to sign in to your AWS account, you can find alternate 
 
 ## I need to change the credit card for my AWS account<a name="troubleshoot-change-credit-card"></a>
 
-To change the credit card for your AWS account, you must be able to sign in\. AWS has protections in place that require you to prove that you're the account owner\. For directions, see [Managing your credit card payment methods](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cc.html) in the *AWS Billing and Cost Management User Guide*\.
+To change the credit card for your AWS account, you must be able to sign in\. AWS has protections in place that require you to prove that you're the account owner\. For directions, see [Managing your credit card payment methods](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cc.html) in the *AWS Billing User Guide*\.
 
 ## I need to report fraudulent AWS account activity<a name="troubleshoot-report-suspicious-account-activity"></a>
 
