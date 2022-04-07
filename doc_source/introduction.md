@@ -14,6 +14,7 @@ AWS Identity and Access Management \(IAM\) is a web service that helps you secur
 + [What is ABAC for AWS?](introduction_attribute-based-access-control.md)
 + [Security features outside IAM](introduction_security-outside-iam.md)
 + [Quick links to common tasks](introduction_quick-links-common-tasks.md)
++ [Using IAM with an AWS SDK](sdk-general-information-section.md)
 
 ## Video introduction to IAM<a name="intro-video"></a>
 

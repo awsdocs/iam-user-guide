@@ -50,7 +50,7 @@ If you [create a member account](https://docs.aws.amazon.com/cli/latest/referenc
 
  You can now use IAM policies to control which pages a user can access\.
 
-After you have activated IAM user access, you can attach IAM policies to grant or deny access to specific billing features\. For more information about using policies to grant IAM users access to AWS Billing and Cost Management Management features, see [Using identity\-based policies \(IAM policies\) for Billing and Cost Management Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing User Guide*\.
+After you have activated IAM user access, you can attach IAM policies to grant or deny access to specific billing features\. For more information about using policies to grant IAM users access to AWS Billing and Cost Management features, see [Using identity\-based policies \(IAM policies\) for Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing User Guide*\.
 
 ## Step 2: Create IAM policies that grant permissions to billing data<a name="tutorial-billing-step2"></a>
 

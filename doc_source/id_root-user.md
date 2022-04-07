@@ -30,7 +30,7 @@ For more information, see the following articles in the AWS Knowledge Center:
 
 ## Enable MFA on the AWS account root user<a name="id_root-user_manage_mfa"></a>
 
-If you continue to use the root user credentials, we recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
+We recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
 + [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
