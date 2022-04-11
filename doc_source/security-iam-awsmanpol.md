@@ -209,7 +209,7 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
 }
 ```
 
-## <a name="w800aac30c55c49"></a>
+## <a name="w798aac30c55c49"></a>
 
 
 
@@ -226,9 +226,7 @@ View details about updates to IAM and AWS managed policies since these service b
 
 | Change | Description | Date | 
 | --- | --- | --- | 
-| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Add permission for Lambda | IAM Access Analyzer added the lambda:GetFunctionUrlConfig action to the service\-level permissions of AccessAnalyzerServiceRolePolicy\. | April 6, 2022 | 
-| [IAMReadOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMReadOnlyAccess) – IAM started tracking changes to this policy |  IAMReadOnlyAccess policy allows read\-only access to resources\.  | December 1, 2021 | 
-| [IAMUserChangePassword](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMUserChangePassword) – IAM started tracking changes to this policy | IAMUserChangePassword policy allows a user to change their password\.  | November 22, 2021 | 
-| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Add permission for Amazon S3 multi\-region access points | IAM Access Analyzer added new Amazon S3 actions to analyze metadata associated with multi\-region access points\. | September 2, 2021 | 
-|  [IAMAccessAnalyzerReadOnlyAccess](#security-iam-awsmanpol-IAMAccessAnalyzerReadOnlyAccess) – Add permission to support policy validation  |  IAM Access Analyzer added a new action to grant `ValidatePolicy` permissions to allow you to use the policy checks for validation\. This permission is required by IAM Access Analyzer to perform policy checks on your policies\. This action is associated to the `ValidatePolicy` API operation\.  | March 16, 2021 | 
+| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added the lambda:GetFunctionUrlConfig action to the service\-level permissions of AccessAnalyzerServiceRolePolicy\. | April 6, 2022 | 
+| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added new Amazon S3 actions to analyze metadata associated with multi\-region access points\. | September 2, 2021 | 
+|  [IAMAccessAnalyzerReadOnlyAccess](#security-iam-awsmanpol-IAMAccessAnalyzerReadOnlyAccess) – Added permissions  |  IAM Access Analyzer added a new action to grant `ValidatePolicy` permissions to allow you to use the policy checks for validation\. This permission is required by IAM Access Analyzer to perform policy checks on your policies\.  | March 16, 2021 | 
 |  IAM Access Analyzer started tracking changes  |  IAM Access Analyzer started tracking changes for its AWS managed policies\.  | March 1, 2021 | 
