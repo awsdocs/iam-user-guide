@@ -6,6 +6,43 @@ The following code examples show how to list IAM groups\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+using System;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+
+var client = new AmazonIdentityManagementServiceClient();
+
+var request = new ListGroupsRequest
+{
+    MaxItems = 10,
+};
+
+var response = await client.ListGroupsAsync(request);
+
+do
+{
+    response.Groups.ForEach(group =>
+    {
+        Console.WriteLine($"{group.GroupName} created on: {group.CreateDate}");
+    });
+
+    if (response.IsTruncated)
+    {
+        request.Marker = response.Marker;
+        response = await client.ListGroupsAsync(request);
+    }
+} while (response.IsTruncated);
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [ListGroups](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListGroups) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

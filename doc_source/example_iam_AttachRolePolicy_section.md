@@ -6,6 +6,45 @@ The following code examples show how to attach an IAM policy to a role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+        /// <summary>
+        /// Attach the policy to the role so that the user can assume it.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="policyArn">The ARN of the policy to attach.</param>
+        /// <param name="roleName">The name of the role to attach the policy to.</param>
+        public static async Task AttachRoleAsync(
+            AmazonIdentityManagementServiceClient client,
+            string policyArn,
+            string roleName)
+        {
+            var request = new AttachRolePolicyRequest
+            {
+                PolicyArn = policyArn,
+                RoleName = roleName,
+            };
+
+            var response = await client.AttachRolePolicyAsync(request);
+
+            if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
+            {
+                Console.WriteLine("Successfully attached the policy to the role.");
+            }
+            else
+            {
+                Console.WriteLine("Could not attach the policy.");
+            }
+        }
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

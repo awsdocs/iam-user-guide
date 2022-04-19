@@ -6,6 +6,48 @@ The following code examples show how to list inline policies for an IAM role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+using System;
+
+var client = new AmazonIdentityManagementServiceClient();
+var request = new ListRolePoliciesRequest
+{
+    RoleName = "LambdaS3Role",
+};
+
+var response = new ListRolePoliciesResponse();
+
+do
+{
+    response = await client.ListRolePoliciesAsync(request);
+
+    if (response.PolicyNames.Count > 0)
+    {
+        response.PolicyNames.ForEach(policyName =>
+        {
+            Console.WriteLine($"{policyName}");
+        });
+    }
+
+    // As long as response.IsTruncated is true, set request.Marker equal
+    // to response.Marker and call ListRolesAsync again.
+    if (response.IsTruncated)
+    {
+        request.Marker = response.Marker;
+    }
+} while (response.IsTruncated);
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [ListRolePolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListRolePolicies) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

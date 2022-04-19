@@ -274,7 +274,7 @@ The policy that you attached to each role allows the employees to view any secre
 
 ## Step 6: Test scalability<a name="tutorial_abac_step6"></a>
 
-An important reason for using attribute\-based access control \(ABAC\) over role\-based access control \(RBAC\) is scalability\. As your company adds new projects, teams, or people to AWS, you don't need to update your ABAC\-driven policies\. For example, assume that Example Company is funding a new project, code named **Centaur**\. An engineer named Saanvi Sarkar will be the lead engineer for **Centaur** while continuing to work on the **Unicorn** project\. There are also several newly hired engineers, including Nikhil Jayashankar, who will work on only the **Centaur** project\.
+An important reason for using attribute\-based access control \(ABAC\) over role\-based access control \(RBAC\) is scalability\. As your company adds new projects, teams, or people to AWS, you don't need to update your ABAC\-driven policies\. For example, assume that Example Company is funding a new project, code named **Centaur**\. An engineer named Saanvi Sarkar will be the lead engineer for **Centaur** while continuing to work on the **Unicorn** project\. Saanvi will also review work for the **Peg** project\. There are also several newly hired engineers, including Nikhil Jayashankar, who will work on only the **Centaur** project\.
 
 **To add the new project to AWS**
 
@@ -291,7 +291,7 @@ An important reason for using attribute\-based access control \(ABAC\) over role
 
 1. Use the procedures in [Step 4: Test creating secrets](#tutorial_abac_step4) and [Step 5: Test viewing secrets](#tutorial_abac_step5)\. In another browser window, test that Nikhil can create only **Centaur** engineering secrets, and that he can view all engineering secrets\.
 
-1. In the main browser window where you signed in as the administrator, choose `access-Saanvi-uni-eng`\.
+1. In the main browser window where you signed in as the administrator, choose the user `access-Saanvi-uni-eng`\.
 
 1. On the **Permissions** tab, remove the **access\-assume\-role** permissions policy\.
 

@@ -265,6 +265,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Create an inline IAM policy for a user using an AWS SDK](example_iam_PutUserPolicy_section.md)
          + [Delete an IAM policy using an AWS SDK](example_iam_DeletePolicy_section.md)
          + [Delete an IAM role using an AWS SDK](example_iam_DeleteRole_section.md)
+         + [Delete an IAM role policy using an AWS SDK](example_iam_DeleteRolePolicy_section.md)
          + [Delete an IAM server certificate using an AWS SDK](example_iam_DeleteServerCertificate_section.md)
          + [Delete an IAM service-linked role using an AWS SDK](example_iam_DeleteServiceLinkedRole_section.md)
          + [Delete an IAM user using an AWS SDK](example_iam_DeleteUser_section.md)

@@ -6,6 +6,39 @@ The following code examples show how to create an IAM policy\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+        /// <summary>
+        /// Create a policy to allow a user to list the buckets in an account.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="policyName">The name of the poicy to create.</param>
+        /// <param name="policyDocument">The permissions policy document.</param>
+        /// <returns>The newly created ManagedPolicy object.</returns>
+        public static async Task<ManagedPolicy> CreatePolicyAsync(
+            AmazonIdentityManagementServiceClient client,
+            string policyName,
+            string policyDocument)
+        {
+            var request = new CreatePolicyRequest
+            {
+                PolicyName = policyName,
+                PolicyDocument = policyDocument,
+            };
+
+            var response = await client.CreatePolicyAsync(request);
+
+            return response.Policy;
+        }
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreatePolicy) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

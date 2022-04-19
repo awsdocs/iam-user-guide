@@ -6,6 +6,49 @@ The following code examples show how to list IAM roles\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+using System;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+
+var client = new AmazonIdentityManagementServiceClient();
+
+// Without the MaxItems value, the ListRolesAsync method will
+// return information for up to 100 roles. If there are more
+// than the MaxItems value or more than 100 roles, the response
+// value IsTruncated will be true.
+var request = new ListRolesRequest
+{
+    MaxItems = 10,
+};
+
+var response = new ListRolesResponse();
+
+do
+{
+    response = await client.ListRolesAsync(request);
+    response.Roles.ForEach(role =>
+    {
+        Console.WriteLine($"{role.RoleName} - ARN {role.Arn}");
+    });
+
+    // As long as response.IsTruncated is true, set request.Marker equal
+    // to response.Marker and call ListRolesAsync again.
+    if (response.IsTruncated)
+    {
+        request.Marker = response.Marker;
+    }
+} while (response.IsTruncated);
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [ListRoles](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListRoles) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

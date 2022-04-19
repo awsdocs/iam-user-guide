@@ -35,7 +35,7 @@ If you know the email address but no longer have access to the email, first try 
 + If you own the domain for email address, you can restore a deleted email address\. Alternatively, you can set up a catch\-all for your email account, which "catches all" messages sent to email addresses that no longer exist in the mail server and redirects them to another email address\.
 + If the email address on the account is part of your corporate email system, we recommend that you contact your IT system administrators\. They might be able to help you regain access to the email\.
 
-If you're still not able to sign in to your AWS account, you can find alternate support options at [Contact us](https://aws.amazon.com/contact-us/)\. Expand **I cannot login to my AWS account** and choose **Request Support for AWS Account Credentials**\. Provide the information in the form and choose **Submit**\.
+If you're still not able to sign in to your AWS account you can find alternate support options at [Contact us](https://aws.amazon.com/contact-us/)\. Choose **Still unable to log into your AWS account** and then choose one of the available support options\.
 
 ## I need to change the credit card for my AWS account<a name="troubleshoot-change-credit-card"></a>
 

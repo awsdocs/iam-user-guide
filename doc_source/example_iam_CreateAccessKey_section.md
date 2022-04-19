@@ -6,6 +6,41 @@ The following code examples show how to create an IAM access key\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+        /// <summary>
+        /// Create a new AccessKey for the user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="userName">The name of the user for whom to create the key.</param>
+        /// <returns>A new IAM access key for the user.</returns>
+        public static async Task<AccessKey> CreateAccessKeyAsync(
+            AmazonIdentityManagementServiceClient client,
+            string userName)
+        {
+            var request = new CreateAccessKeyRequest
+            {
+                UserName = userName,
+            };
+
+            var response = await client.CreateAccessKeyAsync(request);
+
+            if (response.AccessKey is not null)
+            {
+                Console.WriteLine($"Successfully created Access Key for {userName}.");
+            }
+
+            return response.AccessKey;
+        }
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [CreateAccessKey](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateAccessKey) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

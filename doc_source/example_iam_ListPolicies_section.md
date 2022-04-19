@@ -6,6 +6,46 @@ The following code examples show how to list IAM policies\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+using System;
+
+var client = new AmazonIdentityManagementServiceClient();
+
+var request = new ListPoliciesRequest
+{
+    MaxItems = 10,
+};
+
+var response = new ListPoliciesResponse();
+
+do
+{
+    response = await client.ListPoliciesAsync(request);
+    response.Policies.ForEach(policy =>
+    {
+        Console.Write($"{policy.PolicyName} ");
+        Console.Write($"with ID: {policy.PolicyId} ");
+        Console.Write($"and ARN: {policy.Arn}. ");
+        Console.WriteLine($"It was created on {policy.CreateDate}.");
+    });
+
+    if (response.IsTruncated)
+    {
+        request.Marker = response.Marker;
+    }
+} while (response.IsTruncated);
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [ListPolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListPolicies) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

@@ -6,6 +6,29 @@ The following code examples show how to list SAML providers for IAM\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+using System;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+
+var client = new AmazonIdentityManagementServiceClient();
+
+var response = await client.ListSAMLProvidersAsync(new ListSAMLProvidersRequest());
+
+response.SAMLProviderList.ForEach(samlProvider =>
+{
+    Console.WriteLine($"{samlProvider.Arn} created on: {samlProvider.CreateDate}");
+});
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListSAMLProviders) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

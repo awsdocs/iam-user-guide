@@ -16,7 +16,7 @@ Before you use alternative factors of authentication to sign in as a root user, 
 
 1. On the **Amazon Web Services Sign In With Authentication Device** page, choose **Having problems with your authentication device? Click here**\.
 **Note**  
-You might see different text, such as **Sign in using MFA** and **Troubleshoot your authentication device**\. However, the same features are provided\. In either case, if you cannot verify your account email address and phone number using alternative factors of authentication, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA device\.
+You might see alternative text, such as **Sign in using MFA**, **Troubleshoot your authentication device**, or **Troubleshoot MFA**, but the functionality is the same\. If you can't use alternative factors of authentication to verify your account email address and phone number, contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support) to deactivate your MFA device\.
 
 1. If required, type your password again and choose **Sign in**\.
 

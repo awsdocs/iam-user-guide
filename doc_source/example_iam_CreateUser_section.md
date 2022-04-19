@@ -6,6 +6,37 @@ The following code examples show how to create an IAM user\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+        /// <summary>
+        /// Create a new IAM user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="userName">A string representing the user name of the
+        /// new user.</param>
+        /// <returns>The newly created user.</returns>
+        public static async Task<User> CreateUserAsync(
+            AmazonIdentityManagementServiceClient client,
+            string userName)
+        {
+            var request = new CreateUserRequest
+            {
+                UserName = userName,
+            };
+
+            var response = await client.CreateUserAsync(request);
+
+            return response.User;
+        }
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [CreateUser](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateUser) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

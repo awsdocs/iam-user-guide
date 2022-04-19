@@ -17,6 +17,7 @@ The following code examples demonstrate how to perform individual IAM actions wi
 + [Create an inline policy for a user](example_iam_PutUserPolicy_section.md)
 + [Delete a policy](example_iam_DeletePolicy_section.md)
 + [Delete a role](example_iam_DeleteRole_section.md)
++ [Delete a role policy](example_iam_DeleteRolePolicy_section.md)
 + [Delete a server certificate](example_iam_DeleteServerCertificate_section.md)
 + [Delete a service\-linked role](example_iam_DeleteServiceLinkedRole_section.md)
 + [Delete a user](example_iam_DeleteUser_section.md)

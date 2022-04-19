@@ -6,6 +6,39 @@ The following code examples show how to create an IAM role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+  
+
+```
+        /// <summary>
+        /// Create a new IAM role which we can attach to a user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="roleName">The name of the IAM role to create.</param>
+        /// <param name="rolePermissions">The permissions which the role will have.</param>
+        /// <returns>A Role object representing the newly created role.</returns>
+        public static async Task<Role> CreateRoleAsync(
+            AmazonIdentityManagementServiceClient client,
+            string roleName,
+            string rolePermissions)
+        {
+            var request = new CreateRoleRequest
+            {
+                RoleName = roleName,
+                AssumeRolePolicyDocument = rolePermissions,
+            };
+
+            var response = await client.CreateRoleAsync(request);
+
+            return response.Role;
+        }
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
++  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateRole) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
