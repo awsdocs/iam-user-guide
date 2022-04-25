@@ -394,5 +394,30 @@ def create_policy(name, description, actions, resource_arn):
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreatePolicy) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn create_policy(
+    client: &iamClient,
+    policy_name: &str,
+    policy_document: &str,
+) -> Result<Policy, iamError> {
+    let policy = client
+        .create_policy()
+        .policy_name(policy_name)
+        .policy_document(policy_document)
+        .send()
+        .await?;
+    Ok(policy.policy.unwrap())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [CreatePolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

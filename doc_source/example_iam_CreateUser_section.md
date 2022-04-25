@@ -287,5 +287,22 @@ def create_user(user_name):
 +  For API details, see [CreateUser](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreateUser) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn create_user(client: &iamClient, user_name: &str) -> Result<User, iamError> {
+    let response = client.create_user().user_name(user_name).send().await?;
+
+    Ok(response.user.unwrap())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [CreateUser](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

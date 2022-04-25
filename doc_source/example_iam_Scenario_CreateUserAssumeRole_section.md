@@ -2400,5 +2400,256 @@ run_scenario(ScenarioCreateUserAssumeRole.new(Aws::IAM::Resource.new)) if $PROGR
   + [PutUserPolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/PutUserPolicy)
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_iam::Error as iamError;
+use aws_sdk_iam::{Client as iamClient, Credentials as iamCredentials};
+use aws_sdk_s3::Client as s3Client;
+use aws_sdk_sts::Client as stsClient;
+use aws_types::region::Region;
+use std::borrow::Borrow;
+use tokio::time::{sleep, Duration};
+use uuid::Uuid;
+
+#[tokio::main]
+async fn main() -> Result<(), iamError> {
+    let (client, uuid, list_all_buckets_policy_document, inline_policy_document) =
+        initialize_variables().await;
+
+    if let Err(e) = run_iam_operations(
+        client,
+        uuid,
+        list_all_buckets_policy_document,
+        inline_policy_document,
+    )
+    .await
+    {
+        println!("{:?}", e);
+    };
+
+    Ok(())
+}
+
+async fn initialize_variables() -> (iamClient, String, String, String) {
+    let region_provider = RegionProviderChain::first_try(Region::new("us-west-2"));
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = iamClient::new(&shared_config);
+    let uuid = Uuid::new_v4().to_string();
+
+    let list_all_buckets_policy_document = "{
+                \"Version\": \"2012-10-17\",
+                \"Statement\": [{
+                    \"Effect\": \"Allow\",
+                    \"Action\": \"s3:ListAllMyBuckets\",
+                    \"Resource\": \"arn:aws:s3:::*\"}]
+    }"
+    .to_string();
+    let inline_policy_document = "{
+                \"Version\": \"2012-10-17\",
+                \"Statement\": [{
+                    \"Effect\": \"Allow\",
+                    \"Action\": \"sts:AssumeRole\",
+                    \"Resource\": \"{}\"}]
+    }"
+    .to_string();
+
+    (
+        client,
+        uuid,
+        list_all_buckets_policy_document,
+        inline_policy_document,
+    )
+}
+
+async fn run_iam_operations(
+    client: iamClient,
+    uuid: String,
+    list_all_buckets_policy_document: String,
+    inline_policy_document: String,
+) -> Result<(), iamError> {
+    let user = iam_service::create_user(&client, &format!("{}{}", "iam_demo_user_", uuid)).await?;
+    println!(
+        "Created the user with the name: {}",
+        user.user_name.as_ref().unwrap()
+    );
+    let key = iam_service::create_access_key(&client, user.user_name.as_ref().unwrap()).await?;
+
+    let assume_role_policy_document = "{
+        \"Version\": \"2012-10-17\",
+                \"Statement\": [{
+                    \"Effect\": \"Allow\",
+                    \"Principal\": {\"AWS\": \"{}\"},
+                    \"Action\": \"sts:AssumeRole\"
+                }]
+            }"
+    .to_string()
+    .replace("{}", user.arn.as_ref().unwrap());
+
+    let assume_role_role = iam_service::create_role(
+        &client,
+        &format!("{}{}", "iam_demo_role_", uuid),
+        &assume_role_policy_document,
+    )
+    .await?;
+    println!(
+        "Created the role with the ARN: {}",
+        assume_role_role.arn.as_ref().unwrap()
+    );
+
+    let list_all_buckets_policy = iam_service::create_policy(
+        &client,
+        &format!("{}{}", "iam_demo_policy_", uuid),
+        &list_all_buckets_policy_document,
+    )
+    .await?;
+    println!(
+        "Created policy: {}",
+        list_all_buckets_policy.policy_name.as_ref().unwrap()
+    );
+
+    let attach_role_policy_result =
+        iam_service::attach_role_policy(&client, &assume_role_role, &list_all_buckets_policy)
+            .await?;
+    println!(
+        "Attached the policy to the role: {:?}",
+        attach_role_policy_result
+    );
+
+    let inline_policy_name = &format!("{}{}", "iam_demo_inline_policy_", uuid);
+    let inline_policy_document =
+        inline_policy_document.replace("{}", assume_role_role.arn.as_ref().unwrap());
+    iam_service::create_user_policy(&client, &user, &inline_policy_name, &inline_policy_document)
+        .await?;
+    println!("Created inline policy.");
+
+    //First, fail to list the buckets with the user.
+    let creds = iamCredentials::from_keys(
+        key.access_key_id.as_ref().unwrap(),
+        key.secret_access_key.as_ref().unwrap(),
+        None,
+    );
+    let fail_config = aws_config::from_env()
+        .credentials_provider(creds.clone())
+        .load()
+        .await;
+    println!("Fail config: {:?}", fail_config);
+    let fail_client: s3Client = s3Client::new(&fail_config);
+    match fail_client.list_buckets().send().await {
+        Ok(e) => {
+            println!("This should not run. {:?}", e);
+        }
+        Err(e) => {
+            println!("Successfully failed with error: {:?}", e)
+        }
+    }
+
+    let sts_config = aws_config::from_env()
+        .credentials_provider(creds.clone())
+        .load()
+        .await;
+    let sts_client: stsClient = stsClient::new(&sts_config);
+    sleep(Duration::from_secs(10)).await;
+    let assumed_role = sts_client
+        .assume_role()
+        .role_arn(assume_role_role.arn.as_ref().unwrap())
+        .role_session_name(&format!("{}{}", "iam_demo_assumerole_session_", uuid))
+        .send()
+        .await;
+    println!("Assumed role: {:?}", assumed_role);
+    sleep(Duration::from_secs(10)).await;
+
+    let assumed_credentials = iamCredentials::from_keys(
+        assumed_role
+            .as_ref()
+            .unwrap()
+            .credentials
+            .as_ref()
+            .unwrap()
+            .access_key_id
+            .as_ref()
+            .unwrap(),
+        assumed_role
+            .as_ref()
+            .unwrap()
+            .credentials
+            .as_ref()
+            .unwrap()
+            .secret_access_key
+            .as_ref()
+            .unwrap(),
+        assumed_role
+            .as_ref()
+            .unwrap()
+            .credentials
+            .as_ref()
+            .unwrap()
+            .session_token
+            .borrow()
+            .clone(),
+    );
+
+    let succeed_config = aws_config::from_env()
+        .credentials_provider(assumed_credentials)
+        .load()
+        .await;
+    println!("succeed config: {:?}", succeed_config);
+    let succeed_client: s3Client = s3Client::new(&succeed_config);
+    sleep(Duration::from_secs(10)).await;
+    match succeed_client.list_buckets().send().await {
+        Ok(_) => {
+            println!("This should now run successfully.")
+        }
+        Err(e) => {
+            println!("This should not run. {:?}", e);
+            panic!()
+        }
+    }
+
+    //Clean up.
+    iam_service::detach_role_policy(
+        &client,
+        assume_role_role.role_name.as_ref().unwrap(),
+        list_all_buckets_policy.arn.as_ref().unwrap(),
+    )
+    .await?;
+    iam_service::delete_policy(&client, list_all_buckets_policy).await?;
+    iam_service::delete_role(&client, &assume_role_role).await?;
+    println!(
+        "Deleted role {}",
+        assume_role_role.role_name.as_ref().unwrap()
+    );
+    iam_service::delete_access_key(&client, &user, &key).await?;
+    println!("Deleted key for {}", key.user_name.as_ref().unwrap());
+    iam_service::delete_user_policy(&client, &user, &inline_policy_name).await?;
+    println!("Deleted inline user policy: {}", inline_policy_name);
+    iam_service::delete_user(&client, &user).await?;
+    println!("Deleted user {}", user.user_name.as_ref().unwrap());
+
+    Ok(())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++ For API details, see the following topics in *AWS SDK for Rust API reference*\.
+  + [AttachRolePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreateAccessKey](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreatePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreateRole](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreateUser](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteAccessKey](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeletePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteRole](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteUser](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteUserPolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [DetachRolePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [PutUserPolicy](https://docs.rs/releases/search?query=aws-sdk)
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

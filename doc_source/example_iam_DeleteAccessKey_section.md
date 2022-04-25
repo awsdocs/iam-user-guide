@@ -315,5 +315,41 @@ def delete_key(user_name, key_id):
 +  For API details, see [DeleteAccessKey](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeleteAccessKey) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn delete_access_key(
+    client: &iamClient,
+    user: &User,
+    key: &AccessKey,
+) -> Result<(), iamError> {
+    loop {
+        match client
+            .delete_access_key()
+            .user_name(user.user_name.as_ref().unwrap())
+            .access_key_id(key.access_key_id.as_ref().unwrap())
+            .send()
+            .await
+        {
+            Ok(_) => {
+                break;
+            }
+            Err(e) => {
+                println!("Can't delete the access key: {:?}", e);
+                sleep(Duration::from_secs(2)).await;
+            }
+        }
+    }
+    Ok(())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [DeleteAccessKey](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

@@ -293,23 +293,24 @@ This documentation is for an SDK in preview release\. The SDK is subject to chan
   
 
 ```
-async fn make_role(client: &Client, policy_file: &str, name: &str) -> Result<(), Error> {
-    // Read policy doc from file as a string
-    let doc = fs::read_to_string(policy_file).expect("Unable to read file");
+pub async fn create_role(
+    client: &iamClient,
+    role_name: &str,
+    role_policy_document: &str,
+) -> Result<Role, iamError> {
+    let response: CreateRoleOutput = loop {
+        if let Ok(response) = client
+            .create_role()
+            .role_name(role_name)
+            .assume_role_policy_document(role_policy_document)
+            .send()
+            .await
+        {
+            break response;
+        }
+    };
 
-    let resp = client
-        .create_role()
-        .assume_role_policy_document(doc)
-        .role_name(name)
-        .send()
-        .await?;
-
-    println!(
-        "Created role with ARN {}",
-        resp.role().unwrap().arn().unwrap()
-    );
-
-    Ok(())
+    Ok(response.role.unwrap())
 }
 ```
 +  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 

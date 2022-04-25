@@ -154,5 +154,33 @@ def create_service_linked_role(service_name, description):
 +  For API details, see [CreateServiceLinkedRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreateServiceLinkedRole) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn create_service_linked_role(
+    client: &iamClient,
+    aws_service_name: String,
+    custom_suffix: Option<String>,
+    description: Option<String>,
+) -> Result<CreateServiceLinkedRoleOutput, SdkError<CreateServiceLinkedRoleError>> {
+    let response = client
+        .create_service_linked_role()
+        .aws_service_name(aws_service_name)
+        .set_custom_suffix(custom_suffix)
+        .set_description(description)
+        .send()
+        .await?;
+
+    Ok(response)
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [CreateServiceLinkedRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

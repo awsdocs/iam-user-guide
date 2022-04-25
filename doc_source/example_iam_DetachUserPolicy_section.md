@@ -102,5 +102,31 @@ def detach_policy(user_name, policy_arn):
 +  For API details, see [DetachUserPolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DetachUserPolicy) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn detach_user_policy(
+    client: &iamClient,
+    user_name: &str,
+    policy_arn: &str,
+) -> Result<(), iamError> {
+    client
+        .detach_user_policy()
+        .user_name(user_name)
+        .policy_arn(policy_arn)
+        .send()
+        .await?;
+
+    Ok(())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [DetachUserPolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

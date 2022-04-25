@@ -98,5 +98,36 @@ def delete_role(role_name):
 +  For API details, see [DeleteRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeleteRole) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn delete_role(client: &iamClient, role: &Role) -> Result<(), iamError> {
+    let role = role.clone();
+    loop {
+        match client
+            .delete_role()
+            .role_name(role.role_name.as_ref().unwrap())
+            .send()
+            .await
+        {
+            Ok(_) => {
+                break;
+            }
+            Err(_) => {
+                sleep(Duration::from_secs(2)).await;
+            }
+        }
+    }
+    Ok(())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [DeleteRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

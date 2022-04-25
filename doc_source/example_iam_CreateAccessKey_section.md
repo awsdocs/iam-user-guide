@@ -279,5 +279,38 @@ def create_key(user_name):
 +  For API details, see [CreateAccessKey](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreateAccessKey) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn create_access_key(client: &iamClient, user_name: &str) -> Result<AccessKey, iamError> {
+    let mut tries: i32 = 0;
+    let max_tries: i32 = 10;
+
+    let response: Result<CreateAccessKeyOutput, SdkError<CreateAccessKeyError>> = loop {
+        match client.create_access_key().user_name(user_name).send().await {
+            Ok(inner_response) => {
+                break Ok(inner_response);
+            }
+            Err(e) => {
+                tries += 1;
+                if tries > max_tries {
+                    break Err(e);
+                }
+                sleep(Duration::from_secs(2)).await;
+            }
+        }
+    };
+
+    Ok(response.unwrap().access_key.unwrap())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [CreateAccessKey](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

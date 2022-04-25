@@ -1,6 +1,6 @@
 # Delete an inline IAM policy from a user using an AWS SDK<a name="example_iam_DeleteUserPolicy_section"></a>
 
-The following code example shows how to delete an inline IAM policy from a user\.
+The following code examples show how to delete an inline IAM policy from a user\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -36,6 +36,32 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 ```
 +  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [DeleteUserPolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeleteUserPolicy) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+  
+
+```
+pub async fn delete_user_policy(
+    client: &iamClient,
+    user: &User,
+    policy_name: &str,
+) -> Result<(), SdkError<DeleteUserPolicyError>> {
+    client
+        .delete_user_policy()
+        .user_name(user.user_name.as_ref().unwrap())
+        .policy_name(policy_name)
+        .send()
+        .await?;
+
+    Ok(())
+}
+```
++  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
++  For API details, see [DeleteUserPolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 
