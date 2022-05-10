@@ -3,7 +3,7 @@
 Use AWS Identity and Access Management \(IAM\) policy variables as placeholders when you don't know the exact value of a resource or condition key when you write the policy\.
 
 **Note**  
-If AWS cannot resolve a variable, this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
+If AWS cannot resolve a variable this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
 
 **Topics**
 + [Introduction](#policy-vars-intro)
@@ -291,7 +291,7 @@ These predefined policy variables can be used in any string where you can use re
 
 ## Specifying default values<a name="policy-vars-default-values"></a>
 
-When you add a variable to your policy, you can specify a default value for the variable\. If a variable is not present, AWS uses the default text that you provide\.
+If AWS cannot resolve a variable this might cause the entire statement to be invalid\. However, when you add a variable to your policy you can specify a default value for the variable\. If a value is not specified for the variable AWS uses the default text that you provided\. 
 
 To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
 

@@ -575,6 +575,174 @@ This example shows that while the key is single\-valued, you can still use multi
 }
 ```
 
+## aws:ResourceAccount<a name="condition-keys-resourceaccount"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the requested resource owner's [AWS account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) with the resource account in the policy\. You can then allow or deny access to that resource based on the account that owns the resource\.
++ **Availability** – This key is always included in the request context for most service actions\. The following actions don't support this key:
+  + AWS Elastic Beanstalk
+    + `elasticbeanstalk:ListAvailableSolutionStacks`
+  + Amazon Elastic Block Store – All actions
+  + Amazon EC2
+    + `ec2:CopySnapshot`
+    + `ec2:CreateVolume`
+    + `ec2:CreateVpcPeeringConnection`
+  + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
+    + `workspaces:CopyWorkspaceImage`
++ **Value type** – Single\-valued
+
+**Note**  
+Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceAccount` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+This key is equal to the AWS account ID for the account with the resources evaluated in the request\.
+
+For most resources in your account, the [ARN](reference_policies_elements_condition_operators.md#Conditions_ARN) contains the owner account ID for that resource\. For certain resources, such as Amazon S3 buckets, the resource ARN does not include the account ID\. The following two examples show the difference between a resource with an account ID in the ARN, and an Amazon S3 ARN without an account ID:
++ `arn:aws:iam::111122223333:role/AWSExampleRole` – IAM role created and owned within the account `111122223333`\. 
++ `arn:aws:s3:::AWSExampleS3Bucket` – Amazon S3 bucket created and owned within the account `444455556666`, not displayed in the ARN\.
+
+Use the AWS console, or API, or CLI, to find all of your resources and corresponding ARNs\.
+
+You write a policy that denies permissions to resources based on the resource owner's account ID\. For example, the following identity\-based policy denies access to the *specified resource* if the resource does not belong to the *specified account*\.
+
+To use this policy, replace the *italicized placeholder text* with your account information\. 
+
+**Important**  
+This policy does not allow any actions\. Instead, it uses the `Deny` effect which explicitly denies access to all of the resources listed in the statement that do not belong to the listed account\. Use this policy in combination with other policies that allow access to specific resources\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInteractionWithResourcesNotInSpecificAccount",
+      "Action": "service:*",
+      "Effect": "Deny",
+      "Resource": [
+        "arn:partition:service:region:account:*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": [
+            "account"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+This policy denies access to all resources for a specific AWS service unless the specified AWS account owns the resource\. 
+
+Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the element `aws:ResourceAccount` in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\.
++ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
++ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+
+Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
+
+## aws:ResourceOrgID<a name="condition-keys-resourceorgid"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the identifier of the organization in AWS Organizations to which the requested resource belongs with the identifier specified in the policy\.
++ **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
+  + AWS Elastic Beanstalk
+    + `elasticbeanstalk:ListAvailableSolutionStacks`
+  + Amazon Elastic Block Store – All actions
+  + Amazon EC2
+    + `ec2:CopySnapshot`
+    + `ec2:CreateVolume`
+    + `ec2:CreateVpcPeeringConnection`
+  + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
+    + `workspaces:CopyWorkspaceImage`
++ **Policy type** – This condition key does not support the following policy types:
+  + Gateway VPC endpoint policies for Amazon DynamoDB
++ **Value type** – Single\-valued
+
+This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.
+
+**Note**  
+Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgID` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+For example, the following policy prevents the principal from adding objects to the `policy-genius-dev` resource unless the Amazon S3 resource belongs to the same organization as the principal making the request\.
+
+**Important**  
+This policy does not allow any actions\. Instead, it uses the `Deny` effect which explicitly denies access to all of the resources listed in the statement that do not belong to the listed account\. Use this policy in combination with other policies that allow access to specific resources\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Sid": "DenyPutObjectToS3ResourcesOutsideMyOrganization",
+    "Effect": "Deny",
+    "Action": "s3:PutObject",
+    "Resource": "arn:partition:s3:::policy-genius-dev/*",
+    "Condition": {
+      "StringNotEquals": {
+        "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
+      }
+    }
+  }
+}
+```
+
+## aws:ResourceOrgPaths<a name="condition-keys-resourceorgpaths"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the AWS Organizations path for the accessed resource to the path in the policy\. In a policy, this condition key ensures that the resource belongs to an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path) 
++ **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
+  + AWS Elastic Beanstalk
+    + `elasticbeanstalk:ListAvailableSolutionStacks`
+  + Amazon Elastic Block Store – All actions
+  + Amazon EC2
+    + `ec2:CopySnapshot`
+    + `ec2:CreateVolume`
+    + `ec2:CreateVpcPeeringConnection`
+  + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
+    + `workspaces:CopyWorkspaceImage`
++ **Policy type** – This condition key does not support the following policy types:
+  + Gateway VPC endpoint policies for Amazon DynamoDB
++ **Value type** – Multivalued
+
+`aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+
+**Note**  
+Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgPaths` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+For example, the following condition returns `True` for resources that belong to the organization `o-a1b2c3d4e5`\. When you include a wildcard, you must use the [StringLike](reference_policies_elements_condition_operators.md) condition operator\.
+
+```
+"Condition": { 
+      "ForAnyValue:StringLike": {
+             "aws:ResourceOrgPaths":["o-a1b2c3d4e5/*"]
+   }
+}
+```
+
+The following condition returns `True` for resources owned by accounts attached to the OU `ou-ab12-11111111` or any of the child OUs\.
+
+```
+"Condition": { "ForAnyValue:StringLike" : {
+     "aws:ResourceOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/*"]
+}}
+```
+
+The following condition returns `True` for resources owned by accounts attached directly to the OU `ou-ab12-22222222`, but not the child OUs\. The following example uses the [StringEquals](reference_policies_elements_condition_operators.md) condition operator to specify the exact match requirement for the OU and not a wildcard match\.
+
+```
+"Condition": { "ForAnyValue:StringEquals" : {
+     "aws:ResourceOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/ou-ab12-22222222/"]
+}}
+```
+
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.

@@ -76,7 +76,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 	})
 
 	if err != nil {
-		panic("Could't create policy!" + err.Error())
+		panic("Couldn't create policy!" + err.Error())
 	}
 
 	fmt.Print("Created a new policy: " + *createPolicyResult.Policy.Arn)
