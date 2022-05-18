@@ -204,10 +204,6 @@ Some actions require different resource types under different circumstances\. Ea
 
    The **Permission** column in each row of **Action Settings and Results** displays the result of the simulation of that action on the specified resource\.
 
-1. Choose **Run Simulation** in the upper\-right corner\.
-
-   The **Permission** column in each row of **Action Settings and Results** displays the result of the simulation of that action on the specified resource\.
-
 1. To see which statement in a policy explicitly allowed or denied an action, choose the ***N* matching statement\(s\)** link in the **Permissions** column to expand the row\. Then choose the **Show statement** link\. The **Policies** pane shows the relevant policy with the statement that affected the simulation result highlighted\.
 **Note**  
 If an action is *implicitly* denied—that is, if the action is denied only because it is not explicitly allowed—the **List** and **Show statement** options are not displayed\.
