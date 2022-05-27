@@ -431,7 +431,7 @@ This key provides a list of all [service principal](reference_policies_elements_
 
 `aws:PrincipalServiceNamesList` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
-## aws:PrincipalTag<a name="condition-keys-principaltag"></a>
+## aws:PrincipalTag/*tag\-key*<a name="condition-keys-principaltag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
@@ -546,7 +546,7 @@ You can use this context key to limit access to AWS services within a given set 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you could check whether the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\. For more information, see [Controlling access during AWS requests](access_tags.md#access_tags_control-requests)\.
-+ **Availability** – This key is included in the request context when tags are passed in the request\. When multiple tags are passed in the request, there is one context key for each tag key\-value pair\.
++ **Availability** – This key is included in the request context when tag key\-value pairs are passed in the request\. When multiple tags are passed in the request, there is one context key for each tag key\-value pair\.
 + **Value type** – Single\-valued
 
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:RequestTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a request tag key named either `TagKey1` or `tagkey1`, but not both\.
@@ -891,7 +891,7 @@ Use this key to compare the VPC endpoint identifier of the request with the endp
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag keys in a request with the keys that you specify in the policy\. As a best practice when you use policies to control access using tags, use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling access based on tag keys](access_tags.md#access_tags_control-tag-keys)\.
-+ **Availability** – This key is included in the request context only if the operation supports attaching tags to resources\.
++ **Availability** – This key is included in the request context if the operation supports passing tags in the request\.
 + **Value type** – Multivalued
 
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.

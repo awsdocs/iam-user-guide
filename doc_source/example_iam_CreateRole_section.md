@@ -80,12 +80,10 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) {
+    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) throws Exception {
 
         try {
-
             JSONObject jsonObject = (JSONObject) readJsonSimpleDemo(fileLocation);
-
             CreateRoleRequest request = CreateRoleRequest.builder()
                     .roleName(rolename)
                     .assumeRolePolicyDocument(jsonObject.toJSONString())
@@ -98,8 +96,6 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return "";
     }

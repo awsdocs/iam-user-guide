@@ -794,25 +794,25 @@ public class IAMScenario {
                     "   ]" +
                     "}";
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         final String usage = "\n" +
                 "Usage:\n" +
                 "    <username> <policyName> <roleName> <roleSessionName> <fileLocation> <bucketName> \n\n" +
                 "Where:\n" +
-                "    username - the name of the IAM user to create. \n\n" +
-                "    policyName - the name of the policy to create. \n\n" +
-                "    roleName - the name of the role to create. \n\n" +
-                "    roleSessionName - the name of the session required for the assumeRole operation. \n\n" +
-                "    fileLocation - the file location to the JSON required to create the role (see Readme). \n\n" +
-                "    bucketName - the name of the Amazon S3 bucket from which objects are read. \n\n" ;
+                "    username - The name of the IAM user to create. \n\n" +
+                "    policyName - The name of the policy to create. \n\n" +
+                "    roleName - The name of the role to create. \n\n" +
+                "    roleSessionName - The name of the session required for the assumeRole operation. \n\n" +
+                "    fileLocation - The file location to the JSON required to create the role (see Readme). \n\n" +
+                "    bucketName - The name of the Amazon S3 bucket from which objects are read. \n\n" ;
 
         if (args.length != 6) {
             System.out.println(usage);
            System.exit(1);
         }
 
-        String userName =  args[0];
+        String userName = args[0];
         String policyName = args[1];
         String roleName = args[2];
         String roleSessionName = args[3];
@@ -822,6 +822,7 @@ public class IAMScenario {
         Region region = Region.AWS_GLOBAL;
         IamClient iam = IamClient.builder()
                 .region(region)
+                .credentialsProvider(ProfileCredentialsProvider.create())
                 .build();
 
         // Create the IAM user.
@@ -880,10 +881,9 @@ public class IAMScenario {
         return false;
     }
 
-    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) {
+    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) throws Exception {
 
         try {
-
             JSONObject jsonObject = (JSONObject) readJsonSimpleDemo(fileLocation);
             CreateRoleRequest request = CreateRoleRequest.builder()
                     .roleName(rolename)
@@ -898,8 +898,6 @@ public class IAMScenario {
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return "";
     }
@@ -907,7 +905,7 @@ public class IAMScenario {
     public static String createIAMPolicy(IamClient iam, String policyName ) {
 
         try {
-            // Create an IamWaiter object
+            // Create an IamWaiter object.
             IamWaiter iamWaiter = iam.waiter();
             CreatePolicyRequest request = CreatePolicyRequest.builder()
                     .policyName(policyName)
@@ -915,7 +913,7 @@ public class IAMScenario {
 
             CreatePolicyResponse response = iam.createPolicy(request);
 
-            // Wait until the policy is created
+            // Wait until the policy is created.
             GetPolicyRequest polRequest = GetPolicyRequest.builder()
                     .policyArn(response.policy().arn())
                     .build();
@@ -939,7 +937,7 @@ public class IAMScenario {
                     .roleName(roleName)
                     .build();
 
-            ListAttachedRolePoliciesResponse  response = iam.listAttachedRolePolicies(request);
+            ListAttachedRolePoliciesResponse response = iam.listAttachedRolePolicies(request);
             List<AttachedPolicy> attachedPolicies = response.attachedPolicies();
 
             String polArn;
@@ -952,8 +950,7 @@ public class IAMScenario {
                 }
             }
 
-            AttachRolePolicyRequest attachRequest =
-                    AttachRolePolicyRequest.builder()
+            AttachRolePolicyRequest attachRequest = AttachRolePolicyRequest.builder()
                             .roleName(roleName)
                             .policyArn(policyArn)
                             .build();

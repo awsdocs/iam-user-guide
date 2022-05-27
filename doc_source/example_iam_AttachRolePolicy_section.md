@@ -77,12 +77,11 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
     public static void attachIAMRolePolicy(IamClient iam, String roleName, String policyArn ) {
 
         try {
-
              ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
                     .roleName(roleName)
                     .build();
 
-            ListAttachedRolePoliciesResponse  response = iam.listAttachedRolePolicies(request);
+            ListAttachedRolePoliciesResponse response = iam.listAttachedRolePolicies(request);
             List<AttachedPolicy> attachedPolicies = response.attachedPolicies();
 
             // Ensure that the policy is not attached to this role

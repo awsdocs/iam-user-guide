@@ -406,6 +406,7 @@ Use this key to compare the session name that a principal specifies when assumin
 **Availability** – This key is present in the request when the principal assumes the role using the AWS Management Console, any assume\-role CLI command, or any AWS STS `AssumeRole` API operation\.  
 You can use this key in a role trust policy to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. After the IAM user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the session name that matches their user name\. This makes it easier for administrators to differentiate between role sessions when a role is used by different principals\.  
 The following role trust policy requires that IAM users in account `111122223333` provide their IAM user name as the session name when they assume the role\. This requirement is enforced using the `aws:username` [condition variable](reference_policies_variables.md) in the condition key\. This policy allows IAM users to assume the role to which the policy is attached\. This policy does not allow anyone using temporary credentials to assume the role because the `username` variable is present for only IAM users\.  
+You can use any single\-valued condition key as a [variable](reference_policies_variables.md)\. You can't use a multivalued condition key as a variable\.
 
 ```
 {

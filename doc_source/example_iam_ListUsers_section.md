@@ -88,6 +88,9 @@ do
 
                 for(User user : response.users()) {
                  System.out.format("\n Retrieved user %s", user.userName());
+                 AttachedPermissionsBoundary permissionsBoundary = user.permissionsBoundary();
+                 if (permissionsBoundary != null)
+                     System.out.format("\n Permissions boundary details %s", permissionsBoundary.permissionsBoundaryTypeAsString());
                 }
 
                 if(!response.isTruncated()) {

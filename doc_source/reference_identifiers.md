@@ -15,7 +15,7 @@ If you use the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM r
 
 When you use AWS CloudFormation to create resources, you can specify a path for users, user groups, and roles, and customer managed policies\.
 
-If you have a user and user group in the same path, IAM doesn't automatically put the user in that user group\. For example, you might create a Developers user group and specify the path as `/division_abc/subdivision_xyz/product_1234/engineering/`\. If you create a user named Bob and add the same path to him, this doesn't automatically put Bob in the Developers user group\. IAM doesn't enforce any boundaries between users or user groups based on their paths\. Users with different paths can use the same resources if they've been granted permission to those resources\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
+If you have a user and user group in the same path, IAM doesn't automatically put the user in that user group\. For example, you might create a Developers user group and specify the path as `/division_abc/subdivision_xyz/product_1234/engineering/`\. If you create a user named Bob and add the same path to him, this doesn't automatically put Bob in the Developers user group\. IAM doesn't enforce any boundaries between users or user groups based on their paths\. Users with different paths can use the same resources if they've been granted permission to those resources\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 ## IAM ARNs<a name="identifiers-arns"></a>
 
