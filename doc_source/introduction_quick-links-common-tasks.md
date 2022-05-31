@@ -21,9 +21,9 @@ See [Getting credential reports for your AWS account](id_credentials_getting-rep
 To add a virtual MFA device, see one of the following:   
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
 + [Enable a virtual MFA device for an IAM user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-iam-user)
-To add a U2F security key, see one of the following:   
-+ [Enable a U2F security key for the AWS account root user \(console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-root)
-+ [Enable a U2F security key for another IAM user \(console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-iam-user)
+To add a FIDO security key, see one of the following:   
++ [Enable a FIDO security key for the AWS account root user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-root)
++ [Enable a FIDO security key for another IAM user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-iam-user)
 To add a hardware MFA device, see one of the following:   
 + [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)\.
 + [Enable a hardware MFA device for another IAM user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)

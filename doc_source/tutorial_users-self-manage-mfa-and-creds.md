@@ -24,7 +24,7 @@ To perform the steps in this tutorial, you must already have the following:
 + Your account ID number, which you type into the policy in Step 1\. 
 
   To find your account ID number, on the navigation bar at the top of the page, choose **Support** and then choose **Support Center**\. You can find your account ID under this page's **Support** menu\. 
-+ A [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [U2F security key](id_credentials_mfa_enable_u2f.md), or [hardware\-based MFA device](id_credentials_mfa_enable_physical.md)\.
++ A [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [FIDO security key](id_credentials_mfa_enable_fido.md), or [hardware\-based MFA device](id_credentials_mfa_enable_physical.md)\.
 + A test IAM user who is a member of a user group as follows:
 
 

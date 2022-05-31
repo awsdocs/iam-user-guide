@@ -1,6 +1,6 @@
 # What if an MFA device is lost or stops working?<a name="id_credentials_mfa_lost-or-broken"></a>
 
-If your [virtual MFA device](id_credentials_mfa_enable_virtual.md) or [hardware MFA device](id_credentials_mfa_enable_physical.md) appears to be functioning properly, but you cannot use it to access your AWS resources, it might be out of synchronization with AWS\. For information about synchronizing a virtual MFA device or hardware MFA device, see [Resynchronizing virtual and hardware MFA devices](id_credentials_mfa_sync.md)\. [U2F security keys](id_credentials_mfa_enable_u2f.md) do not go out of sync\.
+If your [virtual MFA device](id_credentials_mfa_enable_virtual.md) or [hardware MFA device](id_credentials_mfa_enable_physical.md) appears to be functioning properly, but you cannot use it to access your AWS resources, it might be out of synchronization with AWS\. For information about synchronizing a virtual MFA device or hardware MFA device, see [Resynchronizing virtual and hardware MFA devices](id_credentials_mfa_sync.md)\. [FIDO security keys](id_credentials_mfa_enable_fido.md) do not go out of sync\.
 
 If your AWS account root user [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) is lost, damaged, or not working, you can recover access to your account\. IAM users must contact an administrator to deactivate the device\.
 
@@ -38,10 +38,10 @@ You might see alternative text, such as **Sign in using MFA**, **Troubleshoot yo
 
 1. The next step varies depending on the type of MFA you are using:
    + For a virtual MFA device, remove the account from your device\. Then go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA virtual device entity before you create a new one\.
-   + For a U2F security key, go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and deactivate the old U2F key before enabling a new one\.
+   + For a FIDO security key, go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and deactivate the old FIDO security key before enabling a new one\.
    + For a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. You can continue to sign in using alternative factors of authentication until you receive your new device\. After you have the new hardware MFA device, go to the [AWS Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page and delete the old MFA hardware device entity before you create a new one\.
 **Note**  
-You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your U2F security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new U2F security key\.
+You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your FIDO security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new FIDO security key\.
 
 1. If your MFA device is missing or stolen, also [change your AWS password](id_credentials_passwords_change-root.md) in case an attacker has stolen the authentication device and might also have your current password\.
 
@@ -55,9 +55,9 @@ If you are an IAM user and your device is lost or stops working, you can't recov
 
 1. The next step varies depending on the type of MFA you are using:
    + For a virtual MFA device, remove the account from your device\. Then enable the virtual device as described in [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)\.
-   + For a U2F security key, contact the third\-party provider for help replacing the device\. When you receive the new U2F security key, enable it as described in [Enabling a U2F security key \(console\)](id_credentials_mfa_enable_u2f.md)\.
+   + For a FIDO security key, contact the third\-party provider for help replacing the device\. When you receive the new FIDO security key, enable it as described in [Enabling a FIDO security key \(console\)](id_credentials_mfa_enable_fido.md)\.
    + For a hardware MFA device, contact the third\-party provider for help fixing or replacing the device\. After you have the new physical MFA device, enable the device as described in [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)\.
 **Note**  
-You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your U2F security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new U2F security key\.
+You don't have to replace a lost or stolen MFA device with the same type of device\. For example, if you break your FIDO security key and order a new one, you can use virtual MFA or a hardware MFA device until you receive a new FIDO security key\.
 
 1. If your MFA device is missing or stolen, also [change your password](id_credentials_passwords_user-change-own.md) in case an attacker has stolen the authentication device and might also have your current password\.

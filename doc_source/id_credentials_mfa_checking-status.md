@@ -12,7 +12,7 @@ Use the IAM console to check whether an AWS account root user or IAM user has a 
 
 If you want to enable MFA for the account, see one of the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
-+ [Enable a U2F security key for the AWS account root user \(console\)](id_credentials_mfa_enable_u2f.md#enable-u2f-mfa-for-root)
++ [Enable a FIDO security key for the AWS account root user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-root)
 + [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 **To check the MFA status of IAM users**
@@ -31,9 +31,9 @@ If you want to enable MFA for the account, see one of the following:
 
    1. Choose **Close** to return to the list of users\.
 
-1. The **MFA** column tells you about the MFA device that is enabled\. If no MFA device is active for the user, the console displays **Not enabled**\. If the user has an MFA device enabled, the **MFA** column shows the type of device that is enabled with a value of **Virtual**, **U2F Security Key**, **Hardware**, or **SMS**\.
+1. The **MFA** column tells you about the MFA device that is enabled\. If no MFA device is active for the user, the console displays **Not enabled**\. If the user has an MFA device enabled, the **MFA** column shows the type of device that is enabled with a value of **Virtual**, **FIDO Security Key**, **Hardware**, or **SMS**\.
 **Note**  
-AWS ended support for enabling SMS multi\-factor authentication \(MFA\)\. We recommend that customers who have IAM users that use SMS text message\-based MFA switch to one of the following alternative methods: [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [U2F security key](id_credentials_mfa_enable_u2f.md), or [hardware MFA device](id_credentials_mfa_enable_physical.md)\. You can identify the users in your account with an assigned SMS MFA device\. To do so, go to the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.
+AWS ended support for enabling SMS multi\-factor authentication \(MFA\)\. We recommend that customers who have IAM users that use SMS text message\-based MFA switch to one of the following alternative methods: [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [FIDO security key](id_credentials_mfa_enable_fido.md), or [hardware MFA device](id_credentials_mfa_enable_physical.md)\. You can identify the users in your account with an assigned SMS MFA device\. To do so, go to the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.
 
 1. To view additional information about the MFA device for a user, choose the name of the user whose MFA status you want to check\. Then choose the **Security credentials** tab\. 
 
@@ -46,5 +46,5 @@ If you want to change the current setting, choose **Manage** next to **Assigned 
 
 For more information on enabling MFA, see the following: 
 + [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
-+ [Enabling a U2F security key \(console\)](id_credentials_mfa_enable_u2f.md)
++ [Enabling a FIDO security key \(console\)](id_credentials_mfa_enable_fido.md)
 + [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
