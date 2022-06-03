@@ -40,7 +40,7 @@ If you [create a member account](https://docs.aws.amazon.com/cli/latest/referenc
 
 1. Sign in to the AWS Management Console with your root account credentials \(specifically, the email address and password that you used to create your AWS account\)\.
 
-1. On the navigation bar, choose your account name, and then choose [My Account](https://console.aws.amazon.com/billing/home#/account)\.
+1. On the navigation bar, choose your account name, and then choose [Account](https://console.aws.amazon.com/billing/home#/account)\.
 
 1. Next to **IAM User and Role Access to Billing Information**, choose **Edit**\.
 
