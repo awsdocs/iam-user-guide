@@ -2,6 +2,9 @@
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called *tags*\. You can attach tags to IAM resources, including IAM entities \(users or roles\) and to AWS resources\. You can define policies that use tag condition keys to grant permissions to your principals based on their tags\. When you use tags to control access to your AWS resources, you allow your teams and resources to grow with fewer changes to AWS policies\. ABAC policies are more flexible than traditional AWS policies, which require you to list each individual resource\. For more information about ABAC and its advantage over traditional policies, see [What is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
 
+**Note**  
+You must pass a single value for each session tag\. AWS Security Token Service does not support multi\-valued session tags\.
+
 **Topics**
 + [Tutorial overview](#tutorial_attribute-based-access-control-overview)
 + [Prerequisites](#tutorial_abac_prereqs)

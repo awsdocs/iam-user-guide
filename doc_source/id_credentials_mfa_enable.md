@@ -13,6 +13,9 @@ The steps for configuring MFA depend on the type of MFA device you are using\.
 
 The following overview procedure describes how to set up and use MFA and provides links to related information\.
 
+**Note**  
+You can also watch this English\-language video, [How to Setup AWS Multi\-Factor Authentication \(MFA\) and AWS Budget Alerts](https://www.youtube.com/watch?v=e6A7z7FqQDE), for more information\.
+
 1. *Get an MFA device such as one of the following\.* You can enable only one MFA device per AWS account root user or IAM user\.
    + A virtual MFA device, which is a software app that is compliant with [RFC 6238, a standards\-based TOTP \(time\-based one\-time password\) algorithm](https://tools.ietf.org/html/rfc6238)\. You can install the app on a phone or other device\. For a list of a few supported apps that you can use as virtual MFA devices, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
    + A FIDO security key with an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md), such as one of the FIDO2 devices discussed on the [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/) page\.
