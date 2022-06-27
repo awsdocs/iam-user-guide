@@ -660,8 +660,6 @@ Use this key to compare the identifier of the organization in AWS Organizations 
   + Amazon WorkSpaces
     + `workspaces:DescribeWorkspaceImages`
     + `workspaces:CopyWorkspaceImage`
-+ **Policy type** – This condition key does not support the following policy types:
-  + Gateway VPC endpoint policies for Amazon DynamoDB
 + **Value type** – Single\-valued
 
 This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.
@@ -708,8 +706,6 @@ Use this key to compare the AWS Organizations path for the accessed resource to 
   + Amazon WorkSpaces
     + `workspaces:DescribeWorkspaceImages`
     + `workspaces:CopyWorkspaceImage`
-+ **Policy type** – This condition key does not support the following policy types:
-  + Gateway VPC endpoint policies for Amazon DynamoDB
 + **Value type** – Multivalued
 
 `aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
