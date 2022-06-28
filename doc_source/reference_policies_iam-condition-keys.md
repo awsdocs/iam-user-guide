@@ -2,7 +2,7 @@
 
 You can use the `Condition` element in a JSON policy to test the value of keys that are included in the request context of all AWS requests\. These keys provide information about the request itself or the resources that the request references\. You can check that keys have specified values before allowing the action requested by the user\. This gives you granular control over when your JSON policy statements match or don't match an incoming request\. For information about how to use the `Condition` element in a JSON policy, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\.
 
-This topic describes the keys defined and provided by the IAM service \(with an `iam:` prefix\) and the AWS Security Token Service \(AWS STS\) service \(with an `sts:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service Developer Guide*\.
+This topic describes the keys defined and provided by the IAM service \(with an `iam:` prefix\) and the AWS Security Token Service \(AWS STS\) service \(with an `sts:` prefix\)\. Several other AWS services also provide service\-specific keys that are relevant to the actions and resources defined by that service\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\. The documentation for a service that supports condition keys often has additional information\. For example, for information about keys that you can use in policies for Amazon S3 resources, see [Amazon S3 Policy Keys](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html#AvailableKeys-iamV2) in the *Amazon Simple Storage Service User Guide*\.
 
 **Topics**
 + [Available keys for IAM](#available-keys-for-iam)
@@ -18,7 +18,7 @@ You can use the following condition keys in policies that control access to IAM 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Specifies the ARN of the resource to which this role will be associated at the destination service\. The resource usually belongs to the service to which the principal is passing the role\. Sometimes, the resource might belong to a third service\. For example, you might pass a role to Amazon EC2 Auto Scaling that they use on an Amazon EC2 instance\. In this case, the condition would match the ARN of the Amazon EC2 instance\.   
 This condition key applies to only the [PassRole](id_roles_use_passrole.md) action in a policy\. It can't be used to limit any other action\.   
-Use this condition key in a policy to allow an entity to pass a role, but only if that role is associated with the specified resource\. You can use wildcards \(\*\) to allow operations performed on a specific type of resource without restricting the Region or resource ID\. For example, you can allow an IAM user or role to pass any role to the Amazon EC2 service to be used with instances in the Region "us\-east\-1" or "us\-west\-1"\. The IAM user or role would not be allowed to pass roles to other services, and it doesn't allow Amazon EC2 to use the role with instances in other Regions\.   
+Use this condition key in a policy to allow an entity to pass a role, but only if that role is associated with the specified resource\. You can use wildcards \(\*\) to allow operations performed on a specific type of resource without restricting the Region or resource ID\. For example, you can allow an IAM user or role to pass any role to the Amazon EC2 service to be used with instances in the Region `us-east-1` or `us-west-1`\. The IAM user or role would not be allowed to pass roles to other services\. In addition, it doesn't allow Amazon EC2 to use the role with instances in other Regions\.   
 
 ```
 {
@@ -40,7 +40,24 @@ AWS services that support [iam:PassedToService](#ck_PassedToService) also suppor
 
 **iam:AWSServiceName**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Specifies the AWS service to which this role is attached\.
+Specifies the AWS service to which this role is attached\.  
+In this example, you allow an entity to create a service\-linked role if the service name is *access\-analyzer\.amazonaws\.com\.*  
+
+```
+{
+   "Version": "2012-10-17",
+   "Statement": [{
+       "Effect": "Allow",
+       "Action": "iam:CreateServiceLinkedRole",
+       "Resource": "*",
+       "Condition": {
+         "StringLike": {
+           "iam:AWSServiceName": "access-analyzer.amazonaws.com"
+         }
+       }
+     }]
+ }
+```
 
 **iam:OrganizationsPolicyId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -67,8 +84,8 @@ Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that inv
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
 IAM and AWS STS support both the `iam:ResourceTag` IAM condition key and the `aws:ResourceTag` global condition key\.
-You can add custom attributes to IAM resouces in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
-This example shows how you might create an IAM policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
+You can add custom attributes to IAM resources in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+This example shows how you might create an identity\-based policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
 
 ```
 {
@@ -77,7 +94,7 @@ This example shows how you might create an IAM policy that allows deleting users
         "Effect": "Allow",
         "Action": "iam:DeleteUser",
         "Resource": "*",
-        "Condition": {"StringLike": {"iam:ResourceTag/status": "terminated"}}
+        "Condition": {"StringEquals": {"iam:ResourceTag/status": "terminated"}}
     }]
 }
 ```
@@ -85,22 +102,6 @@ This example shows how you might create an IAM policy that allows deleting users
 ## Available keys for AWS web identity federation<a name="condition-keys-wif"></a>
 
 You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\)\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that limit the access of federated users to resources that are associated with a specific provider, app, or user\. These keys are typically used in the trust policy for a role\.
-
-**aws:FederatedProvider**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-The `FederatedProvider` key identifies which of the IdPs was used to authenticate the user\. For example, if the user was authenticated through Amazon Cognito, the key would contain `cognito-identity.amazonaws.com`\. Similarly, if the user was authenticated through Login with Amazon, the key would contain the value `www.amazon.com`\. You might use the key in a resource policy like the following, which uses the `aws:FederatedProvider` key as a policy variable in the ARN of a resource\. The policy allows any user who has been authenticated using an IdP to get objects out of a folder in an Amazon S3 bucket\. However, the bucket must be specific to the provider that the user authenticates with\.  
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Principal": "*",
-    "Action": "s3:GetObject",
-    "Resource": "arn:aws:s3:::BUCKET-NAME/${aws:FederatedProvider}/*"
-  }
-}
-```
 
 **amr**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -126,7 +127,7 @@ Use the `aud` condition key to verify that the Google client ID or Amazon Cognit
 + `accounts.google.com:aud`
 + `cognito-identity.amazonaws.com:aud`
 The `accounts.google.com:aud` condition key matches the following Google ID Token fields\.   
-+ `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [ `accounts.google.com:oaud`](#ck_oaud) condition key\.
++ `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [`accounts.google.com:oaud`](#ck_oaud) condition key\.
 + `azp` when the `azp` field is set\. This can happen for hybrid apps where a web application and Android app have a different OAuth 2\.0 Google client ID but share the same Google APIs project\. 
 For more information about Google `aud` and `azp` fields, see the [Google Identity Platform OpenID Connect](https://developers.google.com/identity/protocols/OpenIDConnect) Guide\.  
 When you write a policy using the `accounts.google.com:aud` condition key, you must know whether the app is a hybrid app that sets the `azp` field\.   
@@ -153,7 +154,7 @@ The following example policy works for non\-hybrid apps that do not set the `azp
 }
 ```
 `azp` Field Set  
-The following example policy works for hybrid apps that do set the `azp` field\. In this case the Google ID Token `aud` field value matches only the `accounts.google.com:oaud` condition key value\. The `azp` field value matches the `accounts.google.com:aud` condition key value\.  
+The following example policy works for hybrid apps that do set the `azp` field\. In this case, the Google ID Token `aud` field value matches only the `accounts.google.com:oaud` condition key value\. The `azp` field value matches the `accounts.google.com:aud` condition key value\.  
 
 ```
 {
@@ -196,7 +197,7 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 + `cognito-identity.amazonaws.com:sub`
 Use these keys to verify that the user ID matches the one that you specify in the policy\. You can use the `sub` key with the `aud` key for the same identity provider\.
 
-**More Information About Web Identity Federation**  
+**More information about web identity federation**  
 For more information about web identity federation, see the following:  
 + [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
 + [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
@@ -389,7 +390,7 @@ You can use this condition key to allow principals to get a bearer token for use
 **sts:DurationSeconds**  
 Works with [numeric operators](reference_policies_elements_condition_operators.md#Conditions_Numeric)\.  
 Use this key to specify the duration \(in seconds\) that a principal can use when getting an AWS STS bearer token\.  
-Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The aws codeartifact get\-authorization\-token command returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using bearer tokens](id_credentials_bearer.md)\.   
+Some AWS services require that you have permission to get an AWS STS service bearer token before you can access their resources programmatically\. For example, AWS CodeArtifact requires principals to use bearer tokens to perform some operations\. The `aws codeartifact get-authorization-token` command returns a bearer token\. You can then use the bearer token to perform AWS CodeArtifact operations\. For more information about bearer tokens, see [Using bearer tokens](id_credentials_bearer.md)\.   
 **Availability** – This key is present in requests that get a bearer token\. You cannot make a direct call to AWS STS to get a bearer token\. When you perform some operations in other services, the service requests the bearer token on your behalf\. The key is not present for AWS STS assume\-role operations\.
 
 **sts:ExternalId**  
@@ -402,9 +403,10 @@ The `ExternalId` value must have a minimum of 2 characters and a maximum of 1,22
 **sts:RoleSessionName**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Use this key to compare the session name that a principal specifies when assuming a role with the value that is specified in the policy\.  
-**Availability** – This key is present in the request when the principal assumes the role using the AWS Management Console, the assume\-role CLI command, or the AssumeRole API operation\.  
-You can use this key in a role trust policy to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. After the IAM user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the session name that matches their user name\. This makes it easier for administrators to determine which user performed a specific action in AWS\.  
+**Availability** – This key is present in the request when the principal assumes the role using the AWS Management Console, any assume\-role CLI command, or any AWS STS `AssumeRole` API operation\.  
+You can use this key in a role trust policy to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. After the IAM user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the session name that matches their user name\. This makes it easier for administrators to differentiate between role sessions when a role is used by different principals\.  
 The following role trust policy requires that IAM users in account `111122223333` provide their IAM user name as the session name when they assume the role\. This requirement is enforced using the `aws:username` [condition variable](reference_policies_variables.md) in the condition key\. This policy allows IAM users to assume the role to which the policy is attached\. This policy does not allow anyone using temporary credentials to assume the role because the `username` variable is present for only IAM users\.  
+You can use any single\-valued condition key as a [variable](reference_policies_variables.md)\. You can't use a multivalued condition key as a variable\.
 
 ```
 {
@@ -431,6 +433,37 @@ When an administrator views the AWS CloudTrail log for an action, they can compa
     }
 ```
 If you allow [cross\-account access using roles](id_roles_common-scenarios_aws-accounts.md), then users in one account can assume a role in another account\. The ARN of the assumed role user listed in CloudTrail includes the account *where the role exists*\. It does not include the account of the user that assumed the role\. Users are unique only within an account\. Therefore, we recommend that you use this method for checking CloudTrail logs only for roles that are assumed by users in accounts that you administer\. Your users might use the same user name in multiple accounts\.
+
+**sts:SourceIdentity**  
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Use this key to compare the source identity that a principal specifies when assuming a role with the value that is specified in the policy\.  
+**Availability** – This key is present in the request when the principal provides a source identity while assuming a role using any AWS STS assume\-role CLI command, or AWS STS `AssumeRole` API operation\.  
+You can use this key in a role trust policy to require that your users set a specific source identity when they assume a role\. For example, you can require your workforce or federated identities to specify a value for source identity\. You can configure your identity provider \(IdP\) to use one of the attributes that are associated with your users, like a user name or email as the source identity\. The IdP then passes the source identity as an attribute in the assertions or claims that it sends to AWS\. The value of the source identity attribute identifies the user or application who is assuming the role\.  
+After the user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the source identity value that was set\. This makes it easier for administrators to determine who or what performed actions with a role in AWS\. You must grant permissions for the `sts:SetSourceIdentity` action to allow an identity to set a source identity\.   
+Unlike [`sts:RoleSessionName`](#ck_rolesessionname), after the source identity is set, the value cannot be changed\. It is present in the request context for all actions taken with the role by the source identity\. The value persists into subsequent role sessions when you use the session credentials to assume another role\. Assuming one role from another is called [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\.   
+You can use the [`aws:SourceIdentity`](reference_policies_condition-keys.md#condition-keys-sourceidentity) global condition key to further control access to AWS resources based on the value of source identity in subsequent requests\.   
+The following role trust policy allows the IAM user `AdminUser` to assume a role in account `111122223333`\. It also grants permission to the `AdminUser` to set a source identity, as long as the source identity set is `DiegoRamirez`\.  
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAdminUserAssumeRole",
+            "Effect": "Allow",
+            "Principal": {"AWS": " arn:aws:iam::111122223333:user/AdminUser"},
+            "Action": [
+                "sts:AssumeRole",
+                "sts:SetSourceIdentity"
+            ],
+            "Condition": {
+                "StringEquals": {"sts:SourceIdentity": "DiegoRamirez"}
+            }
+        }
+    ]
+}
+```
+To learn more about using source identity information, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
 
 **sts:TransitiveTagKeys**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  

@@ -5,7 +5,9 @@ A *role* specifies a set of permissions that you can use to access AWS resources
 **Important**  
 The permissions of your IAM user and any roles that you assume are not cumulative\. Only one set of permissions is active at a time\. When you assume a role, you temporarily give up your previous user or role permissions and work with the permissions that are assigned to the role\. When you exit the role, your user permissions are automatically restored\.
 
-You can use a role to run an AWS CLI command when you are signed in as an IAM user\. You can also use a role to run an AWS CLI command when you are signed in as an [externally authenticated user](id_roles_providers.md) \([SAML](id_roles_providers_saml.md) or [OIDC](id_roles_providers_oidc.md)\) that is already using a role\. In addition, you can use a role to run an AWS CLI command from within an Amazon EC2 instance that is attached to a role through its instance profile\. You can also use [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining), which is using a role to assume a second role\. You cannot assume a role when you are signed in as the AWS account root user\.
+You can use a role to run an AWS CLI command when you are signed in as an IAM user\. You can also use a role to run an AWS CLI command when you are signed in as an [externally authenticated user](id_roles_providers.md) \([SAML](id_roles_providers_saml.md) or [OIDC](id_roles_providers_oidc.md)\) that is already using a role\. In addition, you can use a role to run an AWS CLI command from within an Amazon EC2 instance that is attached to a role through its instance profile\. You cannot assume a role when you are signed in as the AWS account root user\.
+
+[**Role chaining**](id_roles_terms-and-concepts.md#iam-term-role-chaining) – You can also use role chaining, which is using permissions from a role to access a second role\. When you switch roles in the console, you are not using role chaining\. You are using the permissions of your original user\.
 
 By default, your role session lasts for one hour\. When you assume this role using the `assume-role*` CLI operations, you can specify a value for the `duration-seconds` parameter\. This value can range from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
 
@@ -16,7 +18,7 @@ If you use role chaining, your session duration is limited to a maximum of one h
 Imagine that you are an IAM user for working in the development environment\. In this scenario, you occasionally need to work with the production environment at the command line with the [AWS CLI](http://aws.amazon.com/cli/)\. You already have an access key credential set available to you\. This can be the access key pair that is assigned to your standard IAM user\. Or, if you signed in as a federated user, it can be the access key pair for the role that was initially assigned to you\. If your current permissions grant you the ability to assume a specific IAM role, then you can identify that role in a "profile" in the AWS CLI configuration files\. That command is then run with the permissions of the specified IAM role, not the original identity\. Note that when you specify that profile in an AWS CLI command, you are using the new role\. In this situation, you cannot make use of your original permissions in the development account at the same time\. The reason is that only one set of permissions can be in effect at a time\.
 
 **Note**  
-For security purposes, administrators can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. Your administrator might require that you specify your IAM user name as the session name when you assume the role\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
+For security purposes, administrators can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. Your administrator might require that you specify a source identity or a role session name when you assume the role\. For more information, see [`sts:SourceIdentity`](reference_policies_iam-condition-keys.md#ck_sourceidentity) and [`sts:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
 
 **To switch to a production role \(AWS CLI\)**
 
@@ -61,7 +63,7 @@ For more information, see [Assuming a Role](https://docs.aws.amazon.com/cli/late
 
 Imagine that you are using two AWS accounts, and you want to allow an application running on an Amazon EC2 instance to run [AWS CLI](http://aws.amazon.com/cli/) commands in both accounts\. Assume that the EC2 instance exists in account `111111111111`\. That instance includes the `abcd` instance profile role that allows the application to perform read\-only Amazon S3 tasks on the `my-bucket-1` bucket within the same `111111111111` account\. However, the application must also be allowed to assume the `efgh` cross\-account role to perform tasks in account `222222222222`\. To do this, the `abcd` EC2 instance profile role must have the following permissions policy:
 
-***Account 111111111111 `abcd` Role Permissions Policy***
+***Account 111111111111 `abcd` role permissions policy***
 
 ```
 {
@@ -71,10 +73,12 @@ Imagine that you are using two AWS accounts, and you want to allow an applicatio
             "Sid": "AllowAccountLevelS3Actions",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowListAndReadS3ActionOnMyBucket",
@@ -100,7 +104,7 @@ Imagine that you are using two AWS accounts, and you want to allow an applicatio
 
 Assume that the `efgh` cross\-account role allows read\-only Amazon S3 tasks on the `my-bucket-2` bucket within the same `222222222222` account\. To do this, the `efgh` cross\-account role must have the following permissions policy:
 
-***Account 222222222222 `efgh` Role Permissions Policy***
+***Account 222222222222 `efgh` role permissions policy***
 
 ```
 {
@@ -110,10 +114,12 @@ Assume that the `efgh` cross\-account role allows read\-only Amazon S3 tasks on 
             "Sid": "AllowAccountLevelS3Actions",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:HeadBucket"
+                "s3:GetBucketLocation",
+                "s3:GetAccountPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
-            "Resource": "*"
+            "Resource": "arn:aws:s3:::*"
         },
         {
             "Sid": "AllowListAndReadS3ActionOnMyBucket",
@@ -133,7 +139,7 @@ Assume that the `efgh` cross\-account role allows read\-only Amazon S3 tasks on 
 
 The `efgh` role must allow the `abcd` instance profile role to assume it\. To do this, the `efgh` role must have the following trust policy:
 
-***Account 222222222222 `efgh` Role Trust Policy***
+***Account 222222222222 `efgh` role trust policy***
 
 ```
 {
@@ -152,7 +158,7 @@ The `efgh` role must allow the `abcd` instance profile role to assume it\. To do
 To then run AWS CLI commands in account `222222222222`, you must update the CLI configuration file\. Identify the `efgh` role as the "profile" and the `abcd` EC2 instance profile role as the "credential source" in the AWS CLI configuration file\. Then your CLI commands are run with the permissions of the `efgh` role, not the original `abcd` role\.
 
 **Note**  
-For security purposes, you can use AWS CloudTrail to audit the use of roles in the account\. To identify a role's actions in CloudTrail logs, you can use the role session name\. When the AWS CLI assumes a role on a user's behalf as described in this topic, a role session name is automatically created as `AWS-CLI-session-nnnnnnnn`\. Here *nnnnnnnn* is an integer that represents the time in [Unix epoch time](http://wikipedia.org/wiki/Unix_time) \(the number of seconds since midnight UTC on January 1, 1970\)\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
+For security purposes, you can use AWS CloudTrail to audit the use of roles in the account\. To differentiate between role sessions when a role is used by different principals in CloudTrail logs, you can use the role session name\. When the AWS CLI assumes a role on a user's behalf as described in this topic, a role session name is automatically created as `AWS-CLI-session-nnnnnnnn`\. Here *nnnnnnnn* is an integer that represents the time in [Unix epoch time](http://wikipedia.org/wiki/Unix_time) \(the number of seconds since midnight UTC on January 1, 1970\)\. For more information, see [CloudTrail Event Reference](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/eventreference.html) in the *AWS CloudTrail User Guide*\.
 
 **To allow an EC2 instance profile role to switch to a cross\-account role \(AWS CLI\)**
 

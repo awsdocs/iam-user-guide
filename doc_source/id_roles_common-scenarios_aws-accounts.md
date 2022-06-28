@@ -41,3 +41,8 @@ The administrator can optionally configure the role so that users who assume the
 1. The temporary credentials allow access to the AWS resource:
    + AWS console: The AWS console uses the temporary credentials on behalf of the user for all subsequent console actions, in this case, to read and write to the `productionapp` bucket\. The console cannot access any other resource in the production account\. When the user exits the role, the user's permissions revert to the original permissions held before switching to the role\.
    + API/CLI: The application uses the temporary security credentials to update the `productionapp` bucket\. With the temporary security credentials, the application can only read from and write to the `productionapp` bucket and cannot access any other resource in the Production account\. The application does not have to exit the role, but instead stops using the temporary credentials and uses the original credentials in subsequent API calls\.
+
+## More information<a name="id_roles_common-scenarios_more-info"></a>
+
+For more information, see the following:
++ [IAM tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)

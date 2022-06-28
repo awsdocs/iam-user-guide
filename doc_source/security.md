@@ -16,3 +16,4 @@ This documentation helps you understand how to apply the shared responsibility m
 + [Infrastructure security in AWS Identity and Access Management](infrastructure-security.md)
 + [Configuration and vulnerability analysis in AWS Identity and Access Management](configuration-and-vulnerability-analysis.md)
 + [Security best practices and use cases in AWS Identity and Access Management](IAMBestPracticesAndUseCases.md)
++ [AWS managed policies for AWS Identity and Access Management Access Analyzer](security-iam-awsmanpol.md)

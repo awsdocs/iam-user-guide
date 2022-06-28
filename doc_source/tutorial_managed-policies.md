@@ -1,4 +1,4 @@
-# IAM Tutorial: Create and attach your first customer managed policy<a name="tutorial_managed-policies"></a>
+# IAM tutorial: Create and attach your first customer managed policy<a name="tutorial_managed-policies"></a>
 
 In this tutorial, you use the AWS Management Console to create a [customer managed policy](access_policies_managed-vs-inline.md#customer-managed-policies) and then attach that policy to an IAM user in your AWS account\. The policy you create allows an IAM test user to sign in directly to the AWS Management Console with read\-only permissions\. 
 
@@ -29,7 +29,7 @@ In this step, you create a customer managed policy that allows any attached user
 
 **To create the policy for your test user**
 
-1. Sign in to the IAM console at https://console\.aws\.amazon\.com/iam/ with your user that has administrator permissions\.
+1. Sign in to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/) with your user that has administrator permissions\.
 
 1. In the navigation pane, choose **Policies**\. 
 
@@ -52,7 +52,7 @@ In this step, you create a customer managed policy that allows any attached user
    }
    ```
 
-1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
+1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
@@ -70,7 +70,7 @@ Next you attach the policy you just created to your test IAM user\.
 
 1. At the top of the policy list, in the search box, start typing **UsersReadOnlyAccesstoIAMConsole** until you can see your policy\. Then check the box next to **UsersReadOnlyAccessToIAMConsole** in the list\. 
 
-1. Choose the **Policy actions** button, and then chose **Attach**\. 
+1. Choose the **Actions** button, and then choose **Attach**\. 
 
 1. For **Filter**, choose **Users**\. 
 
@@ -95,7 +95,6 @@ For this tutorial, we recommend that you test access by signing in as the test u
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed policies and inline policies](access_policies_managed-vs-inline.md)
 + [Controlling user access to the AWS Management Console](console_controlling-access.md)
-+ [Create individual IAM users](best-practices.md#create-iam-users)
 
 ## Summary<a name="tutorial-managed-policies-summary"></a>
 

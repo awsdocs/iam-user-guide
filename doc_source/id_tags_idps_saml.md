@@ -20,7 +20,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:TagSAMLProvider",
         "iam:UntagSAMLProvider"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:saml-provider/<SAMLProviderName>"
+    "Resource": "arn:aws:iam::<account-number>:saml-provider/<SAMLProviderName>"
 }
 ```
 
@@ -39,7 +39,7 @@ To use this policy, replace *<SAMLProviderName>* with the name of the SAML provi
         "iam:ListSAMLProviderTags",
         "iam:TagSAMLProvider"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:saml-provider/<SAMLProviderName>"
+    "Resource": "arn:aws:iam::<account-number>:saml-provider/<SAMLProviderName>"
 }
 ```
 

@@ -9,7 +9,7 @@ This section lists the data types that are supported when you specify values in 
 + Maps
 + Structs \(which are just nested Maps\)
 
-The following table maps each data type to the serialization\. Note that all policies must be in UTF\-8\. For information about the JSON data types, go to [RFC 4627](http://tools.ietf.org/html/rfc4627)\. 
+The following table maps each data type to the serialization\. Note that all policies must be in UTF\-8\. For information about the JSON data types, go to [RFC 4627](https://datatracker.ietf.org/doc/html/rfc4627)\.
 
 
 ****  
@@ -22,6 +22,6 @@ The following table maps each data type to the serialization\. Note that all pol
 |  Boolean  |  true false  | 
 |  Null  |  null  | 
 |  Date  |  String adhering to the [W3C Profile of ISO 8601](http://www.w3.org/TR/NOTE-datetime)  | 
-|  IpAddress  |  String adhering to [RFC 4632](http://tools.ietf.org/html/rfc4632)  | 
+|  IpAddress  |  String adhering to [RFC 4632](https://datatracker.ietf.org/doc/html/rfc4632)  | 
 |  List  |  Array  | 
 |  Object  |  Object  | 

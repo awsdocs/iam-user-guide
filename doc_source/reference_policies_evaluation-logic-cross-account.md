@@ -2,7 +2,7 @@
 
 You can allow a principal in one account to access resources in a second account\. This is called cross\-account access\. When you allow cross\-account access, the account where the principal exists is called the *trusted* account\. The account where the resource exists is the *trusting* account\. 
 
-To allow cross\-account access, you attach a resource\-based policy to the resource that you want to share\. You must also attach an identity\-based policy to the identity that acts the principal in the request\. The resource\-based policy in the trusting account must specify the principal of the trusted account that will have access to the resource\. You can specify the entire account or its IAM users, federated users, IAM roles, or assumed\-role sessions\. You can also specify an AWS service as a principal\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. 
+To allow cross\-account access, you attach a resource\-based policy to the resource that you want to share\. You must also attach an identity\-based policy to the identity that acts as the principal in the request\. The resource\-based policy in the trusting account must specify the principal of the trusted account that will have access to the resource\. You can specify the entire account or its IAM users, federated users, IAM roles, or assumed\-role sessions\. You can also specify an AWS service as a principal\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. 
 
 The principal's identity\-based policy must allow the requested access to the resource in the trusting service\. You can do this by specifying the ARN of the resource or by allowing access to all resources \(`*`\)\.
 
@@ -17,7 +17,7 @@ For cross\-account requests, the requester in the trusted `AccountA` must have a
 
 When you make a cross\-account request, AWS performs two evaluations\. AWS evaluates the request in the trusting account and the trusted account\. For more information about how a request is evaluated within a single account, see [Determining whether a request is allowed or denied within an account](reference_policies_evaluation-logic.md#policy-eval-denyallow)\. The request is allowed only if both evaluations return a decision of `Allow`\.
 
-![\[Cross-account evalusation\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_cross-account-eval-simple.png)
+![\[Cross-account evaluation\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_cross-account-eval-simple.png)
 
 1. When a principal in one account makes a request to access a resource in another account, this is a cross\-account request\.
 

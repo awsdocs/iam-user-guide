@@ -37,7 +37,7 @@ AWS STS currently supports VPC endpoints in the following Regions:
 + AWS GovCloud \(US\-East\)
 + AWS GovCloud \(US\-West\)
 
-## Create a VPC for AWS STS<a name="id_credentials_sts_vpce_create"></a>
+## Create a VPC endpoint for AWS STS<a name="id_credentials_sts_vpce_create"></a>
 
 To start using AWS STS with your VPC, create an interface VPC endpoint for AWS STS\. For more information, see [Creating an Interface Endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) in the *Amazon VPC User Guide*\.
 

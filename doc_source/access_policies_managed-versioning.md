@@ -2,7 +2,7 @@
 
 When you make changes to an IAM customer managed policy, and when AWS makes changes to an AWS managed policy, the changed policy doesn't overwrite the existing policy\. Instead, IAM creates a new *version* of the managed policy\. IAM stores up to five versions of your customer managed policies\. IAM does not support versioning for inline policies\. 
 
-The following diagram illustrates versioning for a customer managed policy\. In this example, the versions are 1\-4 are saved\. You can have up to five managed policy versions saved to IAM\. When you edit a policy that would create a sixth saved version, you can choose which older version should no longer be saved\. You can revert to any of the other four saved versions at any time\.
+The following diagram illustrates versioning for a customer managed policy\. In this example, the versions 1\-4 are saved\. You can have up to five managed policy versions saved to IAM\. When you edit a policy that would create a sixth saved version, you can choose which older version should no longer be saved\. You can revert to any of the other four saved versions at any time\.
 
 ![\[Changes to managed policies become new versions of the policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Changes to managed policies become new versions of the policy\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
@@ -45,7 +45,7 @@ You can use the following policy to deny a user access to change an existing cus
 
 ## Setting the default version of customer managed policies<a name="default-version"></a>
 
-One of the versions of a managed policy is set as the *default* version\. The policy's default version is the operative version—that is, it's the version that is in effect for all of the principal entities \(users, groups, and roles\) that the managed policy is attached to\. 
+One of the versions of a managed policy is set as the *default* version\. The policy's default version is the operative version—that is, it's the version that is in effect for all of the principal entities \(users, user groups, and roles\) that the managed policy is attached to\. 
 
 When you create a customer managed policy, the policy begins with a single version identified as v1\. For managed policies with only a single version, that version is automatically set as the default\. For customer managed policies with more than one version, you choose which version to set as the default\. For AWS managed policies, the default version is set by AWS\. The following diagrams illustrate this concept\. 
 
@@ -57,7 +57,7 @@ When you create a customer managed policy, the policy begins with a single versi
 
 ### <a name="set-default-version-managed-policy-console"></a>
 
-You can set the default version of a customer managed policy to apply that version to every IAM identity \(user, group, and role\) where the policy is attached\. You cannot set the default version for an AWS managed policy or an inline policy\.
+You can set the default version of a customer managed policy to apply that version to every IAM identity \(user, user group, and role\) where the policy is attached\. You cannot set the default version for an AWS managed policy or an inline policy\.
 
 **To set the default version of a customer managed policy \(console\)**
 
@@ -65,7 +65,7 @@ You can set the default version of a customer managed policy to apply that versi
 
 1. In the navigation pane, choose **Policies**\.
 
-1. In the list of policies, choose the policy name of the policy to set the default version of\. You can use the **Filter** menu and the search box to filter the list of policies\.
+1. In the list of policies, choose the policy name of the policy to set the default version of\. You can use the search box to filter the list of policies\.
 
 1. Choose the **Policy versions** tab\. Select the check box next to the version that you want to set as the default version, and then choose **Set as default**\.
 

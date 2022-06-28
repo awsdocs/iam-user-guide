@@ -2,6 +2,9 @@
 
 To sign in to an AWS account as an IAM user, you must have an account alias or an account ID for the AWS account\. If you are signed in to the AWS Management Console or have configured the AWS CLI or an AWS SDK with your account credentials, you can find the account alias or account ID for the AWS account\. If you cannot sign in, ask your administrator for the information that you need to sign in\.
 
+**Note**  
+Account aliases are not secrets, and they will appear in your public\-facing sign\-in page URL\. Do not include any sensitive information in your account alias\.
+
 **Topics**
 + [Finding your AWS account ID](#FindingYourAWSId)
 + [About account aliases](#AboutAccountAlias)
@@ -52,7 +55,7 @@ You can use the AWS Management Console, the IAM API, or the command line interfa
 
 **Considerations**
 + Your AWS account can have only one alias\. If you create a new alias for your AWS account, the new alias overwrites the previous alias, and the URL containing the previous alias stops working\.
-+ The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [IAM and STS quotas](reference_iam-quotas.md)\.
++ The account alias must be unique across all Amazon Web Services products\. It must contain only digits, lowercase letters, and hyphens\. For more information on limitations on AWS account entities, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 ### Creating, editing, and deleting aliases \(console\)<a name="CreateAlias_Console"></a>
 
@@ -64,11 +67,11 @@ You can create, edit, and delete an account alias from the AWS Management Consol
 
 1. In the navigation pane, choose **Dashboard**\.
 
-1. Find the **Sign\-in URL for IAM users in this account**, and choose **Customize** to the right of the link\. If an alias already exists, then choose **Edit** to the right of the link\.
+1. In the **AWS Account** section, find **Account Alias**, and choose **Create**\. If an alias already exists, then choose **Edit**\.
 
-1. Type the name you want to use for your alias, then choose **Create alias**\. If an alias already exists, then choose **Save**\.
+1. Type the name you want to use for your alias, then choose **Save changes**\.
 
-1. To remove the alias, choose **Delete alias**, and then choose **Delete**\. The sign\-in URL reverts to using your AWS account ID\.
+1. To remove the alias, next to **Account Alias** choose **Delete**, and then choose **Delete**\. The sign\-in URL reverts to using your AWS account ID\.
 
 ### Creating, deleting, and listing aliases \(AWS CLI\)<a name="CreateAlias_APICLI"></a>
 

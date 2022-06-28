@@ -4,7 +4,7 @@ IAM users who are configured with [multi\-factor authentication \(MFA\)](id_cred
 
 **Topics**
 + [Signing in with a virtual MFA device](#console_sign-in-mfa-virtual)
-+ [Signing in with a U2F security key](#console_sign-in-mfa-u2f)
++ [Signing in with a FIDO security key](#console_sign-in-mfa-fido)
 + [Signing in with a hardware MFA device](#console_sign-in-mfa-hardware)
 
 ## Signing in with a virtual MFA device<a name="console_sign-in-mfa-virtual"></a>
@@ -15,13 +15,16 @@ If the MFA code is correct, the user can access the AWS Management Console\. If 
 
 A virtual MFA device can go out of sync\. If a user cannot sign in to the AWS Management Console after several tries, the user is prompted to synchronize the virtual MFA device\. The user can follow the on\-screen prompts to synchronize the virtual MFA device\. For information about how you can synchronize a device on behalf of a user in your AWS account, see [Resynchronizing virtual and hardware MFA devices](id_credentials_mfa_sync.md)\. 
 
-## Signing in with a U2F security key<a name="console_sign-in-mfa-u2f"></a>
+## Signing in with a FIDO security key<a name="console_sign-in-mfa-fido"></a>
 
-If MFA is required for the user, a second sign\-in page appears\. The user needs to tap the U2F security key\.
+If MFA is required for the user, a second sign\-in page appears\. The user needs to tap the FIDO security key\.
 
-Unlike other MFA devices, U2F security keys do not go out of sync\. Administrators can deactivate a U2F security key if it's lost or broken\. For more information, see [Deactivating MFA devices \(console\)](id_credentials_mfa_disable.md#deactive-mfa-console)\.
+**Note**  
+Google Chrome users should not choose any of the available options on the pop\-up that asks to **Verify your identity with amazon\.com**\. You only need to tap on the security key\.
 
-For information on browsers that support U2F and U2F devices that AWS supports, see [Supported configurations for using U2F security keys](id_credentials_mfa_u2f_supported_configurations.md)\.
+Unlike other MFA devices, FIDO security keys do not go out of sync\. Administrators can deactivate a FIDO security key if it's lost or broken\. For more information, see [Deactivating MFA devices \(console\)](id_credentials_mfa_disable.md#deactive-mfa-console)\.
+
+For information on browsers that support WebAuthn and FIDO\-compliant devices that AWS supports, see [Supported configurations for using FIDO security keys](id_credentials_mfa_fido_supported_configurations.md)\.
 
 ## Signing in with a hardware MFA device<a name="console_sign-in-mfa-hardware"></a>
 

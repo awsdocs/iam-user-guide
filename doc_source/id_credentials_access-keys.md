@@ -263,7 +263,7 @@ You can rotate access keys from the AWS Command Line Interface\.
    + [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-access-key.html)
 
 For more information, see the following:
-+  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
++  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the AWS Security Blog provides more information on key rotation\. 
 + [Security best practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
 
 ### Rotating access keys \(AWS API\)<a name="rotating_access_keys_api"></a>
@@ -293,7 +293,7 @@ You can rotate access keys using the AWS API\.
    + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteAccessKey.html)
 
 For more information, see the following:
-+  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the *AWS Security Blog* provides more information on key rotation\. 
++  [How to Rotate Access Keys for IAM Users](http://aws.amazon.com/blogs/security/how-to-rotate-access-keys-for-iam-users/)\. This entry on the AWS Security Blog provides more information on key rotation\. 
 + [Security best practices in IAM](best-practices.md)\. This page provides general recommendations for helping to secure your AWS resources\.
 
 ## Auditing access keys<a name="Using_access-keys-audit"></a>
@@ -302,6 +302,6 @@ You can review the AWS access keys in your code to determine whether the keys ar
 
 The AWS CLI and AWS API operations return the ID of the AWS account to which the access key belongs\. Access key IDs beginning with `AKIA` are long\-term credentials for an IAM user or an AWS account root user\. Access key IDs beginning with `ASIA` are temporary credentials that are created using AWS STS operations\. If the account in the response belongs to you, you can sign in as the root user and review your root user access keys\. Then, you can pull a [credentials report](id_credentials_getting-report.md) to learn which IAM user owns the keys\. To learn who requested the temporary credentials for an `ASIA` access key, view the AWS STS events in your CloudTrail logs\.
 
-For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who used the temporary credentials to perform an action in AWS\. You can use the `aws:RoleSessionName` condition key in the role trust policy to require users to specify a session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. For more information, see `aws:RoleSessionName`\.
+For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. You can use the `sts:SourceIdentity` condition key in the role trust policy to require users to specify an identity when they assume a role\. For example, you can require that IAM users specify their own user name as their source identity\. This can help you determine which user performed a specific action in AWS\. For more information, see [`sts:SourceIdentity`](reference_policies_iam-condition-keys.md#ck_sourceidentity)\.
 
 This operation does not indicate the state of the access key\. The key might be active, inactive, or deleted\. Active keys might not have permissions to perform an operation\. Providing a deleted access key might return an error that the key doesn't exist\.

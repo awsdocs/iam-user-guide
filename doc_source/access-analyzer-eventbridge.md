@@ -241,7 +241,7 @@ To learn more about creating rules, see [Creating an EventBridge Rule That Trigg
    aws events put-rule --name TestRule --event-pattern "{\"source\":[\"aws.access-analyzer\"],\"detail-type\":[\"Access Analyzer Finding\"],\"detail\":{\"status\":[\"ACTIVE\"]}}"
    ```
 
-   The following example demonstrates how to create a rule that tirggers a target action only for access previews with a status from `Creating` to `Completed`\.
+   The following example demonstrates how to create a rule that triggers a target action only for access previews with a status from `Creating` to `Completed`\.
 
    ```
    aws events put-rule --name TestRule --event-pattern "{\"source\":[\"aws.access-analyzer\"],\"detail-type\":[\"Access Preview State Change\"],\"detail\":{\"status\":[\"COMPLETED\"]}}"

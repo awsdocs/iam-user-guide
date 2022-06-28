@@ -80,7 +80,7 @@ Before you enable MFA for your root user, review your account settings and conta
    + To use the QR code to configure the virtual MFA device, from the wizard, choose **Show QR code**\. Then follow the app instructions for scanning the code\. For example, you might need to choose the camera icon or choose a command like **Scan account barcode**, and then use the device's camera to scan the QR code\.
    +  In the **Manage MFA Device** wizard, choose **Show secret key**, and then type the secret key into your MFA app\.
 **Important**  
-Make a secure backup of the QR code or secret configuration key, or make sure that you enable multiple virtual MFA devices for your account\. A virtual MFA device might become unavailable, for example, if you lose the smartphone where the virtual MFA device is hosted\)\. If that happens, you will not be able to sign in to your account and you will have to contact customer service to remove MFA protection for the account\. 
+Make a secure backup of the QR code or secret configuration key, or make sure that you enable multiple virtual MFA devices for your account\. A virtual MFA device might become unavailable, for example, if you lose the smartphone where the virtual MFA device is hosted\)\. If that happens and you are not able to sign into your account by [Recovering a root user MFA device](id_credentials_mfa_lost-or-broken.md#root-mfa-lost-or-broken), you will not be able to sign in to your account and you will have to contact customer service to remove MFA protection for the account\. 
 
    The device starts generating six\-digit numbers\. 
 

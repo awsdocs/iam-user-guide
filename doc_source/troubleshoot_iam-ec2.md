@@ -53,7 +53,7 @@ If you still can't access your temporary security credentials on your EC2 instan
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/hostname; echo
   ```
-+ Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling the EC2 `DescribeInstances` API operation or using the aws ec2 `describe-instances` CLI command\. 
++ Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling the EC2 `DescribeInstances` API operation or using the aws ec2 `aws ec2 describe-instances` CLI command\. 
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/iam; echo

@@ -1,4 +1,4 @@
-# IAM Tutorial: Use SAML session tags for ABAC<a name="tutorial_abac-saml"></a>
+# IAM tutorial: Use SAML session tags for ABAC<a name="tutorial_abac-saml"></a>
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called tags\. You can attach tags to IAM resources, including IAM entities \(users or roles\), and to AWS resources\. When the entities are used to make requests to AWS, they become principals and those principals include tags\.
 
@@ -6,7 +6,7 @@ You can also pass [session tags](id_session-tags.md) when you assume a role or f
 
 If your company uses a SAML\-based identity provider \(IdP\) to manage corporate user identities, you can use SAML attributes for fine\-grained access control in AWS\. Attributes can include cost center identifiers, user email addresses, department classifications, and project assignments\. When you pass these attributes as session tags, you can then control access to AWS based on these session tags\.
 
-To complete the [ABAC tutorial](tutorial_attribute-based-access-control.md) by passing SAML attributes to your session principal, complete the tasks in [IAM Tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md), with the changes that are included in this topic\.
+To complete the [ABAC tutorial](tutorial_attribute-based-access-control.md) by passing SAML attributes to your session principal, complete the tasks in [IAM tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md), with the changes that are included in this topic\.
 
 ## Prerequisites<a name="tutorial_abac-saml-prerequisites"></a>
 
@@ -84,7 +84,7 @@ To pass these attributes as session tags, include the following elements in your
 </Attribute>
 ```
 
-### Step 3B: Enable console access<a name="tutorial_abac-saml-step3b"></a>
+### Step 3C: Enable console access<a name="tutorial_abac-saml-step3b"></a>
 
 Enable console access for your federated SAML users\. For more information, see [Enabling SAML 2\.0 federated users to access the AWS Management Console](id_roles_providers_enable-console-saml.md)\.
 

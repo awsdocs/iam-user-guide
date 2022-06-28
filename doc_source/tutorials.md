@@ -7,4 +7,4 @@ The following tutorials present complete end\-to\-end procedures for common task
 + [Delegate access across AWS accounts using roles](tutorial_cross-account-with-roles.md)
 + [Create a customer managed policy](tutorial_managed-policies.md)
 + [Use attribute\-based access control \(ABAC\)](tutorial_attribute-based-access-control.md)
-+ [Enable users to manage their credentials and MFA settings](tutorial_users-self-manage-mfa-and-creds.md)
++ [Permit users to manage their credentials and MFA settings](tutorial_users-self-manage-mfa-and-creds.md)

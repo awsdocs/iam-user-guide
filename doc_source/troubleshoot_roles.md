@@ -16,7 +16,8 @@ Use the information here to help you diagnose and fix common issues that you mig
 ## I can't assume a role<a name="troubleshoot_roles_cant-assume-role"></a>
 
 Check the following:
-+ Make sure to use the exact name of your role, because role names are case sensitive\.
++ When you assume a role using the AWS Management Console, make sure to use the exact name of your role\. Role names are case sensitive when you assume a role\.
++ When you assume a role using AWS STS API or AWS CLI, make sure to use the exact name of your role in the ARN\. Role names are case sensitive when you assume a role\. 
 + Verify that your IAM policy grants you permission to call `sts:AssumeRole` for the role that you want to assume\. The `Action` element of your IAM policy must allow you to call the `AssumeRole` action\. In addition, the `Resource` element of your IAM policy must specify the role that you want to assume\. For example, the `Resource` element can specify a role by its Amazon Resource Name \(ARN\) or by a wildcard \(\*\)\. For example, at least one policy applicable to you must grant permissions similar to the following:
 
   ```
@@ -58,6 +59,7 @@ Check the following:
         "DateLessThan": {"aws:CurrentTime": "2017-12-31T23:59:59Z"}
       }
   ```
++ **Source Identity** – Administrators can configure roles to require identities to pass a custom string that identifies the person or application that is performing actions in AWS, called *source identity*\. Verify whether the role being assumed requires that a source identity is set\. For more information about source identity, see [Monitor and control actions taken with assumed roles](id_credentials_temp_control-access_monitor.md)\.
 
 ## A new role appeared in my AWS account<a name="troubleshoot_roles_new-role-appeared"></a>
 

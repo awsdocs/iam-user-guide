@@ -21,6 +21,8 @@ Keep in mind that all IAM policies are stored using syntax that begins with the 
   + [Attaching or detaching a policy in an IAM account](#troubleshoot_roles_cant-attach-detach-policy)
   + [Changing policies for your IAM identities based on their activity](#troubleshoot_change-policies-based-on-activity)
 + [Troubleshoot JSON policy documents](#troubleshoot_policies-json)
+  + [Validate your policies](#usepolicyvalidation)
+  + [I don't have permissions for policy validation in the JSON editor](#nopermsforpolicyvalidation)
   + [More than one JSON policy object](#morethanonepolicyblock)
   + [More than one JSON statement element](#morethanonestatement)
   + [More than one effect, action, or resource element in a JSON statement element](#duplicateelement)
@@ -75,7 +77,7 @@ Alternatively, to use JSON syntax \(such as wildcards\) for services, create, ed
 
 ### Reducing the size of your policy in the visual editor<a name="troubleshoot_policy-size"></a>
 
-When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM and STS character quotas](reference_iam-quotas.md#reference_iam-quotas-entity-length)\. 
+When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM and STS character limits](reference_iam-quotas.md#reference_iam-quotas-entity-length)\. 
 
 To reduce the size of your policy in the visual editor, edit your policy or move permission blocks to another policy\. The error message includes the number of characters that your policy document contains, and you can use this information to help you reduce the size of your policy\.
 
@@ -134,7 +136,7 @@ If your policy includes unrecognized services, actions or resource types, one of
 + **Service does not support summaries** – If your policy includes a generally available \(GA\) service that does not support policy summaries, then the service is included in the **Unrecognized services** section of the policy summary table\. Generally available services are services that are released publicly and are not preview or custom services\. If an unrecognized service is generally available and the name is spelled correctly, then the service does not support IAM policy summaries\. To learn how to request policy summary support for a GA service, see [Service does not support IAM policy summaries](#unsupported-services-actions)\.
 + **Action does not support summaries** – If your policy includes a supported service with an unsupported action, then the action is included in the **Unrecognized actions** section of the service summary table\. To learn about warnings within a service summary, see [Service summary \(list of actions\)](access_policies_understand-service-summary.md)\.
 + **Resource type does not support summaries** – If your policy includes a supported action with an unsupported resource type, then the resource is included in the **Unrecognized resource types** section of the service summary table\. To learn about warnings within a service summary, see [Service summary \(list of actions\)](access_policies_understand-service-summary.md)\.
-+ **Typo** – Because the policy validator in AWS checks only that the JSON is syntactically correct, you can create a policy that includes a typo\. If you are certain that your policy contains none of the errors above, then your policy might include a typo\. Check for misspelled service, action, and resource type names\. For example, you might use `s2` instead of `s3` and `ListMyBuckets` instead of `ListAllMyBuckets`\. Another common action typo is the inclusion of unnecessary text in ARNs, such as `arn:aws:s3: : :*`, or missing colons in actions, such as `iam.CreateUser`\. You can evaluate a policy that might include typos by using the [policy simulator](access_policies_testing-policies.md) to confirm whether the policy provides the permissions you intended\.
++ **Typo** – AWS checks that the JSON is syntactically correct, and that the policy does not include typos or other errors as part of [policy validation](access_policies_policy-validator.md)\. As a best practice, we recommend that you open existing policies and review and resolve any policy validation recommendations\.
 
 ### Service does not support IAM policy summaries<a name="unsupported-services-actions"></a>
 
@@ -377,6 +379,18 @@ You can update policies for your IAM identities \(users, groups, and roles\) bas
 
 You can diagnose and resolve issues relating to JSON policy documents\.
 
+### Validate your policies<a name="usepolicyvalidation"></a>
+
+ When you create or edit a JSON policy, IAM can perform policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with recommendations to help you further refine your policies\. To learn more about policy validation, see [Validating IAM policies](access_policies_policy-validator.md)\. To learn more about IAM Access Analyzer policy checks and actionable recommendations, see [ IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)\. 
+
+### I don't have permissions for policy validation in the JSON editor<a name="nopermsforpolicyvalidation"></a>
+
+In the AWS Management Console, you might receive the following error if you do not have permissions to view IAM Access Analyzer policy validation results:
+
+`You need permissions. You do not have the permissions required to perform this operation. Ask your administrator to add permissions.`
+
+To fix this error, ask your administrator to add the `access-analyzer:ValidatePolicy` permission for you\.
+
 ### More than one JSON policy object<a name="morethanonepolicyblock"></a>
 
 An IAM policy must consist of one and only one JSON object\. You denote an object by placing \{ \} braces around it\. Although you can nest other objects within a JSON object by embedding additional \{ \} braces within the outer pair, a policy can contain only one outermost pair of \{ \} braces\. The following example is incorrect because it contains two objects at the top level \(called out in *red*\):
@@ -484,7 +498,7 @@ The policy engine does not allow such errors in new or edited policies\. However
 Multiple `Effect` elements: only the last `Effect` element is observed\. The others are ignored\.
 Multiple `Action` elements: all `Action` elements are combined internally and treated as if they were a single list\.
 Multiple `Resource` elements: all `Resource` elements are combined internally and treated as if they were a single list\.
-The policy engine does not allow you to save any policy with syntax errors\. You must correct the errors in the policy before you can save it\. The [Policy Validator](access_policies_policy-validator.md) tool can help you to find all older policies with errors and can recommend corrections for them\.
+The policy engine does not allow you to save any policy with syntax errors\. You must correct the errors in the policy before you can save it\.We recommend that you review any correct any [policy validation](access_policies_policy-validator.md) recommendations for your policies\.
 
  In each case, the solution is to remove the incorrect extra element\. For `Effect` elements, this is straightforward: if you want the previous example to *deny* permissions to Amazon EC2 instances, then you must remove the line `"Effect": "Allow",` from the policy, as follows:
 

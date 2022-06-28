@@ -10,7 +10,7 @@ https://12-digit-AWS-account-ID or alias.signin.aws.amazon.com/console
 
 For more information about how IAM users sign in to the AWS Management Console, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. 
 
-Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [IAM Identities \(users, groups, and roles\)](id.md)\. For information about using policies to set permissions, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. 
+Even if your users have their own passwords, they still need permissions to access your AWS resources\. By default, a user has no permissions\. To give your users the permissions they need, you assign policies to them or to the groups they belong to\. For information about creating users and groups, see [IAM Identities \(users, user groups, and roles\)](id.md)\. For information about using policies to set permissions, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. 
 
 You can grant users permission to change their own passwords\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\. For information about how users access your account sign\-in page, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. 
 
@@ -90,7 +90,7 @@ For security reasons, you cannot access the password after completing this step,
 1. For **Console access**, choose **Disable**, and then choose **Apply**\.
 
 **Important**  
-When you delete a user's password, the user can no longer sign in to the AWS Management Console\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, or AWS API function calls\.
+You can disable user access to the AWS Management Console by removing their password\. This prevents them from signing in the to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
 
 ## Creating, changing, or deleting an IAM user password \(AWS CLI\)<a name="Using_ManagingPasswordsCLIAPI"></a>
 

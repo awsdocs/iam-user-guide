@@ -3,23 +3,25 @@
 A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. You can use the AWS Management Console to create *customer managed policies* in IAM\. Customer managed policies are standalone policies that you administer in your own AWS account\. You can then attach the policies to identities \(users, groups, and roles\) in your AWS account\.
 
 **Topics**
-+ [Creating IAM policies \(console\)](#access_policies_create-start)
++ [Creating IAM policies](#access_policies_create-start)
 + [Creating policies on the JSON tab](#access_policies_create-json-editor)
 + [Creating policies with the visual editor](#access_policies_create-visual-editor)
 + [Importing existing managed policies](#access_policies_create-copy)
 
-## Creating IAM policies \(console\)<a name="access_policies_create-start"></a>
+## Creating IAM policies<a name="access_policies_create-start"></a>
 
 You can create a customer managed policy in the AWS Management Console using one of the following methods:
 + **[JSON](#access_policies_create-json-editor)** — Paste and customize a published [example identity\-based policy](access_policies_examples.md)\.
 + **[Visual editor](#access_policies_create-visual-editor)** — Construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
 + **[Import](#access_policies_create-copy)** — Import and customize a managed policy from within your account\. You can import an AWS managed policy or a customer managed policy that you previously created\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 ## Creating policies on the JSON tab<a name="access_policies_create-json-editor"></a>
 
 You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
+
+ When you create or edit a policy in the JSON editor, IAM performs policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with actionable recommendations to help you further refine the policy\. 
 
 A JSON [policy](access_policies.md) document consists of one or more statements\. Each statement should contain all the actions that share the same effect \(`Allow` or `Deny`\) and support the same resources and conditions\. If one action requires you to specify all resources \(`"*"`\) and another action supports the Amazon Resource Name \(ARN\) of a specific resource, they must be in two separate JSON statements\. For details about ARN formats, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\. For information about the IAM policy language, see [IAM JSON policy reference](reference_policies.md)\.
 
@@ -35,13 +37,13 @@ A JSON [policy](access_policies.md) document consists of one or more statements\
 
 1. Type or paste a JSON policy document\. For details about the IAM policy language, see [IAM JSON policy reference](reference_policies.md)\.
 
+1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
+**Note**  
+You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Next: Tags** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+
 1. When you are finished, choose **Next: Tags**\.
 
    \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
-
-1. When you are finished, choose **Review policy**\. The [Policy Validator](access_policies_policy-validator.md) reports any syntax errors\.
-**Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Next: Tags** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
 
@@ -146,7 +148,7 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 
    Statements from the imported policies are added to the bottom of your JSON policy\.
 
-1. Customize your policy in JSON, or choose the **Visual editor**\. Then choose **Review policy**\.
+1. Customize your policy in JSON\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. Or, customize your policy in the **Visual editor**\. Then choose **Review policy**\.
 **Note**  
 You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 

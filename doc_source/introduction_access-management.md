@@ -25,25 +25,13 @@ IAM users are identities in the service\. When you create an IAM user, they can'
 
 Actions or resources that are not explicitly allowed are denied by default\. For example, if the preceding policy is the only policy that is attached to a user, then that user is allowed to only perform DynamoDB actions on the `Books` table\. Actions on all other tables are prohibited\. Similarly, the user is not allowed to perform any actions in Amazon EC2, Amazon S3, or in any other AWS service\. The reason is that permissions to work with those services are not included in the policy\. 
 
-The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the [service summary](access_policies_understand-service-summary.md), and the [action summary](access_policies_understand-action-summary.md)\. The *policy summary* table includes a list of services\. Choose a service there to see the *service summary*\. This summary table includes a list of the actions and associated permissions for the chosen service\. You can choose an action from that table to view the *action summary*\. This table includes a list of resources and conditions for the chosen action\. 
-
-![\[Policy summaries diagram image that illustrates the 3 tables and their relationship\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_summaries-diagram.png)
-
-You can view policy summaries on the **Users** page for all policies \(managed and inline\) that are attached to that user\. View summaries on the **Policies** page for all managed policies\.
-
-For example, the previous policy is summarized in the AWS Management Console as follows:
-
-![\[DynamoDB Example Summary\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-dynamodbexample.png)
-
-You can also view the JSON document for the policy\. For information about viewing the summary or JSON document, see [Understanding permissions granted by a policy](access_policies_understand.md)\.
-
 ## Policies and groups<a name="intro-access-groups"></a>
 
 You can organize IAM users into *IAM groups* and attach a policy to a group\. In that case, individual users still have their own credentials, but all the users in a group have the permissions that are attached to the group\. Use groups for easier permissions management, and to follow our [Security best practices in IAM](best-practices.md)\. 
 
 ![\[Users can be organized into groups to make it easier to manage permissions, because users have the permissions assigned to a group.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-users-and-groups.diagram.png)
 
-Users or groups can have multiple policies attached to them that grant different permissions\. In that case, the users' permissions are calculated based on the combination of policies\. But the basic principle still applies: If the user has not been granted an explicit permission for an action and a resource, the user does not have those permissions\. 
+Users or groups can have multiple policies attached to them that grant different permissions\. In that case, the permissions for the users are calculated based on the combination of policies\. But the basic principle still applies: If the user has not been granted an explicit permission for an action and a resource, the user does not have those permissions\. 
 
 ## Federated users and roles<a name="intro-access-roles"></a>
 
@@ -56,7 +44,7 @@ Identity\-based policies are permissions policies that you attach to an IAM iden
 ***Identity\-based policies*** control what actions the identity can perform, on which resources, and under what conditions\. Identity\-based policies can be further categorized:
 + **Managed policies** – Standalone identity\-based policies that you can attach to multiple users, groups, and roles in your AWS account\. You can use two types of managed policies: 
   + **AWS managed policies** – Managed policies that are created and managed by AWS\. If you are new to using policies, we recommend that you start by using AWS managed policies\.
-  + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\. You can create and edit an IAM policy in the visual editor or by creating the JSON policy document directly\. For more information, see [Creating IAM policies](access_policies_create.md) and [Editing IAM policies](access_policies_manage-edit.md)\.
+  + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\. You can create, edit, and validate an IAM policy in the visual editor or by creating the JSON policy document directly\. For more information, see [Creating IAM policies](access_policies_create.md) and [Editing IAM policies](access_policies_manage-edit.md)\.
 + **Inline policies** – Policies that you create and manage and that are embedded directly into a single user, group, or role\. In most cases, we don't recommend using inline policies\.
 
 ***Resource\-based policies*** control what actions a specified principal can perform on that resource and under what conditions\. Resource\-based policies are inline policies, and there are no managed resource\-based policies\. To enable cross\-account access, you can specify an entire account or IAM entities in another account as the principal in a resource\-based policy\.

@@ -3,13 +3,14 @@
 Use AWS Identity and Access Management \(IAM\) policy variables as placeholders when you don't know the exact value of a resource or condition key when you write the policy\.
 
 **Note**  
-If AWS cannot resolve a variable, this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
+If AWS cannot resolve a variable this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
 
 **Topics**
 + [Introduction](#policy-vars-intro)
 + [Tags as policy variables](#policy-vars-tags)
 + [Where you can use policy variables](#policy-vars-wheretouse)
 + [Request information that you can use for policy variables](#policy-vars-infotouse)
++ [Specifying default values](#policy-vars-default-values)
 + [For more information](#policy-vars-formoreinfo)
 
 ## Introduction<a name="policy-vars-intro"></a>
@@ -40,7 +41,10 @@ In IAM policies, many actions allow you to provide a name for the specific resou
 
 In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy to allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. But don't create a separate policy for each user that explicitly specifies the user's name as part of the resource\. Instead, create a single group policy that works for any user in that group\. 
 
-You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\. 
+You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\.
+
+**Important**  
+You can use any single\-valued condition key as a variable\. You can't use a multivalued condition key as a variable\.
 
 The following example shows a policy for an Amazon S3 bucket that uses a policy variable\. 
 
@@ -82,7 +86,7 @@ You can use policy variables in a similar way to allow each user to manage his o
   "Statement": [{
     "Action": ["iam:*AccessKey*"],
     "Effect": "Allow",
-    "Resource": ["arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/David"]
+    "Resource": ["arn:aws:iam::account-id:user/David"]
   }]
 }
 ```
@@ -97,7 +101,7 @@ By using a policy variable, you can create a policy like this:
   "Statement": [{
     "Action": ["iam:*AccessKey*"],
     "Effect": "Allow",
-    "Resource": ["arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/${aws:username}"]
+    "Resource": ["arn:aws:iam::account-id:user/${aws:username}"]
   }]
 }
 ```
@@ -182,24 +186,37 @@ The following Amazon SNS topic policy gives users in AWS account `999999999999` 
 ```
 {
   "Version": "2012-10-17",
-  "Statement": [{
-    "Principal": {"AWS": "999999999999"},
-    "Effect": "Allow",
-    "Action": "sns:*",
-    "Condition": {"StringLike": {"sns:endpoint": "https://example.com/${aws:username}/*"}}
-  }]
+  "Statement": [
+    {
+      "Principal": {
+        "AWS": "999999999999"
+      },
+      "Effect": "Allow",
+      "Action": "sns:*",
+      "Condition": {
+        "StringLike": {
+          "sns:endpoint": "https://example.com/${aws:username}/"
+        },
+        "StringEquals": {
+          "sns:Protocol": "https"
+        }
+      }
+    }
+  ]
 }
 ```
 
-When referencing a tag in a `Condition` element expression, use the relevant prefix and key name as the condition key\. Then use the value that you want to test in the condition value\. For example, the following policy example allows full access to IAM resources, but only if the tag `costCenter` is attached to the resource\. The tag must also have a value of either `12345` or `67890`\. If the tag has no value, or has any other value, then the request fails\.
+When referencing a tag in a `Condition` element expression, use the relevant prefix and key name as the condition key\. Then use the value that you want to test in the condition value\. For example, the following policy example allows full access to IAM users, but only if the tag `costCenter` is attached to the user\. The tag must also have a value of either `12345` or `67890`\. If the tag has no value, or has any other value, then the request fails\.
 
 ```
 {
-  "Version": "2015-01-01",
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Effect": "Allow",
-      "Action": "iam:*",
+      "Action": [
+          "iam:*user*"
+       ],
       "Resource": "*",
       "Condition": {
         "StringLike": {
@@ -213,7 +230,7 @@ When referencing a tag in a `Condition` element expression, use the relevant pre
 
 ## Request information that you can use for policy variables<a name="policy-vars-infotouse"></a>
 
- You can use the `Condition` element of a JSON policy to compare keys in the [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext) with key values that you specify in your policy\. When you use a policy variable, AWS substitutes a value from the request context key in place of the variable in your policy\. 
+ You can use the `Condition` element of a JSON policy to compare keys in the [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext) with key values that you specify in your policy\. When you use a policy variable, AWS substitutes a value from the request context key in place of the variable in your policy\.
 
 ### Information available in all requests<a name="policy-vars-infoallreqs"></a>
 
@@ -263,7 +280,7 @@ Requests can also include service\-specific keys and values in its request conte
 + `sns:Protocol`
 
 For information about service\-specific keys that you can use to get values for policy variables, refer to the documentation for the individual services\. For example, see the following topics: 
-+  [Bucket Keys in Amazon S3 Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service Developer Guide*\. 
++  [Bucket Keys in Amazon S3 Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service User Guide*\. 
 +  [Amazon SNS Keys](https://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
 
 ### Special characters<a name="policy-vars-specialchars"></a>
@@ -275,9 +292,21 @@ There are a few special predefined policy variables that have fixed values that 
 
 These predefined policy variables can be used in any string where you can use regular policy variables\.
 
+## Specifying default values<a name="policy-vars-default-values"></a>
+
+If AWS cannot resolve a variable this might cause the entire statement to be invalid\. However, when you add a variable to your policy you can specify a default value for the variable\. If a value is not specified for the variable AWS uses the default text that you provided\. 
+
+To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+
+For example, if a principal is tagged with `team=yellow`, they can access `ExampleCorp's` Amazon S3 bucket named `DOC-EXAMPLE-BUCKET-yellow`\. A policy with this resource allows team members to access their team bucket, but not those of other teams\. For users without team tags, it sets a default value of `company-wide` for the bucket name\. These users can access only the `DOC-EXAMPLE-BUCKET-company-wide` bucket where they can view broad information, such as instructions for joining a team\.
+
+```
+"Resource":"arn:aws:s3:::DOC-EXAMPLE-BUCKET-${aws:PrincipalTag/team, 'company-wide'}"
+```
+
 ## For more information<a name="policy-vars-formoreinfo"></a>
 
- For more information about policies, see the following: 
+For more information about policies, see the following: 
 +  [Policies and permissions in IAM](access_policies.md) 
 +  [Example IAM identity\-based policies](access_policies_examples.md) 
 +  [IAM JSON policy elements reference](reference_policies_elements.md) 

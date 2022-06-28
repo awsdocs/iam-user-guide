@@ -2,7 +2,7 @@
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called *tags*\. You can attach tags to IAM resources, including IAM entities \(users or roles\) and to AWS resources\. You can create a single ABAC policy or small set of policies for your IAM principals\. These ABAC policies can be designed to allow operations when the principal's tag matches the resource tag\. ABAC is helpful in environments that are growing rapidly and helps with situations where policy management becomes cumbersome\.
 
-For example, you can create three roles with the `access-project` tag key\. Set the tag value of the first role to `Heart`, the second to `Sun`, and the third to `Lightning`\. You can then use a single policy that allows access when the role and the resource are tagged with the same value for `access-project`\. For a detailed tutorial that demonstrates how to use ABAC in AWS, see [IAM Tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
+For example, you can create three roles with the `access-project` tag key\. Set the tag value of the first role to `Heart`, the second to `Sun`, and the third to `Lightning`\. You can then use a single policy that allows access when the role and the resource are tagged with the same value for `access-project`\. For a detailed tutorial that demonstrates how to use ABAC in AWS, see [IAM tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
 
 ![\[ABAC Model\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
@@ -25,4 +25,4 @@ For example, assume that you have three projects, named `Heart`, `Sun`, and `Lig
 + **Granular permissions are possible using ABAC\.** When you create policies, it's a best practice to [grant least privilege](best-practices.md#grant-least-privilege)\. Using traditional RBAC, you must write a policy that allows access to only specific resources\. However, when you use ABAC, you can allow actions on all resources, but only if the resource tag matches the principal's tag\.
 + **Use employee attributes from your corporate directory with ABAC\.** You can configure your SAML\-based or web identity provider to pass session tags to AWS\. When your employees federate into AWS, their attributes are applied to their resulting principal in AWS\. You can then use ABAC to allow or deny permissions based on those attributes\.
 
-For a detailed tutorial that demonstrates how to use ABAC in AWS, see [IAM Tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.
+For a detailed tutorial that demonstrates how to use ABAC in AWS, see [IAM tutorial: Define permissions to access AWS resources based on tags](tutorial_attribute-based-access-control.md)\.

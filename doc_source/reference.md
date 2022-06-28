@@ -4,6 +4,6 @@ Use the topics in this section to find detailed reference material for various a
 
 **Topics**
 + [IAM identifiers](reference_identifiers.md)
-+ [IAM and STS quotas](reference_iam-quotas.md)
++ [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)
 + [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)
 + [IAM JSON policy reference](reference_policies.md)

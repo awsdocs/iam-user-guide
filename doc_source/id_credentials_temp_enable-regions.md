@@ -24,11 +24,11 @@ You can change this setting using the AWS Management Console, AWS CLI, or AWS AP
 Tokens that are valid in all AWS Regions include more characters than tokens that are valid in Regions that are enabled by default\. Changing this setting might affect existing systems where you temporarily store tokens\.
 
 **To change the Region compatibility of session tokens for the global endpoint \(AWS CLI\)**  
-Set the security token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
+Set the session token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
 + [https://docs.aws.amazon.com/cli/latest/reference/iam/set-security-token-service-preferences.html](https://docs.aws.amazon.com/cli/latest/reference/iam/set-security-token-service-preferences.html)
 
 **To change the Region compatibility of session tokens for the global endpoint \(AWS API\)**  
-Set the security token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
+Set the session token version\. Version 1 tokens are valid only in AWS Regions that are available by default\. These tokens do not work in manually enabled Regions, such as Asia Pacific \(Hong Kong\)\. Version 2 tokens are valid in all Regions\. However, version 2 tokens include more characters and might affect systems where you temporarily store tokens\.
 + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetSecurityTokenServicePreferences.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SetSecurityTokenServicePreferences.html) 
 
 ## Activating and deactivating AWS STS in an AWS Region<a name="sts-regions-activate-deactivate"></a>

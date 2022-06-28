@@ -16,8 +16,8 @@ You can generate a credential report as often as once every four hours\. When yo
 ## Required permissions<a name="id_credentials_required_permissions"></a>
 
 The following permissions are needed to create and download reports:
-+ To create a credential report: `GenerateCredentialReport` 
-+ To download the report: `GetCredentialReport`
++ To create a credential report: `iam:GenerateCredentialReport` 
++ To download the report: `iam:GetCredentialReport`
 
 ## Understanding the report format<a name="id_credentials_understanding_the_report_format"></a>
 

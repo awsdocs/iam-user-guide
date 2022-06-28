@@ -4,14 +4,14 @@ When an administrator [creates a role for cross\-account access](id_roles_create
 
 To grant a user permission to switch to a role, the administrator of the trusted account creates a new policy for the user\. Or the administrator might edit an existing policy to add the required elements\. The administrator can then send the users a link that takes the user to the **Switch Role** page with all the details already filled in\. Alternatively, the administrator can provide the user with the account ID number or account alias that contains the role and the role name\. The user then goes to the **Switch Role** page and adds the details manually\. For details on how a user switches roles, see [Switching to a role \(console\)](id_roles_use_switch-role-console.md)\. 
 
-Note that you can switch roles only when you sign in as an IAM user\. You cannot switch roles when you sign in as the AWS account root user\.
+Note that you can switch roles only when you sign in as an IAM user, a SAML\-federated role, or a web\-identity federated role\. You cannot switch roles when you sign in as the AWS account root user\.
 
 **Important**  
 You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalId` parameter\.
 
 **Notes**  
-This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is [best practice not to grant permissions directly to an individual user](best-practices.md#use-groups-for-permissions)\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\. 
-When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, it uses your original user or federated role credentials to determine if you are allowed to assume RoleA\. If you then try to switch to RoleB *while you are using RoleA*, your **original** user or federated role credentials are used to authorize your attempt, not the credentials for RoleA\.
+This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is best practice not to grant permissions directly to an individual user\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\. 
+When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, it uses your original user or federated role credentials to determine if you are allowed to assume RoleA\. If you then try to switch to RoleB *while you are using RoleA*, your **original** user or federated role credentials are used to authorize your attempt\. The credentials for RoleA are not used for this action\.
 
 **Topics**
 + [Creating or editing the policy](#roles-usingrole-createpolicy)
@@ -36,7 +36,7 @@ The following example shows a policy that lets the user assume roles in only one
   "Statement": {
     "Effect": "Allow",
     "Action": "sts:AssumeRole",
-    "Resource": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/Test*"
+    "Resource": "arn:aws:iam::account-id:role/Test*"
   }
 }
 ```
@@ -61,4 +61,4 @@ We recommend that you direct your users to [Switching to a role \(console\)](id_
 **Considerations**
 + If you create the role programmatically, you can create the role with a path in addition to a name\. If you do so, you must provide the complete path and role name to your users so they can enter it on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.
 + If you create the role programmatically, you can add a `Path` of up to 512 characters in addition to a `RoleName`\. The role name can be up to 64 characters long\. However, to use a role with the **Switch Role** feature in the AWS Management Console, the combined `Path` and `RoleName` cannot exceed 64 characters\.
-+ For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. You can use the `aws:RoleSessionName` condition key in the role trust policy to require users to specify a session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. For more information, see [`aws:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname)\.
++ For security purposes, you can [review AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) to learn who performed an action in AWS\. You can use the `sts:SourceIdentity` condition key in the role trust policy to require users to specify an identity when they assume a role\. For example, you can require that IAM users specify their own user name as their source identity\. This can help you determine which user performed a specific action in AWS\. For more information, see [`sts:SourceIdentity`](reference_policies_iam-condition-keys.md#ck_sourceidentity)\. You can also use [`sts:RoleSessionName`](reference_policies_iam-condition-keys.md#ck_rolesessionname) to require users to specify a session name when they assume a role\. This can help you differentiate between role sessions when a role is used by different principals\.

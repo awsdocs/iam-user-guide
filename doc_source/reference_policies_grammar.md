@@ -6,7 +6,7 @@ For examples of policies, see the following topics:
 + [Policies and permissions in IAM](access_policies.md)
 + [Example IAM identity\-based policies](access_policies_examples.md)
 + [Example Policies for Working in the Amazon EC2 Console](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-ec2-console.html) and [Example Policies for Working With the AWS CLI, the Amazon EC2 CLI, or an AWS SDK](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ExamplePolicies_EC2.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
-+  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service Developer Guide*\. 
++  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) and [User Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-policies-s3.html) in the *Amazon Simple Storage Service User Guide*\. 
 
 For examples of policies used in other AWS services, go to the documentation for those services\.
 
@@ -18,15 +18,15 @@ For examples of policies used in other AWS services, go to the documentation for
 
 ## The policy language and JSON<a name="policies-grammar-json"></a>
 
-Policies are expressed in JSON\. When a policy is submitted to IAM, it is first validated to make sure that the JSON syntax is correct\. In this document, we do not provide a complete description of what constitutes valid JSON\. However, here are some basic JSON rules:
+Policies are expressed in JSON\. When you create or edit a JSON policy, IAM can perform policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with recommendations to help you further refine your policies\. To learn more about policy validation, see [Validating IAM policies](access_policies_policy-validator.md)\. To learn more about IAM Access Analyzer policy checks and actionable recommendations, see [ IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)\. 
+
+In this document, we do not provide a complete description of what constitutes valid JSON\. However, here are some basic JSON rules:
 + White space between individual entities is allowed\.
 + Values are enclosed in quotation marks\. Quotation marks are optional for numeric and Boolean values\.
 + Many elements \(for example, `action_string_list` and `resource_string_list`\) can take a JSON array as a value\. Arrays can take one or more values\. If more than one value is included, the array is in square brackets \(`[` and `]`\) and comma\-delimited, as in the following example: 
 
   `"Action" : ["ec2:Describe*","ec2:List*"]`
 + Basic JSON data types \(Boolean, number, and string\) are defined in [RFC 7159](http://tools.ietf.org/html/rfc7159)\.
-
-You can use a JSON validator to check the syntax of a policy\. You can find a validator online, and many code editors and XML\-editing tools include JSON validation features\.
 
 ## Conventions used in this grammar<a name="policies-grammar-conventions"></a>
 
@@ -119,12 +119,12 @@ policy  = {
 
 ## Policy grammar notes<a name="policies-grammar-notes"></a>
 + A single policy can contain an array of statements\.
-+ Policies have a maximum size between 2048 characters and 10,240 characters, depending on what entity the policy is attached to\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\. Policy size calculations do not include white space characters\.
++ Policies have a maximum size between 2048 characters and 10,240 characters, depending on what entity the policy is attached to\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\. Policy size calculations do not include white space characters\.
 + Individual elements must not contain multiple instances of the same key\. For example, you cannot include the `Effect` block twice in the same statement\. 
 + Blocks can appear in any order\. For example, `version_block` can follow `id_block` in a policy\. Similarly, `effect_block`, `principal_block`, `action_block` can appear in any order within a statement\.
 + The `id_block` is optional in resource\-based policies\. It must *not* be included in identity\-based policies\.
 + The `principal_block` element is required in resource\-based policies \(for example, in Amazon S3 bucket policies\) and in trust policies for IAM roles\. It must *not* be included in identity\-based policies\.
-+ The `principal_map` element in Amazon S3 bucket policies can include the `CanonicalUser` ID\. Most resource\-based policies do not support this mapping\. To learn more about using the canonical user ID in a bucket policy, see [Specifying a Principal in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html) in the *Amazon Simple Storage Service Developer Guide*\.
++ The `principal_map` element in Amazon S3 bucket policies can include the `CanonicalUser` ID\. Most resource\-based policies do not support this mapping\. To learn more about using the canonical user ID in a bucket policy, see [Specifying a Principal in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-bucket-user-policy-specifying-principal-intro.html) in the *Amazon Simple Storage Service User Guide*\.
 + Each string value \(`policy_id_string`, `sid_string`, `principal_id_string`, `action_string`, `resource_string`, `condition_type_string`, `condition_key_string`, and the string version of `condition_value`\) can have its own minimum and maximum length restrictions, specific allowed values, or required internal format\.
 
 ### Notes about string values<a name="policies-grammar-notes-strings"></a>
@@ -211,7 +211,7 @@ Identifies the type of condition being tested, such as `StringEquals`, `StringLi
 **`condition_key_string`**  
 Identifies the condition key whose value will be tested to determine whether the condition is met\. AWS defines a set of condition keys that are available in all AWS services, including `aws:PrincipalType`, `aws:SecureTransport`, and `aws:userid`\.  
 For a list of AWS condition keys, see [AWS global condition context keys](reference_policies_condition-keys.md)\. For condition keys that are specific to a service, see the documentation for that service such as the following:  
-+ [Specifying Conditions in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service Developer Guide*
++ [Specifying Conditions in a Policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/amazon-s3-policy-keys.html) in the *Amazon Simple Storage Service User Guide*
 + [IAM Policies for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-policies-for-amazon-ec2.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ```
@@ -229,7 +229,7 @@ For a list of AWS condition keys, see [AWS global condition context keys](refere
 
 "Condition": {
   "StringEquals": {
-    "ec2:ResourceTag/purpose": "test"
+    "aws:ResourceTag/purpose": "test"
   }
 }
 ```

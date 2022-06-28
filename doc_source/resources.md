@@ -14,8 +14,8 @@ IAM is a rich product, and you'll find many resources to help you learn more abo
 ## Users and groups<a name="resources-users-and-groups"></a>
 
 Consult these resources for creating, managing, and using users and groups\.
-+ **[Creating your first IAM admin user and group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
-+ **[IAM Identities \(users, groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
++ **[Creating your first IAM admin user and user group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
++ **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
 +  [http://aws.amazon.com/blogs/security/guidelines-for-when-to-use-accounts-users-and-groups](http://aws.amazon.com/blogs/security/guidelines-for-when-to-use-accounts-users-and-groups) – An AWS Security Blog post that discusses how to organize user access with separate AWS accounts or with IAM users and groups in a single account\.
 
 ## Credentials \(passwords, access keys, and MFA devices\)<a name="resources-credentials"></a>
@@ -30,6 +30,7 @@ Review the following guides to manage passwords for your AWS account and for IAM
 Learn the inner workings of IAM policies and find tips on the best ways to confer permissions:
 + **[Policies and permissions in IAM](access_policies.md)** – Introduces the policy language that is used to define permissions\. Describes how permissions can be attached to users or groups or, for some AWS products, to resources themselves\.
 +  **[IAM JSON policy elements reference](reference_policies_elements.md)** – Provides descriptions and examples of each policy language element\.
++ **[Validating IAM policies](access_policies_policy-validator.md)** – Find resources for JSON policy validation\.
 +  **[Example IAM identity\-based policies](access_policies_examples.md)** – Shows examples of policies for common tasks in various AWS products\.
 + **[AWS Policy Generator](http://aws.amazon.com/blogs/aws/aws-policy-generator/)** – Create custom policies by choosing products and actions from a list\.
 +  **[IAM Policy Simulator](https://policysim.aws.amazon.com/)** – Test whether a policy would allow or deny a specific request to AWS\.
@@ -37,9 +38,9 @@ Learn the inner workings of IAM policies and find tips on the best ways to confe
 ## Federation and delegation<a name="resources-federation-and-delegation"></a>
 
 You can grant access to resources in your AWS account for users who are authenticated \(signed in\) elsewhere\. These can be IAM users in another AWS account \(known as *delegation*\), users who are authenticated with your organization's sign\-in process, or users from an Internet identity provider like Login with Amazon, Facebook, Google, or any other OpenID Connect \(OIDC\) compatible identity provider\. In these cases, the users get temporary security credentials to access AWS resources\. 
-+  **[IAM Tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)** – Guides you through granting cross\-account access to an IAM user in another AWS account\. 
++  **[IAM tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)** – Guides you through granting cross\-account access to an IAM user in another AWS account\. 
 + **[Common scenarios for temporary credentials](id_credentials_temp.md#sts-introduction)** – Describes ways in which users can be federated into AWS after being authenticated outside of AWS\. 
-+ **[Web Identity Federation Playground](http://aws.amazon.com/blogs/https:aws/the-aws-web-identity-federation-playground/)** – Lets you experiment with Login with Amazon, Google, or Facebook to authenticate and then make a call to Amazon S3\. 
++ **[Web Identity Federation Playground](http://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/)** – Lets you experiment with Login with Amazon, Google, or Facebook to authenticate and then make a call to Amazon S3\. 
 
 ## IAM and other AWS products<a name="resources-iam-and-other-services"></a>
 
@@ -64,7 +65,7 @@ Most AWS products are integrated with IAM so that you can use IAM features to he
 ## General security practices<a name="resources-general-security"></a>
 
 Find expert tips and guidance on the best ways to secure your AWS account and resources:
-+ **[AWS Security Best Practices](https://d0.awsstatic.com/whitepapers/Security/AWS_Security_Best_Practices.pdf)** \(PDF\) – Provides an in\-depth look at how to manage security across AWS accounts and products, including suggestions for security architecture, use of IAM, encryption and data security, and more\. 
++ **[Best Practices for Security, Identity, &, Compliance](http://aws.amazon.com/architecture/security-identity-compliance)** – Find resources for how to manage security across AWS accounts and products, including suggestions for security architecture, use of IAM, encryption and data security, and more\. 
 + **[Security best practices in IAM](best-practices.md)** – Offers recommendations for ways to use IAM to help secure your AWS account and resources\. 
 + **[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\. 
 
@@ -73,7 +74,7 @@ Find expert tips and guidance on the best ways to secure your AWS account and re
 Explore the following resources to learn more about IAM and AWS\. 
 + [https://aws.amazon.com/iam/](https://aws.amazon.com/iam/) – General information about the AWS Identity and Access Management product\.
 + [https://forums.aws.amazon.com/forum.jspa?forumID=76](https://forums.aws.amazon.com/forum.jspa?forumID=76) – A community forum for customers to discuss technical questions related to IAM\. 
-+ ** [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/)** – Links to role\-based and specialty courses as well as self\-paced labs to help sharpen your AWS skills and gain practical experience\.
++ ** [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/)** – Links to role\-based and specialty courses, in addition to self\-paced labs to help sharpen your AWS skills and gain practical experience\.
 + ** [AWS Developer Tools](https://aws.amazon.com/tools/)** – Links to developer tools, SDKs, IDE toolkits, and command line tools for developing and managing AWS applications\.
 + ** [AWS Whitepapers](https://aws.amazon.com/whitepapers/)** – Links to a comprehensive list of technical AWS whitepapers, covering topics such as architecture, security, and economics and authored by AWS Solutions Architects or other technical experts\.
 + ** [AWS Support Center](https://console.aws.amazon.com/support/home#/)** – The hub for creating and managing your AWS Support cases\. Also includes links to other helpful resources, such as forums, technical FAQs, service health status, and AWS Trusted Advisor\.

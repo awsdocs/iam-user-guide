@@ -13,14 +13,14 @@ The process for using web identity federation ***without*** Amazon Cognito follo
    + [Login with Amazon Developer Center](https://login.amazon.com/) 
    + [Add Facebook Login to Your App or Website](https://developers.facebook.com/docs/facebook-login/v2.1) on the Facebook developers site\. 
    + [Using OAuth 2\.0 for Login \(OpenID Connect\)](https://developers.google.com/accounts/docs/OAuth2Login) on the Google developers site\.
-**Note**  
-Although Amazon Cognito and Google are based on OIDC technology, you don't have to create an IAM identity provider entity to use them\. Support for Amazon Cognito and Google are built\-in to AWS\.
+**Important**  
+If you use an OIDC identity provider from Google, Facebook, or Amazon Cognito, do not create a separate IAM identity provider in the AWS Management Console\. AWS has these OIDC identity providers built\-in and available for your use\. Skip the following step and move directly to creating new roles using your identity provider\.
 
-1. If you use an IdP that is compatible with OIDC, then create an IAM identity provider entity for it\.
+1. If you use an IdP other than Google, Facebook or Amazon Cognito compatible with OIDC, then create an IAM identity provider entity for it\.
 
-1. In IAM, [create one or more roles](id_roles_create_for-idp.md)\. For each role, define who can assume the role \(the trust policy\) and what permissions the app's users are to have \(the permissions policy\)\. Typically, you create one role for each IdP that an app supports\. For example, you might create a role that is assumed by an app when the user signs in through Login with Amazon, a second role for the same app where the user signs in through Facebook, and a third role for the app where the user signs in through Google\. For the trust relationship, specify the IdP \(like Amazon\.com\) as the `Principal` \(the trusted entity\), and include a `Condition` that matches the IdP assigned app ID\. Examples of roles for different providers are described later in this topic\. 
+1. In IAM, [create one or more roles](id_roles_create_for-idp.md)\. For each role, define who can assume the role \(the trust policy\) and what permissions the app's users have \(the permissions policy\)\. Typically, you create one role for each IdP that an app supports\. For example, you might create a role assumed by an app if the user signs in through Login with Amazon, a second role for the same app if the user signs in through Facebook, and a third role for the app if the user signs in through Google\. For the trust relationship, specify the IdP \(like Amazon\.com\) as the `Principal` \(the trusted entity\), and include a `Condition` that matches the IdP assigned app ID\. Examples of roles for different providers are described in [Creating a role for a third\-party Identity Provider \(federation\)](id_roles_create_for-idp.md)\. 
 
-1. In your application, authenticate your users with the IdP\. The specifics of how to do this vary both according to which IdP you're using \(Login with Amazon, Facebook, or Google\) and on which platform your app runs\. For example, an Android app's method of authentication can differ from that of an iOS app or a JavaScript\-based web app\.
+1. In your application, authenticate your users with the IdP\. The specifics of how to do this vary both according to which IdP you use \(Login with Amazon, Facebook, or Google\) and on which platform your app runs\. For example, an Android app's method of authentication can differ from that of an iOS app or a JavaScript\-based web app\.
 
    Typically, if the user is not already signed in, the IdP takes care of displaying a sign\-in page\. After the IdP authenticates the user, the IdP returns an authentication token with information about the user to your app\. The information included depends on what the IdP exposes and what information the user is willing to share\. You can use this information in your app\.
 

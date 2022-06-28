@@ -4,7 +4,7 @@ You can create one or more IAM users in your AWS account\. You might create an I
 
 **Important**  
 If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.  
-If you arrived at this page from the IAM console, it is possible that your account does not include IAM users, even though you are signed in\. You could be signed in as the AWS account root user, using a role, or signed in with temporary credentials\. To learn more about these IAM identities, see [IAM Identities \(users, groups, and roles\)](id.md)\.
+If you arrived at this page from the IAM console, it is possible that your account does not include IAM users, even though you are signed in\. You could be signed in as the AWS account root user, using a role, or signed in with temporary credentials\. To learn more about these IAM identities, see [IAM Identities \(users, user groups, and roles\)](id.md)\.
 
 **Topics**
 + [Creating IAM users \(console\)](#id_users_create_console)
@@ -17,7 +17,7 @@ The process of creating a user and enabling that user to perform work tasks cons
 
 1. Create credentials for the user, depending on the type of access the user requires:
    + **Programmatic access:** The IAM user might need to make API calls, use the AWS CLI, or use the Tools for Windows PowerShell\. In that case, create an access key \(access key ID and a secret access key\) for that user\.
-   + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\.
+   + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\. Disabling console access for a user prevents them from signing in to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
 
    As a best practice, create only the credentials that the user needs\. For example, for a user who requires access only through the AWS Management Console, do not create access keys\.
 
@@ -41,11 +41,11 @@ You can use the AWS Management Console to create IAM users\.
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Users** and then choose **Add user**\.
+1. In the navigation pane, choose **Users** and then choose **Add users**\.
 
 1. Type the user name for the new user\. This is the sign\-in name for AWS\. If you want to add multiple users, choose **Add another user** for each additional user and type their user names\. You can add up to 10 users at one time\.
 **Note**  
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and STS quotas](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
 
 1. Select the type of access this set of users will have\. You can select programmatic access, access to the AWS Management Console, or both\.
    + Select **Programmatic access** if the users require access to the API, AWS CLI, or Tools for Windows PowerShell\. This creates an access key for each new user\. You can view or download the access keys when you get to the **Final** page\.
@@ -64,11 +64,11 @@ If an administrator has enabled [the **Allow users to change their own password*
 1. On the **Set permissions** page, specify how you want to assign permissions to this set of new users\. Choose one of the following three options:
    + **Add user to group**\. Choose this option if you want to assign the users to one or more groups that already have permissions policies\. IAM displays a list of the groups in your account, along with their attached policies\. You can select one or more existing groups, or choose **Create group** to create a new group\. For more information, see [Changing permissions for an IAM user](id_users_change-permissions.md)\.
    + **Copy permissions from existing user**\. Choose this option to copy all of the group memberships, attached managed policies, embedded inline policies, and any existing [permissions boundaries](access_policies_boundaries.md) from an existing user to the new users\. IAM displays a list of the users in your account\. Select the one whose permissions most closely match the needs of your new users\.
-   + **Attach existing policies directly**\. Choose this option to see a list of the AWS managed and customer managed policies in your account\. Select the policies that you want to attach to the new users or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to add the policy to the new user\. As a [best practice](best-practices.md#use-groups-for-permissions), we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
+   + **Attach existing policies directly**\. Choose this option to see a list of the AWS managed and customer managed policies in your account\. Select the policies that you want to attach to the new users or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to add the policy to the new user\. As a best practice, we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\. 
 
-   Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum user permissions**\. IAM displays a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies \(console\)](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
+   Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum user permissions**\. IAM displays a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions boundary or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to select the policy to use for the permissions boundary\.
 
 1. Choose **Next: Tags**\.
 

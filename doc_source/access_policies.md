@@ -6,8 +6,8 @@ IAM policies define permissions for an action regardless of the method that you 
 
 ## Policy types<a name="access_policy-types"></a>
 
-The following policy types, listed in order of frequency, are available for use in AWS\. For more details, see the sections below for each policy type\.
-+ **[Identity\-based policies](#policies_id-based)** – Attach managed and inline policies to IAM identities \(users, groups to which users belong, or roles\)\. Identity\-based policies grant permissions to an identity\.
+The following policy types, listed in order from most frequently used to less frequently used, are available for use in AWS\. For more details, see the sections below for each policy type\.
++ **[Identity\-based policies](#policies_id-based)** – Attach [managed](#managedpolicy) and [inline](#inline) policies to IAM identities \(users, groups to which users belong, or roles\)\. Identity\-based policies grant permissions to an identity\.
 + **[Resource\-based policies](#policies_resource-based)** – Attach inline policies to resources\. The most common examples of resource\-based policies are Amazon S3 bucket policies and IAM role trust policies\. Resource\-based policies grant permissions to the principal that is specified in the policy\. Principals can be in the same account as the resource or in other accounts\.
 + **[Permissions boundaries](#policies_bound)** – Use a managed policy as the permissions boundary for an IAM entity \(user or role\)\. That policy defines the maximum permissions that the identity\-based policies can grant to an entity, but does not grant permissions\. Permissions boundaries do not define the maximum permissions that a resource\-based policy can grant to an entity\.
 + **[Organizations SCPs](#policies_scp)** – Use an AWS Organizations service control policy \(SCP\) to define the maximum permissions for account members of an organization or organizational unit \(OU\)\. SCPs limit permissions that identity\-based policies or resource\-based policies grant to entities \(users or roles\) within the account, but do not grant permissions\.
@@ -28,7 +28,7 @@ To learn how to choose between managed and inline policies, see [Choosing betwee
 
 Resource\-based policies are JSON policy documents that you attach to a resource such as an Amazon S3 bucket\. These policies grant the specified principal permission to perform specific actions on that resource and defines under what conditions this applies\. Resource\-based policies are inline policies\. There are no managed resource\-based policies\. 
 
-To enable cross\-account access, you can specify an entire account or IAM entities in another account as the principal in a resource\-based policy\. Adding a cross\-account principal to a resource\-based policy is only half of establishing the trust relationship\. When the principal and the resource are in separate AWS accounts, you must also use an identity\-based policy to grant the principal access to the resource\. However, if a resource\-based policy grants access to a principal in the same account, no additional identity\-based policy is required\. For step\-by step instructions for granting cross\-service access, see [IAM Tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)\.
+To enable cross\-account access, you can specify an entire account or IAM entities in another account as the principal in a resource\-based policy\. Adding a cross\-account principal to a resource\-based policy is only half of establishing the trust relationship\. When the principal and the resource are in separate AWS accounts, you must also use an identity\-based policy to grant the principal access to the resource\. However, if a resource\-based policy grants access to a principal in the same account, no additional identity\-based policy is required\. For step\-by step instructions for granting cross\-service access, see [IAM tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)\.
 
 The IAM service supports only one type of resource\-based policy called a role *trust policy*, which is attached to an IAM role\. An IAM role is both an identity and a resource that supports resource\-based policies\. For that reason, you must attach both a trust policy and an identity\-based policy to an IAM role\. Trust policies define which principal entities \(accounts, users, roles, and federated users\) can assume the role\. To learn how IAM roles are different from other resource\-based policies, see [How IAM roles differ from resource\-based policies](id_roles_compare-resource-policies.md)\.
 
@@ -50,7 +50,7 @@ Access control lists \(ACLs\) are service policies that allow you to control whi
 
 ### Session policies<a name="policies_session"></a>
 
-Session policies are advanced policies that you pass in a parameter when you programmatically create a temporary session for a role or federated user\. The permissions for a session are the intersection of the identity\-based policies for the IAM entity \(user or role\) used to create the session and the session policies\. Permissions can also come from a resource\-based policy\. An explicit deny in any of these policies overrides the allow\.
+Session policies are advanced policies that you pass as a parameter when you programmatically create a temporary session for a role or federated user\. The permissions for a session are the intersection of the identity\-based policies for the IAM entity \(user or role\) used to create the session and the session policies\. Permissions can also come from a resource\-based policy\. An explicit deny in any of these policies overrides the allow\.
 
 You can create role session and pass session policies programmatically using the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. You can pass a single JSON inline session policy document using the `Policy` parameter\. You can use the `PolicyArns` parameter to specify up to 10 managed session policies\. For more information about creating a role session, see [Requesting temporary security credentials](id_credentials_temp_request.md)\.
 
@@ -77,6 +77,8 @@ The AWS account root user is affected by some policy types but not others\. You 
 Most policies are stored in AWS as JSON documents\. Identity\-based policies and policies used to set permissions boundaries are JSON policy documents that you attach to a user or role\. Resource\-based policies are JSON policy documents that you attach to a resource\. SCPs are JSON policy documents with restricted syntax that you attach to an AWS Organizations organizational unit \(OU\)\. ACLs are also attached to a resource, but you must use a different syntax\. Session policies are JSON policies that you provide when you assume a role or federated user session\.
 
 It is not necessary for you to understand the JSON syntax\. You can use the visual editor in the AWS Management Console to create and edit customer managed policies without ever using JSON\. However, if you use inline policies for groups or complex policies, you must still create and edit those policies in the JSON editor using the console\. For more information about using the visual editor, see [Creating IAM policies](access_policies_create.md) and [Editing IAM policies](access_policies_manage-edit.md)\.
+
+ When you create or edit a JSON policy, IAM can perform policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with recommendations to help you further refine your policies\. To learn more about policy validation, see [Validating IAM policies](access_policies_policy-validator.md)\. To learn more about IAM Access Analyzer policy checks and actionable recommendations, see [ IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)\. 
 
 ### JSON policy document structure<a name="policies-introduction"></a>
 
@@ -166,11 +168,10 @@ The following resource\-based policy can be attached to an Amazon S3 bucket\. Th
 ```
 {
   "Version": "2012-10-17",
-  "Id": "S3-Account-Permissions",
   "Statement": [{
     "Sid": "1",
     "Effect": "Allow",
-    "Principal": {"AWS": ["arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:root"]},
+    "Principal": {"AWS": ["arn:aws:iam::account-id:root"]},
     "Action": "s3:*",
     "Resource": [
       "arn:aws:s3:::mybucket",

@@ -41,7 +41,7 @@ For example, imagine you have an IAM user named `token-app` whose credentials ar
 {
   "Version": "2012-10-17",
   "Statement": {
-    "Principal": {"AWS": "arn:aws:sts::ACCOUNT-ID-WITHOUT-HYPHENS:federated-user/Bob"},
+    "Principal": {"AWS": "arn:aws:sts::account-id:federated-user/Bob"},
     "Effect": "Deny",
     "Action": "s3:*",
     "Resource": "arn:aws:s3:::EXAMPLE-BUCKET"
@@ -52,7 +52,7 @@ For example, imagine you have an IAM user named `token-app` whose credentials ar
 You can specify the ARN of the IAM user whose credentials were used to call `GetFederationToken` in the `Principal` element of the bucket policy, instead of specifying the federated user\. In that case, the `Principal` element of the preceding policy would look like this:
 
 ```
-"Principal": {"AWS": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:user/token-app"}
+"Principal": {"AWS": "arn:aws:iam::account-id:user/token-app"}
 ```
 
 It is important to note that specifying the ARN of IAM user `token-app` in the policy will result in denying access to ***all*** federated users created by `token-app`, not only the federated user named Bob\. 
@@ -62,13 +62,13 @@ It is important to note that specifying the ARN of IAM user `token-app` in the p
 It is also possible to specify the ARN of the temporary security credentials that were created by assuming a role\. The difference is the syntax used in the `Principal` element of the resource\-based policy\. For example, a user assumes a role called `Accounting-Role` and specifies a `RoleSessionName` of `Mary` \(`RoleSessionName` is a parameter of the `AssumeRole` API call\)\. To deny access to the temporary security credentials that resulted from this API call, the `Principal` element of the resource\-based policy would look like this:
 
 ```
-"Principal": {"AWS": "arn:aws:sts::ACCOUNT-ID-WITHOUT-HYPHENS:assumed-role/Accounting-Role/Mary"}
+"Principal": {"AWS": "arn:aws:sts::account-id:assumed-role/Accounting-Role/Mary"}
 ```
 
 You can also specify the ARN of the IAM role in the `Principal` element of a resourced\-based policy, as in the following example\. In this case, the policy will result in denying access to ***all*** temporary security credentials associated with the role named `Accounting-Role`\. 
 
 ```
-"Principal": {"AWS": "arn:aws:iam::ACCOUNT-ID-WITHOUT-HYPHENS:role/Accounting-Role"}
+"Principal": {"AWS": "arn:aws:iam::account-id:role/Accounting-Role"}
 ```
 
 ## Denying access to temporary security credentials issued before a specific time<a name="denying-access-to-credentials-by-issue-time"></a>

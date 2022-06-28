@@ -15,7 +15,7 @@ We recommend that you [set a custom password policy](id_credentials_passwords_ac
 
 1. In the **Password policy** section, choose **Change password policy** if your account uses the default password policy\. If your account uses a custom password policy, choose **Change**\.
 
-1. Select **Allow users to change their own password**, and then click **save changes**\. 
+1. Select **Allow users to change their own password**, and then choose **Save changes**\. This allows all users in the account access to the `iam:ChangePassword` action for only their user and to the `iam:GetAccountPasswordPolicy` action\.
 
 1. Provide users with the following instructions for changing their passwords: [How an IAM user changes their own password](id_credentials_passwords_user-change-own.md)\. 
 
@@ -31,7 +31,7 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
 
 1. Create the users who should be allowed to change their own password, if they do not already exist\. For details, see [Creating an IAM user in your AWS account](id_users_create.md)\. 
 
-1. Create an IAM group for the users who should be allowed to change their passwords, and then add the users from the previous step to the group\. For details, see [Creating your first IAM admin user and group](getting-started_create-admin-group.md) and [Managing IAM groups](id_groups_manage.md)\. 
+1. Create an IAM group for the users who should be allowed to change their passwords, and then add the users from the previous step to the group\. For details, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md) and [Managing IAM user groups](id_groups_manage.md)\. 
 
    This step is optional, but it's a best practice to use groups to manage permissions\. That way, you can add and remove users and change the permissions for the group as a whole\. 
 
@@ -49,7 +49,7 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
        {
          "Effect": "Allow",
          "Action": "iam:ChangePassword",
-         "Resource": "arn:aws:iam::account-id-without-hyphens:user/${aws:username}"
+         "Resource": "arn:aws:iam::account-id:user/${aws:username}"
        }
      ]
    }
