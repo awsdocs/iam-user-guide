@@ -20,13 +20,13 @@ If you can't enable your FIDO security key, check the following:
   For information on devices and browsers you can use with WebAuthn and AWS, see [Supported configurations for using FIDO security keys](id_credentials_mfa_fido_supported_configurations.md)\.
 + Are you using Mozilla Firefox?
 
-  Most Firefox versions that support WebAuthn do not enable support by default\. To enable support for WebAuthn in Firefox, do the following:
+  Current Firefox versions support WebAuthn by default\. To enable support for WebAuthn in Firefox, do the following:
 
   1. From the Firefox address bar, type **about:config**\.
 
-  1. In the Search bar of the screen that opens, type **u2f**\.
+  1. In the Search bar of the screen that opens, type **webauthn**\.
 
-  1. Choose **security\.webauth\.u2f** and change its value to **true**\.
+  1. Choose **security\.webauth\.webauthn** and change its value to **true**\.
 + Are you using any browser plugins?
 
   AWS does not support the use of plugins to add WebAuthn browser support\. Instead, use a browser that offers native support of the WebAuthn standard\.

@@ -38,7 +38,7 @@ This policy does not allow users to view the **Users** page in the IAM console o
                 "iam:ListVirtualMFADevices"
             ],
             "Resource": "*"
-        },       
+        },
         {
             "Sid": "AllowManageOwnPasswords",
             "Effect": "Allow",

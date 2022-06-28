@@ -4,9 +4,9 @@ To configure many AWS services, you must *pass* an IAM role to the service\. Thi
 
 To pass a role \(and its permissions\) to an AWS service, a user must have permissions to *pass the role* to the service\. This helps administrators ensure that only approved users can configure a service with a role that grants permissions\. To allow a user to pass a role to an AWS service, you must grant the `PassRole` permission to the user's IAM user, role, or group\.
 
-**Notes**
-- You cannot use the `PassRole` permission to pass a cross-account role.
-- You cannot limit permissions to pass a role based on tags attached to the role using the `ResourceTag/key-name` condition key\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
+**Notes**  
+You cannot use the `PassRole` permission to pass a cross\-account role\.
+You cannot limit permissions to pass a role based on tags attached to the role using the `ResourceTag/key-name` condition key\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
 
 When you create a service\-linked role, you must also have permission to pass that role to the service\. Some services automatically create a service\-linked role in your account when you perform an action in that service\. For example, Amazon EC2 Auto Scaling creates the `AWSServiceRoleForAutoScaling` service\-linked role for you when you create an Auto Scaling group for the first time\. If you try to create an Auto Scaling group without the `PassRole` permission, you receive an error\. If you choose the default role, the `iam:PassRole` permission might not be required\. To learn which services support service\-linked roles, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\. To learn which services automatically create a service\-linked role when you perform an action in that service, choose the **Yes** link and view the service\-linked role documentation for the service\.
 
