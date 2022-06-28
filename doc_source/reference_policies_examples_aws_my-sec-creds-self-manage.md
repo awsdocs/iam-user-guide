@@ -35,7 +35,6 @@ This policy does not allow users to view the **Users** page in the IAM console o
             "Effect": "Allow",
             "Action": [
                 "iam:GetAccountPasswordPolicy",
-                
                 "iam:ListVirtualMFADevices"
             ],
             "Resource": "*"
