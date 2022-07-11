@@ -84,6 +84,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Roles terms and concepts](id_roles_terms-and-concepts.md)
       + [Common scenarios for roles: Users, applications, and services](id_roles_common-scenarios.md)
          + [Providing access to an IAM user in another AWS account that you own](id_roles_common-scenarios_aws-accounts.md)
+         + [Providing access for non AWS workloads](id_roles_common-scenarios_non-aws.md)
          + [Providing access to AWS accounts owned by third parties](id_roles_common-scenarios_third-party.md)
             + [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md)
          + [Providing access to an AWS service](id_roles_common-scenarios_services.md)

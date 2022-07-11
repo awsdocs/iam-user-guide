@@ -4,7 +4,7 @@ You can use WebAuthn as a multi\-factor authentication \(MFA\) method in AWS usi
 
 ## FIDO devices supported by AWS<a name="id_credentials_mfa_fido_supported_devices"></a>
 
-AWS currently supports FIDO\-compliant security devices that plug into USB ports on your computer\.
+AWS currently supports FIDO\-compliant security devices that plug into USB ports on your computer\. We currently do not support the Platform authenticators TouchID, FaceID, or Windows Hello\.
 
 **Note**  
 AWS requires access to the physical USB port on your computer to verify your FIDO\-compliant device\. WebAuthn MFA will not work with a virtual machine, a remote connection, or a browser's incognito mode\.
