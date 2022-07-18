@@ -252,9 +252,37 @@ Use this key to compare the account to which the requesting principal belongs wi
 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN) and [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
-+ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
+Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. 
++ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\. You can specify the following types of principals in this condition key: 
+  + IAM role
+  + IAM user
+  + AWS STS federated user session
+  + AWS account root user
 + **Value type** – Single\-valued
+
+The following list shows the request context value returned for different types of principals that you can specify in the `aws:PrincipalArn` condition key:
++ **IAM role** – The request context contains the following value for condition key `aws:PrincipalArn`\. Do not specify the assumed role session ARN as a value for this condition key\. For more information about the assumed role session principal, see [Role session principals](reference_policies_elements_principal.md#principal-role-session)\.
+
+  ```
+  arn:aws:iam::AWS-account-ID:role/role-name
+  ```
++ **IAM user** – The request context contains the following value for condition key `aws:PrincipalArn`\.
+
+  ```
+  arn:aws:iam::AWS-account-ID:user/user-name
+  ```
++ **AWS STS federated user sessions** – The request context contains the following value for condition key `aws:PrincipalArn`\.
+
+  ```
+  arn:aws:sts::AWS-account-ID:federated-user/user-name
+  ```
++ **AWS account root user** – The request context contains the following value for condition key `aws:PrincipalArn`\. When you specify the root user ARN as the value for the `aws:PrincipalArn` condition key, it limits permissions only for the root user of the AWS account\. This is different from specifying the root user ARN in the principal element of a resource\-based policy, which delegates authority to the AWS account\. For more information about specifying the root user ARN in the principal element of a resource\-based policy, see [AWS account principals](reference_policies_elements_principal.md#principal-accounts)\. 
+
+  ```
+  arn:aws:iam::AWS-account-ID:root
+  ```
+
+  You can specify the root user ARN as a value for condition key `aws:PrincipalArn` in AWS Organizations service control policies \(SCPs\)\. SCPs are a type of organization policy used to manage permissions in your organization and affect only member accounts in the organization\. An SCP restricts permissions for IAM users and roles in member accounts, including the member account's root user\. For more information about the effect of SCPs on permissions, see [SCP effects on permissions](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#scp-effects-on-permissions) in the *Organizations User Guide*\.
 
 ## aws:PrincipalIsAWSService<a name="condition-keys-principalisawsservice"></a>
 

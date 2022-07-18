@@ -271,7 +271,18 @@ For the most part, you use friendly names and [ARNs](#identifiers-arns) when you
 
 One example reuses friendly names in your AWS account\. Within your account, a friendly name for a user, user group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee\. The bucket has a resource\-based policy \(a bucket policy\) that allows users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the `David` IAM user, the policy allows the new David to access information that was left by the former David\. 
 
-However, every IAM user has a unique ID, even if you create a new IAM user that reuses a friendly name you deleted before\. In the example, the old IAM user David and the new IAM user David have different unique IDs\. You can create resource\-based policies that grant access by unique ID and not just by user name\. Doing so reduces the chance that you could inadvertently grant access to information that an employee should not have\. 
+In general, we recommend that you specify the ARN for the resource in your policies instead of its unique ID\. However, every IAM user has a unique ID, even if you create a new IAM user that reuses a friendly name you deleted before\. In the example, the old IAM user David and the new IAM user David have different unique IDs\. You can create resource\-based policies that grant access by unique ID and not just by user name\. The following example shows how you might specify unique IDs in the principal element of a resource\-based policy\.
+
+```
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::1111-1111-1111:role/examplerole",
+          "AIDACKCEVSQ6C2EXAMPLE",
+          "AROADBQP57FF2AEXAMPLE"
+}
+```
+
+Doing so reduces the chance that you could inadvertently grant access to information that an employee should not have\. 
 
 Another example where user IDs can be useful is if you maintain your own database \(or other store\) of IAM user information\. The unique ID can provide a unique identifier for each IAM user you create\. This is the case when you have IAM users that reuse a name, as in the previous example\.
 

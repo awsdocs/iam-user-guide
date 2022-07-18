@@ -88,7 +88,7 @@ For information about changing the root user's password, see [Changing the AWS a
 
 ## Securing the credentials for the root user<a name="id_root-user_secure_credentials"></a>
 
-For more information about securing the credentials for the AWS account root user, see [Lock away your AWS account root user access keys](best-practices.md#lock-away-credentials)\.
+For more information about securing the credentials for the AWS account root user, see [Safeguard your root user credentials and don't use them for everyday tasks](best-practices.md#lock-away-credentials)\.
 
 ## Transferring the root user owner<a name="id_root-user_transfer_account"></a>
 

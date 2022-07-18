@@ -179,12 +179,6 @@ If you leave the value for a condition key empty, then that key is ignored durin
 Some actions require different resource types under different circumstances\. Each group of resource types is associated with a scenario\. If one of these applies to your simulation, select it and the simulator requires the resource types appropriate for that scenario\. The following list shows each of the supported scenario options and the resources that you must define to run the simulation\.
 
    Each of the following Amazon EC2 scenarios requires that you specify `instance`, `image`, and `security-group` resources\. If your scenario includes an EBS volume, then you must specify that `volume` as a resource\. If the Amazon EC2 scenario includes a virtual private cloud \(VPC\), then you must supply the `network-interface` resource\. If it includes an IP subnet, then you must specify the `subnet` resource\. For more information on the Amazon EC2 scenario options, see [Supported Platforms](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html) in the *Amazon EC2 User Guide*\.
-   + **EC2\-Classic\-InstanceStore**
-
-     instance, image, security\-group
-   + **EC2\-Classic\-EBS**
-
-     instance, image, security\-group, volume
    + **EC2\-VPC\-InstanceStore**
 
      instance, image, security\-group, network\-interface

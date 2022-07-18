@@ -203,7 +203,7 @@ This policy does not allow any actions\. Use this policy in combination with oth
 
 If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SecureTransport` key is always present in the request context\. 
 
-You can not use a [policy variable](reference_policies_variables.md) with the `Boolean` condition operator\.
+You can use a [policy variable](reference_policies_variables.md) with the `Boolean` condition operator\.
 
 ## Binary condition operators<a name="Conditions_BinaryEquals"></a>
 

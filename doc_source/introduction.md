@@ -36,7 +36,7 @@ You can grant different permissions to different people for different resources\
 You can use IAM features to securely provide credentials for applications that run on EC2 instances\. These credentials provide permissions for your application to access other AWS resources\. Examples include S3 buckets and DynamoDB tables\. 
 
 **Multi\-factor authentication \(MFA\)**  
-You can add two\-factor authentication to your account and to individual users for extra security\. With MFA you or your users must provide not only a password or access key to work with your account, but also a code from a specially configured device\. 
+You can add two\-factor authentication to your account and to individual users for extra security\. With MFA you or your users must provide not only a password or access key to work with your account, but also a code from a specially configured device\. If you already use a FIDO security key with other services, and it has an AWS supported configuration\. For more information, see [Supported configurations for using FIDO security keys](id_credentials_mfa_fido_supported_configurations.md)\. 
 
 **Identity federation**  
 You can allow users who already have passwords elsewhere—for example, in your corporate network or with an internet identity provider—to get temporary access to your AWS account\. 
