@@ -1,6 +1,10 @@
 # Manage your IAM account using an AWS SDK<a name="example_iam_Scenario_AccountManagement_section"></a>
 
-The following code example shows how to manage your IAM account\.
+The following code example shows how to:
++ Get and update the alias for the account\.
++ Generate a report of users and their credentials\.
++ Get a summary of account usage\.
++ Get details about all users, groups, roles, and policies in your account, including their relationships to each other\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -229,6 +233,14 @@ def usage_demo():
     print('-'*88)
     print("Thanks for watching.")
 ```
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [CreateAccountAlias](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreateAccountAlias)
+  + [DeleteAccountAlias](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeleteAccountAlias)
+  + [GenerateCredentialReport](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GenerateCredentialReport)
+  + [GetAccountAuthorizationDetails](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GetAccountAuthorizationDetails)
+  + [GetAccountSummary](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GetAccountSummary)
+  + [GetCredentialReport](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GetCredentialReport)
+  + [ListAccountAliases](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListAccountAliases)
 
 ------
 

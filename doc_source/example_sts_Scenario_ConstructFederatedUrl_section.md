@@ -1,6 +1,9 @@
 # Construct a URL with AWS STS for federated users using an AWS SDK<a name="example_sts_Scenario_ConstructFederatedUrl_section"></a>
 
-The following code example shows how to construct a URL with AWS STS to give federated users limited access to the AWS Management Console\.
+The following code example shows how to:
++ Create an IAM role that grants read\-only access to the current account's Amazon S3 resources\.
++ Get a security token from the AWS federation endpoint\.
++ Construct a URL that can be used to access the console with federated credentials\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -10,7 +13,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
 **SDK for Python \(Boto3\)**  
  To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
-Create a role that grants read\-only access to the current account's Amazon S3 resources\.  
+Create a role that grants read\-only access to the current account's S3 resources\.  
 
 ```
 def setup(iam_resource):

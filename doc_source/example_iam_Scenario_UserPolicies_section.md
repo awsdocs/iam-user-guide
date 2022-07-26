@@ -1,6 +1,10 @@
 # Create read\-only and read\-write IAM users using an AWS SDK<a name="example_iam_Scenario_UserPolicies_section"></a>
 
-The following code example shows how to create two AWS Identity and Access Management \(IAM\) users, where one user can get and put objects in an Amazon Simple Storage Service \(Amazon S3\) bucket and the other can only get objects from the bucket\. The users' credentials are then used to move objects in and out of the bucket\.
+The following code example shows how to:
++ Create two IAM users\.
++ Attach a policy that lets one of the users get and put objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\.
++ Attach a policy that lets the other user get objects from the bucket\.
++ Obtain differing permissions to the bucket based on user credentials\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -356,6 +360,17 @@ def usage_demo():
     print(f"Emptied and deleted {bucket.name}.")
     print("Thanks for watching!")
 ```
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [AttachUserPolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/AttachUserPolicy)
+  + [CreateAccessKey](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreateAccessKey)
+  + [CreatePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreatePolicy)
+  + [CreateUser](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreateUser)
+  + [DeleteAccessKey](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeleteAccessKey)
+  + [DeletePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeletePolicy)
+  + [DeleteUser](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeleteUser)
+  + [DetachUserPolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DetachUserPolicy)
+  + [ListUsers](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListUsers)
+  + [UpdateUser](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/UpdateUser)
 
 ------
 

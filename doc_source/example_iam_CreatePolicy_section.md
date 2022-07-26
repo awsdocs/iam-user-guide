@@ -95,19 +95,20 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
     public static String createIAMPolicy(IamClient iam, String policyName ) {
 
         try {
-            // Create an IamWaiter object
+            // Create an IamWaiter object.
             IamWaiter iamWaiter = iam.waiter();
 
             CreatePolicyRequest request = CreatePolicyRequest.builder()
                 .policyName(policyName)
-                .policyDocument(PolicyDocument).build();
+                .policyDocument(PolicyDocument)
+                .build();
 
             CreatePolicyResponse response = iam.createPolicy(request);
 
-            // Wait until the policy is created
+            // Wait until the policy is created.
             GetPolicyRequest polRequest = GetPolicyRequest.builder()
-                    .policyArn(response.policy().arn())
-                    .build();
+                .policyArn(response.policy().arn())
+                .build();
 
             WaiterResponse<GetPolicyResponse> waitUntilPolicyExists = iamWaiter.waitUntilPolicyExists(polRequest);
             waitUntilPolicyExists.matched().response().ifPresent(System.out::println);

@@ -319,7 +319,7 @@ Attribute\-based access control \(ABAC\) uses an authorization strategy that def
 
 If your company uses an OIDC or SAML\-based identity provider \(IdP\) to manage user identities, you can configure your assertion to pass session tags to AWS\. For example, with corporate user identities, when your employees federate into AWS, AWS applies their attributes to their resulting principal\. You can then use ABAC to allow or deny permissions based on those attributes\. For details, see [IAM tutorial: Use SAML session tags for ABAC](tutorial_abac-saml.md)\.
 
-For more information about using AWS SSO with ABAC, see [Attributes for access control](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributesforaccesscontrol.html) in the *AWS Single Sign\-On User Guide*\.
+For more information about using IAM Identity Center with ABAC, see [Attributes for access control](https://docs.aws.amazon.com/singlesignon/latest/userguide/attributesforaccesscontrol.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
 
 ## Viewing session tags in CloudTrail<a name="id_session-tags_ctlogs"></a>
 

@@ -1,6 +1,10 @@
 # Get a session token that requires an MFA token with AWS STS using an AWS SDK<a name="example_sts_Scenario_SessionTokenMfa_section"></a>
 
-The following code example shows how to get a session token that requires a mulfi\-factor authentication \(MFA\) token with AWS STS and use temporary credentials to access an AWS resource\.
+The following code example shows how to:
++ Create an IAM role that grants permission to list Amazon S3 buckets\.
++ Create an IAM user that has permission to assume the role only when MFA credentials are provided\.
++ Register an MFA device for the user\.
++ Provide MFA credentials to get a session token and use temporary credentials to list S3 buckets\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -10,7 +14,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
 **SDK for Python \(Boto3\)**  
  To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
-Create an IAM user, register an MFA device, and create a role that grants permission to let the user list Amazon S3 buckets only when MFA credentials are used\.  
+Create an IAM user, register an MFA device, and create a role that grants permission to let the user list S3 buckets only when MFA credentials are used\.  
 
 ```
 def setup(iam_resource):
@@ -84,7 +88,7 @@ def setup(iam_resource):
 
     return user, user_key, virtual_mfa_device
 ```
-Get temporary session credentials by passing an MFA token, and use the credentials to list Amazon S3 buckets for the account\.  
+Get temporary session credentials by passing an MFA token, and use the credentials to list S3 buckets for the account\.  
 
 ```
 def list_buckets_with_session_token_with_mfa(mfa_serial_number, mfa_totp, sts_client):

@@ -78,9 +78,9 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
     public static void attachIAMRolePolicy(IamClient iam, String roleName, String policyArn ) {
 
         try {
-             ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
-                    .roleName(roleName)
-                    .build();
+            ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
+                .roleName(roleName)
+                .build();
 
             ListAttachedRolePoliciesResponse response = iam.listAttachedRolePolicies(request);
             List<AttachedPolicy> attachedPolicies = response.attachedPolicies();
@@ -90,29 +90,26 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             for (AttachedPolicy policy: attachedPolicies) {
                 polArn = policy.policyArn();
                 if (polArn.compareTo(policyArn)==0) {
-                   System.out.println(roleName +
-                            " policy is already attached to this role.");
+                    System.out.println(roleName + " policy is already attached to this role.");
                     return;
                 }
-          }
+            }
 
-            AttachRolePolicyRequest attachRequest =
-                AttachRolePolicyRequest.builder()
-                        .roleName(roleName)
-                        .policyArn(policyArn)
-                        .build();
+           AttachRolePolicyRequest attachRequest = AttachRolePolicyRequest.builder()
+               .roleName(roleName)
+               .policyArn(policyArn)
+               .build();
 
-            iam.attachRolePolicy(attachRequest);
+           iam.attachRolePolicy(attachRequest);
 
-            System.out.println("Successfully attached policy " + policyArn +
+           System.out.println("Successfully attached policy " + policyArn +
                 " to role " + roleName);
 
-         } catch (IamException e) {
-                System.err.println(e.awsErrorDetails().errorMessage());
-                System.exit(1);
-          }
-
-     System.out.println("Done");
+        } catch (IamException e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+        System.out.println("Done");
     }
 ```
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for Java 2\.x API Reference*\. 

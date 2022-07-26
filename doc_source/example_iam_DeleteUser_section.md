@@ -92,11 +92,12 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             DeleteUserRequest request = DeleteUserRequest.builder()
-                    .userName(userName)
-                    .build();
+                .userName(userName)
+                .build();
 
             iam.deleteUser(request);
             System.out.println("Successfully deleted IAM user " + userName);
+
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);

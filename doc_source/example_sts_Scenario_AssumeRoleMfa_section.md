@@ -1,6 +1,10 @@
 # Assume an IAM role that requires an MFA token with AWS STS using an AWS SDK<a name="example_sts_Scenario_AssumeRoleMfa_section"></a>
 
-The following code example shows how to assume an IAM role that requires a multi\-factor authentication \(MFA\) token with AWS STS and use temporary security credentials to access an AWS resource\.
+The following code example shows how to:
++ Create an IAM role that grants permission to list Amazon S3 buckets\.
++ Create an IAM user that has permission to assume the role only when MFA credentials are provided\.
++ Register an MFA device for the user\.
++ Assume the role and use temporary credentials to list S3 buckets\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -10,7 +14,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
 **SDK for Python \(Boto3\)**  
  To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
-Create an IAM user, register an MFA device, and create a role that grants permission to list Amazon S3 buckets\. The user has rights only to assume the role\.  
+Create an IAM user, register an MFA device, and create a role that grants permission to list S3 buckets\. The user has rights only to assume the role\.  
 
 ```
 def setup(iam_resource):
@@ -142,7 +146,7 @@ def try_to_assume_role_without_mfa(assume_role_arn, session_name, sts_client):
         else:
             raise
 ```
-Assume the role that grants permission to list Amazon S3 buckets, passing the required MFA token, and show that buckets can be listed\.  
+Assume the role that grants permission to list S3 buckets, passing the required MFA token, and show that buckets can be listed\.  
 
 ```
 def list_buckets_from_assumed_role_with_mfa(

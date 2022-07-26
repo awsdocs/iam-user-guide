@@ -17,8 +17,8 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             DeleteAccountAliasRequest request = DeleteAccountAliasRequest.builder()
-                    .accountAlias(alias)
-                    .build();
+                .accountAlias(alias)
+                .build();
 
             iam.deleteAccountAlias(request);
             System.out.println("Successfully deleted account alias " + alias);

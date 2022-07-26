@@ -72,34 +72,36 @@ do
 
         try {
 
-             boolean done = false;
-             String newMarker = null;
+            boolean done = false;
+            String newMarker = null;
 
-             while(!done) {
+            while(!done) {
                 ListUsersResponse response;
-
                 if (newMarker == null) {
                     ListUsersRequest request = ListUsersRequest.builder().build();
                     response = iam.listUsers(request);
                 } else {
                     ListUsersRequest request = ListUsersRequest.builder()
-                        .marker(newMarker).build();
+                        .marker(newMarker)
+                        .build();
+
                     response = iam.listUsers(request);
                 }
 
                 for(User user : response.users()) {
-                 System.out.format("\n Retrieved user %s", user.userName());
-                 AttachedPermissionsBoundary permissionsBoundary = user.permissionsBoundary();
-                 if (permissionsBoundary != null)
-                     System.out.format("\n Permissions boundary details %s", permissionsBoundary.permissionsBoundaryTypeAsString());
+                    System.out.format("\n Retrieved user %s", user.userName());
+                    AttachedPermissionsBoundary permissionsBoundary = user.permissionsBoundary();
+                    if (permissionsBoundary != null)
+                        System.out.format("\n Permissions boundary details %s", permissionsBoundary.permissionsBoundaryTypeAsString());
                 }
 
                 if(!response.isTruncated()) {
-                  done = true;
+                    done = true;
                 } else {
                     newMarker = response.marker();
                 }
             }
+
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);

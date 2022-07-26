@@ -1,6 +1,10 @@
 # Manage IAM policies using an AWS SDK<a name="example_iam_Scenario_PolicyManagement_section"></a>
 
-The following code example shows how to manage IAM policies\.
+The following code example shows how to:
++ Create and list policies\.
++ Create and get policy versions\.
++ Roll back a policy to a previous version\.
++ Delete policies\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -229,6 +233,15 @@ def usage_demo():
     print(f"Deleted policy {policy.policy_name}.")
     print("Thanks for watching!")
 ```
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [CreatePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreatePolicy)
+  + [CreatePolicyVersion](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreatePolicyVersion)
+  + [DeletePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeletePolicy)
+  + [DeletePolicyVersion](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeletePolicyVersion)
+  + [GetPolicyVersion](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GetPolicyVersion)
+  + [ListPolicies](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListPolicies)
+  + [ListPolicyVersions](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListPolicyVersions)
+  + [SetDefaultPolicyVersion](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/SetDefaultPolicyVersion)
 
 ------
 

@@ -1,6 +1,10 @@
-# Rollback an IAM policy version using an AWS SDK<a name="example_iam_Scenario_RollbackPolicyVersion_section"></a>
+# Roll back an IAM policy version using an AWS SDK<a name="example_iam_Scenario_RollbackPolicyVersion_section"></a>
 
-The following code example shows how to rollback an IAM policy version\.
+The following code example shows how to:
++ Get the list of policy versions in order by date\.
++ Find the default policy version\.
++ Make the previous policy version the default\.
++ Delete the old default version\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -59,6 +63,10 @@ def rollback_policy_version(policy_arn):
     else:
         return rollback_version
 ```
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [DeletePolicyVersion](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeletePolicyVersion)
+  + [ListPolicyVersions](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListPolicyVersions)
+  + [SetDefaultPolicyVersion](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/SetDefaultPolicyVersion)
 
 ------
 

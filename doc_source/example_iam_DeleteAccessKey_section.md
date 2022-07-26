@@ -144,9 +144,9 @@ func main() {
 
         try {
             DeleteAccessKeyRequest request = DeleteAccessKeyRequest.builder()
-                    .accessKeyId(accessKey)
-                    .userName(username)
-                    .build();
+                .accessKeyId(accessKey)
+                .userName(username)
+                .build();
 
             iam.deleteAccessKey(request);
             System.out.println("Successfully deleted access key " + accessKey +

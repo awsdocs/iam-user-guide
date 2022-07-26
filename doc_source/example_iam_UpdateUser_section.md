@@ -88,18 +88,18 @@ func main() {
 
         try {
             UpdateUserRequest request = UpdateUserRequest.builder()
-                    .userName(curName)
-                    .newUserName(newName)
-                    .build();
+                .userName(curName)
+                .newUserName(newName)
+                .build();
 
             iam.updateUser(request);
-            System.out.printf("Successfully updated user to username %s",
-                newName);
+            System.out.printf("Successfully updated user to username %s", newName);
+
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
         }
-      }
+    }
 ```
 +  For API details, see [UpdateUser](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/UpdateUser) in *AWS SDK for Java 2\.x API Reference*\. 
 

@@ -10,6 +10,9 @@ Code excerpts that show you how to call individual service functions\.
 **Scenarios**  
 Code examples that show you how to accomplish a specific task by calling multiple functions within the same service\.
 
+**Cross\-service examples**  
+Sample applications that work across multiple AWS services\.
+
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.
 
 **Contents**
@@ -65,4 +68,7 @@ For a complete list of AWS SDK developer guides and code examples, see [Using IA
   + [Manage policies](example_iam_Scenario_PolicyManagement_section.md)
   + [Manage roles](example_iam_Scenario_RoleManagement_section.md)
   + [Manage your account](example_iam_Scenario_AccountManagement_section.md)
-  + [Rollback a policy version](example_iam_Scenario_RollbackPolicyVersion_section.md)
+  + [Roll back a policy version](example_iam_Scenario_RollbackPolicyVersion_section.md)
++ [Cross\-service examples](service_code_examples_iam_cross-service_examples.md)
+  + [Create a long\-lived Amazon EMR cluster and run several steps](example_cross_LongLivedEmrCluster_section.md)
+  + [Create a short\-lived Amazon EMR cluster and run a step](example_cross_ShortLivedEmrCluster_section.md)

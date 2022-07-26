@@ -3,7 +3,7 @@
 For increased security, we recommend that you configure multi\-factor authentication \(MFA\) to help protect your AWS resources\. You can enable MFA for IAM users or the AWS account root user\. When you enable MFA for the root user, it affects only the root user credentials\. IAM users in the account are distinct identities with their own credentials, and each identity has its own MFA configuration\.
 
 **Note**  
-Have you considered using AWS Single Sign\-On \(AWS SSO\)? You can use AWS SSO to centrally manage access to multiple AWS accounts and provide users with MFA\-protected, single sign\-on access to all their assigned accounts from one place\. With AWS SSO, you can create and manage user identities in AWS SSO or easily connect to your existing SAML 2\.0 compatible identity provider\. For more information, see [What is AWS SSO?](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the *AWS Single Sign\-On User Guide*\.
+Have you considered using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) \(IAM Identity Center\)? You can use IAM Identity Center to centrally manage access to multiple AWS accounts and provide users with MFA\-protected, single sign\-on access to all their assigned accounts from one place\. With IAM Identity Center, you can create and manage user identities in IAM Identity Center or easily connect to your existing SAML 2\.0 compatible identity provider\. For more information, see [What is IAM Identity Center?](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
 
 **Topics**
 + [What is MFA?](#id_credentials_mfa-what-is-mfa)

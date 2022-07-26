@@ -123,11 +123,11 @@ func main() {
 
         try {
             CreateAccessKeyRequest request = CreateAccessKeyRequest.builder()
-                .userName(user).build();
+                .userName(user)
+                .build();
 
             CreateAccessKeyResponse response = iam.createAccessKey(request);
-           String keyId = response.accessKey().accessKeyId();
-           return keyId;
+            return response.accessKey().accessKeyId();
 
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());

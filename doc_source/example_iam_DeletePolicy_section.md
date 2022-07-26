@@ -17,8 +17,8 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             DeletePolicyRequest request = DeletePolicyRequest.builder()
-                   .policyArn(policyARN)
-                   .build();
+                .policyArn(policyARN)
+                .build();
 
             iam.deletePolicy(request);
             System.out.println("Successfully deleted the policy");

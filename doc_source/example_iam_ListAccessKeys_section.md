@@ -102,21 +102,24 @@ func main() {
             while (!done) {
                 ListAccessKeysResponse response;
 
-            if(newMarker == null) {
-                ListAccessKeysRequest request = ListAccessKeysRequest.builder()
-                        .userName(userName).build();
-                response = iam.listAccessKeys(request);
-            } else {
-                ListAccessKeysRequest request = ListAccessKeysRequest.builder()
-                        .userName(userName)
-                        .marker(newMarker).build();
-                response = iam.listAccessKeys(request);
-            }
+                if(newMarker == null) {
+                    ListAccessKeysRequest request = ListAccessKeysRequest.builder()
+                    .userName(userName)
+                    .build();
 
-            for (AccessKeyMetadata metadata :
-                    response.accessKeyMetadata()) {
-                System.out.format("Retrieved access key %s",
-                        metadata.accessKeyId());
+                    response = iam.listAccessKeys(request);
+
+                } else {
+                    ListAccessKeysRequest request = ListAccessKeysRequest.builder()
+                        .userName(userName)
+                        .marker(newMarker)
+                        .build();
+
+                    response = iam.listAccessKeys(request);
+                }
+
+                for (AccessKeyMetadata metadata : response.accessKeyMetadata()) {
+                    System.out.format("Retrieved access key %s", metadata.accessKeyId());
             }
 
             if (!response.isTruncated()) {

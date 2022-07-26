@@ -90,7 +90,6 @@ func main() {
 
         try {
             ListAccountAliasesResponse response = iam.listAccountAliases();
-
             for (String alias : response.accountAliases()) {
                 System.out.printf("Retrieved account alias %s", alias);
             }

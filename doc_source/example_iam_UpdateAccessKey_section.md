@@ -87,26 +87,25 @@ func main() {
   
 
 ```
-       public static void updateKey(IamClient iam, String username, String accessId, String status ) {
+    public static void updateKey(IamClient iam, String username, String accessId, String status ) {
 
-          try {
-              if (status.toLowerCase().equalsIgnoreCase("active")) {
-                  statusType = StatusType.ACTIVE;
-              } else if (status.toLowerCase().equalsIgnoreCase("inactive")) {
-                  statusType = StatusType.INACTIVE;
-              } else {
-                  statusType = StatusType.UNKNOWN_TO_SDK_VERSION;
-              }
-              UpdateAccessKeyRequest request = UpdateAccessKeyRequest.builder()
+        try {
+            if (status.toLowerCase().equalsIgnoreCase("active")) {
+                statusType = StatusType.ACTIVE;
+            } else if (status.toLowerCase().equalsIgnoreCase("inactive")) {
+                 statusType = StatusType.INACTIVE;
+            } else {
+                statusType = StatusType.UNKNOWN_TO_SDK_VERSION;
+            }
+
+            UpdateAccessKeyRequest request = UpdateAccessKeyRequest.builder()
                 .accessKeyId(accessId)
                 .userName(username)
                 .status(statusType)
                 .build();
 
-              iam.updateAccessKey(request);
-
-              System.out.printf(
-                "Successfully updated the status of access key %s to" +
+            iam.updateAccessKey(request);
+            System.out.printf("Successfully updated the status of access key %s to" +
                         "status %s for user %s", accessId, status, username);
 
         } catch (IamException e) {

@@ -75,15 +75,15 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             IamWaiter iamWaiter = iam.waiter();
 
             CreateUserRequest request = CreateUserRequest.builder()
-                    .userName(username)
-                    .build();
+                .userName(username)
+                .build();
 
             CreateUserResponse response = iam.createUser(request);
 
             // Wait until the user is created
             GetUserRequest userRequest = GetUserRequest.builder()
-                    .userName(response.user().userName())
-                    .build();
+                .userName(response.user().userName())
+                .build();
 
             WaiterResponse<GetUserResponse> waitUntilUserExists = iamWaiter.waitUntilUserExists(userRequest);
             waitUntilUserExists.matched().response().ifPresent(System.out::println);

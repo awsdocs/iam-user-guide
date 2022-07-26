@@ -86,10 +86,10 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         try {
             JSONObject jsonObject = (JSONObject) readJsonSimpleDemo(fileLocation);
             CreateRoleRequest request = CreateRoleRequest.builder()
-                    .roleName(rolename)
-                    .assumeRolePolicyDocument(jsonObject.toJSONString())
-                    .description("Created using the AWS SDK for Java")
-                    .build();
+                .roleName(rolename)
+                .assumeRolePolicyDocument(jsonObject.toJSONString())
+                .description("Created using the AWS SDK for Java")
+                .build();
 
             CreateRoleResponse response = iam.createRole(request);
             System.out.println("The ARN of the role is "+response.role().arn());

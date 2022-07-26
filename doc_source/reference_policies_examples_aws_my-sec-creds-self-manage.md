@@ -6,6 +6,7 @@ To learn how users can access the **My Security Credentials** page, see [How IAM
 
 **Note**  
 This example policy does not allow users to reset a password while signing in to the AWS Management Console for the first time\. We recommend that you do not grant permissions to new users until after they sign in\. For more information, see [How do I securely create IAM users?](troubleshoot_general.md#troubleshoot_general_securely-create-iam-users)\. This also prevents users with an expired password from resetting their password during sign in\. You can allow this by adding `iam:ChangePassword` and `iam:GetAccountPasswordPolicy` to the statement `DenyAllExceptListedIfNoMFA`\. However, we do not recommend this because allowing users to change their password without MFA can be a security risk\.
+If you intend to use this policy for programmatic access you must call [https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) to authenticate with MFA\. For more information, see [Configuring MFA\-protected API access](id_credentials_mfa_configure-api-require.md)\.
 
 **What does this policy do?**
 + The `AllowViewAccountInfo` statement allows the user to view account\-level information\. These permissions must be in their own statement because they do not support or do not need to specify a resource ARN\. Instead the permissions specify `"Resource" : "*"`\. This statement includes the following actions that allow the user to view specific information: 

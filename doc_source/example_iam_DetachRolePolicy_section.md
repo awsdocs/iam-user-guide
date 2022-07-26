@@ -72,9 +72,9 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             DetachRolePolicyRequest request = DetachRolePolicyRequest.builder()
-                    .roleName(roleName)
-                    .policyArn(policyArn)
-                    .build();
+                .roleName(roleName)
+                .policyArn(policyArn)
+                .build();
 
             iam.detachRolePolicy(request);
             System.out.println("Successfully detached policy " + policyArn +
