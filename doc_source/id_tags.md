@@ -14,7 +14,28 @@ You can also use tags in AWS STS to add custom attributes when you assume a role
 
 ## Choose an AWS tag naming convention<a name="id_tags_naming"></a>
 
-When you begin attaching tags to your IAM resources, choose your tag naming convention carefully\. Apply the same convention to all of your AWS tags\. This is especially important if you use tags in policies to control access to AWS resources\. If you already use tags in AWS, review your naming convention and adjust it accordingly\. To view tagging use cases and best practices, download the *[Tagging Best Practices](https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf)* whitepaper\.
+When you begin attaching tags to your IAM resources, choose your tag naming convention carefully\. Apply the same convention to all of your AWS tags\. This is especially important if you use tags in policies to control access to AWS resources\. If you already use tags in AWS, review your naming convention and adjust it accordingly\.
+
+**Note**  
+If your account is a member of AWS Organizations, see [Tag policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the Organizations user guide to learn more about using tags in Organizations\.
+
+### Best practices for tag naming<a name="id_tags_naming_best_practices"></a>
+
+These are some best practices and naming conventions for tags\.
+
+Names for AWS tags are case sensitive so ensure that they are used consistently\. For example, the tags `CostCenter` and `costcenter` are different, so one might be configured as a cost allocation tag for financial analysis and reporting and the other one might not be\. Similarly, the `Name` tag appears in the AWS Console for many resources, but the `name` tag does not\. 
+
+A number of tags are predefined by AWS or created automatically by various AWS services\. Many AWS\-defined tags names use all lowercase, with hyphens separating words in the name, and prefixes to identify the source service for the tag\. For example: 
++ `aws:ec2spot:fleet-request-id` identifies the Amazon EC2 Spot Instance Request that launched the instance\.
++ `aws:cloudformation:stack-name` identifies the AWS CloudFormation stack that created the resource\. 
++ `elasticbeanstalk:environment-name` identifies the application that created the resource\.
+
+Consider naming your tags using all lowercase, with hyphens separating words, and a prefix identifying the organization name or abbreviated name\. For example, for a fictitious company named *AnyCompany*, you might define tags such as:
++ `anycompany:cost-center` to identify the internal Cost Center code 
++ `anycompany:environment-type` to identify whether the environment is development, test, or production
++ `anycompany:application-id` to identify the application the resource was created for 
+
+The prefix ensures that tags are clearly identified as having been defined by your organization and not by AWS or a third\-party tool that you may be using\. Using all lowercase with hyphens for separators avoids confusion about how to capitalize a tag name\. For example, `anycompany:project-id` is simpler to remember than `ANYCOMPANY:ProjectID`, `anycompany:projectID`, or `Anycompany:ProjectId`\.
 
 ## Rules for tagging in IAM and AWS STS<a name="id_tags_rules"></a>
 
