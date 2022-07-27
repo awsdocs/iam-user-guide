@@ -34,9 +34,7 @@ Creating a role from the AWS CLI involves multiple steps\. When you use the cons
 
    A permissions boundary controls the maximum permissions that a role can have\. Permissions boundaries are an advanced AWS feature\.
 
-The following example shows the first two, and most common, steps for creating an identity provider role in a simple environment\. This example allows any user in the `123456789012` account to assume the role and view the `example_bucket` Amazon S3 bucket\. This example also assumes that you are running the AWS CLI on a computer running Windows, and have already configured the AWS CLI with your credentials\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
-
-In this example, include the following trust policy in the first command when you create the role\. This trust policy allows users in the `123456789012` account to assume the role using the `AssumeRole` operation, but only if the user provides MFA authentication using the `SerialNumber` and `TokenCode` parameters\. For more information about MFA, see [Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)\.
+The following example shows the first two, and most common, steps for creating an identity provider role in a simple environment\. This example allows any user in the Amazon Cognito identity pool with ID `us-east:12345678-ffff-ffff-ffff-123456` to assume the role and view the `example_bucket` Amazon S3 bucket\. This example also assumes that you are running the AWS CLI on a computer running Windows, and have already configured the AWS CLI with your credentials\. For more information, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)\.
 
 The following example trust policy is designed for a mobile app if the user signs in using Amazon Cognito\. In this example, *us\-east:12345678\-ffff\-ffff\-ffff\-123456* represents the identity pool ID assigned by Amazon Cognito\.
 
