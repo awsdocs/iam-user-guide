@@ -51,7 +51,7 @@ Observe the following conventions when formulating a tag naming convention for I
 
 For other IAM resource types, tag key values are case sensitive\. That means you can have separate **Costcenter** and **costcenter** tag keys\. For example, if you have tagged a customer managed policy with the **Costcenter = 1234** tag and you add the **costcenter = 5678** tag, the policy will have both the **Costcenter** and **costcenter** tag keys\.
 
-As a best practice, we recommend that you avoid using similar tags with inconsistent case treatment\. We recommend that you decide on strategy for capitalizing tags, and consistently implement that strategy across all resource types\. To learn more about best practices for tagging, see [Tagging AWS Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html)in the AWS General Reference\.
+As a best practice, we recommend that you avoid using similar tags with inconsistent case treatment\. We recommend that you decide on a strategy for capitalizing tags, and consistently implement that strategy across all resource types\. To learn more about best practices for tagging, see [Tagging AWS Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) in the AWS General Reference\.
 
 The following lists show the differences in case sensitivity for tag keys that are attached to IAM resources\.
 
