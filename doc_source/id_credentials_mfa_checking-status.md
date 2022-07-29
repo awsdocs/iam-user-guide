@@ -31,13 +31,13 @@ If you want to enable MFA for the account, see one of the following:
 
    1. Choose **Close** to return to the list of users\.
 
-1. The **MFA** column tells you about the MFA device that is enabled\. If no MFA device is active for the user, the console displays **Not enabled**\. If the user has an MFA device enabled, the **MFA** column shows the type of device that is enabled with a value of **Virtual**, **FIDO Security Key**, **Hardware**, or **SMS**\.
+1. The **MFA** column tells you about the MFA device that is enabled\. If no MFA device is active for the user, the console displays **None**\. If the user has an MFA device enabled, the **MFA** column shows the type of device that is enabled with a value of **Virtual**, **FIDO Security Key**, **Hardware**, or **SMS**\.
 **Note**  
 AWS ended support for enabling SMS multi\-factor authentication \(MFA\)\. We recommend that customers who have IAM users that use SMS text message\-based MFA switch to one of the following alternative methods: [virtual \(software\-based\) MFA device](id_credentials_mfa_enable_virtual.md), [FIDO security key](id_credentials_mfa_enable_fido.md), or [hardware MFA device](id_credentials_mfa_enable_physical.md)\. You can identify the users in your account with an assigned SMS MFA device\. To do so, go to the IAM console, choose **Users** from the navigation pane, and look for users with **SMS** in the **MFA** column of the table\.
 
 1. To view additional information about the MFA device for a user, choose the name of the user whose MFA status you want to check\. Then choose the **Security credentials** tab\. 
 
-1. If no MFA device is active for the user, the console displays **No** next to **Assigned MFA device**\. If the user has an MFA device enabled, the **Assigned MFA device** item shows a value for the device:
+1. If no MFA device is active for the user, the console displays **Not assigned** next to **Assigned MFA device**\. If the user has an MFA device enabled, the **Assigned MFA device** item shows a value for the device:
    + The device serial number of a hardware device \(usually the number from the back of the device\), such as `GAHT12345678`
    + The ARN in AWS for an SMS device, such as `arn:aws:iam::123456789012:sms-mfa/username`
    + The ARN in AWS for a virtual device, such as `arn:aws:iam::123456789012:mfa/username`
