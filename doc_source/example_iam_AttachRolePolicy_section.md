@@ -249,16 +249,16 @@ suspend fun attachIAMRolePolicy(roleNameVal: String, policyArnVal: String) {
                 return
         }
 
-       val policyRequest = AttachRolePolicyRequest {
+        val policyRequest = AttachRolePolicyRequest {
             roleName = roleNameVal
             policyArn = policyArnVal
         }
         iamClient.attachRolePolicy(policyRequest)
         println("Successfully attached policy $policyArnVal to role $roleNameVal")
-      }
+    }
 }
 
-fun checkList(attachedPolicies:List<AttachedPolicy>, policyArnVal:String) :Int {
+fun checkList(attachedPolicies: List<AttachedPolicy>, policyArnVal: String): Int {
 
     for (policy in attachedPolicies) {
         val polArn = policy.policyArn.toString()

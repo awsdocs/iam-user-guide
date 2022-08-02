@@ -174,14 +174,13 @@ This is prerelease documentation for a feature in preview release\. It is subjec
   
 
 ```
-suspend  fun listAliases() {
+suspend fun listAliases() {
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
-      val response = iamClient.listAccountAliases(ListAccountAliasesRequest{})
+        val response = iamClient.listAccountAliases(ListAccountAliasesRequest {})
         response.accountAliases?.forEach { alias ->
             println("Retrieved account alias $alias")
         }
-
     }
 }
 ```

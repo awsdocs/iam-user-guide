@@ -7,7 +7,7 @@ Use condition operators in the `Condition` element to match the condition key an
 The condition operator that you can use in a policy depends on the condition key you choose\. You can choose a global condition key or a service\-specific condition key\. To learn which condition operator you can use for a global condition key, see [AWS global condition context keys](reference_policies_condition-keys.md)\. To learn which condition operator you can use for a service\-specific condition key, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html) and choose the service that you want to view\.
 
 **Important**  
-If the key that you specify in a policy condition is not present in the request context, the values do not match\. This applies to all condition operators except [\.\.\.IfExists](#Conditions_IfExists) and [Null check](#Conditions_Null)\. These operators test whether the key is present \(exists\) in the request context\.
+If the key that you specify in a policy condition is not present in the request context, the values do not match and the condition is *false*\. If the policy condition requires that the key is *not* matched, such as `StringNotLike` or `ArnNotLike`, and the right key is not present, the condition is *true*\. This logic applies to all condition operators except [\.\.\.IfExists](#Conditions_IfExists) and [Null check](#Conditions_Null)\. These operators test whether the key is present \(exists\) in the request context\.
 
 The condition operators can be grouped into the following categories:
 + [String](#Conditions_String)
@@ -33,10 +33,10 @@ String condition operators let you construct `Condition` elements that restrict 
 |   `StringNotEquals`   |  Negated matching  | 
 |   `StringEqualsIgnoreCase`   |  Exact matching, ignoring case  | 
 |   `StringNotEqualsIgnoreCase`   |  Negated matching, ignoring case  | 
-|   `StringLike`   |  Case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) and single\-character match wildcards \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.    | 
+|   `StringLike`   | Case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) and single\-character match wildcards \(?\) anywhere in the string\. You must specify wildcards to achieve partial string matches\.   If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.   | 
 |   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) or single\-character match wildcards \(?\) anywhere in the string\.  | 
 
-For example, the following statement contains a `Condition` element that uses the `StringEquals` condition operator with the `aws:PrincipalTag` key to specify that the principal making the request must be tagged with the `iamuser-admin` job category\.
+For example, the following statement contains a `Condition` element that uses [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principaltag](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-principaltag) key to specify that the principal making the request must be tagged with the `iamuser-admin` job category\.
 
 ```
 {
@@ -128,7 +128,7 @@ You can not use a [policy variable](reference_policies_variables.md) with the `N
 
 ## Date condition operators<a name="Conditions_Date"></a>
 
-Date condition operators let you construct `Condition` elements that restrict access based on comparing a key to a date/time value\. You use these condition operators with the `aws:CurrentTime` key or `aws:EpochTime` keys\. You must specify date/time values with one of the [W3C implementations of the ISO 8601 date formats](http://www.w3.org/TR/NOTE-datetime) or in epoch \(UNIX\) time\.  
+Date condition operators let you construct `Condition` elements that restrict access based on comparing a key to a date/time value\. You use these condition operators with [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-currenttime](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-currenttime) key or [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-epochtime](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-epochtime) key\. You must specify date/time values with one of the [W3C implementations of the ISO 8601 date formats](http://www.w3.org/TR/NOTE-datetime) or in epoch \(UNIX\) time\.  
 
 **Note**  
 Wildcards are not permitted for date condition operators\.
@@ -145,7 +145,7 @@ Wildcards are not permitted for date condition operators\.
 |   `DateGreaterThan`   |  Matching after a specific a date and time  | 
 |   `DateGreaterThanEquals`   |  Matching at or after a specific date and time  | 
 
-For example, the following statement contains a `Condition` element that uses the `DateGreaterThan` condition operator with the `aws:TokenIssueTime` key\. This condition specifies that the temporary security credentials used to make the request were issued in 2020\. This policy can be updated programmatically every day to ensure that account members use fresh credentials\.
+For example, the following statement contains a `Condition` element that uses the `DateGreaterThan` condition operator with the [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tokenissuetime](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tokenissuetime) key\. This condition specifies that the temporary security credentials used to make the request were issued in 2020\. This policy can be updated programmatically every day to ensure that account members use fresh credentials\.
 
 ```
 {
@@ -159,7 +159,7 @@ For example, the following statement contains a `Condition` element that uses th
 }
 ```
 
-If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:TokenIssueTime` key is present in the request context only when the principal uses temporary credentials to make the request\. They key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using access keys\. In this example, if an IAM user attempts to view or edit an access key, the request is denied\.
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:TokenIssueTime` key is present in the request context only when the principal uses temporary credentials to make the request\. The key is not present in AWS CLI, AWS API, or AWS SDK requests that are made using access keys\. In this example, if an IAM user attempts to view or edit an access key, the request is denied\.
 
 You can not use a [policy variable](reference_policies_variables.md) with the `Date` condition operator\.
 
@@ -174,7 +174,7 @@ Boolean conditions let you construct `Condition` elements that restrict access b
 | --- | --- | 
 |   `Bool`   |  Boolean matching  | 
 
-For example, this identity\-based policy uses the `Bool` condition operator with the `aws:SecureTransport` key to deny all S3 actions on a bucket and its contents if the request is not over SSL\.
+For example, this identity\-based policy uses the `Bool` condition operator with the [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-securetransport](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-securetransport) key to deny all S3 actions on a bucket and its contents if the request is not over SSL\.
 
 **Important**  
 This policy does not allow any actions\. Use this policy in combination with other policies that allow specific actions\. 
@@ -223,7 +223,7 @@ You can not use a [policy variable](reference_policies_variables.md) with the `B
 
 ## IP address condition operators<a name="Conditions_IPAddress"></a>
 
-IP address condition operators let you construct `Condition` elements that restrict access based on comparing a key to an IPv4 or IPv6 address or range of IP addresses\. You use these with the `aws:SourceIp` key\. The value must be in the standard CIDR format \(for example, 203\.0\.113\.0/24 or 2001:DB8:1234:5678::/64\)\. If you specify an IP address without the associated routing prefix, IAM uses the default prefix value of `/32`\.
+IP address condition operators let you construct `Condition` elements that restrict access based on comparing a key to an IPv4 or IPv6 address or range of IP addresses\. You use these with the [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceip](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceip) key\. The value must be in the standard CIDR format \(for example, 203\.0\.113\.0/24 or 2001:DB8:1234:5678::/64\)\. If you specify an IP address without the associated routing prefix, IAM uses the default prefix value of `/32`\.
 
 Some AWS services support IPv6, using :: to represent a range of 0s\. To learn whether a service supports IPv6, see the documentation for that service\.
 
@@ -323,7 +323,7 @@ The following resource\-based policy example shows a policy attached to an Amazo
 }
 ```
 
-If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SourceArn` key is present in the request context only if a resource triggers a service to call another service on behalf of the resource owner\. If an IAM user attempts to perform this operation directly, the condition returns `false` and the request is implicitly denied by this statement\.
+If the key that you specify in a policy condition is not present in the request context, the values do not match\. The [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn) key is present in the request context only if a resource triggers a service to call another service on behalf of the resource owner\. If an IAM user attempts to perform this operation directly, the condition returns `false` and the request is implicitly denied by this statement\.
 
 ## \.\.\.IfExists condition operators<a name="Conditions_IfExists"></a>
 
@@ -389,7 +389,7 @@ The *intent* of the preceding policy is to enable the user to launch any instanc
 
 ## Condition operator to check existence of condition keys<a name="Conditions_Null"></a>
 
-Use a `Null` condition operator to check if a condition key is present at the time of authorization\. In the policy statement, use either `true` \(the key doesn't exist — it is null\) or `false` \(the key exists and its value is not null\)\.
+Use a `Null` condition operator to check if a condition key is absent at the time of authorization\. In the policy statement, use either `true` \(the key doesn't exist — it is null\) or `false` \(the key exists and its value is not null\)\.
 
 You can not use a [policy variable](reference_policies_variables.md) with the `Null` condition operator\.
 

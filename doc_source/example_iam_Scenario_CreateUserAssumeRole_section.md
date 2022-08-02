@@ -1508,12 +1508,12 @@ suspend fun main(args: Array<String>) {
         <username> <policyName> <roleName> <roleSessionName> <fileLocation> <bucketName> 
 
     Where:
-        username - the name of the IAM user to create. 
-        policyName - the name of the policy to create. 
-        roleName - the name of the role to create. 
-        roleSessionName - the name of the session required for the assumeRole operation. 
-        fileLocation - the file location to the JSON required to create the role (see Readme). 
-        bucketName - the name of the Amazon S3 bucket from which objects are read. 
+        username - The name of the IAM user to create. 
+        policyName - The name of the policy to create. 
+        roleName - The name of the role to create. 
+        roleSessionName - The name of the session required for the assumeRole operation. 
+        fileLocation - The file location to the JSON required to create the role (see Readme). 
+        bucketName - The name of the Amazon S3 bucket from which objects are read. 
     """
 
     if (args.size != 6) {

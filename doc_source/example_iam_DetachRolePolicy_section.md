@@ -212,7 +212,7 @@ suspend fun detachPolicy(roleNameVal: String, policyArnVal: String) {
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
         iamClient.detachRolePolicy(request)
-        println( "Successfully detached policy $policyArnVal from role $roleNameVal")
+        println("Successfully detached policy $policyArnVal from role $roleNameVal")
     }
 }
 ```
