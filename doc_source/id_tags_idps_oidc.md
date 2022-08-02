@@ -20,7 +20,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:TagOpenIDConnectProvider",
         "iam:UntagOpenIDConnectProvider"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:oidc-provider/<OIDCProviderName>"
+    "Resource": "arn:aws:iam::<account-number>:oidc-provider/<OIDCProviderName>"
 }
 ```
 
@@ -39,7 +39,7 @@ To use this policy, replace *<OIDCProviderName>* with the name of the OIDC provi
         "iam:ListOpenIDConnectProviderTags",
         "iam:TagOpenIDConnectProvider"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:oidc-provider/<OIDCProviderName>"
+    "Resource": "arn:aws:iam::<account-number>:oidc-provider/<OIDCProviderName>"
 }
 ```
 

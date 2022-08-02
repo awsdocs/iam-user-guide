@@ -10,7 +10,7 @@ You can use a role to configure your SAML 2\.0\-compliant identity provider \(Id
 The following diagram illustrates the flow for SAML\-enabled single sign\-on\. 
 
 **Note**  
-This specific use of SAML differs from the more general one illustrated at [About SAML 2\.0\-based federation](id_roles_providers_saml.md) because this workflow opens the AWS Management Console on behalf of the user\. This requires the use of the AWS SSO endpoint instead of directly calling the `AssumeRoleWithSAML` API\. The endpoint calls the API for the user and returns a URL that automatically redirects the user's browser to the AWS Management Console\.
+This specific use of SAML differs from the more general one illustrated at [About SAML 2\.0\-based federation](id_roles_providers_saml.md) because this workflow opens the AWS Management Console on behalf of the user\. This requires the use of the AWS sign\-in endpoint instead of directly calling the `AssumeRoleWithSAML` API\. The endpoint calls the API for the user and returns a URL that automatically redirects the user's browser to the AWS Management Console\.
 
 ![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)![\[Single sign-on (SSO) to the AWS Management Console using SAML\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/)
 
@@ -61,12 +61,16 @@ The next step is to create an IAM role that establishes a trust relationship bet
 }
 ```
 
+You can include regional endpoints for the `saml:aud` attribute at `https://region-code.signin.aws.amazon.com/static/saml-metadata.xml`\. For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\.
+
 For the [permission policy](access_policies.md) in the role, you specify permissions as you would for any role, user, or group\. For example, if users from your organization are allowed to administer Amazon EC2 instances, you explicitly allow Amazon EC2 actions in the permission policy\. You can do this by assigning a [managed policy](access_policies_manage-attach-detach.md), such as the **Amazon EC2 Full Access** managed policy\. 
 
 For details about creating a role for a SAML IdP, see [Creating a role for SAML 2\.0 federation \(console\)](id_roles_create_for-idp_saml.md)\. 
 
 ### Finish configuration and create SAML assertions<a name="fedconsole-configassertions"></a>
 
-After you create the role, inform your SAML IdP about AWS as a service provider by installing the `saml-metadata.xml` file found at [https://signin\.aws\.amazon\.com/static/saml\-metadata\.xml](https://signin.aws.amazon.com/static/saml-metadata.xml)\. How you install that file depends on your IdP\. Some providers give you the option to type the URL, whereupon the IdP gets and installs the file for you\. Others require you to download the file from the URL and then provide it as a local file\. Refer to your IdP documentation for details, or see [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md) for links to the web documentation for many of the supported SAML providers\.
+Notify your SAML IdP that AWS is your service provider by installing the `saml-metadata.xml` file found at `https://region-code.signin.aws.amazon.com/static/saml-metadata.xml` or `https://signin.aws.amazon.com/static/saml-metadata.xml`\. For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\. 
+
+How you install that file depends on your IdP\. Some providers give you the option to type the URL, whereupon the IdP gets and installs the file for you\. Others require you to download the file from the URL and then provide it as a local file\. Refer to your IdP documentation for details, or see [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md) for links to the web documentation for many of the supported SAML providers\.
 
 You also configure the information that you want the IdP to pass as SAML attributes to AWS as part of the authentication response\. Most of this information appears in AWS as condition context keys that you can evaluate in your policies\. These condition keys ensure that only authorized users in the right contexts are granted permissions to access your AWS resources\. You can specify time windows that restrict when the console may be used\. You can also specify the maximum time \(up to 12 hours\) that users can access the console before having to refresh their credentials\. For details, see [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)\.

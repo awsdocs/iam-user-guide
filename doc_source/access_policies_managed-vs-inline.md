@@ -5,6 +5,7 @@ When you need to set the permissions for an identity in IAM, you must decide whe
 **Topics**
 + [AWS managed policies](#aws-managed-policies)
 + [Customer managed policies](#customer-managed-policies)
++ [Get started using permissions with AWS managed policies](#aws-or-customer-managed)
 + [Inline policies](#inline-policies)
 + [Choosing between managed policies and inline policies](#choosing-managed-or-inline)
 + [Converting an inline policy to a managed policy](#convert-inline-to-managed-policy)
@@ -33,6 +34,16 @@ A great way to create a customer managed policy is to start by copying an existi
 The following diagram illustrates customer managed policies\. Each policy is an entity in IAM with its own [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) that includes the policy name\. Notice that the same policy can be attached to multiple principal entities—for example, the same **DynamoDB\-books\-app** policy is attached to two different IAM roles\.
 
 ![\[Diagram of customer managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-customer-managed-policies.diagram.png)
+
+## Get started using permissions with AWS managed policies<a name="aws-or-customer-managed"></a>
+
+We recommend using policies that [grant least privilege](access_policies.md#grant-least-priv), or granting only the permissions required to perform a task\. The most secure way to grant least privilege is to write a customer managed policy with only the permissions needed by your team\. You must create a process to allow your team to request more permissions when necessary\. It takes time and expertise to [create IAM customer managed policies](access_policies_create-console.md) that provide your team with only the permissions they need\.
+
+To get started adding permissions to your IAM identities \(users, groups of users, and roles\), you can use [AWS managed policies](#aws-managed-policies)\. AWS managed policies don't grant least privilege permissions\. You must consider the security risk of granting your principals more permissions than they need to do their job\.
+
+You can attach AWS managed policies, including job functions, to any IAM identity\. To switch to least privilege permissions, you can run AWS Identity and Access Management Access Analyzer to monitor the principals with AWS managed policies\. After learning which permissions they are using, then you can write a custom policy or generate a policy with only the required permissions for your team\. This is less secure, but provides more flexibility as you learn how your team is using AWS\.
+
+AWS managed policies are designed to provide permissions for many common use cases\. For more information about AWS managed policies that are designed for specific job functions, see [AWS managed policies for job functions](access_policies_job-functions.md)\.
 
 ## Inline policies<a name="inline-policies"></a>
 

@@ -136,35 +136,23 @@ This policy provides read\-only access to IAM Access Analyzer\. No other service
 
 ## AccessAnalyzerServiceRolePolicy<a name="security-iam-aa-service-role-policy"></a>
 
-You can't attach AccessAnalyzerServiceRolePolicy to your IAM entities\. This policy is attached to a service\-linked role that allows IAM Access Analyzer to perform actions on your behalf\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+You can't attach AccessAnalyzerServiceRolePolicy to your IAM entities\. This policy is attached to a service\-linked role that allows IAM Access Analyzer to perform actions on your behalf\. For more information, see [Using service\-linked roles for AWS Identity and Access Management Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-using-service-linked-roles.html)\.
 
 ### Service\-level permissions<a name="service-level-permissions"></a>
 
 This policy allows access to IAM Access Analyzer to analyze resource metadata from multiple AWS services\. The policy also allows permissions to AWS Organizations and allows the creation of an analyzer within the AWS organization as the zone of trust\.
 
 ```
-            {
+{
   "Version": "2012-10-17",
   "Statement": [
     {
       "Effect": "Allow",
       "Action": [
-        "s3:GetBucketPublicAccessBlock",
-        "s3:GetBucketPolicyStatus",
-        "s3:GetAccountPublicAccessBlock",
-        "s3:ListAllMyBuckets",
-        "s3:GetBucketAcl",
-        "s3:GetBucketLocation",
-        "s3:GetBucketPolicy",
-        "s3:ListAccessPoints",
-        "s3:GetAccessPoint",
-        "s3:GetAccessPointPolicy",
-        "s3:GetAccessPointPolicyStatus",
-        "s3:DescribeMultiRegionAccessPointOperation",
-        "s3:GetMultiRegionAccessPoint",
-        "s3:GetMultiRegionAccessPointPolicy",
-        "s3:GetMultiRegionAccessPointPolicyStatus",
-        "s3:ListMultiRegionAccessPoints",
+        "ec2:DescribeAddresses",
+        "ec2:DescribeByoipCidrs",
+        "ec2:DescribeVpcEndpoints",
+        "ec2:DescribeVpcs",
         "iam:GetRole",
         "iam:ListRoles",
         "kms:DescribeKey",
@@ -172,39 +160,56 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
         "kms:ListGrants",
         "kms:ListKeyPolicies",
         "kms:ListKeys",
-        "ec2:DescribeVpcs",
-        "ec2:DescribeVpcEndpoints",
-        "ec2:DescribeByoipCidrs",
-        "ec2:DescribeAddresses",
-        "lambda:ListFunctions",
+        "lambda:GetFunctionUrlConfig",
+        "lambda:GetLayerVersionPolicy",
         "lambda:GetPolicy",
+        "lambda:ListAliases",
+        "lambda:ListFunctions",
         "lambda:ListLayers",
         "lambda:ListLayerVersions",
-        "lambda:GetLayerVersionPolicy",
-        "sqs:GetQueueAttributes",
-        "sqs:ListQueues",
+        "lambda:ListVersionsByFunction",
+        "organizations:DescribeAccount",
+        "organizations:DescribeOrganization",
+        "organizations:DescribeOrganizationalUnit",
+        "organizations:ListAccounts",
+        "organizations:ListAccountsForParent",
+        "organizations:ListAWSServiceAccessForOrganization",
+        "organizations:ListChildren",
+        "organizations:ListDelegatedAdministrators",
+        "organizations:ListOrganizationalUnitsForParent",
+        "organizations:ListParents",
+        "organizations:ListRoots",
+        "s3:DescribeMultiRegionAccessPointOperation",
+        "s3:GetAccessPoint",
+        "s3:GetAccessPointPolicy",
+        "s3:GetAccessPointPolicyStatus",
+        "s3:GetAccountPublicAccessBlock",
+        "s3:GetBucketAcl",
+        "s3:GetBucketLocation",
+        "s3:GetBucketPolicyStatus",
+        "s3:GetBucketPolicy",
+        "s3:GetBucketPublicAccessBlock",
+        "s3:GetMultiRegionAccessPoint",
+        "s3:GetMultiRegionAccessPointPolicy",
+        "s3:GetMultiRegionAccessPointPolicyStatus",
+        "s3:ListAccessPoints",
+        "s3:ListAllMyBuckets",
+        "s3:ListMultiRegionAccessPoints",
+        "sns:GetTopicAttributes",
+        "sns:ListTopics",
         "secretsmanager:DescribeSecret",
         "secretsmanager:GetResourcePolicy",
         "secretsmanager:ListSecrets",
-        "organizations:ListAWSServiceAccessForOrganization",
-        "organizations:ListDelegatedAdministrators",
-        "organizations:ListRoots",
-        "organizations:ListParents",
-        "organizations:ListChildren",
-        "organizations:ListOrganizationalUnitsForParent",
-        "organizations:ListAccountsForParent",
-        "organizations:ListAccounts",
-        "organizations:DescribeAccount",
-        "organizations:DescribeOrganization",
-        "organizations:DescribeOrganizationalUnit"
+        "sqs:GetQueueAttributes",
+        "sqs:ListQueues"
       ],
       "Resource": "*"
     }
   ]
-  }
+}
 ```
 
-## <a name="w267aac27c55c49"></a>
+## <a name="w1021aac30c55c49"></a>
 
 
 
@@ -221,8 +226,7 @@ View details about updates to IAM and AWS managed policies since these service b
 
 | Change | Description | Date | 
 | --- | --- | --- | 
-| [IAMReadOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMReadOnlyAccess) – IAM started tracking changes to this policy\. |  IAMReadOnlyAccess policy allows read\-only access to resources\.  | December 1, 2021 | 
-| [IAMUserChangePassword](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/IAMUserChangePassword) – IAM started tracking changes to this policy\. | IAMUserChangePassword policy allows a user to change their password\.  | November 22, 2021 | 
-| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Add permission for Amazon S3 multi\-region access points | IAM Access Analyzer added new Amazon S3 actions to analyze metadata associated with multi\-region access points\. | September 2, 2021 | 
-|  [IAMAccessAnalyzerReadOnlyAccess](#security-iam-awsmanpol-IAMAccessAnalyzerReadOnlyAccess) – Add permission to support policy validation  |  IAM Access Analyzer added a new action to grant `ValidatePolicy` permissions to allow you to use the policy checks for validation\. This permission is required by IAM Access Analyzer to perform policy checks on your policies\. This action is associated to the `ValidatePolicy` API operation\.  | March 16, 2021 | 
+| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added the lambda:GetFunctionUrlConfig action to the service\-level permissions of AccessAnalyzerServiceRolePolicy\. | April 6, 2022 | 
+| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added new Amazon S3 actions to analyze metadata associated with multi\-region access points\. | September 2, 2021 | 
+|  [IAMAccessAnalyzerReadOnlyAccess](#security-iam-awsmanpol-IAMAccessAnalyzerReadOnlyAccess) – Added permissions  |  IAM Access Analyzer added a new action to grant `ValidatePolicy` permissions to allow you to use the policy checks for validation\. This permission is required by IAM Access Analyzer to perform policy checks on your policies\.  | March 16, 2021 | 
 |  IAM Access Analyzer started tracking changes  |  IAM Access Analyzer started tracking changes for its AWS managed policies\.  | March 1, 2021 | 

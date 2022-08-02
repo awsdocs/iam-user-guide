@@ -72,24 +72,26 @@ As the account administrator, imagine that you want to allow the IAM user `DevUs
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AssumeRole",
-            "Effect": "Allow",
-            "Action": "sts:AssumeRole",
-            "Resource": "arn:aws:iam::123456789012:role/Developer_Role"
-        },
-        {
-            "Sid": "SetAwsUserNameAsSourceIdentity",
-            "Effect": "Allow",
-            "Action": "sts:SetSourceIdentity",
-            "Resource": "arn:aws:iam::123456789012:role/Developer_Role",
-            "Condition": {
-                "StringLike": {"sts:SourceIdentity": "${aws:username}"}
-            }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AssumeRole",
+      "Effect": "Allow",
+      "Action": "sts:AssumeRole",
+      "Resource": "arn:aws:iam::123456789012:role/Developer_Role"
+    },
+    {
+      "Sid": "SetAwsUserNameAsSourceIdentity",
+      "Effect": "Allow",
+      "Action": "sts:SetSourceIdentity",
+      "Resource": "arn:aws:iam::123456789012:role/Developer_Role",
+      "Condition": {
+        "StringLike": {
+          "sts:SourceIdentity": "${aws:username}"
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 
@@ -99,21 +101,25 @@ To enforce the acceptable source identity values, you can configure the followin
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowDevUserAssumeRole",
-            "Effect": "Allow",
-            "Principal": {"AWS": " arn:aws:iam::123456789012:user/DevUser"},
-            "Action": [
-                "sts:AssumeRole",
-                "sts:SetSourceIdentity"
-            ],
-            "Condition": {
-                "StringEquals": {"sts:SourceIdentity": "DevUser"}
-            }
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowDevUserAssumeRole",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::123456789012:user/DevUser"
+      },
+      "Action": [
+        "sts:AssumeRole",
+        "sts:SetSourceIdentity"
+      ],
+      "Condition": {
+        "StringEquals": {
+          "sts:SourceIdentity": "DevUser"
         }
-    ]
+      }
+    }
+  ]
 }
 ```
 
@@ -211,19 +217,30 @@ Imagine that you want to require your developers to set a source identity to ass
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AssumeRoleAndSetSourceIdentity",
+      "Sid": "SAMLProviderAssumeRoleWithSAML",
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::111111111111:saml-provider/name-of-identity-provider"
+        "Federated": "arn:aws:iam::111122223333:saml-provider/name-of-identity-provider"
       },
       "Action": [
-        "sts:AssumeRoleWithSAML",
-        "sts:SetSourceIdentity"
+        "sts:AssumeRoleWithSAML"
       ],
       "Condition": {
         "StringEquals": {
           "SAML:aud": "https://signin.aws.amazon.com/saml"
-        },
+        }
+      }
+    },
+    {
+      "Sid": "SetSourceIdentitySrEngs",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::111122223333:saml-provider/name-of-identity-provider"
+      },
+      "Action": [
+        "sts:SetSourceIdentity"
+      ],
+      "Condition": {
         "StringLike": {
           "sts:SourceIdentity": [
             "Saanvi",
@@ -249,7 +266,7 @@ Alternatively, if you use an OIDC provider for web identity federation and users
     {
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::111111111111:oidc-provider/server.example.com"
+        "Federated": "arn:aws:iam::111122223333:oidc-provider/server.example.com"
       },
       "Action": [
         "sts:AssumeRoleWithWebIdentity",

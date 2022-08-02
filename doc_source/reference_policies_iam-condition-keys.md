@@ -40,7 +40,24 @@ AWS services that support [iam:PassedToService](#ck_PassedToService) also suppor
 
 **iam:AWSServiceName**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-Specifies the AWS service to which this role is attached\.
+Specifies the AWS service to which this role is attached\.  
+In this example, you allow an entity to create a service\-linked role if the service name is *access\-analyzer\.amazonaws\.com\.*  
+
+```
+{
+   "Version": "2012-10-17",
+   "Statement": [{
+       "Effect": "Allow",
+       "Action": "iam:CreateServiceLinkedRole",
+       "Resource": "*",
+       "Condition": {
+         "StringLike": {
+           "iam:AWSServiceName": "access-analyzer.amazonaws.com"
+         }
+       }
+     }]
+ }
+```
 
 **iam:OrganizationsPolicyId**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -67,8 +84,8 @@ Checks the Amazon Resource Name \(ARN\) of a managed policy in requests that inv
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Checks that the tag attached to the identity resource \(user or role\) matches the specified key name and value\.  
 IAM and AWS STS support both the `iam:ResourceTag` IAM condition key and the `aws:ResourceTag` global condition key\.
-You can add custom attributes to IAM resouces in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
-This example shows how you might create an IAM policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
+You can add custom attributes to IAM resources in the form of a key\-value pair\. For more information about tags for IAM resources, see [Tagging IAM resources](id_tags.md)\. You can use `ResourceTag` to [control access](access_tags.md#access_tags_control-resources) to AWS resources, including IAM resources\. However, because IAM does not support tags for groups, you cannot use tags to control access to groups\.  
+This example shows how you might create an identity\-based policy that allows deleting users with the **status=terminated** tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.  
 
 ```
 {
@@ -110,7 +127,7 @@ Use the `aud` condition key to verify that the Google client ID or Amazon Cognit
 + `accounts.google.com:aud`
 + `cognito-identity.amazonaws.com:aud`
 The `accounts.google.com:aud` condition key matches the following Google ID Token fields\.   
-+ `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [ `accounts.google.com:oaud`](#ck_oaud) condition key\.
++ `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [`accounts.google.com:oaud`](#ck_oaud) condition key\.
 + `azp` when the `azp` field is set\. This can happen for hybrid apps where a web application and Android app have a different OAuth 2\.0 Google client ID but share the same Google APIs project\. 
 For more information about Google `aud` and `azp` fields, see the [Google Identity Platform OpenID Connect](https://developers.google.com/identity/protocols/OpenIDConnect) Guide\.  
 When you write a policy using the `accounts.google.com:aud` condition key, you must know whether the app is a hybrid app that sets the `azp` field\.   
@@ -389,6 +406,7 @@ Use this key to compare the session name that a principal specifies when assumin
 **Availability** – This key is present in the request when the principal assumes the role using the AWS Management Console, any assume\-role CLI command, or any AWS STS `AssumeRole` API operation\.  
 You can use this key in a role trust policy to require that your users provide a specific session name when they assume a role\. For example, you can require that IAM users specify their own user name as their session name\. After the IAM user assumes the role, activity appears in [AWS CloudTrail logs](cloudtrail-integration.md#cloudtrail-integration_signin-tempcreds) with the session name that matches their user name\. This makes it easier for administrators to differentiate between role sessions when a role is used by different principals\.  
 The following role trust policy requires that IAM users in account `111122223333` provide their IAM user name as the session name when they assume the role\. This requirement is enforced using the `aws:username` [condition variable](reference_policies_variables.md) in the condition key\. This policy allows IAM users to assume the role to which the policy is attached\. This policy does not allow anyone using temporary credentials to assume the role because the `username` variable is present for only IAM users\.  
+You can use any single\-valued condition key as a [variable](reference_policies_variables.md)\. You can't use a multivalued condition key as a variable\.
 
 ```
 {

@@ -66,4 +66,4 @@ You can use the following phrases in the IAM search\. Replace terms in italics w
 + **create group**
 + **attach policy to *group\_name***
 + **attach entities to *policy\_name***
-+ **detach entities to *policy\_name***
++ **detach entities from *policy\_name***

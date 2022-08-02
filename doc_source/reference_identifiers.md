@@ -11,11 +11,11 @@ IAM uses a few different identifiers for users, user groups, roles, policies, an
 
 When you create a user, a role, a user group, or a policy, or when you upload a server certificate, you give it a friendly name\. Examples include Bob, TestApp1, Developers, ManageCredentialsPermissions, or ProdServerCert\. 
 
-If you use the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM resources, you can add resources an optional path\. You can use a single path, or nest multiple paths as a folder structure\. For example, you could use the nested path `/division_abc/subdivision_xyz/product_1234/engineering/` to match your company organizational structure\. You could then create a policy to allow all users in that path to access the policy simulator API\. To view this policy, see [IAM: Access the policy simulator API based on user path](reference_policies_examples_iam_policy-sim-path.md)\. For information about how a friendly name can be specified, see [the User API documentation](https://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html)\. For additional examples of how you might use paths, see [IAM ARNs](#identifiers-arns)\.
+If you use the IAM API or AWS Command Line Interface \(AWS CLI\) to create IAM resources, you can add an optional path\. You can use a single path, or nest multiple paths as a folder structure\. For example, you could use the nested path `/division_abc/subdivision_xyz/product_1234/engineering/` to match your company organizational structure\. You could then create a policy to allow all users in that path to access the policy simulator API\. To view this policy, see [IAM: Access the policy simulator API based on user path](reference_policies_examples_iam_policy-sim-path.md)\. For information about how a friendly name can be specified, see [the User API documentation](https://docs.aws.amazon.com/IAM/latest/APIReference/API_User.html)\. For additional examples of how you might use paths, see [IAM ARNs](#identifiers-arns)\.
 
 When you use AWS CloudFormation to create resources, you can specify a path for users, user groups, and roles, and customer managed policies\.
 
-If you have a user and user group in the same path, IAM doesn't automatically put the user in that user group\. For example, you might create a Developers user group and specify the path as `/division_abc/subdivision_xyz/product_1234/engineering/`\. If you create a user named Bob and add the same path to him, this doesn't automatically put Bob in the Developers user group\. IAM doesn't enforce any boundaries between users or user groups based on their paths\. Users with different paths can use the same resources if they've been granted permission to those resources\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
+If you have a user and user group in the same path, IAM doesn't automatically put the user in that user group\. For example, you might create a Developers user group and specify the path as `/division_abc/subdivision_xyz/product_1234/engineering/`\. If you create a user named Bob and add the same path to him, this doesn't automatically put Bob in the Developers user group\. IAM doesn't enforce any boundaries between users or user groups based on their paths\. Users with different paths can use the same resources if they've been granted permission to those resources\. The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 ## IAM ARNs<a name="identifiers-arns"></a>
 
@@ -27,7 +27,7 @@ arn:partition:service:region:account:resource
 
 Where:
 + `partition` identifies the partition for the resource \. For standard AWS Regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\. You cannot [delegate access](id_roles_compare-resource-policies.md#aboutdelegation-resourcepolicy) between accounts in different partitions\.
-+ `service` identifies the AWS product\. IAM resources always uses `iam`\.
++ `service` identifies the AWS product\. IAM resources always use `iam`\.
 + `region` identifies the Region of the resource\. For IAM resources, this is always kept blank\.
 + `account` specifies the AWS account ID with no hyphens\.
 + `resource` identifies the specific resource by name\.
@@ -271,7 +271,18 @@ For the most part, you use friendly names and [ARNs](#identifiers-arns) when you
 
 One example reuses friendly names in your AWS account\. Within your account, a friendly name for a user, user group, or policy must be unique\. For example, you might create an IAM user named David\. Your company uses Amazon S3 and has a bucket with folders for each employee\. The bucket has a resource\-based policy \(a bucket policy\) that allows users access only their own folders in the bucket\. Suppose that the employee named David leaves your company and you delete the corresponding IAM user\. But later another employee named David starts and you create a new IAM user named David\. If the bucket policy specifies the `David` IAM user, the policy allows the new David to access information that was left by the former David\. 
 
-However, every IAM user has a unique ID, even if you create a new IAM user that reuses a friendly name you deleted before\. In the example, the old IAM user David and the new IAM user David have different unique IDs\. You can create resource\-based policies that grant access by unique ID and not just by user name\. Doing so reduces the chance that you could inadvertently grant access to information that an employee should not have\. 
+In general, we recommend that you specify the ARN for the resource in your policies instead of its unique ID\. However, every IAM user has a unique ID, even if you create a new IAM user that reuses a friendly name you deleted before\. In the example, the old IAM user David and the new IAM user David have different unique IDs\. You can create resource\-based policies that grant access by unique ID and not just by user name\. The following example shows how you might specify unique IDs in the principal element of a resource\-based policy\.
+
+```
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::1111-1111-1111:role/examplerole",
+          "AIDACKCEVSQ6C2EXAMPLE",
+          "AROADBQP57FF2AEXAMPLE"
+}
+```
+
+Doing so reduces the chance that you could inadvertently grant access to information that an employee should not have\. 
 
 Another example where user IDs can be useful is if you maintain your own database \(or other store\) of IAM user information\. The unique ID can provide a unique identifier for each IAM user you create\. This is the case when you have IAM users that reuse a name, as in the previous example\.
 

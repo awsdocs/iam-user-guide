@@ -50,7 +50,7 @@ If you [create a member account](https://docs.aws.amazon.com/cli/latest/referenc
 
  You can now use IAM policies to control which pages a user can access\.
 
-After you have activated IAM user access, you can attach IAM policies to grant or deny access to specific billing features\. For more information about using policies to grant IAM users access to AWS Billing and Cost Management Management features, see [Using identity\-based policies \(IAM policies\) for Billing and Cost Management Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing and Cost Management User Guide*\.
+After you have activated IAM user access, you can attach IAM policies to grant or deny access to specific billing features\. For more information about using policies to grant IAM users access to AWS Billing and Cost Management features, see [Using identity\-based policies \(IAM policies\) for Billing and Cost Management](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html) in the *AWS Billing User Guide*\.
 
 ## Step 2: Create IAM policies that grant permissions to billing data<a name="tutorial-billing-step2"></a>
 
@@ -144,7 +144,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 ## Related resources<a name="tutorial-billing-addl-resources"></a>
 
-For related information found in the *AWS Billing and Cost Management User Guide*, see the following resources:
+For related information found in the *AWS Billing User Guide*, see the following resources:
 + [Activating Access to the Billing and Cost Management Console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate) 
 + [Allow full access to AWS services but deny IAM users access to the Billing and Cost Management console](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-example-policies.html#ExampleAllowAllDenyBilling)\.
 + [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)

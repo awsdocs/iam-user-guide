@@ -21,7 +21,7 @@ For more information about these identifiers, see [IAM identifiers](reference_id
 ## Users and credentials<a name="id_users_creds"></a>
 
 You can access AWS in different ways depending on the user credentials:
-+ [**Console password**](id_credentials_passwords.md): A password that the user can type to sign in to interactive sessions such as the AWS Management Console\. Disabling the password \(console access\) for a user prevents them from signing in the to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
++ [**Console password**](id_credentials_passwords.md): A password that the user can type to sign in to interactive sessions such as the AWS Management Console\. Disabling the password \(console access\) for a user prevents them from signing in to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
 + [**Access keys**](id_credentials_access-keys.md): A combination of an access key ID and a secret access key\. You can assign two to a user at a time\. These can be used to make programmatic calls to AWS\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
 + [**SSH keys for use with CodeCommit**](id_credentials_ssh-keys.md): An SSH public key in the OpenSSH format that can be used to authenticate with CodeCommit\.
 + [**Server certificates**](id_credentials_server-certs.md): SSL/TLS certificates that you can use to authenticate with some AWS services\. We recommend that you use AWS Certificate Manager \(ACM\) to provision, manage, and deploy your server certificates\. Use IAM only when you must support HTTPS connections in a region that is not supported by ACM\. To learn which regions support ACM, see [AWS Certificate Manager endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/acm.html) in the *AWS General Reference*\.
@@ -47,7 +47,7 @@ You can also add a permissions boundary to your users\. A permissions boundary i
 
 Each IAM user is associated with one and only one AWS account\. Because users are defined within your AWS account, they don't need to have a payment method on file with AWS\. Any AWS activity performed by users in your account is billed to your account\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 ## Users as service accounts<a name="id_users_service_accounts"></a>
 

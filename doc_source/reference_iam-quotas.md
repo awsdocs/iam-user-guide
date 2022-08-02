@@ -1,4 +1,4 @@
-# IAM and AWS STS quotas<a name="reference_iam-quotas"></a>
+# IAM and AWS STS quotas, name requirements, and character limits<a name="reference_iam-quotas"></a>
 
 AWS Identity and Access Management \(IAM\) and AWS Security Token Service \(STS\) have quotas that limit the size of objects\. This affects how you name an object, the number of objects you can create, and the number of characters you can use when you pass an object\. 
 
@@ -34,15 +34,15 @@ The following quotas are adjustable\.
 
 | Resource | Default quota | Maximum quota | 
 | --- | --- | --- | 
-| Role trust policy length | 2048 characters | 4096 characters | 
 | Customer managed policies in an AWS account | 1500 | 5000 | 
 | Groups in an AWS account | 300 | 500 | 
-| Roles in an AWS account | 1000 | 5000 | 
+| Instance profiles in an AWS account | 1000 | 5000 | 
 | Managed policies attached to an IAM role | 10 | 20 | 
 | Managed policies attached to an IAM user | 10 | 20 | 
-| Virtual MFA devices \(assigned or unassigned\) in an AWS account | Equal to the user quota for the account | Not applicable | 
-| Instance profiles in an AWS account | 1000 | 5000 | 
+| Role trust policy length | 2048 characters | 4096 characters | 
+| Roles in an AWS account | 1000 | 5000 | 
 | Server certificates stored in an AWS account | 20 | 1000 | 
+| Virtual MFA devices \(assigned or unassigned\) in an AWS account | Equal to the user quota for the account | Not applicable | 
 
 You cannot request an increase for the following quotas\.
 
@@ -70,13 +70,13 @@ You cannot request an increase for the following quotas\.
 | Signing certificates assigned to an IAM user | 2 | 
 | SSH public keys assigned to an IAM user | 5 | 
 | Tags that can be attached to a customer managed policy | 50 | 
-| Tags that can be attached to an instance profile | 50 | 
-| Tags that can be attached to an Open ID Connect \(OIDC\) identity provider  | 50 | 
-| Tags that can be attached to an IAM role | 50 | 
 | Tags that can be attached to a SAML identity provider | 50 | 
 | Tags that can be attached to a server certificate | 50 | 
-| Tags that can be attached to an IAM user | 50 | 
 | Tags that can be attached to a virtual MFA device | 50 | 
+| Tags that can be attached to an instance profile | 50 | 
+| Tags that can be attached to an IAM role | 50 | 
+| Tags that can be attached to an IAM user | 50 | 
+| Tags that can be attached to an Open ID Connect \(OIDC\) identity provider  | 50 | 
 | Users in an AWS account | 5000 \(If you need to add a large number of users, consider using [temporary security credentials](id_credentials_temp.md)\.\) | 
 | Versions of a managed policy that can be stored | 5 | 
 
@@ -84,27 +84,28 @@ You cannot request an increase for the following quotas\.
 
 For IAM Access Analyzer quotas, see [IAM Access Analyzer Quotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#access-analyzer-quotas)\.
 
-## IAM and STS character quotas<a name="reference_iam-quotas-entity-length"></a>
+## IAM and STS character limits<a name="reference_iam-quotas-entity-length"></a>
 
-The following are the maximum character counts and size quotas for IAM and AWS STS\. You cannot request an increase for the following quotas\.
+The following are the maximum character counts and size limits for IAM and AWS STS\. You cannot request an increase for the following limits\.
 
 
-| Description | Quota | 
+| Description | Limit | 
 | --- | --- | 
-| Path | 512 characters | 
-| User name | 64 characters | 
-| Group name | 128 characters | 
-| Role name | 64 characters If you intend to use a role with the **Switch Role** feature in the AWS Management Console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
-| Tag key | 128 charactersThis character quota applies to tags on IAM resources and [session tags](id_session-tags.md)\. | 
-| Tag value | 256 charactersThis character quota applies to tags on IAM resources and [session tags](id_session-tags.md)\.Tag values can be empty which means tag values can have a length of 0 characters\. | 
-| Instance profile name | 128 characters | 
-|  Unique IDs created by IAM  |  128 characters\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 
-| Policy name | 128 characters | 
-| Password for a login profile | 1–128 characters | 
 | Alias for an AWS account ID | 3–63 characters | 
-| Role session name | 64 characters | 
+| For [inline policies](access_policies_managed-vs-inline.md) | You can add as many inline policies as you want to an IAM user, role, or group\. But the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following limits: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  IAM does not count white space when calculating the size of a policy against these limits\.  | 
+| For [managed policies](access_policies_managed-vs-inline.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  IAM does not count white space when calculating the size of a policy against this limit\.   | 
+| Group name | 128 characters | 
+| Instance profile name | 128 characters | 
+| Password for a login profile | 1–128 characters | 
+| Path | 512 characters | 
+| Policy name | 128 characters | 
+| Role name | 64 characters If you intend to use a role with the **Switch Role** feature in the AWS Management Console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
 | Role session duration |  12 hours When you assume a role from the AWS CLI or API, you can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer role session\. You can specify a value from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role, which can range 1–12 hours\. If you don't specify a value for the `DurationSeconds` parameter, your security credentials are valid for one hour\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the IAM user's session, whichever is less\. The maximum session duration setting does not limit sessions assumed by AWS services\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\.   | 
+| Role session name | 64 characters | 
 | Role [session policies](access_policies.md#policies_session) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  | 
 | Role [session tags](id_session-tags.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  | 
-| For [inline policies](access_policies_managed-vs-inline.md) | You can add as many inline policies as you want to an IAM user, role, or group\. But the total aggregate policy size \(the sum size of all inline policies\) per entity cannot exceed the following quotas: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  IAM does not count white space when calculating the size of a policy against these quotas\.  | 
-| For [managed policies](access_policies_managed-vs-inline.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  IAM does not count white space when calculating the size of a policy against this quota\.   | 
+| SAML authentication response base64 encoded | 100,000 charactersThis character limit applies to [https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html) CLI or [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API operation\. | 
+| Tag key | 128 charactersThis character limit applies to tags on IAM resources and [session tags](id_session-tags.md)\. | 
+| Tag value | 256 charactersThis character limit applies to tags on IAM resources and [session tags](id_session-tags.md)\.Tag values can be empty which means tag values can have a length of 0 characters\. | 
+|  Unique IDs created by IAM  |  128 characters\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  This is not intended to be an exhaustive list, nor is it a guarantee that IDs of a certain type begin only with the specified letter combination\.   | 
+| User name | 64 characters | 

@@ -17,7 +17,7 @@ The process of creating a user and enabling that user to perform work tasks cons
 
 1. Create credentials for the user, depending on the type of access the user requires:
    + **Programmatic access:** The IAM user might need to make API calls, use the AWS CLI, or use the Tools for Windows PowerShell\. In that case, create an access key \(access key ID and a secret access key\) for that user\.
-   + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\. Disabling console access for a user prevents them from signing in the to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
+   + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\. Disabling console access for a user prevents them from signing in to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
 
    As a best practice, create only the credentials that the user needs\. For example, for a user who requires access only through the AWS Management Console, do not create access keys\.
 
@@ -45,7 +45,7 @@ You can use the AWS Management Console to create IAM users\.
 
 1. Type the user name for the new user\. This is the sign\-in name for AWS\. If you want to add multiple users, choose **Add another user** for each additional user and type their user names\. You can add up to 10 users at one time\.
 **Note**  
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\. User names can be a combination of up to 64 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), underscore \(\_\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two users named *TESTUSER* and *testuser*\.
 
 1. Select the type of access this set of users will have\. You can select programmatic access, access to the AWS Management Console, or both\.
    + Select **Programmatic access** if the users require access to the API, AWS CLI, or Tools for Windows PowerShell\. This creates an access key for each new user\. You can view or download the access keys when you get to the **Final** page\.

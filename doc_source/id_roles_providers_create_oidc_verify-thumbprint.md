@@ -3,7 +3,9 @@
 When you [create an OpenID Connect \(OIDC\) identity provider](id_roles_providers_create_oidc.md) in IAM, you must supply a thumbprint\. IAM requires the thumbprint for the top intermediate certificate authority \(CA\) that signed the certificate used by the external identity provider \(IdP\)\. The thumbprint is a signature for the CA's certificate that was used to issue the certificate for the OIDC\-compatible IdP\. When you create an IAM OIDC identity provider, you are trusting identities authenticated by that IdP to have access to your AWS account\. By supplying the CA's certificate thumbprint, you trust any certificate issued by that CA with the same DNS name as the one registered\. This eliminates the need to update trusts in each account when you renew the IdP's signing certificate\.
 
 **Important**  
-In most cases, the federation server uses two different certificates\. The first establishes an HTTPS connection between the clients and the federation endpoint\. This can be safely issued by a public root CA, such as AWS Certificate Manager\. The second is used to sign tokens\. We recommend that you issue this using a private CA\.
+In most cases, the federation server uses two different certificates:  
+The first establishes an HTTPS connection between AWS and your IdP\. This should be issued by a by a well\-known public root CA, such as AWS Certificate Manager\. This enables the client to check the reliability and status of the certificate\.
+The second is used to encrypt tokens, and should be signed by a private or public *root* CA\.
 
 You can create an IAM OIDC identity provider with [the AWS Command Line Interface, the Tools for Windows PowerShell, or the IAM API](id_roles_providers_create_oidc.md#manage-oidc-provider-cli)\. When you use these methods, you must obtain the thumbprint manually and supply it to AWS\. When you create an OIDC identity provider with [the IAM console](id_roles_providers_create_oidc.md), the console attempts to fetch the thumbprint for you\. We recommend that you also obtain the thumbprint for your OIDC IdP manually and verify that the console fetched the correct thumbprint\. 
 

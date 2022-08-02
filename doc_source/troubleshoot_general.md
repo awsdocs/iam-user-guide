@@ -11,7 +11,6 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
 + [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
 + [How do I securely create IAM users?](#troubleshoot_general_securely-create-iam-users)
-+ [Troubleshooting access denied error messages](troubleshoot_access-denied.md)
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 
@@ -112,7 +111,7 @@ To fix this issue, an administrator should **not** edit policy permissions\. Ins
 
 ## How do I securely create IAM users?<a name="troubleshoot_general_securely-create-iam-users"></a>
 
-If you have employees that require access to AWS, you might choose to create IAM users or [use AWS SSO for authentication](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\. If you use IAM, AWS recommends that you create an IAM user and securely communicate the credentials to the employee\. If you are not physically located next to your employee, use a secure workflow to communicate credentials to employees\.
+If you have employees that require access to AWS, you might choose to create IAM users or [use IAM Identity Center for authentication](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\. If you use IAM, AWS recommends that you create an IAM user and securely communicate the credentials to the employee\. If you are not physically located next to your employee, use a secure workflow to communicate credentials to employees\.
 
 Use the following workflow to securely create a new user in IAM:
 

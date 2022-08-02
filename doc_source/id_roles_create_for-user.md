@@ -10,7 +10,7 @@ For information about how to use roles to delegate permissions, see [Roles terms
 
 ## Creating an IAM role \(console\)<a name="roles-creatingrole-user-console"></a>
 
-You can use the AWS Management Console to create a role that an IAM user can assume\. For example, assume that your organization has multiple AWS accounts to isolate a development environment from a production environment\. For a high\-level description of the steps to set up and use a role that allows users in the development account to access resources in the production account, see [Example scenario using separate development and production accounts](id_roles_common-scenarios_aws-accounts.md#id_roles_common-scenarios_aws-accounts-example)\.
+You can use the AWS Management Console to create a role that an IAM user can assume\. For example, assume that your organization has multiple AWS accounts to isolate a development environment from a production environment\. For high\-level information about creating a role that allows users in the development account to access resources in the production account, see [Example scenario using separate development and production accounts](id_roles_common-scenarios_aws-accounts.md#id_roles_common-scenarios_aws-accounts-example)\.
 
 **To create a role \(console\)**
 
@@ -18,35 +18,35 @@ You can use the AWS Management Console to create a role that an IAM user can ass
 
 1. In the navigation pane of the console, choose **Roles** and then choose **Create role**\.
 
-1. Choose the **Another AWS account** role type\.
+1. Choose **AWS account** role type\.
 
-1. For **Account ID**, type the AWS account ID to which you want to grant access to your resources\.
+1. To create a role for your account, choose **This account**\. To create a role for another account, choose **Another AWS account** and enter the **Account ID** to which you want to grant access to your resources\.
 
    The administrator of the specified account can grant permission to assume this role to any IAM user in that account\. To do this, the administrator attaches a policy to the user or a group that grants permission for the `sts:AssumeRole` action\. That policy must specify the role's ARN as the `Resource`\. 
 
-1. If you are granting permissions to users from an account that you do not control, and the users will assume this role programmatically, then select **Require external ID**\. The external ID can be any word or number that is agreed upon between you and the administrator of the third\-party account\. This option automatically adds a condition to the trust policy that allows the user to assume the role only if the request includes the correct `sts:ExternalID`\. For more information, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md)\.
+1. If you are granting permissions to users from an account that you do not control, and the users will assume this role programmatically, select **Require external ID**\. The external ID can be any word or number that is agreed upon between you and the administrator of the third\-party account\. This option automatically adds a condition to the trust policy that allows the user to assume the role only if the request includes the correct `sts:ExternalID`\. For more information, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md)\.
 **Important**  
 Choosing this option restricts access to the role only through the AWS CLI, Tools for Windows PowerShell, or the AWS API\. This is because you cannot use the AWS console to switch to a role that has an `externalId` condition in its trust policy\. However, you can create this kind of access programmatically by writing a script or an application using the relevant SDK\. For more information and a sample script, see [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the AWS Security Blog\.
 
 1. If you want to restrict the role to users who sign in with multi\-factor authentication \(MFA\), select **Require MFA**\. This adds a condition to the role's trust policy that checks for an MFA sign\-in\. A user who wants to assume the role must sign in with a temporary one\-time password from a configured MFA device\. Users without MFA authentication cannot assume the role\. For more information about MFA, see [Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)
 
-1. Choose **Next: Permissions**\.
+1. Choose **Next**\.
 
-1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want anyone who assumes the role to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
+1. IAM includes a list of the AWS managed and customer managed policies in your account\. Select the policy to use for the permissions policy or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab\. Select the check box next to the permissions policies that you want anyone who assumes the role to have\. If you prefer, you can select no policies at this time, and then attach policies to the role later\. By default, a role has no permissions\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\. 
 
    Open the **Set permissions boundary** section and choose **Use a permissions boundary to control the maximum role permissions**\. Select the policy to use for the permissions boundary\.
 
-1. Choose **Next: Tags**\.
+1. Choose **Next**\.
+
+1. For **Role name**, enter a name for your role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because other AWS resources might reference the role, you cannot edit the name of the role after it has been created\.
+
+1. \(Optional\) For **Description**, enter a description for the new role\.
+
+1. Choose **Edit** in the **Step 1: Select trusted entities** or **Step 2: Add permissions** sections to edit the use cases and permissions for the role\. 
 
 1. \(Optional\) Add metadata to the role by attaching tags as key–value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
-
-1. Choose **Next: Review**\. 
-
-1. For **Role name**, type a name for your role\. Role names must be unique within your AWS account\. They are not distinguished by case\. For example, you cannot create roles named both **PRODROLE** and **prodrole**\. Because other AWS resources might reference the role, you cannot edit the name of the role after it has been created\.
-
-1. \(Optional\) For **Role description**, type a description for the new role\.
 
 1. Review the role and then choose **Create role**\.
 **Important**  

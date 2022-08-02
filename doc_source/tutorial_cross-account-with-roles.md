@@ -105,7 +105,7 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 
 1. In the navigation pane, choose **Roles** and then choose **Create role**\.
 
-1. Choose the **Another AWS account** role type\.
+1. Choose the **An AWS account** role type\.
 
 1. For **Account ID**, type the **Development** account ID\.
 
@@ -115,19 +115,19 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 
 1. Choose **Next: Permissions** to set the permissions associated with the role\.
 
-1. Select the box next to the policy that you created previously\.
+1. Select the check box next to the policy that you created previously\.
 **Tip**  
 For **Filter**, choose **Customer managed** to filter the list to include only the policies that you created\. This hides the AWS created policies and makes it much easier to find the one you need\.
 
-   Then choose **Next: Tags**\. 
+   Then, choose **Next**\. 
 
 1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
-1. Choose **Next: Review** and type **UpdateApp** for the role name\.
-
-1. \(Optional\) For **Role description**, type a description for the new role\.
+1. \(Optional\) For **Description**, enter a description for the new role\.
 
 1. After reviewing the role, choose **Create role**\.
+
+    
 
    The `UpdateApp` role appears in the list of roles\.
 
@@ -143,7 +143,7 @@ Now you must obtain the Amazon Resource Name \(ARN\) of the role, a unique ident
 
    The Production account has an account ID of 999999999999, so the role ARN is `arn:aws:iam::999999999999:role/UpdateApp`\. Ensure that you provide the real AWS account ID for the Production account\.
 
-At this point, you have established trust between the **Production** and **Development** accounts\. You did this by creating a role in the **Production** account that identifies the **Development** account as a trusted principal\. You also defined the users that can switch to the `UpdateApp` role can do\.
+At this point, you have established trust between the **Production** and **Development** accounts\. You did this by creating a role in the **Production** account that identifies the **Development** account as a trusted principal\. You also defined what the users who switch to the `UpdateApp` role can do\.
 
 Next, modify the permissions for the user groups\.
 
@@ -231,21 +231,21 @@ You can switch to a role only after you sign in as an IAM user or a federated us
 If David needs to work within the **Production** environment in the AWS Management Console, he can do so by using **Switch Role**\. He specifies the account ID or alias and the role name, and his permissions immediately switch to those permitted by the role\. He can then use the console to work with the `productionapp` bucket, but cannot work with any other resources in **Production**\. While David uses the role, he also cannot make use of his power\-user privileges in the **Development** account\. That's because only one set of permissions can be in effect at a time\.
 
 **Important**  
-Switching roles using the AWS Management Console works only with accounts that do not require an `ExternalId`\. For example, assume that you grant access to your account to a third party and require an `ExternalId` in a `Condition` element in your permissions policy\. In that case, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalId`\. For more information about this scenario, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the AWS Security Blog\.
+Switching roles using the AWS Management Console only works with accounts that do not require an `ExternalId`\. For example, assume that you grant access to your account to a third party and require an `ExternalId` in a `Condition` element in your permissions policy\. In that case, the third party can access your account only by using the AWS API or a command line tool\. The third party cannot use the console because it cannot supply a value for `ExternalId`\. For more information about this scenario, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md), and [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the AWS Security Blog\.
 
 IAM provides two ways that David can use to enter the **Switch Role** page:
-+ David receives a link from his administrator that points to a pre\-defined Switch Role configuration\. The link is provided to the administrator on the final page of the **Create role** wizard or on the **Role Summary** page for a cross\-account role\. Choosing this link takes David to the **Switch Role** page with the **Account ID** and **Role name** fields already filled in\. All David needs to do is choose **Switch Role** and he's done\.
-+ The administrator does not send the link in email, but instead sends the **Account ID** number and **Role Name** values\. David must manually type them to switch roles\. This is illustrated in the following procedure\.
++ David receives a link from their administrator that points to a predefined Switch Role configuration\. The link is provided to the administrator on the final page of the **Create role** wizard or on the **Role Summary** page for a cross\-account role\. Choosing this link takes David to the **Switch Role** page with the **Account ID** and **Role name** fields already filled in\. All David needs to do is choose **Switch Roles**\.
++ The administrator does not send the link in email, but instead sends the **Account ID** number and **Role Name** values\. To switch roles, David must manually enter the values\. This is illustrated in the following procedure\.
 
 **To assume a role**
 
 1. David signs into the AWS Management Console using his normal user in the **Development** user group\.
 
-1. He chooses the link that his administrator sent to him in email\. This takes him to the **Switch Role** page with the account ID or alias and the role name information already filled in\.
+1. They choose the link that the administrator emailed to them\. This takes David to the **Switch Role** page with the account ID or alias and the role name information already filled in\.
 
    —or—
 
-   He chooses his name \(the Identity menu\) on the navigation bar, and then chooses **Switch Role**\. 
+   David chooses their name \(the Identity menu\) on the navigation bar, and then chooses **Switch Roles**\. 
 
    If this is the first time that David tries to access the Switch Role page this way, he first lands on a first\-run **Switch Role** page\. This page provides additional information on how switching roles can permit users to manage resources across AWS accounts\. David must choose **Switch Role** on this page to complete the rest of this procedure\.
 
@@ -255,7 +255,7 @@ IAM provides two ways that David can use to enter the **Switch Role** page:
 
 1. David can now use the Amazon S3 console to work with the Amazon S3 bucket, or any other resource to which the `UpdateApp` role has permissions\.
 
-1. When he is done with the work he needs to do, David can return to his original permissions\. To do that, he chooses the **PRODUCTION **role display name on the navigation bar and then chooses **Back to David @ 111111111111**\.
+1. When done, David can return to their original permissions\. To do that, they choose the **PRODUCTION **role display name on the navigation bar and then choose **Back to David @ 111111111111**\.
 
 1. The next time that David wants to switch roles and chooses the **Identity** menu in the navigation bar, he sees the PRODUCTION entry still there from last time\. He can simply choose that entry to switch roles immediately without reentering the account ID and role name\.
 
@@ -298,12 +298,12 @@ David's default environment uses the `David` user credentials from his default p
    }
    ```
 
-1. David sees the three pieces that he needs in the Credentials section of the output\.
+1. David sees the three pieces that they need in the Credentials section of the output\.
    + `AccessKeyId`
    + `SecretAccessKey`
    + `SessionToken`
 
-   David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually type the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
+   David needs to configure the AWS CLI environment to use these parameters in subsequent calls\. For information about the various ways to configure your credentials, see [Configuring the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#config-settings-and-precedence)\. You cannot use the `aws configure` command because it does not support capturing the session token\. However, you can manually enter the information into a configuration file\. Because these are temporary credentials with a relatively short expiration time, it is easiest to add them to the environment of your current command line session\.
 
 1. To add the three values to the environment, David cuts and pastes the output of the previous step into the following commands\. You might want to cut and paste into a simple text editor to address line wrap issues in the output of the session token\. It must be added as a single long string, even though it is shown line wrapped here for clarity\.
 **Note**  
@@ -321,7 +321,7 @@ The following example shows commands given in the Windows environment, where "se
 
    At this point, any following commands run under the permissions of the role identified by those credentials\. In David's case, the `UpdateApp` role\.
 
-1. Run the command to access the resources in the Production account\. In this example, David simply lists the contents of his S3 bucket with the following command\.
+1. Run the command to access the resources in the Production account\. In this example, David lists the contents of their S3 bucket with the following command\.
 
    ```
    aws s3 ls s3://productionapp
@@ -335,11 +335,11 @@ When David needs to make an update to the **Production** account from code, he m
 
 **To assume a role**
 
-1. David calls `AssumeRole` as part of an application\. He must specify the `UpdateApp` ARN: `arn:aws:iam::999999999999:role/UpdateApp`\.
+1. David calls `AssumeRole` as part of an application\. They must specify the `UpdateApp` ARN: `arn:aws:iam::999999999999:role/UpdateApp`\.
 
    The response from the `AssumeRole` call includes the temporary credentials with an `AccessKeyId` and a `SecretAccessKey`\. It also includes an `Expiration` time that indicates when the credentials expire and you must request new ones\. 
 
-1. With the temporary credentials, David makes an `s3:PutObject` call to update the `productionapp` bucket\. He would pass the credentials to the API call as the `AuthParams` parameter\. Because the temporary role credentials have only read and write access to the `productionapp` bucket, any other actions in the Production account are denied\.
+1. With the temporary credentials, David makes an `s3:PutObject` call to update the `productionapp` bucket\. They would pass the credentials to the API call as the `AuthParams` parameter\. Because the temporary role credentials have only read and write access to the `productionapp` bucket, any other actions in the Production account are denied\.
 
 For a code example \(using Python\), see [Switching to an IAM role \(AWS API\)](id_roles_use_switch-role-api.md)\.
 

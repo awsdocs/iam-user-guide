@@ -19,12 +19,12 @@ If you prefer not to permanently delete a role, you can disable a role\. To do t
 
 ## View role access<a name="roles-delete_prerequisites"></a>
 
-Before you delete a role, we recommend that you review when the role was last used\. You can do this using the AWS Management Console, the AWS CLI, or the AWS API\.You should view this information because you don't want to remove access from someone using the role\. 
+Before you delete a role, we recommend that you review when the role was last used\. You can do this using the AWS Management Console, the AWS CLI, or the AWS API\. You should view this information because you don't want to remove access from someone using the role\. 
 
 The date of the role last activity might not match the last date reported in the **Access Advisor** tab\. The [**Access Advisor**](access_policies_access-advisor-view-data.md) tab reports activity only for services allowed by the role permissions policies\. The date of the role last activity includes the last attempt to access any service in AWS\. 
 
 **Note**  
-The tracking period for a rolelast activity and Access Advisor data is for the trailing 400 days\. This period can be shorter if your Region began supporting these features within the last year\. The role might have been used more than 400 days ago\. For more information about the tracking period, see [Where AWS tracks last accessed information](access_policies_access-advisor.md#access-advisor_tracking-period)\.
+The tracking period for a role last activity and Access Advisor data is for the trailing 400 days\. This period can be shorter if your Region began supporting these features within the last year\. The role might have been used more than 400 days ago\. For more information about the tracking period, see [Where AWS tracks last accessed information](access_policies_access-advisor.md#access-advisor_tracking-period)\.
 
 **To view when a role was last used \(console\)**
 
@@ -34,7 +34,7 @@ The tracking period for a rolelast activity and Access Advisor data is for the t
 
 1. Find the row of the role with the activity you want to view\. You can use the search field to narrow the results\. View the **Last activity** column to see the number of days since the role was last used\. If the role has not been used within the tracking period, then the table displays **None**\. 
 
-1. Choose the name of the role to view more information\. The role ** Summary** page also includes **Last activity**, which displays the last used date for the role \. If the role has not been used within the last 400 days, then **Last activity** displays **Not accessed in the tracking period**\.
+1. Choose the name of the role to view more information\. The role ** Summary** page also includes **Last activity**, which displays the last used date for the role\. If the role has not been used within the last 400 days, then **Last activity** displays **Not accessed in the tracking period**\.
 
 **To view when a role was last used \(AWS CLI\)**  
 `[aws iam get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html)` \- Run this command to return information about a role, including the `RoleLastUsed` object\. This object contains the `LastUsedDate` and the `Region` in which the role was last used\. If `RoleLastUsed` is present but does not contain a value, then the role has not been used within the tracking period\.
@@ -50,7 +50,7 @@ If the service does not include documentation for deleting the service\-linked r
 
 ## Deleting an IAM role \(console\)<a name="roles-managingrole-deleting-console"></a>
 
-When you use the AWS Management Console to delete a role, IAM also automatically deletes the policies associated with the role\. It also deletes any Amazon EC2 instance profile that contains the role\.
+When you use the AWS Management Console to delete a role, IAM also automatically deletes any inline policies associated with the role\. It also deletes any Amazon EC2 instance profile that contains the role\.
 
 **Important**  
 In some cases, a role might be associated with an Amazon EC2 instance profile, and the role and the instance profile might have the same name\. In that case you can use the AWS Management Console to delete the role and the instance profile\. This linkage happens automatically for roles and instance profiles that you create in the console\. If you created the role from the AWS CLI, Tools for Windows PowerShell, or the AWS API, then the role and the instance profile might have different names\. In that case you cannot use the console to delete them\. Instead, you must use the AWS CLI, Tools for Windows PowerShell, or AWS API to first remove the role from the instance profile\. You must then take a separate step to delete the role\.
@@ -70,7 +70,7 @@ You cannot use the console to delete an instance profile unless it has the same 
 
 ## Deleting an IAM role \(AWS CLI\)<a name="roles-managingrole-deleting-cli"></a>
 
-When you use the AWS CLI to delete a role, you must first delete the policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
+When you use the AWS CLI to delete a role, you must first delete inline policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
 
 **To delete a role \(AWS CLI\)**
 
@@ -124,7 +124,7 @@ When you use the AWS CLI to delete a role, you must first delete the policies as
 
 ## Deleting an IAM role \(AWS API\)<a name="roles-managingrole-deleting-api"></a>
 
-When you use the IAM API to delete a role, you must first delete the policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
+When you use the IAM API to delete a role, you must first delete inline policies associated with the role\. Also, if you want to delete the associated instance profile that contains the role, you must delete it separately\.
 
 **To delete a role \(AWS API\)**
 

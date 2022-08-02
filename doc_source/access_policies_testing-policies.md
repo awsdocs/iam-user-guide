@@ -163,7 +163,7 @@ To test a customer managed policy that is attached to a user: In the navigation 
 
 1. <a name="polsimstep-service"></a>Under **Policy Simulator**, choose **Select service** and then choose the service to test\. Then choose **Select actions** and select one or more actions to test\. Although the menus show the available selections for only one service at a time, all the services and actions that you have selected appear in **Action Settings and Results**\. 
 
-1. \(Optional\) If any of the policies that you choose in [Step 2](#polsimstep-selectid) and [Step 5](#polsimstep-polsubset) include conditions with [AWS *global condition keys*](reference_policies_condition-keys.md), then supply values for those keys\. You can do this by expanding the **Global Settings** section and typing values for the key names displayed there\.
+1. \(Optional\) If any of the policies that you choose in [Step 2](#polsimstep-selectid) and [Step 5](#polsimstep-polsubset) include conditions with [AWS*global condition keys*](reference_policies_condition-keys.md), then supply values for those keys\. You can do this by expanding the **Global Settings** section and typing values for the key names displayed there\.
 **Warning**  
 If you leave the value for a condition key empty, then that key is ignored during the simulation\. In some cases, this results in an error, and the simulation fails to run\. In other cases, the simulation runs, but the results might not be reliable\. In those cases, the simulation does not match the real\-world conditions that include a value for the condition key or variable\.
 
@@ -179,12 +179,6 @@ If you leave the value for a condition key empty, then that key is ignored durin
 Some actions require different resource types under different circumstances\. Each group of resource types is associated with a scenario\. If one of these applies to your simulation, select it and the simulator requires the resource types appropriate for that scenario\. The following list shows each of the supported scenario options and the resources that you must define to run the simulation\.
 
    Each of the following Amazon EC2 scenarios requires that you specify `instance`, `image`, and `security-group` resources\. If your scenario includes an EBS volume, then you must specify that `volume` as a resource\. If the Amazon EC2 scenario includes a virtual private cloud \(VPC\), then you must supply the `network-interface` resource\. If it includes an IP subnet, then you must specify the `subnet` resource\. For more information on the Amazon EC2 scenario options, see [Supported Platforms](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html) in the *Amazon EC2 User Guide*\.
-   + **EC2\-Classic\-InstanceStore**
-
-     instance, image, security\-group
-   + **EC2\-Classic\-EBS**
-
-     instance, image, security\-group, volume
    + **EC2\-VPC\-InstanceStore**
 
      instance, image, security\-group, network\-interface
@@ -199,10 +193,6 @@ Some actions require different resource types under different circumstances\. Ea
      instance, image, security\-group, network\-interface, subnet, volume
 
 1. <a name="polsimstep-respol"></a>\(Optional\) If you want to include a resource\-based policy in your simulation, then you must first select the actions that you want to simulate on that resource in [Step 6](#polsimstep-service)\. Expand the rows for the selected actions, and type the ARN of the resource with a policy that you want to simulate\. Then select **Include Resource Policy** next to the **ARN** text box\. The IAM policy simulator currently supports resource\-based policies from only the following services: Amazon S3 \(resource\-based policies only; ACLs are not currently supported\), Amazon SQS, Amazon SNS, and unlocked S3 Glacier vaults \(locked vaults are not currently supported\)\.
-
-1. Choose **Run Simulation** in the upper\-right corner\.
-
-   The **Permission** column in each row of **Action Settings and Results** displays the result of the simulation of that action on the specified resource\.
 
 1. Choose **Run Simulation** in the upper\-right corner\.
 

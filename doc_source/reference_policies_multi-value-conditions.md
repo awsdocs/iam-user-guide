@@ -14,7 +14,7 @@ A `Condition` element can contain multiple conditions, and each condition can co
 
 ## Evaluation logic for conditions with multiple keys or values<a name="reference_policies_multiple-conditions-eval"></a>
 
-If your policy has multiple condition operators or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All conditions must resolve to true to trigger the desired `Allow` or `Deny` effect\.
+If your policy has multiple [condition operators](reference_policies_elements_condition_operators.md) or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All conditions must resolve to true to trigger the desired `Allow` or `Deny` effect\.
 
 ![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
 
@@ -23,42 +23,19 @@ When multiple values are listed in a policy for negated matching condition opera
 
 ## Using multiple keys and values<a name="reference_policies_multi-key-or-value-conditions"></a>
 
-To compare your condition against a request context with multiple key values, you must use the `ForAllValues` or `ForAnyValue` set operators\. These qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. Additionally, if you include a multivalued key in your policy with a wildcard or a variable, you must also use the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String)\. For requests that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key2":\["Value2A", "Value2B"\]\)\.
-+ `ForAllValues` – Tests whether the value of every member of the request set is a subset of the condition key set\. The condition returns true if every key value in the request matches at least one value in the policy\. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\.
-+ `ForAnyValue` – Tests whether at least one member of the set of request values matches at least one member of the set of condition key values\. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or a null dataset, the condition returns false\.
+To compare your condition against a [request context](intro-structure.md#intro-structure-request) with multiple key values, you must use the `ForAllValues` or `ForAnyValue` set operators\. These set operators are used to compare two sets of values\.
 
-Assume that you want to let John use a resource only if a numeric value *foo* equals either A or B, and another numeric value *bar* equals C\. You would create a condition block that looks like the following figure\.
+When a policy condition compares two sets of values, such as the set of tags in a request and the set of tags in a policy condition, you need to tell AWS how to compare the sets\. IAM defines two set operators, `ForAnyValue` and `ForAllValues`\. You must use set operators with *multivalued* condition keys\. Do not use set operators with *single\-valued* condition keys\.
 
-![\[Condition block that includes two NumericEquals conditions\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example1.diagram.png)
+To determine whether an AWS condition key is single\-valued or multivalued, review its data type\. To view the condition key data types for a service, see [Actions, Resources, and Condition Keys for AWS Services](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) and choose the service whose condition keys you want to view\. If the condition **Type** field includes the `ArrayOf` prefix, the condition key is multivalued\. For example, [AWS Key Management Service](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awskeymanagementservice.html) supports condition keys with the `String` single\-valued data type and the `ArrayOfString` multivalued data type\.
++ *Single\-valued* condition keys have at most one value in the request context\. For example, you can tag resources in AWS\. Resource tags are stored as tag key\-value pairs\. A resource tag key can have a single tag value\. Therefore, [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourcetag) is a single\-valued condition key\. Do not use a set operator with a single\-valued condition key\.
++ *Multivalued* condition keys can have multiple values in the request context\. For example, you can tag resources in AWS and include multiple tag key\-value pairs in a request\. Therefore, [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-tagkeys) is a multivalued condition key\. Multivalued condition keys require a set operator\.
 
-Assume that you also want to restrict John's access to after January 1, 2019\. You would add another condition, `DateGreaterThan`, with a date equal to January 1, 2019\. The condition block would then look like the following figure\.
-
-![\[Condition block that includes DateGreaterThan condition\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Example2.diagram.png)
-
-AWS has predefined condition operators and keys \(like `aws:CurrentTime`\)\. Individual AWS services also define service\-specific keys\.
-
-As an example, assume that you want to let user John access your Amazon SQS queue under the following conditions:
-+ The time is after 12:00 p\.m\. on 7/16/2019
-+ The time is before 3:00 p\.m\. on 7/16/2019
-+ The request comes from an IP address within the range 192\.0\.2\.0 to 192\.0\.2\.255 *or* 203\.0\.113\.0 to 203\.0\.113\.255\.
-
-Your condition block has three separate condition operators, and all three of them must be met for John to have access to your queue, topic, or resource\.
-
-The following shows what the condition block looks like in your policy\. The two values for `aws:SourceIp` are evaluated using `OR`\. The three separate condition operators are evaluated using `AND`\.
-
-```
- 1. "Condition" :  {
- 2.       "DateGreaterThan" : {
- 3.          "aws:CurrentTime" : "2019-07-16T12:00:00Z"
- 4.        },
- 5.       "DateLessThan": {
- 6.          "aws:CurrentTime" : "2019-07-16T15:00:00Z"
- 7.        },
- 8.        "IpAddress" : {
- 9.           "aws:SourceIp" : ["192.0.2.0/24", "203.0.113.0/24"]
-10.       }
-11. }
-```
+The `ForAllValues` and `ForAnyValue` qualifiers add set\-operation functionality to the condition operator so that you can test multiple request values against multiple condition values\. Additionally, if you include a multivalued string key in your policy with a wildcard or a variable, you must also use the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String)\. For requests that include multiple values for a single key, you must enclose the condition key values within brackets like an [array](reference_policies_grammar.md#policies-grammar-json)\. For example, `"Key2":["Value2A", "Value2B"]`\.
++ `ForAllValues` – Use with multivalued condition keys\. Tests whether the value of every member of the request set is a subset of the condition key set\. The condition returns true if every key value in the request matches at least one value in the policy\. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. Do not use `ForAllValues` with an `Allow` effect because it can be overly permissive\.
++ `ForAnyValue` – Use with multivalued condition keys\. Tests whether at least one member of the set of request values matches at least one member of the set of condition key values\. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or a null dataset, the condition returns false\.
+**Note**  
+The the difference between single\-valued and multivalued condition keys depends on the number of values in the request context, not the number of values in the policy condition\.
 
 ## Examples of using multiple values with condition set operators<a name="reference_policies_multi-value-conditions-examples"></a>
 

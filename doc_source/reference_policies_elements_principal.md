@@ -2,7 +2,7 @@
 
 Use the `Principal` element in a resource\-based JSON policy to specify the principal that is allowed or denied access to a resource\. 
 
-You can use the `Principal` element in [resource\-based policies](access_policies_identity-vs-resource.md)\. Several services support resource\-based policies, including IAM\. The IAM resource\-based policy type is a role trust policy\. In IAM roles, use the `Principal` element in the role trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
+You must use the `Principal` element in [resource\-based policies](access_policies_identity-vs-resource.md)\. Several services support resource\-based policies, including IAM\. The IAM resource\-based policy type is a role trust policy\. In IAM roles, use the `Principal` element in the role trust policy to specify who can assume the role\. For cross\-account access, you must specify the 12\-digit identifier of the trusted account\. To learn whether principals in accounts outside of your zone of trust \(trusted organization or account\) have access to assume your roles, see [What is IAM Access Analyzer?](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)\.
 
 **Note**  
 After you create the role, you can change the account to "\*" to allow everyone to assume the role\. If you do this, we strongly recommend that you limit who can access the role through other means, such as a `Condition` element that limits access to only certain IP addresses\. Do not leave your role accessible to everyone\!
@@ -13,7 +13,7 @@ You cannot use the `Principal` element in an identity\-based policy\. Identity\-
 
 ## Specifying a principal<a name="Principal_specifying"></a>
 
-You specify a principal in the `Principal` element of a resource\-based policy or in condition keys that support principals\. For example, you can specify a principal [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) in the `aws:PrincipalArn` condition key\. 
+You specify a principal in the `Principal` element of a resource\-based policy or in condition keys that support principals\.
 
 You can specify any of the following principals in a policy:
 + AWS account and root user
@@ -23,6 +23,8 @@ You can specify any of the following principals in a policy:
 + Federated user sessions
 + AWS services
 + All principals
+
+You cannot identify a user group as a principal in a policy \(such as a resource\-based policy\) because groups relate to permissions, not authentication, and principals are authenticated IAM entities\.
 
 You can specify more than one principal for each of the principal types in following sections using an array\. Arrays can take one or more values\. When you specify more than one principal in an element, you grant permissions to each principal\. This is a logical `OR` and not a logical `AND`, because you authenticate as one principal at a time\. If you include more than one value, use square brackets \(`[` and `]`\) and comma\-delimit each entry for the array\. The following example policy defines permissions for the 123456789012 account or the 555555555555 account\.
 
@@ -69,9 +71,9 @@ You can also specify more than one AWS account, \(or canonical user ID\) as a pr
 "Principal": { 
   "AWS": [
     "arn:aws:iam::123456789012:root",
-    "999999999999",
-    "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be"
-  ]
+    "999999999999"
+  ],
+  "CanonicalUser": "79a59df900b949e55d96a1e698fbacedfd6e09d98eacf8f8d5218e7cd47ef2be"
 }
 ```
 
@@ -90,9 +92,9 @@ To specify the role ARN in the `Principal` element, use the following format:
 ```
 
 **Important**  
-If your `Principal` element in a role trust policy contains an ARN that points to a specific IAM role, then that ARN transforms to the role unique principal ID when you save the policy\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the role\. You don't normally see this ID in the console, because IAM uses a reverse transformation back to the role ARN when the trust policy is displayed\. However, if you delete the role, then you break the relationship\. The policy no longer applies, even if you recreate the role because the new role has a new principal ID that does not match the ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to a valid ARN\. The end result is that if you delete and recreate a role referenced in a trust policy's `Principal` element, you must edit the role to replace the now incorrect principal ID with the correct ARN\. The ARN once again transforms into the role's new principal ID when you save the policy\.
+If your `Principal` element in a role trust policy contains an ARN that points to a specific IAM role, then that ARN transforms to the role unique principal ID when you save the policy\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the role\. You don't normally see this ID in the console, because IAM uses a reverse transformation back to the role ARN when the trust policy is displayed\. However, if you delete the role, then you break the relationship\. The policy no longer applies, even if you recreate the role because the new role has a new principal ID that does not match the ID stored in the trust policy\. When this happens, the principal ID appears in resource\-based policies because AWS can no longer map it back to a valid ARN\. The end result is that if you delete and recreate a role referenced in a trust policy's `Principal` element, you must edit the role to replace the now incorrect principal ID with the correct ARN\. The ARN once again transforms into the role's new principal ID when you save the policy\.
 
-Alternatively, you can specify the role principal as the principal in a resource\-based policy or [create a broad\-permission policy](#principal-anonymous) that uses the `aws:PrincipalArn` condition key\. When you use this key, the role session principal is granted the permissions based on the ARN of role that was assumed, and not the ARN of the resulting session\. Because AWS does not convert condition key ARNs to IDs, permissions granted to the role ARN persist if you delete the role and then create a new role with the same name\. Permissions granted using the `aws:PrincipalArn` condition key are not limited by Identity\-based policy types such as permissions boundaries or session policies\.
+Alternatively, you can specify the role principal as the principal in a resource\-based policy or [create a broad\-permission policy](#principal-anonymous) that uses the `aws:PrincipalArn` condition key\. When you use this key, the role session principal is granted the permissions based on the ARN of role that was assumed, and not the ARN of the resulting session\. Because AWS does not convert condition key ARNs to IDs, permissions granted to the role ARN persist if you delete the role and then create a new role with the same name\. Permissions granted using the `aws:PrincipalArn` condition key with a wildcard \(\*\) in the `Principal` element of a resource\-based policy are not limited by identity\-based policy types, such as permissions boundaries or session policies\. An explicit deny in any of these policies overrides the allow\.
 
 ## Role session principals<a name="principal-role-session"></a>
 
@@ -100,7 +102,7 @@ You can specify role sessions in the `Principal` element of a resource\-based po
 
 The format that you use for a role session principal depends on the AWS STS operation that was used to assume the role\.
 
-Additionally, administrators can design a process to control how role sessions are issued\. For example, they can provide a one\-click solution for their users that creates a predictable session name\. If your administrator does this, you can use role session principals in your policies or condition keys\. Otherwise, you can specify the role ARN as a principal or in the `aws:PrincipalArn` condition key\. How you specify the role as a principal can change the effective permissions for the resulting session\. For more information, see [IAM role principals](#principal-roles)\. 
+Additionally, administrators can design a process to control how role sessions are issued\. For example, they can provide a one\-click solution for their users that creates a predictable session name\. If your administrator does this, you can use role session principals in your policies or condition keys\. Otherwise, you can specify the role ARN as a principal in the `aws:PrincipalArn` condition key\. How you specify the role as a principal can change the effective permissions for the resulting session\. For more information, see [IAM role principals](#principal-roles)\. 
 
 ### Assumed\-role session principals<a name="principal-sessions"></a>
 
@@ -152,7 +154,7 @@ Use this principal type in your policy to allow or deny access based on the trus
 
 ## IAM user principals<a name="principal-users"></a>
 
-You can specify IAM user sin the `Principal` element of a resource\-based policy or in condition keys that support principals\.
+You can specify IAM users in the `Principal` element of a resource\-based policy or in condition keys that support principals\.
 
 **Note**  
 In a `Principal` element, the user name part of the [*Amazon Resource Name* \(ARN\)](reference_identifiers.md#identifiers-arns) is case sensitive\.
@@ -173,14 +175,14 @@ In a `Principal` element, the user name part of the [*Amazon Resource Name* \(AR
 When you specify users in a `Principal` element, you cannot use a wildcard \(`*`\) to mean "all users"\. Principals must always name specific users\. 
 
 **Important**  
-If your `Principal` element in a role trust policy contains an ARN that points to a specific IAM user, then IAM transforms the ARN to the user's unique principal ID when you save the policy\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the user's ARN when the trust policy is displayed\. However, if you delete the user, then you break the relationship\. The policy no longer applies, even if you recreate the user\. That's because the new user has a new principal ID that does not match the ID stored in the trust policy\. When this happens, the principal ID shows up in the console because AWS can no longer map it back to a valid ARN\. The result is that if you delete and recreate a user referenced in a trust policy `Principal` element, you must edit the role to replace the now incorrect principal ID with the correct ARN\. IAM once again transforms ARN into the user's new principal ID when you save the policy\.
+If your `Principal` element in a role trust policy contains an ARN that points to a specific IAM user, then IAM transforms the ARN to the user's unique principal ID when you save the policy\. This helps mitigate the risk of someone escalating their privileges by removing and recreating the user\. You don't normally see this ID in the console, because there is also a reverse transformation back to the user's ARN when the trust policy is displayed\. However, if you delete the user, then you break the relationship\. The policy no longer applies, even if you recreate the user\. That's because the new user has a new principal ID that does not match the ID stored in the trust policy\. When this happens, the principal ID appears in resource\-based policies because AWS can no longer map it back to a valid ARN\. The result is that if you delete and recreate a user referenced in a trust policy `Principal` element, you must edit the role to replace the now incorrect principal ID with the correct ARN\. IAM once again transforms ARN into the user's new principal ID when you save the policy\.
 
 ## AWS STS federated user session principals<a name="sts-session-principals"></a>
 
 You can specify *federated user sessions* in the `Principal` element of a resource\-based policy or in condition keys that support principals\.
 
 **Important**  
-AWS recommends that you use AWS STS federated user sessions only when necessary, such as when [root user access is required](https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root)\. Instead, [use roles to delegate permissions](best-practices.md#delegate-using-roles)\.
+AWS recommends that you use AWS STS federated user sessions only when necessary, such as when [root user access is required](https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root)\. Instead, [use roles to delegate permissions](tutorial_cross-account-with-roles.md)\.
 
 An *AWS STS federated user session principal* is a session principal that results from using the AWS STS `GetFederationToken` operation\. In this case, AWS STS uses [identity federation](https://aws.amazon.com/identity/federation/) as the method to obtain temporary access tokens instead of using IAM roles\. 
 
@@ -221,9 +223,14 @@ The following example shows a policy that can be attached to a service role\. Th
 
 ## All principals<a name="principal-anonymous"></a>
 
-You can use a wildcard \(\*\) to specify all principals in the `Principal` element of a resource\-based policy or in condition keys that support principals\. As a best practice, do this only with the `Condition` element and a condition key such as `aws:PrincipalArn` to limit those broad permissions\.
+You can use a wildcard \(\*\) to specify all principals in the `Principal` element of a resource\-based policy or in condition keys that support principals\. [Resource\-based policies](access_policies.md#policies_resource-based) *grant* permissions and [condition keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) are used to limit the conditions of a policy statement\.
 
-For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*\) in the principal element specifies all users or public access\. For example, you can use either of the following methods to specify all principals in the `Principal` element:
+**Important**  
+We strongly recommend that you do not use a wildcard \(\*\) in the `Principal` element of a resource\-based policy with an `Allow` effect unless you intend to grant public or anonymous access\. Otherwise, specify intended principals, services, or AWS accounts in the `Principal` element and then further restrict access in the `Condition` element\. This is especially true for IAM role trust policies, because they allow other principals to become a principal in your account\.
+
+For resource\-based policies, using a wildcard \(\*\) with an `Allow` effect grants access to all users, including anonymous users \(public access\)\. For IAM users and role principals within your account, no other permissions are required\. For principals in other accounts, they must also have identity\-based permissions in their account that allow them to access your resource\. This is called [cross\-account access](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic-cross-account.html)\.
+
+For anonymous users, the following elements are equivalent:
 
 ```
 "Principal": "*"
@@ -233,21 +240,39 @@ For resource\-based policies, such as Amazon S3 bucket policies, a wildcard \(\*
 "Principal" : { "AWS" : "*" }
 ```
 
-Using `"Principal": "*"` with an `Allow` effect in a resource\-based policy allows anyone, even if they’re not signed in to AWS, to access your resource\. 
-
-Using `"Principal" : { "AWS" : "*" }` with an `Allow` effect in a resource\-based policy allows any root user, IAM user, assumed\-role session, or federated user in any account in the same [partition](reference_identifiers.md#identifiers-arns) to access your resource\. For IAM user and role principals within your account, no other permissions are required\. For principals in other accounts, they must also have identity\-based permissions in their account that allow them to access your resource\. This is called [cross\-account access](reference_policies_evaluation-logic-cross-account.md)\. This method does not allow web identity session principals, SAML session principals, or service principals to access your resource\. 
-
-**Important**  
-Because anyone can create an AWS account, the **security level** of these two methods is equivalent, even though they function differently\.
-
 You cannot use a wildcard to match part of a principal name or ARN\.
+
+The following example shows a resource\-based policy that can be used instead of [`NotPrincipal` With `Deny`](reference_policies_elements_notprincipal.md#specifying-notprincipal) to explicitly deny all principals *except* for the ones specified in the `Condition` element\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "UsePrincipalArnInsteadOfNotPrincipalWithDeny",
+      "Effect": "Deny",
+      "Action": "s3:*",
+      "Principal": "*",
+      "Resource": [
+        "arn:aws:s3:::BUCKETNAME/*",
+        "arn:aws:s3:::BUCKETNAME"
+      ],
+      "Condition": {
+        "ArnNotEquals": {
+          "aws:PrincipalArn": "arn:aws:iam::444455556666:user/user-name"
+        }
+      }
+    }
+  ]
+}
+```
 
 ## More information<a name="Principal_more-info"></a>
 
 For more information, see the following:
-+ [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service User Guide*
-+ [Example Policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
-+ [Amazon SQS Policy Examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
-+ [Key Policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
-+ [Account Identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
-+ [About web identity federation](id_roles_providers_oidc.md)Web identity federation
++ [Bucket policy examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the *Amazon Simple Storage Service User Guide*
++ [Example policies for Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/UsingIAMwithSNS.html#ExamplePolicies_SNS) in the *Amazon Simple Notification Service Developer Guide*
++ [Amazon SQS policy examples](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/SQSExamples.html) in the *Amazon Simple Queue Service Developer Guide*
++ [Key policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html) in the *AWS Key Management Service Developer Guide*
++ [Account identifiers](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) in the *AWS General Reference*
++ [About web identity federation](id_roles_providers_oidc.md)

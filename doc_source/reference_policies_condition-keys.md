@@ -14,6 +14,9 @@ If you use condition keys that are available only in some circumstances, you can
 
 Global condition keys are condition keys with an `aws:` prefix\. AWS services can support global condition keys or provide service\-specific keys that include their service prefix\. For example, IAM condition keys include the `iam:` prefix\. For more information, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html) and choose the service whose keys you want to view\.
 
+**Important**  
+To compare your condition against a request context with multiple key values, you must use the `ForAllValues` or `ForAnyValue` set operators\. Use set operators only with multivalued condition keys\. Do not use set operators with single\-valued condition keys\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.
+
 ## aws:CalledVia<a name="condition-keys-calledvia"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
@@ -241,24 +244,52 @@ This combination of the `Allow` effect, `Null` element, and `false` value allows
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the account to which the requesting principal belongs with the account identifier that you specify in the policy\.
-+ **Availability** – This key is always included in the request context\.
+Use this key to compare the account to which the requesting principal belongs with the account identifier that you specify in the policy\. For anonymous requests, the request context returns `anonymous`\.
++ **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
 ## aws:PrincipalArn<a name="condition-keys-principalarn"></a>
 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN) and [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. To learn which types of principals you can specify in this condition key, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\.
-+ **Availability** – This key is always included in the request context\.
+Use this key to compare the [Amazon Resource Name](reference_identifiers.md#identifiers-arns) \(ARN\) of the principal that made the request with the ARN that you specify in the policy\. For IAM roles, the request context returns the ARN of the role, not the ARN of the user that assumed the role\. 
++ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\. You can specify the following types of principals in this condition key: 
+  + IAM role
+  + IAM user
+  + AWS STS federated user session
+  + AWS account root user
 + **Value type** – Single\-valued
+
+The following list shows the request context value returned for different types of principals that you can specify in the `aws:PrincipalArn` condition key:
++ **IAM role** – The request context contains the following value for condition key `aws:PrincipalArn`\. Do not specify the assumed role session ARN as a value for this condition key\. For more information about the assumed role session principal, see [Role session principals](reference_policies_elements_principal.md#principal-role-session)\.
+
+  ```
+  arn:aws:iam::AWS-account-ID:role/role-name
+  ```
++ **IAM user** – The request context contains the following value for condition key `aws:PrincipalArn`\.
+
+  ```
+  arn:aws:iam::AWS-account-ID:user/user-name
+  ```
++ **AWS STS federated user sessions** – The request context contains the following value for condition key `aws:PrincipalArn`\.
+
+  ```
+  arn:aws:sts::AWS-account-ID:federated-user/user-name
+  ```
++ **AWS account root user** – The request context contains the following value for condition key `aws:PrincipalArn`\. When you specify the root user ARN as the value for the `aws:PrincipalArn` condition key, it limits permissions only for the root user of the AWS account\. This is different from specifying the root user ARN in the principal element of a resource\-based policy, which delegates authority to the AWS account\. For more information about specifying the root user ARN in the principal element of a resource\-based policy, see [AWS account principals](reference_policies_elements_principal.md#principal-accounts)\. 
+
+  ```
+  arn:aws:iam::AWS-account-ID:root
+  ```
+
+  You can specify the root user ARN as a value for condition key `aws:PrincipalArn` in AWS Organizations service control policies \(SCPs\)\. SCPs are a type of organization policy used to manage permissions in your organization and affect only member accounts in the organization\. An SCP restricts permissions for IAM users and roles in member accounts, including the member account's root user\. For more information about the effect of SCPs on permissions, see [SCP effects on permissions](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#scp-effects-on-permissions) in the *Organizations User Guide*\.
 
 ## aws:PrincipalIsAWSService<a name="condition-keys-principalisawsservice"></a>
 
 Works with [Boolean operators](reference_policies_elements_condition_operators.md#Conditions_Boolean)\.
 
 Use this key to check whether the call to your resource is being made directly by an AWS [service principal](reference_policies_elements_principal.md#principal-services)\. For example, AWS CloudTrail uses the service principal `cloudtrail.amazonaws.com` to write logs to your Amazon S3 bucket\. The request context key is set to true when a service uses a service principal to perform a direct action on your resources\. The context key is set to false if the service uses the credentials of an IAM principal to make a request on the principal's behalf\. It is also set to false if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
-+ **Availability** – This key is present in the request context for all signed API requests that use AWS credentials\.
++ **Availability** – This key is present in the request context for all signed API requests that use AWS credentials\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 You can use this condition key to limit access to your trusted identities and expected network locations while safely granting access to AWS services\.
@@ -293,7 +324,7 @@ In the following Amazon S3 bucket policy example, access to the bucket is restri
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the identifier of the organization in AWS Organizations to which the requesting principal belongs with the identifier specified in the policy\.
-+ **Availability** – This key is included in the request context only if the principal is a member of an organization\.
++ **Availability** – This key is included in the request context only if the principal is a member of an organization\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 This global key provides an alternative to listing all the account IDs for all AWS accounts in an organization\. You can use this condition key to simplify specifying the `Principal` element in a [resource\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:PrincipalOrgID` key automatically include the correct accounts and don't require manual updating\.
@@ -310,7 +341,7 @@ For example, the following Amazon S3 bucket policy allows members of any account
     "Action": "s3:PutObject",
     "Resource": "arn:aws:s3:::policy-ninja-dev/*",
     "Condition": {"StringEquals":
-      {"aws:PrincipalOrgID":["o-xxxxxxxxxxx"]}
+      {"aws:PrincipalOrgID":"o-xxxxxxxxxxx"}
     }
   }
 }
@@ -326,7 +357,7 @@ For more information about AWS Organizations, see [What Is AWS Organizations?](h
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the AWS Organizations path for the principal who is making the request to the path in the policy\. That principal can be an IAM user, IAM role, federated user, or AWS account root user\. In a policy, this condition key ensures that the requester is an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path)\.
-+ **Availability** – This key is included in the request context only if the principal is a member of an organization\.
++ **Availability** – This key is included in the request context only if the principal is a member of an organization\. Anonymous requests do not include this key\.
 + **Value type** – Multivalued
 
 **Note**  
@@ -386,6 +417,7 @@ Use this key to compare the [service principal](reference_policies_elements_prin
   + If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
   + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
   + If the call is made directly by an IAM principal\.
+  + If the call is made by an anonymous requester\.
 + **Value type** – Single\-valued
 
 You can use this condition key to limit access to your trusted identities and expected network locations while safely granting access to an AWS service\.
@@ -422,21 +454,22 @@ This key provides a list of all [service principal](reference_policies_elements_
   + If the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\.
   + If the service uses the credentials of an IAM principal to make a request on the principal's behalf\.
   + If the call is made directly by an IAM principal\.
+  + If the call is made by an anonymous requester\.
 + **Value type** – Multivalued
 
 `aws:PrincipalServiceNamesList` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
-## aws:PrincipalTag<a name="condition-keys-principaltag"></a>
+## aws:PrincipalTag/*tag\-key*<a name="condition-keys-principaltag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag attached to the principal making the request with the tag that you specify in the policy\. If the principal has more than one tag attached, the request context includes one `aws:PrincipalTag` key for each attached tag key\.
-+ **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\.
++ **Availability** – This key is included in the request context if the principal is using an IAM user with attached tags\. It is included for a principal using an IAM role with attached tags or [session tags](id_session-tags.md)\. Anonymous requests do not include this key\.
 + **Value type** – Single\-valued
 
 You can add custom attributes to a user or role in the form of a key\-value pair\. For more information about IAM tags, see [Tagging IAM resources](id_tags.md)\. You can use `aws:PrincipalTag` to [control access](access_iam-tags.md#access_iam-tags_control-principals) for AWS principals\.
 
-This example shows how you might create an IAM policy that allows users with the **tagManager=true** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an identity\-based policy that allows users with the **department=hr** tag to manage IAM users, groups, or roles\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 ```
 {
@@ -446,7 +479,11 @@ This example shows how you might create an IAM policy that allows users with the
       "Effect": "Allow",
       "Action": "iam:*",
       "Resource": "*",
-      "Condition": {"StringEquals": {"aws:PrincipalTag/tagManager": "true"}}
+      "Condition": {
+        "StringEquals": {
+          "aws:PrincipalTag/department": "hr"
+        }
+      }
     }
   ]
 }
@@ -457,7 +494,7 @@ This example shows how you might create an IAM policy that allows users with the
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the type of principal making the request with the principal type that you specify in the policy\. For more information, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is always included in the request context\.
++ **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
 ## aws:referer<a name="condition-keys-referer"></a>
@@ -537,19 +574,205 @@ You can use this context key to limit access to AWS services within a given set 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag key\-value pair that was passed in the request with the tag pair that you specify in the policy\. For example, you could check whether the request includes the tag key `"Dept"` and that it has the value `"Accounting"`\. For more information, see [Controlling access during AWS requests](access_tags.md#access_tags_control-requests)\.
-+ **Availability** – This key is included in the request context when tags are passed in the request\. When multiple tags are passed in the request, there is one context key for each tag key\-value pair\.
++ **Availability** – This key is included in the request context when tag key\-value pairs are passed in the request\. When multiple tags are passed in the request, there is one context key for each tag key\-value pair\.
 + **Value type** – Single\-valued
 
 This context key is formatted `"aws:RequestTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:RequestTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a request tag key named either `TagKey1` or `tagkey1`, but not both\.
 
-Because you can include multiple tag key\-value pairs in a request, the request content could be a [multivalued](reference_policies_multi-value-conditions.md) request\. In this case, you should consider using the `ForAllValues` or `ForAnyValue` set operators\. For more information, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+This example shows that while the key is single\-valued, you can still use multiple key\-value pairs in a request if the keys are different\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Action": "ec2:CreateTags",
+    "Resource": "arn:aws:ec2:::instance/*",
+    "Condition": {
+      "StringEquals": {
+        "aws:RequestTag/environment": [
+          "preprod",
+          "production"
+        ],
+        "aws:RequestTag/team": [
+          "engineering"
+        ]
+      }
+    }
+  }
+}
+```
+
+## aws:ResourceAccount<a name="condition-keys-resourceaccount"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the requested resource owner's [AWS account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) with the resource account in the policy\. You can then allow or deny access to that resource based on the account that owns the resource\.
++ **Availability** – This key is always included in the request context for most service actions\. The following actions don't support this key:
+  + AWS Elastic Beanstalk
+    + `elasticbeanstalk:ListAvailableSolutionStacks`
+  + Amazon Elastic Block Store – All actions
+  + Amazon EC2
+    + `ec2:CopySnapshot`
+    + `ec2:CreateVolume`
+    + `ec2:CreateVpcPeeringConnection`
+  + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
+    + `workspaces:CopyWorkspaceImage`
++ **Value type** – Single\-valued
+
+**Note**  
+Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceAccount` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+This key is equal to the AWS account ID for the account with the resources evaluated in the request\.
+
+For most resources in your account, the [ARN](reference_policies_elements_condition_operators.md#Conditions_ARN) contains the owner account ID for that resource\. For certain resources, such as Amazon S3 buckets, the resource ARN does not include the account ID\. The following two examples show the difference between a resource with an account ID in the ARN, and an Amazon S3 ARN without an account ID:
++ `arn:aws:iam::111122223333:role/AWSExampleRole` – IAM role created and owned within the account `111122223333`\. 
++ `arn:aws:s3:::AWSExampleS3Bucket` – Amazon S3 bucket created and owned within the account `444455556666`, not displayed in the ARN\.
+
+Use the AWS console, or API, or CLI, to find all of your resources and corresponding ARNs\.
+
+You write a policy that denies permissions to resources based on the resource owner's account ID\. For example, the following identity\-based policy denies access to the *specified resource* if the resource does not belong to the *specified account*\.
+
+To use this policy, replace the *italicized placeholder text* with your account information\. 
+
+**Important**  
+This policy does not allow any actions\. Instead, it uses the `Deny` effect which explicitly denies access to all of the resources listed in the statement that do not belong to the listed account\. Use this policy in combination with other policies that allow access to specific resources\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyInteractionWithResourcesNotInSpecificAccount",
+      "Action": "service:*",
+      "Effect": "Deny",
+      "Resource": [
+        "arn:partition:service:region:account:*"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": [
+            "account"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
+This policy denies access to all resources for a specific AWS service unless the specified AWS account owns the resource\. 
+
+Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the element `aws:ResourceAccount` in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\.
++ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
++ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+
+Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
+
+## aws:ResourceOrgID<a name="condition-keys-resourceorgid"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the identifier of the organization in AWS Organizations to which the requested resource belongs with the identifier specified in the policy\.
++ **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
+  + AWS Elastic Beanstalk
+    + `elasticbeanstalk:ListAvailableSolutionStacks`
+  + Amazon Elastic Block Store – All actions
+  + Amazon EC2
+    + `ec2:CopySnapshot`
+    + `ec2:CreateVolume`
+    + `ec2:CreateVpcPeeringConnection`
+  + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
+    + `workspaces:CopyWorkspaceImage`
++ **Value type** – Single\-valued
+
+This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.
+
+**Note**  
+Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgID` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+For example, the following policy prevents the principal from adding objects to the `policy-genius-dev` resource unless the Amazon S3 resource belongs to the same organization as the principal making the request\.
+
+**Important**  
+This policy does not allow any actions\. Instead, it uses the `Deny` effect which explicitly denies access to all of the resources listed in the statement that do not belong to the listed account\. Use this policy in combination with other policies that allow access to specific resources\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Sid": "DenyPutObjectToS3ResourcesOutsideMyOrganization",
+    "Effect": "Deny",
+    "Action": "s3:PutObject",
+    "Resource": "arn:partition:s3:::policy-genius-dev/*",
+    "Condition": {
+      "StringNotEquals": {
+        "aws:ResourceOrgID": "${aws:PrincipalOrgID}"
+      }
+    }
+  }
+}
+```
+
+## aws:ResourceOrgPaths<a name="condition-keys-resourceorgpaths"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+Use this key to compare the AWS Organizations path for the accessed resource to the path in the policy\. In a policy, this condition key ensures that the resource belongs to an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path) 
++ **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
+  + AWS Elastic Beanstalk
+    + `elasticbeanstalk:ListAvailableSolutionStacks`
+  + Amazon Elastic Block Store – All actions
+  + Amazon EC2
+    + `ec2:CopySnapshot`
+    + `ec2:CreateVolume`
+    + `ec2:CreateVpcPeeringConnection`
+  + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
+    + `workspaces:CopyWorkspaceImage`
++ **Value type** – Multivalued
+
+`aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+
+**Note**  
+Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgPaths` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+For example, the following condition returns `True` for resources that belong to the organization `o-a1b2c3d4e5`\. When you include a wildcard, you must use the [StringLike](reference_policies_elements_condition_operators.md) condition operator\.
+
+```
+"Condition": { 
+      "ForAnyValue:StringLike": {
+             "aws:ResourceOrgPaths":["o-a1b2c3d4e5/*"]
+   }
+}
+```
+
+The following condition returns `True` for resources owned by accounts attached to the OU `ou-ab12-11111111` or any of the child OUs\.
+
+```
+"Condition": { "ForAnyValue:StringLike" : {
+     "aws:ResourceOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/*"]
+}}
+```
+
+The following condition returns `True` for resources owned by accounts attached directly to the OU `ou-ab12-22222222`, but not the child OUs\. The following example uses the [StringEquals](reference_policies_elements_condition_operators.md) condition operator to specify the exact match requirement for the OU and not a wildcard match\.
+
+```
+"Condition": { "ForAnyValue:StringEquals" : {
+     "aws:ResourceOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/ou-ab12-22222222/"]
+}}
+```
 
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag key\-value pair that you specify in the policy with the key\-value pair attached to the resource\. For example, you could require that access to a resource is allowed only if the resource has the attached tag key `"Dept"` with the value `"Marketing"`\. For more information, see [Controlling access to AWS resources](access_tags.md#access_tags_control-resources)\.
-+ **Availability** – This key is included in the request context when the requested resource already has attached tags\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
++ **Availability** – This key is included in the request context when the requested resource already has attached tags or in requests that create a resource with an attached tag\. This key is returned only for resources that [support authorization based on tags](reference_aws-services-that-work-with-iam.md)\. There is one context key for each tag key\-value pair\.
 + **Value type** – Single\-valued
 
 This context key is formatted `"aws:ResourceTag/tag-key":"tag-value"` where *tag\-key* and *tag\-value* are a tag key and value pair\. Tag keys and values are not case\-sensitive\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\.
@@ -692,7 +915,7 @@ Use this key to compare the VPC endpoint identifier of the request with the endp
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the tag keys in a request with the keys that you specify in the policy\. As a best practice when you use policies to control access using tags, use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling access based on tag keys](access_tags.md#access_tags_control-tag-keys)\.
-+ **Availability** – This key is included in the request context only if the operation supports attaching tags to resources\.
++ **Availability** – This key is included in the request context if the operation supports passing tags in the request\.
 + **Value type** – Multivalued
 
 This context key is formatted `"aws:TagKeys":"tag-key"` where *tag\-key* is a list of tag keys without values \(for example, `["Dept","Cost-Center"]`\)\.
@@ -727,7 +950,7 @@ This key should be used carefully\. Since the `aws:UserAgent` value is provided 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the requester's principal identifier with the ID that you specify in the policy\. For IAM users, the request context value is the user ID\. For IAM roles, this value format can vary\. For details about how the information appears for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is included in the request context for all signed requests\. Anonymous requests do not include this key\.
++ **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
 ## aws:username<a name="condition-keys-username"></a>
@@ -735,7 +958,7 @@ Use this key to compare the requester's principal identifier with the ID that yo
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
 Use this key to compare the requester's user name with the user name that you specify in the policy\. For details about how the information appears for different principals, see [Specifying a principal](reference_policies_elements_principal.md#Principal_specifying)\. For specific examples of `principal` key values, see [Principal key values](reference_policies_variables.md#principaltable)\.
-+ **Availability** – This key is always included in the request context for IAM users\. Anonymous requests and requests that are made using the AWS account root user or IAM roles do not include this key\. Requests made using AWS SSO credentials do not include this key in the context\. To learn how to control access to AWS SSO users, see `identitystore:UserId` in [Using predefined attributes from the AWS SSO identity store for access control in AWS](https://docs.aws.amazon.com/singlesignon/latest/userguide/using-predefined-attributes.html)\.
++ **Availability** – This key is always included in the request context for IAM users\. Anonymous requests and requests that are made using the AWS account root user or IAM roles do not include this key\. Requests made using IAM Identity Center credentials do not include this key in the context\. To learn how to control access to users in IAM Identity Center, see `identitystore:UserId` in [Using predefined attributes from the IAM Identity Center identity store for access control in AWS](https://docs.aws.amazon.com/singlesignon/latest/userguide/using-predefined-attributes.html)\. Users in IAM Identity Center are the people in your workforce who need access to your AWS accounts or to your cloud applications\.
 + **Value type** – Single\-valued
 
 ## aws:ViaAWSService<a name="condition-keys-viaawsservice"></a>

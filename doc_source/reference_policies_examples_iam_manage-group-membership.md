@@ -1,6 +1,6 @@
 # IAM: Allows managing a group's membership programmatically and in the console<a name="reference_policies_examples_iam_manage-group-membership"></a>
 
-This example shows how you might create an IAM policy that allows updating the membership of the group called `MarketingTeam`\. This policy defines permissions for programmatic and console access\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+This example shows how you might create an identity\-based policy that allows updating the membership of the group called `MarketingTeam`\. This policy defines permissions for programmatic and console access\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
 
 What does this policy do?
 + The `ViewGroups` statement allows the user to list all the users and groups in the AWS Management Console\. It also allows the user to view basic information about the users in the account\. These permissions must be in their own statement because they do not support or do not need to specify a resource ARN\. Instead the permissions specify `"Resource" : "*"`\.

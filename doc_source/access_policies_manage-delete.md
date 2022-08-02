@@ -6,7 +6,7 @@ For more information about the difference between managed and inline policies, s
 
 For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.
 
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 **Topics**
 + [View policy access](#manage-delete_prerequisites)

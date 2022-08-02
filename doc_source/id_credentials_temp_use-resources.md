@@ -1,8 +1,8 @@
 # Using temporary credentials with AWS resources<a name="id_credentials_temp_use-resources"></a>
 
-You can use temporary security credentials to make programmatic requests for AWS resources using the AWS CLI or AWS API \(using the [AWS SDKs](https://aws.amazon.com/tools/)\)\. The temporary credentials provide the same permissions that you have with use long\-term security credentials such as IAM user credentials\. However, there are a few differences:
+You can use temporary security credentials to make programmatic requests for AWS resources using the AWS CLI or AWS API \(using the [AWS SDKs](https://aws.amazon.com/tools/)\)\. The temporary credentials provide the same permissions as long\-term security credentials, such as IAM user credentials\. However, there are a few differences:
 + When you make a call using temporary security credentials, the call must include a session token, which is returned along with those temporary credentials\. AWS uses the session token to validate the temporary security credentials\. 
-+ The temporary credentials expire after a specified interval\. After the credentials expire, any calls that you make with those credentials will fail, so you must get a new set of credentials\. 
++ Temporary credentials expire after a specified interval\. After temporary credentials expire, any calls that you make with those credentials will fail, so you must generate a new set of temporary credentials\. Temporary credentials cannot be extended or refreshed beyond the original specified interval\.
 + When you use temporary credentials to make a request, your principal might include a set of tags\. These tags come from session tags and tags that are attached to the role that you assume\. For more information about session tags, see [Passing session tags in AWS STS](id_session-tags.md)\.
 
 If you are using the [AWS SDKs](https://aws.amazon.com/tools), the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\), or the [Tools for Windows PowerShell](https://aws.amazon.com/powershell), the way to get and use temporary security credentials differs with the context\. If you are running code, AWS CLI, or Tools for Windows PowerShell commands inside an EC2 instance, you can take advantage of roles for Amazon EC2\. Otherwise, you can call an [AWS STS API](https://docs.aws.amazon.com/STS/latest/APIReference/) to get the temporary credentials, and then use them explicitly to make calls to AWS services\.
@@ -51,7 +51,7 @@ You must make sure that you get a new set of credentials before the old ones exp
 
 You can use temporary security credentials with the AWS CLI\. This can be useful for testing policies\. 
 
-Using the [AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/), you can call an [ AWS STS API](https://docs.aws.amazon.com/STS/latest/APIReference/) like `AssumeRole` or `GetFederationToken` and then capture the resulting output\. The following example shows a call to `AssumeRole` that sends the output to a file\. In the example, the `profile` parameter is assumed to be a profile in the AWS CLI configuration file\. It is also assumed to reference credentials for an IAM user who has permissions to assume the role\.
+Using the [AWS CLI](https://docs.aws.amazon.com/cli/latest/reference/), you can call an [AWS STS API](https://docs.aws.amazon.com/STS/latest/APIReference/) like `AssumeRole` or `GetFederationToken` and then capture the resulting output\. The following example shows a call to `AssumeRole` that sends the output to a file\. In the example, the `profile` parameter is assumed to be a profile in the AWS CLI configuration file\. It is also assumed to reference credentials for an IAM user who has permissions to assume the role\.
 
 ```
 aws sts assume-role --role-arn arn:aws:iam::123456789012:role/role-name --role-session-name "RoleSession1" --profile IAM-user-name > assume-role-output.txt
@@ -68,7 +68,7 @@ The following example shows how you might set the environment variables for temp
 ```
 $ export AWS_ACCESS_KEY_ID=ASIAIOSFODNN7EXAMPLE
 $ export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-$ export AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of security token>
+$ export AWS_SESSION_TOKEN=AQoDYXdzEJr...<remainder of session token>
 $ aws ec2 describe-instances --region us-west-1
 ```
 

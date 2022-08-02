@@ -1,6 +1,6 @@
 # Managing IAM users<a name="id_users_manage"></a>
 
-Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a user group, or list all user groups that a user is a member of\. You can rename or change the path of an IAM user\. You can also delete an IAM user from your AWS account\.
+Amazon Web Services offers multiple tools for managing the IAM users in your AWS account\. You can list the IAM users in your account or in a user group, or list all user groups that a user is a member of\. You can rename or change the path of an IAM user\. You can delete an IAM user from your AWS account, or deactivate the user temporarily\.
 
 For more information about adding, changing, or removing managed policies for an IAM user, see [Changing permissions for an IAM user](id_users_change-permissions.md)\. For information about managing inline policies for IAM users, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md), [Editing IAM policies](access_policies_manage-edit.md), and [Deleting IAM policies](access_policies_manage-delete.md)\. As a best practice, use managed policies instead of inline policies\. To learn more about validating IAM policies, see [Validating IAM policies](access_policies_policy-validator.md)\.
 
@@ -11,6 +11,7 @@ For more information about adding, changing, or removing managed policies for an
 + [Listing IAM users](#id_users_manage_list)
 + [Renaming an IAM user](#id_users_renaming)
 + [Deleting an IAM user](#id_users_deleting)
++ [Deactivating an IAM user](#id_users_deactivating)
 
 ## View user access<a name="users-manage_prerequisites"></a>
 
@@ -65,9 +66,7 @@ This is true also if an administrator changes the path; the administrator needs 
 
 ## Deleting an IAM user<a name="id_users_deleting"></a>
 
-You might delete an IAM user from your account if someone quits your company\. If the user is only temporarily away from your company, you can disable the user's credentials instead of deleting the user entirely from the AWS account\. That way, you can prevent the user from accessing the AWS account's resources during the absence but you can re\-enable the user later\.
-
-For more information about disabling credentials, see [Managing access keys for IAM users](id_credentials_access-keys.md)\. For information about the permissions that you need in order to delete a user, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
+You might delete an IAM user from your AWS account if that user quits your company\. If the user is away temporarily, you can deactivate the user's access instead of deleting them from the account as described in [Deactivating an IAM user](#id_users_deactivating)\.
 
 **Topics**
 + [Deleting an IAM user \(console\)](#id_users_deleting_console)
@@ -140,3 +139,45 @@ Unlike the AWS Management Console, when you delete a user with the AWS CLI, you 
 1. Delete the user\.
 
    `[aws iam delete\-user](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-user.html)` 
+
+## Deactivating an IAM user<a name="id_users_deactivating"></a>
+
+You might need to deactivate an IAM user while they are temporarily away from your company\. You can leave their IAM user credentials in place and still block their AWS access\.
+
+To deactivate a user, create and attach a policy to deny the user access to AWS\. You can restore the user's access later\.
+
+Here are two examples of deny policies that you can attach to a user to deny their access\.
+
+The following policy does not include a time limit\. You must remove the policy to restore the user's access\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [ 
+      {
+        "Effect": "Deny",
+        "Action": "*",
+        "Resource": "*"
+      } 
+   ]
+}
+```
+
+The following policy includes a condition that starts the policy on December 24, 2024 at 11:59 PM \(UTC\) and ends it on February 28, 2025 at 11:59 PM \(UTC\)\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+        "Effect": "Deny",
+        "Action": "*",
+        "Resource": "*",
+        "Condition": {
+          "DateGreaterThan": {"aws:CurrentTime": "2024-12-24T00:23:59Z"},
+          "DateLessThan": {"aws:CurrentTime": "2025-02-28T00:23:59Z"}
+          }
+       }
+   ]
+}
+```

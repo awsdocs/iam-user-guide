@@ -7,7 +7,7 @@ To call the API operations, you can use one of the [AWS SDKs](http://aws.amazon.
 The AWS STS API operations create a new session with temporary security credentials that include an access key pair and a session token\. The access key pair consists of an access key ID and a secret key\. Users \(or an application that the user runs\) can use these credentials to access your resources\. You can create a role session and pass session policies and session tags programmatically using AWS STS API operations\. The resulting session permissions are the intersection of the role's identity\-based policies and the session policies\. For more information about session policies, see [Session policies](access_policies.md#policies_session)\. For more information about session tags, see [Passing session tags in AWS STS](id_session-tags.md)\.
 
 **Note**  
-The size of the security token that AWS STS API operations return is not fixed\. We strongly recommend that you make no assumptions about the maximum size\. The typical token size is less than 4096 bytes, but that can vary\.
+The size of the session token that AWS STS API operations return is not fixed\. We strongly recommend that you make no assumptions about the maximum size\. The typical token size is less than 4096 bytes, but that can vary\.
 
 ## Using AWS STS with AWS Regions<a name="using_sts_regions"></a>
 
@@ -159,7 +159,7 @@ When you make this request, you use the credentials of a specific IAM user\. The
 
 When you use the temporary credentials that are returned by the `GetFederationToken` operation, the session's principal tags include the user's tags and the passed session tags\. For more information about session tags, see [Passing session tags in AWS STS](id_session-tags.md)\.
 
-The `GetFederationToken` call returns temporary security credentials that consist of the security token, access key, secret key, and expiration\. You can use `GetFederationToken` if you want to manage permissions inside your organization \(for example, using the proxy application to assign permissions\)\. To view a sample application that uses `GetFederationToken`, go to [Identity Federation Sample Application for an Active Directory Use Case](https://aws.amazon.com/code/1288653099190193) in the *AWS Sample Code & Libraries*\.
+The `GetFederationToken` call returns temporary security credentials that consist of the session token, access key, secret key, and expiration\. You can use `GetFederationToken` if you want to manage permissions inside your organization \(for example, using the proxy application to assign permissions\)\. To view a sample application that uses `GetFederationToken`, go to [Identity Federation Sample Application for an Active Directory Use Case](https://aws.amazon.com/code/1288653099190193) in the *AWS Sample Code & Libraries*\.
 
 The following example shows a sample request and response that uses `GetFederationToken`\. This example request federates the calling user for the specified duration with the [session policy](access_policies.md#policies_session) ARN and [session tags](id_session-tags.md)\. The resulting session is named `Jane-session`\.
 
@@ -231,7 +231,7 @@ The `GetSessionToken` API operation returns a set of temporary security credenti
 
 By default, temporary security credentials for an IAM user are valid for a maximum of 12 hours\. But you can request a duration as short as 15 minutes or as long as 36 hours using the `DurationSeconds` parameter\. For security reasons, a token for an AWS account root user is restricted to a duration of one hour\. 
 
-`GetSessionToken` returns temporary security credentials consisting of a security token, an access key ID, and a secret access key\. The following example shows a sample request and response using `GetSessionToken`\. The response also includes the expiration time of the temporary security credentials\. 
+`GetSessionToken` returns temporary security credentials consisting of a session token, an access key ID, and a secret access key\. The following example shows a sample request and response using `GetSessionToken`\. The response also includes the expiration time of the temporary security credentials\. 
 
 **Example request**  
 

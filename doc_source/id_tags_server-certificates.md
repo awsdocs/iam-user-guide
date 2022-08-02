@@ -24,7 +24,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:TagServerCertificate",
         "iam:UntagServerCertificate"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:server-certificate/<CertificateName>"
+    "Resource": "arn:aws:iam::<account-number>:server-certificate/<CertificateName>"
 }
 ```
 
@@ -43,7 +43,7 @@ To use this policy, replace *<CertificateName>* with the name of the server cert
         "iam:ListServerCertificateTags",
         "iam:TagServerCertificate"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:server-certificate/<CertificateName>"
+    "Resource": "arn:aws:iam::<account-number>:server-certificate/<CertificateName>"
 }
 ```
 

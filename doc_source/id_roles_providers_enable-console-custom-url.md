@@ -49,7 +49,7 @@ The following procedure contains examples of text strings\. To enhance readabili
 
 1. Authenticate the user in your identity and authorization system\.
 
-1. Obtain temporary security credentials for the user\. The temporary credentials consist of an access key ID, a secret access key, and a security token\. For more information about creating temporary credentials, see [Temporary security credentials in IAM](id_credentials_temp.md)\.
+1. Obtain temporary security credentials for the user\. The temporary credentials consist of an access key ID, a secret access key, and a session token\. For more information about creating temporary credentials, see [Temporary security credentials in IAM](id_credentials_temp.md)\.
 
    To get temporary credentials, you call either the AWS STS [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API \(recommended\) or the [GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html) API\. For more information about the differences between these API operations, see [Understanding the API Options for Securely Delegating Access to Your AWS Account](http://aws.amazon.com/blogs/security/understanding-the-api-options-for-securely-delegating-access-to-your-aws-account) in the AWS Security Blog\.
 **Important**  
@@ -61,7 +61,7 @@ When you use the [GetFederationToken](https://docs.aws.amazon.com/STS/latest/API
    ```
    {"sessionId":"*** temporary access key ID ***",
    "sessionKey":"*** temporary secret access key ***",
-   "sessionToken":"*** security token ***"}
+   "sessionToken":"*** session token ***"}
    ```
 
 1. [URL encode](https://en.wikipedia.org/wiki/Percent-encoding) the session string from the previous step\. Because the information that you are encoding is sensitive, we recommend that you avoid using a web service for this encoding\. Instead, use a locally installed function or feature in your development toolkit to securely encode this information\. You can use the `urllib.quote_plus` function in Python, the `URLEncoder.encode` function in Java, or the `CGI.escape` function in Ruby\. See the examples later in this topic\.
@@ -70,11 +70,13 @@ When you use the [GetFederationToken](https://docs.aws.amazon.com/STS/latest/API
 **Note**  
 AWS supports POST requests here\.
 
-   Send your request to the AWS federation endpoint at the following address:
+   Send your request to the AWS federation endpoint:
+
+   `https://region-code.signin.aws.amazon.com/federation` 
+
+   For a list of possible *region\-code* values, see the **Region** column in [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html)\. You can optionally use the default AWS Sign\-In federation endpoint:
 
    `https://signin.aws.amazon.com/federation` 
-**Note**  
-You can optionally use a regional AWS Sign\-In federation endpoint\. For a list of endpoints, see [AWS Sign\-In endpoints](https://docs.aws.amazon.com/general/latest/gr/signin-service.html) in the *AWS General Reference*\.
 
    The request must include the `Action` and `Session` parameters, and \(optionally\) if you used an [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operation, a `SessionDuration` HTTP parameter as shown in the following example\.
 
@@ -170,7 +172,7 @@ import boto3 # AWS SDK for Python (Boto3) 'pip install boto3'
 
 # Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
 # and secret access key of an IAM user or using existing temporary credentials.
-# The credentials can be in EC2 instance metadata, in environment variables, 
+# The credentials can be in Amazon EC2 instance metadata, in environment variables, 
 # or in a configuration file, and will be discovered automatically by the 
 # client('sts') function. For more information, see the Python SDK docs:
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html
@@ -230,12 +232,12 @@ from selenium import webdriver # 'pip install selenium', 'brew install chromedri
 
 # Step 1: Authenticate user in your own identity system.
 
-# Step 2: Using the access keys for an IAM user in your AWS account,
+# Step 2: Using the access keys for an IAM user in your AAWS account,
 # call "AssumeRole" to get temporary access keys for the federated user
 
 # Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
 # and secret access key of an IAM user or using existing temporary credentials.
-# The credentials can be in EC2 instance metadata, in environment variables, 
+# The credentials can be in Amazon EC2 instance metadata, in environment variables, 
 # or in a configuration file, and will be discovered automatically by the 
 # client('sts') function. For more information, see the Python SDK docs:
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html
@@ -367,7 +369,7 @@ String consoleURL = "https://console.aws.amazon.com/sns";
 String signInURL = "https://signin.aws.amazon.com/federation";
   
 // Create the sign-in token using temporary credentials,
-// including the access key ID,  secret access key, and security token.
+// including the access key ID,  secret access key, and session token.
 String sessionJson = String.format(
   "{\"%1$s\":\"%2$s\",\"%3$s\":\"%4$s\",\"%5$s\":\"%6$s\"}",
   "sessionId", federatedCredentials.getAccessKeyId(),

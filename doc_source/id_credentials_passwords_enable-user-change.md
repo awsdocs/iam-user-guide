@@ -15,7 +15,7 @@ We recommend that you [set a custom password policy](id_credentials_passwords_ac
 
 1. In the **Password policy** section, choose **Change password policy** if your account uses the default password policy\. If your account uses a custom password policy, choose **Change**\.
 
-1. Select **Allow users to change their own password**, and then click **save changes**\. 
+1. Select **Allow users to change their own password**, and then choose **Save changes**\. This allows all users in the account access to the `iam:ChangePassword` action for only their user and to the `iam:GetAccountPasswordPolicy` action\.
 
 1. Provide users with the following instructions for changing their passwords: [How an IAM user changes their own password](id_credentials_passwords_user-change-own.md)\. 
 

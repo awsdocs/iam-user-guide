@@ -1,8 +1,6 @@
 # Creating your first IAM delegated user and user group<a name="getting-started_create-delegated-user"></a>
 
-To support multiple users in your AWS account, you must delegate permission to allow other people to perform only the actions you want to allow\. To do this, create an IAM user group with the permissions those people need and then add IAM users to the necessary user groups as you create them\. You can use this process to set up the user groups, users, and permissions for your entire AWS account\. 
-
-This solution is best used by small and medium organizations where an AWS administrator can manually manage the users and user groups\. For large organizations, you can use [custom IAM roles](id_roles_providers_enable-console-custom-url.md), [federation](id_roles_providers.md), or [single sign\-on](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
+To support multiple users in your AWS account, you must delegate permission to allow other people to perform only the actions you want to allow\. To do this, you can create an IAM user group with the permissions those people need and then add IAM users to the necessary user groups as you create them\. 
 
 ## Creating a delegated IAM user and user group \(console\)<a name="getting-started_create-admin-group-console"></a>
 

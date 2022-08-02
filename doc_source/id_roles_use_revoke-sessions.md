@@ -33,16 +33,16 @@ You can revoke the session permissions from a role\.
 
 1. On the **Revoke sessions** tab, choose **Revoke active sessions**\.
 
-1. AWS asks you to confirm the action\. Choose **Revoke active sessions** on the dialog box\.
+1. AWS asks you to confirm the action\. Select the **I acknowledge that I am revoking all active sessions for this role\.** check box and choose **Revoke active sessions** on the dialog box\.
 
-   IAM immediately attaches a policy named `AWSRevokeOlderSessions` to the role\. The policy denies all access to users who assumed the role before the moment you chose **Revoke active sessions**\. Any user who assumes the role ***after ***you chose **Revoke active sessions** is **not** affected\.
+   IAM immediately attaches a policy named `AWSRevokeOlderSessions` to the role\. The policy denies all access to users who assumed the role before the moment you choose **Revoke active sessions**\. Any user who assumes the role ***after ***you choose **Revoke active sessions** is **not** affected\.
 
-   When you apply a new policy to a user or a resource, it may take a few minutes for policy updates to take effect\. To learn why changes are not always immediately visible, see [Changes that I make are not always immediately visible](troubleshoot_general.md#troubleshoot_general_eventual-consistency)\.
+   When you apply a new policy to a user or a resource, it can take a few minutes for policy updates to take effect\. To learn why changes are not always immediately visible, see [Changes that I make are not always immediately visible](troubleshoot_general.md#troubleshoot_general_eventual-consistency)\.
 
 **Note**  
-Don't worry about remembering to delete the policy\. Any user who assumes the role *after* you revoked sessions is not affected by the policy\. If you choose to **Revoke Sessions** again later, then the date/time stamp in the policy is refreshed and it again denies all permissions to any user who assumed the role before the new specified time\.
+Don't worry about remembering to delete the policy\. Any user who assumes the role *after* you revoke sessions is not affected by the policy\. If you choose to **Revoke Sessions** again later, then the date and time stamp in the policy is refreshed and it again denies all permissions to any user who assumed the role before the new specified time\.
 
-Valid users whose sessions are revoked in this way must acquire temporary credentials for a new session to continue working\. Note that the AWS CLI caches credentials until they expire\. To force the CLI to delete and refresh cached credentials that are no longer valid, run one of the following commands:
+Valid users whose sessions are revoked in this way must acquire temporary credentials for a new session to continue working\. The AWS CLI caches credentials until they expire\. To force the CLI to delete and refresh cached credentials that are no longer valid, run one of the following commands:
 
 **Linux, macOS, or Unix**
 

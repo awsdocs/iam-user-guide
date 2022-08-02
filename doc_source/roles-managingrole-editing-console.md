@@ -24,7 +24,7 @@ If a user is listed as the principal in a role's trust policy but cannot assume 
 
 1. In the list of roles in your account, choose the name of the role that you want to modify\.
 
-1. Choose the **Trust relationships** tab, and then choose **Edit trust relationship**\.
+1. Choose the **Trust relationships** tab, and then choose **Edit trust policy**\.
 
 1. Edit the trust policy as needed\. To add additional principals that can assume the role, specify them in the `Principal` element\. For example, the following policy snippet shows how to reference two AWS accounts in the `Principal` element:
 
@@ -50,7 +50,7 @@ If a user is listed as the principal in a role's trust policy but cannot assume 
    },
    ```
 
-1. When you are finished editing your trust policy, choose **Update Trust Policy** to save your changes\.
+1. When you are finished editing your trust policy, choose **Update policy** to save your changes\.
 
    For more information about policy structure and syntax, see [Policies and permissions in IAM](access_policies.md) and the [IAM JSON policy elements reference](reference_policies_elements.md)\.
 
@@ -60,7 +60,7 @@ For more information and detail about this procedure, see [Granting a user permi
 
 1. Sign in to the trusted external AWS account\. 
 
-1. Decide whether to attach the permissions to a user or to a group\. In the navigation pane of the IAM console, choose **Users** or **Groups** accordingly\.
+1. Decide whether to attach the permissions to a user or to a group\. In the navigation pane of the IAM console, choose **Users** or **User groups** accordingly\.
 
 1. Choose the name of the user or group to which you want to grant access, and then choose the **Permissions** tab\.
 
@@ -98,9 +98,9 @@ To change the permissions allowed by the role, modify the role's permissions pol
    + To edit an existing customer managed policy, choose the name of the policy and then choose **Edit policy**\.
 **Note**  
 You cannot edit an AWS managed policy\. AWS managed policy appear with the AWS icon \(![\[Image NOT FOUND\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policy_icon.png)\)\. For more information about the difference between AWS managed policies and customer managed policies, see [Managed policies and inline policies](access_policies_managed-vs-inline.md)\. 
-   + To attach an existing managed policy to the role, choose **Add permissions**\.
-   + To edit an existing inline policy, choose the arrow next to the name of the policy and choose **Edit Policy**\.
-   + To embed a new inline policy, choose **Add inline policy**\. 
+   + To attach an existing managed policy to the role, choose **Add permissions** and then choose **Attach policies**\.
+   + To edit an existing inline policy, expand the policy and choose **Edit**\.
+   + To embed a new inline policy, choose **Add permissions** and then choose **Create inline policy**\. 
 
 ## Modifying a role description \(console\)<a name="roles-modify_description"></a>
 
@@ -114,9 +114,9 @@ To change the description of the role, modify the description text\.
 
 1. Choose the name of the role to modify\.
 
-1. Next to **Role description** and on the far right, choose **Edit**\. 
+1. In the **Summary** section, choose **Edit**\.
 
-1. Type a new description in the box and choose **Save**\.
+1. Enter a new description in the box and choose **Save changes**\.
 
 ## Modifying a role maximum session duration \(console\)<a name="roles-modify_max-session-duration"></a>
 
@@ -130,9 +130,11 @@ To specify the maximum session duration setting for roles that are assumed using
 
 1. Choose the name of the role to modify\.
 
-1. Next to **Maximum session duration**, choose a value\. Or choose **Custom duration** and type a value \(in seconds\)\.
+1. In the **Summary** section, choose **Edit**\.
 
-1. Choose **Save**\.
+1. For **Maximum session duration**, choose a value\. Alternatively, choose **Custom duration** and enter a value \(in seconds\)\.
+
+1. Choose **Save changes**\.
 
    Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)\.
 
@@ -152,7 +154,7 @@ To change the maximum permissions allowed for a role, modify the role's [permiss
 
 1. In the navigation pane, choose **Roles**\.
 
-1. Choose the name of the role whose [permissions boundary](access_policies_boundaries.md) you want to change\. 
+1. Choose the name of the role with the [permissions boundary](access_policies_boundaries.md) that you want to change\. 
 
 1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Change boundary**\.
 

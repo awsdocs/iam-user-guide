@@ -33,8 +33,8 @@ String condition operators let you construct `Condition` elements that restrict 
 |   `StringNotEquals`   |  Negated matching  | 
 |   `StringEqualsIgnoreCase`   |  Exact matching, ignoring case  | 
 |   `StringNotEqualsIgnoreCase`   |  Negated matching, ignoring case  | 
-|   `StringLike`   |  Case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) and a single\-character match wildcard \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.    | 
-|   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\) anywhere in the string\.  | 
+|   `StringLike`   |  Case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) and single\-character match wildcards \(?\) anywhere in the string\.  If a key contains multiple values, `StringLike` can be qualified with set operators—`ForAllValues:StringLike` and `ForAnyValue:StringLike`\. For more information, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.    | 
+|   `StringNotLike`   |  Negated case\-sensitive matching\. The values can include multi\-character match wildcards \(\*\) or single\-character match wildcards \(?\) anywhere in the string\.  | 
 
 For example, the following statement contains a `Condition` element that uses the `StringEquals` condition operator with the `aws:PrincipalTag` key to specify that the principal making the request must be tagged with the `iamuser-admin` job category\.
 
@@ -174,23 +174,36 @@ Boolean conditions let you construct `Condition` elements that restrict access b
 | --- | --- | 
 |   `Bool`   |  Boolean matching  | 
 
-For example, the following statement uses the `Bool` condition operator with the `aws:SecureTransport` key to specify that the request must use SSL\.
+For example, this identity\-based policy uses the `Bool` condition operator with the `aws:SecureTransport` key to deny all S3 actions on a bucket and its contents if the request is not over SSL\.
+
+**Important**  
+This policy does not allow any actions\. Use this policy in combination with other policies that allow specific actions\. 
 
 ```
 {
   "Version": "2012-10-17",
-  "Statement": {
-    "Effect": "Allow",
-    "Action": "iam:*AccessKey*",
-    "Resource": "arn:aws:iam::account-id:user/*",
-    "Condition": {"Bool": {"aws:SecureTransport": "true"}}
-  }
+  "Statement": [
+    {
+      "Sid": "BooleanExample",
+      "Action": "s3:*",
+      "Effect": "Deny",
+      "Resource": [
+        "arn:aws:s3:::DOC-EXAMPLE-BUCKET",
+        "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
+      ],
+      "Condition": {
+        "Bool": {
+          "aws:SecureTransport": "false"
+        }
+      }
+    }
+  ]
 }
 ```
 
 If the key that you specify in a policy condition is not present in the request context, the values do not match\. The `aws:SecureTransport` key is always present in the request context\. 
 
-You can not use a [policy variable](reference_policies_variables.md) with the `Boolean` condition operator\.
+You can use a [policy variable](reference_policies_variables.md) with the `Boolean` condition operator\.
 
 ## Binary condition operators<a name="Conditions_BinaryEquals"></a>
 
@@ -267,17 +280,19 @@ The `aws:SourceIp` condition key works only in a JSON policy if you are calling 
 
 ## Amazon Resource Name \(ARN\) condition operators<a name="Conditions_ARN"></a>
 
-Amazon Resource Name \(ARN\) condition operators let you construct `Condition` elements that restrict access based on comparing a key to an ARN\. The ARN is considered a string\. Not all services support comparing ARNs using this operator\. If the ARN condition operator doesn't work, then try using [string condition operators](#Conditions_String)\.
+Amazon Resource Name \(ARN\) condition operators let you construct `Condition` elements that restrict access based on comparing a key to an ARN\. The ARN is considered a string\. 
 
 
 ****  
 
 | Condition operator | Description | 
 | --- | --- | 
-|   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include a multi\-character match wildcard \(\*\) or a single\-character match wildcard \(?\)\. The `ArnEquals` and `ArnLike` condition operators behave identically\.  | 
+|   `ArnEquals`, `ArnLike`  |  Case\-sensitive matching of the ARN\. Each of the six colon\-delimited components of the ARN is checked separately and each can include multi\-character match wildcards \(\*\) or single\-character match wildcards \(?\)\. The `ArnEquals` and `ArnLike` condition operators behave identically\.  | 
 |   `ArnNotEquals`, `ArnNotLike`  |  Negated matching for ARN\. The `ArnNotEquals` and `ArnNotLike` condition operators behave identically\.  | 
 
-There are certain cases when a string operator would match when an ARN operator would not match\. For example, if the following pattern is used for matching:
+There are certain cases when a string operator would match when an ARN operator would not match\. In that case, try using [string condition operators](#Conditions_String)\.
+
+For example, if the following pattern is used for matching:
 
 ```
 arn:aws:someservice:*:111122223333:finance/*
@@ -312,7 +327,7 @@ If the key that you specify in a policy condition is not present in the request 
 
 ## \.\.\.IfExists condition operators<a name="Conditions_IfExists"></a>
 
-You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\.
+You can add `IfExists` to the end of any condition operator name except the `Null` condition—for example, `StringLikeIfExists`\. You do this to say "If the policy key is present in the context of the request, process the key as specified in the policy\. If the key is not present, evaluate the condition element as true\." Other condition elements in the statement can still result in a nonmatch, but not a missing key when checked with `...IfExists`\. If you are using an `"Effect": "Deny"` element with a negated condition operator like `StringNotEqualsIfExists`, the request is still denied even if the tag is missing\.
 
 **Example using `IfExists`**
 

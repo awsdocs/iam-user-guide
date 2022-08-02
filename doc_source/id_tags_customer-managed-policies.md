@@ -22,7 +22,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
         "iam:TagPolicy",
         "iam:UntagPolicy"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:policy/<policyname>"
+    "Resource": "arn:aws:iam::<account-number>:policy/<policyname>"
 }
 ```
 
@@ -41,7 +41,7 @@ To use this policy, replace *<policyname>* with the name of the policy whose tag
         "iam:ListPolicyTags",
         "iam:TagPolicy"
     ],
-    "Resource": "arn:aws:iam:*:<account-number>:policy/<policyname>"
+    "Resource": "arn:aws:iam::<account-number>:policy/<policyname>"
 }
 ```
 
