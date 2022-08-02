@@ -9,7 +9,7 @@ You can create, rotate, disable, or delete access keys \(access key IDs and secr
 
 When you create access keys, you create the access key ID and secret access key as a set\. During access key creation, AWS gives you one opportunity to view and download the secret access key part of the access key\. If you don't download it or if you lose it, you can delete the access key and then create a new one\. You can create root user access keys with the [IAM console](https://console.aws.amazon.com/iam/home?#), AWS CLI, or AWS API\.
 
-A newly created access key has the status of *active*, which means that you can use the access key for CLI and API calls\. You are [limited to two access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html) for each IAM user, which is useful when you want to [rotate the access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#iam-user-access-keys)\. You can also assign up to two access keys to the root user\. When you disable an access key, you can't use it for API calls, and inactive keys do count toward your limit\. You can create or delete an access key any time\. However, when you delete an access key, it's gone forever and can't be retrieved\.
+A newly created access key has the status of *active*, which means that you can use the access key for CLI and API calls\. You are [limited to two access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html) for each IAM user, which is useful when you want to [rotate the access keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html#iam-user-access-keys)\. You can also assign up to two access keys to the root user\. When you disable an access key, you can't use it for API calls\. Inactive keys still count toward your limit\. You can create or delete an access key any time\. However, when you delete an access key, it's gone forever and can't be retrieved\.
 
 You can change the email address and password on the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page\. You can also choose **Forgot password?** on the AWS sign\-in page to reset your password\.
 
@@ -30,7 +30,7 @@ For more information, see the following articles in the AWS Knowledge Center:
 
 ## Enable MFA on the AWS account root user<a name="id_root-user_manage_mfa"></a>
 
-If you continue to use the root user credentials, we recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
+We recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
 + [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
@@ -88,7 +88,7 @@ For information about changing the root user's password, see [Changing the AWS a
 
 ## Securing the credentials for the root user<a name="id_root-user_secure_credentials"></a>
 
-For more information about securing the credentials for the AWS account root user, see [Lock away your AWS account root user access keys](best-practices.md#lock-away-credentials)\.
+For more information about securing the credentials for the AWS account root user, see [Safeguard your root user credentials and don't use them for everyday tasks](best-practices.md#lock-away-credentials)\.
 
 ## Transferring the root user owner<a name="id_root-user_transfer_account"></a>
 

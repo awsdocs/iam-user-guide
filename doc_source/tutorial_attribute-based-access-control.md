@@ -2,6 +2,9 @@
 
 Attribute\-based access control \(ABAC\) is an authorization strategy that defines permissions based on attributes\. In AWS, these attributes are called *tags*\. You can attach tags to IAM resources, including IAM entities \(users or roles\) and to AWS resources\. You can define policies that use tag condition keys to grant permissions to your principals based on their tags\. When you use tags to control access to your AWS resources, you allow your teams and resources to grow with fewer changes to AWS policies\. ABAC policies are more flexible than traditional AWS policies, which require you to list each individual resource\. For more information about ABAC and its advantage over traditional policies, see [What is ABAC for AWS?](introduction_attribute-based-access-control.md)\.
 
+**Note**  
+You must pass a single value for each session tag\. AWS Security Token Service does not support multi\-valued session tags\.
+
 **Topics**
 + [Tutorial overview](#tutorial_attribute-based-access-control-overview)
 + [Prerequisites](#tutorial_abac_prereqs)
@@ -274,7 +277,7 @@ The policy that you attached to each role allows the employees to view any secre
 
 ## Step 6: Test scalability<a name="tutorial_abac_step6"></a>
 
-An important reason for using attribute\-based access control \(ABAC\) over role\-based access control \(RBAC\) is scalability\. As your company adds new projects, teams, or people to AWS, you don't need to update your ABAC\-driven policies\. For example, assume that Example Company is funding a new project, code named **Centaur**\. An engineer named Saanvi Sarkar will be the lead engineer for **Centaur** while continuing to work on the **Unicorn** project\. There are also several newly hired engineers, including Nikhil Jayashankar, who will work on only the **Centaur** project\.
+An important reason for using attribute\-based access control \(ABAC\) over role\-based access control \(RBAC\) is scalability\. As your company adds new projects, teams, or people to AWS, you don't need to update your ABAC\-driven policies\. For example, assume that Example Company is funding a new project, code named **Centaur**\. An engineer named Saanvi Sarkar will be the lead engineer for **Centaur** while continuing to work on the **Unicorn** project\. Saanvi will also review work for the **Peg** project\. There are also several newly hired engineers, including Nikhil Jayashankar, who will work on only the **Centaur** project\.
 
 **To add the new project to AWS**
 
@@ -291,7 +294,7 @@ An important reason for using attribute\-based access control \(ABAC\) over role
 
 1. Use the procedures in [Step 4: Test creating secrets](#tutorial_abac_step4) and [Step 5: Test viewing secrets](#tutorial_abac_step5)\. In another browser window, test that Nikhil can create only **Centaur** engineering secrets, and that he can view all engineering secrets\.
 
-1. In the main browser window where you signed in as the administrator, choose `access-Saanvi-uni-eng`\.
+1. In the main browser window where you signed in as the administrator, choose the user `access-Saanvi-uni-eng`\.
 
 1. On the **Permissions** tab, remove the **access\-assume\-role** permissions policy\.
 

@@ -111,7 +111,7 @@ To fix this issue, an administrator should **not** edit policy permissions\. Ins
 
 ## How do I securely create IAM users?<a name="troubleshoot_general_securely-create-iam-users"></a>
 
-If you have employees that require access to AWS, you might choose to create IAM users or [use AWS SSO for authentication](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\. If you use IAM, AWS recommends that you create an IAM user and securely communicate the credentials to the employee\. If you are not physically located next to your employee, use a secure workflow to communicate credentials to employees\.
+If you have employees that require access to AWS, you might choose to create IAM users or [use IAM Identity Center for authentication](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\. If you use IAM, AWS recommends that you create an IAM user and securely communicate the credentials to the employee\. If you are not physically located next to your employee, use a secure workflow to communicate credentials to employees\.
 
 Use the following workflow to securely create a new user in IAM:
 

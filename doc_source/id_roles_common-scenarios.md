@@ -15,6 +15,7 @@ Federated users sign in by using credentials from an identity provider \(IdP\)\.
 
 This section provides overviews of the following scenarios:
 + [Provide access for an IAM user in one AWS account that you own to access resources in another account that you own](id_roles_common-scenarios_aws-accounts.md)
++ [Provide access to non AWS workloads](id_roles_common-scenarios_non-aws.md)
 + [Provide access to IAM users in AWS accounts owned by third parties](id_roles_common-scenarios_third-party.md)
 + [Provide access for services offered by AWS to AWS resources](id_roles_common-scenarios_services.md)
 + [Provide access for externally authenticated users \(identity federation\)](id_roles_common-scenarios_federated-users.md)

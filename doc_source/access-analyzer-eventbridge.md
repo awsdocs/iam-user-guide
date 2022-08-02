@@ -181,51 +181,39 @@ The following example shows data for an event that is sent to EventBridge for an
 
 The following procedure describes how to create an event rule using the console\.
 
-Open the Amazon EventBridge console at [https://console\.aws\.amazon\.com/events/](https://console.aws.amazon.com/events/)\.
+1. Open the Amazon EventBridge console at [https://console\.aws\.amazon\.com/events/](https://console.aws.amazon.com/events/)\.
 
-1. Choose **Create rule**\.
+1. Using the following values, create an EventBridge rule that monitors finding events or access preview events:
+   + For **Rule type**, choose **Rule with an event pattern**\.
+   + For **Event source**, choose **Other**\.
+   + For **Event pattern**, choose **Custom patterns \(JSON editor\)**, and paste one of the following event pattern examples into the text area:
+     + To create a rule based on a findings event, use the following pattern example:
 
-1. Enter a **Name** and, optionally, a **Description**\.
+       ```
+       {
+         "source": [
+           "aws.access-analyzer"
+         ],
+         "detail-type": [
+           "Access Analyzer Finding"
+         ]
+       }
+       ```
+     + To create a rule based on an access preview event, use the following pattern example:
 
-1. Under **Define pattern** choose **Event pattern**, then choose **Custom pattern**\.
+       ```
+       {
+         "source": [
+           "aws.access-analyzer"
+         ],
+         "detail-type": [
+           "Access Preview State Change"
+         ]
+       }
+       ```
+   + For **Target types**, choose **AWS service**, and for **Select a target**, choose a target such as an Amazon SNS topic or AWS Lambda function\. The target is triggered when an event is received that matches the event pattern defined in the rule\.
 
-1. Copy the following findings event example and then paste it into the **Event pattern** box\.
-
-   ```
-   {
-     "source": [
-       "aws.access-analyzer"
-     ],
-     "detail-type": [
-       "Access Analyzer Finding"
-     ]
-   }
-   ```
-
-   Or copy the following access preview event example and then paste it into the **Event pattern** box\.
-
-   ```
-   {
-     "source": [
-       "aws.access-analyzer"
-     ],
-     "detail-type": [
-       "Access Preview State Change"
-     ]
-   }
-   ```
-
-1. Choose **Save**\.
-
-1. Under **Select targets**, choose a **Target** action for the rule, such as an Amazon SNS topic or AWS Lambda function\. 
-
-1. Choose the specific SNS topic or Lambda function to use when the target is triggered\.
-
-   The target is triggered when an event is received that matches the event pattern defined in the rule\.
-
-1. Choose **Save** to create the rule\.
-
-To learn more about creating rules, see [Creating an EventBridge Rule That Triggers on an Event from an AWS Resource](https://docs.aws.amazon.com/eventbridge/latest/userguide/create-eventbridge-rule.html)\.
+   To learn more about creating rules, see [Creating Amazon EventBridge rules that react to events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule.html) in the *Amazon EventBridge User Guide*\.
 
 ### Creating an event rule using the CLI<a name="access-analyzer-create-rule-cli"></a>
 

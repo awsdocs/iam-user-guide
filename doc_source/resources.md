@@ -16,7 +16,6 @@ IAM is a rich product, and you'll find many resources to help you learn more abo
 Consult these resources for creating, managing, and using users and groups\.
 + **[Creating your first IAM admin user and user group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
 + **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
-+  [http://aws.amazon.com/blogs/security/guidelines-for-when-to-use-accounts-users-and-groups](http://aws.amazon.com/blogs/security/guidelines-for-when-to-use-accounts-users-and-groups) – An AWS Security Blog post that discusses how to organize user access with separate AWS accounts or with IAM users and groups in a single account\.
 
 ## Credentials \(passwords, access keys, and MFA devices\)<a name="resources-credentials"></a>
 
@@ -65,9 +64,10 @@ Most AWS products are integrated with IAM so that you can use IAM features to he
 ## General security practices<a name="resources-general-security"></a>
 
 Find expert tips and guidance on the best ways to secure your AWS account and resources:
-+ **[Best Practices for Security, Identity, &, Compliance](http://aws.amazon.com/architecture/security-identity-compliance)** – Find resources for how to manage security across AWS accounts and products, including suggestions for security architecture, use of IAM, encryption and data security, and more\. 
-+ **[Security best practices in IAM](best-practices.md)** – Offers recommendations for ways to use IAM to help secure your AWS account and resources\. 
-+ **[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\. 
++ **[Best Practices for Security, Identity, &, Compliance](http://aws.amazon.com/architecture/security-identity-compliance)** – Find resources for how to manage security across AWS accounts and products, including suggestions for security architecture, use of IAM, encryption and data security, and more\.
++ **[Identity and Access Management](https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/identity-and-access-management.html)** – The AWS Well\-Architected Framework helps you understand key concepts, design principles, and architectural best practices for designing and running workloads in the cloud\.
++ **[Security best practices in IAM](best-practices.md)** – Offers recommendations for ways to use IAM to help secure your AWS account and resources\.
++ **[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\.
 
 ## General resources<a name="resources-general"></a>
 

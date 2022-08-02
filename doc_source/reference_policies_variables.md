@@ -3,7 +3,7 @@
 Use AWS Identity and Access Management \(IAM\) policy variables as placeholders when you don't know the exact value of a resource or condition key when you write the policy\.
 
 **Note**  
-If AWS cannot resolve a variable, this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
+If AWS cannot resolve a variable this might cause the entire statement to be invalid\. For example, if you use the `aws:TokenIssueTime` variable, the variable resolves to a value only when the requester authenticated using temporary credentials \(an IAM role\)\. To prevent variables from causing invalid statements, use the [\.\.\.IfExists condition operator\.](reference_policies_elements_condition_operators.md#Conditions_IfExists)
 
 **Topics**
 + [Introduction](#policy-vars-intro)
@@ -41,7 +41,10 @@ In IAM policies, many actions allow you to provide a name for the specific resou
 
 In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy to allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. But don't create a separate policy for each user that explicitly specifies the user's name as part of the resource\. Instead, create a single group policy that works for any user in that group\. 
 
-You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\. 
+You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\.
+
+**Important**  
+You can use any single\-valued condition key as a variable\. You can't use a multivalued condition key as a variable\.
 
 The following example shows a policy for an Amazon S3 bucket that uses a policy variable\. 
 
@@ -227,7 +230,7 @@ When referencing a tag in a `Condition` element expression, use the relevant pre
 
 ## Request information that you can use for policy variables<a name="policy-vars-infotouse"></a>
 
- You can use the `Condition` element of a JSON policy to compare keys in the [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext) with key values that you specify in your policy\. When you use a policy variable, AWS substitutes a value from the request context key in place of the variable in your policy\. 
+ You can use the `Condition` element of a JSON policy to compare keys in the [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext) with key values that you specify in your policy\. When you use a policy variable, AWS substitutes a value from the request context key in place of the variable in your policy\.
 
 ### Information available in all requests<a name="policy-vars-infoallreqs"></a>
 
@@ -291,7 +294,7 @@ These predefined policy variables can be used in any string where you can use re
 
 ## Specifying default values<a name="policy-vars-default-values"></a>
 
-When you add a variable to your policy, you can specify a default value for the variable\. If a variable is not present, AWS uses the default text that you provide\.
+If AWS cannot resolve a variable this might cause the entire statement to be invalid\. However, when you add a variable to your policy you can specify a default value for the variable\. If a value is not specified for the variable AWS uses the default text that you provided\. 
 
 To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
 

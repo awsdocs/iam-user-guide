@@ -81,17 +81,17 @@ codecommit:ListRepositories with an explicit deny in a service control policy
   ```
 
 ### Access denied due to role trust policies<a name="access-denied-role-trust-policy-examples"></a>
-+ Implicit denial: For the following error, check for a missing `Allow` statement for `codecommit:ListRepositories` in your role trust policy\.
++ Implicit denial: For the following error, check for a missing `Allow` statement for `sts:AssumeRole` in your role trust policy\.
 
   ```
   User: arn:aws:iam::123456789012:user/JohnDoe is not authorized to perform: 
-  codecommit:ListRepositories because the role trust policy allows the codecommit:ListRepositories action
+  sts:AssumeRole because the role trust policy allows the sts:AssumeRole action
   ```
-+ Explicit denial: For the following error, check for a missing `Allow` statement for `arcinteg:Echo` in your role trust policy\.
++ Explicit denial: For the following error, check for a missing `Allow` statement for `sts:AssumeRole` in your role trust policy\.
 
   ```
   User: arn:aws:iam::777788889999:user/JohnDoe is not authorized to perform: 
-  arcinteg:Echo with an explicit deny in the role trust policy
+  sts:AssumeRole with an explicit deny in the role trust policy
   ```
 
 ### Access denied due to identity\-based policies<a name="access-denied-identity-based-policy-examples"></a>
