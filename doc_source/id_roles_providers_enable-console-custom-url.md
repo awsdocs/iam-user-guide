@@ -26,7 +26,7 @@ Do not use the `SessionDuration` HTTP parameter if you got the temporary credent
 The URL that the federation endpoint provides is valid for 15 minutes after it is created\. This differs from the duration \(in seconds\) of the temporary security credential session that is associated with the URL\. Those credentials are valid for the duration you specified when you created them, starting from the time they were created\.
 
 **Important**  
-The URL grants access to your AWS resources through the AWS Management Console if you have enabled permissions in the associated temporary security credentials\. For this reason, you should treat the URL as a secret\. We recommend returning the URL through a secure redirect, for example, by using a 302 HTTP response status code over an SSL connection\. For more information about the 302 HTTP response status code, go to [RFC 2616, section 10\.3\.3](https://tools.ietf.org/html/rfc2616#section-10.3.3)\.
+The URL grants access to your AWS resources through the AWS Management Console if you have enabled permissions in the associated temporary security credentials\. For this reason, you should treat the URL as a secret\. We recommend returning the URL through a secure redirect, for example, by using a 302 HTTP response status code over an SSL connection\. For more information about the 302 HTTP response status code, go to [RFC 2616, section 10\.3\.3](https://datatracker.ietf.org/doc/html/rfc2616#section-10.3.3)\.
 
 To view a sample application that shows you how you can implement a single sign\-on solution, go to [AWS Management Console federation proxy sample use case](https://aws.amazon.com/code/4001165270590826) in the *AWS Sample Code & Libraries*\.
 
