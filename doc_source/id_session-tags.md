@@ -212,7 +212,7 @@ To set the `Project` and `Department` tags as transitive, use the following mult
 
 ## Passing session tags using AssumeRoleWithWebIdentity<a name="id_session-tags_adding-assume-role-idp"></a>
 
-Use OpenID Connect\(OIDC\)\-compliant web identity federation to authenticate the `AssumeRoleWithWebIdentity` operation\. This operation returns a set of temporary credentialsyou can use to access AWS resources\. For more information about using web identity federation for AWS Management Console access, see [About web identity federation](id_roles_providers_oidc.md)\.
+Use OpenID Connect\(OIDC\)\-compliant web identity federation to authenticate the `AssumeRoleWithWebIdentity` operation\. This operation returns a set of temporary credentials you can use to access AWS resources\. For more information about using web identity federation for AWS Management Console access, see [About web identity federation](id_roles_providers_oidc.md)\.
 
 To pass session tags from OpenID Connect \(OIDC\), you must include the session tags in the JSON Web Token \(JWT\)\. Include session tags in the `[https://aws.amazon.com/](https://aws.amazon.com/)tags` namespace in the token when you submit the `AssumeRoleWithWebIdentity` request\. To learn more about OIDC tokens and claims, see [Using Tokens with User Pools](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html) in the *Amazon Cognito Developer Guide*\.
 
