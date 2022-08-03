@@ -1,6 +1,6 @@
 # Modifying a role \(AWS CLI\)<a name="roles-managingrole-editing-cli"></a>
 
-You can use the AWS Command Line Interface to modify a role\. To change the set of tags on a role, see [](id_tags_roles.md#id_tags_roles_procs-cli-api)\.
+You can use the AWS Command Line Interface to modify a role\. To change the set of tags on a role, see [Managing tags on IAM roles \(AWS CLI or AWS API\)](id_tags_roles.md#id_tags_roles_procs-cli-api)\.
 
 **Topics**
 + [Modifying a role trust policy \(AWS CLI\)](#roles-managingrole_edit-trust-policy-cli)

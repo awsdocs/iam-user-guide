@@ -136,7 +136,7 @@ This policy provides read\-only access to IAM Access Analyzer\. No other service
 
 ## AccessAnalyzerServiceRolePolicy<a name="security-iam-aa-service-role-policy"></a>
 
-You can't attach AccessAnalyzerServiceRolePolicy to your IAM entities\. This policy is attached to a service\-linked role that allows IAM Access Analyzer to perform actions on your behalf\. For more information, see [Using service\-linked roles for AWS IAM Access Analyzer](access-analyzer-using-service-linked-roles.md)\.
+You can't attach AccessAnalyzerServiceRolePolicy to your IAM entities\. This policy is attached to a service\-linked role that allows IAM Access Analyzer to perform actions on your behalf\. For more information, see [Using service\-linked roles for AWS Identity and Access Management Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-using-service-linked-roles.html)\.
 
 ### Service\-level permissions<a name="service-level-permissions"></a>
 
@@ -209,7 +209,7 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
 }
 ```
 
-## <a name="w798aac30c55c49"></a>
+## <a name="w1028aac30c55c49"></a>
 
 
 

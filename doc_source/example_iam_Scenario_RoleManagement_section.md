@@ -1,6 +1,9 @@
 # Manage IAM roles using an AWS SDK<a name="example_iam_Scenario_RoleManagement_section"></a>
 
-The following code example shows how to manage IAM roles\.
+The following code example shows how to:
++ Create an IAM role\.
++ Attach and detach policies for a role\.
++ Delete a role\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -9,6 +12,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 Create functions that wrap IAM role actions\.  
 
 ```
@@ -124,7 +128,11 @@ def usage_demo():
     print(f"Deleted {role.name}.")
     print("Thanks for watching!")
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
++ For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
+  + [AttachRolePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/AttachRolePolicy)
+  + [CreateRole](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreateRole)
+  + [DeleteRole](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeleteRole)
+  + [DetachRolePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DetachRolePolicy)
 
 ------
 

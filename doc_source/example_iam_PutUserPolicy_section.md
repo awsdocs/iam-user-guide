@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -38,7 +39,6 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
     policy
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [PutUserPolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/PutUserPolicy) in *AWS SDK for Ruby API Reference*\. 
 
 ------

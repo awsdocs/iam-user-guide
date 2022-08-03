@@ -11,9 +11,432 @@ The following code examples show how to:
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM/IAM_Basics_Scenario#code-examples)\. 
+  
+
+```
+    using System;
+    using System.IO;
+    using System.Threading.Tasks;
+    using Amazon;
+    using Amazon.IdentityManagement;
+    using Amazon.IdentityManagement.Model;
+    using Amazon.S3;
+    using Amazon.SecurityToken;
+    using Amazon.SecurityToken.Model;
+
+    public class IAM_Basics
+    {
+        // Values needed for user, role, and policies.
+        private const string UserName = "example-user";
+        private const string S3PolicyName = "s3-list-buckets-policy";
+        private const string RoleName = "temporary-role";
+        private const string AssumePolicyName = "sts-trust-user";
+
+        private static readonly RegionEndpoint Region = RegionEndpoint.USEast2;
+
+        public static async Task Main()
+        {
+            DisplayInstructions();
+
+            // Create the IAM client object.
+            var client = new AmazonIdentityManagementServiceClient(Region);
+
+            // First create a user. By default, the new user has
+            // no permissions.
+            Console.WriteLine($"Creating a new user with user name: {UserName}.");
+            var user = await CreateUserAsync(client, UserName);
+            var userArn = user.Arn;
+            Console.WriteLine($"Successfully created user: {UserName} with ARN: {userArn}.");
+
+            // Create an AccessKey for the user.
+            var accessKey = await CreateAccessKeyAsync(client, UserName);
+
+            var accessKeyId = accessKey.AccessKeyId;
+            var secretAccessKey = accessKey.SecretAccessKey;
+
+            // Try listing the Amazon Simple Storage Service (Amazon S3)
+            // buckets. This should fail at this point because the user doesn't
+            // have permissions to perform this task.
+            var s3Client1 = new AmazonS3Client(accessKeyId, secretAccessKey);
+            await ListMyBucketsAsync(s3Client1);
+
+            // Define a role policy document that allows the new user
+            // to assume the role.
+            // string assumeRolePolicyDocument = File.ReadAllText("assumePolicy.json");
+            string assumeRolePolicyDocument = "{" +
+                "\"Version\": \"2012-10-17\"," +
+                "\"Statement\": [{" +
+                "\"Effect\": \"Allow\"," +
+                "\"Principal\": {" +
+                $"	\"AWS\": \"{userArn}\"" +
+                "}," +
+                    "\"Action\": \"sts:AssumeRole\"" +
+                "}]" +
+            "}";
+
+            // Permissions to list all buckets.
+            string policyDocument = "{" +
+                "\"Version\": \"2012-10-17\"," +
+                "	\"Statement\" : [{" +
+                    "	\"Action\" : [\"s3:ListAllMyBuckets\"]," +
+                    "	\"Effect\" : \"Allow\"," +
+                    "	\"Resource\" : \"*\"" +
+                "}]" +
+            "}";
+
+            // Create the role to allow listing the S3 buckets. Role names are
+            // not case sensitive and must be unique to the account for which it
+            // is created.
+            var role = await CreateRoleAsync(client, RoleName, assumeRolePolicyDocument);
+            var roleArn = role.Arn;
+
+            // Create a policy with permissions to list S3 buckets
+            var policy = await CreatePolicyAsync(client, S3PolicyName, policyDocument);
+
+            // Wait 15 seconds for the policy to be created.
+            WaitABit(15, "Waiting for the policy to be available.");
+
+            // Attach the policy to the role you created earlier.
+            await AttachRoleAsync(client, policy.Arn, RoleName);
+
+            // Wait 15 seconds for the role to be updated.
+            Console.WriteLine();
+            WaitABit(15, "Waiting to time for the policy to be attached.");
+
+            // Use the AWS Security Token Service (AWS STS) to have the user
+            // assume the role we created.
+            var stsClient = new AmazonSecurityTokenServiceClient(accessKeyId, secretAccessKey);
+
+            // Wait for the new credentials to become valid.
+            WaitABit(10, "Waiting for the credentials to be valid.");
+
+            var assumedRoleCredentials = await AssumeS3RoleAsync(stsClient, "temporary-session", roleArn);
+
+            // Try again to list the buckets using the client created with
+            // the new user's credentials. This time, it should work.
+            var s3Client2 = new AmazonS3Client(assumedRoleCredentials);
+
+            await ListMyBucketsAsync(s3Client2);
+
+            // Now clean up all the resources used in the example.
+            await DeleteResourcesAsync(client, accessKeyId, UserName, policy.Arn, RoleName);
+
+            Console.WriteLine("IAM Demo completed.");
+        }
+
+
+        /// <summary>
+        /// Create a new IAM user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="userName">A string representing the user name of the
+        /// new user.</param>
+        /// <returns>The newly created user.</returns>
+        public static async Task<User> CreateUserAsync(
+            AmazonIdentityManagementServiceClient client,
+            string userName)
+        {
+            var request = new CreateUserRequest
+            {
+                UserName = userName,
+            };
+
+            var response = await client.CreateUserAsync(request);
+
+            return response.User;
+        }
+
+
+
+        /// <summary>
+        /// Create a new AccessKey for the user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="userName">The name of the user for whom to create the key.</param>
+        /// <returns>A new IAM access key for the user.</returns>
+        public static async Task<AccessKey> CreateAccessKeyAsync(
+            AmazonIdentityManagementServiceClient client,
+            string userName)
+        {
+            var request = new CreateAccessKeyRequest
+            {
+                UserName = userName,
+            };
+
+            var response = await client.CreateAccessKeyAsync(request);
+
+            if (response.AccessKey is not null)
+            {
+                Console.WriteLine($"Successfully created Access Key for {userName}.");
+            }
+
+            return response.AccessKey;
+        }
+
+
+
+        /// <summary>
+        /// Create a policy to allow a user to list the buckets in an account.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="policyName">The name of the poicy to create.</param>
+        /// <param name="policyDocument">The permissions policy document.</param>
+        /// <returns>The newly created ManagedPolicy object.</returns>
+        public static async Task<ManagedPolicy> CreatePolicyAsync(
+            AmazonIdentityManagementServiceClient client,
+            string policyName,
+            string policyDocument)
+        {
+            var request = new CreatePolicyRequest
+            {
+                PolicyName = policyName,
+                PolicyDocument = policyDocument,
+            };
+
+            var response = await client.CreatePolicyAsync(request);
+
+            return response.Policy;
+        }
+
+
+
+        /// <summary>
+        /// Attach the policy to the role so that the user can assume it.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="policyArn">The ARN of the policy to attach.</param>
+        /// <param name="roleName">The name of the role to attach the policy to.</param>
+        public static async Task AttachRoleAsync(
+            AmazonIdentityManagementServiceClient client,
+            string policyArn,
+            string roleName)
+        {
+            var request = new AttachRolePolicyRequest
+            {
+                PolicyArn = policyArn,
+                RoleName = roleName,
+            };
+
+            var response = await client.AttachRolePolicyAsync(request);
+
+            if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
+            {
+                Console.WriteLine("Successfully attached the policy to the role.");
+            }
+            else
+            {
+                Console.WriteLine("Could not attach the policy.");
+            }
+        }
+
+
+
+        /// <summary>
+        /// Create a new IAM role which we can attach to a user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="roleName">The name of the IAM role to create.</param>
+        /// <param name="rolePermissions">The permissions which the role will have.</param>
+        /// <returns>A Role object representing the newly created role.</returns>
+        public static async Task<Role> CreateRoleAsync(
+            AmazonIdentityManagementServiceClient client,
+            string roleName,
+            string rolePermissions)
+        {
+            var request = new CreateRoleRequest
+            {
+                RoleName = roleName,
+                AssumeRolePolicyDocument = rolePermissions,
+            };
+
+            var response = await client.CreateRoleAsync(request);
+
+            return response.Role;
+        }
+
+
+
+        /// <summary>
+        /// List the Amazon S3 buckets owned by the user.
+        /// </summary>
+        /// <param name="accessKeyId">The access key Id for the user.</param>
+        /// <param name="secretAccessKey">The Secret access key for the user.</param>
+        public static async Task ListMyBucketsAsync(AmazonS3Client client)
+        {
+            Console.WriteLine("\nPress <Enter> to list the S3 buckets using the new user.\n");
+            Console.ReadLine();
+
+            try
+            {
+                // Get the list of buckets accessible by the new user.
+                var response = await client.ListBucketsAsync();
+
+                // Loop through the list and print each bucket's name
+                // and creation date.
+                Console.WriteLine(new string('-', 80));
+                Console.WriteLine("Listing S3 buckets:\n");
+                response.Buckets
+                    .ForEach(b => Console.WriteLine($"Bucket name: {b.BucketName}, created on: {b.CreationDate}"));
+            }
+            catch (AmazonS3Exception ex)
+            {
+                // Something else went wrong. Display the error message.
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+
+            Console.WriteLine("Press <Enter> to continue.");
+            Console.ReadLine();
+        }
+
+
+
+        /// <summary>
+        /// Have the user assume the role that allows the role to be used to
+        /// list all S3 buckets.
+        /// </summary>
+        /// <param name="client">An initialized AWS STS client object.</param>
+        /// <param name="roleSession">The name of the session where the role
+        /// assumption will be active.</param>
+        /// <param name="roleToAssume">The Amazon Resource Name (ARN) of the
+        /// role to assume.</param>
+        /// <returns>The AssumedRoleUser object needed to perform the list
+        /// buckets procedure.</returns>
+        public static async Task<Credentials> AssumeS3RoleAsync(
+            AmazonSecurityTokenServiceClient client,
+            string roleSession,
+            string roleToAssume)
+        {
+            // Create the request to use with the AssumeRoleAsync call.
+            var request = new AssumeRoleRequest()
+            {
+                RoleSessionName = roleSession,
+                RoleArn = roleToAssume,
+            };
+
+            var response = await client.AssumeRoleAsync(request);
+
+            return response.Credentials;
+        }
+
+
+
+        /// <summary>
+        /// Delete the user, and other resources created for this example.
+        /// </summary>
+        /// <param name="client">The initialized client object.</param>
+        /// <param name=accessKeyId">The Id of the user's access key.</param>"
+        /// <param name="userName">The user name of the user to delete.</param>
+        /// <param name="policyName">The name of the policy to delete.</param>
+        /// <param name="policyArn">The Amazon Resource Name ARN of the Policy to delete.</param>
+        /// <param name="roleName">The name of the role that will be deleted.</param>
+        public static async Task DeleteResourcesAsync(
+            AmazonIdentityManagementServiceClient client,
+            string accessKeyId,
+            string userName,
+            string policyArn,
+            string roleName)
+        {
+            var detachPolicyResponse = await client.DetachRolePolicyAsync(new DetachRolePolicyRequest
+            {
+                PolicyArn = policyArn,
+                RoleName = roleName,
+            });
+
+            var delPolicyResponse = await client.DeletePolicyAsync(new DeletePolicyRequest
+            {
+                PolicyArn = policyArn,
+            });
+
+            var delRoleResponse = await client.DeleteRoleAsync(new DeleteRoleRequest
+            {
+                RoleName = roleName,
+            });
+
+            var delAccessKey = await client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest
+            {
+                AccessKeyId = accessKeyId,
+                UserName = userName,
+            });
+
+            var delUserResponse = await client.DeleteUserAsync(new DeleteUserRequest
+            {
+                UserName = userName,
+            });
+
+        }
+
+
+        /// <summary>
+        /// Display a countdown and wait for a number of seconds.
+        /// </summary>
+        /// <param name="numSeconds">The number of seconds to wait.</param>
+        public static void WaitABit(int numSeconds, string msg)
+        {
+            Console.WriteLine(msg);
+
+            // Wait for the requested number of seconds.
+            for (int i = numSeconds; i > 0; i--)
+            {
+                System.Threading.Thread.Sleep(1000);
+                Console.Write($"{i}...");
+            }
+
+            Console.WriteLine("\n\nPress <Enter> to continue.");
+            Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Shows the a description of the features of the program.
+        /// </summary>
+        public static void DisplayInstructions()
+        {
+            var separator = new string('-', 80);
+
+            Console.WriteLine(separator);
+            Console.WriteLine("IAM Basics");
+            Console.WriteLine("This application uses the basic features of the AWS Identity and Access");
+            Console.WriteLine("Management (IAM) creating, managing, and controlling access to resources for");
+            Console.WriteLine("users. The application was created using the AWS SDK for .NET version 3.7 and");
+            Console.WriteLine(".NET Core 5. The application performs the following actions:");
+            Console.WriteLine();
+            Console.WriteLine("1. Creates a user with no permissions");
+            Console.WriteLine("2. Creates a rolw and policy that grants s3:ListAllMyBuckets permission");
+            Console.WriteLine("3. Grants the user permission to assume the role");
+            Console.WriteLine("4. Creates an Amazon Simple Storage Service (Amazon S3) client and tries");
+            Console.WriteLine("   to list buckets. (This should fail.)");
+            Console.WriteLine("5. Gets temporary credentials by assuming the role.");
+            Console.WriteLine("6. Creates an Amazon S3 client object with the temporary credentials and");
+            Console.WriteLine("   lists the buckets. (This time it should work.)");
+            Console.WriteLine("7. Deletes all of the resources created.");
+            Console.WriteLine(separator);
+            Console.WriteLine("Press <Enter> to continue.");
+            Console.ReadLine();
+        }
+    }
+```
++ For API details, see the following topics in *AWS SDK for \.NET API Reference*\.
+  + [AttachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/AttachRolePolicy)
+  + [CreateAccessKey](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateAccessKey)
+  + [CreatePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreatePolicy)
+  + [CreateRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateRole)
+  + [CreateUser](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateUser)
+  + [DeleteAccessKey](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteAccessKey)
+  + [DeletePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeletePolicy)
+  + [DeleteRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteRole)
+  + [DeleteUser](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteUser)
+  + [DeleteUserPolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteUserPolicy)
+  + [DetachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DetachRolePolicy)
+  + [PutUserPolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/PutUserPolicy)
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -334,7 +757,6 @@ func scenario() {
 	fmt.Println("done!")
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 + For API details, see the following topics in *AWS SDK for Go API Reference*\.
   + [AttachRolePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.AttachRolePolicy)
   + [CreateAccessKey](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreateAccessKey)
@@ -353,6 +775,7 @@ func scenario() {
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 Create functions that wrap IAM user actions\.  
 
 ```
@@ -372,25 +795,25 @@ public class IAMScenario {
                     "   ]" +
                     "}";
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         final String usage = "\n" +
-                "Usage:\n" +
-                "    <username> <policyName> <roleName> <roleSessionName> <fileLocation> <bucketName> \n\n" +
-                "Where:\n" +
-                "    username - the name of the IAM user to create. \n\n" +
-                "    policyName - the name of the policy to create. \n\n" +
-                "    roleName - the name of the role to create. \n\n" +
-                "    roleSessionName - the name of the session required for the assumeRole operation. \n\n" +
-                "    fileLocation - the file location to the JSON required to create the role (see Readme). \n\n" +
-                "    bucketName - the name of the Amazon S3 bucket from which objects are read. \n\n" ;
+            "Usage:\n" +
+            "    <username> <policyName> <roleName> <roleSessionName> <fileLocation> <bucketName> \n\n" +
+            "Where:\n" +
+            "    username - The name of the IAM user to create. \n\n" +
+            "    policyName - The name of the policy to create. \n\n" +
+            "    roleName - The name of the role to create. \n\n" +
+            "    roleSessionName - The name of the session required for the assumeRole operation. \n\n" +
+            "    fileLocation - The file location to the JSON required to create the role (see Readme). \n\n" +
+            "    bucketName - The name of the Amazon S3 bucket from which objects are read. \n\n" ;
 
         if (args.length != 6) {
             System.out.println(usage);
-           System.exit(1);
+            System.exit(1);
         }
 
-        String userName =  args[0];
+        String userName = args[0];
         String policyName = args[1];
         String roleName = args[2];
         String roleSessionName = args[3];
@@ -399,19 +822,17 @@ public class IAMScenario {
 
         Region region = Region.AWS_GLOBAL;
         IamClient iam = IamClient.builder()
-                .region(region)
-                .build();
+            .region(region)
+            .credentialsProvider(ProfileCredentialsProvider.create())
+            .build();
 
         // Create the IAM user.
-       Boolean createUser = createIAMUser(iam, userName);
-
+        Boolean createUser = createIAMUser(iam, userName);
 
        if (createUser) {
            System.out.println(userName + " was successfully created.");
-
            String polArn = createIAMPolicy(iam, policyName);
            System.out.println("The policy " + polArn + " was successfully created.");
-
            String roleArn = createIAMRole(iam, roleName, fileLocation);
            System.out.println(roleArn + " was successfully created.");
            attachIAMRolePolicy(iam, roleName, polArn);
@@ -420,8 +841,6 @@ public class IAMScenario {
            TimeUnit.MINUTES.sleep(1);
            assumeGivenRole(roleArn, roleSessionName, bucketName);
 
-
-
            System.out.println("*** Getting ready to delete the AWS resources");
            deleteRole(iam, roleName, polArn);
            deleteIAMUser(iam, userName);
@@ -429,7 +848,6 @@ public class IAMScenario {
        } else {
            System.out.println(userName +" was not successfully created.");
        }
-
     }
 
     public static Boolean createIAMUser(IamClient iam, String username ) {
@@ -438,14 +856,14 @@ public class IAMScenario {
             // Create an IamWaiter object
             IamWaiter iamWaiter = iam.waiter();
             CreateUserRequest request = CreateUserRequest.builder()
-                    .userName(username)
-                    .build();
+                .userName(username)
+                .build();
 
             // Wait until the user is created.
             CreateUserResponse response = iam.createUser(request);
             GetUserRequest userRequest = GetUserRequest.builder()
-                    .userName(response.user().userName())
-                    .build();
+                .userName(response.user().userName())
+                .build();
 
             WaiterResponse<GetUserResponse> waitUntilUserExists = iamWaiter.waitUntilUserExists(userRequest);
             waitUntilUserExists.matched().response().ifPresent(System.out::println);
@@ -458,16 +876,15 @@ public class IAMScenario {
         return false;
     }
 
-    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) {
+    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) throws Exception {
 
         try {
-
             JSONObject jsonObject = (JSONObject) readJsonSimpleDemo(fileLocation);
             CreateRoleRequest request = CreateRoleRequest.builder()
-                    .roleName(rolename)
-                    .assumeRolePolicyDocument(jsonObject.toJSONString())
-                    .description("Created using the AWS SDK for Java")
-                    .build();
+                .roleName(rolename)
+                .assumeRolePolicyDocument(jsonObject.toJSONString())
+                .description("Created using the AWS SDK for Java")
+                .build();
 
             CreateRoleResponse response = iam.createRole(request);
             System.out.println("The ARN of the role is "+response.role().arn());
@@ -476,8 +893,6 @@ public class IAMScenario {
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return "";
     }
@@ -485,18 +900,18 @@ public class IAMScenario {
     public static String createIAMPolicy(IamClient iam, String policyName ) {
 
         try {
-            // Create an IamWaiter object
+            // Create an IamWaiter object.
             IamWaiter iamWaiter = iam.waiter();
             CreatePolicyRequest request = CreatePolicyRequest.builder()
-                    .policyName(policyName)
-                    .policyDocument(PolicyDocument).build();
+                .policyName(policyName)
+                .policyDocument(PolicyDocument).build();
 
             CreatePolicyResponse response = iam.createPolicy(request);
 
-            // Wait until the policy is created
+            // Wait until the policy is created.
             GetPolicyRequest polRequest = GetPolicyRequest.builder()
-                    .policyArn(response.policy().arn())
-                    .build();
+                .policyArn(response.policy().arn())
+                .build();
 
             WaiterResponse<GetPolicyResponse> waitUntilPolicyExists = iamWaiter.waitUntilPolicyExists(polRequest);
             waitUntilPolicyExists.matched().response().ifPresent(System.out::println);
@@ -512,33 +927,29 @@ public class IAMScenario {
     public static void attachIAMRolePolicy(IamClient iam, String roleName, String policyArn ) {
 
         try {
-
             ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
-                    .roleName(roleName)
-                    .build();
+                .roleName(roleName)
+                .build();
 
-            ListAttachedRolePoliciesResponse  response = iam.listAttachedRolePolicies(request);
+            ListAttachedRolePoliciesResponse response = iam.listAttachedRolePolicies(request);
             List<AttachedPolicy> attachedPolicies = response.attachedPolicies();
 
             String polArn;
             for (AttachedPolicy policy: attachedPolicies) {
                 polArn = policy.policyArn();
                 if (polArn.compareTo(policyArn)==0) {
-                    System.out.println(roleName +
-                            " policy is already attached to this role.");
+                    System.out.println(roleName + " policy is already attached to this role.");
                     return;
                 }
             }
 
-            AttachRolePolicyRequest attachRequest =
-                    AttachRolePolicyRequest.builder()
-                            .roleName(roleName)
-                            .policyArn(policyArn)
-                            .build();
+            AttachRolePolicyRequest attachRequest = AttachRolePolicyRequest.builder()
+                .roleName(roleName)
+                .policyArn(policyArn)
+                .build();
 
             iam.attachRolePolicy(attachRequest);
-            System.out.println("Successfully attached policy " + policyArn +
-                    " to role " + roleName);
+            System.out.println("Successfully attached policy " + policyArn + " to role " + roleName);
 
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
@@ -550,14 +961,14 @@ public class IAMScenario {
     public static void assumeGivenRole(String roleArn, String roleSessionName, String bucketName) {
 
         StsClient stsClient = StsClient.builder()
-                .region(Region.US_EAST_1)
-                .build();
+            .region(Region.US_EAST_1)
+            .build();
 
         try {
             AssumeRoleRequest roleRequest = AssumeRoleRequest.builder()
-                    .roleArn(roleArn)
-                    .roleSessionName(roleSessionName)
-                    .build();
+                .roleArn(roleArn)
+                .roleSessionName(roleSessionName)
+                .build();
 
             AssumeRoleResponse roleResponse = stsClient.assumeRole(roleRequest);
             Credentials myCreds = roleResponse.credentials();
@@ -568,16 +979,15 @@ public class IAMScenario {
             // List all objects in an Amazon S3 bucket using the temp creds.
             Region region = Region.US_EAST_1;
             S3Client s3 = S3Client.builder()
-                    .credentialsProvider(StaticCredentialsProvider.create(AwsSessionCredentials.create(key, secKey, secToken)))
-                    .region(region)
-                    .build();
+                .credentialsProvider(StaticCredentialsProvider.create(AwsSessionCredentials.create(key, secKey, secToken)))
+                .region(region)
+                .build();
 
             System.out.println("Created a S3Client using temp credentials.");
             System.out.println("Listing objects in "+bucketName);
-            ListObjectsRequest listObjects = ListObjectsRequest
-                    .builder()
-                    .bucket(bucketName)
-                    .build();
+            ListObjectsRequest listObjects = ListObjectsRequest.builder()
+                .bucket(bucketName)
+                .build();
 
             ListObjectsResponse res = s3.listObjects(listObjects);
             List<S3Object> objects = res.contents();
@@ -595,27 +1005,27 @@ public class IAMScenario {
     public static void deleteRole(IamClient iam, String roleName, String polArn) {
 
         try {
-
             // First the policy needs to be detached.
             DetachRolePolicyRequest rolePolicyRequest = DetachRolePolicyRequest.builder()
-                    .policyArn(polArn)
-                    .roleName(roleName)
-                    .build();
+                .policyArn(polArn)
+                .roleName(roleName)
+                .build();
 
             iam.detachRolePolicy(rolePolicyRequest);
 
             // Delete the policy.
             DeletePolicyRequest request = DeletePolicyRequest.builder()
-                    .policyArn(polArn)
-                    .build();
+                .policyArn(polArn)
+                .build();
 
             iam.deletePolicy(request);
             System.out.println("*** Successfully deleted "+polArn);
 
             // Delete the role.
             DeleteRoleRequest roleRequest = DeleteRoleRequest.builder()
-                    .roleName(roleName)
-                    .build();
+                .roleName(roleName)
+                .build();
+
             iam.deleteRole(roleRequest);
             System.out.println("*** Successfully deleted " +roleName);
 
@@ -629,11 +1039,12 @@ public class IAMScenario {
 
         try {
             DeleteUserRequest request = DeleteUserRequest.builder()
-                    .userName(userName)
-                    .build();
+                .userName(userName)
+                .build();
 
             iam.deleteUser(request);
             System.out.println("*** Successfully deleted " + userName);
+
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
@@ -647,7 +1058,6 @@ public class IAMScenario {
     }
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 + For API details, see the following topics in *AWS SDK for Java 2\.x API Reference*\.
   + [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/AttachRolePolicy)
   + [CreateAccessKey](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/CreateAccessKey)
@@ -666,6 +1076,7 @@ public class IAMScenario {
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -1067,7 +1478,6 @@ export const run = async (
 };
 run(userName, s3_policy_name, role_name, assume_policy_name);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 + For API details, see the following topics in *AWS SDK for JavaScript API Reference*\.
   + [AttachRolePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/attachrolepolicycommand.html)
   + [CreateAccessKey](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/createaccesskeycommand.html)
@@ -1087,6 +1497,7 @@ run(userName, s3_policy_name, role_name, assume_policy_name);
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 Create functions that wrap IAM user actions\.  
 
 ```
@@ -1097,12 +1508,12 @@ suspend fun main(args: Array<String>) {
         <username> <policyName> <roleName> <roleSessionName> <fileLocation> <bucketName> 
 
     Where:
-        username - the name of the IAM user to create. 
-        policyName - the name of the policy to create. 
-        roleName - the name of the role to create. 
-        roleSessionName - the name of the session required for the assumeRole operation. 
-        fileLocation - the file location to the JSON required to create the role (see Readme). 
-        bucketName - the name of the Amazon S3 bucket from which objects are read. 
+        username - The name of the IAM user to create. 
+        policyName - The name of the policy to create. 
+        roleName - The name of the role to create. 
+        roleSessionName - The name of the session required for the assumeRole operation. 
+        fileLocation - The file location to the JSON required to create the role (see Readme). 
+        bucketName - The name of the Amazon S3 bucket from which objects are read. 
     """
 
     if (args.size != 6) {
@@ -1320,7 +1731,6 @@ fun readJsonSimpleDemo(filename: String): Any? {
     return jsonParser.parse(reader)
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 + For API details, see the following topics in *AWS SDK for Kotlin API reference*\.
   + [AttachRolePolicy](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation)
   + [CreateAccessKey](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation)
@@ -1339,6 +1749,7 @@ fun readJsonSimpleDemo(filename: String): Any? {
 #### [ PHP ]
 
 **SDK for PHP**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -1433,7 +1844,6 @@ $deletedKey = $service->deleteAccessKey($key['AccessKeyId']);
 $deletedUser = $service->deleteUser($user['UserName']);
 echo "Delete user: {$user['UserName']}\n";
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
 + For API details, see the following topics in *AWS SDK for PHP API Reference*\.
   + [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/AttachRolePolicy)
   + [CreateAccessKey](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/CreateAccessKey)
@@ -1452,6 +1862,7 @@ echo "Delete user: {$user['UserName']}\n";
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 Create an IAM user and a role that grants permission to list Amazon S3 buckets\. The user has rights only to assume the role\. After assuming the role, use temporary credentials to list buckets for the account\.  
 
 ```
@@ -1677,7 +2088,6 @@ def usage_demo():
 if __name__ == '__main__':
     usage_demo()
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 + For API details, see the following topics in *AWS SDK for Python \(Boto3\) API Reference*\.
   + [AttachRolePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/AttachRolePolicy)
   + [CreateAccessKey](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreateAccessKey)
@@ -1696,6 +2106,7 @@ if __name__ == '__main__':
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -1962,7 +2373,6 @@ end
 
 run_scenario(ScenarioCreateUserAssumeRole.new(Aws::IAM::Resource.new)) if $PROGRAM_NAME == __FILE__
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 + For API details, see the following topics in *AWS SDK for Ruby API Reference*\.
   + [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/AttachRolePolicy)
   + [CreateAccessKey](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreateAccessKey)
@@ -1976,6 +2386,257 @@ run_scenario(ScenarioCreateUserAssumeRole.new(Aws::IAM::Resource.new)) if $PROGR
   + [DeleteUserPolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeleteUserPolicy)
   + [DetachRolePolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DetachRolePolicy)
   + [PutUserPolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/PutUserPolicy)
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_iam::Error as iamError;
+use aws_sdk_iam::{Client as iamClient, Credentials as iamCredentials};
+use aws_sdk_s3::Client as s3Client;
+use aws_sdk_sts::Client as stsClient;
+use aws_types::region::Region;
+use std::borrow::Borrow;
+use tokio::time::{sleep, Duration};
+use uuid::Uuid;
+
+#[tokio::main]
+async fn main() -> Result<(), iamError> {
+    let (client, uuid, list_all_buckets_policy_document, inline_policy_document) =
+        initialize_variables().await;
+
+    if let Err(e) = run_iam_operations(
+        client,
+        uuid,
+        list_all_buckets_policy_document,
+        inline_policy_document,
+    )
+    .await
+    {
+        println!("{:?}", e);
+    };
+
+    Ok(())
+}
+
+async fn initialize_variables() -> (iamClient, String, String, String) {
+    let region_provider = RegionProviderChain::first_try(Region::new("us-west-2"));
+
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = iamClient::new(&shared_config);
+    let uuid = Uuid::new_v4().to_string();
+
+    let list_all_buckets_policy_document = "{
+                \"Version\": \"2012-10-17\",
+                \"Statement\": [{
+                    \"Effect\": \"Allow\",
+                    \"Action\": \"s3:ListAllMyBuckets\",
+                    \"Resource\": \"arn:aws:s3:::*\"}]
+    }"
+    .to_string();
+    let inline_policy_document = "{
+                \"Version\": \"2012-10-17\",
+                \"Statement\": [{
+                    \"Effect\": \"Allow\",
+                    \"Action\": \"sts:AssumeRole\",
+                    \"Resource\": \"{}\"}]
+    }"
+    .to_string();
+
+    (
+        client,
+        uuid,
+        list_all_buckets_policy_document,
+        inline_policy_document,
+    )
+}
+
+async fn run_iam_operations(
+    client: iamClient,
+    uuid: String,
+    list_all_buckets_policy_document: String,
+    inline_policy_document: String,
+) -> Result<(), iamError> {
+    let user = iam_service::create_user(&client, &format!("{}{}", "iam_demo_user_", uuid)).await?;
+    println!(
+        "Created the user with the name: {}",
+        user.user_name.as_ref().unwrap()
+    );
+    let key = iam_service::create_access_key(&client, user.user_name.as_ref().unwrap()).await?;
+
+    let assume_role_policy_document = "{
+        \"Version\": \"2012-10-17\",
+                \"Statement\": [{
+                    \"Effect\": \"Allow\",
+                    \"Principal\": {\"AWS\": \"{}\"},
+                    \"Action\": \"sts:AssumeRole\"
+                }]
+            }"
+    .to_string()
+    .replace("{}", user.arn.as_ref().unwrap());
+
+    let assume_role_role = iam_service::create_role(
+        &client,
+        &format!("{}{}", "iam_demo_role_", uuid),
+        &assume_role_policy_document,
+    )
+    .await?;
+    println!(
+        "Created the role with the ARN: {}",
+        assume_role_role.arn.as_ref().unwrap()
+    );
+
+    let list_all_buckets_policy = iam_service::create_policy(
+        &client,
+        &format!("{}{}", "iam_demo_policy_", uuid),
+        &list_all_buckets_policy_document,
+    )
+    .await?;
+    println!(
+        "Created policy: {}",
+        list_all_buckets_policy.policy_name.as_ref().unwrap()
+    );
+
+    let attach_role_policy_result =
+        iam_service::attach_role_policy(&client, &assume_role_role, &list_all_buckets_policy)
+            .await?;
+    println!(
+        "Attached the policy to the role: {:?}",
+        attach_role_policy_result
+    );
+
+    let inline_policy_name = &format!("{}{}", "iam_demo_inline_policy_", uuid);
+    let inline_policy_document =
+        inline_policy_document.replace("{}", assume_role_role.arn.as_ref().unwrap());
+    iam_service::create_user_policy(&client, &user, &inline_policy_name, &inline_policy_document)
+        .await?;
+    println!("Created inline policy.");
+
+    //First, fail to list the buckets with the user.
+    let creds = iamCredentials::from_keys(
+        key.access_key_id.as_ref().unwrap(),
+        key.secret_access_key.as_ref().unwrap(),
+        None,
+    );
+    let fail_config = aws_config::from_env()
+        .credentials_provider(creds.clone())
+        .load()
+        .await;
+    println!("Fail config: {:?}", fail_config);
+    let fail_client: s3Client = s3Client::new(&fail_config);
+    match fail_client.list_buckets().send().await {
+        Ok(e) => {
+            println!("This should not run. {:?}", e);
+        }
+        Err(e) => {
+            println!("Successfully failed with error: {:?}", e)
+        }
+    }
+
+    let sts_config = aws_config::from_env()
+        .credentials_provider(creds.clone())
+        .load()
+        .await;
+    let sts_client: stsClient = stsClient::new(&sts_config);
+    sleep(Duration::from_secs(10)).await;
+    let assumed_role = sts_client
+        .assume_role()
+        .role_arn(assume_role_role.arn.as_ref().unwrap())
+        .role_session_name(&format!("{}{}", "iam_demo_assumerole_session_", uuid))
+        .send()
+        .await;
+    println!("Assumed role: {:?}", assumed_role);
+    sleep(Duration::from_secs(10)).await;
+
+    let assumed_credentials = iamCredentials::from_keys(
+        assumed_role
+            .as_ref()
+            .unwrap()
+            .credentials
+            .as_ref()
+            .unwrap()
+            .access_key_id
+            .as_ref()
+            .unwrap(),
+        assumed_role
+            .as_ref()
+            .unwrap()
+            .credentials
+            .as_ref()
+            .unwrap()
+            .secret_access_key
+            .as_ref()
+            .unwrap(),
+        assumed_role
+            .as_ref()
+            .unwrap()
+            .credentials
+            .as_ref()
+            .unwrap()
+            .session_token
+            .borrow()
+            .clone(),
+    );
+
+    let succeed_config = aws_config::from_env()
+        .credentials_provider(assumed_credentials)
+        .load()
+        .await;
+    println!("succeed config: {:?}", succeed_config);
+    let succeed_client: s3Client = s3Client::new(&succeed_config);
+    sleep(Duration::from_secs(10)).await;
+    match succeed_client.list_buckets().send().await {
+        Ok(_) => {
+            println!("This should now run successfully.")
+        }
+        Err(e) => {
+            println!("This should not run. {:?}", e);
+            panic!()
+        }
+    }
+
+    //Clean up.
+    iam_service::detach_role_policy(
+        &client,
+        assume_role_role.role_name.as_ref().unwrap(),
+        list_all_buckets_policy.arn.as_ref().unwrap(),
+    )
+    .await?;
+    iam_service::delete_policy(&client, list_all_buckets_policy).await?;
+    iam_service::delete_role(&client, &assume_role_role).await?;
+    println!(
+        "Deleted role {}",
+        assume_role_role.role_name.as_ref().unwrap()
+    );
+    iam_service::delete_access_key(&client, &user, &key).await?;
+    println!("Deleted key for {}", key.user_name.as_ref().unwrap());
+    iam_service::delete_user_policy(&client, &user, &inline_policy_name).await?;
+    println!("Deleted inline user policy: {}", inline_policy_name);
+    iam_service::delete_user(&client, &user).await?;
+    println!("Deleted user {}", user.user_name.as_ref().unwrap());
+
+    Ok(())
+}
+```
++ For API details, see the following topics in *AWS SDK for Rust API reference*\.
+  + [AttachRolePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreateAccessKey](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreatePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreateRole](https://docs.rs/releases/search?query=aws-sdk)
+  + [CreateUser](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteAccessKey](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeletePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteRole](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteUser](https://docs.rs/releases/search?query=aws-sdk)
+  + [DeleteUserPolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [DetachRolePolicy](https://docs.rs/releases/search?query=aws-sdk)
+  + [PutUserPolicy](https://docs.rs/releases/search?query=aws-sdk)
 
 ------
 

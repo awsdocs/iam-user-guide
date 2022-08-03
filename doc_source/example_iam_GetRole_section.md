@@ -6,9 +6,38 @@ The following code examples show how to get an IAM role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+using System;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+
+var client = new AmazonIdentityManagementServiceClient();
+
+var response = await client.GetRoleAsync(new GetRoleRequest
+{
+    RoleName = "LambdaS3Role",
+});
+
+if (response.Role is not null)
+{
+    Console.WriteLine($"{response.Role.RoleName} with ARN: {response.Role.Arn}");
+    Console.WriteLine($"{response.Role.Description}");
+    Console.WriteLine($"Created: {response.Role.CreateDate} Last used on: { response.Role.RoleLastUsed}");
+}
+```
++  For API details, see [GetRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/GetRole) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -27,13 +56,13 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 	fmt.Println("Name: ", *getRoleResult.Role.RoleName)
 	fmt.Println("Created On: ", *getRoleResult.Role.CreateDate)
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [GetRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.GetRole) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -66,13 +95,13 @@ const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For API details, see [GetRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/getrolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 ------
 #### [ PHP ]
 
 **SDK for PHP**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -86,13 +115,13 @@ $service = new IamService();
         });
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [GetRole](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/GetRole) in *AWS SDK for PHP API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -113,13 +142,13 @@ def get_role(role_name):
     else:
         return role
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [GetRole](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GetRole) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -138,8 +167,26 @@ def get_role(role_name):
     role
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [GetRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/GetRole) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn get_role(
+    client: &iamClient,
+    role_name: String,
+) -> Result<GetRoleOutput, SdkError<GetRoleError>> {
+    let response = client.get_role().role_name(role_name).send().await?;
+    Ok(response)
+}
+```
++  For API details, see [GetRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 

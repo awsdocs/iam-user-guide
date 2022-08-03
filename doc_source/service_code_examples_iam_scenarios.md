@@ -9,4 +9,4 @@ The following code examples show you how to implement common scenarios in IAM wi
 + [Manage policies](example_iam_Scenario_PolicyManagement_section.md)
 + [Manage roles](example_iam_Scenario_RoleManagement_section.md)
 + [Manage your account](example_iam_Scenario_AccountManagement_section.md)
-+ [Rollback a policy version](example_iam_Scenario_RollbackPolicyVersion_section.md)
++ [Roll back a policy version](example_iam_Scenario_RollbackPolicyVersion_section.md)

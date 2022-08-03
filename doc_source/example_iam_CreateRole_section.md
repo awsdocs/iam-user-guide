@@ -6,9 +6,43 @@ The following code examples show how to create an IAM role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+        /// <summary>
+        /// Create a new IAM role which we can attach to a user.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="roleName">The name of the IAM role to create.</param>
+        /// <param name="rolePermissions">The permissions which the role will have.</param>
+        /// <returns>A Role object representing the newly created role.</returns>
+        public static async Task<Role> CreateRoleAsync(
+            AmazonIdentityManagementServiceClient client,
+            string roleName,
+            string rolePermissions)
+        {
+            var request = new CreateRoleRequest
+            {
+                RoleName = roleName,
+                AssumeRolePolicyDocument = rolePermissions,
+            };
+
+            var response = await client.CreateRoleAsync(request);
+
+            return response.Role;
+        }
+```
++  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateRole) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -37,27 +71,25 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 	fmt.Println("☑️ Create Role")
 	fmt.Printf("The new role's ARN is %s \n", *myRole.Role.Arn)
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [CreateRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreateRole) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
-    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) {
+    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) throws Exception {
 
         try {
-
             JSONObject jsonObject = (JSONObject) readJsonSimpleDemo(fileLocation);
-
             CreateRoleRequest request = CreateRoleRequest.builder()
-                    .roleName(rolename)
-                    .assumeRolePolicyDocument(jsonObject.toJSONString())
-                    .description("Created using the AWS SDK for Java")
-                    .build();
+                .roleName(rolename)
+                .assumeRolePolicyDocument(jsonObject.toJSONString())
+                .description("Created using the AWS SDK for Java")
+                .build();
 
             CreateRoleResponse response = iam.createRole(request);
             System.out.println("The ARN of the role is "+response.role().arn());
@@ -65,8 +97,6 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
-        } catch (Exception e) {
-            e.printStackTrace();
         }
         return "";
     }
@@ -77,13 +107,13 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         return jsonParser.parse(reader);
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/CreateRole) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -134,13 +164,13 @@ const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/createrolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 ------
 #### [ PHP ]
 
 **SDK for PHP**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -175,13 +205,13 @@ echo "Created role: {$assumeRoleRole['RoleName']}\n";
         return $result['Role'];
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/CreateRole) in *AWS SDK for PHP API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -214,13 +244,13 @@ def create_role(role_name, allowed_services):
     else:
         return role
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreateRole) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -249,7 +279,6 @@ def create_role(role_name, allowed_services):
     role
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreateRole) in *AWS SDK for Ruby API Reference*\. 
 
 ------
@@ -257,29 +286,30 @@ def create_role(role_name, allowed_services):
 
 **SDK for Rust**  
 This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
   
 
 ```
-async fn make_role(client: &Client, policy_file: &str, name: &str) -> Result<(), Error> {
-    // Read policy doc from file as a string
-    let doc = fs::read_to_string(policy_file).expect("Unable to read file");
+pub async fn create_role(
+    client: &iamClient,
+    role_name: &str,
+    role_policy_document: &str,
+) -> Result<Role, iamError> {
+    let response: CreateRoleOutput = loop {
+        if let Ok(response) = client
+            .create_role()
+            .role_name(role_name)
+            .assume_role_policy_document(role_policy_document)
+            .send()
+            .await
+        {
+            break response;
+        }
+    };
 
-    let resp = client
-        .create_role()
-        .assume_role_policy_document(doc)
-        .role_name(name)
-        .send()
-        .await?;
-
-    println!(
-        "Created role with ARN {}",
-        resp.role().unwrap().arn().unwrap()
-    );
-
-    Ok(())
+    Ok(response.role.unwrap())
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
 +  For API details, see [CreateRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------

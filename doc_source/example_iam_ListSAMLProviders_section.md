@@ -6,9 +6,33 @@ The following code examples show how to list SAML providers for IAM\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+using System;
+using Amazon.IdentityManagement;
+using Amazon.IdentityManagement.Model;
+
+var client = new AmazonIdentityManagementServiceClient();
+
+var response = await client.ListSAMLProvidersAsync(new ListSAMLProvidersRequest());
+
+response.SAMLProviderList.ForEach(samlProvider =>
+{
+    Console.WriteLine($"{samlProvider.Arn} created on: {samlProvider.CreateDate}");
+});
+```
++  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListSAMLProviders) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -24,13 +48,13 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 		fmt.Printf("%s %s -> %s", *provider.Arn, *provider.CreateDate, *provider.ValidUntil)
 	}
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [ListSAMLProviders](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListSAMLProviders) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -59,13 +83,13 @@ export const run = async () => {
 }
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listsamlproviderscommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 ------
 #### [ PHP ]
 
 **SDK for PHP**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -77,13 +101,13 @@ $service = new IamService();
         return $this->iamClient->listSAMLProviders();
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/ListSAMLProviders) in *AWS SDK for PHP API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -104,13 +128,13 @@ def list_saml_providers(count):
         logger.exception("Couldn't list SAML providers.")
         raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListSAMLProviders) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -127,8 +151,26 @@ def list_saml_providers(count):
     raise
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/ListSAMLProviders) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn list_saml_providers(
+    client: &Client,
+) -> Result<ListSamlProvidersOutput, SdkError<ListSAMLProvidersError>> {
+    let response = client.list_saml_providers().send().await?;
+
+    Ok(response)
+}
+```
++  For API details, see [ListSAMLProviders](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 

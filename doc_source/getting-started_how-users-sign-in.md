@@ -3,7 +3,7 @@
 After you create IAM users \(with passwords\), those users can sign in to the AWS Management Console\. To sign in, they need your account ID or alias\. They can also sign in from a custom URL that includes your account ID\. 
 
 **Note**  
-If your company has an existing identity system, you might want to create a single sign\-on \(SSO\) option\. SSO gives users access to the AWS Management Console without requiring them to have an IAM user identity\. SSO also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Enabling custom identity broker access to the AWS console](id_roles_providers_enable-console-custom-url.md)\. 
+If your company has an existing identity system, you might want to create an AWS IAM Identity Center \(successor to AWS Single Sign\-On\) \(IAM Identity Center\) option\. IAM Identity Center gives users access to the AWS Management Console without requiring them to have an IAM user identity\. IAM Identity Center also eliminates the need for users to sign in to your organization's site and to AWS separately\. For more information, see [Enabling custom identity broker access to the AWS console](id_roles_providers_enable-console-custom-url.md)\. 
 
 Before you create a sign\-in URL for your account, you create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS account ID and its alias](console_account-alias.md)\. 
 

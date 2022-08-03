@@ -1,6 +1,9 @@
 # Construct a URL with AWS STS for federated users using an AWS SDK<a name="example_sts_Scenario_ConstructFederatedUrl_section"></a>
 
-The following code example shows how to construct a URL with AWS STS to give federated users limited access to the AWS Management Console\.
+The following code example shows how to:
++ Create an IAM role that grants read\-only access to the current account's Amazon S3 resources\.
++ Get a security token from the AWS federation endpoint\.
++ Construct a URL that can be used to access the console with federated credentials\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -9,7 +12,8 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
-Create a role that grants read\-only access to the current account's Amazon S3 resources\.  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
+Create a role that grants read\-only access to the current account's S3 resources\.  
 
 ```
 def setup(iam_resource):
@@ -142,7 +146,6 @@ def usage_demo():
         teardown(role)
         print("Thanks for watching!")
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/boto3/sts-2011-06-15/AssumeRole) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

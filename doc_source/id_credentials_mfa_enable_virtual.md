@@ -1,6 +1,6 @@
 # Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)<a name="id_credentials_mfa_enable_virtual"></a>
 
-You can use a phone or other device as a virtual multi\-factor authentication \(MFA\) device\. To do this, install a mobile app that is compliant with [RFC 6238, a standards\-based TOTP \(time\-based one\-time password\) algorithm](https://tools.ietf.org/html/rfc6238)\. These apps generates a six\-digit authentication code\. Because they can run on unsecured mobile devices, virtual MFA might not provide the same level of security as U2F devices or hardware MFA devices\. We do recommend that you use a virtual MFA device while waiting for hardware purchase approval or while you wait for your hardware to arrive\. 
+You can use a phone or other device as a virtual multi\-factor authentication \(MFA\) device\. To do this, install a mobile app that is compliant with [RFC 6238, a standards\-based TOTP \(time\-based one\-time password\) algorithm](https://datatracker.ietf.org/doc/html/rfc6238)\. These apps generates a six\-digit authentication code\. Because they can run on unsecured mobile devices, virtual MFA might not provide the same level of security as U2F devices or hardware MFA devices\. We do recommend that you use a virtual MFA device while waiting for hardware purchase approval or while you wait for your hardware to arrive\. 
 
 Most virtual MFA apps support creating multiple virtual devices, allowing you to use the same app for multiple AWS accounts or users\. However, you can enable only one MFA device per user\.
 

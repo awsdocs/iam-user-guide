@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -76,36 +77,35 @@ func main() {
 	fmt.Println("Access Key activated")
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [UpdateAccessKey](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.UpdateAccessKey) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
-       public static void updateKey(IamClient iam, String username, String accessId, String status ) {
+    public static void updateKey(IamClient iam, String username, String accessId, String status ) {
 
-          try {
-              if (status.toLowerCase().equalsIgnoreCase("active")) {
-                  statusType = StatusType.ACTIVE;
-              } else if (status.toLowerCase().equalsIgnoreCase("inactive")) {
-                  statusType = StatusType.INACTIVE;
-              } else {
-                  statusType = StatusType.UNKNOWN_TO_SDK_VERSION;
-              }
-              UpdateAccessKeyRequest request = UpdateAccessKeyRequest.builder()
+        try {
+            if (status.toLowerCase().equalsIgnoreCase("active")) {
+                statusType = StatusType.ACTIVE;
+            } else if (status.toLowerCase().equalsIgnoreCase("inactive")) {
+                 statusType = StatusType.INACTIVE;
+            } else {
+                statusType = StatusType.UNKNOWN_TO_SDK_VERSION;
+            }
+
+            UpdateAccessKeyRequest request = UpdateAccessKeyRequest.builder()
                 .accessKeyId(accessId)
                 .userName(username)
                 .status(statusType)
                 .build();
 
-              iam.updateAccessKey(request);
-
-              System.out.printf(
-                "Successfully updated the status of access key %s to" +
+            iam.updateAccessKey(request);
+            System.out.printf("Successfully updated the status of access key %s to" +
                         "status %s for user %s", accessId, status, username);
 
         } catch (IamException e) {
@@ -114,13 +114,13 @@ func main() {
         }
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 +  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/UpdateAccessKey) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -156,11 +156,11 @@ export const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-access-keys.html#iam-examples-managing-access-keys-updating)\. 
 +  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/updateaccesskeycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -186,7 +186,6 @@ iam.updateAccessKey(params, function(err, data) {
   }
 });
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/iam-examples-managing-access-keys.html#iam-examples-managing-access-keys-updating)\. 
 +  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/iam-2010-05-08/UpdateAccessKey) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -194,6 +193,7 @@ iam.updateAccessKey(params, function(err, data) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -218,7 +218,6 @@ def update_key(user_name, key_id, activate):
             "Couldn't %s key %s.", 'Activate' if activate else 'Deactivate', key_id)
         raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/UpdateAccessKey) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

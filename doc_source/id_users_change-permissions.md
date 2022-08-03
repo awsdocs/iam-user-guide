@@ -61,7 +61,7 @@ Adding a user to a group affects the user immediately\.<a name="by-add-users-to-
 
    1. In the new tab, for **Group name**, type a name for your new group\.
 **Note**  
-The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\. Group names can be a combination of up to 128 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two groups named *TESTGROUP* and *testgroup*\.
+The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\. Group names can be a combination of up to 128 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two groups named *TESTGROUP* and *testgroup*\.
 
    1. Select one or more check boxes for the managed policies that you want to attach to the group\. You can also create a new managed policy by choosing **Create policy**\. If you do, return to this browser tab or window when the new policy is done; choose **Refresh**; and then choose the new policy to attach it to your group\. For more information, see [Creating IAM policies](access_policies_create.md)\.
 

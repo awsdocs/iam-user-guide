@@ -117,6 +117,9 @@ The permissions granted by a service\-linked role are indirectly transferable to
 
 For example, when you create an Amazon RDS DB instance, [RDS creates the service\-linked role](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAM.ServiceLinkedRoles.html) for you\. This role allows RDS to call Amazon EC2, Amazon SNS, Amazon CloudWatch Logs, and Amazon Kinesis on your behalf whenever you edit the DB instance\. If you create a policy to allow users and roles in your account or another account to have the same permissions to that Amazon RDS instance, then RDS can still use that role make changes to EC2, SNS, CloudWatch Logs, and Kinesis on their behalf\. The new user or role can indirectly edit resources in those other services\.
 
+**Important**  
+When transferring service linked role permissions, be aware of the "confused deputy" privilege escalation risk\. Learn more about mitigating that risk in [ Cross\-service confused deputy prevention](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html#cross-service-confused-deputy-prevention)\.
+
 ## Creating a service\-linked role<a name="create-service-linked-role"></a>
 
 The method that you use to create a service\-linked role depends on the service\. In some cases, you don't need to manually create a service\-linked role\. For example, when you complete a specific action \(such as creating a resource\) in the service, the service might create the service\-linked role for you\. Or if you were using a service before it began supporting service\-linked roles, then the service might have automatically created the role in your account\. To learn more, see [A new role appeared in my AWS account](troubleshoot_roles.md#troubleshoot_roles_new-role-appeared)\.

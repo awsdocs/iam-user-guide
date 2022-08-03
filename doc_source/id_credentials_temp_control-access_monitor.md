@@ -217,19 +217,30 @@ Imagine that you want to require your developers to set a source identity to ass
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "AssumeRoleAndSetSourceIdentity",
+      "Sid": "SAMLProviderAssumeRoleWithSAML",
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::111111111111:saml-provider/name-of-identity-provider"
+        "Federated": "arn:aws:iam::111122223333:saml-provider/name-of-identity-provider"
       },
       "Action": [
-        "sts:AssumeRoleWithSAML",
-        "sts:SetSourceIdentity"
+        "sts:AssumeRoleWithSAML"
       ],
       "Condition": {
         "StringEquals": {
           "SAML:aud": "https://signin.aws.amazon.com/saml"
-        },
+        }
+      }
+    },
+    {
+      "Sid": "SetSourceIdentitySrEngs",
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::111122223333:saml-provider/name-of-identity-provider"
+      },
+      "Action": [
+        "sts:SetSourceIdentity"
+      ],
+      "Condition": {
         "StringLike": {
           "sts:SourceIdentity": [
             "Saanvi",
@@ -255,7 +266,7 @@ Alternatively, if you use an OIDC provider for web identity federation and users
     {
       "Effect": "Allow",
       "Principal": {
-        "Federated": "arn:aws:iam::111111111111:oidc-provider/server.example.com"
+        "Federated": "arn:aws:iam::111122223333:oidc-provider/server.example.com"
       },
       "Action": [
         "sts:AssumeRoleWithWebIdentity",
@@ -376,22 +387,22 @@ If the user uses the assumed role session to perform an action, the source ident
   "eventVersion": "1.08",
   "userIdentity": {
     "type": "AssumedRole",
-    "principalId": "AROAJ45Q7YFFAREXAMPLE: Dev1",
-    "arn": "arn: aws: sts: : 123456789012: assumed-role/DevRole/Dev1",
+    "principalId": "AROAJ45Q7YFFAREXAMPLE:Dev1",
+    "arn": "arn:aws:sts::123456789012:assumed-role/DevRole/Dev1",
     "accountId": "123456789012",
     "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
     "sessionContext": {
       "sessionIssuer": {
         "type": "Role",
         "principalId": "AROAJ45Q7YFFAREXAMPLE",
-        "arn": "arn: aws: iam: : 123456789012: role/DevRole",
+        "arn": "arn:aws:iam::123456789012:role/DevRole",
         "accountId": "123456789012",
         "userName": "DevRole"
       },
       "webIdFederationData": {},
       "attributes": {
         "mfaAuthenticated": "false",
-        "creationDate": "2021-02-21T23: 46: 28Z"
+        "creationDate": "2021-02-21T23:46:28Z"
       },
       "sourceIdentity": "source-identity-value-present"
     }

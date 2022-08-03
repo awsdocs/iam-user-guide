@@ -1,6 +1,6 @@
 # Delete an IAM service\-linked role using an AWS SDK<a name="example_iam_DeleteServiceLinkedRole_section"></a>
 
-The following code example shows how to delete an IAM service\-linked role\.
+The following code examples show how to delete an IAM service\-linked role\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -39,8 +40,31 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
     end
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [DeleteServiceLinkedRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeleteServiceLinkedRole) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn delete_service_linked_role(
+    client: &iamClient,
+    role_name: &str,
+) -> Result<(), iamError> {
+    client
+        .delete_service_linked_role()
+        .role_name(role_name)
+        .send()
+        .await?;
+
+    Ok(())
+}
+```
++  For API details, see [DeleteServiceLinkedRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 

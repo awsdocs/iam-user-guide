@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
@@ -16,8 +17,8 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
         try {
             DeletePolicyRequest request = DeletePolicyRequest.builder()
-                   .policyArn(policyARN)
-                   .build();
+                .policyArn(policyARN)
+                .build();
 
             iam.deletePolicy(request);
             System.out.println("Successfully deleted the policy");
@@ -29,13 +30,13 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         System.out.println("Done");
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 +  For API details, see [DeletePolicy](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/DeletePolicy) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam/#code-examples)\. 
 Create the client\.  
 
 ```
@@ -67,7 +68,6 @@ const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam/#code-examples)\. 
 +  For API details, see [DeletePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/deletepolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 ------
@@ -75,6 +75,7 @@ run();
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
   
 
 ```
@@ -85,19 +86,18 @@ suspend fun deleteIAMPolicy(policyARNVal: String?) {
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
-       iamClient.deletePolicy(request)
+        iamClient.deletePolicy(request)
         println("Successfully deleted $policyARNVal")
-
     }
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 +  For API details, see [DeletePolicy](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -114,13 +114,13 @@ def delete_policy(policy_arn):
         logger.exception("Couldn't delete policy %s.", policy_arn)
         raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [DeletePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DeletePolicy) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -144,8 +144,27 @@ def delete_policy(policy_arn):
     raise
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [DeletePolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeletePolicy) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn delete_policy(client: &iamClient, policy: Policy) -> Result<(), iamError> {
+    client
+        .delete_policy()
+        .policy_arn(policy.arn.unwrap())
+        .send()
+        .await?;
+    Ok(())
+}
+```
++  For API details, see [DeletePolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 

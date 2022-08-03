@@ -18,8 +18,14 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows users to manage their own MFA device on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.\)
 + Allows users to manage their own password on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-password-only.md)\.\)
 + Allows users to manage their own password, access keys, and SSH public keys on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\.\)
-+ Denies access to AWS based on the requested Region\. [View this policy](reference_policies_examples_aws_deny-requested-region.md)\.
++ Denies access to AWS based on the requested Region\. \([View this policy](reference_policies_examples_aws_deny-requested-region.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
+
+## Example policy: AWS CloudFormation<a name="policy_cfn_sns"></a>
++ Deny access to Amazon SNS resources outside of your account except CloudFormation\. \([View this policy](reference_policies_examples_cfn_sns_resource_account.md)\.\)
+
+## Example policy: AWS Data Exchange<a name="policy_data_exchange"></a>
++ Deny access to Amazon S3 resources outside of your account except AWS Data Exchange\. \([View this policy](reference_policies_examples_resource_account_data_exch.md)\.\)
 
 ## Example policies: AWS Data Pipeline<a name="policy_library_DataPipeline"></a>
 + Denies access to pipelines that a user did not create \([View this policy](reference_policies_examples_datapipeline_not-owned.md)\.\)
@@ -64,6 +70,7 @@ If you would like to submit a policy to be included in this reference guide, use
 + Allows IAM users to rotate their own credentials, programmatically and in the console\. \([View this policy](reference_policies_examples_iam_credentials_console.md)\.\)
 + Allows viewing service last accessed information for an AWS Organizations policy in the IAM console\. \([View this policy](reference_policies_examples_iam_service-accessed-data-orgs.md)\.\)
 + Limits managed policies that can be applied to an IAM user, group, or role \([View this policy](reference_policies_examples_iam_limit-managed.md)\.\)
++ Allows access to IAM policies only in your account \([View this policy](resource_examples_iam_policies_resource_account.md)\.\)
 
 ## Example policies: AWS Lambda<a name="policy_library_Lambda"></a>
 + Allows an AWS Lambda function to access an Amazon DynamoDB table \([View this policy](reference_policies_examples_lambda-access-dynamodb.md)\.\)

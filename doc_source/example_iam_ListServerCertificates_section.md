@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -37,11 +38,11 @@ export const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-server-certificates.html#iam-examples-server-certificates-listing)\. 
 +  For API details, see [ListServerCertificates](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listservercertificatescommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -61,7 +62,6 @@ iam.listServerCertificates({}, function(err, data) {
   }
 });
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/iam-examples-server-certificates.html#iam-examples-server-certificates-listing)\. 
 +  For API details, see [ListServerCertificates](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/iam-2010-05-08/ListServerCertificates) in *AWS SDK for JavaScript API Reference*\. 
 

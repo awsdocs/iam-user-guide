@@ -17,6 +17,9 @@ You can then create an IAM policy that allows or denies access to a resource bas
 
 You can create an IAM policy visually, using JSON, or by importing an existing managed policy\. For details, see [Creating IAM policies](access_policies_create.md)\.
 
+**Note**  
+Some services allow users to specify tags when they create the resource if they have permissions to use the action that creates the resource\.
+
 ## Controlling access to AWS resources<a name="access_tags_control-resources"></a>
 
 You can use conditions in your IAM policies to control access to AWS resources based on the tags on that resource\. You can do this using the global `aws:ResourceTag/tag-key` condition key, or a service\-specific key\. Some services support only the service\-specific version of this key and not the global version\. 
@@ -82,7 +85,7 @@ This example shows how you might create an identity\-based policy that allows us
 
 You can use a condition in your IAM policies to control whether specific tag keys can be used on a resource or in a request\.
 
-As a best practice, when you use policies to control access using tags, you should use the [`aws:TagKeys` condition key](reference_policies_condition-keys.md#condition-keys-tagkeys)\. AWS services that support tags might allow you to create multiple tag key names that differ only by case, such as tagging an Amazon EC2 instance with `stack=production` and `Stack=test`\. Key names are not case sensitive in policy conditions\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\. To prevent duplicate tags with a key that varies only by case, use the `aws:TagKeys` condition to define the tag keys that your users can apply\.
+As a best practice, when you use policies to control access using tags, you should use the [`aws:TagKeys` condition key](reference_policies_condition-keys.md#condition-keys-tagkeys)\. AWS services that support tags might allow you to create multiple tag key names that differ only by case, such as tagging an Amazon EC2 instance with `stack=production` and `Stack=test`\. Key names are not case sensitive in policy conditions\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\. To prevent duplicate tags with a key that varies only by case, use the `aws:TagKeys` condition to define the tag keys that your users can apply, or use tag policies, available with AWS Organizations\. For more information see [Tag Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the *Organizations User Guide*\. 
 
 This example shows how you might create an identity\-based policy that allows creating and tagging a Secrets Manager secret, but only with the tag keys `environment` or `cost-center`\.
 

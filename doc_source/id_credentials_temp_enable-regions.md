@@ -74,6 +74,8 @@ The following table lists the Regions and their endpoints\. It indicates which o
 
 ¹You must [enable the Region](https://docs.aws.amazon.com/general/latest/gr/rande-manage.html) to use it\. This automatically activates STS\. You cannot manually activate or deactivate STS in these Regions\.
 
+²To use AWS in China, you need an account and credentials specific to AWS in China\.
+
 ## AWS CloudTrail and Regional endpoints<a name="sts-regions-cloudtrail"></a>
 
 Calls to Regional endpoints, such as `us-east-2.amazonaws.com`, are logged in AWS CloudTrail the same as any call to a Regional service\. Calls to the global endpoint, `sts.amazonaws.com`, are logged as calls to a global service\. For more information, see [Logging IAM and AWS STS API calls with AWS CloudTrail](cloudtrail-integration.md)\.

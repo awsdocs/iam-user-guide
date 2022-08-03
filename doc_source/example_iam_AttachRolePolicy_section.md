@@ -6,9 +6,49 @@ The following code examples show how to attach an IAM policy to a role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+        /// <summary>
+        /// Attach the policy to the role so that the user can assume it.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="policyArn">The ARN of the policy to attach.</param>
+        /// <param name="roleName">The name of the role to attach the policy to.</param>
+        public static async Task AttachRoleAsync(
+            AmazonIdentityManagementServiceClient client,
+            string policyArn,
+            string roleName)
+        {
+            var request = new AttachRolePolicyRequest
+            {
+                PolicyArn = policyArn,
+                RoleName = roleName,
+            };
+
+            var response = await client.AttachRolePolicyAsync(request);
+
+            if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
+            {
+                Console.WriteLine("Successfully attached the policy to the role.");
+            }
+            else
+            {
+                Console.WriteLine("Could not attach the policy.");
+            }
+        }
+```
++  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -25,25 +65,24 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 
 	fmt.Println("☑️ Attached policy " + ExamplePolicyARN + " to role " + ExampleRoleName)
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [AttachRolePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.AttachRolePolicy) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
     public static void attachIAMRolePolicy(IamClient iam, String roleName, String policyArn ) {
 
         try {
+            ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
+                .roleName(roleName)
+                .build();
 
-             ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
-                    .roleName(roleName)
-                    .build();
-
-            ListAttachedRolePoliciesResponse  response = iam.listAttachedRolePolicies(request);
+            ListAttachedRolePoliciesResponse response = iam.listAttachedRolePolicies(request);
             List<AttachedPolicy> attachedPolicies = response.attachedPolicies();
 
             // Ensure that the policy is not attached to this role
@@ -51,38 +90,35 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
             for (AttachedPolicy policy: attachedPolicies) {
                 polArn = policy.policyArn();
                 if (polArn.compareTo(policyArn)==0) {
-                   System.out.println(roleName +
-                            " policy is already attached to this role.");
+                    System.out.println(roleName + " policy is already attached to this role.");
                     return;
                 }
-          }
+            }
 
-            AttachRolePolicyRequest attachRequest =
-                AttachRolePolicyRequest.builder()
-                        .roleName(roleName)
-                        .policyArn(policyArn)
-                        .build();
+           AttachRolePolicyRequest attachRequest = AttachRolePolicyRequest.builder()
+               .roleName(roleName)
+               .policyArn(policyArn)
+               .build();
 
-            iam.attachRolePolicy(attachRequest);
+           iam.attachRolePolicy(attachRequest);
 
-            System.out.println("Successfully attached policy " + policyArn +
+           System.out.println("Successfully attached policy " + policyArn +
                 " to role " + roleName);
 
-         } catch (IamException e) {
-                System.err.println(e.awsErrorDetails().errorMessage());
-                System.exit(1);
-          }
-
-     System.out.println("Done");
+        } catch (IamException e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+        System.out.println("Done");
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -138,11 +174,11 @@ export const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-attaching-role-policy)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/attachrolepolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -183,7 +219,6 @@ iam.listAttachedRolePolicies(paramsRoleList, function(err, data) {
   }
 });
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/iam-examples-policies.html#iam-examples-policies-attaching-role-policy)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -192,6 +227,7 @@ iam.listAttachedRolePolicies(paramsRoleList, function(err, data) {
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
   
 
 ```
@@ -213,16 +249,16 @@ suspend fun attachIAMRolePolicy(roleNameVal: String, policyArnVal: String) {
                 return
         }
 
-       val policyRequest = AttachRolePolicyRequest {
+        val policyRequest = AttachRolePolicyRequest {
             roleName = roleNameVal
             policyArn = policyArnVal
         }
         iamClient.attachRolePolicy(policyRequest)
         println("Successfully attached policy $policyArnVal to role $roleNameVal")
-      }
+    }
 }
 
-fun checkList(attachedPolicies:List<AttachedPolicy>, policyArnVal:String) :Int {
+fun checkList(attachedPolicies: List<AttachedPolicy>, policyArnVal: String): Int {
 
     for (policy in attachedPolicies) {
         val polArn = policy.policyArn.toString()
@@ -235,13 +271,13 @@ fun checkList(attachedPolicies:List<AttachedPolicy>, policyArnVal:String) :Int {
     return 0
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 +  For API details, see [AttachRolePolicy](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 
 ------
 #### [ PHP ]
 
 **SDK for PHP**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -281,13 +317,13 @@ $service->attachRolePolicy($assumeRoleRole['RoleName'], $listAllBucketsPolicy['A
         });
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for PHP API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 Attach a policy to a role using the Boto3 Policy object\.  
 
 ```
@@ -322,13 +358,13 @@ def attach_policy(role_name, policy_arn):
         logger.exception("Couldn't attach policy %s to role %s.", policy_arn, role_name)
         raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -359,8 +395,31 @@ def attach_policy(role_name, policy_arn):
     policy
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn attach_role_policy(
+    client: &iamClient,
+    role: &Role,
+    policy: &Policy,
+) -> Result<AttachRolePolicyOutput, SdkError<AttachRolePolicyError>> {
+    client
+        .attach_role_policy()
+        .role_name(role.role_name.as_ref().unwrap())
+        .policy_arn(policy.arn.as_ref().unwrap())
+        .send()
+        .await
+}
+```
++  For API details, see [AttachRolePolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 

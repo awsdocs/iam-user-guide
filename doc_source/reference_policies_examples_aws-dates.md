@@ -20,3 +20,6 @@ To learn about using multiple conditions within the `Condition` block of an IAM 
     ]
 }
 ```
+
+**Note**  
+You cannot use a policy variable with the Date condition operator\. To learn more see [Condition element](reference_policies_variables.md#policy-vars-conditionelement)

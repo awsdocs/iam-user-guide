@@ -70,7 +70,7 @@ Next you attach the policy you just created to your test IAM user\.
 
 1. At the top of the policy list, in the search box, start typing **UsersReadOnlyAccesstoIAMConsole** until you can see your policy\. Then check the box next to **UsersReadOnlyAccessToIAMConsole** in the list\. 
 
-1. Choose the **Actions** button, and then chose **Attach**\. 
+1. Choose the **Actions** button, and then choose **Attach**\. 
 
 1. For **Filter**, choose **Users**\. 
 

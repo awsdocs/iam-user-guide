@@ -7,33 +7,36 @@ The 'sub' value used in the object key is not the user's sub value in the User P
 
 ```
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "ListYourObjects",
-            "Effect": "Allow",
-            "Action": "s3:ListBucket",
-            "Resource": ["arn:aws:s3:::bucket-name"],
-            "Condition": {
-                "StringLike": {
-                    "s3:prefix": ["cognito/application-name/${cognito-identity.amazonaws.com:sub}"]
-                }
-            }
-        },
-        {
-            "Sid": "ReadWriteDeleteYourObjects",
-            "Effect": "Allow",
-            "Action": [
-                "s3:GetObject",
-                "s3:PutObject",
-                "s3:DeleteObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::bucket-name/cognito/application-name/${cognito-identity.amazonaws.com:sub}",
-                "arn:aws:s3:::bucket-name/cognito/application-name/${cognito-identity.amazonaws.com:sub}/*"
-            ]
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ListYourObjects",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": [
+        "arn:aws:s3:::bucket-name"
+      ],
+      "Condition": {
+        "StringLike": {
+          "s3:prefix": [
+            "cognito/application-name/${cognito-identity.amazonaws.com:sub}/*"
+          ]
         }
-    ]
+      }
+    },
+    {
+      "Sid": "ReadWriteDeleteYourObjects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Resource": [
+        "arn:aws:s3:::bucket-name/cognito/application-name/${cognito-identity.amazonaws.com:sub}/*"
+      ]
+    }
+  ]
 }
 ```
 

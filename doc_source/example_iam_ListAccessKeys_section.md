@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -82,13 +83,13 @@ func main() {
 	}
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [ListAccessKeys](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListAccessKeys) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
@@ -101,21 +102,24 @@ func main() {
             while (!done) {
                 ListAccessKeysResponse response;
 
-            if(newMarker == null) {
-                ListAccessKeysRequest request = ListAccessKeysRequest.builder()
-                        .userName(userName).build();
-                response = iam.listAccessKeys(request);
-            } else {
-                ListAccessKeysRequest request = ListAccessKeysRequest.builder()
-                        .userName(userName)
-                        .marker(newMarker).build();
-                response = iam.listAccessKeys(request);
-            }
+                if(newMarker == null) {
+                    ListAccessKeysRequest request = ListAccessKeysRequest.builder()
+                    .userName(userName)
+                    .build();
 
-            for (AccessKeyMetadata metadata :
-                    response.accessKeyMetadata()) {
-                System.out.format("Retrieved access key %s",
-                        metadata.accessKeyId());
+                    response = iam.listAccessKeys(request);
+
+                } else {
+                    ListAccessKeysRequest request = ListAccessKeysRequest.builder()
+                        .userName(userName)
+                        .marker(newMarker)
+                        .build();
+
+                    response = iam.listAccessKeys(request);
+                }
+
+                for (AccessKeyMetadata metadata : response.accessKeyMetadata()) {
+                    System.out.format("Retrieved access key %s", metadata.accessKeyId());
             }
 
             if (!response.isTruncated()) {
@@ -131,13 +135,13 @@ func main() {
         }
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/ListAccessKeys) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -172,11 +176,11 @@ export const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-access-keys.html#iam-examples-managing-access-keys-listing)\. 
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listaccesskeyscommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -201,7 +205,6 @@ iam.listAccessKeys(params, function(err, data) {
   }
 });
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/iam-examples-managing-access-keys.html#iiam-examples-managing-access-keys-listing)\. 
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/iam-2010-05-08/ListAccessKeys) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -210,29 +213,30 @@ iam.listAccessKeys(params, function(err, data) {
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
   
 
 ```
 suspend fun listKeys(userNameVal: String?) {
 
-      val request = ListAccessKeysRequest {
-          userName = userNameVal
-      }
-      IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
+    val request = ListAccessKeysRequest {
+        userName = userNameVal
+    }
+    IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
         val response = iamClient.listAccessKeys(request)
-            response.accessKeyMetadata?.forEach { md ->
-                println("Retrieved access key ${md.accessKeyId}")
-            }
-      }
+        response.accessKeyMetadata?.forEach { md ->
+            println("Retrieved access key ${md.accessKeyId}")
+        }
+    }
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 +  For API details, see [ListAccessKeys](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -252,13 +256,13 @@ def list_keys(user_name):
     else:
         return keys
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/ListAccessKeys) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -284,7 +288,6 @@ def list_keys(user_name):
     puts("\t#{e.code}: #{e.message}")
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/ListAccessKeys) in *AWS SDK for Ruby API Reference*\. 
 
 ------

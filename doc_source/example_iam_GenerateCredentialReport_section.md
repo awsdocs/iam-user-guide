@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -29,7 +30,6 @@ def generate_credential_report():
     else:
         return response
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [GenerateCredentialReport](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/GenerateCredentialReport) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------

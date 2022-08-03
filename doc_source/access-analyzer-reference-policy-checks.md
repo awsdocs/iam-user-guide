@@ -56,13 +56,13 @@ For example, IAM is a global service\. The Region portion of an IAM resource ARN
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Data type mismatch: The text does not match the expected JSON data type.
+Data type mismatch: The text does not match the expected JSON data type {{data_type)).
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The text does not match the expected JSON data type."
+"findingDetails": "The text does not match the expected JSON data type {{data_type))."
 ```
 
 **Resolving the error**
@@ -575,39 +575,6 @@ The service prefix in the action must match the specifications \(including capit
 + [Action element](reference_policies_elements_action.md)
 + [ Known services and their actions](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
 
-## Error – Invalid service principal format<a name="access-analyzer-reference-policy-checks-error-invalid-service-principal-format"></a>
-
-In the AWS Management Console, the finding for this check includes the following message:
-
-```
-Invalid service principal format: The service principal does not match the expected format. Use the format.
-```
-
-In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
-
-```
-"findingDetails": "The service principal does not match the expected format. Use the format."
-```
-
-**Resolving the error**
-
-The value in the condition key\-value pair must match a defined service principal format\.
-
-A *service principal* is an identifier that is used to grant permissions to a service\. You can specify a service principal in the value for some global condition keys and service\-specific keys\. The service principal is defined by each service\.
-
-The identifier for a service principal includes the service name, and is usually in the following format:
-
-`service-name.amazonaws.com`
-
-Some service\-specific keys may use a different format for service principals\. For example, the `kms:ViaService` condition key requires the following format for service principals:
-
-`service-name.AWS_region.amazonaws.com`
-
-**Related terms**
-+ [Service principals](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services)
-+ [AWS global condition keys](reference_policies_condition-keys.md)
-+ [`kms:ViaService` condition key](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service)
-
 ## Error – Invalid variable for operator<a name="access-analyzer-reference-policy-checks-error-invalid-variable-for-operator"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
@@ -894,38 +861,6 @@ A JSON policy must include a statement\.
 **Related terms**
 + [JSON policy elements](reference_policies_elements.md)
 
-## Error – Missing tag key in condition<a name="access-analyzer-reference-policy-checks-error-missing-tag-key-in-condition"></a>
-
-In the AWS Management Console, the finding for this check includes the following message:
-
-```
-Missing tag key in condition: The condition key must include a tag key to control access based on tags. Use the format tag-key and specify a key name for tag-key.
-```
-
-In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
-
-```
-"findingDetails": "The condition key must include a tag key to control access based on tags. Use the format tag-key and specify a key name for tag-key."
-```
-
-**Resolving the error**
-
-To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\.
-
-For example, to [control access to AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html#access_tags_control-resources), you include the `aws:ResourceTag` condition key\. This key requires the format `aws:ResourceTag/tag-key`\. To specify the tag key `owner` and the tag value `JaneDoe` in a condition, use the following format\.
-
-```
-"Condition": {
-    "StringEquals": {"aws:ResourceTag/owner": "JaneDoe"}
-}
-```
-
-**Related terms**
-+ [Controlling access using tags](access_iam-tags.md)
-+ [Conditions](reference_policies_elements_condition.md)
-+ [Global condition keys](reference_policies_condition-keys.md)
-+ [AWS service condition keys](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
-
 ## Error – Null with if exists<a name="access-analyzer-reference-policy-checks-error-null-with-if-exists"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
@@ -1126,6 +1061,27 @@ For some policy types, statement IDs must be unique\. The `Sid` \(statement ID\)
 **Related terms**
 + [IAM JSON policy elements: Sid](reference_policies_elements_sid.md)
 
+## Error – Unsupported action in policy<a name="access-analyzer-reference-policy-checks-error-unsupported-action-in-policy"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Unsupported action in policy: The action is not supported for the resource-based policy attached to the resource type.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The action is not supported for the resource-based policy attached to the resource type."
+```
+
+**Resolving the error**
+
+Some actions aren't supported in the `Action` element in the resource\-based policy attached to a different resource type\. For example, AWS Key Management Service actions aren't supported in Amazon S3 bucket policies\. Specify an action that is supported by resource type attached to your resource\-based policy\.
+
+**Related terms**
++ [JSON policy elements: Action](reference_policies_elements_action.md)
+
 ## Error – Unsupported element combination<a name="access-analyzer-reference-policy-checks-error-unsupported-element-combination"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
@@ -1190,6 +1146,27 @@ The `Principal` element specifies the principal that is allowed or denied access
 **Related terms**
 + [AWS JSON policy elements: Principal](reference_policies_elements_principal.md)
 + [How IAM roles differ from resource\-based policies](id_roles_compare-resource-policies.md)
+
+## Error – Unsupported resource ARN in policy<a name="access-analyzer-reference-policy-checks-error-unsupported-resource-arn-in-policy"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Unsupported resource ARN in policy: The resource ARN is not supported for the resource-based policy attached to the resource type.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The resource ARN is not supported for the resource-based policy attached to the resource type."
+```
+
+**Resolving the error**
+
+Some resource ARNs aren't supported in the `Resource` element of the resource\-based policy when the policy is attached to a different resource type\. For example, AWS KMS ARNs aren't supported in the `Resource` element for Amazon S3 bucket policies\. Specify a resource ARN that is supported by a resource type attached to your resource\-based policy\.
+
+**Related terms**
++ [JSON policy elements: Action](reference_policies_elements_action.md)
 
 ## Error – Unsupported Sid<a name="access-analyzer-reference-policy-checks-error-unsupported-sid"></a>
 
@@ -1320,10 +1297,14 @@ In programmatic calls to the AWS CLI or AWS API, the finding for this check incl
 
 **Resolving the error**
 
-When you add a variable to your policy, you can specify a default value for the variable\. For example, anonymous users won't populate the `${aws:userid}` variable\. You can set the default to "anonymous" for those users\. To add a default to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+When you add a variable to your policy, you can specify a default value for the variable\. If a variable is not present, AWS uses the default text that you provide\.
+
+To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
+
+For example, if a principal is tagged with `team=yellow`, they can access the `DOC-EXAMPLE-BUCKET` Amazon S3 bucket with the name `DOC-EXAMPLE-BUCKET-yellow`\. A policy with this resource might allow team members to access their own resources, but not those of other teams\. For users without team tags, you might set a default value of `company-wide`\. These users can access only the `DOC-EXAMPLE-BUCKET-company-wide` bucket where they can view broad information, such as instructions for joining a team\.
 
 ```
-Condition: StringEquals: "aws:Resource": "arn:aws:s3:::/bucket/${aws:userid, 'anonymous'}"
+"Resource":"arn:aws:s3:::DOC-EXAMPLE-BUCKET-${aws:PrincipalTag/team, 'company-wide'}"
 ```
 
 **Related terms**
@@ -1416,6 +1397,28 @@ A `Version` policy element is different from a policy version\. The `Version` po
 + [IAM policy elements: Variables](reference_policies_variables.md)
 + [IAM JSON policy elements: Version](reference_policies_elements_version.md)
 
+## Error – Unsupported condition key for service principal<a name="access-analyzer-reference-policy-checks-error-unsupported-condition-key-for-service-principal"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Unsupported condition key for service principal: The following condition keys are not supported when used with the service principal:.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The following condition keys are not supported when used with the service principal:."
+```
+
+**Resolving the error**
+
+You can specify AWS services in the `Principal` element of a resource\-based policy using a *service principal*, which is an identifier for the service\. You can't use some condition keys with certain service principals\. For example, you can't use the `aws:PrincipalOrgID` condition key with the service principal `cloudfront.amazonaws.com`\. You should remove condition keys that do not apply to the service principal in the `Principal` element\.
+
+**Related terms**
++ [Service principals](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services)
++ [JSON policy elements: Principal](reference_policies_elements_principal.md)
+
 ## Error – Private IP address<a name="access-analyzer-reference-policy-checks-error-private-ip-address"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
@@ -1479,6 +1482,159 @@ To specify multiple actions, AWS recommends that you list them individually\.
 **Related terms**
 + [Quotas for AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html)
 + [AWS Organizations service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
+
+## Error – Invalid service principal format<a name="access-analyzer-reference-policy-checks-error-invalid-service-principal-format"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Invalid service principal format: The service principal does not match the expected format. Use the format with all lowercase letters.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The service principal does not match the expected format. Use the format with all lowercase letters."
+```
+
+**Resolving the error**
+
+The value in the condition key\-value pair must match a defined service principal format\.
+
+A *service principal* is an identifier that is used to grant permissions to a service\. You can specify a service principal in the `Principal` element or as a value for some global condition keys and service\-specific keys\. The service principal is defined by each service\.
+
+The identifier for a service principal includes the service name, and is usually in the following format in all lowercase letters:
+
+`service-name.amazonaws.com`
+
+Some service\-specific keys may use a different format for service principals\. For example, the `kms:ViaService` condition key requires the following format for service principals in all lowercase letters:
+
+`service-name.AWS_region.amazonaws.com`
+
+**Related terms**
++ [Service principals](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services)
++ [AWS global condition keys](reference_policies_condition-keys.md)
++ [`kms:ViaService` condition key](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-via-service)
+
+## Error – Missing tag key in condition<a name="access-analyzer-reference-policy-checks-error-missing-tag-key-in-condition"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Missing tag key in condition: The condition key must include a tag key to control access based on tags. Use the format tag-key and specify a key name for tag-key.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The condition key must include a tag key to control access based on tags. Use the format tag-key and specify a key name for tag-key."
+```
+
+**Resolving the error**
+
+To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\.
+
+For example, to [control access to AWS resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html#access_tags_control-resources), you include the `aws:ResourceTag` condition key\. This key requires the format `aws:ResourceTag/tag-key`\. To specify the tag key `owner` and the tag value `JaneDoe` in a condition, use the following format\.
+
+```
+"Condition": {
+    "StringEquals": {"aws:ResourceTag/owner": "JaneDoe"}
+}
+```
+
+**Related terms**
++ [Controlling access using tags](access_iam-tags.md)
++ [Conditions](reference_policies_elements_condition.md)
++ [Global condition keys](reference_policies_condition-keys.md)
++ [AWS service condition keys](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html)
+
+## Error – Invalid vpc format<a name="access-analyzer-reference-policy-checks-error-invalid-vpc-format"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Invalid vpc format: The VPC identifier in the condition key value is not valid. Use the prefix 'vpc-' followed by 8 or 17 alphanumeric characters.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The VPC identifier in the condition key value is not valid. Use the prefix 'vpc-' followed by 8 or 17 alphanumeric characters."
+```
+
+**Resolving the error**
+
+The `aws:SourceVpc` condition key must use the prefix `vpc-` followed by either 8 or 17 alphanumeric characters, for example, `vpc-11223344556677889` or `vpc-12345678`\.
+
+**Related terms**
++ [AWS global condition keys: aws:SourceVpc](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpc)
+
+## Error – Invalid vpce format<a name="access-analyzer-reference-policy-checks-error-invalid-vpce-format"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Invalid vpce format: The VPCE identifier in the condition key value is not valid.  Use the prefix 'vpce-' followed by 8 or 17 alphanumeric characters.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The VPCE identifier in the condition key value is not valid.  Use the prefix 'vpce-' followed by 8 or 17 alphanumeric characters."
+```
+
+**Resolving the error**
+
+The `aws:SourceVpce` condition key must use the prefix `vpce-` followed by either 8 or 17 alphanumeric characters, for example, `vpce-11223344556677889` or `vpce-12345678`\.
+
+**Related terms**
++ [AWS global condition keys: aws:SourceVpce](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcevpce)
+
+## Error – Federated principal not supported<a name="access-analyzer-reference-policy-checks-error-federated-principal-not-supported"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Federated principal not supported: The policy type does not support a federated identity provider in the principal element. Use a supported principal.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The policy type does not support a federated identity provider in the principal element. Use a supported principal."
+```
+
+**Resolving the error**
+
+The `Principal` element uses federated principals for trust policies attached to IAM roles to provide access through identity federation\. Identity policies and other resource\-based policies don't support a federated identity provider in the `Principal` element\. For example, you can't use a SAML principal in an Amazon S3 bucket policy\. Change the `Principal` element to a supported principal type\.
+
+**Related terms**
++ [Creating a role for identity federation](id_roles_create_for-idp.md)
++ [JSON policy elements: Principal](reference_policies_elements_principal.md)
+
+## Error – Unsupported action for condition key<a name="access-analyzer-reference-policy-checks-error-unsupported-action-for-condition-key"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Unsupported action for condition key: The following actions: are not supported by the condition key. The condition will not be evaluated for these actions. We recommend that you move these actions to a different statement without this condition key.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The following actions: are not supported by the condition key. The condition will not be evaluated for these actions. We recommend that you move these actions to a different statement without this condition key."
+```
+
+**Resolving the error**
+
+Make sure that the condition key in the `Condition` element of the policy statement applies to every action in the `Action` element\. To ensure that the actions you specify are effectively allowed or denied by your policy, you should move the unsupported actions to a different statement without the condition key\.
+
+**Note**  
+If the `Action` element has actions with wildcards, IAM Access Analyzer doesn't evaluate those actions for this error\.
+
+**Related terms**
++ [JSON policy elements: Action](reference_policies_elements_action.md)
 
 ## General Warning – Create SLR with NotResource<a name="access-analyzer-reference-policy-checks-general-warning-create-slr-with-not-resource"></a>
 
@@ -1815,6 +1971,33 @@ The following AWS managed policies grant permissions to actions across many AWS 
 + [ReadOnlyAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/ReadOnlyAccess)
 + [AWSSupportServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/AWSSupportServiceRolePolicy)
 
+## General Warning – Policy size exceeds resource policy quota<a name="access-analyzer-reference-policy-checks-general-warning-policy-size-exceeds-resource-policy-quota"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Policy size exceeds resource policy quota: The characters in the resource policy exceed the character maximum for resource policies. We recommend that you use multiple granular policies.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The characters in the resource policy exceed the character maximum for resource policies. We recommend that you use multiple granular policies."
+```
+
+**Resolving the general warning**
+
+Resource\-based policies are JSON policy documents that you attach to a resource, such as an Amazon S3 bucket\. These policies grant the specified principal permission to perform specific actions on that resource and define under what conditions this applies\. The size of resource\-based policies cannot exceed the quota set for that resource\. Quotas, also referred to as limits in AWS, are the maximum values for the resources, actions, and items in your AWS account\.
+
+If your policy is larger than the quota, you can organize your policy into multiple statements and group the statements into multiple policies\.
+
+**Related terms**
++ [Resource\-based policies](access_policies.md#policies_resource-based)
++ [Amazon S3 bucket policies](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html)
++ [Multiple statements and multiple policies](access_policies.md#policies-syntax-multiples)
++ [Overview of JSON policies](access_policies.md#access_policies-json)
++ [IAM JSON policy grammar](reference_policies_grammar.md)
+
 ## General Warning – Type mismatch<a name="access-analyzer-reference-policy-checks-general-warning-type-mismatch"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
@@ -1971,100 +2154,6 @@ Using `"Effect": "Allow"` with the `NotPrincipal` can be overly permissive\. For
 + [AWS JSON policy elements: Principal](reference_policies_elements_principal.md)
 + [AWS JSON policy elements: NotPrincipal](reference_policies_elements_notprincipal.md)
 
-## Security Warning – Deny NotAction with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-security-warning-deny-notaction-with-unsupported-tag-condition-key-for-service"></a>
-
-In the AWS Management Console, the finding for this check includes the following message:
-
-```
-Deny NotAction with unsupported tag condition key for service: Using the effect Deny with NotAction and the tag condition key can be overly permissive because some service actions are not denied by this statement. This is because the condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction.
-```
-
-In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
-
-```
-"findingDetails": "Using the effect Deny with NotAction and the tag condition key can be overly permissive because some service actions are not denied by this statement. This is because the condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction."
-```
-
-**Resolving the security warning**
-
-Using tag condition keys in the `Condition` element of a policy with the element `NotAction` and `"Effect": "Deny"` can be overly permissive\. The condition is ignored for service actions that don’t support the condition key\. AWS recommends that you rewrite the logic to deny a list of actions\.
-
-If you use the `aws:ResourceTag` condition key with `NotAction`, any new or existing service actions that don’t support the key are not denied\. AWS recommends that you explicitly list the actions that you want to deny\. IAM Access Analyzer returns a separate finding for listed actions that don’t support the `aws:ResourceTag` condition key\. For more information, see [Security Warning – Deny with unsupported tag condition key for service](#access-analyzer-reference-policy-checks-security-warning-deny-with-unsupported-tag-condition-key-for-service)\. 
-
-When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
-
-**Related terms**
-+ [Global condition keys](reference_policies_condition-keys.md)
-+ [Comparing ABAC to RBAC](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)
-+ [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
-+ [Condition element](reference_policies_elements_condition.md)
-+ [Overview of JSON policies](access_policies.md#access_policies-json)
-
-## Security Warning – Deny with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-security-warning-deny-with-unsupported-tag-condition-key-for-service"></a>
-
-In the AWS Management Console, the finding for this check includes the following message:
-
-```
-Deny with unsupported tag condition key for service: Using the effect Deny with the tag condition key and actions for services with the following prefixes can be overly permissive:. Actions for the listed services are not denied by this statement. We recommend that you move these actions to a different statement without this condition key.
-```
-
-In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
-
-```
-"findingDetails": "Using the effect Deny with the tag condition key and actions for services with the following prefixes can be overly permissive:. Actions for the listed services are not denied by this statement. We recommend that you move these actions to a different statement without this condition key."
-```
-
-**Resolving the security warning**
-
-Using unsupported tag condition keys in the `Condition` element of a policy with `"Effect": "Deny"` can be overly permissive, because the condition is ignored for that service\. AWS recommends that you remove the service actions that don’t support the condition key and create another statement to deny access to specific resources for those actions\.
-
-If you use the `aws:ResourceTag` condition key and it’s not supported by a service action, then the key is not included in the request context\. In this case, the condition in the `Deny` statement always returns `false` and the action is never denied\. This happens even if the resource is tagged correctly\.
-
-When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
-
-**Note**  
-Some services allow support for the `aws:ResourceTag` condition key for a subset of their resources and actions\. IAM Access Analyzer returns findings for the service actions that are not supported\. For example, Amazon S3 supports `aws:ResourceTag` for a subset of its resources\. To view all of the resource types available in Amazon S3 that support the `aws:ResourceTag` condition key, see [Resource types defined by Amazon S3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-resources-for-iam-policies) in the Service Authorization Reference\.
-
-For example, assume that you want to deny access to untag delete specific resources that are tagged with the key\-value pair `status=Confidential`\. Also assume that AWS Lambda allows you to tag and untag resources, but doesn’t support the `aws:ResourceTag` condition key\. To deny the delete actions for AWS App Mesh and AWS Backup if this tag is present, use the `aws:ResourceTag` condition key\. For Lambda, use a resource naming convention that includes the `"Confidential"` prefix\. Then include a separate statement that prevents deleting resources with that naming convention\.
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "DenyDeleteSupported",
-            "Effect": "Deny",
-            "Action": [
-                "appmesh:DeleteMesh", 
-                "backup:DeleteBackupPlan"
-                ],
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:ResourceTag/status": "Confidential"
-                }
-            }
-        },
-        {
-            "Sid": "DenyDeleteUnsupported",
-            "Effect": "Deny",
-            "Action": "lambda:DeleteFunction",
-            "Resource": "arn:aws:lambda:*:403299380220:function:Confidential*"
-        }
-    ]
-}
-```
-
-**Warning**  
-Do not use the …[IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) version of the condition operator as a workaround for this finding\. This means "Deny the action if the key is present in the request context and the values match\. Otherwise, deny the action\." In the previous example, including the `lambda:DeleteFunction` action in the `DenyDeleteSupported` statement with the `StringEqualsIfExists` operator always denies the action\. For that action, the key is not present in the context, and every attempt to delete that resource type is denied, regardless of whether the resource is tagged\.
-
-**Related terms**
-+ [Global condition keys](reference_policies_condition-keys.md)
-+ [Comparing ABAC to RBAC](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)
-+ [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
-+ [Condition element](reference_policies_elements_condition.md)
-+ [Overview of JSON policies](access_policies.md#access_policies-json)
-
 ## Security Warning – ForAllValues with single valued key<a name="access-analyzer-reference-policy-checks-security-warning-forallvalues-with-single-valued-key"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
@@ -2085,33 +2174,6 @@ AWS recommends that you use the `ForAllValues` only with multivalued conditions\
 
 To learn whether a condition supports a single value or multiple values, review the [Actions, resources, and condition keys](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) page for the service\. Condition keys with the `ArrayOf` data type prefix are multivalued condition keys\. For example, Amazon SES supports keys with single values \(`String`\) and the `ArrayOfString` multivalued data type\.
 + [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)
-
-## Security Warning – Missing paired condition keys<a name="access-analyzer-reference-policy-checks-security-warning-missing-paired-condition-keys"></a>
-
-In the AWS Management Console, the finding for this check includes the following message:
-
-```
-Missing paired condition keys: Using the condition key can be overly permissive without also using the following condition keys:. Condition keys like this one are more secure when paired with a related key. We recommend that you add the related condition keys to the same condition block.
-```
-
-In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
-
-```
-"findingDetails": "Using the condition key can be overly permissive without also using the following condition keys:. Condition keys like this one are more secure when paired with a related key. We recommend that you add the related condition keys to the same condition block."
-```
-
-**Resolving the security warning**
-
-Some condition keys are more secure when paired with other related condition keys\. AWS recommends that you include the related condition keys in the same condition block as the existing condition key\. This makes the permissions granted through the policy more secure\.
-
-For example, you can use the `aws:VpcSourceIp` condition key to compare the IP address from which a request was made with the IP address that you specify in the policy\. AWS recommends that you add the related `aws:SourceVPC` condition key\. This checks whether the request comes from the VPC that you specify in the policy *and* the IP address that you specify\.
-
-**Related terms**
-+ [`aws:VpcSourceIp` global condition key](reference_policies_condition-keys.md#condition-keys-vpcsourceip)
-+ [`aws:SourceVPC` global condition key](reference_policies_condition-keys.md#condition-keys-sourcevpc)
-+ [Global condition keys](reference_policies_condition-keys.md)
-+ [Condition element](reference_policies_elements_condition.md)
-+ [Overview of JSON policies](access_policies.md#access_policies-json)
 
 ## Security Warning – Pass role with NotResource<a name="access-analyzer-reference-policy-checks-security-warning-pass-role-with-not-resource"></a>
 
@@ -2284,25 +2346,117 @@ To configure many AWS services, you must pass an IAM role to the service\. To al
 + [IAM JSON policy elements: Action](reference_policies_elements_action.md)
 + [IAM JSON policy elements: Resource](reference_policies_elements_resource.md)
 
-## Suggestion – Allow NotAction with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-suggestion-allow-notaction-with-unsupported-tag-condition-key-for-service"></a>
+## Security Warning – Missing paired condition keys<a name="access-analyzer-reference-policy-checks-security-warning-missing-paired-condition-keys"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Allow NotAction with unsupported tag condition key for service: Using the effect Allow with NotAction and the tag condition key allows only service actions that support the condition key. The condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction.
+Missing paired condition keys: Using the condition key can be overly permissive without also using the following condition keys:. Condition keys like this one are more secure when paired with a related key. We recommend that you add the related condition keys to the same condition block.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the effect Allow with NotAction and the tag condition key allows only service actions that support the condition key. The condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction."
+"findingDetails": "Using the condition key can be overly permissive without also using the following condition keys:. Condition keys like this one are more secure when paired with a related key. We recommend that you add the related condition keys to the same condition block."
 ```
 
-**Resolving the suggestion**
+**Resolving the security warning**
 
-Using unsupported tag condition keys in the `Condition` element of a policy with the element `NotAction` and `"Effect": "Allow"` does not affect the permissions granted by the policy\. The condition is ignored for service actions that don’t support the condition key\. AWS recommends that you rewrite the logic to allow a list of actions\.
+Some condition keys are more secure when paired with other related condition keys\. AWS recommends that you include the related condition keys in the same condition block as the existing condition key\. This makes the permissions granted through the policy more secure\.
 
-If you use the `aws:ResourceTag` condition key with `NotAction`, any new or existing service actions that don’t support the key are not allowed\. AWS recommends that you explicitly list the actions that you want to allow\. IAM Access Analyzer returns a separate finding for listed actions that don’t support the `aws:ResourceTag` condition key\. For more information, see [Suggestion – Allow with unsupported tag condition key for service](#access-analyzer-reference-policy-checks-suggestion-allow-with-unsupported-tag-condition-key-for-service)\.
+For example, you can use the `aws:VpcSourceIp` condition key to compare the IP address from which a request was made with the IP address that you specify in the policy\. AWS recommends that you add the related `aws:SourceVPC` condition key\. This checks whether the request comes from the VPC that you specify in the policy *and* the IP address that you specify\.
+
+**Related terms**
++ [`aws:VpcSourceIp` global condition key](reference_policies_condition-keys.md#condition-keys-vpcsourceip)
++ [`aws:SourceVPC` global condition key](reference_policies_condition-keys.md#condition-keys-sourcevpc)
++ [Global condition keys](reference_policies_condition-keys.md)
++ [Condition element](reference_policies_elements_condition.md)
++ [Overview of JSON policies](access_policies.md#access_policies-json)
+
+## Security Warning – Deny with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-security-warning-deny-with-unsupported-tag-condition-key-for-service"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Deny with unsupported tag condition key for service: Using the effect Deny with the tag condition key and actions for services with the following prefixes can be overly permissive:. Actions for the listed services are not denied by this statement. We recommend that you move these actions to a different statement without this condition key.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "Using the effect Deny with the tag condition key and actions for services with the following prefixes can be overly permissive:. Actions for the listed services are not denied by this statement. We recommend that you move these actions to a different statement without this condition key."
+```
+
+**Resolving the security warning**
+
+Using unsupported tag condition keys in the `Condition` element of a policy with `"Effect": "Deny"` can be overly permissive, because the condition is ignored for that service\. AWS recommends that you remove the service actions that don’t support the condition key and create another statement to deny access to specific resources for those actions\.
+
+If you use the `aws:ResourceTag` condition key and it’s not supported by a service action, then the key is not included in the request context\. In this case, the condition in the `Deny` statement always returns `false` and the action is never denied\. This happens even if the resource is tagged correctly\.
+
+When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
+
+**Note**  
+Some services allow support for the `aws:ResourceTag` condition key for a subset of their resources and actions\. IAM Access Analyzer returns findings for the service actions that are not supported\. For example, Amazon S3 supports `aws:ResourceTag` for a subset of its resources\. To view all of the resource types available in Amazon S3 that support the `aws:ResourceTag` condition key, see [Resource types defined by Amazon S3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-resources-for-iam-policies) in the Service Authorization Reference\.
+
+For example, assume that you want to deny access to untag delete specific resources that are tagged with the key\-value pair `status=Confidential`\. Also assume that AWS Lambda allows you to tag and untag resources, but doesn’t support the `aws:ResourceTag` condition key\. To deny the delete actions for AWS App Mesh and AWS Backup if this tag is present, use the `aws:ResourceTag` condition key\. For Lambda, use a resource naming convention that includes the `"Confidential"` prefix\. Then include a separate statement that prevents deleting resources with that naming convention\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyDeleteSupported",
+            "Effect": "Deny",
+            "Action": [
+                "appmesh:DeleteMesh", 
+                "backup:DeleteBackupPlan"
+                ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/status": "Confidential"
+                }
+            }
+        },
+        {
+            "Sid": "DenyDeleteUnsupported",
+            "Effect": "Deny",
+            "Action": "lambda:DeleteFunction",
+            "Resource": "arn:aws:lambda:*:403299380220:function:Confidential*"
+        }
+    ]
+}
+```
+
+**Warning**  
+Do not use the …[IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) version of the condition operator as a workaround for this finding\. This means "Deny the action if the key is present in the request context and the values match\. Otherwise, deny the action\." In the previous example, including the `lambda:DeleteFunction` action in the `DenyDeleteSupported` statement with the `StringEqualsIfExists` operator always denies the action\. For that action, the key is not present in the context, and every attempt to delete that resource type is denied, regardless of whether the resource is tagged\.
+
+**Related terms**
++ [Global condition keys](reference_policies_condition-keys.md)
++ [Comparing ABAC to RBAC](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)
++ [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
++ [Condition element](reference_policies_elements_condition.md)
++ [Overview of JSON policies](access_policies.md#access_policies-json)
+
+## Security Warning – Deny NotAction with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-security-warning-deny-notaction-with-unsupported-tag-condition-key-for-service"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Deny NotAction with unsupported tag condition key for service: Using the effect Deny with NotAction and the tag condition key can be overly permissive because some service actions are not denied by this statement. This is because the condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "Using the effect Deny with NotAction and the tag condition key can be overly permissive because some service actions are not denied by this statement. This is because the condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction."
+```
+
+**Resolving the security warning**
+
+Using tag condition keys in the `Condition` element of a policy with the element `NotAction` and `"Effect": "Deny"` can be overly permissive\. The condition is ignored for service actions that don’t support the condition key\. AWS recommends that you rewrite the logic to deny a list of actions\.
+
+If you use the `aws:ResourceTag` condition key with `NotAction`, any new or existing service actions that don’t support the key are not denied\. AWS recommends that you explicitly list the actions that you want to deny\. IAM Access Analyzer returns a separate finding for listed actions that don’t support the `aws:ResourceTag` condition key\. For more information, see [Security Warning – Deny with unsupported tag condition key for service](#access-analyzer-reference-policy-checks-security-warning-deny-with-unsupported-tag-condition-key-for-service)\. 
 
 When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
 
@@ -2313,70 +2467,29 @@ When a service supports the `aws:ResourceTag` condition key, you can use tags to
 + [Condition element](reference_policies_elements_condition.md)
 + [Overview of JSON policies](access_policies.md#access_policies-json)
 
-## Suggestion – Allow with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-suggestion-allow-with-unsupported-tag-condition-key-for-service"></a>
+## Security Warning – Restrict access to service principal<a name="access-analyzer-reference-policy-checks-security-warning-restrict-access-to-service-principal"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Allow with unsupported tag condition key for service: Using the effect Allow with the tag condition key and actions for services with the following prefixes does not affect the policy:. Actions for the listed service are not allowed by this statement. We recommend that you move these actions to a different statement without this condition key.
+Restrict access to service principal: Granting access to a service principal without specifying a source is overly permissive. Use aws:SourceArn or aws:SourceAccount condition key and scope access to a specific source to grant fine-grained access.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the effect Allow with the tag condition key and actions for services with the following prefixes does not affect the policy:. Actions for the listed service are not allowed by this statement. We recommend that you move these actions to a different statement without this condition key."
+"findingDetails": "Granting access to a service principal without specifying a source is overly permissive. Use aws:SourceArn or aws:SourceAccount condition key and scope access to a specific source to grant fine-grained access."
 ```
 
-**Resolving the suggestion**
+**Resolving the security warning**
 
-Using unsupported tag condition keys in the `Condition` element of a policy with `"Effect": "Allow"` does not affect the permissions granted by the policy, because the condition is ignored for that service action\. AWS recommends that you remove the actions for services that don’t support the condition key and create another statement to allow access to specific resources in that service\.
-
-If you use the `aws:ResourceTag` condition key and it’s not supported by a service action, then the key is not included in the request context\. In this case, the condition in the `Allow` statement always returns `false` and the action is never allowed\. This happens even if the resource is tagged correctly\. 
-
-When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
-
-**Note**  
-Some services allow support for the `aws:ResourceTag` condition key for a subset of their resources and actions\. IAM Access Analyzer returns findings for the service actions that are not supported\. For example, Amazon S3 supports `aws:ResourceTag` for a subset of its resources\. To view all of the resource types available in Amazon S3 that support the `aws:ResourceTag` condition key, see [Resource types defined by Amazon S3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-resources-for-iam-policies) in the Service Authorization Reference\.
-
-For example, assume that you want to allow team members to view details for specific resources that are tagged with the key\-value pair `team=BumbleBee`\. Also assume that AWS Lambda allows you to tag resources, but doesn’t support the `aws:ResourceTag` condition key\. To allow viewing details for AWS App Mesh and AWS Backup if this tag is present, use the `aws:ResourceTag` condition key\. For Lambda, use a resource naming convention that includes the team name as a prefix\. Then include a separate statement that allows viewing resources with that naming convention\.
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "AllowViewSupported",
-            "Effect": "Allow",
-            "Action": [
-                "appmesh:DescribeMesh", 
-                "backup:GetBackupPlan"
-                ],
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:ResourceTag/team": "BumbleBee"
-                }
-            }
-        },
-        {
-            "Sid": "AllowViewUnsupported",
-            "Effect": "Allow",
-            "Action": "lambda:GetFunction",
-            "Resource": "arn:aws:lambda:*:403299380220:function:BumbleBee*"
-        }
-    ]
-}
-```
-
-**Warning**  
-Do not use the `Not` [version of the condition operator](reference_policies_elements_condition_operators.md) with `"Effect": "Allow"` as a workaround for this finding\. These condition operators provide negated matching\. This means that after the condition is evaluated, the result is negated\. In the previous example, including the `lambda:GetFunction` action in the `AllowViewSupported` statement with the `StringNotEquals` operator always allows the action, regardless of whether the resource is tagged\.  
-Do not use the …[IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) version of the condition operator as a workaround for this finding\. This means "Allow the action if the key is present in the request context and the values match\. Otherwise, allow the action\." In the previous example, including the `lambda:GetFunction` action in the `AllowViewSupported` statement with the `StringEqualsIfExists` operator always allows the action\. For that action, the key is not present in the context, and every attempt to view that resource type is allowed, regardless of whether the resource is tagged\.
+You can specify AWS services in the `Principal` element of a resource\-based policy using a *service principal*, which is an identifier for the service\. When granting access to a service principal to act on your behalf, restrict access\. You can prevent overly permissive policies by using the `aws:SourceAccount` or `aws:SourceArn` condition keys to restrict access to a specific source, such as a specific resource ARN or AWS account\. Restricting access helps you prevent a security issue called the *confused deputy problem*\.
 
 **Related terms**
-+ [Global condition keys](reference_policies_condition-keys.md)
-+ [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
-+ [Condition element](reference_policies_elements_condition.md)
-+ [Overview of JSON policies](access_policies.md#access_policies-json)
++ [Service principals](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services)
++ [AWS global condition keys: aws:SourceAccount](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount)
++ [AWS global condition keys: aws:SourceArn](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn)
++ [The confused deputy problem](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html#cross-service-confused-deputy-prevention)
 
 ## Suggestion – Empty array action<a name="access-analyzer-reference-policy-checks-suggestion-empty-array-action"></a>
 
@@ -2766,13 +2879,13 @@ In this example, the permissions are defined if multi\-factor authentication \(M
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Redundant resource: "The resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)
+Redundant resource: The resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)"
+"findingDetails": "The resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)"
 ```
 
 **Resolving the suggestion**
@@ -2841,3 +2954,144 @@ When you include the name of an AWS service in a policy, AWS recommends that you
       "Resource": "arn:aws:*code*::111122223333:*"
 ```
 + [IAM JSON policy elements: Resource](reference_policies_elements_resource.md)
+
+## Suggestion – Allow with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-suggestion-allow-with-unsupported-tag-condition-key-for-service"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Allow with unsupported tag condition key for service: Using the effect Allow with the tag condition key and actions for services with the following prefixes does not affect the policy:. Actions for the listed service are not allowed by this statement. We recommend that you move these actions to a different statement without this condition key.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "Using the effect Allow with the tag condition key and actions for services with the following prefixes does not affect the policy:. Actions for the listed service are not allowed by this statement. We recommend that you move these actions to a different statement without this condition key."
+```
+
+**Resolving the suggestion**
+
+Using unsupported tag condition keys in the `Condition` element of a policy with `"Effect": "Allow"` does not affect the permissions granted by the policy, because the condition is ignored for that service action\. AWS recommends that you remove the actions for services that don’t support the condition key and create another statement to allow access to specific resources in that service\.
+
+If you use the `aws:ResourceTag` condition key and it’s not supported by a service action, then the key is not included in the request context\. In this case, the condition in the `Allow` statement always returns `false` and the action is never allowed\. This happens even if the resource is tagged correctly\. 
+
+When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
+
+**Note**  
+Some services allow support for the `aws:ResourceTag` condition key for a subset of their resources and actions\. IAM Access Analyzer returns findings for the service actions that are not supported\. For example, Amazon S3 supports `aws:ResourceTag` for a subset of its resources\. To view all of the resource types available in Amazon S3 that support the `aws:ResourceTag` condition key, see [Resource types defined by Amazon S3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-resources-for-iam-policies) in the Service Authorization Reference\.
+
+For example, assume that you want to allow team members to view details for specific resources that are tagged with the key\-value pair `team=BumbleBee`\. Also assume that AWS Lambda allows you to tag resources, but doesn’t support the `aws:ResourceTag` condition key\. To deny the delete actions for AWS App Mesh and AWS Backup if this tag is present, use the `aws:ResourceTag` condition key\. For Lambda, use a resource naming convention that includes the team name as a prefix\. Then include a separate statement that prevents viewing resources with that naming convention\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowViewSupported",
+            "Effect": "Allow",
+            "Action": [
+                "appmesh:DescribeMesh", 
+                "backup:GetBackupPlan"
+                ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "aws:ResourceTag/status": "New"
+                }
+            }
+        },
+        {
+            "Sid": "AllowViewUnsupported",
+            "Effect": "Allow",
+            "Action": "lambda:GetFunction",
+            "Resource": "arn:aws:lambda:*:403299380220:function:New*"
+        }
+    ]
+}
+```
+
+**Warning**  
+Do not use the `Not` [version of the condition operator](reference_policies_elements_condition_operators.md) with `"Effect": "Allow"` as a workaround for this finding\. These condition operators provide negated matching\. This means that after the condition is evaluated, the result is negated\. In the previous example, including the `lambda:GetFunction` action in the `AllowViewSupported` statement with the `StringNotEquals` operator always allows the action, regardless of whether the resource is tagged\.  
+Do not use the …[IfExists](reference_policies_elements_condition_operators.md#Conditions_IfExists) version of the condition operator as a workaround for this finding\. This means "Allow the action if the key is present in the request context and the values match\. Otherwise, allow the action\." In the previous example, including the `lambda:GetFunction` action in the `AllowViewSupported` statement with the `StringEqualsIfExists` operator always allows the action\. For that action, the key is not present in the context, and every attempt to view that resource type is allowed, regardless of whether the resource is tagged\.
+
+**Related terms**
++ [Global condition keys](reference_policies_condition-keys.md)
++ [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
++ [Condition element](reference_policies_elements_condition.md)
++ [Overview of JSON policies](access_policies.md#access_policies-json)
+
+## Suggestion – Allow NotAction with unsupported tag condition key for service<a name="access-analyzer-reference-policy-checks-suggestion-allow-notaction-with-unsupported-tag-condition-key-for-service"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Allow NotAction with unsupported tag condition key for service: Using the effect Allow with NotAction and the tag condition key allows only service actions that support the condition key. The condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "Using the effect Allow with NotAction and the tag condition key allows only service actions that support the condition key. The condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction."
+```
+
+**Resolving the suggestion**
+
+Using unsupported tag condition keys in the `Condition` element of a policy with the element `NotAction` and `"Effect": "Allow"` does not affect the permissions granted by the policy\. The condition is ignored for service actions that don’t support the condition key\. AWS recommends that you rewrite the logic to allow a list of actions\.
+
+If you use the `aws:ResourceTag` condition key with `NotAction`, any new or existing service actions that don’t support the key are not allowed\. AWS recommends that you explicitly list the actions that you want to allow\. IAM Access Analyzer returns a separate finding for listed actions that don’t support the `aws:ResourceTag` condition key\. For more information, see [Suggestion – Allow with unsupported tag condition key for service](#access-analyzer-reference-policy-checks-suggestion-allow-with-unsupported-tag-condition-key-for-service)\.
+
+When a service supports the `aws:ResourceTag` condition key, you can use tags to control access to that service’s resources\. This is known as [attribute\-based access control \(ABAC\)](introduction_attribute-based-access-control.md)\. Services that don’t support these keys require you to control access to resources using [resource\-based access control \(RBAC\)](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)\.
+
+**Related terms**
++ [Global condition keys](reference_policies_condition-keys.md)
++ [Comparing ABAC to RBAC](introduction_attribute-based-access-control.md#introduction_attribute-based-access-control_compare-rbac)
++ [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)
++ [Condition element](reference_policies_elements_condition.md)
++ [Overview of JSON policies](access_policies.md#access_policies-json)
+
+## Suggestion – Irrelevant condition key in policy<a name="access-analyzer-reference-policy-checks-suggestion-irrelevant-condition-key-in-policy"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Irrelevant condition key in policy: The condition key is not relevant for the policy. Use this key in an identity-based policy to govern access to this resource.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "The condition key is not relevant for the policy. Use this key in an identity-based policy to govern access to this resource."
+```
+
+**Resolving the suggestion**
+
+Some condition keys aren't relevant for resource\-based policies\. For example, the `s3:ResourceAccount` condition key isn't relevant for the resource\-based policy attached to an Amazon S3 bucket or Amazon S3 access point resource type\.
+
+You should use the condition key in an identity\-based policy to control access to the resource\.
+
+**Related terms**
++ [Identity\-based policies and resource\-based policies](access_policies_identity-vs-resource.md)
+
+## Suggestion – Recommended condition key for service principal<a name="access-analyzer-reference-policy-checks-suggestion-recommended-condition-key-for-service-principal"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Recommended condition key for service principal: To restrict access to the service principal operating on your behalf, we recommend aws:SourceArn or aws:SourceAccount instead of.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "To restrict access to the service principal operating on your behalf, we recommend aws:SourceArn or aws:SourceAccount instead of."
+```
+
+**Resolving the suggestion**
+
+You can specify AWS services in the `Principal` element of a resource\-based policy using a *service principal*, which is an identifier for the service\. You should use the `aws:SourceAccount` or `aws:SourceArn` condition keys when granting access to service principals instead of other condition keys, such as `aws:Referer`\. This helps you prevent a security issue called the *confused deputy problem*\.
+
+**Related terms**
++ [Service principals](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services)
++ [AWS global condition keys: aws:SourceAccount](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount)
++ [AWS global condition keys: aws:SourceArn](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn)
++ [The confused deputy problem](https://docs.aws.amazon.com/IAM/latest/UserGuide/confused-deputy.html#cross-service-confused-deputy-prevention)

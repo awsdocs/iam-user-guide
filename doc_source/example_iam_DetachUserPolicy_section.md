@@ -9,6 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -73,13 +74,13 @@ func main() {
 	fmt.Println("Role detached successfully")
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [DetachUserPolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DetachUserPolicy) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -98,8 +99,33 @@ def detach_policy(user_name, policy_arn):
             "Couldn't detach policy %s from user %s.", policy_arn, user_name)
         raise
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [DetachUserPolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/DetachUserPolicy) in *AWS SDK for Python \(Boto3\) API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn detach_user_policy(
+    client: &iamClient,
+    user_name: &str,
+    policy_arn: &str,
+) -> Result<(), iamError> {
+    client
+        .detach_user_policy()
+        .user_name(user_name)
+        .policy_arn(policy_arn)
+        .send()
+        .await?;
+
+    Ok(())
+}
+```
++  For API details, see [DetachUserPolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 

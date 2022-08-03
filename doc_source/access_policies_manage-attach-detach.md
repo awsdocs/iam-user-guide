@@ -31,7 +31,7 @@ You can use the console, AWS CLI, or AWS API to perform any of these actions\.
 + For more information about permissions boundaries, see [Permissions boundaries for IAM entities](access_policies_boundaries.md)\.
 + For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.
 + For information about validating IAM policies, see [Validating IAM policies](access_policies_policy-validator.md)\.
-+ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas](reference_iam-quotas.md)\.
++ The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
 ## View identity activity<a name="attach-detach_prerequisites"></a>
 

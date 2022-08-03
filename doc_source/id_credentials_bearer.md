@@ -19,8 +19,10 @@ If you perform an action in an AWS service that generates a bearer token for you
             "Sid": "AllowServiceBearerToken",
             "Effect": "Allow",
             "Action": "sts:GetServiceBearerToken",
-            "Resource": "arn:aws:iam::111122223333:user/TestUser1"
+            "Resource": "*"
         }
     ]
 }
 ```
+
+For a service bearer token example, see [ Using identity\-based policies for AWS CodeArtifact](https://docs.aws.amazon.com/codeartifact/latest/ug/auth-and-access-control-iam-identity-based-access-control.html) in the *AWS CodeArtifact* user guide\.

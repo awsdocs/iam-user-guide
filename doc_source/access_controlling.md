@@ -36,7 +36,7 @@ You can use a permissions boundary on Zhang to make sure that he is never given 
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "SomeServices",
+            "Sid": "PermissionsBoundarySomeServices",
             "Effect": "Allow",
             "Action": [
                 "cloudwatch:*",
@@ -47,12 +47,12 @@ You can use a permissions boundary on Zhang to make sure that he is never given 
             "Resource": "*"
         },
         {
-            "Sid": "NoConfidentialBucket",
+            "Sid": "PermissionsBoundaryNoConfidentialBucket",
             "Effect": "Deny",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::CompanyConfidential/*",
-                "arn:aws:s3:::CompanyConfidential"
+                "arn:aws:s3:::CompanyConfidential",
+                "arn:aws:s3:::CompanyConfidential/*"
             ]
         }
     ]

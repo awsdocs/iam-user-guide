@@ -6,9 +6,43 @@ The following code examples show how to create an IAM policy\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+        /// <summary>
+        /// Create a policy to allow a user to list the buckets in an account.
+        /// </summary>
+        /// <param name="client">The initialized IAM client object.</param>
+        /// <param name="policyName">The name of the poicy to create.</param>
+        /// <param name="policyDocument">The permissions policy document.</param>
+        /// <returns>The newly created ManagedPolicy object.</returns>
+        public static async Task<ManagedPolicy> CreatePolicyAsync(
+            AmazonIdentityManagementServiceClient client,
+            string policyName,
+            string policyDocument)
+        {
+            var request = new CreatePolicyRequest
+            {
+                PolicyName = policyName,
+                PolicyDocument = policyDocument,
+            };
+
+            var response = await client.CreatePolicyAsync(request);
+
+            return response.Policy;
+        }
+```
++  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreatePolicy) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -43,37 +77,38 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 	})
 
 	if err != nil {
-		panic("Could't create policy!" + err.Error())
+		panic("Couldn't create policy!" + err.Error())
 	}
 
 	fmt.Print("Created a new policy: " + *createPolicyResult.Policy.Arn)
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
 +  For API details, see [CreatePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreatePolicy) in *AWS SDK for Go API Reference*\. 
 
 ------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
     public static String createIAMPolicy(IamClient iam, String policyName ) {
 
         try {
-            // Create an IamWaiter object
+            // Create an IamWaiter object.
             IamWaiter iamWaiter = iam.waiter();
 
             CreatePolicyRequest request = CreatePolicyRequest.builder()
                 .policyName(policyName)
-                .policyDocument(PolicyDocument).build();
+                .policyDocument(PolicyDocument)
+                .build();
 
             CreatePolicyResponse response = iam.createPolicy(request);
 
-            // Wait until the policy is created
+            // Wait until the policy is created.
             GetPolicyRequest polRequest = GetPolicyRequest.builder()
-                    .policyArn(response.policy().arn())
-                    .build();
+                .policyArn(response.policy().arn())
+                .build();
 
             WaiterResponse<GetPolicyResponse> waitUntilPolicyExists = iamWaiter.waitUntilPolicyExists(polRequest);
             waitUntilPolicyExists.matched().response().ifPresent(System.out::println);
@@ -86,13 +121,13 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
         return "" ;
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/SdkForJavaV2/iam-2010-05-08/CreatePolicy) in *AWS SDK for Java 2\.x API Reference*\. 
 
 ------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -148,11 +183,11 @@ export const run = async () => {
 };
 run();
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-creating)\. 
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/createpolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -199,7 +234,6 @@ iam.createPolicy(params, function(err, data) {
   }
 });
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/iam-examples-policies.html#iam-examples-policies-creating)\. 
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/iam-2010-05-08/CreatePolicy) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -208,27 +242,28 @@ iam.createPolicy(params, function(err, data) {
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
   
 
 ```
 suspend fun createIAMPolicy(policyNameVal: String?): String {
 
     val policyDocumentVal = "{" +
-            "  \"Version\": \"2012-10-17\"," +
-            "  \"Statement\": [" +
-            "    {" +
-            "        \"Effect\": \"Allow\"," +
-            "        \"Action\": [" +
-            "            \"dynamodb:DeleteItem\"," +
-            "            \"dynamodb:GetItem\"," +
-            "            \"dynamodb:PutItem\"," +
-            "            \"dynamodb:Scan\"," +
-            "            \"dynamodb:UpdateItem\"" +
-            "       ]," +
-            "       \"Resource\": \"*\"" +
-            "    }" +
-            "   ]" +
-            "}"
+        "  \"Version\": \"2012-10-17\"," +
+        "  \"Statement\": [" +
+        "    {" +
+        "        \"Effect\": \"Allow\"," +
+        "        \"Action\": [" +
+        "            \"dynamodb:DeleteItem\"," +
+        "            \"dynamodb:GetItem\"," +
+        "            \"dynamodb:PutItem\"," +
+        "            \"dynamodb:Scan\"," +
+        "            \"dynamodb:UpdateItem\"" +
+        "       ]," +
+        "       \"Resource\": \"*\"" +
+        "    }" +
+        "   ]" +
+        "}"
 
     val request = CreatePolicyRequest {
         policyName = policyNameVal
@@ -236,18 +271,18 @@ suspend fun createIAMPolicy(policyNameVal: String?): String {
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
-          val response = iamClient.createPolicy(request)
-          return response.policy?.arn.toString()
+        val response = iamClient.createPolicy(request)
+        return response.policy?.arn.toString()
     }
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 +  For API details, see [CreatePolicy](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 
 ------
 #### [ PHP ]
 
 **SDK for PHP**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -275,13 +310,13 @@ echo "Created policy: {$listAllBucketsPolicy['PolicyName']}\n";
         return $result['Policy'];
     }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/SdkForPHPV3/iam-2010-05-08/CreatePolicy) in *AWS SDK for PHP API Reference*\. 
 
 ------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -320,13 +355,13 @@ def create_policy(name, description, actions, resource_arn):
     else:
         return policy
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/boto3/iam-2010-05-08/CreatePolicy) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
 ------
 #### [ Ruby ]
 
 **SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -357,8 +392,32 @@ def create_policy(name, description, actions, resource_arn):
     policy
   end
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/CreatePolicy) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+  
+
+```
+pub async fn create_policy(
+    client: &iamClient,
+    policy_name: &str,
+    policy_document: &str,
+) -> Result<Policy, iamError> {
+    let policy = client
+        .create_policy()
+        .policy_name(policy_name)
+        .policy_document(policy_document)
+        .send()
+        .await?;
+    Ok(policy.policy.unwrap())
+}
+```
++  For API details, see [CreatePolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 
