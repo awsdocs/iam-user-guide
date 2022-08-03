@@ -387,22 +387,22 @@ If the user uses the assumed role session to perform an action, the source ident
   "eventVersion": "1.08",
   "userIdentity": {
     "type": "AssumedRole",
-    "principalId": "AROAJ45Q7YFFAREXAMPLE: Dev1",
-    "arn": "arn: aws: sts: : 123456789012: assumed-role/DevRole/Dev1",
+    "principalId": "AROAJ45Q7YFFAREXAMPLE:Dev1",
+    "arn": "arn:aws:sts::123456789012:assumed-role/DevRole/Dev1",
     "accountId": "123456789012",
     "accessKeyId": "ASIAIOSFODNN7EXAMPLE",
     "sessionContext": {
       "sessionIssuer": {
         "type": "Role",
         "principalId": "AROAJ45Q7YFFAREXAMPLE",
-        "arn": "arn: aws: iam: : 123456789012: role/DevRole",
+        "arn": "arn:aws:iam::123456789012:role/DevRole",
         "accountId": "123456789012",
         "userName": "DevRole"
       },
       "webIdFederationData": {},
       "attributes": {
         "mfaAuthenticated": "false",
-        "creationDate": "2021-02-21T23: 46: 28Z"
+        "creationDate": "2021-02-21T23:46:28Z"
       },
       "sourceIdentity": "source-identity-value-present"
     }
