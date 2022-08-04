@@ -2422,7 +2422,7 @@ For example, assume that you want to deny access to untag delete specific resour
             "Sid": "DenyDeleteUnsupported",
             "Effect": "Deny",
             "Action": "lambda:DeleteFunction",
-            "Resource": "arn:aws:lambda:*:403299380220:function:Confidential*"
+            "Resource": "arn:aws:lambda:*:123456789012:function:status-Confidential*"
         }
     ]
 }
@@ -2980,7 +2980,7 @@ When a service supports the `aws:ResourceTag` condition key, you can use tags to
 **Note**  
 Some services allow support for the `aws:ResourceTag` condition key for a subset of their resources and actions\. IAM Access Analyzer returns findings for the service actions that are not supported\. For example, Amazon S3 supports `aws:ResourceTag` for a subset of its resources\. To view all of the resource types available in Amazon S3 that support the `aws:ResourceTag` condition key, see [Resource types defined by Amazon S3](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-resources-for-iam-policies) in the Service Authorization Reference\.
 
-For example, assume that you want to allow team members to view details for specific resources that are tagged with the key\-value pair `team=BumbleBee`\. Also assume that AWS Lambda allows you to tag resources, but doesn’t support the `aws:ResourceTag` condition key\. To deny the delete actions for AWS App Mesh and AWS Backup if this tag is present, use the `aws:ResourceTag` condition key\. For Lambda, use a resource naming convention that includes the team name as a prefix\. Then include a separate statement that prevents viewing resources with that naming convention\.
+For example, assume that you want to allow team members to view details for specific resources that are tagged with the key\-value pair `team=BumbleBee`\. Also assume that AWS Lambda allows you to tag resources, but doesn’t support the `aws:ResourceTag` condition key\. To allow view actions for AWS App Mesh and AWS Backup if this tag is present, use the `aws:ResourceTag` condition key\. For Lambda, use a resource naming convention that includes the team name as a prefix\. Then include a separate statement that allows viewing resources with that naming convention\.
 
 ```
 {
@@ -2996,7 +2996,7 @@ For example, assume that you want to allow team members to view details for spec
             "Resource": "*",
             "Condition": {
                 "StringEquals": {
-                    "aws:ResourceTag/status": "New"
+                    "aws:ResourceTag/team": "BumbleBee"
                 }
             }
         },
@@ -3004,7 +3004,7 @@ For example, assume that you want to allow team members to view details for spec
             "Sid": "AllowViewUnsupported",
             "Effect": "Allow",
             "Action": "lambda:GetFunction",
-            "Resource": "arn:aws:lambda:*:403299380220:function:New*"
+            "Resource": "arn:aws:lambda:*:123456789012:function:team-BumbleBee*"
         }
     ]
 }

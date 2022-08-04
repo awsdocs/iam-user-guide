@@ -29,7 +29,7 @@ You can use policies to control what the person making the request \(the princip
 
 For example, assume that you want the user Zhang Wei to have full access to CloudWatch, Amazon DynamoDB, Amazon EC2, and Amazon S3\. You can create two different policies so that you can later break them up if you need one set of permissions for a different user\. Or you can put both the permissions together in a single policy, and then attach that policy to the IAM user that is named Zhang Wei\. You could also attach a policy to a user group to which Zhang belongs, or a role that Zhang can assume\. As a result, when Zhang views the contents of an S3 bucket, his requests are allowed\. If he tries to create a new IAM user, his request is denied because he doesn't have permission\. 
 
-You can use a permissions boundary on Zhang to make sure that he is never given access to the `CompanyConfidential` S3 bucket\. To do this, determine the *maximum* permissions that you want Zhang to have\. In this case, you control what he does using his permissions policies\. Here, you only care that he doesn't access the confidential bucket\. So you use the following policy to define Zhang's boundary to allow all AWS actions for Amazon S3 and a few other services but deny access to the `CompanyConfidential` S3 bucket\. Because the permissions boundary does not allow any IAM actions, it prevents Zhang from deleting his \(or anyone's\) boundary\.
+You can use a permissions boundary on Zhang to make sure that he is never given access to the `DOC-EXAMPLE-BUCKET1` S3 bucket\. To do this, determine the *maximum* permissions that you want Zhang to have\. In this case, you control what he does using his permissions policies\. Here, you only care that he doesn't access the confidential bucket\. So you use the following policy to define Zhang's boundary to allow all AWS actions for Amazon S3 and a few other services but deny access to the `DOC-EXAMPLE-BUCKET1` S3 bucket\. Because the permissions boundary does not allow any IAM actions, it prevents Zhang from deleting his \(or anyone's\) boundary\.
 
 ```
 {
@@ -51,8 +51,8 @@ You can use a permissions boundary on Zhang to make sure that he is never given 
             "Effect": "Deny",
             "Action": "s3:*",
             "Resource": [
-                "arn:aws:s3:::CompanyConfidential",
-                "arn:aws:s3:::CompanyConfidential/*"
+                "arn:aws:s3:::DOC-EXAMPLE-BUCKET1",
+                "arn:aws:s3:::DOC-EXAMPLE-BUCKET1/*"
             ]
         }
     ]
