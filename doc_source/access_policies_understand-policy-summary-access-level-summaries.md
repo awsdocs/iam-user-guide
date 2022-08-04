@@ -2,7 +2,7 @@
 
 ## AWS access level summary<a name="access_policies_access-level-summaries"></a>
 
-Policy summaries include an access level summary that describes the action permissions defined for each service that is mentioned in the policy\. To learn about policy summaries, see [Understanding permissions granted by a policy](access_policies_understand.md)\. Access level summaries indicate whether the actions in each access level \(`List`, `Read`, `Write`, and `Permissions management`\) have `Full` or `Limited` permissions defined in the policy\. To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
+Policy summaries include an access level summary that describes the action permissions defined for each service that is mentioned in the policy\. To learn about policy summaries, see [Understanding permissions granted by a policy](access_policies_understand.md)\. Access level summaries indicate whether the actions in each access level \(`List`, `Read`, `Write`, `Permissions management`, and `Tagging`\) have `Full` or `Limited` permissions defined in the policy\. To view the access level classification that is assigned to each action in a service, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
 
 The following example describes the access provided by a policy for the given services\. For examples of full JSON policy documents and their related summaries, see [Examples of policy summaries](access_policies_policy-summary-examples.md)\.
 
@@ -26,7 +26,7 @@ As [previously mentioned](access_policies_understand-policy-summary.md#full-vs-l
 + **None**: The policy provides no access\.
 + \(empty\): IAM does not recognize this service\. If the service name includes a typo, then the policy provides no access to the service\. If the service name is correct, then the service might not support policy summaries or might be in preview\. In this case, the policy might provide access, but that access cannot be shown in the policy summary\. To request policy summary support for a generally available \(GA\) service, see [Service does not support IAM policy summaries](troubleshoot_policies.md#unsupported-services-actions)\.
 
-Access level summaries that include limited \(partial\) access to actions are grouped using the AWS access level classifications `List`, `Read`, `Write`, `Permissions Management`, or `Tagging`\.
+Access level summaries that include limited \(partial\) access to actions are grouped using the AWS access level classifications `List`, `Read`, `Write`, `Permissions management`, or `Tagging`\.
 
 ## AWS access levels<a name="access_policies_access-level"></a>
 
