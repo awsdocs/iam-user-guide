@@ -248,6 +248,31 @@ Use this key to compare the account to which the requesting principal belongs wi
 + **Availability** – This key is included in the request context for all requests, including anonymous requests\.
 + **Value type** – Single\-valued
 
+In the following example, access is denied except to principals with the account number `123456789012`\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyAccessFromPrincipalNotInSpecificAccount",
+      "Action": "service:*",
+      "Effect": "Deny",
+      "Resource": [
+        "arn:partition:service:region:accountID:resource"
+      ],
+      "Condition": {
+        "StringNotEquals": {
+          "aws:PrincipalAccount": [
+            "123456789012"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
 ## aws:PrincipalArn<a name="condition-keys-principalarn"></a>
 
 Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN) and [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.

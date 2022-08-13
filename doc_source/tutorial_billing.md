@@ -70,11 +70,13 @@ Next, create custom policies that grant both view and full access permissions to
 
    **Full access**
 
-   1. Choose **Select actions** and then select the check box next to **All Billing actions \(aws\-portal:\*\)**\. You do not need to select a resource or condition for this policy\.
+   1. Select the check box next to **All Billing actions \(aws\-portal:\*\)** under **Manual actions**\. You do not need to select a resource or condition for this policy\.
 
-   1. Choose **Review policy**\.
+   1. Choose **Next: Tags**\.
 
-   1. On the **Review** page, next to **Name**, type **BillingFullAccess**, and then choose **Create policy** to save it\.
+   1. Choose **Next: Review**\.
+
+   1. On the **Review policy** page, next to **Name**, type **BillingFullAccess**, and then choose **Create policy** to save it\.
 
    **Read\-only access**
 
@@ -82,9 +84,11 @@ Next, create custom policies that grant both view and full access permissions to
 
    1. Choose **Select actions** and then select the check box next to **Read**\. You do not need to select a resource or condition for this policy\.
 
-   1. Choose **Review policy**\.
+   1. Choose **Next: Tags**\.
 
-   1. On the **Review** page, for **Name**, type **BillingViewAccess**\. Then choose **Create policy** to save it\.
+   1. Choose **Next: Review**\.
+
+   1. On the **Review policy** page, for **Name**, type **BillingViewAccess**\. Then choose **Create policy** to save it\.
 
    To review descriptions for each of the permissions available in IAM policies that grant users access to the Billing and Cost Management console, see [Billing Permissions Descriptions](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-permissions-ref.html#user-permissions)\.
 

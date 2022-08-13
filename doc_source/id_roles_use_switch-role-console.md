@@ -11,8 +11,9 @@ When you switch roles in the AWS Management Console, the console always uses you
 
 This section provides additional information about using the IAM console to switch to a role\.
 
-**Note**  
+**Notes:**  
 You cannot switch roles if you sign in as the AWS account root user\. You can switch roles when you sign in as an IAM user, a SAML\-federated role, or a web\-identity federated role\.
+You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API that supports the `ExternalId` parameter\.
 + If your administrator gives you a link, choose the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. The link takes you to the appropriate webpage and fills in the account ID \(or alias\) and the role name\.
 + You can manually construct the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. To construct your link, use the following format:
 

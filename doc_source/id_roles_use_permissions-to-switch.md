@@ -7,7 +7,7 @@ To grant a user permission to switch to a role, the administrator of the trusted
 Note that you can switch roles only when you sign in as an IAM user, a SAML\-federated role, or a web\-identity federated role\. You cannot switch roles when you sign in as the AWS account root user\.
 
 **Important**  
-You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the AssumeRole API that supports the `ExternalId` parameter\.
+You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API that supports the `ExternalId` parameter\.
 
 **Notes**  
 This topic discusses policies for a *user*, because we are ultimately granting permissions to a user to accomplish a task\. However, it is best practice not to grant permissions directly to an individual user\. For easier management, we recommend assigning policies and granting permissions to IAM groups and then making the users members of the appropriate groups\. 
