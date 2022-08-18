@@ -9,7 +9,7 @@ The `s3:*Object` action uses a wildcard as part of the action name\. The `AllObj
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "ConsoleAccess",
+            "Sid": "S3ConsoleAccess",
             "Effect": "Allow",
             "Action": [
                 "s3:GetAccountPublicAccessBlock",
@@ -17,6 +17,7 @@ The `s3:*Object` action uses a wildcard as part of the action name\. The `AllObj
                 "s3:GetBucketLocation",
                 "s3:GetBucketPolicyStatus",
                 "s3:GetBucketPublicAccessBlock",
+                "s3:ListAccessPoints",
                 "s3:ListAllMyBuckets"
             ],
             "Resource": "*"

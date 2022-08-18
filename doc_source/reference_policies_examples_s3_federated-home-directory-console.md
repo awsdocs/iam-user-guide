@@ -11,14 +11,21 @@ You can view the role ID using the AWS CLI command `aws iam get-role --role-name
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Sid": "S3ConsoleAccess",
             "Effect": "Allow",
             "Action": [
-                "s3:ListAllMyBuckets",
-                "s3:GetBucketLocation"
+                "s3:GetAccountPublicAccessBlock",
+                "s3:GetBucketAcl",
+                "s3:GetBucketLocation",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketPublicAccessBlock",
+                "s3:ListAccessPoints",
+                "s3:ListAllMyBuckets"
             ],
             "Resource": "*"
         },
         {
+            "Sid": "ListObjectsInBucket",
             "Effect": "Allow",
             "Action": "s3:ListBucket",
             "Resource": "arn:aws:s3:::bucket-name",

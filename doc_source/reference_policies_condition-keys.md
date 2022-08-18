@@ -157,7 +157,7 @@ You can use any single\-valued condition key as a [variable](reference_policies_
     "Effect": "Allow",
     "Principal": "*",
     "Action": "s3:GetObject",
-    "Resource": "arn:aws:s3:::BUCKET-NAME/${aws:FederatedProvider}/*"
+    "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/${aws:FederatedProvider}/*"
   }
 }
 ```
@@ -289,22 +289,22 @@ The following list shows the request context value returned for different types 
 + **IAM role** – The request context contains the following value for condition key `aws:PrincipalArn`\. Do not specify the assumed role session ARN as a value for this condition key\. For more information about the assumed role session principal, see [Role session principals](reference_policies_elements_principal.md#principal-role-session)\.
 
   ```
-  arn:aws:iam::AWS-account-ID:role/role-name
+  arn:aws:iam::123456789012:role/role-name
   ```
 + **IAM user** – The request context contains the following value for condition key `aws:PrincipalArn`\.
 
   ```
-  arn:aws:iam::AWS-account-ID:user/user-name
+  arn:aws:iam::123456789012:user/user-name
   ```
 + **AWS STS federated user sessions** – The request context contains the following value for condition key `aws:PrincipalArn`\.
 
   ```
-  arn:aws:sts::AWS-account-ID:federated-user/user-name
+  arn:aws:sts::123456789012:federated-user/user-name
   ```
 + **AWS account root user** – The request context contains the following value for condition key `aws:PrincipalArn`\. When you specify the root user ARN as the value for the `aws:PrincipalArn` condition key, it limits permissions only for the root user of the AWS account\. This is different from specifying the root user ARN in the principal element of a resource\-based policy, which delegates authority to the AWS account\. For more information about specifying the root user ARN in the principal element of a resource\-based policy, see [AWS account principals](reference_policies_elements_principal.md#principal-accounts)\. 
 
   ```
-  arn:aws:iam::AWS-account-ID:root
+  arn:aws:iam::123456789012:root
   ```
 
   You can specify the root user ARN as a value for condition key `aws:PrincipalArn` in AWS Organizations service control policies \(SCPs\)\. SCPs are a type of organization policy used to manage permissions in your organization and affect only member accounts in the organization\. An SCP restricts permissions for IAM users and roles in member accounts, including the member account's root user\. For more information about the effect of SCPs on permissions, see [SCP effects on permissions](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html#scp-effects-on-permissions) in the *Organizations User Guide*\.
@@ -330,7 +330,7 @@ In the following Amazon S3 bucket policy example, access to the bucket is restri
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::my-logs-bucket/AWSLogs/AccountNumber/*",
+      "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET1/AWSLogs/AccountNumber/*",
       "Condition": {
         "StringNotEqualsIfExists": {
           "aws:SourceVpc": "vpc-111bbb22"
@@ -458,7 +458,7 @@ In the following Amazon S3 bucket policy example, access to the bucket is restri
       "Effect": "Deny",
       "Principal": "*",
       "Action": "s3:PutObject",
-      "Resource": "arn:aws:s3:::my-logs-bucket/AWSLogs/AccountNumber/*",
+      "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET1/AWSLogs/AccountNumber/*",
       "Condition": {
         "StringNotEqualsIfExists": {
           "aws:SourceVpc": "vpc-111bbb22",
@@ -653,8 +653,8 @@ Some AWS services require access to AWS\-owned resources that are hosted in anot
 This key is equal to the AWS account ID for the account with the resources evaluated in the request\.
 
 For most resources in your account, the [ARN](reference_policies_elements_condition_operators.md#Conditions_ARN) contains the owner account ID for that resource\. For certain resources, such as Amazon S3 buckets, the resource ARN does not include the account ID\. The following two examples show the difference between a resource with an account ID in the ARN, and an Amazon S3 ARN without an account ID:
-+ `arn:aws:iam::111122223333:role/AWSExampleRole` – IAM role created and owned within the account `111122223333`\. 
-+ `arn:aws:s3:::AWSExampleS3Bucket` – Amazon S3 bucket created and owned within the account `444455556666`, not displayed in the ARN\.
++ `arn:aws:iam::123456789012:role/AWSExampleRole` – IAM role created and owned within the account 123456789012\. 
++ `arn:aws:s3:::DOC-EXAMPLE-BUCKET2` – Amazon S3 bucket created and owned within the account `111122223333`, not displayed in the ARN\.
 
 Use the AWS console, or API, or CLI, to find all of your resources and corresponding ARNs\.
 
@@ -861,7 +861,7 @@ The following role trust policy for `CriticalRole` in account `111122223333` con
         {
             "Sid": "AssumeRoleIfSourceIdentity",
             "Effect": "Allow",
-            "Principal": {"AWS": " arn:aws:iam::111122223333:role/CriticalRole"},
+            "Principal": {"AWS": " arn:aws:iam::123456789012:role/CriticalRole"},
             "Action": [
                 "sts:AssumeRole",
                 "sts:SetSourceIdentity"
@@ -888,7 +888,7 @@ Use this key to compare the requester's IP address with the IP address that you 
 
 The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `aws:ViaAWSService` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 
 
-For example, you can attach the following policy to an IAM user\. This policy allows the user to put an object into the `my-service-bucket` Amazon S3 bucket directly if they make the call from the specified IP address\. However, if the user makes another request that causes a service to call Amazon S3, the IP address restriction does not apply\. The `PrincipalPutObjectIfIpAddress` statement restricts the IP address only if the request is not made by a service\. The `ServicePutObject` statement allows the operation without IP address restriction if the request is made by a service\.
+For example, you can attach the following policy to an IAM user\. This policy allows the user to put an object into the `DOC-EXAMPLE-BUCKET3` Amazon S3 bucket directly if they make the call from the specified IP address\. However, if the user makes another request that causes a service to call Amazon S3, the IP address restriction does not apply\. The `PrincipalPutObjectIfIpAddress` statement restricts the IP address only if the request is not made by a service\. The `ServicePutObject` statement allows the operation without IP address restriction if the request is made by a service\.
 
 ```
 {
@@ -898,17 +898,17 @@ For example, you can attach the following policy to an IAM user\. This policy al
             "Sid": "PrincipalPutObjectIfIpAddress",
             "Effect": "Allow",
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::my-service-bucket/*",
+            "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET3/*",
             "Condition": {
                 "Bool": {"aws:ViaAWSService": "false"},
-                "IpAddress": {"aws:SourceIp": "123.45.167.89"}
+                "IpAddress": {"aws:SourceIp": "203.0.113.0"}
             }
         },
         {
             "Sid": "ServicePutObject",
             "Effect": "Allow",
             "Action": "s3:PutObject",
-            "Resource": "arn:aws:s3:::my-service-bucket/*",
+            "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*",
             "Condition": {
                 "Bool": {"aws:ViaAWSService": "true"}
             }

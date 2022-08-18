@@ -174,8 +174,8 @@ The following policy includes a condition that starts the policy on December 24,
         "Action": "*",
         "Resource": "*",
         "Condition": {
-          "DateGreaterThan": {"aws:CurrentTime": "2024-12-24T00:23:59Z"},
-          "DateLessThan": {"aws:CurrentTime": "2025-02-28T00:23:59Z"}
+          "DateGreaterThan": {"aws:CurrentTime": "2024-12-24T23:59:59Z"},
+          "DateLessThan": {"aws:CurrentTime": "2025-02-28T23:59:59Z"}
           }
        }
    ]
