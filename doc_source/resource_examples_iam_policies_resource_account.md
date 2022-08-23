@@ -8,7 +8,7 @@ You can create a policy with an exception to allow for AWS managed IAM policies\
 {
   "Version": "2012-10-17",
   "Statement": [
-  {
+    {
       "Sid": "AllowAccessToResourcesInSpecificAccountsAndSpecificService1",
       "Effect": "Deny",
       "NotAction":[
@@ -23,8 +23,9 @@ You can create a policy with an exception to allow for AWS managed IAM policies\
           "aws:ResourceAccount": [
             "111122223333"
           ]
-        },
-     }
-   }
+        }
+      }
+    }
+  ]
 }
 ```
