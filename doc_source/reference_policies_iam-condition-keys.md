@@ -105,7 +105,7 @@ You can use web identity federation to give temporary security credentials to us
 
 **amr**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-**Example**: `cognito-identity.amazonaws.com.com:amr`  
+**Example**: `cognito-identity.amazonaws.com:amr`  
 If you are using Amazon Cognito for web identity federation, the `cognito-identity.amazonaws.com:amr` key \(Authentication Methods Reference\) includes login information about the user\. The key is multivalued, meaning that you test it in a policy using [condition set operators](reference_policies_multi-value-conditions.md)\. The key can contain the following values:   
 + If the user is unauthenticated, the key contains only `unauthenticated`\.
 + If the user is authenticated, the key contains the value `authenticated` and the name of the login provider used in the call \(`graph.facebook.com`, `accounts.google.com`, or `www.amazon.com`\)\. 
