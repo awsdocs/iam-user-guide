@@ -2,142 +2,249 @@
 
 The following examples show how to call `GetSessionToken` and `AssumeRole` operations and pass MFA authentication parameters\. No permissions are required to call `GetSessionToken`, but you must have a policy that allows you to call `AssumeRole`\. The credentials returned are then used to list all S3 buckets in the account\.
 
-## Calling GetSessionToken with MFA authentication \(Python and C\#\)<a name="MFAProtectedAPI-example-getsessiontoken"></a>
+## Calling GetSessionToken with MFA authentication<a name="MFAProtectedAPI-example-getsessiontoken"></a>
 
-The following examples, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/) and [AWS SDK for \.NET](http://aws.amazon.com/sdkfornet/), show how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by the `GetSessionToken` operation are then used to list all S3 buckets in the account\.
+The following example shows how to call `GetSessionToken` and pass MFA authentication information\. The temporary security credentials returned by the `GetSessionToken` operation are then used to list all S3 buckets in the account\.
 
 The policy attached to the user who runs this code \(or to a group that the user is in\) provides the permissions for the returned temporary credentials\. For this example code, the policy must grant the user permission to request the Amazon S3 `ListBuckets` operation\. 
 
-### Using Python<a name="MFAProtectedAPI-python-example"></a>
+The following code example shows how to get a session token with AWS STS and use it to perform a service action that requires an MFA token\.
+
+------
+#### [ Python ]
+
+**SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
+Get a session token by passing an MFA token and use it to list Amazon S3 buckets for the account\.  
 
 ```
-import boto
-from boto.s3.connection import S3Connection
-from boto.sts import STSConnection
+def list_buckets_with_session_token_with_mfa(mfa_serial_number, mfa_totp, sts_client):
+    """
+    Gets a session token with MFA credentials and uses the temporary session
+    credentials to list Amazon S3 buckets.
 
-# Prompt for MFA time-based one-time password (TOTP)
-mfa_TOTP = raw_input("Enter the MFA code: ")
+    Requires an MFA device serial number and token.
 
-# The calls to AWS STS GetSessionToken must be signed with the access key ID and secret
-# access key of an IAM user. The credentials can be in environment variables or in 
-# a configuration file and will be discovered automatically
-# by the STSConnection() function. For more information, see the Python SDK 
-# documentation: http://boto.readthedocs.org/en/latest/boto_config_tut.html
+    :param mfa_serial_number: The serial number of the MFA device. For a virtual MFA
+                              device, this is an Amazon Resource Name (ARN).
+    :param mfa_totp: A time-based, one-time password issued by the MFA device.
+    :param sts_client: A Boto3 STS instance that has permission to assume the role.
+    """
+    if mfa_serial_number is not None:
+        response = sts_client.get_session_token(
+            SerialNumber=mfa_serial_number, TokenCode=mfa_totp)
+    else:
+        response = sts_client.get_session_token()
+    temp_credentials = response['Credentials']
 
-sts_connection = STSConnection()
+    s3_resource = boto3.resource(
+        's3',
+        aws_access_key_id=temp_credentials['AccessKeyId'],
+        aws_secret_access_key=temp_credentials['SecretAccessKey'],
+        aws_session_token=temp_credentials['SessionToken'])
 
-# Use the appropriate device ID (serial number for hardware device or ARN for virtual device). 
-# Replace ACCOUNT-NUMBER-WITHOUT-HYPHENS and MFA-DEVICE-ID with appropriate values.
-
-tempCredentials = sts_connection.get_session_token(
-    duration=3600,
-    mfa_serial_number="&region-arn;iam::ACCOUNT-NUMBER-WITHOUT-HYPHENS:mfa/MFA-DEVICE-ID",
-    mfa_token=mfa_TOTP
-)
-
-# Use the temporary credentials to list the contents of an S3 bucket
-s3_connection = S3Connection(
-    aws_access_key_id=tempCredentials.access_key,
-    aws_secret_access_key=tempCredentials.secret_key,
-    security_token=tempCredentials.session_token
-)
-
-# Replace BUCKET-NAME with an appropriate value.
-bucket = s3_connection.get_bucket(bucket_name="BUCKET-NAME")
-objectlist = bucket.list()
-for obj in objectlist:
-    print obj.name
+    print(f"Buckets for the account:")
+    for bucket in s3_resource.buckets.all():
+        print(bucket.name)
 ```
++  For API details, see [GetSessionToken](https://docs.aws.amazon.com/goto/boto3/sts-2011-06-15/GetSessionToken) in *AWS SDK for Python \(Boto3\) API Reference*\. 
 
-### Using C\#<a name="MFAProtectedAPI-csharp-example"></a>
+------
+
+## Calling AssumeRole with MFA authentication<a name="MFAProtectedAPI-example-assumerole"></a>
+
+The following examples show how to call `AssumeRole` and pass MFA authentication information\. The temporary security credentials returned by `AssumeRole` are then used to list all Amazon S3 buckets in the account\.
+
+For more information about this scenario, see [Scenario: MFA protection for cross\-account delegation](id_credentials_mfa_configure-api-require.md#MFAProtectedAPI-cross-account-delegation)\. 
+
+The following code examples show how to assume a role with AWS STS\.
+
+------
+#### [ JavaScript ]
+
+**SDK for JavaScript V3**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/sts#code-examples)\. 
+Create the client\.  
 
 ```
-Console.Write("Enter MFA code: ");
-string mfaTOTP = Console.ReadLine(); // Get string from user
+import { STSClient } from  "@aws-sdk/client-sts";
+// Set the AWS Region.
+const REGION = "REGION"; //e.g. "us-east-1"
+// Create an Amazon STS service client object.
+const stsClient = new STSClient({ region: REGION });
+export { stsClient };
+```
+Assume the IAM role\.  
 
-/* The calls to AWS STS GetSessionToken must be signed using the access key ID and secret
-   access key of an IAM user. The credentials can be in environment variables or in 
-   a configuration file and will be discovered automatically
-   by the AmazonSecurityTokenServiceClient constructor. For more information, see 
-   https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/net-dg-config-creds.html
-*/
-AmazonSecurityTokenServiceClient stsClient = 
-    new AmazonSecurityTokenServiceClient();
-GetSessionTokenRequest getSessionTokenRequest = new GetSessionTokenRequest();
-getSessionTokenRequest.DurationSeconds = 3600;
+```
+// Import required AWS SDK clients and commands for Node.js
+import { stsClient } from "./libs/stsClient.js";
+import {
+  AssumeRoleCommand,
+  GetCallerIdentityCommand,
+} from "@aws-sdk/client-sts";
 
-// Replace ACCOUNT-NUMBER-WITHOUT-HYPHENS and MFA-DEVICE-ID with appropriate values
-getSessionTokenRequest.SerialNumber = "arn:aws:iam::ACCOUNT-NUMBER-WITHOUT-HYPHENS:mfa/MFA-DEVICE-ID"; 
-getSessionTokenRequest.TokenCode = mfaTOTP;
+// Set the parameters
+export const params = {
+  RoleArn: "ARN_OF_ROLE_TO_ASSUME", //ARN_OF_ROLE_TO_ASSUME
+  RoleSessionName: "session1",
+  DurationSeconds: 900,
+};
 
-GetSessionTokenResponse getSessionTokenResponse = 
-    stsClient.GetSessionToken(getSessionTokenRequest);
+export const run = async () => {
+  try {
+    //Assume Role
+    const data = await stsClient.send(new AssumeRoleCommand(params));
+    return data;
+    const rolecreds = {
+      accessKeyId: data.Credentials.AccessKeyId,
+      secretAccessKey: data.Credentials.SecretAccessKey,
+      sessionToken: data.Credentials.SessionToken,
+    };
+    //Get Amazon Resource Name (ARN) of current identity
+    try {
+      const stsParams = { credentials: rolecreds };
+      const stsClient = new STSClient(stsParams);
+      const results = await stsClient.send(
+        new GetCallerIdentityCommand(rolecreds)
+      );
+      console.log("Success", results);
+    } catch (err) {
+      console.log(err, err.stack);
+    }
+  } catch (err) {
+    console.log("Error", err);
+  }
+};
+run();
+```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sts/classes/assumerolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-// Extract temporary credentials from result of GetSessionToken call
-GetSessionTokenResult getSessionTokenResult = 
-    getSessionTokenResponse.GetSessionTokenResult;
-string tempAccessKeyId = getSessionTokenResult.Credentials.AccessKeyId;
-string tempSessionToken = getSessionTokenResult.Credentials.SessionToken;
-string tempSecretAccessKey = getSessionTokenResult.Credentials.SecretAccessKey;
-SessionAWSCredentials tempCredentials = new SessionAWSCredentials(tempAccessKeyId, 
-    tempSecretAccessKey, tempSessionToken);
+**SDK for JavaScript V2**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/sts#code-examples)\. 
+  
 
-// Use the temporary credentials to list the contents of an S3 bucket
-// Replace BUCKET-NAME with an appropriate value
-ListObjectsRequest S3ListObjectsRequest = new ListObjectsRequest();
-S3ListObjectsRequest.BucketName = "BUCKET-NAME";
-S3Client = AWSClientFactory.CreateAmazonS3Client(tempCredentials);
-ListObjectsResponse S3ListObjectsResponse = 
-    S3Client.ListObjects(S3ListObjectsRequest);
-foreach (S3Object s3Object in S3ListObjectsResponse.S3Objects)
-{
-    Console.WriteLine(s3Object.Key);
+```
+// Load the AWS SDK for Node.js
+const AWS = require('aws-sdk');
+// Set the region 
+AWS.config.update({region: 'REGION'});
+
+var roleToAssume = {RoleArn: 'arn:aws:iam::123456789012:role/RoleName',
+                    RoleSessionName: 'session1',
+                    DurationSeconds: 900,};
+var roleCreds;
+
+// Create the STS service object    
+var sts = new AWS.STS({apiVersion: '2011-06-15'});
+
+//Assume Role
+sts.assumeRole(roleToAssume, function(err, data) {
+    if (err) console.log(err, err.stack);
+    else{
+        roleCreds = {accessKeyId: data.Credentials.AccessKeyId,
+                     secretAccessKey: data.Credentials.SecretAccessKey,
+                     sessionToken: data.Credentials.SessionToken};
+        stsGetCallerIdentity(roleCreds);
+    }
+});
+
+//Get Arn of current identity
+function stsGetCallerIdentity(creds) {
+    var stsParams = {credentials: creds };
+    // Create STS service object
+    var sts = new AWS.STS(stsParams);
+        
+    sts.getCallerIdentity({}, function(err, data) {
+        if (err) {
+            console.log(err, err.stack);
+        }
+        else {
+            console.log(data.Arn);
+        }
+    });    
 }
 ```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/AWSJavaScriptSDK/sts-2011-06-15/AssumeRole) in *AWS SDK for JavaScript API Reference*\. 
 
-## Calling AssumeRole with MFA authentication \(Python\)<a name="MFAProtectedAPI-example-assumerole"></a>
+------
+#### [ Python ]
 
-The following example, written using the [AWS SDK for Python \(Boto\)](http://aws.amazon.com/sdkforpython/), shows how to call `AssumeRole` and pass MFA authentication information\. The temporary security credentials returned by `AssumeRole` are then used to list all Amazon S3 buckets in the account\. 
-
- For more information about this scenario, see [Scenario: MFA protection for cross\-account delegation](id_credentials_mfa_configure-api-require.md#MFAProtectedAPI-cross-account-delegation)\. 
+**SDK for Python \(Boto3\)**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
+Assume an IAM role that requires an MFA token and use temporary credentials to list Amazon S3 buckets for the account\.  
 
 ```
-import boto
-from boto.s3.connection import S3Connection
-from boto.sts import STSConnection
+def list_buckets_from_assumed_role_with_mfa(
+        assume_role_arn, session_name, mfa_serial_number, mfa_totp, sts_client):
+    """
+    Assumes a role from another account and uses the temporary credentials from
+    that role to list the Amazon S3 buckets that are owned by the other account.
+    Requires an MFA device serial number and token.
 
-# Prompt for MFA time-based one-time password (TOTP)
-mfa_TOTP = raw_input("Enter the MFA code: ")
+    The assumed role must grant permission to list the buckets in the other account.
 
-# The calls to AWS STS AssumeRole must be signed with the access key ID and secret
-# access key of an IAM user. (The AssumeRole API operation can also be called using temporary
-# credentials, but this example does not show that scenario.) 
-# The IAM user credentials can be in environment variables or in 
-# a configuration file and will be discovered automatically
-# by the STSConnection() function. For more information, see the Python SDK 
-# documentation: http://boto.readthedocs.org/en/latest/boto_config_tut.html
+    :param assume_role_arn: The Amazon Resource Name (ARN) of the role that
+                            grants access to list the other account's buckets.
+    :param session_name: The name of the STS session.
+    :param mfa_serial_number: The serial number of the MFA device. For a virtual MFA
+                              device, this is an ARN.
+    :param mfa_totp: A time-based, one-time password issued by the MFA device.
+    :param sts_client: A Boto3 STS instance that has permission to assume the role.
+    """
+    response = sts_client.assume_role(
+        RoleArn=assume_role_arn,
+        RoleSessionName=session_name,
+        SerialNumber=mfa_serial_number,
+        TokenCode=mfa_totp)
+    temp_credentials = response['Credentials']
+    print(f"Assumed role {assume_role_arn} and got temporary credentials.")
 
-sts_connection = STSConnection()
+    s3_resource = boto3.resource(
+        's3',
+        aws_access_key_id=temp_credentials['AccessKeyId'],
+        aws_secret_access_key=temp_credentials['SecretAccessKey'],
+        aws_session_token=temp_credentials['SessionToken'])
 
-# Use appropriate device ID (serial number for hardware device or ARN for virtual device)
-# Replace ACCOUNT-NUMBER-WITHOUT-HYPHENS, ROLE-NAME, and MFA-DEVICE-ID with appropriate values
-tempCredentials = sts_connection.assume_role(
-    role_arn="arn:aws:iam::ACCOUNT-NUMBER-WITHOUT-HYPHENS:role/ROLE-NAME",
-    role_session_name="AssumeRoleSession1",
-    mfa_serial_number="arn:aws:iam::ACCOUNT-NUMBER-WITHOUT-HYPHENS:mfa/MFA-DEVICE-ID",
-    mfa_token=mfa_TOTP
-)
-
-# Use the temporary credentials to list the contents of an S3 bucket
-s3_connection = S3Connection(
-    aws_access_key_id=tempCredentials.credentials.access_key,
-    aws_secret_access_key=tempCredentials.credentials.secret_key,
-    security_token=tempCredentials.credentials.session_token
-)
-
-# Replace BUCKET-NAME with a real bucket name
-bucket = s3_connection.get_bucket(bucket_name="BUCKET-NAME")
-objectlist = bucket.list()
-for obj in objectlist:
-    print obj.name
+    print(f"Listing buckets for the assumed role's account:")
+    for bucket in s3_resource.buckets.all():
+        print(bucket.name)
 ```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/boto3/sts-2011-06-15/AssumeRole) in *AWS SDK for Python \(Boto3\) API Reference*\. 
+
+------
+#### [ Ruby ]
+
+**SDK for Ruby**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/sts#code-examples)\. 
+  
+
+```
+  # Creates an AWS Security Token Service (AWS STS) client with specified credentials.
+  # This is separated into a factory function so that it can be mocked for unit testing.
+  #
+  # @param key_id [String] The ID of the access key used by the STS client.
+  # @param key_secret [String] The secret part of the access key used by the STS client.
+  def create_sts_client(key_id, key_secret)
+    Aws::STS::Client.new(access_key_id: key_id, secret_access_key: key_secret)
+  end
+
+  # Gets temporary credentials that can be used to assume a role.
+  #
+  # @param role_arn [String] The ARN of the role that is assumed when these credentials
+  #                          are used.
+  # @param sts_client [AWS::STS::Client] An AWS STS client.
+  # @return [Aws::AssumeRoleCredentials] The credentials that can be used to assume the role.
+  def assume_role(role_arn, sts_client)
+    credentials = Aws::AssumeRoleCredentials.new(
+      client: sts_client,
+      role_arn: role_arn,
+      role_session_name: "create-use-assume-role-scenario"
+    )
+    puts("Assumed role '#{role_arn}', got temporary credentials.")
+    credentials
+  end
+```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/sts-2011-06-15/AssumeRole) in *AWS SDK for Ruby API Reference*\. 
+
+------

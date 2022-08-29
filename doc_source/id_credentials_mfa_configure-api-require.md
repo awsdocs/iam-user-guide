@@ -143,7 +143,7 @@ The permissions policy does not include an MFA condition\. It is important to un
 
    When Richard calls `AssumeRole`, AWS determines whether he has valid credentials, including the requirement for MFA\. If so, Richard successfully assumes the role and can perform any DynamoDB action on the table named `Books` in account A while using the role's temporary credentials\. 
 
-   For an example of a program that calls `AssumeRole`, see [Calling AssumeRole with MFA authentication \(Python\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-assumerole)\.
+   For an example of a program that calls `AssumeRole`, see [Calling AssumeRole with MFA authentication](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-assumerole)\.
 
 ## Scenario: MFA protection for access to API operations in the current account<a name="MFAProtectedAPI-user-mfa"></a>
 
@@ -182,7 +182,7 @@ For this policy to take effect, users must first sign out and then sign in again
 
 1. User Sofía \(or an application that Sofía is using\) uses the temporary credentials provided by `GetSessionToken` to call the Amazon EC2 `StopInstances` or `TerminateInstances` action\. 
 
-   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
+   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA authentication](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 
 ## Scenario: MFA protection for resources that have resource\-based policies<a name="MFAProtectedAPI-resource-policies"></a>
 
@@ -226,6 +226,6 @@ Amazon S3 offers an MFA Delete feature for *root* account access \(only\)\. You 
 
 1. Nikhil \(or an application that he is using\) uses the temporary credentials returned by `GetSessionToken` to call the Amazon S3 `PutObject` action to upload a file to `Account-A-bucket`\. 
 
-   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA authentication \(Python and C\#\)](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
+   For an example of a program that calls `GetSessionToken`, see [Calling GetSessionToken with MFA authentication](id_credentials_mfa_sample-code.md#MFAProtectedAPI-example-getsessiontoken) later in this document\.
 **Note**  
 The temporary credentials that `AssumeRole` returns won't work in this case\. Although the user can provide MFA information to assume a role, the temporary credentials returned by `AssumeRole` don't include the MFA information\. That information is required in order to meet the MFA condition in the policy\. 
