@@ -27,7 +27,7 @@ An IAM role is a global resource\. If a role trust policy grants access to an ex
 
 ## AWS Key Management Service keys<a name="access-analyzer-kms-key"></a>
 
-For AWS KMS keys, Access Analyzer analyzes the key policies and grants applied to a key\. Access Analyzer generates a finding if a key policy or grant allows an external entity to access the key\. For example, if you use the [kms:CallerAccount](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account) condition key in a policy statement to allow access to all users in a specific AWS account, and you specify an account other than the current account \(the zone of trust for the current analyzer\), Access Analyzer generates a finding\. To learn more about AWS KMS condition keys in IAM policy statements, see [AWS KMS Condition Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html#awskeymanagementservice-policy-keys)\.
+For AWS KMS keys, Access Analyzer analyzes the key policies and grants applied to a key\. Access Analyzer generates a finding if a key policy or grant allows an external entity to access the key\. For example, if you use the [kms:CallerAccount](https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-caller-account) condition key in a policy statement to allow access to all users in a specific AWS account, and you specify an account other than the current account \(the zone of trust for the current analyzer\), Access Analyzer generates a finding\. To learn more about KMS condition keys in IAM policy statements, see [AWS KMS Condition Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awskeymanagementservice.html#awskeymanagementservice-policy-keys)\.
 
 When Access Analyzer analyzes a KMS key it reads key metadata, such as the key policy and list of grants\. If the key policy doesn't allow the Access Analyzer role to read the key metadata, an Access Denied error finding is generated\. For example, if the following example policy statement is the only policy applied to a key, it results in an Access Denied error finding in Access Analyzer:
 
@@ -64,7 +64,7 @@ When you create a KMS key, the permissions granted to access the key depend on h
     "Sid": "Allow Access Analyzer access to key metadata",
     "Effect": "Allow",
     "Principal": {
-        "AWS": "arn:aws:iam::111122223333:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer"
+        "AWS": "arn:aws:iam::111122223333:root"
         },
     "Action": [
         "kms:DescribeKey",

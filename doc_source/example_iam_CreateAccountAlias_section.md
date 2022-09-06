@@ -180,8 +180,8 @@ suspend fun createIAMAccountAlias(alias: String) {
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
-        iamClient.createAccountAlias(request)
-        println("Successfully created account alias named $alias")
+          iamClient.createAccountAlias(request)
+          println("Successfully created account alias named $alias")
     }
 }
 ```

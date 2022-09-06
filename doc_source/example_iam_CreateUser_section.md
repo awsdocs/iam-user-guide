@@ -196,10 +196,10 @@ suspend fun createIAMUser(usernameVal: String?): String? {
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
-        val response = iamClient.createUser(request)
-        return response.user?.userName
+         val response = iamClient.createUser(request)
+         return response.user?.userName
     }
-}
+ }
 ```
 +  For API details, see [CreateUser](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 

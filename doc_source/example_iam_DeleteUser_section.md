@@ -197,7 +197,7 @@ This is prerelease documentation for a feature in preview release\. It is subjec
 suspend fun deleteIAMUser(userNameVal: String) {
 
     val request = DeleteUserRequest {
-        userName = userNameVal
+        userName= userNameVal
     }
 
     // To delete a user, ensure that the user's access keys are deleted first.

@@ -11,6 +11,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 + [Changes that I make are not always immediately visible](#troubleshoot_general_eventual-consistency)
 + [I am not authorized to perform: iam:DeleteVirtualMFADevice](#troubleshoot_general_access-denied-delete-mfa)
 + [How do I securely create IAM users?](#troubleshoot_general_securely-create-iam-users)
++ [Additional resources](#troubleshoot_general_resources)
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 
@@ -122,3 +123,11 @@ Use the following workflow to securely create a new user in IAM:
 1. Send the password to your employee using a secure communications method in your company, such as email, chat, or a ticketing system\. Separately, provide your users with the IAM user console link and their user name\. Tell the employee to confirm that they can sign in successfully before you will grant them permissions\.
 
 1. After the employee confirms, add the permissions that they need\. As a security best practice, add a policy that requires the user to authenticate using MFA to manage their credentials\. For an example policy, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
+
+## Additional resources<a name="troubleshoot_general_resources"></a>
+
+The following resources can help you troubleshoot as you work with AWS\.
++ **[AWS CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/)** – Use AWS CloudTrail to track a history of API calls made to AWS and store that information in log files\. This helps you determine which users and accounts accessed resources in your account, when the calls were made, what actions were requested, and more\. For more information, see [Logging IAM and AWS STS API calls with AWS CloudTrail](cloudtrail-integration.md)\.
++ **[AWS Knowledge Center](http://aws.amazon.com/premiumsupport/knowledge-center/)** – Find FAQs and links to other resources to help you troubleshoot issues\.
++ **[AWS Support Center](https://console.aws.amazon.com/support/home#/)** – Get technical support\.
++ **[AWS Premium Support Center](https://aws.amazon.com/premiumsupport/)** – Get premium technical support\.

@@ -210,7 +210,7 @@ This is prerelease documentation for a feature in preview release\. It is subjec
   
 
 ```
-suspend fun createIAMAccessKey(user: String?): String {
+suspend  fun createIAMAccessKey(user: String?): String {
 
     val request = CreateAccessKeyRequest {
         userName = user
@@ -219,8 +219,8 @@ suspend fun createIAMAccessKey(user: String?): String {
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
         val response = iamClient.createAccessKey(request)
         return response.accessKey?.accessKeyId.toString()
-    }
-}
+     }
+ }
 ```
 +  For API details, see [CreateAccessKey](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 
 

@@ -11,11 +11,11 @@ You can create a policy with an exception to allow for AWS managed IAM policies\
     {
       "Sid": "AllowAccessToResourcesInSpecificAccountsAndSpecificService1",
       "Effect": "Deny",
-      "NotAction":[
-            "iam:GetPolicy",
-            "iam:GetPolicyVersion",
-            "iam:ListEntitiesForPolicy",
-            "iam:ListPolicies"
+      "NotAction": [
+        "iam:GetPolicy",
+        "iam:GetPolicyVersion",
+        "iam:ListEntitiesForPolicy",
+        "iam:ListPolicies"
       ],
       "Resource": "*",
       "Condition": {
