@@ -25,7 +25,7 @@ We strongly recommend that you adhere to the best practice of using the **Admini
 
    1. Select the check box to **Activate IAM Access** and choose **Update**\.
 
-   1. On the navigation bar, choose **Services** and then **IAM** to return to the IAM console\.
+   1. On the navigation bar, choose **Services** and then **IAM** under **Security, Identity, & Compliance** to return to the IAM console\.
 
 1. In the navigation pane, choose **Users** and then choose **Add users**\.
 

@@ -64,6 +64,8 @@ AWS STS recommends that you make calls to a Regional endpoint\. To learn how to 
 
 In the example, the first line instantiates an `EndpointConfiguration` object called `regionEndpointConfig`, passing the URL of the endpoint and the Region as the parameters\.
 
+To learn how to set AWS STS regional endpoints using an environment variable for AWS SDKs, see [AWS STS Regionalized endpoints](https://docs.aws.amazon.com/sdkref/latest/guide/feature-sts-regionalized-endpoints.html) in the *AWS SDKs and Tools Reference Guide*\.
+
 For all other language and programming environment combinations, refer to the [documentation for the relevant SDK](https://aws.amazon.com/tools/)\.
 
 ## Regions and endpoints<a name="id_credentials_region-endpoints"></a>

@@ -172,7 +172,7 @@ AWS collects last accessed information for the standard AWS Regions\. When AWS a
 | Europe \(Milan\) | eu\-south\-1 | April 28, 2020 | 
 | Europe \(Paris\) | eu\-west\-3 | December 18, 2017 | 
 | Middle East \(Bahrain\) | me\-south\-1 | July 29, 2019 | 
-|  | me\-central\-1 | August 30, 2022 | 
+| Middle East \(UAE\) | me\-central\-1 | August 30, 2022 | 
 | Africa \(Cape Town\) | af\-south\-1 | April 22, 2020 | 
 | South America \(São Paulo\) | sa\-east\-1 | December 11, 2015 | 
 

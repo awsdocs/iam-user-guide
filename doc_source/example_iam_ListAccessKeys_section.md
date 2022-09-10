@@ -219,15 +219,15 @@ This is prerelease documentation for a feature in preview release\. It is subjec
 ```
 suspend fun listKeys(userNameVal: String?) {
 
-      val request = ListAccessKeysRequest {
-          userName = userNameVal
-      }
-      IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
+    val request = ListAccessKeysRequest {
+        userName = userNameVal
+    }
+    IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
         val response = iamClient.listAccessKeys(request)
-            response.accessKeyMetadata?.forEach { md ->
-                println("Retrieved access key ${md.accessKeyId}")
-            }
-      }
+        response.accessKeyMetadata?.forEach { md ->
+            println("Retrieved access key ${md.accessKeyId}")
+        }
+    }
 }
 ```
 +  For API details, see [ListAccessKeys](https://github.com/awslabs/aws-sdk-kotlin#generating-api-documentation) in *AWS SDK for Kotlin API reference*\. 

@@ -121,16 +121,11 @@ export const run = async () => {
     const data = await iamClient.send(
       new ListAttachedRolePoliciesCommand(params)
     );
-    return data;
     const myRolePolicies = data.AttachedPolicies;
-    myRolePolicies.forEach(function (val, index, array) {
+    myRolePolicies.forEach(function (_val, index) {
       if (myRolePolicies[index].PolicyName === "AmazonDynamoDBFullAccess") {
-         const params = {
-          PolicyArn: "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess",
-          paramsRoleList,
-        };
         try {
-          const results = iamClient.send(
+          await iamClient.send(
             new DetachRolePolicyCommand(paramsRoleList)
           );
           console.log("Policy detached from role successfully");
@@ -141,6 +136,7 @@ export const run = async () => {
       } else {
       }
     });
+    return data;
   } catch (err) {
     console.log("User " + "USER_NAME" + " does not exist.");
   }
@@ -212,7 +208,7 @@ suspend fun detachPolicy(roleNameVal: String, policyArnVal: String) {
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
         iamClient.detachRolePolicy(request)
-        println( "Successfully detached policy $policyArnVal from role $roleNameVal")
+        println("Successfully detached policy $policyArnVal from role $roleNameVal")
     }
 }
 ```

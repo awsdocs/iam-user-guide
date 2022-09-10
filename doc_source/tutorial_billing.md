@@ -64,13 +64,13 @@ Next, create custom policies that grant both view and full access permissions to
 
 1. <a name="tutorial-billing-repeat"></a>In the navigation pane, choose **Policies**, and then choose **Create policy**\.
 
-1. On the **Visual editor** tab, choose **Choose a service** to get started\. Then choose **Billing**\.
+1. On the **Visual editor** tab, choose **Choose a service** to get started\. Then choose **Billing Console**\.
 
 1. Follow these steps to create two policies:
 
    **Full access**
 
-   1. Select the check box next to **All Billing actions \(aws\-portal:\*\)** under **Manual actions**\. You do not need to select a resource or condition for this policy\.
+   1. Select the check box next to **All Billing Console actions \(aws\-portal:\*\)** under **Manual actions**\. You do not need to select a resource or condition for this policy\.
 
    1. Choose **Next: Tags**\.
 

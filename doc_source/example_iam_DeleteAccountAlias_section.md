@@ -107,7 +107,7 @@ This is prerelease documentation for a feature in preview release\. It is subjec
 suspend fun deleteIAMAccountAlias(alias: String) {
 
     val request = DeleteAccountAliasRequest {
-        accountAlias =alias
+        accountAlias = alias
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->

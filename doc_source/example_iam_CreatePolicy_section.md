@@ -249,21 +249,21 @@ This is prerelease documentation for a feature in preview release\. It is subjec
 suspend fun createIAMPolicy(policyNameVal: String?): String {
 
     val policyDocumentVal = "{" +
-            "  \"Version\": \"2012-10-17\"," +
-            "  \"Statement\": [" +
-            "    {" +
-            "        \"Effect\": \"Allow\"," +
-            "        \"Action\": [" +
-            "            \"dynamodb:DeleteItem\"," +
-            "            \"dynamodb:GetItem\"," +
-            "            \"dynamodb:PutItem\"," +
-            "            \"dynamodb:Scan\"," +
-            "            \"dynamodb:UpdateItem\"" +
-            "       ]," +
-            "       \"Resource\": \"*\"" +
-            "    }" +
-            "   ]" +
-            "}"
+        "  \"Version\": \"2012-10-17\"," +
+        "  \"Statement\": [" +
+        "    {" +
+        "        \"Effect\": \"Allow\"," +
+        "        \"Action\": [" +
+        "            \"dynamodb:DeleteItem\"," +
+        "            \"dynamodb:GetItem\"," +
+        "            \"dynamodb:PutItem\"," +
+        "            \"dynamodb:Scan\"," +
+        "            \"dynamodb:UpdateItem\"" +
+        "       ]," +
+        "       \"Resource\": \"*\"" +
+        "    }" +
+        "   ]" +
+        "}"
 
     val request = CreatePolicyRequest {
         policyName = policyNameVal
@@ -271,8 +271,8 @@ suspend fun createIAMPolicy(policyNameVal: String?): String {
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
-          val response = iamClient.createPolicy(request)
-          return response.policy?.arn.toString()
+        val response = iamClient.createPolicy(request)
+        return response.policy?.arn.toString()
     }
 }
 ```

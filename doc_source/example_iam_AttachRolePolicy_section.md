@@ -151,9 +151,8 @@ export const run = async () => {
     const data = await iamClient.send(
       new ListAttachedRolePoliciesCommand(paramsRoleList)
     );
-    return data;
     const myRolePolicies = data.AttachedPolicies;
-    myRolePolicies.forEach(function (val, index, array) {
+    myRolePolicies.forEach(function (_val, index) {
       if (myRolePolicies[index].PolicyName === "AmazonDynamoDBFullAccess") {
         console.log(
           "AmazonDynamoDBFullAccess is already attached to this role."
@@ -249,16 +248,16 @@ suspend fun attachIAMRolePolicy(roleNameVal: String, policyArnVal: String) {
                 return
         }
 
-       val policyRequest = AttachRolePolicyRequest {
+        val policyRequest = AttachRolePolicyRequest {
             roleName = roleNameVal
             policyArn = policyArnVal
         }
         iamClient.attachRolePolicy(policyRequest)
         println("Successfully attached policy $policyArnVal to role $roleNameVal")
-      }
+    }
 }
 
-fun checkList(attachedPolicies:List<AttachedPolicy>, policyArnVal:String) :Int {
+fun checkList(attachedPolicies: List<AttachedPolicy>, policyArnVal: String): Int {
 
     for (policy in attachedPolicies) {
         val polArn = policy.policyArn.toString()

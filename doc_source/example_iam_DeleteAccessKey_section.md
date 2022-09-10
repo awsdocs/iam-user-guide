@@ -243,13 +243,13 @@ This is prerelease documentation for a feature in preview release\. It is subjec
 suspend fun deleteKey(userNameVal: String, accessKey: String) {
 
     val request = DeleteAccessKeyRequest {
-        accessKeyId =accessKey
+        accessKeyId = accessKey
         userName = userNameVal
     }
 
     IamClient { region = "AWS_GLOBAL" }.use { iamClient ->
         iamClient.deleteAccessKey(request)
-        println( "Successfully deleted access key $accessKey from $userNameVal")
+        println("Successfully deleted access key $accessKey from $userNameVal")
     }
 }
 ```

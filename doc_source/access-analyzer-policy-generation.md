@@ -37,6 +37,7 @@ IAM Access Analyzer generates policies with action\-level information for the fo
 + Amazon Athena
 + AWS Batch
 + Amazon Braket
++ AWS CloudTrail
 + Amazon CloudWatch
 + Amazon CloudWatch Logs
 + Amazon CloudWatch Synthetics
@@ -45,7 +46,7 @@ IAM Access Analyzer generates policies with action\-level information for the fo
 + Amazon Cognito Sync
 + Amazon Cognito user pools
 + AWS Cost and Usage Report
-+ Amazon DevOps Guru
++ Amazon DevOps Guru
 + Device Advisor
 + AWS Directory Service
 + Amazon Elastic Block Store
@@ -65,10 +66,11 @@ IAM Access Analyzer generates policies with action\-level information for the fo
 + Amazon MQ
 + Amazon Managed Blockchain
 + Amazon Managed Streaming for Apache Kafka
++ AWS Marketplace
 + Amazon Nimble Studio
 + AWS OpsWorks
 + AWS Outposts
-+ Amazon RDS Performance Insights
++ AWS Performance Insights
 + Amazon RDS
 + AWS RAM
 + AWS Resource Groups
@@ -81,7 +83,7 @@ IAM Access Analyzer generates policies with action\-level information for the fo
 + Service Quotas
 + AWS Signer
 + Amazon Simple Email Service
-+ Amazon S3
++ Amazon Simple Storage Service
 + AWS Systems Manager
 + Amazon Textract
 + Amazon Translate
@@ -91,7 +93,7 @@ IAM Access Analyzer generates policies with action\-level information for the fo
 ## Things to know about generating policies<a name="access-analyzer-policy-generation-know"></a>
 
 Before you generate a policy, review the following important details\.
-+ **Enable a CloudTrail trail** – You must have a CloudTrail trail enabled for your account to generate a policy based on access activity\. When you create a CloudTrail trail, CloudTrail sends events related to your trail to an Amazon S3 bucket that you specify\. To learn how create a CloudTrail trail, see [Creating a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in the *AWS CloudTrail User Guide*\.
++ **Enable a CloudTrail trail** – You must have a CloudTrail trail enabled for your account to generate a policy based on access activity\. When you create a CloudTrail trail, CloudTrail sends events related to your trail to an Amazon S3 bucket that you specify\. To learn how to create a CloudTrail trail, see [Creating a trail for your AWS account](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in the *AWS CloudTrail User Guide*\.
 + **Data events not available** – IAM Access Analyzer does not identify action\-level activity for data events, such as Amazon S3 data events, in generated policies\.
 + **PassRole** – The `iam:PassRole` action is not tracked by CloudTrail and is not included in generated policies\.
 + **Reduce policy generation time** – To generate a policy faster, reduce the date range that you specify during setup for policy generation\.
@@ -99,6 +101,7 @@ Before you generate a policy, review the following important details\.
 + **One policy IAM console** – You can have one generated policy at a time in the IAM console\.
 + **Generated policy availability IAM console** – You can review a generated policy in the IAM console for up to 7 days after it is generated\. After 7 days, you must generate a new policy\.
 + **Policy generation quotas** – For additional information about IAM Access Analyzer policy generation quotas, see [IAM Access Analyzer quotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#access-analyzer-quotas)\.
++ **Amazon S3 standard rates apply** – When you use the policy generation feature, IAM Access Analyzer reviews CloudTrail logs in your S3 bucket\. There are no additional storage charges to access your CloudTrail logs for policy generation\. AWS charges standard Amazon S3 rates for requests and data transfer of CloudTrail logs stored in your S3 bucket\.
 
 ## Permissions required to generate a policy<a name="access-analyzer-policy-generation-perms"></a>
 
@@ -299,26 +302,26 @@ In this example, assume that you want to generate a policy for a user or role in
 
 1. Choose an existing role, or create a new service role that grants IAM Access Analyzer access to the bucket in account B \(where your CloudTrail logs are stored\)\.
 
-1. Update your Amazon S3 bucket object ownership and bucket permissions policy in account B to allow IAM Access Analyzer to access objects in the bucket\.
+1. Verify your Amazon S3 bucket object ownership and bucket permissions policy in account B so that IAM Access Analyzer can access objects in the bucket\.
 
 **Step 1: Choose or create a role for cross\-account access**
 + On the **Generate policy** screen, the option to **Use an existing role** is pre\-selected for you if a role with the required permissions exists in your account\. Otherwise, choose **Create and use a new service role**\. The new role is used to grant IAM Access Analyzer access to your CloudTrail logs in account B\.
 
-**Step 2: Update your Amazon S3 bucket configuration in account B**
+**Step 2: Verify or update your Amazon S3 bucket configuration in account B**
 
 1. Sign in to the AWS Management Console and open the Amazon S3 console at [https://console\.aws\.amazon\.com/s3/](https://console.aws.amazon.com/s3/)\.
 
 1. In the **Buckets** list, choose the name of the bucket where your CloudTrail trail logs are stored\.
 
-1. Choose the **Permissions** tab and find the **Object ownership** section\.
+1. Choose the **Permissions** tab and go to the **Object Ownership** section\.
 
-   Object ownership is an Amazon S3 bucket setting that you can use to control ownership of new objects that are uploaded to your buckets\. By default, when other AWS accounts upload objects to your bucket, the objects are owned by the uploading account\. To generate a policy, all of the objects in the bucket must be owned by the bucket owner\.
-
-   Choose **Edit** and change the object ownership to **Bucket owner preferred**\.
-
-   To learn more about object ownership in Amazon S3, see [Controlling ownership of uploaded objects using S3 Object Ownership](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*\.
+   Use Amazon S3 Object Ownership bucket settings to control ownership of objects that you upload to your buckets\. By default, when other AWS accounts upload objects to your bucket, the uploading account owns the objects\. To generate a policy, the bucket owner must own all of the objects in the bucket\. Depending on your ACL use case, you might need to change the **Object Ownership** setting for your bucket\. Set **Object Ownership** to one of the following options\.
+   + **Bucket owner enforced** \(recommended\)
+   + **Bucket owner preferred**
 **Important**  
-To successfully generate a policy, the objects in the bucket must be owned by the bucket owner\. You can only generate a policy for the time period after the object ownership change was made\.
+To successfully generate a policy, the objects in the bucket must be owned by the bucket owner\. If you choose to use **Bucket owner preferred**, you can only generate a policy for the time period after the object ownership change was made\.
+
+   To learn more about object ownership in Amazon S3, see [Controlling ownership of objects and disabling ACLs for your bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html) in the *Amazon S3 User Guide*\.
 
 1. Add permissions to your Amazon S3 bucket policy in account B to allow access for the role in account A\.
 

@@ -84,9 +84,15 @@ Amazon Relational Database Service \(Amazon RDS\) supports a feature called **En
 
 The role automatically gets a trust policy that grants the `monitoring.rds.amazonaws.com` service permissions to assume the role\. After it does, Amazon RDS can perform all of the actions that the `AmazonRDSEnhancedMonitoringRole` policy allows\.
 
-The user that you want to access Enhanced Monitoring needs a policy that includes a statement that allows the user to pass the role, like the following\. Use your account number and replace the role name with the name you provided in step 6\.
+The user that you want to access Enhanced Monitoring needs a policy that includes a statement that allows the user to to list the RDS roles and a statement that allows the user to pass the role, like the following\. Use your account number and replace the role name with the name you provided in step 6\.
 
 ```
+    {
+      "Sid": "PolicyStatementToAllowUserToListRoles",
+      "Effect": "Allow",
+      "Action": ["iam:ListRoles"],
+      "Resource": "*"
+    },
     {
         "Sid": "PolicyStatementToAllowUserToPassOneSpecificRole",
         "Effect": "Allow",

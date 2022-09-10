@@ -6,7 +6,7 @@ If you are having trouble signing in to Amazon\.com, see [Amazon Customer Servic
 
 **Topics**
 + [I need my AWS account ID or AWS account alias](#troubleshoot-need-aws-account-id-or-alias)
-+ [I forgot my IAM user name or password](#troubleshoot-need-aws-account-id-or-alias)
++ [I forgot my IAM user name or password](#troubleshoot-forgot-iam-user-name-or-password)
 + [I forgot the root user password for my AWS account](#troubleshoot-forgot-password)
 + [I don't have access to the email for my AWS account](#troubleshoot_general_lost-root-creds)
 + [I need to change the credit card for my AWS account](#troubleshoot-change-credit-card)
@@ -17,7 +17,7 @@ If you are having trouble signing in to Amazon\.com, see [Amazon Customer Servic
 
 If you are an IAM user and you are not signed in, you must ask your administrator for the AWS account ID or AWS account alias\. You need this information, plus your IAM user name and password, to sign in to an AWS account\.
 
-## I forgot my IAM user name or password<a name="troubleshoot-need-aws-account-id-or-alias"></a>
+## I forgot my IAM user name or password<a name="troubleshoot-forgot-iam-user-name-or-password"></a>
 
 If you are an IAM user, your administrator provides your credentials\. If you forget your password, you must ask your administrator to reset it\.
 
