@@ -80,7 +80,7 @@ You can attach tags to your IAM resources to organize and control access to them
 
 ```
 aws iam tag-server-certificate --server-certificate-name ExampleCertificate
-                                 --tags '{"Key": "ExampleKey", "Value": "ExampleValue}'
+                                 --tags '{"Key": "ExampleKey", "Value": "ExampleValue"}'
 ```
 
 When the preceding command is successful, no output is returned\. 

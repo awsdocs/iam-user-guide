@@ -14,9 +14,23 @@ A `Condition` element can contain multiple conditions, and each condition can co
 
 ## Evaluation logic for conditions with multiple keys or values<a name="reference_policies_multiple-conditions-eval"></a>
 
-If your policy has multiple [condition operators](reference_policies_elements_condition_operators.md) or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All conditions must resolve to true to trigger the desired `Allow` or `Deny` effect\.
+If your policy has multiple [condition operators](reference_policies_elements_condition_operators.md) or multiple keys attached to a single condition operator, the conditions are evaluated using a logical `AND`\. If a single condition operator includes multiple values for one key, that condition operator is evaluated using a logical `OR`\. All conditions must resolve to true to invoke the desired `Allow` or `Deny` effect\.
 
 ![\[Condition block showing how AND and OR are applied to multiple values\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_Condition_Block_AND.diagram.png)
+
+For example, the following condition block shows how the figure above presents in a policy\. The condition block uses condition operators `StringEqualsIgnoreCase` and `StringEquals`, and condition keys `aws:PrincipalTag` and `aws:PrincipalAccount`\. To invoke the desired `Allow` or `Deny` effect, all conditions must resolve to true\. The user making the request must have both principal tag keys, *department* and *role*, that include one of the tag key values specified in the policy\. Also, the user making the request must belong to the AWS account identifier specified in the policy\.
+
+```
+"Condition": {
+  "StringEqualsIgnoreCase": {
+    "aws:PrincipalTag/department": [ "finance", "hr", "legal" ],
+    "aws:PrincipalTag/role": [ "audit", "security" ]
+  },
+  "StringEquals": {
+    "aws:PrincipalAccount": "123456789012"
+  }
+}
+```
 
 **Note**  
 When multiple values are listed in a policy for negated matching condition operators such as `StringNotEquals` and `DateNotEquals`, the effective permissions work like a logical `AND`\. For example, if there are multiple `aws:PrincipalAccount` values in a `StringNotEquals` condition operator, the string cannot match any of the `aws:PrincipalAccount` values listed to resolve the condition to true\.
