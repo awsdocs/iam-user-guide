@@ -19,22 +19,12 @@ If an IAM user with this policy is not MFA\-authenticated, this policy denies ac
             "Resource": "*"
         },
         {
-            "Sid": "AllowIndividualUserToListOnlyTheirOwnMFA",
-            "Effect": "Allow",
-            "Action": [
-                "iam:ListMFADevices"
-            ],
-            "Resource": [
-                "arn:aws:iam::*:mfa/*",
-                "arn:aws:iam::*:user/${aws:username}"
-            ]
-        },
-        {
             "Sid": "AllowIndividualUserToManageTheirOwnMFA",
             "Effect": "Allow",
             "Action": [
                 "iam:CreateVirtualMFADevice",
                 "iam:DeleteVirtualMFADevice",
+                "iam:ListMFADevices",
                 "iam:EnableMFADevice",
                 "iam:ResyncMFADevice"
             ],

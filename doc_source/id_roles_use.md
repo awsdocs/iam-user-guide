@@ -5,7 +5,7 @@ Before an IAM user, application, or service can use a role that you created, you
 **Important**  
 When you create a role programmatically instead of in the IAM console, you have an option to add a `Path` of up to 512 characters in addition to the `RoleName`, which can be up to 64 characters long\. However, if you intend to use a role with the **Switch Role** feature in the AWS Management Console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.
 
-You can switch roles from the AWS Management Console\. You can assume a role by calling an AWS CLI or API operation or by using a custom URL\. The method that you use determines who can assume the role and how long the role session can last\.
+You can switch roles from the AWS Management Console\. You can assume a role by calling an AWS CLI or API operation or by using a custom URL\. The method that you use determines who can assume the role and how long the role session can last\. When using `AssumeRole*` API operations, the IAM role that you assume is the resource\. The IAM user or role that calls `AssumeRole*` API operations is the principal\.
 
 
 **Comparing methods for using roles**  
@@ -24,9 +24,9 @@ You can switch roles from the AWS Management Console\. You can assume a role by 
 
 ² This setting can have a value from 1 hour to 12 hours\. For details about modifying the maximum session duration setting, see [Modifying a role](id_roles_manage_modify.md)\. This setting determines the maximum session duration that you can request when you get the role credentials\. For example, when you use the [AssumeRole\*](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API operations to assume a role, you can specify a session length using the `DurationSeconds` parameter\. Use this parameter to specify the length of the role session from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the IAM user's session, whichever is less\. Assume that you set a maximum duration of 5 hours on a role\. An IAM user that has been signed into the console for 10 hours \(out of the default maximum of 12\) switches to the role\. The available role session duration is 2 hours\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](#id_roles_use_view-role-max-session) later in this page\.
 
-**Notes:**  
+**Notes**  
 The maximum session duration setting does not limit sessions that are assumed by AWS services\.
-When using `AssumeRole*` API operations, the IAM role that you assume is the resource\. The IAM user or role that calls `AssumeRole*` API operations is the principal\.
+To allow users to assume the current role again within a role session, specify the role ARN or AWS account ARN as a principal in the role trust policy\. AWS services that provide compute resources such as Amazon EC2, Amazon ECS, Amazon EKS, and Lambda provide temporary credentials and automatically rotate these credentials\. This ensures that you always have a valid set of credentials\. For these services, it's not necessary to assume the current role again to obtain temporary credentials\. However, if you intend to pass [session tags](id_session-tags.md) or a [session policy](access_policies.md#policies_session), you need to assume the current role again\. To learn how to modify a role trust policy to add the principal role ARN or AWS account ARN, see [Modifying a role trust policy \(console\)](roles-managingrole-editing-console.md#roles-managingrole_edit-trust-policy)\.
 
 **Topics**
 + [View the maximum session duration setting for a role](#id_roles_use_view-role-max-session)

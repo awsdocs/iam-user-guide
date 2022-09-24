@@ -13,8 +13,10 @@ You can use the AWS Management Console to modify a role\. To change the set of t
 
 To change who can assume a role, you must modify the role's trust policy\. You cannot modify the trust policy for a *[service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role)*\.
 
-**Note**  
+**Notes**  
 If a user is listed as the principal in a role's trust policy but cannot assume the role, check the user's [permissions boundary](access_policies_boundaries.md)\. If a permissions boundary is set for the user, then it must allow the `sts:AssumeRole` action\.
+To allow users to assume the current role again within a role session, specify the role ARN or AWS account ARN as a principal in the role trust policy\. AWS services that provide compute resources such as Amazon EC2, Amazon ECS, Amazon EKS, and Lambda provide temporary credentials and automatically rotate these credentials\. This ensures that you always have a valid set of credentials\. For these services, it's not necessary to assume the current role again to obtain temporary credentials\. However, if you intend to pass [session tags](id_session-tags.md) or a [session policy](access_policies.md#policies_session), you need to assume the current role again\.
+
 
 **To modify a role trust policy \(console\)**
 

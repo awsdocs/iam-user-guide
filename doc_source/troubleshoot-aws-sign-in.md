@@ -5,13 +5,36 @@ Use the information here to help you troubleshoot sign\-in and other AWS account
 If you are having trouble signing in to Amazon\.com, see [Amazon Customer Service](https://www.amazon.com/gp/help/customer/contact-us/) instead\.
 
 **Topics**
++ [My credentials aren't working](#troubleshoot-my-credentials-are-not-working)
 + [I need my AWS account ID or AWS account alias](#troubleshoot-need-aws-account-id-or-alias)
 + [I forgot my IAM user name or password](#troubleshoot-forgot-iam-user-name-or-password)
-+ [I forgot the root user password for my AWS account](#troubleshoot-forgot-password)
++ [I forgot the root user password for my AWS account](#troubleshoot-forgot-root-password)
 + [I don't have access to the email for my AWS account](#troubleshoot_general_lost-root-creds)
 + [I need to change the credit card for my AWS account](#troubleshoot-change-credit-card)
 + [I need to report fraudulent AWS account activity](#troubleshoot-report-suspicious-account-activity)
 + [I need to close my AWS account](#troublehoot-close-aws-account)
+
+## My credentials aren't working<a name="troubleshoot-my-credentials-are-not-working"></a>
+
+When you can't sign in to the AWS Management Console, try to remember how you previously accessed AWS\.
+
+**If you don't remember using a password at all**
+
+You might have previously accessed AWS without using AWS credentials\. This is common for enterprise single sign\-on through IAM Identity Center\. Accessing AWS this way means that you use your corporate credentials to access AWS accounts or applications without entering your credentials\.
++ **AWS access portal** – If an administrator allows you to use credentials from outside AWS to access AWS, you need the URL for your portal\. Check your email, browser favorites, or browser history for a URL that includes `awsapps.com/start` or `signin.aws/platform/login`\.
+
+  For example, your custom URL might include an ID or a domain such as `https://d-1234567890.awsapps.com/start`\. If you can't find your portal link, contact your administrator\. AWS Support can't help you recover this information\. 
+
+**If you remember your user name and password**
+
+You might be on the wrong page\. Try signing in on a different page:
++ **Root user sign\-in page** – If you created or own an AWS account and need to perform restricted actions, enter your account email address in the [AWS Management Console](https://console.aws.amazon.com/)\. To learn how to access the root user, see [Signing in as the root user](https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-root-user-sign-in-tutorial) in the *AWS Sign\-In User Guide*\. If you forgot your root user password, you can reset it\. See [I forgot my root user password for my AWS account](https://docs.aws.amazon.com/signin/latest/userguide/troubleshooting-sign-in-issues.html#troubleshoot-forgot-root-password) in the *AWS Sign\-In User Guide* for more information\. If you forgot your AWS account email address, check your email inbox for an email from AWS\.
++ **IAM user sign\-in page** – If you or someone else created an IAM user within a single AWS account, you must know that account ID or alias\. Enter your account ID or alias, user name, and password in to the [AWS Management Console](https://console.aws.amazon.com/)\. To learn how to access the IAM user sign\-in page, see [Signing in as an IAM user](https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-iam-user-sign-in-tutorial) in the *AWS Sign\-In User Guide*\. If you forgot your IAM user password, see [I forgot my IAM user password for my AWS account](https://docs.aws.amazon.com/signin/latest/userguide/troubleshooting-sign-in-issues.html#troubleshoot-forgot-iam-password) in the *AWS Sign\-In User Guide* for information on resetting your IAM user password\. If you forgot your account number, search your email, browser favorites, or browser history for a URL that includes `signin.aws.amazon.com/`\. Your account ID or alias will follow the `"account="` text in the URL\. If you can’t find your account ID or alias, contact your administrator\. AWS Support can’t help you recover this information\. You can’t see your account ID or alias until after you sign in\. 
++ **AWS access portal** – If an administrator set up an AWS IAM Identity Center \(successor to AWS Single Sign\-On\) identity source for AWS, you must sign in using your user name and password\. In this case, you need the URL for your portal\. Check your email, secure password storage, browser favorites, or browser history for a URL that includes `awsapps.com/start` or `signin.aws/platform/login`\. For example, your custom URL might include an ID or a domain such as `https://d-1234567890.awsapps.com/start.` If you can’t find your portal link, contact your administrator\. AWS Support can’t help you recover this information\.
+
+For more assistance on troubleshooting your sign\-in issues, see [What do I do if I'm having trouble signing in to or accessing my AWS account?](http://aws.amazon.com/premiumsupport/knowledge-center/sign-in-account/)
+
+The following video provides more information about how to sign in when your credentials aren't working:
 
 ## I need my AWS account ID or AWS account alias<a name="troubleshoot-need-aws-account-id-or-alias"></a>
 
@@ -23,7 +46,7 @@ If you are an IAM user, your administrator provides your credentials\. If you fo
 
 For security purposes, AWS doesn't have access to view, provide, or change your credentials\.
 
-## I forgot the root user password for my AWS account<a name="troubleshoot-forgot-password"></a>
+## I forgot the root user password for my AWS account<a name="troubleshoot-forgot-root-password"></a>
 
 If you are a root user and you have lost or forgot the password for your AWS account, you can reset your password\. You must know the email address used to create the AWS account and you must have access to the email account\. For more information, see [Resetting lost or forgotten passwords or access keys for AWS](id_credentials_access-keys_retrieve.md)\.
 

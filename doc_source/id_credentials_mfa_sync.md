@@ -3,7 +3,7 @@
 You can use AWS to resynchronize your virtual and hardware multi\-factor authentication \(MFA\) devices\. If your device is not synchronized when you try to use it, the sign\-in attempt fails and IAM prompts you to resynchronize the device\.
 
 **Note**  
-U2F security keys do not go out of sync\. If a U2F security key is lost or broken, you can deactivate it\. For instructions on deactivating any MFA device type, see [To deactivate an MFA device for another IAM user \(console\)](id_credentials_mfa_disable.md#deactivate-mfa-for-user)\.
+FIDO security keys do not go out of sync\. If a FIDO security key is lost or broken, you can deactivate it\. For instructions on deactivating any MFA device type, see [To deactivate an MFA device for another IAM user \(console\)](id_credentials_mfa_disable.md#deactivate-mfa-for-user)\.
 
 As an AWS administrator, you can resynchronize your IAM users' virtual and hardware MFA devices if they get out of synchronization\.
 

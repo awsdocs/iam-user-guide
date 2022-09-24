@@ -634,8 +634,6 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 
 Use this key to compare the requested resource owner's [AWS account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html) with the resource account in the policy\. You can then allow or deny access to that resource based on the account that owns the resource\.
 + **Availability** – This key is always included in the request context for most service actions\. The following actions don't support this key:
-  + AWS Elastic Beanstalk
-    + `elasticbeanstalk:ListAvailableSolutionStacks`
   + Amazon Elastic Block Store – All actions
   + Amazon EC2
     + `ec2:CopyFpgaImage`
@@ -705,8 +703,6 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 
 Use this key to compare the identifier of the organization in AWS Organizations to which the requested resource belongs with the identifier specified in the policy\.
 + **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
-  + AWS Elastic Beanstalk
-    + `elasticbeanstalk:ListAvailableSolutionStacks`
   + Amazon Elastic Block Store – All actions
   + Amazon EC2
     + `ec2:CopyFpgaImage`
@@ -754,8 +750,6 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 
 Use this key to compare the AWS Organizations path for the accessed resource to the path in the policy\. In a policy, this condition key ensures that the resource belongs to an account member within the specified organization root or organizational units \(OUs\) in AWS Organizations\. An AWS Organizations path is a text representation of the structure of an Organizations entity\. For more information about using and understanding paths, see [Understand the AWS Organizations entity path](access_policies_access-advisor-view-data-orgs.md#access_policies_access-advisor-viewing-orgs-entity-path) 
 + **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
-  + AWS Elastic Beanstalk
-    + `elasticbeanstalk:ListAvailableSolutionStacks`
   + Amazon Elastic Block Store – All actions
   + Amazon EC2
     + `ec2:CopyFpgaImage`

@@ -8,7 +8,7 @@ To learn how users can access the **My Security Credentials** page, see [How IAM
 + The `ViewAccountPasswordRequirements` statement allows the user to view the account password requirements while changing their own IAM user password\.
 + The `ChangeOwnPassword` statement allows the user to change their own password\. This statement also includes the `GetUser` action, which is required to view most of the information on the **My Security Credentials** page\.
 
-This policy does not allow users to view the **Users** page in the IAM console or use that page to access their own user information\. To allow this, add the `iam:ListUsers` action to the `ViewAccountPasswordRequirements` statement\.
+This policy does not allow users to view the **Users** page in the IAM console or use that page to access their own user information\. To allow this, add the `iam:ListUsers` action to the `ViewAccountPasswordRequirements` statement\. It also does not allow users to change their password on their own user page\. To allow this, add the `iam:GetLoginProfile` and `iam:UpdateLoginProfile` actions to the `ChangeOwnPasswords` statement\.
 
 ```
 {

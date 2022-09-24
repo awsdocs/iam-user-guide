@@ -56,7 +56,7 @@ You can also use the following format to manually construct the link\. Substitut
 
 `https://signin.aws.amazon.com/switchrole?account=your_account_ID_or_alias&roleName=optional_path/role_name`
 
-We recommend that you direct your users to [Switching to a role \(console\)](id_roles_use_switch-role-console.md) to step them through the process\.
+We recommend that you direct your users to [Switching to a role \(console\)](id_roles_use_switch-role-console.md) to step them through the process\. To troubleshoot common issues that you might encounter when you assume a role, see [I can't assume a role](troubleshoot_roles.md#troubleshoot_roles_cant-assume-role)\.
 
 **Considerations**
 + If you create the role programmatically, you can create the role with a path in addition to a name\. If you do so, you must provide the complete path and role name to your users so they can enter it on the **Switch Role** page of the AWS Management Console\. For example: `division_abc/subdivision_efg/role_XYZ`\.

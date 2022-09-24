@@ -72,8 +72,10 @@ Find expert tips and guidance on the best ways to secure your AWS account and re
 ## General resources<a name="resources-general"></a>
 
 Explore the following resources to learn more about IAM and AWS\. 
-+ [https://aws.amazon.com/iam/](https://aws.amazon.com/iam/) – General information about the AWS Identity and Access Management product\.
-+ [https://forums.aws.amazon.com/forum.jspa?forumID=76](https://forums.aws.amazon.com/forum.jspa?forumID=76) – A community forum for customers to discuss technical questions related to IAM\. 
++ **[Product Information for IAM](https://aws.amazon.com/iam/)** – General information about the AWS Identity and Access Management product\.
++ **[Discussion Forms for AWS Identity and Access Management](https://forums.aws.amazon.com/forum.jspa?forumID=76)** – A community forum for customers to discuss technical questions related to IAM\.
++ **[Getting Started Resource Center](http://aws.amazon.com/getting-started/?ref=docs_gateway/iam/resources.html)** – Learn the fundamentals and start building on AWS\.
++ **[Hands\-on Tutorials for AWS](http://aws.amazon.com/getting-started/hands-on/?ref=docs_gateway/iam/resources.html)** – A collection of step\-by\-step tutorials for common AWS use cases\.
 + ** [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/)** – Links to role\-based and specialty courses, in addition to self\-paced labs to help sharpen your AWS skills and gain practical experience\.
 + ** [AWS Developer Tools](https://aws.amazon.com/tools/)** – Links to developer tools, SDKs, IDE toolkits, and command line tools for developing and managing AWS applications\.
 + ** [AWS Whitepapers](https://aws.amazon.com/whitepapers/)** – Links to a comprehensive list of technical AWS whitepapers, covering topics such as architecture, security, and economics and authored by AWS Solutions Architects or other technical experts\.

@@ -12,7 +12,7 @@ To learn how users can access the **My Security Credentials** page, see [How IAM
 + The `AllowManageOwnAccessKeys` statement allows the user to create, update, and delete their own access keys\.
 + The `AllowManageOwnSSHPublicKeys` statement allows the user to upload, update, and delete their own SSH public keys for CodeCommit\.
 
-This policy does not allow users to view or manage their own MFA devices\. They also cannot view the **Users** page in the IAM console or use that page to access their own user information\. To allow this, add the `iam:ListUsers` action to the `AllowViewAccountInfo` statement\. It also does not allow users to change their password on their own user page\. To allow this, add the `iam:CreateLoginProfile`, `iam:DeleteLoginProfile`, `iam:GetLoginProfile`, and `iam:UpdateLoginProfile` actions to the `AllowManageOwnPasswords` statement\. 
+This policy does not allow users to view or manage their own MFA devices\. They also cannot view the **Users** page in the IAM console or use that page to access their own user information\. To allow this, add the `iam:ListUsers` action to the `AllowViewAccountInfo` statement\. It also does not allow users to change their password on their own user page\. To allow this, add the `iam:GetLoginProfile` and `iam:UpdateLoginProfile` actions to the `AllowManageOwnPasswords` statement\. 
 
 ```
 {
