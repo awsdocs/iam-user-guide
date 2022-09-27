@@ -38,7 +38,7 @@ The AWS Console Mobile App does not currently support using FIDO certified secur
 
 ## AWS CLI and AWS API<a name="id_credentials_mfa_fido_cliapi"></a>
 
-AWS currently supports using FIDO certiffied security keys only in the AWS Management Console\. Using FIDO certified security keys for MFA is not currently supported in the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/) and [AWS API](https://aws.amazon.com/tools/), or for access to [MFA\-protected API operations](id_credentials_mfa_configure-api-require.md)\.
+AWS currently supports using FIDO certified security keys only in the AWS Management Console\. Using FIDO certified security keys for MFA is not currently supported in the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/) and [AWS API](https://aws.amazon.com/tools/), or for access to [MFA\-protected API operations](id_credentials_mfa_configure-api-require.md)\.
 
 ## Additional resources<a name="id_credentials_mfa_fido_additional_resources"></a>
 + For more information on using FIDO certified security keys in AWS, see [Enabling a FIDO security key \(console\)](id_credentials_mfa_enable_fido.md)\.
