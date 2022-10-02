@@ -41,7 +41,6 @@ export const run = async () => {
   try {
     //Assume Role
     const data = await stsClient.send(new AssumeRoleCommand(params));
-    return data;
     const rolecreds = {
       accessKeyId: data.Credentials.AccessKeyId,
       secretAccessKey: data.Credentials.SecretAccessKey,
