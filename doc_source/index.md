@@ -354,6 +354,7 @@ sponsored by Amazon.
    + [IAM Access Analyzer policy validation](access-analyzer-policy-validation.md)
       + [Access Analyzer policy check reference](access-analyzer-reference-policy-checks.md)
    + [IAM Access Analyzer policy generation](access-analyzer-policy-generation.md)
+      + [IAM Access Analyzer policy generation and IAM action last accessed support](access-analyzer-policy-generation-action-last-accessed-support.md)
    + [IAM Access Analyzer quotas](access-analyzer-quotas.md)
 + [Troubleshooting IAM](troubleshoot.md)
    + [Troubleshooting general IAM issues](troubleshoot_general.md)

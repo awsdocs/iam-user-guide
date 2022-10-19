@@ -11,6 +11,7 @@ As an administrator or developer, you might grant permissions to IAM entities \(
 + [Generate a policy using AWS CloudTrail data in another account](#access-analyzer-policy-generation-cross-account)
 + [Generate a policy based on CloudTrail activity \(AWS CLI\)](#access-analyzer-policy-generation-cli)
 + [Generate a policy based on CloudTrail activity \(AWS API\)](#access-analyzer-policy-generation-api)
++ [IAM Access Analyzer policy generation and IAM action last accessed support](access-analyzer-policy-generation-action-last-accessed-support.md)
 
 ## How policy generation works<a name="access-analyzer-policy-generation-howitworks"></a>
 
@@ -23,72 +24,10 @@ IAM Access Analyzer analyzes your CloudTrail events to identify actions and serv
 ## Service and action\-level information<a name="access-analyzer-policy-generation-service-action"></a>
 
 When IAM Access Analyzer generates an IAM policy, information is returned to help you to further customize the policy\. Two categories of information can be returned when a policy is generated:
-+ **Policy with action\-level information –** For some AWS services, such as Amazon EC2, IAM Access Analyzer can identify the actions found in your CloudTrail events and lists the actions used in the generated policy\. For some services, we prompt you to add actions for the services to the generated policy\.
++ **Policy with action\-level information –** For some AWS services, such as Amazon EC2, IAM Access Analyzer can identify the actions found in your CloudTrail events and lists the actions used in the policy it generates\. For a list of supported services, see [IAM Access Analyzer policy generation and IAM action last accessed support](access-analyzer-policy-generation-action-last-accessed-support.md)\. For some services, IAM Access Analyzer prompts you to add actions for the services to the generated policy\.
 + **Policy with service\-level information –** IAM Access Analyzer uses [last accessed](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html) information to create a policy template with all of the recently used services\. When using the AWS Management Console, we prompt you to review the services and add actions to complete the policy\.
 
-IAM Access Analyzer generates policies with action\-level information for the following AWS services\. For a list of actions in each service, see [Actions, Resources, and Condition Keys for AWS Services](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) in the Service Authorization Reference\.
-
-### Supported services for action\-level information<a name="services-action-level"></a>
-+ IAM Access Analyzer
-+ AWS Amplify
-+ Amazon AppIntegrations
-+ Amazon AppFlow
-+ AWS Application Cost Profiler
-+ Amazon Athena
-+ AWS Batch
-+ Amazon Braket
-+ AWS CloudTrail
-+ Amazon CloudWatch
-+ Amazon CloudWatch Logs
-+ Amazon CloudWatch Synthetics
-+ Amazon CodeGuru Profiler
-+ Amazon Cognito Identity
-+ Amazon Cognito Sync
-+ Amazon Cognito user pools
-+ AWS Cost and Usage Report
-+ Amazon DevOps Guru
-+ Device Advisor
-+ AWS Directory Service
-+ Amazon Elastic Block Store
-+ Amazon EC2
-+ Amazon Elastic Container Registry
-+ Amazon ECS
-+ Elastic Load Balancing
-+ Amazon EventBridge Schemas
-+ Fleet Hub for AWS IoT Device Management
-+ AWS Ground Station
-+ Amazon GuardDuty
-+ IAM
-+ Amazon Interactive Video Service
-+ AWS KMS
-+ Amazon Kinesis Data Firehose
-+ AWS Lambda
-+ Amazon MQ
-+ Amazon Managed Blockchain
-+ Amazon Managed Streaming for Apache Kafka
-+ AWS Marketplace
-+ Amazon Nimble Studio
-+ AWS OpsWorks
-+ AWS Outposts
-+ AWS Performance Insights
-+ Amazon RDS
-+ AWS RAM
-+ AWS Resource Groups
-+ Resource Groups Tagging API
-+ Savings Plans
-+ AWS Secrets Manager
-+ AWS Security Hub
-+ AWS Security Token Service
-+ AWS Server Migration Service
-+ Service Quotas
-+ AWS Signer
-+ Amazon Simple Email Service
-+ Amazon Simple Storage Service
-+ AWS Systems Manager
-+ Amazon Textract
-+ Amazon Translate
-+ AWS Well\-Architected Tool
-+ Amazon WorkLink
+For a list of actions in each service, see [Actions, Resources, and Condition Keys for AWS Services](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) in the Service Authorization Reference\.
 
 ## Things to know about generating policies<a name="access-analyzer-policy-generation-know"></a>
 
@@ -128,8 +67,8 @@ The first example policy shows the permissions policy for the service role that 
         {
             "Effect": "Allow",
             "Action": [
-                "iam:GenerateServiceLastAccessedDetails",
-                "iam:GetServiceLastAccessedDetails"
+                "iam:GetServiceLastAccessedDetails",
+                "iam:GenerateServiceLastAccessedDetails"
             ],
             "Resource": "*"
         },
@@ -189,17 +128,15 @@ You must also have the following IAM Access Analyzer permissions to generate pol
 
 ```
 {
-      "Sid": "AllowUserToGeneratePolicy",
-      "Effect": "Allow",
-      "Action": [
-        "access-analyzer:ListPolicyGenerations",
-        "access-analyzer:StartPolicyGeneration",
-        "access-analyzer:GetGeneratedPolicy",
-        "access-analyzer:CancelPolicyGeneration"
-      ],
-      "Resource": "*"
-    }
-  ]
+  "Sid": "AllowUserToGeneratePolicy",
+  "Effect": "Allow",
+  "Action": [
+    "access-analyzer:CancelPolicyGeneration",
+    "access-analyzer:GetGeneratedPolicy",
+    "access-analyzer:ListPolicyGenerations",
+    "access-analyzer:StartPolicyGeneration"
+  ],
+  "Resource": "*"
 }
 ```
 
@@ -207,14 +144,14 @@ You must also have the following IAM Access Analyzer permissions to generate pol
 When you use the AWS Management Console to generate a policy, you must have `cloudtrail:ListTrails` permission to list the CloudTrail trails in your account as shown in the following policy statement\.
 
 ```
-    {
-      "Sid": "AllowUserToListTrails",
-      "Effect": "Allow",
-      "Action": [
-        "CloudTrail:ListTrails"
-      ],
-      "Resource": "*"
-    }
+{
+  "Sid": "AllowUserToListTrails",
+  "Effect": "Allow",
+  "Action": [
+    "CloudTrail:ListTrails"
+  ],
+  "Resource": "*"
+}
 ```
 
 ## Generate a policy based on CloudTrail activity \(console\)<a name="access-analyzer-policy-generation-console"></a>
