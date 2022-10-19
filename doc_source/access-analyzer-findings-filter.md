@@ -1,10 +1,10 @@
 # Filtering findings<a name="access-analyzer-findings-filter"></a>
 
-The default filtering for the page is to display all active findings\. To view archived findings, choose the **Archived** tab\. When you first start using Access Analyzer, there are no archived findings\.
+The default filtering for the page is to display all active findings\. To view archived findings, choose the **Archived** tab\. When you first start using IAM Access Analyzer, there are no archived findings\.
 
 Use filters to display only the findings for a specific resource, account, principal, or other value\. To create a filter, select the property to filter on, then choose a property value to filter on\. For example, to create a filter that displays only findings for a specific AWS account, choose **AWS Account** for the property, then enter the account number for the AWS account that you want to view findings for\. To create a filter that displays only findings for resources that allow public access, you can choose the **Public access** property, then choose **Public access: true**\.
 
-For a list of filter keys that you can use to create or update an archive rule, see [Access Analyzer filter keys](access-analyzer-reference-filter-keys.md)\.
+For a list of filter keys that you can use to create or update an archive rule, see [IAM Access Analyzer filter keys](access-analyzer-reference-filter-keys.md)\.
 
 **To filter the findings displayed**
 

@@ -1,4 +1,4 @@
-# Troubleshooting AWS sign\-in or account issues<a name="troubleshoot-aws-sign-in"></a>
+# Troubleshoot AWS sign\-in or account issues<a name="troubleshoot_sign_in"></a>
 
 Use the information here to help you troubleshoot sign\-in and other AWS account issues\. For step\-by\-step directions to sign in to an AWS account, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\.
 

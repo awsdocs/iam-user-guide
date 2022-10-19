@@ -119,18 +119,6 @@ You can use the following AWS CLI commands to create and manage IAM OIDC identit
 + To remove tags on an existing IAM OIDC identity provider, run the following command:
   + [https://docs.aws.amazon.com/cli/latest/reference/iam/untag-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-open-id-connect-provider.html)
 
-**To tag an existing IAM OIDC identity provider \(AWS CLI\)**
-+ To tag an existing IAM OIDC identity provider, run the following command:
-  + [https://docs.aws.amazon.com/cli/latest/reference/iam/tag-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-open-id-connect-provider.html)
-
-**To list tags for an existing IAM OIDC identity provider \(AWS CLI\)**
-+ To list tags for an existing IAM OIDC identity provider, run the following command:
-  + [https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-provider-tags.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-open-id-connect-provider-tags.html)
-
-**To remove tags on an IAM OIDC identity provider \(AWS CLI\)**
-+ To remove tags on an existing IAM OIDC identity provider, run the following command:
-  + [https://docs.aws.amazon.com/cli/latest/reference/iam/untag-open-id-connect-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-open-id-connect-provider.html)
-
 **To add or remove a client ID from an existing IAM OIDC identity provider \(AWS CLI\)**
 
 1. \(Optional\) To get a list of all the IAM OIDC identity provider in your AWS account, run the following command:
@@ -171,18 +159,6 @@ You can use the following IAM API commands to create and manage OIDC providers\.
 **To update the list of server certificate thumbprints for an existing IAM OIDC identity provider \(AWS API\)**
 + To update the list of server certificate thumbprints for an IAM OIDC identity provider, call the following operation:
   + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateOpenIDConnectProviderThumbprint.html)
-
-**To tag an existing IAM OIDC identity provider \(AWS API\)**
-+ To tag an existing IAM OIDC identity provider, call the following operation:
-  + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagOpenIDConnectProvider.html)
-
-**To list tags for an existing IAM OIDC identity provider \(AWS API\)**
-+ To list tags for an existing IAM OIDC identity provider, call the following operation:
-  + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviderTags.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListOpenIDConnectProviderTags.html)
-
-**To remove tags on an existing IAM OIDC identity provider \(AWS API\)**
-+ To remove tags on an existing IAM OIDC identity provider, call the following operation:
-  + [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagOpenIDConnectProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagOpenIDConnectProvider.html)
 
 **To tag an existing IAM OIDC identity provider \(AWS API\)**
 + To tag an existing IAM OIDC identity provider, call the following operation:

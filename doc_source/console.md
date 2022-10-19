@@ -4,13 +4,13 @@ The AWS Management Console provides a web\-based user interface that you can use
 
 Before you can use the AWS Management Console, you must sign in to your AWS account\. The process that you will use to sign in to your AWS account depends on what type of AWS user you are\. There are two different types of users in AWS\. You are either the account owner \(root user\) or you are an IAM user\. The root user is created when the AWS account is created using the email address and password that were used to create the account\. IAM users are created by the root user or an IAM administrator within the AWS account\.
 
-If you do not remember your credentials or have trouble signing in using your credentials, see [AWS sign\-in issues](troubleshoot-aws-sign-in.md)\.
+If you do not remember your credentials or have trouble signing in using your credentials, see [AWS sign\-in issues](troubleshoot_sign_in.md)\.
 
 **Topics**
 + [Sign in as the root user](#root-user-sign-in-page)
 + [Sign in as an IAM user](#user-sign-in-page)
 + [Your AWS account ID and its alias](console_account-alias.md)
-+ [Troubleshooting AWS sign\-in or account issues](troubleshoot-aws-sign-in.md)
++ [Troubleshoot AWS sign\-in or account issues](troubleshoot_sign_in.md)
 
 ## Sign in as the root user<a name="root-user-sign-in-page"></a>
 

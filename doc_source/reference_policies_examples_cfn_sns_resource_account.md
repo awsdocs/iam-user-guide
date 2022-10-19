@@ -1,10 +1,10 @@
 # AWS: Deny access to Amazon SNS resources outside your account except CloudFormation<a name="reference_policies_examples_cfn_sns_resource_account"></a>
 
-Using the condition key `aws:ResourceAccount` in your identity\-based policies can impact the user or the role's ability to utilize some AWS services that require interaction with resources in accounts owned by a service\.
+This example shows how you might create an identity\-based policy that denies access to all resources in AWS that don't belong to your account, except for resources that CloudFormation requires for normal operations\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\. 
 
-This example shows how you might create an IAM policy that denies access to all resources in AWS that don't belong to your account, except for resources that CloudFormation requires for normal operations\. If you use CloudFormation Stack Sets in your environment, Stack Sets send requests to Amazon SNS topics owned by the CloudFormation on behalf of the IAM principal \(user or role\) invoking the Stack Sets APIs\. In that case, the policy using the `aws:ResourceAccount` condition key, without accounting for CloudFormation\-owned resources, denies access to the Amazon SNS topics owned by the service account\. 
+You can create a similar policy to restrict access to resources within an organization or an organizational unit, while accounting for CloudFormation owned resources by using the condition keys `aws:ResourceOrgID` and `aws:ResourceOrgPaths`, in your identity\-based policies\. 
 
-To use this policy, replace the *italicized placeholder text* with your information\.
+If you use CloudFormation Stack Sets in your environment, Stack Sets send requests to Amazon SNS topics owned by the CloudFormation on behalf of the IAM principal \(user or role\) invoking the Stack Sets APIs\. In that case, the policy using the `aws:ResourceAccount`, `aws:ResourceOrgPaths`, or `aws:ResourceOrgID` condition key, without accounting for CloudFormation owned resources, denies access to the Amazon SNS topics owned by the service account\. 
 
 To allow AWS CloudFormation Stack Sets APIs access to resources in your account, use the following statements in your resource policy:
 + The `DenyAllAwsResourcesOutsideAccountExceptSNS` statement uses the `NotAction` element with the `[Deny](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_effect.html)` effect which explicitly denies access to all of the actions *not* listed in the statement and do *not* belong to the listed account\.

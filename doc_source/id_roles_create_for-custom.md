@@ -18,7 +18,7 @@ You can use the AWS Management Console to create a role that an IAM user can ass
 
 1. In the **Custom trust policy** section, enter or paste the custom trust policy for the role\. For more information, see [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\.
 
-1. Choose **Next**\.
+1. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\.
 
 1. Select the check box next to the custom trust policy you created\.
 

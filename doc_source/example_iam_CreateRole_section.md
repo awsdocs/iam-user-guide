@@ -39,6 +39,41 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateRole) in *AWS SDK for \.NET API Reference*\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+bool AwsDoc::IAM::createIamRole(
+        const Aws::String &roleName,
+        const Aws::String &policy,
+        const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient client(clientConfig);
+    Aws::IAM::Model::CreateRoleRequest request;
+
+    request.SetRoleName(roleName);
+    request.SetAssumeRolePolicyDocument(policy);
+
+    Aws::IAM::Model::CreateRoleOutcome outcome = client.CreateRole(request);
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Error creating role. " <<
+                  outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        const Aws::IAM::Model::Role iamRole = outcome.GetResult().GetRole();
+        std::cout << "Created role " << iamRole.GetRoleName() << "\n";
+        std::cout << "ID: " << iamRole.GetRoleId() << "\n";
+        std::cout << "ARN: " << iamRole.GetArn() << std::endl;
+    }
+
+    return outcome.IsSuccess();
+}
+```
++  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/CreateRole) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

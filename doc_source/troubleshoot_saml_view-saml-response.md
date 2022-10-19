@@ -14,49 +14,57 @@ For all browsers, go to the page where you can reproduce the issue\. Then follow
 
 **To view a SAML response in Chrome**
 
-These steps were tested using version 54\.0\.2840\.87m\. If you use another version, you might need to adapt the steps accordingly\.
+These steps were tested using version 106\.0\.5249\.103 \(Official Build\) \(arm64\) of Google Chrome\. If you use another version, you might need to adapt the steps accordingly\.
 
-1. Press **F12** to start the developer console\.
+1. Press **F12** to start the **Developer Tools** console\.
 
-1. Select the **Network** tab, and then select **Preserve log**\.
+1. Select the **Network** tab, and then select **Preserve log** in the upper left of the **Developer Tools** window\.
 
 1. Reproduce the issue\.
 
-1. Look for a **SAML Post** in the developer console pane\. Select that row, and then view the **Headers** tab at the bottom\. Look for the **SAMLResponse** attribute that contains the encoded request\.
+1. \(Optional\) If the **Method** column is not visible in the **Developer Tools** **Network** log pane, right\-click on any column label and choose **Method** to add the column\.
+
+1. Look for a **SAML Post** in the **Developer Tools** **Network** log pane\. Select that row, and then view the **Payload** tab at the top\. Look for the **SAMLResponse** element that contains the encoded request\. The associated value is the Base64\-encoded response\.
 
 ## Mozilla Firefox<a name="firefox"></a>
 
 **To view a SAML response in Firefox**
 
-This procedure was tested on version 37\.0\.2 of Mozilla Firefox\. If you use another version, you might need to adapt the steps accordingly\.
+This procedure was tested on version 105\.0\.3 \(64\-bit\) of Mozilla Firefox\. If you use another version, you might need to adapt the steps accordingly\.
 
-1. Press **F12** to start the developer console\.
-
-1. In the upper right of the developer tools window, click options \(the small gear icon\)\. Under **Common Preferences** select **Enable persistent logs**\. 
+1. Press **F12** to start the **Web Developer Tools** console\.
 
 1. Select the **Network** tab\. 
 
+1. In the upper right of the **Web Developer Tools **window, choose options \(the small gear icon\)\. Select **Persist logs**\. 
+
 1. Reproduce the issue\.
 
-1. Look for a **POST** **SAML** in the table\. Select that row\. In the **Form Data** window on the right, select the **Params** tab and find the **SAMLResponse** element\.
+1. \(Optional\) If the **Method** column is not visible in the **Web Developer Tools** **Network** log pane, right\-click on any column label and choose **Method** to add the column\.
+
+1. Look for a **POST** **SAML** in the table\. Select that row, and then view the **Request** tab and find the **SAMLResponse** element\. The associated value is the Base64\-encoded response\.
 
 ## Apple Safari<a name="safari"></a>
 
 **To view a SAML response in Safari**
 
-These steps were tested using version 8\.0\.6 \(10600\.6\.3\)\. If you use another version, you might need to adapt the steps accordingly\.
+These steps were tested using version 16\.0 \(17614\.1\.25\.9\.10, 17614\) of Apple Safari\. If you use another version, you might need to adapt the steps accordingly\.
 
 1. Enable Web Inspector in Safari\. Open the **Preferences** window, select the **Advanced** tab, and then select **Show Develop menu in the menu bar**\.
 
-1. Now you can open Web Inspector\. Click **Develop**, then select **Show Web Inspector**\.
+1. Now you can open Web Inspector\. Choose **Develop** in the menu bar, then select **Show Web Inspector**\.
 
-1. Select the **Resources** tab\.
+1. Select the **Network** tab\.
+
+1. In the upper left of the **Web Inspector** window, choose options \(the small circle icon containing three horizontal lines\)\. Select **Preserve Log**\.
+
+1. \(Optional\) If the **Method** column is not visible in the **Web Inspector** **Network** log pane, right\-click on any column label and choose **Method** to add the column\.
 
 1. Reproduce the issue\.
 
-1. Look for a **saml\-signin\.aws\.amazon\.com** request\.
+1. Look for a **POST** **SAML** in the table\. Select that row, and then view the Headers tab\.
 
-1. Scroll down to find `Request Data` with the name `SAMLResponse`\. The associated value is the Base64\-encoded response\.
+1. Look for the **SAMLResponse** element that contains the encoded request\. Scroll down to find `Request Data` with the name `SAMLResponse`\. The associated value is the Base64\-encoded response\.
 
 ## What to do with the Base64\-encoded SAML response<a name="whatnext"></a>
 

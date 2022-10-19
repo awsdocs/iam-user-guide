@@ -39,6 +39,71 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 +  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreatePolicy) in *AWS SDK for \.NET API Reference*\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+Aws::String AwsDoc::IAM::createPolicy(const Aws::String &policyName,
+                                      const Aws::String &rsrcArn,
+                                      const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+
+    Aws::IAM::Model::CreatePolicyRequest request;
+    request.SetPolicyName(policyName);
+    request.SetPolicyDocument(BuildSamplePolicyDocument(rsrcArn));
+
+    Aws::IAM::Model::CreatePolicyOutcome outcome = iam.CreatePolicy(request);
+    Aws::String result;
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Error creating policy " << policyName << ": " <<
+                  outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        result = outcome.GetResult().GetPolicy().GetArn();
+        std::cout << "Successfully created policy " << policyName <<
+                  std::endl;
+    }
+
+    return result;
+}
+
+Aws::String AwsDoc::IAM::BuildSamplePolicyDocument(const Aws::String &rsrc_arn) {
+    std::stringstream stringStream;
+    stringStream << "{"
+                 << "  \"Version\": \"2012-10-17\","
+                 << "  \"Statement\": ["
+                 << "    {"
+                 << "        \"Effect\": \"Allow\","
+                 << "        \"Action\": \"logs:CreateLogGroup\","
+                 << "        \"Resource\": \""
+                 << rsrc_arn
+                 << "\""
+                 << "    },"
+                 << "    {"
+                 << "        \"Effect\": \"Allow\","
+                 << "        \"Action\": ["
+                 << "            \"dynamodb:DeleteItem\","
+                 << "            \"dynamodb:GetItem\","
+                 << "            \"dynamodb:PutItem\","
+                 << "            \"dynamodb:Scan\","
+                 << "            \"dynamodb:UpdateItem\""
+                 << "       ],"
+                 << "       \"Resource\": \""
+                 << rsrc_arn
+                 << "\""
+                 << "    }"
+                 << "   ]"
+                 << "}";
+
+    return stringStream.str();
+}
+```
++  For API details, see [CreatePolicy](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/CreatePolicy) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

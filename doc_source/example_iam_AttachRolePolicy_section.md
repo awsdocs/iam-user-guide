@@ -45,6 +45,65 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for \.NET API Reference*\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+bool AwsDoc::IAM::attachRolePolicy(const Aws::String &roleName,
+                                   const Aws::String &policyArn,
+                                   const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+
+    Aws::IAM::Model::ListAttachedRolePoliciesRequest list_request;
+    list_request.SetRoleName(roleName);
+
+    bool done = false;
+    while (!done) {
+        auto list_outcome = iam.ListAttachedRolePolicies(list_request);
+        if (!list_outcome.IsSuccess()) {
+            std::cerr << "Failed to list attached policies of role " <<
+                      roleName << ": " << list_outcome.GetError().GetMessage() <<
+                      std::endl;
+            return false;
+        }
+
+        const auto &policies = list_outcome.GetResult().GetAttachedPolicies();
+        if (std::any_of(policies.cbegin(), policies.cend(),
+                        [=](const Aws::IAM::Model::AttachedPolicy &policy) {
+                                return policy.GetPolicyArn() == policyArn;
+                        })) {
+            std::cout << "Policy " << policyArn <<
+                      " is already attached to role " << roleName << std::endl;
+            return true;
+        }
+
+        done = !list_outcome.GetResult().GetIsTruncated();
+        list_request.SetMarker(list_outcome.GetResult().GetMarker());
+    }
+
+    Aws::IAM::Model::AttachRolePolicyRequest request;
+    request.SetRoleName(roleName);
+    request.SetPolicyArn(policyArn);
+
+    Aws::IAM::Model::AttachRolePolicyOutcome outcome = iam.AttachRolePolicy(request);
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Failed to attach policy " << policyArn << " to role " <<
+                  roleName << ": " << outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        std::cout << "Successfully attached policy " << policyArn << " to role " <<
+                  roleName << std::endl;
+    }
+
+    return outcome.IsSuccess();
+}
+```
++  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

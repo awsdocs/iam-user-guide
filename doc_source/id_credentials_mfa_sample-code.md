@@ -60,6 +60,119 @@ For more information about this scenario, see [Scenario: MFA protection for cros
 The following code examples show how to assume a role with AWS STS\.
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/STS#code-examples)\. 
+  
+
+```
+using Amazon;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Model;
+using System;
+using System.Threading.Tasks;
+
+namespace AssumeRoleExample
+{
+    class AssumeRole
+    {
+        /// <summary>
+        /// This example shows how to use the AWS Security Token
+        /// Service (AWS STS) to assume an IAM role.
+        /// 
+        /// NOTE: It is important that the role that will be assumed has a
+        /// trust relationship with the account that will assume the role.
+        /// 
+        /// Before you run the example, you need to create the role you want to
+        /// assume and have it trust the IAM account that will assume that role.
+        /// 
+        /// See https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html
+        /// for help in working with roles.
+        /// </summary>
+
+        private static readonly RegionEndpoint REGION = RegionEndpoint.USWest2;
+
+        static async Task Main()
+        {
+            // Create the SecurityToken client and then display the identity of the
+            // default user.
+            var roleArnToAssume = "arn:aws:iam::123456789012:role/testAssumeRole";
+
+            var client = new Amazon.SecurityToken.AmazonSecurityTokenServiceClient(REGION);
+
+            // Get and display the information about the identity of the default user.
+            var callerIdRequest = new GetCallerIdentityRequest();
+            var caller = await client.GetCallerIdentityAsync(callerIdRequest);
+            Console.WriteLine($"Original Caller: {caller.Arn}");
+
+            // Create the request to use with the AssumeRoleAsync call.
+            var assumeRoleReq = new AssumeRoleRequest()
+            {
+                DurationSeconds = 1600,
+                RoleSessionName = "Session1",
+                RoleArn = roleArnToAssume
+            };
+
+            var assumeRoleRes = await client.AssumeRoleAsync(assumeRoleReq);
+
+            // Now create a new client based on the credentials of the caller assuming the role.
+            var client2 = new AmazonSecurityTokenServiceClient(credentials: assumeRoleRes.Credentials);
+
+            // Get and display information about the caller that has assumed the defined role.
+            var caller2 = await client2.GetCallerIdentityAsync(callerIdRequest);
+            Console.WriteLine($"AssumedRole Caller: {caller2.Arn}");
+        }
+    }
+}
+```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/sts-2011-06-15/AssumeRole) in *AWS SDK for \.NET API Reference*\. 
+
+------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sts#code-examples)\. 
+  
+
+```
+bool AwsDoc::STS::assumeRole(const Aws::String &roleArn,
+                             const Aws::String &roleSessionName,
+                             const Aws::String &externalId,
+                             Aws::Auth::AWSCredentials &credentials,
+                             const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::STS::STSClient sts(clientConfig);
+    Aws::STS::Model::AssumeRoleRequest sts_req;
+
+    sts_req.SetRoleArn(roleArn);
+    sts_req.SetRoleSessionName(roleSessionName);
+    sts_req.SetExternalId(externalId);
+
+    const Aws::STS::Model::AssumeRoleOutcome outcome = sts.AssumeRole(sts_req);
+
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Error assuming IAM role. " <<
+                  outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        std::cout << "Credentials successfully retrieved." << std::endl;
+        const Aws::STS::Model::AssumeRoleResult result = outcome.GetResult();
+        const Aws::STS::Model::Credentials &temp_credentials = result.GetCredentials();
+
+        // Store temporary credentials in return argument.
+        // Note: The credentials object returned by assumeRole differs
+        // from the AWSCredentials object used in most situations.
+        credentials.SetAWSAccessKeyId(temp_credentials.GetAccessKeyId());
+        credentials.SetAWSSecretKey(temp_credentials.GetSecretAccessKey());
+        credentials.SetSessionToken(temp_credentials.GetSessionToken());
+    }
+
+    return outcome.IsSuccess();
+}
+```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForCpp/sts-2011-06-15/AssumeRole) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  

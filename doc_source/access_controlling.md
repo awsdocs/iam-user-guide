@@ -263,7 +263,7 @@ In the following example, the condition ensures that the `AttachGroupPolicy` and
 }
 ```
 
-This policy uses the `ArnLike` condition operator because the ARN includes a wildcard character\. For a specific ARN, use the `ArnEquals` condition operator\. For more information about `ArnLike` and `ArnEquals`, see [Amazon Resource Name \(ARN\) condition operators](reference_policies_elements_condition_operators.md#Conditions_ARN) in the *Condition Types* section of the *Policy Element Reference*\. 
+This policy uses the `ArnLike` condition operator, but you can also use the `ArnEquals` condition operator because these two condition operators behave identically\. For more information about `ArnLike` and `ArnEquals`, see [Amazon Resource Name \(ARN\) condition operators](reference_policies_elements_condition_operators.md#Conditions_ARN) in the *Condition Types* section of the *Policy Element Reference*\. 
 
 For example, you can limit the use of actions to involve only the managed policies that you specify\. You do this by specifying the policy ARN in the `Condition` element of the policy that grants these permissions\. For example, to specify the ARN of a customer managed policy:
 

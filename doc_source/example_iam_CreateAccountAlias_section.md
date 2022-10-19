@@ -6,6 +6,36 @@ The following code examples show how to create an alias for an IAM account\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+bool AwsDoc::IAM::createAccountAlias(const Aws::String &aliasName,
+                                     const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::CreateAccountAliasRequest request;
+    request.SetAccountAlias(aliasName);
+
+    Aws::IAM::Model::CreateAccountAliasOutcome outcome = iam.CreateAccountAlias(
+            request);
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Error creating account alias " << aliasName << ": "
+                  << outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        std::cout << "Successfully created account alias " << aliasName <<
+                  std::endl;
+    }
+
+    return outcome.IsSuccess();
+}
+```
++  For API details, see [CreateAccountAlias](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/CreateAccountAlias) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

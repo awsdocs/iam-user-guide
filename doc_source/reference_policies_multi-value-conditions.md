@@ -49,7 +49,7 @@ The `ForAllValues` and `ForAnyValue` qualifiers add set\-operation functionality
 + `ForAllValues` – Use with multivalued condition keys\. Tests whether the value of every member of the request set is a subset of the condition key set\. The condition returns true if every key value in the request matches at least one value in the policy\. It also returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. Do not use `ForAllValues` with an `Allow` effect because it can be overly permissive\.
 + `ForAnyValue` – Use with multivalued condition keys\. Tests whether at least one member of the set of request values matches at least one member of the set of condition key values\. The condition returns true if any one of the key values in the request matches any one of the condition values in the policy\. For no matching key or a null dataset, the condition returns false\.
 **Note**  
-The the difference between single\-valued and multivalued condition keys depends on the number of values in the request context, not the number of values in the policy condition\.
+The difference between single\-valued and multivalued condition keys depends on the number of values in the request context, not the number of values in the policy condition\.
 
 ## Examples of using multiple values with condition set operators<a name="reference_policies_multi-value-conditions-examples"></a>
 

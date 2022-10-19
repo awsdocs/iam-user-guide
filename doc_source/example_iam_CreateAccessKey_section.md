@@ -41,6 +41,42 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 +  For API details, see [CreateAccessKey](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateAccessKey) in *AWS SDK for \.NET API Reference*\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+Aws::String AwsDoc::IAM::createAccessKey(const Aws::String &userName,
+                                         const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+
+    Aws::IAM::Model::CreateAccessKeyRequest request;
+    request.SetUserName(userName);
+
+    Aws::String result;
+    Aws::IAM::Model::CreateAccessKeyOutcome outcome = iam.CreateAccessKey(request);
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Error creating access key for IAM user " << userName
+                  << ":" << outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        const auto &accessKey = outcome.GetResult().GetAccessKey();
+        std::cout << "Successfully created access key for IAM user " <<
+                  userName << std::endl << "  aws_access_key_id = " <<
+                  accessKey.GetAccessKeyId() << std::endl <<
+                  " aws_secret_access_key = " << accessKey.GetSecretAccessKey() <<
+                  std::endl;
+        result = accessKey.GetAccessKeyId();
+    }
+
+    return result;
+}
+```
++  For API details, see [CreateAccessKey](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/CreateAccessKey) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

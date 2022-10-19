@@ -6,6 +6,43 @@ The following code examples show how to get data about the last use of an IAM ac
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+bool AwsDoc::IAM::accessKeyLastUsed(const Aws::String &secretKeyID,
+                                    const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::GetAccessKeyLastUsedRequest request;
+
+    request.SetAccessKeyId(secretKeyID);
+
+    Aws::IAM::Model::GetAccessKeyLastUsedOutcome outcome = iam.GetAccessKeyLastUsed(
+            request);
+
+    if (!outcome.IsSuccess()) {
+        std::cerr << "Error querying last used time for access key " <<
+                  secretKeyID << ":" << outcome.GetError().GetMessage() << std::endl;
+    }
+    else {
+        Aws::String lastUsedTimeString =
+                outcome.GetResult()
+                        .GetAccessKeyLastUsed()
+                        .GetLastUsedDate()
+                        .ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+        std::cout << "Access key " << secretKeyID << " last used at time " <<
+                  lastUsedTimeString << std::endl;
+    }
+
+    return outcome.IsSuccess();
+}
+```
++  For API details, see [GetAccessKeyLastUsed](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/GetAccessKeyLastUsed) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  

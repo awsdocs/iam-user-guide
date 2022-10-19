@@ -17,27 +17,27 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   #
   # @param role [Aws::IAM::Role] The role to delete.
   def delete_service_linked_role(role)
-      response = @iam_resource.client.delete_service_linked_role(role_name: role.name)
-      task_id = response.deletion_task_id
-      while true
-        response = @iam_resource.client.get_service_linked_role_deletion_status(
-          deletion_task_id: task_id)
-        status = response.status
-        puts("Deletion of #{role.name} #{status}.")
-        if %w(SUCCEEDED FAILED).include?(status)
-          break
-        else
-          sleep(3)
-        end
+    response = @iam_resource.client.delete_service_linked_role(role_name: role.name)
+    task_id = response.deletion_task_id
+    while true
+      response = @iam_resource.client.get_service_linked_role_deletion_status(
+        deletion_task_id: task_id)
+      status = response.status
+      puts("Deletion of #{role.name} #{status}.")
+      if %w(SUCCEEDED FAILED).include?(status)
+        break
+      else
+        sleep(3)
       end
-  rescue Aws::Errors::ServiceError => e
-    # If AWS has not yet fully propagated the role, it deletes the role but
-    # returns NoSuchEntity.
-    if e.code != "NoSuchEntity"
-      puts("Couldn't delete #{role.name}. Here's why:")
-      puts("\t#{e.code}: #{e.message}")
-      raise
     end
+rescue Aws::Errors::ServiceError => e
+  # If AWS has not yet fully propagated the role, it deletes the role but
+  # returns NoSuchEntity.
+  if e.code != "NoSuchEntity"
+    puts("Couldn't delete #{role.name}. Here's why:")
+    puts("\t#{e.code}: #{e.message}")
+    raise
+  end
   end
 ```
 +  For API details, see [DeleteServiceLinkedRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/iam-2010-05-08/DeleteServiceLinkedRole) in *AWS SDK for Ruby API Reference*\. 

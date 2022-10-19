@@ -3,7 +3,7 @@
 **Having trouble signing in to AWS?** Make sure that you're on the correct [AWS sign\-in page](console.md) for your type of user\. If you are the AWS account root user \(account owner\), you can sign in to AWS using the credentials that you set up when you created the AWS account\. If you are an IAM user, your account administrator can give you the credentials that you can use to sign in to AWS\.
 
 **Note**  
-If you need to request support, do not use the feedback link on this page, as the form is received by the AWS Documentation team, not AWS Support\. Instead, on the [Contact Us](http://aws.amazon.com/contact-us/) page, expand **I cannot login to my AWS Account** and choose **Request Support for AWS Account Credentials**\.
+If you need to request support, do not use the **Feedback** link on this page\. Feedback you enter is received by the AWS Documentation team, not AWS Support\. Instead, choose the **Contact Us** link at the top of this page\. There, you'll find links to resources to help you get the support that you need\.
 
 The AWS account root user or an IAM administrator for the account can create *IAM identities*\. An IAM identity provides access to an AWS account\. A *user group* is a collection of IAM users managed as a unit\. An IAM identity represents a user, and can be authenticated and then authorized to perform actions in AWS\. Each IAM identity can be associated with one or more *policies*\. Policies determine what actions a user, role, or member of a user group can perform, on which AWS resources, and under what conditions\.
 

@@ -648,9 +648,6 @@ Use this key to compare the requested resource owner's [AWS account ID](https://
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Single\-valued
 
-**Note**  
-Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceAccount` in your identity\-based policies might impact your identity's ability to access these resources\.
-
 This key is equal to the AWS account ID for the account with the resources evaluated in the request\.
 
 For most resources in your account, the [ARN](reference_policies_elements_condition_operators.md#Conditions_ARN) contains the owner account ID for that resource\. For certain resources, such as Amazon S3 buckets, the resource ARN does not include the account ID\. The following two examples show the difference between a resource with an account ID in the ARN, and an Amazon S3 ARN without an account ID:
@@ -691,6 +688,9 @@ This policy does not allow any actions\. Instead, it uses the `Deny` effect whic
 
 This policy denies access to all resources for a specific AWS service unless the specified AWS account owns the resource\. 
 
+**Note**  
+Some AWS services require access to AWS owned resources that are hosted in another AWS account\. Using `aws:ResourceAccount` in your identity\-based policies might impact your identity's ability to access these resources\.
+
 Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the element `aws:ResourceAccount` in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\.
 + [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
 + [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
@@ -719,9 +719,6 @@ Use this key to compare the identifier of the organization in AWS Organizations 
 
 This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.
 
-**Note**  
-Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgID` in your identity\-based policies might impact your identity's ability to access these resources\.
-
 For example, the following policy prevents the principal from adding objects to the `policy-genius-dev` resource unless the Amazon S3 resource belongs to the same organization as the principal making the request\.
 
 **Important**  
@@ -744,6 +741,15 @@ This policy does not allow any actions\. Instead, it uses the `Deny` effect whic
 }
 ```
 
+**Note**  
+Some AWS services require access to AWS owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgID` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the `aws:ResourceOrgID` key in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\. You can create a similar policy to restrict access to resources within your organization using the `aws:ResourceOrgID` key, while accounting for service\-owned resources\.
++ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
++ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+
+Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
+
 ## aws:ResourceOrgPaths<a name="condition-keys-resourceorgpaths"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
@@ -765,9 +771,6 @@ Use this key to compare the AWS Organizations path for the accessed resource to 
 + **Value type** – Multivalued
 
 `aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
-
-**Note**  
-Some AWS services require access to AWS\-owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgPaths` in your identity\-based policies might impact your identity's ability to access these resources\.
 
 For example, the following condition returns `True` for resources that belong to the organization `o-a1b2c3d4e5`\. When you include a wildcard, you must use the [StringLike](reference_policies_elements_condition_operators.md) condition operator\.
 
@@ -794,6 +797,15 @@ The following condition returns `True` for resources owned by accounts attached 
      "aws:ResourceOrgPaths":["o-a1b2c3d4e5/r-ab12/ou-ab12-11111111/ou-ab12-22222222/"]
 }}
 ```
+
+**Note**  
+Some AWS services require access to AWS owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgPaths` in your identity\-based policies might impact your identity's ability to access these resources\.
+
+Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the `aws:ResourceOrgPaths` key in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\. You can create a similar policy to restrict access to resources within an organizational unit \(OU\) using the `aws:ResourceOrgPaths` key, while accounting for service\-owned resources\.
++ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
++ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+
+Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
 
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 
