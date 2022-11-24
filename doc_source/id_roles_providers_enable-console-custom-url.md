@@ -20,6 +20,7 @@ To enable your organization's users to access the AWS Management Console, you ca
    + If you use the `GetFederationToken` API operation in your URL, you can include the `DurationSeconds` parameter\. This parameter specifies the duration of the federated console session\. The value can range from 900 seconds \(15 minutes\) to 129,600 seconds \(36 hours\)\. 
 **Note**  
 Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
+Using the credentials for one role to assume a different role is called [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. When you use role chaining, your new credentials are limited to a maximum duration of one hour\. When you use roles to [grant permissions to applications that run on EC2 instances](id_roles_use_switch-role-ec2.md), those applications are not subject to this limitation\.
 
 1. Give the URL to the user or invoke the URL on the user's behalf\.
 
@@ -91,6 +92,7 @@ The following instructions in this step only work using GET requests\.
    The `SessionDuration` HTTP parameter specifies the duration of the console session\. This is separate from the duration of the temporary credentials that you specify using the `DurationSeconds` parameter\. You can specify a `SessionDuration` maximum value of 43,200 \(12 hours\)\. If the `SessionDuration` parameter is missing, then the session defaults to the duration of the credentials that you retrieved from AWS STS in step 2 \(which defaults to one hour\)\. See the [documentation for the `AssumeRole` API](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) for details about how to specify a duration using the `DurationSeconds` parameter\. The ability to create a console session that is longer than one hour is intrinsic to the `getSigninToken` operation of the federation endpoint\.
 **Note**  
 Do not use the `SessionDuration` HTTP parameter if you got the temporary credentials with `GetFederationToken`\. Doing so will cause the operation to fail\.
+Using the credentials for one role to assume a different role is called [*role chaining*](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. When you use role chaining, your new credentials are limited to a maximum duration of one hour\. When you use roles to [grant permissions to applications that run on EC2 instances](id_roles_use_switch-role-ec2.md), those applications are not subject to this limitation\.
 
    When you enable console sessions with an extended duration, you increase the risk of credential exposure\. To help you mitigate this risk, you can immediately disable the active console sessions for any role by choosing **Revoke Sessions** on the **Role Summary** IAM console page\. For more information, see [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)\. 
 

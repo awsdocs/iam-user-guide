@@ -33,7 +33,7 @@ When users leave your organization or no longer need AWS access, it is important
 
 1. Choose the name of the user whose password you want to create\. 
 
-1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage password** next to **Console password**\.
+1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage** next to **Console password**\.
 
 1. In **Manage console access**, for **Console access** choose **Enable** if not already selected\. If console access is disabled, then no password is needed\.
 
@@ -59,7 +59,7 @@ For security reasons, you cannot access the password after completing this step,
 
 1. Choose the name of the user whose password you want to change\. 
 
-1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage password** next to **Console password**\.
+1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage** next to **Console password**\.
 
 1. In **Manage console access**, for **Console access** choose **Enable** if not already selected\. If console access is disabled, then no password is needed\.
 
@@ -85,7 +85,7 @@ For security reasons, you cannot access the password after completing this step,
 
 1. Choose the name of the user whose password you want to delete\. 
 
-1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage password** next to **Console password**\.
+1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage** next to **Console password**\.
 
 1. For **Console access**, choose **Disable**, and then choose **Apply**\.
 

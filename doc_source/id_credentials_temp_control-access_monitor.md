@@ -363,7 +363,7 @@ For example, assume that a user makes an AWS STS `AssumeRole` request, and sets 
     "userIdentity": {
         "type": "AWSAccount",
         "principalId": "AIDAJ45Q7YFFAREXAMPLE",
-        "accountId": "123456789012"
+        "accountId": "111122223333"
     },
     "eventTime": "2020-04-02T18:20:53Z",
     "eventSource": "sts.amazonaws.com",
@@ -372,8 +372,8 @@ For example, assume that a user makes an AWS STS `AssumeRole` request, and sets 
     "sourceIPAddress": "203.0.113.64",
     "userAgent": "aws-cli/1.16.96 Python/3.6.0 Windows/10 botocore/1.12.86",
     "requestParameters": {
-        "roleArn": "arn:aws:iam::123456789012:role/Assumed_Role",
-        "roleSessionName": "Test1",
+        "roleArn": "arn:aws:iam::123456789012:role/DevRole",
+        "roleSessionName": "Dev1",
         "sourceIdentity": "source-identity-value-set",
     },
 ```

@@ -25,8 +25,8 @@ To add a FIDO security key, see one of the following:
 + [Enable a FIDO security key for the AWS account root user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-root)
 + [Enable a FIDO security key for another IAM user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-iam-user)
 To add a hardware MFA device, see one of the following:   
-+ [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)\.
-+ [Enable a hardware MFA device for another IAM user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)
++ [Enable a hardware TOTP token for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)\.
++ [Enable a hardware TOTP token for another IAM user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-iam-user)
 
 **Get an access key**  
 You need an access key if you want to make AWS requests using the [AWS SDKs](https://aws.amazon.com/tools/), the [AWS Command Line Tools](https://aws.amazon.com/tools/#Command_Line_Tools), or the API operations\.   

@@ -4,6 +4,7 @@ The following table describes major documentation updates for IAM\.
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [IAM Access Analyzer support for new resource types](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-resources.html) | IAM Access Analyzer added support for the following resource types:  Amazon EBS volume snapshots   Amazon ECR repositories   Amazon EFS file systems   Amazon RDS DB snapshots   Amazon RDS DB cluster snapshots   Amazon SNS topics   | October 25, 2022 | 
 | [U2F deprecation and WebAuthn/FIDO update](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html) | Removed mentions of U2F as an MFA option and added information about WebAuthn, FIDO2, and FIDO security keys\. | May 31, 2022 | 
 | [Updates to resilience in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/disaster-recovery-resiliency.html) | Added information about maintaining access to IAM credentials when an event disrupts communication between AWS Regions\. | May 16, 2022 | 
 | [New global condition keys for resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-resourceaccount) | You can now control access to resources based on the account, Organizational Unit \(OU\), or organization in AWS Organizations that contains your resources\. You can use the `aws:ResourceAccount`, `aws:ResourceOrgID`, and `aws:ResourceOrgPaths` global condition keys in an IAM policy\. | April 27, 2022 | 

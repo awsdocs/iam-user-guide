@@ -3,18 +3,19 @@
 **Note**  
 If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.
 
-Access keys are long\-term credentials for an IAM user or the AWS account root user\. You can use access keys to sign programmatic requests to the AWS CLI or AWS API \(directly or using the AWS SDK\)\. For more information, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\. 
-
-Access keys consist of two parts: an access key ID \(for example, `AKIAIOSFODNN7EXAMPLE`\) and a secret access key \(for example, `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`\)\. Like a user name and password, you must use both the access key ID and secret access key together to authenticate your requests\. Manage your access keys as securely as you do your user name and password\.
+Access keys are long\-term credentials for an IAM user or the AWS account root user\. You can use access keys to sign programmatic requests to the AWS CLI or AWS API \(directly or using the AWS SDK\)\. For more information, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the *Amazon Web Services General Reference*\.
 
 **Important**  
-Do not provide your access keys to a third party, even to help [find your canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId)\. By doing this, you might give someone permanent access to your account\.
+As a best practice, use temporary security credentials \(IAM roles\) instead of creating long\-term credentials like access keys, and don't create AWS account root user access keys\. We don't recommend generating access keys for your root user, because they allow full access to all your resources for all AWS services, including your billing information\. For more information, see [Best Practices for AWS accounts](https://docs.aws.amazon.com/accounts/latest/reference/best-practices.html) in the *AWS Account Management Reference Guide*\.
 
-As a best practice, use temporary security credentials \(IAM roles\) instead of access keys, and disable any AWS account root user access keys\. For more information, see [Best Practices for Managing AWS Access Keys](https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html) in the *Amazon Web Services General Reference*\.
+Access keys consist of two parts: an access key ID \(for example, `AKIAIOSFODNN7EXAMPLE`\) and a secret access key \(for example, `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`\)\. Like a user name and password, you must use both the access key ID and secret access key together to authenticate your requests\. Manage your access keys as securely as you do your user name and password\.
 
 If you still need to use long\-term access keys, you can create, modify, view, or rotate your access keys \(access key IDs and secret access keys\)\. You can have a maximum of two access keys\. This allows you to rotate the active keys according to best practices\.
 
 When you create an access key pair, save the access key ID and secret access key in a secure location\. The secret access key is available only at the time you create it\. If you lose your secret access key, you must delete the access key and create a new one\. For more details, see [Resetting lost or forgotten passwords or access keys for AWS](id_credentials_access-keys_retrieve.md)\.
+
+**Important**  
+Do not provide your access keys to a third party, even to help [find your canonical user ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html#FindingCanonicalId)\. By doing this, you might give someone permanent access to your account\.
 
 **Topics**
 + [Permissions required](#access-keys_required-permissions)

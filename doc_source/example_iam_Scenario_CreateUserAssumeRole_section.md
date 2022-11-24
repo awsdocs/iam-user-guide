@@ -14,7 +14,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ \.NET ]
 
 **AWS SDK for \.NET**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM/IAM_Basics_Scenario#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM/IAM_Basics_Scenario#code-examples)\. 
   
 
 ```
@@ -436,7 +436,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ C\+\+ ]
 
 **SDK for C\+\+**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
   
 
 ```
@@ -457,9 +457,9 @@ namespace AwsDoc {
     }
 }
 
-//! Scenario to create an IAM user, create an IAM role, and apply the role to the use.
+//! Scenario to create an IAM user, create an IAM role, and apply the role to the user.
 // "IAM access" permissions are needed to run this code.
-// "STS assume role" permissions are needed to run this code; (note, it may be necessary to
+// "STS assume role" permissions are needed to run this code. (Note: It might be necessary to
 //    create a custom policy).
 /*!
   \sa iamCreateUserAssumeRoleScenario
@@ -837,7 +837,7 @@ bool AwsDoc::IAM::DeleteCreatedEntities(const Aws::IAM::IAMClient &client,
 #### [ Go ]
 
 **SDK for Go V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -1176,12 +1176,29 @@ func scenario() {
 #### [ Java ]
 
 **SDK for Java 2\.x**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
 Create functions that wrap IAM user actions\.  
 
 ```
-public class IAMScenario {
+/*
+  To run this Java V2 code example, set up your development environment, including your credentials.
 
+  For information, see this documentation topic:
+
+  https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/get-started.html
+
+  This example performs these operations:
+
+  1. Creates a user that has no permissions.
+  2. Creates a role and policy that grants Amazon S3 permissions.
+  3. Creates a role.
+  4. Grants the user permissions.
+  5. Gets temporary credentials by assuming the role.  Creates an Amazon S3 Service client object with the temporary credentials.
+  6. Deletes the resources.
+ */
+
+public class IAMScenario {
+    public static final String DASHES = new String(new char[80]).replace("\0", "-");
     public static final String PolicyDocument =
             "{" +
                     "  \"Version\": \"2012-10-17\"," +
@@ -1227,25 +1244,52 @@ public class IAMScenario {
             .credentialsProvider(ProfileCredentialsProvider.create())
             .build();
 
-        // Create the IAM user.
+        System.out.println(DASHES);
+        System.out.println("Welcome to the AWS IAM example scenario.");
+        System.out.println(DASHES);
+
+        System.out.println(DASHES);
+        System.out.println(" 1. Create the IAM user.");
         Boolean createUser = createIAMUser(iam, userName);
+        System.out.println(DASHES);
 
        if (createUser) {
            System.out.println(userName + " was successfully created.");
+
+           System.out.println(DASHES);
+           System.out.println("2. Creates a policy.");
            String polArn = createIAMPolicy(iam, policyName);
            System.out.println("The policy " + polArn + " was successfully created.");
+           System.out.println(DASHES);
+
+           System.out.println(DASHES);
+           System.out.println("3. Creates a role.");
            String roleArn = createIAMRole(iam, roleName, fileLocation);
            System.out.println(roleArn + " was successfully created.");
-           attachIAMRolePolicy(iam, roleName, polArn);
+           System.out.println(DASHES);
 
+           System.out.println(DASHES);
+           System.out.println("4. Grants the user permissions.");
+           attachIAMRolePolicy(iam, roleName, polArn);
+           System.out.println(DASHES);
+
+           System.out.println(DASHES);
            System.out.println("*** Wait for 1 MIN so the resource is available");
            TimeUnit.MINUTES.sleep(1);
+           System.out.println("5. Gets temporary credentials by assuming the role.");
+           System.out.println("Perform an Amazon S3 Service operation using the temporary credentials.");
            assumeGivenRole(roleArn, roleSessionName, bucketName);
+           System.out.println(DASHES);
 
-           System.out.println("*** Getting ready to delete the AWS resources");
+           System.out.println(DASHES);
+           System.out.println("6 Getting ready to delete the AWS resources");
            deleteRole(iam, roleName, polArn);
            deleteIAMUser(iam, userName);
+           System.out.println(DASHES);
+
+           System.out.println(DASHES);
            System.out.println("This IAM Scenario has successfully completed");
+           System.out.println(DASHES);
        } else {
            System.out.println(userName +" was not successfully created.");
        }
@@ -1477,7 +1521,7 @@ public class IAMScenario {
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -1898,7 +1942,7 @@ run(userName, s3_policy_name, role_name, assume_policy_name);
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
 Create functions that wrap IAM user actions\.  
 
 ```
@@ -2150,7 +2194,7 @@ fun readJsonSimpleDemo(filename: String): Any? {
 #### [ PHP ]
 
 **SDK for PHP**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -2263,7 +2307,7 @@ echo "Delete user: {$user['UserName']}\n";
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
 Create an IAM user and a role that grants permission to list Amazon S3 buckets\. The user has rights only to assume the role\. After assuming the role, use temporary credentials to list buckets for the account\.  
 
 ```
@@ -2507,7 +2551,7 @@ if __name__ == '__main__':
 #### [ Ruby ]
 
 **SDK for Ruby**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -2793,7 +2837,7 @@ run_scenario(ScenarioCreateUserAssumeRole.new(Aws::IAM::Resource.new)) if $PROGR
 
 **SDK for Rust**  
 This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
   
 
 ```

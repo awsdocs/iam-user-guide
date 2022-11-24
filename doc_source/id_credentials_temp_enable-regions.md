@@ -17,7 +17,7 @@ You can change this setting using the AWS Management Console, AWS CLI, or AWS AP
 
 1. Open the [IAM console](https://console.aws.amazon.com/iam/home?#home)\. In the navigation pane, choose **Account settings**\.
 
-1. If necessary, expand the **Security Token Service \(STS\)** section\. In the first table next to **Global endpoint**, the **Region compatibility of session tokens** column indicates `Valid only in AWS Regions enabled by default`\. Choose **Change**\.
+1. If necessary, expand the **Security Token Service \(STS\)** section\. In the first table next to **Global endpoint**, the **Region compatibility of session tokens** column indicates `Valid only in AWS Regions enabled by default`\. Choose **Edit**\.
 
 1. In the **Change region compatibility of session tokens for global endpoint** dialog box, select **Valid in all AWS Regions**\. Then choose **Save changes**\.
 **Note**  

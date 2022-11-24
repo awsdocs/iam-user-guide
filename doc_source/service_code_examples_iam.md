@@ -2,16 +2,11 @@
 
 The following code examples show how to use IAM with an AWS software development kit \(SDK\)\. 
 
-The examples are divided into the following categories:
+*Actions* are code excerpts that show you how to call individual service functions\.
 
-**Actions**  
-Code excerpts that show you how to call individual service functions\.
+*Scenarios* are code examples that show you how to accomplish a specific task by calling multiple functions within the same service\.
 
-**Scenarios**  
-Code examples that show you how to accomplish a specific task by calling multiple functions within the same service\.
-
-**Cross\-service examples**  
-Sample applications that work across multiple AWS services\.
+*Cross\-service examples* are sample applications that work across multiple AWS services\.
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.
 
@@ -19,6 +14,7 @@ For a complete list of AWS SDK developer guides and code examples, see [Using IA
 + [Actions](service_code_examples_iam_actions.md)
   + [Attach a policy to a role](example_iam_AttachRolePolicy_section.md)
   + [Attach a policy to a user](example_iam_AttachUserPolicy_section.md)
+  + [Attach an inline policy to a role](example_iam_PutRolePolicy_section.md)
   + [Create a policy](example_iam_CreatePolicy_section.md)
   + [Create a policy version](example_iam_CreatePolicyVersion_section.md)
   + [Create a role](example_iam_CreateRole_section.md)

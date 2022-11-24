@@ -73,7 +73,7 @@ Sometimes you pass a role to a service that then passes the role to a different 
 Some services, such as AWS CodeBuild and AWS CodeCommit do not support this condition key\.
 
 **iam:PermissionsBoundary**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions boundaries for IAM entities](access_policies_boundaries.md)
 
 **iam:PolicyARN**  

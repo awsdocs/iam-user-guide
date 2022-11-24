@@ -138,9 +138,21 @@ This policy provides read\-only access to IAM Access Analyzer\. No other service
 
 You can't attach AccessAnalyzerServiceRolePolicy to your IAM entities\. This policy is attached to a service\-linked role that allows IAM Access Analyzer to perform actions on your behalf\. For more information, see [Using service\-linked roles for AWS Identity and Access Management Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-using-service-linked-roles.html)\.
 
-### Service\-level permissions<a name="service-level-permissions"></a>
+### Permissions groupings<a name="service-level-permissions"></a>
 
-This policy allows access to IAM Access Analyzer to analyze resource metadata from multiple AWS services\. The policy also allows permissions to AWS Organizations and allows the creation of an analyzer within the AWS organization as the zone of trust\.
+This policy allows access to IAM Access Analyzer to analyze resource metadata from multiple AWS services\.
++ **Amazon Elastic Compute Cloud** – Allows permissions to describe IP addresses, snapshots, and VPCs\.
++ **Amazon Elastic Container Registry** – Allows permissions to describe image repositories and retrieve repository policies\.
++ **Amazon Elastic File System** – Allows permissions to view the description of an Amazon EFS file system and view the resource\-level policy for an Amazon EFS file system\.
++ **AWS Identity and Access Management** – Allows permissions to retrieve information about a specified role and list the IAM roles that have a specified path prefix\.
++ **AWS Key Management Service** – Allows permissions to view detailed information about an KMS key and its key policies and grants\.
++ **AWS Lambda** – Allows permissions to view information about Lambda aliases, functions, layers, and aliases\.
++ **AWS Organizations** – Allows permissions to Organizations and allows the creation of an analyzer within the AWS organization as the zone of trust\.
++ **Amazon Relational Database Service** – Allows permissions to view detailed information about Amazon RDS DB snapshots and Amazon RDS DB cluster snapshots\.
++ **Amazon Simple Storage Service** – Allows permissions to view detailed information about Amazon S3 access points and buckets\.
++ **AWS Secrets Manager** – Allows permissions to view detailed information about secrets and resource policies attached to secrets\.
++ **Amazon Simple Notification Service** – Allows permissions to view detailed information about a topic\.
++ **Amazon Simple Queue Service** – Allows permissions to view detailed information about specified queues\.
 
 ```
 {
@@ -151,8 +163,14 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
       "Action": [
         "ec2:DescribeAddresses",
         "ec2:DescribeByoipCidrs",
+        "ec2:DescribeSnapshotAttribute",
+        "ec2:DescribeSnapshots",
         "ec2:DescribeVpcEndpoints",
         "ec2:DescribeVpcs",
+        "ecr:DescribeRepositories",
+        "ecr:GetRepositoryPolicy",
+        "elasticfilesystem:DescribeFileSystemPolicy",
+        "elasticfilesystem:DescribeFileSystems",
         "iam:GetRole",
         "iam:ListRoles",
         "kms:DescribeKey",
@@ -179,6 +197,10 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
         "organizations:ListOrganizationalUnitsForParent",
         "organizations:ListParents",
         "organizations:ListRoots",
+        "rds:DescribeDBClusterSnapshotAttributes",
+        "rds:DescribeDBClusterSnapshots",
+        "rds:DescribeDBSnapshotAttributes",
+        "rds:DescribeDBSnapshots",
         "s3:DescribeMultiRegionAccessPointOperation",
         "s3:GetAccessPoint",
         "s3:GetAccessPointPolicy",
@@ -209,7 +231,7 @@ This policy allows access to IAM Access Analyzer to analyze resource metadata fr
 }
 ```
 
-## <a name="w1134aac30c55c49"></a>
+## <a name="w487aac30c55c49"></a>
 
 
 
@@ -226,6 +248,7 @@ View details about updates to IAM and AWS managed policies since these service b
 
 | Change | Description | Date | 
 | --- | --- | --- | 
+| [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added support for the following resource types to the service\-level permissions of AccessAnalyzerServiceRolePolicy: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/security-iam-awsmanpol.html)  | October 25, 2022 | 
 | [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added the lambda:GetFunctionUrlConfig action to the service\-level permissions of AccessAnalyzerServiceRolePolicy\. | April 6, 2022 | 
 | [AccessAnalyzerServiceRolePolicy](https://console.aws.amazon.com/iam/home#policies/AccessAnalyzerServiceRolePolicy) – Added permissions | IAM Access Analyzer added new Amazon S3 actions to analyze metadata associated with multi\-region access points\. | September 2, 2021 | 
 |  [IAMAccessAnalyzerReadOnlyAccess](#security-iam-awsmanpol-IAMAccessAnalyzerReadOnlyAccess) – Added permissions  |  IAM Access Analyzer added a new action to grant `ValidatePolicy` permissions to allow you to use the policy checks for validation\. This permission is required by IAM Access Analyzer to perform policy checks on your policies\.  | March 16, 2021 | 

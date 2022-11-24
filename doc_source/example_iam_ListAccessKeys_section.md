@@ -6,10 +6,67 @@ The following code examples show how to list a user's IAM access keys\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+bool AwsDoc::IAM::listAccessKeys(const Aws::String &userName,
+                                 const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::ListAccessKeysRequest request;
+    request.SetUserName(userName);
+
+    bool done = false;
+    bool header = false;
+    while (!done) {
+        auto outcome = iam.ListAccessKeys(request);
+        if (!outcome.IsSuccess()) {
+            std::cerr << "Failed to list access keys for user " << userName
+                      << ": " << outcome.GetError().GetMessage() << std::endl;
+            return false;
+        }
+
+        if (!header) {
+            std::cout << std::left << std::setw(32) << "UserName" <<
+                      std::setw(30) << "KeyID" << std::setw(20) << "Status" <<
+                      std::setw(20) << "CreateDate" << std::endl;
+            header = true;
+        }
+
+        const auto &keys = outcome.GetResult().GetAccessKeyMetadata();
+        const Aws::String DATE_FORMAT = "%Y-%m-%d";
+
+        for (const auto &key: keys) {
+            Aws::String statusString =
+                    Aws::IAM::Model::StatusTypeMapper::GetNameForStatusType(
+                            key.GetStatus());
+            std::cout << std::left << std::setw(32) << key.GetUserName() <<
+                      std::setw(30) << key.GetAccessKeyId() << std::setw(20) <<
+                      statusString << std::setw(20) <<
+                      key.GetCreateDate().ToGmtString(DATE_FORMAT.c_str()) << std::endl;
+        }
+
+        if (outcome.GetResult().GetIsTruncated()) {
+            request.SetMarker(outcome.GetResult().GetMarker());
+        }
+        else {
+            done = true;
+        }
+    }
+
+    return true;
+}
+```
++  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/ListAccessKeys) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
   
 
 ```
@@ -89,7 +146,7 @@ func main() {
 #### [ Java ]
 
 **SDK for Java 2\.x**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
@@ -141,7 +198,7 @@ func main() {
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -180,7 +237,7 @@ run();
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listaccesskeyscommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -213,7 +270,7 @@ iam.listAccessKeys(params, function(err, data) {
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
   
 
 ```
@@ -236,7 +293,7 @@ suspend fun listKeys(userNameVal: String?) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -262,7 +319,7 @@ def list_keys(user_name):
 #### [ Ruby ]
 
 **SDK for Ruby**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```

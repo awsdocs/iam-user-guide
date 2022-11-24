@@ -13,7 +13,7 @@ Use the IAM console to check whether an AWS account root user or IAM user has a 
 If you want to enable MFA for the account, see one of the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
 + [Enable a FIDO security key for the AWS account root user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-root)
-+ [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
++ [Enable a hardware TOTP token for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 **To check the MFA status of IAM users**
 
@@ -47,4 +47,4 @@ If you want to change the current setting, choose **Manage** next to **Assigned 
 For more information on enabling MFA, see the following: 
 + [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
 + [Enabling a FIDO security key \(console\)](id_credentials_mfa_enable_fido.md)
-+ [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
++ [Enabling a hardware TOTP token \(console\)](id_credentials_mfa_enable_physical.md)

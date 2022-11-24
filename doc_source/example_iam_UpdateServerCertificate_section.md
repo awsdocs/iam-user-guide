@@ -1,15 +1,56 @@
 # Update an IAM server certificate using an AWS SDK<a name="example_iam_UpdateServerCertificate_section"></a>
 
-The following code example shows how to update an IAM server certificate\.
+The following code examples show how to update an IAM server certificate\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ C\+\+ ]
+
+**SDK for C\+\+**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
+  
+
+```
+bool AwsDoc::IAM::updateServerCertificate(const Aws::String &currentCertificateName,
+                                          const Aws::String &newCertificateName,
+                                          const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::UpdateServerCertificateRequest request;
+    request.SetServerCertificateName(currentCertificateName);
+    request.SetNewServerCertificateName(newCertificateName);
+
+    auto outcome = iam.UpdateServerCertificate(request);
+    bool result = true;
+    if (outcome.IsSuccess()) {
+        std::cout << "Server certificate " << currentCertificateName
+                  << " successfully renamed as " << newCertificateName
+                  << std::endl;
+    }
+    else {
+        if (outcome.GetError().GetErrorType() != Aws::IAM::IAMErrors::NO_SUCH_ENTITY) {
+            std::cerr << "Error changing name of server certificate " <<
+                      currentCertificateName << " to " << newCertificateName << ":" <<
+                      outcome.GetError().GetMessage() << std::endl;
+            result = false;
+        }
+        else {
+            std::cout << "Certificate '" << currentCertificateName
+                      << "' not found." << std::endl;
+        }
+    }
+
+    return result;
+}
+```
++  For API details, see [UpdateServerCertificate](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/UpdateServerCertificate) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -50,7 +91,7 @@ run();
 +  For API details, see [UpdateServerCertificate](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/updateservercertificatecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```

@@ -1,10 +1,13 @@
 # Enabling a FIDO security key \(console\)<a name="id_credentials_mfa_enable_fido"></a>
 
-FIDO security keys are a type of [MFA device](id_credentials_mfa.md) that you can use to protect your AWS resources\. You plug your FIDO security key into a USB port on your computer and enable it using the instructions that follow\. After you enable it, you tap it when prompted to securely complete the sign\-in process\. If you already use a FIDO security key with other services, and it has an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md) \(for example, the Yubikey 5 Series from Yubico\), you can also use it with AWS\. Otherwise, you need to purchase a FIDO2 security key if you want to use Webauthn for MFA in AWS\. For specifications and purchase information, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
+FIDO security keys are a type of [multi\-factor authentication \(MFA\) device](id_credentials_mfa.md) that you can use to protect your AWS resources\. You plug your FIDO security key into a USB port on your computer and enable it using the instructions that follow\. After you enable it, you tap it when prompted to securely complete the sign\-in process\. If you already use a FIDO security key with other services, and it has an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md) \(for example, the YubiKey 5 Series from Yubico\), you can also use it with AWS\. Otherwise, you need to purchase a FIDO security key if you want to use WebAuthn for MFA in AWS\. For specifications and purchase information, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
 
-FIDO2 is an open authentication standard and an extension of FIDO U2F, offering the same high level of security based on public key cryptography\. FIDO2 consists of the W3C Web Authentication specification \(WebAuthn API\) and the Client to Authentication Protocol \(CTAP\), an application layer protocol\. CTAP enables communication between client or platform, like a browser or operating system, with an external authenticator\. You can continue to use FIDO\-compliant devices, such as FIDO U2F security keys\. When you enable a FIDO\-compliant authenticator in AWS, the FIDO security key creates a new key pair for use with only AWS\. First, you enter your credentials\. When prompted, you tap the FIDO security key, which responds to the authentication challenge issued by AWS\. To learn more about the FIDO2 standard, see the [FIDO2 Project](https://en.wikipedia.org/wiki/FIDO2_Project)\.
+FIDO2 is an open authentication standard and an extension of FIDO U2F, offering the same high level of security based on public key cryptography\. FIDO2 consists of the W3C Web Authentication specification \(WebAuthn API\) and the FIDO Alliance Client\-to\-Authenticator Protocol \(CTAP\), an application layer protocol\. CTAP enables communication between client or platform, like a browser or operating system, with an external authenticator\. When you enable a FIDO Certified authenticator in AWS, the FIDO security key creates a new key pair for use with only AWS\. First, you enter your credentials\. When prompted, you tap the FIDO security key, which responds to the authentication challenge issued by AWS\. To learn more about the FIDO2 standard, see the [FIDO2 Project](https://en.wikipedia.org/wiki/FIDO2_Project)\.
 
-You can enable **one** MFA device \(of any kind\) per root user or IAM user\. 
+You can register up to **eight** MFA devices of any combination of the [currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) with your AWS account root user and IAM users\. With multiple MFA devices, you only need one MFA device to sign in to the AWS Management Console or create a session through the AWS CLI as that user\.
+
+**Note**  
+We recommend that you require your human users to use temporary credentials when accessing AWS\. Your users can federate into AWS with an identity provider where they authenticate with their corporate credentials and MFA configurations\. To manage access to AWS and business applications, we recommend that you use IAM Identity Center\. For more information, see the [The IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\. 
 
 **Topics**
 + [Permissions required](#enable-fido-mfa-for-iam-user-permissions-required)
@@ -80,11 +83,11 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 1. In the **Manage MFA device** wizard, choose **FIDO security key**, and then choose **Continue**\.
 
 1. Insert the FIDO security key into your computer's USB port\.  
-![\[FIDO Security Key\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
+![\[FIDO security key inserted into a USB port\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
 
-1. Tap the FIDO2 security key, and then choose **Close** when setup is complete\. 
+1. Tap the FIDO security key, and then choose **Close** when setup is complete\. 
 
-The FIDO2 security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
+The FIDO security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\. 
 
 ## Enable a FIDO security key for another IAM user \(console\)<a name="enable-fido-mfa-for-iam-user"></a>
 
@@ -103,7 +106,7 @@ You can enable a FIDO security key for another IAM user from the AWS Management 
 1. In the **Manage MFA device** wizard, choose **FIDO security key**, and then choose **Continue**\.
 
 1. Insert the FIDO security key into your computer's USB port\.  
-![\[FIDO Security Key\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
+![\[FIDO security key inserted into a USB port\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
 
 1. Tap the FIDO security key, and then choose **Close** when setup is complete\. 
 
@@ -113,7 +116,7 @@ The FIDO security key is ready for use with AWS\. For information about using MF
 
 You can configure and enable a virtual MFA device for your root user from the AWS Management Console only, not from the AWS CLI or AWS API\. 
 
-If your FIDO security key is lost, stolen, or not working, you can still sign in using alternative factors of authentication\. To learn about signing in using alternative factors of authentication, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.<a name="enable_fido_root"></a>
+If your FIDO security key is lost, stolen, or not working, you can still sign in using another MFA device registered to the same AWS account root user\. If you only have a single MFA device registered, you can sign in using alternate factors of identification\. To learn about signing in using alternative factors of authentication, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\. To disable this feature, contact [AWS Support](https://console.aws.amazon.com/support/home#/)\.<a name="enable_fido_root"></a>
 
 **To enable the FIDO key for your root user \(console\)**
 
@@ -131,7 +134,7 @@ If you see three text boxes, then you previously signed in to the console with *
 1. In the wizard, choose **FIDO security key** and then choose **Continue**\.
 
 1. Insert the FIDO security key into your computer's USB port\.  
-![\[FIDO Security Key\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
+![\[FIDO security key inserted into a USB port\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
 
 1. Tap the FIDO security key, and then choose **Close** when setup is complete\. 
 
@@ -139,10 +142,10 @@ The FIDO security key is ready for use with AWS\. The next time you use your roo
 
 ## Replace a FIDO security key<a name="replace-fido-mfa"></a>
 
-You can have only one MFA device \(virtual, FIDO security key, or hardware\) assigned to a user at a time\. If the user loses a FIDO\-compliant authenticator or needs to replace it for any reason, you must first deactivate the old FIDO\-compliant authenticator\. Then you can add a new MFA device for the user\.
+You can have up to eight MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) assigned to a use at a time with your AWS account root user and IAM users\. If the user loses a FIDO authenticator or needs to replace it for any reason, you must first deactivate the old FIDO authenticator\. Then you can add a new MFA device for the user\.
 + To deactivate the device currently associated with a user, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\.
-+ To add a new FIDO security key for an IAM user, see [Enabling a FIDO security key \(console\)](#id_credentials_mfa_enable_fido)\.
++ To add a new FIDO security key for an IAM user, see [Enable a FIDO security key for your own IAM user \(console\)](#enable-fido-mfa-for-own-iam-user)\.
 
-If you don't have access to a new FIDO security key, you can enable a new virtual MFA device or hardware MFA device\. See one of the following for instructions:
+If you don't have access to a new FIDO security key, you can enable a new virtual MFA device or hardware TOTP token\. See one of the following for instructions:
 + [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md) 
-+ [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md) 
++ [Enabling a hardware TOTP token \(console\)](id_credentials_mfa_enable_physical.md) 

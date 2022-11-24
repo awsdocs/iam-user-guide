@@ -30,9 +30,13 @@ For more information, see the following articles in the AWS Knowledge Center:
 
 ## Enable MFA on the AWS account root user<a name="id_root-user_manage_mfa"></a>
 
-We recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. For more information about enabling MFA, see the following:
+We recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. We recommend that you enable multiple MFA devices to your AWS account root user and IAM users in your AWS accounts\. This allows you to raise the security bar in your AWS accounts, including your AWS account root user\. You can register up to eight MFA devices of any combination of the currently supported MFA types for your AWS account root user and IAM users\.
+
+With multiple MFA devices, only one MFA device is needed to sign into the AWS Management Console or create a session using the AWS CLI as that user\. For more information, see [How do I use an MFA token to authenticate access to my AWS resources through the AWS CLI?](https://aws.amazon.com/premiumsupport/knowledge-center/authenticate-mfa-cli/)
+
+ For more information about enabling MFA, see the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
-+ [Enable a hardware MFA device for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
++ [Enable a hardware TOTP token for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 ## Creating access keys for the root user<a name="id_root-user_manage_add-key"></a>
 
@@ -84,7 +88,7 @@ You can mark an access key as inactive instead of deleting it\. This enables you
 
 ## Changing the password for the root user<a name="id_root-user_manage_password"></a>
 
-For information about changing the root user's password, see [Changing the AWS account root user password](id_credentials_passwords_change-root.md)\. To change the root user, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
+For information about changing the password for the root user, see [Changing the AWS account root user password](id_credentials_passwords_change-root.md)\. To change the root user, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that Require Root User](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)
 
 ## Securing the credentials for the root user<a name="id_root-user_secure_credentials"></a>
 

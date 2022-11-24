@@ -9,6 +9,7 @@ For a complete list of AWS SDK developer guides and code examples, see [Using IA
   + [Actions](service_code_examples_iam_actions.md)
     + [Attach a policy to a role](example_iam_AttachRolePolicy_section.md)
     + [Attach a policy to a user](example_iam_AttachUserPolicy_section.md)
+    + [Attach an inline policy to a role](example_iam_PutRolePolicy_section.md)
     + [Create a policy](example_iam_CreatePolicy_section.md)
     + [Create a policy version](example_iam_CreatePolicyVersion_section.md)
     + [Create a role](example_iam_CreateRole_section.md)

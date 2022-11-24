@@ -6,7 +6,7 @@ The steps for configuring MFA depend on the type of MFA device you are using\.
 + [General steps for enabling MFA devices](#id_credentials_mfa_enable-overview)
 + [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
 + [Enabling a FIDO security key \(console\)](id_credentials_mfa_enable_fido.md)
-+ [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
++ [Enabling a hardware TOTP token \(console\)](id_credentials_mfa_enable_physical.md)
 + [Enabling and managing virtual MFA devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)
 
 ## General steps for enabling MFA devices<a name="id_credentials_mfa_enable-overview"></a>
@@ -16,24 +16,31 @@ The following overview procedure describes how to set up and use MFA and provide
 **Note**  
 You can also watch this English\-language video, [How to Setup AWS Multi\-Factor Authentication \(MFA\) and AWS Budget Alerts](https://www.youtube.com/watch?v=e6A7z7FqQDE), for more information\.
 
-1. *Get an MFA device such as one of the following\.* You can enable only one MFA device per AWS account root user or IAM user\.
+1. *Get an MFA device such as one of the following\.* You can enable up to eight MFA devices per AWS account root user or IAM user of any combination of the following types\.
    + A virtual MFA device, which is a software app that is compliant with [RFC 6238, a standards\-based TOTP \(time\-based one\-time password\) algorithm](https://datatracker.ietf.org/doc/html/rfc6238)\. You can install the app on a phone or other device\. For a list of a few supported apps that you can use as virtual MFA devices, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
-   + A FIDO security key with an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md), such as one of the FIDO2 devices discussed on the [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/) page\.
-   + A hardware\-based MFA device, such as one of the AWS supported hardware token devices discussed on the [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/) page\.
+   + A FIDO security key with an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md)\. The FIDO Alliance maintains a list of all [FIDO Certified products]() that are compatible with FIDO specifications\.
+   + A hardware\-based MFA device from a third\-party provider like a token device\. These tokens are used exclusively with AWS accounts\. For more information, see [Enabling a hardware TOTP token \(console\)](id_credentials_mfa_enable_physical.md)\. You can purchase these tokens directly from the manufacturers as a key fob or display card device\.
 
 1. *Enable the MFA device\.* 
-   + IAM users with virtual or hardware MFA devices: Enable from the AWS Management Console, AWS CLI, or the IAM API\.
-   + IAM users with FIDO security keys: Enable from the AWS Management Console only\.
-   + AWS account root users with any type of MFA device: Enable from the AWS Management Console only\.
+   + **Virtual or Hardware TOTP tokens** –You can use AWS CLI commands or AWS API operations to enable a virtual MFA device for an IAM user\. You cannot enable an MFA device for the AWS account root user with the AWS CLI, AWS API, Tools for Windows PowerShell, or any other command line tool\. However, you can use the AWS Management Console to enable an MFA device for the root user\.
+   + **FIDO security keys** – Root users and IAM users with FIDO security keys can enable from the AWS Management Console only, not from the AWS CLI or AWS API\.
 
    For information about enabling each type of MFA device, see the following pages:
    + Virtual MFA device: [Enabling a virtual multi\-factor authentication \(MFA\) device \(console\)](id_credentials_mfa_enable_virtual.md)
    + FIDO security key: [Enabling a FIDO security key \(console\)](id_credentials_mfa_enable_fido.md) 
-   + Hardware MFA device: [Enabling a hardware MFA device \(console\)](id_credentials_mfa_enable_physical.md)
+   + Hardware TOTP token: [Enabling a hardware TOTP token \(console\)](id_credentials_mfa_enable_physical.md)
+
+1. *Enable Multiple MFA devices \(recommended\)*
+   + We recommend that you enable multiple MFA devices to the AWS account root user and IAM users in your AWS accounts\. This allows you to raise the security bar in your AWS accounts and simplify managing access to highly privileged users, such as the AWS account root user\.
+   + You can register up to **eight** MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) with your AWS account root user and IAM users\. With multiple MFA devices, you only need one MFA device to sign in to the AWS Management Console or create a session through the AWS CLI as that user\.
+   + In the event of a lost, stolen, or inaccessible MFA device you can use one of the remaining MFA devices to access the AWS account without performing the AWS account recovery procedure\. If an MFA device is lost or stolen, it is best practice to disassociate the lost or stolen device from all IAM users it may be associated with\.
+   + Allow your employees in geographically dispersed locations or working remotely to use hardware\-based MFA to access AWS without shipping a single hardware device or coordinating a physical exchange of a single hardware device between employees\.
+   + Maintain access to your users in AWS by using a different MFA device associated with an IAM user if for any reason the holder of one MFA device is not available\.
+   + Storing additional MFA devices associated with your AWS account root user and IAM users in a secure physical location such as a vault or safe while retaining physical access to another MFA device for redundancy\.
 
 1. *Use the MFA device when you log in to or access AWS resources\.* Note the following:
-   + FIDO security keys: To access an AWS website, enter your credentials and then tap the FIDO security key when prompted\.
-   + Virtual MFA devices and hardware MFA devices: To access an AWS website, you need an MFA code from the device in addition to your user name and password\. 
+   + **FIDO security keys** – To access an AWS website, enter your credentials and then tap the FIDO security key when prompted\.
+   + **Virtual MFA devices and hardware TOTP tokens** – To access an AWS website, you need an MFA code from the device in addition to your user name and password\. 
 
      To access MFA\-protected API operations, you need the following:
      + An MFA code

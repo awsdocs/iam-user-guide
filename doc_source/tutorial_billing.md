@@ -134,15 +134,15 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    1. Sign in to your AWS account as the user FinanceManager\.
 
-   1. On the navigation bar, choose **FinanceManager@*<account alias or ID number>*** , and then choose **My Billing Dashboard**\.
+   1. On the navigation bar, choose **FinanceManager@*<account alias or ID number>*** , and then choose **Billing Dashboard**\.
 
-   1. Browse through the pages and choose the various buttons to ensure that you have full modify permissions\. 
+   1. Browse through the pages and choose the various buttons to ensure that you have full modify permissions\.
 
    **Read\-only access**
 
    1. Sign in to your AWS account as the user FinanceUser\.
 
-   1. On the navigation bar, choose **FinanceUser@*<account alias or ID number>***, and then choose **My Billing Dashboard**\.
+   1. On the navigation bar, choose **FinanceUser@*<account alias or ID number>***, and then choose **Billing Dashboard**\.
 
    1. Browse through the pages\. Notice that you can display costs, reports, and billing data with no problems\. However, if you choose an option to modify a value, you receive an **Access Denied **message\. For example, on the **Preferences** page, choose any of the check boxes on the page, and then choose **Save preferences**\. The console message informs you that you need **ModifyBilling** permissions to make changes to that page\.
 
