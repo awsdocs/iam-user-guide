@@ -343,7 +343,7 @@ To successfully generate a policy, the objects in the bucket must be owned by th
          ],
          "Resource": [
            "arn:aws:s3:::DOC-EXAMPLE-BUCKET",
-           "arn:aws:s3:::DOC-EXAMPLE-BUCKET/AWSLogs/organization-id/${aws:PrincipalAccount}/*"
+           "arn:aws:s3:::DOC-EXAMPLE-BUCKET/organization-id/AWSLogs/${aws:PrincipalAccount}/*"
          ],
          "Condition": {
            "StringEquals": {
