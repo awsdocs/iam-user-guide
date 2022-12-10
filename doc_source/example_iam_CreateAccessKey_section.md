@@ -84,65 +84,27 @@ Aws::String AwsDoc::IAM::createAccessKey(const Aws::String &userName,
   
 
 ```
-package main
-
-import (
-	"context"
-	"flag"
-	"fmt"
-
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
-)
-
-// IMACreateAccessKeyAPI defines the interface for the CreateAccessKey function.
-// We use this interface to test the function using a mocked service.
-type IAMCreateAccessKeyAPI interface {
-	CreateAccessKey(ctx context.Context,
-		params *iam.CreateAccessKeyInput,
-		optFns ...func(*iam.Options)) (*iam.CreateAccessKeyOutput, error)
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
 }
 
-// MakeAccessKey creates a new AWS Identity and Access Management (IAM) access key for a user.
-// Inputs:
-//     c is the context of the method call, which includes the AWS Region.
-//     api is the interface that defines the method call.
-//     input defines the input arguments to the service call.
-// Output:
-//     If successful, a CreateAccessKeyOutput object containing the result of the service call and nil.
-//     Otherwise, nil and an error from the call to CreateAccessKey.
-func MakeAccessKey(c context.Context, api IAMCreateAccessKeyAPI, input *iam.CreateAccessKeyInput) (*iam.CreateAccessKeyOutput, error) {
-	return api.CreateAccessKey(c, input)
-}
 
-func main() {
-	userName := flag.String("u", "", "The name of the user")
-	flag.Parse()
 
-	if *userName == "" {
-		fmt.Println("You must supply a user name (-u USER)")
-		return
-	}
-
-	cfg, err := config.LoadDefaultConfig(context.TODO())
+// CreateAccessKeyPair creates an access key for a user. The returned access key contains
+// the ID and secret credentials needed to use the key.
+func (wrapper UserWrapper) CreateAccessKeyPair(userName string) (*types.AccessKey, error) {
+	var key *types.AccessKey
+	result, err := wrapper.IamClient.CreateAccessKey(context.TODO(), &iam.CreateAccessKeyInput{
+		UserName: aws.String(userName)})
 	if err != nil {
-		panic("configuration error, " + err.Error())
+		log.Printf("Couldn't create access key pair for user %v. Here's why: %v\n", userName, err)
+	} else {
+		key = result.AccessKey
 	}
-
-	client := iam.NewFromConfig(cfg)
-
-	input := &iam.CreateAccessKeyInput{
-		UserName: userName,
-	}
-
-	result, err := MakeAccessKey(context.TODO(), client, input)
-	if err != nil {
-		fmt.Println("Got an error creating a new access key")
-		fmt.Println(err)
-		return
-	}
-
-	fmt.Println("Created new access key with ID: " + *result.AccessKey.AccessKeyId + " and secret key: " + *result.AccessKey.SecretAccessKey)
+	return key, err
 }
 ```
 +  For API details, see [CreateAccessKey](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreateAccessKey) in *AWS SDK for Go API Reference*\. 

@@ -838,324 +838,780 @@ bool AwsDoc::IAM::DeleteCreatedEntities(const Aws::IAM::IAMClient &client,
 
 **SDK for Go V2**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
-  
+Run an interactive scenario at a command prompt\.  
 
 ```
-package main
+// AssumeRoleScenario shows you how to use the AWS Identity and Access Management (IAM)
+// service to perform the following actions:
+//
+// 1. Create a user who has no permissions.
+// 2. Create a role that grants permission to list Amazon Simple Storage Service
+//    (Amazon S3) buckets for the account.
+// 3. Add a policy to let the user assume the role.
+// 4. Try and fail to list buckets without permissions.
+// 5. Assume the role and list S3 buckets using temporary credentials.
+// 6. Delete the policy, role, and user.
+type AssumeRoleScenario struct {
+	sdkConfig aws.Config
+	accountWrapper actions.AccountWrapper
+	policyWrapper actions.PolicyWrapper
+	roleWrapper actions.RoleWrapper
+	userWrapper actions.UserWrapper
+	questioner demotools.IQuestioner
+	helper IScenarioHelper
+	isTestRun bool
+}
 
-import (
-	"context"
-	"errors"
-	"fmt"
-	"time"
-
-	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/credentials"
-	"github.com/aws/aws-sdk-go-v2/credentials/stscreds"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
-	"github.com/aws/aws-sdk-go-v2/service/iam/types"
-	"github.com/aws/aws-sdk-go-v2/service/s3"
-	"github.com/aws/aws-sdk-go-v2/service/sts"
-	"github.com/aws/smithy-go"
-)
-
-/*
-This is a basic scenario for using AWS Identity and Access Management (IAM) and AWS Security Token Service (STS).
-
-This example will do the following:
-
- *   Create a user that has no permissions.
- *   Create a role and policy that grant s3:ListAllMyBuckets permission.
- *   Grant the user permission to assume the role.
- *   Create an S3 client object as the user and try to list buckets (this should fail).
- *   Get temporary credentials by assuming the role.
- *   Create an S3 client object with the temporary credentials and list the buckets (this should succeed).
- *   Delete all the resources.
-
- */
-
-const (
-	scenario_UserName               = "ExampleUser123"
-	scenario_BucketListerRoleName   = "BucketListerRole"
-	scenario_BucketListerPolicyName = "BucketListerListMyBucketsPolicy"
-)
-
-func scenario() {
-
-	cfg, err := config.LoadDefaultConfig(context.Background())
-
-	if err != nil {
-		panic("Couldn't load a configuration")
+// NewAssumeRoleScenario constructs an AssumeRoleScenario instance from a configuration.
+// It uses the specified config to get an IAM client and create wrappers for the actions
+// used in the scenario.
+func NewAssumeRoleScenario(sdkConfig aws.Config, questioner demotools.IQuestioner,
+		helper IScenarioHelper) AssumeRoleScenario {
+	iamClient := iam.NewFromConfig(sdkConfig)
+	return AssumeRoleScenario{
+		sdkConfig: 		sdkConfig,
+		accountWrapper: actions.AccountWrapper{IamClient: iamClient},
+		policyWrapper:  actions.PolicyWrapper{IamClient: iamClient},
+		roleWrapper:    actions.RoleWrapper{IamClient: iamClient},
+		userWrapper:    actions.UserWrapper{IamClient: iamClient},
+		questioner:     questioner,
+		helper:         helper,
 	}
+}
 
-	iamSvc := iam.NewFromConfig(cfg)
+// addTestOptions appends the API options specified in the original configuration to
+// another configuration. This is used to attach the middleware stubber to clients
+// that are constructed during the scenario, which is needed for unit testing.
+func (scenario AssumeRoleScenario) addTestOptions(scenarioConfig *aws.Config) {
+	if scenario.isTestRun {
+		scenarioConfig.APIOptions = append(scenarioConfig.APIOptions, scenario.sdkConfig.APIOptions...)
+	}
+}
 
-	fmt.Println("⏺️ Create user")
-
-	var userInfo types.User
-
-	user, err := iamSvc.CreateUser(context.Background(), &iam.CreateUserInput{
-		UserName: aws.String(scenario_UserName),
-	})
-
-	if err != nil {
-
-		var existsAlready *types.EntityAlreadyExistsException
-		if errors.As(err, &existsAlready) {
-			// The user possibly exists.
-			// Check if the user actually exists within IAM.
-			uuser, err := iamSvc.GetUser(context.Background(), &iam.GetUserInput{UserName: aws.String(scenario_UserName)})
-			if err != nil {
-				panic("Can't get user: " + err.Error())
-			} else {
-				// Make sure the user info is set for later.
-				userInfo = *uuser.User
-				fmt.Println("User already existed...")
-			}
-		} else {
-			fmt.Println("Couldn't create user! " + err.Error())
+// Run runs the interactive scenario.
+func (scenario AssumeRoleScenario) Run() {
+	defer func() {
+		if r := recover(); r != nil {
+			log.Printf("Something went wrong with the demo.\n")
+			log.Println(r)
 		}
-	} else {
-		userInfo = *user.User
-	}
+	}()
 
-	fmt.Printf("User %s has id %s\n", scenario_UserName, *userInfo.Arn)
+	log.Println(strings.Repeat("-", 88))
+	log.Println("Welcome to the AWS Identity and Access Management (IAM) assume role demo.")
+	log.Println(strings.Repeat("-", 88))
 
-	fmt.Println("⏺️ Create access key")
+	user := scenario.CreateUser()
+	accessKey := scenario.CreateAccessKey(user)
+	role := scenario.CreateRoleAndPolicies(user)
+	noPermsConfig := scenario.ListBucketsWithoutPermissions(accessKey)
+	scenario.ListBucketsWithAssumedRole(noPermsConfig, role)
+	scenario.Cleanup(user, role)
 
-	creds, err := iamSvc.CreateAccessKey(context.Background(), &iam.CreateAccessKeyInput{
-		UserName: aws.String(scenario_UserName),
-	})
+	log.Println(strings.Repeat("-", 88))
+	log.Println("Thanks for watching!")
+	log.Println(strings.Repeat("-", 88))
+}
 
+// CreateUser creates a new IAM user. This user has no permissions.
+func (scenario AssumeRoleScenario) CreateUser() *types.User {
+	log.Println("Let's create an example user with no permissions.")
+	userName := scenario.questioner.Ask("Enter a name for the example user:", demotools.NotEmpty{})
+	user, err := scenario.userWrapper.GetUser(userName)
 	if err != nil {
-		panic("Couldn't create credentials for a user! " + err.Error())
+		panic(err)
 	}
-
-	akId := *creds.AccessKey.AccessKeyId
-	sakId := *creds.AccessKey.SecretAccessKey
-
-	fmt.Printf("🗝️ CREDS: accessKeyId(%s) Secretkey(%s)\n", akId, sakId)
-
-	// Grant the user the ability to assume the role.
-
-	fmt.Println("💤 waiting for a few moments for keys to become available")
-
-	time.Sleep(10 * time.Second)
-
-	fmt.Println("⏺️ Create the bucket lister role")
-	bucketListerRole, err := iamSvc.CreateRole(context.Background(), &iam.CreateRoleInput{
-		RoleName: aws.String(scenario_BucketListerRoleName),
-		AssumeRolePolicyDocument: aws.String(`{
-			"Version": "2012-10-17",
-			"Statement": [
-			  {
-				"Effect": "Allow",
-				"Principal": {
-				  "AWS":"` + (*userInfo.Arn) + `"
-				},
-				"Action": "sts:AssumeRole"
-			  }
-			]
-		  }`),
-		Description: aws.String("Role to let users list their buckets."),
-	})
-	var bucketListerRoleArn string
-	if err != nil {
-		// Check to see if the role exists.
-		var existsException *types.EntityAlreadyExistsException
-		if errors.As(err, &existsException) {
-			// Check if we can look up the role as it stands already
-			tRole, err := iamSvc.GetRole(context.Background(), &iam.GetRoleInput{
-				RoleName: aws.String(scenario_BucketListerRoleName),
-			})
-			if err != nil {
-				// Told it already exists, but now it's gone.
-				panic("Couldn't find seemingly extant role: " + err.Error())
-			} else {
-				bucketListerRoleArn = *tRole.Role.Arn
-			}
-		} else {
-			panic("Couldn't create role! " + err.Error())
-		}
-	} else {
-		bucketListerRoleArn = *bucketListerRole.Role.Arn
-	}
-
-	fmt.Printf("✔️ The ARN for the bucket lister role is %s", bucketListerRoleArn)
-
-	fmt.Println("⏺️ Create policy to allow bucket listing")
-	bucketAllowPolicy := aws.String(`{
-		"Version": "2012-10-17",
-		"Statement": [
-		  {
-			"Sid": "Stmt1646154730759",
-			"Action": [
-			  "s3:ListAllMyBuckets"
-			],
-			"Effect": "Allow",
-			"Resource": "*"}]}`)
-
-	var bucketListerPolicyArn string
-	bucketListerPolicy, err := iamSvc.CreatePolicy(context.Background(), &iam.CreatePolicyInput{
-		PolicyName:     aws.String(scenario_BucketListerPolicyName),
-		PolicyDocument: bucketAllowPolicy,
-		Description:    aws.String("Allow user to list their own buckets"),
-	})
-
-	if err != nil {
-		var existsException *types.EntityAlreadyExistsException
-		if errors.As(err, &existsException) {
-
-			stsClient := sts.NewFromConfig(cfg)
-			mCallerId, _ := stsClient.GetCallerIdentity(context.Background(), &sts.GetCallerIdentityInput{})
-
-			mpolicyArn := fmt.Sprintf("arn:aws:iam::%s:policy/%s", *mCallerId.Account, scenario_BucketListerPolicyName)
-
-			_, err := iamSvc.GetPolicy(context.Background(), &iam.GetPolicyInput{
-				PolicyArn: &mpolicyArn,
-			})
-			if err != nil {
-				panic("Failed to find policy by arn(" + mpolicyArn + ") -> " + err.Error())
-			}
-			bucketListerPolicyArn = mpolicyArn
-
-		} else {
-			panic("Couldn't create policy! " + err.Error())
-		}
-	} else {
-		bucketListerPolicyArn = *bucketListerPolicy.Policy.Arn
-	}
-
-	fmt.Println("⏺️ Attach role policy")
-
-	_, err = iamSvc.AttachRolePolicy(context.Background(), &iam.AttachRolePolicyInput{
-		PolicyArn: &bucketListerPolicyArn,
-		RoleName:  aws.String(scenario_BucketListerRoleName),
-	})
-
-	if err != nil {
-		fmt.Println("Couldn't attach policy to role! " + err.Error())
-	}
-
-	fmt.Printf("⭕  attached role policy ")
-
-	fmt.Println("💤 waiting for a few moments for keys to become available")
-
-	time.Sleep(10 * time.Second)
-
-	// Create an S3 client that acts as the user.
-	userConfig, err := config.LoadDefaultConfig(context.TODO(),
-		// Use credentials created earlier.
-		config.WithCredentialsProvider(credentials.StaticCredentialsProvider{
-			Value: aws.Credentials{
-				AccessKeyID: akId, SecretAccessKey: sakId,
-				Source: "Example user creds",
-			},
-		}))
-	if err != nil {
-		panic("Couldn't create config for new credentials! " + err.Error())
-	} else {
-		creds, err := userConfig.Credentials.Retrieve(context.Background())
+	if user == nil {
+		user, err = scenario.userWrapper.CreateUser(userName)
 		if err != nil {
-			panic("Couldn't get credentials for our new config, something is wrong: " + err.Error())
+			panic(err)
 		}
-		fmt.Printf("-> config creds are %s %s\n", creds.AccessKeyID, creds.SecretAccessKey)
-	}
-
-	s3Client := s3.NewFromConfig(userConfig)
-	// Attempt to list buckets.
-	_, err = s3Client.ListBuckets(context.Background(), &s3.ListBucketsInput{})
-
-	if err == nil {
-		fmt.Println("Call to s3:ListBuckets was not denied (unexpected!)")
+		log.Printf("Created user %v.\n", *user.UserName)
 	} else {
-		var oe smithy.APIError
-		if errors.As(err, &oe) && (oe.ErrorCode() == "AccessDenied") {
-			fmt.Println("Couldn't list buckets (expected!)")
-		} else {
-			panic("unexpected error: " + err.Error())
-		}
+		log.Printf("User %v already exists.\n", *user.UserName)
 	}
+	log.Println(strings.Repeat("-", 88))
+	return user
+}
 
-	stsClient := sts.NewFromConfig(userConfig)
-	roleCreds := stscreds.NewAssumeRoleProvider(stsClient, bucketListerRoleArn)
-
-	tmpCreds, err := roleCreds.Retrieve(context.Background())
+// CreateAccessKey creates an access key for the user.
+func (scenario AssumeRoleScenario) CreateAccessKey(user *types.User) *types.AccessKey {
+	accessKey, err := scenario.userWrapper.CreateAccessKeyPair(*user.UserName)
 	if err != nil {
-		fmt.Println("couldn't get role creds: " + err.Error())
-	} else {
-		fmt.Printf("role creds: %s %v\n\n", tmpCreds.AccessKeyID, tmpCreds.Expires)
+		panic(err)
+	}
+	log.Printf("Created access key %v for your user.", *accessKey.AccessKeyId)
+	log.Println("Waiting a few seconds for your user to be ready...")
+	scenario.helper.Pause(10)
+	log.Println(strings.Repeat("-", 88))
+	return accessKey
+}
+
+// CreateRoleAndPolicies creates a policy that grants permission to list S3 buckets for
+// the current account and attaches the policy to a newly created role. It also adds an
+// inline policy to the specified user that grants the user permission to assume the role.
+func (scenario AssumeRoleScenario) CreateRoleAndPolicies(user *types.User) *types.Role {
+	log.Println("Let's create a role and policy that grant permission to list S3 buckets.")
+	scenario.questioner.Ask("Press Enter when you're ready.")
+	listBucketsRole, err := scenario.roleWrapper.CreateRole(scenario.helper.GetName(), *user.Arn)
+	if err != nil {panic(err)}
+	log.Printf("Created role %v.\n", *listBucketsRole.RoleName)
+	listBucketsPolicy, err := scenario.policyWrapper.CreatePolicy(
+		scenario.helper.GetName(), []string{"s3:ListAllMyBuckets"}, "arn:aws:s3:::*")
+	if err != nil {panic(err)}
+	log.Printf("Created policy %v.\n", *listBucketsPolicy.PolicyName)
+	err = scenario.roleWrapper.AttachRolePolicy(*listBucketsPolicy.Arn, *listBucketsRole.RoleName)
+	if err != nil {panic(err)}
+	log.Printf("Attached policy %v to role %v.\n", *listBucketsPolicy.PolicyName,
+		*listBucketsRole.RoleName)
+	err = scenario.userWrapper.CreateUserPolicy(*user.UserName, scenario.helper.GetName(),
+		[]string{"sts:AssumeRole"}, *listBucketsRole.Arn)
+	if err != nil {panic(err)}
+	log.Printf("Created an inline policy for user %v that lets the user assume the role.\n",
+		*user.UserName)
+	log.Println("Let's give AWS a few seconds to propagate these new resources and connections...")
+	scenario.helper.Pause(10)
+	log.Println(strings.Repeat("-", 88))
+	return listBucketsRole
+}
+
+// ListBucketsWithoutPermissions creates an Amazon S3 client from the user's access key
+// credentials and tries to list buckets for the account. Because the user does not have
+// permission to perform this action, the action fails.
+func (scenario AssumeRoleScenario) ListBucketsWithoutPermissions(accessKey *types.AccessKey) *aws.Config {
+ 	log.Println("Let's try to list buckets without permissions. This should return an AccessDenied error.")
+ 	scenario.questioner.Ask("Press Enter when you're ready.")
+ 	noPermsConfig, err := config.LoadDefaultConfig(context.TODO(),
+		config.WithCredentialsProvider(credentials.NewStaticCredentialsProvider(
+			*accessKey.AccessKeyId, *accessKey.SecretAccessKey, ""),
+	))
+ 	if err != nil {panic(err)}
+
+ 	// Add test options if this is a test run. This is needed only for testing purposes.
+	scenario.addTestOptions(&noPermsConfig)
+
+ 	s3Client := s3.NewFromConfig(noPermsConfig)
+ 	_, err = s3Client.ListBuckets(context.TODO(), &s3.ListBucketsInput{})
+ 	if err != nil {
+ 		// The SDK for Go does not model the AccessDenied error, so check ErrorCode directly.
+		var ae smithy.APIError
+		if errors.As(err, &ae) {
+			switch ae.ErrorCode() {
+			case "AccessDenied":
+				log.Println("Got AccessDenied error, which is the expected result because\n" +
+					"the ListBuckets call was made without permissions.")
+			default:
+				log.Println("Expected AccessDenied, got something else.")
+				panic(err)
+			}
+		}
+ 	} else {
+ 		log.Println("Expected AccessDenied error when calling ListBuckets without permissions,\n" +
+ 			"but the call succeeded. Continuing the example anyway...")
+	}
+	log.Println(strings.Repeat("-", 88))
+ 	return &noPermsConfig
+}
+
+// ListBucketsWithAssumedRole performs the following actions:
+//
+// 1. Creates an AWS Security Token Service (AWS STS) client from the config created from
+//   the user's access key credentials.
+// 2. Gets temporary credentials by assuming the role that grants permission to list the
+//    buckets.
+// 3. Creates an Amazon S3 client from the temporary credentials.
+// 4. Lists buckets for the account. Because the temporary credentials are generated by
+//    assuming the role that grants permission, the action succeeds.
+func (scenario AssumeRoleScenario) ListBucketsWithAssumedRole(noPermsConfig *aws.Config, role *types.Role) {
+	log.Println("Let's assume the role that grants permission to list buckets and try again.")
+	scenario.questioner.Ask("Press Enter when you're ready.")
+	stsClient := sts.NewFromConfig(*noPermsConfig)
+	tempCredentials, err := stsClient.AssumeRole(context.TODO(), &sts.AssumeRoleInput{
+		RoleArn:           role.Arn,
+		RoleSessionName:   aws.String("AssumeRoleExampleSession"),
+		DurationSeconds:   aws.Int32(900),
+	})
+	if err != nil {
+		log.Printf("Couldn't assume role %v.\n", *role.RoleName)
+		panic(err)
+	}
+	log.Printf("Assumed role %v, got temporary credentials.\n", *role.RoleName)
+	assumeRoleConfig, err := config.LoadDefaultConfig(context.TODO(),
+		config.WithCredentialsProvider(credentials.NewStaticCredentialsProvider(
+			*tempCredentials.Credentials.AccessKeyId,
+			*tempCredentials.Credentials.SecretAccessKey,
+			*tempCredentials.Credentials.SessionToken),
+		),
+	)
+	if err != nil {panic(err)}
+
+	// Add test options if this is a test run. This is needed only for testing purposes.
+	scenario.addTestOptions(&assumeRoleConfig)
+
+	s3Client := s3.NewFromConfig(assumeRoleConfig)
+	result, err := s3Client.ListBuckets(context.TODO(), &s3.ListBucketsInput{})
+	if err != nil {
+		log.Println("Couldn't list buckets with assumed role credentials.")
+		panic(err)
+	}
+	log.Println("Successfully called ListBuckets with assumed role credentials, \n" +
+		"here are some of them:")
+	for i := 0; i < len(result.Buckets) && i < 5; i++ {
+		log.Printf("\t%v\n", *result.Buckets[i].Name)
+	}
+	log.Println(strings.Repeat("-", 88))
+}
+
+// Cleanup deletes all resources created for the scenario.
+func (scenario AssumeRoleScenario) Cleanup(user *types.User, role *types.Role) {
+	if scenario.questioner.AskBool(
+		"Do you want to delete the resources created for this example? (y/n)", "y",
+	) {
+		 policies, err := scenario.roleWrapper.ListAttachedRolePolicies(*role.RoleName)
+		 if err != nil {panic(err)}
+		 for _, policy := range policies {
+			 err = scenario.roleWrapper.DetachRolePolicy(*role.RoleName, *policy.PolicyArn)
+			 if err != nil {panic(err)}
+			 err = scenario.policyWrapper.DeletePolicy(*policy.PolicyArn)
+			 if err != nil {panic(err)}
+			 log.Printf("Detached policy %v from role %v and deleted the policy.\n",
+			 	*policy.PolicyName, *role.RoleName)
+		 }
+		 err = scenario.roleWrapper.DeleteRole(*role.RoleName)
+		 if err != nil {panic(err)}
+		 log.Printf("Deleted role %v.\n", *role.RoleName)
+
+		 userPols, err := scenario.userWrapper.ListUserPolicies(*user.UserName)
+		 if err != nil {panic(err)}
+		 for _, userPol := range userPols {
+		 	err = scenario.userWrapper.DeleteUserPolicy(*user.UserName, userPol)
+		 	if err != nil {panic(err)}
+		 	log.Printf("Deleted policy %v from user %v.\n", userPol, *user.UserName)
+		 }
+		 keys, err := scenario.userWrapper.ListAccessKeys(*user.UserName)
+		 if err != nil {panic(err)}
+		 for _, key := range keys {
+		 	err = scenario.userWrapper.DeleteAccessKey(*user.UserName, *key.AccessKeyId)
+		 	if err != nil {panic(err)}
+		 	log.Printf("Deleted access key %v from user %v.\n", *key.AccessKeyId, *user.UserName)
+		 }
+		 err = scenario.userWrapper.DeleteUser(*user.UserName)
+		 if err != nil {panic(err)}
+		 log.Printf("Deleted user %v.\n", *user.UserName)
+		 log.Println(strings.Repeat("-", 88))
 	}
 
-	roleConfig, err := config.LoadDefaultConfig(context.Background(),
-		config.WithCredentialsProvider(roleCreds),
+}
+```
+Define a struct that wraps account actions\.  
+
+```
+// AccountWrapper encapsulates AWS Identity and Access Management (IAM) account actions
+// used in the examples.
+// It contains an IAM service client that is used to perform account actions.
+type AccountWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// GetAccountPasswordPolicy gets the account password policy for the current account.
+// If no policy has been set, a NoSuchEntityException is error is returned.
+func (wrapper AccountWrapper) GetAccountPasswordPolicy() (*types.PasswordPolicy, error) {
+	var pwPolicy *types.PasswordPolicy
+	result, err := wrapper.IamClient.GetAccountPasswordPolicy(context.TODO(),
+		&iam.GetAccountPasswordPolicyInput{})
+	if err != nil {
+		log.Printf("Couldn't get account password policy. Here's why: %v\n", err)
+	} else {
+		pwPolicy = result.PasswordPolicy
+	}
+	return pwPolicy, err
+}
+
+
+
+// ListSAMLProviders gets the SAML providers for the account.
+func (wrapper AccountWrapper) ListSAMLProviders() ([]types.SAMLProviderListEntry, error) {
+	var providers []types.SAMLProviderListEntry
+	result, err := wrapper.IamClient.ListSAMLProviders(context.TODO(), &iam.ListSAMLProvidersInput{})
+	if err != nil {
+		log.Printf("Couldn't list SAML providers. Here's why: %v\n", err)
+	} else {
+		providers = result.SAMLProviderList
+	}
+	return providers, err
+}
+```
+Define a struct that wraps policy actions\.  
+
+```
+// PolicyDocument defines a policy document as a Go struct that can be serialized
+// to JSON.
+type PolicyDocument struct {
+	Version string
+	Statement []PolicyStatement
+}
+
+// PolicyStatement defines a statement in a policy document.
+type PolicyStatement struct {
+	Effect string
+	Action []string
+	Principal map[string]string `json:",omitempty"`
+	Resource *string `json:",omitempty"`
+}
+
+
+
+// PolicyWrapper encapsulates AWS Identity and Access Management (IAM) policy actions
+// used in the examples.
+// It contains an IAM service client that is used to perform policy actions.
+type PolicyWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// ListPolicies gets up to maxPolicies policies.
+func (wrapper PolicyWrapper) ListPolicies(maxPolicies int32) ([]types.Policy, error) {
+	var policies []types.Policy
+	result, err := wrapper.IamClient.ListPolicies(context.TODO(), &iam.ListPoliciesInput{
+		MaxItems: aws.Int32(maxPolicies),
+	})
+	if err != nil {
+		log.Printf("Couldn't list policies. Here's why: %v\n", err)
+	} else {
+		policies = result.Policies
+	}
+	return policies, err
+}
+
+
+
+// CreatePolicy creates a policy that grants a list of actions to the specified resource.
+// PolicyDocument shows how to work with a policy document as a data structure and
+// serialize it to JSON by using Go's JSON marshaler.
+func (wrapper PolicyWrapper) CreatePolicy(policyName string, actions []string,
+		resourceArn string) (*types.Policy, error) {
+	var policy *types.Policy
+	policyDoc := PolicyDocument{
+		Version:   "2012-10-17",
+		Statement: []PolicyStatement{{
+			Effect: "Allow",
+			Action: actions,
+			Resource: aws.String(resourceArn),
+		}},
+	}
+	policyBytes, err := json.Marshal(policyDoc)
+	if err != nil {
+		log.Printf("Couldn't create policy document for %v. Here's why: %v\n", resourceArn, err)
+		return nil, err
+	}
+	result, err := wrapper.IamClient.CreatePolicy(context.TODO(), &iam.CreatePolicyInput{
+		PolicyDocument: aws.String(string(policyBytes)),
+		PolicyName:     aws.String(policyName),
+	})
+	if err != nil {
+		log.Printf("Couldn't create policy %v. Here's why: %v\n", policyName, err)
+	} else {
+		policy = result.Policy
+	}
+	return policy, err
+}
+
+
+
+// GetPolicy gets data about a policy.
+func (wrapper PolicyWrapper) GetPolicy(policyArn string) (*types.Policy, error) {
+	var policy *types.Policy
+	result, err := wrapper.IamClient.GetPolicy(context.TODO(), &iam.GetPolicyInput{
+		PolicyArn: aws.String(policyArn),
+	})
+	if err != nil {
+		log.Printf("Couldn't get policy %v. Here's why: %v\n", policyArn, err)
+	} else {
+		policy = result.Policy
+	}
+	return policy, err
+}
+
+
+
+// DeletePolicy deletes a policy.
+func (wrapper PolicyWrapper) DeletePolicy(policyArn string) error {
+	_, err := wrapper.IamClient.DeletePolicy(context.TODO(), &iam.DeletePolicyInput{
+		PolicyArn: aws.String(policyArn),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete policy %v. Here's why: %v\n", policyArn, err)
+	}
+	return err
+}
+```
+Define a struct that wraps role actions\.  
+
+```
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// ListRoles gets up to maxRoles roles.
+func (wrapper RoleWrapper) ListRoles(maxRoles int32) ([]types.Role, error) {
+	var roles []types.Role
+	result, err := wrapper.IamClient.ListRoles(context.TODO(),
+		&iam.ListRolesInput{MaxItems: aws.Int32(maxRoles)},
 	)
 	if err != nil {
-		panic("Couldn't create config with assumed role! " + err.Error())
-	}
-
-	roleS3client := s3.NewFromConfig(roleConfig)
-
-	mybuckets, err := roleS3client.ListBuckets(context.Background(), &s3.ListBucketsInput{})
-
-	if err != nil {
-		panic("Couldn't list buckets while assuming role that allows this: " + err.Error())
+		log.Printf("Couldn't list roles. Here's why: %v\n", err)
 	} else {
-		fmt.Println("Buckets owned by the user....")
-		for _, bucket := range mybuckets.Buckets {
-			fmt.Printf("%s -> %s\n", *bucket.Name, bucket.CreationDate)
+		roles = result.Roles
+	}
+	return roles, err
+}
+
+
+
+// CreateRole creates a role that trusts a specified user. The trusted user can assume
+// the role to acquire its permissions.
+// PolicyDocument shows how to work with a policy document as a data structure and
+// serialize it to JSON by using Go's JSON marshaler.
+func (wrapper RoleWrapper) CreateRole(roleName string, trustedUserArn string) (*types.Role, error) {
+	var role *types.Role
+	trustPolicy := PolicyDocument{
+		Version:   "2012-10-17",
+		Statement: []PolicyStatement{{
+			Effect: "Allow",
+			Principal: map[string]string{"AWS": trustedUserArn},
+			Action: []string{"sts:AssumeRole"},
+		}},
+	}
+	policyBytes, err := json.Marshal(trustPolicy)
+	if err != nil {
+		log.Printf("Couldn't create trust policy for %v. Here's why: %v\n", trustedUserArn, err)
+		return nil, err
+	}
+	result, err := wrapper.IamClient.CreateRole(context.TODO(), &iam.CreateRoleInput{
+		AssumeRolePolicyDocument: aws.String(string(policyBytes)),
+		RoleName:                 aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't create role %v. Here's why: %v\n", roleName, err)
+	} else {
+		role = result.Role
+	}
+	return role, err
+}
+
+
+
+// GetRole gets data about a role.
+func (wrapper RoleWrapper) GetRole(roleName string) (*types.Role, error) {
+	var role *types.Role
+	result, err := wrapper.IamClient.GetRole(context.TODO(),
+		&iam.GetRoleInput{RoleName: aws.String(roleName)})
+	if err != nil {
+		log.Printf("Couldn't get role %v. Here's why: %v\n", roleName, err)
+	} else {
+		role = result.Role
+	}
+	return role, err
+}
+
+
+
+// CreateServiceLinkedRole creates a service-linked role that is owned by the specified service.
+func (wrapper RoleWrapper) CreateServiceLinkedRole(serviceName string, description string) (*types.Role, error) {
+	var role *types.Role
+	result, err := wrapper.IamClient.CreateServiceLinkedRole(context.TODO(), &iam.CreateServiceLinkedRoleInput{
+		AWSServiceName: aws.String(serviceName),
+		Description:    aws.String(description),
+	})
+	if err != nil {
+		log.Printf("Couldn't create service-linked role %v. Here's why: %v\n", serviceName, err)
+	} else {
+		role = result.Role
+	}
+	return role, err
+}
+
+
+
+// DeleteServiceLinkedRole deletes a service-linked role.
+func (wrapper RoleWrapper) DeleteServiceLinkedRole(roleName string) error {
+	_, err := wrapper.IamClient.DeleteServiceLinkedRole(context.TODO(), &iam.DeleteServiceLinkedRoleInput{
+		RoleName: aws.String(roleName)},
+	)
+	if err != nil {
+		log.Printf("Couldn't delete service-linked role %v. Here's why: %v\n", roleName, err)
+	}
+	return err
+}
+
+
+
+// AttachRolePolicy attaches a policy to a role.
+func (wrapper RoleWrapper) AttachRolePolicy(policyArn string, roleName string) error {
+	_, err := wrapper.IamClient.AttachRolePolicy(context.TODO(), &iam.AttachRolePolicyInput{
+		PolicyArn: aws.String(policyArn),
+		RoleName:  aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't attach policy %v to role %v. Here's why: %v\n", policyArn, roleName, err)
+	}
+	return err
+}
+
+
+
+// ListAttachedRolePolicies lists the policies that are attached to the specified role.
+func (wrapper RoleWrapper) ListAttachedRolePolicies(roleName string) ([]types.AttachedPolicy, error) {
+	var policies []types.AttachedPolicy
+	result, err := wrapper.IamClient.ListAttachedRolePolicies(context.TODO(), &iam.ListAttachedRolePoliciesInput{
+		RoleName: aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't list attached policies for role %v. Here's why: %v\n", roleName, err)
+	} else {
+		policies = result.AttachedPolicies
+	}
+	return policies, err
+}
+
+
+
+// DetachRolePolicy detaches a policy from a role.
+func (wrapper RoleWrapper) DetachRolePolicy(roleName string, policyArn string) error {
+	_, err := wrapper.IamClient.DetachRolePolicy(context.TODO(), &iam.DetachRolePolicyInput{
+		PolicyArn: aws.String(policyArn),
+		RoleName:  aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't detach policy from role %v. Here's why: %v\n", roleName, err)
+	}
+	return err
+}
+
+
+
+// ListRolePolicies lists the inline policies for a role.
+func (wrapper RoleWrapper) ListRolePolicies(roleName string) ([]string, error) {
+	var policies []string
+	result, err := wrapper.IamClient.ListRolePolicies(context.TODO(), &iam.ListRolePoliciesInput{
+		RoleName: aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't list policies for role %v. Here's why: %v\n", roleName, err)
+	} else {
+		policies = result.PolicyNames
+	}
+	return policies, err
+}
+
+
+
+// DeleteRole deletes a role. All attached policies must be detached before a
+// role can be deleted.
+func (wrapper RoleWrapper) DeleteRole(roleName string) error {
+	_, err := wrapper.IamClient.DeleteRole(context.TODO(), &iam.DeleteRoleInput{
+		RoleName: aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete role %v. Here's why: %v\n", roleName, err)
+	}
+	return err
+}
+```
+Define a struct that wraps user actions\.  
+
+```
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// ListUsers gets up to maxUsers number of users.
+func (wrapper UserWrapper) ListUsers(maxUsers int32) ([]types.User, error) {
+	var users []types.User
+	result, err := wrapper.IamClient.ListUsers(context.TODO(), &iam.ListUsersInput{
+		MaxItems: aws.Int32(maxUsers),
+	})
+	if err != nil {
+		log.Printf("Couldn't list users. Here's why: %v\n", err)
+	} else {
+		users = result.Users
+	}
+	return users, err
+}
+
+
+
+// GetUser gets data about a user.
+func (wrapper UserWrapper) GetUser(userName string) (*types.User, error) {
+	var user *types.User
+	result, err := wrapper.IamClient.GetUser(context.TODO(), &iam.GetUserInput{
+		UserName: aws.String(userName),
+	})
+	if err != nil {
+		var apiError smithy.APIError
+		if errors.As(err, &apiError) {
+			switch apiError.(type) {
+			case *types.NoSuchEntityException:
+				log.Printf("User %v does not exist.\n", userName)
+				err = nil
+			default:
+				log.Printf("Couldn't get user %v. Here's why: %v\n", userName, err)
+			}
 		}
+	} else {
+		user = result.User
 	}
+	return user, err
+}
 
-	// ---- Clean up ----
 
-	// Delete the user's access keys.
 
-	fmt.Println("cleanup: Delete created access key")
-	_, _ = iamSvc.DeleteAccessKey(context.Background(), &iam.DeleteAccessKeyInput{
-		AccessKeyId: &akId,
-		UserName:    aws.String(scenario_UserName),
-	})
-
-	// Delete the user.
-	fmt.Println("cleanup: delete the user we created")
-	_, err = iamSvc.DeleteUser(context.Background(), &iam.DeleteUserInput{UserName: aws.String(scenario_UserName)})
-	if err != nil {
-		fmt.Println("Couldn't delete user! " + err.Error())
-	}
-
-	// Detach the role policy.
-
-	fmt.Println("cleanup: Detach the policy from the role")
-	_, err = iamSvc.DetachRolePolicy(context.Background(), &iam.DetachRolePolicyInput{
-		RoleName:  aws.String(scenario_BucketListerRoleName),
-		PolicyArn: &bucketListerPolicyArn,
-	})
-
-	if err != nil {
-		fmt.Println("Couldn't detach role policy from role " + err.Error())
-	}
-
-	// Delete the role.
-	fmt.Println("cleanup: Remove the role")
-	_, err = iamSvc.DeleteRole(context.Background(), &iam.DeleteRoleInput{
-		RoleName: aws.String(scenario_BucketListerRoleName),
+// CreateUser creates a new user with the specified name.
+func (wrapper UserWrapper) CreateUser(userName string) (*types.User, error) {
+	var user *types.User
+	result, err := wrapper.IamClient.CreateUser(context.TODO(), &iam.CreateUserInput{
+		UserName: aws.String(userName),
 	})
 	if err != nil {
-		fmt.Println("Couldn't delete role! " + err.Error())
+		log.Printf("Couldn't create user %v. Here's why: %v\n", userName, err)
+	} else {
+		user = result.User
 	}
+	return user, err
+}
 
-	// Delete the policy.
-	fmt.Println("cleanup: delete the policy")
-	_, err = iamSvc.DeletePolicy(context.Background(), &iam.DeletePolicyInput{
-		PolicyArn: &bucketListerPolicyArn,
+
+
+// CreateUserPolicy adds an inline policy to a user. This example creates a policy that
+// grants a list of actions on a specified role.
+// PolicyDocument shows how to work with a policy document as a data structure and
+// serialize it to JSON by using Go's JSON marshaler.
+func (wrapper UserWrapper) CreateUserPolicy(userName string, policyName string, actions []string,
+		roleArn string) error {
+	policyDoc := PolicyDocument{
+		Version:   "2012-10-17",
+		Statement: []PolicyStatement{{
+			Effect: "Allow",
+			Action: actions,
+			Resource: aws.String(roleArn),
+		}},
+	}
+	policyBytes, err := json.Marshal(policyDoc)
+	if err != nil {
+		log.Printf("Couldn't create policy document for %v. Here's why: %v\n", roleArn, err)
+		return err
+	}
+	_, err = wrapper.IamClient.PutUserPolicy(context.TODO(), &iam.PutUserPolicyInput{
+		PolicyDocument: aws.String(string(policyBytes)),
+		PolicyName:     aws.String(policyName),
+		UserName:       aws.String(userName),
 	})
 	if err != nil {
-		fmt.Println("couldn't delete policy!")
+		log.Printf("Couldn't create policy for user %v. Here's why: %v\n", userName, err)
 	}
+	return err
+}
 
-	fmt.Println("done!")
+
+
+// ListUserPolicies lists the inline policies for the specified user.
+func (wrapper UserWrapper) ListUserPolicies(userName string) ([]string, error) {
+	var policies []string
+	result, err := wrapper.IamClient.ListUserPolicies(context.TODO(), &iam.ListUserPoliciesInput{
+		UserName: aws.String(userName),
+	})
+	if err != nil {
+		log.Printf("Couldn't list policies for user %v. Here's why: %v\n", userName, err)
+	} else {
+		policies = result.PolicyNames
+	}
+	return policies, err
+}
+
+
+
+// DeleteUserPolicy deletes an inline policy from a user.
+func (wrapper UserWrapper) DeleteUserPolicy(userName string, policyName string) error {
+	_, err := wrapper.IamClient.DeleteUserPolicy(context.TODO(), &iam.DeleteUserPolicyInput{
+		PolicyName: aws.String(policyName),
+		UserName:   aws.String(userName),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete policy from user %v. Here's why: %v\n", userName, err)
+	}
+	return err
+}
+
+
+
+// DeleteUser deletes a user.
+func (wrapper UserWrapper) DeleteUser(userName string) error {
+	_, err := wrapper.IamClient.DeleteUser(context.TODO(), &iam.DeleteUserInput{
+		UserName: aws.String(userName),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete user %v. Here's why: %v\n", userName, err)
+	}
+	return err
+}
+
+
+
+// CreateAccessKeyPair creates an access key for a user. The returned access key contains
+// the ID and secret credentials needed to use the key.
+func (wrapper UserWrapper) CreateAccessKeyPair(userName string) (*types.AccessKey, error) {
+	var key *types.AccessKey
+	result, err := wrapper.IamClient.CreateAccessKey(context.TODO(), &iam.CreateAccessKeyInput{
+		UserName: aws.String(userName)})
+	if err != nil {
+		log.Printf("Couldn't create access key pair for user %v. Here's why: %v\n", userName, err)
+	} else {
+		key = result.AccessKey
+	}
+	return key, err
+}
+
+
+
+// DeleteAccessKey deletes an access key from a user.
+func (wrapper UserWrapper) DeleteAccessKey(userName string, keyId string) error {
+	_, err := wrapper.IamClient.DeleteAccessKey(context.TODO(), &iam.DeleteAccessKeyInput{
+		AccessKeyId: aws.String(keyId),
+		UserName:    aws.String(userName),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete access key %v. Here's why: %v\n", keyId, err)
+	}
+	return err
+}
+
+
+
+// ListAccessKeys lists the access keys for the specified user.
+func (wrapper UserWrapper) ListAccessKeys(userName string) ([]types.AccessKeyMetadata, error) {
+	var keys []types.AccessKeyMetadata
+	result, err := wrapper.IamClient.ListAccessKeys(context.TODO(), &iam.ListAccessKeysInput{
+		UserName: aws.String(userName),
+	})
+	if err != nil {
+		log.Printf("Couldn't list access keys for user %v. Here's why: %v\n", userName, err)
+	} else {
+		keys = result.AccessKeyMetadata
+	}
+	return keys, err
 }
 ```
 + For API details, see the following topics in *AWS SDK for Go API Reference*\.
@@ -1200,33 +1656,33 @@ Create functions that wrap IAM user actions\.
 public class IAMScenario {
     public static final String DASHES = new String(new char[80]).replace("\0", "-");
     public static final String PolicyDocument =
-            "{" +
-                    "  \"Version\": \"2012-10-17\"," +
-                    "  \"Statement\": [" +
-                    "    {" +
-                    "        \"Effect\": \"Allow\"," +
-                    "        \"Action\": [" +
-                    "            \"s3:*\"" +
-                    "       ]," +
-                    "       \"Resource\": \"*\"" +
-                    "    }" +
-                    "   ]" +
-                    "}";
+        "{" +
+            "  \"Version\": \"2012-10-17\"," +
+            "  \"Statement\": [" +
+            "    {" +
+            "        \"Effect\": \"Allow\"," +
+            "        \"Action\": [" +
+            "            \"s3:*\"" +
+            "       ]," +
+            "       \"Resource\": \"*\"" +
+            "    }" +
+            "   ]" +
+            "}";
 
+    public static String userArn;
     public static void main(String[] args) throws Exception {
 
         final String usage = "\n" +
             "Usage:\n" +
-            "    <username> <policyName> <roleName> <roleSessionName> <fileLocation> <bucketName> \n\n" +
+            "    <username> <policyName> <roleName> <roleSessionName> <bucketName> \n\n" +
             "Where:\n" +
             "    username - The name of the IAM user to create. \n\n" +
             "    policyName - The name of the policy to create. \n\n" +
             "    roleName - The name of the role to create. \n\n" +
             "    roleSessionName - The name of the session required for the assumeRole operation. \n\n" +
-            "    fileLocation - The file location to the JSON required to create the role (see Readme). \n\n" +
-            "    bucketName - The name of the Amazon S3 bucket from which objects are read. \n\n" ;
+            "    bucketName - The name of the Amazon S3 bucket from which objects are read. \n\n";
 
-        if (args.length != 6) {
+        if (args.length != 5) {
             System.out.println(usage);
             System.exit(1);
         }
@@ -1235,8 +1691,7 @@ public class IAMScenario {
         String policyName = args[1];
         String roleName = args[2];
         String roleSessionName = args[3];
-        String fileLocation = args[4];
-        String bucketName = args[5];
+        String bucketName = args[4];
 
         Region region = Region.AWS_GLOBAL;
         IamClient iam = IamClient.builder()
@@ -1250,53 +1705,82 @@ public class IAMScenario {
 
         System.out.println(DASHES);
         System.out.println(" 1. Create the IAM user.");
-        Boolean createUser = createIAMUser(iam, userName);
+        User createUser = createIAMUser(iam, userName);
+
+        System.out.println(DASHES);
+        userArn = createUser.arn();
+
+        AccessKey myKey = createIAMAccessKey(iam, userName);
+        String accessKey = myKey.accessKeyId();
+        String secretKey = myKey.secretAccessKey();
+        String assumeRolePolicyDocument = "{" +
+            "\"Version\": \"2012-10-17\"," +
+            "\"Statement\": [{" +
+            "\"Effect\": \"Allow\"," +
+            "\"Principal\": {" +
+            "	\"AWS\": \"" + userArn + "\"" +
+            "}," +
+            "\"Action\": \"sts:AssumeRole\"" +
+            "}]" +
+            "}";
+
+        System.out.println(assumeRolePolicyDocument);
+        System.out.println(userName + " was successfully created.");
+        System.out.println(DASHES);
+        System.out.println("2. Creates a policy.");
+        String polArn = createIAMPolicy(iam, policyName);
+        System.out.println("The policy " + polArn + " was successfully created.");
         System.out.println(DASHES);
 
-       if (createUser) {
-           System.out.println(userName + " was successfully created.");
+        System.out.println(DASHES);
+        System.out.println("3. Creates a role.");
+        TimeUnit.SECONDS.sleep(30);
+        String roleArn = createIAMRole(iam, roleName, assumeRolePolicyDocument);
+        System.out.println(roleArn + " was successfully created.");
+        System.out.println(DASHES);
 
-           System.out.println(DASHES);
-           System.out.println("2. Creates a policy.");
-           String polArn = createIAMPolicy(iam, policyName);
-           System.out.println("The policy " + polArn + " was successfully created.");
-           System.out.println(DASHES);
+        System.out.println(DASHES);
+        System.out.println("4. Grants the user permissions.");
+        attachIAMRolePolicy(iam, roleName, polArn);
+        System.out.println(DASHES);
 
-           System.out.println(DASHES);
-           System.out.println("3. Creates a role.");
-           String roleArn = createIAMRole(iam, roleName, fileLocation);
-           System.out.println(roleArn + " was successfully created.");
-           System.out.println(DASHES);
+        System.out.println(DASHES);
+        System.out.println("*** Wait for 30 secs so the resource is available");
+        TimeUnit.SECONDS.sleep(30);
+        System.out.println("5. Gets temporary credentials by assuming the role.");
+        System.out.println("Perform an Amazon S3 Service operation using the temporary credentials.");
+        assumeGivenRole(roleArn, roleSessionName, bucketName, accessKey, secretKey);
+        System.out.println(DASHES);
 
-           System.out.println(DASHES);
-           System.out.println("4. Grants the user permissions.");
-           attachIAMRolePolicy(iam, roleName, polArn);
-           System.out.println(DASHES);
+        System.out.println(DASHES);
+        System.out.println("6 Getting ready to delete the AWS resources");
+        deleteKey(iam, userName, accessKey );
+        deleteRole(iam, roleName, polArn);
+        deleteIAMUser(iam, userName);
+        System.out.println(DASHES);
 
-           System.out.println(DASHES);
-           System.out.println("*** Wait for 1 MIN so the resource is available");
-           TimeUnit.MINUTES.sleep(1);
-           System.out.println("5. Gets temporary credentials by assuming the role.");
-           System.out.println("Perform an Amazon S3 Service operation using the temporary credentials.");
-           assumeGivenRole(roleArn, roleSessionName, bucketName);
-           System.out.println(DASHES);
-
-           System.out.println(DASHES);
-           System.out.println("6 Getting ready to delete the AWS resources");
-           deleteRole(iam, roleName, polArn);
-           deleteIAMUser(iam, userName);
-           System.out.println(DASHES);
-
-           System.out.println(DASHES);
-           System.out.println("This IAM Scenario has successfully completed");
-           System.out.println(DASHES);
-       } else {
-           System.out.println(userName +" was not successfully created.");
-       }
+        System.out.println(DASHES);
+        System.out.println("This IAM Scenario has successfully completed");
+        System.out.println(DASHES);
     }
 
-    public static Boolean createIAMUser(IamClient iam, String username ) {
+    public static AccessKey createIAMAccessKey(IamClient iam, String user) {
+        try {
+            CreateAccessKeyRequest request = CreateAccessKeyRequest.builder()
+                .userName(user)
+                .build();
 
+            CreateAccessKeyResponse response = iam.createAccessKey(request);
+            return response.accessKey();
+
+        } catch (IamException e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+        return null;
+    }
+
+    public static User createIAMUser(IamClient iam, String username) {
         try {
             // Create an IamWaiter object
             IamWaiter iamWaiter = iam.waiter();
@@ -1312,27 +1796,26 @@ public class IAMScenario {
 
             WaiterResponse<GetUserResponse> waitUntilUserExists = iamWaiter.waitUntilUserExists(userRequest);
             waitUntilUserExists.matched().response().ifPresent(System.out::println);
-            return true;
+            return response.user();
 
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
         }
-        return false;
+        return null;
     }
 
-    public static String createIAMRole(IamClient iam, String rolename, String fileLocation ) throws Exception {
+    public static String createIAMRole(IamClient iam, String rolename, String json) {
 
         try {
-            JSONObject jsonObject = (JSONObject) readJsonSimpleDemo(fileLocation);
             CreateRoleRequest request = CreateRoleRequest.builder()
                 .roleName(rolename)
-                .assumeRolePolicyDocument(jsonObject.toJSONString())
+                .assumeRolePolicyDocument(json)
                 .description("Created using the AWS SDK for Java")
                 .build();
 
             CreateRoleResponse response = iam.createRole(request);
-            System.out.println("The ARN of the role is "+response.role().arn());
+            System.out.println("The ARN of the role is " + response.role().arn());
             return response.role().arn();
 
         } catch (IamException e) {
@@ -1342,8 +1825,7 @@ public class IAMScenario {
         return "";
     }
 
-    public static String createIAMPolicy(IamClient iam, String policyName ) {
-
+    public static String createIAMPolicy(IamClient iam, String policyName) {
         try {
             // Create an IamWaiter object.
             IamWaiter iamWaiter = iam.waiter();
@@ -1352,8 +1834,6 @@ public class IAMScenario {
                 .policyDocument(PolicyDocument).build();
 
             CreatePolicyResponse response = iam.createPolicy(request);
-
-            // Wait until the policy is created.
             GetPolicyRequest polRequest = GetPolicyRequest.builder()
                 .policyArn(response.policy().arn())
                 .build();
@@ -1366,11 +1846,10 @@ public class IAMScenario {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
         }
-        return "" ;
+        return "";
     }
 
-    public static void attachIAMRolePolicy(IamClient iam, String roleName, String policyArn ) {
-
+    public static void attachIAMRolePolicy(IamClient iam, String roleName, String policyArn) {
         try {
             ListAttachedRolePoliciesRequest request = ListAttachedRolePoliciesRequest.builder()
                 .roleName(roleName)
@@ -1378,11 +1857,10 @@ public class IAMScenario {
 
             ListAttachedRolePoliciesResponse response = iam.listAttachedRolePolicies(request);
             List<AttachedPolicy> attachedPolicies = response.attachedPolicies();
-
             String polArn;
-            for (AttachedPolicy policy: attachedPolicies) {
+            for (AttachedPolicy policy : attachedPolicies) {
                 polArn = policy.policyArn();
-                if (polArn.compareTo(policyArn)==0) {
+                if (polArn.compareTo(policyArn) == 0) {
                     System.out.println(roleName + " policy is already attached to this role.");
                     return;
                 }
@@ -1403,10 +1881,13 @@ public class IAMScenario {
     }
 
     // Invoke an Amazon S3 operation using the Assumed Role.
-    public static void assumeGivenRole(String roleArn, String roleSessionName, String bucketName) {
+    public static void assumeGivenRole(String roleArn, String roleSessionName, String bucketName, String keyVal, String keySecret) {
 
+        // Use the creds of the new IAM user that was created in this code example.
+        AwsBasicCredentials credentials = AwsBasicCredentials.create(keyVal, keySecret);
         StsClient stsClient = StsClient.builder()
             .region(Region.US_EAST_1)
+            .credentialsProvider(StaticCredentialsProvider.create(credentials))
             .build();
 
         try {
@@ -1421,7 +1902,7 @@ public class IAMScenario {
             String secKey = myCreds.secretAccessKey();
             String secToken = myCreds.sessionToken();
 
-            // List all objects in an Amazon S3 bucket using the temp creds.
+            // List all objects in an Amazon S3 bucket using the temp creds retrieved by invoking assumeRole.
             Region region = Region.US_EAST_1;
             S3Client s3 = S3Client.builder()
                 .credentialsProvider(StaticCredentialsProvider.create(AwsSessionCredentials.create(key, secKey, secToken)))
@@ -1429,7 +1910,7 @@ public class IAMScenario {
                 .build();
 
             System.out.println("Created a S3Client using temp credentials.");
-            System.out.println("Listing objects in "+bucketName);
+            System.out.println("Listing objects in " + bucketName);
             ListObjectsRequest listObjects = ListObjectsRequest.builder()
                 .bucket(bucketName)
                 .build();
@@ -1464,7 +1945,7 @@ public class IAMScenario {
                 .build();
 
             iam.deletePolicy(request);
-            System.out.println("*** Successfully deleted "+polArn);
+            System.out.println("*** Successfully deleted " + polArn);
 
             // Delete the role.
             DeleteRoleRequest roleRequest = DeleteRoleRequest.builder()
@@ -1472,7 +1953,24 @@ public class IAMScenario {
                 .build();
 
             iam.deleteRole(roleRequest);
-            System.out.println("*** Successfully deleted " +roleName);
+            System.out.println("*** Successfully deleted " + roleName);
+
+        } catch (IamException e) {
+            System.err.println(e.awsErrorDetails().errorMessage());
+            System.exit(1);
+        }
+    }
+
+    public static void deleteKey(IamClient iam ,String username, String accessKey ) {
+        try {
+            DeleteAccessKeyRequest request = DeleteAccessKeyRequest.builder()
+                .accessKeyId(accessKey)
+                .userName(username)
+                .build();
+
+            iam.deleteAccessKey(request);
+            System.out.println("Successfully deleted access key " + accessKey +
+                " from user " + username);
 
         } catch (IamException e) {
             System.err.println(e.awsErrorDetails().errorMessage());
@@ -1481,7 +1979,6 @@ public class IAMScenario {
     }
 
     public static void deleteIAMUser(IamClient iam, String userName) {
-
         try {
             DeleteUserRequest request = DeleteUserRequest.builder()
                 .userName(userName)
@@ -1494,12 +1991,6 @@ public class IAMScenario {
             System.err.println(e.awsErrorDetails().errorMessage());
             System.exit(1);
         }
-    }
-
-    public static Object readJsonSimpleDemo(String filename) throws Exception {
-        FileReader reader = new FileReader(filename);
-        JSONParser jsonParser = new JSONParser();
-        return jsonParser.parse(reader);
     }
 }
 ```

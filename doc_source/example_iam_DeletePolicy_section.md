@@ -35,6 +35,36 @@ bool AwsDoc::IAM::deletePolicy(const Aws::String &policyArn,
 +  For API details, see [DeletePolicy](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/DeletePolicy) in *AWS SDK for C\+\+ API Reference*\. 
 
 ------
+#### [ Go ]
+
+**SDK for Go V2**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+  
+
+```
+// PolicyWrapper encapsulates AWS Identity and Access Management (IAM) policy actions
+// used in the examples.
+// It contains an IAM service client that is used to perform policy actions.
+type PolicyWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// DeletePolicy deletes a policy.
+func (wrapper PolicyWrapper) DeletePolicy(policyArn string) error {
+	_, err := wrapper.IamClient.DeletePolicy(context.TODO(), &iam.DeletePolicyInput{
+		PolicyArn: aws.String(policyArn),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete policy %v. Here's why: %v\n", policyArn, err)
+	}
+	return err
+}
+```
++  For API details, see [DeletePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DeletePolicy) in *AWS SDK for Go API Reference*\. 
+
+------
 #### [ Java ]
 
 **SDK for Java 2\.x**  

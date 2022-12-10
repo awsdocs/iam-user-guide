@@ -111,41 +111,45 @@ Aws::String AwsDoc::IAM::BuildSamplePolicyDocument(const Aws::String &rsrc_arn) 
   
 
 ```
-	// CreatePolicy
+// PolicyWrapper encapsulates AWS Identity and Access Management (IAM) policy actions
+// used in the examples.
+// It contains an IAM service client that is used to perform policy actions.
+type PolicyWrapper struct {
+	IamClient *iam.Client
+}
 
-	fmt.Println("🔐 CreatePolicy")
 
-	policyDocument := `{
-		"Version": "2012-10-17",
-		"Statement": [
-			{
-				"Effect": "Allow",
-				"Action": [
-					"dynamodb:DeleteItem",
-					"dynamodb:GetItem",
-					"dynamodb:PutItem",
-					"dynamodb:Query",
-					"dynamodb:Scan",
-					"dynamodb:UpdateItem"
-				],
-				"Resource": [
-					"arn:aws:dynamodb:us-west-2:123456789012:table/mytable",
-					"arn:aws:dynamodb:us-west-2:123456789012:table/mytable/*"
-				]
-			}
-		]
-	}`
 
-	createPolicyResult, err := service.CreatePolicy(context.Background(), &iam.CreatePolicyInput{
-		PolicyDocument: &policyDocument,
-		PolicyName:     aws.String(ExamplePolicyName),
-	})
-
-	if err != nil {
-		panic("Couldn't create policy!" + err.Error())
+// CreatePolicy creates a policy that grants a list of actions to the specified resource.
+// PolicyDocument shows how to work with a policy document as a data structure and
+// serialize it to JSON by using Go's JSON marshaler.
+func (wrapper PolicyWrapper) CreatePolicy(policyName string, actions []string,
+		resourceArn string) (*types.Policy, error) {
+	var policy *types.Policy
+	policyDoc := PolicyDocument{
+		Version:   "2012-10-17",
+		Statement: []PolicyStatement{{
+			Effect: "Allow",
+			Action: actions,
+			Resource: aws.String(resourceArn),
+		}},
 	}
-
-	fmt.Print("Created a new policy: " + *createPolicyResult.Policy.Arn)
+	policyBytes, err := json.Marshal(policyDoc)
+	if err != nil {
+		log.Printf("Couldn't create policy document for %v. Here's why: %v\n", resourceArn, err)
+		return nil, err
+	}
+	result, err := wrapper.IamClient.CreatePolicy(context.TODO(), &iam.CreatePolicyInput{
+		PolicyDocument: aws.String(string(policyBytes)),
+		PolicyName:     aws.String(policyName),
+	})
+	if err != nil {
+		log.Printf("Couldn't create policy %v. Here's why: %v\n", policyName, err)
+	} else {
+		policy = result.Policy
+	}
+	return policy, err
+}
 ```
 +  For API details, see [CreatePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreatePolicy) in *AWS SDK for Go API Reference*\. 
 

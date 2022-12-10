@@ -50,17 +50,28 @@ do
   
 
 ```
-	// ListGroups
+// GroupWrapper encapsulates AWS Identity and Access Management (IAM) group actions
+// used in the examples.
+// It contains an IAM service client that is used to perform group actions.
+type GroupWrapper struct {
+	IamClient *iam.Client
+}
 
-	listGroupsResult, err := service.ListGroups(context.Background(), &iam.ListGroupsInput{})
 
+
+// ListGroups lists up to maxGroups number of groups.
+func (wrapper GroupWrapper) ListGroups(maxGroups int32) ([]types.Group, error) {
+	var groups []types.Group
+	result, err := wrapper.IamClient.ListGroups(context.TODO(), &iam.ListGroupsInput{
+		MaxItems: aws.Int32(maxGroups),
+	})
 	if err != nil {
-		panic("Couldn't list groups! " + err.Error())
+		log.Printf("Couldn't list groups. Here's why: %v\n", err)
+	} else {
+		groups = result.Groups
 	}
-
-	for _, group := range listGroupsResult.Groups {
-		fmt.Printf("group %s - %s\n", *group.GroupId, *group.Arn)
-	}
+	return groups, err
+}
 ```
 +  For API details, see [ListGroups](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListGroups) in *AWS SDK for Go API Reference*\. 
 

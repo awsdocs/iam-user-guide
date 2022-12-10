@@ -41,20 +41,27 @@ if (response.Role is not null)
   
 
 ```
-	// GetRole
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	getRoleResult, err := service.GetRole(context.Background(), &iam.GetRoleInput{
-		RoleName: aws.String(ExampleRoleName),
-	})
 
+
+// GetRole gets data about a role.
+func (wrapper RoleWrapper) GetRole(roleName string) (*types.Role, error) {
+	var role *types.Role
+	result, err := wrapper.IamClient.GetRole(context.TODO(),
+		&iam.GetRoleInput{RoleName: aws.String(roleName)})
 	if err != nil {
-		panic("Couldn't get role! " + err.Error())
+		log.Printf("Couldn't get role %v. Here's why: %v\n", roleName, err)
+	} else {
+		role = result.Role
 	}
-
-	fmt.Println("☑️ GetRole results: ")
-	fmt.Println("ARN: ", *getRoleResult.Role.Arn)
-	fmt.Println("Name: ", *getRoleResult.Role.RoleName)
-	fmt.Println("Created On: ", *getRoleResult.Role.CreateDate)
+	return role, err
+}
 ```
 +  For API details, see [GetRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.GetRole) in *AWS SDK for Go API Reference*\. 
 

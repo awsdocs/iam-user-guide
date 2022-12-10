@@ -81,30 +81,45 @@ bool AwsDoc::IAM::createIamRole(
   
 
 ```
-	// CreateRole
-	myRole, err := service.CreateRole(context.Background(), &iam.CreateRoleInput{
-		RoleName:    aws.String(ExampleRoleName),
-		Description: aws.String("My super awesome example role"),
-		AssumeRolePolicyDocument: aws.String(`{
-			"Version": "2012-10-17",
-			"Statement": [
-			  {
-				"Effect": "Allow",
-				"Principal": {
-				  "Service": "ec2.amazonaws.com"
-				},
-				"Action": "sts:AssumeRole"
-			  }
-			]
-		  }`),
-	})
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	if err != nil {
-		panic("Couldn't create role: " + err.Error())
+
+
+// CreateRole creates a role that trusts a specified user. The trusted user can assume
+// the role to acquire its permissions.
+// PolicyDocument shows how to work with a policy document as a data structure and
+// serialize it to JSON by using Go's JSON marshaler.
+func (wrapper RoleWrapper) CreateRole(roleName string, trustedUserArn string) (*types.Role, error) {
+	var role *types.Role
+	trustPolicy := PolicyDocument{
+		Version:   "2012-10-17",
+		Statement: []PolicyStatement{{
+			Effect: "Allow",
+			Principal: map[string]string{"AWS": trustedUserArn},
+			Action: []string{"sts:AssumeRole"},
+		}},
 	}
-
-	fmt.Println("☑️ Create Role")
-	fmt.Printf("The new role's ARN is %s \n", *myRole.Role.Arn)
+	policyBytes, err := json.Marshal(trustPolicy)
+	if err != nil {
+		log.Printf("Couldn't create trust policy for %v. Here's why: %v\n", trustedUserArn, err)
+		return nil, err
+	}
+	result, err := wrapper.IamClient.CreateRole(context.TODO(), &iam.CreateRoleInput{
+		AssumeRolePolicyDocument: aws.String(string(policyBytes)),
+		RoleName:                 aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't create role %v. Here's why: %v\n", roleName, err)
+	} else {
+		role = result.Role
+	}
+	return role, err
+}
 ```
 +  For API details, see [CreateRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreateRole) in *AWS SDK for Go API Reference*\. 
 

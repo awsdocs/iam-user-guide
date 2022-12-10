@@ -55,19 +55,28 @@ do
   
 
 ```
-	// ListRolePolicies
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	rolePoliciesList, err := service.ListRolePolicies(context.Background(), &iam.ListRolePoliciesInput{
-		RoleName: aws.String(ExampleRoleName),
+
+
+// ListRolePolicies lists the inline policies for a role.
+func (wrapper RoleWrapper) ListRolePolicies(roleName string) ([]string, error) {
+	var policies []string
+	result, err := wrapper.IamClient.ListRolePolicies(context.TODO(), &iam.ListRolePoliciesInput{
+		RoleName: aws.String(roleName),
 	})
-
 	if err != nil {
-		panic("Couldn't list policies for role: " + err.Error())
+		log.Printf("Couldn't list policies for role %v. Here's why: %v\n", roleName, err)
+	} else {
+		policies = result.PolicyNames
 	}
-
-	for _, rolePolicy := range rolePoliciesList.PolicyNames {
-		fmt.Printf("Policy ARN: %v", rolePolicy)
-	}
+	return policies, err
+}
 ```
 +  For API details, see [ListRolePolicies](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListRolePolicies) in *AWS SDK for Go API Reference*\. 
 

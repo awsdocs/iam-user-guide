@@ -98,17 +98,28 @@ bool AwsDoc::IAM::listUsers(const Aws::Client::ClientConfiguration &clientConfig
   
 
 ```
-	// ListUsers
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
+}
 
-	fmt.Println("➡️ List users")
 
-	userListResult, err := service.ListUsers(context.Background(), &iam.ListUsersInput{})
+
+// ListUsers gets up to maxUsers number of users.
+func (wrapper UserWrapper) ListUsers(maxUsers int32) ([]types.User, error) {
+	var users []types.User
+	result, err := wrapper.IamClient.ListUsers(context.TODO(), &iam.ListUsersInput{
+		MaxItems: aws.Int32(maxUsers),
+	})
 	if err != nil {
-		panic("Couldn't list users: " + err.Error())
+		log.Printf("Couldn't list users. Here's why: %v\n", err)
+	} else {
+		users = result.Users
 	}
-	for _, userResult := range userListResult.Users {
-		fmt.Printf("%s\t%s\n", *userResult.UserName, *userResult.Arn)
-	}
+	return users, err
+}
 ```
 +  For API details, see [ListUsers](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListUsers) in *AWS SDK for Go API Reference*\. 
 

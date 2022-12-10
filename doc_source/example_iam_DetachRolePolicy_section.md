@@ -90,6 +90,37 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 +  For API details, see [DetachRolePolicy](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/DetachRolePolicy) in *AWS SDK for C\+\+ API Reference*\. 
 
 ------
+#### [ Go ]
+
+**SDK for Go V2**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+  
+
+```
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// DetachRolePolicy detaches a policy from a role.
+func (wrapper RoleWrapper) DetachRolePolicy(roleName string, policyArn string) error {
+	_, err := wrapper.IamClient.DetachRolePolicy(context.TODO(), &iam.DetachRolePolicyInput{
+		PolicyArn: aws.String(policyArn),
+		RoleName:  aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't detach policy from role %v. Here's why: %v\n", roleName, err)
+	}
+	return err
+}
+```
++  For API details, see [DetachRolePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DetachRolePolicy) in *AWS SDK for Go API Reference*\. 
+
+------
 #### [ Java ]
 
 **SDK for Java 2\.x**  

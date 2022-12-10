@@ -41,24 +41,28 @@ catch (NoSuchEntityException ex)
   
 
 ```
-	// GetAccountPasswordPolicy
+// AccountWrapper encapsulates AWS Identity and Access Management (IAM) account actions
+// used in the examples.
+// It contains an IAM service client that is used to perform account actions.
+type AccountWrapper struct {
+	IamClient *iam.Client
+}
 
-	fmt.Println("🔐 GetAccountPasswordPolicy")
 
-	accountPasswordPolicy, err := service.GetAccountPasswordPolicy(context.Background(), &iam.GetAccountPasswordPolicyInput{})
 
+// GetAccountPasswordPolicy gets the account password policy for the current account.
+// If no policy has been set, a NoSuchEntityException is error is returned.
+func (wrapper AccountWrapper) GetAccountPasswordPolicy() (*types.PasswordPolicy, error) {
+	var pwPolicy *types.PasswordPolicy
+	result, err := wrapper.IamClient.GetAccountPasswordPolicy(context.TODO(),
+		&iam.GetAccountPasswordPolicyInput{})
 	if err != nil {
-		var notexists *types.NoSuchEntityException
-		if errors.As(err, &notexists) {
-			fmt.Println("No password policy")
-		} else {
-			panic("Couldn't get account password policy! " + err.Error())
-		}
+		log.Printf("Couldn't get account password policy. Here's why: %v\n", err)
 	} else {
-		fmt.Println("Users can change password: ", accountPasswordPolicy.PasswordPolicy.AllowUsersToChangePassword)
-		fmt.Println("Passwords expire: ", accountPasswordPolicy.PasswordPolicy.ExpirePasswords)
-		fmt.Println("Minimum password length: ", accountPasswordPolicy.PasswordPolicy.MinimumPasswordLength)
+		pwPolicy = result.PasswordPolicy
 	}
+	return pwPolicy, err
+}
 ```
 +  For API details, see [GetAccountPasswordPolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.GetAccountPasswordPolicy) in *AWS SDK for Go API Reference*\. 
 

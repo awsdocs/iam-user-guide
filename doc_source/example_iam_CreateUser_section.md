@@ -70,19 +70,28 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-	// CreateUser
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
+}
 
-	fmt.Println("➡️ Create user " + ExampleUserName)
 
-	createUserResult, err := service.CreateUser(context.Background(), &iam.CreateUserInput{
-		UserName: aws.String(ExampleUserName),
+
+// CreateUser creates a new user with the specified name.
+func (wrapper UserWrapper) CreateUser(userName string) (*types.User, error) {
+	var user *types.User
+	result, err := wrapper.IamClient.CreateUser(context.TODO(), &iam.CreateUserInput{
+		UserName: aws.String(userName),
 	})
-
 	if err != nil {
-		panic("Couldn't create user: " + err.Error())
+		log.Printf("Couldn't create user %v. Here's why: %v\n", userName, err)
+	} else {
+		user = result.User
 	}
-
-	fmt.Printf("Created user %s\n", *createUserResult.User.Arn)
+	return user, err
+}
 ```
 +  For API details, see [CreateUser](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreateUser) in *AWS SDK for Go API Reference*\. 
 

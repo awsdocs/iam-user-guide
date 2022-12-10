@@ -14,7 +14,7 @@ If your AWS account root user [multi\-factor authentication \(MFA\) device](id_c
 Before you use alternative factors of authentication to sign in as a root user, you must be able to access the email and primary contact phone number that are associated with your account\. If you need to update the primary contact phone number, you can sign in as an IAM user with either *Administrator* access or both `aws-portal:ViewAccount` and `aws-portal:ModifyAccount` permissions for your AWS account instead of the root user\. For additional instructions on updating the account contact information see, [https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#contact-info](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-account-payment.html#contact-info)\. If you do not have access to an email and primary contact phone number, you must contact [AWS Support](https://aws.amazon.com/forms/aws-mfa-support)\.
 
 **Important**  
-We recommend that you keep the email address and contact phone number linked to your root account user up to date for a successful account recovery\.
+We recommend that you keep the email address and contact phone number linked to your root user up to date for a successful account recovery\.
 
 **To sign in using alternative factors of authentication as an AWS account root user**
 

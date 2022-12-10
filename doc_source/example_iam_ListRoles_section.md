@@ -56,26 +56,28 @@ do
   
 
 ```
-	// ListRoles
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	roles, err := service.ListRoles(context.Background(), &iam.ListRolesInput{})
 
+
+// ListRoles gets up to maxRoles roles.
+func (wrapper RoleWrapper) ListRoles(maxRoles int32) ([]types.Role, error) {
+	var roles []types.Role
+	result, err := wrapper.IamClient.ListRoles(context.TODO(),
+		&iam.ListRolesInput{MaxItems: aws.Int32(maxRoles)},
+	)
 	if err != nil {
-		panic("Could not list roles: " + err.Error())
+		log.Printf("Couldn't list roles. Here's why: %v\n", err)
+	} else {
+		roles = result.Roles
 	}
-
-	fmt.Println("☑️ list roles")
-	for _, idxRole := range roles.Roles {
-
-		fmt.Printf("%s\t%s\t%s\t",
-			*idxRole.RoleId,
-			*idxRole.RoleName,
-			*idxRole.Arn)
-		if idxRole.Description != nil {
-			fmt.Print(*idxRole.Description)
-		}
-		fmt.Print("\n")
-	}
+	return roles, err
+}
 ```
 +  For API details, see [ListRoles](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListRoles) in *AWS SDK for Go API Reference*\. 
 

@@ -13,21 +13,29 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-	// CreateServiceLinkedRole
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	fmt.Println("➡️ Create SLR for " + ExampleSLRService)
-	createSlrResult, err := service.CreateServiceLinkedRole(context.Background(), &iam.CreateServiceLinkedRoleInput{
-		AWSServiceName: aws.String(ExampleSLRService),
-		Description:    aws.String(ExampleSLRDescription),
+
+
+// CreateServiceLinkedRole creates a service-linked role that is owned by the specified service.
+func (wrapper RoleWrapper) CreateServiceLinkedRole(serviceName string, description string) (*types.Role, error) {
+	var role *types.Role
+	result, err := wrapper.IamClient.CreateServiceLinkedRole(context.TODO(), &iam.CreateServiceLinkedRoleInput{
+		AWSServiceName: aws.String(serviceName),
+		Description:    aws.String(description),
 	})
-
-	// NOTE: We don't consider this an error as running this example multiple times will cause an error.
 	if err != nil {
-		fmt.Printf("Couldn't create service-linked role: %v\n", err.Error())
+		log.Printf("Couldn't create service-linked role %v. Here's why: %v\n", serviceName, err)
 	} else {
-
-		fmt.Printf("Created service-linked role with ARN: %s\n", *createSlrResult.Role.Arn)
+		role = result.Role
 	}
+	return role, err
+}
 ```
 +  For API details, see [CreateServiceLinkedRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.CreateServiceLinkedRole) in *AWS SDK for Go API Reference*\. 
 

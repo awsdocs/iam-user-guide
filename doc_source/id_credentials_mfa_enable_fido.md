@@ -21,6 +21,9 @@ We recommend that you require your human users to use temporary credentials when
 
 To manage a FIDO security key for your own IAM user while protecting sensitive MFA\-related actions, you must have the permissions from the following policy:
 
+**Note**  
+The ARN values are static values and are not an indicator of what protocol was used to register the authenticator\. We have deprecated U2F, so all new implementations use WebAuthn\.
+
 ```
 {
     "Version": "2012-10-17",

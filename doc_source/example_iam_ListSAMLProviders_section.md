@@ -36,17 +36,26 @@ response.SAMLProviderList.ForEach(samlProvider =>
   
 
 ```
-	// ListSAMLProviders
+// AccountWrapper encapsulates AWS Identity and Access Management (IAM) account actions
+// used in the examples.
+// It contains an IAM service client that is used to perform account actions.
+type AccountWrapper struct {
+	IamClient *iam.Client
+}
 
-	samlProviderList, err := service.ListSAMLProviders(context.Background(), &iam.ListSAMLProvidersInput{})
 
+
+// ListSAMLProviders gets the SAML providers for the account.
+func (wrapper AccountWrapper) ListSAMLProviders() ([]types.SAMLProviderListEntry, error) {
+	var providers []types.SAMLProviderListEntry
+	result, err := wrapper.IamClient.ListSAMLProviders(context.TODO(), &iam.ListSAMLProvidersInput{})
 	if err != nil {
-		panic("Couldn't list saml providers: " + err.Error())
+		log.Printf("Couldn't list SAML providers. Here's why: %v\n", err)
+	} else {
+		providers = result.SAMLProviderList
 	}
-
-	for _, provider := range samlProviderList.SAMLProviderList {
-		fmt.Printf("%s %s -> %s", *provider.Arn, *provider.CreateDate, *provider.ValidUntil)
-	}
+	return providers, err
+}
 ```
 +  For API details, see [ListSAMLProviders](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListSAMLProviders) in *AWS SDK for Go API Reference*\. 
 

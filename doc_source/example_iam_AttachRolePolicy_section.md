@@ -111,18 +111,26 @@ bool AwsDoc::IAM::attachRolePolicy(const Aws::String &roleName,
   
 
 ```
-	// AttachRolePolicy
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	_, err = service.AttachRolePolicy(context.Background(), &iam.AttachRolePolicyInput{
-		PolicyArn: aws.String(ExamplePolicyARN),
-		RoleName:  aws.String(ExampleRoleName),
+
+
+// AttachRolePolicy attaches a policy to a role.
+func (wrapper RoleWrapper) AttachRolePolicy(policyArn string, roleName string) error {
+	_, err := wrapper.IamClient.AttachRolePolicy(context.TODO(), &iam.AttachRolePolicyInput{
+		PolicyArn: aws.String(policyArn),
+		RoleName:  aws.String(roleName),
 	})
-
 	if err != nil {
-		panic("Couldn't apply a policy to the role!")
+		log.Printf("Couldn't attach policy %v to role %v. Here's why: %v\n", policyArn, roleName, err)
 	}
-
-	fmt.Println("☑️ Attached policy " + ExamplePolicyARN + " to role " + ExampleRoleName)
+	return err
+}
 ```
 +  For API details, see [AttachRolePolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.AttachRolePolicy) in *AWS SDK for Go API Reference*\. 
 

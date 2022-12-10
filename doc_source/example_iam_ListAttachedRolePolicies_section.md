@@ -51,21 +51,28 @@ do
   
 
 ```
-	// ListAttachedRolePolicies
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
 
-	attachedPoliciesList, err := service.ListAttachedRolePolicies(context.Background(), &iam.ListAttachedRolePoliciesInput{
-		RoleName: aws.String(ExampleRoleName),
+
+
+// ListAttachedRolePolicies lists the policies that are attached to the specified role.
+func (wrapper RoleWrapper) ListAttachedRolePolicies(roleName string) ([]types.AttachedPolicy, error) {
+	var policies []types.AttachedPolicy
+	result, err := wrapper.IamClient.ListAttachedRolePolicies(context.TODO(), &iam.ListAttachedRolePoliciesInput{
+		RoleName: aws.String(roleName),
 	})
-
 	if err != nil {
-		panic("Couldn't call ListAttachedRolePolicies: " + err.Error())
+		log.Printf("Couldn't list attached policies for role %v. Here's why: %v\n", roleName, err)
+	} else {
+		policies = result.AttachedPolicies
 	}
-
-	fmt.Println("➡️ List attached role policies for " + ExampleRoleName)
-
-	for _, attachedPolicy := range attachedPoliciesList.AttachedPolicies {
-		fmt.Printf("attached policy: %v\n (%v) \n", attachedPolicy.PolicyArn, attachedPolicy.PolicyName)
-	}
+	return policies, err
+}
 ```
 +  For API details, see [ListAttachedRolePolicies](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListAttachedRolePolicies) in *AWS SDK for Go API Reference*\. 
 

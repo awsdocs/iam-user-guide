@@ -102,66 +102,25 @@ bool AwsDoc::IAM::deleteAccessKey(const Aws::String &userName,
   
 
 ```
-package main
-
-import (
-	"context"
-	"flag"
-	"fmt"
-
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
-)
-
-// IAMDeleteAccessKeyAPI defines the interface for the DeleteAccessKey function.
-// We use this interface to test the function using a mocked service.
-type IAMDeleteAccessKeyAPI interface {
-	DeleteAccessKey(ctx context.Context,
-		params *iam.DeleteAccessKeyInput,
-		optFns ...func(*iam.Options)) (*iam.DeleteAccessKeyOutput, error)
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
 }
 
-// RemoveAccessKey deletes an AWS Identity and Access Management (IAM) access key.
-// Inputs:
-//     c is the context of the method call, which includes the AWS Region.
-//     api is the interface that defines the method call.
-//     input defines the input arguments to the service call.
-// Output:
-//     If successful, a DeleteAccessKeyOutput object containing the result of the service call and nil.
-//     Otherwise, nil and an error from the call to DeleteAccessKey.
-func RemoveAccessKey(c context.Context, api IAMDeleteAccessKeyAPI, input *iam.DeleteAccessKeyInput) (*iam.DeleteAccessKeyOutput, error) {
-	return api.DeleteAccessKey(c, input)
-}
 
-func main() {
-	keyID := flag.String("k", "", "The ID of the access key")
-	userName := flag.String("u", "", "The name of the user")
-	flag.Parse()
 
-	if *keyID == "" || *userName == "" {
-		fmt.Println("You must supply the key ID and user name (-k KEY-ID -u USER-NAME")
-		return
-	}
-
-	cfg, err := config.LoadDefaultConfig(context.TODO())
+// DeleteAccessKey deletes an access key from a user.
+func (wrapper UserWrapper) DeleteAccessKey(userName string, keyId string) error {
+	_, err := wrapper.IamClient.DeleteAccessKey(context.TODO(), &iam.DeleteAccessKeyInput{
+		AccessKeyId: aws.String(keyId),
+		UserName:    aws.String(userName),
+	})
 	if err != nil {
-		panic("configuration error, " + err.Error())
+		log.Printf("Couldn't delete access key %v. Here's why: %v\n", keyId, err)
 	}
-
-	client := iam.NewFromConfig(cfg)
-
-	input := &iam.DeleteAccessKeyInput{
-		AccessKeyId: keyID,
-		UserName:    userName,
-	}
-
-	_, err = RemoveAccessKey(context.TODO(), client, input)
-	if err != nil {
-		fmt.Println("Error", err)
-		return
-	}
-
-	fmt.Println("Deleted key with ID " + *keyID + " from user " + *userName)
+	return err
 }
 ```
 +  For API details, see [DeleteAccessKey](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DeleteAccessKey) in *AWS SDK for Go API Reference*\. 

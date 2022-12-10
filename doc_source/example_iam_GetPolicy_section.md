@@ -72,19 +72,28 @@ bool AwsDoc::IAM::getPolicy(const Aws::String &policyArn,
   
 
 ```
-	// GetPolicy
+// PolicyWrapper encapsulates AWS Identity and Access Management (IAM) policy actions
+// used in the examples.
+// It contains an IAM service client that is used to perform policy actions.
+type PolicyWrapper struct {
+	IamClient *iam.Client
+}
 
-	getPolicyResponse, err := service.GetPolicy(context.Background(), &iam.GetPolicyInput{
-		PolicyArn: policyArn,
+
+
+// GetPolicy gets data about a policy.
+func (wrapper PolicyWrapper) GetPolicy(policyArn string) (*types.Policy, error) {
+	var policy *types.Policy
+	result, err := wrapper.IamClient.GetPolicy(context.TODO(), &iam.GetPolicyInput{
+		PolicyArn: aws.String(policyArn),
 	})
-
 	if err != nil {
-		panic("Couldn't get policy from ARN: " + err.Error())
+		log.Printf("Couldn't get policy %v. Here's why: %v\n", policyArn, err)
+	} else {
+		policy = result.Policy
 	}
-
-	fmt.Printf("policy: %s, name %s\n",
-		*getPolicyResponse.Policy.Arn,
-		*getPolicyResponse.Policy.PolicyName)
+	return policy, err
+}
 ```
 +  For API details, see [GetPolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.GetPolicy) in *AWS SDK for Go API Reference*\. 
 

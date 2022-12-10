@@ -107,18 +107,28 @@ bool AwsDoc::IAM::listPolicies(const Aws::Client::ClientConfiguration &clientCon
   
 
 ```
-	// ListPolicies
+// PolicyWrapper encapsulates AWS Identity and Access Management (IAM) policy actions
+// used in the examples.
+// It contains an IAM service client that is used to perform policy actions.
+type PolicyWrapper struct {
+	IamClient *iam.Client
+}
 
-	policyListResponse, err := service.ListPolicies(context.Background(), &iam.ListPoliciesInput{})
 
+
+// ListPolicies gets up to maxPolicies policies.
+func (wrapper PolicyWrapper) ListPolicies(maxPolicies int32) ([]types.Policy, error) {
+	var policies []types.Policy
+	result, err := wrapper.IamClient.ListPolicies(context.TODO(), &iam.ListPoliciesInput{
+		MaxItems: aws.Int32(maxPolicies),
+	})
 	if err != nil {
-		panic("Couldn't get list of policies! " + err.Error())
+		log.Printf("Couldn't list policies. Here's why: %v\n", err)
+	} else {
+		policies = result.Policies
 	}
-
-	fmt.Print("PolicyName\tARN")
-	for _, policy := range policyListResponse.Policies {
-		fmt.Printf("%s\t%s\n", *policy.PolicyName, *policy.Arn)
-	}
+	return policies, err
+}
 ```
 +  For API details, see [ListPolicies](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListPolicies) in *AWS SDK for Go API Reference*\. 
 

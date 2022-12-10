@@ -6,6 +6,37 @@ The following code examples show how to delete an IAM role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ Go ]
+
+**SDK for Go V2**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+  
+
+```
+// RoleWrapper encapsulates AWS Identity and Access Management (IAM) role actions
+// used in the examples.
+// It contains an IAM service client that is used to perform role actions.
+type RoleWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// DeleteRole deletes a role. All attached policies must be detached before a
+// role can be deleted.
+func (wrapper RoleWrapper) DeleteRole(roleName string) error {
+	_, err := wrapper.IamClient.DeleteRole(context.TODO(), &iam.DeleteRoleInput{
+		RoleName: aws.String(roleName),
+	})
+	if err != nil {
+		log.Printf("Couldn't delete role %v. Here's why: %v\n", roleName, err)
+	}
+	return err
+}
+```
++  For API details, see [DeleteRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DeleteRole) in *AWS SDK for Go API Reference*\. 
+
+------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  

@@ -93,15 +93,25 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-	// DeleteUser
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
+}
 
-	_, err = service.DeleteUser(context.Background(), &iam.DeleteUserInput{
-		UserName: aws.String(ExampleUserName),
+
+
+// DeleteUser deletes a user.
+func (wrapper UserWrapper) DeleteUser(userName string) error {
+	_, err := wrapper.IamClient.DeleteUser(context.TODO(), &iam.DeleteUserInput{
+		UserName: aws.String(userName),
 	})
-
 	if err != nil {
-		panic("Couldn't delete user: " + err.Error())
+		log.Printf("Couldn't delete user %v. Here's why: %v\n", userName, err)
 	}
+	return err
+}
 ```
 +  For API details, see [DeleteUser](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DeleteUser) in *AWS SDK for Go API Reference*\. 
 
