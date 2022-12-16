@@ -78,17 +78,17 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    To get your AWS account ID, contact your administrator\.
 
-1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
-![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
+1. In the navigation bar on the upper right, choose your user name, and then choose **Security credentials**\.   
+![\[AWS Management Console Security credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
-1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication** section, choose **Manage MFA device**\.
+1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication \(MFA\)** section, choose **Assign MFA device**\.
 
-1. In the **Manage MFA device** wizard, choose **FIDO security key**, and then choose **Continue**\.
+1. In the wizard, type a **Device name**, choose **Security Key**, and then choose **Next**\.
 
 1. Insert the FIDO security key into your computer's USB port\.  
 ![\[FIDO security key inserted into a USB port\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
 
-1. Tap the FIDO security key, and then choose **Close** when setup is complete\. 
+1. Tap the FIDO security key\. 
 
 The FIDO security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\. 
 
@@ -102,16 +102,16 @@ You can enable a FIDO security key for another IAM user from the AWS Management 
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security credentials** tab\.
+1. Choose the name of the user for whom you want to enable MFA\.
 
-1. Next to **Assigned MFA device**, choose **Manage**\.
+1. Choose the **Security Credentials** tab\. Under **Multi\-factor authentication \(MFA\)**, choose **Assign MFA device**\.
 
-1. In the **Manage MFA device** wizard, choose **FIDO security key**, and then choose **Continue**\.
+1. In the wizard, type a **Device name**, choose **Security Key**, and then choose **Next**\.
 
 1. Insert the FIDO security key into your computer's USB port\.  
 ![\[FIDO security key inserted into a USB port\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
 
-1. Tap the FIDO security key, and then choose **Close** when setup is complete\. 
+1. Tap the FIDO security key\. 
 
 The FIDO security key is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
 
@@ -127,19 +127,19 @@ If your FIDO security key is lost, stolen, or not working, you can still sign in
 **Note**  
 If you see three text boxes, then you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials\. Your browser might remember this preference and open this account\-specific sign\-in page every time that you try to sign in\. You cannot use the IAM user sign\-in page to sign in as the account owner\. If you see the [IAM user sign\-in page](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#user-sign-in-page), choose **Sign in using root user email** near the bottom of the page\. This returns you to the main sign\-in page\. From there, you can sign in as the root user using your AWS account email address and password\.
 
-1. On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.  
-![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+1. On the right side of the navigation bar, choose your account name, and then choose **Security credentials**\. If necessary, choose **Continue to Security credentials**\.  
+![\[Security credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Expand the **Multi\-factor authentication \(MFA\)** section\.
 
-1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
+1. Choose **Assign MFA device**\.
 
-1. In the wizard, choose **FIDO security key** and then choose **Continue**\.
+1. In the wizard, type a **Device name**, choose **Security Key**, and then choose **Next**\.
 
 1. Insert the FIDO security key into your computer's USB port\.  
 ![\[FIDO security key inserted into a USB port\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/u2f-key.png)
 
-1. Tap the FIDO security key, and then choose **Close** when setup is complete\. 
+1. Tap the FIDO security key\. 
 
 The FIDO security key is ready for use with AWS\. The next time you use your root user credentials to sign in, you must tap your FIDO security key to complete the sign\-in process\.
 

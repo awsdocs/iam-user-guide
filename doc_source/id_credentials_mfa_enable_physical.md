@@ -4,7 +4,7 @@ A hardware TOTP token generates a six\-digit numeric code based upon a time\-bas
 
 Hardware TOTP tokens and [FIDO security keys](id_credentials_mfa_enable_fido.md) are both physical devices that you purchase\. The difference is that hardware MFA devices generate a TOTP code that you view and then enter when prompted when signing it to AWS\. A FIDO security key is a strong phishing\-resistant MFA option where you don't see or type an authentication code\. Instead, the FIDO security key generates a response without presenting it to the user and the service validates it\. For specifications and purchase information for both device types, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
 
-You can enable a hardware TOTP token for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a hardware TOTP token for the AWS account root user \(console\)](#enable-hw-mfa-for-root)\.
+You can enable a hardware TOTP token for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a hardware TOTP token for the AWS account root user\(console\)](#enable-hw-mfa-for-root)\.
 
 You can register up to **eight** MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) with your AWS account root user and IAM users\. With multiple MFA devices, you only need one MFA device to sign in to the AWS Management Console or create a session through the AWS CLI as that user\.
 
@@ -18,7 +18,7 @@ If you want to enable the device from the command line, use [https://docs.aws.am
 + [Permissions required](#enable-hw-mfa-for-iam-user-permissions-required)
 + [Enable a hardware TOTP token for your own IAM user \(console\)](#enable-hw-mfa-for-own-iam-user)
 + [Enable a hardware TOTP token for another IAM user \(console\)](#enable-hw-mfa-for-iam-user)
-+ [Enable a hardware TOTP token for the AWS account root user \(console\)](#enable-hw-mfa-for-root)
++ [Enable a hardware TOTP token for the AWS account root user\(console\)](#enable-hw-mfa-for-root)
 + [Replace or "rotate" a physical MFA device](#replace-phys-mfa)
 
 ## Permissions required<a name="enable-hw-mfa-for-iam-user-permissions-required"></a>
@@ -76,12 +76,12 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    To get your AWS account ID, contact your administrator\.
 
-1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
-![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
+1. In the navigation bar on the upper right, choose your user name, and then choose **Security credentials**\.   
+![\[AWS Management Console Security credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
-1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication** section, choose **Manage MFA device**\.
+1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication \(MFA\)** section, choose **Assign MFA device**\.
 
-1. In the **Manage MFA device** wizard, choose **Hardware TOTP token** and then choose **Continue**\.
+1. In the wizard, type a **Device name**, choose **Hardware TOTP token**, and then choose **Next**\.
 
 1. Type the device serial number\. The serial number is usually on the back of the device\.
 
@@ -90,7 +90,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
 1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **MFA code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 
-1. Choose **Assign MFA**\.
+1. Choose **Add MFA**\.
 **Important**  
 Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
@@ -106,11 +106,11 @@ The device is ready for use with AWS\. For information about using MFA with the 
 
 1. In the navigation pane, choose **Users**\.
 
-1. Choose the name of the user for whom you want to enable MFA, and then choose the **Security credentials** tab\.
+1. Choose the name of the user for whom you want to enable MFA\.
 
-1. Next to **Assigned MFA device**, choose **Manage**\.
+1. Choose the **Security Credentials** tab\. Under **Multi\-factor authentication \(MFA\)**, choose **Assign MFA device**\.
 
-1. In the **Manage MFA device** wizard, choose **Hardware MFA device** and then choose **Continue**\.
+1. In the wizard, type a **Device name**, choose **Hardware TOTP token**, and then choose **Next**\.
 
 1. Type the device serial number\. The serial number is usually on the back of the device\.
 
@@ -119,13 +119,13 @@ The device is ready for use with AWS\. For information about using MFA with the 
 
 1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **MFA code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 
-1. Choose **Assign MFA**\.
+1. Choose **Add MFA**\.
 **Important**  
 Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
 The device is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
 
-## Enable a hardware TOTP token for the AWS account root user \(console\)<a name="enable-hw-mfa-for-root"></a>
+## Enable a hardware TOTP token for the AWS account root user\(console\)<a name="enable-hw-mfa-for-root"></a>
 
 You can configure and enable a virtual MFA device for your root user from the AWS Management Console only, not from the AWS CLI or AWS API\.
 
@@ -140,14 +140,14 @@ You might see different text, such as **Sign in using MFA** and **Troubleshoot y
 **Note**  
 If you see three text boxes, then you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials\. Your browser might remember this preference and open this account\-specific sign\-in page every time that you try to sign in\. You cannot use the IAM user sign\-in page to sign in as the account owner\. If you see the [IAM user sign\-in page](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#user-sign-in-page), choose **Sign in using root user email** near the bottom of the page\. This returns you to the main sign\-in page\. From there, you can sign in as the root user using your AWS account email address and password\.
 
-1. On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.  
-![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+1. On the right side of the navigation bar, choose on your account name, and then choose **Security credentials**\. If necessary, choose **Continue to Security credentials**\.  
+![\[Security credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Expand the **Multi\-factor authentication \(MFA\)** section\.
 
-1. Choose **Manage MFA** or **Activate MFA**, depending on which option you chose in the preceding step\.
+1. Choose **Assign MFA device**\.
 
-1. In the wizard, choose **Hardware TOTP token** and then choose **Continue**\.
+1. In the wizard, type a **Device name**, choose **Hardware TOTP token**, and then choose **Next**\.
 
 1. In the **Serial number** box, type the serial number that is found on the back of the MFA device\.
 
@@ -156,7 +156,7 @@ If you see three text boxes, then you previously signed in to the console with *
 
 1. Wait 30 seconds while the device refreshes the code, and then type the next six\-digit number into the **MFA code 2** box\. You might need to press the button on the front of the device again to display the second number\.
 
-1. Choose **Assign MFA**\. The MFA device is now associated with the AWS account\.
+1. Choose **Add MFA**\. The MFA device is now associated with the AWS account\.
 **Important**  
 Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
@@ -167,4 +167,4 @@ Submit your request immediately after generating the authentication codes\. If y
 You can have up to eight MFA devices of any combination of the [currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) assigned to a user at a time with your AWS account root user and IAM users\. If the user loses a device or needs to replace it for any reason, you must first deactivate the old device\. Then you can add the new device for the user\.
 + To deactivate the device currently associated with a user, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\.
 + To add a replacement hardware TOTP token for an IAM user, follow the steps in the procedure [Enable a hardware TOTP token for another IAM user \(console\)](#enable-hw-mfa-for-iam-user) earlier in this topic\.
-+ To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a hardware TOTP token for the AWS account root user \(console\)](#enable-hw-mfa-for-root) earlier in this topic\.
++ To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a hardware TOTP token for the AWS account root user\(console\)](#enable-hw-mfa-for-root) earlier in this topic\.

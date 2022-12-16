@@ -146,7 +146,7 @@ A *SAML session principal* is a session principal that results from using the AW
 
 When you issue a role from a SAML identity provider, you get this special type of session principal that includes information about the SAML identity provider\.
 
-Use this principal type in your policy to allow or deny access based on the trusted SAML identity provider\. To specify the web identity role session ARN in the `Principal` element of a role trust policy, use the following format:
+Use this principal type in your policy to allow or deny access based on the trusted SAML identity provider\. To specify the SAML identity role session ARN in the `Principal` element of a role trust policy, use the following format:
 
 ```
 "Principal": { "Federated": "arn:aws:iam::AWS-account-ID:saml-provider/provider-name" }

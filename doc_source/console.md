@@ -25,7 +25,7 @@ Before you sign in to an AWS account as the root user, be sure that you have the
 1. Open [https://console\.aws\.amazon\.com/](https://console.aws.amazon.com/)\.
 
 1. If you have not signed in previously using this browser, the main sign\-in page appears as follows\. Choose **Root user**, enter the email address associated with your account, and choose **Next**\.  
-![\[Main sign-in page with Root user selected\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/sign-in-main-capture.png)
+![\[Main sign-in page with root user selected\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/sign-in-main-capture.png)
 
    If you have signed in as a root user previously using this browser, your browser might remember the email address for the AWS account\. If so, you'll see the screen shown in the next step instead\.
 

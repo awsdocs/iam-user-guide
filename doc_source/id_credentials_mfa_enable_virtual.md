@@ -14,14 +14,14 @@ For a list of virtual MFA apps that you can use, see [Multi\-Factor Authenticati
 
 ## Permissions required<a name="mfa_enable_virtual_permissions-required"></a>
 
-To manage virtual MFA devices for your IAM user, you must have the permissions from the following policy: [AWS: Allows MFA\-authenticated IAM users to manage their own MFA device on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.
+To manage virtual MFA devices for your IAM user, you must have the permissions from the following policy: [AWS: Allows MFA\-authenticated IAM users to manage their own MFA device on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.
 
 ## Enable a virtual MFA device for an IAM user \(console\)<a name="enable-virt-mfa-for-iam-user"></a>
 
 You can use IAM in the AWS Management Console to enable and manage a virtual MFA device for an IAM user in your account\. You can attach tags to your IAM resources, including virtual MFA devices, to identify, organize, and control access to them\. You can tag virtual MFA devices only when you use the AWS CLI or AWS API\. To enable and manage an MFA device using the AWS CLI or AWS API, see [Enabling and managing virtual MFA devices \(AWS CLI or AWS API\)](id_credentials_mfa_enable_cliapi.md)\. For more information about tagging IAM resources, see [Tagging IAM resources](id_tags.md)\. 
 
 **Note**  
-You must have physical access to the hardware that will host the user's virtual MFA device in order to configure MFA\. For example, you might configure MFA for a user who will use a virtual MFA device running on a smartphone\. In that case, you must have the smartphone available in order to finish the wizard\. Because of this, you might want to let users configure and manage their own virtual MFA devices\. In that case, you must grant users the permissions to perform the necessary IAM actions\. For more information and for an example of an IAM policy that grants these permissions, see [AWS: Allows MFA\-authenticated IAM users to manage their own MFA device on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\. 
+You must have physical access to the hardware that will host the user's virtual MFA device in order to configure MFA\. For example, you might configure MFA for a user who will use a virtual MFA device running on a smartphone\. In that case, you must have the smartphone available in order to finish the wizard\. Because of this, you might want to let users configure and manage their own virtual MFA devices\. In that case, you must grant users the permissions to perform the necessary IAM actions\. For more information and for an example of an IAM policy that grants these permissions, see [AWS: Allows MFA\-authenticated IAM users to manage their own MFA device on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\. 
 
 **To enable a virtual MFA device for an IAM user \(console\)**
 
@@ -29,11 +29,11 @@ You must have physical access to the hardware that will host the user's virtual 
 
 1. In the navigation pane, choose **Users**\.
 
-1. In the **User Name** list, choose the name of the intended MFA user\.
+1. In the **Users** list, choose the name of the intended MFA user\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
+1. Choose the **Security Credentials** tab\. Under **Multi\-factor authentication \(MFA\)**, choose **Assign MFA device**\.
 
-1. In the **Manage MFA Device** wizard, choose **Virtual MFA device**, and then choose **Continue**\.
+1. In the **Select MFA device** wizard, type a **Device name**, choose **Authenticator app**, and then choose **Next**\.
 
    IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic\. The graphic is a representation of the "secret configuration key" that is available for manual entry on devices that do not support QR codes\.
 
@@ -43,11 +43,11 @@ You must have physical access to the hardware that will host the user's virtual 
 
 1. Determine whether the MFA app supports QR codes, and then do one of the following:
    + From the wizard, choose **Show QR code**, and then use the app to scan the QR code\. For example, you might choose the camera icon or choose an option similar to **Scan code**, and then use the device's camera to scan the code\.
-   + In the **Manage MFA Device** wizard, choose **Show secret key**, and then type the secret key into your MFA app\.
+   + From the wizard, choose **Show secret key**, and then type the secret key into your MFA app\.
 
    When you are finished, the virtual MFA device starts generating one\-time passwords\. 
 
-1. In the **Manage MFA Device** wizard, in the **MFA code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **MFA code 2** box\. Choose **Assign MFA**\. 
+1. In the wizard, in the **MFA code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **MFA code 2** box\. Choose **Add MFA**\. 
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
@@ -63,12 +63,12 @@ Before you enable MFA for your root user, review your account settings and conta
 
 1. Sign in to the AWS Management Console\.
 
-1. On the right side of the navigation bar, choose your account name, and choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\. Then expand the **Multi\-Factor Authentication \(MFA\)** section on the page\.  
-![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+1. On the right side of the navigation bar, choose your account name, and choose **Security credentials**\. If necessary, choose **Continue to Security credentials**\.  
+![\[Security credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
-1. Choose **Activate MFA**\.
+1. In the **Multi\-Factor Authentication \(MFA\)** section, choose **Assign MFA device**\.
 
-1. In the wizard, choose **Virtual MFA device**, and then choose **Continue**\.
+1. In the wizard, choose **Authenticator app**, and then choose **Next**\.
 
    IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic\. The graphic is a representation of the secret configuration key that is available for manual entry on devices that do not support QR codes\.
 
@@ -78,17 +78,15 @@ Before you enable MFA for your root user, review your account settings and conta
 
 1. The easiest way to configure the app is to use the app to scan the QR code\. If you cannot scan the code, you can type the configuration information manually\. The QR code and secret configuration key generated by IAM are tied to your AWS account and cannot be used with a different account\. They can, however, be reused to configure a new MFA device for your account in case you lose access to the original MFA device\.
    + To use the QR code to configure the virtual MFA device, from the wizard, choose **Show QR code**\. Then follow the app instructions for scanning the code\. For example, you might need to choose the camera icon or choose a command like **Scan account barcode**, and then use the device's camera to scan the QR code\.
-   +  In the **Manage MFA Device** wizard, choose **Show secret key**, and then type the secret key into your MFA app\.
+   + In the **Set up device** wizard, choose **Show secret key**, and then type the secret key into your MFA app\.
 **Important**  
 Make a secure backup of the QR code or secret configuration key, or make sure that you enable multiple MFA devices for your account\. You can register up to **eight** MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) with your AWS account root user and IAM users\. A virtual MFA device might become unavailable, for example, if you lose the smartphone where the virtual MFA device is hosted\. If that happens and you are not able to sign into your account with no additional MFA devices attached to the user or even by [Recovering a root user MFA device](id_credentials_mfa_lost-or-broken.md#root-mfa-lost-or-broken), you will not be able to sign in to your account and you will have to [contact customer service](https://support.aws.amazon.com/#/contacts/aws-mfa-support) to remove MFA protection for the account\. 
 
-   The device starts generating six\-digit numbers\. 
+   The device starts generating six\-digit numbers\.
 
-1. In the **Manage MFA Device** wizard, in the **MFA Code 1** box, enter the six\-digit number that's currently displayed by the MFA device\. Wait up to 30 seconds for the device to generate a new number, and then type the new six\-digit number into the **MFA Code 2** box\.
+1. In the wizard, in the **MFA code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **MFA code 2** box\. Choose **Add MFA**\. 
 **Important**  
-Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
-
-1. Choose **Assign MFA**, and then choose **Finish**\.
+Submit your request immediately after generating the code\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
 The device is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
 

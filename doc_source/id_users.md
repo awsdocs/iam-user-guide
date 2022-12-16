@@ -1,6 +1,9 @@
 # IAM users<a name="id_users"></a>
 
-An AWS Identity and Access Management \(IAM\) *user* is an entity that you create in AWS to represent the person or application that uses it to interact with AWS\. A user in AWS consists of a name and credentials\.
+**Important**  
+The IAM best practices have been updated\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials\. An additional best practice recommendation is to require workloads to use temporary credentials with IAM roles to access AWS\. IAM users are to be used only in very limited scenarios where an IAM role cannot be assumed\. To learn about using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) to create users with temporary credentials, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\. 
+
+An AWS Identity and Access Management \(IAM\) *user* is an entity that you create in AWS\. The IAM user represents the human user or workload who uses the IAM user to interact with AWS;\. A user in AWS consists of a name and credentials\.
 
 An IAM user with administrator permissions is not the same thing as the AWS account root user\. For more information about the root user, see [AWS account root user](id_root-user.md)\.
 
@@ -22,7 +25,7 @@ For more information about these identifiers, see [IAM identifiers](reference_id
 
 You can access AWS in different ways depending on the user credentials:
 + [**Console password**](id_credentials_passwords.md): A password that the user can type to sign in to interactive sessions such as the AWS Management Console\. Disabling the password \(console access\) for a user prevents them from signing in to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
-+ [**Access keys**](id_credentials_access-keys.md): A combination of an access key ID and a secret access key\. You can assign two to a user at a time\. These can be used to make programmatic calls to AWS\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
++ [**Access keys**](id_credentials_access-keys.md): Used to make programmatic calls to AWS\. However, there are more secure alternatives to consider before you create access keys for users\. For more information, see [Considerations and alternatives for long\-term access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#alternatives-to-long-term-access-keys) in the *AWS General Reference*\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
 + [**SSH keys for use with CodeCommit**](id_credentials_ssh-keys.md): An SSH public key in the OpenSSH format that can be used to authenticate with CodeCommit\.
 + [**Server certificates**](id_credentials_server-certs.md): SSL/TLS certificates that you can use to authenticate with some AWS services\. We recommend that you use AWS Certificate Manager \(ACM\) to provision, manage, and deploy your server certificates\. Use IAM only when you must support HTTPS connections in a region that is not supported by ACM\. To learn which regions support ACM, see [AWS Certificate Manager endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/acm.html) in the *AWS General Reference*\.
 

@@ -1,15 +1,11 @@
 # Creating an IAM user in your AWS account<a name="id_users_create"></a>
 
-You can create one or more IAM users in your AWS account\. You might create an IAM user when someone joins your team, or when you create a new application that needs to make API calls to AWS\. 
-
 **Important**  
+The IAM best practices have been updated\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials\. An additional best practice recommendation is to require workloads to use temporary credentials with IAM roles to access AWS\. IAM users are to be used only in very limited scenarios where an IAM role cannot be assumed\. To learn about using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) to create users with temporary credentials, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\. 
+
+**Note**  
 If you found this page because you are looking for information about the Product Advertising API to sell Amazon products on your website, see the [Product Advertising API 5\.0 Documentation](https://webservices.amazon.com/paapi5/documentation/)\.  
 If you arrived at this page from the IAM console, it is possible that your account does not include IAM users, even though you are signed in\. You could be signed in as the AWS account root user, using a role, or signed in with temporary credentials\. To learn more about these IAM identities, see [IAM Identities \(users, user groups, and roles\)](id.md)\.
-
-**Topics**
-+ [Creating IAM users \(console\)](#id_users_create_console)
-+ [Creating IAM users \(AWS CLI\)](#id_users_create_cliwpsapi)
-+ [Creating IAM users \(AWS API\)](#id_users_create_api)
 
 The process of creating a user and enabling that user to perform work tasks consists of the following steps:
 
@@ -18,20 +14,25 @@ The process of creating a user and enabling that user to perform work tasks cons
 1. Create credentials for the user, depending on the type of access the user requires:
    + **Programmatic access:** The IAM user might need to make API calls, use the AWS CLI, or use the Tools for Windows PowerShell\. In that case, create an access key \(access key ID and a secret access key\) for that user\.
    + **AWS Management Console access**: If the user needs to access the AWS Management Console, [create a password for the user](id_credentials_passwords_admin-change-user.md)\. Disabling console access for a user prevents them from signing in to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\.
+**Tip**  
+Create only the credentials that the user needs\. For example, for a user who requires access only through the AWS Management Console, do not create access keys\.
 
-   As a best practice, create only the credentials that the user needs\. For example, for a user who requires access only through the AWS Management Console, do not create access keys\.
-
-1. Give the user permissions to perform the required tasks by adding the user to one or more groups\. You can also grant permissions by attaching permissions policies directly to the user\. However, we recommend instead that you put your users in groups and manage permissions through policies that are attached to those groups\. You can also use a [permissions boundary](access_policies_boundaries.md) to limit the permissions that a user can have, though this is not common\. 
+1. Give the user permissions to perform the required tasks by adding the user to one or more groups\. You can also grant permissions by attaching permissions policies directly to the user\. However, we recommend instead that you put your users in groups and manage permissions through policies that are attached to those groups\. You can also use a [permissions boundary](access_policies_boundaries.md) to limit the permissions that a user can have, though this is not common\.
 
 1. \(Optional\) Add metadata to the user by attaching tags\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. Provide the user with the necessary sign\-in information\. This includes the password and the console URL for the account sign\-in page where the user provides those credentials\. For more information, see [How IAM users sign in to AWS](id_users_sign-in.md)\.
 
-1. \(Optional\) Configure [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) for the user\. MFA requires the user to provide a one\-time\-use code each time he or she signs into the AWS Management Console\. 
+1. \(Optional\) Configure [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) for the user\. MFA requires the user to provide a one\-time\-use code each time he or she signs into the AWS Management Console\.
 
-1. \(Optional\) Give users permissions to manage their own security credentials\. \(By default, users do not have permissions to manage their own credentials\.\) For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\. 
+1. \(Optional\) Give users permissions to manage their own security credentials\. \(By default, users do not have permissions to manage their own credentials\.\) For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
 
-For information about the permissions that you need in order to create a user, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
+For information about the permissions that you need in order to create a user, see [Permissions required to access IAM resources](access_permissions-required.md)\.
+
+**Topics**
++ [Creating IAM users \(console\)](#id_users_create_console)
++ [Creating IAM users \(AWS CLI\)](#id_users_create_cliwpsapi)
++ [Creating IAM users \(AWS API\)](#id_users_create_api)
 
 ## Creating IAM users \(console\)<a name="id_users_create_console"></a>
 
@@ -64,7 +65,9 @@ If an administrator has enabled [the **Allow users to change their own password*
 1. On the **Set permissions** page, specify how you want to assign permissions to this set of new users\. Choose one of the following three options:
    + **Add user to group**\. Choose this option if you want to assign the users to one or more groups that already have permissions policies\. IAM displays a list of the groups in your account, along with their attached policies\. You can select one or more existing groups, or choose **Create group** to create a new group\. For more information, see [Changing permissions for an IAM user](id_users_change-permissions.md)\.
    + **Copy permissions from existing user**\. Choose this option to copy all of the group memberships, attached managed policies, embedded inline policies, and any existing [permissions boundaries](access_policies_boundaries.md) from an existing user to the new users\. IAM displays a list of the users in your account\. Select the one whose permissions most closely match the needs of your new users\.
-   + **Attach existing policies directly**\. Choose this option to see a list of the AWS managed and customer managed policies in your account\. Select the policies that you want to attach to the new users or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to add the policy to the new user\. As a best practice, we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
+   + **Attach existing policies directly**\. Choose this option to see a list of the AWS managed and customer managed policies in your account\. Select the policies that you want to attach to the new users or choose **Create policy** to open a new browser tab and create a new policy from scratch\. For more information, see step 4 in the procedure [Creating IAM policies](access_policies_create-console.md#access_policies_create-start)\. After you create the policy, close that tab and return to your original tab to add the policy to the new user\.
+**Tip**  
+Whenever possible, attach your policies to a group and then make users members of the appropriate groups\.
 
 1. \(Optional\) Set a [permissions boundary](access_policies_boundaries.md)\. This is an advanced feature\. 
 
@@ -119,7 +122,7 @@ This is your only opportunity to view or download the secret access keys, and yo
 
 1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing tags on IAM users \(AWS CLI or AWS API\)](id_tags_users.md#id_tags_users_procs-cli-api)\.
 
-1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
+1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
 
 ## Creating IAM users \(AWS API\)<a name="id_users_create_api"></a>
 
@@ -146,4 +149,4 @@ This is your only opportunity to view or download the secret access keys, and yo
 
 1. \(Optional\) Add custom attributes to the user by attaching tags\. For more information, see [Managing tags on IAM users \(AWS CLI or AWS API\)](id_tags_users.md#id_tags_users_procs-cli-api)\.
 
-1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
+1. \(Optional\) Give the user permission to manage their own security credentials\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.

@@ -71,14 +71,12 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 
    To get your AWS account ID, contact your administrator\.
 
-1. In the navigation bar on the upper right, choose your user name, and then choose **My Security Credentials**\.   
-![\[AWS Management Console My Security Credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
+1. In the navigation bar on the upper right, choose your user name, and then choose **Security credentials**\.   
+![\[AWS Management Console Security credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
-1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication** section, choose **Manage MFA device**\.
+1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication \(MFA\)** section, choose the radio button next to the device and choose **Resync**\.
 
-1. In the **Manage MFA device** wizard, choose **Resync**, and then choose **Continue**\.
-
-1. Type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Continue**\.
+1. Type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Resync**\.
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the request appears to work but the device remains out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\.
 
@@ -88,11 +86,9 @@ Submit your request immediately after generating the codes\. If you generate the
 
 1. In the navigation pane, choose **Users**, and then choose the name of the user whose MFA device needs to be resynchronized\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
+1. Choose the **Security credentials** tab\. In the **Multi\-factor authentication \(MFA\)** section, choose the radio button next to the device and choose **Resync**\.
 
-1. In the **Manage MFA device** wizard, choose **Resync**, and then choose **Continue**\.
-
-1. Type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Continue**\.
+1. Type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Resync**\.
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the request appears to work but the device remains out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\.
 
@@ -112,14 +108,14 @@ You might see different text, such as **Sign in using MFA** and **Troubleshoot y
 **Note**  
 If you see three text boxes, then you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials\. Your browser might remember this preference and open this account\-specific sign\-in page every time that you try to sign in\. You cannot use the IAM user sign\-in page to sign in as the account owner\. If you see the [IAM user sign\-in page](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#user-sign-in-page), choose **Sign in using root user email** near the bottom of the page\. This returns you to the main sign\-in page\. From there, you can sign in as the root user using your AWS account email address and password\.
 
-1. On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.  
-![\[My Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+1. On the right side of the navigation bar, choose on your account name, and then choose **Security credentials**\. If necessary, choose **Continue to Security credentials**\.  
+![\[Security credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
 1. Expand the **Multi\-factor authentication \(MFA\)** section on the page\.
 
-1. Next to your active MFA device, choose **Resync**\.
+1. Choose the radio button next to the device and choose **Resync**\.
 
-1. In the **Manage MFA device** dialog box, type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Continue**\.
+1. In the **Resync MFA device** dialog box, type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Resync**\.
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device is successfully associated with the user, but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\.
 

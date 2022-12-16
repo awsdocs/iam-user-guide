@@ -1,5 +1,8 @@
 # Permitting IAM users to change their own passwords<a name="id_credentials_passwords_enable-user-change"></a>
 
+**Note**  
+Users with federated identities will use the process defined by their identity provider to change their passwords\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials\.
+
 You can grant IAM users the permission to change their own passwords for signing in to the AWS Management Console\. You can do this in one of two ways:
 + [Allow all IAM users in the account to change their own passwords](#proc_letalluserschangepassword)\. 
 + [Allow only selected IAM users to change their own passwords](#proc_letselectuserschangepassword)\. In this scenario, you disable the option for all users to change their own passwords and you use an IAM policy to grant permissions to only some users\. This approach allows those users to change their own passwords and optionally other credentials like their own access keys\. 
@@ -31,9 +34,7 @@ For information about the AWS CLI, Tools for Windows PowerShell, and API command
 
 1. Create the users who should be allowed to change their own password, if they do not already exist\. For details, see [Creating an IAM user in your AWS account](id_users_create.md)\. 
 
-1. Create an IAM group for the users who should be allowed to change their passwords, and then add the users from the previous step to the group\. For details, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md) and [Managing IAM user groups](id_groups_manage.md)\. 
-
-   This step is optional, but it's a best practice to use groups to manage permissions\. That way, you can add and remove users and change the permissions for the group as a whole\. 
+1. \(Optional\) Create an IAM group for the users who should be allowed to change their passwords, and then add the users from the previous step to the group\. For details, see [Managing IAM user groups](id_groups_manage.md)\. 
 
 1. Assign the following policy to the group\. For more information, see [Managing IAM policies](access_policies_manage.md)\.
 

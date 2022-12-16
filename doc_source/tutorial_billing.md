@@ -58,7 +58,7 @@ Next, create custom policies that grant both view and full access permissions to
 
 **To create IAM policies that grant permissions to billing data**
 
-1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don't sign in with your root user credentials\. For more information, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)\.
+1. Sign in to the AWS Management Console as a user with administrator credentials\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 

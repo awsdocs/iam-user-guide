@@ -12,12 +12,12 @@ If you would like to submit a policy to be included in this reference guide, use
 ## Example policies: AWS<a name="policy_library_AWS"></a>
 + Allows access during a specific range of dates\. \([View this policy](reference_policies_examples_aws-dates.md)\.\)
 + Allows enabling and disabling AWS Regions\. \([View this policy](reference_policies_examples_aws-enable-disable-regions.md)\.\)
-+ Allows MFA\-authenticated users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.\)
++ Allows MFA\-authenticated users to manage their own credentials on the **My security credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.\)
 + Allows specific access when using MFA during a specific range of dates\. \([View this policy](reference_policies_examples_aws_mfa-dates.md)\.\)
-+ Allows users to manage their own credentials on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.md)\.\)
-+ Allows users to manage their own MFA device on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.\)
-+ Allows users to manage their own password on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-password-only.md)\.\)
-+ Allows users to manage their own password, access keys, and SSH public keys on the **My Security Credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\.\)
++ Allows users to manage their own credentials on the **My security credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-no-mfa.md)\.\)
++ Allows users to manage their own MFA device on the **My security credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-mfa-only.md)\.\)
++ Allows users to manage their own password on the **My security credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-password-only.md)\.\)
++ Allows users to manage their own password, access keys, and SSH public keys on the **My security credentials** page\. \([View this policy](reference_policies_examples_aws_my-sec-creds-self-manage-pass-accesskeys-ssh.md)\.\)
 + Denies access to AWS based on the requested Region\. \([View this policy](reference_policies_examples_aws_deny-requested-region.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
 

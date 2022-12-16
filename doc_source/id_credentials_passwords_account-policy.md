@@ -52,7 +52,12 @@ For information about the permissions required for an IAM user to change their o
 
 ## Default password policy<a name="default-policy-details"></a>
 
-If an administrator does not set a custom password policy, IAM user passwords must meet the default AWS password policy\. The default password policy enforces the following conditions:
+If an administrator does not set a custom password policy, IAM user passwords must meet the default AWS password policy\.
+
+**Note**  
+AWS is rolling out improvements to the sign\-in process\. One of those improvements is to enforce a more secure password policy for your account\. If your account has been upgraded, you are required to meet the password policy in this section\. If your account has not yet been upgraded, then AWS does not enforce this policy, but highly recommends that you follow its guidelines for a more secure password\.
+
+The default password policy enforces the following conditions:
 + Minimum password length of 8 characters and a maximum length of 128 characters
 + Minimum of three of the following mix of character types: uppercase, lowercase, numbers, and non\-alphanumeric character \(`! @ # $ % ^ & * ( ) _ + - = [ ] { } | '`\)
 + Not be identical to your AWS account name or email address

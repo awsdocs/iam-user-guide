@@ -3,7 +3,7 @@
 IAM is a rich product, and you'll find many resources to help you learn more about how IAM can help you secure your AWS account and resources\. 
 
 **Topics**
-+ [Users and groups](#resources-users-and-groups)
++ [Identities](#resources-users-and-groups)
 + [Credentials \(passwords, access keys, and MFA devices\)](#resources-credentials)
 + [Permissions and policies](#resources-permissions-and-policies)
 + [Federation and delegation](#resources-federation-and-delegation)
@@ -11,18 +11,20 @@ IAM is a rich product, and you'll find many resources to help you learn more abo
 + [General security practices](#resources-general-security)
 + [General resources](#resources-general)
 
-## Users and groups<a name="resources-users-and-groups"></a>
+## Identities<a name="resources-users-and-groups"></a>
 
-Consult these resources for creating, managing, and using users and groups\.
-+ **[Creating your first IAM admin user and user group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
-+ **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
+Consult these resources for creating, managing, and using identities\.
++ [Manage identities in IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-sso.html) – Procedural information about creating users and group in IAM Identity Center\.
++ **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of users, groups, and roles\.
 
 ## Credentials \(passwords, access keys, and MFA devices\)<a name="resources-credentials"></a>
 
-Review the following guides to manage passwords for your AWS account and for IAM users\. You'll also find information about *access keys*—the secret key that you use to make programmatic calls to AWS\.
-+ **[AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)** – Describes the types of credentials you use to access Amazon Web Services, explains how to create and manage them, and includes recommendations for managing access keys securely\.
-+ **[Managing user passwords in AWS](id_credentials_passwords.md)** and **[Managing access keys for IAM users](id_credentials_access-keys.md)** – Describes options for managing credentials for IAM users in your account\.
+Review the following guides to manage passwords, access keys, and MFA devices for your AWS account and for IAM users\. 
++ **[Managing user passwords in AWS](id_credentials_passwords.md)** – Describes options for managing passwords for IAM users in your account\.
++ **[Managing access keys for IAM users](id_credentials_access-keys.md)** –  Describes how *access keys* work and how you can use them to make programmatic calls to AWS\. There are other more secure alternatives to access keys that we recommend you consider first\. For more information, see [Considerations and alternatives for long\-term access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#alternatives-to-long-term-access-keys) in the *AWS General Reference guide*\.
 +  **[Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)** – Describes how to configure your account and IAM users to require both a password and a one\-time use code that is generated on a device before sign\-in is allowed\. \(This is sometimes called two\-factor authentication\.\)
+
+For general information about the types of credentials you use to access Amazon Web Services, see **[AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)** in the *AWS General Reference guide*\.\.
 
 ## Permissions and policies<a name="resources-permissions-and-policies"></a>
 

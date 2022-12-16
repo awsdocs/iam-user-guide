@@ -26,7 +26,7 @@ You might sometimes grant permissions to an IAM entity \(user or role\) beyond w
 IAM offers three ways to add permissions policies to a user:
 + **Add user to group** – Make the user a member of a group\. The policies from the group are attached to the user\.
 + **Copy permissions from existing user** – Copy all group memberships, attached managed policies, inline policies, and any existing permissions boundaries from the source user\.
-+ **Attach policies directly to user** – Attach a managed policy directly to the user\. As a best practice, we recommend that you instead attach your policies to a group and then make users members of the appropriate groups\.
++ **Attach policies directly to user** – Attach a managed policy directly to the user\. For easier permissions management, attach your policies to a group and then make users members of the appropriate groups\.
 
 **Important**  
 If the user has a permissions boundary, then you cannot add more permissions to a user than are allowed by the permissions boundary\.
