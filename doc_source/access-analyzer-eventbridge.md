@@ -1,24 +1,24 @@
-# Monitoring AWS IAM Access Analyzer with Amazon EventBridge<a name="access-analyzer-eventbridge"></a>
+# Monitoring AWS Identity and Access Management Access Analyzer with Amazon EventBridge<a name="access-analyzer-eventbridge"></a>
 
-Use the information in this topic to learn how to monitor Access Analyzer findings and access previews with Amazon EventBridge\. EventBridge is the new version of Amazon CloudWatch Events\.
+Use the information in this topic to learn how to monitor IAM Access Analyzer findings and access previews with Amazon EventBridge\. EventBridge is the new version of Amazon CloudWatch Events\.
 
 ## Findings events<a name="access-analyzer-events-findings"></a>
 
-Access Analyzer sends an event to EventBridge for each generated finding, for a change to the status of an existing finding, and when a finding is deleted\. To receive findings and notifications about findings, you must create an event rule in Amazon EventBridge\. When you create an event rule, you can also specify a target action to trigger based on the rule\. For example, you could create an event rule that triggers an Amazon SNS topic when an event for a new finding is received from Access Analyzer\.
+IAM Access Analyzer sends an event to EventBridge for each generated finding, for a change to the status of an existing finding, and when a finding is deleted\. To receive findings and notifications about findings, you must create an event rule in Amazon EventBridge\. When you create an event rule, you can also specify a target action to trigger based on the rule\. For example, you could create an event rule that triggers an Amazon SNS topic when an event for a new finding is received from IAM Access Analyzer\.
 
 ## Access preview events<a name="access-analyzer-access-preview-events"></a>
 
-Access Analyzer sends an event to EventBridge for each access preview and change to its status\. This includes an event when the access preview is first created \(status Creating\), when the access preview is complete \(status Completed\), or when the access preview creation failed \(status Failed\)\. To receive notifications about access previews, you must create an event rule in EventBridge\. When you create an event rule, you can specify a target action to trigger based on the rule\. For example, you could create an event rule that triggers an Amazon SNS topic when an event for a completed access preview is received from Access Analyzer\. 
+IAM Access Analyzer sends an event to EventBridge for each access preview and change to its status\. This includes an event when the access preview is first created \(status Creating\), when the access preview is complete \(status Completed\), or when the access preview creation failed \(status Failed\)\. To receive notifications about access previews, you must create an event rule in EventBridge\. When you create an event rule, you can specify a target action to trigger based on the rule\. For example, you could create an event rule that triggers an Amazon SNS topic when an event for a completed access preview is received from IAM Access Analyzer\. 
 
 ## Event notification frequency<a name="access-analyzer-event-frequency"></a>
 
-Access Analyzer sends events for new findings and findings with status updates to EventBridge within about an hour from when the event occurs in your account\. Access Analyzer also sends events to EventBridge when a resolved finding is deleted because the retention period has expired\. For findings that are deleted because the analyzer that generated them is deleted, the event is sent to EventBridge approximately 24 hours after the analyzer was deleted\. When a finding is deleted, the finding status is not changed\. Instead, the `isDeleted` attribute is set to `true`\. Access Analyzer also sends events for newly created access previews and access preview status changes to EventBridge\.
+IAM Access Analyzer sends events for new findings and findings with status updates to EventBridge within about an hour from when the event occurs in your account\. IAM Access Analyzer also sends events to EventBridge when a resolved finding is deleted because the retention period has expired\. For findings that are deleted because the analyzer that generated them is deleted, the event is sent to EventBridge approximately 24 hours after the analyzer was deleted\. When a finding is deleted, the finding status is not changed\. Instead, the `isDeleted` attribute is set to `true`\. IAM Access Analyzer also sends events for newly created access previews and access preview status changes to EventBridge\.
 
 
 
 ## Example findings events<a name="access-analyzer-event-example"></a>
 
-The following is an example Access Analyzer event sent to EventBridge\. The `id` listed is the ID for the event in EventBridge\. To learn more, see [Events and Event Patterns in EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)\.
+The following is an example IAM Access Analyzer event sent to EventBridge\. The `id` listed is the ID for the event in EventBridge\. To learn more, see [Events and Event Patterns in EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html)\.
 
 In the `detail` object, the values for the `accountId` and `region` attributes refer to the account and region reported in the finding\. The `isDeleted` attribute indicates whether the event was from the finding being deleted\. The `id` is the finding ID\. The `resources` array is a singleton with the ARN of the analyzer that generated the finding\.
 
@@ -58,7 +58,7 @@ In the `detail` object, the values for the `accountId` and `region` attributes r
 }
 ```
 
-Access Analyzer also sends events to EventBridge for error findings\. An error finding is a finding generated when Access Analyzer can't analyze the resource\. Events for error findings include an `error` attribute as shown in the following example\.
+IAM Access Analyzer also sends events to EventBridge for error findings\. An error finding is a finding generated when IAM Access Analyzer can't analyze the resource\. Events for error findings include an `error` attribute as shown in the following example\.
 
 ```
 {

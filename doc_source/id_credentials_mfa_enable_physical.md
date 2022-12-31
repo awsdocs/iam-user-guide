@@ -12,7 +12,7 @@ You can register up to **eight** MFA devices of any combination of the [ current
 We recommend that you enable multiple MFA devices for your users for continued access to your account in case of a lost or inaccessible MFA device\.
 
 **Note**  
-If you want to enable the device from the command line, use [https://docs.aws.amazon.com/cli/latest/reference/iam/userenablemfadevice.html](https://docs.aws.amazon.com/cli/latest/reference/iam/userenablemfadevice.html) [https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) operation\. 
+If you want to enable the MFA device from the command line, use [https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/enable-mfa-device.html)\. To enable the MFA device with the IAM API, use the [https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) operation\. 
 
 **Topics**
 + [Permissions required](#enable-hw-mfa-for-iam-user-permissions-required)

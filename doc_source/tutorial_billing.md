@@ -38,7 +38,7 @@ If you [create a member account](https://docs.aws.amazon.com/cli/latest/referenc
 
 **To activate IAM user and role access to the Billing and Cost Management console**
 
-1. Sign in to the AWS Management Console with your root account credentials \(specifically, the email address and password that you used to create your AWS account\)\.
+1. Sign in to the AWS Management Console with your root user credentials \(specifically, the email address and password that you used to create your AWS account\)\.
 
 1. On the navigation bar, choose your account name, and then choose [Account](https://console.aws.amazon.com/billing/home#/account)\.
 
@@ -155,7 +155,7 @@ For related information found in the *AWS Billing User Guide*, see the following
 
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed policies and inline policies](access_policies_managed-vs-inline.md)
-+ [Controlling user access to the AWS Management Console](console_controlling-access.md)
++ [Controlling IAM users access to the AWS Management Console](console_controlling-access.md)
 + [Attaching a policy to an IAM user group](id_groups_manage_attach-policy.md)
 
 ## Summary<a name="tutorial-billing-summary"></a>

@@ -77,7 +77,7 @@ If you select the **Require password reset** option, make sure that the user has
 **Important**  
 For security reasons, you cannot access the password after completing this step, but you can create a new password at any time\.
 
-**To delete \(disable\) an IAM user's password \(console\)**
+**To delete \(disable\) an IAM user password \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -90,7 +90,7 @@ For security reasons, you cannot access the password after completing this step,
 1. For **Console access**, choose **Disable**, and then choose **Apply**\.
 
 **Important**  
-You can disable user access to the AWS Management Console by removing their password\. This prevents them from signing in the to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
+You can prevent an IAM user from accessing the AWS Management Console by removing their password\. This prevents them from signing in to the AWS Management Console using their sign\-in credentials\. It does not change their permissions or prevent them from accessing the console using an assumed role\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
 
 ## Creating, changing, or deleting an IAM user password \(AWS CLI\)<a name="Using_ManagingPasswordsCLIAPI"></a>
 

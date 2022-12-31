@@ -21,9 +21,6 @@ If you would like to submit a policy to be included in this reference guide, use
 + Denies access to AWS based on the requested Region\. \([View this policy](reference_policies_examples_aws_deny-requested-region.md)\.\)
 + Denies access to AWS based on the source IP address\. \([View this policy](reference_policies_examples_aws_deny-ip.md)\.\)
 
-## Example policy: AWS CloudFormation<a name="policy_cfn_sns"></a>
-+ Deny access to Amazon SNS resources outside of your account except CloudFormation\. \([View this policy](reference_policies_examples_cfn_sns_resource_account.md)\.\)
-
 ## Example policy: AWS Data Exchange<a name="policy_data_exchange"></a>
 + Deny access to Amazon S3 resources outside of your account except AWS Data Exchange\. \([View this policy](reference_policies_examples_resource_account_data_exch.md)\.\)
 

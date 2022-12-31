@@ -4,7 +4,7 @@ The `GetFederationToken` operation is called by an IAM user and returns temporar
 + The session policies passed as a parameter of the `GetFederationToken` API call\. \(This is most common\.\)
 + A resource\-based policy that explicitly names the federated user in the `Principal` element of the policy\. \(This is less common\.\)
 
-Session policies are advanced policies that you pass as parameters when you programmatically create a temporary session\. When you create a federated user session and pass session policies, the resulting session's permissions are the intersection of the IAM user's identity\-based policy and the session policies\. You cannot use the session policy to grant more permissions than those allowed by the identity\-based policy of the user that is being federated\.
+Session policies are advanced policies that you pass as parameters when you programmatically create a temporary session\. When you create a federated user session and pass session policies, the resulting session's permissions are the intersection of the user's identity\-based policy and the session policies\. You cannot use the session policy to grant more permissions than those allowed by the identity\-based policy of the user that is being federated\.
 
 In most cases if you do not pass a policy with the `GetFederationToken` API call, the resulting temporary security credentials have no permissions\. However, a resource\-based policy can provide additional permissions for the session\. You can access a resource with a resource\-based policy that specifies your session as the allowed principal\. 
 

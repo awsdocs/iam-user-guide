@@ -1,6 +1,6 @@
 # IAM JSON policy elements: Sid<a name="reference_policies_elements_sid"></a>
 
-You can provide an optional identifier, `Sid` \(statement ID\) for the policy statement\. You can assign a `Sid` value to each statement in a statement array\. You can use the `Sid` value as a description for the policy statement\. In services that let you specify an `ID` element, such as SQS and SNS, the `Sid` value is just a sub\-ID of the policy document ID\. In IAM, the `Sid` value must be unique within a JSON policy\.
+You can provide `Sid` \(statement ID\) as an optional identifier for the policy statement\. You can assign a `Sid` value to each statement in a statement array\. You can use the `Sid` value as a description for the policy statement\. In services that let you specify an `ID` element, such as SQS and SNS, the `Sid` value is just a sub\-ID of the policy document ID\. In IAM, the `Sid` value must be unique within a JSON policy\.
 
 ```
 "Sid": "1"

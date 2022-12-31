@@ -19,7 +19,7 @@ Policies let you specify who has access to AWS resources, and what actions they 
 
 For example, you might grant a user permission to list his or her own access keys\. You might also expand that permission and also let each user create, update, and delete their own keys\. 
 
-When you give permissions to a user group, all users in that user group get those permissions\. For example, you can give the Administrators user group permission to perform any of the IAM actions on any of the AWS account resources\. Another example: You can give the Managers user group permission to describe the AWS account's Amazon EC2 instances\.
+When you give permissions to a user group, all users in that user group get those permissions\. For example, you can give the Administrators user group permission to perform any of the IAM actions on any of the AWS account resources\. Another example: You can give the Managers user group permission to describe the Amazon EC2 instances of the AWS account\.
 
 For information about how to delegate basic permissions to your users, user groups, and roles, see [Permissions required to access IAM resources](access_permissions-required.md)\. For additional examples of policies that illustrate basic permissions, see [Example policies for administering IAM resources](id_credentials_delegate-permissions_examples.md)\.
 

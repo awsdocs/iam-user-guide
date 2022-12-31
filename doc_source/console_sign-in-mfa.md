@@ -1,6 +1,6 @@
 # Using MFA devices with your IAM sign\-in page<a name="console_sign-in-mfa"></a>
 
-IAM users who are configured with [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) devices must use their MFA devices to sign in to the AWS Management Console\. After the user enters the user name and password, AWS checks the user's account to see if MFA is required for that user\. The following sections provide information on how users complete signing in when MFA is required\. 
+Users who are configured with [multi\-factor authentication \(MFA\)](id_credentials_mfa.md) devices must use their MFA devices to sign in to the AWS Management Console\. After the user enters their sign\-in credentials, AWS checks the user's account to see if MFA is required for that user\. The following sections provide information on how users complete signing in when MFA is required\. 
 
 **Topics**
 + [Signing in with multiple MFA devices enabled](#console_sign-in-multiple-mfa)

@@ -29,7 +29,7 @@ You must have physical access to the hardware that will host the user's virtual 
 
 1. In the navigation pane, choose **Users**\.
 
-1. In the **Users** list, choose the name of the intended MFA user\.
+1. In the **Users** list, choose the name of the IAM user\.
 
 1. Choose the **Security Credentials** tab\. Under **Multi\-factor authentication \(MFA\)**, choose **Assign MFA device**\.
 

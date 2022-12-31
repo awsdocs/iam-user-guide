@@ -691,11 +691,9 @@ This policy denies access to all resources for a specific AWS service unless the
 **Note**  
 Some AWS services require access to AWS owned resources that are hosted in another AWS account\. Using `aws:ResourceAccount` in your identity\-based policies might impact your identity's ability to access these resources\.
 
-Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the element `aws:ResourceAccount` in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\.
-+ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
-+ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+Certain AWS services, such as AWS Data Exchange, rely on access to resources outside of your AWS accounts for normal operations\. If you use the element `aws:ResourceAccount` in your policies, include additional statements to create exemptions for those services\. The example policy [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md) demonstrates how to deny access based on the resource account while defining exceptions for service\-owned resources\.
 
-Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
+Use this policy example as a template for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
 
 ## aws:ResourceOrgID<a name="condition-keys-resourceorgid"></a>
 
@@ -744,11 +742,9 @@ This policy does not allow any actions\. Instead, it uses the `Deny` effect whic
 **Note**  
 Some AWS services require access to AWS owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgID` in your identity\-based policies might impact your identity's ability to access these resources\.
 
-Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the `aws:ResourceOrgID` key in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\. You can create a similar policy to restrict access to resources within your organization using the `aws:ResourceOrgID` key, while accounting for service\-owned resources\.
-+ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
-+ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+Certain AWS services, such as AWS Data Exchange, rely on access to resources outside of your AWS accounts for normal operations\. If you use the `aws:ResourceOrgID` key in your policies, include additional statements to create exemptions for those services\. The example policy [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md) demonstrates how to deny access based on the resource account while defining exceptions for service\-owned resources\. You can create a similar policy to restrict access to resources within your organization using the `aws:ResourceOrgID` key, while accounting for service\-owned resources\.
 
-Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
+Use this policy example as a template for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
 
 ## aws:ResourceOrgPaths<a name="condition-keys-resourceorgpaths"></a>
 
@@ -801,11 +797,9 @@ The following condition returns `True` for resources owned by accounts attached 
 **Note**  
 Some AWS services require access to AWS owned resources that are hosted in another AWS account\. Using `aws:ResourceOrgPaths` in your identity\-based policies might impact your identity's ability to access these resources\.
 
-Certain AWS services, such as AWS Data Exchange and CloudFormation, rely on access to resources outside of your AWS accounts for normal operations\. If you use the `aws:ResourceOrgPaths` key in your policies, include additional statements to create exemptions for those services\. The following example policies demonstrate how to deny access based on the resource account while defining exceptions for service\-owned resources\. You can create a similar policy to restrict access to resources within an organizational unit \(OU\) using the `aws:ResourceOrgPaths` key, while accounting for service\-owned resources\.
-+ [AWS: Deny access to Amazon SNS resources outside your account except CloudFormation](reference_policies_examples_cfn_sns_resource_account.md)
-+ [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md)
+Certain AWS services, such as AWS Data Exchange, rely on access to resources outside of your AWS accounts for normal operations\. If you use the `aws:ResourceOrgPaths` key in your policies, include additional statements to create exemptions for those services\. The example policy [AWS: Deny access to Amazon S3 resources outside your account except AWS Data Exchange](reference_policies_examples_resource_account_data_exch.md) demonstrates how to deny access based on the resource account while defining exceptions for service\-owned resources\. You can create a similar policy to restrict access to resources within an organizational unit \(OU\) using the `aws:ResourceOrgPaths` key, while accounting for service\-owned resources\.
 
-Use these policy examples as templates for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
+Use this policy example as a template for creating your own custom policies\. Refer to your service [documentation](https://docs.aws.amazon.com/index.html) for more information\.
 
 ## aws:ResourceTag/*tag\-key*<a name="condition-keys-resourcetag"></a>
 

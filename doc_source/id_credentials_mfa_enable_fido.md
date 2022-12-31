@@ -146,7 +146,7 @@ The FIDO security key is ready for use with AWS\. The next time you use your roo
 ## Replace a FIDO security key<a name="replace-fido-mfa"></a>
 
 You can have up to eight MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) assigned to a use at a time with your AWS account root user and IAM users\. If the user loses a FIDO authenticator or needs to replace it for any reason, you must first deactivate the old FIDO authenticator\. Then you can add a new MFA device for the user\.
-+ To deactivate the device currently associated with a user, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\.
++ To deactivate the device currently associated with an IAM user, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\.
 + To add a new FIDO security key for an IAM user, see [Enable a FIDO security key for your own IAM user \(console\)](#enable-fido-mfa-for-own-iam-user)\.
 
 If you don't have access to a new FIDO security key, you can enable a new virtual MFA device or hardware TOTP token\. See one of the following for instructions:

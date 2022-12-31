@@ -30,7 +30,7 @@ To perform the steps in this tutorial, you must already have the following:
 
 ****  
 
-| *Create user account* | *Create and configure user group account* | User name | Other instructions | User group name | Add user as a member | Other instructions | 
+| *Create user* | *Create and configure user group account* | User name | Other instructions | User group name | Add user as a member | Other instructions | 
 | --- | --- | --- | --- | --- | --- | --- | 
 | MFAUser | Choose only the option for AWS Management Console access, and assign a password\. | EC2MFA | MFAUser | Do NOT attach any policies or otherwise grant permissions to this user group\. | 
 
@@ -38,7 +38,9 @@ To perform the steps in this tutorial, you must already have the following:
 
 You begin by creating an IAM customer managed policy that denies all permissions except those required for IAM users to manage their own credentials and MFA devices\.
 
-1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don't sign in with your AWS account root user credentials\. For more information, see [Create individual IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#create-iam-users)\.
+1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don't sign in with your AWS account root user credentials\.
+**Important**  
+The IAM best practices have been updated\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials\. An additional best practice recommendation is to require workloads to use temporary credentials with IAM roles to access AWS\. IAM users are to be used only in very limited scenarios where an IAM role cannot be assumed\. To learn about using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) to create users with temporary credentials, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\. 
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -114,7 +116,7 @@ Submit your request immediately after generating the code\. If you generate the 
 
 ## Related resources<a name="tutorial_mfa_related"></a>
 
-For related information found in the *IAM User Guide*, see the following resources:
+For additional information, see the following topics:
 + [Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)
 + [Enabling MFA devices for users in AWS](id_credentials_mfa_enable.md)
 + [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)

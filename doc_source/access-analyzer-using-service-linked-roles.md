@@ -1,14 +1,14 @@
-# Using service\-linked roles for AWS IAM Access Analyzer<a name="access-analyzer-using-service-linked-roles"></a>
+# Using service\-linked roles for AWS Identity and Access Management Access Analyzer<a name="access-analyzer-using-service-linked-roles"></a>
 
-AWS IAM Access Analyzer uses an IAM [ service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role linked directly to Access Analyzer\. Service\-linked roles are predefined by Access Analyzer and include all the permissions that the feature requires to call other AWS services on your behalf\.
+AWS Identity and Access Management Access Analyzer uses an IAM [ service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role linked directly to Access Analyzer\. Service\-linked roles are predefined by Access Analyzer and include all the permissions that the feature requires to call other AWS services on your behalf\.
 
 A service\-linked role makes setting up Access Analyzer easier because you don’t have to manually add the necessary permissions\. Access Analyzer defines the permissions of its service\-linked roles, and unless defined otherwise, only Access Analyzer can assume its roles\. The defined permissions include the trust policy and the permissions policy, and that permissions policy cannot be attached to any other IAM entity\.
 
 For information about other services that support service\-linked roles, see [AWS Services That Work with IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) and look for the services that have **Yes** in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
 
-## Service\-linked role permissions for AWS IAM Access Analyzer<a name="slr-permissions"></a>
+## Service\-linked role permissions for AWS Identity and Access Management Access Analyzer<a name="slr-permissions"></a>
 
-AWS IAM Access Analyzer uses the service\-linked role named **AWSServiceRoleForAccessAnalyzer** – Allow Access Analyzer to analyze resource metadata\.
+AWS Identity and Access Management Access Analyzer uses the service\-linked role named **AWSServiceRoleForAccessAnalyzer** – Allow Access Analyzer to analyze resource metadata\.
 
 The AWSServiceRoleForAccessAnalyzer service\-linked role trusts the following services to assume the role:
 + `access-analyzer.amazonaws.com`
@@ -19,12 +19,12 @@ You must configure permissions to allow an IAM entity \(such as a user, group, o
 
 ## Creating a service\-linked role for Access Analyzer<a name="create-slr"></a>
 
-You don't need to manually create a service\-linked role\. When you enable Access Analyzer in the AWS Management Console or the AWS API, Access Analyzer creates the service\-linked role for you\. The same service\-linked role is used in all Regions in which you enable Access Analyzer\.
+You don't need to manually create a service\-linked role\. When you enable Access Analyzer in the AWS Management Console or the AWS API, Access Analyzer creates the service\-linked role for you\. The same service\-linked role is used in all Regions in which you enable IAM Access Analyzer\.
 
 **Note**  
-Access Analyzer is Regional\. You must enable Access Analyzer in each Region independently\.
+IAM Access Analyzer is Regional\. You must enable IAM Access Analyzer in each Region independently\.
 
-If you delete this service\-linked role, Access Analyzer recreates the role when you next create an analyzer\.
+If you delete this service\-linked role, IAM Access Analyzer recreates the role when you next create an analyzer\.
 
 You can also use the IAM console to create a service\-linked role with the **Access Analyzer** use case\. In the AWS CLI or the AWS API, create a service\-linked role with the `access-analyzer.amazonaws.com` service name\. For more information, see [Creating a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\. If you delete this service\-linked role, you can use this same process to create the role again\.
 

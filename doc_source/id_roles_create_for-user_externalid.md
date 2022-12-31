@@ -13,7 +13,7 @@ To provide an external ID when you assume a role, use the AWS CLI or AWS API to 
 
 For example, let's say that you decide to hire a third\-party company called Example Corp to monitor your AWS account and help optimize costs\. In order to track your daily spending, Example Corp needs to access your AWS resources\. Example Corp also monitors many other AWS accounts for other customers\.
 
-Do not give Example Corp access to an IAM user and its long\-term credentials in your AWS account\. Instead, use an IAM role and its temporary security credentials\. An IAM role provides a mechanism to allow a third party to access your AWS resources without needing to share long\-term credentials \(for example, an IAM user's access key\)\.
+Do not give Example Corp access to an IAM user and its long\-term credentials in your AWS account\. Instead, use an IAM role and its temporary security credentials\. An IAM role provides a mechanism to allow a third party to access your AWS resources without needing to share long\-term credentials \(such as an IAM user access key\)\.
 
 You can use an IAM role to establish a trusted relationship between your AWS account and the Example Corp account\. After this relationship is established, a member of the Example Corp account can call the AWS Security Token Service [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API to obtain temporary security credentials\. The Example Corp members can then use the credentials to access AWS resources in your account\. 
 
@@ -29,7 +29,7 @@ Example Corp can use any string value they want for the ExternalId, as long as i
 1. You sign in to AWS and create an IAM role that gives Example Corp access to your resources\. Like any IAM role, the role has two policies, a permission policy and a trust policy\. The role's trust policy specifies who can assume the role\. In our sample scenario, the policy specifies the AWS account number of Example Corp as the `Principal`\. This allows identities from that account to assume the role\. In addition, you add a `[Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html#Condition)` element to the trust policy\. This `Condition` tests the `ExternalId` context key to ensure that it matches the unique customer ID from Example Corp\. For example:
 
    ```
-       "Principal": {"AWS": "Example Corp's AWS Account ID"},
+       "Principal": {"AWS": "Example Corp's AWS account ID"},
        "Condition": {"StringEquals": {"sts:ExternalId": "Unique ID Assigned by Example Corp"}}
    ```
 

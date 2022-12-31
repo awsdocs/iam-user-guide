@@ -1,6 +1,6 @@
 # Reviewing findings<a name="access-analyzer-findings-view"></a>
 
-After you [enable Access Analyzer](access-analyzer-getting-started.md#access-analyzer-enabling), the next step is to review any findings to determine whether the access identified in the finding is intentional or unintentional\. You can also review findings to determine common findings for access that is intended, and then [create an archive rule](access-analyzer-archive-rules.md) to automatically archive those findings\. You can also review archived and resolved findings\.
+After you [enable IAM Access Analyzer](access-analyzer-getting-started.md#access-analyzer-enabling), the next step is to review any findings to determine whether the access identified in the finding is intentional or unintentional\. You can also review findings to determine common findings for access that is intended, and then [create an archive rule](access-analyzer-archive-rules.md) to automatically archive those findings\. You can also review archived and resolved findings\.
 
 **To review findings**
 
@@ -57,7 +57,7 @@ The level of access granted to the external entity by the actions in the resourc
 
 **Updated**  
 A timestamp for the most recent update to the finding status, or the time and date the finding was generated if no updates have been made\.  
-It may take up to 30 minutes after a policy is modified for Access Analyzer to again analyze the resource and then update the finding\.
+It may take up to 30 minutes after a policy is modified for IAM Access Analyzer to again analyze the resource and then update the finding\.
 
 **Status**  
 The status of the finding, one of **Active**, **Archived**, or **Resolved**\.

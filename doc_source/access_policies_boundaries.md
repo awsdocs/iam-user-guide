@@ -88,7 +88,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 1. María creates the `XCompanyBoundaries` managed policy to use as a permissions boundary for all new users in the account\.
 
-1. María creates the `DelegatedUserBoundary` managed policy and assigns it as the permissions boundary for Zhang\. Maria makes a note of her admin IAM user's ARN and uses it in the policy to prevent Zhang from accessing it\.
+1. María creates the `DelegatedUserBoundary` managed policy and assigns it as the permissions boundary for Zhang\. Maria makes a note of her admin user's ARN and uses it in the policy to prevent Zhang from accessing it\.
 
 1. María creates the `DelegatedUserPermissions` managed policy and attaches it as a permissions policy for Zhang\.
 

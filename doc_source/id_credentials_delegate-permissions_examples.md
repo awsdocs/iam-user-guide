@@ -79,7 +79,7 @@ The following permissions in the policy allow access to user tasks via the AWS M
 
 ## Allow users to set account password policy<a name="creds-policies-set-password-policy"></a>
 
-You might give some users permissions to get and update your AWS account's [password policy](id_credentials_passwords_account-policy.md)\. To view the example policy, see [IAM: Allows setting the account password requirements programmatically and in the console](reference_policies_examples_iam_set-account-pass-policy.md)\. 
+You might give some users permissions to get and update the [password policy](id_credentials_passwords_account-policy.md) of your AWS account\. To view the example policy, see [IAM: Allows setting the account password requirements programmatically and in the console](reference_policies_examples_iam_set-account-pass-policy.md)\. 
 
 ## Allow users to generate and retrieve IAM credential reports<a name="iampolicy-generate-credential-report"></a>
 

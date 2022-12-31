@@ -19,28 +19,30 @@ If an IAM user with this policy is not MFA\-authenticated, this policy denies ac
             "Resource": "*"
         },
         {
-            "Sid": "AllowIndividualUserToManageTheirOwnMFA",
+            "Sid": "AllowUserToCreateVirtualMFADevice",
             "Effect": "Allow",
             "Action": [
-                "iam:CreateVirtualMFADevice",
-                "iam:DeleteVirtualMFADevice",
-                "iam:ListMFADevices",
-                "iam:EnableMFADevice",
-                "iam:ResyncMFADevice"
+                "iam:CreateVirtualMFADevice"
             ],
-            "Resource": [
-                "arn:aws:iam::*:mfa/${aws:username}",
-                "arn:aws:iam::*:user/${aws:username}"
-            ]
+            "Resource": "arn:aws:iam::*:mfa/*"
         },
         {
-            "Sid": "AllowIndividualUserToDeactivateOnlyTheirOwnMFAOnlyWhenUsingMFA",
+            "Sid": "AllowUserToManageTheirOwnMFA",
+            "Effect": "Allow",
+            "Action": [
+                "iam:EnableMFADevice",
+                "iam:ListMFADevices",
+                "iam:ResyncMFADevice"
+            ],
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Sid": "AllowUserToDeactivateTheirOwnMFAOnlyWhenUsingMFA",
             "Effect": "Allow",
             "Action": [
                 "iam:DeactivateMFADevice"
             ],
             "Resource": [
-                "arn:aws:iam::*:mfa/${aws:username}",
                 "arn:aws:iam::*:user/${aws:username}"
             ],
             "Condition": {
