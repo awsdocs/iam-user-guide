@@ -420,7 +420,7 @@ The following condition allows access for every principal in the `o-a1b2c3d4e5` 
 }}
 ```
 
-`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. When you use multiple values with the `ForAnyValue` condition operator, the principal's path must match one of the paths listed in the policy\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array \("Key":\["Value1", "Value2"\]\)\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Creating a condition with multiple keys or values](reference_policies_multi-value-conditions.md)\.
+`aws:PrincipalOrgPaths` is a multivalued condition key\. Multivalued keys can have multiple values in the request context\. When you use multiple values with the `ForAnyValue` condition operator, the principal's path must match one of the paths listed in the policy\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
 ```
     "Condition": {
@@ -482,7 +482,7 @@ This key provides a list of all [service principal](reference_policies_elements_
   + If the call is made by an anonymous requester\.
 + **Value type** – Multivalued
 
-`aws:PrincipalServiceNamesList` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+`aws:PrincipalServiceNamesList` is a multivalued condition key\. Multivalued keys can have multiple values in the request context\. You must use the `ForAnyValue` or `ForAllValues` set operators with [string condition operators](reference_policies_elements_condition_operators.md#Conditions_String) for this key\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
 ## aws:PrincipalTag/*tag\-key*<a name="condition-keys-principaltag"></a>
 
@@ -766,7 +766,7 @@ Use this key to compare the AWS Organizations path for the accessed resource to 
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Multivalued
 
-`aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys include one or more values in a list format\. The result is a logical `OR`\. You must use the `ForAnyValue` or `ForAllValues` set operators with the `StringLike` [condition operator](reference_policies_elements_condition_operators.md#Conditions_String) when you use this key\. For policies that include multiple values for a single key, you must enclose the conditions within brackets like an array, such as `("Key":["Value1", "Value2"])`\. You should also include these brackets when there is a single value\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
+`aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys can have multiple values in the request context\. You must use the `ForAnyValue` or `ForAllValues` set operators with [string condition operators](reference_policies_elements_condition_operators.md#Conditions_String) for this key\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
 For example, the following condition returns `True` for resources that belong to the organization `o-a1b2c3d4e5`\. When you include a wildcard, you must use the [StringLike](reference_policies_elements_condition_operators.md) condition operator\.
 
@@ -948,7 +948,7 @@ Use this key to compare the VPC endpoint identifier of the request with the endp
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
 
-Use this key to compare the tag keys in a request with the keys that you specify in the policy\. As a best practice when you use policies to control access using tags, use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling access based on tag keys](access_tags.md#access_tags_control-tag-keys)\.
+Use this key to compare the tag keys in a request with the keys that you specify in the policy\. We recommend that when you use policies to control access using tags, use the `aws:TagKeys` condition key to define what tag keys are allowed\. For example policies and more information, see [Controlling access based on tag keys](access_tags.md#access_tags_control-tag-keys)\.
 + **Availability** – This key is included in the request context if the operation supports passing tags in the request\.
 + **Value type** – Multivalued
 

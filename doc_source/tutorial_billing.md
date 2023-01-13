@@ -122,13 +122,13 @@ Now that you have custom billing policies available, you can attach them to thei
 
 We recommend that you test access by signing in as each of the test users to learn what your users might experience\. Use the following steps to sign in using both test accounts to see the difference between access rights\.
 
-**To test billing access by signing in with both test user accounts**
+**To test billing access by signing in with both test users**
 
 1. Use your AWS account ID or account alias, your IAM user name, and your password to sign in to the [IAM console](https://console.aws.amazon.com/iam)\.
 **Note**  
 For your convenience, the AWS sign\-in page uses a browser cookie to remember your IAM user name and account information\. If you previously signed in as a different user, choose **Sign in to a different account** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account ID or account alias to be redirected to the IAM user sign\-in page for your account\.
 
-1. Sign in with each account using the steps provided below so you can compare the different user experiences\.
+1. Sign in with each user using the steps provided below so you can compare the different user experiences\.
 
    **Full access**
 

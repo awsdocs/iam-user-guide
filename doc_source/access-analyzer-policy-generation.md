@@ -36,11 +36,13 @@ Before you generate a policy, review the following important details\.
 + **Data events not available** – IAM Access Analyzer does not identify action\-level activity for data events, such as Amazon S3 data events, in generated policies\.
 + **PassRole** – The `iam:PassRole` action is not tracked by CloudTrail and is not included in generated policies\.
 + **Reduce policy generation time** – To generate a policy faster, reduce the date range that you specify during setup for policy generation\.
-+ **Use CloudTrail for auditing** – Do not use policy generation for auditing purposes; use CloudTrail instead\. For more information about using CloudTrail see, [Logging IAM and AWS STS API calls with AWS CloudTrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
++ **Use CloudTrail for auditing** – Do not use policy generation for auditing purposes; use CloudTrail instead\. For more information about using CloudTrail, see [Logging IAM and AWS STS API calls with AWS CloudTrail](https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html)\.
++ **Denied actions** – Policy generation reviews all CloudTrail events, including denied actions\.
 + **One policy IAM console** – You can have one generated policy at a time in the IAM console\.
 + **Generated policy availability IAM console** – You can review a generated policy in the IAM console for up to 7 days after it is generated\. After 7 days, you must generate a new policy\.
 + **Policy generation quotas** – For additional information about IAM Access Analyzer policy generation quotas, see [IAM Access Analyzer quotas](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#access-analyzer-quotas)\.
 + **Amazon S3 standard rates apply** – When you use the policy generation feature, IAM Access Analyzer reviews CloudTrail logs in your S3 bucket\. There are no additional storage charges to access your CloudTrail logs for policy generation\. AWS charges standard Amazon S3 rates for requests and data transfer of CloudTrail logs stored in your S3 bucket\.
++ **AWS Control Tower support** – Policy generation does not support AWS Control Tower for generating policies\.
 
 ## Permissions required to generate a policy<a name="access-analyzer-policy-generation-perms"></a>
 

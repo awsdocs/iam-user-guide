@@ -361,3 +361,33 @@ def list_buckets_from_assumed_role_with_mfa(
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/sts-2011-06-15/AssumeRole) in *AWS SDK for Ruby API Reference*\. 
 
 ------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+  
+
+```
+    public func assumeRole(role: IAMClientTypes.Role, sessionName: String)
+                    async throws -> STSClientTypes.Credentials {
+        let input = AssumeRoleInput(
+            roleArn: role.arn,
+            roleSessionName: sessionName
+        )
+        do {
+            let output = try await stsClient.assumeRole(input: input)
+
+            guard let credentials = output.credentials else {
+                throw ServiceHandlerError.authError
+            }
+
+            return credentials
+        } catch {
+            throw error
+        }
+    }
+```
++  For API details, see [AssumeRole](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
+
+------

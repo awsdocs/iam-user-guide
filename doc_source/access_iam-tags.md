@@ -1,6 +1,6 @@
 # Controlling access to and for IAM users and roles using tags<a name="access_iam-tags"></a>
 
-Use the information in the following section to control who can access your IAM users and roles and what resources your users and roles can access\. For more general information and examples of controlling access to other AWS resources, including other IAM resources, see [Controlling access to AWS resources using tags](access_tags.md)\.
+Use the information in the following section to control who can access your IAM users and roles and what resources your users and roles can access\. For more general information and examples of controlling access to other AWS resources, including other IAM resources, see [Tagging IAM resources](id_tags.md)\.
 
 Tags can be attached to the IAM *resource*, passed in the *request*, or attached to the *principal* that is making the request\. An IAM user or role can be both a resource and principal\. For example, you can write a policy that allows a user to list the groups for a user\. This operation is allowed only if the user making the request \(the principal\) has the same `project=blue` tag as the user they're trying to view\. In this example, the user can view the group membership for any user, including themselves, as long as they are working on the same project\.
 

@@ -310,5 +310,31 @@ pub async fn create_access_key(client: &iamClient, user_name: &str) -> Result<Ac
 +  For API details, see [CreateAccessKey](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+  
+
+```
+    public func createAccessKey(userName: String) async throws -> IAMClientTypes.AccessKey {
+        let input = CreateAccessKeyInput(
+            userName: userName
+        )
+        do {
+            let output = try await iamClient.createAccessKey(input: input)
+            guard let accessKey = output.accessKey else {
+                throw ServiceHandlerError.keyError
+            }
+            return accessKey
+        } catch {
+            throw error
+        }
+    }
+```
++  For API details, see [CreateAccessKey](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

@@ -1,6 +1,6 @@
 # Creating IAM policies \(AWS CLI\)<a name="access_policies_create-cli"></a>
 
-A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. You can use the AWS CLI to create *customer managed policies* in IAM\. Customer managed policies are standalone policies that you administer in your own AWS account\. As a best practice, we recommend that you take the extra step to [validate your policies](access_policies_policy-validator.md) and review and correct any errors or recommendations\. You can then attach the policies to identities \(users, groups, and roles\) in your AWS account\.
+A [policy](access_policies.md) is an entity that, when attached to an identity or resource, defines their permissions\. You can use the AWS CLI to create *customer managed policies* in IAM\. Customer managed policies are standalone policies that you administer in your own AWS account\. As a [best practice](best-practices.md), we recommend that you use IAM Access Analyzer to validate your IAM policies to ensure secure and functional permissions\. By [validating your policies](access_policies_policy-validator.md) you can address any errors or recommendations before you attach the policies to identities \(users, groups, and roles\) in your AWS account\.
 
 The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 

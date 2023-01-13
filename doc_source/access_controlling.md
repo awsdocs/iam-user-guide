@@ -137,7 +137,7 @@ You can control how your users can apply AWS managed policies\. To do this, atta
 
 For example, you might create a policy that allows users to attach only the [IAMUserChangePassword](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/IAMUserChangePassword) and [PowerUserAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/PowerUserAccess) AWS managed policies to a new IAM user, user group, or role\.
 
-For customer managed policies, you can control who can create, update, and delete these policies\. You can control who can attach and detach policies to and from principal entities \(user groups, users, and roles\)\. You can also control which policies a user can attach or detach, and to and from which entities\. 
+For customer managed policies, you can control who can create, update, and delete these policies\. You can control who can attach and detach policies to and from principal entities \(user groups, users, and roles\)\. You can also control which policies a user can attach or detach, and to and from which entities\.
 
 For example, you can give permissions to an account administrator to create, update, and delete policies\. Then you give permissions to a team leader or other limited administrator to attach and detach these policies to and from principal entities that the limited administrator manages\.
 

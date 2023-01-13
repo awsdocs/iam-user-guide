@@ -139,25 +139,41 @@ This documentation is for an SDK in preview release\. The SDK is subject to chan
 ```
 pub async fn delete_role(client: &iamClient, role: &Role) -> Result<(), iamError> {
     let role = role.clone();
-    loop {
-        match client
-            .delete_role()
-            .role_name(role.role_name.as_ref().unwrap())
-            .send()
-            .await
-        {
-            Ok(_) => {
-                break;
-            }
-            Err(_) => {
-                sleep(Duration::from_secs(2)).await;
-            }
-        }
+    while client
+        .delete_role()
+        .role_name(role.role_name.as_ref().unwrap())
+        .send()
+        .await
+        .is_err()
+    {
+        sleep(Duration::from_secs(2)).await;
     }
     Ok(())
 }
 ```
 +  For API details, see [DeleteRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+  
+
+```
+    public func deleteRole(role: IAMClientTypes.Role) async throws {
+        let input = DeleteRoleInput(
+            roleName: role.roleName
+        )
+        do {
+            _ = try await iamClient.deleteRole(input: input)
+        } catch {
+            throw error
+        }
+    }
+```
++  For API details, see [DeleteRole](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
 
 ------
 

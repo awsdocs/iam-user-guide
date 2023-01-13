@@ -489,5 +489,32 @@ pub async fn create_policy(
 +  For API details, see [CreatePolicy](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+  
+
+```
+    public func createPolicy(name: String, policyDocument: String) async throws -> IAMClientTypes.Policy {
+        let input = CreatePolicyInput(
+            policyDocument: policyDocument,
+            policyName: name
+        )
+        do {
+            let output = try await iamClient.createPolicy(input: input)
+            guard let policy = output.policy else {
+                throw ServiceHandlerError.noSuchPolicy
+            }
+            return policy
+        } catch {
+            throw error
+        }
+    }
+```
++  For API details, see [CreatePolicy](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

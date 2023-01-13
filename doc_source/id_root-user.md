@@ -83,7 +83,7 @@ If you see three text boxes, then you previously signed in to the console with *
 
 ## Changing the password for the root user<a name="id_root-user_manage_password"></a>
 
-For information about changing the password for the root user, see [Changing the AWS account root user password](id_credentials_passwords_change-root.md)\. To change the root user, you must log in using the root user credentials\. To view the tasks that require you to sign in as the root user, see [AWS Tasks that require root user credentials](https://docs.aws.amazon.com/general/latest/gr/aws_tasks-that-require-root.html)\.
+For information about changing the password for the root user, see [Changing the AWS account root user password](id_credentials_passwords_change-root.md)\. To change the root user, you must log in using the root user credentials\. For the complete list of tasks that require you to sign in as the root user, see [Tasks that require root user credentials](https://docs.aws.amazon.com/accounts/latest/reference/root-user-tasks.html) in the *AWS Account Management Reference Guide*\. \.
 
 ## Securing the credentials for the root user<a name="id_root-user_secure_credentials"></a>
 

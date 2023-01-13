@@ -7,7 +7,7 @@ FIDO security keys do not go out of sync\. If a FIDO security key is lost or bro
 
 As an AWS administrator, you can resynchronize your IAM users' virtual and hardware MFA devices if they get out of synchronization\.
 
-If your AWS account root user MFA device is not working, you can resynchronize your device using the IAM console with or without completing the sign\-in process\. 
+If your AWS account root user MFA device is not working, you can resynchronize your device using the IAM console with or without completing the sign\-in process\. If you aren’t able to successfully resynchronize your device, you may need to de\-associate and re\-associate it\. For more information on how to do this, see [Deactivating MFA devices](id_credentials_mfa_disable.md) and [Enabling MFA devices for users in AWS](id_credentials_mfa_enable.md)\.
 
 **Topics**
 + [Permissions required](#id_credentials_mfa_sync_console-permissions-required)

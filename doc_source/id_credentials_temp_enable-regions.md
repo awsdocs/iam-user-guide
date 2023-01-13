@@ -13,7 +13,7 @@ You can change this setting using the AWS Management Console, AWS CLI, or AWS AP
 
 **To change the Region compatibility of session tokens for the global endpoint \(console\)**
 
-1. Sign in as a root user or an IAM user with permissions to perform IAM administration tasks\. To change the compatibility of session tokens, you must have a policy that allows the `iam:SetSecurityTokenServicePreferences` action\.
+1. Sign in as a root user or a user with permissions to perform IAM administration tasks\. To change the compatibility of session tokens, you must have a policy that allows the `iam:SetSecurityTokenServicePreferences` action\.
 
 1. Open the [IAM console](https://console.aws.amazon.com/iam/home?#home)\. In the navigation pane, choose **Account settings**\.
 
@@ -42,7 +42,7 @@ Active Regions are available to everyone that uses temporary credentials in that
 
 **To activate or deactivate AWS STS in a Region that is enabled by default \(console\)**
 
-1. Sign in as a root user or an IAM user with permissions to perform IAM administration tasks\.
+1. Sign in as a root user or a user with permissions to perform IAM administration tasks\.
 
 1. Open the [IAM console](https://console.aws.amazon.com/iam/home?#home) and in the navigation pane choose [https://console.aws.amazon.com/iam/home?#account_settings](https://console.aws.amazon.com/iam/home?#account_settings)\.
 

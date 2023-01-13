@@ -340,5 +340,27 @@ pub async fn delete_user(client: &iamClient, user: &User) -> Result<(), SdkError
 +  For API details, see [DeleteUser](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+  
+
+```
+    public func deleteUser(user: IAMClientTypes.User) async throws {
+        let input = DeleteUserInput(
+            userName: user.userName
+        )
+        do {
+            _ = try await iamClient.deleteUser(input: input)
+        } catch {
+            throw error
+        }
+    }
+```
++  For API details, see [DeleteUser](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

@@ -13,7 +13,7 @@ For help signing in using an IAM Identity Center user, see [Signing in to the AW
 **Note**  
 If you need to request support, do not use the **Feedback** link on this page\. Feedback you enter is received by the AWS Documentation team, not AWS Support\. Instead, choose the **Contact Us** link at the top of this page\. There, you'll find links to resources to help you get the support that you need\.
 
-The AWS account root user or an IAM administrator for the account can create *IAM identities*\. An IAM identity provides access to an AWS account\. An *IAM user group* is a collection of IAM users managed as a unit\. An IAM identity represents a human user or programmatic workload, and can be authenticated and then authorized to perform actions in AWS\. Each IAM identity can be associated with one or more *policies*\. Policies determine what actions a user, role, or member of a user group can perform, on which AWS resources, and under what conditions\.
+The AWS account root user or an administrative user for the account can create *IAM identities*\. An IAM identity provides access to an AWS account\. An *IAM user group* is a collection of IAM users managed as a unit\. An IAM identity represents a human user or programmatic workload, and can be authenticated and then authorized to perform actions in AWS\. Each IAM identity can be associated with one or more *policies*\. Policies determine what actions a user, role, or member of a user group can perform, on which AWS resources, and under what conditions\.
 
 ## [AWS account root user](id_root-user.md)<a name="id_root"></a>
 

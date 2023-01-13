@@ -5,7 +5,7 @@
 | --- |
 | The AWS Identity and Access Management best practices were updated on July 14, 2022\. | 
 
-To help secure your AWS resources, follow these best practices for AWS Identity and Access Management \(IAM\) \. 
+To help secure your AWS resources, follow these best practices for AWS Identity and Access Management \(IAM\)\.
 
 **Topics**
 + [Require human users to use federation with an identity provider to access AWS using temporary credentials](#bp-users-federation-idp)
@@ -55,7 +55,9 @@ There are specific use cases that require long\-term credentials with IAM users 
 
 ## Safeguard your root user credentials and don't use them for everyday tasks<a name="lock-away-credentials"></a>
 
-When you create an AWS account you establish a root user name and password to sign in to the AWS Management Console\. Safeguard your root user credentials the same way you would protect other sensitive personal information\. You can do this by configuring MFA for your root user credentials\. We don't recommend generating access keys for your root user, because they allow full access to all your resources for all AWS services, including your billing information\. Don’t use your root user for everyday tasks\. Use the root user to complete the tasks that only the root user can perform\. For the complete list of these tasks, see [Tasks that require root user credentials](https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root) in the *AWS General Reference*\. For more information, see [Best practices to protect your account's root user](https://docs.aws.amazon.com/accounts/latest/reference/best-practices-root-user.html) in the *AWS Account Management User Guide*\.
+When you create an AWS account you establish a root user name and password to sign in to the AWS Management Console\. Safeguard your root user credentials the same way you would protect other sensitive personal information\. You can do this by configuring MFA for your root user credentials\. We don't recommend generating access keys for your root user, because they allow full access to all your resources for all AWS services, including your billing information\. Don’t use your root user for everyday tasks\. Use the root user to complete the tasks that only the root user can perform\. For the complete list of tasks that require you to sign in as the root user, see [Tasks that require root user credentials](https://docs.aws.amazon.com/accounts/latest/reference/root-user-tasks.html) in the *AWS Account Management Reference Guide*\. 
+
+For additional best practices, see [Best practices to protect your account's root user](https://docs.aws.amazon.com/accounts/latest/reference/best-practices-root-user.html) in the *AWS Account Management User Guide*\.
 
 ## Apply least\-privilege permissions<a name="grant-least-privilege"></a>
 

@@ -63,8 +63,8 @@ You cannot request an increase for the following quotas\.
 | OpenId Connect identity providers per AWS account | 100 | 
 | Permissions boundaries for an IAM user | 1 | 
 | Permissions boundaries for an IAM role | 1 | 
-| MFA devices in use by an IAM user | 1 | 
-| MFA devices in use by the AWS account root user | 1 | 
+| MFA devices in use by an IAM user | 8 | 
+| MFA devices in use by the AWS account root user | 8 | 
 | Roles in an instance profile | 1 | 
 | SAML providers in an AWS account | 100 | 
 | Signing certificates assigned to an IAM user | 2 | 

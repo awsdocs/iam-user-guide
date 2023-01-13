@@ -25,7 +25,6 @@ You cannot enable or disable regions that are enabled by default\. You can only 
             "Sid": "ViewConsole",
             "Effect": "Allow",
             "Action": [
-                "aws-portal:ViewAccount",
                 "account:ListRegions"
             ],
             "Resource": "*"
