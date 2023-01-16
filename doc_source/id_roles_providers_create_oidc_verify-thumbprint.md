@@ -69,7 +69,7 @@ AWS secures communication with some OIDC identity providers \(IdPs\) through our
 1. Use the OpenSSL command line tool to run the following command\. 
 
    ```
-   openssl x509 -in certificate.crt -fingerprint -noout
+   openssl x509 -in certificate.crt -fingerprint -sha1 -noout
    ```
 
    Your command window displays the certificate thumbprint, which looks similar to the following example:
