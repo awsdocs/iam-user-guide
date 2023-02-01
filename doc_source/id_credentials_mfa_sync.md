@@ -74,7 +74,7 @@ For your convenience, the AWS sign\-in page uses a browser cookie to remember yo
 1. In the navigation bar on the upper right, choose your user name, and then choose **Security credentials**\.   
 ![\[AWS Management Console Security credentials link\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-user.shared.console.png)
 
-1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication \(MFA\)** section, choose the radio button next to the device and choose **Resync**\.
+1. On the **AWS IAM credentials** tab, in the **Multi\-factor authentication \(MFA\)** section, choose the radio button next to the MFA device and choose **Resync**\.
 
 1. Type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Resync**\.
 **Important**  
@@ -86,7 +86,7 @@ Submit your request immediately after generating the codes\. If you generate the
 
 1. In the navigation pane, choose **Users**, and then choose the name of the user whose MFA device needs to be resynchronized\.
 
-1. Choose the **Security credentials** tab\. In the **Multi\-factor authentication \(MFA\)** section, choose the radio button next to the device and choose **Resync**\.
+1. Choose the **Security credentials** tab\. In the **Multi\-factor authentication \(MFA\)** section, choose the radio button next to the MFA device and choose **Resync**\.
 
 1. Type the next two sequentially generated codes from the device into **MFA code 1** and **MFA code 2**\. Then choose **Resync**\.
 **Important**  

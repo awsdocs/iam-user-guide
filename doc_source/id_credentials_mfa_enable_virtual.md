@@ -33,7 +33,7 @@ You must have physical access to the hardware that will host the user's virtual 
 
 1. Choose the **Security Credentials** tab\. Under **Multi\-factor authentication \(MFA\)**, choose **Assign MFA device**\.
 
-1. In the **Select MFA device** wizard, type a **Device name**, choose **Authenticator app**, and then choose **Next**\.
+1. In the wizard, type a **Device name**, choose **Authenticator app**, and then choose **Next**\.
 
    IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic\. The graphic is a representation of the "secret configuration key" that is available for manual entry on devices that do not support QR codes\.
 
@@ -47,7 +47,7 @@ You must have physical access to the hardware that will host the user's virtual 
 
    When you are finished, the virtual MFA device starts generating one\-time passwords\. 
 
-1. In the wizard, in the **MFA code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **MFA code 2** box\. Choose **Add MFA**\. 
+1. On the **Set up device** page, in the **MFA code 1** box, type the one\-time password that currently appears in the virtual MFA device\. Wait up to 30 seconds for the device to generate a new one\-time password\. Then type the second one\-time password into the **MFA code 2** box\. Choose **Add MFA**\. 
 **Important**  
 Submit your request immediately after generating the codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device is out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can [resync the device](id_credentials_mfa_sync.md)\.
 
@@ -68,7 +68,7 @@ Before you enable MFA for your root user, review your account settings and conta
 
 1. In the **Multi\-Factor Authentication \(MFA\)** section, choose **Assign MFA device**\.
 
-1. In the wizard, choose **Authenticator app**, and then choose **Next**\.
+1. In the wizard, type a **Device name**, choose **Authenticator app**, and then choose **Next**\.
 
    IAM generates and displays configuration information for the virtual MFA device, including a QR code graphic\. The graphic is a representation of the secret configuration key that is available for manual entry on devices that do not support QR codes\.
 

@@ -374,8 +374,8 @@ For example, assume that a user makes an AWS STS `AssumeRole` request, and sets 
     "requestParameters": {
         "roleArn": "arn:aws:iam::123456789012:role/DevRole",
         "roleSessionName": "Dev1",
-        "sourceIdentity": "source-identity-value-set",
-    },
+        "sourceIdentity": "source-identity-value-set"
+    }
 ```
 
 If the user uses the assumed role session to perform an action, the source identity information is present in the `userIdentity` key in the CloudTrail log\.

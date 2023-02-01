@@ -119,6 +119,46 @@ bool AwsDoc::STS::assumeRole(const Aws::String &roleArn,
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForCpp/sts-2011-06-15/AssumeRole) in *AWS SDK for C\+\+ API Reference*\. 
 
 ------
+#### [ Java ]
+
+**SDK for Java 2\.x**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/sts#readme)\. 
+  
+
+```
+    public static void assumeGivenRole(StsClient stsClient, String roleArn, String roleSessionName) {
+
+        try {
+            AssumeRoleRequest roleRequest = AssumeRoleRequest.builder()
+                .roleArn(roleArn)
+                .roleSessionName(roleSessionName)
+                .build();
+
+           AssumeRoleResponse roleResponse = stsClient.assumeRole(roleRequest);
+           Credentials myCreds = roleResponse.credentials();
+
+           // Display the time when the temp creds expire.
+           Instant exTime = myCreds.expiration();
+           String tokenInfo = myCreds.sessionToken();
+
+           // Convert the Instant to readable date.
+           DateTimeFormatter formatter =
+                   DateTimeFormatter.ofLocalizedDateTime( FormatStyle.SHORT )
+                           .withLocale( Locale.US)
+                           .withZone( ZoneId.systemDefault() );
+
+           formatter.format( exTime );
+           System.out.println("The token "+tokenInfo + "  expires on " + exTime );
+
+       } catch (StsException e) {
+           System.err.println(e.getMessage());
+           System.exit(1);
+       }
+   }
+```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForJavaV2/sts-2011-06-15/AssumeRole) in *AWS SDK for Java 2\.x API Reference*\. 
+
+------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
@@ -126,56 +166,40 @@ bool AwsDoc::STS::assumeRole(const Aws::String &roleArn,
 Create the client\.  
 
 ```
-import { STSClient } from  "@aws-sdk/client-sts";
+import { STSClient } from "@aws-sdk/client-sts";
 // Set the AWS Region.
-const REGION = "REGION"; //e.g. "us-east-1"
-// Create an Amazon STS service client object.
-const stsClient = new STSClient({ region: REGION });
-export { stsClient };
+const REGION = "us-east-1";
+// Create an AWS STS service client object.
+export const client = new STSClient({ region: REGION });
 ```
 Assume the IAM role\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js
-import { stsClient } from "./libs/stsClient.js";
-import {
-  AssumeRoleCommand,
-  GetCallerIdentityCommand,
-} from "@aws-sdk/client-sts";
+import { AssumeRoleCommand } from "@aws-sdk/client-sts";
 
-// Set the parameters
-export const params = {
-  RoleArn: "ARN_OF_ROLE_TO_ASSUME", //ARN_OF_ROLE_TO_ASSUME
-  RoleSessionName: "session1",
-  DurationSeconds: 900,
-};
+import { client } from "../libs/client.js";
 
-export const run = async () => {
+export const main = async () => {
   try {
-    //Assume Role
-    const data = await stsClient.send(new AssumeRoleCommand(params));
-    return data;
-    const rolecreds = {
-      accessKeyId: data.Credentials.AccessKeyId,
-      secretAccessKey: data.Credentials.SecretAccessKey,
-      sessionToken: data.Credentials.SessionToken,
-    };
-    //Get Amazon Resource Name (ARN) of current identity
-    try {
-      const stsParams = { credentials: rolecreds };
-      const stsClient = new STSClient(stsParams);
-      const results = await stsClient.send(
-        new GetCallerIdentityCommand(rolecreds)
-      );
-      console.log("Success", results);
-    } catch (err) {
-      console.log(err, err.stack);
-    }
+    // Returns a set of temporary security credentials that you can use to
+    // access Amazon Web Services resources that you might not normally 
+    // have access to.
+    const command = new AssumeRoleCommand({
+      // The Amazon Resource Name (ARN) of the role to assume.
+      RoleArn: "ROLE_ARN",
+      // An identifier for the assumed role session.
+      RoleSessionName: "session1",
+      // The duration, in seconds, of the role session. The value specified
+      // can range from 900 seconds (15 minutes) up to the maximum session 
+      // duration set for the role.
+      DurationSeconds: 900,
+    });
+    const response = await client.send(command);
+    console.log(response);
   } catch (err) {
-    console.log("Error", err);
+    console.error(err);
   }
 };
-run();
 ```
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sts/classes/assumerolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 

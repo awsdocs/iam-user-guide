@@ -59,17 +59,17 @@ Adding a user to a group affects the user immediately\.<a name="by-add-users-to-
 
 1. \(Optional\) In addition to selecting from existing groups, you can choose **Create group** to define a new group:
 
-   1. In the new tab, for **Group name**, type a name for your new group\.
+   1. In the new tab, for **User group name**, type a name for your new group\.
 **Note**  
 The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\. Group names can be a combination of up to 128 letters, digits, and these characters: plus \(\+\), equal \(=\), comma \(,\), period \(\.\), at sign \(@\), and hyphen \(\-\)\. Names must be unique within an account\. They are not distinguished by case\. For example, you cannot create two groups named *TESTGROUP* and *testgroup*\.
 
    1. Select one or more check boxes for the managed policies that you want to attach to the group\. You can also create a new managed policy by choosing **Create policy**\. If you do, return to this browser tab or window when the new policy is done; choose **Refresh**; and then choose the new policy to attach it to your group\. For more information, see [Creating IAM policies](access_policies_create.md)\.
 
-   1. Choose **Create group**\.
+   1. Choose **Create user group**\.
 
    1. Return to the original tab, refresh your list of groups\. Then select the check box for your new group\.
 
-1. Choose **Next: Review** to see the list of group memberships to be added to the user\. Then choose **Add permissions**\.
+1. Choose **Next** to see the list of group memberships to be added to the user\. Then choose **Add permissions**\.
 
 ### Adding permissions by copying from another user<a name="users_change_permissions-add-copy-console"></a>
 
@@ -85,7 +85,7 @@ Copying permissions affects the user immediately\.<a name="by-copying-user"></a>
 
 1. Select the radio button next to the user whose permissions you want to copy\. 
 
-1. Choose **Next: Review** to see the list of changes that are to be made to the user\. Then choose **Add permissions**\.
+1. Choose **Next** to see the list of changes that are to be made to the user\. Then choose **Add permissions**\.
 
 ### Adding permissions by attaching policies directly to the user<a name="users_change_permissions-add-directly-console"></a>
 
@@ -97,11 +97,11 @@ Attaching policies affects the user immediately\.<a name="by-direct-attach-polic
 
 1. Choose **Users** in the navigation pane, choose the name of the user whose permissions you want to modify, and then choose the **Permissions** tab\.
 
-1. Choose **Add permissions**, and then choose **Attach existing policies directly to user**\. 
+1. Choose **Add permissions**, and then choose **Attach policies directly**\. 
 
 1. Select one or more check boxes for the managed policies that you want to attach to the user\. You can also create a new managed policy by choosing **Create policy**\. If you do, return to this browser tab or window when the new policy is done\. Choose **Refresh**; and then select the check box for the new policy to attach it to your user\. For more information, see [Creating IAM policies](access_policies_create.md)\.
 
-1. Choose **Next: Review** to see the list of policies that are to be attached to the user\. Then choose **Add permissions**\.
+1. Choose **Next** to see the list of policies that are to be attached to the user\. Then choose **Add permissions**\.
 
 ### Setting the permissions boundary for a user<a name="users_change_permissions-set-boundary-console"></a>
 
@@ -115,7 +115,7 @@ Setting a permissions boundary affects the user immediately\.
 
 1. Choose the name of the user whose permissions boundary you want to change\. 
 
-1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Set boundary**\.
+1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Set permissions boundary**\.
 
 1. Select the policy that you want to use for the permissions boundary\.
 
@@ -141,11 +141,11 @@ Changing permissions affects the user immediately\.
 
 1. Choose the **Permissions** tab\. If necessary, open the **Permissions policies** section\.
 
-1. Choose the name of the policy that you want to edit to view details about the policy\. Choose the **Used as** tab to view other entities that might be affected if you edit the policy\. 
+1. Choose the name of the policy that you want to edit to view details about the policy\. Choose the **Policy usage** tab to view other entities that might be affected if you edit the policy\. 
 
-1. Choose the **Permissions tab** and review the permissions granted by the policy\. Then choose **Edit policy**\. 
+1. Choose the **Permissions** tab and review the permissions granted by the policy\. Then choose **Edit policy**\. 
 
-1. Edit the policy using the **Visual editor** tab or the **JSON** tab and resolve any [policy validation](access_policies_policy-validator.md) recommendations\. For more information, see [Editing IAM policies](access_policies_manage-edit.md)\.
+1. Edit the policy and resolve any [policy validation](access_policies_policy-validator.md) recommendations\. For more information, see [Editing IAM policies](access_policies_manage-edit.md)\.
 
 1. Choose **Review policy**, review the policy summary, and then choose **Save changes**\.
 
@@ -165,13 +165,13 @@ Changing a permissions boundary affects the user immediately\.
 
 1. Select the policy that you want to use for the permissions boundary\.
 
-1. Choose **Change boundary**\.
+1. Choose **Set boundary**\.
 
 ## Removing a permissions policy from a user \(console\)<a name="users_change_permissions-remove-policy-console"></a>
 
 Removing a policy affects the user immediately\.
 
-**To revoke permissions for IAM users**
+**To remove permissions for IAM users**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -181,9 +181,9 @@ Removing a policy affects the user immediately\.
 
 1. Choose the **Permissions** tab\. 
 
-1. If you want to revoke permissions by removing an existing policy, view the **Policy type** to understand how the user is getting that policy before choosing **X** to remove the policy:
-   + If the policy applies because of group membership, then choosing **X** removes the user from the group\. Remember that you might have multiple policies attached to a single group\. If you remove a user from a group, the user loses access to *all* policies that it received through that group membership\.
-   + If the policy is a managed policy attached directly to the user, then choosing **X** detaches the policy from the user\. This does not affect the policy itself or any other entity that the policy might be attached to\.
+1. If you want to remove permissions by removing an existing policy, view the **Type** to understand how the user is getting that policy before choosing **Remove** to remove the policy:
+   + If the policy applies because of group membership, then choosing **Remove** removes the user from the group\. Remember that you might have multiple policies attached to a single group\. If you remove a user from a group, the user loses access to *all* policies that it received through that group membership\.
+   + If the policy is a managed policy attached directly to the user, then choosing **Remove** detaches the policy from the user\. This does not affect the policy itself or any other entity that the policy might be attached to\.
    + If the policy is an inline embedded policy, then choosing **X** removes the policy from IAM\. Inline policies that are attached directly to a user exist only on that user\.
 
 ## Removing the permissions boundary from a user \(console\)<a name="users_change_permissions-remove-boundary-console"></a>
@@ -200,7 +200,7 @@ Removing a permissions boundary affects the user immediately\.
 
 1. Choose the **Permissions** tab\. If necessary, open the **Permissions boundary** section and then choose **Remove boundary**\.
 
-1. Choose **Remove** to confirm that you want to remove the permissions boundary\.
+1. Choose **Remove boundary** to confirm that you want to remove the permissions boundary\.
 
 
 

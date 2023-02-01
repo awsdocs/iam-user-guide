@@ -27,9 +27,7 @@ You can manage your user identities in an external system outside of AWS and gra
 
    AWS STS web identity federation supports Login with Amazon, Facebook, Google, and any OpenID Connect \(OIDC\)\-compatible identity provider\.
 **Note**  
-For mobile applications, we recommend that you use Amazon Cognito\. You can use this service with the [AWS Mobile SDK for iOS](https://docs.amplify.aws/sdk/q/platform/ios/) and the [AWS Mobile SDK for Android](https://docs.amplify.aws/sdk/q/platform/android/) to create unique identities for users and authenticate them for secure access to your AWS resources\. Amazon Cognito supports the same identity providers as AWS STS, and also supports unauthenticated \(guest\) access and lets you migrate user data when a user signs in\. Amazon Cognito also provides API operations for synchronizing user data so that it is preserved as users move between devices\. For more information, see the following:  
-[Use existing Amazon Cognito resources](https://docs.amplify.aws/lib/auth/existing-resources/q/platform/ios/) in the *AWS Mobile SDK for iOS Developer Guide*
-[Use existing Amazon Cognito resources](https://docs.amplify.aws/lib/auth/existing-resources/q/platform/android/) in the *AWS Mobile SDK for Android Developer Guide*
+For mobile applications, we recommend that you use Amazon Cognito\. You can use this service with AWS SDKs for mobile development to create unique identities for users and authenticate them for secure access to your AWS resources\. Amazon Cognito supports the same identity providers as AWS STS, and also supports unauthenticated \(guest\) access and lets you migrate user data when a user signs in\. Amazon Cognito also provides API operations for synchronizing user data so that it is preserved as users move between devices\. For more information, see [Authentication with Amplify](https://docs.amplify.aws/lib/auth/getting-started/q/platform/js/#authentication-with-amplify) in the *Amplify Documentation*\.
 
 ### Roles for cross\-account access<a name="role_cross-account"></a>
 

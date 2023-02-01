@@ -2,6 +2,9 @@
 
 You can delete IAM policies using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or the IAM API\.
 
+**Note**  
+Deletion of IAM policies is permanent\. After the policy is deleted it cannot be recovered\.
+
 For more information about the difference between managed and inline policies, see [Managed policies and inline policies](access_policies_managed-vs-inline.md)\. 
 
 For general information about IAM policies, see [Policies and permissions in IAM](access_policies.md)\.

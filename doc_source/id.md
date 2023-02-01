@@ -60,7 +60,7 @@ As a [best practice](best-practices.md), use temporary credentials with both hum
 + Administrative enforcement of MFA usage
 + Single sign\-on to all AWS account entitlements
 
-For more information, see [What is IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/singlesignon/latest/userguide/what-is.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
+For more information, see [What is IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
 
 ## When to create an IAM user \(instead of a role\)<a name="id_which-to-choose"></a>
 

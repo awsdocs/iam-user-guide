@@ -37,7 +37,7 @@ With multiple MFA devices, only one MFA device is needed to sign into the AWS Ma
 
  For more information about enabling MFA, see the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
-+ [Enable a hardware TOTP token for the AWS account root user\(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
++ [Enable a hardware TOTP token for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 ## Creating access keys for the root user<a name="id_root-user_manage_add-key"></a>
 

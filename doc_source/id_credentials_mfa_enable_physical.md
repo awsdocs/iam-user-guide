@@ -4,7 +4,7 @@ A hardware TOTP token generates a six\-digit numeric code based upon a time\-bas
 
 Hardware TOTP tokens and [FIDO security keys](id_credentials_mfa_enable_fido.md) are both physical devices that you purchase\. The difference is that hardware MFA devices generate a TOTP code that you view and then enter when prompted when signing it to AWS\. A FIDO security key is a strong phishing\-resistant MFA option where you don't see or type an authentication code\. Instead, the FIDO security key generates a response without presenting it to the user and the service validates it\. For specifications and purchase information for both device types, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
 
-You can enable a hardware TOTP token for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a hardware TOTP token for the AWS account root user\(console\)](#enable-hw-mfa-for-root)\.
+You can enable a hardware TOTP token for an IAM user from the AWS Management Console, the command line, or the IAM API\. To enable an MFA device for your AWS account root user, see [Enable a hardware TOTP token for the AWS account root user \(console\)](#enable-hw-mfa-for-root)\.
 
 You can register up to **eight** MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) with your AWS account root user and IAM users\. With multiple MFA devices, you only need one MFA device to sign in to the AWS Management Console or create a session through the AWS CLI as that user\.
 
@@ -18,7 +18,7 @@ If you want to enable the MFA device from the command line, use [https://docs.aw
 + [Permissions required](#enable-hw-mfa-for-iam-user-permissions-required)
 + [Enable a hardware TOTP token for your own IAM user \(console\)](#enable-hw-mfa-for-own-iam-user)
 + [Enable a hardware TOTP token for another IAM user \(console\)](#enable-hw-mfa-for-iam-user)
-+ [Enable a hardware TOTP token for the AWS account root user\(console\)](#enable-hw-mfa-for-root)
++ [Enable a hardware TOTP token for the AWS account root user \(console\)](#enable-hw-mfa-for-root)
 + [Replace or "rotate" a physical MFA device](#replace-phys-mfa)
 
 ## Permissions required<a name="enable-hw-mfa-for-iam-user-permissions-required"></a>
@@ -125,7 +125,7 @@ Submit your request immediately after generating the authentication codes\. If y
 
 The device is ready for use with AWS\. For information about using MFA with the AWS Management Console, see [Using MFA devices with your IAM sign\-in page](console_sign-in-mfa.md)\.
 
-## Enable a hardware TOTP token for the AWS account root user\(console\)<a name="enable-hw-mfa-for-root"></a>
+## Enable a hardware TOTP token for the AWS account root user \(console\)<a name="enable-hw-mfa-for-root"></a>
 
 You can configure and enable a virtual MFA device for your root user from the AWS Management Console only, not from the AWS CLI or AWS API\.
 
@@ -167,4 +167,4 @@ Submit your request immediately after generating the authentication codes\. If y
 You can have up to eight MFA devices of any combination of the [currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) assigned to a user at a time with your AWS account root user and IAM users\. If the user loses a device or needs to replace it for any reason, you must first deactivate the old device\. Then you can add the new device for the user\.
 + To deactivate the device currently associated with a user, see [Deactivating MFA devices](id_credentials_mfa_disable.md)\.
 + To add a replacement hardware TOTP token for an IAM user, follow the steps in the procedure [Enable a hardware TOTP token for another IAM user \(console\)](#enable-hw-mfa-for-iam-user) earlier in this topic\.
-+ To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a hardware TOTP token for the AWS account root user\(console\)](#enable-hw-mfa-for-root) earlier in this topic\.
++ To add a replacement virtual MFA device for the AWS account root user, follow the steps in the procedure [Enable a hardware TOTP token for the AWS account root user \(console\)](#enable-hw-mfa-for-root) earlier in this topic\.

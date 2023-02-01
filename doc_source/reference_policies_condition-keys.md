@@ -514,6 +514,20 @@ This example shows how you might create an identity\-based policy that allows us
 }
 ```
 
+This example shows how you might create a resource\-based policy with the `aws:PrincipalTag` key in the resource ARN\. The policy allows the `s3:GetObject` action only if the bucket name ends with a team name from the `team` principal tag\. To use this policy, replace the *italicized placeholder text* in the example policy with your own information\. Then, follow the directions in [create a policy](access_policies_create.md) or [edit a policy](access_policies_manage-edit.md)\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Effect": "Allow",
+    "Principal": "*",
+    "Action": "s3:GetObject",
+    "Resource": "arn:aws:s3:::DOC-EXAMPLE-BUCKET-${aws:PrincipalTag/team}/"
+  }
+}
+```
+
 ## aws:PrincipalType<a name="condition-keys-principaltype"></a>
 
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.

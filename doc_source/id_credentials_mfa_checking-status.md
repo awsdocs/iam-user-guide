@@ -13,7 +13,7 @@ Use the IAM console to check whether an AWS account root user or IAM user has a 
 If you want to enable MFA for the account, see one of the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)
 + [Enable a FIDO security key for the AWS account root user \(console\)](id_credentials_mfa_enable_fido.md#enable-fido-mfa-for-root)
-+ [Enable a hardware TOTP token for the AWS account root user\(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
++ [Enable a hardware TOTP token for the AWS account root user \(console\)](id_credentials_mfa_enable_physical.md#enable-hw-mfa-for-root)
 
 **To check the MFA status of IAM users**
 
@@ -37,7 +37,7 @@ AWS ended support for enabling SMS multi\-factor authentication \(MFA\)\. We rec
 
 1. To view additional information about the MFA device for a user, choose the name of the user whose MFA status you want to check\. Then choose the **Security credentials** tab\. 
 
-1. If no MFA device is active for the user, the console displays **No MFA devices** in the **Multi\-factor authentication \(MFA\)** section\. If the user has MFA devices enabled, the **Multi\-factor authentication \(MFA\)** section shows details about the devices:
+1. If no MFA device is active for the user, the console displays **No MFA devices\. Assign an MFA device to improve the security of your AWS environment** in the **Multi\-factor authentication \(MFA\)** section\. If the user has MFA devices enabled, the **Multi\-factor authentication \(MFA\)** section shows details about the devices:
    + The device name
    + The device type
    + The identifier for the device, such as a serial number for a physical device or the ARN in AWS for a virtual device

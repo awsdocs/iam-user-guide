@@ -32,7 +32,7 @@ To perform the steps in this tutorial, you must already have the following:
 
 | *Create user* | *Create and configure user group account* | User name | Other instructions | User group name | Add user as a member | Other instructions | 
 | --- | --- | --- | --- | --- | --- | --- | 
-| MFAUser | Choose only the option for AWS Management Console access, and assign a password\. | EC2MFA | MFAUser | Do NOT attach any policies or otherwise grant permissions to this user group\. | 
+| MFAUser | Choose only the option for Enable console access – optional, and assign a password\. | EC2MFA | MFAUser | Do NOT attach any policies or otherwise grant permissions to this user group\. | 
 
 ## Step 1: Create a policy to enforce MFA sign\-in<a name="tutorial_mfa_step1"></a>
 
@@ -69,7 +69,7 @@ Next you attach two policies to the test IAM user group, which will be used to g
 
 1. In the search box, type **`EC2MFA`**, and then choose the group name \(not the check box\) in the list\. 
 
-1. Choose the **Permissions** tab, choose **Add permissions**, and then choose **Attach policy**\.
+1. Choose the **Permissions** tab, choose **Add permissions**, and then choose **Attach policies**\.
 
 1. On the **Attach permission policies to EC2MFA group** page, in the search box, type **EC2Full**\. Then select the check box next to **AmazonEC2FullAccess** in the list\. Don't save your changes yet\.
 

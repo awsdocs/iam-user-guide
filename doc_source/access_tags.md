@@ -55,6 +55,20 @@ Do not use the `ResourceTag` condition key in a policy with the `iam:PassRole` a
 
 You can attach this policy to the IAM users in your account\. If a user named `richard-roe` attempts to start an Amazon EC2 instance, the instance must be tagged `Owner=richard-roe` or `owner=richard-roe`\. Otherwise he will be denied access\. The tag key `Owner` matches both `Owner` and `owner` because condition key names are not case\-sensitive\. For more information, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\.
 
+This example shows how you might create an identity\-based policy that uses the `team` principal tag in the resource ARN\. The policy grants permission to delete Amazon Simple Queue Service queues, but only if the queue name starts with the team name followed by `-queue`\. For example, `qa-queue` if `qa` is the team name for the `team` principal tag\.
+
+```
+{
+      "Version": "2012-10-17",
+      "Statement": {
+        "Sid": "AllQueueActions",
+        "Effect": "Allow",
+        "Action": "sqs:DeleteQueue",
+        "Resource": "arn:aws:sqs:us-east-2::${aws:PrincipalTag/team}-queue"
+      }
+}
+```
+
 ## Controlling access during AWS requests<a name="access_tags_control-requests"></a>
 
 You can use conditions in your IAM policies to control what tag key\-value pairs can be passed in a request that tags an AWS resource\.

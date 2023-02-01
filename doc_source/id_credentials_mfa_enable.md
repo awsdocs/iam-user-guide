@@ -18,7 +18,7 @@ You can also watch this English\-language video, [How to Setup AWS Multi\-Factor
 
 1. *Get an MFA device such as one of the following\.* You can enable up to eight MFA devices per AWS account root user or IAM user of any combination of the following types\.
    + A virtual MFA device, which is a software app that is compliant with [RFC 6238, a standards\-based TOTP \(time\-based one\-time password\) algorithm](https://datatracker.ietf.org/doc/html/rfc6238)\. You can install the app on a phone or other device\. For a list of a few supported apps that you can use as virtual MFA devices, see [Multi\-Factor Authentication](http://aws.amazon.com/iam/details/mfa/)\.
-   + A FIDO security key with an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md)\. The FIDO Alliance maintains a list of all [FIDO Certified products]() that are compatible with FIDO specifications\.
+   + A FIDO security key with an [AWS supported configuration](id_credentials_mfa_fido_supported_configurations.md)\. The FIDO Alliance maintains a list of all [FIDO Certified products](https://fidoalliance.org/certification/fido-certified-products/) that are compatible with FIDO specifications\.
    + A hardware\-based MFA device from a third\-party provider like a token device\. These tokens are used exclusively with AWS accounts\. For more information, see [Enabling a hardware TOTP token \(console\)](id_credentials_mfa_enable_physical.md)\. You can purchase these tokens directly from the manufacturers as a key fob or display card device\.
 
 1. *Enable the MFA device\.* 
