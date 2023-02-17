@@ -128,10 +128,10 @@ The following flow chart provides details about how the decision is made\. This 
 
 ## Example identity\-based and resource\-based policy evaluation<a name="policies_evaluation_example"></a>
 
-The most common types of policies are identity\-based policies and resource\-based policies\. When access to a resource is requested, AWS evaluates all the permissions granted by the policies for **at least one Allow** within the same acccount\. An explicit deny in any of the policies overrides the allow\.
+The most common types of policies are identity\-based policies and resource\-based policies\. When access to a resource is requested, AWS evaluates all the permissions granted by the policies for **at least one Allow** within the same account\. An explicit deny in any of the policies overrides the allow\.
 
 **Important**  
-If either the identity\-based policy or the resource\-based policy within the same acccount allows the request and the other doesn't, the request is still allowed\.
+If either the identity\-based policy or the resource\-based policy within the same account allows the request and the other doesn't, the request is still allowed\.
 
 Assume that Carlos has the user name `carlossalazar` and he tries to save a file to the `carlossalazar-logs` Amazon S3 bucket\. 
 

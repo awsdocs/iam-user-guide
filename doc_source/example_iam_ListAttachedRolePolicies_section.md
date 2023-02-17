@@ -124,7 +124,7 @@ run();
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
     public function listAttachedRolePolicies($roleName, $pathPrefix = "", $marker = "", $maxItems = 0)
     {

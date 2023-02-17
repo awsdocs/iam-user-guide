@@ -6,7 +6,7 @@ IAM users with permission who sign in to your AWS account through the AWS Manage
 There is no charge to use IAM\.
 
 **The AWS Management Console**  
-You create a password for each IAM user who needs access to the AWS Management Console\. Users access the console through your IAM\-enabled AWS account sign\-in page\. For information about accessing the sign\-in page, see [Signing in to the AWS Management Console as an IAM user or root user](console.md)\. For information about creating passwords, see [Managing user passwords in AWS](id_credentials_passwords.md)\.  
+You create a password for each IAM user who needs access to the AWS Management Console\. Users access the console through your IAM\-enabled AWS account sign\-in page\. For information about accessing the sign\-in page, see [How to sign in to AWS](https://docs.aws.amazon.com/signin/latest/userguide/how-to-sign-in.html) in the *AWS Sign\-In User Guide*\. For information about creating passwords, see [Managing user passwords in AWS](id_credentials_passwords.md)\.  
 You can prevent an IAM user from accessing the AWS Management Console by removing their password\. This prevents them from signing into the AWS Management Console using their sign\-in credentials\. It does not change their permissions or prevent them from accessing the console using an assumed role\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
 
 **Your AWS resources, such as Amazon EC2 instances, Amazon S3 buckets, and so on**  

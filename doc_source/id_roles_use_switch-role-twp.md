@@ -50,7 +50,7 @@ Note that all access keys and tokens are examples only and cannot be used as sho
    Thursday, June 18, 2018 2:28:31 PM
    ```
 
-1. To use these credentials for any subsequent command, include them with the `-Credentials` parameter\. For example, the following command uses the credentials from the role and works only if the role is granted the `iam:ListRoles` permission and can therefore run the `Get-IAMRoles` cmdlet:
+1. To use these credentials for any subsequent command, include them with the `-Credential` parameter\. For example, the following command uses the credentials from the role and works only if the role is granted the `iam:ListRoles` permission and can therefore run the `Get-IAMRoles` cmdlet:
 
    ```
            PS C:\> get-iamroles -Credential $Creds

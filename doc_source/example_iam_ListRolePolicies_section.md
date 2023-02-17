@@ -131,7 +131,7 @@ run();
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
     public function listRolePolicies($roleName, $marker = "", $maxItems = 0)
     {

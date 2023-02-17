@@ -348,7 +348,7 @@ fun checkList(attachedPolicies: List<AttachedPolicy>, policyArnVal: String): Int
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
 $assumeRolePolicyDocument = "{
                 \"Version\": \"2012-10-17\",

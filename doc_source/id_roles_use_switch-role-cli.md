@@ -7,9 +7,9 @@ The permissions of your IAM user and any roles that you assume are not cumulativ
 
 You can use a role to run an AWS CLI command when you are signed in as an IAM user\. You can also use a role to run an AWS CLI command when you are signed in as an [externally authenticated user](id_roles_providers.md) \([SAML](id_roles_providers_saml.md) or [OIDC](id_roles_providers_oidc.md)\) that is already using a role\. In addition, you can use a role to run an AWS CLI command from within an Amazon EC2 instance that is attached to a role through its instance profile\. You cannot assume a role when you are signed in as the AWS account root user\.
 
-[**Role chaining**](id_roles_terms-and-concepts.md#iam-term-role-chaining) – You can also use role chaining, which is using permissions from a role to access a second role\. When you switch roles in the console, you are not using role chaining\. You are using the permissions of your original user\.
+[**Role chaining**](id_roles_terms-and-concepts.md#iam-term-role-chaining) – You can also use role chaining, which is using permissions from a role to access a second role\.
 
-By default, your role session lasts for one hour\. When you assume this role using the `assume-role*` CLI operations, you can specify a value for the `duration-seconds` parameter\. This value can range from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
+By default, your role session lasts for one hour\. When you assume this role using the `assume-role*` CLI operations, you can specify a value for the `duration-seconds` parameter\. This value can range from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. If you switch roles in the console, your session duration is limited to maximum of one hour\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
 
 If you use role chaining, your session duration is limited to a maximum of one hour\. If you then use the `duration-seconds` parameter to provide a value greater than one hour, the operation fails\.
 
