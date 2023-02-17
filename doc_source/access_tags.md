@@ -8,7 +8,7 @@ AWS then checks that you \(the principal entity\) are authenticated \(signed in\
 
 AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram and learn more about the IAM infrastructure, see [Understanding how IAM works](intro-structure.md)\. For details about how IAM determines whether a request is allowed, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\.
 
-Tags can complicate this process because tags can be attached to the *resource* or passed in the *request* to services that support tagging\. To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\. To learn whether an AWS service supports controlling access using tags, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Authorization based on tags** column\. Choose the name of the service to view the authorization and access control documentation for that service\.
+Tags are another consideration in this process because tags can be attached to the *resource* or passed in the *request* to services that support tagging\. To control access based on tags, you provide tag information in the [condition element](reference_policies_elements_condition.md) of a policy\. To learn whether an AWS service supports controlling access using tags, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Authorization based on tags** column\. Choose the name of the service to view the authorization and access control documentation for that service\.
 
 You can then create an IAM policy that allows or denies access to a resource based on that resource's tag\. In that policy, you can use tag condition keys to control access to any of the following:
 + **[Resource](#access_tags_control-resources)** – Control access to AWS service resources based on the tags on those resources\. To do this, use the **ResourceTag/*key\-name*** condition key to determine whether to allow access to the resource based on the tags that are attached to the resource\.
@@ -55,6 +55,20 @@ Do not use the `ResourceTag` condition key in a policy with the `iam:PassRole` a
 
 You can attach this policy to the IAM users in your account\. If a user named `richard-roe` attempts to start an Amazon EC2 instance, the instance must be tagged `Owner=richard-roe` or `owner=richard-roe`\. Otherwise he will be denied access\. The tag key `Owner` matches both `Owner` and `owner` because condition key names are not case\-sensitive\. For more information, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md)\.
 
+This example shows how you might create an identity\-based policy that uses the `team` principal tag in the resource ARN\. The policy grants permission to delete Amazon Simple Queue Service queues, but only if the queue name starts with the team name followed by `-queue`\. For example, `qa-queue` if `qa` is the team name for the `team` principal tag\.
+
+```
+{
+      "Version": "2012-10-17",
+      "Statement": {
+        "Sid": "AllQueueActions",
+        "Effect": "Allow",
+        "Action": "sqs:DeleteQueue",
+        "Resource": "arn:aws:sqs:us-east-2::${aws:PrincipalTag/team}-queue"
+      }
+}
+```
+
 ## Controlling access during AWS requests<a name="access_tags_control-requests"></a>
 
 You can use conditions in your IAM policies to control what tag key\-value pairs can be passed in a request that tags an AWS resource\.
@@ -85,7 +99,7 @@ This example shows how you might create an identity\-based policy that allows us
 
 You can use a condition in your IAM policies to control whether specific tag keys can be used on a resource or in a request\.
 
-As a best practice, when you use policies to control access using tags, you should use the [`aws:TagKeys` condition key](reference_policies_condition-keys.md#condition-keys-tagkeys)\. AWS services that support tags might allow you to create multiple tag key names that differ only by case, such as tagging an Amazon EC2 instance with `stack=production` and `Stack=test`\. Key names are not case sensitive in policy conditions\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\. To prevent duplicate tags with a key that varies only by case, use the `aws:TagKeys` condition to define the tag keys that your users can apply, or use tag policies, available with AWS Organizations\. For more information see [Tag Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the *Organizations User Guide*\. 
+We recommend that when you use policies to control access using tags, you use the [`aws:TagKeys` condition key](reference_policies_condition-keys.md#condition-keys-tagkeys)\. AWS services that support tags might allow you to create multiple tag key names that differ only by case, such as tagging an Amazon EC2 instance with `stack=production` and `Stack=test`\. Key names are not case sensitive in policy conditions\. This means that if you specify `"aws:ResourceTag/TagKey1": "Value1"` in the condition element of your policy, then the condition matches a resource tag key named either `TagKey1` or `tagkey1`, but not both\. To prevent duplicate tags with a key that varies only by case, use the `aws:TagKeys` condition to define the tag keys that your users can apply, or use tag policies, available with AWS Organizations\. For more information see [Tag Policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html) in the *Organizations User Guide*\. 
 
 This example shows how you might create an identity\-based policy that allows creating and tagging a Secrets Manager secret, but only with the tag keys `environment` or `cost-center`\.
 

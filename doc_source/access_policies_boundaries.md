@@ -88,7 +88,7 @@ To enforce these rules, María completes the following tasks, for which details 
 
 1. María creates the `XCompanyBoundaries` managed policy to use as a permissions boundary for all new users in the account\.
 
-1. María creates the `DelegatedUserBoundary` managed policy and assigns it as the permissions boundary for Zhang\. Maria makes a note of her admin IAM user's ARN and uses it in the policy to prevent Zhang from accessing it\.
+1. María creates the `DelegatedUserBoundary` managed policy and assigns it as the permissions boundary for Zhang\. Maria makes a note of her admin user's ARN and uses it in the policy to prevent Zhang from accessing it\.
 
 1. María creates the `DelegatedUserPermissions` managed policy and attaches it as a permissions policy for Zhang\.
 
@@ -176,59 +176,62 @@ Each statement serves a different purpose:
             "Sid": "CreateOrChangeOnlyWithBoundary",
             "Effect": "Allow",
             "Action": [
+                "iam:AttachUserPolicy",
                 "iam:CreateUser",
                 "iam:DeleteUserPolicy",
-                "iam:AttachUserPolicy",
                 "iam:DetachUserPolicy",
                 "iam:PutUserPermissionsBoundary",
                 "iam:PutUserPolicy"
             ],
             "Resource": "*",
-            "Condition": {"StringEquals": 
-                {"iam:PermissionsBoundary": "arn:aws:iam::123456789012:policy/XCompanyBoundaries"}}
+            "Condition": {
+               "StringEquals": {
+                 "iam:PermissionsBoundary": "arn:aws:iam::123456789012:policy/XCompanyBoundaries"
+                }
+            }
         },
         {
             "Sid": "CloudWatchAndOtherIAMTasks",
             "Effect": "Allow",
             "Action": [
-                "cloudwatch:*",
-                "iam:GetUser",
-                "iam:ListUsers",
-                "iam:DeleteUser",
-                "iam:UpdateUser",
-                "iam:CreateAccessKey",
-                "iam:CreateLoginProfile",
-                "iam:DeleteLoginProfile",
-                "iam:GetAccountPasswordPolicy",
-                "iam:GetLoginProfile",
-                "iam:ListGroups",
-                "iam:ListGroupsForUser",
-                "iam:CreateGroup",
-                "iam:GetGroup",
-                "iam:DeleteGroup",
-                "iam:UpdateGroup",
-                "iam:CreatePolicy",
-                "iam:DeletePolicy",
-                "iam:DeletePolicyVersion",
-                "iam:GetPolicy",
-                "iam:GetPolicyVersion",
-                "iam:GetUserPolicy",
-                "iam:GetRolePolicy",
-                "iam:ListAccessKeys",
-                "iam:ListSigningCertificates",
-                "iam:ListSSHPublicKeys",
-                "iam:ListServiceSpecificCredentials",
-                "iam:ListMFADevices",
-                "iam:ListPolicies",
-                "iam:ListPolicyVersions",
-                "iam:ListEntitiesForPolicy",
-                "iam:ListUserPolicies",
-                "iam:ListAttachedUserPolicies",
-                "iam:ListRolePolicies",
-                "iam:ListAttachedRolePolicies",
-                "iam:SetDefaultPolicyVersion",
-                "iam:SimulatePrincipalPolicy",
-                "iam:SimulateCustomPolicy" 
+              "cloudwatch:*",
+              "iam:CreateAccessKey",
+              "iam:CreateGroup",
+              "iam:CreateLoginProfile",
+              "iam:CreatePolicy",
+              "iam:DeleteGroup",
+              "iam:DeletePolicy",
+              "iam:DeletePolicyVersion",
+              "iam:DeleteUser",
+              "iam:GetAccountPasswordPolicy",
+              "iam:GetGroup",
+              "iam:GetLoginProfile",
+              "iam:GetPolicy",
+              "iam:GetPolicyVersion",
+              "iam:GetRolePolicy",
+              "iam:GetUser",
+              "iam:GetUserPolicy",
+              "iam:ListAccessKeys",
+              "iam:ListAttachedRolePolicies",
+              "iam:ListAttachedUserPolicies",
+              "iam:ListEntitiesForPolicy",
+              "iam:ListGroups",
+              "iam:ListGroupsForUser",
+              "iam:ListMFADevices",
+              "iam:ListPolicies",
+              "iam:ListPolicyVersions",
+              "iam:ListRolePolicies",
+              "iam:ListSSHPublicKeys",
+              "iam:ListServiceSpecificCredentials",
+              "iam:ListSigningCertificates",
+              "iam:ListUserPolicies",
+              "iam:ListUsers",
+              "iam:SetDefaultPolicyVersion",
+              "iam:SimulateCustomPolicy",
+              "iam:SimulatePrincipalPolicy",
+              "iam:UpdateGroup",
+              "iam:UpdateLoginProfile",
+              "iam:UpdateUser"
             ],
             "NotResource": "arn:aws:iam::123456789012:user/Maria"
         },
@@ -260,7 +263,7 @@ Each statement serves a different purpose:
 
 1. The `CreateOrChangeOnlyWithBoundary` statement allows Zhang to create IAM users but only if he uses the `XCompanyBoundaries` policy to set the permissions boundary\. This statement also allows him to set the permissions boundary for existing users but only using that same policy\. Finally, this statement allows Zhang to manage permissions policies for users with this permissions boundary set\.
 
-1. The `CloudWatchAndOtherIAMTasks` statement allows Zhang to complete other user, group, and policy management tasks\. He has permissions to reset passwords and create access keys for any IAM user not listed in the condition key\. This allows him to help users with sign\-in issues\.
+1. The `CloudWatchAndOtherIAMTasks` statement allows Zhang to complete other user, group, and policy management tasks\. He has permissions to reset passwords and create access keys for any IAM user not listed in the `NotResource` policy element\. This allows him to help users with sign\-in issues\.
 
 1. The `NoBoundaryPolicyEdit` statement denies Zhang access to update the `XCompanyBoundaries` policy\. He is not allowed to change any policy that is used to set the permissions boundary for himself or other users\.
 

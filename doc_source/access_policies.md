@@ -2,7 +2,7 @@
 
 You manage access in AWS by creating policies and attaching them to IAM identities \(users, groups of users, or roles\) or AWS resources\. A policy is an object in AWS that, when associated with an identity or resource, defines their permissions\. AWS evaluates these policies when an IAM principal \(user or role\) makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Most policies are stored in AWS as JSON documents\. AWS supports six types of policies: identity\-based policies, resource\-based policies, permissions boundaries, Organizations SCPs, ACLs, and session policies\.
 
-IAM policies define permissions for an action regardless of the method that you use to perform the operation\. For example, if a policy allows the [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) action, then a user with that policy can get user information from the AWS Management Console, the AWS CLI, or the AWS API\. When you create an IAM user, you can choose to allow console or programmatic access\. If console access is allowed, the IAM user can sign in to the console using a user name and password\. Or if programmatic access is allowed, the user can use access keys to work with the CLI or API\.
+IAM policies define permissions for an action regardless of the method that you use to perform the operation\. For example, if a policy allows the [GetUser](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetUser.html) action, then a user with that policy can get user information from the AWS Management Console, the AWS CLI, or the AWS API\. When you create an IAM user, you can choose to allow console or programmatic access\. If console access is allowed, the IAM user can sign in to the console using their sign\-in credentials\. If programmatic access is allowed, the user can use access keys to work with the CLI or API\.
 
 ## Policy types<a name="access_policy-types"></a>
 
@@ -54,7 +54,7 @@ Session policies are advanced policies that you pass as a parameter when you pro
 
 You can create role session and pass session policies programmatically using the `AssumeRole`, `AssumeRoleWithSAML`, or `AssumeRoleWithWebIdentity` API operations\. You can pass a single JSON inline session policy document using the `Policy` parameter\. You can use the `PolicyArns` parameter to specify up to 10 managed session policies\. For more information about creating a role session, see [Requesting temporary security credentials](id_credentials_temp_request.md)\.
 
-When you create a federated user session, you use an IAM user's access keys to programmatically call the `GetFederationToken` API operation\. You must also pass session policies\. The resulting session's permissions are the intersection of the IAM user's identity\-based policy and the session policy\. For more information about creating a federated user session, see [[GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)—federation through a custom identity broker](id_credentials_temp_request.md#api_getfederationtoken)\.
+When you create a federated user session, you use the access keys of the IAM user to programmatically call the `GetFederationToken` API operation\. You must also pass session policies\. The resulting session's permissions are the intersection of the identity\-based policy and the session policy\. For more information about creating a federated user session, see [[GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)—federation through a custom identity broker](id_credentials_temp_request.md#api_getfederationtoken)\.
 
 A resource\-based policy can specify the ARN of the user or role as a principal\. In that case, the permissions from the resource\-based policy are added to the role or user's identity\-based policy before the session is created\. The session policy limits the total permissions granted by the resource\-based policy and the identity\-based policy\. The resulting session's permissions are the intersection of the session policies and the resource\-based policies plus the intersection of the session policies and identity\-based policies\.
 
@@ -91,7 +91,7 @@ Each statement includes information about a single permission\. If a policy incl
 ![\[JSON policy document structure\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/AccessPolicyLanguage_General_Policy_Structure.diagram.png)
 
 The information in a statement is contained within a series of elements\.
-+ **Version** – Specify the version of the policy language that you want to use\. As a best practice, use the latest `2012-10-17` version\.
++ **Version** – Specify the version of the policy language that you want to use\. We recommend that you use the latest `2012-10-17` version\. For more information, see [IAM JSON policy elements: Version](reference_policies_elements_version.md)
 + **Statement** – Use this main policy element as a container for the following elements\. You can include more than one statement in a policy\.
 + **Sid** \(Optional\) – Include an optional statement ID to differentiate between your statements\.
 + **Effect** – Use `Allow` or `Deny` to indicate whether the policy allows or denies access\.
@@ -104,7 +104,7 @@ To learn about these and other more advanced policy elements, see [IAM JSON poli
 
 ### Multiple statements and multiple policies<a name="policies-syntax-multiples"></a>
 
-If you want to define more than one permission for an entity \(user or role\), you can use multiple statements in a single policy\. You can also attach multiple policies\. If you try to define multiple permissions in a single statement, your policy might not grant the access that you expect\. As a best practice, break up policies by resource type\. 
+If you want to define more than one permission for an entity \(user or role\), you can use multiple statements in a single policy\. You can also attach multiple policies\. If you try to define multiple permissions in a single statement, your policy might not grant the access that you expect\. We recommend that you break up policies by resource type\. 
 
 Because of the [limited size of policies](reference_iam-quotas.md), it might be necessary to use multiple policies for more complex permissions\. It's also a good idea to create functional groupings of permissions in a separate customer managed policy\. For example, Create one policy for IAM user management, one for self\-management, and another policy for S3 bucket management\. Regardless of the combination of multiple statements and multiple policies, AWS [evaluates](reference_policies_evaluation-logic.md) your policies the same way\.
 

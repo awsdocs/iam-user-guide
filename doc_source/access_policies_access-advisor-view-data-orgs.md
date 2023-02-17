@@ -21,13 +21,13 @@ You can build an entity path using the known structure of your organization\. Fo
 The path for the **Dev Managers** OU is built using the IDs of the organization, root, and all OUs in the path down to and including the OU\. 
 
 ```
-o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd
+o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-ghi0-awsccccc/ou-jkl0-awsddddd/
 ```
 
 The path for the account in the **Production** OU is built using the IDs of the organization, root, the OU, and the account number\. 
 
 ```
-o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-abc0-awsaaaaa/111111111111
+o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-abc0-awsaaaaa/111111111111/
 ```
 
 **Note**  

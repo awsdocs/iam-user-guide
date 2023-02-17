@@ -63,8 +63,8 @@ You cannot request an increase for the following quotas\.
 | OpenId Connect identity providers per AWS account | 100 | 
 | Permissions boundaries for an IAM user | 1 | 
 | Permissions boundaries for an IAM role | 1 | 
-| MFA devices in use by an IAM user | 1 | 
-| MFA devices in use by the AWS account root user | 1 | 
+| MFA devices in use by an IAM user | 8 | 
+| MFA devices in use by the AWS account root user | 8 | 
 | Roles in an instance profile | 1 | 
 | SAML providers in an AWS account | 100 | 
 | Signing certificates assigned to an IAM user | 2 | 
@@ -100,7 +100,7 @@ The following are the maximum character counts and size limits for IAM and AWS S
 | Path | 512 characters | 
 | Policy name | 128 characters | 
 | Role name | 64 characters If you intend to use a role with the **Switch Role** feature in the AWS Management Console, then the combined `Path` and `RoleName` cannot exceed 64 characters\.  | 
-| Role session duration |  12 hours When you assume a role from the AWS CLI or API, you can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer role session\. You can specify a value from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role, which can range 1–12 hours\. If you don't specify a value for the `DurationSeconds` parameter, your security credentials are valid for one hour\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the IAM user's session, whichever is less\. The maximum session duration setting does not limit sessions assumed by AWS services\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\.   | 
+| Role session duration |  12 hours When you assume a role from the AWS CLI or API, you can use the `duration-seconds` CLI parameter or the `DurationSeconds` API parameter to request a longer role session\. You can specify a value from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role, which can range 1–12 hours\. If you don't specify a value for the `DurationSeconds` parameter, your security credentials are valid for one hour\. IAM users who switch roles in the console are granted the maximum session duration, or the remaining time in the user's session, whichever is less\. The maximum session duration setting does not limit sessions assumed by AWS services\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\.   | 
 | Role session name | 64 characters | 
 | Role [session policies](access_policies.md#policies_session) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  | 
 | Role [session tags](id_session-tags.md) |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-quotas.html)  | 

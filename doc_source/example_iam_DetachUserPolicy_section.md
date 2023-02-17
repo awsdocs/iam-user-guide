@@ -6,81 +6,10 @@ The following code examples show how to detach an IAM policy from a user\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
-#### [ Go ]
-
-**SDK for Go V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
-  
-
-```
-package main
-
-import (
-	"context"
-	"flag"
-	"fmt"
-
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
-)
-
-// IAMDetachRolePolicyAPI defines the interface for the DetachRolePolicy function.
-// We use this interface to test the function using a mocked service.
-type IAMDetachRolePolicyAPI interface {
-	DetachRolePolicy(ctx context.Context,
-		params *iam.DetachRolePolicyInput,
-		optFns ...func(*iam.Options)) (*iam.DetachRolePolicyOutput, error)
-}
-
-// DetachDynamoFullPolicy detaches an Amazon DynamoDB full-access policy from an AWS Identity and Access Management (IAM) role.
-// Inputs:
-//     c is the context of the method call, which includes the AWS Region.
-//     api is the interface that defines the method call.
-//     input defines the input arguments to the service call.
-// Output:
-//     If successful, a DetachRolePolicyOutput object containing the result of the service call and nil.
-//     Otherwise, nil and an error from the call to DetachRolePolicy.
-func DetachDynamoFullPolicy(c context.Context, api IAMDetachRolePolicyAPI, input *iam.DetachRolePolicyInput) (*iam.DetachRolePolicyOutput, error) {
-	return api.DetachRolePolicy(c, input)
-}
-
-func main() {
-	roleName := flag.String("r", "", "The name of the IAM role")
-	flag.Parse()
-
-	if *roleName == "" {
-		fmt.Println("You must supply a role name (-r ROLE)")
-		return
-	}
-
-	cfg, err := config.LoadDefaultConfig(context.TODO())
-	if err != nil {
-		panic("configuration error, " + err.Error())
-	}
-
-	client := iam.NewFromConfig(cfg)
-
-	policyArn := "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
-	input := &iam.DetachRolePolicyInput{
-		PolicyArn: &policyArn,
-		RoleName:  roleName,
-	}
-
-	_, err = DetachDynamoFullPolicy(context.TODO(), client, input)
-	if err != nil {
-		fmt.Println("Unable to detach DynamoDB full-access role policy from role")
-		return
-	}
-	fmt.Println("Role detached successfully")
-}
-```
-+  For API details, see [DetachUserPolicy](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DetachUserPolicy) in *AWS SDK for Go API Reference*\. 
-
-------
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -106,7 +35,7 @@ def detach_policy(user_name, policy_arn):
 
 **SDK for Rust**  
 This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
   
 
 ```

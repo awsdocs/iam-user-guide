@@ -42,11 +42,11 @@ If you're an administrator and your IAM users can't enable their FIDO security k
 
 ## I can't sign in using my FIDO security key<a name="troubleshoot_mfa-fido-signin"></a>
 
-If you're an IAM user and you can't sign in to the AWS Management Console using WebAuthn, first see [Supported configurations for using FIDO security keys](id_credentials_mfa_fido_supported_configurations.md)\. If you're using a supported configuration but cannot sign in, contact your system administrator for assistance\. 
+If you're an IAM user and you can't sign in to the AWS Management Console using your FIDO security key, first see [Supported configurations for using FIDO security keys](id_credentials_mfa_fido_supported_configurations.md)\. If you're using a supported configuration but cannot sign in, contact your system administrator for assistance\. 
 
 ## I lost or broke my FIDO security key<a name="troubleshoot_mfa-fido-lost"></a>
 
-Only *one* MFA device \(virtual, FIDO security key, or hardware\) is assigned to a user at a time\. Replacing a FIDO security key is similar to replacing a hardware MFA device\. For information on what to do if you lose or break any type of MFA device, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\.
+Up to **eight** MFA devices of any combination of the [ currently supported MFA types](https://aws.amazon.com/iam/features/mfa/) can be assigned to a user\. With multiple MFA devices, you only need one MFA device to sign in to the AWS Management Console\. Replacing a FIDO security key is similar to replacing a hardware TOTP token\. For information on what to do if you lose or break any type of MFA device, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\.
 
 ## Other issues<a name="troubleshoot_mfa-fido-other-issues"></a>
 

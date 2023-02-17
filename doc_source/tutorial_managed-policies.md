@@ -10,7 +10,7 @@ This workflow has three basic steps:
 By default, IAM users do not have permissions to do anything\. They cannot access the AWS Management Console or manage the data within unless you allow it\. In this step, you create a customer managed policy that allows any attached user to sign in to the console\.
 
 **[Step 2: Attach the policy](#step2-attach-policy)**  
-When you attach a policy to a user, the user inherits all of the access permissions that are associated with that policy\. In this step, you attach the new policy to a test user account\.
+When you attach a policy to a user, the user inherits all of the access permissions that are associated with that policy\. In this step, you attach the new policy to a test user\.
 
 **[Step 3: Test user access ](#step3-test-access)**  
 Once the policy is attached, you can sign in as the user and test the policy\. 
@@ -84,7 +84,7 @@ You have attached the policy to your IAM test user, which means that user now ha
 
 For this tutorial, we recommend that you test access by signing in as the test user so you can see what your users might experience\. 
 
-**To test access by signing in with your test user account**
+**To test access by signing in with your test user**
 
 1. Sign in to the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/) with your `PolicyUser` test user\.
 
@@ -94,7 +94,7 @@ For this tutorial, we recommend that you test access by signing in as the test u
 
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed policies and inline policies](access_policies_managed-vs-inline.md)
-+ [Controlling user access to the AWS Management Console](console_controlling-access.md)
++ [Controlling IAM users access to the AWS Management Console](console_controlling-access.md)
 
 ## Summary<a name="tutorial-managed-policies-summary"></a>
 

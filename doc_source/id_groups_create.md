@@ -1,5 +1,8 @@
 # Creating IAM user groups<a name="id_groups_create"></a>
 
+**Note**  
+As a [best practice](best-practices.md), we recommend that you require human users to use federation with an identity provider to access AWS using temporary credentials\. If you follow the best practices, you are not managing IAM users and groups\. Instead, your users and groups are managed outside of AWS and are able to access AWS resources as a *federated identity*\. A federated identity is a user from your enterprise user directory, a web identity provider, the AWS Directory Service, the Identity Center directory, or any user that accesses AWS services by using credentials provided through an identity source\. Federated identities use the groups defined by their identity provider\. If you are using AWS IAM Identity Center \(successor to AWS Single Sign\-On\), see [Manage identities in IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-sso.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide* for information about creating users and groups in IAM Identity Center\.
+
 To set up a user group, you need to create the group\. Then give the group permissions based on the type of work that you expect the users in the group to do\. Finally, add users to the group\.
 
 For information about the permissions that you need in order to create a user group, see [Permissions required to access IAM resources](access_permissions-required.md)\. 
@@ -19,8 +22,6 @@ The number and size of IAM resources in an AWS account are limited\. For more in
 1. In the list of policies, select the check box for each policy that you want to apply to all members of the group\.
 
 1. Choose **Create group**\.
-
-For an example of how to set up an `Administrators` user group, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)\.
 
 **To create IAM user groups \(AWS CLI or AWS API\)**  
 Use one of the following:

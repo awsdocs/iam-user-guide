@@ -4,7 +4,10 @@ Access denied errors appear when AWS explicitly or implicitly denies an authoriz
 
 Most access denied error messages appear in the format `User user is not authorized to perform action on resource because context`\. In this example, *user* is the [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns) that doesn't receive access, *action* is the service action that the policy denies, and *resource* is the ARN of the resource on which the policy acts\. The *context* field represents additional context about the policy type that explains why the policy denied access\.
 
-When a policy explicitly denies access because the policy contains a `Deny` statement, then AWS includes the phrase `with an explicit deny in a type policy` in the access denied error message\. When the policy implicitly denies access, then AWS includes the phrase `because no type policy allows the action action` in the access denied error message\. 
+When a policy explicitly denies access because the policy contains a `Deny` statement, then AWS includes the phrase `with an explicit deny in a type policy` in the access denied error message\. When the policy implicitly denies access, then AWS includes the phrase `because no type policy allows the action action` in the access denied error message\.
+
+**Note**  
+Some AWS services do not support this access denied error message format\. The content of access denied error messages can vary depending on the service making the authorization request\.
 
 If multiple policies of the same policy type deny an authorization request, then AWS doesn't specify the number of policies in the access denied error message\. If multiple policy types deny an authorization request, AWS includes only one of those policy types in the error message\. 
 
@@ -17,7 +20,7 @@ The following examples show the format for different types of access denied erro
 For the following error, check for a `Deny` statement or a missing `Allow` statement for `codecommit:ListRepositories` in your Service Control Policies \(SCPs\)\.
 
 **Note**  
-When an SCP denies access, the error message always includes the phrase `due to an explicit deny in a Service Control Policy`, even if the denial is implicit\.
+When an SCP denies access, the error message can include the phrase `due to an explicit deny in a Service Control Policy`, even if the denial is implicit\.
 
 ```
 User: arn:aws:iam::777788889999:user/JohnDoe is not authorized to perform: 
@@ -85,7 +88,7 @@ codecommit:ListRepositories with an explicit deny in a service control policy
 
   ```
   User: arn:aws:iam::123456789012:user/JohnDoe is not authorized to perform: 
-  sts:AssumeRole because the role trust policy allows the sts:AssumeRole action
+  sts:AssumeRole because no role trust policy allows the sts:AssumeRole action
   ```
 + Explicit denial: For the following error, check for a missing `Allow` statement for `sts:AssumeRole` in your role trust policy\.
 

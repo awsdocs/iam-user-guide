@@ -19,7 +19,7 @@ Policies let you specify who has access to AWS resources, and what actions they 
 
 For example, you might grant a user permission to list his or her own access keys\. You might also expand that permission and also let each user create, update, and delete their own keys\. 
 
-When you give permissions to a user group, all users in that user group get those permissions\. For example, you can give the Administrators user group permission to perform any of the IAM actions on any of the AWS account resources\. Another example: You can give the Managers user group permission to describe the AWS account's Amazon EC2 instances\.
+When you give permissions to a user group, all users in that user group get those permissions\. For example, you can give the Administrators user group permission to perform any of the IAM actions on any of the AWS account resources\. Another example: You can give the Managers user group permission to describe the Amazon EC2 instances of the AWS account\.
 
 For information about how to delegate basic permissions to your users, user groups, and roles, see [Permissions required to access IAM resources](access_permissions-required.md)\. For additional examples of policies that illustrate basic permissions, see [Example policies for administering IAM resources](id_credentials_delegate-permissions_examples.md)\.
 
@@ -66,7 +66,7 @@ For detailed information about the procedures mentioned previously, refer to the
 + To learn how to attach an IAM policy to a principal, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 + To see an example policy for granting full access to EC2, see [Amazon EC2: Allows full EC2 access within a specific Region, programmatically and in the console](reference_policies_examples_ec2_region.md)\.
 + To allow read\-only access to an S3 bucket, use the first two statements of the following example policy: [Amazon S3: Allows read and write access to objects in an S3 Bucket, programmatically and in the console](reference_policies_examples_s3_rw-bucket-console.md)\.
-+ To see an example policy for allowing users to set or rotate their credentials, such as their console password, their programmatic access keys, and their MFA devices, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
++ To see an example policy for allowing users to set or rotate their credentials, such as their console password, their programmatic access keys, and their MFA devices, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
 ## Controlling access to identities<a name="access_controlling-identities"></a>
 
@@ -137,7 +137,7 @@ You can control how your users can apply AWS managed policies\. To do this, atta
 
 For example, you might create a policy that allows users to attach only the [IAMUserChangePassword](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/IAMUserChangePassword) and [PowerUserAccess](https://console.aws.amazon.com/iam/home#policies/arn:aws:iam::aws:policy/job-function/PowerUserAccess) AWS managed policies to a new IAM user, user group, or role\.
 
-For customer managed policies, you can control who can create, update, and delete these policies\. You can control who can attach and detach policies to and from principal entities \(user groups, users, and roles\)\. You can also control which policies a user can attach or detach, and to and from which entities\. 
+For customer managed policies, you can control who can create, update, and delete these policies\. You can control who can attach and detach policies to and from principal entities \(user groups, users, and roles\)\. You can also control which policies a user can attach or detach, and to and from which entities\.
 
 For example, you can give permissions to an account administrator to create, update, and delete policies\. Then you give permissions to a team leader or other limited administrator to attach and detach these policies to and from principal entities that the limited administrator manages\.
 

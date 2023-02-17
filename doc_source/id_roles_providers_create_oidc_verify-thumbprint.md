@@ -15,7 +15,7 @@ You use a web browser and the OpenSSL command line tool to obtain the thumbprint
 
 1. Before you can obtain the thumbprint for an OIDC IdP, you need to obtain the OpenSSL command line tool\. You use this tool to download the OIDC IdP certificate chain and produce a thumbprint of the final certificate in the certificate chain\. If you need to install and configure OpenSSL, follow the instructions at [Install OpenSSL](#oidc-install-openssl) and [Configure OpenSSL](#oidc-configure-openssl)\. 
 **Note**  
-AWS secures communication with some OIDC identity providers \(IdPs\) through our library of trusted certificate authorities \(CAs\) instead of using a certificate thumbprint to verify your IdP server certificate\. These OIDC IdPs include Google, and those that use an Amazon S3 bucket to host a JSON Web Key Set \(JWKS\) endpoint\. In these cases, your legacy thumbprint remains in your configuration, but is no longer used for validation\.
+AWS secures communication with some OIDC identity providers \(IdPs\) through our library of trusted certificate authorities \(CAs\) instead of using a certificate thumbprint to verify your IdP server certificate\. These OIDC IdPs include Google, Auth0, and those that use an Amazon S3 bucket to host a JSON Web Key Set \(JWKS\) endpoint\. In these cases, your legacy thumbprint remains in your configuration, but is no longer used for validation\.
 
 1. Start with the OIDC IdP URL \(for example, `https://server.example.com`\), and then add `/.well-known/openid-configuration` to form the URL for the IdP's configuration document, such as the following: 
 
@@ -69,7 +69,7 @@ AWS secures communication with some OIDC identity providers \(IdPs\) through our
 1. Use the OpenSSL command line tool to run the following command\. 
 
    ```
-   openssl x509 -in certificate.crt -fingerprint -noout
+   openssl x509 -in certificate.crt -fingerprint -sha1 -noout
    ```
 
    Your command window displays the certificate thumbprint, which looks similar to the following example:

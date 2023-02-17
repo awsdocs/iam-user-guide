@@ -8,7 +8,7 @@ Use customer managed policies instead of inline policies\. It's also best to use
 
 When you create or edit IAM policies, AWS can automatically perform policy validation to help you create an effective policy with least privilege in mind\. In the AWS Management Console, IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with recommendations to help you further refine your policies\. To learn more about policy validation, see [Validating IAM policies](access_policies_policy-validator.md)\. To learn more about IAM Access Analyzer policy checks and actionable recommendations, see [ IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)\.
 
-You can use the AWS Management Console, AWS CLI, or AWS API to create customer managed policies in IAM\.
+You can use the AWS Management Console, AWS CLI, or AWS API to create customer managed policies in IAM\. For more information about using AWS CloudFormation templates to add or update policies, see [AWS Identity and Access Management resource type reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_IAM.html) in the *AWS CloudFormation User Guide*\.
 
 **Topics**
 + [Creating IAM policies \(console\)](access_policies_create-console.md)

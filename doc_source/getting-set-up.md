@@ -1,28 +1,29 @@
 # Getting set up with IAM<a name="getting-set-up"></a>
 
-AWS Identity and Access Management \(IAM\) helps you securely control access to Amazon Web Services \(AWS\) and your account resources\. IAM can also keep your account credentials private\. With IAM, you can create multiple IAM users under the umbrella of your AWS account or enable temporary access through identity federation with your corporate directory\. In some cases, you can also enable access to resources across AWS accounts\.
+**Important**  
+The IAM best practices have been updated\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials\. An additional best practice recommendation is to require workloads to use temporary credentials with IAM roles to access AWS\. IAM users are to be used only in very limited scenarios where an IAM role cannot be assumed\. To learn about using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) to create users with temporary credentials, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\. 
 
-Without IAM, however, you must either create multiple AWS accounts—each with its own billing and subscriptions to AWS products—or your employees must share the security credentials of a single AWS account\. In addition, without IAM, you cannot control the tasks a particular user or system can do and what AWS resources they might use\. 
+AWS Identity and Access Management \(IAM\) helps you securely control access to Amazon Web Services \(AWS\) and your account resources\. IAM can also keep your sign\-in credentials private\. You don't need to specifically sign up to use IAM\. There is no charge to use IAM\. 
 
-This guide provides a conceptual overview of IAM, describes business use cases, and explains AWS permissions and policies\.
+Use IAM to give identities, such as users and roles, access to resources in your account\. For example, you can use IAM with existing users in your corporate directory that you manage external to AWS or you can create users in AWS using AWS IAM Identity Center \(successor to AWS Single Sign\-On\)\. Federated identities assume defined IAM roles to access only the resources they need\. For more information about IAM Identity Center, see [What is IAM Identity Center?](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide\.*
+
+**Note**  
+IAM works only with AWS products that are integrated with IAM\. For a list of services that support IAM, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 **Topics**
-+ [Using IAM to give users access to your AWS resources](#UsingIAMToGiveAccess)
-+ [Do I need to sign up for IAM?](#DoINeedToSignUp)
-+ [Additional resources](#HowDoI)
++ [Access control methods](#AccessControlMethods)
++ [Sign up for an AWS account](#sign-up-for-aws)
++ [Create an administrative user](#create-an-admin)
 
-## Using IAM to give users access to your AWS resources<a name="UsingIAMToGiveAccess"></a>
+## Access control methods<a name="AccessControlMethods"></a>
 
 Here are the ways you can use IAM to control access to your AWS resources\.
 
-## Do I need to sign up for IAM?<a name="DoINeedToSignUp"></a>
+## Sign up for an AWS account<a name="sign-up-for-aws"></a>
 
-If you don't already have an AWS account, you need to create one to use IAM\. You don't need to specifically sign up to use IAM\. There is no charge to use IAM\. 
+If you do not have an AWS account, complete the following steps to create one\.
 
-**Note**  
-IAM works only with AWS products that are integrated with IAM\. For a list of services that support IAM, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\. 
-
-**To sign up for AWS**
+**To sign up for an AWS account**
 
 1. Open [https://portal\.aws\.amazon\.com/billing/signup](https://portal.aws.amazon.com/billing/signup)\.
 
@@ -30,18 +31,30 @@ IAM works only with AWS products that are integrated with IAM\. For a list of se
 
    Part of the sign\-up procedure involves receiving a phone call and entering a verification code on the phone keypad\.
 
-   When you sign up for an AWS account, an *AWS account root user* is created\. The root user has access to all AWS services and resources in the account\. As a security best practice, [assign administrative access to an administrative user](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html), and use only the root user to perform [tasks that require root user access](https://docs.aws.amazon.com/general/latest/gr/root-vs-iam.html#aws_tasks-that-require-root)\.
+   When you sign up for an AWS account, an *AWS account root user* is created\. The root user has access to all AWS services and resources in the account\. As a security best practice, [assign administrative access to an administrative user](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html), and use only the root user to perform [tasks that require root user access](https://docs.aws.amazon.com/accounts/latest/reference/root-user-tasks.html)\.
 
-## Additional resources<a name="HowDoI"></a>
+AWS sends you a confirmation email after the sign\-up process is complete\. At any time, you can view your current account activity and manage your account by going to [https://aws\.amazon\.com/](https://aws.amazon.com/) and choosing **My Account**\.
 
-Here are some resources to help you get things done with IAM\.
-+ Manage your AWS account credentials: [AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html) in the *AWS General Reference*
-+ Get started with and learn more about [What is IAM?](introduction.md)
-+ Set up a command line interface \(CLI\) to use with IAM\. For the cross\-platform AWS CLI, see the [AWS Command Line Interface Documentation](http://aws.amazon.com/documentation/cli/) and [IAM CLI reference](https://docs.aws.amazon.com/cli/latest/reference/iam/index.html)\. You can also manage IAM with Windows PowerShell; see the [AWS Tools for Windows PowerShell Documentation](http://aws.amazon.com/documentation/powershell/) and [IAM Windows PowerShell reference](https://docs.aws.amazon.com/powershell/latest/reference/items/AWS_Identity_and_Access_Management_cmdlets.html)\.
-+ Download an AWS SDK for convenient programmatic access to IAM: [Tools for Amazon Web Services](http://aws.amazon.com/tools/)
-+ Get the FAQ: [AWS Identity and Access Management FAQ](http://aws.amazon.com/iam/faqs/)
-+ Get technical support: [AWS Support Center](https://console.aws.amazon.com/support/home#/)
-+ Get premium technical support: [AWS Premium Support Center](https://aws.amazon.com/premiumsupport/)
-+ Find definitions of AWS terms: [ Amazon Web Services Glossary](https://docs.aws.amazon.com/general/latest/gr/glos-chap.html) 
-+ Get community support: [IAM Discussion Forums](https://forums.aws.amazon.com/forum.jspa?forumID=76)
-+ Contact AWS: [Contact Us](http://aws.amazon.com/contact-us/)
+## Create an administrative user<a name="create-an-admin"></a>
+
+After you sign up for an AWS account, create an administrative user so that you don't use the root user for everyday tasks\.
+
+**Secure your AWS account root user**
+
+1.  Sign in to the [AWS Management Console](https://console.aws.amazon.com/) as the account owner by choosing **Root user** and entering your AWS account email address\. On the next page, enter your password\.
+
+   For help signing in by using root user, see [Signing in as the root user](https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-root-user-sign-in-tutorial) in the *AWS Sign\-In User Guide*\.
+
+1. Turn on multi\-factor authentication \(MFA\) for your root user\.
+
+   For instructions, see [Enable a virtual MFA device for your AWS account root user \(console\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root) in the *IAM User Guide*\.
+
+**Create an administrative user**
++ For your daily administrative tasks, grant administrative access to an administrative user in AWS IAM Identity Center \(successor to AWS Single Sign\-On\)\.
+
+  For instructions, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
+
+**Sign in as the administrative user**
++ To sign in with your IAM Identity Center user, use the sign\-in URL that was sent to your email address when you created the IAM Identity Center user\.
+
+  For help signing in using an IAM Identity Center user, see [Signing in to the AWS access portal](https://docs.aws.amazon.com/signin/latest/userguide/iam-id-center-sign-in-tutorial.html) in the *AWS Sign\-In User Guide*\.

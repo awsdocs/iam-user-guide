@@ -12,7 +12,7 @@ Certain events can interrupt communication between AWS Regions over the network\
 
 **Access keys for IAM users**  
 You can authenticate indefinitely in a Region with long\-term [access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)\. When you use the AWS Command Line Interface and APIs, you can provide AWS access keys so that AWS can verify your identity in programmatic requests\.  
-As a best practice, we recommend that your users sign in with [ temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html) instead of long\-term access keys\.
+As a [best practice](best-practices.md), we recommend that your users sign in with [temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html) instead of long\-term access keys\.
 
 **Temporary credentials**  
 You can [request new temporary credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html) with the AWS STS Regional [service endpoint](https://docs.aws.amazon.com/general/latest/gr/sts.html#sts_region) for at least 24 hours\. The following API operations generate temporary credentials\.  
@@ -27,7 +27,7 @@ You can [request new temporary credentials](https://docs.aws.amazon.com/IAM/late
 + Your credentials might not reflect changes to your permissions that you recently applied in IAM\. For more information, see [Changes that I make are not always immediately visible](troubleshoot_general.md#troubleshoot_general_eventual-consistency)\.
 
 **AWS Management Console**  
-+ You might be able to use a Regional sign\-in endpoint to sign in to the AWS Management Console as an IAM user\. Regional sign\-in endpoints have the following URL format\.
++ You might be able to use a Regional sign\-in endpoint to sign in to the AWS Management Console as an IAM userIAM\. Regional sign\-in endpoints have the following URL format\.
 
   `https://{Account ID}.signin.aws.amazon.com/console?region={Region}`
 

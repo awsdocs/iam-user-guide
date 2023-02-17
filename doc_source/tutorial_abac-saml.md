@@ -12,11 +12,11 @@ To complete the [ABAC tutorial](tutorial_attribute-based-access-control.md) by p
 
 To perform the steps to use SAML session tags for ABAC, you must already have the following:
 + Access to a SAML\-based IdP where you can create test users with specific attributes\. 
-+ An AWS account that you can sign in to as an IAM user with administrative permissions\. If you have a new account and sign in as the AWS account root user, then [create an IAM admin user](getting-started_create-admin-group.md)\.
++ The ability to sign in as a user with administrative permissions\.
 + Experience creating and editing IAM users, roles, and policies in the AWS Management Console\. However, if you need help remembering an IAM management process, the ABAC tutorial provides links where you can view step\-by\-step instructions\.
 + Experience setting up a SAML\-based IdP in IAM\. To view more details and links to detailed IAM documentation, see [Passing session tags using AssumeRoleWithSAML](id_session-tags.md#id_session-tags_adding-assume-role-saml)\.
 
-## Step 1: Create a test IAM user<a name="tutorial_abac-saml-step1"></a>
+## Step 1: Create test users<a name="tutorial_abac-saml-step1"></a>
 
 Skip the instructions in [Step 1: Create test users](tutorial_attribute-based-access-control.md#tutorial_abac_step1)\. Because your identities are defined in your provider, it's not necessary for you to add IAM users for your employees\. 
 

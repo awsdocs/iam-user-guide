@@ -28,6 +28,12 @@ IAM Access Analyzer analyzes the following resource types:
 + [AWS Lambda functions and layers](access-analyzer-resources.md#access-analyzer-lambda)
 + [Amazon Simple Queue Service queues](access-analyzer-resources.md#access-analyzer-sqs)
 + [AWS Secrets Manager secrets](access-analyzer-resources.md#access-analyzer-secrets-manager)
++ [Amazon Simple Notification Service topics](access-analyzer-resources.md#access-analyzer-sns)
++ [Amazon Elastic Block Store volume snapshots](access-analyzer-resources.md#access-analyzer-ebs)
++ [Amazon Relational Database Service DB snapshots](access-analyzer-resources.md#access-analyzer-rds-db)
++ [Amazon Relational Database Service DB cluster snapshots](access-analyzer-resources.md#access-analyzer-rds-db-cluster)
++ [Amazon Elastic Container Registry repositories](access-analyzer-resources.md#access-analyzer-ecr)
++ [Amazon Elastic File System file systems](access-analyzer-resources.md#access-analyzer-efs)
 
 ## Validating policies<a name="what-is-access-analyzer-policy-validation"></a>
 

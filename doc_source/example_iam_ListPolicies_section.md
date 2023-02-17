@@ -9,7 +9,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
 #### [ \.NET ]
 
 **AWS SDK for \.NET**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
   
 
 ```
@@ -46,25 +46,89 @@ do
 +  For API details, see [ListPolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListPolicies) in *AWS SDK for \.NET API Reference*\. 
 
 ------
-#### [ Go ]
+#### [ C\+\+ ]
 
-**SDK for Go V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+**SDK for C\+\+**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
   
 
 ```
-	// ListPolicies
+bool AwsDoc::IAM::listPolicies(const Aws::Client::ClientConfiguration &clientConfig) {
+    const Aws::String DATE_FORMAT("%Y-%m-%d");
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::ListPoliciesRequest request;
 
-	policyListResponse, err := service.ListPolicies(context.Background(), &iam.ListPoliciesInput{})
+    bool done = false;
+    bool header = false;
+    while (!done) {
+        auto outcome = iam.ListPolicies(request);
+        if (!outcome.IsSuccess()) {
+            std::cerr << "Failed to list iam policies: " <<
+                      outcome.GetError().GetMessage() << std::endl;
+            return false;
+        }
 
+        if (!header) {
+            std::cout << std::left << std::setw(55) << "Name" <<
+                      std::setw(30) << "ID" << std::setw(80) << "Arn" <<
+                      std::setw(64) << "Description" << std::setw(12) <<
+                      "CreateDate" << std::endl;
+            header = true;
+        }
+
+        const auto &policies = outcome.GetResult().GetPolicies();
+        for (const auto &policy: policies) {
+            std::cout << std::left << std::setw(55) <<
+                      policy.GetPolicyName() << std::setw(30) <<
+                      policy.GetPolicyId() << std::setw(80) << policy.GetArn() <<
+                      std::setw(64) << policy.GetDescription() << std::setw(12) <<
+                      policy.GetCreateDate().ToGmtString(DATE_FORMAT.c_str()) <<
+                      std::endl;
+        }
+
+        if (outcome.GetResult().GetIsTruncated()) {
+            request.SetMarker(outcome.GetResult().GetMarker());
+        }
+        else {
+            done = true;
+        }
+    }
+
+    return true;
+}
+```
++  For API details, see [ListPolicies](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/ListPolicies) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
+#### [ Go ]
+
+**SDK for Go V2**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+  
+
+```
+// PolicyWrapper encapsulates AWS Identity and Access Management (IAM) policy actions
+// used in the examples.
+// It contains an IAM service client that is used to perform policy actions.
+type PolicyWrapper struct {
+	IamClient *iam.Client
+}
+
+
+
+// ListPolicies gets up to maxPolicies policies.
+func (wrapper PolicyWrapper) ListPolicies(maxPolicies int32) ([]types.Policy, error) {
+	var policies []types.Policy
+	result, err := wrapper.IamClient.ListPolicies(context.TODO(), &iam.ListPoliciesInput{
+		MaxItems: aws.Int32(maxPolicies),
+	})
 	if err != nil {
-		panic("Couldn't get list of policies! " + err.Error())
+		log.Printf("Couldn't list policies. Here's why: %v\n", err)
+	} else {
+		policies = result.Policies
 	}
-
-	fmt.Print("PolicyName\tARN")
-	for _, policy := range policyListResponse.Policies {
-		fmt.Printf("%s\t%s\n", *policy.PolicyName, *policy.Arn)
-	}
+	return policies, err
+}
 ```
 +  For API details, see [ListPolicies](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListPolicies) in *AWS SDK for Go API Reference*\. 
 
@@ -72,7 +136,7 @@ do
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -117,7 +181,7 @@ run();
 #### [ PHP ]
 
 **SDK for PHP**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/php/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -146,7 +210,7 @@ $service = new IamService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -173,7 +237,7 @@ def list_policies(scope):
 #### [ Ruby ]
 
 **SDK for Ruby**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```
@@ -202,7 +266,7 @@ def list_policies(scope):
 
 **SDK for Rust**  
 This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
   
 
 ```
@@ -224,6 +288,44 @@ pub async fn list_policies(
 }
 ```
 +  For API details, see [ListPolicies](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/ListPolicies#code-examples)\. 
+  
+
+```
+    public func listPolicies() async throws -> [MyPolicyRecord] {
+        var policyList: [MyPolicyRecord] = []
+        var marker: String? = nil
+        var isTruncated: Bool
+        
+        repeat {
+            let input = ListPoliciesInput(marker: marker)
+            let output = try await client.listPolicies(input: input)
+            
+            guard let policies = output.policies else {
+                return policyList
+            }
+
+            for policy in policies {
+                guard   let name = policy.policyName,
+                        let id = policy.policyId,
+                        let arn = policy.arn else {
+                    throw ServiceHandlerError.noSuchPolicy
+                }
+                policyList.append(MyPolicyRecord(name: name, id: id, arn: arn))
+            }
+            marker = output.marker
+            isTruncated = output.isTruncated
+        } while isTruncated == true
+        return policyList
+    }
+```
++  For API details, see [ListPolicies](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
 
 ------
 

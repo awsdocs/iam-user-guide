@@ -6,81 +6,91 @@ The following code examples show how to list a user's IAM access keys\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
-#### [ Go ]
+#### [ C\+\+ ]
 
-**SDK for Go V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+**SDK for C\+\+**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
   
 
 ```
-package main
+bool AwsDoc::IAM::listAccessKeys(const Aws::String &userName,
+                                 const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::ListAccessKeysRequest request;
+    request.SetUserName(userName);
 
-import (
-	"context"
-	"flag"
-	"fmt"
+    bool done = false;
+    bool header = false;
+    while (!done) {
+        auto outcome = iam.ListAccessKeys(request);
+        if (!outcome.IsSuccess()) {
+            std::cerr << "Failed to list access keys for user " << userName
+                      << ": " << outcome.GetError().GetMessage() << std::endl;
+            return false;
+        }
 
-	"github.com/aws/aws-sdk-go-v2/aws"
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
-)
+        if (!header) {
+            std::cout << std::left << std::setw(32) << "UserName" <<
+                      std::setw(30) << "KeyID" << std::setw(20) << "Status" <<
+                      std::setw(20) << "CreateDate" << std::endl;
+            header = true;
+        }
 
-// IAMListAccessKeysAPI defines the interface for the ListAccessKeys function.
-// We use this interface to test the function using a mocked service.
-type IAMListAccessKeysAPI interface {
-	ListAccessKeys(ctx context.Context,
-		params *iam.ListAccessKeysInput,
-		optFns ...func(*iam.Options)) (*iam.ListAccessKeysOutput, error)
+        const auto &keys = outcome.GetResult().GetAccessKeyMetadata();
+        const Aws::String DATE_FORMAT = "%Y-%m-%d";
+
+        for (const auto &key: keys) {
+            Aws::String statusString =
+                    Aws::IAM::Model::StatusTypeMapper::GetNameForStatusType(
+                            key.GetStatus());
+            std::cout << std::left << std::setw(32) << key.GetUserName() <<
+                      std::setw(30) << key.GetAccessKeyId() << std::setw(20) <<
+                      statusString << std::setw(20) <<
+                      key.GetCreateDate().ToGmtString(DATE_FORMAT.c_str()) << std::endl;
+        }
+
+        if (outcome.GetResult().GetIsTruncated()) {
+            request.SetMarker(outcome.GetResult().GetMarker());
+        }
+        else {
+            done = true;
+        }
+    }
+
+    return true;
+}
+```
++  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/ListAccessKeys) in *AWS SDK for C\+\+ API Reference*\. 
+
+------
+#### [ Go ]
+
+**SDK for Go V2**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+  
+
+```
+// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
+// used in the examples.
+// It contains an IAM service client that is used to perform user actions.
+type UserWrapper struct {
+	IamClient *iam.Client
 }
 
-//  GetAccessKeys retrieves up to the AWS Identity and Access Management (IAM) access keys for a user.
-// Inputs:
-//     c is the context of the method call, which includes the AWS Region.
-//     api is the interface that defines the method call.
-//     input defines the input arguments to the service call.
-// Output:
-//     If successful, a ListAccessKeysOutput object containing the result of the service call and nil.
-//     Otherwise, nil and an error from the call to ListAccessKeys.
-func GetAccessKeys(c context.Context, api IAMListAccessKeysAPI, input *iam.ListAccessKeysInput) (*iam.ListAccessKeysOutput, error) {
-	return api.ListAccessKeys(c, input)
-}
 
-func main() {
-	maxItems := flag.Int("m", 10, "The maximum number of access keys to show")
-	userName := flag.String("u", "", "The name of the user")
-	flag.Parse()
 
-	if *userName == "" {
-		fmt.Println("You must supply the name of a user (-u USER)")
-		return
-	}
-
-	if *maxItems < 0 {
-		*maxItems = 10
-	}
-
-	cfg, err := config.LoadDefaultConfig(context.TODO())
+// ListAccessKeys lists the access keys for the specified user.
+func (wrapper UserWrapper) ListAccessKeys(userName string) ([]types.AccessKeyMetadata, error) {
+	var keys []types.AccessKeyMetadata
+	result, err := wrapper.IamClient.ListAccessKeys(context.TODO(), &iam.ListAccessKeysInput{
+		UserName: aws.String(userName),
+	})
 	if err != nil {
-		panic("configuration error, " + err.Error())
+		log.Printf("Couldn't list access keys for user %v. Here's why: %v\n", userName, err)
+	} else {
+		keys = result.AccessKeyMetadata
 	}
-
-	client := iam.NewFromConfig(cfg)
-
-	input := &iam.ListAccessKeysInput{
-		MaxItems: aws.Int32(int32(*maxItems)),
-		UserName: userName,
-	}
-
-	result, err := GetAccessKeys(context.TODO(), client, input)
-	if err != nil {
-		fmt.Println("Got an error retrieving user access keys:")
-		fmt.Println(err)
-		return
-	}
-
-	for _, key := range result.AccessKeyMetadata {
-		fmt.Println("Status for access key " + *key.AccessKeyId + ": " + string(key.Status))
-	}
+	return keys, err
 }
 ```
 +  For API details, see [ListAccessKeys](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListAccessKeys) in *AWS SDK for Go API Reference*\. 
@@ -89,7 +99,7 @@ func main() {
 #### [ Java ]
 
 **SDK for Java 2\.x**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
@@ -141,7 +151,7 @@ func main() {
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -180,7 +190,7 @@ run();
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listaccesskeyscommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -213,7 +223,7 @@ iam.listAccessKeys(params, function(err, data) {
 
 **SDK for Kotlin**  
 This is prerelease documentation for a feature in preview release\. It is subject to change\.
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/kotlin/services/iam#code-examples)\. 
   
 
 ```
@@ -236,7 +246,7 @@ suspend fun listKeys(userNameVal: String?) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```
@@ -262,7 +272,7 @@ def list_keys(user_name):
 #### [ Ruby ]
 
 **SDK for Ruby**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/iam#code-examples)\. 
   
 
 ```

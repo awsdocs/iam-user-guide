@@ -1,6 +1,6 @@
 # Overview of AWS identity management: Users<a name="introduction_identity-management"></a>
 
-For greater security and organization, you can give access to your AWS account to specific users—identities that you create with custom permissions\. You can further simplify access for those users by federating existing identities into AWS\. 
+For greater security and organization, you can give access to your AWS account to specific users—identities that you create with custom permissions\. You can further simplify access for those users by federating existing identities into AWS\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials instead of as an IAM user\. A primary use for IAM users is to give workloads that cannot use IAM roles the ability to make programmatic requests to AWS services using the API or CLI\. 
 
 **Topics**
 + [First\-time access only: Your root user credentials](#intro-identity-first-time-access)
@@ -17,13 +17,18 @@ The following sections explain how you can use IAM to create and manage user ide
 
 ## IAM users<a name="intro-identity-users"></a>
 
-The "identity" aspect of AWS Identity and Access Management \(IAM\) helps you with the question "Who is that user?", often referred to as *authentication*\. Instead of sharing your root user credentials with others, you can create individual IAM users within your account that correspond to users in your organization\. IAM users are not separate accounts; they are users within your account\. Each user can have its own password for access to the AWS Management Console\. You can also create an individual access key for each user so that the user can make programmatic requests to work with resources in your account\. In the following figure, the users Li, Mateo, DevApp1, DevApp2, TestApp1, and TestApp2 have been added to a single AWS account\. Each user has its own credentials\. 
+The "identity" aspect of AWS Identity and Access Management \(IAM\) helps you with the question "Who is that user?", often referred to as *authentication*\. IAM users are not separate accounts; they are users within your account\. Each user can have its own password for access to the AWS Management Console\. You can also create an individual access key for each user so that the user can make programmatic requests to work with resources in your account\.
+
+IAM users are granted long term credentials to your AWS resources\. As a best practice, you should require your human users to use temporary credentials when accessing AWS\. You can use an identity provider for your human users to provide federated access to AWS accounts by assuming roles, which provide temporary credentials\. For centralized access management, we recommend that you use [AWS IAM Identity Center \(successor to AWS Single Sign\-On\) \(IAM Identity Center\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) to manage access to your accounts and permissions within those accounts\. You can manage your user identities with IAM Identity Center, or manage access permissions for user identities in IAM Identity Center from an external identity provider\. For more information, see [What is AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\.
+
+For more information about roles, see [Roles terms and concepts](id_roles_terms-and-concepts.md)\.
+
+In the following figure, the users Li, Mateo, DevApp1, DevApp2, TestApp1, and TestApp2 have been added to a single AWS account\. Each user has its own credentials\. Li and Mateo are human users that have been granted long\-term credentials for emergency use only, while the others are workloads that cannot assume AWS roles\.
 
 ![\[An AWS account with individual IAM users, each of whom has credentials.\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/iam-intro-account-with-users.diagram.png)
 
-Notice that some of the users are actually applications \(for example, DevApp1\)\. An IAM user doesn't have to represent an actual person; you can create an IAM user in order to generate an access key for an application that runs in your corporate network and needs AWS access\.
-
-We recommend that you create an IAM user for yourself and then assign yourself administrative permissions for your account\. You can then sign in as that user to add more users as needed\. 
+**Note**  
+For scenarios in which you need IAM users with programmatic access and long\-term credentials, we recommend that you rotate access keys\. For more information, see [Rotating access keys](id_credentials_access-keys.md#Using_RotateAccessKey)\.
 
 ## Federating existing users<a name="intro-identity-federation"></a>
 

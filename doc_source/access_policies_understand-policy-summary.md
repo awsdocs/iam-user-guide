@@ -182,12 +182,12 @@ The **SummaryAllElements** policy is not intended for you to use to define permi
         {
             "Effect": "Allow",
             "Action": [
-                "aws-portal:ViewBilling",
-                "aws-portal:ViewPaymentMethods",
-                "aws-portal:ModifyPaymentMethods",
-                "aws-portal:ViewAccount",
-                "aws-portal:ModifyAccount",
-                "aws-portal:ViewUsage"
+                "billing:Get*",
+                "payments:List*",
+                "payments:Update*",
+                "account:Get*",
+                "account:List*",
+                "cur:GetUsage*"
             ],
             "Resource": [
                 "*"

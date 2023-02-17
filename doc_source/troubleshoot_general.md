@@ -92,21 +92,19 @@ You might receive the following error when you attempt to assign or remove a vir
 User: arn:aws:iam::123456789012:user/Diego is not authorized to perform: iam:DeleteVirtualMFADevice on resource: arn:aws:iam::123456789012:mfa/Diego with an explicit deny
 ```
 
-This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and then cancelled the process\. This creates an MFA device for the user in IAM but never activates it\. You must delete the existing MFA device before you can associate a new device with the user\.
+This could happen if someone previously began assigning a virtual MFA device to a user in the IAM console and then cancelled the process\. This creates a virtual MFA device for the user in IAM but never assigns it to the user\. You must delete the existing virtual MFA device before you can create a new virtual MFA device with the same device name\.
 
-AWS recommends a policy that allows a user to delete their own virtual MFA device only if they are authenticated using MFA\. For more information, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\. 
+To fix this issue, an administrator should **not** edit policy permissions\. Instead, the administrator must use the AWS CLI or AWS API to delete the existing but unassigned virtual MFA device\.
 
-To fix this issue, an administrator should **not** edit policy permissions\. Instead, the administrator must use the AWS CLI or AWS API to remove the existing but deactivated device\.
-
-**To delete an existing but deactivated MFA device**
+**To delete an existing but unassigned virtual MFA device**
 
 1. View the virtual MFA devices in your account\.
    + AWS CLI: [https://docs.aws.amazon.com/cli/latest/reference/iam/list-virtual-mfa-devices.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-virtual-mfa-devices.html)
    + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListVirtualMFADevices.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListVirtualMFADevices.html)
 
-1. In the response, locate the ARN of the virtual device for the user you are trying to fix\.
+1. In the response, locate the ARN of the virtual MFA device for the user you are trying to fix\.
 
-1. Delete the device\.
+1. Delete the virtual MFA device\.
    + AWS CLI: [https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/delete-virtual-mfa-device.html)
    + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html)
 
@@ -122,7 +120,7 @@ Use the following workflow to securely create a new user in IAM:
 
 1. Send the password to your employee using a secure communications method in your company, such as email, chat, or a ticketing system\. Separately, provide your users with the IAM user console link and their user name\. Tell the employee to confirm that they can sign in successfully before you will grant them permissions\.
 
-1. After the employee confirms, add the permissions that they need\. As a security best practice, add a policy that requires the user to authenticate using MFA to manage their credentials\. For an example policy, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My Security Credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
+1. After the employee confirms, add the permissions that they need\. As a security best practice, add a policy that requires the user to authenticate using MFA to manage their credentials\. For an example policy, see [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
 ## Additional resources<a name="troubleshoot_general_resources"></a>
 

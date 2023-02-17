@@ -46,6 +46,8 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
    \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
+**Note**  
+You can't edit **Description** after creating the policy\.
 
 After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 
@@ -101,6 +103,8 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 1. When you are finished, choose **Next: Review**\.
 
 1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy summary to make sure that you have granted the intended permissions, and then choose **Create policy** to save your new policy\.
+**Note**  
+You can't edit **Description** after creating the policy\.
 
 After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 

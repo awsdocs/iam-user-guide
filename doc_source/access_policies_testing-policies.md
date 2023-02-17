@@ -6,15 +6,21 @@ For more information about how and why to use IAM policies, see [Policies and pe
 
  
 
-With the IAM policy simulator, you can test and troubleshoot identity\-based policies, IAM permissions boundaries, Organizations service control policies \(SCPs\), and resource\-based policies\. Here are some common things you can do with the policy simulator:
-+ Test policies that are attached to IAM users, user groups, or roles in your AWS account\. If more than one policy is attached to the user, user group, or role, you can test all the policies, or select individual policies to test\. You can test which actions are allowed or denied by the selected policies for specific resources\.
-+ Test and troubleshoot the effect of [permissions boundaries](access_policies_boundaries.md) on IAM entities\. Note: you can only simulate one permissions boundary at a time\.
-+ Test policies that are attached to AWS resources, such as Amazon S3 buckets, Amazon SQS queues, Amazon SNS topics, or Amazon S3 Glacier vaults\.
-+ If your AWS account is a member of an organization in [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/), then you can test the impact of service control policies \(SCPs\) on your IAM policies and resource policies\.
-+ Test new policies that are not yet attached to a user, user group, or role by typing or copying them into the simulator\. These are used only in the simulation and are not saved\. Note: you cannot type or copy a resource\-based policy into the simulator\. To use a resource\-based policy in the simulator, you must include the resource in the simulation\. You must also select the check box to include that resource's policy in the simulation\. 
-+ Test the policies with selected services, actions, and resources\. For example, you can test to ensure that your policy allows an entity to perform the `ListAllMyBuckets`, `CreateBucket`, and `DeleteBucket` actions in the Amazon S3 service on a specific bucket\.
-+ Simulate real\-world scenarios by providing context keys, such as an IP address or date, that are included in `Condition` elements in the policies being tested\. 
-+ Identify which specific statement in a policy results in allowing or denying access to a particular resource or action\. 
+With the IAM policy simulator, you can test and troubleshoot identity\-based policies and IAM permissions boundaries\. Here are some common things you can do with the policy simulator:
++ Test identity\-based policies that are attached to IAM users, user groups, or roles in your AWS account\. If more than one policy is attached to the user, user group, or role, you can test all the policies, or select individual policies to test\. You can test which actions are allowed or denied by the selected policies for specific resources\.
++ Test and troubleshoot the effect of [permissions boundaries](access_policies_boundaries.md) on IAM entities\. You can only simulate one permissions boundary at a time\.
++ Test the effects of resource\-based policies on IAM users that are attached to AWS resources, such as Amazon S3 buckets, Amazon SQS queues, Amazon SNS topics, or Amazon S3 Glacier vaults\. To use a resource\-based policy in the policy simulator for IAM users, you must include the resource in the simulation\. You must also select the check box to include that resource's policy in the simulation\.
+**Note**  
+Simulation of resource\-based policies isn't supported for IAM roles\.
++ If your AWS account is a member of an organization in [AWS Organizations](https://docs.aws.amazon.com/organizations/latest/userguide/), then you can test the impact of service control policies \(SCPs\) on your identity\-based policies\.
+**Note**  
+The policy simulator doesn't evaluate SCPs that have global conditions\.
++ Test new identity\-based policies that are not yet attached to a user, user group, or role by typing or copying them into the policy simulator\. These are used only in the simulation and are not saved\. You can't type or copy a resource\-based policy in the policy simulator\.
++ Test identity\-based policies with selected services, actions, and resources\. For example, you can test to ensure that your policy allows an entity to perform the `ListAllMyBuckets`, `CreateBucket`, and `DeleteBucket` actions in the Amazon S3 service on a specific bucket\.
++ Simulate real\-world scenarios by providing context keys, such as an IP address or date, that are included in `Condition` elements in the policies being tested\.
+**Note**  
+The policy simulator doesn't simulate tags provided as input if the identity\-based policy in the simulation doesn't have a `Condition` element that explicitly checks for tags\.
++ Identify which specific statement in identity\-based policy results in allowing or denying access to a particular resource or action\. 
 
 **Topics**
 + [How the IAM policy simulator works](#policies_policy-simulator-how-it-works)
@@ -24,15 +30,21 @@ With the IAM policy simulator, you can test and troubleshoot identity\-based pol
 
 ## How the IAM policy simulator works<a name="policies_policy-simulator-how-it-works"></a>
 
-The simulator evaluates the policies that you choose and determines the effective permissions for each of the actions that you specify\. The simulator uses the same policy evaluation engine that is used during real requests to AWS services\. But the simulator differs from the live AWS environment in the following ways: 
-+ The simulator does not make an actual AWS service request, so you can safely test requests that might make unwanted changes to your live AWS environment\. 
-+ Because the simulator does not simulate running the selected actions, it cannot report any response to the simulated request\. The only result returned is whether the requested action would be allowed or denied\. 
-+ If you edit a policy inside the simulator, these changes affect only the simulator\. The corresponding policy in your AWS account remains unchanged\.
-+ You can't test AWS Organizations service control policies \(SCPs\) with [global condition keys](reference_policies_condition-keys.md)\.
+The policy simulator evaluates statements in the identity\-based policy and the inputs that you provide during simulation\. The policy simulator results can differ from your live AWS environment\. We recommend that you check your policies against your live AWS environment after testing using the policy simulator to confirm that you have the desired results\.
+
+The policy simulator differs from the live AWS environment in the following ways: 
++ The policy simulator does not make an actual AWS service request, so you can safely test requests that might make unwanted changes to your live AWS environment\. The policy simulator doesn't consider real context key values in production\.
++ Because the policy simulator does not simulate running the selected actions, it cannot report any response to the simulated request\. The only result returned is whether the requested action would be allowed or denied\.
++ If you edit a policy in the policy simulator, these changes affect only the policy simulator\. The corresponding policy in your AWS account remains unchanged\.
++ You can't test service control policies \(SCPs\) with [global condition keys](reference_policies_condition-keys.md)\.
++ The policy simulator doesn't support simulation for IAM roles and users for cross\-account access\.
+
+**Note**  
+The IAM policy simulator doesn't determine which services support [global condition keys](reference_policies_condition-keys.md) for authorization\. For example, the policy simulator doesn't identify that a service doesn't support [`aws:TagKeys`](reference_policies_condition-keys.md#condition-keys-tagkeys)\.
 
 ## Permissions required for using the IAM policy simulator<a name="permissions-required_policy-simulator"></a>
 
-You can use the policy simulator console or the policy simulator API to test policies\. By default, console users can test policies that are not yet attached to a user, user group, or role by typing or copying those policies into the simulator\. These policies are used only in the simulation and do not disclose sensitive information\. API users must have permissions to test unattached policies\. You can allow console or API users to test policies that are attached to IAM users, user groups, or roles in your AWS account\. To do so, you must provide permission to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
+You can use the policy simulator console or the policy simulator API to test policies\. By default, console users can test policies that are not yet attached to a user, user group, or role by typing or copying those policies into the policy simulator\. These policies are used only in the simulation and do not disclose sensitive information\. API users must have permissions to test unattached policies\. You can allow console or API users to test policies that are attached to IAM users, user groups, or roles in your AWS account\. To do so, you must provide permission to retrieve those policies\. In order to test resource\-based policies, users must have permission to retrieve the resource's policy\.
 
 For examples of console and API policies that allow a user to simulate policies, see [Example policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
 
@@ -134,9 +146,9 @@ By default, users can test policies that are not yet attached to a user, user gr
 
 1. In the **Policy Sandbox**, choose **Create New Policy**\.
 
-1. Type or copy a policy into the simulator, and use the simulator as described in the following steps\.
+1. Type or copy a policy into the policy simulator, and use the policy simulator as described in the following steps\.
 
-After you have permission to use the IAM Policy Simulator Console, you can use the simulator to test an IAM user, user group, role, or resource policy\.
+After you have permission to use the IAM Policy Simulator Console, you can use the policy simulator to test an IAM user, user group, role, or resource policy\.
 
 **To test a policy that is attached to a user, user group, or role \(console\)**
 
@@ -144,7 +156,7 @@ After you have permission to use the IAM Policy Simulator Console, you can use t
 **Note**  
 To sign in to the policy simulator as an IAM user, use your unique sign\-in URL to sign in to the AWS Management Console\. Then go to [https://policysim.aws.amazon.com/](https://policysim.aws.amazon.com/)\. For more information about signing in as an IAM user, see [How IAM users sign in to AWS](id_users_sign-in.md)\.
 
-   The simulator opens in **Existing Policies** mode and lists the IAM users in your account under **Users, Groups, and Roles**\.
+   The policy simulator opens in **Existing Policies** mode and lists the IAM users in your account under **Users, Groups, and Roles**\.
 
 1. <a name="polsimstep-selectid"></a>Choose the option that is appropriate to your task:  
 ****    
@@ -176,7 +188,7 @@ If you leave the value for a condition key empty, then that key is ignored durin
    1. If any of the selected policies include a `Condition` element that references a context key for this action's service, then that key name is displayed under the action\. You can specify the value to be used during the simulation of that action for the specified resource\.
 <a name="resource-scenarios"></a>
 **Actions that require different groups of resource types**  
-Some actions require different resource types under different circumstances\. Each group of resource types is associated with a scenario\. If one of these applies to your simulation, select it and the simulator requires the resource types appropriate for that scenario\. The following list shows each of the supported scenario options and the resources that you must define to run the simulation\.
+Some actions require different resource types under different circumstances\. Each group of resource types is associated with a scenario\. If one of these applies to your simulation, select it and the policy simulator requires the resource types appropriate for that scenario\. The following list shows each of the supported scenario options and the resources that you must define to run the simulation\.
 
    Each of the following Amazon EC2 scenarios requires that you specify `instance`, `image`, and `security-group` resources\. If your scenario includes an EBS volume, then you must specify that `volume` as a resource\. If the Amazon EC2 scenario includes a virtual private cloud \(VPC\), then you must supply the `network-interface` resource\. If it includes an IP subnet, then you must specify the `subnet` resource\. For more information on the Amazon EC2 scenario options, see [Supported Platforms](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html) in the *Amazon EC2 User Guide*\.
    + **EC2\-VPC\-InstanceStore**
@@ -211,12 +223,12 @@ The following table lists the informational and warning messages you might encou
 
 | Message | Steps to resolve | 
 | --- | --- | 
-| This policy has been edited\. Changes will not be saved to your account\.  |   **No action required\.**  This message is informational\. If you edit an existing policy in the IAM policy simulator, your change does not affect your AWS account\. The simulator allows you to make changes to policies for testing purposes only\.  | 
-| Cannot get the resource policy\. Reason: detailed error message | The simulator is not able to access a requested resource\-based policy\. Ensure that the specified resource ARN is correct and that the user running the simulation has permission to read the resource's policy\. | 
+| This policy has been edited\. Changes will not be saved to your account\.  |   **No action required\.**  This message is informational\. If you edit an existing policy in the IAM policy simulator, your change does not affect your AWS account\. The policy simulator allows you to make changes to policies for testing purposes only\.  | 
+| Cannot get the resource policy\. Reason: detailed error message | The policy simulator is not able to access a requested resource\-based policy\. Ensure that the specified resource ARN is correct and that the user running the simulation has permission to read the resource's policy\. | 
 | One or more policies require values in the simulation settings\. The simulation might fail without these values\.  |  This message appears if the policy you are testing contains condition keys or variables but you have not provided any values for these keys or variables in **Simulation Settings**\. To dismiss this message, choose **Simulation Settings**, Then enter a value for each condition key or variable\.  | 
 | You have changed policies\. These results are no longer valid\.  |  This message appears if you have changed the selected policy while results are displayed in the **Results** pane\. Results shown in the **Results** pane are not updated dynamically\. To dismiss this message, choose **Run Simulation** again to display new simulation results based on the changes made in the **Policies** pane\.  | 
 | The resource you typed for this simulation does not match this service\.  |  This message appears if you have typed an Amazon Resource Name \(ARN\) in the **Simulation Settings** pane that does not match the service that you chose for the current simulation\. For example, this message appears if you specify an ARN for an Amazon DynamoDB resource but you chose Amazon Redshift as the service to simulate\. To dismiss this message, do one of the following:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html)  | 
-| This action belongs to a service that supports special access control mechanisms in addition to resource\-based policies, such as Amazon S3 ACLs or S3 Glacier vault lock policies\. The policy simulator does not support these mechanisms, so the results can differ from your production environment\.  |   **No action required\.**  This message is informational\. In the current version, the simulator evaluates policies attached to users and user groups, and can evaluate resource\-based policies for Amazon S3, Amazon SQS, Amazon SNS, and S3 Glacier\. The policy simulator does not support all access control mechanisms supported by other AWS services\.  | 
+| This action belongs to a service that supports special access control mechanisms in addition to resource\-based policies, such as Amazon S3 ACLs or S3 Glacier vault lock policies\. The policy simulator does not support these mechanisms, so the results can differ from your production environment\.  |   **No action required\.**  This message is informational\. In the current version, the policy simulator evaluates policies attached to users and user groups, and can evaluate resource\-based policies for Amazon S3, Amazon SQS, Amazon SNS, and S3 Glacier\. The policy simulator does not support all access control mechanisms supported by other AWS services\.  | 
 | DynamoDB FGAC is currently not supported\.  |   **No action required\.**  This informational message refers to *fine\-grained access control*\. Fine\-grained access control is the ability to use IAM policy conditions to determine who can access individual data items and attributes in DynamoDB tables and indexes\. It also refers to the actions that can be performed on these tables and indexes\. The current version of the IAM policy simulator does not support this type of policy condition\. For more information on DynamoDB fine\-grained access control, see [Fine\-Grained Access Control for DynamoDB](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html)\.  | 
 | You have policies that do not comply with the policy syntax\. You can use policy validation to review recommended updates to your policies\.  |  This message appears at the top of the policy list if you have policies that do not comply with the IAM policy grammar\. In order to simulate these policies, review the policy validation options at [Validating IAM policies](access_policies_policy-validator.md) to identify and fix these policies\.  | 
 |  This policy must be updated to comply with the latest policy syntax rules\.  |  This message is displayed if you have policies that do not comply with the IAM policy grammar\. In order to simulate these policies, review the policy validation options at [Validating IAM policies](access_policies_policy-validator.md) to identify and fix these policies\.  | 
@@ -233,7 +245,7 @@ For security reasons, the API operations have been broken into two groups:
 + API operations that simulate only policies that are passed directly to the API as strings\. This set includes [GetContextKeysForCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) and [SimulateCustomPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html)\.
 + API operations that simulate the policies that are attached to a specified IAM user, user group, role, or resource\. Because these API operations can reveal details of permissions assigned to other IAM entities, you should consider restricting access to these API operations\. This set includes [GetContextKeysForPrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html) and [SimulatePrincipalPolicy](https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html)\. For more information about restricting access to API operations, see [Example policies: AWS Identity and Access Management \(IAM\)](access_policies_examples.md#policy_library_IAM)\.
 
-In both cases, the API operations simulate the effect of one or more policies on a list of actions and resources\. Each action is paired with each resource and the simulation determines whether the policies allow or deny that action for that resource\. You can also provide values for any context keys that your policies reference\. You can get the list of context keys that the policies reference by first calling [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) or [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html)\. If you don't provide a value for a context key, the simulation still runs\. But the results might not be reliable because the simulator cannot include that context key in the evaluation\.
+In both cases, the API operations simulate the effect of one or more policies on a list of actions and resources\. Each action is paired with each resource and the simulation determines whether the policies allow or deny that action for that resource\. You can also provide values for any context keys that your policies reference\. You can get the list of context keys that the policies reference by first calling [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html) or [https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html)\. If you don't provide a value for a context key, the simulation still runs\. But the results might not be reliable because the policy simulator cannot include that context key in the evaluation\.
 
 **To get the list of context keys \(AWS CLI, AWS API\)**  
 Use the following to evaluate a list of policies and return a list of context keys that are used in the policies\.

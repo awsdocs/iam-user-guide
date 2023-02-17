@@ -18,14 +18,14 @@ If you are having trouble signing in to Amazon\.com, see [Amazon Customer Servic
 
 When you can't sign in to the AWS Management Console, try to remember how you previously accessed AWS\.
 
-**If you don't remember using a password at all**
+**If you don't remember signing in using a password at all**
 
 You might have previously accessed AWS without using AWS credentials\. This is common for enterprise single sign\-on through IAM Identity Center\. Accessing AWS this way means that you use your corporate credentials to access AWS accounts or applications without entering your credentials\.
 + **AWS access portal** – If an administrator allows you to use credentials from outside AWS to access AWS, you need the URL for your portal\. Check your email, browser favorites, or browser history for a URL that includes `awsapps.com/start` or `signin.aws/platform/login`\.
 
   For example, your custom URL might include an ID or a domain such as `https://d-1234567890.awsapps.com/start`\. If you can't find your portal link, contact your administrator\. AWS Support can't help you recover this information\. 
 
-**If you remember your user name and password**
+**If you remember signing in using a password**
 
 You might be on the wrong page\. Try signing in on a different page:
 + **Root user sign\-in page** – If you created or own an AWS account and need to perform restricted actions, enter your account email address in the [AWS Management Console](https://console.aws.amazon.com/)\. To learn how to access the root user, see [Signing in as the root user](https://docs.aws.amazon.com/signin/latest/userguide/console-sign-in-tutorials.html#introduction-to-root-user-sign-in-tutorial) in the *AWS Sign\-In User Guide*\. If you forgot your root user password, you can reset it\. See [I forgot my root user password for my AWS account](https://docs.aws.amazon.com/signin/latest/userguide/troubleshooting-sign-in-issues.html#troubleshoot-forgot-root-password) in the *AWS Sign\-In User Guide* for more information\. If you forgot your AWS account email address, check your email inbox for an email from AWS\.

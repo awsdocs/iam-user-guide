@@ -12,7 +12,7 @@ These commands provide an ARN for the device that is used in place of a serial n
 + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateVirtualMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateVirtualMFADevice.html) 
 
 **To enable an MFA device for use with AWS**  
-These commands synchronize the device with AWS and associate it with a user or the root user\. If the device is virtual, use the ARN of the virtual device as the serial number\.
+These commands synchronize the device with AWS and associate it with a user\. If the device is virtual, use the ARN of the virtual device as the serial number\.
 
 **Important**  
 Submit your request immediately after generating the authentication codes\. If you generate the codes and then wait too long to submit the request, the MFA device successfully associates with the user but the MFA device becomes out of sync\. This happens because time\-based one\-time passwords \(TOTP\) expire after a short period of time\. If this happens, you can resynchronize the device using the commands described below\.
@@ -55,4 +55,4 @@ After the device is disassociated from the user, you can delete the device entit
 + AWS API: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeleteVirtualMFADevice.html) 
 
 **To recover a virtual MFA device that is lost or not working**  
-Sometimes, an IAM user's device that hosts the virtual MFA app is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. IAM users must contact an administrator to deactivate the device\. For more information, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\.
+Sometimes, a user's device that hosts the virtual MFA app is lost, replaced, or not working\. When this happens, the user can't recover it on their own\. The user must contact an administrator to deactivate the device\. For more information, see [What if an MFA device is lost or stops working?](id_credentials_mfa_lost-or-broken.md)\.

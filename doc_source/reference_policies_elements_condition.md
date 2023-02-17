@@ -45,8 +45,7 @@ When a request is submitted, AWS evaluates each condition key in the policy and 
         "Sid": "AllowRemoveMfaOnlyIfRecentMfa",
         "Effect": "Allow",
         "Action": [
-            "iam:DeactivateMFADevice",
-            "iam:DeleteVirtualMFADevice"
+            "iam:DeactivateMFADevice"
         ],
         "Resource": "arn:aws:iam::*:user/${aws:username}",
         "Condition": {

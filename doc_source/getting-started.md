@@ -1,23 +1,22 @@
 # Getting started with IAM<a name="getting-started"></a>
 
-This topic shows you how to give access to your AWS resources by creating AWS Identity and Access Management \(IAM\) users in your AWS account\. First, you'll learn about IAM concepts you should understand before you create groups and users, and then you'll walk through how to perform the necessary tasks using the AWS Management Console\. The first task is to set up an administrators group for your AWS account\. Having an administrators group for your AWS account isn't required, but we strongly recommend it\.
+Before you get started using IAM you should sign up for an AWS account and create your administrative user using the process described in [Getting set up with IAM](getting-set-up.md)\. Then, review core IAM concepts involved in creating roles, to get ready to walk through how to perform the necessary tasks using the AWS Management Console\.
 
 **Note**  
 This set of documentation deals primarily with the IAM service\. To learn about getting started with AWS and using multiple services to solve a problem such as building and launching your first project, see the [Getting Started Resource Center](https://aws.amazon.com/getting-started/)\.
 
-The following figure shows a simple example of an AWS account with three groups\. A group is a collection of users who have similar responsibilities\. In this example, one group is for administrators \(it's called *Admins*\)\. There's also a *Developers* group and a *Test* group\. Each group has multiple users\. Each user can be in more than one group, although the figure doesn't illustrate that\. You can't put groups inside other groups\. You use policies to grant permissions to groups\.
+IAM roles are a secure way to grant permissions to entities you trust\. Roles are an IAM identity that you can create in your account that has specific permissions\. An IAM role has some similarities to an IAM user\. Roles and users are both AWS identities with permissions policies that determine what the identity can and cannot do in AWS\. However, instead of being uniquely associated with one person, a role is intended to be assumable by anyone who needs it\. Also, a role does not have standard long\-term credentials such as a password or access keys associated with it\. Instead, when you assume a role, it provides you with temporary security credentials for your role session\. Using roles helps you follow the IAM best practices\. You can use a role to:
++ Enable workforce identities and Identity Center enabled applications access to the AWS Management Console using AWS IAM Identity Center \(successor to AWS Single Sign\-On\)\.
++ Delegate permission to an AWS service to carry out actions on your behalf\.
++ Enable application code running on an Amazon EC2 instance to access or modify AWS resources\.
++ Grant access to another AWS account\.
 
-![\[Example layout of AWS account, groups, and users\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/Account_Group_Example.diagram.png)
+Roles have two types of policies attached to them:
++ **Trust policy** – Policy which defines which identities can assume the role\. Creating a role with the IAM console automatically creates a default trust policy that you can customize\. A role can have only one trust policy\.
++ **Permissions policy** – Policy which defines which AWS resources a role can access and the actions it can perform on those resources\. Permissions policies can be AWS managed policies, customer managed policies, or inline policies attached directly to the role\. You can attach multiple permissions policies to an IAM role\.
 
-In the procedure that follows, you will perform the following tasks:
-+ Create an Administrators group and give the group permission to access all of your AWS account's resources\.
-+ Create a user for yourself and add that user to the Administrators group\.
-+ Create a password for your user so you can sign in to the AWS Management Console\.
-
-You will grant the Administrators group permission to access all your available AWS account resources\. Available resources are any AWS products you use, or that you are signed up for\. Users in the Administrators group can also access your AWS account information, *except* for your AWS account's security credentials\.
+You can also use AWS Identity and Access Management Roles Anywhere to give access to machine identities\. Using IAM Roles Anywhere means you don't need to manage long\-term credentials for workloads running outside of AWS\. For more information, see [What is AWS Identity and Access Management Roles Anywhere?](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html) in the *AWS Identity and Access Management Roles Anywhere User Guide*\.
 
 **Topics**
-+ [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)
-+ [Creating your first IAM delegated user and user group](getting-started_create-delegated-user.md)
 + [How IAM users sign in to your AWS account](getting-started_how-users-sign-in.md)
 + [IAM console search](console_search.md)

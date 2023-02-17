@@ -2,6 +2,9 @@
 
  You can use SAML 2\.0 federation instead of creating IAM users in your AWS account\. With an identity provider \(IdP\), you can manage your user identities outside of AWS and give these external user identities permissions to access AWS resources in your account\. For more information about federation and identity providers, see [Identity providers and federation](id_roles_providers.md)\.
 
+**Tip**  
+If you need to support SAML federation across Regions, see the AWS Security Blog article [How to use regional SAML endpoints for failover](http://aws.amazon.com/blogs/security/how-to-use-regional-saml-endpoints-for-failover)\.
+
 ## Prerequisites for creating a role for SAML<a name="idp_saml_Prerequisites"></a>
 
 Before you can create a role for SAML 2\.0 federation, you must first complete the following prerequisite steps\.<a name="saml-prereqs"></a>

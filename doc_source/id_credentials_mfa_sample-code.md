@@ -14,7 +14,7 @@ The following code example shows how to get a session token with AWS STS and use
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
 Get a session token by passing an MFA token and use it to list Amazon S3 buckets for the account\.  
 
 ```
@@ -63,7 +63,7 @@ The following code examples show how to assume a role with AWS STS\.
 #### [ \.NET ]
 
 **AWS SDK for \.NET**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/STS#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/STS#code-examples)\. 
   
 
 ```
@@ -132,7 +132,7 @@ namespace AssumeRoleExample
 #### [ C\+\+ ]
 
 **SDK for C\+\+**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sts#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sts#code-examples)\. 
   
 
 ```
@@ -173,68 +173,92 @@ bool AwsDoc::STS::assumeRole(const Aws::String &roleArn,
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForCpp/sts-2011-06-15/AssumeRole) in *AWS SDK for C\+\+ API Reference*\. 
 
 ------
+#### [ Java ]
+
+**SDK for Java 2\.x**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/sts#readme)\. 
+  
+
+```
+    public static void assumeGivenRole(StsClient stsClient, String roleArn, String roleSessionName) {
+
+        try {
+            AssumeRoleRequest roleRequest = AssumeRoleRequest.builder()
+                .roleArn(roleArn)
+                .roleSessionName(roleSessionName)
+                .build();
+
+           AssumeRoleResponse roleResponse = stsClient.assumeRole(roleRequest);
+           Credentials myCreds = roleResponse.credentials();
+
+           // Display the time when the temp creds expire.
+           Instant exTime = myCreds.expiration();
+           String tokenInfo = myCreds.sessionToken();
+
+           // Convert the Instant to readable date.
+           DateTimeFormatter formatter =
+                   DateTimeFormatter.ofLocalizedDateTime( FormatStyle.SHORT )
+                           .withLocale( Locale.US)
+                           .withZone( ZoneId.systemDefault() );
+
+           formatter.format( exTime );
+           System.out.println("The token "+tokenInfo + "  expires on " + exTime );
+
+       } catch (StsException e) {
+           System.err.println(e.getMessage());
+           System.exit(1);
+       }
+   }
+```
++  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForJavaV2/sts-2011-06-15/AssumeRole) in *AWS SDK for Java 2\.x API Reference*\. 
+
+------
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/sts#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/sts#code-examples)\. 
 Create the client\.  
 
 ```
-import { STSClient } from  "@aws-sdk/client-sts";
+import { STSClient } from "@aws-sdk/client-sts";
 // Set the AWS Region.
-const REGION = "REGION"; //e.g. "us-east-1"
-// Create an Amazon STS service client object.
-const stsClient = new STSClient({ region: REGION });
-export { stsClient };
+const REGION = "us-east-1";
+// Create an AWS STS service client object.
+export const client = new STSClient({ region: REGION });
 ```
 Assume the IAM role\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js
-import { stsClient } from "./libs/stsClient.js";
-import {
-  AssumeRoleCommand,
-  GetCallerIdentityCommand,
-} from "@aws-sdk/client-sts";
+import { AssumeRoleCommand } from "@aws-sdk/client-sts";
 
-// Set the parameters
-export const params = {
-  RoleArn: "ARN_OF_ROLE_TO_ASSUME", //ARN_OF_ROLE_TO_ASSUME
-  RoleSessionName: "session1",
-  DurationSeconds: 900,
-};
+import { client } from "../libs/client.js";
 
-export const run = async () => {
+export const main = async () => {
   try {
-    //Assume Role
-    const data = await stsClient.send(new AssumeRoleCommand(params));
-    return data;
-    const rolecreds = {
-      accessKeyId: data.Credentials.AccessKeyId,
-      secretAccessKey: data.Credentials.SecretAccessKey,
-      sessionToken: data.Credentials.SessionToken,
-    };
-    //Get Amazon Resource Name (ARN) of current identity
-    try {
-      const stsParams = { credentials: rolecreds };
-      const stsClient = new STSClient(stsParams);
-      const results = await stsClient.send(
-        new GetCallerIdentityCommand(rolecreds)
-      );
-      console.log("Success", results);
-    } catch (err) {
-      console.log(err, err.stack);
-    }
+    // Returns a set of temporary security credentials that you can use to
+    // access Amazon Web Services resources that you might not normally 
+    // have access to.
+    const command = new AssumeRoleCommand({
+      // The Amazon Resource Name (ARN) of the role to assume.
+      RoleArn: "ROLE_ARN",
+      // An identifier for the assumed role session.
+      RoleSessionName: "session1",
+      // The duration, in seconds, of the role session. The value specified
+      // can range from 900 seconds (15 minutes) up to the maximum session 
+      // duration set for the role.
+      DurationSeconds: 900,
+    });
+    const response = await client.send(command);
+    console.log(response);
   } catch (err) {
-    console.log("Error", err);
+    console.error(err);
   }
 };
-run();
 ```
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sts/classes/assumerolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/sts#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/sts#code-examples)\. 
   
 
 ```
@@ -284,7 +308,7 @@ function stsGetCallerIdentity(creds) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/sts/sts_temporary_credentials#code-examples)\. 
 Assume an IAM role that requires an MFA token and use temporary credentials to list Amazon S3 buckets for the account\.  
 
 ```
@@ -329,7 +353,7 @@ def list_buckets_from_assumed_role_with_mfa(
 #### [ Ruby ]
 
 **SDK for Ruby**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/sts#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/ruby/example_code/sts#code-examples)\. 
   
 
 ```
@@ -359,5 +383,35 @@ def list_buckets_from_assumed_role_with_mfa(
   end
 ```
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/sts-2011-06-15/AssumeRole) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Swift ]
+
+**SDK for Swift**  
+This is prerelease documentation for an SDK in preview release\. It is subject to change\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+  
+
+```
+    public func assumeRole(role: IAMClientTypes.Role, sessionName: String)
+                    async throws -> STSClientTypes.Credentials {
+        let input = AssumeRoleInput(
+            roleArn: role.arn,
+            roleSessionName: sessionName
+        )
+        do {
+            let output = try await stsClient.assumeRole(input: input)
+
+            guard let credentials = output.credentials else {
+                throw ServiceHandlerError.authError
+            }
+
+            return credentials
+        } catch {
+            throw error
+        }
+    }
+```
++  For API details, see [AssumeRole](https://awslabs.github.io/aws-sdk-swift/reference/0.x) in *AWS SDK for Swift API reference*\. 
 
 ------

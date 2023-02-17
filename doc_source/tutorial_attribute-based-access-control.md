@@ -51,7 +51,7 @@ In this tutorial, you will tag each resource, tag your project roles, and add po
 ## Prerequisites<a name="tutorial_abac_prereqs"></a>
 
 To perform the steps in this tutorial, you must already have the following:
-+ An AWS account that you can sign in to as an IAM user with administrative permissions\. If you have a new account and sign in as the AWS account root user, then [create an IAM admin user](getting-started_create-admin-group.md)\.
++ An AWS account that you can sign in to as a user with administrative permissions\.
 + Your 12\-digit account ID, which you use to create the roles in step 3\.
 
   To find your AWS account ID number using the AWS Management Console, choose **Support** on the navigation bar on the upper right, and then choose **Support Center**\. The account number \(ID\) appears in the navigation pane on the left\.  
@@ -360,7 +360,6 @@ You added policies that allow actions only under specific conditions\. If you ap
 For related information in the *IAM User Guide*, see the following resources:
 + [What is ABAC for AWS?](introduction_attribute-based-access-control.md)
 + [AWS global condition context keys](reference_policies_condition-keys.md)
-+ [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)
 + [Creating IAM users \(console\)](id_users_create.md#id_users_create_console)
 + [Creating a role to delegate permissions to an IAM user](id_roles_create_for-user.md)
 + [Tagging IAM resources](id_tags.md)

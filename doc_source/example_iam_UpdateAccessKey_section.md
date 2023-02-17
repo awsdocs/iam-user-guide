@@ -6,84 +6,44 @@ The following code examples show how to update an IAM access key\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
-#### [ Go ]
+#### [ C\+\+ ]
 
-**SDK for Go V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/gov2/iam#code-examples)\. 
+**SDK for C\+\+**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam#code-examples)\. 
   
 
 ```
-package main
+bool AwsDoc::IAM::updateAccessKey(const Aws::String &userName,
+                                  const Aws::String &accessKeyID,
+                                  Aws::IAM::Model::StatusType status,
+                                  const Aws::Client::ClientConfiguration &clientConfig) {
+    Aws::IAM::IAMClient iam(clientConfig);
+    Aws::IAM::Model::UpdateAccessKeyRequest request;
+    request.SetUserName(userName);
+    request.SetAccessKeyId(accessKeyID);
+    request.SetStatus(status);
 
-import (
-	"context"
-	"flag"
-	"fmt"
+    auto outcome = iam.UpdateAccessKey(request);
+    if (outcome.IsSuccess()) {
+        std::cout << "Successfully updated status of access key "
+                  << accessKeyID << " for user " << userName << std::endl;
+    }
+    else {
+        std::cerr << "Error updated status of access key " << accessKeyID <<
+                  " for user " << userName << ": " <<
+                  outcome.GetError().GetMessage() << std::endl;
+    }
 
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/iam"
-	"github.com/aws/aws-sdk-go-v2/service/iam/types"
-)
-
-// IAMUpdateAccessKeyAPI defines the interface for the UpdateAccessKey function.
-// We use this interface to test the function using a mocked service.
-type IAMUpdateAccessKeyAPI interface {
-	UpdateAccessKey(ctx context.Context,
-		params *iam.UpdateAccessKeyInput,
-		optFns ...func(*iam.Options)) (*iam.UpdateAccessKeyOutput, error)
-}
-
-// ActivateKey sets the status of an AWS Identity and Access Management (IAM) access key to active.
-// Inputs:
-//     c is the context of the method call, which includes the AWS Region.
-//     api is the interface that defines the method call.
-//     input defines the input arguments to the service call.
-// Output:
-//     If successful, a UpdateAccessKeyOutput object containing the result of the service call and nil.
-//     Otherwise, nil and an error from the call to UpdateAccessKey.
-func ActivateKey(c context.Context, api IAMUpdateAccessKeyAPI, input *iam.UpdateAccessKeyInput) (*iam.UpdateAccessKeyOutput, error) {
-	return api.UpdateAccessKey(c, input)
-}
-
-func main() {
-	keyID := flag.String("k", "", "The ID of the access key")
-	userName := flag.String("u", "", "The name of the user")
-	flag.Parse()
-
-	if *keyID == "" || *userName == "" {
-		fmt.Println("You must supply an access key ID and user name (-k KEY-ID -u USER-NAME)")
-		return
-	}
-
-	cfg, err := config.LoadDefaultConfig(context.TODO())
-	if err != nil {
-		panic("configuration error, " + err.Error())
-	}
-
-	client := iam.NewFromConfig(cfg)
-
-	input := &iam.UpdateAccessKeyInput{
-		AccessKeyId: keyID,
-		Status:      types.StatusTypeActive,
-		UserName:    userName,
-	}
-
-	_, err = ActivateKey(context.TODO(), client, input)
-	if err != nil {
-		fmt.Println("Error", err)
-		return
-	}
-
-	fmt.Println("Access Key activated")
+    return outcome.IsSuccess();
 }
 ```
-+  For API details, see [UpdateAccessKey](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.UpdateAccessKey) in *AWS SDK for Go API Reference*\. 
++  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/UpdateAccessKey) in *AWS SDK for C\+\+ API Reference*\. 
 
 ------
 #### [ Java ]
 
 **SDK for Java 2\.x**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javav2/example_code/iam#readme)\. 
   
 
 ```
@@ -120,7 +80,7 @@ func main() {
 #### [ JavaScript ]
 
 **SDK for JavaScript V3**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
 ```
@@ -160,7 +120,7 @@ run();
 +  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/updateaccesskeycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
 **SDK for JavaScript V2**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 
 ```
@@ -193,7 +153,7 @@ iam.updateAccessKey(params, function(err, data) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
   
 
 ```

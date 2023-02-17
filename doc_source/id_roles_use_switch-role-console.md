@@ -3,16 +3,16 @@
 A *role* specifies a set of permissions that you can use to access AWS resources that you need\. In that sense, it is similar to a [user in AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html) \(IAM\)\. When you sign in as a user, you get a specific set of permissions\. However, you don't sign in to a role, but once signed in you can switch to a role\. This temporarily sets aside your original user permissions and instead gives you the permissions assigned to the role\. The role can be in your own account or any other AWS account\. For more information about roles, their benefits, and how to create them, see [IAM roles](id_roles.md), and [Creating IAM roles](id_roles_create.md)\.
 
 **Important**  
-The permissions of your IAM user and any roles that you switch to are not cumulative\. Only one set of permissions is active at a time\. When you switch to a role, you temporarily give up your user permissions and work with the permissions that are assigned to the role\. When you exit the role, your user permissions are automatically restored\.
+The permissions of your user and any roles that you switch to are not cumulative\. Only one set of permissions is active at a time\. When you switch to a role, you temporarily give up your user permissions and work with the permissions that are assigned to the role\. When you exit the role, your user permissions are automatically restored\.
 
-When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, IAM uses your original user or federated role credentials to determine whether you are allowed to assume RoleA\. If you then switch to RoleB *while you are using RoleA*, AWS still uses your **original** user or federated role credentials to authorize the switch, not the credentials for RoleA\.
+When you switch roles in the AWS Management Console, the console always uses your original credentials to authorize the switch\. This applies whether you sign in as an IAM user, a user in IAM Identity Center, as a SAML\-federated role, or as a web\-identity federated role\. For example, if you switch to RoleA, IAM uses your original user or federated role credentials to determine whether you are allowed to assume RoleA\. If you then switch to RoleB *while you are using RoleA*, AWS still uses your **original** user or federated role credentials to authorize the switch, not the credentials for RoleA\.
 
 ## Things to know about switching roles in the console<a name="id_roles_iam_user-switch-role-console-things-to-know"></a>
 
 This section provides additional information about using the IAM console to switch to a role\.
 
 **Notes:**  
-You cannot switch roles if you sign in as the AWS account root user\. You can switch roles when you sign in as an IAM user, a SAML\-federated role, or a web\-identity federated role\.
+You cannot switch roles if you sign in as the AWS account root user\. You can switch roles when you sign in as an IAM user, a user in IAM Identity Center, a SAML\-federated role, or a web\-identity federated role\.
 You cannot switch roles in the AWS Management Console to a role that requires an [ExternalId](id_roles_create_for-user_externalid.md) value\. You can switch to such a role only by calling the [https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) API that supports the `ExternalId` parameter\.
 + If your administrator gives you a link, choose the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. The link takes you to the appropriate webpage and fills in the account ID \(or alias\) and the role name\.
 + You can manually construct the link and then skip to step [Step 5](#StepJumpToHere) in the following procedure\. To construct your link, use the following format:
@@ -25,14 +25,14 @@ You cannot switch roles in the AWS Management Console to a role that requires an
   + \(Optional\) *text\_to\_display* – The text that you want to appear on the navigation bar in place of your user name when this role is active\.
 + You can manually switch roles using the information your administrator provides by using the procedures that follow\. 
 
-By default, when you switch roles, your AWS Management Console session lasts for 1 hour\. IAM user sessions are 12 hours by default\. IAM users who switch roles in the console are granted the role maximum session duration, or the remaining time in the IAM user's session, whichever is less\. For example, assume that a maximum session duration of 10 hours is set for a role\. An IAM user has been signed in to the console for 8 hours when they decide to switch to the role\. There are 4 hours remaining in the IAM user session, so the allowed role session duration is 4 hours\. The following table shows how to determine the session duration for an IAM user when switching roles in the console\.
+By default, when you switch roles, your AWS Management Console session lasts for 1 hour\. IAM user sessions are 12 hours by default\. IAM users who switch roles in the console are granted the role maximum session duration, or the remaining time in the user's session, whichever is less\. For example, assume that a maximum session duration of 10 hours is set for a role\. An IAM user has been signed in to the console for 8 hours when they decide to switch to the role\. There are 4 hours remaining in the user session, so the allowed role session duration is 4 hours\. The following table shows how to determine the session duration for an IAM user when switching roles in the console\.
 
 
 **IAM users console role session duration**  
 
 | IAM user session time remaining is… | Role session duration is… | 
 | --- | --- | 
-| Less than role maximum session duration | Time remaining in IAM user session | 
+| Less than role maximum session duration | Time remaining in user session | 
 | Greater than role maximum session duration | Maximum session duration value | 
 | Equal to role maximum session duration | Maximum session duration value \(approximate\) | 
 

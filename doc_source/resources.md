@@ -3,7 +3,7 @@
 IAM is a rich product, and you'll find many resources to help you learn more about how IAM can help you secure your AWS account and resources\. 
 
 **Topics**
-+ [Users and groups](#resources-users-and-groups)
++ [Identities](#resources-users-and-groups)
 + [Credentials \(passwords, access keys, and MFA devices\)](#resources-credentials)
 + [Permissions and policies](#resources-permissions-and-policies)
 + [Federation and delegation](#resources-federation-and-delegation)
@@ -11,18 +11,20 @@ IAM is a rich product, and you'll find many resources to help you learn more abo
 + [General security practices](#resources-general-security)
 + [General resources](#resources-general)
 
-## Users and groups<a name="resources-users-and-groups"></a>
+## Identities<a name="resources-users-and-groups"></a>
 
-Consult these resources for creating, managing, and using users and groups\.
-+ **[Creating your first IAM admin user and user group](getting-started_create-admin-group.md)** – A step\-by\-step procedure that shows how to create an IAM users and assign permissions\.
-+ **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of how to administer IAM users and groups\.
+Consult these resources for creating, managing, and using identities\.
++ [Manage identities in IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-sso.html) – Procedural information about creating users and group in IAM Identity Center\.
++ **[IAM Identities \(users, user groups, and roles\)](id.md)** – An in\-depth discussion of users, groups, and roles\.
 
 ## Credentials \(passwords, access keys, and MFA devices\)<a name="resources-credentials"></a>
 
-Review the following guides to manage passwords for your AWS account and for IAM users\. You'll also find information about *access keys*—the secret key that you use to make programmatic calls to AWS\.
-+ **[AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)** – Describes the types of credentials you use to access Amazon Web Services, explains how to create and manage them, and includes recommendations for managing access keys securely\.
-+ **[Managing user passwords in AWS](id_credentials_passwords.md)** and **[Managing access keys for IAM users](id_credentials_access-keys.md)** – Describes options for managing credentials for IAM users in your account\.
+Review the following guides to manage passwords, access keys, and MFA devices for your AWS account and for IAM users\. 
++ **[Managing user passwords in AWS](id_credentials_passwords.md)** – Describes options for managing passwords for IAM users in your account\.
++ **[Managing access keys for IAM users](id_credentials_access-keys.md)** –  Describes how *access keys* work and how you can use them to make programmatic calls to AWS\. There are other more secure alternatives to access keys that we recommend you consider first\. For more information, see [Considerations and alternatives for long\-term access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#alternatives-to-long-term-access-keys) in the *AWS General Reference guide*\.
 +  **[Using multi\-factor authentication \(MFA\) in AWS](id_credentials_mfa.md)** – Describes how to configure your account and IAM users to require both a password and a one\-time use code that is generated on a device before sign\-in is allowed\. \(This is sometimes called two\-factor authentication\.\)
+
+For general information about the types of credentials you use to access Amazon Web Services, see **[AWS Security Credentials](https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html)** in the *AWS General Reference guide*\.\.
 
 ## Permissions and policies<a name="resources-permissions-and-policies"></a>
 
@@ -73,13 +75,14 @@ Find expert tips and guidance on the best ways to secure your AWS account and re
 
 Explore the following resources to learn more about IAM and AWS\. 
 + **[Product Information for IAM](https://aws.amazon.com/iam/)** – General information about the AWS Identity and Access Management product\.
-+ **[Discussion Forms for AWS Identity and Access Management](https://forums.aws.amazon.com/forum.jspa?forumID=76)** – A community forum for customers to discuss technical questions related to IAM\.
-+ **[Getting Started Resource Center](http://aws.amazon.com/getting-started/?ref=docs_gateway/iam/resources.html)** – Learn the fundamentals and start building on AWS\.
-+ **[Hands\-on Tutorials for AWS](http://aws.amazon.com/getting-started/hands-on/?ref=docs_gateway/iam/resources.html)** – A collection of step\-by\-step tutorials for common AWS use cases\.
-+ ** [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/)** – Links to role\-based and specialty courses, in addition to self\-paced labs to help sharpen your AWS skills and gain practical experience\.
-+ ** [AWS Developer Tools](https://aws.amazon.com/tools/)** – Links to developer tools, SDKs, IDE toolkits, and command line tools for developing and managing AWS applications\.
-+ ** [AWS Whitepapers](https://aws.amazon.com/whitepapers/)** – Links to a comprehensive list of technical AWS whitepapers, covering topics such as architecture, security, and economics and authored by AWS Solutions Architects or other technical experts\.
-+ ** [AWS Support Center](https://console.aws.amazon.com/support/home#/)** – The hub for creating and managing your AWS Support cases\. Also includes links to other helpful resources, such as forums, technical FAQs, service health status, and AWS Trusted Advisor\.
-+ ** [AWS Support](https://aws.amazon.com/premiumsupport/)** – The primary webpage for information about AWS Support, a one\-on\-one, fast\-response support channel to help you build and run applications in the cloud\.
-+ ** [Contact Us](https://aws.amazon.com/contact-us/)** – A central contact point for inquiries concerning AWS billing, account, events, abuse, and other issues\. 
-+ ** [AWS Site Terms](https://aws.amazon.com/terms/)** – Detailed information about our copyright and trademark; your account, license, and site access; and other topics\.
++ **[AWS re:Post for AWS Identity and Access Management](https://forums.aws.amazon.com/forum.jspa?forumID=76)** – Visit AWS re:Post to discuss technical questions related to IAM with the AWS community\.
++  [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/) – Links to role\-based and specialty courses, in addition to self\-paced labs to help sharpen your AWS skills and gain practical experience\.
++  [AWS Developer Center](https://aws.amazon.com/developer/?ref=docs_id=res1) – Explore tutorials, download tools, and learn about AWS developer events\.
++  [AWS Developer Tools](https://aws.amazon.com/developer/tools/?ref=docs_id=res1) – Links to developer tools, SDKs, IDE toolkits, and command line tools for developing and managing AWS applications\.
++  [Getting Started Resource Center](https://aws.amazon.com/getting-started/?ref=docs_id=res1) – Learn how to set up your AWS account, join the AWS community, and launch your first application\.
++  [Hands\-On Tutorials](https://aws.amazon.com/getting-started/hands-on/?ref=docs_id=res1) – Follow step\-by\-step tutorials to launch your first application on AWS\.
++  [AWS Whitepapers](https://aws.amazon.com/whitepapers/) – Links to a comprehensive list of technical AWS whitepapers, covering topics such as architecture, security, and economics and authored by AWS Solutions Architects or other technical experts\.
++  [AWS Support Center](https://console.aws.amazon.com/support/home#/) – The hub for creating and managing your AWS Support cases\. Also includes links to other helpful resources, such as forums, technical FAQs, service health status, and AWS Trusted Advisor\.
++  [AWS Support](https://aws.amazon.com/premiumsupport/) – The primary webpage for information about AWS Support, a one\-on\-one, fast\-response support channel to help you build and run applications in the cloud\.
++  [Contact Us](https://aws.amazon.com/contact-us/) – A central contact point for inquiries concerning AWS billing, account, events, abuse, and other issues\. 
++  [AWS Site Terms](https://aws.amazon.com/terms/) – Detailed information about our copyright and trademark; your account, license, and site access; and other topics\.

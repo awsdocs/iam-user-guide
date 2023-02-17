@@ -140,7 +140,7 @@ To specify the maximum session duration setting for roles that are assumed using
 
    Your changes don't take effect until the next time someone assumes this role\. To learn how to revoke existing sessions for this role, see [Revoking IAM role temporary security credentials](id_roles_use_revoke-sessions.md)\.
 
-In the AWS Management Console, IAM user sessions are 12 hours by default\. IAM users who switch roles in the console are granted the role maximum session duration, or the remaining time in the IAM user's session, whichever is less\.
+In the AWS Management Console, IAM user sessions are 12 hours by default\. IAM users who switch roles in the console are granted the role maximum session duration, or the remaining time in the user's session, whichever is less\.
 
 Anyone who assumes the role from the AWS CLI or AWS API can request a longer session, up to this maximum\. The `MaxSessionDuration` setting determines the maximum duration of the role session that can be requested\.
 + To specify a session duration using the AWS CLI use the `duration-seconds` parameter\. To learn more, see [Switching to an IAM role \(AWS CLI\)](id_roles_use_switch-role-cli.md)\.

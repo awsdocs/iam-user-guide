@@ -22,9 +22,9 @@ If you use the API or AWS CLI to delete a user from your AWS account, you must d
 
 1. To deactivate the MFA device for a user, choose the name of the user whose MFA you want to remove\.
 
-1. Choose the **Security credentials** tab\. Next to **Assigned MFA device**, choose **Manage**\.
+1. Choose the **Security credentials** tab\.
 
-1. In the **Manage MFA device** wizard, choose **Remove**, and then choose **Remove**\.
+1. Under **​Multi\-factor authentication \(MFA\)**, choose the radio button next to the MFA device, choose **Remove**, and then choose **Remove**\.
 
    The device is removed from AWS\. It cannot be used to sign in or authenticate requests until it is reactivated and associated with an AWS user or AWS account root user\.<a name="deactivate-mfa-for-root"></a>
 
@@ -34,14 +34,14 @@ If you use the API or AWS CLI to delete a user from your AWS account, you must d
 **Note**  
 If you see three text boxes, then you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials\. Your browser might remember this preference and open this account\-specific sign\-in page every time that you try to sign in\. You cannot use the IAM user sign\-in page to sign in as the account owner\. If you see the [IAM user sign\-in page](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#user-sign-in-page), choose **Sign in using root user email** near the bottom of the page\. This returns you to the main sign\-in page\. From there, you can sign in as the root user using your AWS account email address and password\.
 
-1. On the right side of the navigation bar, choose on your account name, and then choose **My Security Credentials**\. If necessary, choose **Continue to Security Credentials**\.  
-![\[Security Credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
+1. On the right side of the navigation bar, choose on your account name, and then choose **Security credentials**\. If necessary, choose **Continue to Security credentials**\.  
+![\[Security credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)
 
-1. Expand the **Multi\-factor authentication \(MFA\)** section\.
+1. In the **Multi\-factor authentication \(MFA\)** section, choose the radio button next the MFA device that you want to deactivate and choose **Remove**\.
 
-1. In the row for the MFA device that you want to deactivate, choose **Deactivate**\.
+1. Choose **Remove**\.
 
-The MFA device is deactivated for the AWS account\. Check the email that is associated with your AWS account for a confirmation message from Amazon Web Services\. The email informs you that your Amazon Web Services multi\-factor authentication \(MFA\) has been deactivated\. The message will come from an address ending in `@amazon.com` or `@aws.amazon.com`\.
+   The MFA device is deactivated for the AWS account\. Check the email that is associated with your AWS account for a confirmation message from Amazon Web Services\. The email informs you that your Amazon Web Services multi\-factor authentication \(MFA\) has been deactivated\. The message will come from an address ending in `@amazon.com` or `@aws.amazon.com`\.
 
 ## Deactivating MFA devices \(AWS CLI\)<a name="deactivate-mfa-cli"></a>
 

@@ -2,7 +2,7 @@
 
 An [IAM role](id_roles.md) is an object in IAM that is assigned [permissions](access_policies.md)\. When you [assume that role](id_roles_use.md) using an IAM identity or an identity from outside of AWS, you receive a session with the permissions that are assigned to the role\. 
 
-When you perform actions in AWS, the information about your session can be logged to AWS CloudTrail for your [account administrator](getting-started_create-admin-group.md) to monitor\. Administrators can configure roles to require identities to pass a custom string that identifies the person or application that is performing actions in AWS\. This identity information is stored as the *source identity* in AWS CloudTrail\. When the administrator reviews activity in CloudTrail, they can view the source identity information to determine who or what performed actions with assumed role sessions\.
+When you perform actions in AWS, the information about your session can be logged to AWS CloudTrail for your account administrator to monitor\. Administrators can configure roles to require identities to pass a custom string that identifies the person or application that is performing actions in AWS\. This identity information is stored as the *source identity* in AWS CloudTrail\. When the administrator reviews activity in CloudTrail, they can view the source identity information to determine who or what performed actions with assumed role sessions\.
 
 After a source identity is set, it is present in requests for any AWS action taken during the role session\. The value that is set persists when a role is used to assume another role through the AWS CLI or AWS API, known as [role chaining](id_roles_terms-and-concepts.md#iam-term-role-chaining)\. The value that is set cannot be changed during the role session\. Administrators can configure granular permissions based on the presence or value of the source identity to further control AWS actions that are taken with shared roles\. You can decide whether the source identity attribute can be used, whether it is required, and what value can be used\.
 
@@ -363,7 +363,7 @@ For example, assume that a user makes an AWS STS `AssumeRole` request, and sets 
     "userIdentity": {
         "type": "AWSAccount",
         "principalId": "AIDAJ45Q7YFFAREXAMPLE",
-        "accountId": "123456789012"
+        "accountId": "111122223333"
     },
     "eventTime": "2020-04-02T18:20:53Z",
     "eventSource": "sts.amazonaws.com",
@@ -372,10 +372,10 @@ For example, assume that a user makes an AWS STS `AssumeRole` request, and sets 
     "sourceIPAddress": "203.0.113.64",
     "userAgent": "aws-cli/1.16.96 Python/3.6.0 Windows/10 botocore/1.12.86",
     "requestParameters": {
-        "roleArn": "arn:aws:iam::123456789012:role/Assumed_Role",
-        "roleSessionName": "Test1",
-        "sourceIdentity": "source-identity-value-set",
-    },
+        "roleArn": "arn:aws:iam::123456789012:role/DevRole",
+        "roleSessionName": "Dev1",
+        "sourceIdentity": "source-identity-value-set"
+    }
 ```
 
 If the user uses the assumed role session to perform an action, the source identity information is present in the `userIdentity` key in the CloudTrail log\.

@@ -33,7 +33,7 @@ When users leave your organization or no longer need AWS access, it is important
 
 1. Choose the name of the user whose password you want to create\. 
 
-1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage password** next to **Console password**\.
+1. Choose the **Security credentials** tab, and then under **Console sign\-in**, choose **Enable console access**\.
 
 1. In **Manage console access**, for **Console access** choose **Enable** if not already selected\. If console access is disabled, then no password is needed\.
 
@@ -43,11 +43,11 @@ When users leave your organization or no longer need AWS access, it is important
 **Note**  
 The password that you create must meet the account's [password policy](id_credentials_passwords_account-policy.md)\.
 
-1. To require the user to create a new password when signing in, choose **Require password reset**\. Then choose **Apply**\.
+1. To require the user to create a new password when signing in, choose **User must create a new password at next sign\-in**\. Then choose **Apply**\.
 **Important**  
-If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
+If you select the **User must create a new password at next sign\-in** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
 
-1. If you choose the option to generate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
+1. If you choose the option to generate a password, choose **Show** in the **Console password** dialog box\. This lets you view the password so you can share it with the user\. 
 **Important**  
 For security reasons, you cannot access the password after completing this step, but you can create a new password at any time\.
 
@@ -59,7 +59,7 @@ For security reasons, you cannot access the password after completing this step,
 
 1. Choose the name of the user whose password you want to change\. 
 
-1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage password** next to **Console password**\.
+1. Choose the **Security credentials** tab, and then under **Console sign\-in**, choose **Manage console access**\.
 
 1. In **Manage console access**, for **Console access** choose **Enable** if not already selected\. If console access is disabled, then no password is needed\.
 
@@ -69,15 +69,15 @@ For security reasons, you cannot access the password after completing this step,
 **Note**  
 The password that you create must meet the account's [password policy](id_credentials_passwords_account-policy.md), if one is currently set\.
 
-1. To require the user to create a new password when signing in, choose **Require password reset**\. Then choose **Apply**\.
+1. To require the user to create a new password when signing in, choose **User must create a new password at next sign\-in**\. Then choose **Apply**\.
 **Important**  
-If you select the **Require password reset** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
+If you select the **User must create a new password at next sign\-in** option, make sure that the user has permission to change his or her password\. For more information, see [Permitting IAM users to change their own passwords](id_credentials_passwords_enable-user-change.md)\.
 
-1. If you choose the option to generate a password, choose **Show** in the **New password** dialog box\. This lets you view the password so you can share it with the user\. 
+1. If you choose the option to generate a password, choose **Show** in the **Console password** dialog box\. This lets you view the password so you can share it with the user\. 
 **Important**  
 For security reasons, you cannot access the password after completing this step, but you can create a new password at any time\.
 
-**To delete \(disable\) an IAM user's password \(console\)**
+**To delete \(disable\) an IAM user password \(console\)**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -85,12 +85,12 @@ For security reasons, you cannot access the password after completing this step,
 
 1. Choose the name of the user whose password you want to delete\. 
 
-1. Choose the **Security credentials** tab, and then under **Sign\-in credentials**, choose **Manage password** next to **Console password**\.
+1. Choose the **Security credentials** tab, and then under **Console sign\-in**, choose **Manage console access**\.
 
 1. For **Console access**, choose **Disable**, and then choose **Apply**\.
 
 **Important**  
-You can disable user access to the AWS Management Console by removing their password\. This prevents them from signing in the to the AWS Management Console using their user name and password\. It does not change their permissions or prevent them from accessing the console using an assumed role\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
+You can prevent an IAM user from accessing the AWS Management Console by removing their password\. This prevents them from signing in to the AWS Management Console using their sign\-in credentials\. It does not change their permissions or prevent them from accessing the console using an assumed role\. If the user has active access keys, they continue to function and allow access through the AWS CLI, Tools for Windows PowerShell, AWS API, or the AWS Console Mobile Application\.
 
 ## Creating, changing, or deleting an IAM user password \(AWS CLI\)<a name="Using_ManagingPasswordsCLIAPI"></a>
 

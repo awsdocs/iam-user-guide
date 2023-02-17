@@ -38,7 +38,7 @@ If you [create a member account](https://docs.aws.amazon.com/cli/latest/referenc
 
 **To activate IAM user and role access to the Billing and Cost Management console**
 
-1. Sign in to the AWS Management Console with your root account credentials \(specifically, the email address and password that you used to create your AWS account\)\.
+1. Sign in to the AWS Management Console with your root user credentials \(specifically, the email address and password that you used to create your AWS account\)\.
 
 1. On the navigation bar, choose your account name, and then choose [Account](https://console.aws.amazon.com/billing/home#/account)\.
 
@@ -58,7 +58,7 @@ Next, create custom policies that grant both view and full access permissions to
 
 **To create IAM policies that grant permissions to billing data**
 
-1. Sign in to the AWS Management Console as a user with administrator credentials\. To adhere to IAM best practices, don't sign in with your root user credentials\. For more information, see [Creating your first IAM admin user and user group](getting-started_create-admin-group.md)\.
+1. Sign in to the AWS Management Console as a user with administrator credentials\.
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -122,27 +122,27 @@ Now that you have custom billing policies available, you can attach them to thei
 
 We recommend that you test access by signing in as each of the test users to learn what your users might experience\. Use the following steps to sign in using both test accounts to see the difference between access rights\.
 
-**To test billing access by signing in with both test user accounts**
+**To test billing access by signing in with both test users**
 
 1. Use your AWS account ID or account alias, your IAM user name, and your password to sign in to the [IAM console](https://console.aws.amazon.com/iam)\.
 **Note**  
 For your convenience, the AWS sign\-in page uses a browser cookie to remember your IAM user name and account information\. If you previously signed in as a different user, choose **Sign in to a different account** near the bottom of the page to return to the main sign\-in page\. From there, you can type your AWS account ID or account alias to be redirected to the IAM user sign\-in page for your account\.
 
-1. Sign in with each account using the steps provided below so you can compare the different user experiences\.
+1. Sign in with each user using the steps provided below so you can compare the different user experiences\.
 
    **Full access**
 
    1. Sign in to your AWS account as the user FinanceManager\.
 
-   1. On the navigation bar, choose **FinanceManager@*<account alias or ID number>*** , and then choose **My Billing Dashboard**\.
+   1. On the navigation bar, choose **FinanceManager@*<account alias or ID number>*** , and then choose **Billing Dashboard**\.
 
-   1. Browse through the pages and choose the various buttons to ensure that you have full modify permissions\. 
+   1. Browse through the pages and choose the various buttons to ensure that you have full modify permissions\.
 
    **Read\-only access**
 
    1. Sign in to your AWS account as the user FinanceUser\.
 
-   1. On the navigation bar, choose **FinanceUser@*<account alias or ID number>***, and then choose **My Billing Dashboard**\.
+   1. On the navigation bar, choose **FinanceUser@*<account alias or ID number>***, and then choose **Billing Dashboard**\.
 
    1. Browse through the pages\. Notice that you can display costs, reports, and billing data with no problems\. However, if you choose an option to modify a value, you receive an **Access Denied **message\. For example, on the **Preferences** page, choose any of the check boxes on the page, and then choose **Save preferences**\. The console message informs you that you need **ModifyBilling** permissions to make changes to that page\.
 
@@ -155,7 +155,7 @@ For related information found in the *AWS Billing User Guide*, see the following
 
 For related information in the *IAM User Guide*, see the following resources:
 + [Managed policies and inline policies](access_policies_managed-vs-inline.md)
-+ [Controlling user access to the AWS Management Console](console_controlling-access.md)
++ [Controlling IAM users access to the AWS Management Console](console_controlling-access.md)
 + [Attaching a policy to an IAM user group](id_groups_manage_attach-policy.md)
 
 ## Summary<a name="tutorial-billing-summary"></a>

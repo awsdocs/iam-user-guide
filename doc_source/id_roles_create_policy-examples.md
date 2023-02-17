@@ -3,13 +3,13 @@
 The following examples show how you can allow or grant an AWS account access to the resources in another AWS account\. To learn how to create an IAM policy using these example JSON policy documents, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 **Topics**
-+ [Using roles to delegate access to another AWS account's resources](#example-delegate-xaccount-rolesapi)
++ [Using roles to delegate access to the resources of another AWS account resources](#example-delegate-xaccount-rolesapi)
 + [Using a policy to delegate access to services](#id_roles_create_policy-examples-access-to-services)
 + [Using a resource\-based policy to delegate access to an Amazon S3 bucket in another account](#example-delegate-xaccount-S3)
 + [Using a resource\-based policy to delegate access to an Amazon SQS queue in another account](#example-delegate-xaccount-SQS)
 + [Cannot delegate access when the account is denied access](#example-delegate-xaccount-SQS-denied)
 
-## Using roles to delegate access to another AWS account's resources<a name="example-delegate-xaccount-rolesapi"></a>
+## Using roles to delegate access to the resources of another AWS account resources<a name="example-delegate-xaccount-rolesapi"></a>
 
  For a tutorial that shows how to use IAM roles to grant users in one account access to AWS resources that are in another account, see [IAM tutorial: Delegate access across AWS accounts using IAM roles](tutorial_cross-account-with-roles.md)\. 
 

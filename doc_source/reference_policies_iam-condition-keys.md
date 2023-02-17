@@ -73,7 +73,7 @@ Sometimes you pass a role to a service that then passes the role to a different 
 Some services, such as AWS CodeBuild and AWS CodeCommit do not support this condition key\.
 
 **iam:PermissionsBoundary**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
+Works with [ARN operators](reference_policies_elements_condition_operators.md#Conditions_ARN)\.  
 Checks that the specified policy is attached as permissions boundary on the IAM principal resource\. For more information, see [Permissions boundaries for IAM entities](access_policies_boundaries.md)
 
 **iam:PolicyARN**  
@@ -101,7 +101,7 @@ This example shows how you might create an identity\-based policy that allows de
 
 ## Available keys for AWS web identity federation<a name="condition-keys-wif"></a>
 
-You can use web identity federation to give temporary security credentials to users who have been authenticated through an identity provider \(IdP\)\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that limit the access of federated users to resources that are associated with a specific provider, app, or user\. These keys are typically used in the trust policy for a role\.
+You can use web identity federation to give temporary security credentials to users who have been authenticated through an OpenID Connect compliant OpenID Provider \(OP\) to an IAM OpenID Connect \(OIDC\) identity provider in your AWS account\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. Identity tokens \(id\_tokens\) from your own OpenID OP may be used, as well as id\_tokens issued to service accounts of Amazon Elastic Kubernetes Service clusters\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that limit the access of federated users to resources that are associated with a specific provider, app, or user\. These keys are typically used in the trust policy for a role\. Define conditions keys using the name of the OIDC provider followed by the claim \(`:aud`, `:azp`, `:amr`, `sub`\)\. For roles used by Amazon Cognito, keys are defined using `cognito-identity.amazonaws.com` followed by the claim\.
 
 **amr**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -195,7 +195,21 @@ Works with [string operators](reference_policies_elements_condition_operators.md
 **Examples**:   
 + `accounts.google.com:sub`
 + `cognito-identity.amazonaws.com:sub`
-Use these keys to verify that the user ID matches the one that you specify in the policy\. You can use the `sub` key with the `aud` key for the same identity provider\.
+Use these keys to verify that the user ID matches the one that you specify in the policy\. You can use the `sub` key with the `aud` key for the same identity provider\.  
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        "Condition": {
+              "StringEquals": {
+                  "oidc.eks.us-east-1.amazonaws.com/id/111122223333:aud": "sts.amazonaws.com",
+                  "oidc.eks.us-east-1.amazonaws.com/id/111122223333:sub": "system:serviceaccount:default:assumer"
+               }
+            }
+    ]
+      }
+```
 
 **More information about web identity federation**  
 For more information about web identity federation, see the following:  

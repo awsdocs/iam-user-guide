@@ -18,9 +18,9 @@ You can use the AWS Management Console to view password usage information for yo
 
    1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
-   1. In **Manage Columns**, select **Console last sign\-in**\.
+   1. In **Select visible columns**, select **Console last sign\-in**\.
 
-   1. Choose **Close** to return to the list of users\.
+   1. Choose **Confirm** to return to the list of users\.
 
 1. The **Console last sign\-in** column shows the date when the user last signed in to AWS through the console\. You can use this information to find users with passwords who have not signed in for more than a specified period of time\. The column displays **Never** for users with passwords that have never signed in\. **None** indicates users with no passwords\. Passwords that have not been used recently might be good candidates for removal\.
 **Important**  
@@ -61,11 +61,11 @@ You can use the AWS Management Console to view access key usage information for 
 
    1. Above the table on the far right, choose the settings icon \(![\[Settings icon\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/console-settings-icon.console.png)\)\.
 
-   1. In **Manage Columns**, select **Access key last used**\.
+   1. In **Select visible columns**, select **Access key last used**\.
 
-   1. Choose **Close** to return to the list of users\.
+   1. Choose **Confirm** to return to the list of users\.
 
-1. The **Access key last used** column shows the number of days since the user last accessed AWS programmatically\. You can use this information to find users with access keys that have not been used for more than a specified period of time\. The column displays **None** for users with no access keys\. Access keys that have not been used recently might be good candidates for removal\.
+1. The **Access key last used** column shows the number of days since the user last accessed AWS programmatically\. You can use this information to find users with access keys that have not been used for more than a specified period of time\. The column displays **–** for users with no access keys\. Access keys that have not been used recently might be good candidates for removal\.
 
 **To find unused access keys by downloading the credentials report \(console\)**
 
