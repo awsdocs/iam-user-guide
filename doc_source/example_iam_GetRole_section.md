@@ -113,7 +113,7 @@ run();
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
     public function getRole($roleName)
     {

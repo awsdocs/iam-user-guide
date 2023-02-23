@@ -279,7 +279,7 @@ suspend fun listAllUsers() {
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
     public function listUsers($pathPrefix = "", $marker = "", $maxItems = 0)
     {

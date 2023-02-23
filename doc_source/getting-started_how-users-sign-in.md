@@ -6,7 +6,7 @@ User sign in to the AWS Management Console to access your AWS resources\. To sig
 To sign in with your IAM Identity Center user, use the sign\-in URL that was sent to your email address when you created the IAM Identity Center user\.  
 For help signing in using an IAM Identity Center user, see [Signing in to the AWS access portal](https://docs.aws.amazon.com/signin/latest/userguide/iam-id-center-sign-in-tutorial.html) in the *AWS Sign\-In User Guide*\.
 
-Before you create a sign\-in URL for your account, you create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS account ID and its alias](console_account-alias.md)\. 
+Before you create a sign\-in URL for your account, you create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [User Types](https://docs.aws.amazon.com/signin/latest/userguide/user-types-list.html.html) in the *AWS Sign\-In User Guide*\. 
 
 You can find the sign\-in URL for an account on the **Dashboard** page in the IAM console\.
 

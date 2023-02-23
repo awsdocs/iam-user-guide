@@ -8,7 +8,7 @@ For these scenarios, you can delegate access to AWS resources using an *IAM role
 
 **Note**  
 When you first create your AWS account, no roles are created by default\. As you add services to your account, they may add service\-linked roles to support their use cases\.  
-  A service\-linked role is a type of service role that is linked to an AWS service\. The service can assume the role to perform an action on your behalf\. Service\-linked roles appear in your IAM account and are owned by the service\. An IAM administrator can view, but not edit the permissions for service\-linked roles\.   
+  A service\-linked role is a type of service role that is linked to an AWS service\. The service can assume the role to perform an action on your behalf\. Service\-linked roles appear in your AWS account and are owned by the service\. An IAM administrator can view, but not edit the permissions for service\-linked roles\.   
 Before you can delete service\-linked roles you must first delete their related resources\. This protects your resources because you can't inadvertently remove permission to access the resources\.  
 For information about which services support using service\-linked roles, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
 

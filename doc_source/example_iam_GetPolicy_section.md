@@ -197,7 +197,7 @@ suspend fun getIAMPolicy(policyArnVal: String?) {
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
     public function getPolicy($policyArn)
     {

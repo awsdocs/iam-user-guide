@@ -247,7 +247,7 @@ suspend fun createIAMUser(usernameVal: String?): String? {
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
 $user = $service->createUser("iam_demo_user_$uuid");
 echo "Created user with the arn: {$user['Arn']}\n";

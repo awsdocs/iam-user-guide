@@ -15,7 +15,7 @@ Use the information here to help you diagnose and fix access\-denied or other co
 
 ## I can't sign in to my AWS account<a name="troubleshoot_general_cant-sign-in"></a>
 
-Verify that you have the correct credentials and that you are using the correct method to sign in\. For more information, see [Troubleshoot AWS sign\-in or account issues](troubleshoot_sign_in.md)\.
+Verify that you have the correct credentials and that you are using the correct method to sign in\. For more information, see [Troubleshooting sign\-in issues](https://docs.aws.amazon.com/signin/latest/userguide/troubleshooting-sign-in-issues.html) in the *AWS Sign\-In User Guide*\.
 
 ## I lost my access keys<a name="troubleshoot_general_access-keys"></a>
 

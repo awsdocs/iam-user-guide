@@ -356,7 +356,7 @@ suspend fun createIAMPolicy(policyNameVal: String?): String {
 
 ```
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
 $listAllBucketsPolicyDocument = "{
                 \"Version\": \"2012-10-17\",

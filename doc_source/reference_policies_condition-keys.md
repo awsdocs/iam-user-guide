@@ -724,9 +724,6 @@ Use this key to compare the identifier of the organization in AWS Organizations 
     + `ec2:CreateVolume`
     + `ec2:CreateVpcPeeringConnection`
   + Amazon EventBridge – All actions
-  + Amazon WorkSpaces
-    + `workspaces:CopyWorkspaceImage`
-    + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Single\-valued
 
 This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.

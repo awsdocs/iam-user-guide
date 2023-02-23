@@ -455,6 +455,8 @@ namespace AwsDoc {
                                           const Aws::IAM::Model::User &user,
                                           const Aws::IAM::Model::Policy &policy);
     }
+
+    static const char ALLOCATION_TAG[] = "example_code";
 }
 
 //! Scenario to create an IAM user, create an IAM role, and apply the role to the user.
@@ -657,6 +659,7 @@ bool AwsDoc::IAM::iamCreateUserAssumeRoleScenario(
                 Aws::Auth::AWSCredentials(credentials.GetAccessKeyId(),
                                           credentials.GetSecretAccessKey(),
                                           credentials.GetSessionToken()),
+                Aws::MakeShared<Aws::S3::S3EndpointProvider>(ALLOCATION_TAG),
                 clientConfig);
         Aws::S3::Model::ListBucketsOutcome listBucketsOutcome = s3Client.ListBuckets();
         if (!listBucketsOutcome.IsSuccess()) {
@@ -710,6 +713,7 @@ bool AwsDoc::IAM::iamCreateUserAssumeRoleScenario(
                 Aws::Auth::AWSCredentials(credentials.GetAccessKeyId(),
                                           credentials.GetSecretAccessKey(),
                                           credentials.GetSessionToken()),
+                Aws::MakeShared<Aws::S3::S3EndpointProvider>(ALLOCATION_TAG),
                 clientConfig);
         Aws::S3::Model::ListBucketsOutcome listBucketsOutcome = s3Client.ListBuckets();
         if (!listBucketsOutcome.IsSuccess()) {
@@ -2696,13 +2700,13 @@ use Aws\Credentials\Credentials;
 use Aws\S3\Exception\S3Exception;
 use Aws\S3\S3Client;
 use Aws\Sts\StsClient;
-use Iam\IamService;
+use Iam\IAMService;
 
 echo("--------------------------------------\n");
 print("Welcome to the Amazon IAM getting started demo using PHP!\n");
 echo("--------------------------------------\n");
 $uuid = uniqid();
-$service = new IamService();
+$service = new IAMService();
 
 $user = $service->createUser("iam_demo_user_$uuid");
 echo "Created user with the arn: {$user['Arn']}\n";

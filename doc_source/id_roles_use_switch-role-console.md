@@ -20,8 +20,9 @@ You cannot switch roles in the AWS Management Console to a role that requires an
   `https://signin.aws.amazon.com/switchrole?account=account_id_number&roleName=role_name&displayName=text_to_display`
 
   Where you replace the following text:
+
   + *account\_id\_number* – The 12\-digit account identifier provided to you by your administrator\. Alternatively, your administrator might create an account alias so that the URL includes your account name instead of an account ID\. For more information, see [Your AWS account ID and its alias](console_account-alias.md)\.
-  + *role\_name* – The name of the role that you want to assume\. You can get this from the end of the role's ARN\. For example, provide the `TestRole` role name from the following role ARN: `arn:aws:iam::403299380220:role/TestRole`\.
+  + *role\_name* – The name of the role that you want to assume\. You can get this from the end of the role's ARN\. For example, provide the `TestRole` role name from the following role ARN: `arn:aws:iam::123456789012:role/TestRole`\.
   + \(Optional\) *text\_to\_display* – The text that you want to appear on the navigation bar in place of your user name when this role is active\.
 + You can manually switch roles using the information your administrator provides by using the procedures that follow\. 
 
