@@ -27,7 +27,7 @@ Use this condition key in a policy to allow an entity to pass a role, but only i
     "Resource": "*",
     "Condition": {
         "StringEquals": {"iam:PassedToService": "ec2.amazonaws.com"},
-        "StringLike": {
+        "ArnLike": {
             "iam:AssociatedResourceARN": [
                 "arn:aws:ec2:us-east-1:111122223333:instance/*",
                 "arn:aws:ec2:us-west-1:111122223333:instance/*"
