@@ -11,13 +11,9 @@ Use IAM to give identities, such as users and roles, access to resources in your
 IAM works only with AWS products that are integrated with IAM\. For a list of services that support IAM, see [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)\.
 
 **Topics**
-+ [Access control methods](#AccessControlMethods)
 + [Sign up for an AWS account](#sign-up-for-aws)
 + [Create an administrative user](#create-an-admin)
-
-## Access control methods<a name="AccessControlMethods"></a>
-
-Here are the ways you can use IAM to control access to your AWS resources\.
++ [Prepare for least\-privilege permissions](#LeastPrivilege)
 
 ## Sign up for an AWS account<a name="sign-up-for-aws"></a>
 
@@ -58,3 +54,16 @@ After you sign up for an AWS account, create an administrative user so that you 
 + To sign in with your IAM Identity Center user, use the sign\-in URL that was sent to your email address when you created the IAM Identity Center user\.
 
   For help signing in using an IAM Identity Center user, see [Signing in to the AWS access portal](https://docs.aws.amazon.com/signin/latest/userguide/iam-id-center-sign-in-tutorial.html) in the *AWS Sign\-In User Guide*\.
+
+## Prepare for least\-privilege permissions<a name="LeastPrivilege"></a>
+
+Using *least\-privilege permissions* is an IAM best practice recommendation\. The concept of least\-privilege permissions is to grant users only the permissions required to perform a task\. As you get set up, consider how you are going to support least\-privilege permissions\. Both the root user and the administrator user have powerful privileges that are not required for everyday tasks\. While you are learning about AWS and testing out different services we recommend that you create at least one additional user in IAM Identity Center with lesser privileges that you can use in different scenarios\. You can use IAM policies to define the actions that can be taken on specific resources under specific conditions and then connect to those resources with your lesser privileged account\.
+
+If you are using IAM Identity Center, consider using IAM Identity Center permissions sets to get started\. To learn more, see [Create a permission set](https://docs.aws.amazon.com/singlesignon/latest/userguide/howtocreatepermissionset.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\. 
+
+If you are not using IAM Identity Center, use IAM roles to define the privileges for different IAM entities\. To learn more, see [Creating IAM roles](id_roles_create.md)\.
+
+Both IAM roles and IAM Identity Center permissions sets can use AWS managed policies based on job functions\. For details on the permissions granted by these policies, see [AWS managed policies for job functions](access_policies_job-functions.md)\. 
+
+**Important**  
+Keep in mind that AWS managed policies might not grant least\-privilege permissions for your specific use cases because they are available for use by all AWS customers\. After getting set up, we recommend that you use IAM Access Analyzer to generate least\-privilege policies based on your access activity that is logged in AWS CloudTrail\. For more information about policy generation, see [IAM Access Analyzer policy generation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-generation.html)\.

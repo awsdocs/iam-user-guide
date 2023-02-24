@@ -1,6 +1,14 @@
-# Understanding how IAM works<a name="intro-structure"></a>
+# How IAM works<a name="intro-structure"></a>
 
-IAM provides the infrastructure necessary to control authentication and authorization for your account\. The IAM infrastructure includes the following elements:
+IAM provides the infrastructure necessary to control authentication and authorization for your AWS account\. The IAM infrastructure is illustrated by the following diagram:
+
+![\[IntroToIAM_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/intro-diagram _policies_800.png)
+
+First, a human user or an application uses their sign\-in credentials to authenticate with AWS\. Authentication is provided by matching the sign\-in credentials to a principal \(an IAM user, federated user, IAM role, or application\) trusted by the AWS account\. 
+
+Next, a request is made to grant the principal access to resources\. Access is granted in response to an authorization request\. For example, when you first sign in to the console and are on the console Home page, you are not accessing a specific service\. When you select a service, the request for authorization is sent to that service and it looks to see if your identity is on the list of authorized users, what policies are being enforced to control the level of access granted, and any other polices that might be in effect\. Authorization requests can be made by principals within your AWS account or from another AWS account that you trust\.
+
+Once authorized, the principal can take action or perform operations on resources in your AWS account\. For example, the principal could launch a new Amazon Elastic Compute Cloud instance, modify IAM group membership, or delete Amazon Simple Storage Service buckets\.
 
 **Topics**
 + [Terms](#intro-structure-terms)
@@ -11,11 +19,9 @@ IAM provides the infrastructure necessary to control authentication and authoriz
 + [Actions or operations](#intro-structure-actions)
 + [Resources](#intro-structure-resources)
 
-![\[IntroToIAM_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/intro-diagram _policies_800.png)
-
 ## Terms<a name="intro-structure-terms"></a>
 
-Learn more about IAM terms\.
+In the previous illustration we used specific terminology to describe how to obtain access to resources\. These IAM terms are commonly used when working with AWS:
 
 IAM Resources  
 The user, group, role, policy, and identity provider objects that are stored in IAM\. As with other AWS services, you can add, edit, and remove resources from IAM\.

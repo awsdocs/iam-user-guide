@@ -4,7 +4,7 @@ When an administrator [creates a role for cross\-account access](id_roles_create
 
 **To grant permission to switch to a role**
 
-1. As the administrator of the trusted account,create a new policy for the user, or edits an existing policy to add the required elements\. For details, see [Creating or editing the policy](#roles-usingrole-createpolicy)\.
+1. As the administrator of the trusted account, create a new policy for the user, or edit an existing policy to add the required elements\. For details, see [Creating or editing the policy](#roles-usingrole-createpolicy)\.
 
 1. Then, choose how you want to share the role information: 
    + **Role link:** Send users a link that takes them to the **Switch Role** page with all the details already filled in\. 

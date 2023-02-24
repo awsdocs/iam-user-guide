@@ -1,6 +1,6 @@
 # IAM console search<a name="console_search"></a>
 
-As you navigate through the IAM Management Console to manage various IAM resources, you often need to locate access keys\. Or you might need to browse to the deeply nested IAM resources to find what you need\. Use the IAM console search page as a faster option for searching\. You can locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
+Use the IAM console search page as a faster option for finding IAM resources\. You can use the console search page to locate access keys related to your account, IAM entities \(such as users, groups, roles, identity providers\), policies by name, and more\.
 
 The IAM console search feature can locate any of the following:
 + IAM entity names that match your search keywords \(for users, groups, roles, identity providers, and policies\)
@@ -19,7 +19,9 @@ Use the **Search** page in the IAM console to find items related to that account
 
 **To search for items in the IAM console**
 
-1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
+1. Follow the sign\-in procedure appropriate to your user type as described in the topic [How to sign in to AWS](https://docs.aws.amazon.com/signin/latest/userguide/how-to-sign-in.html) in the *AWS Sign\-In User Guide*\.
+
+1. On the **Console Home** page, select the IAM service\.
 
 1. In the navigation pane, choose **Search**\. 
 
@@ -45,7 +47,7 @@ The following icons identify the types of items that are found by a search:
 
 ## Sample search phrases<a name="search_phrases"></a>
 
-You can use the following phrases in the IAM search\. Replace terms in italics with the names of actual IAM users, groups, roles, access keys, policies, or identity providers respectively that you want to locate\.
+You can use the following phrases in the IAM search\. Replace terms in italics with the names of the actual IAM users, groups, roles, access keys, policies, or identity providers that you want to locate\.
 + ***user\_name*** or ***group\_name* ** or ***role\_name*** or ***policy\_name*** or ***identity\_provider\_name***
 + ***access\_key***
 + **add user *user\_name* to groups** or **add users to group *group\_name***

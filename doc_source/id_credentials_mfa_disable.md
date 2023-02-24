@@ -32,7 +32,7 @@ If you use the API or AWS CLI to delete a user from your AWS account, you must d
 
 1. Sign in to the [IAM console](https://console.aws.amazon.com/iam/) as the account owner by choosing **Root user** and entering your AWS account email address\. On the next page, enter your password\.
 **Note**  
-If you see three text boxes, then you previously signed in to the console with *[IAM user](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)* credentials\. Your browser might remember this preference and open this account\-specific sign\-in page every time that you try to sign in\. You cannot use the IAM user sign\-in page to sign in as the account owner\. If you see the [IAM user sign\-in page](https://docs.aws.amazon.com/IAM/latest/UserGuide/console.html#user-sign-in-page), choose **Sign in using root user email** near the bottom of the page\. This returns you to the main sign\-in page\. From there, you can sign in as the root user using your AWS account email address and password\.
+As the root user, you can't sign in to the **Sign in as IAM user** page\. If you see the **Sign in as IAM user** page, choose **Sign in using root user email** near the bottom of the page\. For help signing in as the root user, see [Signing in to the AWS Management Console as the root user](https://docs.aws.amazon.com/signin/latest/userguide/introduction-to-          root-user-sign-in-tutorial.html) in the *AWS Sign\-In User Guide*\.
 
 1. On the right side of the navigation bar, choose on your account name, and then choose **Security credentials**\. If necessary, choose **Continue to Security credentials**\.  
 ![\[Security credentials in the navigation menu\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/security-credentials-root.shared.console.png)

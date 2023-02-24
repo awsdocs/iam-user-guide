@@ -8,12 +8,14 @@ AWS Identity and Access Management \(IAM\) is a web service that helps you secur
 + [Video introduction to IAM](#intro-video)
 + [IAM features](#intro-features)
 + [Accessing IAM](#intro-accessing)
-+ [Understanding how IAM works](intro-structure.md)
++ [When do I use IAM?](when-to-use-iam.md)
++ [How IAM works](intro-structure.md)
 + [Overview of AWS identity management: Users](introduction_identity-management.md)
 + [Overview of access management: Permissions and policies](introduction_access-management.md)
 + [What is ABAC for AWS?](introduction_attribute-based-access-control.md)
 + [Security features outside IAM](introduction_security-outside-iam.md)
 + [Quick links to common tasks](introduction_quick-links-common-tasks.md)
++ [IAM console search](console_search.md)
 + [Using IAM with an AWS SDK](sdk-general-information-section.md)
 
 ## Video introduction to IAM<a name="intro-video"></a>
@@ -70,5 +72,5 @@ AWS provides two sets of command line tools: the [AWS Command Line Interface](ht
 **AWS SDKs**  
 AWS provides SDKs \(software development kits\) that consist of libraries and sample code for various programming languages and platforms \(Java, Python, Ruby, \.NET, iOS, Android, etc\.\)\. The SDKs provide a convenient way to create programmatic access to IAM and AWS\. For example, the SDKs take care of tasks such as cryptographically signing requests, managing errors, and retrying requests automatically\. For information about the AWS SDKs, including how to download and install them, see the [Tools for Amazon Web Services](https://aws.amazon.com/tools/) page\.
 
-**IAM HTTPS API**  
-You can access IAM and AWS programmatically by using the IAM HTTPS API, which lets you issue HTTPS requests directly to the service\. When you use the HTTPS API, you must include code to digitally sign requests using your credentials\. For more information, see [Calling the IAM API using HTTP query requests](programming.md) and the [IAM API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/)\.
+**IAM Query API**  
+You can access IAM and AWS programmatically by using the IAM Query API, which lets you issue HTTPS requests directly to the service\. When you use the Query API, you must include code to digitally sign requests using your credentials\. For more information, see [Calling the IAM API using HTTP query requests](programming.md) and the [IAM API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/)\.

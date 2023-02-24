@@ -11,6 +11,17 @@ Other examples of resources that support resource\-based policies include an Ama
 
 You cannot use the `Principal` element in an identity\-based policy\. Identity\-based policies are permissions policies that you attach to IAM identities \(users, groups, or roles\)\. In those cases, the principal is implicitly the identity where the policy is attached\.
 
+**Topics**
++ [Specifying a principal](#Principal_specifying)
++ [AWS account principals](#principal-accounts)
++ [IAM role principals](#principal-roles)
++ [Role session principals](#principal-role-session)
++ [IAM user principals](#principal-users)
++ [AWS STS federated user session principals](#sts-session-principals)
++ [AWS service principals](#principal-services)
++ [All principals](#principal-anonymous)
++ [More information](#Principal_more-info)
+
 ## Specifying a principal<a name="Principal_specifying"></a>
 
 You specify a principal in the `Principal` element of a resource\-based policy or in condition keys that support principals\.

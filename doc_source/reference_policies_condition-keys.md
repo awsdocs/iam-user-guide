@@ -789,7 +789,7 @@ For example, the following condition returns `True` for resources that belong to
 }
 ```
 
-The following condition returns `True` for resources owned by accounts attached to the OU `ou-ab12-11111111` or any of the child OUs\.
+The following condition returns `True` for resources with the OU ID `ou-ab12-11111111`\. It will match resources owned by accounts attached to the OU ou\-ab12\-11111111 or any of the child OUs\.
 
 ```
 "Condition": { "ForAnyValue:StringLike" : {
@@ -797,7 +797,7 @@ The following condition returns `True` for resources owned by accounts attached 
 }}
 ```
 
-The following condition returns `True` for resources owned by accounts attached directly to the OU `ou-ab12-22222222`, but not the child OUs\. The following example uses the [StringEquals](reference_policies_elements_condition_operators.md) condition operator to specify the exact match requirement for the OU and not a wildcard match\.
+The following condition returns `True` for resources owned by accounts attached directly to the OU ID `ou-ab12-22222222`, but not the child OUs\. The following example uses the [StringEquals](reference_policies_elements_condition_operators.md) condition operator to specify the exact match requirement for the OU ID and not a wildcard match\.
 
 ```
 "Condition": { "ForAnyValue:StringEquals" : {

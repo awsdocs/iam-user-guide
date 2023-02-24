@@ -2,7 +2,7 @@
 
 AWS Identity and Access Management \(IAM\) is a web service that helps you securely control access to AWS resources\. When a [principal](intro-structure.md#intro-structure-principal) makes a request in AWS, the AWS enforcement code checks whether the principal is authenticated \(signed in\) and authorized \(has permissions\)\. You manage access in AWS by creating policies and attaching them to IAM identities or AWS resources\. Policies are JSON documents in AWS that, when attached to an identity or resource, define their permissions\. For more information about policy types and uses, see [Policies and permissions in IAM](access_policies.md)\.
 
-For details about the rest of the authentication and authorization process, see [Understanding how IAM works](intro-structure.md)\.
+For details about the rest of the authentication and authorization process, see [How IAM works](intro-structure.md)\.
 
 ![\[AccessManagement_Diagram\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/access-diagram_800.png)
 

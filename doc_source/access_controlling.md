@@ -6,7 +6,7 @@ To use a [policy](access_policies.md) to control access in AWS, you must underst
 
 AWS then checks that you \(the principal\) are authenticated \(signed in\) and authorized \(have permission\) to perform the specified action on the specified resource\. During authorization, AWS checks all the policies that apply to the context of your request\. Most policies are stored in AWS as [JSON documents](access_policies.md#access_policies-json) and specify the permissions for principal entities\. For more information about policy types and uses, see [Policies and permissions in IAM](access_policies.md)\.
 
-AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram of this process, see [Understanding how IAM works](intro-structure.md)\. For details about how AWS determines whether a request is allowed, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\. 
+AWS authorizes the request only if each part of your request is allowed by the policies\. To view a diagram of this process, see [How IAM works](intro-structure.md)\. For details about how AWS determines whether a request is allowed, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\. 
 
 When you create an IAM policy, you can control access to the following:
 + **[Principals](#access_controlling-principals)** – Control what the person making the request \(the [principal](intro-structure.md#intro-structure-principal)\) is allowed to do\. 
