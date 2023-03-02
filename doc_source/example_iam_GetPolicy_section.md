@@ -272,7 +272,7 @@ This is prerelease documentation for an SDK in preview release\. It is subject t
   
 
 ```
-    public func getPolicy(arn: String) async throws -> IamClientTypes.Policy {
+    public func getPolicy(arn: String) async throws -> IAMClientTypes.Policy {
         let input = GetPolicyInput(
             policyArn: arn
         )

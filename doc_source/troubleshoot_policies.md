@@ -509,7 +509,7 @@ The policy engine does not allow you to save any policy with syntax errors\. You
 {
       "Version": "2012-10-17",
       "Statement": {
-        "Efect": "Deny",
+        "Effect": "Deny",
         "Action": "ec2:* ",
         "Resource": "*"
       }

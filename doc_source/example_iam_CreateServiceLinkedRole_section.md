@@ -199,9 +199,9 @@ This is prerelease documentation for an SDK in preview release\. It is subject t
 
 ```
     public func createServiceLinkedRole(service: String, suffix: String? = nil, description: String?)
-                    async throws -> IamClientTypes.Role {
+                    async throws -> IAMClientTypes.Role {
         let input = CreateServiceLinkedRoleInput(
-            aWSServiceName: service,
+            awsServiceName: service,
             customSuffix: suffix,
             description: description
         )

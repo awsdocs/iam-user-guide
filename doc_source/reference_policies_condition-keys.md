@@ -27,17 +27,22 @@ For example, you can use AWS CloudFormation to read and write from an Amazon Dyn
 + **Availability** – This key is present in the request when a service that supports `aws:CalledVia` uses the credentials of an IAM principal to make a request to another service\. This key is not present if the service uses a [service role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-role) or [service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role) to make a call on the principal's behalf\. This key is also not present when the principal makes the call directly\.
 + **Value type** – Multivalued<a name="calledvia-services"></a>
 
-To use the `aws:CalledVia` condition key in a policy, you must provide the service principals to allow or deny AWS service requests\. AWS supports using the following services with `aws:CalledVia`\.
+To use the `aws:CalledVia` condition key in a policy, you must provide the service principals to allow or deny AWS service requests\. AWS supports using the following service principals with `aws:CalledVia`\.
 
 
-**CalledVia services**  
-
-| AWS service | Service principal | 
-| --- | --- | 
-| Amazon Athena | athena\.amazonaws\.com | 
-| AWS CloudFormation | cloudformation\.amazonaws\.com | 
-| Amazon DynamoDB | dynamodb\.amazonaws\.com | 
-| AWS Key Management Service \(AWS KMS\) | kms\.amazonaws\.com | 
+| Service principal | 
+| --- | 
+| athena\.amazonaws\.com | 
+| cloud9\.amazonaws\.com | 
+| cloudformation\.amazonaws\.com | 
+| databrew\.amazonaws\.com | 
+| dataexchange\.amazonaws\.com | 
+| dynamodb\.amazonaws\.com | 
+| kms\.amazonaws\.com | 
+| redshift\-severless\.amazonaws\.com | 
+| redshift\.amazonaws\.com | 
+| servicecatalog\-appregistry\.amazonaws\.com | 
+| sqlworkbench\.amazonaws\.com | 
 
 To allow or deny access when *any* service makes a request using the principal's credentials, use the `aws:ViaAWSService` condition key\. That condition key supports AWS services\.
 

@@ -204,7 +204,7 @@ This is prerelease documentation for an SDK in preview release\. It is subject t
   
 
 ```
-    public func getRole(name: String) async throws -> IamClientTypes.Role {
+    public func getRole(name: String) async throws -> IAMClientTypes.Role {
         let input = GetRoleInput(
             roleName: name
         )

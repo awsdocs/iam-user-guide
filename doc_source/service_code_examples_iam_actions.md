@@ -2,7 +2,7 @@
 
 The following code examples demonstrate how to perform individual IAM actions with AWS SDKs\. These excerpts call the IAM API and are not intended to be run in isolation\. Each example includes a link to GitHub, where you can find instructions on how to set up and run the code in context\.
 
- The following examples include only the most commonly used actions\. For a complete list, see the [AWS Identity and Access Management API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/welcome.html)\. 
+ The following examples include only the most commonly used actions\. For a complete list, see the [AWS Identity and Access Management \(IAM\) API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/welcome.html)\. 
 
 **Topics**
 + [Attach a policy to a role](example_iam_AttachRolePolicy_section.md)

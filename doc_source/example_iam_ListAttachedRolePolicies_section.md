@@ -241,10 +241,10 @@ This is prerelease documentation for an SDK in preview release\. It is subject t
     ///
     /// - Parameter role: The IAM role to return the policy list for.
     ///
-    /// - Returns: An array of `IamClientTypes.AttachedPolicy` objects
+    /// - Returns: An array of `IAMClientTypes.AttachedPolicy` objects
     ///   describing each managed policy that's attached to the role.
-    public func listAttachedRolePolicies(role: String) async throws -> [IamClientTypes.AttachedPolicy] {
-        var policyList: [IamClientTypes.AttachedPolicy] = []
+    public func listAttachedRolePolicies(role: String) async throws -> [IAMClientTypes.AttachedPolicy] {
+        var policyList: [IAMClientTypes.AttachedPolicy] = []
         var marker: String? = nil
         var isTruncated: Bool
         
