@@ -53,23 +53,19 @@ The difference between single\-valued and multivalued condition keys depends on 
 
 ## Examples of using multiple values with condition set operators<a name="reference_policies_multi-value-conditions-examples"></a>
 
-You can create a policy to test multiple values in a request against one or more values that you specify in the policy\. Assume that you have an Amazon DynamoDB table named `Thread` that is used to store information about threads in a technical support forum\. The table has attributes named `ID`, `UserName`, `PostDateTime`, `Message`, and `Tags`\. 
+You can create a policy to test multiple values in a request against one or more values that you specify in the policy\. Assume that you have an Amazon DynamoDB table named `Thread` that is used to store information about threads in a technical support forum\. The table has a partition key attribute named `ID` and each item has the following attributes: `UserName`, `PostDateTime`, `Message`, and `Tags`\.  Here's how an item in such a table would look like:
 
 ```
 {	
-  ID=101
-  UserName=Bob
-  PostDateTime=20130930T231548Z
-  Message="A good resource for this question is docs.aws.amazon.com"
-  Tags=["AWS", "Database", "Security"]
+    "ID": { "S": "101" },
+    "UserName": { "S": "Bob" },
+    "PostDateTime": { "S": "2023-03-17T21:20:00Z" },
+    "Message": { "S": "A good resource for this question is docs.aws.amazon.com" },
+    "Tags": { "SS": ["AWS", "Database", "Security"] }
 }
 ```
 
-For information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Fine\-Grained Access Control for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/FGAC_DDB.html) in the *Amazon DynamoDB Developer Guide*\. 
-
-You can create a policy that allows users to see only the `PostDateTime`, `Message`, and `Tags` attributes\. If the user's request contains any of these attributes, it is allowed\. But if the request contains any other attributes \(for example, `ID`\), the request is denied\. Logically speaking, you want to create a list of allowed attributes \(`PostDateTime`, `Message`, `Tags`\)\. You also want to indicate in the policy that all of the user's requested attributes must be in that list of allowed attributes\.
-
-The following example policy shows how to use the `ForAllValues` qualifier with the `StringEquals` condition operator\. The condition allows a user to request *only* the attributes `ID`, `Message`, or `Tags` from the DynamoDB table named `Thread`\.
+You can create a policy that allows the [GetItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html) operation to obtain only the `PostDateTime`, `Message`, and `Tags` attributes\. If the user's request contains any of these attributes, it is allowed\. But if the request contains any other attributes \(for example, `UserName`\) or implicitly requests all attributes by omitting the [ProjectionExpression](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_GetItem.html#DDB-GetItem-request-ProjectionExpression) parameter, the request is denied\. The following example policy shows how to use the `ForAllValues` qualifier with the `StringEquals` condition operator to achieve this:
 
 ```
 {
@@ -83,9 +79,13 @@ The following example policy shows how to use the `ForAllValues` qualifier with 
                 "ForAllValues:StringEquals": {
                     "dynamodb:Attributes": [
                         "ID",
+                        "PostDateTime",
                         "Message",
                         "Tags"
                     ]
+                },
+                "StringEquals": {
+                    "dynamodb:Select": "SPECIFIC_ATTRIBUTES"
                 }
             }
         }
@@ -93,27 +93,71 @@ The following example policy shows how to use the `ForAllValues` qualifier with 
 }
 ```
 
-Assume the user makes a request to DynamoDB to get the attributes `Message` and `Tags` from the `Thread` table\. In that case, the request is allowed because the user's requested attributes all match values specified in the policy\. The `GetItem` operation requires the user to pass the `ID` attribute as the database table key, which is also allowed in the policy\. However, if the user's request includes the `UserName` attribute, the request fails\. The reason is that `UserName` is not within the list of allowed attributes and the `ForAllValues` qualifier requires all requested values to be listed in the policy\.
+Assume the user invokes the `GetItem` operation with the following input:
+
+```
+{
+    "Key": {
+        "ID": { "S": "101" }
+    },
+    "ProjectionExpression": "Message, Tags"
+}
+```
+
+The relevant request context key values would be:
+
+```
+{
+    "dynamodb:Attributes": ["ID", "Message", "Tags"],
+    "dynamodb:Select": "SPECIFIC_ATTRIBUTES"
+}
+```
+
+In this case, the request is allowed because the user's requested attributes all match values specified in the policy\. The `GetItem` operation requires the user to pass the `ID` attribute as the item's primary key, which is also allowed in the policy\. However, if the user's request includes the `UserName` attribute, the request would be denied\. The reason is that `UserName` is not within the list of allowed attributes and the `ForAllValues` qualifier requires all requested values to be listed in the policy\.
+
+On the other hand, if the user attempts to implicitly obtain all attributes by invoking the `GetItem` operation with the following input:
+
+```
+{
+    "Key": {
+        "ID": { "S": "101" }
+    }
+}
+```
+
+The request context key values would be:
+
+```
+{
+    "dynamodb:Attributes": ["ID"],
+    "dynamodb:Select": "ALL_ATTRIBUTES"
+}
+```
+
+In this case, the user's requested attributes all match values specified in the policy\. However, the `dynamodb:Select` context key does not match, which causes the request to be implicitly denied.
 
 **Important**  
 If you use `dynamodb:Attributes`, you must specify the names of all of the primary key and index key attributes for the table\. You must also specify any secondary indexes that are listed in the policy\. Otherwise, DynamoDB can't use these key attributes to perform the requested action\.
 
-Alternatively, you might want to make sure that users are explicitly forbidden to include some attributes in a request, such as the `ID` and `UserName` attributes\. For example, you might exclude attributes when the user is updating the DynamoDB table, because an update \(`PUT` operation\) should not change certain attributes\. In that case, you create a list of forbidden attributes \(`ID`, `UserName`\)\. If any of the user's requested attributes match any of the forbidden attributes, the request is denied\. 
+**Warning**  
+When you use the `ForAllValues` condition operator, it returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. To require that the request context key exists, you must use the [Null](reference_policies_elements_condition_operators.md#Conditions_Null) operator. To require that the request context key includes at least one value, you must use another condition in the policy\. For an example, see [Controlling access during AWS requests](access_tags.md#access_tags_control-requests)\.
 
-The following example shows how to use the `ForAnyValue` qualifier to deny access to the `ID` and `PostDateTime` attributes if the user tries to perform the `PutItem` action\. That is, if the user tries to update either of those attributes in the `Thread` table\. Notice that the `Effect` element is set to `Deny`\.
+Alternatively, you might want to make sure that users are explicitly forbidden to include some attributes in a request, such as the `PostDateTime` and `UserName` attributes\. For example, you might exclude attributes when the user is updating the DynamoDB table, since an [UpdateItem](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateItem.html) invocation should not change certain attributes\. In that case, you create a list of forbidden attributes \(`PostDateTime`, `UserName`\)\. If any of the user's requested attributes match any of the forbidden attributes, the request is denied\. 
+
+The following example shows how to use the `ForAnyValue` qualifier to deny access to the `PostDateTime` and `UserName` attributes if the user tries to perform the `UpdateItem` action\. That is, if the user tries to update either of those attributes in the `Thread` table\. Notice that the `Effect` element is set to `Deny`\.
 
 ```
 {
     "Version": "2012-10-17",
     "Statement": {
         "Effect": "Deny",
-        "Action": "dynamodb:PutItem",
+        "Action": "dynamodb:UpdateItem",
         "Resource": "arn:aws:dynamodb:*:*:table/Thread",
         "Condition": {
             "ForAnyValue:StringEquals": {
                 "dynamodb:Attributes": [
-                    "ID",
-                    "PostDateTime"
+                    "PostDateTime",
+                    "UserName"
                 ]
             }
         }
@@ -121,12 +165,11 @@ The following example shows how to use the `ForAnyValue` qualifier to deny acces
 }
 ```
 
-Assume that the user makes a request to update the `PostDateTime` and `Message` attributes of the `Thread` table\. The `ForAnyValue` qualifier determines whether any of the requested attributes appear in the list in the policy\. In this case, there is one match \(`PostDateTime`\), so the condition is true\. Assuming the other values in the request also match \(for example, the resource\), the overall policy evaluation returns true\. Because the policy's effect is `Deny`, the request is denied\. 
+Assume that the user makes a request to update the `PostDateTime` and `Message` attributes of the `Thread` table\. The `ForAnyValue` qualifier determines whether any of the requested attributes appear in the list in the policy\. In this case, there is one match \(`PostDateTime`\), so the condition is true\. Assuming the other values in the request also match \(for example, the `Resource`\), the overall policy evaluation returns true\. Because the policy's effect is `Deny`, the request is denied\. 
 
-Imagine the user instead makes a request to perform `PutItem` with just the `UserName` attribute\. None of the attributes in the request \(just `UserName`\) match any of attributes listed in the policy \(`ID`, `PostDateTime`\)\. The condition returns false, so the effect of the policy \(`Deny`\) is also false, and the request is not denied by this policy\. \(For the request to succeed, it must be explicitly allowed by a different policy\. It is not explicitly denied by this policy, but all requests are implicitly denied\.\)
+Imagine the user instead makes a request to perform `UpdateItem` with just the `Message` attribute\. None of the attributes in the request \(`ID`, `Message`\) match any of attributes listed in the policy \(`PostDateTime`, `UserName`\)\. The condition returns false, so the effect of the policy \(`Deny`\) is also false, and the request is not denied by this policy\. However, for the request to succeed, it must be explicitly allowed by a different policy\. Keep in mind that all requests are implicitly denied by default\.
 
-**Warning**  
-When you use the `ForAllValues` condition operator, it returns true if there are no keys in the request, or if the key values resolve to a null data set, such as an empty string\. To require that the request includes at least one value, you must use another condition in the policy\. For an example, see [Controlling access during AWS requests](access_tags.md#access_tags_control-requests)\.
+For more information about how set operators are used in DynamoDB to implement fine\-grained access to individual data items and attributes, see [Using IAM policy conditions for fine\-grained access control](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/specifying-conditions.html) in the *Amazon DynamoDB Developer Guide*\.
 
 ## Evaluation logic for multiple values with condition set operators<a name="reference_policies_multi-value-conditions-eval"></a>
 
