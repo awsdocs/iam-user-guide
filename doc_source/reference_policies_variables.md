@@ -7,8 +7,10 @@ If AWS cannot resolve a variable this might cause the entire statement to be inv
 
 **Topics**
 + [Introduction](#policy-vars-intro)
++ [Using variables in policies](#policy-vars-using-variables)
 + [Tags as policy variables](#policy-vars-tags)
 + [Where you can use policy variables](#policy-vars-wheretouse)
++ [Policy variables with no value](#policy-vars-no-value)
 + [Request information that you can use for policy variables](#policy-vars-infotouse)
 + [Specifying default values](#policy-vars-default-values)
 + [For more information](#policy-vars-formoreinfo)
@@ -39,11 +41,18 @@ In IAM policies, many actions allow you to provide a name for the specific resou
 }
 ```
 
-In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy to allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. But don't create a separate policy for each user that explicitly specifies the user's name as part of the resource\. Instead, create a single group policy that works for any user in that group\. 
+In some cases, you might not know the exact name of the resource when you write the policy\. You might want to generalize the policy so it works for many users without having to make a unique copy of the policy for each user\. For example, consider writing a policy to allow each user to have access to his or her own objects in an Amazon S3 bucket, as in the previous example\. Instead of creating a separate policy for each user that explicitly specifies the user's name as part of the resource, we recommend you create a single group policy that works for any user in that group\. 
 
-You can do this by using *policy variables*, a feature that lets you specify placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the context of the request itself\.
+## Using variables in policies<a name="policy-vars-using-variables"></a>
+
+You can define dynamic values inside policies by using *policy variables* that set placeholders in a policy\. When the policy is evaluated, the policy variables are replaced with values that come from the conditional context keys passed in the request\. Global condition context keys can be used as variables in requests across AWS services\. Service specific condition keys can also be used as variables when interacting with AWS resources, but are only available when requests are made against resources which support them\. For a list of context keys available for each AWS service and resource, see the [https://docs.aws.amazon.com/service-authorization/latest/reference/reference.html](https://docs.aws.amazon.com/service-authorization/latest/reference/reference.html)\.
+
+Variables can be used in [identity\-based policies, resource policies, service control policies, session policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html), and [VPC endpoint policies](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html)\. Identity\-based policies used as permissions boundaries also support policy variables\. 
+
+Under certain circumstances, you can’t populate global condition context keys with a value\. To learn more about each key, see [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html)\. 
 
 **Important**  
+Key names are case\-insensitive\. For example, `aws:CurrentTime` is equivalent to `AWS:currenttime`\.
 You can use any single\-valued condition key as a variable\. You can't use a multivalued condition key as a variable\.
 
 The following example shows a policy for an Amazon S3 bucket that uses a policy variable\. 
@@ -116,7 +125,7 @@ You can tag IAM resources to simplify discovering, organizing, and tracking your
 
 ## Where you can use policy variables<a name="policy-vars-wheretouse"></a>
 
-You can use policy variables in the `Resource` element and in string comparisons in the `Condition` element\.
+ You can use policy variables in the `Resource` element and in string comparisons in the `Condition` element\.
 
 ### Resource element<a name="policy-vars-resourceelement"></a>
 
@@ -228,28 +237,41 @@ When referencing a tag in a `Condition` element expression, use the relevant pre
 }
 ```
 
+## Policy variables with no value<a name="policy-vars-no-value"></a>
+
+When policy variables reference a condition context key that has no value or is not present in an authorization context for a request, the value is effectively null\. There is no equal or like value\. Condition context keys may not be present in the authorization context when:
++ You are using service specific condition context keys in requests to resources that do not support that condition key\.
++ Tags on IAM principals, sessions, resources, or requests are not present\.
++ Other circumstances as listed for each global condition context key in [AWS global condition context keys](reference_policies_condition-keys.md)\.
+
+When you use a variable with no value in the condition element of an IAM policy, [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md) like `StringEquals` or `StringLike` do not match, and the policy statement does not take effect\.
+
+Inverted condition operators like `StringNotEquals` or `StringNotLike` do match against a null value, as the value of the condition key they are testing against is not equal to or like the effectively null value\.
+
+For example, `aws:principaltag/Team` must be equal to `s3:ExistingObjectTag/Team` to allow access\. Access is specifically denied when `aws:principaltag/Team` is not set\. If a variable that has no value in the authorization context is used as part of the `Resource` or `NotResource` element of a policy, the resource that includes a policy variable with no value will not match any resource\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::/example-bucket/*",
+        "StringNotEquals": {
+          "s3:ExistingObjectTag/Team": "${aws:PrincipalTag/Team}"
+        }
+      }
+    }
+  ]
+}
+```
+
 ## Request information that you can use for policy variables<a name="policy-vars-infotouse"></a>
 
  You can use the `Condition` element of a JSON policy to compare keys in the [request context](reference_policies_evaluation-logic.md#policy-eval-reqcontext) with key values that you specify in your policy\. When you use a policy variable, AWS substitutes a value from the request context key in place of the variable in your policy\.
 
-### Information available in all requests<a name="policy-vars-infoallreqs"></a>
-
-Policies contain keys whose values you can use as policy variables\. \(Under some circumstances, the keys do not contain a value—see the information that follows this list\.\) 
-+ **`aws:CurrentTime`** This can be used for conditions that check the date and time\.
-+ **`aws:EpochTime`** This is the date in epoch or Unix time, for use with date/time conditions\.
-+ **`aws:TokenIssueTime`** This is the date and time that temporary security credentials were issued and can be used with date/time conditions\. **Note:** This key is only available in requests that are signed using temporary security credentials\. For more information about temporary security credentials, see [Temporary security credentials in IAM](id_credentials_temp.md)\.
-+ **`aws:PrincipalType`** This value indicates whether the principal is an account, user, federated, or assumed role—see the explanation that follows later\.
-+ **`aws:SecureTransport`** This is a Boolean value that represents whether the request was sent using SSL\.
-+ **`aws:SourceIp`** This is the requester's IP address, for use with IP address conditions\. Refer to [IP address condition operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress) for information about when `SourceIp` is valid and when you should use a VPC\-specific key instead\. 
-+ **`aws:UserAgent`** This value is a string that contains information about the requester's client application\. This string is generated by the client and can be unreliable\. You can only use this context key from the AWS CLI\.
-+ **`aws:userid`** This value is the unique ID for the current user—see the chart that follows\.
-+ **`aws:username`** This is a string containing the [friendly name](reference_identifiers.md#identifiers-friendly-names) of the current user—see the chart that follows\.
-+ **`ec2:SourceInstanceARN`** This is the Amazon Resource Name \(ARN\) of the Amazon EC2 instance from which the request is made\. This key is present only when the request comes from an Amazon EC2 instance using an IAM role associated with an EC2 instance profile\.
-
-**Important**  
-Key names are case\-insensitive\. For example, `aws:CurrentTime` is equivalent to `AWS:currenttime`\. 
-
-#### Principal key values<a name="principaltable"></a>
+### Principal key values<a name="principaltable"></a>
 
 The values for `aws:username`, `aws:userid`, and `aws:PrincipalType` depend on what type of principal initiated the request\. For example, the request could be made using the credentials of an IAM user, an IAM role, or the AWS account root user\. The following shows values for these keys for different types of principals\. 
 
@@ -270,19 +292,6 @@ The recommended way to use web identity federation is by taking advantage of Ama
 + [Amazon Cognito Overview ](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* 
 + [Common scenarios for temporary credentials](id_credentials_temp.md#sts-introduction)\.
 
-### Service\-specific information<a name="policy-vars-infoperservice"></a>
-
-Requests can also include service\-specific keys and values in its request context\. Examples include the following: 
-+ `s3:prefix`
-+ `s3:max-keys`
-+ `s3:x-amz-acl`
-+ `sns:Endpoint`
-+ `sns:Protocol`
-
-For information about service\-specific keys that you can use to get values for policy variables, refer to the documentation for the individual services\. For example, see the following topics: 
-+  [Bucket Keys in Amazon S3 Policies](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingResOpsConditions.html#BucketKeysinAmazonS3Policies) in the *Amazon Simple Storage Service User Guide*\. 
-+  [Amazon SNS Keys](https://docs.aws.amazon.com/sns/latest/dg/AccessPolicyLanguage_SpecialInfo.html#sns_aspen_keys) in the *Amazon Simple Notification Service Developer Guide*\. 
-
 ### Special characters<a name="policy-vars-specialchars"></a>
 
 There are a few special predefined policy variables that have fixed values that enable you to represent characters that otherwise have special meaning\. If these special characters are part of the string, you are trying to match and you inserted them literally they would be misinterpreted\. For example, inserting an \* asterisk in the string would be interpreted as a wildcard, matching any characters, instead of as a literal \*\. In these cases, you can use the following predefined policy variables:
@@ -293,8 +302,6 @@ There are a few special predefined policy variables that have fixed values that 
 These predefined policy variables can be used in any string where you can use regular policy variables\.
 
 ## Specifying default values<a name="policy-vars-default-values"></a>
-
-If AWS cannot resolve a variable this might cause the entire statement to be invalid\. However, when you add a variable to your policy you can specify a default value for the variable\. If a value is not specified for the variable AWS uses the default text that you provided\. 
 
 To add a default value to a variable, surround the default value with single quotes \(`' '`\), and separate the variable text and the default value with a comma and space \(`, `\)\.
 

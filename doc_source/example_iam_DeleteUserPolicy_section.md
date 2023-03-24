@@ -1,9 +1,35 @@
 # Delete an inline IAM policy from a user using an AWS SDK<a name="example_iam_DeleteUserPolicy_section"></a>
 
-The following code examples show how to delete an inline IAM policy from a user\.
+The following code examples show how to delete an inline IAM policy from a user\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
+
+------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Delete an IAM user policy.
+    /// </summary>
+    /// <param name="policyName">The name of the IAM policy to delete.</param>
+    /// <param name="userName">The username of the IAM user.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> DeleteUserPolicyAsync(string policyName, string userName)
+    {
+        var response = await _IAMService.DeleteUserPolicyAsync(new DeleteUserPolicyRequest { PolicyName = policyName, UserName = userName });
+
+        return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
+    }
+```
++  For API details, see [DeleteUserPolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteUserPolicy) in *AWS SDK for \.NET API Reference*\. 
 
 ------
 #### [ Go ]
@@ -13,8 +39,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
-// used in the examples.
+// UserWrapper encapsulates user actions used in the examples.
 // It contains an IAM service client that is used to perform user actions.
 type UserWrapper struct {
 	IamClient *iam.Client

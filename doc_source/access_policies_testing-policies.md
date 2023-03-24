@@ -4,6 +4,9 @@ For more information about how and why to use IAM policies, see [Policies and pe
 
 **You can access the IAM Policy Simulator Console at: [https://policysim\.aws\.amazon\.com/](https://policysim.aws.amazon.com/)**
 
+**Important**  
+The policy simulator results can differ from your live AWS environment\. We recommend that you check your policies against your live AWS environment after testing using the policy simulator to confirm that you have the desired results\. For more information, see [How the IAM policy simulator works](#policies_policy-simulator-how-it-works)\.
+
  
 
 With the IAM policy simulator, you can test and troubleshoot identity\-based policies and IAM permissions boundaries\. Here are some common things you can do with the policy simulator:

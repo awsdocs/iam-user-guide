@@ -6,6 +6,34 @@ The following code examples show how to create an IAM service\-linked role\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Create an IAM service-linked role.
+    /// </summary>
+    /// <param name="serviceName">The name of the AWS Service.</param>
+    /// <param name="description">A description of the IAM service-linked role.</param>
+    /// <returns>The IAM role that was created.</returns>
+    public async Task<Role> CreateServiceLinkedRoleAsync(string serviceName, string description)
+    {
+        var request = new CreateServiceLinkedRoleRequest
+        {
+            AWSServiceName = serviceName,
+            Description = description
+        };
+
+        var response = await _IAMService.CreateServiceLinkedRoleAsync(request);
+        return response.Role;
+    }
+```
++  For API details, see [CreateServiceLinkedRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateServiceLinkedRole) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ Go ]
 
 **SDK for Go V2**  
@@ -42,7 +70,7 @@ func (wrapper RoleWrapper) CreateServiceLinkedRole(serviceName string, descripti
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

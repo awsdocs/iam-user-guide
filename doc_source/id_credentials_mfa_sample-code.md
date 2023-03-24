@@ -215,7 +215,7 @@ bool AwsDoc::STS::assumeRole(const Aws::String &roleArn,
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/sts#code-examples)\. 
 Create the client\.  
 
@@ -257,7 +257,7 @@ export const main = async () => {
 ```
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-sts/classes/assumerolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/sts#code-examples)\. 
   
 
@@ -383,6 +383,52 @@ def list_buckets_from_assumed_role_with_mfa(
   end
 ```
 +  For API details, see [AssumeRole](https://docs.aws.amazon.com/goto/SdkForRubyV3/sts-2011-06-15/AssumeRole) in *AWS SDK for Ruby API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/sts/#code-examples)\. 
+  
+
+```
+async fn assume_role(
+    config: &SdkConfig,
+    region: Region,
+    role_name: String,
+    session_name: Option<String>,
+) -> Result<(), Error> {
+    match config.credentials_provider() {
+        Some(credential) => {
+            let provider = aws_config::sts::AssumeRoleProvider::builder(role_name)
+                .region(region)
+                .session_name(session_name.unwrap_or_else(|| String::from("rust-assume-role")))
+                .build(credential.clone());
+            let local_config = aws_config::from_env()
+                .credentials_provider(provider)
+                .load()
+                .await;
+            let client = Client::new(&local_config);
+            let req = client.get_caller_identity();
+            let resp = req.send().await;
+            match resp {
+                Ok(e) => {
+                    println!("UserID :               {}", e.user_id().unwrap_or_default());
+                    println!("Account:               {}", e.account().unwrap_or_default());
+                    println!("Arn    :               {}", e.arn().unwrap_or_default());
+                }
+                Err(e) => println!("{:?}", e),
+            }
+        }
+        None => {
+            println!("No config provided");
+        }
+    }
+    Ok(())
+}
+```
++  For API details, see [AssumeRole](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
 
 ------
 #### [ Swift ]

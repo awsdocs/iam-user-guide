@@ -1,4 +1,4 @@
-# Create a long\-lived Amazon EMR cluster and run several steps using an AWS SDK<a name="example_cross_LongLivedEmrCluster_section"></a>
+# Create a long\-lived Amazon EMR cluster and run steps using an AWS SDK<a name="example_cross_LongLivedEmrCluster_section"></a>
 
 The following code example shows how to create a long\-lived Amazon EMR cluster and run several steps\.
 

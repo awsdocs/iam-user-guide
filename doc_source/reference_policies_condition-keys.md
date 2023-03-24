@@ -39,8 +39,6 @@ To use the `aws:CalledVia` condition key in a policy, you must provide the servi
 | dataexchange\.amazonaws\.com | 
 | dynamodb\.amazonaws\.com | 
 | kms\.amazonaws\.com | 
-| redshift\-severless\.amazonaws\.com | 
-| redshift\.amazonaws\.com | 
 | servicecatalog\-appregistry\.amazonaws\.com | 
 | sqlworkbench\.amazonaws\.com | 
 
@@ -134,6 +132,102 @@ Works with [date operators](reference_policies_elements_condition_operators.md#C
 Use this key to compare the date and time of the request with the date and time that you specify in the policy\. To view an example policy that uses this condition key, see [AWS: Allows access based on date and time](reference_policies_examples_aws-dates.md)\.
 + **Availability** – This key is always included in the request context\.
 + **Value type** – Single\-valued
+
+## aws:Ec2InstanceSourceVpc<a name="condition-keys-ec2instancesourcevpc"></a>
+
+Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.
+
+This key identifies the VPC to which Amazon EC2 IAM role credentials were delivered to\. You can use this key in a policy with the [`aws:SourceVPC`](#condition-keys-sourcevpc) global key to check if a call is made from a VPC \(`aws:SourceVPC`\) that matches the VPC where a credential was delivered to \(`aws:Ec2InstanceSourceVpc`\)\.
++ **Availability** – This key is included in the request context whenever the requester is signing requests with an Amazon EC2 role credential\. It can be used in IAM policies, service control policies, VPC endpoint policies, and resource policies\.
++ **Value type** – Single\-valued
+
+This key can be used with VPC identifier values, but is most useful when used as a variable combined with the `aws:SourceVpc` context key\. The `aws:SourceVpc` context key is included in the request context only if the requester uses a VPC endpoint to make the request\. Using `aws:Ec2InstanceSourceVpc` with `aws:SourceVpc` allows you to use `aws:Ec2InstanceSourceVpc` more broadly since it compares values that typically change together\.
+
+**Note**  
+This condition key is not available in EC2\-Classic\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "RequireSameVPC",
+      "Effect": "Deny",
+      "Action": "*",
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+            "aws:SourceVpc": "${aws:Ec2InstanceSourceVpc}"
+        },
+        "Null": {
+          "ec2:SourceInstanceARN": "false"
+        },
+        "BoolIfExists": {
+          "aws:ViaAWSService": "false"
+        }
+      }
+    }
+  ]
+}
+```
+
+In the example above, access is denied if the `aws:SourceVpc` value isn’t equal to the `aws:Ec2InstanceSourceVpc` value\. The policy statement is limited to only roles used as Amazon EC2 instance roles by testing for the existence of the `ec2:SourceInstanceARN` condition key\.
+
+The policy uses `aws:ViaAWSService` to allow AWS to authorize requests when requests are made on behalf of your Amazon EC2 instance roles\. For example, when you make a request from an Amazon EC2 instance to an encrypted Amazon S3 bucket, Amazon S3 makes a call to AWS KMS on your behalf\. Some of the keys are not present when the request is made to AWS KMS\.
+
+## aws:Ec2InstanceSourcePrivateIPv4<a name="condition-keys-ec2instancesourceprivateip4"></a>
+
+Works with [IP address operators](reference_policies_elements_condition_operators.md#Conditions_IPAddress)\.
+
+This key identifies the private IPv4 address of the primary elastic network interface to which Amazon EC2 IAM role credentials were delivered\. You must use this condition key with its companion key `aws:Ec2InstanceSourceVpc` to ensure that you have a globally unique combination of VPC ID and source private IP\. Use this key with `aws:Ec2InstanceSourceVpc` to ensure that a request was made from the same private IP address that the credentials were delivered to\.
++ **Availability** – This key is included in the request context whenever the requester is signing requests with an Amazon EC2 role credential\. It can be used in IAM policies, service control policies, VPC endpoint policies, and resource policies\.
++ **Value type** – Single\-valued
+
+**Important**  
+This key should not be used alone in an `Allow` statement\. Private IP addresses are by definition not globally unique\. You should use the `aws:Ec2InstanceSourceVpc` key every time you use the `aws:Ec2InstanceSourcePrivateIPv4` key to specify the VPC your Amazon EC2 instance credentials can be used from\.
+
+**Note**  
+This condition key is not available in EC2\-Classic\.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Deny",
+            "Action":  "*",
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:Ec2InstanceSourceVpc": "${aws:SourceVpc}"
+                },                
+                "Null": {
+                    "ec2:SourceInstanceARN": "false"
+                },
+                "BoolIfExists": {
+                    "aws:ViaAWSService": "false"
+                }
+            }
+        },
+        {
+            "Effect": "Deny",
+            "Action":  "*",
+            "Resource": "*",
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:Ec2InstanceSourcePrivateIPv4": "${aws:VpcSourceIp}"
+                },                               
+                "Null": {
+                    "ec2:SourceInstanceARN": "false"
+                },
+                "BoolIfExists": {
+                    "aws:ViaAWSService": "false"
+                }
+            }
+        }
+    ]
+}
+```
 
 ## aws:EpochTime<a name="condition-keys-epochtime"></a>
 
@@ -663,7 +757,6 @@ Use this key to compare the requested resource owner's [AWS account ID](https://
     + `ec2:CreateVpcPeeringConnection`
   + Amazon EventBridge – All actions
   + Amazon WorkSpaces
-    + `workspaces:CopyWorkspaceImage`
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Single\-valued
 
@@ -729,6 +822,8 @@ Use this key to compare the identifier of the organization in AWS Organizations 
     + `ec2:CreateVolume`
     + `ec2:CreateVpcPeeringConnection`
   + Amazon EventBridge – All actions
+  + Amazon WorkSpaces
+    + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Single\-valued
 
 This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.
@@ -778,7 +873,6 @@ Use this key to compare the AWS Organizations path for the accessed resource to 
     + `ec2:CreateVpcPeeringConnection`
   + Amazon EventBridge – All actions
   + Amazon WorkSpaces
-    + `workspaces:CopyWorkspaceImage`
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Multivalued
 
@@ -912,6 +1006,9 @@ Use this key to compare the requester's IP address with the IP address that you 
 + **Value type** – Single\-valued
 
 The `aws:SourceIp` condition key can be used in a policy to allow principals to make requests only from within a specified IP range\. However, this policy denies access if an AWS service makes calls on the principal's behalf\. In this case, you can use `aws:SourceIp` with the `aws:ViaAWSService` key to ensure that the source IP restriction applies only to requests made directly by a principal\. 
+
+**Note**  
+ `aws:SourceIp` supports both IPv4 and IPv6 address or range of IP addresses\. For details, see [Upgrade IAM policies to IPv6](https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-security-ipv6-upgrade.html)\.
 
 For example, you can attach the following policy to an IAM user\. This policy allows the user to put an object into the `DOC-EXAMPLE-BUCKET3` Amazon S3 bucket directly if they make the call from the specified IP address\. However, if the user makes another request that causes a service to call Amazon S3, the IP address restriction does not apply\. The `PrincipalPutObjectIfIpAddress` statement restricts the IP address only if the request is not made by a service\. The `ServicePutObject` statement allows the operation without IP address restriction if the request is made by a service\.
 

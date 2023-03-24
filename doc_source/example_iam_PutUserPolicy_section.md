@@ -1,6 +1,9 @@
 # Create an inline IAM policy for a user using an AWS SDK<a name="example_iam_PutUserPolicy_section"></a>
 
-The following code examples show how to create an inline IAM policy for a user\.
+The following code examples show how to create an inline IAM policy for a user\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -13,8 +16,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
-// used in the examples.
+// UserWrapper encapsulates user actions used in the examples.
 // It contains an IAM service client that is used to perform user actions.
 type UserWrapper struct {
 	IamClient *iam.Client

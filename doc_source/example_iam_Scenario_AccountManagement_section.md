@@ -1,10 +1,10 @@
 # Manage your IAM account using an AWS SDK<a name="example_iam_Scenario_AccountManagement_section"></a>
 
 The following code example shows how to:
-+ Get and update the alias for the account\.
-+ Generate a report of users and their credentials\.
++ Get and update the account alias\.
++ Generate a report of users and credentials\.
 + Get a summary of account usage\.
-+ Get details about all users, groups, roles, and policies in your account, including their relationships to each other\.
++ Get details for all users, groups, roles, and policies in your account, including their relationships to each other\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 

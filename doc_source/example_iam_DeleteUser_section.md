@@ -1,6 +1,9 @@
 # Delete an IAM user using an AWS SDK<a name="example_iam_DeleteUser_section"></a>
 
-The following code examples show how to delete an IAM user\.
+The following code examples show how to delete an IAM user\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -13,50 +16,17 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-        /// <summary>
-        /// Delete the user, and other resources created for this example.
-        /// </summary>
-        /// <param name="client">The initialized client object.</param>
-        /// <param name=accessKeyId">The Id of the user's access key.</param>"
-        /// <param name="userName">The user name of the user to delete.</param>
-        /// <param name="policyName">The name of the policy to delete.</param>
-        /// <param name="policyArn">The Amazon Resource Name ARN of the Policy to delete.</param>
-        /// <param name="roleName">The name of the role that will be deleted.</param>
-        public static async Task DeleteResourcesAsync(
-            AmazonIdentityManagementServiceClient client,
-            string accessKeyId,
-            string userName,
-            string policyArn,
-            string roleName)
-        {
-            var detachPolicyResponse = await client.DetachRolePolicyAsync(new DetachRolePolicyRequest
-            {
-                PolicyArn = policyArn,
-                RoleName = roleName,
-            });
+    /// <summary>
+    /// Delete an IAM user.
+    /// </summary>
+    /// <param name="userName">The username of the IAM user to delete.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> DeleteUserAsync(string userName)
+    {
+        var response = await _IAMService.DeleteUserAsync(new DeleteUserRequest { UserName = userName });
 
-            var delPolicyResponse = await client.DeletePolicyAsync(new DeletePolicyRequest
-            {
-                PolicyArn = policyArn,
-            });
-
-            var delRoleResponse = await client.DeleteRoleAsync(new DeleteRoleRequest
-            {
-                RoleName = roleName,
-            });
-
-            var delAccessKey = await client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest
-            {
-                AccessKeyId = accessKeyId,
-                UserName = userName,
-            });
-
-            var delUserResponse = await client.DeleteUserAsync(new DeleteUserRequest
-            {
-                UserName = userName,
-            });
-
-        }
+        return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
+    }
 ```
 +  For API details, see [DeleteUser](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteUser) in *AWS SDK for \.NET API Reference*\. 
 
@@ -93,8 +63,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
-// used in the examples.
+// UserWrapper encapsulates user actions used in the examples.
 // It contains an IAM service client that is used to perform user actions.
 type UserWrapper struct {
 	IamClient *iam.Client
@@ -144,7 +113,7 @@ func (wrapper UserWrapper) DeleteUser(userName string) error {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
@@ -186,7 +155,7 @@ run();
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-users.html#iam-examples-managing-users-deleting-users)\. 
 +  For API details, see [DeleteUser](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/deleteusercommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 

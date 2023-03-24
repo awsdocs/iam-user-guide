@@ -13,23 +13,15 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-
-var client = new AmazonIdentityManagementServiceClient();
-
-try
-{
-    var request = new GetAccountPasswordPolicyRequest();
-    var response = await client.GetAccountPasswordPolicyAsync(request);
-
-    Console.WriteLine($"{response.PasswordPolicy}");
-}
-catch (NoSuchEntityException ex)
-{
-    Console.WriteLine($"Error: {ex.Message}");
-}
+    /// <summary>
+    /// Gets the IAM password policy for an AWS account.
+    /// </summary>
+    /// <returns>The PasswordPolicy for the AWS account.</returns>
+    public async Task<PasswordPolicy> GetAccountPasswordPolicyAsync()
+    {
+        var response = await _IAMService.GetAccountPasswordPolicyAsync(new GetAccountPasswordPolicyRequest());
+        return response.PasswordPolicy;
+    }
 ```
 +  For API details, see [GetAccountPasswordPolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/GetAccountPasswordPolicy) in *AWS SDK for \.NET API Reference*\. 
 
@@ -69,7 +61,7 @@ func (wrapper AccountWrapper) GetAccountPasswordPolicy() (*types.PasswordPolicy,
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

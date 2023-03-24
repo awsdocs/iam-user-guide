@@ -6,7 +6,7 @@ A *tag* is a custom attribute label that you can assign to an AWS resource\. Eac
 
 Together these are known as key\-value pairs\. For limits on the number of tags you can have on IAM resources, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
-Tags help you identify and organize your AWS resources\. Many AWS services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related\. For example, you can assign the same tag to an IAM role that you assign to an Amazon S3 bucket\. For more information about tagging strategies, see [Tagging AWS Resources](https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html) in the *AWS General Reference Guide*\.
+Tags help you identify and organize your AWS resources\. Many AWS services support tagging, so you can assign the same tag to resources from different services to indicate that the resources are related\. For example, you can assign the same tag to an IAM role that you assign to an Amazon S3 bucket\. For more information about tagging strategies, see [Tagging AWS resources](reference_tagging.md)\.
 
 In addition to identifying, organizing, and tracking your IAM resources with tags, you can use tags in IAM policies to help control who can view and interact with your resources\. To learn more about using tags to control access, see [Controlling access to and for IAM users and roles using tags](access_iam-tags.md)\.
 

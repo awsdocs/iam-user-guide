@@ -1,7 +1,7 @@
 # IAM users<a name="id_users"></a>
 
 **Important**  
-The IAM best practices have been updated\. As a [best practice](best-practices.md), require human users to use federation with an identity provider to access AWS using temporary credentials\. An additional best practice recommendation is to require workloads to use temporary credentials with IAM roles to access AWS\. IAM users are to be used only in very limited scenarios where an IAM role cannot be assumed\. To learn about using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) to create users with temporary credentials, see [Getting started](https://docs.aws.amazon.com/singlesignon/latest/userguide/getting-started.html) in the *AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide*\. 
+ IAM [best practices](best-practices.md) recommend that you require human users to use federation with an identity provider to access AWS using temporary credentials instead of using IAM users with long\-term credentials\.
 
 An AWS Identity and Access Management \(IAM\) *user* is an entity that you create in AWS\. The IAM user represents the human user or workload who uses the IAM user to interact with AWS\. A user in AWS consists of a name and credentials\.
 

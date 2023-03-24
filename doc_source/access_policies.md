@@ -22,7 +22,7 @@ Identity\-based policies are JSON permissions policy documents that control what
   + **Customer managed policies** – Managed policies that you create and manage in your AWS account\. Customer managed policies provide more precise control over your policies than AWS managed policies\.
 + **Inline policies** – Policies that you add directly to a single user, group, or role\. Inline policies maintain a strict one\-to\-one relationship between a policy and an identity\. They are deleted when you delete the identity\.
 
-To learn how to choose between managed and inline policies, see [Choosing between managed policies and inline policies](access_policies_managed-vs-inline.md#choosing-managed-or-inline)\.
+To learn how to choose between managed and inline policies, see [Choosing between managed policies and inline policies](access_policies-choosing-managed-or-inline.md)\.
 
 ### Resource\-based policies<a name="policies_resource-based"></a>
 

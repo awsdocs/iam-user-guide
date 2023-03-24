@@ -9,6 +9,8 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 This documentation helps you understand how to apply the shared responsibility model when using AWS Identity and Access Management \(IAM\) and AWS Security Token Service \(AWS STS\)\. The following topics show you how to configure IAM and AWS STS to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your IAM resources\. 
 
 **Topics**
++ [AWS security credentials](security-creds.md)
++ [AWS security audit guidelines](security-audit-guide.md)
 + [Data protection in AWS Identity and Access Management](data-protection.md)
 + [Logging and monitoring in AWS Identity and Access Management](security-logging-and-monitoring.md)
 + [Compliance validation for AWS Identity and Access Management](iam-compliance-validation.md)

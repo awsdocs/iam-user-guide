@@ -352,7 +352,7 @@ When the calling principal assumes the role, the source identity in the request 
 
 ## Viewing source identity in CloudTrail<a name="id_credentials_temp_control-access_monitor-ct"></a>
 
-You can use CloudTrail to view the requests made to assume roles or federate users\. You can also view the role or user requests to take actions in AWS\. The CloudTrail log file includes information about the source identity set for the assumed\-role or federated user session\. For more information, see 
+You can use CloudTrail to view the requests made to assume roles or federate users\. You can also view the role or user requests to take actions in AWS\. The CloudTrail log file includes information about the source identity set for the assumed\-role or federated user session\. For more information, see [Logging IAM and AWS STS API calls with AWS CloudTrail](cloudtrail-integration.md)
 
 For example, assume that a user makes an AWS STS `AssumeRole` request, and sets a source identity\. You can find the `sourceIdentity` information in the `requestParameters` key in your CloudTrail log\.
 

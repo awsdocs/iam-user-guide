@@ -672,30 +672,6 @@ Your policy includes a syntax error\. Check your JSON syntax\.
 + [IAM JSON policy elements reference](reference_policies_elements.md)
 + [Overview of JSON policies](access_policies.md#access_policies-json)
 
-## Error – Json syntax error<a name="access-analyzer-reference-policy-checks-error-json-syntax-error"></a>
-
-In the AWS Management Console, the finding for this check includes the following message:
-
-```
-Json syntax error: Fix the JSON syntax error.
-```
-
-In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
-
-```
-"findingDetails": "Fix the JSON syntax error.
-"
-```
-
-**Resolving the error**
-
-Your policy includes a syntax error\. Check your JSON syntax\.
-
-**Related terms**
-+ [JSON validator](https://jsonlint.com/)
-+ [IAM JSON policy elements reference](reference_policies_elements.md)
-+ [Overview of JSON policies](access_policies.md#access_policies-json)
-
 ## Error – Missing action<a name="access-analyzer-reference-policy-checks-error-missing-action"></a>
 
 In the AWS Management Console, the finding for this check includes the following message:

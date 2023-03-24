@@ -13,38 +13,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-
-var client = new AmazonIdentityManagementServiceClient();
-
-// Without the MaxItems value, the ListRolesAsync method will
-// return information for up to 100 roles. If there are more
-// than the MaxItems value or more than 100 roles, the response
-// value IsTruncated will be true.
-var request = new ListRolesRequest
-{
-    MaxItems = 10,
-};
-
-var response = new ListRolesResponse();
-
-do
-{
-    response = await client.ListRolesAsync(request);
-    response.Roles.ForEach(role =>
+    /// <summary>
+    /// List IAM roles.
+    /// </summary>
+    /// <returns>A list of IAM roles.</returns>
+    public async Task<List<Role>> ListRolesAsync()
     {
-        Console.WriteLine($"{role.RoleName} - ARN {role.Arn}");
-    });
+        var listRolesPaginator = _IAMService.Paginators.ListRoles(new ListRolesRequest());
+        var roles = new List<Role>();
 
-    // As long as response.IsTruncated is true, set request.Marker equal
-    // to response.Marker and call ListRolesAsync again.
-    if (response.IsTruncated)
-    {
-        request.Marker = response.Marker;
+        await foreach (var response in listRolesPaginator.Responses)
+        {
+            roles.AddRange(response.Roles);
+        }
+
+        return roles;
     }
-} while (response.IsTruncated);
 ```
 +  For API details, see [ListRoles](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListRoles) in *AWS SDK for \.NET API Reference*\. 
 
@@ -84,7 +68,7 @@ func (wrapper RoleWrapper) ListRoles(maxRoles int32) ([]types.Role, error) {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

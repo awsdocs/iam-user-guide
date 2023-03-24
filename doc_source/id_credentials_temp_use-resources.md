@@ -21,7 +21,7 @@ You can use AWS Security Token Service \(AWS STS\) to create and provide trusted
 
 If you want to run AWS CLI commands or code inside an EC2 instance, the recommended way to get credentials is to use [roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)\. You create an IAM role that specifies the permissions that you want to grant to applications that run on the EC2 instances\. When you launch the instance, you associate the role with the instance\.
 
-Applications, AWS CLI, and Tools for Windows PowerShell commands that run on the instance can then get automatic temporary security credentials from the instance metadata\. You do not have to explicitly get the temporary security credentials\. The AWS SDKs, AWS CLI, and Tools for Windows PowerShell automatically get the credentials from the EC2 instance metadata service and use them\. The temporary credentials have the permissions that you define for the role that is associated with the instance\.
+Applications, AWS CLI, and Tools for Windows PowerShell commands that run on the instance can then get automatic temporary security credentials from the instance metadata\. You do not have to explicitly get the temporary security credentials\. The AWS SDKs, AWS CLI, and Tools for Windows PowerShell automatically get the credentials from the EC2 Instance Metadata Service \(IMDS\) and use them\. The temporary credentials have the permissions that you define for the role that is associated with the instance\.
 
 For more information and for examples, see the following:
 +  [Using IAM Roles to Grant Access to AWS Resources on Amazon Elastic Compute Cloud](https://docs.aws.amazon.com/sdk-for-java/latest/developer-guide/java-dg-roles.html) — AWS SDK for Java

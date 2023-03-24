@@ -1,6 +1,9 @@
 # Get a session token that requires an MFA token with AWS STS using an AWS SDK<a name="example_sts_Scenario_SessionTokenMfa_section"></a>
 
-The following code example shows how to:
+The following code example shows how to get a session token that requires an MFA token\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 + Create an IAM role that grants permission to list Amazon S3 buckets\.
 + Create an IAM user that has permission to assume the role only when MFA credentials are provided\.
 + Register an MFA device for the user\.

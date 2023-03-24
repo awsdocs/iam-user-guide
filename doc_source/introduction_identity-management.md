@@ -49,4 +49,4 @@ To use identity federation with Internet identity providers, we recommend you us
 
 ## Access control methods<a name="AccessControlMethods"></a>
 
-Here are the ways you can use IAM to control access to your AWS resources\.
+Here are the ways you can control access to your AWS resources\.

@@ -13,50 +13,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-        /// <summary>
-        /// Delete the user, and other resources created for this example.
-        /// </summary>
-        /// <param name="client">The initialized client object.</param>
-        /// <param name=accessKeyId">The Id of the user's access key.</param>"
-        /// <param name="userName">The user name of the user to delete.</param>
-        /// <param name="policyName">The name of the policy to delete.</param>
-        /// <param name="policyArn">The Amazon Resource Name ARN of the Policy to delete.</param>
-        /// <param name="roleName">The name of the role that will be deleted.</param>
-        public static async Task DeleteResourcesAsync(
-            AmazonIdentityManagementServiceClient client,
-            string accessKeyId,
-            string userName,
-            string policyArn,
-            string roleName)
+    /// <summary>
+    /// Detach an IAM policy from an IAM role.
+    /// </summary>
+    /// <param name="policyArn">The Amazon Resource Name (ARN) of the IAM policy.</param>
+    /// <param name="roleName">The name of the IAM role.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> DetachRolePolicyAsync(string policyArn, string roleName)
+    {
+        var response = await _IAMService.DetachRolePolicyAsync(new DetachRolePolicyRequest
         {
-            var detachPolicyResponse = await client.DetachRolePolicyAsync(new DetachRolePolicyRequest
-            {
-                PolicyArn = policyArn,
-                RoleName = roleName,
-            });
+            PolicyArn = policyArn,
+            RoleName = roleName,
+        });
 
-            var delPolicyResponse = await client.DeletePolicyAsync(new DeletePolicyRequest
-            {
-                PolicyArn = policyArn,
-            });
-
-            var delRoleResponse = await client.DeleteRoleAsync(new DeleteRoleRequest
-            {
-                RoleName = roleName,
-            });
-
-            var delAccessKey = await client.DeleteAccessKeyAsync(new DeleteAccessKeyRequest
-            {
-                AccessKeyId = accessKeyId,
-                UserName = userName,
-            });
-
-            var delUserResponse = await client.DeleteUserAsync(new DeleteUserRequest
-            {
-                UserName = userName,
-            });
-
-        }
+        return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
+    }
 ```
 +  For API details, see [DetachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DetachRolePolicy) in *AWS SDK for \.NET API Reference*\. 
 
@@ -151,7 +123,7 @@ func (wrapper RoleWrapper) DetachRolePolicy(roleName string, policyArn string) e
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
@@ -206,7 +178,7 @@ run();
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-detaching-role-policy)\. 
 +  For API details, see [DetachRolePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/detachrolepolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 

@@ -1,6 +1,9 @@
 # List IAM users using an AWS SDK<a name="example_iam_ListUsers_section"></a>
 
-The following code examples show how to list IAM users\.
+The following code examples show how to list IAM users\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -13,28 +16,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-
-var client = new AmazonIdentityManagementServiceClient();
-var request = new ListUsersRequest
-{
-    MaxItems = 10,
-};
-var response = await client.ListUsersAsync(request);
-
-do
-{
-    response.Users.ForEach(user =>
+    /// <summary>
+    /// List IAM users.
+    /// </summary>
+    /// <returns>A list of IAM users.</returns>
+    public async Task<List<User>> ListUsersAsync()
     {
-        Console.WriteLine($"{user.UserName} created on {user.CreateDate}.");
-        Console.WriteLine($"ARN: {user.Arn}\n");
-    });
+        var listUsersPaginator = _IAMService.Paginators.ListUsers(new ListUsersRequest());
+        var users = new List<User>();
 
-    request.Marker = response.Marker;
-    response = await client.ListUsersAsync(request);
-} while (response.IsTruncated);
+        await foreach (var response in listUsersPaginator.Responses)
+        {
+            users.AddRange(response.Users);
+        }
+
+        return users;
+    }
 ```
 +  For API details, see [ListUsers](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListUsers) in *AWS SDK for \.NET API Reference*\. 
 
@@ -98,8 +95,7 @@ bool AwsDoc::IAM::listUsers(const Aws::Client::ClientConfiguration &clientConfig
   
 
 ```
-// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
-// used in the examples.
+// UserWrapper encapsulates user actions used in the examples.
 // It contains an IAM service client that is used to perform user actions.
 type UserWrapper struct {
 	IamClient *iam.Client
@@ -176,7 +172,7 @@ func (wrapper UserWrapper) ListUsers(maxUsers int32) ([]types.User, error) {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
@@ -215,7 +211,7 @@ run();
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-users.html#iam-examples-managing-users-listing-users)\. 
 +  For API details, see [ListUsers](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listuserscommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 

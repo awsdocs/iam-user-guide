@@ -13,20 +13,17 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
+    /// <summary>
+    /// Get information about an IAM policy.
+    /// </summary>
+    /// <param name="policyArn">The IAM policy to retrieve information for.</param>
+    /// <returns>The IAM policy.</returns>
+    public async Task<ManagedPolicy> GetPolicyAsync(string policyArn)
+    {
 
-var client = new AmazonIdentityManagementServiceClient();
-var request = new GetPolicyRequest
-{
-    PolicyArn = "POLICY_ARN",
-};
-
-var response = await client.GetPolicyAsync(request);
-
-Console.Write($"{response.Policy.PolicyName} was created on ");
-Console.WriteLine($"{response.Policy.CreateDate}");
+        var response = await _IAMService.GetPolicyAsync(new GetPolicyRequest { PolicyArn = policyArn });
+        return response.Policy;
+    }
 ```
 +  For API details, see [GetPolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/GetPolicy) in *AWS SDK for \.NET API Reference*\. 
 
@@ -100,7 +97,7 @@ func (wrapper PolicyWrapper) GetPolicy(policyArn string) (*types.Policy, error) 
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
@@ -137,7 +134,7 @@ run();
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-getting)\. 
 +  For API details, see [GetPolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/getpolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 

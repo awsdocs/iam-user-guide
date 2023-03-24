@@ -24,7 +24,7 @@ You can use the AWS Management Console to create a role that an IAM user can ass
 
    The administrator of the specified account can grant permission to assume this role to any IAM user in that account\. To do this, the administrator attaches a policy to the user or a group that grants permission for the `sts:AssumeRole` action\. That policy must specify the role's ARN as the `Resource`\. 
 
-1. If you are granting permissions to users from an account that you do not control, and the users will assume this role programmatically, select **Require external ID**\. The external ID can be any word or number that is agreed upon between you and the administrator of the third\-party account\. This option automatically adds a condition to the trust policy that allows the user to assume the role only if the request includes the correct `sts:ExternalID`\. For more information, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md)\.
+1. If you are granting permissions to users from an account that you do not control, and the users will assume this role programmatically, select **Require external ID**\. The external ID can be any word or number that is agreed upon between you and the administrator of the third party account\. This option automatically adds a condition to the trust policy that allows the user to assume the role only if the request includes the correct `sts:ExternalID`\. For more information, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md)\.
 **Important**  
 Choosing this option restricts access to the role only through the AWS CLI, Tools for Windows PowerShell, or the AWS API\. This is because you cannot use the AWS console to switch to a role that has an `externalId` condition in its trust policy\. However, you can create this kind of access programmatically by writing a script or an application using the relevant SDK\. For more information and a sample script, see [How to Enable Cross\-Account Access to the AWS Management Console](http://aws.amazon.com/blogs/security/how-to-enable-cross-account-access-to-the-aws-management-console) in the AWS Security Blog\.
 
@@ -117,7 +117,7 @@ To create this `Test-UserAccess-Role` role, you must first save the previous tru
 $ aws iam create-role --role-name Test-UserAccess-Role --assume-role-policy-document file://C:\policies\trustpolicyforacct123456789012.json
 
 # Attach the permissions policy (in this example a managed policy) to the role to specify what it is allowed to do.
-$ aws iam attach-role-policy --role-name Test-UserAccess-Role --policy-arn arn:aws:iam::123456789012:role/PolicyForRole
+$ aws iam attach-role-policy --role-name Test-UserAccess-Role --policy-arn arn:aws:iam::123456789012:policy/PolicyForRole
 ```
 
 **Important**  

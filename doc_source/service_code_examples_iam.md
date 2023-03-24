@@ -14,7 +14,43 @@ For a complete list of AWS SDK developer guides and code examples, see [Using IA
 
 ## Hello IAM<a name="example_iam_Hello_section"></a>
 
-The following code example shows how to get started using AWS Identity and Access Management \(IAM\)\.
+The following code examples show how to get started using IAM\.
+
+------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+namespace IAMActions;
+
+public class HelloIAM
+{
+    static async Task Main(string[] args)
+    {
+        // Getting started with AWS Identity and Access Management (IAM). List
+        // the policies for the account.
+        var iamClient = new AmazonIdentityManagementServiceClient();
+
+        var listPoliciesPaginator = iamClient.Paginators.ListPolicies(new ListPoliciesRequest());
+        var policies = new List<ManagedPolicy>();
+
+        await foreach (var response in listPoliciesPaginator.Responses)
+        {
+            policies.AddRange(response.Policies);
+        }
+
+        Console.WriteLine("Here are the policies defined for your account:\n");
+        policies.ForEach(policy =>
+        {
+            Console.WriteLine($"Created: {policy.CreateDate}\t{policy.PolicyName}\t{policy.Description}");
+        });
+    }
+}
+```
++  For API details, see [ListPolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListPolicies) in *AWS SDK for \.NET API Reference*\. 
 
 ------
 #### [ Go ]
@@ -71,9 +107,11 @@ func main() {
 
 **Contents**
 + [Actions](service_code_examples_iam_actions.md)
+  + [Add a user to a group](example_iam_AddUserToGroup_section.md)
   + [Attach a policy to a role](example_iam_AttachRolePolicy_section.md)
   + [Attach a policy to a user](example_iam_AttachUserPolicy_section.md)
   + [Attach an inline policy to a role](example_iam_PutRolePolicy_section.md)
+  + [Create a group](example_iam_CreateGroup_section.md)
   + [Create a policy](example_iam_CreatePolicy_section.md)
   + [Create a policy version](example_iam_CreatePolicyVersion_section.md)
   + [Create a role](example_iam_CreateRole_section.md)
@@ -81,7 +119,10 @@ func main() {
   + [Create a user](example_iam_CreateUser_section.md)
   + [Create an access key](example_iam_CreateAccessKey_section.md)
   + [Create an alias for an account](example_iam_CreateAccountAlias_section.md)
+  + [Create an inline policy for a group](example_iam_PutGroupPolicy_section.md)
   + [Create an inline policy for a user](example_iam_PutUserPolicy_section.md)
+  + [Delete a group](example_iam_DeleteGroup_section.md)
+  + [Delete a group policy](example_iam_DeleteGroupPolicy_section.md)
   + [Delete a policy](example_iam_DeletePolicy_section.md)
   + [Delete a role](example_iam_DeleteRole_section.md)
   + [Delete a role policy](example_iam_DeleteRolePolicy_section.md)
@@ -115,10 +156,12 @@ func main() {
   + [List roles](example_iam_ListRoles_section.md)
   + [List server certificates](example_iam_ListServerCertificates_section.md)
   + [List users](example_iam_ListUsers_section.md)
+  + [Remove a user from a group](example_iam_RemoveUserFromGroup_section.md)
   + [Update a server certificate](example_iam_UpdateServerCertificate_section.md)
   + [Update a user](example_iam_UpdateUser_section.md)
   + [Update an access key](example_iam_UpdateAccessKey_section.md)
 + [Scenarios](service_code_examples_iam_scenarios.md)
+  + [Create a group and add a user](example_iam_Scenario_GroupBasics_section.md)
   + [Create a user and assume a role](example_iam_Scenario_CreateUserAssumeRole_section.md)
   + [Create read\-only and read\-write users](example_iam_Scenario_UserPolicies_section.md)
   + [Manage access keys](example_iam_Scenario_ManageAccessKeys_section.md)
@@ -127,5 +170,5 @@ func main() {
   + [Manage your account](example_iam_Scenario_AccountManagement_section.md)
   + [Roll back a policy version](example_iam_Scenario_RollbackPolicyVersion_section.md)
 + [Cross\-service examples](service_code_examples_iam_cross-service_examples.md)
-  + [Create a long\-lived Amazon EMR cluster and run several steps](example_cross_LongLivedEmrCluster_section.md)
+  + [Create a long\-lived Amazon EMR cluster and run steps](example_cross_LongLivedEmrCluster_section.md)
   + [Create a short\-lived Amazon EMR cluster and run a step](example_cross_ShortLivedEmrCluster_section.md)

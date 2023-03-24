@@ -13,18 +13,15 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-
-var client = new AmazonIdentityManagementServiceClient();
-
-var response = await client.ListSAMLProvidersAsync(new ListSAMLProvidersRequest());
-
-response.SAMLProviderList.ForEach(samlProvider =>
-{
-    Console.WriteLine($"{samlProvider.Arn} created on: {samlProvider.CreateDate}");
-});
+    /// <summary>
+    /// List SAML authentication providers.
+    /// </summary>
+    /// <returns>A list of SAML providers.</returns>
+    public async Task<List<SAMLProviderListEntry>> ListSAMLProvidersAsync()
+    {
+        var response = await _IAMService.ListSAMLProvidersAsync(new ListSAMLProvidersRequest());
+        return response.SAMLProviderList;
+    }
 ```
 +  For API details, see [ListSAMLProviders](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListSAMLProviders) in *AWS SDK for \.NET API Reference*\. 
 
@@ -62,7 +59,7 @@ func (wrapper AccountWrapper) ListSAMLProviders() ([]types.SAMLProviderListEntry
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

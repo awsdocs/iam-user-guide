@@ -13,33 +13,23 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-
-var client = new AmazonIdentityManagementServiceClient();
-var request = new ListAttachedRolePoliciesRequest
-{
-    MaxItems = 10,
-    RoleName = "testAssumeRole",
-};
-
-var response = await client.ListAttachedRolePoliciesAsync(request);
-
-do
-{
-    response.AttachedPolicies.ForEach(policy =>
+    /// <summary>
+    /// List the IAM role policies that are attached to an IAM role.
+    /// </summary>
+    /// <param name="roleName">The IAM role to list IAM policies for.</param>
+    /// <returns>A list of the IAM policies attached to the IAM role.</returns>
+    public async Task<List<AttachedPolicyType>> ListAttachedRolePoliciesAsync(string roleName)
     {
-        Console.WriteLine($"{policy.PolicyName} with ARN: {policy.PolicyArn}");
-    });
+        var attachedPolicies = new List<AttachedPolicyType>();
+        var attachedRolePoliciesPaginator = _IAMService.Paginators.ListAttachedRolePolicies(new ListAttachedRolePoliciesRequest { RoleName = roleName });
 
-    if (response.IsTruncated)
-    {
-        request.Marker = response.Marker;
-        response = await client.ListAttachedRolePoliciesAsync(request);
+        await foreach (var response in attachedRolePoliciesPaginator.Responses)
+        {
+            attachedPolicies.AddRange(response.AttachedPolicies);
+        }
+
+        return attachedPolicies;
     }
-
-} while (response.IsTruncated);
 ```
 +  For API details, see [ListAttachedRolePolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListAttachedRolePolicies) in *AWS SDK for \.NET API Reference*\. 
 
@@ -79,7 +69,7 @@ func (wrapper RoleWrapper) ListAttachedRolePolicies(roleName string) ([]types.At
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

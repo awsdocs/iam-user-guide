@@ -4,7 +4,7 @@ You can use identity providers instead of creating IAM users in your AWS account
 
 ## Creating a role for federated users \(console\)<a name="roles-creatingrole-federated-users-console"></a>
 
-The procedures for creating a role for federated users depend on your choice of third\-party providers:
+The procedures for creating a role for federated users depend on your choice of third party providers:
 + For Web Identity or OpenID Connect \(OIDC\), see [Creating a role for web identity or OpenID Connect Federation \(console\)](id_roles_create_for-idp_oidc.md)\.
 + For SAML 2\.0, see [Creating a role for SAML 2\.0 federation \(console\)](id_roles_create_for-idp_saml.md)\.
 

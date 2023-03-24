@@ -13,34 +13,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-        /// <summary>
-        /// Attach the policy to the role so that the user can assume it.
-        /// </summary>
-        /// <param name="client">The initialized IAM client object.</param>
-        /// <param name="policyArn">The ARN of the policy to attach.</param>
-        /// <param name="roleName">The name of the role to attach the policy to.</param>
-        public static async Task AttachRoleAsync(
-            AmazonIdentityManagementServiceClient client,
-            string policyArn,
-            string roleName)
+    /// <summary>
+    /// Attach an IAM policy to a role.
+    /// </summary>
+    /// <param name="policyArn">The policy to attach.</param>
+    /// <param name="roleName">The role that the policy will be attached to.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> AttachRolePolicyAsync(string policyArn, string roleName)
+    {
+        var response = await _IAMService.AttachRolePolicyAsync(new AttachRolePolicyRequest
         {
-            var request = new AttachRolePolicyRequest
-            {
-                PolicyArn = policyArn,
-                RoleName = roleName,
-            };
+            PolicyArn = policyArn,
+            RoleName = roleName,
+        });
 
-            var response = await client.AttachRolePolicyAsync(request);
-
-            if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
-            {
-                Console.WriteLine("Successfully attached the policy to the role.");
-            }
-            else
-            {
-                Console.WriteLine("Could not attach the policy.");
-            }
-        }
+        return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
+    }
 ```
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/AttachRolePolicy) in *AWS SDK for \.NET API Reference*\. 
 
@@ -184,7 +172,7 @@ func (wrapper RoleWrapper) AttachRolePolicy(policyArn string, roleName string) e
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
@@ -243,7 +231,7 @@ run();
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-attaching-role-policy)\. 
 +  For API details, see [AttachRolePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/attachrolepolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 

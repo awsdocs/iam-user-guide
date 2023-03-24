@@ -13,32 +13,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-
-var client = new AmazonIdentityManagementServiceClient();
-
-var request = new ListGroupsRequest
-{
-    MaxItems = 10,
-};
-
-var response = await client.ListGroupsAsync(request);
-
-do
-{
-    response.Groups.ForEach(group =>
+    /// <summary>
+    /// List IAM groups.
+    /// </summary>
+    /// <returns>A list of IAM groups.</returns>
+    public async Task<List<Group>> ListGroupsAsync()
     {
-        Console.WriteLine($"{group.GroupName} created on: {group.CreateDate}");
-    });
+        var groupsPaginator = _IAMService.Paginators.ListGroups(new ListGroupsRequest());
+        var groups = new List<Group>();
 
-    if (response.IsTruncated)
-    {
-        request.Marker = response.Marker;
-        response = await client.ListGroupsAsync(request);
+        await foreach (var response in groupsPaginator.Responses)
+        {
+            groups.AddRange(response.Groups);
+        }
+
+        return groups;
     }
-} while (response.IsTruncated);
 ```
 +  For API details, see [ListGroups](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListGroups) in *AWS SDK for \.NET API Reference*\. 
 
@@ -78,7 +68,7 @@ func (wrapper GroupWrapper) ListGroups(maxGroups int32) ([]types.Group, error) {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

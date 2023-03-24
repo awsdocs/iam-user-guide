@@ -195,7 +195,7 @@ The `ExamplePolicy1` policy is now updated to remove access to the unnecessary A
 
 Information about when an IAM resource \(user, group, role, or policy\) last attempted to access a service can help you when you complete any of the following tasks:
 + **Policies** – [Editing an existing customer\-managed or inline policy to remove permissions](access_policies_manage-edit.md)
-+ **Policies** – [Converting an inline policy to a managed policy and then deleting it](access_policies_managed-vs-inline.md#convert-inline-to-managed-policy)
++ **Policies** – [Converting an inline policy to a managed policy and then deleting it](access_policies-convert-inline-to-managed.md)
 + **Policies** – [Adding an explicit deny to an existing policy](reference_policies_evaluation-logic.md#AccessPolicyLanguage_Interplay)
 + **Policies** – [Detaching a managed policy from an identity \(user, group, or role\)](access_policies_manage-attach-detach.md#detach-managed-policy-console)
 + **Entities** – [Set a permissions boundary to control the maximum permissions that an entity \(user or role\) can have](access_policies_manage-attach-detach.md)

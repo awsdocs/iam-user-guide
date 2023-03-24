@@ -6,6 +6,28 @@ The following code examples show how to delete an IAM policy\.
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
 
 ------
+#### [ \.NET ]
+
+**AWS SDK for \.NET**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/dotnetv3/IAM#code-examples)\. 
+  
+
+```
+    /// <summary>
+    /// Delete an IAM policy.
+    /// </summary>
+    /// <param name="policyArn">The Amazon Resource Name (ARN) of the policy to
+    /// delete.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> DeletePolicyAsync(string policyArn)
+    {
+        var response = await _IAMService.DeletePolicyAsync(new DeletePolicyRequest { PolicyArn = policyArn });
+        return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
+    }
+```
++  For API details, see [DeletePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeletePolicy) in *AWS SDK for \.NET API Reference*\. 
+
+------
 #### [ C\+\+ ]
 
 **SDK for C\+\+**  
@@ -94,7 +116,7 @@ func (wrapper PolicyWrapper) DeletePolicy(policyArn string) error {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam/#code-examples)\. 
 Create the client\.  
 

@@ -255,7 +255,7 @@ If the key that you specify in a policy condition is not present in the request 
 
 You can not use a [policy variable](reference_policies_variables.md) with the `IpAddress` condition operator\.
 
-The following example shows how to mix IPv4 and IPv6 addresses to cover all of your organization's valid IP addresses\. We recommend that you augment your organization's policies with your IPv6 address ranges in addition to IPv4 ranges you already have to ensure the policies continue to work as you make the transition to IPv6\.
+The following example shows how to mix IPv4 and IPv6 addresses to cover all of your organization's valid IP addresses\. We recommend that you update your organization's policies with your IPv6 address ranges in addition to IPv4 ranges you already have to ensure the policies continue to work as you make the transition to IPv6\.
 
 ```
 {

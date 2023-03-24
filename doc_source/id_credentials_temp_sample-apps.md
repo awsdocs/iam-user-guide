@@ -2,7 +2,7 @@
 
 You can use AWS Security Token Service \(AWS STS\) to create and provide trusted users with temporary security credentials that can control access to your AWS resources\. For more information about AWS STS, see [Temporary security credentials in IAM](id_credentials_temp.md)\. To see how you can use AWS STS to manage temporary security credentials, you can download the following sample applications that implement complete example scenarios:
 + [Identity Federation Sample Application for an Active Directory Use Case](https://aws.amazon.com/code/1288653099190193)\. Demonstrates how to use permissions that are tied to a user defined in Active Directory \(\.NET/C\#\) to issue temporary security credentials for accessing Amazon S3 files and buckets\.
-+ [AWS Management Console Federation Proxy Sample Use Case](https://aws.amazon.com/code/4001165270590826)\. Demonstrates how to create a custom federation proxy that enables single sign\-on \(SSO\) so that existing Active Directory users can sign into the AWS Management Console \(\.NET/C\#\)\.
++ [AWS Management Console Federation Proxy Sample Use Case](https://aws.amazon.com/code/4001165270590826)\. Demonstrates how to create a custom federation proxy that enables single sign\-on \(SSO\) so that existing Active Directory users can sign in to the AWS Management Console \(\.NET/C\#\)\.
 + [Integrate Shibboleth with AWS Identity and Access Management](https://aws.amazon.com/code/8383453795065208)\. Shows how to use [Shibboleth](http://shibboleth.net/) and [SAML](id_roles_providers_saml.md) to provide users with single sign\-on \(SSO\) access to the AWS Management Console\. 
 
 ## Samples for web identity federation<a name="sts-sample-apps-wif"></a>

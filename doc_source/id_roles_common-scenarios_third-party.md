@@ -9,7 +9,5 @@ Third parties must provide you with the following information for you to create 
 
 After you create the role, you must provide the role's Amazon Resource Name \(ARN\) to the third party\. They require your role's ARN in order to assume the role\.
 
-For details about creating a role to delegate access to a third party, see [How to use an external ID when granting access to your AWS resources to a third party](id_roles_create_for-user_externalid.md)\.
-
 **Important**  
 When you grant third parties access to your AWS resources, they can access any resource that you specify in the policy\. Their use of your resources is billed to you\. Ensure that you limit their use of your resources appropriately\.

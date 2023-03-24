@@ -13,35 +13,22 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-using System;
-
-var client = new AmazonIdentityManagementServiceClient();
-
-var request = new ListPoliciesRequest
-{
-    MaxItems = 10,
-};
-
-var response = new ListPoliciesResponse();
-
-do
-{
-    response = await client.ListPoliciesAsync(request);
-    response.Policies.ForEach(policy =>
+    /// <summary>
+    /// List IAM policies.
+    /// </summary>
+    /// <returns>A list of the IAM policies.</returns>
+    public async Task<List<ManagedPolicy>> ListPoliciesAsync()
     {
-        Console.Write($"{policy.PolicyName} ");
-        Console.Write($"with ID: {policy.PolicyId} ");
-        Console.Write($"and ARN: {policy.Arn}. ");
-        Console.WriteLine($"It was created on {policy.CreateDate}.");
-    });
+        var listPoliciesPaginator = _IAMService.Paginators.ListPolicies(new ListPoliciesRequest());
+        var policies = new List<ManagedPolicy>();
 
-    if (response.IsTruncated)
-    {
-        request.Marker = response.Marker;
+        await foreach (var response in listPoliciesPaginator.Responses)
+        {
+            policies.AddRange(response.Policies);
+        }
+
+        return policies;
     }
-} while (response.IsTruncated);
 ```
 +  For API details, see [ListPolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListPolicies) in *AWS SDK for \.NET API Reference*\. 
 
@@ -135,7 +122,7 @@ func (wrapper PolicyWrapper) ListPolicies(maxPolicies int32) ([]types.Policy, er
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

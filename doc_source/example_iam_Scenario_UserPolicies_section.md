@@ -1,10 +1,13 @@
 # Create read\-only and read\-write IAM users using an AWS SDK<a name="example_iam_Scenario_UserPolicies_section"></a>
 
-The following code example shows how to:
+The following code example shows how to create users and attach policies to them\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 + Create two IAM users\.
-+ Attach a policy that lets one of the users get and put objects in an Amazon Simple Storage Service \(Amazon S3\) bucket\.
-+ Attach a policy that lets the other user get objects from the bucket\.
-+ Obtain differing permissions to the bucket based on user credentials\.
++ Attach a policy for one user to get and put objects in an Amazon S3 bucket\.
++ Attach a policy for the second user to get objects from the bucket\.
++ Get different permissions to the bucket based on user credentials\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 

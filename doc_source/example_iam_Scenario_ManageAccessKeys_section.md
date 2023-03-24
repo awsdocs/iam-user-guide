@@ -1,6 +1,9 @@
 # Manage IAM access keys using an AWS SDK<a name="example_iam_Scenario_ManageAccessKeys_section"></a>
 
-The following code example shows how to:
+The following code example shows how to manage access keys\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 + Create and list access keys\.
 + Find out when and how an access key was last used\.
 + Update and delete access keys\.

@@ -33,7 +33,7 @@ For more information, see the following articles in the AWS Knowledge Center:
 
 We recommend that you follow the security best practice to enable multi\-factor authentication \(MFA\) for your account\. Because your root user can perform sensitive operations in your account, adding an additional layer of authentication helps you to better secure your account\. Multiple types of MFA are available\. We recommend that you enable multiple MFA devices to your AWS account root user and IAM users in your AWS accounts\. This allows you to raise the security bar in your AWS accounts, including your AWS account root user\. You can register up to eight MFA devices of any combination of the currently supported MFA types for your AWS account root user and IAM users\.
 
-With multiple MFA devices, only one MFA device is needed to sign into the AWS Management Console or create a session using the AWS CLI as that user\. For more information, see [How do I use an MFA token to authenticate access to my AWS resources through the AWS CLI?](https://aws.amazon.com/premiumsupport/knowledge-center/authenticate-mfa-cli/)
+With multiple MFA devices, only one MFA device is needed to sign in to the AWS Management Console or create a session using the AWS CLI as that user\. For more information, see [How do I use an MFA token to authenticate access to my AWS resources through the AWS CLI?](https://aws.amazon.com/premiumsupport/knowledge-center/authenticate-mfa-cli/)
 
  For more information about enabling MFA, see the following:
 + [Enable a virtual MFA device for your AWS account root user \(console\)](id_credentials_mfa_enable_virtual.md#enable-virt-mfa-for-root)

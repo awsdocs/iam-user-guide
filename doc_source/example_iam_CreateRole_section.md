@@ -13,28 +13,24 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-        /// <summary>
-        /// Create a new IAM role which we can attach to a user.
-        /// </summary>
-        /// <param name="client">The initialized IAM client object.</param>
-        /// <param name="roleName">The name of the IAM role to create.</param>
-        /// <param name="rolePermissions">The permissions which the role will have.</param>
-        /// <returns>A Role object representing the newly created role.</returns>
-        public static async Task<Role> CreateRoleAsync(
-            AmazonIdentityManagementServiceClient client,
-            string roleName,
-            string rolePermissions)
+    /// <summary>
+    /// Create a new IAM role.
+    /// </summary>
+    /// <param name="roleName">The name of the IAM role.</param>
+    /// <param name="rolePolicyDocument">The name of the IAM policy document
+    /// for the new role.</param>
+    /// <returns>The Amazon Resource Name (ARN) of the role.</returns>
+    public async Task<string> CreateRoleAsync(string roleName, string rolePolicyDocument)
+    {
+        var request = new CreateRoleRequest
         {
-            var request = new CreateRoleRequest
-            {
-                RoleName = roleName,
-                AssumeRolePolicyDocument = rolePermissions,
-            };
+            RoleName = roleName,
+            AssumeRolePolicyDocument = rolePolicyDocument,
+        };
 
-            var response = await client.CreateRoleAsync(request);
-
-            return response.Role;
-        }
+        var response = await _IAMService.CreateRoleAsync(request);
+        return response.Role.Arn;
+    }
 ```
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateRole) in *AWS SDK for \.NET API Reference*\. 
 
@@ -162,7 +158,7 @@ func (wrapper RoleWrapper) CreateRole(roleName string, trustedUserArn string) (*
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

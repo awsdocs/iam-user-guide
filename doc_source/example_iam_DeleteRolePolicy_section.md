@@ -13,35 +13,21 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-    using System;
-    using System.Threading.Tasks;
-    using Amazon.IdentityManagement;
-    using Amazon.IdentityManagement.Model;
-
-    public class DeleteRolePolicy
+    /// <summary>
+    /// Delete an IAM role policy.
+    /// </summary>
+    /// <param name="roleName">The name of the IAM role.</param>
+    /// <param name="policyName">The name of the IAM role policy to delete.</param>
+    /// <returns>A Boolean value indicating the success of the action.</returns>
+    public async Task<bool> DeleteRolePolicyAsync(string roleName, string policyName)
     {
-        /// <summary>
-        /// Initializes the IAM client object and then calls DeleteRolePolicyAsync
-        /// to delete the Policy attached to the Role.
-        /// </summary>
-        public static async Task Main()
+        var response = await _IAMService.DeleteRolePolicyAsync(new DeleteRolePolicyRequest
         {
-            var client = new AmazonIdentityManagementServiceClient();
-            var response = await client.DeleteRolePolicyAsync(new DeleteRolePolicyRequest
-            {
-                PolicyName = "ExamplePolicy",
-                RoleName = "Test-Role",
-            });
+            PolicyName = policyName,
+            RoleName = roleName,
+        });
 
-            if (response.HttpStatusCode == System.Net.HttpStatusCode.OK)
-            {
-                Console.WriteLine("Policy successfully deleted.");
-            }
-            else
-            {
-                Console.WriteLine("Could not delete pollicy.");
-            }
-        }
+        return response.HttpStatusCode == System.Net.HttpStatusCode.OK;
     }
 ```
 +  For API details, see [DeleteRolePolicy](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/DeleteRolePolicy) in *AWS SDK for \.NET API Reference*\. 

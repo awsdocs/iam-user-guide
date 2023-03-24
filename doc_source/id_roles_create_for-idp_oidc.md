@@ -150,7 +150,7 @@ If you use Amazon Cognito, use the Amazon Cognito console to set up the roles\. 
 You must create a separate role for each IdP that you want to support\.
    + If you want to create an advanced scenario role for Amazon Cognito, choose **Amazon Cognito**\. 
 **Note**  
-You must manually create a role to use with Amazon Cognito only when you work on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you\. For more information about Amazon Cognito, see [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide* and [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*\. 
+You must manually create a role to use with Amazon Cognito only when you work on an advanced scenario\. Otherwise, Amazon Cognito can create roles for you\. For more information about Amazon Cognito, see [Identity pools \(federated identities\) external identity providers](https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html) in the *Amazon Cognito Developer Guide*\. 
 
 1. Enter the identifier for your application\. The label of the identifier changes based on the provider you choose:
    + If you want to create a role for Login with Amazon, enter the app ID into the **Application ID** box\.

@@ -13,37 +13,23 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
-using System;
-
-var client = new AmazonIdentityManagementServiceClient();
-var request = new ListRolePoliciesRequest
-{
-    RoleName = "LambdaS3Role",
-};
-
-var response = new ListRolePoliciesResponse();
-
-do
-{
-    response = await client.ListRolePoliciesAsync(request);
-
-    if (response.PolicyNames.Count > 0)
+    /// <summary>
+    /// List IAM role policies.
+    /// </summary>
+    /// <param name="roleName">The IAM role for which to list IAM policies.</param>
+    /// <returns>A list of IAM policy names.</returns>
+    public async Task<List<string>> ListRolePoliciesAsync(string roleName)
     {
-        response.PolicyNames.ForEach(policyName =>
+        var listRolePoliciesPaginator = _IAMService.Paginators.ListRolePolicies(new ListRolePoliciesRequest { RoleName = roleName });
+        var policyNames = new List<string>();
+
+        await foreach (var response in listRolePoliciesPaginator.Responses)
         {
-            Console.WriteLine($"{policyName}");
-        });
-    }
+            policyNames.AddRange(response.PolicyNames);
+        }
 
-    // As long as response.IsTruncated is true, set request.Marker equal
-    // to response.Marker and call ListRolesAsync again.
-    if (response.IsTruncated)
-    {
-        request.Marker = response.Marker;
+        return policyNames;
     }
-} while (response.IsTruncated);
 ```
 +  For API details, see [ListRolePolicies](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/ListRolePolicies) in *AWS SDK for \.NET API Reference*\. 
 
@@ -83,7 +69,7 @@ func (wrapper RoleWrapper) ListRolePolicies(roleName string) ([]string, error) {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

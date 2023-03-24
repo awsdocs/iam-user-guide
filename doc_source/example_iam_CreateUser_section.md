@@ -1,6 +1,9 @@
 # Create an IAM user using an AWS SDK<a name="example_iam_CreateUser_section"></a>
 
-The following code examples show how to create an IAM user\.
+The following code examples show how to create an IAM user\. 
+
+**Warning**  
+To avoid security risks, don't use IAM users for authentication when developing purpose\-built software or working with real data\. Instead, use federation with an identity provider such as [AWS IAM Identity Center \(successor to AWS Single Sign\-On\)](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)\.
 
 **Note**  
 The source code for these examples is in the [AWS Code Examples GitHub repository](https://github.com/awsdocs/aws-doc-sdk-examples)\. Have feedback on a code example? [Create an Issue](https://github.com/awsdocs/aws-doc-sdk-examples/issues/new/choose) in the code examples repo\. 
@@ -13,26 +16,16 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-        /// <summary>
-        /// Create a new IAM user.
-        /// </summary>
-        /// <param name="client">The initialized IAM client object.</param>
-        /// <param name="userName">A string representing the user name of the
-        /// new user.</param>
-        /// <returns>The newly created user.</returns>
-        public static async Task<User> CreateUserAsync(
-            AmazonIdentityManagementServiceClient client,
-            string userName)
-        {
-            var request = new CreateUserRequest
-            {
-                UserName = userName,
-            };
-
-            var response = await client.CreateUserAsync(request);
-
-            return response.User;
-        }
+    /// <summary>
+    /// Create an IAM user.
+    /// </summary>
+    /// <param name="userName">The username for the new IAM user.</param>
+    /// <returns>The IAM user that was created.</returns>
+    public async Task<User> CreateUserAsync(string userName)
+    {
+        var response = await _IAMService.CreateUserAsync(new CreateUserRequest { UserName = userName });
+        return response.User;
+    }
 ```
 +  For API details, see [CreateUser](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/CreateUser) in *AWS SDK for \.NET API Reference*\. 
 
@@ -70,8 +63,7 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-// UserWrapper encapsulates AWS Identity and Access Management (IAM) user actions
-// used in the examples.
+// UserWrapper encapsulates user actions used in the examples.
 // It contains an IAM service client that is used to perform user actions.
 type UserWrapper struct {
 	IamClient *iam.Client
@@ -136,7 +128,7 @@ func (wrapper UserWrapper) CreateUser(userName string) (*types.User, error) {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 
@@ -181,7 +173,7 @@ run();
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-users.html#iam-examples-managing-users-creating-users)\. 
 +  For API details, see [CreateUser](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/createusercommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
-**SDK for JavaScript V2**  
+**SDK for JavaScript \(v2\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascript/example_code/iam#code-examples)\. 
   
 

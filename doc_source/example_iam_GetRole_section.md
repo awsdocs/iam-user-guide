@@ -13,23 +13,21 @@ The source code for these examples is in the [AWS Code Examples GitHub repositor
   
 
 ```
-using System;
-using Amazon.IdentityManagement;
-using Amazon.IdentityManagement.Model;
+    /// <summary>
+    /// Get information about an IAM role.
+    /// </summary>
+    /// <param name="roleName">The name of the IAM role to retrieve information
+    /// for.</param>
+    /// <returns>The IAM role that was retrieved.</returns>
+    public async Task<Role> GetRoleAsync(string roleName)
+    {
+        var response = await _IAMService.GetRoleAsync(new GetRoleRequest
+        {
+            RoleName = roleName,
+        });
 
-var client = new AmazonIdentityManagementServiceClient();
-
-var response = await client.GetRoleAsync(new GetRoleRequest
-{
-    RoleName = "LambdaS3Role",
-});
-
-if (response.Role is not null)
-{
-    Console.WriteLine($"{response.Role.RoleName} with ARN: {response.Role.Arn}");
-    Console.WriteLine($"{response.Role.Description}");
-    Console.WriteLine($"Created: {response.Role.CreateDate} Last used on: { response.Role.RoleLastUsed}");
-}
+        return response.Role;
+    }
 ```
 +  For API details, see [GetRole](https://docs.aws.amazon.com/goto/DotNetSDKV3/iam-2010-05-08/GetRole) in *AWS SDK for \.NET API Reference*\. 
 
@@ -68,7 +66,7 @@ func (wrapper RoleWrapper) GetRole(roleName string) (*types.Role, error) {
 ------
 #### [ JavaScript ]
 
-**SDK for JavaScript V3**  
+**SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
 Create the client\.  
 

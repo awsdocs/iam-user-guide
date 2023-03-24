@@ -152,7 +152,7 @@ The IAM user named `JohnDoe` in account 777788889999 calls the AWS STS `AssumeRo
     "credentials": {
       "sessionToken": "<encoded session token blob>",
       "accessKeyId": "AKIAQRSTUVWXYZEXAMPLE",
-      "expiration": "Jul 18, 2014 4:07:39 PM"
+      "expiration": "Jul 18, 2023, 4:07:39 PM"
       },
     "assumedRoleUser": {
       "assumedRoleId": "AIDAQRSTUVWXYZEXAMPLE:JohnDoe-EC2-dev",

@@ -5,9 +5,11 @@ The following code examples demonstrate how to perform individual IAM actions wi
  The following examples include only the most commonly used actions\. For a complete list, see the [AWS Identity and Access Management \(IAM\) API Reference](https://docs.aws.amazon.com/IAM/latest/APIReference/welcome.html)\. 
 
 **Topics**
++ [Add a user to a group](example_iam_AddUserToGroup_section.md)
 + [Attach a policy to a role](example_iam_AttachRolePolicy_section.md)
 + [Attach a policy to a user](example_iam_AttachUserPolicy_section.md)
 + [Attach an inline policy to a role](example_iam_PutRolePolicy_section.md)
++ [Create a group](example_iam_CreateGroup_section.md)
 + [Create a policy](example_iam_CreatePolicy_section.md)
 + [Create a policy version](example_iam_CreatePolicyVersion_section.md)
 + [Create a role](example_iam_CreateRole_section.md)
@@ -15,7 +17,10 @@ The following code examples demonstrate how to perform individual IAM actions wi
 + [Create a user](example_iam_CreateUser_section.md)
 + [Create an access key](example_iam_CreateAccessKey_section.md)
 + [Create an alias for an account](example_iam_CreateAccountAlias_section.md)
++ [Create an inline policy for a group](example_iam_PutGroupPolicy_section.md)
 + [Create an inline policy for a user](example_iam_PutUserPolicy_section.md)
++ [Delete a group](example_iam_DeleteGroup_section.md)
++ [Delete a group policy](example_iam_DeleteGroupPolicy_section.md)
 + [Delete a policy](example_iam_DeletePolicy_section.md)
 + [Delete a role](example_iam_DeleteRole_section.md)
 + [Delete a role policy](example_iam_DeleteRolePolicy_section.md)
@@ -49,6 +54,7 @@ The following code examples demonstrate how to perform individual IAM actions wi
 + [List roles](example_iam_ListRoles_section.md)
 + [List server certificates](example_iam_ListServerCertificates_section.md)
 + [List users](example_iam_ListUsers_section.md)
++ [Remove a user from a group](example_iam_RemoveUserFromGroup_section.md)
 + [Update a server certificate](example_iam_UpdateServerCertificate_section.md)
 + [Update a user](example_iam_UpdateUser_section.md)
 + [Update an access key](example_iam_UpdateAccessKey_section.md)

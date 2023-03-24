@@ -48,12 +48,12 @@ For more information about the permissions necessary to work with roles, see "Ho
 To access temporary security credentials on your EC2 instance, you must first use the IAM console to create a role\. Then you launch an EC2 instance that uses that role and examine the running instance\. For more information, see **How Do I Get Started?** in [Using an IAM role to grant permissions to applications running on Amazon EC2 instances](id_roles_use_switch-role-ec2.md)\.
 
 If you still can't access your temporary security credentials on your EC2 instance, check the following:
-+ Can you access another part of the instance metadata service \(IMDS\)? If not, check that you have no firewall rules blocking access to requests to the IMDS\.
++ Can you access another part of the Instance Metadata Service \(IMDS\)? If not, check that you have no firewall rules blocking access to requests to the IMDS\.
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/hostname; echo
   ```
-+ Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling the EC2 `DescribeInstances` API operation or using the aws ec2 `aws ec2 describe-instances` CLI command\. 
++ Does the `iam` subtree of the IMDS exist? If not, verify that your instance has an IAM instance profile associated with it by calling the EC2 `DescribeInstances` API operation or using the `aws ec2 describe-instances` CLI command\. 
 
   ```
   [ec2-user@domU-12-31-39-0A-8D-DE ~]$ GET http://169.254.169.254/latest/meta-data/iam; echo
