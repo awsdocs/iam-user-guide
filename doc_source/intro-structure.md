@@ -69,7 +69,7 @@ You must also be authorized \(allowed\) to complete your request\. During author
 AWS checks each policy that applies to the context of your request\. If a single permissions policy includes a denied action, AWS denies the entire request and stops evaluating\. This is called an *explicit deny*\. Because requests are *denied by default*, AWS authorizes your request only if every part of your request is allowed by the applicable permissions policies\. The evaluation logic for a request within a single account follows these general rules:
 + By default, all requests are denied\. \(In general, requests made using the AWS account root user credentials for resources in the account are always allowed\.\) 
 + An explicit allow in any permissions policy \(identity\-based or resource\-based\) overrides this default\.
-+ The existence of an Organizations SCP, IAM permissions boundary, or a session policy overrides the allow\. If one or more of these policy types exists, they must all allow the request\. Otherwise, it is implicitly denied\.
++ The existence of an organization's SCP, IAM permissions boundary, or a session policy overrides the allow\. If one or more of these policy types exists, they must all allow the request\. Otherwise, it is implicitly denied\.
 + An explicit deny in any policy overrides any allows\.
 
 To learn more about how all types of policies are evaluated, see [Policy evaluation logic](reference_policies_evaluation-logic.md)\. If you need to make a request in a different account, a policy in the other account must allow you to access the resource *and* the IAM entity that you use to make the request must have an identity\-based policy that allows the request\.
