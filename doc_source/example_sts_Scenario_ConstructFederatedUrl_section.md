@@ -150,4 +150,10 @@ def usage_demo():
 
 ------
 
+## Troubleshooting
+### The endpoint `https://signin.aws.amazon.com/federation` returns status code 400 without additional error messages.
+If you encounter a 400 status code error without any additional error messages when accessing the https://signin.aws.amazon.com/federation endpoint, the issue might be related to the `SessionDuration` setting.
+
+The default `str(datetime.timedelta(hours=12).seconds)` will only work for IAM users. If you are using an IAM role, you will hit the 1 hour session limit for role chaining. To verify if this is the cause of the issue, you can try setting the session duration to a value slightly lower than 3600 seconds (e.g. 3590 seconds). Note that setting it to exactly 3600 seconds will not work.
+
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.
