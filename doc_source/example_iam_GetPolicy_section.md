@@ -99,37 +99,24 @@ func (wrapper PolicyWrapper) GetPolicy(policyArn string) (*types.Policy, error) 
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Get the policy\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { GetPolicyCommand } from "@aws-sdk/client-iam";
+import { GetPolicyCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-const params = {
-  PolicyArn: "POLICY_ARN" /* required */,
-};
+const client = new IAMClient({});
 
-const run = async () => {
-  try {
-    const data = await iamClient.send(new GetPolicyCommand(params));
-    console.log("Success", data.Policy);
-  } catch (err) {
-    console.log("Error", err);
-  }
+/**
+ *
+ * @param {string} policyArn
+ */
+export const getPolicy = (policyArn) => {
+  const command = new GetPolicyCommand({
+    PolicyArn: policyArn,
+  });
+
+  return client.send(command);
 };
-run();
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-getting)\. 
 +  For API details, see [GetPolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/getpolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
@@ -209,7 +196,7 @@ $service = new IAMService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```
@@ -265,7 +252,7 @@ def get_default_policy_statement(policy_arn):
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/GetPolicy#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

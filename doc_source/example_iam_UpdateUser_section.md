@@ -73,39 +73,26 @@ bool AwsDoc::IAM::updateUser(const Aws::String &currentUserName,
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Update the user\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { UpdateUserCommand } from "@aws-sdk/client-iam";
+import { UpdateUserCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = {
-  UserName: "ORIGINAL_USER_NAME", //ORIGINAL_USER_NAME
-  NewUserName: "NEW_USER_NAME", //NEW_USER_NAME
-};
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(new UpdateUserCommand(params));
-    console.log("Success, username updated");
-    return data;
-  } catch (err) {
-    console.log("Error", err);
-  }
+/**
+ *
+ * @param {string} currentUserName
+ * @param {string} newUserName
+ */
+export const updateUser = (currentUserName, newUserName) => {
+  const command = new UpdateUserCommand({
+    UserName: currentUserName,
+    NewUserName: newUserName,
+  });
+
+  return client.send(command);
 };
-run();
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-users.html#iam-examples-managing-users-updating-users)\. 
 +  For API details, see [UpdateUser](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/updateusercommand.html) in *AWS SDK for JavaScript API Reference*\. 
@@ -167,7 +154,7 @@ suspend fun updateIAMUser(curName: String?, newName: String?) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```

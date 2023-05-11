@@ -25,21 +25,19 @@ You can edit customer managed policies to change the permissions that are define
 
 1. In the list of policies, choose the policy name of the policy to edit\. You can use the search box to filter the list of policies\.
 
-1. Choose the **Permissions** tab, and then choose **Edit policy**\. 
+1. Choose the **Permissions** tab, and then choose **Edit**\. 
 
 1. Do one of the following:
-   + Choose the **Visual editor** tab to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\.
-   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
+   + Choose the **Visual** option to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Next** to continue\.
+   + Choose the **JSON** option to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\. 
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options any time\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, review the policy **Summary** and then choose **Save changes** to save your work\.
+1. On the **Review and save** page, review **Permissions defined in this policy** and then choose **Save changes** to save your work\.
 
-1. If the managed policy already has the maximum of five versions, choosing **Save** displays a dialog box\. To save your new version, you must remove at least one earlier version\. You cannot delete the default version\. Choose from the following options:
-   + **Remove oldest non\-default policy version \(version v\# \- created \# days ago\)** – Use this option to see which version will be deleted and when it was created\. You can view the JSON policy document for all nondefault versions by choosing the second option, **Select versions to remove**\. 
-   + **Select versions to remove** – Use this option to view the JSON policy document and choose one or more versions to delete\.
+1. If the managed policy already has the maximum of five versions, choosing **Save changes** displays a dialog box\. To save your new version, the oldest non\-default version of the policy is removed and replaced with this new version\. Optionally, you can set the new version as the default policy version\.
 
-   After choosing the versions to remove, choose **Delete version and save** to save your new policy version\.
+   Choose **Save changes** to save your new policy version\.
 
 **To set the default version of a customer managed policy \(console\)**
 
@@ -76,12 +74,12 @@ You can edit an inline policy from the AWS Management Console\.
 1. To edit an inline policy, choose **Edit Policy**\. 
 
 1. Do one of the following:
-   + Choose the **Visual editor** tab to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Review policy** to continue\.
-   + Choose the **JSON** tab to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. To save your changes without affecting the currently attached entities, clear the check box for **Save as default version**\.
+   + Choose the **Visual** option to change your policy without understanding JSON syntax\. You can make changes to the service, actions, resources, or optional conditions for each permission block in your policy\. You can also import a policy to add additional permissions to the bottom of your policy\. When you are finished making changes, choose **Next** to continue\.
+   + Choose the **JSON** option to modify your policy by typing or pasting text in the JSON text box\. You can also import a policy to add additional permissions to the bottom of your policy\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\. To save your changes without affecting the currently attached entities, clear the check box for **Save as default version**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options any time\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, review the policy **Summary** and then choose **Save changes** to save your work\.
+1. On the **Review** page, review the policy summary and then choose **Save changes** to save your work\.
 
 ## Editing customer managed policies \(AWS CLI\)<a name="edit-policies-cli-api"></a>
 

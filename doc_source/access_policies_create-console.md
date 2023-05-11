@@ -4,7 +4,7 @@ A [policy](access_policies.md) is an entity that, when attached to an identity o
 
 **Topics**
 + [Creating IAM policies](#access_policies_create-start)
-+ [Creating policies on the JSON tab](#access_policies_create-json-editor)
++ [Creating policies using the JSON editor](#access_policies_create-json-editor)
 + [Creating policies with the visual editor](#access_policies_create-visual-editor)
 + [Importing existing managed policies](#access_policies_create-copy)
 
@@ -17,9 +17,9 @@ You can create a customer managed policy in the AWS Management Console using one
 
 The number and size of IAM resources in an AWS account are limited\. For more information, see [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)\.
 
-## Creating policies on the JSON tab<a name="access_policies_create-json-editor"></a>
+## Creating policies using the JSON editor<a name="access_policies_create-json-editor"></a>
 
-You can type or paste policies in JSON by choosing the **JSON** tab\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** tab to toggle between the visual editor and JSON to compare the views\.
+You can type or paste policies in JSON by choosing the **JSON** option\. This method is useful for copying an [example policy](access_policies_examples.md) to use in your account\. Or, you can type your own JSON policy document in the JSON editor\. You can also use the **JSON** option to toggle between the visual editor and JSON to compare the views\.
 
  When you create or edit a policy in the JSON editor, IAM performs policy validation to help you create an effective policy\. IAM identifies JSON syntax errors, while IAM Access Analyzer provides additional policy checks with actionable recommendations to help you further refine the policy\. 
 
@@ -33,21 +33,25 @@ A JSON [policy](access_policies.md) document consists of one or more statements\
 
 1. Choose **Create policy**\.
 
-1. Choose the **JSON** tab\.
+1. In the **Policy editor** section, choose the **JSON** option\.
 
 1. Type or paste a JSON policy document\. For details about the IAM policy language, see [IAM JSON policy reference](reference_policies.md)\.
 
-1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
+1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\. 
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Next: Tags** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options anytime\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. When you are finished, choose **Next: Tags**\.
+1. \(Optional\) When you create or edit a policy in the AWS Management Console, you can generate a JSON or YAML policy template that you can use in AWS CloudFormation templates\.
 
-   \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+   To do this, in the **Policy editor** choose **Actions**, and then choose **Generate CloudFormation template**\. To learn more about AWS CloudFormation see [AWS Identity and Access Management resource type reference](https://docs.aws.amazon.com/https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_IAM.html) in the AWS CloudFormation User Guide\.
 
-1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy **Summary** to see the permissions that are granted by your policy\. Then choose **Create policy** to save your work\.
-**Note**  
-You can't edit **Description** after creating the policy\.
+1. When you are finished adding permissions to the policy, choose **Next**\.
+
+1. On the **Review and create** page, type a **Policy Name** and a **Description** \(optional\) for the policy that you are creating\. Review **Permissions defined in this policy** to see the permissions that are granted by your policy\.
+
+1. \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+
+1. Choose **Create policy** to save your new policy\.
 
 After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 
@@ -63,9 +67,9 @@ The visual editor in the IAM console guides you through creating a policy withou
 
 1. Choose **Create policy**\.
 
-1. On the **Visual editor** tab, choose **Choose a service** and then choose an AWS service\. You can use the search box at the top to limit the results in the list of services\. You can choose only one service within a visual editor permission block\. To grant access to more than one service, add multiple permission blocks by choosing **Add additional permissions**\.
+1. In the **Policy editor** section, find the **Select a service** section, and then choose an AWS service\. You can use the search box at the top to limit the results in the list of services\. You can choose only one service within a visual editor permission block\. To grant access to more than one service, add multiple permission blocks by choosing **Add more permissions**\.
 
-1. For **Actions**, choose the actions to add to the policy\. You can choose actions in the following ways:
+1. In **Actions allowed**, choose the actions to add to the policy\. You can choose actions in the following ways:
    + Select the check box for all actions\.
    + Choose **add actions** to type the name of a specific action\. You can use wildcards \(`*`\) to specify multiple actions\.
    + Select one of the **Access level** groups to choose all actions for the access level \(for example, **Read**, **Write**, or **List**\)\.
@@ -78,33 +82,35 @@ The visual editor in the IAM console guides you through creating a policy withou
    If you chose one or more actions that support [resource\-level permissions](access_controlling.md#access_controlling-resources), then the visual editor lists those resources\. You can then expand **Resources** to specify resources for your policy\. 
 
    You can specify resources in the following ways:
-   + Choose **Add ARN** to specify resources by their Amazon Resource Names \(ARN\)\. You can use the visual ARN editor or list ARNs manually\. For more information about ARN syntax, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For information about using ARNs in the `Resource` element of a policy, see [IAM JSON policy elements: Resource](reference_policies_elements_resource.md)\.
-   + Choose **Any** next to a resource to grant permissions to any resources of that type\.
-   + Choose **All resources** to choose all resources for the service\. 
+   + Choose **Add ARNs** to specify resources by their Amazon Resource Names \(ARN\)\. You can use the visual ARN editor or list ARNs manually\. For more information about ARN syntax, see [Amazon Resource Name \(ARN\)](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html) in the *AWS General Reference Guide*\. For information about using ARNs in the `Resource` element of a policy, see [IAM JSON policy elements: Resource](reference_policies_elements_resource.md)\.
+   + Choose **Any in this account** next to a resource to grant permissions to any resources of that type\.
+   + Choose **All** to choose all resources for the service\. 
 
-1. \(Optional\) Choose **Specify request conditions \(optional\)** to add conditions to the policy that you are creating\. Conditions limit a JSON policy statement's effect\. For example, you can specify that a user is allowed to perform the actions on the resources only when that user's request happens within a certain time range\. You can also use commonly used conditions to limit whether a user must be authenticated using a multi\-factor authentication \(MFA\) device\. Or you can require that the request originate from within a certain range of IP addresses\. For lists of all of the context keys that you can use in a policy condition, see [Actions, Resources, and Condition Keys for AWS Services](reference_policies_actions-resources-contextkeys.html)\.
+1. \(Optional\) Choose **Request conditions \- *optional*** to add conditions to the policy that you are creating\. Conditions limit a JSON policy statement's effect\. For example, you can specify that a user is allowed to perform the actions on the resources only when that user's request happens within a certain time range\. You can also use commonly used conditions to limit whether a user must be authenticated using a multi\-factor authentication \(MFA\) device\. Or you can require that the request originate from within a certain range of IP addresses\. For lists of all of the context keys that you can use in a policy condition, see [Actions, resources, and condition keys for AWS services](https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html) in the *Service Authorization Reference*\.
 
    You can choose conditions in the following ways:
    + Use check boxes to select commonly used conditions\.
-   + Choose **Add condition** to specify other conditions\. Choose the condition's **Condition Key**, **Qualifier**, and **Operator**, and then type a **Value**\. To add more than one value, choose **Add new value**\. You can consider the values as being connected by a logical "OR" operator\. When you are finished, choose **Add**\.
+   + Choose **Add another condition** to specify other conditions\. Choose the condition's **Condition Key**, **Qualifier**, and **Operator**, and then type a **Value**\. To add more than one value, choose **Add**\. You can consider the values as being connected by a logical "OR" operator\. When you are finished, choose **Add condition**\.
 
-   To add more than one condition, choose **Add condition** again\. Repeat as needed\. Each condition applies only to this one visual editor permission block\. All the conditions must be true for the permission block to be considered a match\. In other words, consider the conditions to be connected by a logical "AND" operator\.
+   To add more than one condition, choose **Add another condition** again\. Repeat as needed\. Each condition applies only to this one visual editor permission block\. All the conditions must be true for the permission block to be considered a match\. In other words, consider the conditions to be connected by a logical "AND" operator\.
 
    For more information about the **Condition** element, see [IAM JSON policy elements: Condition](reference_policies_elements_condition.md) in the [IAM JSON policy reference](reference_policies.md)\.
 
-1. To add more permission blocks, choose **Add additional permissions**\. For each block, repeat steps 2 through 5\.
+1. To add more permission blocks, choose **Add more permissions**\. For each block, repeat steps 2 through 5\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Next: Tags** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options anytime\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. When you are finished, choose **Next: Tags**\.
+1. \(Optional\) When you create or edit a policy in the AWS Management Console, you can generate a JSON or YAML policy template that you can use in AWS CloudFormation templates\.
 
-   \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+   To do this, in the **Policy editor** choose **Actions**, and then choose **Generate CloudFormation template**\. To learn more about AWS CloudFormation see [AWS Identity and Access Management resource type reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/AWS_IAM.html) in the AWS CloudFormation User Guide\.
 
-1. When you are finished, choose **Next: Review**\.
+1. When you are finished adding permissions to the policy, choose **Next**\.
 
-1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. Review the policy summary to make sure that you have granted the intended permissions, and then choose **Create policy** to save your new policy\.
-**Note**  
-You can't edit **Description** after creating the policy\.
+1. On the **Review and create** page, type a **Policy Name** and a **Description** \(optional\) for the policy that you are creating\. Review the **Permissions defined in this policy** to make sure that you have granted the intended permissions\. 
+
+1. \(Optional\) Add metadata to the policy by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM resources](id_tags.md)\.
+
+1. Choose **Create policy** to save your new policy\.
 
 After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 
@@ -122,21 +128,21 @@ You cannot import an inline policy\. To learn about the difference between manag
 
 1. Choose **Create policy**\.
 
-1. Choose the **Visual editor** tab, and then on the right side of the page, choose **Import managed policy**\.
+1. In the **Policy editor** , choose **Visual** and then on the right side of the page, choose **Actions** then choose **Import policy**\.
 
-1. In the **Import managed policies** window, choose the managed policies that most closely match the policy that you want to include in your new policy\. You can use the **Filter** menu or type in the search box at the top to limit the results in the list of policies\.
+1. In the **Import policy** window, choose the managed policies that most closely match the policy that you want to include in your new policy\. You can use the search box at the top to limit the results in the list of policies\.
 
-1. Choose **Import**\.
+1. Choose **Import policy**\.
 
    The imported policies are added in new permission blocks at the bottom of your policy\.
 
-1. Use the **Visual editor** or choose **JSON** to customize your policy\. Then choose **Review policy**\.
+1. Use the **Visual** editor or choose **JSON** to customize your policy\. Then choose **Next**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options anytime\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these settings later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
+1. On the **Review and create** page, type a **Policy Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these settings later\. Review the **Permissions defined in this policy** and then choose **Create policy** to save your work\.
 
-**To import an existing managed policy in the **JSON** tab**
+**To import an existing managed policy in the **JSON** editor**
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
@@ -144,18 +150,18 @@ You can switch between the **Visual editor** and **JSON** tabs anytime\. However
 
 1. Choose **Create policy**\.
 
-1. Choose the **JSON** tab, and then on the right side of the page, choose **Import managed policy**\.
+1. In the **Policy editor** section, choose the **JSON** option, and then on the right side of the page, choose **Actions** then choose **Import policy**\.
 
-1. In the **Import managed policies** window, choose the managed policies that most closely match the policy that you want to include in your new policy\. You can use the **Filter** menu or type in the search box at the top to limit the results in the list of policies\.
+1. In the **Import policy** window, choose the managed policies that most closely match the policy that you want to include in your new policy\. You can use the search box at the top to limit the results in the list of policies\.
 
-1. Choose **Import**\.
+1. Choose **Import policy**\.
 
    Statements from the imported policies are added to the bottom of your JSON policy\.
 
-1. Customize your policy in JSON\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. Or, customize your policy in the **Visual editor**\. Then choose **Review policy**\.
+1. Customize your policy in JSON\. Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\. Or, customize your policy in the **Visual** editor\. Then choose **Next**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options anytime\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review policy** page, type a **Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these later\. Review the policy **Summary** and then choose **Create policy** to save your work\.
+1. On the **Review and create** page, type a **Policy Name** and a **Description** \(optional\) for the policy that you are creating\. You cannot edit these later\. Review the policy **Permissions defined in this policy** and then choose **Create policy** to save your work\.
 
 After you create a policy, you can attach it to your groups, users, or roles\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.

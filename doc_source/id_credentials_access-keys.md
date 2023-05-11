@@ -27,6 +27,9 @@ When you create an access key pair, save the access key ID and secret access key
 
 ## Permissions required<a name="access-keys_required-permissions"></a>
 
+**Note**  
+`iam:TagUser` is an optional permission for adding and editing descriptions for the access key\. For more information, see [Tagging IAM users](id_tags_users.md)
+
 To create access keys for your own IAM user, you must have the permissions from the following policy:
 
 ```
@@ -39,7 +42,8 @@ To create access keys for your own IAM user, you must have the permissions from 
             "Action": [
                 "iam:CreateAccessKey",
                 "iam:GetUser",
-                "iam:ListAccessKeys"
+                "iam:ListAccessKeys",
+                "iam:TagUser"
             ],
             "Resource": "arn:aws:iam::*:user/${aws:username}"
         }
@@ -62,7 +66,8 @@ To rotate access keys for your own IAM user, you must have the permissions from 
                 "iam:GetAccessKeyLastUsed",
                 "iam:GetUser",
                 "iam:ListAccessKeys",
-                "iam:UpdateAccessKey"
+                "iam:UpdateAccessKey",
+                "iam:TagUser"
             ],
             "Resource": "arn:aws:iam::*:user/${aws:username}"
         }

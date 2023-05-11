@@ -160,55 +160,36 @@ func (wrapper RoleWrapper) CreateRole(roleName string, trustedUserArn string) (*
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Create the role\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { CreateRoleCommand } from "@aws-sdk/client-iam";
+import { CreateRoleCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Sample assume role policy JSON.
-const role_json = {
-    Version: "2012-10-17",
-    Statement: [
+const client = new IAMClient({});
+
+/**
+ *
+ * @param {string} roleName
+ */
+export const createRole = (roleName) => {
+  const command = new CreateRoleCommand({
+    AssumeRolePolicyDocument: JSON.stringify({
+      Version: "2012-10-17",
+      Statement: [
         {
-            Effect: "Allow",
-            Principal: {
-                AWS: "USER_ARN", // The ARN of the user.
-            },
-            Action: "sts:AssumeRole",
+          Effect: "Allow",
+          Principal: {
+            Service: "lambda.amazonaws.com",
+          },
+          Action: "sts:AssumeRole",
         },
-    ],
-};
-// Stringify the assume role policy JSON.
-const myJson = JSON.stringify(role_json);
+      ],
+    }),
+    RoleName: roleName,
+  });
 
-// Set the parameters.
-const params = {
-    AssumeRolePolicyDocument: myJson,
-    Path: "/",
-    RoleName: "ROLE_NAME"
+  return client.send(command);
 };
-
-const run = async () => {
-    try {
-        const data = await iamClient.send(new CreateRoleCommand(params));
-        console.log("Success. Role created. Role Arn: ", data.Role.RoleName);
-        } catch (err) {
-            console.log("Error", err);
-        }
-};
-run();
 ```
 +  For API details, see [CreateRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/createrolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -257,7 +238,7 @@ echo "Created role: {$assumeRoleRole['RoleName']}\n";
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```
@@ -363,7 +344,7 @@ pub async fn create_role(
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/CreateRole#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

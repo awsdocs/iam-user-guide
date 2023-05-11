@@ -15,13 +15,13 @@ IAM does not automatically update policies that refer to the user group as a res
 
 1. Choose the policy name of the policy to edit\.
 
-1. Choose the **Permissions** tab, and then choose **Policy summary**\.
+1. Choose the **Permissions** tab, and then choose **Summary**\.
 
 1. Choose **IAM** from the list of services, if it exists\.
 
 1. Look for the name of your user group in the **Resource** column\.
 
-1. Choose **Edit policy** to change the name of your user group in the policy\.
+1. Choose **Edit** to change the name of your user group in the policy\.
 
 **To change the name of an IAM user group**
 

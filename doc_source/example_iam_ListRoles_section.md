@@ -70,39 +70,44 @@ func (wrapper RoleWrapper) ListRoles(maxRoles int32) ([]types.Role, error) {
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 List the roles\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { ListRolesCommand } from "@aws-sdk/client-iam";
+import { ListRolesCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-const params = {
-    Marker: 'MARKER', // This is a string value.
-    MaxItems: 'MAX_ITEMS' // This is a number value.
-};
+const client = new IAMClient({});
 
-const run = async () => {
-        try {
-            const results = await iamClient.send(new ListRolesCommand(params));
-            console.log("Success", results);
-            return results;
-        } catch (err) {
-            console.log("Error", err);
-        }
-};
-run();
+/**
+ * A generator function that handles paginated results.
+ * The AWS SDK for JavaScript (v3) provides {@link https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html#paginators | paginator} functions to simplify this.
+ *
+ */
+export async function* listRoles() {
+  const command = new ListRolesCommand({
+    MaxItems: 10,
+  });
+
+  /**
+   * @type {import("@aws-sdk/client-iam").ListRolesCommandOutput | undefined}
+   */
+  let response = await client.send(command);
+
+  while (response?.Roles?.length) {
+    for (const role of response.Roles) {
+      yield role;
+    }
+
+    if (response.IsTruncated) {
+      response = await client.send(
+        new ListRolesCommand({
+          Marker: response.Marker,
+        })
+      );
+    } else {
+      break;
+    }
+  }
+}
 ```
 +  For API details, see [ListRoles](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listrolescommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -145,7 +150,7 @@ $service = new IAMService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```
@@ -227,7 +232,7 @@ pub async fn list_roles(
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/ListRoles#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

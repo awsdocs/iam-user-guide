@@ -6,8 +6,6 @@ The following code examples show how to use IAM with an AWS software development
 
 *Scenarios* are code examples that show you how to accomplish a specific task by calling multiple functions within the same service\.
 
-*Cross\-service examples* are sample applications that work across multiple AWS services\.
-
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.
 
 **Get started**
@@ -104,6 +102,118 @@ func main() {
 +  For API details, see [ListPolicies](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.ListPolicies) in *AWS SDK for Go API Reference*\. 
 
 ------
+#### [ JavaScript ]
+
+**SDK for JavaScript \(v3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+  
+
+```
+import { IAMClient, paginateListPolicies } from "@aws-sdk/client-iam";
+
+const client = new IAMClient({});
+
+export const listLocalPolicies = async () => {
+  /**
+   * In v3, the clients expose paginateOperationName APIs that are written using async generators so that you can use async iterators in a for await..of loop.
+   * https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html#paginators
+   */
+  const paginator = paginateListPolicies(
+    { client, pageSize: 10 },
+    // List only customer managed policies.
+    { Scope: "Local" }
+  );
+
+  console.log("IAM policies defined in your account:");
+  let policyCount = 0;
+  for await (const page of paginator) {
+    if (page.Policies) {
+      page.Policies.forEach((p) => {
+        console.log(`${p.PolicyName}`);
+        policyCount++;
+      });
+    }
+  }
+  console.log(`Found ${policyCount} policies.`);
+};
+```
++  For API details, see [ListPolicies](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listpoliciescommand.html) in *AWS SDK for JavaScript API Reference*\. 
+
+------
+#### [ Rust ]
+
+**SDK for Rust**  
+This documentation is for an SDK in preview release\. The SDK is subject to change and should not be used in production\.
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/rust_dev_preview/iam#code-examples)\. 
+From src/bin/hello\.rs\.  
+
+```
+use aws_sdk_iam::error::SdkError;
+use aws_sdk_iam::operation::list_policies::ListPoliciesError;
+use clap::Parser;
+
+const PATH_PREFIX_HELP: &str = "The path prefix for filtering the results.";
+
+#[derive(Debug, clap::Parser)]
+#[command(about)]
+struct HelloScenarioArgs {
+    #[arg(long, default_value="/", help=PATH_PREFIX_HELP)]
+    pub path_prefix: String,
+}
+
+#[tokio::main]
+async fn main() -> Result<(), SdkError<ListPoliciesError>> {
+    let sdk_config = aws_config::load_from_env().await;
+    let client = aws_sdk_iam::Client::new(&sdk_config);
+
+    let args = HelloScenarioArgs::parse();
+
+    iam_service::list_policies(client, args.path_prefix).await?;
+
+    Ok(())
+}
+```
+From src/iam\-service\-lib\.rs\.  
+
+```
+pub async fn list_policies(
+    client: iamClient,
+    path_prefix: String,
+) -> Result<Vec<String>, SdkError<ListPoliciesError>> {
+    let mut list_policies = client
+        .list_policies()
+        .path_prefix(path_prefix)
+        .scope(PolicyScopeType::Local)
+        .into_paginator()
+        .send();
+
+    let mut v = Vec::new();
+
+    while let Some(list_policies_output) = list_policies.next().await {
+        match list_policies_output {
+            Ok(list_policies) => {
+                if let Some(policies) = list_policies.policies() {
+                    for policy in policies {
+                        let policy_name = policy
+                            .policy_name()
+                            .unwrap_or("Missing policy name.")
+                            .to_string();
+                        println!("{}", policy_name);
+                        v.push(policy_name);
+                    }
+                }
+            }
+
+            Err(err) => return Err(err),
+        }
+    }
+
+    Ok(v)
+}
+```
++  For API details, see [ListPolicies](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
+
+------
 
 **Contents**
 + [Actions](service_code_examples_iam_actions.md)
@@ -111,6 +221,7 @@ func main() {
   + [Attach a policy to a role](example_iam_AttachRolePolicy_section.md)
   + [Attach a policy to a user](example_iam_AttachUserPolicy_section.md)
   + [Attach an inline policy to a role](example_iam_PutRolePolicy_section.md)
+  + [Create a SAML provider](example_iam_CreateSAMLProvider_section.md)
   + [Create a group](example_iam_CreateGroup_section.md)
   + [Create a policy](example_iam_CreatePolicy_section.md)
   + [Create a policy version](example_iam_CreatePolicyVersion_section.md)
@@ -121,6 +232,7 @@ func main() {
   + [Create an alias for an account](example_iam_CreateAccountAlias_section.md)
   + [Create an inline policy for a group](example_iam_PutGroupPolicy_section.md)
   + [Create an inline policy for a user](example_iam_PutUserPolicy_section.md)
+  + [Delete SAML provider](example_iam_DeleteSAMLProvider_section.md)
   + [Delete a group](example_iam_DeleteGroup_section.md)
   + [Delete a group policy](example_iam_DeleteGroupPolicy_section.md)
   + [Delete a policy](example_iam_DeletePolicy_section.md)
@@ -141,6 +253,7 @@ func main() {
   + [Get a policy version](example_iam_GetPolicyVersion_section.md)
   + [Get a role](example_iam_GetRole_section.md)
   + [Get a server certificate](example_iam_GetServerCertificate_section.md)
+  + [Get a service\-linked role's deletion status](example_iam_GetServiceLinkedRoleDeletionStatus_section.md)
   + [Get a summary of account usage](example_iam_GetAccountSummary_section.md)
   + [Get a user](example_iam_GetUser_section.md)
   + [Get data about the last use of an access key](example_iam_GetAccessKeyLastUsed_section.md)
@@ -160,6 +273,7 @@ func main() {
   + [Update a server certificate](example_iam_UpdateServerCertificate_section.md)
   + [Update a user](example_iam_UpdateUser_section.md)
   + [Update an access key](example_iam_UpdateAccessKey_section.md)
+  + [Upload a server certificate](example_iam_UploadServerCertificate_section.md)
 + [Scenarios](service_code_examples_iam_scenarios.md)
   + [Create a group and add a user](example_iam_Scenario_GroupBasics_section.md)
   + [Create a user and assume a role](example_iam_Scenario_CreateUserAssumeRole_section.md)
@@ -169,6 +283,3 @@ func main() {
   + [Manage roles](example_iam_Scenario_RoleManagement_section.md)
   + [Manage your account](example_iam_Scenario_AccountManagement_section.md)
   + [Roll back a policy version](example_iam_Scenario_RollbackPolicyVersion_section.md)
-+ [Cross\-service examples](service_code_examples_iam_cross-service_examples.md)
-  + [Create a long\-lived Amazon EMR cluster and run steps](example_cross_LongLivedEmrCluster_section.md)
-  + [Create a short\-lived Amazon EMR cluster and run a step](example_cross_ShortLivedEmrCluster_section.md)

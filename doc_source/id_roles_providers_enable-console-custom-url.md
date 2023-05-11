@@ -240,6 +240,7 @@ from selenium import webdriver # 'pip install selenium', 'brew install chromedri
 # Note: Calls to AWS STS AssumeRole must be signed using the access key ID 
 # and secret access key of an IAM user or using existing temporary credentials.
 # The credentials can be in Amazon EC2 instance metadata, in environment variables, 
+
 # or in a configuration file, and will be discovered automatically by the 
 # client('sts') function. For more information, see the Python SDK docs:
 # http://boto3.readthedocs.io/en/latest/reference/services/sts.html

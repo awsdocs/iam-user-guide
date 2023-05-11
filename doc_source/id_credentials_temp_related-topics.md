@@ -1,6 +1,7 @@
 # Additional resources for temporary security credentials<a name="id_credentials_temp_related-topics"></a>
 
 The following scenarios and applications can guide you in using temporary security credentials: 
++ [How to integrate AWS STS SourceIdentity with your identity provider](http://aws.amazon.com/blogs/security/how-to-integrate-aws-sts-sourceidentity-with-your-identity-provider/)\. This post shows you how to set up the AWS STS `SourceIdentity` attribute when using Okta, Ping, or OneLogin as your IdP\.
 +  [About web identity federation](id_roles_providers_oidc.md)\. This section discusses how to configure IAM roles when you use web identity federation and the `AssumeRoleWithWebIdentity` API\. 
 + [Configuring MFA\-protected API access](id_credentials_mfa_configure-api-require.md)\. This topic explains how to use roles to require multi\-factor authentication \(MFA\) to protect sensitive API actions in your account\.
 + [Token Vending Machine for Identity Registration](https://aws.amazon.com/code/7351543942956566)\. This sample Java web application uses the `GetFederationToken` API to serve temporary security credentials to remote clients\.

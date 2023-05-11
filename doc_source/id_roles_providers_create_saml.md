@@ -84,15 +84,6 @@ The x\.509 certificate included as part of the SAML metadata document must use a
 **To remove tags on an existing IAM identity provider \(AWS CLI\)**
 + Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html) 
 
-**To tag an existing IAM identity provider \(AWS CLI\)**
-+ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/tag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/tag-saml-provider.html) 
-
-**To list tags for existing IAM identity provider \(AWS CLI\)**
-+ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-provider-tags.html](https://docs.aws.amazon.com/cli/latest/reference/iam/list-saml-provider-tags.html) 
-
-**To remove tags on an existing IAM identity provider \(AWS CLI\)**
-+ Run this command:[https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html](https://docs.aws.amazon.com/cli/latest/reference/iam/untag-saml-provider.html) 
-
 **To delete an IAM SAML identity provider \(AWS CLI\)**
 
 1. \(Optional\) To list information for all providers, such as the ARN, creation date, and expiration, run the following command:
@@ -118,15 +109,6 @@ The metadata file must be encoded in UTF\-8 format without a byte order mark \(B
 
 **To upload a new metadata document for an IAM identity provider \(AWS API\)**
 + Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateSAMLProvider.html)
-
-**To tag an existing IAM identity provider \(AWS API\)**
-+ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html)
-
-**To list tags for an existing IAM identity provider \(AWS API\)**
-+ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_ListSAMLProviderTags.html)
-
-**To remove tags on an existing IAM identity provider \(AWS API\)**
-+ Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UntagSAMLProvider.html)
 
 **To tag an existing IAM identity provider \(AWS API\)**
 + Call this operation: [https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_TagSAMLProvider.html)

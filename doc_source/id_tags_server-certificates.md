@@ -14,7 +14,7 @@ You must configure permissions to allow an IAM entity \(user or role\) to tag se
 + `iam:UntagServerCertificate`
 
 **To allow an IAM entity \(user or role\) to add, list, or remove a tag for a server certificate**  
-Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<CertificateName>* with the name of the server certificate whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<CertificateName>* with the name of the server certificate whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -34,7 +34,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 **Note**  
 The `iam:TagServerCertificate` action requires that you also include the `iam:ListServerCertificateTags` action\.
 
-To use this policy, replace *<CertificateName>* with the name of the server certificate whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+To use this policy, replace *<CertificateName>* with the name of the server certificate whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {

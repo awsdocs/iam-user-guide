@@ -84,40 +84,31 @@ bool AwsDoc::IAM::updateAccessKey(const Aws::String &userName,
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Update the access key\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { UpdateAccessKeyCommand } from "@aws-sdk/client-iam";
+import {
+  UpdateAccessKeyCommand,
+  IAMClient,
+  StatusType,
+} from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = {
-  AccessKeyId: "ACCESS_KEY_ID", //ACCESS_KEY_ID
-  Status: "Active",
-  UserName: "USER_NAME", //USER_NAME
-};
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(new UpdateAccessKeyCommand(params));
-    console.log("Success", data);
-    return data;
-  } catch (err) {
-    console.log("Error", err);
-  }
+/**
+ *
+ * @param {string} userName
+ * @param {string} accessKeyId
+ */
+export const updateAccessKey = (userName, accessKeyId) => {
+  const command = new UpdateAccessKeyCommand({
+    AccessKeyId: accessKeyId,
+    Status: StatusType.Inactive,
+    UserName: userName,
+  });
+
+  return client.send(command);
 };
-run();
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-access-keys.html#iam-examples-managing-access-keys-updating)\. 
 +  For API details, see [UpdateAccessKey](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/updateaccesskeycommand.html) in *AWS SDK for JavaScript API Reference*\. 
@@ -156,7 +147,7 @@ iam.updateAccessKey(params, function(err, data) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```

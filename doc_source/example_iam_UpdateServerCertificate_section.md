@@ -51,41 +51,26 @@ bool AwsDoc::IAM::updateServerCertificate(const Aws::String &currentCertificateN
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Update a server certificate\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { UpdateServerCertificateCommand } from "@aws-sdk/client-iam";
+import { UpdateServerCertificateCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = {
-  ServerCertificateName: "CERTIFICATE_NAME", //CERTIFICATE_NAME
-  NewServerCertificateName: "NEW_CERTIFICATE_NAME", //NEW_CERTIFICATE_NAME
-};
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(
-      new UpdateServerCertificateCommand(params)
-    );
-    console.log("Success", data);
-    return data;
-  } catch (err) {
-    console.log("Error", err);
-  }
+/**
+ *
+ * @param {string} currentName
+ * @param {string} newName
+ */
+export const updateServerCertificate = (currentName, newName) => {
+  const command = new UpdateServerCertificateCommand({
+    ServerCertificateName: currentName,
+    NewServerCertificateName: newName,
+  });
+
+  return client.send(command);
 };
-run();
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-server-certificates.html#iam-examples-server-certificates-updating)\. 
 +  For API details, see [UpdateServerCertificate](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/updateservercertificatecommand.html) in *AWS SDK for JavaScript API Reference*\. 

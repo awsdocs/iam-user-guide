@@ -78,8 +78,7 @@ Don't create an IAM user and pass the user's credentials to the application or e
 
 **You're creating an app that runs on a mobile phone and that makes requests to AWS\.**  
 Don't create an IAM user and distribute the user's access key with the app\. Instead, use an identity provider like Login with Amazon, Amazon Cognito, Facebook, or Google to authenticate users and map the users to an IAM role\. The app can use the role to get temporary security credentials that have the permissions specified by the policies attached to the role\. For more information, see the following:   
-+ [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide*
-+ [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide*
++ [Amazon Cognito User Guide](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html)
 + [About web identity federation](id_roles_providers_oidc.md)
 
 **Users in your company are authenticated in your corporate network and want to be able to use AWS without having to sign in again—that is, you want to allow users to federate into AWS\.**  

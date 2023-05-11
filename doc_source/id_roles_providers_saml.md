@@ -6,6 +6,12 @@ IAM federation supports these use cases:
 + [**Federated access to allow a user or application in your organization to call AWS API operations**](#CreatingSAML-configuring)\. You use a SAML assertion \(as part of the authentication response\) that is generated in your organization to get temporary security credentials\. This scenario is similar to other federation scenarios that IAM supports, like those described in [Requesting temporary security credentials](id_credentials_temp_request.md) and [About web identity federation](id_roles_providers_oidc.md)\. However, SAML 2\.0–based IdPs in your organization handle many of the details at run time for performing authentication and authorization checking\. This is the scenario discussed in this topic\.
 + [**Web\-based single sign\-on \(SSO\) to the AWS Management Console from your organization**](id_roles_providers_enable-console-saml.md)\. Users can sign in to a portal in your organization hosted by a SAML 2\.0–compatible IdP, select an option to go to AWS, and be redirected to the console without having to provide additional sign\-in information\. You can use a third\-party SAML IdP to establish SSO access to the console or you can create a custom IdP to enable console access for your external users\. For more information about building a custom IdP, see [Enabling custom identity broker access to the AWS console](id_roles_providers_enable-console-custom-url.md)\.
 
+**Topics**
++ [Using SAML\-based federation for API access to AWS](#CreatingSAML-configuring)
++ [Overview of configuring SAML 2\.0\-based federation](#CreatingSAML-configuring-IdP)
++ [Overview of the role to allow SAML\-federated access to your AWS resources](#CreatingSAML-configuring-role)
++ [Uniquely identifying users in SAML\-based federation](#CreatingSAML-userid)
+
 ## Using SAML\-based federation for API access to AWS<a name="CreatingSAML-configuring"></a>
 
 Assume that you want to provide a way for employees to copy data from their computers to a backup folder\. You build an application that users can run on their computers\. On the back end, the application reads and writes objects in an S3 bucket\. Users don't have direct access to AWS\. Instead, the following process is used:
@@ -24,7 +30,7 @@ Assume that you want to provide a way for employees to copy data from their comp
 
 1. The client app uses the temporary security credentials to call Amazon S3 API operations\. 
 
-### Overview of configuring SAML 2\.0\-based federation<a name="CreatingSAML-configuring-IdP"></a>
+## Overview of configuring SAML 2\.0\-based federation<a name="CreatingSAML-configuring-IdP"></a>
 
 Before you can use SAML 2\.0\-based federation as described in the preceding scenario and diagram, you must configure your organization's IdP and your AWS account to trust each other\. The general process for configuring this trust is described in the following steps\. Inside your organization, you must have an [IdP that supports SAML 2\.0](id_roles_providers_saml_3rd-party.md), like Microsoft Active Directory Federation Service \(AD FS, part of Windows Server\), Shibboleth, or another compatible SAML 2\.0 provider\. 
 
@@ -54,7 +60,7 @@ The AWS implementation of SAML 2\.0 federation does not support encrypted SAML a
 
 1. If the request is successful, the API returns a set of temporary security credentials, which your application can use to make signed requests to AWS\. Your application has information about the current user and can access user\-specific folders in Amazon S3, as described in the previous scenario\. 
 
-### Overview of the role to allow SAML\-federated access to your AWS resources<a name="CreatingSAML-configuring-role"></a>
+## Overview of the role to allow SAML\-federated access to your AWS resources<a name="CreatingSAML-configuring-role"></a>
 
 The role or roles that you create in IAM define what federated users from your organization are allowed to do in AWS\. When you create the trust policy for the role, you specify the SAML provider that you created earlier as the `Principal`\. You can additionally scope the trust policy with a `Condition` to allow only users that match certain SAML attributes to access the role\. For example, you can specify that only users whose SAML affiliation is `staff` \(as asserted by https://openidp\.feide\.no\) are allowed to access the role, as illustrated by the following sample policy:
 
@@ -82,7 +88,7 @@ You can include regional endpoints for the `saml:aud` attribute at `https://regi
 
 For the permission policy in the role, you specify permissions as you would for any role\. For example, if users from your organization are allowed to administer Amazon Elastic Compute Cloud instances, you must explicitly allow Amazon EC2 actions in the permissions policy, such as those in the **AmazonEC2FullAccess** managed policy\. 
 
-### Uniquely identifying users in SAML\-based federation<a name="CreatingSAML-userid"></a>
+## Uniquely identifying users in SAML\-based federation<a name="CreatingSAML-userid"></a>
 
 When you create access policies in IAM, it's often useful to be able to specify permissions based on the identity of users\. For example, for users who have been federated using SAML, an application might want to keep information in Amazon S3 using a structure like this: 
 

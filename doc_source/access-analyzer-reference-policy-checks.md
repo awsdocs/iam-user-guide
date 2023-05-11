@@ -13,8 +13,7 @@ ARN account not allowed: The service {{service}} does not support specifying an 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The service {{service}} does not support specifying an account ID in the resource ARN.
-"
+"findingDetails": "The service {{service}} does not support specifying an account ID in the resource ARN."
 ```
 
 **Resolving the error**
@@ -40,8 +39,7 @@ ARN Region not allowed: The service {{service}} does not support specifying a Re
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The service {{service}} does not support specifying a Region in the resource ARN.
-"
+"findingDetails": "The service {{service}} does not support specifying a Region in the resource ARN."
 ```
 
 **Resolving the error**
@@ -64,8 +62,7 @@ Data type mismatch: The text does not match the expected JSON data type {{data_t
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The text does not match the expected JSON data type {{data_type}}.
-"
+"findingDetails": "The text does not match the expected JSON data type {{data_type}}."
 ```
 
 **Resolving the error**
@@ -89,8 +86,7 @@ Duplicate keys with different case: The condition key {{key}} appears more than 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key {{key}} appears more than once with different capitalization in the same condition block. Remove the duplicate condition keys.
-"
+"findingDetails": "The condition key {{key}} appears more than once with different capitalization in the same condition block. Remove the duplicate condition keys."
 ```
 
 **Resolving the error**
@@ -116,8 +112,7 @@ Invalid action: The action {{action}} does not exist. Did you mean {{valid_actio
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The action {{action}} does not exist. Did you mean {{valid_action}}?
-"
+"findingDetails": "The action {{action}} does not exist. Did you mean {{valid_action}}?"
 ```
 
 **Resolving the error**
@@ -147,8 +142,7 @@ Invalid ARN account: The resource ARN account ID {{account}} is not valid. Provi
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The resource ARN account ID {{account}} is not valid. Provide a 12-digit account ID.
-"
+"findingDetails": "The resource ARN account ID {{account}} is not valid. Provide a 12-digit account ID."
 ```
 
 **Resolving the error**
@@ -172,8 +166,7 @@ Invalid ARN prefix: Add the required prefix (arn) to the resource ARN.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add the required prefix (arn) to the resource ARN.
-"
+"findingDetails": "Add the required prefix (arn) to the resource ARN."
 ```
 
 **Resolving the error**
@@ -196,8 +189,7 @@ Invalid ARN Region: The Region {{region}} is not valid for this resource. Update
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The Region {{region}} is not valid for this resource. Update the resource ARN to include a supported Region.
-"
+"findingDetails": "The Region {{region}} is not valid for this resource. Update the resource ARN to include a supported Region."
 ```
 
 **Resolving the error**
@@ -220,8 +212,7 @@ Invalid ARN resource: Resource ARN does not match the expected ARN format. Updat
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Resource ARN does not match the expected ARN format. Update the resource portion of the ARN.
-"
+"findingDetails": "Resource ARN does not match the expected ARN format. Update the resource portion of the ARN."
 ```
 
 **Resolving the error**
@@ -244,8 +235,7 @@ Invalid ARN service case: Update the service name ${service} in the resource ARN
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Update the service name ${service} in the resource ARN to use all lowercase letters.
-"
+"findingDetails": "Update the service name ${service} in the resource ARN to use all lowercase letters."
 ```
 
 **Resolving the error**
@@ -268,8 +258,7 @@ Invalid condition data type: The condition value data types do not match. Use co
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition value data types do not match. Use condition values of the same JSON data type.
-"
+"findingDetails": "The condition value data types do not match. Use condition values of the same JSON data type."
 ```
 
 **Resolving the error**
@@ -296,8 +285,7 @@ Invalid condition key format: The condition key format is not valid. Use the for
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key format is not valid. Use the format service:keyname.
-"
+"findingDetails": "The condition key format is not valid. Use the format service:keyname."
 ```
 
 **Resolving the error**
@@ -320,8 +308,7 @@ Invalid condition multiple Boolean: The condition key does not support multiple 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key does not support multiple Boolean values. Use a single Boolean value.
-"
+"findingDetails": "The condition key does not support multiple Boolean values. Use a single Boolean value."
 ```
 
 **Resolving the error**
@@ -344,8 +331,7 @@ Invalid condition operator: The condition operator {{operator}} is not valid. Us
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition operator {{operator}} is not valid. Use a valid condition operator.
-"
+"findingDetails": "The condition operator {{operator}} is not valid. Use a valid condition operator."
 ```
 
 **Resolving the error**
@@ -368,8 +354,7 @@ Invalid effect: The effect {{effect}} is not valid. Use Allow or Deny.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The effect {{effect}} is not valid. Use Allow or Deny.
-"
+"findingDetails": "The effect {{effect}} is not valid. Use Allow or Deny."
 ```
 
 **Resolving the error**
@@ -391,8 +376,7 @@ Invalid global condition key: The condition key {{key}} does not exist. Use a va
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key {{key}} does not exist. Use a valid condition key.
-"
+"findingDetails": "The condition key {{key}} does not exist. Use a valid condition key."
 ```
 
 **Resolving the error**
@@ -415,8 +399,7 @@ Invalid partition: The resource ARN for the service {{service}} does not support
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The resource ARN for the service {{service}} does not support the partition {{partition}}. Use the supported values: {{partitions}}
-"
+"findingDetails": "The resource ARN for the service {{service}} does not support the partition {{partition}}. Use the supported values: {{partitions}}"
 ```
 
 **Resolving the error**
@@ -426,7 +409,7 @@ Update the resource ARN to include a supported partition\. If you included a sup
 A *partition* is a group of AWS Regions\. Each AWS account is scoped to one partition\. In Classic Regions, use the `aws` partition\. In China Regions, use `aws-cn`\.
 
 **Related terms**
-+ [Amazon Resource Names \(ARNs\) \- Partitions](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html )
++ [Amazon Resource Names \(ARNs\) \- Partitions](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)
 
 ## Error – Invalid policy element<a name="access-analyzer-reference-policy-checks-error-invalid-policy-element"></a>
 
@@ -439,8 +422,7 @@ Invalid policy element: The policy element {{element}} is not valid.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The policy element {{element}} is not valid.
-"
+"findingDetails": "The policy element {{element}} is not valid."
 ```
 
 **Resolving the error**
@@ -461,8 +443,7 @@ Invalid principal format: The Principal element contents are not valid. Specify 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The Principal element contents are not valid. Specify a key-value pair in the Principal element.
-"
+"findingDetails": "The Principal element contents are not valid. Specify a key-value pair in the Principal element."
 ```
 
 **Resolving the error**
@@ -492,8 +473,7 @@ Invalid principal key: The principal key {{principal-key}} is not valid.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The principal key {{principal-key}} is not valid.
-"
+"findingDetails": "The principal key {{principal-key}} is not valid."
 ```
 
 **Resolving the error**
@@ -518,8 +498,7 @@ Invalid Region: The Region {{region}} is not valid. Update the condition value t
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The Region {{region}} is not valid. Update the condition value to a suported Region.
-"
+"findingDetails": "The Region {{region}} is not valid. Update the condition value to a suported Region."
 ```
 
 **Resolving the error**
@@ -542,8 +521,7 @@ Invalid service: The service {{service}} does not exist. Use a valid service nam
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The service {{service}} does not exist. Use a valid service name.
-"
+"findingDetails": "The service {{service}} does not exist. Use a valid service name."
 ```
 
 **Resolving the error**
@@ -564,8 +542,7 @@ Invalid service condition key: The condition key {{key}} does not exist in the s
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key {{key}} does not exist in the service {{service}}. Use a valid condition key.
-"
+"findingDetails": "The condition key {{key}} does not exist in the service {{service}}. Use a valid condition key."
 ```
 
 **Resolving the error**
@@ -587,8 +564,7 @@ Invalid service in action: The service {{service}} specified in the action does 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The service {{service}} specified in the action does not exist. Did you mean {{service2}}?
-"
+"findingDetails": "The service {{service}} specified in the action does not exist. Did you mean {{service2}}?"
 ```
 
 **Resolving the error**
@@ -610,8 +586,7 @@ Invalid variable for operator: Policy variables can only be used with String and
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Policy variables can only be used with String and ARN operators.
-"
+"findingDetails": "Policy variables can only be used with String and ARN operators."
 ```
 
 **Resolving the error**
@@ -633,8 +608,7 @@ Invalid version: The version ${version} is not valid. Use one of the following v
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The version ${version} is not valid. Use one of the following versions: ${versions}
-"
+"findingDetails": "The version ${version} is not valid. Use one of the following versions: ${versions}"
 ```
 
 **Resolving the error**
@@ -659,8 +633,30 @@ Json syntax error: Fix the JSON syntax error at index {{index}} line {{line}} co
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Fix the JSON syntax error at index {{index}} line {{line}} column {{column}}.
-"
+"findingDetails": "Fix the JSON syntax error at index {{index}} line {{line}} column {{column}}."
+```
+
+**Resolving the error**
+
+Your policy includes a syntax error\. Check your JSON syntax\.
+
+**Related terms**
++ [JSON validator](https://jsonlint.com/)
++ [IAM JSON policy elements reference](reference_policies_elements.md)
++ [Overview of JSON policies](access_policies.md#access_policies-json)
+
+## Error – Json syntax error<a name="access-analyzer-reference-policy-checks-error-json-syntax-error"></a>
+
+In the AWS Management Console, the finding for this check includes the following message:
+
+```
+Json syntax error: Fix the JSON syntax error.
+```
+
+In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
+
+```
+"findingDetails": "Fix the JSON syntax error."
 ```
 
 **Resolving the error**
@@ -683,8 +679,7 @@ Missing action: Add an Action or NotAction element to the policy statement.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add an Action or NotAction element to the policy statement.
-"
+"findingDetails": "Add an Action or NotAction element to the policy statement."
 ```
 
 **Resolving the error**
@@ -707,8 +702,7 @@ Missing ARN field: Resource ARNs must include at least {{fields}} fields in the 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Resource ARNs must include at least {{fields}} fields in the following structure: arn:partition:service:region:account:resource
-"
+"findingDetails": "Resource ARNs must include at least {{fields}} fields in the following structure: arn:partition:service:region:account:resource"
 ```
 
 **Resolving the error**
@@ -731,8 +725,7 @@ Missing ARN Region: Add a Region to the {{service}} resource ARN.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a Region to the {{service}} resource ARN.
-"
+"findingDetails": "Add a Region to the {{service}} resource ARN."
 ```
 
 **Resolving the error**
@@ -755,8 +748,7 @@ Missing effect: Add an Effect element to the policy statement with a value of Al
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add an Effect element to the policy statement with a value of Allow or Deny.
-"
+"findingDetails": "Add an Effect element to the policy statement with a value of Allow or Deny."
 ```
 
 **Resolving the error**
@@ -778,8 +770,7 @@ Missing principal: Add a Principal element to the policy statement.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a Principal element to the policy statement.
-"
+"findingDetails": "Add a Principal element to the policy statement."
 ```
 
 **Resolving the error**
@@ -807,8 +798,7 @@ Missing qualifier: The request context key ${key} has multiple values. Use the F
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The request context key ${key} has multiple values. Use the ForAllValues or ForAnyValue condition key qualifiers in your policy.
-"
+"findingDetails": "The request context key ${key} has multiple values. Use the ForAllValues or ForAnyValue condition key qualifiers in your policy."
 ```
 
 **Resolving the error**
@@ -837,8 +827,7 @@ Missing resource: Add a Resource or NotResource element to the policy statement.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a Resource or NotResource element to the policy statement.
-"
+"findingDetails": "Add a Resource or NotResource element to the policy statement."
 ```
 
 **Resolving the error**
@@ -862,8 +851,7 @@ Missing statement: Add a statement to the policy
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a statement to the policy
-"
+"findingDetails": "Add a statement to the policy"
 ```
 
 **Resolving the error**
@@ -884,8 +872,7 @@ Null with if exists: The Null condition operator cannot be used with the IfExist
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The Null condition operator cannot be used with the IfExists suffix. Update the operator or the suffix.
-"
+"findingDetails": "The Null condition operator cannot be used with the IfExists suffix. Update the operator or the suffix."
 ```
 
 **Resolving the error**
@@ -908,8 +895,7 @@ SCP syntax error action wildcard: SCP actions can include wildcards (*) only at 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "SCP actions can include wildcards (*) only at the end of a string. Update {{action}}.
-"
+"findingDetails": "SCP actions can include wildcards (*) only at the end of a string. Update {{action}}."
 ```
 
 **Resolving the error**
@@ -935,8 +921,7 @@ SCP syntax error allow condition: SCPs do not support the Condition element with
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "SCPs do not support the Condition element with effect Allow. Update the element Condition or the effect.
-"
+"findingDetails": "SCPs do not support the Condition element with effect Allow. Update the element Condition or the effect."
 ```
 
 **Resolving the error**
@@ -964,8 +949,7 @@ SCP syntax error allow NotAction: SCPs do not support NotAction with effect Allo
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "SCPs do not support NotAction with effect Allow. Update the element NotAction or the effect.
-"
+"findingDetails": "SCPs do not support NotAction with effect Allow. Update the element NotAction or the effect."
 ```
 
 **Resolving the error**
@@ -991,8 +975,7 @@ SCP syntax error allow resource: SCPs do not support Resource with effect Allow.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "SCPs do not support Resource with effect Allow. Update the element Resource or the effect.
-"
+"findingDetails": "SCPs do not support Resource with effect Allow. Update the element Resource or the effect."
 ```
 
 **Resolving the error**
@@ -1018,8 +1001,7 @@ SCP syntax error NotResource: SCPs do not support the NotResource element. Updat
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "SCPs do not support the NotResource element. Update the policy to use Resource instead.
-"
+"findingDetails": "SCPs do not support the NotResource element. Update the policy to use Resource instead."
 ```
 
 **Resolving the error**
@@ -1045,8 +1027,7 @@ SCP syntax error principal: SCPs do not support specifying principals. Remove th
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "SCPs do not support specifying principals. Remove the Principal or NotPrincipal element.
-"
+"findingDetails": "SCPs do not support specifying principals. Remove the Principal or NotPrincipal element."
 ```
 
 **Resolving the error**
@@ -1070,8 +1051,7 @@ Unique Sids required: Duplicate statement IDs are not supported for this policy 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Duplicate statement IDs are not supported for this policy type. Update the Sid value.
-"
+"findingDetails": "Duplicate statement IDs are not supported for this policy type. Update the Sid value."
 ```
 
 **Resolving the error**
@@ -1092,8 +1072,7 @@ Unsupported action in policy: The action {{action}} is not supported for the res
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The action {{action}} is not supported for the resource-based policy attached to the resource type {{resourceType}}.
-"
+"findingDetails": "The action {{action}} is not supported for the resource-based policy attached to the resource type {{resourceType}}."
 ```
 
 **Resolving the error**
@@ -1114,8 +1093,7 @@ Unsupported element combination: The policy elements ${element1} and ${element2}
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The policy elements ${element1} and ${element2} can not be used in the same statement. Remove one of these elements.
-"
+"findingDetails": "The policy elements ${element1} and ${element2} can not be used in the same statement. Remove one of these elements."
 ```
 
 **Resolving the error**
@@ -1137,8 +1115,7 @@ Unsupported global condition key: The condition key aws:ARN is not supported. Us
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key aws:ARN is not supported. Use aws:PrincipalArn or aws:SourceArn instead.
-"
+"findingDetails": "The condition key aws:ARN is not supported. Use aws:PrincipalArn or aws:SourceArn instead."
 ```
 
 **Resolving the error**
@@ -1159,8 +1136,7 @@ Unsupported principal: The policy type ${policy_type} does not support the Princ
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The policy type ${policy_type} does not support the Principal element. Remove the Principal element.
-"
+"findingDetails": "The policy type ${policy_type} does not support the Principal element. Remove the Principal element."
 ```
 
 **Resolving the error**
@@ -1182,8 +1158,7 @@ Unsupported resource ARN in policy: The resource ARN is not supported for the re
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The resource ARN is not supported for the resource-based policy attached to the resource type {{resourceType}}.
-"
+"findingDetails": "The resource ARN is not supported for the resource-based policy attached to the resource type {{resourceType}}."
 ```
 
 **Resolving the error**
@@ -1198,13 +1173,13 @@ Some resource ARNs aren't supported in the `Resource` element of the resource\-b
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Unsupported Sid: "Update the characters in the Sid element to use one of the following character types: [a-z
+Unsupported Sid: Update the characters in the Sid element to use one of the following character types: [a-z, A-Z, 0-9]
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""Update the characters in the Sid element to use one of the following character types: [a-z"
+"findingDetails": "Update the characters in the Sid element to use one of the following character types: [a-z, A-Z, 0-9]"
 ```
 
 **Resolving the error**
@@ -1219,13 +1194,13 @@ The `Sid` element supports uppercase letters, lowercase letters, and numbers\.
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Unsupported wildcard in principal: "Wildcards (*
+Unsupported wildcard in principal: Wildcards (*, ?) are not supported with the principal key {{principal_key}}. Replace the wildcard with a valid principal value.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""Wildcards (*"
+"findingDetails": "Wildcards (*, ?) are not supported with the principal key {{principal_key}}. Replace the wildcard with a valid principal value."
 ```
 
 **Resolving the error**
@@ -1248,8 +1223,7 @@ Missing brace in variable: The policy variable is missing a closing curly brace.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The policy variable is missing a closing curly brace. Add } after the variable text.
-"
+"findingDetails": "The policy variable is missing a closing curly brace. Add } after the variable text."
 ```
 
 **Resolving the error**
@@ -1272,8 +1246,7 @@ Missing quote in variable: The policy variable default value must begin and end 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The policy variable default value must begin and end with a single quote. Add the missing quote.
-"
+"findingDetails": "The policy variable default value must begin and end with a single quote. Add the missing quote."
 ```
 
 **Resolving the error**
@@ -1302,8 +1275,7 @@ Unsupported space in variable: A space is not supported within the policy variab
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "A space is not supported within the policy variable text. Remove the space.
-"
+"findingDetails": "A space is not supported within the policy variable text. Remove the space."
 ```
 
 **Resolving the error**
@@ -1324,8 +1296,7 @@ Empty variable: Empty policy variable. Remove the ${ } variable structure or pro
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Empty policy variable. Remove the ${ } variable structure or provide a variable within the structure.
-"
+"findingDetails": "Empty policy variable. Remove the ${ } variable structure or provide a variable within the structure."
 ```
 
 **Resolving the error**
@@ -1346,8 +1317,7 @@ Variable unsupported in element: Policy variables are supported in the Resource 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Policy variables are supported in the Resource and Condition elements. Remove the policy variable {{variable}} from this element.
-"
+"findingDetails": "Policy variables are supported in the Resource and Condition elements. Remove the policy variable {{variable}} from this element."
 ```
 
 **Resolving the error**
@@ -1362,13 +1332,13 @@ You can use policy variables in the `Resource` element and in string comparisons
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Variable unsupported in version: "To include variables in your policy
+Variable unsupported in version: To include variables in your policy, use the policy version 2012-10-17 or later.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""To include variables in your policy"
+"findingDetails": "To include variables in your policy, use the policy version 2012-10-17 or later."
 ```
 
 **Resolving the error**
@@ -1392,8 +1362,7 @@ Private IP address: aws:SourceIp works only for public IP address ranges. The va
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "aws:SourceIp works only for public IP address ranges. The values for condition key aws:SourceIp include only private IP addresses and will not have the desired effect. Update the value to include only public IP addresses.
-"
+"findingDetails": "aws:SourceIp works only for public IP address ranges. The values for condition key aws:SourceIp include only private IP addresses and will not have the desired effect. Update the value to include only public IP addresses."
 ```
 
 **Resolving the error**
@@ -1413,8 +1382,7 @@ Private NotIpAddress: The values for condition key aws:SourceIp include only pri
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The values for condition key aws:SourceIp include only private IP addresses and has no effect. aws:SourceIp works only for public IP address ranges. Update the value to include only public IP addresses.
-"
+"findingDetails": "The values for condition key aws:SourceIp include only private IP addresses and has no effect. aws:SourceIp works only for public IP address ranges. Update the value to include only public IP addresses."
 ```
 
 **Resolving the error**
@@ -1434,8 +1402,7 @@ Policy size exceeds SCP quota: The {{policySize}} characters in the service cont
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The {{policySize}} characters in the service control policy (SCP) exceed the {{policySizeQuota}} character maximum for SCPs. We recommend that you use multiple granular policies.
-"
+"findingDetails": "The {{policySize}} characters in the service control policy (SCP) exceed the {{policySizeQuota}} character maximum for SCPs. We recommend that you use multiple granular policies."
 ```
 
 **Resolving the error**
@@ -1459,8 +1426,7 @@ Invalid service principal format: The service principal does not match the expec
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The service principal does not match the expected format. Use the format {{expectedFormat}}.
-"
+"findingDetails": "The service principal does not match the expected format. Use the format {{expectedFormat}}."
 ```
 
 **Resolving the error**
@@ -1493,8 +1459,7 @@ Missing tag key in condition: The condition key {{conditionKeyName}} must includ
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key {{conditionKeyName}} must include a tag key to control access based on tags. Use the format {{conditionKeyName}}tag-key and specify a key name for tag-key.
-"
+"findingDetails": "The condition key {{conditionKeyName}} must include a tag key to control access based on tags. Use the format {{conditionKeyName}}tag-key and specify a key name for tag-key."
 ```
 
 **Resolving the error**
@@ -1526,8 +1491,7 @@ Invalid vpc format: The VPC identifier in the condition key value is not valid. 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The VPC identifier in the condition key value is not valid. Use the prefix 'vpc-' followed by 8 or 17 alphanumeric characters.
-"
+"findingDetails": "The VPC identifier in the condition key value is not valid. Use the prefix 'vpc-' followed by 8 or 17 alphanumeric characters."
 ```
 
 **Resolving the error**
@@ -1548,8 +1512,7 @@ Invalid vpce format: The VPCE identifier in the condition key value is not valid
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The VPCE identifier in the condition key value is not valid.  Use the prefix 'vpce-' followed by 8 or 17 alphanumeric characters.
-"
+"findingDetails": "The VPCE identifier in the condition key value is not valid.  Use the prefix 'vpce-' followed by 8 or 17 alphanumeric characters."
 ```
 
 **Resolving the error**
@@ -1570,8 +1533,7 @@ Federated principal not supported: The policy type does not support a federated 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The policy type does not support a federated identity provider in the principal element. Use a supported principal.
-"
+"findingDetails": "The policy type does not support a federated identity provider in the principal element. Use a supported principal."
 ```
 
 **Resolving the error**
@@ -1593,8 +1555,7 @@ Unsupported action for condition key: The following actions: {{actions}} are not
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The following actions: {{actions}} are not supported by the condition key {{key}}. The condition will not be evaluated for these actions. We recommend that you move these actions to a different statement without this condition key.
-"
+"findingDetails": "The following actions: {{actions}} are not supported by the condition key {{key}}. The condition will not be evaluated for these actions. We recommend that you move these actions to a different statement without this condition key."
 ```
 
 **Resolving the error**
@@ -1618,8 +1579,7 @@ Unsupported action in policy: The action {{action}} is not supported for the res
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The action {{action}} is not supported for the resource-based policy attached to the resource type {{resourceType}}.
-"
+"findingDetails": "The action {{action}} is not supported for the resource-based policy attached to the resource type {{resourceType}}."
 ```
 
 **Resolving the error**
@@ -1640,8 +1600,7 @@ Unsupported resource ARN in policy: The resource ARN is not supported for the re
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The resource ARN is not supported for the resource-based policy attached to the resource type {{resourceType}}.
-"
+"findingDetails": "The resource ARN is not supported for the resource-based policy attached to the resource type {{resourceType}}."
 ```
 
 **Resolving the error**
@@ -1662,8 +1621,7 @@ Unsupported condition key for service principal: The following condition keys ar
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The following condition keys are not supported when used with the service principal: {{conditionKeys}}.
-"
+"findingDetails": "The following condition keys are not supported when used with the service principal: {{conditionKeys}}."
 ```
 
 **Resolving the error**
@@ -1685,8 +1643,7 @@ Role trust policy syntax error notprincipal: Role trust policies do not support 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Role trust policies do not support NotPrincipal. Update the policy to use a Principal element instead.
-"
+"findingDetails": "Role trust policies do not support NotPrincipal. Update the policy to use a Principal element instead."
 ```
 
 **Resolving the error**
@@ -1708,8 +1665,7 @@ Role trust policy unsupported wildcard in principal: "Principal:" "*" is not sup
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""Principal:" "*" is not supported in the principal element of a role trust policy. Replace the wildcard with a valid principal value.
-"
+"findingDetails": ""Principal:" "*" is not supported in the principal element of a role trust policy. Replace the wildcard with a valid principal value."
 ```
 
 **Resolving the error**
@@ -1730,8 +1686,7 @@ Role trust policy syntax error resource: Role trust policies apply to the role t
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Role trust policies apply to the role that they are attached to. You cannot specify a resource. Remove the Resource or NotResource element.
-"
+"findingDetails": "Role trust policies apply to the role that they are attached to. You cannot specify a resource. Remove the Resource or NotResource element."
 ```
 
 **Resolving the error**
@@ -1751,8 +1706,7 @@ Missing action for condition key: The {{actionName}} action must be in the actio
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The {{actionName}} action must be in the action block to allow setting values for the condition key {{keyName}}. Add {{actionName}} to the action block.
-"
+"findingDetails": "The {{actionName}} action must be in the action block to allow setting values for the condition key {{keyName}}. Add {{actionName}} to the action block."
 ```
 
 **Resolving the error**
@@ -1773,8 +1727,7 @@ Invalid federated principal syntax in role trust policy: The principal value spe
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The principal value specifies a federated principal that does not match the expected format. Update the federated principal to a domain name or a SAML metadata ARN.
-"
+"findingDetails": "The principal value specifies a federated principal that does not match the expected format. Update the federated principal to a domain name or a SAML metadata ARN."
 ```
 
 **Resolving the error**
@@ -1795,8 +1748,7 @@ Mismatched action for principal: The {{actionName}} action is invalid with the f
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The {{actionName}} action is invalid with the following principal(s): {{principalNames}}. Use a SAML provider principal with the sts:AssumeRoleWithSAML action or use an OIDC provider principal with the sts:AssumeRoleWithWebIdentity action. Ensure the provider is Federated if you use either of the two options.
-"
+"findingDetails": "The {{actionName}} action is invalid with the following principal(s): {{principalNames}}. Use a SAML provider principal with the sts:AssumeRoleWithSAML action or use an OIDC provider principal with the sts:AssumeRoleWithWebIdentity action. Ensure the provider is Federated if you use either of the two options."
 ```
 
 **Resolving the error**
@@ -1839,8 +1791,7 @@ Create SLR with NotResource: Using the iam:CreateServiceLinkedRole action with N
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the iam:CreateServiceLinkedRole action with NotResource can allow creation of unintended service-linked roles for multiple resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using the iam:CreateServiceLinkedRole action with NotResource can allow creation of unintended service-linked roles for multiple resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the general warning**
@@ -1861,8 +1812,7 @@ Create SLR with star in action and NotResource: Using an action with a wildcard(
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using an action with a wildcard(*) and NotResource can allow creation of unintended service-linked roles because it can allow iam:CreateServiceLinkedRole permissions on multiple resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using an action with a wildcard(*) and NotResource can allow creation of unintended service-linked roles because it can allow iam:CreateServiceLinkedRole permissions on multiple resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the general warning**
@@ -1883,8 +1833,7 @@ Create SLR with NotAction and NotResource: Using NotAction with NotResource can 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using NotAction with NotResource can allow creation of unintended service-linked roles because it allows iam:CreateServiceLinkedRole permissions on multiple resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using NotAction with NotResource can allow creation of unintended service-linked roles because it allows iam:CreateServiceLinkedRole permissions on multiple resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the general warning**
@@ -1907,8 +1856,7 @@ Create SLR with star in resource: Using the iam:CreateServiceLinkedRole action w
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the iam:CreateServiceLinkedRole action with wildcards (*) in the resource can allow creation of unintended service-linked roles. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using the iam:CreateServiceLinkedRole action with wildcards (*) in the resource can allow creation of unintended service-linked roles. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the general warning**
@@ -1937,8 +1885,7 @@ Create SLR with star in action and resource: Using wildcards (*) in the action a
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using wildcards (*) in the action and the resource can allow creation of unintended service-linked roles because it allows iam:CreateServiceLinkedRole permissions on all resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using wildcards (*) in the action and the resource can allow creation of unintended service-linked roles because it allows iam:CreateServiceLinkedRole permissions on all resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the general warning**
@@ -1967,8 +1914,7 @@ Create SLR with star in resource and NotAction: Using a resource with wildcards 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using a resource with wildcards (*) and NotAction can allow creation of unintended service-linked roles because it allows iam:CreateServiceLinkedRole permissions on all resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using a resource with wildcards (*) and NotAction can allow creation of unintended service-linked roles because it allows iam:CreateServiceLinkedRole permissions on all resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the general warning**
@@ -1990,8 +1936,7 @@ Deprecated global condition key: We recommend that you update aws:ARN to use the
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "We recommend that you update aws:ARN to use the newer condition key aws:PrincipalArn.
-"
+"findingDetails": "We recommend that you update aws:ARN to use the newer condition key aws:PrincipalArn."
 ```
 
 **Resolving the general warning**
@@ -2010,8 +1955,7 @@ Invalid date value: The date {{date}} might not resolve as expected. We recommen
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The date {{date}} might not resolve as expected. We recommend that you use the YYYY-MM-DD format.
-"
+"findingDetails": "The date {{date}} might not resolve as expected. We recommend that you use the YYYY-MM-DD format."
 ```
 
 **Resolving the general warning**
@@ -2032,8 +1976,7 @@ Invalid role reference: The Principal element includes the IAM role ID {{roleid}
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The Principal element includes the IAM role ID {{roleid}}. We recommend that you use a role ARN instead.
-"
+"findingDetails": "The Principal element includes the IAM role ID {{roleid}}. We recommend that you use a role ARN instead."
 ```
 
 **Resolving the general warning**
@@ -2054,8 +1997,7 @@ Invalid user reference: The Principal element includes the IAM user ID {{userid}
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The Principal element includes the IAM user ID {{userid}}. We recommend that you use a user ARN instead.
-"
+"findingDetails": "The Principal element includes the IAM user ID {{userid}}. We recommend that you use a user ARN instead."
 ```
 
 **Resolving the general warning**
@@ -2076,8 +2018,7 @@ Missing version: We recommend that you specify the Version element to help you w
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "We recommend that you specify the Version element to help you with debugging permission issues.
-"
+"findingDetails": "We recommend that you specify the Version element to help you with debugging permission issues."
 ```
 
 **Resolving the general warning**
@@ -2096,8 +2037,7 @@ Unique Sids recommended: We recommend that you use statement IDs that are unique
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "We recommend that you use statement IDs that are unique to your policy. Update the Sid value.
-"
+"findingDetails": "We recommend that you use statement IDs that are unique to your policy. Update the Sid value."
 ```
 
 **Resolving the general warning**
@@ -2112,13 +2052,13 @@ AWS recommends that you use unique statement IDs\. The `Sid` \(statement ID\) el
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Wildcard without like operator: "Your condition value includes a * or ? character. If you meant to use a wildcard (*
+Wildcard without like operator: Your condition value includes a * or ? character. If you meant to use a wildcard (*, ?), update the condition operator to include Like.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""Your condition value includes a * or ? character. If you meant to use a wildcard (*"
+"findingDetails": "Your condition value includes a * or ? character. If you meant to use a wildcard (*, ?), update the condition operator to include Like."
 ```
 
 **Resolving the general warning**
@@ -2143,13 +2083,13 @@ The following AWS managed policies include wildcards in their condition value wi
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Policy size exceeds identity policy quota: "The {{policySize}} characters in the identity policy
+Policy size exceeds identity policy quota: The {{policySize}} characters in the identity policy, excluding whitespace, exceed the {{policySizeQuota}} character maximum for inline and managed policies. We recommend that you use multiple granular policies.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The {{policySize}} characters in the identity policy"
+"findingDetails": "The {{policySize}} characters in the identity policy, excluding whitespace, exceed the {{policySizeQuota}} character maximum for inline and managed policies. We recommend that you use multiple granular policies."
 ```
 
 **Resolving the general warning**
@@ -2186,8 +2126,7 @@ Policy size exceeds resource policy quota: The {{policySize}} characters in the 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The {{policySize}} characters in the resource policy exceed the {{policySizeQuota}} character maximum for resource policies. We recommend that you use multiple granular policies.
-"
+"findingDetails": "The {{policySize}} characters in the resource policy exceed the {{policySizeQuota}} character maximum for resource policies. We recommend that you use multiple granular policies."
 ```
 
 **Resolving the general warning**
@@ -2214,8 +2153,7 @@ Type mismatch: Use the operator type {{allowed}} instead of operator {{operator}
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Use the operator type {{allowed}} instead of operator {{operator}} for the condition key {{key}}.
-"
+"findingDetails": "Use the operator type {{allowed}} instead of operator {{operator}} for the condition key {{key}}."
 ```
 
 **Resolving the general warning**
@@ -2239,8 +2177,7 @@ Type mismatch Boolean: Add a valid Boolean value (true or false) for the conditi
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a valid Boolean value (true or false) for the condition operator {{operator}}.
-"
+"findingDetails": "Add a valid Boolean value (true or false) for the condition operator {{operator}}."
 ```
 
 **Resolving the general warning**
@@ -2264,8 +2201,7 @@ Type mismatch date: The date condition operator is used with an invalid value. S
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The date condition operator is used with an invalid value. Specify a valid date using YYYY-MM-DD or other ISO 8601 date/time format.
-"
+"findingDetails": "The date condition operator is used with an invalid value. Specify a valid date using YYYY-MM-DD or other ISO 8601 date/time format."
 ```
 
 **Resolving the general warning**
@@ -2287,8 +2223,7 @@ Type mismatch IP range: The condition operator {{operator}} is used with an inva
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition operator {{operator}} is used with an invalid IP range value. Specify the IP range in standard CIDR format.
-"
+"findingDetails": "The condition operator {{operator}} is used with an invalid IP range value. Specify the IP range in standard CIDR format."
 ```
 
 **Resolving the general warning**
@@ -2310,8 +2245,7 @@ Type mismatch number: Add a valid numeric value for the condition operator {{ope
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a valid numeric value for the condition operator {{operator}}.
-"
+"findingDetails": "Add a valid numeric value for the condition operator {{operator}}."
 ```
 
 **Resolving the general warning**
@@ -2333,8 +2267,7 @@ Type mismatch string: Add a valid base64-encoded string value for the condition 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a valid base64-encoded string value for the condition operator {{operator}}.
-"
+"findingDetails": "Add a valid base64-encoded string value for the condition operator {{operator}}."
 ```
 
 **Resolving the general warning**
@@ -2356,8 +2289,7 @@ Specific github repo and branch recommended: Using a wildcard (*) in token.actio
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using a wildcard (*) in token.actions.githubusercontent.com:sub can allow requests from more sources than you intended. Specify the value of token.actions.githubusercontent.com:sub with the repository and branch name.
-"
+"findingDetails": "Using a wildcard (*) in token.actions.githubusercontent.com:sub can allow requests from more sources than you intended. Specify the value of token.actions.githubusercontent.com:sub with the repository and branch name."
 ```
 
 **Resolving the general warning**
@@ -2399,8 +2331,7 @@ Allow with NotPrincipal: Using Allow with NotPrincipal can be overly permissive.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using Allow with NotPrincipal can be overly permissive. We recommend that you use Principal instead.
-"
+"findingDetails": "Using Allow with NotPrincipal can be overly permissive. We recommend that you use Principal instead."
 ```
 
 **Resolving the security warning**
@@ -2420,8 +2351,7 @@ ForAllValues with single valued key: Using ForAllValues qualifier with the singl
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using ForAllValues qualifier with the single-valued condition key {{key}} can be overly permissive. We recommend that you remove ForAllValues:.
-"
+"findingDetails": "Using ForAllValues qualifier with the single-valued condition key {{key}} can be overly permissive. We recommend that you remove ForAllValues:."
 ```
 
 **Resolving the security warning**
@@ -2442,8 +2372,7 @@ Pass role with NotResource: Using the iam:PassRole action with NotResource can b
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the iam:PassRole action with NotResource can be overly permissive because it can allow iam:PassRole permissions on multiple resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using the iam:PassRole action with NotResource can be overly permissive because it can allow iam:PassRole permissions on multiple resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the security warning**
@@ -2465,8 +2394,7 @@ Pass role with star in action and NotResource: Using an action with a wildcard (
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using an action with a wildcard (*) and NotResource can be overly permissive because it can allow iam:PassRole permissions on multiple resources. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using an action with a wildcard (*) and NotResource can be overly permissive because it can allow iam:PassRole permissions on multiple resources. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the security warning**
@@ -2488,8 +2416,7 @@ Pass role with NotAction and NotResource: Using NotAction with NotResource can b
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using NotAction with NotResource can be overly permissive because it can allow iam:PassRole permissions on multiple resources.. We recommend that you specify resource ARNs instead.
-"
+"findingDetails": "Using NotAction with NotResource can be overly permissive because it can allow iam:PassRole permissions on multiple resources.. We recommend that you specify resource ARNs instead."
 ```
 
 **Resolving the security warning**
@@ -2513,8 +2440,7 @@ Pass role with star in resource: Using the iam:PassRole action with wildcards (*
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the iam:PassRole action with wildcards (*) in the resource can be overly permissive because it allows iam:PassRole permissions on multiple resources. We recommend that you specify resource ARNs or add the iam:PassedToService condition key to your statement.
-"
+"findingDetails": "Using the iam:PassRole action with wildcards (*) in the resource can be overly permissive because it allows iam:PassRole permissions on multiple resources. We recommend that you specify resource ARNs or add the iam:PassedToService condition key to your statement."
 ```
 
 **Resolving the security warning**
@@ -2564,8 +2490,7 @@ Pass role with star in action and resource: Using wildcards (*) in the action an
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using wildcards (*) in the action and the resource can be overly permissive because it allows iam:PassRole permissions on all resources. We recommend that you specify resource ARNs or add the iam:PassedToService condition key to your statement.
-"
+"findingDetails": "Using wildcards (*) in the action and the resource can be overly permissive because it allows iam:PassRole permissions on all resources. We recommend that you specify resource ARNs or add the iam:PassedToService condition key to your statement."
 ```
 
 **Resolving the security warning**
@@ -2595,8 +2520,7 @@ Pass role with star in resource and NotAction: Using a resource with wildcards (
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using a resource with wildcards (*) and NotAction can be overly permissive because it allows iam:PassRole permissions on all resources. We recommend that you specify resource ARNs or add the iam:PassedToService condition key to your statement.
-"
+"findingDetails": "Using a resource with wildcards (*) and NotAction can be overly permissive because it allows iam:PassRole permissions on all resources. We recommend that you specify resource ARNs or add the iam:PassedToService condition key to your statement."
 ```
 
 **Resolving the security warning**
@@ -2619,8 +2543,7 @@ Missing paired condition keys: Using the condition key {{conditionKeyName}} can 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the condition key {{conditionKeyName}} can be overly permissive without also using the following condition keys: {{recommendedKeys}}. Condition keys like this one are more secure when paired with a related key. We recommend that you add the related condition keys to the same condition block.
-"
+"findingDetails": "Using the condition key {{conditionKeyName}} can be overly permissive without also using the following condition keys: {{recommendedKeys}}. Condition keys like this one are more secure when paired with a related key. We recommend that you add the related condition keys to the same condition block."
 ```
 
 **Resolving the security warning**
@@ -2647,8 +2570,7 @@ Deny with unsupported tag condition key for service: Using the effect Deny with 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the effect Deny with the tag condition key {{conditionKeyName}} and actions for services with the following prefixes can be overly permissive: {{serviceNames}}. Actions for the listed services are not denied by this statement. We recommend that you move these actions to a different statement without this condition key.
-"
+"findingDetails": "Using the effect Deny with the tag condition key {{conditionKeyName}} and actions for services with the following prefixes can be overly permissive: {{serviceNames}}. Actions for the listed services are not denied by this statement. We recommend that you move these actions to a different statement without this condition key."
 ```
 
 **Resolving the security warning**
@@ -2713,8 +2635,7 @@ Deny NotAction with unsupported tag condition key for service: Using the effect 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the effect Deny with NotAction and the tag condition key {{conditionKeyName}} can be overly permissive because some service actions are not denied by this statement. This is because the condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction.
-"
+"findingDetails": "Using the effect Deny with NotAction and the tag condition key {{conditionKeyName}} can be overly permissive because some service actions are not denied by this statement. This is because the condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction."
 ```
 
 **Resolving the security warning**
@@ -2743,8 +2664,7 @@ Restrict access to service principal: Granting access to a service principal wit
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Granting access to a service principal without specifying a source is overly permissive. Use aws:SourceArn or aws:SourceAccount condition key and scope access to a specific source to grant fine-grained access.
-"
+"findingDetails": "Granting access to a service principal without specifying a source is overly permissive. Use aws:SourceArn or aws:SourceAccount condition key and scope access to a specific source to grant fine-grained access."
 ```
 
 **Resolving the security warning**
@@ -2768,8 +2688,7 @@ Missing condition key for oidc principal: Using an Open ID Connect principal wit
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using an Open ID Connect principal without a condition can be overly permissive. Add condition keys with a prefix that matches your federated OIDC principals to ensure that only the intended identity provider assumes the role.
-"
+"findingDetails": "Using an Open ID Connect principal without a condition can be overly permissive. Add condition keys with a prefix that matches your federated OIDC principals to ensure that only the intended identity provider assumes the role."
 ```
 
 **Resolving the security warning**
@@ -2811,8 +2730,7 @@ Empty array action: This statement includes no actions and does not affect the p
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "This statement includes no actions and does not affect the policy. Specify actions.
-"
+"findingDetails": "This statement includes no actions and does not affect the policy. Specify actions."
 ```
 
 **Resolving the suggestion**
@@ -2831,8 +2749,7 @@ Empty array condition: There are no values for the condition key {{key}} and it 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "There are no values for the condition key {{key}} and it does not affect the policy. Specify conditions.
-"
+"findingDetails": "There are no values for the condition key {{key}} and it does not affect the policy. Specify conditions."
 ```
 
 **Resolving the suggestion**
@@ -2845,13 +2762,13 @@ The optional `Condition` element structure requires that you use a condition ope
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Empty array condition ForAllValues: "The ForAllValues prefix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty
+Empty array condition ForAllValues: The ForAllValues prefix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty, we recommend that you use the Null condition operator with the value of true instead.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The ForAllValues prefix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty"
+"findingDetails": "The ForAllValues prefix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty, we recommend that you use the Null condition operator with the value of true instead."
 ```
 
 **Resolving the suggestion**
@@ -2874,8 +2791,7 @@ Empty array condition ForAnyValue: The ForAnyValue prefix with an empty conditio
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The ForAnyValue prefix with an empty condition key {{key}} never matches the request context and it does not affect the policy. Specify conditions.
-"
+"findingDetails": "The ForAnyValue prefix with an empty condition key {{key}} never matches the request context and it does not affect the policy. Specify conditions."
 ```
 
 **Resolving the suggestion**
@@ -2891,13 +2807,13 @@ When you use `ForAnyValues` with an empty condition key, the condition never mat
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Empty array condition IfExists: "The IfExists suffix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty
+Empty array condition IfExists: The IfExists suffix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty, we recommend that you use the Null condition operator with the value of true instead.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The IfExists suffix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty"
+"findingDetails": "The IfExists suffix with an empty condition key matches only if the key {{key}} is missing from the request context. To determine if the request context is empty, we recommend that you use the Null condition operator with the value of true instead."
 ```
 
 **Resolving the suggestion**
@@ -2919,8 +2835,7 @@ Empty array principal: This statement includes no principals and does not affect
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "This statement includes no principals and does not affect the policy. Specify principals.
-"
+"findingDetails": "This statement includes no principals and does not affect the policy. Specify principals."
 ```
 
 **Resolving the suggestion**
@@ -2942,8 +2857,7 @@ Empty array resource: This statement includes no resources and does not affect t
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "This statement includes no resources and does not affect the policy. Specify resources.
-"
+"findingDetails": "This statement includes no resources and does not affect the policy. Specify resources."
 ```
 
 **Resolving the suggestion**
@@ -2965,8 +2879,7 @@ Empty object condition: This condition block is empty and it does not affect the
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "This condition block is empty and it does not affect the policy. Specify conditions.
-"
+"findingDetails": "This condition block is empty and it does not affect the policy. Specify conditions."
 ```
 
 **Resolving the suggestion**
@@ -2987,8 +2900,7 @@ Empty object principal: This statement includes no principals and does not affec
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "This statement includes no principals and does not affect the policy. Specify principals.
-"
+"findingDetails": "This statement includes no principals and does not affect the policy. Specify principals."
 ```
 
 **Resolving the suggestion**
@@ -3010,8 +2922,7 @@ Empty Sid value: Add a value to the empty string in the Sid element.
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Add a value to the empty string in the Sid element.
-"
+"findingDetails": "Add a value to the empty string in the Sid element."
 ```
 
 **Resolving the suggestion**
@@ -3032,8 +2943,7 @@ Improve IP range: The non-zero bits in the IP address after the masked bits are 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The non-zero bits in the IP address after the masked bits are ignored. Replace address with {{addr}}.
-"
+"findingDetails": "The non-zero bits in the IP address after the masked bits are ignored. Replace address with {{addr}}."
 ```
 
 **Resolving the suggestion**
@@ -3053,8 +2963,7 @@ Null with qualifier: Avoid using the Null condition operator with the ForAllValu
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Avoid using the Null condition operator with the ForAllValues or ForAnyValue qualifiers because they always return a true or false respectively.
-"
+"findingDetails": "Avoid using the Null condition operator with the ForAllValues or ForAnyValue qualifiers because they always return a true or false respectively."
 ```
 
 **Resolving the suggestion**
@@ -3073,13 +2982,13 @@ When you use the `Null` condition operator with `ForAllValues`, the statement al
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Private IP address subset: "The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses will not have the desired effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges
+Private IP address subset: The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses will not have the desired effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges, use aws:VpcSourceIp.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses will not have the desired effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges"
+"findingDetails": "The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses will not have the desired effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges, use aws:VpcSourceIp."
 ```
 
 **Resolving the suggestion**
@@ -3100,13 +3009,13 @@ The global condition key `aws:VpcSourceIP` matches only if the request originate
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Private NotIpAddress subset: "The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses have no effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges
+Private NotIpAddress subset: The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses have no effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges, use aws:VpcSourceIp.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses have no effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges"
+"findingDetails": "The values for condition key aws:SourceIp include a mix of private and public IP addresses. The private addresses have no effect. aws:SourceIp works only for public IP address ranges. To define permissions for private IP ranges, use aws:VpcSourceIp."
 ```
 
 **Resolving the suggestion**
@@ -3130,8 +3039,7 @@ Redundant action: The {{redundantActionCount}} action(s) are redundant because t
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The {{redundantActionCount}} action(s) are redundant because they provide similar permissions. Update the policy to remove the redundant action such as: {{redundantAction}}.
-"
+"findingDetails": "The {{redundantActionCount}} action(s) are redundant because they provide similar permissions. Update the policy to remove the redundant action such as: {{redundantAction}}."
 ```
 
 **Resolving the suggestion**
@@ -3141,7 +3049,7 @@ When you use wildcards \(\*\) in the `Action` element, you can include redundant
 For example, the following actions include the `iam:GetCredentialReport` action twice\.
 
 ```
-    "Action": [
+"Action": [
         "iam:Get*",
         "iam:List*",
         "iam:GetCredentialReport"
@@ -3170,8 +3078,7 @@ Redundant condition value num: Multiple values in {{operator}} are redundant. Re
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Multiple values in {{operator}} are redundant. Replace with the {{greatest/least}} single value for {{key}}.
-"
+"findingDetails": "Multiple values in {{operator}} are redundant. Replace with the {{greatest/least}} single value for {{key}}."
 ```
 
 **Resolving the suggestion**
@@ -3181,7 +3088,7 @@ When you use numeric condition operators for similar values in a condition key, 
 For example, the following `Condition` element includes multiple `aws:MultiFactorAuthAge` conditions that have an age overlap of 1200 seconds\.
 
 ```
-      "Condition": {
+"Condition": {
         "NumericLessThan": {
           "aws:MultiFactorAuthAge": [
             "2700",
@@ -3200,13 +3107,13 @@ In this example, the permissions are defined if multi\-factor authentication \(M
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Redundant resource: "The {{redundantResourceCount}} resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)
+Redundant resource: The {{redundantResourceCount}} resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""The {{redundantResourceCount}} resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)"
+"findingDetails": "The {{redundantResourceCount}} resource ARN(s) are redundant because they reference the same resource. Review the use of wildcards (*)"
 ```
 
 **Resolving the suggestion**
@@ -3216,7 +3123,7 @@ When you use wildcards \(\*\) in Amazon Resource Names \(ARNs\), you can create 
 For example, the following `Resource` element includes multiple ARNs with redundant permissions\.
 
 ```
-        "Resource": [
+"Resource": [
             "arn:aws:iam::111122223333:role/jane-admin",
             "arn:aws:iam::111122223333:role/jane-s3only",
             "arn:aws:iam::111122223333:role/jane*"
@@ -3243,8 +3150,7 @@ Redundant statement: The statements are redundant because they provide identical
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The statements are redundant because they provide identical permissions. Update the policy to remove the redundant statement.
-"
+"findingDetails": "The statements are redundant because they provide identical permissions. Update the policy to remove the redundant statement."
 ```
 
 **Resolving the suggestion**
@@ -3259,13 +3165,13 @@ When you include the same statement more than once in a long policy, the stateme
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Wildcard in service name: "Avoid using wildcards (*
+Wildcard in service name: Avoid using wildcards (*, ?) in the service name because it might grant unintended access to other AWS services with similar names.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""Avoid using wildcards (*"
+"findingDetails": "Avoid using wildcards (*, ?) in the service name because it might grant unintended access to other AWS services with similar names."
 ```
 
 **Resolving the suggestion**
@@ -3273,7 +3179,7 @@ In programmatic calls to the AWS CLI or AWS API, the finding for this check incl
 When you include the name of an AWS service in a policy, AWS recommends that you do not include wildcards \(\*, ?\)\. This might add permissions for future services that you do not intend\. For example, there are more than a dozen AWS services with the word `*code*` in their name\.
 
 ```
-      "Resource": "arn:aws:*code*::111122223333:*"
+"Resource": "arn:aws:*code*::111122223333:*"
 ```
 + [IAM JSON policy elements: Resource](reference_policies_elements_resource.md)
 
@@ -3288,8 +3194,7 @@ Allow with unsupported tag condition key for service: Using the effect Allow wit
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the effect Allow with the tag condition key {{conditionKeyName}} and actions for services with the following prefixes does not affect the policy: {{serviceNames}}. Actions for the listed service are not allowed by this statement. We recommend that you move these actions to a different statement without this condition key.
-"
+"findingDetails": "Using the effect Allow with the tag condition key {{conditionKeyName}} and actions for services with the following prefixes does not affect the policy: {{serviceNames}}. Actions for the listed service are not allowed by this statement. We recommend that you move these actions to a different statement without this condition key."
 ```
 
 **Resolving the suggestion**
@@ -3354,8 +3259,7 @@ Allow NotAction with unsupported tag condition key for service: Using the effect
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "Using the effect Allow with NotAction and the tag condition key {{conditionKeyName}} allows only service actions that support the condition key. The condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction.
-"
+"findingDetails": "Using the effect Allow with NotAction and the tag condition key {{conditionKeyName}} allows only service actions that support the condition key. The condition key doesn't apply to some service actions. We recommend that you use Action instead of NotAction."
 ```
 
 **Resolving the suggestion**
@@ -3378,13 +3282,13 @@ When a service supports the `aws:ResourceTag` condition key, you can use tags to
 In the AWS Management Console, the finding for this check includes the following message:
 
 ```
-Recommended condition key for service principal: "To restrict access to the service principal {{servicePrincipalPrefix}} operating on your behalf
+Recommended condition key for service principal: To restrict access to the service principal {{servicePrincipalPrefix}} operating on your behalf, we recommend aws:SourceArn or aws:SourceAccount instead of {{key}}.
 ```
 
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": ""To restrict access to the service principal {{servicePrincipalPrefix}} operating on your behalf"
+"findingDetails": "To restrict access to the service principal {{servicePrincipalPrefix}} operating on your behalf, we recommend aws:SourceArn or aws:SourceAccount instead of {{key}}."
 ```
 
 **Resolving the suggestion**
@@ -3408,8 +3312,7 @@ Irrelevant condition key in policy: The condition key {{condition-key}} is not r
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The condition key {{condition-key}} is not relevant for the {{resource-type}} policy.  Use this key in an identity-based policy to govern access to this resource.
-"
+"findingDetails": "The condition key {{condition-key}} is not relevant for the {{resource-type}} policy.  Use this key in an identity-based policy to govern access to this resource."
 ```
 
 **Resolving the suggestion**
@@ -3432,8 +3335,7 @@ Redundant principal in role trust policy: The assumed-role principal {{redundant
 In programmatic calls to the AWS CLI or AWS API, the finding for this check includes the following message:
 
 ```
-"findingDetails": "The assumed-role principal {{redundant_principal}} is redundant with its parent role {{parent_role}}. Remove the assumed-role principal.
-"
+"findingDetails": "The assumed-role principal {{redundant_principal}} is redundant with its parent role {{parent_role}}. Remove the assumed-role principal."
 ```
 
 **Resolving the suggestion**

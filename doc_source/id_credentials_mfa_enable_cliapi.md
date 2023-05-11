@@ -6,6 +6,8 @@ When you enable an MFA device from the AWS Management Console, the console perfo
 
 You can attach tags to your IAM resources, including virtual MFA devices, to identify, organize, and control access to them\. You can tag virtual MFA devices only when you use the AWS CLI or AWS API\.
 
+An IAM user using the SDK or CLI can enable an additional MFA device by calling [https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_EnableMFADevice.html) or deactivate an existing MFA device by calling [https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html](https://docs.aws.amazon.com/IAM/latest/APIReference/API_DeactivateMFADevice.html)\. To do this successfully, they must first call [https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetSessionToken.html) and submit MFA codes with an existing MFA device\. This call returns temporary security credentials that can then be used to sign API operations that require MFA authentication\. For an example request and response, see [`GetSessionToken`—temporary credentials for users in untrusted environments](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken)\. 
+
 **To create the virtual device entity in IAM to represent a virtual MFA device**  
 These commands provide an ARN for the device that is used in place of a serial number in many of the following commands\.
 + AWS CLI: [https://docs.aws.amazon.com/cli/latest/reference/iam/create-virtual-mfa-device.html](https://docs.aws.amazon.com/cli/latest/reference/iam/create-virtual-mfa-device.html) 

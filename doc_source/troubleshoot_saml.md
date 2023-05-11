@@ -3,7 +3,7 @@
 Use the information here to help you diagnose and fix issues that you might encounter when working with SAML 2\.0 and federation with IAM\.
 
 **Topics**
-+ [Error: Your request included an invalid SAML response\. to logout, click here\.](#troubleshoot_saml_invalid-response)
++ [Error: Your request included an invalid SAML response\. To logout, click here\.](#troubleshoot_saml_invalid-response)
 + [Error: RoleSessionName is required in AuthnResponse \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_missing-rolesessionname)
 + [Error: Not authorized to perform sts:AssumeRoleWithSAML \(service: AWSSecurityTokenService; status code: 403; error code: AccessDenied\)](#troubleshoot_saml_missing-role)
 + [Error: RoleSessionName in AuthnResponse must match \[a\-zA\-Z\_0\-9\+=,\.@\-\]\{2,64\} \(service: AWSSecurityTokenService; status code: 400; error code: InvalidIdentityToken\)](#troubleshoot_saml_invalid-rolesessionname)
@@ -13,9 +13,10 @@ Use the information here to help you diagnose and fix issues that you might enco
 + [Error: Could not parse metadata\.](#troubleshoot_saml_issuer-metadata)
 + [Error: Specified provider doesn't exist\.](#troubleshoot_saml_provider-doesnotexist)
 + [Error: Requested DurationSeconds exceeds MaxSessionDuration set for this role\.](#troubleshoot_saml_duration-exceeds)
++ [Error: Response does not contain the required audience\.](#troubleshoot_saml_required-audience)
 + [How to view a SAML response in your browser for troubleshooting](troubleshoot_saml_view-saml-response.md)
 
-## Error: Your request included an invalid SAML response\. to logout, click here\.<a name="troubleshoot_saml_invalid-response"></a>
+## Error: Your request included an invalid SAML response\. To logout, click here\.<a name="troubleshoot_saml_invalid-response"></a>
 
 This error can occur when the SAML response from the identity provider does not include an attribute with the `Name` set to `https://aws.amazon.com/SAML/Attributes/Role`\. The attribute must contain one or more `AttributeValue` elements, each containing a comma\-separated pair of strings:
 + The ARN of a role that the user can be mapped to
@@ -82,3 +83,7 @@ This error can occur if the name of the provider that you specify in the SAML as
 This error can occur if you assume a role from the AWS CLI or API\. 
 
 When you use the [assume\-role\-with\-saml](https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role-with-saml.html) CLI or [AssumeRoleWithSAML](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRoleWithSAML.html) API operations to assume a role, you can specify a value for the `DurationSeconds` parameter\. You can specify a value from 900 seconds \(15 minutes\) up to the maximum session duration setting for the role\. If you specify a value higher than this setting, the operation fails\. For example, if you specify a session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails\. To learn how to view the maximum value for your role, see [View the maximum session duration setting for a role](id_roles_use.md#id_roles_use_view-role-max-session)\. 
+
+## Error: Response does not contain the required audience\.<a name="troubleshoot_saml_required-audience"></a>
+
+This error can occur if there is a mismatch between the audience URL and the identity provider in the SAML configuration\. Make sure that your identity provider \(IdP\) relying party identifier exactly matches the audience URL \(entity ID\) provided in the SAML configuration\.

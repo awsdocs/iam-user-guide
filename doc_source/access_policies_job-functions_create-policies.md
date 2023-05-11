@@ -48,11 +48,11 @@ This example shows the steps required to configure Alice, an IAM user, as a [Dat
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. Choose **Policies** and then enter **database** in the search box\.
+1. Choose **Policies**, type **database** in the search box, and then press enter\.
 
-1. Select the check box for the **DatabaseAdministrator** policy, choose **Actions**, and then choose **Attach**\.
+1. Select the radio button for the **DatabaseAdministrator** policy, choose **Actions**, and then choose **Attach**\.
 
-1. In the list of users, select **Alice** and then choose **Attach policy**\. Alice now can administer AWS databases\. However, to allow Alice to monitor those databases, you must configure the service role\.
+1. In the list of entities, select **Alice** and then choose **Attach policy**\. Alice now can administer AWS databases\. However, to allow Alice to monitor those databases, you must configure the service role\.
 
 1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
@@ -76,15 +76,15 @@ This example shows the steps required to configure Jorge, an IAM user, as a [Net
 
 1. Sign in to the AWS Management Console and open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Policies** and then enter **network** in the search box\.
+1. In the navigation pane, choose **Policies** and then enter **network** in the search box, and then press enter\.
 
-1. Select the check box next to **NetworkAdministrator** policy, choose **Actions**, and then choose **Attach**\.
+1. Select the radio button next to **NetworkAdministrator** policy, choose **Actions**, and then choose **Attach**\.
 
 1. In the list of users, select the check box next to **Jorge** and then choose **Attach policy**\. Jorge can now administer AWS network resources\. However, to enable monitoring of IP traffic in your VPC, you must configure the service role\.
 
 1. Because the service role you need to create doesn't have a predefined managed policy, you must first create it\. In the navigation pane, choose **Policies**, then choose **Create policy**\.
 
-1. Choose the **JSON** tab and copy the text from the following JSON policy document\. Paste this text into the **JSON** text box\. 
+1. In the **Policy editor** section, choose the **JSON** option and copy the text from the following JSON policy document\. Paste this text into the **JSON** text box\. 
 
    ```
    {
@@ -105,11 +105,11 @@ This example shows the steps required to configure Jorge, an IAM user, as a [Net
    }
    ```
 
-1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
+1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\. 
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs at any time\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options any time\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, enter **vpc\-flow\-logs\-policy\-for\-service\-role** for the policy name\. Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
+1. On the **Review and create** page, type **vpc\-flow\-logs\-policy\-for\-service\-role** for the policy name\. Review the **Permissions defined in this policy** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
 
    The new policy appears in the list of managed policies and is ready to attach\.
 

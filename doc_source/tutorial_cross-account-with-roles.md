@@ -95,11 +95,11 @@ Before you can create a role, you need the *account ID* of the **Development** A
 
    The `ListBucket` permission allows users to view objects in the `productionapp` bucket\. The `GetObject`, `PutObject`, `DeleteObject` permissions allows users to view, update, and delete contents in the `productionapp` bucket\.
 
-1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Review policy**\. 
+1.  Resolve any security warnings, errors, or general warnings generated during [policy validation](access_policies_policy-validator.md), and then choose **Next**\. 
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, if you make changes or choose **Review policy** in the **Visual editor** tab, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
+You can switch between the **Visual** and **JSON** editor options anytime\. However, if you make changes or choose **Next** in the **Visual** editor, IAM might restructure your policy to optimize it for the visual editor\. For more information, see [Policy restructuring](troubleshoot_policies.md#troubleshoot_viseditor-restructure)\.
 
-1. On the **Review** page, enter **read\-write\-app\-bucket** for the policy name\. Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
+1. On the **Review and create** page, type **read\-write\-app\-bucket** for the policy name\. Review the permissions granted by your policy, and then choose **Create policy** to save your work\.
 
    The new policy appears in the list of managed policies\.
 
@@ -178,9 +178,7 @@ At this point, both Testers and Developers user group members have permissions t
 
 1. Choose **Review policy**\.
 
-1. Type a **Policy name** such as **allow\-assume\-S3\-role\-in\-production**\.
-
-1. \(Optional\) For **Description**, type a description for the policy\.
+1. Type a **Name** such as **allow\-assume\-S3\-role\-in\-production**\.
 
 1. Choose **Create policy**\.
 
@@ -211,7 +209,7 @@ In most environments, you may not need the following procedure\. If, however, yo
 
 1. Choose **Review policy**\.
 
-1. Type a **Policy name** like **deny\-assume\-S3\-role\-in\-production**\.
+1. Type a **Name** like **deny\-assume\-S3\-role\-in\-production**\.
 
 1. Choose **Create policy**\.
 

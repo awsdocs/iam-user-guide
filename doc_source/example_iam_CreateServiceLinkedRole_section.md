@@ -72,38 +72,30 @@ func (wrapper RoleWrapper) CreateServiceLinkedRole(serviceName string, descripti
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Create a service\-linked role\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { CreateServiceLinkedRoleCommand } from "@aws-sdk/client-iam";
-// Set the parameters.
-const params = {
-  AWSServiceName: "AWS_SERVICE_NAME" /* required */,
-};
+import { CreateServiceLinkedRoleCommand, IAMClient } from "@aws-sdk/client-iam";
 
-const run = async () => {
-  try {
-    const data = await iamClient.send(
-      new CreateServiceLinkedRoleCommand(params)
-    );
-    console.log("Success", data);
-  } catch (err) {
-    console.log("Error", err);
-  }
+const client = new IAMClient({});
+
+/**
+ *
+ * @param {string} serviceName
+ */
+export const createServiceLinkedRole = async (serviceName) => {
+  const command = new CreateServiceLinkedRoleCommand({
+    // For a list of AWS services that support service-linked roles,
+    // see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html.
+    // 
+    // For a list of AWS service endpoints, see https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html.
+    AWSServiceName: serviceName,
+  });
+
+  const response = await client.send(command);
+  console.log(response);
+  return response;
 };
-run();
 ```
 +  For API details, see [CreateServiceLinkedRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/createservicelinkedrolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -136,7 +128,7 @@ $service = new IAMService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```
@@ -222,7 +214,7 @@ pub async fn create_service_linked_role(
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/CreateServiceLinkedRole#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

@@ -47,7 +47,7 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, select the check box next to the name of the policy to attach\. You can use the search box to filter the list of policies\.
+1. In the list of policies, select the radio button next to the name of the policy to attach\. You can use the search box to filter the list of policies\.
 
 1. Choose **Actions**, and then choose **Attach**\.
 
@@ -61,9 +61,9 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 
 1. In the list of policies, choose the name of the policy to set\. You can use the search box to filter the list of policies\.
 
-1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section and choose **Set boundary**\.
+1. On the policy details page, choose the **Entities attached** tab, and then, if necessary, open the **Attached as a permissions boundaries** section and choose **Set this policy as a permissions boundary**\.
 
-1. Select one or more users or roles on which to use the policy for a permissions boundary\. You can use the search box to filter the list of principal entities\. After selecting the principals, choose **Set boundaries**\.<a name="embed-inline-policy-console"></a>
+1. Select one or more users or roles on which to use the policy for a permissions boundary\. You can use the search box to filter the list of principal entities\. After selecting the principals, choose **Set permissions boundary**\.<a name="embed-inline-policy-console"></a>
 
 **To embed an inline policy for a user or role \(console\)**
 
@@ -75,7 +75,7 @@ You can use the AWS Management Console to add permissions to an identity \(user,
 
 1. Choose the **Permissions** tab\. 
 
-1. Choose **Add permissions** and then choose **Add inline policy**\.
+1. Choose **Add permissions** and then choose **Create inline policy**\.
 
     
 **Note**  
@@ -84,7 +84,7 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 1. Choose from the following methods to view the steps required to create your policy:
    + [Importing existing managed policies](access_policies_create-console.md#access_policies_create-copy) – You can import a managed policy within your account and then edit the policy to customize it to your specific requirements\. A managed policy can be an AWS managed policy or a customer managed policy that you created previously\.
    + [Creating policies with the visual editor](access_policies_create-console.md#access_policies_create-visual-editor) – You can construct a new policy from scratch in the visual editor\. If you use the visual editor, you do not have to understand JSON syntax\.
-   + [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor) – In the **JSON** tab, you can use JSON syntax to create a policy\. You can enter a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
+   + [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor) – In the **JSON** editor option, you can use JSON syntax to create a policy\. You can type a new JSON policy document or paste an [example policy](access_policies_examples.md)\.
 
 1. After you create an inline policy, it is automatically embedded in your user or role\.
 
@@ -99,8 +99,8 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 1. Choose the **Permissions** tab, choose **Add permissions**, and then choose **Create inline policy**\.
 
 1. Do one of the following:
-   + Choose the **Visual editor** tab to create the policy\. For more information, see [Creating policies with the visual editor](access_policies_create-console.md#access_policies_create-visual-editor)\.
-   + Choose the **JSON tab** to create the policy\. For more information, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+   + Choose the **Visual** option to create the policy\. For more information, see [Creating policies with the visual editor](access_policies_create-console.md#access_policies_create-visual-editor)\.
+   + Choose the **JSON** option to create the policy\. For more information, see [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 1. When you are satisfied with the policy, choose **Create policy**\.<a name="replace-managed-policy-boundary-console"></a>
 
@@ -112,9 +112,9 @@ You cannot embed an inline policy in a *[service\-linked role](id_roles_terms-an
 
 1. In the list of policies, choose the name of the policy to set\. You can use the search box to filter the list of policies\.
 
-1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section\. Select the check box next to the users or roles whose boundaries you want to change and then choose **Change boundary**\.
+1. On the policy details page, choose the **Entities attached** tab, and then, if necessary, open the **Attached as a permissions boundary** section\. Select the check box next to the users or roles whose boundaries you want to change and then choose **Change**\.
 
-1. Select a new policy to use for a permissions boundary\. You can use the search box to filter the list of policies\. After selecting the policy, choose **Change boundary**\.
+1. Select a new policy to use for a permissions boundary\. You can use the search box to filter the list of policies\. After selecting the policy, choose **Set permissions boundary**\.
 
 ## Removing IAM identity permissions \(console\)<a name="remove-policies-console"></a>
 
@@ -126,7 +126,7 @@ You can use the AWS Management Console to remove permissions from an identity \(
 
 1. In the navigation pane, choose **Policies**\. 
 
-1. In the list of policies, select the check box next to the name of the policy to detach\. You can use the search box to filter the list of policies\.
+1. In the list of policies, select the radio button next to the name of the policy to detach\. You can use the search box to filter the list of policies\.
 
 1. Choose **Actions**, and then choose **Detach**\.
 
@@ -140,9 +140,9 @@ You can use the AWS Management Console to remove permissions from an identity \(
 
 1. In the list of policies, choose the name of the policy to set\. You can use the search box to filter the list of policies\.
 
-1. On the policy summary page, choose the **Policy usage tab**, and then, if necessary, open the **Permissions boundaries** section and choose **Remove boundary**\.
+1. On the policy summary page, choose the **Entities attached** tab, and then, if necessary, open the **Attached as a permissions boundary** section and choose the entities to remove the permissions boundary from\. Then choose **Remove boundary**\.
 
-1. Confirm that you want to remove the boundary and choose **Remove**\.<a name="delete-inline-policy-console"></a>
+1. Confirm that you want to remove the boundary and choose **Remove boundary**\.<a name="delete-inline-policy-console"></a>
 
 **To delete an inline policy \(console\)**
 
@@ -154,13 +154,9 @@ You can use the AWS Management Console to remove permissions from an identity \(
 
 1. Choose the **Permissions** tab\.
 
-1. Do one of the following:
-   + In **User groups** or **Roles**, select the check box next to the policy and choose **Remove**\.
-   + In **Users**, choose **X**\.
+1. Select the check box next to the policy and choose **Remove**\.
 
-1. Do one of the following:
-   + In **User groups** or **Roles**, choose **Delete** in the confirmation box\.
-   + In **Users**, choose **Detach** in the confirmation box for a policy that is attached directly, or choose **Remove from group** for a policy that is attached from a group\.
+1. Choose **Remove** in the confirmation box\.
 
 ## Adding IAM policies \(AWS CLI\)<a name="add-policy-cli"></a>
 

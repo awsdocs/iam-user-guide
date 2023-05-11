@@ -12,7 +12,7 @@ You must configure permissions to allow an IAM entity \(users or roles\) to tag 
 + `iam:UntagPolicy`
 
 **To allow an IAM entity \(user or role\) to add, list, or remove a tag for a customer managed policy**  
-Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<policyname>* with the name of the policy whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+Add the following statement to the permissions policy for the IAM entity that needs to manage tags\. Use your account number and replace *<policyname>* with the name of the policy whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -32,7 +32,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 **Note**  
 The `iam:TagPolicy` action requires that you also include the `iam:ListPolicyTags` action\.
 
-To use this policy, replace *<policyname>* with the name of the policy whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+To use this policy, replace *<policyname>* with the name of the policy whose tags need to be managed\. To learn how to create a policy using this example JSON policy document, see [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {
@@ -57,9 +57,7 @@ You can manage tags for IAM customer managed policies from the AWS Management Co
 
 1. In the navigation pane of the console, choose **Policies** and then choose the name of the customer managed policy that you want to edit\.
 
-1. Choose the **Tags** tab and then complete one of the following actions:
-   + Choose **Add tags** if the policy does not yet have tags\.
-   + Choose **Edit tags** to manage the existing set of tags\.
+1. Choose the **Tags** tab and then choose **Manage tags**\.
 
 1. Add or remove tags to complete the set of tags\. Then choose **Save changes**\.
 

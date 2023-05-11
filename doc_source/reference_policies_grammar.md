@@ -106,7 +106,7 @@ policy  = {
     ("*" | [<action_string>, <action_string>, ...])
 
 <resource_block> = ("Resource" | "NotResource") : 
-    ("*" | [<resource_string>, <resource_string>, ...])
+    : ("*" | <resource_string> | [<resource_string>, <resource_string>, ...])
 
 <condition_block> = "Condition" : { <condition_map> }
 <condition_map> = { 
@@ -114,7 +114,7 @@ policy  = {
   <condition_type_string> : { <condition_key_string> : <condition_value_list> }, ...
 }  
 <condition_value_list> = [<condition_value>, <condition_value>, ...]
-<condition_value> = ("string" | "number" | "Boolean")
+<condition_value> = (<condition_value_string> | <condition_value_string> | <condition_value_string>)
 ```
 
 ## Policy grammar notes<a name="policies-grammar-notes"></a>
@@ -230,6 +230,19 @@ For a list of AWS condition keys, see [AWS global condition context keys](refere
 "Condition": {
   "StringEquals": {
     "aws:ResourceTag/purpose": "test"
+  }
+}
+```
+
+**`condition_value_string`**  
+Identifies the value of the condition\_key\_string that determines whether the condition is met\. For a complete list of valid values for a condition type, see [IAM JSON policy elements: Condition operators](reference_policies_elements_condition_operators.md)\.  
+
+```
+"Condition":{
+  "ForAnyValue:StringEquals": {
+		"dynamodb:Attributes": [
+			"ID",
+			"PostDateTime"
   }
 }
 ```

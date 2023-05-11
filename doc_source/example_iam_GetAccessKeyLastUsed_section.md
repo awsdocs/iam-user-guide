@@ -50,36 +50,34 @@ bool AwsDoc::IAM::accessKeyLastUsed(const Aws::String &secretKeyID,
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Get the access key\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { GetAccessKeyLastUsedCommand } from "@aws-sdk/client-iam";
+import { GetAccessKeyLastUsedCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = { AccessKeyId: "ACCESS_KEY_ID" }; //ACCESS_KEY_ID
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(new GetAccessKeyLastUsedCommand(params));
-    console.log("Success", data);
-    return data;
-  } catch (err) {
-    console.log("Error", err);
+/**
+ *
+ * @param {string} accessKeyId
+ */
+export const getAccessKeyLastUsed = async (accessKeyId) => {
+  const command = new GetAccessKeyLastUsedCommand({
+    AccessKeyId: accessKeyId,
+  });
+
+  const response = await client.send(command);
+  
+  if (response.AccessKeyLastUsed?.LastUsedDate) {
+    console.log(`
+    ${accessKeyId} was last used by ${response.UserName} via 
+    the ${response.AccessKeyLastUsed.ServiceName} service on
+    ${response.AccessKeyLastUsed.LastUsedDate.toISOString()}
+    `);
   }
+
+  return response;
 };
-run();
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-access-keys.html#iam-examples-managing-access-keys-last-used)\. 
 +  For API details, see [GetAccessKeyLastUsed](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/getaccesskeylastusedcommand.html) in *AWS SDK for JavaScript API Reference*\. 
@@ -112,7 +110,7 @@ iam.getAccessKeyLastUsed({AccessKeyId: 'ACCESS_KEY_ID'}, function(err, data) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```

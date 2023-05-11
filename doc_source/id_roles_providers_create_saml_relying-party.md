@@ -10,3 +10,6 @@ You also need to create appropriate claim rules in your IdP that specify AWS as 
 +  [Overview of the role to allow SAML\-federated access to your AWS resources](id_roles_providers_saml.md#CreatingSAML-configuring-role)\. This topic discusses using SAML\-specific keys in IAM policies and how to use them to restrict permissions for SAML\-federated users\. 
 + [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)\. This topic discusses how to configure SAML claims that include information about the user\. The claims are bundled into a SAML assertion and included in the SAML response that is sent to AWS\. You must ensure that the information needed by AWS policies is included in the SAML assertion in a form that AWS can recognize and use\.
 +  [Integrating third\-party SAML solution providers with AWS](id_roles_providers_saml_3rd-party.md)\. This topic provides links to documentation provided by third\-party organizations about how to integrate identity solutions with AWS\. 
+
+**Note**  
+If you need to support SAML federation across Regions, see the AWS Security Blog article [How to use regional SAML endpoints for failover](http://aws.amazon.com/blogs/security/how-to-use-regional-saml-endpoints-for-failover)\.

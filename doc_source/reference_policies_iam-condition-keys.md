@@ -7,7 +7,9 @@ This topic describes the keys defined and provided by the IAM service \(with an 
 **Topics**
 + [Available keys for IAM](#available-keys-for-iam)
 + [Available keys for AWS web identity federation](#condition-keys-wif)
++ [Cross\-service AWS web identity federation context keys](#cross-condition-keys-wif)
 + [Available keys for SAML\-based AWS STS federation](#condition-keys-saml)
++ [Cross\-service SAML\-based AWS STS federation context keys](#cross-condition-keys-saml)
 + [Available keys for AWS STS](#condition-keys-sts)
 
 ## Available keys for IAM<a name="available-keys-for-iam"></a>
@@ -101,7 +103,7 @@ This example shows how you might create an identity\-based policy that allows de
 
 ## Available keys for AWS web identity federation<a name="condition-keys-wif"></a>
 
-You can use web identity federation to give temporary security credentials to users who have been authenticated through an OpenID Connect compliant OpenID Provider \(OP\) to an IAM OpenID Connect \(OIDC\) identity provider in your AWS account\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. Identity tokens \(id\_tokens\) from your own OpenID OP may be used, as well as id\_tokens issued to service accounts of Amazon Elastic Kubernetes Service clusters\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that limit the access of federated users to resources that are associated with a specific provider, app, or user\. These keys are typically used in the trust policy for a role\. Define conditions keys using the name of the OIDC provider followed by the claim \(`:aud`, `:azp`, `:amr`, `sub`\)\. For roles used by Amazon Cognito, keys are defined using `cognito-identity.amazonaws.com` followed by the claim\.
+You can use web identity federation to give temporary security credentials to users who have been authenticated through an OpenID Connect compliant OpenID Provider \(OP\) to an IAM OpenID Connect \(OIDC\) identity provider in your AWS account\. Examples of such providers include Login with Amazon, Amazon Cognito, Google, or Facebook\. Identity tokens \(id\_tokens\) from your own OpenID OP may be used, as well as id\_tokens issued to service accounts of Amazon Elastic Kubernetes Service clusters\. In that case, additional condition keys are available when the temporary security credentials are used to make a request\. You can use these keys to write policies that limit the access of federated users to resources that are associated with a specific provider, app, or user\. These keys are typically used in the trust policy for a role\. Define condition keys using the name of the OIDC provider followed by the claim \(`:aud`, `:azp`, `:amr`, `sub`\)\. For roles used by Amazon Cognito, keys are defined using `cognito-identity.amazonaws.com` followed by the claim\.
 
 **amr**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
@@ -124,8 +126,10 @@ As an example, the following condition in the trust policy for an Amazon Cognito
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 Use the `aud` condition key to verify that the Google client ID or Amazon Cognito identity pool ID matches the one that you specify in the policy\. You can use the `aud` key with the `sub` key for the same identity provider\.  
 **Examples**:  
++ `graph.facebook.com:app_id`
 + `accounts.google.com:aud`
 + `cognito-identity.amazonaws.com:aud`
+The `graph.facebook.com:app_id` field supplies the audience context that matches the aud field used by other identity providers\.  
 The `accounts.google.com:aud` condition key matches the following Google ID Token fields\.   
 + `aud` for OAuth 2\.0 Google client IDs of your application, when the `azp` field is not set\. When the `azp` field is set, the `aud` field matches the [`accounts.google.com:oaud`](#ck_oaud) condition key\.
 + `azp` when the `azp` field is set\. This can happen for hybrid apps where a web application and Android app have a different OAuth 2\.0 Google client ID but share the same Google APIs project\. 
@@ -179,7 +183,6 @@ The following example policy works for hybrid apps that do set the `azp` field\.
 **id**  
 Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
 **Examples**:  
-+ `graph.facebook.com:app_id`
 + `graph.facebook.com:id`
 + `www.amazon.com:app_id`
 + `www.amazon.com:user_id`
@@ -213,9 +216,21 @@ Use these keys to verify that the user ID matches the one that you specify in th
 
 **More information about web identity federation**  
 For more information about web identity federation, see the following:  
-+ [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840) in the *AWS Mobile SDK for Android Developer Guide* guide
-+ [Amazon Cognito Overview](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664) in the *AWS Mobile SDK for iOS Developer Guide* guide
++ [Amazon Cognito User Guide](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html)\.
 + [About web identity federation](id_roles_providers_oidc.md)
+
+## Cross\-service AWS web identity federation context keys<a name="cross-condition-keys-wif"></a>
+
+Some web identity federation condition keys can be used in role trust policies to define what users are allowed to access in other AWS services\. These are the following condition keys that can be used in role trust policies when federated principals assume another role, and in resource policies from other AWS services to authorize resource access by federated principals\. If you are using Amazon Cognito for web identity federation, then these keys are available when the user is authenticated\.
+
+Select a condition key to see the description\.
++ [amr](#ck_wif-amr)
++ [aud](#ck_wif-aud)
++ [id](#ck_wif-id)
++ [sub](#ck_wif-sub)
+
+**Note**  
+No other web identitiy based federation condition keys are available for use after the external identity provider \(IdP\) authentication and authorization for the initial AssumeRoleWithWebIdentity operation\.
 
 ## Available keys for SAML\-based AWS STS federation<a name="condition-keys-saml"></a>
 
@@ -372,23 +387,17 @@ Condition keys whose type is a list can include multiple values\. To create cond
 }
 ```
 
-### SAML role permissions policies<a name="condition-keys-saml_permission-policy"></a>
+## Cross\-service SAML\-based AWS STS federation context keys<a name="cross-condition-keys-saml"></a>
 
-In the permissions policy of a role for SAML federation that defines what users are allowed to access in AWS, you can include the following keys:
+Some SAML\-based federation condition keys can be used in subsequent requests to authorize AWS operations in other services and `AssumeRole` calls\. These are the following condition keys that can be used in role trust policies when federated principals assume another role, and in resource policies from other AWS services to authorize resource access by federated principals\. For more information about using these keys, see [About SAML 2\.0\-based federation](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html#CreatingSAML-userid)\. 
 
-**saml:namequalifier**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-This contains a hash value that represents the combination of the `saml:doc` and `saml:iss` values\. It is used as a namespace qualifier; the combination of `saml:namequalifier` and `saml:sub` uniquely identifies a user\. 
+Select a condition key to see the description\.
++ [saml:namequalifier](#ck_saml-namequalifier)
++ [saml:sub](#ck_saml-sub)
++ [saml:sub_type](#ck_saml-subtype)
 
-**saml:sub**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-This is the subject of the claim, which includes a value that uniquely identifies an individual user within an organization \(for example, `_cbb88bf52c2510eabe00c1642d4643f41430fe25e3`\)\. 
-
-**saml:sub\_type**  
-Works with [string operators](reference_policies_elements_condition_operators.md#Conditions_String)\.  
-This key can have the value `persistent`, `transient`, or consist of the full `Format` URI from the `Subject` and `NameID` elements used in your SAML assertion\. A value of `persistent` indicates that the value in `saml:sub` is the same for a user between sessions\. If the value is `transient`, the user has a different `saml:sub` value for each session\. For information about the `NameID` element's `Format` attribute, see [Configuring SAML assertions for the authentication response](id_roles_providers_create_saml_assertions.md)\.
-
-For more information about using these keys, see [About SAML 2\.0\-based federation](id_roles_providers_saml.md)\. 
+**Note**  
+No other SAML\-based federation condition keys are available for use after the initial external identity provider \(IdP\) authentication response\.
 
 ## Available keys for AWS STS<a name="condition-keys-sts"></a>
 

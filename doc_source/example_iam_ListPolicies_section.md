@@ -124,43 +124,47 @@ func (wrapper PolicyWrapper) ListPolicies(maxPolicies int32) ([]types.Policy, er
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 List the policies\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import {ListPoliciesCommand} from "@aws-sdk/client-iam";
+import { ListPoliciesCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = {
-    Marker: 'MARKER',
-    MaxItems: 'MAX_ITEMS',
-    OnlyAttached: "ONLY_ATTACHED", /* Options are "true" or "false"*/
-    PathPrefix: 'PATH_PREFIX',
-    PolicyUsageFilter: "POLICY_USAGE_FILTER", /* Options are "PermissionsPolicy" or "PermissionsBoundary"*/
-    Scope: "SCOPE" /* Options are "All", "AWS", "Local"*/
-};
+const client = new IAMClient({});
 
-export const run = async () => {
-    try {
-        const results = await iamClient.send(new ListPoliciesCommand(params));
-        console.log("Success", results);
-        return results;
-    } catch (err) {
-        console.log("Error", err);
+/**
+ * A generator function that handles paginated results.
+ * The AWS SDK for JavaScript (v3) provides {@link https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html#paginators | paginator} functions to simplify this.
+ *
+ */
+export async function* listPolicies() {
+  const command = new ListPoliciesCommand({
+    MaxItems: 10,
+    OnlyAttached: false,
+    // List only the customer managed policies in your Amazon Web Services account.
+    Scope: "Local",
+  });
+
+  let response = await client.send(command);
+
+  while (response.Policies?.length) {
+    for (const policy of response.Policies) {
+      yield policy;
     }
-};
-run();
+
+    if (response.IsTruncated) {
+      response = await client.send(
+        new ListPoliciesCommand({
+          Marker: response.Marker,
+          MaxItems: 10,
+          OnlyAttached: false,
+          Scope: "Local",
+        })
+      );
+    } else {
+      break;
+    }
+  }
+}
 ```
 +  For API details, see [ListPolicies](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listpoliciescommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -197,7 +201,7 @@ $service = new IAMService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```
@@ -258,20 +262,38 @@ This documentation is for an SDK in preview release\. The SDK is subject to chan
 
 ```
 pub async fn list_policies(
-    client: &iamClient,
-    path_prefix: Option<String>,
-    marker: Option<String>,
-    max_items: Option<i32>,
-) -> Result<ListPoliciesOutput, SdkError<ListPoliciesError>> {
-    let response = client
+    client: iamClient,
+    path_prefix: String,
+) -> Result<Vec<String>, SdkError<ListPoliciesError>> {
+    let mut list_policies = client
         .list_policies()
-        .set_path_prefix(path_prefix)
-        .set_marker(marker)
-        .set_max_items(max_items)
-        .send()
-        .await?;
+        .path_prefix(path_prefix)
+        .scope(PolicyScopeType::Local)
+        .into_paginator()
+        .send();
 
-    Ok(response)
+    let mut v = Vec::new();
+
+    while let Some(list_policies_output) = list_policies.next().await {
+        match list_policies_output {
+            Ok(list_policies) => {
+                if let Some(policies) = list_policies.policies() {
+                    for policy in policies {
+                        let policy_name = policy
+                            .policy_name()
+                            .unwrap_or("Missing policy name.")
+                            .to_string();
+                        println!("{}", policy_name);
+                        v.push(policy_name);
+                    }
+                }
+            }
+
+            Err(err) => return Err(err),
+        }
+    }
+
+    Ok(v)
 }
 ```
 +  For API details, see [ListPolicies](https://docs.rs/releases/search?query=aws-sdk) in *AWS SDK for Rust API reference*\. 
@@ -281,7 +303,7 @@ pub async fn list_policies(
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/ListPolicies#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

@@ -10,13 +10,15 @@ When you delete a user group in the AWS Management Console, the console automati
 
 1. Choose the policy name of the policy to delete\.
 
-1. Choose the **Permissions** tab, and then choose **Policy summary**\.
+1. Choose the **Permissions** tab, and then choose **Summary**\.
 
 1. Choose **IAM** from the list of services, if it exists\.
 
 1. Look for the name of your user group in the **Resource** column\.
 
-1. Choose **Delete policy** to delete the policy\.
+1. Choose **Delete** to delete the policy\.
+
+1. Type the policy name to confirm deletion of the policy and choose **Delete**\. 
 
 In contrast, when you use the AWS CLI, Tools for Windows PowerShell, or AWS API to delete a user group, you must first remove the users in the group\. Then delete any inline policies embedded in the user group\. Next, detach any managed policies that are attached to the group\. Only then can you delete the user group itself\.
 

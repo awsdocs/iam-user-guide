@@ -26,7 +26,7 @@ arn:partition:service:region:account:resource
 ```
 
 Where:
-+ `partition` identifies the partition for the resource \. For standard AWS Regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\. You cannot [delegate access](id_roles_compare-resource-policies.md#aboutdelegation-resourcepolicy) between accounts in different partitions\.
++ `partition` identifies the partition for the resource\. For standard AWS Regions, the partition is `aws`\. If you have resources in other partitions, the partition is `aws-partitionname`\. For example, the partition for resources in the China \(Beijing\) Region is `aws-cn`\. You cannot [delegate access](id_roles_compare-resource-policies.md#aboutdelegation-resourcepolicy) between accounts in different partitions\.
 + `service` identifies the AWS product\. IAM resources always use `iam`\.
 + `region` identifies the Region of the resource\. For IAM resources, this is always kept blank\.
 + `account` specifies the AWS account ID with no hyphens\.

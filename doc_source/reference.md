@@ -8,5 +8,4 @@ Use the topics in this section to find detailed reference material for various a
 + [IAM and AWS STS quotas, name requirements, and character limits](reference_iam-quotas.md)
 + [AWS services that work with IAM](reference_aws-services-that-work-with-iam.md)
 + [Signing AWS API requests](reference_aws-signing.md)
-+ [Tagging AWS resources](reference_tagging.md)
 + [IAM JSON policy reference](reference_policies.md)

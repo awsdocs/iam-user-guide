@@ -125,55 +125,26 @@ func (wrapper RoleWrapper) DetachRolePolicy(roleName string, policyArn string) e
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Detach the policy\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import {
-  ListAttachedRolePoliciesCommand,
-  DetachRolePolicyCommand,
-} from "@aws-sdk/client-iam";
+import { DetachRolePolicyCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = { RoleName: "ROLE_NAME" }; //ROLE_NAME
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(
-      new ListAttachedRolePoliciesCommand(params)
-    );
-    const myRolePolicies = data.AttachedPolicies;
-    myRolePolicies.forEach(function (_val, index) {
-      if (myRolePolicies[index].PolicyName === "AmazonDynamoDBFullAccess") {
-        try {
-          await iamClient.send(
-            new DetachRolePolicyCommand(paramsRoleList)
-          );
-          console.log("Policy detached from role successfully");
-          process.exit();
-        } catch (err) {
-          console.log("Unable to detach policy from role", err);
-        }
-      } else {
-      }
-    });
-    return data;
-  } catch (err) {
-    console.log("User " + "USER_NAME" + " does not exist.");
-  }
+/**
+ *
+ * @param {string} policyArn
+ * @param {string} roleName
+ */
+export const detachRolePolicy = (policyArn, roleName) => {
+  const command = new DetachRolePolicyCommand({
+    PolicyArn: policyArn,
+    RoleName: roleName,
+  });
+
+  return client.send(command);
 };
-run();
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-policies.html#iam-examples-policies-detaching-role-policy)\. 
 +  For API details, see [DetachRolePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/detachrolepolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
@@ -250,7 +221,7 @@ suspend fun detachPolicy(roleNameVal: String, policyArnVal: String) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
 Detach a policy from a role using the Boto3 Policy object\.  
 
 ```
@@ -350,7 +321,7 @@ pub async fn detach_role_policy(
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/Basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

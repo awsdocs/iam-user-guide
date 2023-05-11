@@ -358,7 +358,7 @@ In the following example, access is denied except to principals with the account
       "Action": "service:*",
       "Effect": "Deny",
       "Resource": [
-        "arn:partition:service:region:accountID:resource"
+        "arn:aws:service:region:accountID:resource"
       ],
       "Condition": {
         "StringNotEquals": {
@@ -749,16 +749,34 @@ Use this key to compare the requested resource owner's [AWS account ID](https://
 + **Availability** – This key is always included in the request context for most service actions\. The following actions don't support this key:
   + Amazon Elastic Block Store – All actions
   + Amazon EC2
+    + `ec2:AcceptTransitGatewayPeeringAttachment`
+    + `ec2:AcceptVpcEndpointConnections`
+    + `ec2:AcceptVpcPeeringConnection`
     + `ec2:CopyFpgaImage`
     + `ec2:CopyImage`
     + `ec2:CopySnapshot`
     + `ec2:CreateTransitGatewayPeeringAttachment`
     + `ec2:CreateVolume`
+    + `ec2:CreateVpcEndpoint`
     + `ec2:CreateVpcPeeringConnection`
+    + `ec2:DeleteTransitGatewayPeeringAttachment`
+    + `ec2:DeleteVpcPeeringConnection`
+    + `ec2:RejectTransitGatewayPeeringAttachment`
+    + `ec2:RejectVpcEndpointConnections`
+    + `ec2:RejectVpcPeeringConnection`
   + Amazon EventBridge – All actions
+  + Amazon Route 53
+    + `route53:AssociateVpcWithHostedZone`
+    + `route53:CreateVPCAssociationAuthorization`
+    + `route53:DeleteVPCAssociationAuthorization`
+    + `route53:DisassociateVPCFromHostedZone`
+    + `route53:ListHostedZonesByVPC`
   + Amazon WorkSpaces
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Single\-valued
+
+**Note**  
+For additional considerations for the above unsupported actions, see the [Data Perimeter Policy Examples](https://github.com/aws-samples/data-perimeter-policy-examples) repository\.
 
 This key is equal to the AWS account ID for the account with the resources evaluated in the request\.
 
@@ -784,7 +802,7 @@ This policy does not allow any actions\. Instead, it uses the `Deny` effect whic
       "Action": "service:*",
       "Effect": "Deny",
       "Resource": [
-        "arn:partition:service:region:account:*"
+        "arn:aws:service:region:account:*"
       ],
       "Condition": {
         "StringNotEquals": {
@@ -815,16 +833,34 @@ Use this key to compare the identifier of the organization in AWS Organizations 
 + **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
   + Amazon Elastic Block Store – All actions
   + Amazon EC2
+    + `ec2:AcceptTransitGatewayPeeringAttachment`
+    + `ec2:AcceptVpcEndpointConnections`
+    + `ec2:AcceptVpcPeeringConnection`
     + `ec2:CopyFpgaImage`
     + `ec2:CopyImage`
     + `ec2:CopySnapshot`
     + `ec2:CreateTransitGatewayPeeringAttachment`
     + `ec2:CreateVolume`
+    + `ec2:CreateVpcEndpoint`
     + `ec2:CreateVpcPeeringConnection`
+    + `ec2:DeleteTransitGatewayPeeringAttachment`
+    + `ec2:DeleteVpcPeeringConnection`
+    + `ec2:RejectTransitGatewayPeeringAttachment`
+    + `ec2:RejectVpcEndpointConnections`
+    + `ec2:RejectVpcPeeringConnection`
   + Amazon EventBridge – All actions
+  + Amazon Route 53
+    + `route53:AssociateVpcWithHostedZone`
+    + `route53:CreateVPCAssociationAuthorization`
+    + `route53:DeleteVPCAssociationAuthorization`
+    + `route53:DisassociateVPCFromHostedZone`
+    + `route53:ListHostedZonesByVPC`
   + Amazon WorkSpaces
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Single\-valued
+
+**Note**  
+For additional considerations for the above unsupported actions, see the [Data Perimeter Policy Examples](https://github.com/aws-samples/data-perimeter-policy-examples) repository\.
 
 This global key returns the resource organization ID for a given request\. It allows you to create rules that apply to all resources in an organization that are specified in the `Resource` element of an [identity\-based policy](access_policies_identity-vs-resource.md)\. You can specify the [organization ID](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_details.html) in the condition element\. When you add and remove accounts, policies that include the `aws:ResourceOrgID` key automatically include the correct accounts and you don't have to manually update it\.
 
@@ -865,16 +901,34 @@ Use this key to compare the AWS Organizations path for the accessed resource to 
 + **Availability** – This key is included in the request context only if the account that owns the resource is a member of an organization\. This global condition key does not support the following actions:
   + Amazon Elastic Block Store – All actions
   + Amazon EC2
+    + `ec2:AcceptTransitGatewayPeeringAttachment`
+    + `ec2:AcceptVpcEndpointConnections`
+    + `ec2:AcceptVpcPeeringConnection`
     + `ec2:CopyFpgaImage`
     + `ec2:CopyImage`
     + `ec2:CopySnapshot`
     + `ec2:CreateTransitGatewayPeeringAttachment`
     + `ec2:CreateVolume`
+    + `ec2:CreateVpcEndpoint`
     + `ec2:CreateVpcPeeringConnection`
+    + `ec2:DeleteTransitGatewayPeeringAttachment`
+    + `ec2:DeleteVpcPeeringConnection`
+    + `ec2:RejectTransitGatewayPeeringAttachment`
+    + `ec2:RejectVpcEndpointConnections`
+    + `ec2:RejectVpcPeeringConnection`
   + Amazon EventBridge – All actions
+  + Amazon Route 53
+    + `route53:AssociateVpcWithHostedZone`
+    + `route53:CreateVPCAssociationAuthorization`
+    + `route53:DeleteVPCAssociationAuthorization`
+    + `route53:DisassociateVPCFromHostedZone`
+    + `route53:ListHostedZonesByVPC`
   + Amazon WorkSpaces
     + `workspaces:DescribeWorkspaceImages`
 + **Value type** – Multivalued
+
+**Note**  
+For additional considerations for the above unsupported actions, see the [Data Perimeter Policy Examples](https://github.com/aws-samples/data-perimeter-policy-examples) repository\.
 
 `aws:ResourceOrgPaths` is a multivalued condition key\. Multivalued keys can have multiple values in the request context\. You must use the `ForAnyValue` or `ForAllValues` set operators with [string condition operators](reference_policies_elements_condition_operators.md#Conditions_String) for this key\. For more information about multivalued condition keys, see [Using multiple keys and values](reference_policies_multi-value-conditions.md#reference_policies_multi-key-or-value-conditions)\.
 
@@ -980,7 +1034,7 @@ The following role trust policy for `CriticalRole` in account `111122223333` con
         {
             "Sid": "AssumeRoleIfSourceIdentity",
             "Effect": "Allow",
-            "Principal": {"AWS": " arn:aws:iam::123456789012:role/CriticalRole"},
+            "Principal": {"AWS": "arn:aws:iam::123456789012:role/CriticalRole"},
             "Action": [
                 "sts:AssumeRole",
                 "sts:SetSourceIdentity"

@@ -45,6 +45,8 @@ A great way to create a customer managed policy is to start by copying an existi
 
 The following diagram illustrates customer managed policies\. Each policy is an entity in IAM with its own [Amazon Resource Name \(ARN\)](reference_identifiers.md#identifiers-arns) that includes the policy name\. Notice that the same policy can be attached to multiple principal entities—for example, the same **DynamoDB\-books\-app** policy is attached to two different IAM roles\.
 
+For more information, see [Creating IAM policies](access_policies_create.md)
+
 ![\[Diagram of customer managed policies\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-customer-managed-policies.diagram.png)
 
 ## Inline policies<a name="inline-policies"></a>

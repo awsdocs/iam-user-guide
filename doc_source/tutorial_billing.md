@@ -59,7 +59,7 @@ Now we are going to attach the appropriate AWS managed polices to the billing us
 
 1. Select the **Actions** drop\-down arrow, and then choose **Attach** from the actions list\.
 
-1. On the **Attach policy** page, in the **Filter** search box, enter **BillingFullAccessGroup**\.
+1. On the **Attach as a permissions policy** page, in the **Search** box, enter **BillingFullAccessGroup**\.
 
 1. In the list, select the user group and then select **Attach policy**\. You are returned to the **Policies** page\.
 
@@ -69,7 +69,7 @@ Now we are going to attach the appropriate AWS managed polices to the billing us
 
 1. Select the **Actions** drop\-down arrow, and then choose **Attach** from the actions list\.
 
-1. On the **Attach policy** page, in the **Filter** search box, enter **BillingViewAccessGroup**\. 
+1. On the **Attach as a permissions policy** page, in the **Search** search box, enter **BillingViewAccessGroup**\. 
 
 1. In the list, select the user group and then select **Attach policy**\.
 

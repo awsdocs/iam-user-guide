@@ -51,34 +51,26 @@ bool AwsDoc::IAM::getServerCertificate(const Aws::String &certificateName,
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Get a server certificate\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { GetServerCertificateCommand } from "@aws-sdk/client-iam";
+import { GetServerCertificateCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = { ServerCertificateName: "CERTIFICATE_NAME" }; //CERTIFICATE_NAME
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(new GetServerCertificateCommand(params));
-    console.log("Success", data);
-    return data;
-  } catch (err) {
-    console.log("Error", err);
-  }
+/**
+ *
+ * @param {string} certName
+ * @returns
+ */
+export const getServerCertificate = async (certName) => {
+  const command = new GetServerCertificateCommand({
+    ServerCertificateName: certName,
+  });
+
+  const response = await client.send(command);
+  console.log(response);
+  return response;
 };
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-server-certificates.html#iam-examples-server-certificates-getting)\. 

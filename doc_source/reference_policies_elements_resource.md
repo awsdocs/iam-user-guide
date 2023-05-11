@@ -24,7 +24,12 @@ Each IAM user name is unique and case\-insensitive\.
 
 ## Using wildcards in resource ARNs<a name="reference_policies_elements_resource_wildcards"></a>
 
-You can use wildcards as part of the resource ARN\. You can use wildcard characters \(\* and ?\) within any ARN segment \(the parts separated by colons\)\. An asterisk \(\*\) represents any combination of characters and a question mark \(?\) represents any single character\. You can use multiple \* or ? characters in each segment\. The following example refers to all IAM users whose path is `/accounting`\. 
+You can use wildcards as part of the resource ARN\. You can use wildcard characters \(\* and ?\) within ARN segments \(the parts separated by colons\) to represent any combination of characters with an askterisk \(\*\) and any single character with a question mark \(?\)\. You can use multiple \* or ? characters in each segment\.
+
+**Note**  
+You can't use a wildcard in the service segment that identifies the AWS product\. For more information about ARN segments, see [Amazon Resource Names \(ARNs\)](reference-arns.md)
+
+The following example refers to all IAM users whose path is `/accounting`\. 
 
 ```
 "Resource": "arn:aws:iam::account-ID-without-hyphens:user/accounting/*"

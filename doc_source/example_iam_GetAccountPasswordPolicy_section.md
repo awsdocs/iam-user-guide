@@ -63,32 +63,23 @@ func (wrapper AccountWrapper) GetAccountPasswordPolicy() (*types.PasswordPolicy,
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 Get the account password policy\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { GetAccountPasswordPolicyCommand } from "@aws-sdk/client-iam";
+import {
+  GetAccountPasswordPolicyCommand,
+  IAMClient,
+} from "@aws-sdk/client-iam";
 
-const run = async () => {
-  try {
-    const data = await iamClient.send(new GetAccountPasswordPolicyCommand({}));
-    console.log("Success", data.PasswordPolicy);
-  } catch (err) {
-    console.log("Error", err);
-  }
+const client = new IAMClient({});
+
+export const getAccountPasswordPolicy = async () => {
+  const command = new GetAccountPasswordPolicyCommand({});
+
+  const response = await client.send(command);
+  console.log(response.PasswordPolicy);
+  return response;
 };
-run();
 ```
 +  For API details, see [GetAccountPasswordPolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/getaccountpasswordpolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -114,7 +105,7 @@ $service = new IAMService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```

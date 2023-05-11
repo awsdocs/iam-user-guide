@@ -70,5 +70,67 @@ bool AwsDoc::IAM::putRolePolicy(
 +  For API details, see [PutRolePolicy](https://docs.aws.amazon.com/goto/SdkForCpp/iam-2010-05-08/PutRolePolicy) in *AWS SDK for C\+\+ API Reference*\. 
 
 ------
+#### [ JavaScript ]
+
+**SDK for JavaScript \(v3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+  
+
+```
+import { PutRolePolicyCommand, IAMClient } from "@aws-sdk/client-iam";
+
+const examplePolicyDocument = JSON.stringify({
+  Version: "2012-10-17",
+  Statement: [
+    {
+      Sid: "VisualEditor0",
+      Effect: "Allow",
+      Action: [
+        "s3:ListBucketMultipartUploads",
+        "s3:ListBucketVersions",
+        "s3:ListBucket",
+        "s3:ListMultipartUploadParts",
+      ],
+      Resource: "arn:aws:s3:::some-test-bucket",
+    },
+    {
+      Sid: "VisualEditor1",
+      Effect: "Allow",
+      Action: [
+        "s3:ListStorageLensConfigurations",
+        "s3:ListAccessPointsForObjectLambda",
+        "s3:ListAllMyBuckets",
+        "s3:ListAccessPoints",
+        "s3:ListJobs",
+        "s3:ListMultiRegionAccessPoints",
+      ],
+      Resource: "*",
+    },
+  ],
+});
+
+const client = new IAMClient({});
+
+/**
+ *
+ * @param {string} roleName
+ * @param {string} policyName
+ * @param {string} policyDocument
+ */
+export const putRolePolicy = async (roleName, policyName, policyDocument) => {
+  const command = new PutRolePolicyCommand({
+    RoleName: roleName,
+    PolicyName: policyName,
+    PolicyDocument: policyDocument,
+  });
+
+  const response = await client.send(command);
+  console.log(response);
+  return response;
+};
+```
++  For API details, see [PutRolePolicy](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/putrolepolicycommand.html) in *AWS SDK for JavaScript API Reference*\. 
+
+------
 
 For a complete list of AWS SDK developer guides and code examples, see [Using IAM with an AWS SDK](sdk-general-information-section.md)\. This topic also includes information about getting started and details about previous SDK versions\.

@@ -201,7 +201,7 @@ The second example shows the assumed role account's \(111122223333\) CloudTrail 
     "credentials": {
       "sessionToken": "<encoded session token blob>",     
       "accessKeyId": "AKIAQRSTUVWXYZEXAMPLE",     
-      "expiration": "Jul 18, 2014 4:07:39 PM"     
+      "expiration": "Jul 18, 2014, 4:07:39 PM"     
     },   
     "assumedRoleUser": {     
       "assumedRoleId": "AIDAQRSTUVWXYZEXAMPLE:JohnDoe-EC2-dev",     
@@ -275,7 +275,7 @@ The following example shows a CloudTrail log entry for a request made by John Do
     "responseElements": {
         "credentials": {
             "accessKeyId": "ASIAWHOJDLGPOEXAMPLE",
-            "expiration": "Oct 2, 2019 11:12:29 PM",
+            "expiration": "Oct 2, 2019, 11:12:29 PM",
             "sessionToken": "AgoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMSJHMEXAMPLETOKEN+//rJb8Lo30mFc5MlhFCEbubZvEj0wHB/mDMwIgSEe9gk/Zjr09tZV7F1HDTMhmEXAMPLETOKEN/iEJ/rkqngII9///////////ARABGgw0MjgzMDc4NjM5NjYiDLZjZFKwP4qxQG5sFCryASO4UPz5qE97wPPH1eLMvs7CgSDBSWfonmRTCfokm2FN1+hWUdQQH6adjbbrVLFL8c3jSsBhQ383AvxpwK5YRuDE1AI/+C+WKFZb701eiv9J5La2EXAMPLETOKEN/c7S5Iro1WUJ0q3Cxuo/8HUoSxVhQHM7zF7mWWLhXLEQ52ivL+F6q5dpXu4aTFedpMfnJa8JtkWwG9x1Axj0Ypy2ok8v5unpQGWych1vwdvj6ez1Dm8Xg1+qIzXILiEXAMPLETOKEN/vQGqu8H+nxp3kabcrtOvTFTvxX6vsc8OGwUfHhzAfYGEXAMPLETOKEN/L6v1yMM3B1OwFOrQBno1HEjf1oNI8RnQiMNFdUOtwYj7HUZIOCZmjfN8PPHq77N7GJl9lzvIZKQA0Owcjg+mc78zHCj8y0siY8C96paEXAMPLETOKEN/E3cpksxWdgs91HRzJWScjN2+r2LTGjYhyPqcmFzzo2mCE7mBNEXAMPLETOKEN/oJy+2o83YNW5tOiDmczgDzJZ4UKR84yGYOMfSnF4XcEJrDgAJ3OJFwmTcTQICAlSwLEXAMPLETOKEN"
         },
         "assumedRoleUser": {
@@ -384,7 +384,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
         "sourceIdentity": "MySAMLUser"
         "credentials": {
             "accessKeyId": "AKIAIOSFODNN7EXAMPLE",
-            "expiration": "Mar 23, 2016 2:39:57 AM",
+            "expiration": "Mar 23, 2016, 2:39:57 AM",
             "sessionToken": "<encoded session token blob>"
         },
         "nameQualifier": "bdGOnTesti4+ExamplexL/jEvs=",
@@ -454,7 +454,7 @@ The following example shows a CloudTrail log entry for a request made for the AW
     "audience": "<id of application>.apps.googleusercontent.com",
     "credentials": {
       "accessKeyId": "ASIACQRSTUVWRAOEXAMPLE",
-      "expiration": "Mar 23, 2016 2:39:51 AM",
+      "expiration": "Mar 23, 2016, 2:39:51 AM",
       "sessionToken": "<encoded session token blob>"
     },
     "assumedRoleUser": {

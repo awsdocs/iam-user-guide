@@ -12,6 +12,9 @@ To control access based on tags, you provide tag information in the [condition e
 
 You can create an IAM policy using the visual editor, using JSON, or by importing an existing managed policy\. For details, see [Creating IAM policies](access_policies_create.md)\.
 
+**Note**  
+You can also pass [session tags](id_session-tags.md) when you assume an IAM role or federate a user\. These are valid only for the length of the session\.
+
 ## Controlling access for IAM principals<a name="access_iam-tags_control-principals"></a>
 
 You can control what the principal is allowed to do based on the tags attached to that person's identity\. 

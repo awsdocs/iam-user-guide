@@ -50,14 +50,12 @@ You begin by creating an IAM customer managed policy that denies all permissions
 
 1. Choose the **JSON** tab and copy the text from the following JSON policy document: [AWS: Allows MFA\-authenticated IAM users to manage their own credentials on the My security credentials page](reference_policies_examples_aws_my-sec-creds-self-manage.md)\.
 
-1. Paste the policy text into the **JSON** text box\. Resolve any security warnings, errors, or general warnings generated during policy validation, and then choose **Next: Tags**\.
+1. Paste the policy text into the **JSON** text box\. Resolve any security warnings, errors, or general warnings generated during policy validation, and then choose **Next**\.
 **Note**  
-You can switch between the **Visual editor** and **JSON** tabs anytime\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to the **JSON** tab to continue working with this policy\.  
+You can switch between the **Visual editor** and **JSON** options anytime\. However, the policy above includes the `NotAction` element, which is not supported in the visual editor\. For this policy, you will see a notification on the **Visual editor** tab\. Return to **JSON** to continue working with this policy\.  
 This example policy does not allow users to reset a password while signing in to the AWS Management Console for the first time\. We recommend that you do not grant permissions to new users until after they sign in and reset their password\.
 
-1. On the **Tags page** you can add tag key\-value pairs to the customer managed policy \(optional\), and then choose **Next: Review**\.
-
-1. On the **Review** page, type **Force\_MFA** for the policy name\. For the policy description, type **This policy allows users to manage their own passwords and MFA devices but nothing else unless they authenticate with MFA\.** Review the policy **Summary** to see the permissions granted by your policy, and then choose **Create policy** to save your work\.
+1. On the **Review and create** page, type **Force\_MFA** for the policy name\. For the policy description, type **This policy allows users to manage their own passwords and MFA devices but nothing else unless they authenticate with MFA\.** In the **Tags** area, you can optionally add tag key\-value pairs to the customer managed policy\. Review the permissions granted by your policy, and then choose **Create policy** to save your work\.
 
    The new policy appears in the list of managed policies and is ready to attach\.
 

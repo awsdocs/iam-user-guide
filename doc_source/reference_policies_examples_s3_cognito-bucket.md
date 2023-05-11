@@ -44,6 +44,4 @@ Amazon Cognito provides authentication, authorization, and user management for y
 
 The two main components of Amazon Cognito are user pools and identity pools\. User pools are user directories that provide sign\-up and sign\-in options for your app users\. Identity pools enable you to grant your users access to other AWS services\. You can use identity pools and user pools separately or together\. 
 
-For more information about Amazon Cognito, see the following:
-+ [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html) in the *AWS Mobile SDK for Android Developer Guide*
-+ [Amazon Cognito Identity](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html) in the *AWS Mobile SDK for iOS Developer Guide*
+For more information about Amazon Cognito, see [Amazon Cognito User Guide](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html)\.

@@ -28,7 +28,7 @@ You must configure permissions to allow an IAM entity \(user or role\) to view o
 + `iam:DeleteAccountPasswordPolicy` – Allows the entity to delete the custom password policy for their account and revert to the default password policy
 + `iam:UpdateAccountPasswordPolicy` – Allows the entity to create or change the custom password policy for their account
 
-The following policy allows full access to view and edit the account password policy\. To learn how to create an IAM policy using this example JSON policy document, see [Creating policies on the JSON tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+The following policy allows full access to view and edit the account password policy\. To learn how to create an IAM policy using this example JSON policy document, see [Creating policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
 ```
 {

@@ -1,6 +1,6 @@
 # Deactivating MFA devices<a name="id_credentials_mfa_disable"></a>
 
-If you have having trouble signing in with a multi\-factor authentication \(MFA\) device as an IAM user, contact your administrator for help\. 
+If you are having trouble signing in with a multi\-factor authentication \(MFA\) device as an IAM user, contact your administrator for help\.
 
 As an administrator, you can deactivate the device for another IAM user\. This allows the user to sign in without using MFA\. You might do this as a temporary solution while the MFA device is replaced, or if the device is temporarily unavailable\. However, we recommend that you enable a new device for the user as soon as possible\. To learn how to enable a new MFA device, see [Enabling MFA devices for users in AWS](id_credentials_mfa_enable.md)\.
 

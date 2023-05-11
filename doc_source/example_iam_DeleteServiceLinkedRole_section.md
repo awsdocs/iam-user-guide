@@ -36,6 +36,29 @@ func (wrapper RoleWrapper) DeleteServiceLinkedRole(roleName string) error {
 +  For API details, see [DeleteServiceLinkedRole](https://pkg.go.dev/github.com/aws/aws-sdk-go-v2/service/iam#Client.DeleteServiceLinkedRole) in *AWS SDK for Go API Reference*\. 
 
 ------
+#### [ JavaScript ]
+
+**SDK for JavaScript \(v3\)**  
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
+  
+
+```
+import { DeleteServiceLinkedRoleCommand, IAMClient } from "@aws-sdk/client-iam";
+
+const client = new IAMClient({});
+
+/**
+ *
+ * @param {string} roleName
+ */
+export const deleteServiceLinkedRole = (roleName) => {
+  const command = new DeleteServiceLinkedRoleCommand({ RoleName: roleName });
+  return client.send(command);
+};
+```
++  For API details, see [DeleteServiceLinkedRole](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/deleteservicelinkedrolecommand.html) in *AWS SDK for JavaScript API Reference*\. 
+
+------
 #### [ Ruby ]
 
 **SDK for Ruby**  

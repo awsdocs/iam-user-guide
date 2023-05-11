@@ -154,39 +154,46 @@ func (wrapper UserWrapper) ListAccessKeys(userName string) ([]types.AccessKeyMet
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 List the access keys\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import { ListAccessKeysCommand } from "@aws-sdk/client-iam";
+import { ListAccessKeysCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = {
-  MaxItems: 5,
-  UserName: "IAM_USER_NAME", //IAM_USER_NAME
-};
+const client = new IAMClient({});
 
-export const run = async () => {
-  try {
-    const data = await iamClient.send(new ListAccessKeysCommand(params));
-    console.log("Success", data);
-    return data;
-  } catch (err) {
-    console.log("Error", err);
+/**
+ * A generator function that handles paginated results.
+ * The AWS SDK for JavaScript (v3) provides {@link https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html#paginators | paginator} functions to simplify this.
+ *
+ * @param {string} userName
+ */
+export async function* listAccessKeys(userName) {
+  const command = new ListAccessKeysCommand({
+    MaxItems: 5,
+    UserName: userName,
+  });
+
+  /**
+   * @type {import("@aws-sdk/client-iam").ListAccessKeysCommandOutput | undefined}
+   */
+  let response = await client.send(command);
+
+  while (response?.AccessKeyMetadata?.length) {
+    for (const key of response.AccessKeyMetadata) {
+      yield key;
+    }
+
+    if (response.IsTruncated) {
+      response = await client.send(
+        new ListAccessKeysCommand({
+          Marker: response.Marker,
+        })
+      );
+    } else {
+      break;
+    }
   }
-};
-run();
+}
 ```
 +  For more information, see [AWS SDK for JavaScript Developer Guide](https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/iam-examples-managing-access-keys.html#iam-examples-managing-access-keys-listing)\. 
 +  For API details, see [ListAccessKeys](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listaccesskeyscommand.html) in *AWS SDK for JavaScript API Reference*\. 
@@ -248,7 +255,7 @@ suspend fun listKeys(userNameVal: String?) {
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```

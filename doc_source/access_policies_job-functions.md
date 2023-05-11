@@ -38,7 +38,7 @@ Before an IAM user or role can access the AWS Billing and Cost Management consol
 
 **Policy updates:** AWS maintains and updates this policy\. For a history of changes for this policy, view the policy in the IAM console and then choose the **Policy versions** tab\. For more information about job function policy updates, see [Updates to AWS managed policies for job functions](#security-iam-awsmanpol-jobfunction-updates)\.
 
-**Policy description:** This policy grants full permissions for managing billing, costs, payment methods, budgets, and reports\. For additional cost management policy examples, see [AWS Billing policy examples](https://docs.aws.amazon.com/Iawsaccountbilling/latest/aboutv2/billing-example-policies.html) in the *AWS Billing and Cost Management User Guide*
+**Policy description:** This policy grants full permissions for managing billing, costs, payment methods, budgets, and reports\. For additional cost management policy examples, see [AWS Billing policy examples](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-example-policies.html) in the *AWS Billing and Cost Management User Guide*
 
 **Note**  
 Before an IAM user or role can access the AWS Billing and Cost Management console with the permissions in this policy, you must first activate IAM user and role access\. To do this, follow the instructions in [Step 1 of the tutorial about delegating access to the billing console](tutorial_billing.md)\.

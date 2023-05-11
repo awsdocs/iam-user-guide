@@ -31,21 +31,19 @@ You can delete a customer managed policy to remove it from your AWS account\. Yo
 
 1. In the navigation pane, choose **Policies**\.
 
-1. Select the check box next to the customer managed policy to delete\. You can use the search box to filter the list of policies\.
+1. Select the radio button next to the customer managed policy to delete\. You can use the search box to filter the list of policies\.
 
 1. Choose **Actions**, and then choose **Delete**\.
 
-1. Confirm that you want to delete the policy, and then choose **Delete**\.
+1. Follow the instructions to confirm that you want to delete the policy, and then choose **Delete**\.
 
 **To delete an inline policy for a user group, user, or role \(console\)**
 
 1. In the navigation pane, choose **User groups**, **Users**, or **Roles**\.
 
-1. Choose the name of the user group, user, or role with the policy that you want to delete\. Then choose the **Permissions** tab\. If you chose **Users** or **Roles**, expand the policy\.
+1. Choose the name of the user group, user, or role with the policy that you want to delete\. Then choose the **Permissions** tab\.
 
-1. To delete an inline policy in **User groups**, choose **Delete**\. To delete an inline policy in **Users** or **Roles**, choose **X**\. 
-
-1. If you are deleting a single inline policy in **User groups**, type the name of the policy and choose **Delete**\. If you are deleting multiple inline policies in **User groups**, type the number of policies you are deleting followed by **inline policies** and choose **Delete**\. For example, if you are deleting three inline policies, type **3 inline policies**\.
+1. Select the check boxes next to the policies to delete and choose **Remove**\. To delete an inline policy in **Users** or **Roles**, choose **Remove** to confirm the deletion\. If you are deleting a single inline policy in **User groups**, type the name of the policy and choose **Delete**\. If you are deleting multiple inline policies in **User groups**, type the number of policies you are deleting followed by **inline policies** and choose **Delete**\. For example, if you are deleting three inline policies, type **3 inline policies**\.
 
 ## Deleting IAM policies \(AWS CLI\)<a name="delete-policies-cli-api"></a>
 

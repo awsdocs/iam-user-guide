@@ -8,7 +8,7 @@ To view an action summary for each action that grants permissions, choose the li
 
 ## Viewing action summaries<a name="viewing-action-summaries"></a>
 
-You can view the action summary for any policy that is attached to a user on the **Users** page\. You can view the action summary for any policy that is attached to a role on the **Roles** page\. You can view the action summary for managed policies on the **Policies** page\. However, if you try to view the action summary for a managed policy from the **Users** page or the **Roles** page, you are redirected to the **Policies** page\.
+You can view the action summary for managed policies, any policy that is attached to a user, and any policy that is attached to a role on the **Policies** page\.
 
 **To view the action summary for a managed policy**
 
@@ -18,7 +18,7 @@ You can view the action summary for any policy that is attached to a user on the
 
 1. In the list of policies, choose the name of the policy that you want to view\.
 
-1. On the **Summary** page for the policy, view the **Permissions** tab to see the policy summary\.
+1. On the **Policy details** page for the policy, view the **Permissions** tab to see the policy summary\.
 
 1. In the policy summary list of services, choose the name of the service that you want to view\.
 
@@ -34,7 +34,9 @@ You can view the action summary for any policy that is attached to a user on the
 
 1. On the **Summary** page for the user, view the **Permissions** tab to see the list of policies that are attached to the user directly or from a group\.
 
-1. In the table of policies for the user, expand the row of the policy that you want to view\.
+1. In the table of policies for the user, choose the name of the policy that you want to view\.
+
+   If you are on the **Users** page and choose to view the service summary for a policy that is attached to that user, you are redirected to the **Policies** page\. You can view service summaries only on the **Policies** page\.
 
 1. In the policy summary list of services, choose the name of the service that you want to view\.
 **Note**  
@@ -52,7 +54,9 @@ If the policy that you select is an inline policy that is attached directly to t
 
 1. On the **Summary** page for the role, view the **Permissions** tab to see the list of policies that are attached to the role\.
 
-1. In the table of policies for the role, expand the row of the policy that you want to view\.
+1. In the table of policies for the role, choose the name of the policy that you want to view\.
+
+   If you are on the **Roles** page and choose to view the service summary for a policy that is attached to that user, you are redirected to the **Policies** page\. You can view service summaries only on the **Policies** page\.
 
 1. In the policy summary list of services, choose the name of the service that you want to view\.
 
@@ -68,21 +72,21 @@ The example below is the action summary for the `PutObject` \(Write\) action fro
 
 The action summary page includes the following information:
 
-1. Next to the **Back** link appears the name of the service and action in the format `service: action` \(in this case **S3: PutObject**\)\. The action summary for this service includes the list of resources that are defined in the policy\.
+1. Choose **JSON** to see additional details about the policy, such as viewing the multiple conditions that are applied to the actions\. \(If you are viewing the action summary for an inline policy that is attached directly to a user, the steps differ\. To access the JSON policy document in that case, you must close the action summary dialog box and return to the policy summary\.\)
 
-1. Choose **\{ \} JSON** to see additional details about the policy, such as viewing the multiple conditions that are applied to the actions\. \(If you are viewing the action summary for an inline policy that is attached directly to a user, the steps differ\. To access the JSON policy document in that case, you must close the action summary dialog box and return to the policy summary\.\)
+1. To view the summary for a specific resource, type keywords into the **Search** box to reduce the list of available resources\.
 
-1. To view the summary for a specific resource, type keywords into the search box to reduce the list of available resources\.
+1. Next to the **Actions** back arrow appears the name of the service and action in the format `action name action in service` \(in this case **PutObject action in S3**\)\. The action summary for this service includes the list of resources that are defined in the policy\.
 
 1. **Resource** – This column lists the resources that the policy defines for the chosen service\. In this example, the **PutObject** action is allowed on all object paths, but on only the `developer_bucket` Amazon S3 bucket resource\. Depending on the information that the service provides to IAM, you might see an ARN such as `arn:aws:s3:::developer_bucket/*`, or you might see the defined resource type, such as `BucketName = developer_bucket, ObjectPath = All`\.
 
 1. **Region** – This column shows the Region in which the resource is defined\. Resources can be defined for all Regions, or a single Region\. They cannot exist in more than one specific Region\.
-   + **All Regions** – The actions that are associated with the resource apply to all Regions\. In this example, the action belongs to a global service, Amazon S3\. Actions that belong to global services apply to all Regions\.
+   + **All regions** – The actions that are associated with the resource apply to all Regions\. In this example, the action belongs to a global service, Amazon S3\. Actions that belong to global services apply to all Regions\.
    + Region text – The actions associated with the resource apply to one Region\. For example, a policy can specify the `us-east-2` Region for a resource\.
 
 1. **Account** – This column indicates whether the services or actions associated with the resource apply to a specific account\. Resources can exist in all accounts or a single account\. They cannot exist in more than one specific account\.
    + **All accounts** – The actions that are associated with the resource apply to all accounts\. In this example, the action belongs to a global service, Amazon S3\. Actions that belong to global services apply to all accounts\.
-   + **This account** – The actions that are associated with the resource apply only to the account that you are currently logged in to\.
+   + **This account** – The actions that are associated with the resource apply only in the current account\.\.
    + Account number – The actions that are associated with the resource apply to one account \(one that you are not currently logged in to\)\. For example, if a policy specifies the `123456789012` account for a resource, then the account number appears in the policy summary\.
 
-1. **Request condition** – This column shows whether the actions that are associated with the resource are subject to conditions\. This example includes the `s3:x-amz-acl = public-read` condition\. To learn more about those conditions, choose **\{ \} JSON** to review the JSON policy document\.
+1. **Request condition** – This column shows whether the actions that are associated with the resource are subject to conditions\. This example includes the `s3:x-amz-acl = public-read` condition\. To learn more about those conditions, choose **JSON** to review the JSON policy document\.

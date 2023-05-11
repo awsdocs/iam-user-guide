@@ -70,39 +70,41 @@ func (wrapper GroupWrapper) ListGroups(maxGroups int32) ([]types.Group, error) {
 
 **SDK for JavaScript \(v3\)**  
  There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/iam#code-examples)\. 
-Create the client\.  
-
-```
-import { IAMClient } from "@aws-sdk/client-iam";
-// Set the AWS Region.
-const REGION = "REGION"; // For example, "us-east-1".
-// Create an IAM service client object.
-const iamClient = new IAMClient({ region: REGION });
-export { iamClient };
-```
 List the groups\.  
 
 ```
-// Import required AWS SDK clients and commands for Node.js.
-import { iamClient } from "./libs/iamClient.js";
-import {ListGroupsCommand} from "@aws-sdk/client-iam";
+import { ListGroupsCommand, IAMClient } from "@aws-sdk/client-iam";
 
-// Set the parameters.
-export const params = {
-    RoleName: 'ROLE_NAME', /* This is a number value. Required */
-    Marker: 'MARKER', /* This is a string value. Optional */
-    MaxItems: 'MAX_ITEMS' /* This is a number value. Optional */
-};
+const client = new IAMClient({});
 
-export const run = async () => {
-    try {
-        const data = await iamClient.send(new ListGroupsCommand({}));
-        console.log("Success", data.Groups);
-    } catch (err) {
-        console.log("Error", err);
+/**
+ * A generator function that handles paginated results.
+ * The AWS SDK for JavaScript (v3) provides {@link https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html#paginators | paginator} functions to simplify this.
+ */
+export async function* listGroups() {
+  const command = new ListGroupsCommand({
+    MaxItems: 10,
+  });
+
+  let response = await client.send(command);
+
+  while (response.Groups?.length) {
+    for (const group of response.Groups) {
+      yield group;
     }
+
+    if (response.IsTruncated) {
+      response = await client.send(
+        new ListGroupsCommand({
+          Marker: response.Marker,
+          MaxItems: 10,
+        })
+      );
+    } else {
+      break;
+    }
+  }
 }
-run();
 ```
 +  For API details, see [ListGroups](https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-iam/classes/listgroupscommand.html) in *AWS SDK for JavaScript API Reference*\. 
 
@@ -139,7 +141,7 @@ $service = new IAMService();
 #### [ Python ]
 
 **SDK for Python \(Boto3\)**  
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam/iam_basics#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/iam#code-examples)\. 
   
 
 ```
@@ -214,7 +216,7 @@ pub async fn list_groups(
 
 **SDK for Swift**  
 This is prerelease documentation for an SDK in preview release\. It is subject to change\.
- There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam/ListGroups#code-examples)\. 
+ There's more on GitHub\. Find the complete example and learn how to set up and run in the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/swift/example_code/iam#code-examples)\. 
   
 
 ```

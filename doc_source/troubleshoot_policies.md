@@ -1,6 +1,6 @@
 # Troubleshooting IAM policies<a name="troubleshoot_policies"></a>
 
-A [policy](access_policies.md) is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents that are attached to principals as *identity\-based policies* or to resources as *resource\-based policies*\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. You can create and edit customer managed policies in the AWS Management Console using the **Visual editor** tab or the **JSON** tab\. When you view a policy in the AWS Management Console, you can see a summary of the permissions that are granted by that policy\. You can use the visual editor and policy summaries to help you diagnose and fix common errors encountered while managing IAM policies\.
+A [policy](access_policies.md) is an entity in AWS that, when attached to an identity or resource, defines their permissions\. AWS evaluates these policies when a principal, such as a user, makes a request\. Permissions in the policies determine whether the request is allowed or denied\. Policies are stored in AWS as JSON documents that are attached to principals as *identity\-based policies* or to resources as *resource\-based policies*\. You can attach an identity\-based policy to a principal \(or identity\), such as an IAM group, user, or role\. Identity\-based policies include AWS managed policies, customer managed policies, and inline policies\. You can create and edit customer managed policies in the AWS Management Console using both **Visual** and **JSON** editor options\. When you view a policy in the AWS Management Console, you can see a summary of the permissions that are granted by that policy\. You can use the visual editor and policy summaries to help you diagnose and fix common errors encountered while managing IAM policies\.
 
 Keep in mind that all IAM policies are stored using syntax that begins with the rules of [JavaScript Object Notation](http://www.json.org) \(JSON\)\. You do not have to understand this syntax to create or manage your policies\. You can create and edit a policy using the visual editor in the AWS Management Console\. To learn more about JSON syntax in IAM policies, see [Grammar of the IAM JSON policy language ](reference_policies_grammar.md)\.
 
@@ -30,25 +30,25 @@ Keep in mind that all IAM policies are stored using syntax that begins with the 
 
 ## Troubleshoot using the visual editor<a name="troubleshoot_policies-viseditor"></a>
 
-When you create or edit a customer managed policy, you can use information in the **Visual editor** tab to help you troubleshoot errors in your policy\. To view an example of using the visual editor to create a policy, see [Controlling access to identities](access_controlling.md#access_controlling-identities)\.
+When you create or edit a customer managed policy, you can use information in the **Visual** editor to help you troubleshoot errors in your policy\. To view an example of using the visual editor to create a policy, see [Controlling access to identities](access_controlling.md#access_controlling-identities)\.
 
 ### Policy restructuring<a name="troubleshoot_viseditor-restructure"></a>
 
 When you create a policy, AWS validates, processes, and transforms the policy before storing it\. When AWS returns the policy in response to a user query or displays it in the console, AWS transforms the policy back into a human\-readable format without changing the permissions granted by the policy\. This can result in differences in what you see in the policy visual editor or **JSON** tab: Visual editor permission blocks can be added, removed, or reordered, and content within a block can be optimized\. In the **JSON** tab, insignificant white space can be removed, and elements within JSON maps can be reordered\. In addition, AWS account IDs within the principal elements can be replaced by the ARN of the AWS account root user\. Because of these possible changes, you should not compare JSON policy documents as strings\. 
 
-When you create a customer managed policy in the AWS Management Console, you can choose to work entirely in the **JSON** tab\. If you never make any changes in the **Visual editor** tab and choose **Review policy** from the **JSON** tab, the policy is less likely to be restructured\. However, if you create a policy and use the **Visual editor** tab to make any modifications, or if you choose **Review policy** from the **Visual editor** tab, then IAM might restructure the policy to optimize its appearance in the visual editor\. 
+When you create a customer managed policy in the AWS Management Console, you can choose to work entirely in the **JSON** editor\. If you never make any changes in the **Visual** editor and choose **Next** from the **JSON** editor, the policy is less likely to be restructured\. However, if you create a policy and use the **Visual** editor to make any modifications, or if you choose **Next** from the **Visual** editor option, then IAM might restructure the policy to optimize its appearance in the visual editor\. 
 
 This restructuring exists only in your editing session and is not saved automatically\.
 
 If your policy is restructured in your editing session, IAM determines whether to save the restructuring based on the following situations:
 
 
-| On this tab | If you edit your policy | And then choose ***Review policy*** from this tab | When you choose ***Save changes*** | 
+| Using this editor option | If you edit your policy | And then choose ***Next*** from this tab | When you choose ***Save changes*** | 
 | --- | --- | --- | --- | 
-| Visual editor | Edited | Visual editor | The policy is restructured | 
-| Visual editor | Edited | JSON | The policy is restructured | 
-| Visual editor | Not Edited | Visual editor | The policy is restructured | 
-| JSON | Edited | Visual editor | The policy is restructured | 
+| Visual | Edited | Visual | The policy is restructured | 
+| Visual | Edited | JSON | The policy is restructured | 
+| Visual | Not Edited | Visual | The policy is restructured | 
+| JSON | Edited | Visual | The policy is restructured | 
 | JSON | Edited | JSON | The policy structure is not changed | 
 | JSON | Not Edited | JSON | The policy structure is not changed | 
 
@@ -73,11 +73,11 @@ When you use the visual editor to construct a policy, you can select only one se
 
 If you are familiar with the JSON syntax, you can also use a wildcard character \(\*\) to manually specify multiple services\. For example, type **Code\*** to provide permissions for all services beginning with `Code`, such as `CodeBuild` and `CodeCommit`\. However, you must then type the actions and resource ARNs to complete your policy\. Additionally, when you save your policy, it might be [restructured](#troubleshoot_viseditor-restructure) to include each service in a separate permission block\.
 
-Alternatively, to use JSON syntax \(such as wildcards\) for services, create, edit, and save your policy using the **JSON** tab\.
+Alternatively, to use JSON syntax \(such as wildcards\) for services, create, edit, and save your policy using the **JSON** editor option\.
 
 ### Reducing the size of your policy in the visual editor<a name="troubleshoot_policy-size"></a>
 
-When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** tab\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM and STS character limits](reference_iam-quotas.md#reference_iam-quotas-entity-length)\. 
+When you use the visual editor to create a policy, IAM creates a JSON document to store your policy\. You can view this document by switching to the **JSON** editor option\. If this JSON document exceeds the size limit of a policy, the visual editor displays an error message and does not allow you to review and save your policy\. To view the IAM limitation on the size of a managed policy, see [IAM and STS character limits](reference_iam-quotas.md#reference_iam-quotas-entity-length)\. 
 
 To reduce the size of your policy in the visual editor, edit your policy or move permission blocks to another policy\. The error message includes the number of characters that your policy document contains, and you can use this information to help you reduce the size of your policy\.
 
@@ -89,18 +89,18 @@ When you create or edit a policy in the visual editor, you might see a warning t
 IAM reviews service names, actions, and resource types for services that support policy summaries\. However, your policy summary might include a resource value or condition that does not exist\. Always test your policies with the [policy simulator](access_policies_testing-policies.md)\.
 
 If your policy includes unrecognized services, actions or resource types, one of the following errors has occurred:
-+ **Preview service** – Services that are in preview do not support the visual editor\. If you are participating in the preview, you can ignore the warning and continue, though you must manually type the actions and resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** tab to type or paste a JSON policy document\.
-+ **Custom service** – Custom services do not support the visual editor\. If you are using a custom service, you can ignore the warning and continue, though you must manually type the actions and resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** tab to type or paste a JSON policy document\.
-+ **Service does not support the visual editor** – If your policy includes a generally available \(GA\) service that does not support the visual editor, you can ignore the warning and continue, though you must manually type the actions and resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** tab to type or paste a JSON policy document\. 
++ **Preview service** – Services that are in preview do not support the visual editor\. If you are participating in the preview, you can ignore the warning and continue, though you must manually type the actions and resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** editor option to type or paste a JSON policy document\.
++ **Custom service** – Custom services do not support the visual editor\. If you are using a custom service, you can ignore the warning and continue, though you must manually type the actions and resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** editor option to type or paste a JSON policy document\.
++ **Service does not support the visual editor** – If your policy includes a generally available \(GA\) service that does not support the visual editor, you can ignore the warning and continue, though you must manually type the actions and resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** editor option to type or paste a JSON policy document\. 
 
   Generally available services are services that are released publicly and are not preview or custom services\. If an unrecognized service is generally available and the name is spelled correctly, then the service does not support the visual editor\. To learn how to request visual editor or policy summary support for a GA service, see [Service does not support IAM policy summaries](#unsupported-services-actions)\.
-+ **Action does not support the visual editor** – If your policy includes a supported service with an unsupported action, you can ignore the warning and continue, though you must manually type the resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** tab to type or paste a JSON policy document\.
++ **Action does not support the visual editor** – If your policy includes a supported service with an unsupported action, you can ignore the warning and continue, though you must manually type the resource ARNs to complete your policy\. Alternatively, you can choose the **JSON** editor option to type or paste a JSON policy document\.
 
   If your policy includes a supported service with an unsupported action, then the service does not fully support the visual editor\. To learn how to request visual editor or policy summary support for a GA service, see [Service does not support IAM policy summaries](#unsupported-services-actions)\.
 + **Resource type does not support the visual editor** – If your policy includes a supported action with an unsupported resource type, you can ignore the warning and continue\. However, IAM cannot confirm that you have included resources for all of your selected actions, and you might see additional warnings\.
 + **Typo** – When you manually type a service, action, or resource in the visual editor, you can create a policy that includes a typo\. To avoid this, we recommend that you use the visual editor by selecting from the list of services and actions, and then complete the resource section according to the prompts\. However, if a service does not fully support the visual editor, you might have to manually type parts of your policy\. 
 
-  If you are certain that your policy contains none of the errors above, then your policy might include a typo\. Check for misspelled service, action, and resource type names\. For example, you might use `s2` instead of `s3` and `ListMyBuckets` instead of `ListAllMyBuckets`\. Another common action typo is the inclusion of unnecessary text in ARNs, such as `arn:aws:s3: : :*`, or missing colons in actions, such as `iam.CreateUser`\. You can evaluate a policy that might include typos by choosing **Review policy** to review the policy summary and confirm whether the policy provides the permissions you intended\.
+  If you are certain that your policy contains none of the errors above, then your policy might include a typo\. Check for misspelled service, action, and resource type names\. For example, you might use `s2` instead of `s3` and `ListMyBuckets` instead of `ListAllMyBuckets`\. Another common action typo is the inclusion of unnecessary text in ARNs, such as `arn:aws:s3: : :*`, or missing colons in actions, such as `iam.CreateUser`\. You can evaluate a policy that might include typos by choosing **Next** to review the policy summary and confirm whether the policy provides the permissions you intended\.
 
 ## Troubleshoot using policy summaries<a name="troubleshoot_policies-polsum"></a>
 
@@ -108,7 +108,7 @@ You can diagnose and resolve issues related to policy summaries\.
 
 ### Missing policy summary<a name="missing-policy-summary"></a>
 
-The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the [service summary](access_policies_understand-service-summary.md), and the [action summary](access_policies_understand-action-summary.md)\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. You can view the [policy summary](access_policies_understand.md) for any policies that are attached to a user on the **Users** page\. You can view the policy summary for managed policies on the **Policies** page\. If AWS is unable to render a summary for a policy, then you see the JSON policy document instead of the summary, and receive the following error:
+The IAM console includes *policy summary* tables that describe the access level, resources, and conditions that are allowed or denied for each service in a policy\. Policies are summarized in three tables: the [policy summary](access_policies_understand-policy-summary.md), the [service summary](access_policies_understand-service-summary.md), and the [action summary](access_policies_understand-action-summary.md)\. The *policy summary* table includes a list of services and summaries of the permissions that are defined by the chosen policy\. You can view the [policy summary](access_policies_understand.md) for any policies that are attached to an entity on the **Policy details** page for that policy\. You can view the policy summary for managed policies on the **Policies** page\. If AWS is unable to render a summary for a policy, then you see the JSON policy document instead of the summary, and receive the following error:
 
 **A summary for this policy cannot be generated\. You can still view or edit the JSON policy document\.**
 
@@ -153,7 +153,7 @@ When a generally available \(GA\) service or action is not recognized by IAM pol
    + If the policy is a managed policy, choose **Policies** in the navigation pane\. In the list of policies, choose the name of the policy that you want to view\.
    + If the policy is an inline policy attached to the user, choose **Users** in the navigation pane\. In the list of users, choose the name of the user whose policy you want to view\. In the table of policies for the user, expand the header for the policy summary that you want to view\.
 
-1. In the left side on the AWS Management Console footer, choose **Feedback**\. In the **Tell us about your experience:** box, type **I request that the <ServiceName> service add support for IAM policy summaries and the visual editor**\. If you want more than one service to support summaries, type **I request that the <ServiceName1>, <ServiceName2>, and <ServiceName3> services add support for IAM policy summaries and the visual editor**\.
+1. In the left side on the AWS Management Console footer, choose **Feedback**\. In the **Feedback for IAM** box, type **I request that the <ServiceName> service add support for IAM policy summaries and the visual editor**\. If you want more than one service to support summaries, type **I request that the <ServiceName1>, <ServiceName2>, and <ServiceName3> services add support for IAM policy summaries and the visual editor**\.
 
 **To request that a service add IAM policy summary support for a missing action**
 
@@ -165,7 +165,7 @@ When a generally available \(GA\) service or action is not recognized by IAM pol
 
 1. In the policy summary, choose the name of the service that includes an unsupported action\.
 
-1. In the left side on the AWS Management Console footer, choose **Feedback**\. In the **Tell us about your experience:** box, type **I request that the <ServiceName> service add IAM policy summary and the visual editor support for the <ActionName> action**\. If you want to report more than one unsupported action, type **I request that the <ServiceName> service add IAM policy summary and the visual editor support for the <ActionName1>, <ActionName2>, and <ActionName3> actions**\. 
+1. In the left side on the AWS Management Console footer, choose **Feedback**\. In the **Feedback for IAM** box, type **I request that the <ServiceName> service add IAM policy summary and the visual editor support for the <ActionName> action**\. If you want to report more than one unsupported action, type **I request that the <ServiceName> service add IAM policy summary and the visual editor support for the <ActionName1>, <ActionName2>, and <ActionName3> actions**\. 
 
 To request that a different service includes missing actions, repeat the last three steps\.
 
@@ -372,7 +372,7 @@ You can diagnose and resolve issues relating to policy management\.
 
 ### Attaching or detaching a policy in an IAM account<a name="troubleshoot_roles_cant-attach-detach-policy"></a>
 
-Some AWS managed policies are linked to a service\. These policies are used only with a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) for that service\. In the IAM console, when you view the **Summary** page for a policy, the page includes a banner to indicate that the policy is linked to a service\. You cannot attach this policy to a user, group, or role within IAM\. When you create a service\-linked role for the service, this policy is automatically attached to your new role\. Because the policy is required, you cannot detach the policy from the service\-linked role\. 
+Some AWS managed policies are linked to a service\. These policies are used only with a [service\-linked role](id_roles_terms-and-concepts.md#iam-term-service-linked-role) for that service\. In the IAM console, when you view the **Policy details** page for a policy, the page includes a banner to indicate that the policy is linked to a service\. You cannot attach this policy to a user, group, or role within IAM\. When you create a service\-linked role for the service, this policy is automatically attached to your new role\. Because the policy is required, you cannot detach the policy from the service\-linked role\. 
 
 ### Changing policies for your IAM identities based on their activity<a name="troubleshoot_change-policies-based-on-activity"></a>
 

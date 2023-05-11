@@ -128,9 +128,9 @@ For more information on editing managed policies, see [Editing customer managed 
 
 1. In the list of policies, choose the name of the policy that you want to delete\.
 
-1. Choose the **Policy usage** tab to view which IAM users, groups, or roles use this policy\. If any of these identities use the policy, complete the following tasks:
+1. Choose the **Entities attached** tab to view which IAM users, groups, or roles use this policy\. If any of these identities use the policy, complete the following tasks:
 
-   1. Create a new managed policy with the necessary permissions\. To ensure that the identities have the same permissions before and after your actions, copy the JSON policy document from the existing policy\. Then create the new managed policy and paste the JSON document as described in [Creating Policies on the JSON Tab](access_policies_create-console.md#access_policies_create-json-editor)\.
+   1. Create a new managed policy with the necessary permissions\. To ensure that the identities have the same permissions before and after your actions, copy the JSON policy document from the existing policy\. Then create the new managed policy and paste the JSON document as described in [Creating Policies using the JSON editor](access_policies_create-console.md#access_policies_create-json-editor)\.
 
    1. For each affected identity, attach the new policy and then detach the old one\. For more information, see [Adding and removing IAM identity permissions](access_policies_manage-attach-detach.md)\.
 

@@ -168,71 +168,7 @@ The following policy allows users to get a screenshot of a running Amazon EC2 in
 
 ![\[Action summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-example4-dialog.png)
 
-## Policy 5: Unrecognized\_Service\_Action<a name="example5"></a>
-
-The following policy was intended to provide full access to DynamoDB, but that access fails because `dynamodb` is misspelled as `dynamobd`\. This policy was intended to allow access to some Amazon EC2 actions in the `us-east-2` Region, but deny that access to the `ap-northeast-2` Region\. However, access to reboot instances in the `ap-northeast-2` Region is not explicitly denied because of the unrecognized `o` in the middle of the `RebootInstances` action\. This example shows how you can use policy summaries to locate errors in your policies\. To learn how to edit policies based on information in a policy summary, see [Editing policies to fix warnings](access_policies_understand-policy-summary.md#edit-policy-summary)\.
-
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "dynamobd:*"
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-       "Effect": "Deny",
-       "Action": [
-         "ec2:RunInstances",
-         "ec2:StartInstances",
-         "ec2:StopInstances",
-         "ec2:RebootoInstances"
-       ],
-            "Resource": "*",
-            "Effect": "Deny",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:Region": "ap-northeast-2"
-                }
-            }
-        },
-        {
-            "Action": [
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:RebootInstances"
-            ],
-            "Resource": "*",
-            "Effect": "Allow",
-            "Condition": {
-                "StringEquals": {
-                    "ec2:Region": "us-east-2"
-                }
-            }
-        }
-    ]
-}
-```
-
-***Unrecognized\_Service\_Action** Policy Summary:*
-
-![\[Policy summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-example5-dialog.png)
-
-***Unrecognized\_Service\_Action EC2 \(Explicit deny\)** Service Summary:*
-
-![\[Service summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-action-example5-dialog.png)
-
-***Unrecognized\_Service\_Action StartInstances \(Write\)** Action Summary:*
-
-![\[Action summary dialog image\]](http://docs.aws.amazon.com/IAM/latest/UserGuide/images/policies-summary-resource-example5-dialog.png)
-
-## Policy 6: CodeBuild\_CodeCommit\_CodeDeploy<a name="example6"></a>
+## Policy 5: CodeBuild\_CodeCommit\_CodeDeploy<a name="example6"></a>
 
 This policy provides access to specific CodeBuild, CodeCommit, and CodeDeploy resources\. Because these resources are specific to each service, they appear only with the matching service\. If you include a resource that does not match any services in the `Action` element, then the resource appears in all action summaries\.
 
